@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcat="http://www.w3.org/ns/dcat#" targetNamespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" elementFormDefault="qualified" attributeFormDefault="qualified">
+	<xs:annotation>
+		<xs:documentation xml:lang="en">
+      RDF XML Schema (relevant parts for DCAT-AP)
+      XML Schema for http://www.w3.org/1999/02/22-rdf-syntax-ns# namespace
+    </xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
+	<xs:import namespace="http://www.w3.org/ns/dcat#" schemaLocation="dcat.xsd"/>
+	<!-- rdf:plainLiteral -->
+	<xs:complexType name="PlainLiteral">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+The Resource Description Framework [RDF] is defined to have an extensible system of typed literals, based on XML Schema datatypes [XSD], and also to have plain literals. In the RDF specification, plain literals differ from typed literals in that plain literals have no datatype and can optionally have a language tag, indicating the natural language of the content.
+      </xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute ref="xml:lang" use="optional"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<!-- rdf:typedLiteral -->
+	<xs:complexType name="TypedLiteral">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="datatype" type="xs:anyURI"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<!-- rdf:TypedLiteral dateTime -->
+	<xs:complexType name="DateTimeLiteral">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+			Date in 
+      </xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:dateTime">
+				<xs:attribute name="datatype" type="xs:anyURI" fixed="http://www.w3.org/2001/XMLSchema#dateTime"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<!-- rdf:Resource-->
+	<xs:complexType name="Resource">
+		<xs:attribute ref="rdf:resource"/>
+	</xs:complexType>		
+	<!-- CatalogRoot -->
+	<xs:complexType name="CatalogRoot">
+		<xs:choice>
+			<xs:element ref="dcat:Catalog"/>
+		</xs:choice>
+	</xs:complexType>
+	<!-- individual elements -->
+	<xs:attribute name="about" type="xs:anyURI"/>
+	<xs:attribute name="resource" type="xs:anyURI"/>
+	<xs:attribute name="nodeID" type="xs:NCName"/>
+	<xs:element name="RDF" type="rdf:CatalogRoot"/>
+	<xs:element name="comment" type="xs:string" />
+</xs:schema>

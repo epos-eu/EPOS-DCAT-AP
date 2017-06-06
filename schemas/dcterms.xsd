@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:dct="http://purl.org/dc/terms/" xmlns:locn="http://www.w3.org/ns/locn#" xmlns:schema="http://schema.org/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" targetNamespace="http://purl.org/dc/terms/" elementFormDefault="qualified" attributeFormDefault="qualified">
+	<xs:annotation>
+		<xs:documentation xml:lang="en">
+      DCterms XML Schema  (relevant parts for DCAT-AP)
+      XML Schema for http://purl.org/dc/terms/ namespace
+    </xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="http://xmlns.com/foaf/0.1/" schemaLocation="foaf.xsd"/>
+	<xs:import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" schemaLocation="rdf.xsd"/>
+	<xs:import namespace="http://www.w3.org/2004/02/skos/core#" schemaLocation="skos.xsd"/>
+	<xs:import namespace="http://schema.org/" schemaLocation="schema.org.xsd"/>
+	<xs:import namespace="http://www.w3.org/ns/locn#" schemaLocation="locn.xsd"/>
+	<!-- individual elements -->
+	<xs:element name="alternative" type="rdf:PlainLiteral"/>
+	<xs:element name="title" type="rdf:PlainLiteral"/>
+	<xs:element name="tableOfContents" type="rdf:PlainLiteral"/>
+	<xs:element name="abstract" type="rdf:PlainLiteral"/>
+	<xs:element name="description" type="rdf:PlainLiteral"/>
+	<xs:element name="created" type="rdf:DateTimeLiteral"/>
+	<xs:element name="valid" type="rdf:DateTimeLiteral"/>
+	<xs:element name="available" type="rdf:DateTimeLiteral"/>
+	<xs:element name="issued" type="rdf:DateTimeLiteral"/>
+	<xs:element name="modified" type="rdf:DateTimeLiteral"/>
+	<xs:element name="dateAccepted" type="rdf:DateTimeLiteral"/>
+	<xs:element name="dateCopyrighted" type="rdf:DateTimeLiteral"/>
+	<xs:element name="dateSubmitted" type="rdf:DateTimeLiteral"/>
+	<!-- <xs:element name="format" type="skos:Concept"/> -->
+	<xs:element name="format" type="dct:MediaTypeOrExtent" />
+	<xs:element name="extent" type="xs:anyURI"/>
+	<xs:element name="medium" type="xs:anyURI"/>
+	<xs:element name="isVersionOf" type="xs:anyURI"/>
+	<xs:element name="hasVersion" type="xs:anyURI"/>
+	<xs:element name="isReplacedBy" type="xs:anyURI"/>
+	<xs:element name="replaces" type="xs:anyURI"/>
+	<xs:element name="isRequiredBy" type="xs:anyURI"/>
+	<xs:element name="requires" type="xs:anyURI"/>
+	<xs:element name="isPartOf" type="xs:anyURI"/>
+	<xs:element name="hasPart" type="xs:anyURI"/>
+	<xs:element name="isReferencedBy" type="xs:anyURI"/>
+	<xs:element name="relation" type="xs:anyURI"/>
+	<xs:element name="references" type="xs:anyURI"/>
+	<xs:element name="isFormatOf" type="xs:anyURI"/>
+	<xs:element name="hasFormat" type="xs:anyURI"/>
+	<xs:element name="conformsTo" type="xs:anyURI"/>
+	<xs:element name="spatial" type="dct:Location"/>
+	<xs:element name="temporal" type="dct:PeriodOfTime"/>
+	<xs:element name="audience" type="xs:anyURI"/>
+	<xs:element name="accrualMethod" type="xs:anyURI"/>
+	<xs:element name="accrualPeriodicity" type="xs:anyURI"/>
+	<xs:element name="accrualPolicy" type="xs:anyURI"/>
+	<xs:element name="instructionalMethod" type="xs:anyURI"/>
+	<!-- <xs:element name="provenance" type="xs:anyURI"/> -->
+	<xs:element name="provenance" type="dct:ProvenanceStatement" />
+	<!-- <xs:element name="rights" type="xs:anyURI"/> -->
+	<xs:element name="rights" type="dct:RightsStatement"/>
+	<xs:element name="rightsHolder" type="xs:anyURI"/>
+	<xs:element name="source" type="xs:anyURI"/>
+	<xs:element name="mediator" substitutionGroup="dct:audience"/>
+	<xs:element name="educationLevel" substitutionGroup="dct:audience"/>
+	<!-- <xs:element name="accessRights" type="xs:anyURI"/> -->
+	<xs:element name="accessRights" type="dct:RightsStatement" />
+	<!-- <xs:element name="license" type="skos:Concept"/> -->
+	<xs:element name="license" type="rdf:PlainLiteral" />
+	<xs:element name="bibliographicCitation" type="xs:anyURI"/>
+	<xs:element name="publisher" type="foaf:Agent"/>
+	<!-- <xs:element name="type" type="skos:Concept"/> -->
+	<xs:element name="type" type="rdf:PlainLiteral"/>
+	<!-- <xs:element name="identifier" type="xs:anyURI"/>  -->
+	<xs:element name="identifier" type="xs:ID" />
+	<!-- <xs:element name="language" type="skos:Concept"/>-->
+	<xs:element name="language" type="dct:LinguisticSystem" /> 
+	<xs:element name="subject" type="rdf:PlainLiteral" />
+	
+	
+	
+	<!-- dct:LicenseDocument -->
+	<xs:complexType name="LicenseDocument">
+		<xs:sequence>
+			<xs:element name="LicenseDocument">
+				<xs:complexType>
+					<xs:sequence>
+						<!-- mandatory properties for adms:Identifier-->
+						<xs:element ref="dct:type" maxOccurs="1"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<!-- dct:PeriodOfTime-->
+	<xs:complexType name="PeriodOfTime">
+		<xs:sequence>
+			<xs:element name="PeriodOfTime">
+				<xs:complexType>
+					<xs:sequence>
+						<!-- optional properties for dct:PeriodOfTime-->
+						<xs:element ref="schema:startDate" minOccurs="0" maxOccurs="1"/>
+						<xs:element ref="schema:endDate" minOccurs="0" maxOccurs="1"/>
+					</xs:sequence>
+					<xs:attribute ref="rdf:about"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- dct:Location-->
+	<xs:complexType name="Location">
+		<xs:sequence>
+			<xs:element name="Location" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<!-- optional properties for dct:Location-->
+						<xs:element ref="locn:geometry" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="skos:prefLabel" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+					<xs:attribute ref="rdf:about"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<!-- dct:LinguisticSystem -->
+	<xs:complexType name="LinguisticSystem">
+		<xs:sequence>
+			<xs:element name="LinguisticSystem" type="xs:string"
+				minOccurs="0" maxOccurs="1" />
+		</xs:sequence>
+		<xs:attribute ref="rdf:about" />
+	</xs:complexType>
+
+	<!-- dct:MediaTypeOrExtent -->
+	<xs:complexType name="MediaTypeOrExtent">
+		<xs:sequence>
+			<xs:element name="MediaTypeOrExtent" type="xs:string"
+				minOccurs="0" maxOccurs="1" />
+		</xs:sequence>
+		<xs:attribute ref="rdf:about" />
+	</xs:complexType>
+
+	<!-- dct:ProvenanceStatement -->
+	<xs:complexType name="ProvenanceStatement">
+		<xs:sequence>
+			<xs:element name="ProvenanceStatement" type="xs:string"
+				minOccurs="0" maxOccurs="1" />
+		</xs:sequence>
+		<xs:attribute ref="rdf:about" />
+	</xs:complexType>
+
+	<!-- dct:RightsStatement -->
+	<xs:complexType name="RightsStatement">
+		<xs:sequence>
+			<xs:element name="RightsStatement" type="xs:string"
+				minOccurs="0" maxOccurs="1" />
+		</xs:sequence>
+		<xs:attribute ref="rdf:about" />
+	</xs:complexType>
+	
+</xs:schema>
