@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eposap:Epos
+xmlns:adms="http://www.w3.org/ns/adms#"
+	xmlns:cnt="http://www.w3.org/2008/content#" xmlns:dcat="http://www.w3.org/ns/dcat#"
+	xmlns:dct="http://purl.org/dc/terms/" xmlns:eposap="http://www.epos-ip.org/"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:http="http://www.w3.org/2006/http#"
+	xmlns:locn="http://www.w3.org/ns/locn#" xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:schema="http://schema.org/"
+	xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:vcard="http://www.w3.org/2006/vcard/ns#"
+	xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.epos-ip.org/ EPOS_DCAT-AP.xsd ">
+
+	<!-- EPOS Catalog -->
+	<eposap:Catalog>
+		<dct:title>Example of catalog</dct:title>
+		<dct:description>Some description</dct:description>
+		<dct:publisher>
+			<foaf:name>publisher name</foaf:name>
+		</dct:publisher>
+		<eposap:Dataset><!-- EPOS Data -->
+			<dct:identifier>GFZ.4.1.2016.005</dct:identifier> <!-- Unique Resource Identifier -->
+			<dct:title>My Dataset</dct:title><!-- Title -->
+			<dct:description>This dataset describes...</dct:description><!-- Abstract -->
+			<dct:issued>2001-12-31T12:00:00</dct:issued><!-- Date of Publication -->
+			<dct:modified>2001-12-31T12:00:00</dct:modified><!-- Date of Revision -->
+			<dct:language><!-- Language -->
+				<dct:LinguisticSystem>eng</dct:LinguisticSystem>
+			</dct:language>
+			<dct:provenance><!-- Lineage -->
+				<dct:ProvenanceStatement>GFZ provenance</dct:ProvenanceStatement>
+			</dct:provenance>
+			<dct:type><!-- Resource type -->
+				Resource type
+			</dct:type>
+			<dcat:keyword>keyword0</dcat:keyword><!-- Keywords (key-phrase) -->
+			<dcat:keyword>keyword1</dcat:keyword><!-- Keywords (key-phrase) -->
+			<dcat:keyword>keyword2</dcat:keyword><!-- Keywords (key-phrase) -->
+			<dcat:keyword>keywordN</dcat:keyword><!-- Keywords (key-phrase) -->
+			<dcat:theme> <!-- Domain -->
+				Some domain
+			</dcat:theme>
+			<dct:accessRights><!-- Public Access Limitations -->
+				<dct:RightsStatement>Some access Rights</dct:RightsStatement>
+			</dct:accessRights>
+			<dct:conformsTo>EPSG:4326</dct:conformsTo> <!-- Spatial Reference System -->
+			<dcat:landingPage> <!-- Online resource -->
+				<foaf:primaryTopic>http://tempuri.org</foaf:primaryTopic>
+			</dcat:landingPage>
+			<dct:spatial><!-- Spatial coordinates -->
+				<dct:Location>
+					<locn:geometry>POLYGON(-10.58 70.09,34.59 70.09,34.59 34.56,-10.58 34.56, -10.58 70.09)</locn:geometry>
+				</dct:Location>
+			</dct:spatial>
+			<dct:temporal><!-- Temporal extent -->
+				<dct:PeriodOfTime>
+					<schema:startDate>2001-12-31T12:00:00</schema:startDate>
+					<schema:endDate>2001-12-31T12:00:00</schema:endDate>
+				</dct:PeriodOfTime>
+			</dct:temporal>
+			<eposap:distribution>
+				<dcat:Distribution>
+					<dct:title>Title of distribution</dct:title>
+					<dct:description>Some description</dct:description>
+					<dcat:accessURL/>
+					<dct:issued>2001-12-31T12:00:00</dct:issued>
+					<dct:modified>2001-12-31T12:00:00</dct:modified>
+					<dct:format><!-- Distribution format -->
+						<dct:MediaTypeOrExtent>Distribution format</dct:MediaTypeOrExtent>
+					</dct:format>
+					<dct:license><!-- Access and use description -->
+						Distribution license
+					</dct:license>
+				</dcat:Distribution>
+			</eposap:distribution>
+			<dct:created>2001-12-31T12:00:00</dct:created> <!-- Data creation -->
+			<dct:subject><!-- Topic Category -->
+				EARTH SCIENCE
+			</dct:subject>
+			<cnt:characterEncoding>UTF-8</cnt:characterEncoding> <!-- Characterset -->
+			<dcat:contactPoint>personID01</dcat:contactPoint> <!--- Point of Contact -->
+			<eposap:responsibleParty>personID01</eposap:responsibleParty> <!---Responsible Party -->
+			<rdf:comment>Some Spatial Resolution</rdf:comment><!-- Spatial Resolution -->
+			<adms:representationTechnique><!-- Spatial Rapresentation Tecnique -->
+				Vector
+			</adms:representationTechnique>
+		</eposap:Dataset>
+
+		<!-- Attribute specific to the metadata -->
+		<eposap:CatalogRecord><!-- ATTRIBUTE SPECIFIC TO METADATA -->
+			<foaf:primaryTopic>Some topic</foaf:primaryTopic> <!-- Topic -->
+			<dct:modified>2001-12-31T12:00:00</dct:modified> <!-- Updated -->
+			<dct:language><!-- Language -->
+				<dct:LinguisticSystem>eng</dct:LinguisticSystem>
+			</dct:language>
+			<dct:title>Record name</dct:title><!-- Standard Name -->
+			<dct:identifier>idvalue3</dct:identifier><!-- File identifier -->
+			<owl:versionInfo>Record version</owl:versionInfo><!-- Standard Version -->
+			<cnt:characterEncoding>UTF-8</cnt:characterEncoding><!-- Characterset -->
+			<dcat:contactPoint>personID01</dcat:contactPoint><!-- Point of contact -->
+			<dct:created>2001-12-31T12:00:00</dct:created> <!-- Created -->
+		</eposap:CatalogRecord>
+	</eposap:Catalog>
+
+	<!-- EPOS Person -->
+	<eposap:Person>
+		<vcard:fn>Ritter, Malte Christian</vcard:fn><!-- Last Name, Given Name -->
+		<vcard:hasAddress><!-- Postal Address -->
+			<vcard:Address>
+				<vcard:street-address>Street Address</vcard:street-address>
+				<vcard:locality>Locality</vcard:locality>
+				<vcard:postal-code>Postal-code</vcard:postal-code>
+				<vcard:country-name>Country-name</vcard:country-name>
+			</vcard:Address>
+		</vcard:hasAddress>
+		<vcard:hasEmail>ritter@test.org</vcard:hasEmail><!-- Email -->
+		<vcard:hasTelephone>+00434585622</vcard:hasTelephone><!-- Phone -->
+		<dct:identifier>personID01</dct:identifier> <!-- Unique Identifier -->
+		<eposap:affiliation>organisationID01</eposap:affiliation> <!-- Organisation -->
+		<dct:language><!-- Language for contact -->
+			<dct:LinguisticSystem>Eng</dct:LinguisticSystem>
+		</dct:language>
+		<schema:qualifications>Qualification</schema:qualifications><!-- Qualification -->
+		<vcard:hasURL><!-- CV -->
+			http://test.org/cv.pdf
+		</vcard:hasURL>
+	</eposap:Person>
+
+	<!-- EPOS Organisation -->
+	<eposap:Organisation>
+		<vcard:fn>GFZ German Research Center for Geosciences</vcard:fn><!-- Title
+			(english) -->
+		<vcard:organization-name>GFZ German Research Center for Geosciences</vcard:organization-name><!--
+			Title (native lang) -->
+		<vcard:hasAddress><!-- Postal Address -->
+			<vcard:Address>
+				<vcard:street-address>Street Address</vcard:street-address>
+				<vcard:locality>Locality</vcard:locality>
+				<vcard:postal-code>Postal-code</vcard:postal-code>
+				<vcard:country-name>Country-name</vcard:country-name>
+			</vcard:Address>
+		</vcard:hasAddress>
+		<vcard:hasEmail>gfz@test.org</vcard:hasEmail><!-- Email -->
+		<vcard:hasURL>http://www.gfz-potsdam.de/en/home/</vcard:hasURL><!-- Website -->
+		<vcard:hasLogo>http://test.org/logo.png</vcard:hasLogo><!-- Logo -->
+		<dct:identifier>organisationID01</dct:identifier><!-- Unique Identifier -->
+		<eposap:scientificContact>personID01</eposap:scientificContact><!-- Scientific
+			Contact -->
+		<dct:spatial><!-- Spatial Coordinates -->
+			<dct:Location>
+				<locn:geometry>POINT(9.1927945677761, 45.463925903103,0)</locn:geometry>
+			</dct:Location>
+		</dct:spatial>
+		<dct:type><!-- Type -->
+			Organisation Type
+		</dct:type>
+		<eposap:legalContact>personID01</eposap:legalContact><!-- Legal Contact -->
+		<eposap:financialContact>personID01</eposap:financialContact><!-- Financial
+			Contact -->
+		<eposap:isPartOf>organisationID01</eposap:isPartOf><!-- Is part of -->
+		<eposap:associatedProjects>projectID01</eposap:associatedProjects><!--
+			Associated Project -->
+	</eposap:Organisation>
+
+	<!-- EPOS Project -->
+	<eposap:Project>
+		<dct:identifier>projectID01</dct:identifier>
+		<dct:title>Project name</dct:title><!-- Name (Title) -->
+		<dct:description>Some description</dct:description><!-- Description (Abstract) -->
+	</eposap:Project>
+
+	<!-- EPOS WebService -->
+
+	<eposap:WebService>
+		<dct:title>GFZ Data Services</dct:title> <!-- title -->
+		<!-- abstract -->
+		<dct:description>Since 2004, the GFZ German Research Centre for Geosciences assigns Digital Object Identifiers (DOI) to datasets. These datasets are archived by and published through GFZ Data Services and cover all geoscientific disciplines. They range from large dynamic datasets deriving from data intensive global monitoring networks with real-time data acquisition to the full suite of highly variable datasets collected by individual researchers or small teams. These highly variable data (‘long-tail data’) are small in size, but represent an important part of the total scientific output.</dct:description>
+		<dct:issued>2001-12-31T12:00:00</dct:issued><!-- date of publication -->
+		<dct:modified>20016-12-31T12:00:00</dct:modified><!-- date of revision -->
+		<!-- 
+			Whenever possible, you should use URIs for licences. 
+			A register of standard licences is available at: 
+			http://publications.europa.eu/mdr/resource/authority/licence/html/licences-eng.html 
+		-->
+		<dct:license>Creative Commons for data, Open Source licences for software </dct:license> <!-- Access and Use Restrictions -->
+		<foaf:page> <!-- URI -->
+			<foaf:primaryTopic>http://dataservices.gfz-potsdam.de/igets/showshort.php?</foaf:primaryTopic>
+		</foaf:page>
+		<dct:format><!-- distribution format, in case the service provides (also) access to binary data -->
+			<dct:MediaTypeOrExtent>zip</dct:MediaTypeOrExtent>
+		</dct:format>
+		<!-- public access limitations:
+			There a codelist for this, so you can check if it is suitable to you. 
+			The description is here:     
+			http://publications.europa.eu/mdr/resource/authority/access-right/html/access-right-eng.html
+			  
+			The base URI is:     
+			http://publications.europa.eu/resource/authority/access-right/
+		-->
+		<dct:rights>
+			<dct:RightsStatement>open data</dct:RightsStatement>
+		</dct:rights>
+		<!-- 
+			Spatial Reference System 
+			the CRS should be specified with the relevant URI from the OGC EPSG register.
+			The base URI is:
+			http://spatialreference.org/ref/ -->
+		<dct:conformsTo>EPSG:4326</dct:conformsTo> 
+		<dct:identifier>dataservices.gfz-potsdam.de</dct:identifier> <!-- Unique Resource Identifier: this is the entry point of the service -->
+		<dct:created>2001-12-31T12:00:00</dct:created> <!-- date of creation -->
+		<eposap:domain> <!-- This property refers to the domain of resource (e.g. Seismology, GNSS etc.) -->
+			Seismology
+		</eposap:domain>
+		<dct:type> <!-- RESOURCE TYPE This property refers to service type (E.g. "metadata service", "binary data service", "map service"...) -->
+			map service
+		</dct:type>
+		<dcat:keyword>Laboratories, rocks</dcat:keyword> <!-- Keywords -->
+		
+
+		<!-- List of Parameters: 
+			this section is needed in order to describe the parameters of the service. 
+			E.g. in the case of a RESTful service, we may have "domain" as parameter, 
+			with type "string" and a list of allowed value terms specified by the value tag, 
+			e.g. 'seism','gps'  (i.e. namespace)-->
+		<eposap:parameter>
+			<http:paramName>id</http:paramName>
+			<dct:type> <!-- This property refers to parameter type -->
+				integer
+			</dct:type>			
+			<owl:versionInfo>1.0</owl:versionInfo> <!-- version of parameter -->
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>stationType</http:paramName>
+			<dct:type> <!-- This property refers to parameter type -->
+				string
+			</dct:type>	
+			<http:paramValue>mobile,static</http:paramValue>	<!-- allowed vocabulary terms, optional tag -->				
+			<owl:versionInfo>1.5</owl:versionInfo> <!-- version of parameter -->
+		</eposap:parameter>		
+		<dcat:contactPoint>personID01</dcat:contactPoint> <!-- internal link to contact point (vcard:Individual) described in the same file in <eposap:Person> -->
+		<eposap:responsibleParty>personID01</eposap:responsibleParty> <!-- internal link to responsibleParty (vcard:Individual) described in the same file in <eposap:Person> -->
+		<dct:spatial> <!-- Geographic location/spatial extent /bounding box -->
+			<dct:Location>
+				<locn:geometry>POLYGON(-10.58 70.09,34.59 70.09,34.59 34.56,-10.58 34.56, -10.58 70.09)</locn:geometry>
+			</dct:Location>
+		</dct:spatial>
+		<adms:representationTechnique> <!-- Spatial representation type -->
+			Vector
+		</adms:representationTechnique>
+		<dct:temporal> <!-- temporal extent -->
+			<dct:PeriodOfTime>
+				<schema:startDate>2001-12-31T12:00:00</schema:startDate>
+				<schema:endDate>2016-12-31T12:00:00</schema:endDate>
+			</dct:PeriodOfTime>
+		</dct:temporal>
+		<dct:provenance> <!-- Lineage -->
+			<dct:ProvenanceStatement>GFZ Provenance</dct:ProvenanceStatement>
+		</dct:provenance>
+		<dct:source>(another coupled resource URI, if any)</dct:source> <!-- Coupled Resource [coupled resource uri]-->
+	</eposap:WebService>
+
+	<!--  EPOS Publication -->
+	<eposap:Publication>
+	   <dct:identifier>doi_123.ABC</dct:identifier>
+	  <dct:title>publication title</dct:title>
+	  <eposap:authors>personID01</eposap:authors>
+	  <eposap:publisher>personID01</eposap:publisher>
+	  <dct:abstract>abstract</dct:abstract>
+	  <dct:issued>2001-12-31T12:00:00</dct:issued>
+	  <schema:issn>issn</schema:issn>
+	  <schema:issueNumber>issueNumber</schema:issueNumber>
+	  <schema:volumeNumber>volumeNumber</schema:volumeNumber>
+	  <schema:numberOfPages>numberOfPages</schema:numberOfPages>
+	  <schema:keywords>keywords</schema:keywords>
+	  <eposap:contributors>personID01</eposap:contributors>
+	  <dct:accessRights>
+	    <dct:RightsStatement>access Rights</dct:RightsStatement>
+	  </dct:accessRights>
+	  <dct:format>
+	    <dct:MediaTypeOrExtent>PDF</dct:MediaTypeOrExtent>
+	  </dct:format>
+  </eposap:Publication>
+
+	<!--  EPOS Service -->
+	<eposap:Service>
+		<dct:identifier>serviceID01</dct:identifier>
+	  <schema:name>name of service</schema:name>
+	  <schema:serviceType>serviceType</schema:serviceType>
+	  <dct:description>some description</dct:description>
+	  <dct:license>termsOfUse</dct:license>
+	  <dcat:contactPoint>personID01</dcat:contactPoint>
+  </eposap:Service>
+
+	<!--  EPOS Equipment -->
+	<eposap:Equipment>
+	    <dct:identifier>equipmentID01</dct:identifier> <!-- Unique Resource Identifier -->
+	    <schema:serialNumber>012-AB6-G6H-9KL</schema:serialNumber> <!-- SerialNumber -->
+	    <dct:type> <!-- Type -->
+	      type of equipment
+	    </dct:type>
+	    <schema:numberOfItems>1</schema:numberOfItems><!-- quantity  -->
+	    <schema:manufacturer>some manufacturer</schema:manufacturer> <!-- manufacturer  -->
+	    <dct:description>dct:description</dct:description> <!-- description -->
+	    <dct:title>instrumentName</dct:title> <!-- InstrumentName  -->
+	    <eposap:relatedTo>facilityID01</eposap:relatedTo> <!-- facility  -->
+  		<eposap:isPartOf>equipmentID01</eposap:isPartOf> <!-- equipment  -->
+  		<dcat:contactPoint>personID01</dcat:contactPoint> <!-- person -->
+  		<eposap:owner>organisationID01</eposap:owner> <!-- Organization  -->
+	    <dct:temporal>
+	      <dct:PeriodOfTime>
+	        <schema:startDate>2016-10-30T12:00:00</schema:startDate>
+	        <schema:endDate>2016-12-31T12:00:00</schema:endDate>
+	      </dct:PeriodOfTime>
+	    </dct:temporal>
+	    <eposap:orientation>x,y,z</eposap:orientation> <!--  orientation -->
+	    <eposap:dynamicRange> <!-- DynamicRange -->
+	      <schema:unitText>unit</schema:unitText>
+    		  <schema:value>value</schema:value>
+	    </eposap:dynamicRange>
+	    <eposap:resolution>0.0</eposap:resolution> <!-- resolution -->
+	    <eposap:samplePeriod> <!-- samplePeriod -->
+	      <schema:unitText>unit</schema:unitText>
+    		  <schema:value>value</schema:value>
+	    </eposap:samplePeriod>
+	    <eposap:filter>some filter</eposap:filter> <!-- filter -->
+	    <dct:spatial> <!-- location -->
+	      <dct:Location>
+	        <locn:geometry>POINT(9.1927945677761 45.463925903103,0)</locn:geometry>
+	      </dct:Location>
+	    </dct:spatial>
+  </eposap:Equipment>
+
+  <!-- EPOS Facility -->
+	<eposap:Facility>
+	    <dct:identifier>facilityID01</dct:identifier>
+	    <dct:title>facilityName</dct:title>
+	    <vcard:hasAddress> <!-- country -->
+		    <vcard:Address>
+		      <vcard:street-address>street-address</vcard:street-address>
+		      <vcard:locality>locality</vcard:locality>
+		      <vcard:postal-code>postal-code</vcard:postal-code>
+		      <vcard:country-name>country-name</vcard:country-name>
+		    </vcard:Address>
+	  	</vcard:hasAddress>
+	    <dct:description>some description</dct:description>
+	    <eposap:owner>organisationID01</eposap:owner><!-- organisation -->
+	   	<dcat:contactPoint>personID01</dcat:contactPoint><!-- person -->
+  		<eposap:facilityManager>personID01</eposap:facilityManager><!-- person -->
+	    <dct:type> <!-- type -->
+	      type of facility
+	    </dct:type>
+	    <foaf:page> <!-- website -->
+    			<foaf:primaryTopic>http://www.test.org</foaf:primaryTopic>
+  		</foaf:page>
+	    <dcat:theme><!-- scienceDomain -->
+		    scienceDomain
+  		</dcat:theme>
+  </eposap:Facility>
+
+
+</eposap:Epos>
