@@ -2,6 +2,6 @@
 DCAT-AP extension for EPOS Solid Earth Data
 
 
-## Usuful tools
+## Useful tools
 .xsd Validator https://www.freeformatter.com/xml-validator-xsd.html
 
