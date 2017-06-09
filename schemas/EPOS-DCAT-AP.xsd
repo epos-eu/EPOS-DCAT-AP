@@ -53,29 +53,10 @@
 			<xs:element ref="dct:title" minOccurs="1" maxOccurs="unbounded" />
 			<xs:element ref="dct:description" minOccurs="1" maxOccurs="unbounded" />
 			<xs:element ref="dct:publisher" minOccurs="1" maxOccurs="1" />
-			
+
 			<!-- EPOS extension -->
 			<xs:element ref="eposap:Dataset" minOccurs="1" maxOccurs="unbounded" />
 			<xs:element ref="eposap:CatalogRecord" minOccurs="1" />
-		</xs:sequence>
-	</xs:complexType>
-
-	<!-- eposap:CatalogRecord -->
-	<xs:element name="CatalogRecord" type="eposap:CatalogRecord" />
-	<xs:complexType name="CatalogRecord">
-		<xs:sequence>
-			<!-- dcat:CatalogRecord properties -->
-			<xs:element ref="foaf:primaryTopic" minOccurs="1" maxOccurs="1" />
-			<xs:element ref="dct:modified" minOccurs="1" maxOccurs="1" />
-			<xs:element ref="dct:language" minOccurs="1" maxOccurs="unbounded" />
-			<xs:element ref="dct:title" minOccurs="0" maxOccurs="unbounded" />
-
-			<!-- EPOS extension -->
-			<xs:element ref="dct:identifier" minOccurs="0" maxOccurs="1" />
-			<xs:element ref="owl:versionInfo" minOccurs="0" maxOccurs="1" />
-			<xs:element ref="cnt:characterEncoding" minOccurs="1" maxOccurs="1" />
-			<xs:element ref="dcat:contactPoint" minOccurs="1" maxOccurs="1" />
-			<xs:element ref="dct:created" minOccurs="1" maxOccurs="1" />
 		</xs:sequence>
 	</xs:complexType>
 
@@ -90,26 +71,44 @@
 			<xs:element ref="dct:issued" minOccurs="1" maxOccurs="1" />
 			<xs:element ref="dct:modified" minOccurs="1" maxOccurs="1" />
 			<xs:element ref="dct:language" minOccurs="1" maxOccurs="unbounded" />
-			<xs:element ref="dct:provenance" minOccurs="1" maxOccurs="unbounded" />
+			<xs:element ref="dct:provenance" minOccurs="1" maxOccurs="1" />
 			<xs:element ref="dct:type" minOccurs="1" maxOccurs="1" />
 			<xs:element ref="dcat:keyword" minOccurs="1" maxOccurs="unbounded" />
-			<xs:element ref="dcat:theme" minOccurs="0" maxOccurs="unbounded" />
-			<xs:element ref="dct:accessRights" minOccurs="1" maxOccurs="1" />
-			<xs:element ref="dct:publisher" minOccurs="0" maxOccurs="unbounded" />
-			<xs:element ref="dct:conformsTo" minOccurs="0" maxOccurs="unbounded" />
-			<xs:element ref="dcat:landingPage" minOccurs="0" maxOccurs="unbounded" />
-			<xs:element ref="dct:spatial" minOccurs="0" maxOccurs="unbounded" />
-			<xs:element ref="dct:temporal" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element ref="dct:accessRights" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="dct:conformsTo" minOccurs="0" maxOccurs="1" />
+			<xs:element ref="dcat:landingPage" minOccurs="0" maxOccurs="1" />
+			<xs:element ref="dct:spatial" minOccurs="0" maxOccurs="1" />
+			<xs:element ref="dct:temporal" minOccurs="0" maxOccurs="1" />
 			<xs:element name="distribution" type="dcat:Distribution" minOccurs="0" maxOccurs="unbounded" />
-			
+
 			<!-- EPOS extension -->
+			<xs:element name="domain" type="xs:string" minOccurs="1" maxOccurs="1" />
 			<xs:element ref="dct:created" minOccurs="1" maxOccurs="1" />
 			<xs:element ref="dct:subject" minOccurs="1" maxOccurs="unbounded" />
 			<xs:element ref="cnt:characterEncoding" minOccurs="1" maxOccurs="1" />
 			<xs:element ref="dcat:contactPoint" minOccurs="1" maxOccurs="1" />
-			<xs:element ref="eposap:responsibleParty" />
+			<xs:element ref="eposap:responsibleParty" minOccurs="1" maxOccurs="1"/>
 			<xs:element ref="rdf:comment" minOccurs="0" maxOccurs="1" />
 			<xs:element ref="adms:representationTechnique" minOccurs="0" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- eposap:CatalogRecord -->
+	<xs:element name="CatalogRecord" type="eposap:CatalogRecord" />
+	<xs:complexType name="CatalogRecord">
+		<xs:sequence>
+			<!-- dcat:CatalogRecord properties -->
+			<xs:element ref="foaf:primaryTopic" minOccurs="1" maxOccurs="1" />
+			<xs:element ref="dct:modified" minOccurs="1" maxOccurs="1" />
+			<xs:element ref="dct:language" minOccurs="1" maxOccurs="1" />
+			<xs:element ref="dct:title" minOccurs="0" maxOccurs="1" />
+
+			<!-- EPOS extension -->
+			<xs:element ref="dct:identifier" minOccurs="1" maxOccurs="1" />
+			<xs:element ref="owl:versionInfo" minOccurs="0" maxOccurs="1" />
+			<xs:element ref="cnt:characterEncoding" minOccurs="1" maxOccurs="1" />
+			<xs:element ref="dcat:contactPoint" minOccurs="1" maxOccurs="1" />
+			<xs:element ref="dct:created" minOccurs="1" maxOccurs="1" />
 		</xs:sequence>
 	</xs:complexType>
 
@@ -123,31 +122,29 @@
 			<xs:element ref="dct:issued" minOccurs="1" maxOccurs="1" />
 			<xs:element ref="dct:modified" minOccurs="1" maxOccurs="1" />
 			<xs:element ref="dct:license" minOccurs="1" maxOccurs="unbounded" />
-			<xs:element ref="foaf:page" minOccurs="1" maxOccurs="unbounded" />
-			<xs:element ref="dct:format" minOccurs="0" maxOccurs="unbounded" />
-			<xs:element ref="dct:language" minOccurs="0" maxOccurs="unbounded" />
-			<xs:element ref="dct:rights" minOccurs="0" maxOccurs="1" />
-			<xs:element ref="dct:conformsTo" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element ref="foaf:page" minOccurs="1" maxOccurs="1" />
+			<xs:element ref="dct:format" minOccurs="0" maxOccurs="1" />
+			<xs:element ref="dct:rights" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element ref="dct:conformsTo" minOccurs="0" maxOccurs="1" />
 
 			<!-- EPOS extension -->
 			<xs:element ref="dct:identifier" minOccurs="1" maxOccurs="1" />
-			<xs:element ref="dct:created" minOccurs="1" maxOccurs="1" />			
-			<xs:element name="domain" minOccurs="1" maxOccurs="1" /><!--  domain -->			
+			<xs:element ref="dct:created" minOccurs="1" maxOccurs="1" />
+			<xs:element name="domain" type="xs:string" minOccurs="1" maxOccurs="1" /><!--  domain -->
 			<xs:element ref="dct:type" minOccurs="1" maxOccurs="1" /><!-- resource type -->
 			<xs:element ref="dcat:keyword" minOccurs="1" maxOccurs="unbounded" />
-			
-			<xs:element name="parameter" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="parameter" minOccurs="1" maxOccurs="unbounded">
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element ref="http:paramName" minOccurs="1" maxOccurs="1" />
 						<xs:element ref="dct:type" minOccurs="1" maxOccurs="1" /> <!-- parameter type -->
-						<xs:element ref="http:paramValue" minOccurs="0" maxOccurs="1" />									
+						<xs:element ref="http:paramValue" minOccurs="0" maxOccurs="1" />
 						<xs:element ref="owl:versionInfo" minOccurs="0" maxOccurs="1" />
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
 			<xs:element ref="dcat:contactPoint" minOccurs="1" maxOccurs="1" />
-			<xs:element ref="eposap:responsibleParty" />
+			<xs:element ref="eposap:responsibleParty" minOccurs="1" maxOccurs="1" />
 			<xs:element ref="dct:spatial" minOccurs="0" maxOccurs="1" />
 			<xs:element ref="adms:representationTechnique" minOccurs="0" maxOccurs="1" />
 			<xs:element ref="dct:temporal" minOccurs="0" maxOccurs="1" />
@@ -161,11 +158,11 @@
 	<xs:complexType name="Publication">
 		<xs:sequence>
 			<!-- EPOS extension -->
-			<xs:element ref="dct:identifier" />
+			<xs:element ref="dct:identifier" minOccurs="1" maxOccurs="1"/>
 			<xs:element ref="dct:title" minOccurs="1" maxOccurs="unbounded" />
 			<xs:element ref="eposap:authors" minOccurs="1" maxOccurs="unbounded" />
 			<xs:element ref="eposap:publisher" minOccurs="1" maxOccurs="1" />
-			<xs:element ref="dct:abstract" minOccurs="1" maxOccurs="unbounded" />
+			<xs:element ref="dct:abstract" minOccurs="0" maxOccurs="unbounded" />
 			<xs:element ref="dct:issued" minOccurs="1" maxOccurs="1" />
 			<xs:element ref="schema:issn" minOccurs="0" maxOccurs="1" />
 			<xs:element ref="schema:issueNumber" minOccurs="0" maxOccurs="1" />
@@ -183,7 +180,7 @@
 	<xs:complexType name="Equipment">
 		<xs:sequence>
 			<!-- EPOS extension -->
-			<xs:element ref="dct:identifier" />
+			<xs:element ref="dct:identifier" minOccurs="1" maxOccurs="1" />
 			<xs:element ref="schema:serialNumber" minOccurs="1" maxOccurs="1" />
 			<xs:element ref="dct:type" minOccurs="1" maxOccurs="1" />
 			<xs:element ref="schema:numberOfItems" minOccurs="1" maxOccurs="1" />
@@ -192,8 +189,8 @@
 			<xs:element ref="dct:title" minOccurs="1" maxOccurs="1" />
 			<xs:element ref="eposap:relatedTo" minOccurs="1" maxOccurs="unbounded" />
 			<xs:element ref="eposap:isPartOf" minOccurs="1" maxOccurs="unbounded" />
-			<xs:element ref="dcat:contactPoint" minOccurs="0" maxOccurs="1" />
-			<xs:element ref="eposap:owner" minOccurs="0" maxOccurs="1" />
+			<xs:element ref="dcat:contactPoint" minOccurs="1" maxOccurs="1" />
+			<xs:element ref="eposap:owner" minOccurs="1" maxOccurs="1" />
 			<xs:element ref="dct:temporal" minOccurs="0" maxOccurs="1" />
 			<xs:element name="orientation" type="xs:string" minOccurs="0" maxOccurs="1" />
 			<xs:element name="dynamicRange" minOccurs="0" maxOccurs="1">
@@ -228,9 +225,9 @@
 			<xs:element ref="vcard:hasAddress" minOccurs="1" maxOccurs="1" />
 			<xs:element ref="dct:description" minOccurs="1" maxOccurs="1" />
 			<xs:element ref="eposap:owner" minOccurs="1" maxOccurs="1" />
-			<xs:element ref="dcat:contactPoint" minOccurs="0" maxOccurs="1" />
-			<xs:element ref="eposap:facilityManager" minOccurs="0" maxOccurs="1" />
-			<xs:element ref="dct:type" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element ref="dcat:contactPoint" minOccurs="1" maxOccurs="1" />
+			<xs:element ref="eposap:facilityManager" minOccurs="1" maxOccurs="1" />
+			<xs:element ref="dct:type" minOccurs="1" maxOccurs="unbounded" />
 			<xs:element ref="foaf:page" minOccurs="0" maxOccurs="1" />
 			<xs:element ref="dcat:theme" minOccurs="0" maxOccurs="unbounded" />
 		</xs:sequence>
@@ -253,23 +250,23 @@
 	<xs:complexType name="Organisation">
 		<xs:sequence>
 			<!-- vcard:Organization properties -->
-			<xs:element ref="vcard:fn" minOccurs="0" maxOccurs="1" />
+			<xs:element ref="vcard:fn" minOccurs="1" maxOccurs="1" />
 			<xs:element ref="vcard:organization-name" minOccurs="0" maxOccurs="1" />
-			<xs:element ref="vcard:hasAddress" minOccurs="0" maxOccurs="1" />
+			<xs:element ref="vcard:hasAddress" minOccurs="1" maxOccurs="1" />
 			<xs:element ref="vcard:hasEmail" minOccurs="0" maxOccurs="1" />
-			<xs:element ref="vcard:hasURL" minOccurs="0" maxOccurs="1" />
-			<xs:element ref="vcard:hasTelephone" minOccurs="0" maxOccurs="1" />
+			<xs:element ref="vcard:hasURL" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element ref="vcard:hasTelephone" minOccurs="0" maxOccurs="unbounded" />
 			<xs:element ref="vcard:hasLogo" minOccurs="0" maxOccurs="1" />
 
 			<!-- EPOS extension -->
 			<xs:element ref="dct:identifier" minOccurs="1" maxOccurs="1" />
-			<xs:element ref="eposap:scientificContact" />
+			<xs:element ref="eposap:scientificContact" minOccurs="1" maxOccurs="1"/>
 			<xs:element ref="dct:spatial" minOccurs="0" maxOccurs="1" />
-			<xs:element ref="dct:type" minOccurs="0" maxOccurs="1" />
-			<xs:element ref="eposap:legalContact" />
-			<xs:element ref="eposap:financialContact" />
-			<xs:element ref="eposap:isPartOf" />
-			<xs:element ref="eposap:associatedProjects" />
+			<xs:element ref="dct:type" minOccurs="1" maxOccurs="1" />
+			<xs:element ref="eposap:legalContact" minOccurs="1" maxOccurs="1" />
+			<xs:element ref="eposap:financialContact" minOccurs="1" maxOccurs="1" />
+			<xs:element ref="eposap:isPartOf" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="eposap:associatedProjects" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 
@@ -280,14 +277,14 @@
 			<!-- vcard:Individual properties -->
 			<xs:element ref="vcard:fn" minOccurs="1" maxOccurs="1" />
 			<xs:element ref="vcard:hasAddress" minOccurs="1" maxOccurs="1" />
-			<xs:element ref="vcard:hasEmail" minOccurs="0" maxOccurs="1" />			
+			<xs:element ref="vcard:hasEmail" minOccurs="0" maxOccurs="1" />
 			<xs:element ref="vcard:hasTelephone" minOccurs="0" maxOccurs="1" />
-			
+
 			<!-- EPOS extension -->
 			<xs:element ref="dct:identifier" minOccurs="1" maxOccurs="1" />
-			<xs:element ref="eposap:affiliation" />
+			<xs:element ref="eposap:affiliation" minOccurs="1" maxOccurs="1" />
 			<xs:element ref="dct:language" minOccurs="1" maxOccurs="1" />
-			<xs:element ref="schema:qualifications" minOccurs="0" maxOccurs="1" />
+			<xs:element ref="schema:qualifications" minOccurs="0" maxOccurs="unbounded" />
 			<xs:element ref="vcard:hasURL" minOccurs="0" maxOccurs="1" />
 		</xs:sequence>
 	</xs:complexType>
@@ -296,7 +293,7 @@
 	<!-- eposap:Service -->
 	<xs:element name="Service" type="eposap:Service" />
 	<xs:complexType name="Service">
-		<xs:sequence>			
+		<xs:sequence>
 			<!-- schema:Service properties -->
 			<xs:element ref="dct:identifier" minOccurs="1" maxOccurs="1"/>
 			<xs:element ref="schema:name" minOccurs="1" maxOccurs="1"/>
@@ -308,7 +305,7 @@
 		</xs:sequence>
 	</xs:complexType>
 
-	<!-- Software&ModalCode 
+	<!-- Software&ModalCode
 	<xs:complexType name="ModelCode">
 		<xs:complexContent>
 			<xs:extension base="schema:SoftwareSourceCode">
@@ -342,7 +339,7 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
---> 
+-->
 
 	<xs:element name="Epos" type="eposap:Epos" />
 	<xs:complexType name="Epos">
@@ -357,8 +354,8 @@
 			<xs:element ref="eposap:Equipment" minOccurs="0" maxOccurs="unbounded" />
 			<xs:element ref="eposap:Facility" minOccurs="0" maxOccurs="unbounded" />
 
-			<!-- Software&ModalCode 
-			<xs:element name="Software" type="eposap:Software" minOccurs="0" maxOccurs="unbounded" /> 
+			<!-- Software&ModalCode
+			<xs:element name="Software" type="eposap:Software" minOccurs="0" maxOccurs="unbounded" />
 			<xs:element name="ModelCode" type="eposap:ModelCode" minOccurs="0" maxOccurs="unbounded" /> -->
 		</xs:sequence>
 	</xs:complexType>
