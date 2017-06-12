@@ -1,3 +1,6 @@
+# Important: HOW TO CONTRIBUTE to this project
+You have to fork it to your personal repo, work on it, and make a pull request, as described here: https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/
+
 # EPOS-DCAT-AP
 DCAT-AP extension for Solid Earth Data, developed in the context of European Plate Observing System (EPOS) project www.epos-ip.org
 
