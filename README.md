@@ -12,7 +12,7 @@ In particular, this adds details to map from native formats that include the fol
 - Software
 
 ## How it is being used in the context of EPOS
-EPOS is building a complex system, called Integrated Core Services (ICS) that integrates data, data products, services and softwares from the scientific communities in the field of Solid Earth Sciences.
+EPOS is building a system, called Integrated Core Services (ICS) that integrates data, data products, services and softwares from the scientific communities in the field of Solid Earth Sciences.
 ICS is a metadata-driven system, that uses the metadata to manage resources and respond properly to user queries (More info on ICS: http://www.sciencedirect.com/science/article/pii/S1877050914007923 and https://rd.springer.com/chapter/10.1007/978-3-319-13674-5_17).
 
 **In order to enable the harmonization of metadata from the various communities in the Solid Earth Sciences, an extension of DCAT-AP is being used.**
