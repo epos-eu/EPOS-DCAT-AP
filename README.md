@@ -19,7 +19,13 @@ ICS is a metadata-driven system, that uses the metadata to manage resoruces and 
 All communities are therefore expected to map their metadata to this format.
 
 ### General description of mapping process for EPOS communities
-It can be found here: http://wiki.epos-ip.org/index.php/TCS_Metadata_Mapping***
+It can be found here: http://wiki.epos-ip.org/index.php/TCS_Metadata_Mapping
+
+## Structure of repository
+- In the **schemas** folder all XML schema definition files can be found.
+- In the **examples** folder a number of mapped metadta examples from EPOS communities can be found.
 
 ## Useful tools
 .xsd Validator https://www.freeformatter.com/xml-validator-xsd.html
+
+##
