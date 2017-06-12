@@ -43,8 +43,10 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 			<dcat:landingPage> <!-- Online resource -->
 				<foaf:primaryTopic>http://tempuri.org</foaf:primaryTopic>
 			</dcat:landingPage>
-			<dct:spatial><!-- Spatial coordinates -->
+			<!-- Spatial coordinates -->
+			<dct:spatial>
 				<dct:Location>
+					<!-- POLYGON(lon1 lat1, lon2 lat2,...) -->
 					<locn:geometry>POLYGON(-10.58 70.09,34.59 70.09,34.59 34.56,-10.58 34.56, -10.58 70.09)</locn:geometry>
 				</dct:Location>
 			</dct:spatial>
@@ -147,7 +149,8 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 			Contact -->
 		<dct:spatial><!-- Spatial Coordinates -->
 			<dct:Location>
-				<locn:geometry>POINT(9.1927945677761, 45.463925903103,0)</locn:geometry>
+				<!-- POINT(lon lat elevation) -->
+				<locn:geometry>POINT(9.1927945677761 45.463925903103 0)</locn:geometry>
 			</dct:Location>
 		</dct:spatial>
 		<dct:type><!-- Type -->
@@ -240,6 +243,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 		<eposap:responsibleParty>personID01</eposap:responsibleParty> <!-- internal link to responsibleParty (vcard:Individual) described in the same file in <eposap:Person> -->
 		<dct:spatial> <!-- Geographic location/spatial extent /bounding box -->
 			<dct:Location>
+				<!-- POLYGON(lon1 lat1, lon2 lat2,...) -->
 				<locn:geometry>POLYGON(-10.58 70.09,34.59 70.09,34.59 34.56,-10.58 34.56, -10.58 70.09)</locn:geometry>
 			</dct:Location>
 		</dct:spatial>
@@ -324,7 +328,8 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 	    <eposap:filter>some filter</eposap:filter> <!-- filter -->
 	    <dct:spatial> <!-- location -->
 	      <dct:Location>
-	        <locn:geometry>POINT(9.1927945677761 45.463925903103,0)</locn:geometry>
+		<!-- POINT(lon lat elevation) -->
+	        <locn:geometry>POINT(9.1927945677761 45.463925903103 0)</locn:geometry>
 	      </dct:Location>
 	    </dct:spatial>
   </eposap:Equipment>
