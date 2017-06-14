@@ -15,4 +15,5 @@ Step 2)
 - do the commit, inserting properly title (es. add <MY NFO> xml dcat file);
 
 Step 3)
-move to the (second) tab ("pull requests") and click on "New pull request" button.
+move to the (second) tab ("pull requests") and click on "New pull request" button an then "Create Pull Request".
+Insert a title for the request and finally confirm by clicking on "Create Pull Request".
