@@ -12,7 +12,7 @@ In particular, this adds details to map from native formats that include the fol
 - Institutions
 - Facilities and equipment
 - Web services
-- Software
+- Software 
 
 ## How it is being used in the context of EPOS
 EPOS is building a system, called Integrated Core Services (ICS) that integrates data, data products, services and softwares from the scientific communities in the field of Solid Earth Sciences.
