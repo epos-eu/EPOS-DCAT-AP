@@ -77,7 +77,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 		<dct:title>Project EPOS</dct:title><!-- Name (Title) -->
 		<dct:description>EPOS is a pan-European infrastructure for solid Earth science to support a safe and sustainable society.</dct:description><!-- Description (Abstract) -->
         </eposap:Project>
-        
+
 	<!-- EPOS WebService -->
 
 	<eposap:WebService>
@@ -90,10 +90,10 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 		</dct:description>
 		<dct:issued>2017-06-14T12:00:00</dct:issued><!-- date of publication -->
 		<dct:modified>2017-06-14T12:00:00</dct:modified><!-- date of revision -->
-		<!-- 
-			Whenever possible, you should use URIs for licences. 
-			A register of standard licences is available at: 
-			http://publications.europa.eu/mdr/resource/authority/licence/html/licences-eng.html 
+		<!--
+			Whenever possible, you should use URIs for licences.
+			A register of standard licences is available at:
+			http://publications.europa.eu/mdr/resource/authority/licence/html/licences-eng.html
 		-->
 		<dct:license>Creative Commons for data, Open Source licences for software</dct:license> <!-- Access and Use Restrictions -->
 		<foaf:page> <!-- URI -->
@@ -103,22 +103,22 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 			<dct:MediaTypeOrExtent>xml</dct:MediaTypeOrExtent>
 		</dct:format>
 		<!-- public access limitations:
-			There a codelist for this, so you can check if it is suitable to you. 
-			The description is here:     
+			There a codelist for this, so you can check if it is suitable to you.
+			The description is here:
 			http://publications.europa.eu/mdr/resource/authority/access-right/html/access-right-eng.html
-			  
-			The base URI is:     
+
+			The base URI is:
 			http://publications.europa.eu/resource/authority/access-right/
 		-->
 		<dct:rights>
 			<dct:RightsStatement>open data</dct:RightsStatement>
 		</dct:rights>
-		<!-- 
-			Spatial Reference System 
+		<!--
+			Spatial Reference System
 			the CRS should be specified with the relevant URI from the OGC EPSG register.
 			The base URI is:
 			http://www.opengis.net/def/crs/ -->
-		<dct:conformsTo></dct:conformsTo> 
+		<dct:conformsTo></dct:conformsTo>
 		<dct:identifier>webservices.rm.ingv.it</dct:identifier> <!-- Unique Resource Identifier: this is the entry point of the service -->
 		<dct:created>2017-06-14T12:00:00</dct:created> <!-- date of creation -->
 		<eposap:domain> <!-- This property refers to the domain of resource (e.g. Seismology, GNSS etc.) -->
@@ -131,19 +131,19 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 			data service
 		</dct:type>
 		<dcat:keyword>Earthquake, Event, rocks, seismic waves propagation</dcat:keyword> <!-- Keywords -->
-	
 
 
-		<!-- List of Parameters: 
-			this section is needed in order to describe the parameters of the service. 
-			E.g. in the case of a RESTful service, we may have "domain" as parameter, 
-			with type "string" and a list of allowed value terms specified by the value tag, 
+
+		<!-- List of Parameters:
+			this section is needed in order to describe the parameters of the service.
+			E.g. in the case of a RESTful service, we may have "domain" as parameter,
+			with type "string" and a list of allowed value terms specified by the value tag,
 			e.g. 'seism','gps'  (i.e. namespace)-->
-		
+
                 <eposap:parameter>
                         <http:paramName>starttime</http:paramName>
                         <dct:type>
-                                None
+                                time
                         </dct:type>
                         <owl:versionInfo>1.0</owl:versionInfo>
                 </eposap:parameter>
@@ -151,7 +151,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
                 <eposap:parameter>
                         <http:paramName>endtime</http:paramName>
                         <dct:type>
-                                None
+                                time
                         </dct:type>
                         <owl:versionInfo>1.0</owl:versionInfo>
                 </eposap:parameter>
@@ -159,7 +159,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
                 <eposap:parameter>
                         <http:paramName>minlatitude</http:paramName>
                         <dct:type>
-                                None
+                                float
                         </dct:type>
                         <owl:versionInfo>1.0</owl:versionInfo>
                 </eposap:parameter>
@@ -167,7 +167,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
                 <eposap:parameter>
                         <http:paramName>maxlatitude</http:paramName>
                         <dct:type>
-                                None
+                                float
                         </dct:type>
                         <owl:versionInfo>1.0</owl:versionInfo>
                 </eposap:parameter>
@@ -175,7 +175,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
                 <eposap:parameter>
                         <http:paramName>minlongitude</http:paramName>
                         <dct:type>
-                                None
+                                float
                         </dct:type>
                         <owl:versionInfo>1.0</owl:versionInfo>
                 </eposap:parameter>
@@ -183,7 +183,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
                 <eposap:parameter>
                         <http:paramName>maxlongitude</http:paramName>
                         <dct:type>
-                                None
+                                float
                         </dct:type>
                         <owl:versionInfo>1.0</owl:versionInfo>
                 </eposap:parameter>
@@ -191,7 +191,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
                 <eposap:parameter>
                         <http:paramName>mindepth</http:paramName>
                         <dct:type>
-                                None
+                                float
                         </dct:type>
                         <owl:versionInfo>1.0</owl:versionInfo>
                 </eposap:parameter>
@@ -199,7 +199,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
                 <eposap:parameter>
                         <http:paramName>maxdepth</http:paramName>
                         <dct:type>
-                                None
+                                float
                         </dct:type>
                         <owl:versionInfo>1.0</owl:versionInfo>
                 </eposap:parameter>
@@ -207,7 +207,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
                 <eposap:parameter>
                         <http:paramName>minmagnitude</http:paramName>
                         <dct:type>
-                                None
+                                float
                         </dct:type>
                         <owl:versionInfo>1.0</owl:versionInfo>
                 </eposap:parameter>
@@ -215,7 +215,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
                 <eposap:parameter>
                         <http:paramName>maxmagnitude</http:paramName>
                         <dct:type>
-                                None
+                                float
                         </dct:type>
                         <owl:versionInfo>1.0</owl:versionInfo>
                 </eposap:parameter>
@@ -223,7 +223,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
                 <eposap:parameter>
                         <http:paramName>includeallorigins</http:paramName>
                         <dct:type>
-                                None
+                                boolean
                         </dct:type>
                         <owl:versionInfo>1.0</owl:versionInfo>
                 </eposap:parameter>
@@ -231,7 +231,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
                 <eposap:parameter>
                         <http:paramName>includeallmagnitudes</http:paramName>
                         <dct:type>
-                                None
+                                boolean
                         </dct:type>
                         <owl:versionInfo>1.0</owl:versionInfo>
                 </eposap:parameter>
@@ -239,7 +239,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
                 <eposap:parameter>
                         <http:paramName>includearrivals</http:paramName>
                         <dct:type>
-                                None
+                                boolean
                         </dct:type>
                         <owl:versionInfo>1.0</owl:versionInfo>
                 </eposap:parameter>
@@ -247,7 +247,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
                 <eposap:parameter>
                         <http:paramName>eventid</http:paramName>
                         <dct:type>
-                                None
+                                string
                         </dct:type>
                         <owl:versionInfo>1.0</owl:versionInfo>
                 </eposap:parameter>
@@ -255,7 +255,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
                 <eposap:parameter>
                         <http:paramName>limit</http:paramName>
                         <dct:type>
-                                None
+                                integer
                         </dct:type>
                         <owl:versionInfo>1.0</owl:versionInfo>
                 </eposap:parameter>
@@ -263,7 +263,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
                 <eposap:parameter>
                         <http:paramName>offset</http:paramName>
                         <dct:type>
-                                None
+                                integer
                         </dct:type>
                         <owl:versionInfo>1.0</owl:versionInfo>
                 </eposap:parameter>
@@ -271,7 +271,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
                 <eposap:parameter>
                         <http:paramName>orderby</http:paramName>
                         <dct:type>
-                                None
+                                integer
                         </dct:type>
                         <owl:versionInfo>1.0</owl:versionInfo>
                 </eposap:parameter>
@@ -279,7 +279,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
                 <eposap:parameter>
                         <http:paramName>contributor</http:paramName>
                         <dct:type>
-                                None
+                                string
                         </dct:type>
                         <owl:versionInfo>1.0</owl:versionInfo>
                 </eposap:parameter>
@@ -287,7 +287,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
                 <eposap:parameter>
                         <http:paramName>catalog</http:paramName>
                         <dct:type>
-                                None
+                                string
                         </dct:type>
                         <owl:versionInfo>1.0</owl:versionInfo>
                 </eposap:parameter>
@@ -295,7 +295,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
                 <eposap:parameter>
                         <http:paramName>updatedafter</http:paramName>
                         <dct:type>
-                                None
+                                time
                         </dct:type>
                         <owl:versionInfo>1.0</owl:versionInfo>
                 </eposap:parameter>
@@ -303,7 +303,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
                 <eposap:parameter>
                         <http:paramName>format</http:paramName>
                         <dct:type>
-                                None
+                                string
                         </dct:type>
                         <owl:versionInfo>1.0</owl:versionInfo>
                 </eposap:parameter>
@@ -311,7 +311,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
                 <eposap:parameter>
                         <http:paramName>nodata</http:paramName>
                         <dct:type>
-                                None
+                                string
                         </dct:type>
                         <owl:versionInfo>1.0</owl:versionInfo>
                 </eposap:parameter>
@@ -319,7 +319,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
                 <eposap:parameter>
                         <http:paramName>latitude</http:paramName>
                         <dct:type>
-                                None
+                                float
                         </dct:type>
                         <owl:versionInfo>1.0</owl:versionInfo>
         	</eposap:parameter>
@@ -327,7 +327,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
                 <eposap:parameter>
                         <http:paramName>longitude</http:paramName>
                         <dct:type>
-                                None
+                                float
                         </dct:type>
                         <owl:versionInfo>1.0</owl:versionInfo>
                 </eposap:parameter>
@@ -335,23 +335,23 @@ xmlns:adms="http://www.w3.org/ns/adms#"
                 <eposap:parameter>
                         <http:paramName>minradius</http:paramName>
                         <dct:type>
-                                None
+                                float
                         </dct:type>
-                        <owl:versionInfo>1.0</owl:versionInfo>        
+                        <owl:versionInfo>1.0</owl:versionInfo>
                 </eposap:parameter>
 
                 <eposap:parameter>
                         <http:paramName>maxradius</http:paramName>
                         <dct:type>
-                                None
+                                float
                         </dct:type>
-                        <owl:versionInfo>1.0</owl:versionInfo>                
+                        <owl:versionInfo>1.0</owl:versionInfo>
                 </eposap:parameter>
 
 
-	
 
-		
+
+
 		<dcat:contactPoint>personID01</dcat:contactPoint> <!-- internal link to contact point (vcard:Individual) described in the same file in <eposap:Person> -->
 		<eposap:responsibleParty>personID01</eposap:responsibleParty> <!-- internal link to responsibleParty (vcard:Individual) described in the same file in <eposap:Person> -->
 		<dct:spatial> <!-- Geographic location/spatial extent /bounding box -->
