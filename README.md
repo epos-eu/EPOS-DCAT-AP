@@ -1,5 +1,5 @@
 ## ++HOW TO CONTRIBUTE to this project++
-You have to fork it to your personal repo, work on it, and make a pull request, as described here: https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/
+You have to fork it to your personal repo, work on it, push on your personal repo, and make a pull request. See description down below in "How to contribute" section.
 
 # EPOS-DCAT-AP
 DCAT-AP extension for Solid Earth Data, developed in the context of European Plate Observing System (EPOS) project www.epos-ip.org
@@ -31,4 +31,18 @@ It can be found here: http://wiki.epos-ip.org/index.php/TCS_Metadata_Mapping
 ## Useful tools
 .xsd Validator https://www.freeformatter.com/xml-validator-xsd.html
 
-##
+## HOW TO CONTRIBUTE
+Go to https://github.com/epos-eu/EPOS-DCAT-AP
+
+- Step 1)
+create a fork on your personal account by the "fork" button;
+
+- Step 2)
+-- browse into your forked project (at the top of the page you should read youraccount/EPOS-DCAT-AP forked from epos-eu/EPOS-DCAT-AP) and go to the directory in which you want to upload your file;
+-- click on "Upload files" button;
+-- drag your file into the graphic dashed square;
+-- do the commit, inserting properly title (es. add <MY NFO> xml dcat file);
+
+- Step 3)
+move to the (second) tab ("pull requests") and click on "New pull request" button an then "Create Pull Request".
+Insert a title for the request and finally confirm by clicking on "Create Pull Request".
