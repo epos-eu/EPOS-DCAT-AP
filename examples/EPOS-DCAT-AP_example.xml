@@ -36,7 +36,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 			<dct:accessRights><!-- Public Access Limitations -->
 				<dct:RightsStatement>Some access Rights</dct:RightsStatement>
 			</dct:accessRights>
-			<dct:conformsTo>http://www.opengis.net/def/crs/EPSG/0/4326</dct:conformsTo> <!-- Spatial Reference System FULL LIST HERE: http://spatialreference.org/ref/-->
+			<dct:conformsTo>http://www.opengis.net/def/crs/EPSG/0/4326</dct:conformsTo> <!-- Spatial Reference System -->
 			<dcat:landingPage> <!-- Online resource -->
 				<foaf:primaryTopic>http://tempuri.org</foaf:primaryTopic>
 			</dcat:landingPage>
@@ -58,6 +58,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 					<dct:title>Title of distribution</dct:title>
 					<dct:description>Some description</dct:description>
 					<dcat:accessURL/>
+					<dcat:downloadURL>URL of dataset</dcat:downloadURL>
 					<dct:issued>2001-12-31T12:00:00</dct:issued>
 					<dct:modified>2001-12-31T12:00:00</dct:modified>
 					<dct:format><!-- Distribution format -->
@@ -85,6 +86,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 			<adms:representationTechnique><!-- Spatial Rapresentation Tecnique -->
 				Vector
 			</adms:representationTechnique>
+			<eposap:providedBy>dataservices.gfz-potsdam.de</eposap:providedBy>
 		</eposap:Dataset>
 
 		<!-- Attribute specific to the metadata -->
@@ -225,7 +227,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 		</dct:type>
 		<!-- Keywords, annotation. Simple and free (web annotation ontology in the future) -->
 		<dcat:keyword>Laboratories, rocks</dcat:keyword> <!-- Keywords -->
-
+		<eposap:operation>download, visualise, etc</eposap:operation>
 
 		<!-- List of Parameters:
 			this section is needed in order to describe the parameters of the service.
@@ -234,13 +236,17 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 			e.g. 'seism','gps'  (i.e. namespace)-->
 		<eposap:parameter>
 			<http:paramName>id</http:paramName>
+			<rdf:label>id</rdf:label>
 			<dct:type> <!-- This property refers to parameter type -->
 				integer
 			</dct:type>
-			<owl:versionInfo>1.0</owl:versionInfo> <!-- version of parameter -->
+			<!-- These properties refer to range value of the parameter -->
+			<schema:minValue>0</schema:minValue> 
+			<schema:maxValue>100</schema:maxValue>
 		</eposap:parameter>
 		<eposap:parameter>
-			<http:paramName>stationType</http:paramName>
+			<http:paramName>statType</http:paramName>
+			<rdf:label>stationType</rdf:label>
 			<dct:type> <!-- This property refers to parameter type -->
 				string
 			</dct:type>
