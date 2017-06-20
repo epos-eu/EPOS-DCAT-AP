@@ -44,6 +44,8 @@
 	<xs:element name="facilityManager" type="xs:IDREF" />
 	<xs:element name="owner" type="xs:IDREF" />
 	<xs:element name="relatedTo" type="xs:IDREF" />
+	<xs:element name="providedBy" type="xs:IDREF" />
+	
 
 	<!-- eposap:Catalog -->
 	<xs:element name="Catalog" type="eposap:Catalog" />
@@ -79,9 +81,10 @@
 			<xs:element ref="dcat:landingPage" minOccurs="0" maxOccurs="1" />
 			<xs:element ref="dct:spatial" minOccurs="0" maxOccurs="1" />
 			<xs:element ref="dct:temporal" minOccurs="0" maxOccurs="1" />
-			<xs:element name="distribution" type="dcat:Distribution" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="distribution" type="dcat:Distribution" minOccurs="1" maxOccurs="1" />
 			
 			<!-- EPOS extension -->
+			
 			<xs:element name="domain" type="xs:string" minOccurs="1" maxOccurs="1" />
 			<xs:element name="subDomain" type="xs:string" minOccurs="1" maxOccurs="1" />
 			<xs:element ref="dct:created" minOccurs="1" maxOccurs="1" />
@@ -91,6 +94,7 @@
 			<xs:element ref="eposap:responsibleParty" minOccurs="1" maxOccurs="1"/>
 			<xs:element ref="rdf:comment" minOccurs="0" maxOccurs="1" />
 			<xs:element ref="adms:representationTechnique" minOccurs="0" maxOccurs="1" />
+			<xs:element ref="eposap:providedBy" minOccurs="0" maxOccurs="1"/>
 		</xs:sequence>
 	</xs:complexType>
 	
@@ -124,7 +128,7 @@
 			<xs:element ref="dct:modified" minOccurs="1" maxOccurs="1" />
 			<xs:element ref="dct:license" minOccurs="1" maxOccurs="unbounded" />
 			<xs:element ref="foaf:page" minOccurs="1" maxOccurs="1" />
-			<xs:element ref="dct:format" minOccurs="0" maxOccurs="1" />
+			<xs:element ref="dct:format" minOccurs="0" maxOccurs="unbounded" />
 			<xs:element ref="dct:rights" minOccurs="0" maxOccurs="unbounded" />
 			<xs:element ref="dct:conformsTo" minOccurs="0" maxOccurs="1" />
 
@@ -134,13 +138,17 @@
 			<xs:element name="domain" type="xs:string" minOccurs="1" maxOccurs="1" /><!--  domain -->
 			<xs:element name="subDomain" type="xs:string" minOccurs="1" maxOccurs="1" />
 			<xs:element ref="dct:type" minOccurs="1" maxOccurs="1" /><!-- resource type -->
-			<xs:element ref="dcat:keyword" minOccurs="0" maxOccurs="1" />			
+			<xs:element ref="dcat:keyword" minOccurs="0" maxOccurs="1" />
+			<xs:element name="operation" type="xs:string" minOccurs="1" maxOccurs="1" /><!--  operation -->			
 			<xs:element name="parameter" minOccurs="0" maxOccurs="unbounded">
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element ref="http:paramName" minOccurs="1" maxOccurs="1" />
+						<xs:element ref="rdf:label" minOccurs="1" maxOccurs="1" />
 						<xs:element ref="dct:type" minOccurs="1" maxOccurs="1" /> <!-- parameter type -->
-						<xs:element ref="http:paramValue" minOccurs="0" maxOccurs="1" />									
+						<xs:element ref="http:paramValue" minOccurs="0" maxOccurs="1" />		
+						<xs:element ref="schema:minValue" minOccurs="0" maxOccurs="1" />	
+						<xs:element ref="schema:maxValue" minOccurs="0" maxOccurs="1" />								
 						<xs:element ref="owl:versionInfo" minOccurs="0" maxOccurs="1" />
 					</xs:sequence>
 				</xs:complexType>
@@ -183,7 +191,7 @@
 		<xs:sequence>
 			<!-- EPOS extension -->
 			<xs:element ref="dct:identifier" minOccurs="1" maxOccurs="1" />
-			<xs:element ref="schema:serialNumber" minOccurs="1" maxOccurs="1" />
+			<xs:element ref="schema:serialNumber" minOccurs="0" maxOccurs="1" />
 			<xs:element ref="dct:type" minOccurs="1" maxOccurs="1" />
 			<xs:element ref="schema:numberOfItems" minOccurs="1" maxOccurs="1" />
 			<xs:element ref="schema:manufacturer" minOccurs="1" maxOccurs="1" />
