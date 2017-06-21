@@ -32,6 +32,7 @@
 
 	<!-- EPOS roles -->
 	<xs:element name="responsibleParty" type="xs:IDREF" />
+	<xs:element name="publisher" type="xs:IDREF" />
 	<xs:element name="affiliation" type="xs:IDREF" />
 	<xs:element name="legalContact" type="xs:IDREF" />
 	<xs:element name="financialContact" type="xs:IDREF" />
@@ -126,9 +127,9 @@
 			<xs:element ref="dct:description" minOccurs="1" maxOccurs="unbounded" />
 			<xs:element ref="dct:issued" minOccurs="1" maxOccurs="1" />
 			<xs:element ref="dct:modified" minOccurs="1" maxOccurs="1" />
-			<xs:element ref="dct:license" minOccurs="1" maxOccurs="unbounded" />
+			<xs:element ref="dct:license" minOccurs="0" maxOccurs="unbounded" />
 			<xs:element ref="foaf:page" minOccurs="1" maxOccurs="1" />
-			<xs:element ref="dct:format" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element ref="dct:format" minOccurs="1" maxOccurs="1" />
 			<xs:element ref="dct:rights" minOccurs="0" maxOccurs="unbounded" />
 			<xs:element ref="dct:conformsTo" minOccurs="0" maxOccurs="1" />
 
@@ -137,9 +138,9 @@
 			<xs:element ref="dct:created" minOccurs="1" maxOccurs="1" />			
 			<xs:element name="domain" type="xs:string" minOccurs="1" maxOccurs="1" /><!--  domain -->
 			<xs:element name="subDomain" type="xs:string" minOccurs="1" maxOccurs="1" />
-			<xs:element ref="dct:type" minOccurs="1" maxOccurs="1" /><!-- resource type -->
 			<xs:element ref="dcat:keyword" minOccurs="0" maxOccurs="1" />
-			<xs:element name="operation" type="xs:string" minOccurs="1" maxOccurs="1" /><!--  operation -->			
+			<xs:element name="operation" type="xs:string" minOccurs="1" maxOccurs="1" /><!--  operation -->	
+			<xs:element ref="dct:hasVersion" minOccurs="0" maxOccurs="1" />
 			<xs:element name="parameter" minOccurs="0" maxOccurs="unbounded">
 				<xs:complexType>
 					<xs:sequence>
@@ -153,13 +154,12 @@
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-			<xs:element ref="dcat:contactPoint" minOccurs="1" maxOccurs="1" />
-			<xs:element ref="eposap:responsibleParty" minOccurs="1" maxOccurs="1" />
-			<xs:element ref="dct:spatial" minOccurs="0" maxOccurs="1" />
+			<xs:element ref="dcat:contactPoint" minOccurs="1" maxOccurs="unbounded" />
+			<xs:element ref="eposap:publisher" minOccurs="1" maxOccurs="1" />
+			<xs:element ref="dct:spatial" minOccurs="0" maxOccurs="unbounded" />
 			<xs:element ref="adms:representationTechnique" minOccurs="0" maxOccurs="1" />
 			<xs:element ref="dct:temporal" minOccurs="0" maxOccurs="1" />
-			<xs:element ref="dct:provenance" minOccurs="0" maxOccurs="1" />
-			<xs:element ref="dct:source" minOccurs="0" maxOccurs="1" />
+			
 		</xs:sequence>
 	</xs:complexType>
 
@@ -294,7 +294,7 @@
 			<xs:element ref="dct:identifier" minOccurs="1" maxOccurs="1" />
 			<xs:element ref="eposap:affiliation" minOccurs="1" maxOccurs="1" />
 			<xs:element ref="dct:language" minOccurs="1" maxOccurs="1" />
-			<xs:element ref="schema:qualifications" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element ref="schema:qualifications" minOccurs="0" maxOccurs="1" />
 			<xs:element ref="vcard:hasURL" minOccurs="0" maxOccurs="1" />
 		</xs:sequence>
 	</xs:complexType>
