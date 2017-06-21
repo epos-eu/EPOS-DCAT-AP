@@ -174,7 +174,6 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 	</eposap:Project>
 
 	<!-- EPOS WebService -->
-
 	<eposap:WebService>
 		<dct:title>GFZ Data Services</dct:title> <!-- title -->
 		<!-- abstract -->
@@ -222,12 +221,11 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 		Geochemical data, Borehole data, Rock sample properties) -->
 			sub domain
 		</eposap:subDomain>
-		<dct:type> <!-- RESOURCE TYPE This property refers to service type (E.g. "metadata service", "binary data service", "map service"...) -->
-			map service
-		</dct:type>
+		
 		<!-- Keywords, annotation. Simple and free (web annotation ontology in the future) -->
 		<dcat:keyword>Laboratories, rocks</dcat:keyword> <!-- Keywords -->
 		<eposap:operation>download, visualise, etc</eposap:operation>
+		<dct:hasVersion>0.1</dct:hasVersion>
 
 		<!-- List of Parameters:
 			this section is needed in order to describe the parameters of the service.
@@ -250,11 +248,16 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 			<dct:type> <!-- This property refers to parameter type -->
 				string
 			</dct:type>
-			<http:paramValue>mobile,static</http:paramValue>	<!-- allowed vocabulary terms, optional tag -->
+			<!-- allowed vocabulary terms, optional tag -->
+			<http:paramValue>mobile</http:paramValue>
+			<http:paramValue>static</http:paramValue>	
 			<owl:versionInfo>1.5</owl:versionInfo> <!-- version of parameter -->
 		</eposap:parameter>
+		<!-- The document is meant to be human readable (e.g. PDF, doc, and so on). 
+			This will help a user who, for instance, does not understand something from the hints/label of the parameters. -->
+		<schema:documentation>URL pointing to the specification</schema:documentation>
 		<dcat:contactPoint>personID01</dcat:contactPoint> <!-- internal link to contact point (vcard:Individual) described in the same file in <eposap:Person> -->
-		<eposap:responsibleParty>personID01</eposap:responsibleParty> <!-- internal link to responsibleParty (vcard:Individual) described in the same file in <eposap:Person> -->
+		<eposap:publisher>organisationID01</eposap:publisher> <!-- internal link to responsibleParty (vcard:Individual) described in the same file in <eposap:Person> -->
 		<dct:spatial> <!-- Geographic location/spatial extent /bounding box -->
 			<dct:Location>
 				<!-- POLYGON(lon1 lat1, lon2 lat2,...) -->
@@ -270,12 +273,8 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 				<schema:endDate>2016-12-31T12:00:00</schema:endDate>
 			</dct:PeriodOfTime>
 		</dct:temporal>
-		<dct:provenance> <!-- Lineage -->
-			<dct:ProvenanceStatement>GFZ Provenance</dct:ProvenanceStatement>
-		</dct:provenance>
-		<dct:source>(another coupled resource URI, if any)</dct:source> <!-- Coupled Resource [coupled resource uri]-->
 	</eposap:WebService>
-
+	
 	<!--  EPOS Publication -->
 	<eposap:Publication>
 	   <dct:identifier>doi_123.ABC</dct:identifier>
