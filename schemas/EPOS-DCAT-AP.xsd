@@ -32,6 +32,7 @@
 
 	<!-- EPOS roles -->
 	<xs:element name="responsibleParty" type="xs:IDREF" />
+	<xs:element name="publisher" type="xs:IDREF" />
 	<xs:element name="affiliation" type="xs:IDREF" />
 	<xs:element name="legalContact" type="xs:IDREF" />
 	<xs:element name="financialContact" type="xs:IDREF" />
@@ -153,7 +154,7 @@
 				</xs:complexType>
 			</xs:element>
 			<xs:element ref="dcat:contactPoint" minOccurs="1" maxOccurs="unbounded" />
-			<xs:element ref="eposap:responsibleParty" minOccurs="1" maxOccurs="1" />
+			<xs:element ref="eposap:publisher" minOccurs="1" maxOccurs="1" />
 			<xs:element ref="dct:spatial" minOccurs="0" maxOccurs="unbounded" />
 			<xs:element ref="adms:representationTechnique" minOccurs="0" maxOccurs="1" />
 			<xs:element ref="dct:temporal" minOccurs="0" maxOccurs="1" />
