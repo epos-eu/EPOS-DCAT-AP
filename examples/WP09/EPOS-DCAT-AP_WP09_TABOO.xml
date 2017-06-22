@@ -9,7 +9,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 	xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:vcard="http://www.w3.org/2006/vcard/ns#"
 	xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.epos-ip.org/ https://raw.githubusercontent.com/epos-eu/EPOS-DCAT-AP/master/schemas/EPOS-DCAT-AP.xsd">
-    
+
 	<!-- EPOS Person -->
 	<eposap:Person>
 		<vcard:fn>Chiaraluce, Lauro</vcard:fn><!-- Last Name, Given Name -->
@@ -24,7 +24,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 		<vcard:hasEmail>lauro.chiaraluce@ingv.it</vcard:hasEmail><!-- Email -->
 		<vcard:hasTelephone>+3906******</vcard:hasTelephone><!-- Phone -->
 		<dct:identifier>personID01</dct:identifier> <!-- Unique Identifier -->
-		<eposap:affiliation>organisationID01</eposap:affiliation> <!-- Organisation -->
+		<eposap:affiliation>pic999472675</eposap:affiliation> <!-- Organisation -->
 		<dct:language><!-- Language for contact -->
 			<dct:LinguisticSystem>Eng</dct:LinguisticSystem>
 		</dct:language>
@@ -34,60 +34,47 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 		</vcard:hasURL>
 	</eposap:Person>
 
-	<!-- EPOS Organisation -->
-	<eposap:Organisation>
-		<vcard:fn>INGV National Institute of Geophysics e Volcanology</vcard:fn><!-- Title
-			(english) -->
-		<vcard:organization-name>INGV Istituto Nazionale di Geofisica e Vulcanologia</vcard:organization-name><!--
-			Title (native lang) -->
-		<vcard:hasAddress><!-- Postal Address -->
-			<vcard:Address>
-				<vcard:street-address>Via di Vigna Murata, 605</vcard:street-address>
-				<vcard:locality>Rome</vcard:locality>
-				<vcard:postal-code>00143</vcard:postal-code>
-				<vcard:country-name>ITALY</vcard:country-name>
-			</vcard:Address>
-		</vcard:hasAddress>
-		<vcard:hasEmail>info@ingv.it</vcard:hasEmail><!-- Email -->
-		<vcard:hasURL>http://www.ingv.it</vcard:hasURL><!-- Website -->
-		<vcard:hasLogo>http://test.org/logo.png</vcard:hasLogo><!-- Logo -->
-		<dct:identifier>organisationID01</dct:identifier><!-- Unique Identifier -->
-		<eposap:scientificContact>personID01</eposap:scientificContact><!-- Scientific
-			Contact -->
-		<dct:spatial><!-- Spatial Coordinates -->
-			<dct:Location>
-<<<<<<< HEAD:examples/WP9/EPOS-DCAT-AP_WP09_TABOO.xml
-				<locn:geometry>POINT(41.827709 12.515116 0)</locn:geometry>
-=======
-				<!-- POINT(lon lat elevation) -->
-				<locn:geometry>POINT(12.515116 41.827709 0)</locn:geometry>
->>>>>>> master:examples/WP09/EPOS-DCAT-AP_WP09_TABOO.xml
-			</dct:Location>
-		</dct:spatial>
-		<dct:type><!-- Type -->
-			Organisation Type
-		</dct:type>
-		<eposap:legalContact>personID01</eposap:legalContact><!-- Legal Contact -->
-		<eposap:financialContact>personID01</eposap:financialContact><!-- Financial
-			Contact -->
-		<eposap:isPartOf>organisationID01</eposap:isPartOf><!-- Is part of -->
-		<eposap:associatedProjects>projectID01</eposap:associatedProjects><!--
-			Associated Project -->
-	</eposap:Organisation>
-
-    <!-- EPOS Project -->
-	<eposap:Project>
-		<dct:identifier>projectID01</dct:identifier>
-		<dct:title>Project name</dct:title><!-- Name (Title) -->
-		<dct:description>Some description</dct:description><!-- Description (Abstract) -->
-	</eposap:Project>
+    
+    <!-- EPOS Organisation -->
+    <eposap:Organisation>
+        <vcard:fn>INGV National Institute of Geophysics e Volcanology</vcard:fn><!-- Title (english) -->
+        <vcard:organization-name>INGV Istituto Nazionale di Geofisica e Vulcanologia</vcard:organization-name><!-- Title (native lang) -->
+        <vcard:hasAddress><!-- Postal Address -->
+            <vcard:Address>
+                <vcard:street-address>Via di Vigna Murata, 605</vcard:street-address>
+                <vcard:locality>Rome</vcard:locality>
+                <vcard:postal-code>00143</vcard:postal-code>
+                <vcard:country-name>ITALY</vcard:country-name>
+            </vcard:Address>
+        </vcard:hasAddress>
+        <vcard:hasEmail>info@ingv.it</vcard:hasEmail><!-- Email -->
+        <vcard:hasURL>http://www.ingv.it</vcard:hasURL><!-- Website -->
+        <vcard:hasLogo>http://roma2.rm.ingv.it/userfiles/file/Logo/INGV_Logo-abbr_colore.jpg</vcard:hasLogo><!-- Logo -->
+        <dct:identifier>pic999472675</dct:identifier><!-- Unique Identifier -->
+        <eposap:scientificContact>personID01</eposap:scientificContact><!-- Scientific Contact -->
+        <dct:spatial><!-- Spatial Coordinates -->
+            <dct:Location>
+                <!-- POINT(lon lat elevation) -->
+                <locn:geometry>POINT(12.515116 41.827709 0)</locn:geometry>
+            </dct:Location>
+        </dct:spatial>
+        <dct:type><!-- Type -->
+            Research Institute
+        </dct:type>
+        <eposap:legalContact>personID01</eposap:legalContact><!-- Legal Contact to be correct -->
+        <eposap:financialContact>personID01</eposap:financialContact><!-- Financial
+            Contact  to be correct-->
+        <!--<eposap:isPartOf>organisationID01</eposap:isPartOf> to remove // Is part of -->
+        <!--<eposap:associatedProjects>projectID01</eposap:associatedProjects>--><!--
+            Associated Project -->
+    </eposap:Organisation>
+    
     
 	<!-- EPOS WebService -->
-
 	<eposap:WebService>
-		<dct:title>VpVs Services</dct:title> <!-- title -->
+		<dct:title>VpVs Data Services</dct:title> <!-- title -->
 		<!-- abstract -->
-		<dct:description>description</dct:description>
+		<dct:description>Some description</dct:description>
 		<dct:issued>2017-06-08T12:00:00</dct:issued><!-- date of publication -->
 		<dct:modified>2017-06-08T12:00:00</dct:modified><!-- date of revision -->
 		<!-- 
@@ -117,37 +104,60 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 			Spatial Reference System 
 			the CRS should be specified with the relevant URI from the OGC EPSG register.
 			The base URI is:
-<<<<<<< HEAD:examples/WP9/EPOS-DCAT-AP_WP09_TABOO.xml
-			http://spatialreference.org/ref/ -->
-=======
 			http://www.opengis.net/def/crs/ -->
-		
->>>>>>> master:examples/WP09/EPOS-DCAT-AP_WP09_TABOO.xml
-		<dct:conformsTo>http://www.opengis.net/def/crs/EPSG/0/4326</dct:conformsTo> 
+        <dct:conformsTo>http://www.opengis.net/def/crs/EPSG/0/4326</dct:conformsTo> 
 		<dct:identifier>webservices.ingv.it</dct:identifier> <!-- Unique Resource Identifier: this is the entry point of the service -->
 		<dct:created>2017-06-08T12:00:00</dct:created> <!-- date of creation -->
-		<eposap:domain> <!-- This property refers to the domain of resource (e.g. Seismology, GNSS etc.) -->
+		<eposap:domain> <!-- This property refers to the domain of resource (e.g. Seismology, Geodesy, 
+		Satellite data, Geomagnetic data, Geology, Geohazards, Georesources, Transnational access) -->
 			Seismology
 		</eposap:domain>
-		<dct:type> <!-- RESOURCE TYPE This property refers to service type (E.g. "metadata service", "binary data service", "map service"...) -->
-			map service
-		</dct:type>
+        <eposap:subDomain> <!-- This property refers to the subdomain of resource (e.g. 
+		Earthquake parameters, Velocity models, GNSS station velocities, InSAR, Meteorology, 
+		Variation of geomagnetic field, 3D/4D structural models, Analog models, Numerical models, 
+		Geochemical data, Borehole data, Rock sample properties) -->
+			sub domain
+		</eposap:subDomain>
+        
+        <!-- Keywords, annotation. Simple and free (web annotation ontology in the future) -->
 		<dcat:keyword>Laboratories, rocks</dcat:keyword> <!-- Keywords -->
-	
-
-
-		<!-- List of Parameters: 
-			this section is needed in order to describe the parameters of the service. 
-			E.g. in the case of a RESTful service, we may have "domain" as parameter, 
-			with type "string" and a list of allowed value terms specified by the value tag, 
+		<eposap:operation>download, visualise, etc</eposap:operation>
+		<dct:hasVersion>0.1</dct:hasVersion>
+        
+        <!-- List of Parameters:
+			this section is needed in order to describe the parameters of the service.
+			E.g. in the case of a RESTful service, we may have "domain" as parameter,
+			with type "string" and a list of allowed value terms specified by the value tag,
 			e.g. 'seism','gps'  (i.e. namespace)-->
-	<!--	{% module Template('params.xml', param_descriptions=param_descriptions)%}	-->
-
-		
+		<eposap:parameter>
+			<http:paramName>id</http:paramName>
+			<rdf:label>id</rdf:label>
+			<dct:type> <!-- This property refers to parameter type -->
+				integer
+			</dct:type>
+			<!-- These properties refer to range value of the parameter -->
+			<schema:minValue>0</schema:minValue> 
+			<schema:maxValue>100</schema:maxValue>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>statType</http:paramName>
+			<rdf:label>stationType</rdf:label>
+			<dct:type> <!-- This property refers to parameter type -->
+				string
+			</dct:type>
+			<!-- allowed vocabulary terms, optional tag -->
+			<http:paramValue>mobile</http:paramValue>
+			<http:paramValue>static</http:paramValue>	
+			<owl:versionInfo>1.5</owl:versionInfo> <!-- version of parameter -->
+		</eposap:parameter>
+		<!-- The document is meant to be human readable (e.g. PDF, doc, and so on). 
+			This will help a user who, for instance, does not understand something from the hints/label of the parameters. -->
+		<schema:documentation>URL pointing to the specification</schema:documentation>
 		<dcat:contactPoint>personID01</dcat:contactPoint> <!-- internal link to contact point (vcard:Individual) described in the same file in <eposap:Person> -->
-		<eposap:responsibleParty>personID01</eposap:responsibleParty> <!-- internal link to responsibleParty (vcard:Individual) described in the same file in <eposap:Person> -->
+		<eposap:publisher>pic999472675</eposap:publisher> <!-- internal link to responsibleParty (vcard:Organisation) described in the same file in <eposap:Organisation> -->
 		<dct:spatial> <!-- Geographic location/spatial extent /bounding box -->
 			<dct:Location>
+				<!-- POLYGON(lon1 lat1, lon2 lat2,...) -->
 				<locn:geometry>POLYGON(11.78 43.95, 13.61 43.95, 13.61 42.8, 11.78 42.8)</locn:geometry>
 			</dct:Location>
 		</dct:spatial>
@@ -160,10 +170,6 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 				<schema:endDate>2015-10-04T23:59:59</schema:endDate>
 			</dct:PeriodOfTime>
 		</dct:temporal>
-		<dct:provenance> <!-- Lineage -->
-			<dct:ProvenanceStatement>INGV Provenance</dct:ProvenanceStatement>
-		</dct:provenance>
-		<dct:source>(another coupled resource URI, if any)</dct:source> <!-- Coupled Resource [coupled resource uri]-->
 	</eposap:WebService>
 
 </eposap:Epos>
