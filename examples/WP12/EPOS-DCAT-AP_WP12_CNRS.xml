@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eposap:Epos
+xmlns:adms="http://www.w3.org/ns/adms#"
+	xmlns:cnt="http://www.w3.org/2008/content#" xmlns:dcat="http://www.w3.org/ns/dcat#"
+	xmlns:dct="http://purl.org/dc/terms/" xmlns:eposap="http://www.epos-ip.org/"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:http="http://www.w3.org/2006/http#"
+	xmlns:locn="http://www.w3.org/ns/locn#" xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:schema="http://schema.org/"
+	xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:vcard="http://www.w3.org/2006/vcard/ns#"
+	xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.epos-ip.org/ https://raw.githubusercontent.com/epos-eu/EPOS-DCAT-AP/master/schemas/EPOS-DCAT-AP.xsd">
+
+	<!-- CNRS Organisation -->
+	<eposap:Organisation>
+		<vcard:fn>French National Research Council</vcard:fn><!-- Title
+			(english) -->
+		<vcard:organization-name>Centre national de la recherche scientifique</vcard:organization-name><!--
+			Title (native lang) -->
+		<vcard:hasAddress><!-- Postal Address -->
+			<vcard:Address>
+				<vcard:street-address>Street Address</vcard:street-address>
+				<vcard:locality>Locality</vcard:locality>
+				<vcard:postal-code>Postal-code</vcard:postal-code>
+				<vcard:country-name>Country-name</vcard:country-name>
+			</vcard:Address>
+		</vcard:hasAddress>
+		<vcard:hasEmail>tobefilled@test.org</vcard:hasEmail><!-- Email -->
+		<vcard:hasURL>http://www.gfz-potsdam.de/en/home/</vcard:hasURL><!-- Website -->
+		<vcard:hasLogo>http://test.org/logo.png</vcard:hasLogo><!-- Logo -->
+		<dct:identifier>CNRS</dct:identifier><!-- Unique Identifier -->
+		<eposap:scientificContact>CNRSEmilieOstanciaux</eposap:scientificContact>
+		<dct:spatial>
+			<dct:Location>
+				<locn:geometry>POINT(0.0 0.0 0)</locn:geometry>
+			</dct:Location>
+		</dct:spatial>
+		<dct:type><!-- Type -->
+			Public entity
+		</dct:type>
+		<eposap:legalContact>personID01</eposap:legalContact><!-- Legal Contact -->
+		<eposap:financialContact>personID01</eposap:financialContact><!-- Financial Contact -->
+		<eposap:isPartOf>CNRSEmilieOstanciaux</eposap:isPartOf><!-- Is part of -->
+	</eposap:Organisation>
+
+	<!-- CNRS Persons -->
+	<eposap:Person>
+		<vcard:fn>Emilie, Ostanciaux</vcard:fn><!-- Last Name, Given Name -->
+		<vcard:hasAddress><!-- Postal Address -->
+			<vcard:Address>
+				<vcard:street-address>Street Address</vcard:street-address>
+				<vcard:locality>Locality</vcard:locality>
+				<vcard:postal-code>Postal-code</vcard:postal-code>
+				<vcard:country-name>Country-name</vcard:country-name>
+			</vcard:Address>
+		</vcard:hasAddress>
+		<vcard:hasEmail>ostanciaux@ipgp.fr</vcard:hasEmail><!-- Email -->
+		<vcard:hasTelephone>+330157275336</vcard:hasTelephone><!-- Phone -->
+		<dct:identifier>CNRSEmilieOstanciaux</dct:identifier> <!-- Unique Identifier -->
+		<eposap:affiliation>CNRS</eposap:affiliation> <!-- Organisation -->
+		<dct:language><!-- Language for contact -->
+			<dct:LinguisticSystem>Eng,Fra</dct:LinguisticSystem>
+		</dct:language>
+		<schema:qualifications>Qualification</schema:qualifications><!-- Qualification -->
+		<vcard:hasURL><!-- CV -->
+			http://test.org/cv.pdf
+		</vcard:hasURL>
+	</eposap:Person>
+
+</eposap:Epos>
