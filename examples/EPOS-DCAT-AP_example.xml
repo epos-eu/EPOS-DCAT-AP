@@ -193,7 +193,9 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 		<foaf:page> <!-- URI -->
 			<foaf:primaryTopic>http://dataservices.gfz-potsdam.de/igets/showshort.php?</foaf:primaryTopic>
 		</foaf:page>
-		<dct:format><!-- distribution format, in case the service provides (also) access to binary data -->
+		<dct:format><!-- distribution format. 
+			The base URI of the controlled vocabulary is: https://www.iana.org/assignments/media-types/application/
+     			(e.g., zip) -->
 			<dct:MediaTypeOrExtent>zip</dct:MediaTypeOrExtent>
 		</dct:format>
 		<!-- public access limitations:
@@ -268,8 +270,11 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 				<locn:geometry>POLYGON(-10.58 70.09,34.59 70.09,34.59 34.56,-10.58 34.56, -10.58 70.09)</locn:geometry>
 			</dct:Location>
 		</dct:spatial>
-		<adms:representationTechnique> <!-- Spatial representation type -->
-			Vector
+		<!-- Spatial representation type. 
+			The base URI is: https://www.iana.org/assignments/media-types/text/
+ 			(e.g., xml) -->
+		<adms:representationTechnique> 
+			xml
 		</adms:representationTechnique>
 		<dct:temporal> <!-- temporal extent -->
 			<dct:PeriodOfTime>
