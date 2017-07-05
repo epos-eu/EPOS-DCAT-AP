@@ -151,8 +151,8 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 			Contact -->
 		<dct:spatial><!-- Spatial Coordinates -->
 			<dct:Location>
-				<!-- POINT(lon lat elevation) -->
-				<locn:geometry>POINT(9.1927945677761 45.463925903103 0)</locn:geometry>
+				<!-- POINT(lon lat elevation). Skip elevation when the value is 0 -->
+				<locn:geometry>POINT(9.1927945677761 45.463925903103)</locn:geometry>
 			</dct:Location>
 		</dct:spatial>
 		<dct:type><!-- Type -->
@@ -341,8 +341,8 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 	    <eposap:filter>some filter</eposap:filter> <!-- filter -->
 	    <dct:spatial> <!-- location -->
 	      <dct:Location>
-		<!-- POINT(lon lat elevation) -->
-	        <locn:geometry>POINT(9.1927945677761 45.463925903103 0)</locn:geometry>
+		<!-- POINT(lon lat elevation). Skip elevation when the value is 0. -->
+	        <locn:geometry>POINT(9.1927945677761 45.463925903103)</locn:geometry>
 	      </dct:Location>
 	    </dct:spatial>
   </eposap:Equipment>
