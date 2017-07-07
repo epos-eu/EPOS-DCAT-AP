@@ -54,5 +54,14 @@
 	<xs:element name="hasURL" type="xs:anyURI"/>
 	<xs:element name="hasTelephone" type="xs:anyURI" />
 	<xs:element name="hasLogo" type="xs:anyURI" />
-	<xs:element name="organization-name" type="xs:string"/>
+	<!-- <xs:element name="organization-name" type="xs:string"/> -->
+	<xs:element name="organization-name" type="vcard:organization-name"/>
+	<xs:complexType name="organization-name">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute ref="xml:lang" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
 </xs:schema>
