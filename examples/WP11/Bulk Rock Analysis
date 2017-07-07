@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <eposap:Epos
 xmlns:adms="http://www.w3.org/ns/adms#"
 	xmlns:cnt="http://www.w3.org/2008/content#" xmlns:dcat="http://www.w3.org/ns/dcat#"
@@ -8,10 +8,8 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:schema="http://schema.org/"
 	xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:vcard="http://www.w3.org/2006/vcard/ns#"
 	xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.epos-ip.org/ https://raw.githubusercontent.com/epos-eu/EPOS-DCAT-AP/master/schemas/EPOS-DCAT-AP.xsd">
+	xsi:schemaLocation="http://www.epos-ip.org/terms.html https://raw.githubusercontent.com/epos-eu/EPOS-DCAT-AP/master/schemas/EPOS-DCAT-AP.xsd">
 
-	<!-- In general some metadata must be revised -->
-	
 		<!-- EPOS Person -->
 	<eposap:Person>
 		<vcard:fn>Reitano, Danilo</vcard:fn><!-- Last Name, Given Name -->
@@ -121,13 +119,6 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 			Associated Project -->
 	</eposap:Organisation>
 
-	<!-- EPOS Project 
-	<eposap:Project>
-		<dct:identifier>projectID01</dct:identifier>
-		<dct:title>Project name</dct:title> Name (Title)
-		<dct:description>Some description</dct:description> Description (Abstract)
-	</eposap:Project>-->
-
 	<!-- EPOS WebService -->
 	<eposap:WebService>
 		<dct:title>Bulk Rock Analysis</dct:title> <!-- title for example-->
@@ -195,9 +186,6 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 			<dct:type> <!-- This property refers to parameter type -->
 				String
 			</dct:type>
-			<!-- These properties refer to range value of the parameter
-			<schema:minValue>0</schema:minValue> 
-			<schema:maxValue>100</schema:maxValue> -->
 		</eposap:parameter>
 		
 		<eposap:parameter>
@@ -232,6 +220,9 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 		<eposap:parameter>
 			<http:paramName>Vent location</http:paramName>
 			<rdf:label>Description of the summit crater or eruptive vent producing the eruptive activity. For summit craters: VOR=Voragine crater, BN=Bocca Nuova Crater, NEC=North-East Crater,SEC=South-East Crater, NSEC=New South East Crater</rdf:label>
+			<dct:type> <!-- This property refers to parameter type -->
+				String
+			</dct:type>
 			<!-- allowed vocabulary terms, optional tag -->
 			<http:paramValue>VOR</http:paramValue>
 			<http:paramValue>BN</http:paramValue>
@@ -239,18 +230,15 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 			<http:paramValue>SEC</http:paramValue>
 			<http:paramValue>NSEC</http:paramValue>
 			<http:paramValue>no info</http:paramValue>
-			<dct:type> <!-- This property refers to parameter type -->
-				String
-			</dct:type>
 		</eposap:parameter>
 		
 		<eposap:parameter>
 			<http:paramName>Reference of analysis</http:paramName>
 			<rdf:label>Scientific paper where analyses are published</rdf:label>
-			<http:paramValue>unpublished data</http:paramValue>
 			<dct:type> <!-- This property refers to parameter type -->
 				String
 			</dct:type>
+			<http:paramValue>unpublished data</http:paramValue>
 		</eposap:parameter>
 		
 		<eposap:parameter>
@@ -365,10 +353,10 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 			<rdf:label>Content of Na2O of the sample, expressed as weight percent(wt%)</rdf:label>
 			<dct:type> <!-- This property refers to parameter type -->
 				Float
+			</dct:type>
 			<!-- These properties refer to range value of the parameter -->
 			<schema:minValue>2</schema:minValue> 
 			<schema:maxValue>5</schema:maxValue>
-			</dct:type>
 		</eposap:parameter>
 		
 		<eposap:parameter>
@@ -376,10 +364,10 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 			<rdf:label>Content of K2O of the sample, expressed as weight percent(wt%)</rdf:label>
 			<dct:type> <!-- This property refers to parameter type -->
 				Float
+			</dct:type>
 			<!-- These properties refer to range value of the parameter -->
 			<schema:minValue>1</schema:minValue> 
 			<schema:maxValue>4</schema:maxValue>
-			</dct:type>
 		</eposap:parameter>
 		
 		<eposap:parameter>
@@ -701,19 +689,17 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 			</dct:PeriodOfTime>
 		</dct:temporal>
 	</eposap:WebService>
-
-
-<!--  EPOS Publication -->
+	
+	<!--  EPOS Publication -->
 	<eposap:Publication>
-	  <dct:identifier>10.1007/s00445-006-0083-4</dct:identifier>
+	  <dct:identifier>doi_10.1007/s00445-006-0083-4</dct:identifier>
 	  <dct:title>Petrologic evidence of a complex plumbing system feeding the July-August 2001 eruption of Mt Etna, Sicily, Italy</dct:title>
 	  <eposap:authors>Corsaro RA, Miraglia L, Pompilio M</eposap:authors>
 	  <eposap:publisher>Bulletin of Volcanology</eposap:publisher>
 	  <dct:abstract>After the major 1991–1993 eruption, Mt. Etna resumed flank activity in July 2001 through a complex system of eruptive fissures cutting the NE and the S flanks of the volcano and feeding effusive activity, fire fountains,  Strombolian and minor phreatomagmatic explosions.  Throughout the eruption, magmas with different petrography and composition were erupted. The vents higher than 2,600 m a.s.l. (hereafter Upper vents, UV) erupted porphyritic, plagioclase-rich trachybasalt, typical of present- day summit and flank activity. Differently, the vents located at 2,550 and 2,100 m a.s.l. (hereafter Lower vents,  LV) produced slightly more primitive trachybasalt dominated by large clinopyroxene, olivine and uncommon minerals for Etna such as amphibole, apatite and orthopyroxene and containing siliceous and cognate xenoliths. Petrologic investigations carried out on samples collected throughout the eruption provided insights into one of the most intriguing aspects of the 2001 activity,  namely the coeval occurrence of distinct magmas. We interpret this evidence as the result of a complex plumbing system. It consists in two separate magma storage systems:  a shallow one feeding the activity of the UV and a deeper and more complex storage related to the activity of LV. In this deep storage zone, which is thermally and compositionally zoned, the favourable conditions allow the crystallization of amphibole and the occurrence of cognate xenoliths representing wall cumulates. Throughout 2001 eruption, UV and LV magmas remain clearly distinct and ascended following different paths, ruling out the occurrence of mixing processes between them. Furthermore,  integrating the 2001 eruption in the framework of summit activity occurring since 1995, we propose that the 2001 magma feeding the vents lower than 2,600 m a.s.l. is a precursor of a refilling event, which reached its peak during the 2002–2003 Etna flank eruption</dct:abstract>
-	  <dct:issued>2007</dct:issued>
+	  <dct:issued>2007-01-01T12:00:00</dct:issued>
 	  <schema:issn>1432-0819</schema:issn>
 	  <schema:issueNumber>69</schema:issueNumber>
-	  <schema:volumeNumber></schema:volumeNumber>
 	  <schema:numberOfPages>21</schema:numberOfPages>
 	  <schema:keywords>Mt. Etna, Flank eruption,Amphibole,Xenoliths,Petrologic monitoring,Plumbing system, Eruption dynamics</schema:keywords>
 	  <eposap:contributors>orcid0000000161378806</eposap:contributors> <!--, Used ORCID reference -->
@@ -724,14 +710,14 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 	    <dct:MediaTypeOrExtent>PDF</dct:MediaTypeOrExtent>
 	  </dct:format>
     </eposap:Publication>
-	
+		
 	<eposap:Publication>
-      <dct:identifier>DOI 10.1007/s00445-009-0264-z</dct:identifier>
+      <dct:identifier>doi_10.1007/s00445-009-0264-z</dct:identifier>
 	  <dct:title>Petrology of lavas from 2004-05 eruption of Mt. Etna, Italy: inferences on the dynamics of magma in the central conduits plumbing system</dct:title>
 	  <eposap:authors>Corsaro RA, Civetta L, Di Renzo V, Miraglia L</eposap:authors>
 	  <eposap:publisher>Bulletin of Volcanology</eposap:publisher>
 	  <dct:abstract>Following the 2001 and 2002–2003 flank eruptions,  activity resumed at Mt. Etna on 7 September 2004 and lasted for about 6 months. This paper presents new petrographic, major and trace element, and Sr–Nd isotope data from sequential samples collected during the entire 2004–2005 eruption. The progressive change of lava composition allowed defining three phases that correspond to different processes controlling magma dynamics inside the central volcano conduits. The compositional variability of products erupted up to 24 September is well reproduced by a fractional crystallization model that involves magma already stored at shallow depth since the 2002–2003 eruption. The progressive mixing of this magma with a distinct new one rising within the central conduits is clearly revealed by the composition of the products erupted from 24 September to 15 October. After 15 October, the contribution from the new magma gradually becomes predominant, and the efficiency of the mixing process ensures the emission of homogeneous products up to the end of the eruption. Our results give insights into the complex conditions of magma storage and evolution in the shallow plumbing system of Mt. Etna during a flank eruption.  Furthermore, they confirm that the 2004–2005 activity at Etna was triggered by regional movements of the eastern flank of the volcano. They caused the opening of a complex fracture zone extending ESE which drained a magma stored at shallow depth since the 2002–2003 eruption. This process favored the ascent of a different magma in the central conduits, which began to be erupted on 24 September without any significant change in eruptive style, deformation,  and seismicity until the end of eruption</dct:abstract>
-	  <dct:issued>2009</dct:issued>
+	  <dct:issued>2009-01-01T12:00:00</dct:issued>
 	  <schema:issn>1432-0819</schema:issn>
 	  <schema:issueNumber>71</schema:issueNumber>
 	  <schema:volumeNumber>7</schema:volumeNumber>
@@ -747,12 +733,12 @@ xmlns:adms="http://www.w3.org/ns/adms#"
     </eposap:Publication>
 	
 	<eposap:Publication>
-      <dct:identifier>10.1007/s00445-011-0467-y</dct:identifier>
+      <dct:identifier>doi_10.1007/s00445-011-0467-y</dct:identifier>
 	  <dct:title>Lava fountains during the episodic eruption of South-East Crater (Mt. Etna), 2000: insights into magma-gas dynamics within the shallow volcano plumbing system</dct:title>
 	  <eposap:authors>Andronico D, Corsaro RA</eposap:authors>
 	  <eposap:publisher>Bulletin of Volcanology</eposap:publisher>
 	  <dct:abstract>Etna, in Sicily (Italy) is well known for frequent effusive and explosive eruptions from both its summit and flanks. South-East Crater (SE Crater), one of the four summit craters, has been the most active in the last 20 years and often produces episodic lava fountains over periods lasting from a few weeks to months. The most striking of such eruptive phases was in 2000. Sixty four lava fountains, separated by quiescent intervals and sometimes associated with lava overflows, occurred that year between January and June, a time period during which we consider the volcano to have been in episodic eruption.  This paper presents mainly results of petrochemical investigations carried out on both tephra and lavas collected during a number of the lava fountain episodes in 2000. The new data have been integrated with volcanological and seismic information in order to correlate the features of the eruptive activity with magma-gas dynamics in the plumbing system of SE Crater. The main findings allow us to characterise the 2000 episodic eruption in the framework of the recent SE Crater activity. In particular, we infer that the onset of the 2000 eruption was triggered by the ascent of new, more primitive and volatile-rich magma that progressively intruded into the SE Crater reservoir, where it mixed with the resident, more evolved magma. Furthermore, we argue that the 2000 SE Crater lava fountains largely resulted from the instability of a foam layer accumulated at the top of the underlying reservoir and rebuilt prior to each episode, in agreement with the collapsing foam model for lava fountains</dct:abstract>
-	  <dct:issued>2011</dct:issued>
+	  <dct:issued>2011-01-01T12:00:00</dct:issued>
 	  <schema:issn>1432-0819</schema:issn>
 	  <schema:issueNumber>73</schema:issueNumber>
 	  <schema:volumeNumber>9</schema:volumeNumber>
@@ -768,14 +754,13 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 	</eposap:Publication>
 	
 	<eposap:Publication>
-	  <dct:identifier>10.1016/j.jvolgeores.2012.02.010</dct:identifier>
+	  <dct:identifier>doi_10.1016/j.jvolgeores.2012.02.010</dct:identifier>
 	  <dct:title>Relationship between petrologic  processes in the plumbing system of Mt. Etna and the dynamics of the eastern ﬂank from 1995 to 2005</dct:title>
 	  <eposap:authors>Corsaro RA, Di Renzo V, Distefano S, Miraglia L, Civetta L</eposap:authors>
 	  <eposap:publisher>Journal of Volcanology and Geothermal Research</eposap:publisher>
 	  <dct:abstract>Mt. Etna volcano is located in a complex tectonic setting, with large sectors of its eastern flank sliding seaward at different rates. According to recent petrologic studies, the Etna's plumbing system has a multifaceted geometry, variable in space and time and consisting of storage zones at different depths, where magma ascending to the surface undergoes various processes, mainly fractional crystallization and mixing. In this framework we investigated a possible cause–effect relationship between the flank displacement and pre-eruptive magmatic processes in the shallow plumbing system (less than 5 km b.s.l.) during the decade 1995–2005. In particular, we analyzed petrography, mineral chemistry, geochemistry, Sr and Nd isotopes of the products emitted from 1995 to 2001 by the four summit craters of Etna (South-East, North-East, Bocca Nuova and Voragine). Results integrated with petrologic data already available in literature for the investigated decade, allowed us to better constrain the temporal evolution of the magmatic processes occurring in the Etna's shallow plumbing system (mainly mixing between compositionally and isotopically distinct magmas and fractional crystallization), and to make inferences on its geometry. Furthermore, a comparison between petrologic data and deformative patterns evidences that, from 1995 to July 2001, the aforementioned pre-eruptive magmatic processes did not significantly influence the volcano eastern flank dislocation, which stayed slow and fairly regular. By contrast, the onset of the 2001 flank eruption leads to an acceleration of the movement as a consequence of the ascent, of a primitive, volatile-rich, subaphyric basaltic magma from a deeper (about 10 km b.s.l.) reservoir, during the 2001 and 2002–03 activity.  At least for the decade 1995–2005, pre-eruptive magmatic processes in the shallow portion (b5 km b.s.l.) of Etna's plumbing system, did not directly affect the movement of the volcano's eastern flank. Conversely, a magma intrusion which forcefully opens a new path from a deeper zone (about 10 km b.s.l.) of the plumbing system, causes a dramatic increase of deformative pattern, which strongly accelerates the slide of the eastern flank, as occurred during both 2001 and 2002–03 eruptions</dct:abstract>
-	  <dct:issued>2013</dct:issued>
+	  <dct:issued>2013-01-01T12:00:00</dct:issued>
 	  <schema:issn>0377-0273</schema:issn>
-	  <schema:issueNumber></schema:issueNumber>
 	  <schema:volumeNumber>251</schema:volumeNumber>
 	  <schema:numberOfPages>15</schema:numberOfPages>
 	  <schema:keywords>Mt. Etna, Bulk rock composition, Volcano plumbing system, Mixing, Fractional crystallization, Flank instability</schema:keywords>
@@ -789,14 +774,13 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 	</eposap:Publication>
 	
 	<eposap:Publication>
-	  <dct:identifier>10.1016/j.jvolgeores.2014.02.009</dct:identifier>
+	  <dct:identifier>doi_10.1016/j.jvolgeores.2014.02.009</dct:identifier>
 	  <dct:title>The transition from summit to flank activity at Mt. Etna, Sicily (Italy): Inferences from the petrology of products erupted in 2007–2009</dct:title>
 	  <eposap:authors>Corsaro RA, Miraglia L</eposap:authors>
 	  <eposap:publisher>Journal of Volcanology and Geothermal Research</eposap:publisher>
 	  <dct:abstract>Mt. Etna is an active basaltic volcano where both flank and summit eruptions take place. In recent decades, the South-East summit crater (SEC) has in particular been characterized by ‘episodic’ eruptions, consisting of recurrent lava fountains associated with lava flow emissions and lasting froma few weeks to months. Recent volcanic activity shows that, if there is a transition froman episodic summit eruption to a flank eruption, then this usually takes place while the last paroxysm of the episodic eruption is still underway. By contrast, the 2007–08 episodic eruption at SEC was followed by the 2008–09 flank activity which started three days after the conclusion of the last paroxysm, coinciding with the strong earthquake (M= 7.9) in Sichuan (China), whose perturbations were recorded by the monitoring network of Mt. Etna.Wetherefore investigated the transition from a summit episodic eruption at SEC to flank activity utilizing a petrologic study of the products erupted from2007 to 2009, integrated with literature data. The compositional variability of the productsmay largely be explained by a mixing between an evolved magma stored in the SEC reservoir and a more primitive magma which intrudes it. In the studied period, the most significant episodes of magma recharge occurred before the onset of the 2007–08 episodic eruption and during the 2008–09 flank activity, more precisely before June 2008. According to previous studies, the seven paroxysms of the 2007–08 episodic eruption at SEC have been interpreted as resulting from the disruption of a foam layer at the top of the SEC reservoir which was rebuilt before each subsequent episode. The transition from the 2007–08 episodic eruption at SEC to the 2008–09 flank activitywas essentially triggered by the Sichuan earthquakewhich caused a variation of dynamic stress. It caused the volatile exolution, the pressurization of SEC stored magma, and the consequent fracturing of the surrounding rocks where magma intruded to then be erupted during the 2008–09 flank activity</dct:abstract>
-	  <dct:issued>2014</dct:issued>
+	  <dct:issued>2014-01-01T12:00:00</dct:issued>
 	  <schema:issn>0377-0273</schema:issn>
-	  <schema:issueNumber></schema:issueNumber>
 	  <schema:volumeNumber>275</schema:volumeNumber>
 	  <schema:numberOfPages>10</schema:numberOfPages>
 	  <schema:keywords>Mt. Etna, Summit and flank eruption, Episodic eruption, Shallow plumbing system, Magma mixing, Trigger of volcanic activity</schema:keywords>
@@ -808,5 +792,5 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 	    <dct:MediaTypeOrExtent>PDF</dct:MediaTypeOrExtent>
 	  </dct:format>
 	  </eposap:Publication>
-	  
+	
 </eposap:Epos>
