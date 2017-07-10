@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eposap:Epos xmlns:adms="http://www.w3.org/ns/adms#" xmlns:cnt="http://www.w3.org/2008/content#" xmlns:dcat="http://www.w3.org/ns/dcat#" xmlns:dct="http://purl.org/dc/terms/" xmlns:eposap="http://www.epos-ip.org/terms.html" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:http="http://www.w3.org/2006/http#" xmlns:locn="http://www.w3.org/ns/locn#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:schema="http://schema.org/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:vcard="http://www.w3.org/2006/vcard/ns#" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.epos-ip.org/terms.html ../../schemas/EPOS-DCAT-AP.xsd">
+	<!-- EPOS Person -->
+	<eposap:Person>
+		<vcard:fn>Support BRGM</vcard:fn>
+		<!-- Last Name, Given Name -->
+		<!-- WFS GetCaps /wfs:WFS_Capabilities/ows:ServiceProvider/ows:ServiceContact/ows:IndividualName -->
+		<vcard:hasAddress>
+			<!-- Postal Address -->
+			<vcard:Address>
+				<vcard:street-address>3, avenue Claude Guillemin</vcard:street-address>
+				<vcard:locality>ORLEANS</vcard:locality>
+				<!-- WFS GetCaps /wfs:WFS_Capabilities/ows:ServiceProvider/ows:ServiceContact/ows:ContactInfo/ows:Address/ows:City -->
+				<vcard:postal-code>45000</vcard:postal-code>
+				<!-- WFS GetCaps /wfs:WFS_Capabilities/ows:ServiceProvider/ows:ServiceContact/ows:ContactInfo/ows:Address/ows:PostalCodew-->
+				<vcard:country-name>FRANCE</vcard:country-name>
+				<!-- WFS GetCaps /wfs:WFS_Capabilities/ows:ServiceProvider/ows:ServiceContact/ows:ContactInfo/ows:Address/ows:Country -->
+			</vcard:Address>
+		</vcard:hasAddress>
+		<vcard:hasEmail>contact-brgm@brgm.fr</vcard:hasEmail>
+		<!-- Email -->
+		<!-- WFS GetCaps /wfs:WFS_Capabilities/ows:ServiceProvider/ows:ServiceContact/ows:ContactInfo/ows:Address/ows:ElectronicMailAddress -->
+		<vcard:hasTelephone/>
+		<dct:identifier>TBD</dct:identifier>
+		<!-- Unique Identifier -->
+		<eposap:affiliation>TBD</eposap:affiliation>
+		<!-- Organisation: PIC of BRGM -> 	needs to be hardcoded ?-->
+		<dct:language>
+			<!-- Language for contact -->
+			<dct:LinguisticSystem>EN</dct:LinguisticSystem>
+		</dct:language>
+		<schema:qualifications/>
+		<!-- Qualification -->
+		<vcard:hasURL/>
+		<!-- CV -->
+	</eposap:Person>
+	<!-- EPOS Organisation -->
+	<eposap:Organisation>
+		<vcard:fn>BRGM (French Geological Survey)</vcard:fn>
+		<!-- Title (english) -->
+		<!-- WFS GetCaps /wfs:WFS_Capabilities/ows:ServiceProvider/ows:ProviderName -->
+		<vcard:hasAddress>
+			<!-- Postal Address -->
+			<vcard:Address>
+				<vcard:street-address>3, avenue Claude Guillemin</vcard:street-address>
+				<vcard:locality>ORLEANS</vcard:locality>
+				<!-- WFS GetCaps /wfs:WFS_Capabilities/ows:ServiceProvider/ows:ServiceContact/ows:ContactInfo/ows:Address/ows:City -->
+				<vcard:postal-code>45000</vcard:postal-code>
+				<!-- WFS GetCaps /wfs:WFS_Capabilities/ows:ServiceProvider/ows:ServiceContact/ows:ContactInfo/ows:Address/ows:PostalCodew-->
+				<vcard:country-name>FRANCE</vcard:country-name>
+				<!-- WFS GetCaps /wfs:WFS_Capabilities/ows:ServiceProvider/ows:ServiceContact/ows:ContactInfo/ows:Address/ows:Country -->
+			</vcard:Address>
+		</vcard:hasAddress>
+		<vcard:hasEmail>contact-brgm@brgm.fr</vcard:hasEmail>
+		<!-- Email -->
+		<!-- WFS GetCaps /wfs:WFS_Capabilities/ows:ServiceProvider/ows:ServiceContact/ows:ContactInfo/ows:Address/ows:ElectronicMailAddress -->
+		<vcard:hasURL>http://www.brgm.eu</vcard:hasURL>
+		<!-- TODO SG : -->
+		<!-- Website -->
+		<dct:identifier>TBD</dct:identifier>
+		<!-- Unique Identifier -->
+		<eposap:scientificContact>TBD: identifier of 'Support BRGM' ?</eposap:scientificContact>
+		<!-- Scientific
+			Contact -->
+		<dct:spatial>
+			<!-- Spatial Coordinates -->
+			<dct:Location>
+				<!-- POINT(lon lat elevation) -->
+				<locn:geometry>POINT(1.90389 47.90289 0)</locn:geometry>
+			</dct:Location>
+		</dct:spatial>
+		<dct:type>
+			<!-- Type -->
+			Research Institute
+		</dct:type>
+		<eposap:legalContact>TBD : identifier of 'Support BRGM' ? </eposap:legalContact>
+		<!-- Legal Contact -->
+		<eposap:financialContact>TBD : identifier of 'Support BRGM' ?</eposap:financialContact>
+		<!-- Financial
+			Contact -->
+		<!-- <eposap:isPartOf></eposap:isPartOf> -->
+		<!-- <eposap:associatedProjects>projectID01</eposap:associatedProjects> -->
+	</eposap:Organisation>
+	<!-- EPOS WebService -->
+	<eposap:WebService>
+		<dct:title>EPOS TCS Geological Information and Modelling index discovery service</dct:title>
+		<!-- WFS GetCaps /wfs:WFS_Capabilities/ows:ServiceIdentification/ows:Title -->
+		<!-- abstract -->
+		<dct:description>This WFS enables searching through various indices provided by EPOS TCS Geological Information and Modelling.</dct:description>
+		<!-- WFS GetCaps /wfs:WFS_Capabilities/ows:ServiceIdentification/ows:Abstract -->
+		<dct:issued>2016-10-27T00:00:00</dct:issued>
+		<!-- WFS GetCaps ? -->
+		<!-- date of publication -->
+		<dct:modified>2017-07-04T00:00:00</dct:modified>
+		<!-- WFS GetCaps ? -->
+		<!-- date of revision -->
+		<!--
+			Whenever possible, you should use URIs for licences.
+			A register of standard licences is available at:
+			http://publications.europa.eu/mdr/resource/authority/licence/html/licences-eng.html
+		-->
+		<dct:license>TBD</dct:license>
+		<!-- Access and Use Restrictions -->
+		<foaf:page>
+			<!-- URI -->
+			<foaf:primaryTopic>http://resource.europe-geology.eu/service/wfsBorehole?</foaf:primaryTopic>
+		</foaf:page>
+		<dct:format>
+			<dct:MediaTypeOrExtent>https://www.iana.org/assignments/media-types/application/gml+xml</dct:MediaTypeOrExtent>
+			<!-- WFS GetCaps GetFeature Operation : /wfs:WFS_Capabilities/ows:OperationsMetadata/ows:Operation[3]/ows:Parameter[2]/ows:AllowedValues/ows:Value[1]   does not provide the reference to IANA -->
+			<!-- GML is published. -->
+		</dct:format>
+		<!-- public access limitations:
+			There a codelist for this, so you can check if it is suitable to you.
+			The description is here:
+			http://publications.europa.eu/mdr/resource/authority/access-right/html/access-right-eng.html
+
+			The base URI is:
+			http://publications.europa.eu/resource/authority/access-right/
+		-->
+		<dct:rights>
+			<dct:RightsStatement>TBD</dct:RightsStatement>
+		</dct:rights>
+		<!--
+			Spatial Reference System
+			the CRS should be specified with the relevant URI.
+			The base URI is:
+			http://www.opengis.net/def/crs/ -->
+		<dct:conformsTo>EPSG:4326</dct:conformsTo>
+		<!-- WFS GetCaps FeatureType 'gsmlp:BoreholeView' /wfs:WFS_Capabilities/FeatureTypeList/FeatureType[1]/DefaultCRS-->
+		<!-- Spatial Reference System -->
+		<dct:identifier>http://resource.europe-geology.eu/service/wfsBorehole</dct:identifier>
+		<!-- Unique Resource Identifier: this is the entry point of the service -->
+		<dct:created>2016-10-27T09:30:00</dct:created>
+		<!-- WFS GetCaps ? -->
+		<!-- date of creation -->
+		<eposap:domain>
+			<!-- This property refers to the domain of resource (e.g. Seismology, Geodesy, 
+		Satellite data, Geomagnetic data, Geology, Geohazards, Georesources, Transnational access) -->
+			Geology
+		</eposap:domain>
+		<eposap:subDomain>
+			<!-- This property refers to the subdomain of resource (e.g. 
+		Earthquake parameters, Velocity models, GNSS station velocities, InSAR, Meteorology, 
+		Variation of geomagnetic field, 3D/4D structural models, Analog models, Numerical models, 
+		Geochemical data, Borehole data, Rock sample properties) -->
+			 Borehole data
+		</eposap:subDomain>
+		<!-- Keywords, annotation. Simple and free (web annotation ontology in the future) -->
+		<dcat:keyword>Borehole, Borehole Index, Geology, INSPIRE:GE, GeoSciML</dcat:keyword>
+		<!-- Keywords -->
+		<eposap:operation>TBD</eposap:operation>
+		<!-- TODO : what is the actual list of allowed values ? -->
+		<dct:hasVersion>2.0.0, 2.0.2</dct:hasVersion>
+		<!-- WFS GetCaps GetCapabilities operation /wfs:WFS_Capabilities/ows:OperationsMetadata/ows:Operation[1]/ows:Parameter[1]/ows:AllowedValues-->
+		<!-- Several formats support is usual in OGC services -->
+		<!-- List of Parameters:
+			this section is needed in order to describe the parameters of the service.
+			E.g. in the case of a RESTful service, we may have "domain" as parameter,
+			with type "string" and a list of allowed value terms specified by the value tag,
+			e.g. 'seism','gps'  (i.e. namespace)-->
+		<eposap:parameter>
+			<http:paramName>description</http:paramName> <!-- gsmlp:BoreholeView/gml:description-->
+			<rdf:label>description</rdf:label>
+			<dct:type>
+				string
+			</dct:type>
+		</eposap:parameter>
+		<eposap:parameter> 
+			<http:paramName>gml:identifier</http:paramName> <!-- gsmlp:BoreholeView/gml:identifier -->
+			<!-- ? can we pass namespace ? I need it as we have 2 identifiers which I need to disambiguate-->
+			<rdf:label>index identifier</rdf:label>
+			<dct:type>
+				gml:CodeWithAuthorityType <!--list the allowed types-->
+			</dct:type>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>name</http:paramName> <!-- gsmlp:BoreholeView/gml:name-->
+			<rdf:label>name</rdf:label>
+			<dct:type>
+				string
+			</dct:type>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>gsmlp:identifier</http:paramName> <!-- gsmlp:BoreholeView/gsmlp:identifier -->
+			<!-- ? can we pass namespace ? I need it as we have 2 identifiers which I need to disambiguate-->
+			<rdf:label>identifier of the Borehole</rdf:label>
+			<dct:type>
+				gml:CodeWithAuthorityType <!--list the allowed types-->
+			</dct:type>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>purpose</http:paramName> <!-- gsmlp:BoreholeView/gsmlp:purpose -->
+			<rdf:label>purpose</rdf:label>
+			<dct:type>
+				gml:ReferenceType <!--list the allowed types-->
+			</dct:type>
+			<http:paramValue>http://inspire.ec.europa.eu/codelist/BoreholePurposeValue</http:paramValue><!-- vocab endpoint http://inspire.ec.europa.eu/codelist/BoreholePurposeValue -->
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>status</http:paramName> <!-- gsmlp:BoreholeView/an so on for the XPath ... -->
+			<rdf:label>status</rdf:label>
+			<dct:type>
+				gml:ReferenceType <!--list the allowed types-->
+			</dct:type>
+			<http:paramValue>http://resource.europe-geology.eu/vocabs/BoreholeStatus</http:paramValue><!-- vocab endpoint http://resource.europe-geology.eu/vocabs/BoreholeStatus -->
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>drillingMethod</http:paramName>
+			<rdf:label>drillingMethod</rdf:label>
+			<dct:type>
+				gml:ReferenceType <!--list the allowed types-->
+			</dct:type>
+			<http:paramValue>http://resource.europe-geology.eu/vocabs/DrillingMethod</http:paramValue><!-- vocab endpoint http://resource.europe-geology.eu/vocabs/DrillingMethod -->
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>operator</http:paramName>
+			<rdf:label>operator</rdf:label>
+			<dct:type>
+				string
+			</dct:type>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>driller</http:paramName>
+			<rdf:label>driller</rdf:label>
+			<dct:type>
+				string
+			</dct:type>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>drillStartDate</http:paramName>
+			<rdf:label>drillStartDate</rdf:label>
+			<dct:type>
+				date
+			</dct:type>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>drillEndDate</http:paramName>
+			<rdf:label>drillEndDate</rdf:label>
+			<dct:type>
+				date
+			</dct:type>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>startPoint</http:paramName>
+			<rdf:label>startPoint</rdf:label>
+			<dct:type>
+				gml:ReferenceType <!--list the allowed types-->
+			</dct:type>
+			<http:paramValue>http://resource.europe-geology.eu/vocabs/StartPoint</http:paramValue><!-- vocab endpoint http://resource.europe-geology.eu/vocabs/StartPoint -->
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>inclinationType</http:paramName>
+			<rdf:label>inclinationType</rdf:label>
+			<dct:type>
+				gml:ReferenceType <!--list the allowed types-->
+			</dct:type>
+			<http:paramValue>http://resource.europe-geology.eu/vocabs/BoreholeInclinationType</http:paramValue><!-- vocab endpoint http://resource.europe-geology.eu/vocabs/BoreholeInclinationType -->
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>boreholeMaterialCustodian</http:paramName>
+			<rdf:label>boreholeMaterialCustodian</rdf:label>
+			<dct:type>
+				string
+			</dct:type>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>boreholeLength_m</http:paramName>
+			<rdf:label>boreholeLength_m</rdf:label>
+			<dct:type>
+				gml:MeasureType <!--list the allowed types-->
+			</dct:type>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>elevation_m</http:paramName>
+			<rdf:label>elevation_m</rdf:label>
+			<dct:type>
+				gml:MeasureType <!--list the allowed types-->
+			</dct:type>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>elevation_srs</http:paramName>
+			<rdf:label>elevation_srs</rdf:label>
+			<dct:type>
+				anyURI <!--list the allowed types-->
+			</dct:type>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>positionalAccuracy</http:paramName>
+			<rdf:label>positionalAccuracy</rdf:label>
+			<dct:type>
+				string
+			</dct:type>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>source</http:paramName>
+			<rdf:label>source</rdf:label>
+			<dct:type>
+				string
+			</dct:type>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>parentBorehole_uri</http:paramName>
+			<rdf:label>parentBorehole_uri</rdf:label>
+			<dct:type>
+				anyURI <!--list the allowed types-->
+			</dct:type>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>metadata_uri</http:paramName>
+			<rdf:label>metadata_uri</rdf:label>
+			<dct:type>
+				anyURI <!--list the allowed types-->
+			</dct:type>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>shape</http:paramName>
+			<rdf:label>shape</rdf:label>
+			<dct:type>
+				gml:GeometryPropertyType<!--list the allowed types-->
+				<!-- the 'geometry' field. classical OGC spatial filter can also bet passed-->
+			</dct:type>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>cored</http:paramName>
+			<rdf:label>cored</rdf:label>
+			<dct:type>
+				boolean
+			</dct:type>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>accessToPhysicalDrillCore</http:paramName>
+			<rdf:label>accessToPhysicalDrillCore</rdf:label>
+			<dct:type>
+				boolean
+			</dct:type>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>boreholeUse</http:paramName>
+			<rdf:label>boreholeUse</rdf:label>
+			<dct:type>
+				gml:ReferenceType <!--list the allowed types-->
+			</dct:type>
+			<http:paramValue>http://inspire.ec.europa.eu/codelist/BoreholePurposeValue</http:paramValue><!-- vocab endpoint http://inspire.ec.europa.eu/codelist/BoreholePurposeValue -->
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>detailedDescription</http:paramName>
+			<rdf:label>detailedDescription</rdf:label>
+			<dct:type>
+				gml:ReferenceType <!--list the allowed types-->
+			</dct:type>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>geophysicalLogs</http:paramName>
+			<rdf:label>geophysicalLogs</rdf:label>
+			<dct:type>
+				gml:ReferenceType <!--list the allowed types-->
+			</dct:type>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>geologicalDescription</http:paramName>
+			<rdf:label>geologicalDescription</rdf:label>
+			<dct:type>
+				gml:ReferenceType <!--list the allowed types-->
+			</dct:type>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>groundWaterLevel</http:paramName>
+			<rdf:label>groundWaterLevel</rdf:label>
+			<dct:type>
+				gml:ReferenceType <!--list the allowed types-->
+			</dct:type>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>groundWaterChemistry</http:paramName>
+			<rdf:label>groundWaterChemistry</rdf:label>
+			<dct:type>
+				gml:ReferenceType <!--list the allowed types-->
+			</dct:type>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>rockGeochemistry</http:paramName>
+			<rdf:label>rockGeochemistry</rdf:label>
+			<dct:type>
+				gml:ReferenceType <!--list the allowed types-->
+			</dct:type>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>poreGasChemistry</http:paramName>
+			<rdf:label>poreGasChemistry</rdf:label>
+			<dct:type>
+				gml:ReferenceType <!--list the allowed types-->
+			</dct:type>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>geoTechnicalInfo</http:paramName>
+			<rdf:label>geoTechnicalInfo</rdf:label>
+			<dct:type>
+				gml:ReferenceType <!--list the allowed types-->
+			</dct:type>
+		</eposap:parameter>
+		<schema:documentation>https://forge.brgm.fr/svnrepository/epos/trunk/Documents/EPOS_Borehole_V.1.0.1.docx</schema:documentation>
+		<dcat:contactPoint>TBD</dcat:contactPoint>
+		<!-- internal link to contact point (vcard:Individual) described in the same file in <eposap:Person> -->
+		<eposap:publisher>TBD</eposap:publisher>
+		<!-- Organisation: PIC of BRGM -> 	needs to be hardcoded ?-->
+		<!--<dct:spatial>TODO SG add some BBOX--> 
+			<!-- Geographic location/spatial extent /bounding box -->
+			<!--<dct:Location>-->
+				<!-- POLYGON(lon1 lat1, lon2 lat2,...) -->
+				<!--<locn:geometry>POLYGON(-12.39 30.3, -12.39 49.0, 45.28 49.0, 45.28 30.3, -12.39 30.3)</locn:geometry>
+			</dct:Location>
+		</dct:spatial>-->
+		<adms:representationTechnique>
+			<!-- Spatial representation type -->
+			vector
+		</adms:representationTechnique>
+		<dct:temporal>
+			<!-- temporal extent -->
+			<dct:PeriodOfTime>
+				<schema:startDate>2016-10-27T00:00:00</schema:startDate>
+			</dct:PeriodOfTime>
+		</dct:temporal>
+	</eposap:WebService>
+</eposap:Epos>
