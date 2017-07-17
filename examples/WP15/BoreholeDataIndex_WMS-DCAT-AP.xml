@@ -63,7 +63,8 @@ based on the work done by James Passmore on Terrafirma WMS 	-->
 		<!-- Website -->
 		<dct:identifier>http://TBD.brgm.fr</dct:identifier>
 		<!-- Unique Identifier of BRGM in which system ? within EPOS Granularity database ? -->
-		<!-- AFAIK, I cannot build a URI using BRGM PIC : 999993662 that will land on some ec.europa.eu webpage -->
+		<!-- AFAIK, I cannot build a URI using BRGM PIC : 999993662 that will land on some ec.europa.eu webpage like 'ec.europa.eu/PIC/999993662' -->
+		<!-- http://viaf.org/viaf/150807757/ -->
 		<eposap:scientificContact>http://TBD.support.brgm.fr</eposap:scientificContact>
 		<!-- TBD : identifier of 'Support BRGM' ?-->
 		<!-- Scientific
@@ -113,9 +114,9 @@ based on the work done by James Passmore on Terrafirma WMS 	-->
 		<eposap:domain>Geology</eposap:domain>
 		<eposap:subDomain>Borehole data</eposap:subDomain>
 		<!--<dct:type>View Service</dct:type>-->
-		<dcat:keyword>http://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceCategory/infoFeatureAccessService</dcat:keyword>
-		<!-- what type of keyword do you want ? kind of service type (see above) or domain (see commented below) ? -->
-		<!-- <dcat:keyword>Borehole, Borehole Index, Geology, INSPIRE:GE, GeoSciML</dcat:keyword> -->
+		<!--<dcat:keyword>http://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceCategory/infoMapAccessService</dcat:keyword>-->
+		<!-- what type of keyword do you want ? kind of service type (see commented above) or domain (see below) ? -->
+		<dcat:keyword>Borehole, Borehole Index, Geology, INSPIRE geology, GeoSciML</dcat:keyword>
 		<eposap:operation>GetMap</eposap:operation>
 		<!-- as only one format is asked and describing all parameters for all the operations supported by a WMS won't match with this, I chose to only describe the GetMap operation. However, there may be a need for the GUI to also describe GetFeatureInfo operation (and also GetCapabilities more for the back-end). But how to do so, in another file ?-->
 		<!-- I just mapped GetMap Mandatory KVP Request parameters from OGC 06-042 - Table 8  -->
@@ -172,10 +173,10 @@ based on the work done by James Passmore on Terrafirma WMS 	-->
 			<rdf:label>height</rdf:label>
 			<dct:type>string</dct:type>
 		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>height</http:paramName>
+		<eposap:parameter> <!-- TODO SG : copy/paste issue-->
+			<http:paramName>format</http:paramName>
 			<!-- from OGC 06-042 Height inpixels of map picture. -->
-			<rdf:label>height</rdf:label>
+			<rdf:label>format</rdf:label>
 			<dct:type>string</dct:type>
 		</eposap:parameter>
 		<dcat:contactPoint>http://TBD.support.brgm.fr</dcat:contactPoint>
