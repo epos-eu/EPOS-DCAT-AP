@@ -23,8 +23,8 @@
 		</vcard:hasAddress>
 		<vcard:hasEmail>roberto.vallone@ingv.it</vcard:hasEmail><!-- Email -->
 		<vcard:hasTelephone>+3906518601</vcard:hasTelephone><!-- Phone -->
-		<dct:identifier>orcid0000-0003-1208-9412</dct:identifier> <!-- Unique Identifier -->
-		<eposap:affiliation>PIC999472675</eposap:affiliation> <!-- Organisation: PIC of INGV-->
+		<dct:identifier>http://orcid.org/0000-0003-1208-9412</dct:identifier> <!-- Unique Identifier -->
+		<eposap:affiliation>PIC:999472675</eposap:affiliation> <!-- Organisation: PIC of INGV-->
 		<dct:language><!-- Language for contact -->
 			<dct:LinguisticSystem>EN</dct:LinguisticSystem>
 		</dct:language>
@@ -51,8 +51,8 @@
 		<vcard:hasEmail>info@ingv.it</vcard:hasEmail><!-- Email -->
 		<vcard:hasURL>http://www.ingv.it</vcard:hasURL><!-- Website -->
 		<vcard:hasLogo>http://comunicazione.ingv.it/images/news/news/Ingv-Istituto-Nazionale-di-Geofisica-e-Vulcanologia.jpg</vcard:hasLogo><!-- Logo TO BE CORRECTED -->
-		<dct:identifier>PIC999472675</dct:identifier><!-- Unique Identifier -->
-		<eposap:scientificContact>orcid0000-0003-1208-9412</eposap:scientificContact> <!-- Scientific Contact -->
+		<dct:identifier>PIC:999472675</dct:identifier><!-- Unique Identifier -->
+		<eposap:scientificContact>http://orcid.org/0000-0003-1208-9412</eposap:scientificContact> <!-- Scientific Contact -->
 		<dct:spatial><!-- Spatial Coordinates -->
 			<dct:Location>
 				<!-- POINT(lon lat elevation) -->
@@ -62,8 +62,8 @@
 		<dct:type><!-- Type -->
 			Research Institute
 		</dct:type>
-		<eposap:legalContact>orcid0000-0002-8651-6387</eposap:legalContact><!-- Legal Contact -->
-		<eposap:financialContact>orcid0000-0002-8651-6387</eposap:financialContact><!-- Financial Contact -->
+		<eposap:legalContact>http://orcid.org/0000-0002-8651-6387</eposap:legalContact><!-- Legal Contact -->
+		<eposap:financialContact>http://orcid.org/0000-0002-8651-6387</eposap:financialContact><!-- Financial Contact -->
 		<!-- <eposap:isPartOf></eposap:isPartOf> -->
 		<!-- <eposap:associatedProjects>projectID01</eposap:associatedProjects> -->
 	</eposap:Organisation>
@@ -119,16 +119,13 @@
 		Satellite data, Geomagnetic data, Geology, Geohazards, Georesources, Transnational access) -->
 			Seismology
 		</eposap:domain>
-		<eposap:subDomain> <!-- This property refers to the subdomain of resource (e.g. 
-		Earthquake parameters, Velocity models, GNSS station velocities, InSAR, Meteorology, 
-		Variation of geomagnetic field, 3D/4D structural models, Analog models, Numerical models, 
-		Geochemical data, Borehole data, Rock sample properties) -->
+		<eposap:subDomain>
 			TBD
 		</eposap:subDomain>
 		<!-- Keywords, annotation. Simple and free (web annotation ontology in the future) -->
 		<dcat:keyword>earthquakes, magnitude, slip rate, crustal fault sources, subduction fault sources, hazard model, faults, seismology, geology, geohazard, seismic hazard, seismogenic fault, seismogenic source</dcat:keyword> <!-- Keywords -->
 		<eposap:operation>TBD</eposap:operation>
-		<dct:hasVersion>2.0.0, 1.1.0, 1.0.0</dct:hasVersion> <!-- Several formats support is usual in OGC services -->
+		<!-- <dct:hasVersion></dct:hasVersion> -->
 
 		<!-- List of Parameters:
 			this section is needed in order to describe the parameters of the service.
@@ -141,7 +138,7 @@
 			<dct:type>string</dct:type>
 			<http:paramValue>text/xml</http:paramValue>
 			<http:paramValue>application/json</http:paramValue>
-			<http:paramValue>application/gml+xml; version=3.2</http:paramValue>
+			<http:paramValue>application/gml+xml</http:paramValue>
 			<http:paramValue>application/vnd.google-earth.kml+xml</http:paramValue>
 			<http:paramValue>SHAPE-ZIP</http:paramValue>
 			<http:paramValue>csv</http:paramValue>
@@ -245,8 +242,8 @@
 			<schema:minValue>5.5</schema:minValue> <!-- The minimum magnitude considered for the faults to be inserted in EDSF is 5.5 -->
 			<schema:maxValue>9</schema:maxValue>
 		</eposap:parameter>
-		<dcat:contactPoint>orcid0000-0003-1208-9412</dcat:contactPoint> <!-- internal link to contact point (vcard:Individual) described in the same file in <eposap:Person> -->
-		<eposap:publisher>PIC999472675</eposap:publisher> <!-- PIC of INGV -->
+		<dcat:contactPoint>http://orcid.org/0000-0003-1208-9412</dcat:contactPoint> <!-- internal link to contact point (vcard:Individual) described in the same file in <eposap:Person> -->
+		<eposap:publisher>PIC:999472675</eposap:publisher> <!-- PIC of INGV -->
 		<dct:spatial> <!-- Geographic location/spatial extent /bounding box -->
 			<dct:Location>
 				<!-- POLYGON(lon1 lat1, lon2 lat2,...) -->
@@ -254,7 +251,7 @@
 			</dct:Location>
 		</dct:spatial>
 		<adms:representationTechnique> <!-- Spatial representation type -->
-			binary image
+			vector
 		</adms:representationTechnique>
 		<dct:temporal> <!-- temporal extent -->
 			<dct:PeriodOfTime>
