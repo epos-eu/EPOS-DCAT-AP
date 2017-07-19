@@ -1,14 +1,14 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<eposap:Epos>
+<?xml version="1.0" encoding="UTF-8"?>
+<eposap:Epos
 	xmlns:adms="http://www.w3.org/ns/adms#"
 	xmlns:cnt="http://www.w3.org/2008/content#" xmlns:dcat="http://www.w3.org/ns/dcat#"
-	xmlns:dct="http://purl.org/dc/terms/" xmlns:eposap="http://www.epos-ip.org/"
+	xmlns:dct="http://purl.org/dc/terms/" xmlns:eposap="http://www.epos-ip.org/terms.html"
 	xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:http="http://www.w3.org/2006/http#"
 	xmlns:locn="http://www.w3.org/ns/locn#" xmlns:owl="http://www.w3.org/2002/07/owl#"
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:schema="http://schema.org/"
 	xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:vcard="http://www.w3.org/2006/vcard/ns#"
 	xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.epos-ip.org/ https://raw.githubusercontent.com/epos-eu/EPOS-DCAT-AP/master/schemas/EPOS-DCAT-AP.xsd">
+	xsi:schemaLocation="http://www.epos-ip.org/terms.html https://raw.githubusercontent.com/epos-eu/EPOS-DCAT-AP/master/schemas/EPOS-DCAT-AP.xsd">
 
 	<!-- EPOS Person -->
 	<eposap:Person>
@@ -23,8 +23,8 @@
 		</vcard:hasAddress>
 		<vcard:hasEmail>roberto.vallone@ingv.it</vcard:hasEmail><!-- Email -->
 		<vcard:hasTelephone>+3906518601</vcard:hasTelephone><!-- Phone -->
-		<dct:identifier>orcid0000-0003-1208-9412</dct:identifier> <!-- Unique Identifier -->
-		<eposap:affiliation>PIC999472675</eposap:affiliation> <!-- Organisation: PIC of INGV-->
+		<dct:identifier>http://orcid.org/0000-0003-1208-9412</dct:identifier> <!-- Unique Identifier -->
+		<eposap:affiliation>PIC:999472675</eposap:affiliation> <!-- Organisation: PIC of INGV-->
 		<dct:language><!-- Language for contact -->
 			<dct:LinguisticSystem>EN</dct:LinguisticSystem>
 		</dct:language>
@@ -33,7 +33,50 @@
 			http://orcid.org/0000-0003-1208-9412
 		</vcard:hasURL>
 	</eposap:Person>
-
+	<eposap:Person>
+		<vcard:fn>Doglioni, Carlo</vcard:fn><!-- Last Name, Given Name -->
+		<vcard:hasAddress><!-- Postal Address -->
+			<vcard:Address>
+				<vcard:street-address>Via di Vigna Murata 605</vcard:street-address>
+				<vcard:locality>Rome</vcard:locality>
+				<vcard:postal-code>00143</vcard:postal-code>
+				<vcard:country-name>Italy</vcard:country-name>
+			</vcard:Address>
+		</vcard:hasAddress>
+		<vcard:hasEmail>segreteria.presidenza@ingv.it</vcard:hasEmail><!-- Email -->
+		<vcard:hasTelephone>+3906518601</vcard:hasTelephone><!-- Phone -->
+		<dct:identifier>http://orcid.org/0000-0002-8651-6387</dct:identifier> <!-- Unique Identifier -->
+		<eposap:affiliation>PIC:999472675</eposap:affiliation> <!-- Organisation: PIC of INGV-->
+		<dct:language><!-- Language for contact -->
+			<dct:LinguisticSystem>EN</dct:LinguisticSystem>
+		</dct:language>
+		<schema:qualifications>Professor</schema:qualifications><!-- Qualification -->
+		<vcard:hasURL><!-- CV -->
+			http://orcid.org/0000-0002-8651-6387
+		</vcard:hasURL>
+	</eposap:Person>
+	<eposap:Person>
+		<vcard:fn>Basili, Roberto</vcard:fn><!-- Last Name, Given Name -->
+		<vcard:hasAddress><!-- Postal Address -->
+			<vcard:Address>
+				<vcard:street-address>Via di Vigna Murata 605</vcard:street-address>
+				<vcard:locality>Rome</vcard:locality>
+				<vcard:postal-code>00143</vcard:postal-code>
+				<vcard:country-name>Italy</vcard:country-name>
+			</vcard:Address>
+		</vcard:hasAddress>
+		<vcard:hasEmail>roberto.basili@ingv.it</vcard:hasEmail><!-- Email -->
+		<vcard:hasTelephone>+390651860516</vcard:hasTelephone><!-- Phone -->
+		<dct:identifier>http://orcid.org/0000-0002-1213-0828</dct:identifier> <!-- Unique Identifier -->
+		<eposap:affiliation>PIC:999472675</eposap:affiliation> <!-- Organisation: PIC of INGV-->
+		<dct:language><!-- Language for contact -->
+			<dct:LinguisticSystem>EN</dct:LinguisticSystem>
+		</dct:language>
+		<schema:qualifications>Senior researcher</schema:qualifications><!-- Qualification -->
+		<vcard:hasURL><!-- CV -->
+			http://orcid.org/0000-0002-1213-0828
+		</vcard:hasURL>
+	</eposap:Person>
 	<!-- EPOS Organisation -->
 	<eposap:Organisation>
 		<vcard:fn>National Institute of Geophysics and Volcanology</vcard:fn><!-- Title
@@ -51,8 +94,8 @@
 		<vcard:hasEmail>info@ingv.it</vcard:hasEmail><!-- Email -->
 		<vcard:hasURL>http://www.ingv.it</vcard:hasURL><!-- Website -->
 		<vcard:hasLogo>http://comunicazione.ingv.it/images/news/news/Ingv-Istituto-Nazionale-di-Geofisica-e-Vulcanologia.jpg</vcard:hasLogo><!-- Logo TO BE CORRECTED -->
-		<dct:identifier>PIC999472675</dct:identifier><!-- Unique Identifier -->
-		<eposap:scientificContact>orcid0000-0003-1208-9412</eposap:scientificContact> <!-- Scientific Contact -->
+		<dct:identifier>PIC:999472675</dct:identifier><!-- Unique Identifier -->
+		<eposap:scientificContact>http://orcid.org/0000-0002-1213-0828</eposap:scientificContact> <!-- Scientific Contact -->
 		<dct:spatial><!-- Spatial Coordinates -->
 			<dct:Location>
 				<!-- POINT(lon lat elevation) -->
@@ -62,8 +105,8 @@
 		<dct:type><!-- Type -->
 			Research Institute
 		</dct:type>
-		<eposap:legalContact>orcid0000-0002-8651-6387</eposap:legalContact><!-- Legal Contact -->
-		<eposap:financialContact>orcid0000-0002-8651-6387</eposap:financialContact><!-- Financial Contact -->
+		<eposap:legalContact>http://orcid.org/0000-0002-8651-6387</eposap:legalContact><!-- Legal Contact -->
+		<eposap:financialContact>http://orcid.org/0000-0002-8651-6387</eposap:financialContact><!-- Financial Contact -->
 		<!-- <eposap:isPartOf></eposap:isPartOf> -->
 		<!-- <eposap:associatedProjects>projectID01</eposap:associatedProjects> -->
 	</eposap:Organisation>
@@ -79,7 +122,7 @@
 	<!-- EPOS WebService -->
 
 	<eposap:WebService>
-		<dct:title>European Database of Seismogenic Faults | Crustal Fault Sources - Web Map Service</dct:title> <!-- title -->
+		<dct:title>European Database of Seismogenic Faults | Crustal Fault Sources | Web Map Service</dct:title> <!-- title -->
 		<!-- abstract -->
 		<dct:description>The European Database of Seismogenic Faults (EDSF) was compiled in the framework of the EU Project SHARE, Work Package 3, Task 3.2. EDSF includes only faults that are deemed to be capable of generating earthquakes of magnitude equal to or larger than 5.5 and aims at ensuring a homogeneous input for use in ground-shaking hazard assessment in the Euro-Mediterranean area. Several research institutions participated in this effort with the contribution of many scientists (see the Database section for a full list). This layer includes the seismogenic faults that involve the earth crust. The EDSF database and website are hosted and maintained by INGV.</dct:description>
 		<dct:issued>2001-12-31T12:00:00</dct:issued><!-- date of publication -->
@@ -143,18 +186,20 @@
 			<http:paramValue>image/png</http:paramValue>
 			<http:paramValue>image/jpeg</http:paramValue>
 			<http:paramValue>image/geotiff</http:paramValue>
-			<http:paramValue>application/vnd.google-earth.kml+xml</http:paramValue>
-			<http:paramValue>image/gif</http:paramValue>
+			<http:paramValue>kml</http:paramValue>
+			<http:paramValue>kmz</http:paramValue>
+			<http:paramValue>application/json;type=utfgrid</http:paramValue>
 			<http:paramValue>application/pdf</http:paramValue>
 			<!-- If OpenLayers will be supported by the EPOS GUI the following line will be uncommented -->
-			<!-- <http:paramValue>text/html; subtype=openlayers</http:paramValue> -->
+			<!-- <http:paramValue>application/openlayers</http:paramValue> -->
 		</eposap:parameter>
 		<eposap:parameter>
 			<http:paramName>version</http:paramName>
-			<rdf:label>WMS version </rdf:label>
+			<rdf:label>WMS version</rdf:label>
 			<dct:type>string</dct:type>
 			<http:paramValue>1.3.0</http:paramValue> <!-- The first entry should be the default value -->
-			<http:paramValue>1.1.1</http:paramValue>
+			<http:paramValue>1.1.0</http:paramValue>
+			<http:paramValue>1.0.0</http:paramValue>
 		</eposap:parameter>
 		<eposap:parameter>
 			<http:paramName>width</http:paramName>
@@ -182,7 +227,7 @@
 			</dct:Location>
 		</dct:spatial>
 		<adms:representationTechnique> <!-- Spatial representation type -->
-			binary image
+			raster
 		</adms:representationTechnique>
 		<dct:temporal> <!-- temporal extent -->
 			<dct:PeriodOfTime>
