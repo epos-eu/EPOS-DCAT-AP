@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<eposap:Epos>
+<eposap:Epos
 	xmlns:adms="http://www.w3.org/ns/adms#"
 	xmlns:cnt="http://www.w3.org/2008/content#" xmlns:dcat="http://www.w3.org/ns/dcat#"
-	xmlns:dct="http://purl.org/dc/terms/" xmlns:eposap="http://www.epos-ip.org/"
+	xmlns:dct="http://purl.org/dc/terms/" xmlns:eposap="http://www.epos-ip.org/terms.html"
 	xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:http="http://www.w3.org/2006/http#"
 	xmlns:locn="http://www.w3.org/ns/locn#" xmlns:owl="http://www.w3.org/2002/07/owl#"
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:schema="http://schema.org/"
 	xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:vcard="http://www.w3.org/2006/vcard/ns#"
 	xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.epos-ip.org/ https://raw.githubusercontent.com/epos-eu/EPOS-DCAT-AP/master/schemas/EPOS-DCAT-AP.xsd">
+	xsi:schemaLocation="http://www.epos-ip.org/terms.html https://raw.githubusercontent.com/epos-eu/EPOS-DCAT-AP/master/schemas/EPOS-DCAT-AP.xsd">
 
 	<!-- EPOS Person -->
 	<eposap:Person>
@@ -33,7 +33,50 @@
 			http://orcid.org/0000-0003-1208-9412
 		</vcard:hasURL>
 	</eposap:Person>
-
+	<eposap:Person>
+		<vcard:fn>Doglioni, Carlo</vcard:fn><!-- Last Name, Given Name -->
+		<vcard:hasAddress><!-- Postal Address -->
+			<vcard:Address>
+				<vcard:street-address>Via di Vigna Murata 605</vcard:street-address>
+				<vcard:locality>Rome</vcard:locality>
+				<vcard:postal-code>00143</vcard:postal-code>
+				<vcard:country-name>Italy</vcard:country-name>
+			</vcard:Address>
+		</vcard:hasAddress>
+		<vcard:hasEmail>segreteria.presidenza@ingv.it</vcard:hasEmail><!-- Email -->
+		<vcard:hasTelephone>+3906518601</vcard:hasTelephone><!-- Phone -->
+		<dct:identifier>http://orcid.org/0000-0002-8651-6387</dct:identifier> <!-- Unique Identifier -->
+		<eposap:affiliation>PIC:999472675</eposap:affiliation> <!-- Organisation: PIC of INGV-->
+		<dct:language><!-- Language for contact -->
+			<dct:LinguisticSystem>EN</dct:LinguisticSystem>
+		</dct:language>
+		<schema:qualifications>Professor</schema:qualifications><!-- Qualification -->
+		<vcard:hasURL><!-- CV -->
+			http://orcid.org/0000-0002-8651-6387
+		</vcard:hasURL>
+	</eposap:Person>
+	<eposap:Person>
+		<vcard:fn>Basili, Roberto</vcard:fn><!-- Last Name, Given Name -->
+		<vcard:hasAddress><!-- Postal Address -->
+			<vcard:Address>
+				<vcard:street-address>Via di Vigna Murata 605</vcard:street-address>
+				<vcard:locality>Rome</vcard:locality>
+				<vcard:postal-code>00143</vcard:postal-code>
+				<vcard:country-name>Italy</vcard:country-name>
+			</vcard:Address>
+		</vcard:hasAddress>
+		<vcard:hasEmail>roberto.basili@ingv.it</vcard:hasEmail><!-- Email -->
+		<vcard:hasTelephone>+390651860516</vcard:hasTelephone><!-- Phone -->
+		<dct:identifier>http://orcid.org/0000-0002-1213-0828</dct:identifier> <!-- Unique Identifier -->
+		<eposap:affiliation>PIC:999472675</eposap:affiliation> <!-- Organisation: PIC of INGV-->
+		<dct:language><!-- Language for contact -->
+			<dct:LinguisticSystem>EN</dct:LinguisticSystem>
+		</dct:language>
+		<schema:qualifications>Senior researcher</schema:qualifications><!-- Qualification -->
+		<vcard:hasURL><!-- CV -->
+			http://orcid.org/0000-0002-1213-0828
+		</vcard:hasURL>
+	</eposap:Person>
 	<!-- EPOS Organisation -->
 	<eposap:Organisation>
 		<vcard:fn>National Institute of Geophysics and Volcanology</vcard:fn><!-- Title
@@ -52,7 +95,7 @@
 		<vcard:hasURL>http://www.ingv.it</vcard:hasURL><!-- Website -->
 		<vcard:hasLogo>http://comunicazione.ingv.it/images/news/news/Ingv-Istituto-Nazionale-di-Geofisica-e-Vulcanologia.jpg</vcard:hasLogo><!-- Logo TO BE CORRECTED -->
 		<dct:identifier>PIC:999472675</dct:identifier><!-- Unique Identifier -->
-		<eposap:scientificContact>http://orcid.org/0000-0003-1208-9412</eposap:scientificContact> <!-- Scientific Contact -->
+		<eposap:scientificContact>http://orcid.org/0000-0002-1213-0828</eposap:scientificContact> <!-- Scientific Contact -->
 		<dct:spatial><!-- Spatial Coordinates -->
 			<dct:Location>
 				<!-- POINT(lon lat elevation) -->
@@ -136,11 +179,11 @@
 			<http:paramName>outputFormat</http:paramName>
 			<rdf:label>Output format</rdf:label>
 			<dct:type>string</dct:type>
-			<http:paramValue>text/xml</http:paramValue>
+			<http:paramValue>GML2</http:paramValue>
+			<http:paramValue>GML3</http:paramValue>
 			<http:paramValue>application/json</http:paramValue>
-			<http:paramValue>application/gml+xml</http:paramValue>
 			<http:paramValue>application/vnd.google-earth.kml+xml</http:paramValue>
-			<http:paramValue>SHAPE-ZIP</http:paramValue>
+			<http:paramValue>shape-zip</http:paramValue>
 			<http:paramValue>csv</http:paramValue>
 		</eposap:parameter>
 		<eposap:parameter>
