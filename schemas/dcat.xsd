@@ -27,7 +27,7 @@
 	
 	<!-- EPOS -->
 	<xs:element name="theme" type="rdf:PlainLiteral" />
-	<xs:element name="contactPoint" type="xs:IDREF"/>
+	<xs:element name="contactPoint" type="xs:anyURI"/>
 	<xs:element name="keyword" type="rdf:PlainLiteral"/>
 	<xs:element name="landingPage" type="foaf:Document" />
 	<xs:element name="accessURL" type="rdf:Resource"/>
@@ -132,7 +132,7 @@
 						<xs:element ref="dct:title" minOccurs="0" maxOccurs="unbounded"/>
 						<xs:element ref="dct:description" minOccurs="0" maxOccurs="unbounded"/>
 						<xs:element name="accessURL" type="rdf:Resource" minOccurs="1" maxOccurs="unbounded"/>
-						<xs:element name="downloadURL" type="rdf:Resource" minOccurs="0"/>
+						<xs:element name="downloadURL" type="xs:anyURI" minOccurs="1" maxOccurs="1"/>
 						<xs:element ref="dct:issued" minOccurs="0" maxOccurs="1"/>
 						<xs:element ref="dct:modified" minOccurs="0" maxOccurs="1"/>
 						<xs:element ref="dct:format" minOccurs="0" maxOccurs="unbounded"/>

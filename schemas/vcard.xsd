@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dct="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:vcard="http://www.w3.org/2006/vcard/ns#" targetNamespace="http://www.w3.org/2006/vcard/ns#" elementFormDefault="qualified" attributeFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:dct="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:vcard="http://www.w3.org/2006/vcard/ns#" targetNamespace="http://www.w3.org/2006/vcard/ns#" elementFormDefault="qualified" attributeFormDefault="qualified">
 	<xs:annotation>
 		<xs:documentation xml:lang="en">
       ADMS XML Schema
@@ -10,6 +10,7 @@
 	<xs:import namespace="http://xmlns.com/foaf/0.1/" schemaLocation="https://raw.githubusercontent.com/epos-eu/EPOS-DCAT-AP/master/schemas/foaf.xsd"/>
 	<xs:import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" schemaLocation="https://raw.githubusercontent.com/epos-eu/EPOS-DCAT-AP/master/schemas/rdf.xsd"/>
 	<xs:import namespace="http://www.w3.org/2004/02/skos/core#" schemaLocation="https://raw.githubusercontent.com/epos-eu/EPOS-DCAT-AP/master/schemas/skos.xsd"/>
+	<xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="https://raw.githubusercontent.com/epos-eu/EPOS-DCAT-AP/master/schemas/xml.xsd"/>
 	<!-- vcard:Kind-->
 	<xs:complexType name="Organization">
 		<xs:sequence>
@@ -54,5 +55,14 @@
 	<xs:element name="hasURL" type="xs:anyURI"/>
 	<xs:element name="hasTelephone" type="xs:anyURI" />
 	<xs:element name="hasLogo" type="xs:anyURI" />
-	<xs:element name="organization-name" type="xs:string"/>
+	<!-- <xs:element name="organization-name" type="xs:string"/> -->
+	<xs:element name="organization-name" type="vcard:organization-name"/>
+	<xs:complexType name="organization-name">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute ref="xml:lang" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
 </xs:schema>
