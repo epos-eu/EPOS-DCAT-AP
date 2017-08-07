@@ -24,10 +24,11 @@
 		<dct:identifier>http://TBD.support.brgm.fr</dct:identifier>
 		<!-- TBD : identifier of 'Support BRGM' ? within EPOS Granularity database ?-->
 		<!-- Unique Identifier -->
-		<eposap:affiliation>http://TBD.brgm.fr</eposap:affiliation>
+		<eposap:affiliation>PIC:999993662</eposap:affiliation>
 		<dct:language>
 			<!-- Language for contact -->
-			<dct:LinguisticSystem>EN</dct:LinguisticSystem>
+			<dct:LinguisticSystem>eng</dct:LinguisticSystem>
+			<!-- see https://github.com/epos-eu/EPOS-DCAT-AP/issues/19 -->
 		</dct:language>
 		<schema:qualifications/>
 		<!-- Qualification -->
@@ -57,7 +58,7 @@
 		<vcard:hasURL>http://www.brgm.eu</vcard:hasURL>
 		<!-- TODO SG : -->
 		<!-- Website -->
-		<dct:identifier>http://TBD.brgm.fr</dct:identifier>
+		<dct:identifier>PIC:999993662</dct:identifier>
 		<!-- Unique Identifier of BRGM in which system ? within EPOS Granularity database ? -->
 		<!-- AFAIK, I cannot build a URI using BRGM PIC : 999993662 that will land on some ec.europa.eu webpage like ec.europa.eu/PIC/999993662 -->
 		<!-- http://viaf.org/viaf/150807757/ -->
@@ -156,12 +157,12 @@
 		<!-- what type of keyword do you want ? kind of service type (see commented above) or domain (see below) ? -->
 		<dcat:keyword>Borehole, Borehole Index, Geology, INSPIRE:GE, GeoSciML</dcat:keyword>
 		<!-- Keywords -->
-		<eposap:operation>GetFeature</eposap:operation>
-		<dct:hasVersion>2.0.0, 2.0.2</dct:hasVersion>
+		<eposap:operation>GetCapabilities</eposap:operation>
+		<dct:hasVersion>2.0.2</dct:hasVersion>
 		<!-- WFS GetCaps GetCapabilities operation /wfs:WFS_Capabilities/ows:OperationsMetadata/ows:Operation[1]/ows:Parameter[1]/ows:AllowedValues-->
 		<!-- Several formats support is usual in OGC services -->
-		<!-- as only one format is asked and describing all parameters for all the operations supported by a WFS won't match with this, I chose to only describe the GetFeature operation. However, there may be a need for the back-end and GUI to also describe other operations But how to do so, in another file ?-->
-		<!-- I just mapped GetFeature Mandatory KVP Request parameters from OGC 09-025r2  -->
+		<!-- Decision WP6/7 - WP15 20170724 webconf: the GUI will be able to interact generically with standards OGC services -> thus just the GetCapabilities is mapped. Few fields are mandatory  according to OGC 09-025r2  (WFS 2.02) and OGC 06-121r9 (OWS Common)-->
+		<!-- This rationale implies that the ICS-C will learn from the WFS DescribeFeatureType operation response the structure of the BoreholeIndex (xsd + link to vocabularies)-->
 		<eposap:parameter>
 			<http:paramName>service</http:paramName>
 			<rdf:label>service</rdf:label>
@@ -169,282 +170,14 @@
 			<http:paramValue>WFS</http:paramValue>
 		</eposap:parameter>
 		<eposap:parameter>
-			<http:paramName>version</http:paramName>
-			<rdf:label>version</rdf:label>
-			<dct:type>string</dct:type>
-			<http:paramValue>2.0.0, 2.0.2</http:paramValue>
-		</eposap:parameter>
-		<eposap:parameter>
 			<http:paramName>request</http:paramName>
 			<rdf:label>request</rdf:label>
 			<dct:type>string</dct:type>
-			<http:paramValue>GetFeature</http:paramValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>typenames</http:paramName>
-			<!-- gsmlp:BoreholeView/gml:description-->
-			<rdf:label>typenames</rdf:label>
-			<dct:type>
-				string
-			</dct:type>
-			<http:paramValue>gsmlp:BoreholeViewx</http:paramValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>description</http:paramName>
-			<!-- gsmlp:BoreholeView/gml:description-->
-			<rdf:label>description</rdf:label>
-			<dct:type>
-				string
-			</dct:type>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>gml:identifier</http:paramName>
-			<!-- gsmlp:BoreholeView/gml:identifier -->
-			<!-- ? can we pass namespace ? I need it as we have 2 identifiers which I need to disambiguate-->
-			<rdf:label>index identifier</rdf:label>
-			<dct:type>
-				gml:CodeWithAuthorityType <!--list the allowed types-->
-			</dct:type>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>name</http:paramName>
-			<!-- gsmlp:BoreholeView/gml:name-->
-			<rdf:label>name</rdf:label>
-			<dct:type>
-				string
-			</dct:type>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>gsmlp:identifier</http:paramName>
-			<!-- gsmlp:BoreholeView/gsmlp:identifier -->
-			<!-- ? can we pass namespace ? I need it as we have 2 identifiers which I need to disambiguate-->
-			<rdf:label>identifier of the Borehole</rdf:label>
-			<dct:type>
-				gml:CodeWithAuthorityType <!--list the allowed types-->
-			</dct:type>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>purpose</http:paramName>
-			<!-- gsmlp:BoreholeView/gsmlp:purpose -->
-			<rdf:label>purpose</rdf:label>
-			<dct:type>
-				gml:ReferenceType <!--list the allowed types-->
-			</dct:type>
-			<http:paramValue>http://inspire.ec.europa.eu/codelist/BoreholePurposeValue</http:paramValue>
-			<!-- vocab endpoint http://inspire.ec.europa.eu/codelist/BoreholePurposeValue -->
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>status</http:paramName>
-			<!-- gsmlp:BoreholeView/an so on for the XPath ... -->
-			<rdf:label>status</rdf:label>
-			<dct:type>
-				gml:ReferenceType <!--list the allowed types-->
-			</dct:type>
-			<http:paramValue>http://resource.europe-geology.eu/vocabs/BoreholeStatus</http:paramValue>
-			<!-- vocab endpoint http://resource.europe-geology.eu/vocabs/BoreholeStatus -->
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>drillingMethod</http:paramName>
-			<rdf:label>drillingMethod</rdf:label>
-			<dct:type>
-				gml:ReferenceType <!--list the allowed types-->
-			</dct:type>
-			<http:paramValue>http://resource.europe-geology.eu/vocabs/DrillingMethod</http:paramValue>
-			<!-- vocab endpoint http://resource.europe-geology.eu/vocabs/DrillingMethod -->
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>operator</http:paramName>
-			<rdf:label>operator</rdf:label>
-			<dct:type>
-				string
-			</dct:type>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>driller</http:paramName>
-			<rdf:label>driller</rdf:label>
-			<dct:type>
-				string
-			</dct:type>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>drillStartDate</http:paramName>
-			<rdf:label>drillStartDate</rdf:label>
-			<dct:type>
-				date
-			</dct:type>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>drillEndDate</http:paramName>
-			<rdf:label>drillEndDate</rdf:label>
-			<dct:type>
-				date
-			</dct:type>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>startPoint</http:paramName>
-			<rdf:label>startPoint</rdf:label>
-			<dct:type>
-				gml:ReferenceType <!--list the allowed types-->
-			</dct:type>
-			<http:paramValue>http://resource.europe-geology.eu/vocabs/StartPoint</http:paramValue>
-			<!-- vocab endpoint http://resource.europe-geology.eu/vocabs/StartPoint -->
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>inclinationType</http:paramName>
-			<rdf:label>inclinationType</rdf:label>
-			<dct:type>
-				gml:ReferenceType <!--list the allowed types-->
-			</dct:type>
-			<http:paramValue>http://resource.europe-geology.eu/vocabs/BoreholeInclinationType</http:paramValue>
-			<!-- vocab endpoint http://resource.europe-geology.eu/vocabs/BoreholeInclinationType -->
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>boreholeMaterialCustodian</http:paramName>
-			<rdf:label>boreholeMaterialCustodian</rdf:label>
-			<dct:type>
-				string
-			</dct:type>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>boreholeLength_m</http:paramName>
-			<rdf:label>boreholeLength_m</rdf:label>
-			<dct:type>
-				gml:MeasureType <!--list the allowed types-->
-			</dct:type>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>elevation_m</http:paramName>
-			<rdf:label>elevation_m</rdf:label>
-			<dct:type>
-				gml:MeasureType <!--list the allowed types-->
-			</dct:type>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>elevation_srs</http:paramName>
-			<rdf:label>elevation_srs</rdf:label>
-			<dct:type>
-				anyURI <!--list the allowed types-->
-			</dct:type>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>positionalAccuracy</http:paramName>
-			<rdf:label>positionalAccuracy</rdf:label>
-			<dct:type>
-				string
-			</dct:type>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>source</http:paramName>
-			<rdf:label>source</rdf:label>
-			<dct:type>
-				string
-			</dct:type>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>parentBorehole_uri</http:paramName>
-			<rdf:label>parentBorehole_uri</rdf:label>
-			<dct:type>
-				anyURI <!--list the allowed types-->
-			</dct:type>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>metadata_uri</http:paramName>
-			<rdf:label>metadata_uri</rdf:label>
-			<dct:type>
-				anyURI <!--list the allowed types-->
-			</dct:type>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>shape</http:paramName>
-			<rdf:label>shape</rdf:label>
-			<dct:type>
-				gml:GeometryPropertyType<!--list the allowed types-->
-				<!-- the 'geometry' field. classical OGC spatial filter can also bet passed-->
-			</dct:type>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>cored</http:paramName>
-			<rdf:label>cored</rdf:label>
-			<dct:type>
-				boolean
-			</dct:type>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>accessToPhysicalDrillCore</http:paramName>
-			<rdf:label>accessToPhysicalDrillCore</rdf:label>
-			<dct:type>
-				boolean
-			</dct:type>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>boreholeUse</http:paramName>
-			<rdf:label>boreholeUse</rdf:label>
-			<dct:type>
-				gml:ReferenceType <!--list the allowed types-->
-			</dct:type>
-			<http:paramValue>http://inspire.ec.europa.eu/codelist/BoreholePurposeValue</http:paramValue>
-			<!-- vocab endpoint http://inspire.ec.europa.eu/codelist/BoreholePurposeValue -->
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>detailedDescription</http:paramName>
-			<rdf:label>detailedDescription</rdf:label>
-			<dct:type>
-				gml:ReferenceType <!--list the allowed types-->
-			</dct:type>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>geophysicalLogs</http:paramName>
-			<rdf:label>geophysicalLogs</rdf:label>
-			<dct:type>
-				gml:ReferenceType <!--list the allowed types-->
-			</dct:type>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>geologicalDescription</http:paramName>
-			<rdf:label>geologicalDescription</rdf:label>
-			<dct:type>
-				gml:ReferenceType <!--list the allowed types-->
-			</dct:type>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>groundWaterLevel</http:paramName>
-			<rdf:label>groundWaterLevel</rdf:label>
-			<dct:type>
-				gml:ReferenceType <!--list the allowed types-->
-			</dct:type>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>groundWaterChemistry</http:paramName>
-			<rdf:label>groundWaterChemistry</rdf:label>
-			<dct:type>
-				gml:ReferenceType <!--list the allowed types-->
-			</dct:type>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>rockGeochemistry</http:paramName>
-			<rdf:label>rockGeochemistry</rdf:label>
-			<dct:type>
-				gml:ReferenceType <!--list the allowed types-->
-			</dct:type>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>poreGasChemistry</http:paramName>
-			<rdf:label>poreGasChemistry</rdf:label>
-			<dct:type>
-				gml:ReferenceType <!--list the allowed types-->
-			</dct:type>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>geoTechnicalInfo</http:paramName>
-			<rdf:label>geoTechnicalInfo</rdf:label>
-			<dct:type>
-				gml:ReferenceType <!--list the allowed types-->
-			</dct:type>
+			<http:paramValue>GetCapabilities</http:paramValue>
 		</eposap:parameter>
 		<schema:documentation>https://forge.brgm.fr/svnrepository/epos/trunk/Documents/EPOS_Borehole_V.1.0.1.docx</schema:documentation>
 		<dcat:contactPoint>http://TBD.support.brgm.fr</dcat:contactPoint>
-		<eposap:publisher>http://TBD.brgm.fr</eposap:publisher>
-		<!-- Organisation: PIC of BRGM : 999993662-> 	needs to be hardcoded ?-->
+		<eposap:publisher>PIC:999993662</eposap:publisher>
 		<!--<dct:spatial>TODO SG add some BBOX-->
 		<!-- Geographic location/spatial extent /bounding box -->
 		<!--<dct:Location>-->
@@ -454,7 +187,9 @@
 		</dct:spatial>-->
 		<adms:representationTechnique>
 			<!-- Spatial representation type -->
-			vector <!-- need for a controlled vocab here -->
+			 http://registry.it.csiro.au/def/isotc211/MD_SpatialRepresentationTypeCode/vector 
+			<!-- see https://github.com/epos-eu/EPOS-DCAT-AP/issues/29 -->
+			<!-- I picked the one at CSIRO not having another one at hand so far-->
 		</adms:representationTechnique>
 		<dct:temporal>
 			<!-- temporal extent -->
