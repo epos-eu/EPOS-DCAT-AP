@@ -134,11 +134,12 @@
 		-->
 		<dct:license>https://creativecommons.org/licenses/by-sa/4.0/</dct:license> <!-- Access and Use Restrictions -->
 		<foaf:page> <!-- URI -->
-			<foaf:primaryTopic>http://services.seismofaults.eu/geoserver/EDSF/wfs?service=WFS&amp;request=GetFeature&amp;typeName=EDSF:subduction_contours</foaf:primaryTopic>
+			<foaf:primaryTopic>http://services.seismofaults.eu/geoserver/EDSF/subduction_contours/wfs?</foaf:primaryTopic>
 		</foaf:page>
 		<!-- All the parameters with no possible choices should be inserted in the base url for now at least IMHO -->
 		<dct:format><!-- distribution format, in case the service provides (also) access to binary data -->
-			<dct:MediaTypeOrExtent>gml</dct:MediaTypeOrExtent>
+			<!-- <dct:MediaTypeOrExtent>gml</dct:MediaTypeOrExtent> -->
+			<dct:MediaTypeOrExtent>https://www.iana.org/assignments/media-types/application/gml+xml</dct:MediaTypeOrExtent>
 		</dct:format>
 		<!-- public access limitations:
 			There a codelist for this, so you can check if it is suitable to you.
@@ -148,14 +149,15 @@
 			http://publications.europa.eu/resource/authority/access-right/
 		-->
 		<dct:rights>
-			<dct:RightsStatement>open data</dct:RightsStatement>
+			<dct:RightsStatement>PUBLIC</dct:RightsStatement>
 		</dct:rights>
 		<!--
 			Spatial Reference System
 			the CRS should be specified with the relevant URI.
 			The base URI is:
 			http://www.opengis.net/def/crs/ -->
-		<dct:conformsTo>EPSG:4326</dct:conformsTo> <!-- Spatial Reference System -->
+		<!-- <dct:conformsTo>EPSG:4326</dct:conformsTo> -->
+		<dct:conformsTo>http://www.opengis.net/def/crs/EPSG/0/4326</dct:conformsTo>
 		<dct:identifier>services.seismofaults.eu</dct:identifier> <!-- Unique Resource Identifier: this is the entry point of the service -->
 		<dct:created>2017-03-01T12:00:00</dct:created> <!-- date of creation -->
 		<eposap:domain> <!-- This property refers to the domain of resource (e.g. Seismology, Geodesy, 
@@ -176,23 +178,16 @@
 			with type "string" and a list of allowed value terms specified by the value tag,
 			e.g. 'seism','gps'  (i.e. namespace)-->
 		<eposap:parameter> <!-- Mapping server supports several output formats: the most importants ones were inserted here -->
-			<http:paramName>outputFormat</http:paramName>
-			<rdf:label>Output format</rdf:label>
+			<http:paramName>service</http:paramName>
+			<rdf:label>service</rdf:label>
 			<dct:type>string</dct:type>
-			<http:paramValue>GML2</http:paramValue>
-			<http:paramValue>GML3</http:paramValue>
-			<http:paramValue>application/json</http:paramValue>
-			<http:paramValue>application/vnd.google-earth.kml+xml</http:paramValue>
-			<http:paramValue>shape-zip</http:paramValue>
-			<http:paramValue>csv</http:paramValue>
+			<http:paramValue>wfs</http:paramValue>
 		</eposap:parameter>
 		<eposap:parameter>
-			<http:paramName>version</http:paramName>
-			<rdf:label>WFS version </rdf:label>
+			<http:paramName>request</http:paramName>
+			<rdf:label>request</rdf:label>
 			<dct:type>string</dct:type>
-			<http:paramValue>2.0.0</http:paramValue> <!-- The first entry should be the default value -->
-			<http:paramValue>1.1.0</http:paramValue>
-			<http:paramValue>1.0.0</http:paramValue>
+			<http:paramValue>GetCapabilities</http:paramValue>
 		</eposap:parameter>
 		<dcat:contactPoint>http://orcid.org/0000-0003-1208-9412</dcat:contactPoint> <!-- internal link to contact point (vcard:Individual) described in the same file in <eposap:Person> -->
 		<eposap:publisher>PIC:999472675</eposap:publisher> <!-- PIC of INGV -->
