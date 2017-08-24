@@ -122,9 +122,9 @@
 	<!-- EPOS WebService -->
 
 	<eposap:WebService>
-		<dct:title>European Database of Seismogenic Faults | Subductions - Web Feature Service</dct:title> <!-- title -->
+		<dct:title>European Database of Seismogenic Faults | Metadata Catalogue Service - CSW</dct:title> <!-- title -->
 		<!-- abstract -->
-		<dct:description>The European Database of Seismogenic Faults (EDSF) was compiled in the framework of the EU Project SHARE, Work Package 3, Task 3.2. EDSF includes only faults that are deemed to be capable of generating earthquakes of magnitude equal to or larger than 5.5 and aims at ensuring a homogeneous input for use in ground-shaking hazard assessment in the Euro-Mediterranean area. Several research institutions participated in this effort with the contribution of many scientists (see the Database section for a full list). This layer includes subduction contours lines. The EDSF database and website are hosted and maintained by INGV.</dct:description>
+		<dct:description>The European Database of Seismogenic Faults (EDSF) was compiled in the framework of the EU Project SHARE, Work Package 3, Task 3.2. EDSF includes only faults that are deemed to be capable of generating earthquakes of magnitude equal to or larger than 5.5 and aims at ensuring a homogeneous input for use in ground-shaking hazard assessment in the Euro-Mediterranean area. Several research institutions participated in this effort with the contribution of many scientists (see the Database section for a full list). This layer includes the seismogenic faults that involve the earth crust. The EDSF database and website are hosted and maintained by INGV.</dct:description>
 		<dct:issued>2001-12-31T12:00:00</dct:issued><!-- date of publication -->
 		<dct:modified>2016-12-31T12:00:00</dct:modified><!-- date of revision -->
 		<!--
@@ -134,12 +134,10 @@
 		-->
 		<dct:license>https://creativecommons.org/licenses/by-sa/4.0/</dct:license> <!-- Access and Use Restrictions -->
 		<foaf:page> <!-- URI -->
-			<foaf:primaryTopic>http://services.seismofaults.eu/geoserver/EDSF/subduction_contours/wfs?</foaf:primaryTopic>
+			<foaf:primaryTopic>http://services.seismofaults.eu/geonetwork/srv/eng/csw-edsf?</foaf:primaryTopic>
 		</foaf:page>
-		<!-- All the parameters with no possible choices should be inserted in the base url for now at least IMHO -->
-		<dct:format><!-- distribution format, in case the service provides (also) access to binary data -->
-			<!-- <dct:MediaTypeOrExtent>gml</dct:MediaTypeOrExtent> -->
-			<dct:MediaTypeOrExtent>https://www.iana.org/assignments/media-types/application/gml+xml</dct:MediaTypeOrExtent>
+		<dct:format rdf:about="GetCapabilities">
+			<dct:MediaTypeOrExtent>https://www.iana.org/assignments/media-types/text/xml</dct:MediaTypeOrExtent>
 		</dct:format>
 		<!-- public access limitations:
 			There a codelist for this, so you can check if it is suitable to you.
@@ -165,12 +163,12 @@
 			Seismology
 		</eposap:domain>
 		<eposap:subDomain>
-			TBD
+			TBD <!-- Faults -->
 		</eposap:subDomain>
 		<!-- Keywords, annotation. Simple and free (web annotation ontology in the future) -->
 		<dcat:keyword>earthquakes, magnitude, slip rate, crustal fault sources, subduction fault sources, hazard model, faults, seismology, geology, geohazard, seismic hazard, seismogenic fault, seismogenic source</dcat:keyword> <!-- Keywords -->
-		<eposap:operation>TBD</eposap:operation>
-		<dct:hasVersion>2.0.0, 1.1.0, 1.0.0</dct:hasVersion> <!-- Several formats support is usual in OGC services -->
+		<eposap:operation>GetCapabilities</eposap:operation>
+		<dct:hasVersion>2.0.2</dct:hasVersion>
 
 		<!-- List of Parameters:
 			this section is needed in order to describe the parameters of the service.
@@ -181,7 +179,7 @@
 			<http:paramName>service</http:paramName>
 			<rdf:label>service</rdf:label>
 			<dct:type>string</dct:type>
-			<http:paramValue>wfs</http:paramValue>
+			<http:paramValue>CSW</http:paramValue>
 		</eposap:parameter>
 		<eposap:parameter>
 			<http:paramName>request</http:paramName>
