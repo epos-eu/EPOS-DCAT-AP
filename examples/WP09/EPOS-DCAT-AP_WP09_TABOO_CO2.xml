@@ -134,8 +134,8 @@
 				datetime
 			</dct:type>
 			<!-- These properties refer to range value of the parameter -->
-			<schema:minValue>2001-12-31T12:00:00</schema:minValue> 
-			<schema:maxValue>2017-06-20T12:00:00</schema:maxValue>
+			<schema:minValue>2001-12-31T12:00:00.000</schema:minValue> 
+			<schema:maxValue>2017-06-20T12:00:00.000</schema:maxValue>
 		</eposap:parameter>
                 
         <eposap:parameter>
@@ -145,8 +145,8 @@
 				datetime
 			</dct:type>
 			<!-- These properties refer to range value of the parameter -->
-			<schema:minValue>2001-12-31T12:00:00</schema:minValue> 
-			<schema:maxValue>2017-06-20T12:00:00</schema:maxValue>
+			<schema:minValue>2001-12-31T12:00:00.000</schema:minValue> 
+			<schema:maxValue>2017-06-20T12:00:00.000</schema:maxValue>
 		</eposap:parameter>
                 
 		<eposap:parameter>
@@ -205,35 +205,13 @@
 		</eposap:parameter>
                 
         <eposap:parameter>
-			<http:paramName>maxeqdepth</http:paramName>
-			<rdf:label>maximum "sampling period" allowed to extract data</rdf:label>
-			<dct:type> <!-- This property refers to parameter type -->
-				ISO 8601
-			</dct:type>
-			<!-- allowed vocabulary terms, optional tag -->
-			<schema:minValue></schema:minValue> 
-			<schema:maxValue></schema:maxValue>
-		</eposap:parameter>
-                
-        <eposap:parameter>
-			<http:paramName>type_site</http:paramName>
+			<http:paramName>inst_type</http:paramName>
 			<rdf:label>nickname of type of installation</rdf:label>
 			<dct:type> <!-- This property refers to parameter type -->
 				string
 			</dct:type>
 		</eposap:parameter>
                 
-        <eposap:parameter>
-			<http:paramName>max_co2_err</http:paramName>
-			<rdf:label>maximum % uncertainty of the measure accepted for extraction</rdf:label>
-			<dct:type> <!-- This property refers to parameter type -->
-				integer
-			</dct:type>
-			<!-- allowed vocabulary terms, optional tag -->
-			<schema:minValue>0</schema:minValue> 
-			<schema:maxValue>100</schema:maxValue>
-		</eposap:parameter>
-                <!-- -->
         <eposap:parameter>
 			<http:paramName>max_int_delta</http:paramName>
 			<rdf:label>maximum distance in time between internal temperature</rdf:label>
