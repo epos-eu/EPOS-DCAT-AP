@@ -44,14 +44,15 @@ public class XMLReaderTest extends TestCase {
 		final XMLReader reader = new XMLReader();
 		final List<String> errorFiles = new ArrayList<String>();
 		try {
-			Files.walkFileTree(Paths.get("examples"), new SimpleFileVisitor<Path>() {
+			Files.walkFileTree(Paths.get("../../../examples").normalize(), new SimpleFileVisitor<Path>() {
 				@Override
 				public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
 					if (file.getFileName().toString().endsWith("xml")) {
+						String absolute = file.toAbsolutePath().normalize().toString();
 						try {
-							reader.readXML(file.toAbsolutePath().toString());
+							reader.readXML(absolute);
 						} catch (Exception e) {
-							errorFiles.add(file.toAbsolutePath().toString());
+							errorFiles.add(absolute);
 						}
 					}
 					return FileVisitResult.CONTINUE;
