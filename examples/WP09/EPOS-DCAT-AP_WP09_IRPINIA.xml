@@ -2,14 +2,15 @@
 <eposap:Epos
 xmlns:adms="http://www.w3.org/ns/adms#"
 	xmlns:cnt="http://www.w3.org/2008/content#" xmlns:dcat="http://www.w3.org/ns/dcat#"
-	xmlns:dct="http://purl.org/dc/terms/" xmlns:eposap="http://www.epos-ip.org/"
+	xmlns:dct="http://purl.org/dc/terms/" xmlns:eposap="http://www.epos-ip.org/terms.html"
 	xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:http="http://www.w3.org/2006/http#"
 	xmlns:locn="http://www.w3.org/ns/locn#" xmlns:owl="http://www.w3.org/2002/07/owl#"
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:schema="http://schema.org/"
 	xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:vcard="http://www.w3.org/2006/vcard/ns#"
 	xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.epos-ip.org/ https://raw.githubusercontent.com/epos-eu/EPOS-DCAT-AP/master/schemas/EPOS-DCAT-AP.xsd">
+	xsi:schemaLocation="http://www.epos-ip.org/terms.html https://raw.githubusercontent.com/epos-eu/EPOS-DCAT-AP/master/schemas/EPOS-DCAT-AP.xsd">
 
+	
 	<!-- EPOS Person -->
 	<eposap:Person>
 		<vcard:fn>Festa, Gaetano</vcard:fn><!-- Last Name, Given Name -->
@@ -26,7 +27,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 		<dct:identifier>EPOS.NFO-IRPINIA.Gaetano_Festa</dct:identifier> <!-- Unique Identifier -->
 		<eposap:affiliation>EPOS.NFO-IRPINIA.RISSC-Lab</eposap:affiliation> <!-- Organisation -->
 		<dct:language><!-- Language for contact -->
-			<dct:LinguisticSystem>Eng</dct:LinguisticSystem>
+			<dct:LinguisticSystem>En</dct:LinguisticSystem>
 		</dct:language>
 		<schema:qualifications>Associate Professor of Earth and Atmosphere Physics</schema:qualifications><!-- Qualification -->
 		<vcard:hasURL><!-- CV -->
@@ -50,7 +51,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 		<dct:identifier>EPOS.NFO-IRPINIA.Luca_Elia</dct:identifier> <!-- Unique Identifier -->
 		<eposap:affiliation>EPOS.NFO-IRPINIA.RISSC-Lab</eposap:affiliation> <!-- Organisation -->
 		<dct:language><!-- Language for contact -->
-			<dct:LinguisticSystem>Eng</dct:LinguisticSystem>
+			<dct:LinguisticSystem>En</dct:LinguisticSystem>
 		</dct:language>
 		<schema:qualifications>Contractor</schema:qualifications><!-- Qualification -->
 		<vcard:hasURL><!-- CV -->
@@ -61,7 +62,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 	<eposap:Organisation>
 		<vcard:fn>RISSC-Lab, University Federico II of Naples</vcard:fn><!-- Title
 			(english) -->
-		<vcard:organization-name>RISSC-Lab, Università Fedrico II di Napoli</vcard:organization-name><!--
+		<vcard:organization-name xml:lang="it">RISSC-Lab, Università Fedrico II di Napoli</vcard:organization-name><!--
 			Title (native lang) -->
 		<vcard:hasAddress><!-- Postal Address -->
 			<vcard:Address>
@@ -80,7 +81,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 		<dct:spatial><!-- Spatial Coordinates -->
 			<dct:Location>
 				<!-- POINT(lon lat elevation) -->
-				<locn:geometry>POINT(14.183455 40.837710 0)</locn:geometry>
+				<locn:geometry>POINT(14.183455 40.837710)</locn:geometry>
 			</dct:Location>
 		</dct:spatial>
 		<dct:type><!-- Type -->
@@ -117,7 +118,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 		-->
 		<dct:license>Creative Commons for data, Open Source licences for software</dct:license> <!-- Access and Use Restrictions -->
 		<foaf:page> <!-- URI -->
-			<foaf:primaryTopic>http://seismnet.fisica.unina.it/eposws/vpvs/1/</foaf:primaryTopic>
+			<foaf:primaryTopic>http://seismnet.fisica.unina.it/eposws/vpvs/1/query?</foaf:primaryTopic>
 		</foaf:page>
 		<dct:format><!-- distribution format, in case the service provides (also) access to binary data -->
 			<dct:MediaTypeOrExtent>JSON</dct:MediaTypeOrExtent>
@@ -138,616 +139,633 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 			the CRS should be specified with the relevant URI from the OGC EPSG register.
 			The base URI is:
 			http://www.opengis.net/def/crs/ -->
-		<dct:conformsTo>http://www.opengis.net/def/crs/EPSG/0/4326</dct:conformsTo> 
+		<dct:conformsTo>EPSG:4326</dct:conformsTo> 
 		<dct:identifier>seismnet.fisica.unina.it/eposws/vpvs/1/</dct:identifier> <!-- Unique Resource Identifier: this is the entry point of the service -->
 		<dct:created>2017-06-08T12:00:00</dct:created> <!-- date of creation -->
 		<eposap:domain> <!-- This property refers to the domain of resource (e.g. Seismology, GNSS etc.) -->
 			Rock Physics
 		</eposap:domain>
-		<dct:type> <!-- RESOURCE TYPE This property refers to service type (E.g. "metadata service", "binary data service", "map service"...) -->
-			text data service
-		</dct:type>
+		<eposap:subDomain>TBD</eposap:subDomain>
 		<dcat:keyword>NFO, rocks, seismic waves propagation</dcat:keyword> <!-- Keywords -->
-	
+                <eposap:operation>TBDc</eposap:operation>  
+	<!-- List of Parameters: 
+		this section is needed in order to describe the parameters of the service. 
+		E.g. in the case of a RESTful service, we may have "domain" as parameter, 
+		with type "string" and a list of allowed value terms specified by the value tag, 
+		e.g. 'seism','gps'  (i.e. namespace)-->
+
+		<eposap:parameter>
+			<http:paramName>param_mintime</http:paramName>
+			<rdf:label>UTC minimum date and time</rdf:label>
+			<dct:type>
+				None
+			</dct:type>
+			<owl:versionInfo>1.0</owl:versionInfo>
+	<!-- 		
+
+			<dct:validationMessages>
+
+				<dct:validationMessage>Validate parameter if ISO8601 Date time between &lt;1970-01-01T00:00:00.000&gt; and &lt;2017-06-12T14:26:07.072&gt;</dct:validationMessage>
+
+				<dct:validationMessage>UTC minimum date and time
+			     meaning: data are extracted if related time is greater equal to mintime
+			     standard reference:  ISO 8601 (YYYY-MM-DDThh:mm:ss.ccc)</dct:validationMessage>
+
+			</dct:validationMessages>
+
+	 -->	</eposap:parameter>
+
+		<eposap:parameter>
+			<http:paramName>param_maxtime</http:paramName>
+			<rdf:label>UTC maximum date and time</rdf:label> 
+			<dct:type>
+				None
+			</dct:type>
+			<owl:versionInfo>1.0</owl:versionInfo>
+	<!-- 		
+
+			<dct:validationMessages>
+
+				<dct:validationMessage>Validate parameter if ISO8601 Date time between &lt;1970-01-01T00:00:00.000&gt; and &lt;2017-06-12T14:26:07.073&gt;</dct:validationMessage>
+
+				<dct:validationMessage>UTC maximum date and time
+			     meaning: data are extracted if related time is less or equal to maxtime
+			     standard reference:  ISO 8601 (YYYY-MM-DDThh:mm:ss.ccc)</dct:validationMessage>
+
+			</dct:validationMessages>
+
+	 -->	</eposap:parameter>
+
+		<eposap:parameter>
+			<http:paramName>param_minlat</http:paramName>
+			<rdf:label>Minimum latitude of the selection area</rdf:label>
+			<dct:type>
+				None
+			</dct:type>
+			<owl:versionInfo>1.0</owl:versionInfo>
+	<!-- 		
+
+			<dct:validationMessages>
+
+				<dct:validationMessage>Validate number inside range range -90 - 90</dct:validationMessage>
+
+				<dct:validationMessage>earthquakes and stations to calculate Vp/Vs are extracted if latitude is greater or equal to minlat
+			     standard reference:  ISO 6709</dct:validationMessage>
+
+			</dct:validationMessages>
+
+	 -->	</eposap:parameter>
+
+		<eposap:parameter>
+			<http:paramName>param_maxlat</http:paramName>
+			<rdf:label>Maximum latitude of the selection area</rdf:label>
+			<dct:type>
+				None
+			</dct:type>
+			<owl:versionInfo>1.0</owl:versionInfo>
+	<!-- 		
+
+			<dct:validationMessages>
+
+				<dct:validationMessage>Validate number inside range range -90 - 90</dct:validationMessage>
+
+				<dct:validationMessage>earthquakes and stations to calculate Vp/Vs are extracted if latitude is less or equal to maxlat
+			     standard reference:  ISO 6709</dct:validationMessage>
+
+			</dct:validationMessages>
+
+	 -->	</eposap:parameter>
+
+		<eposap:parameter>
+			<http:paramName>param_minlon</http:paramName>
+			<rdf:label>Minimum longitude of the selection area</rdf:label>
+			<dct:type>
+				None
+			</dct:type>
+			<owl:versionInfo>1.0</owl:versionInfo>
+	<!-- 		
+
+			<dct:validationMessages>
+
+				<dct:validationMessage>Validate number inside range range -180 - 180</dct:validationMessage>
+
+				<dct:validationMessage>earthquakes and stations to calculate Vp/Vs are extracted if longitude is greater or equal to minlon
+			     standard reference:  ISO 6709</dct:validationMessage>
+
+			</dct:validationMessages>
+
+	 -->	</eposap:parameter>
+
+		<eposap:parameter>
+			<http:paramName>param_maxlon</http:paramName>
+			<rdf:label>Maximum longitude of the selection area</rdf:label>
+			<dct:type>
+				None
+			</dct:type>
+			<owl:versionInfo>1.0</owl:versionInfo>
+	<!-- 		
+
+			<dct:validationMessages>
+
+				<dct:validationMessage>Validate number inside range range -180 - 180</dct:validationMessage>
+
+				<dct:validationMessage>earthquakes and stations to calculate Vp/Vs are extracted if longitude is less or equal to maxlon
+			     standard reference:  ISO 6709</dct:validationMessage>
+
+			</dct:validationMessages>
+
+	 -->	</eposap:parameter>
+
+		<eposap:parameter>
+			<http:paramName>param_mineqdep</http:paramName>
+			<rdf:label>Minimum depth of earthquakes</rdf:label>
+			<dct:type>
+				None
+			</dct:type>
+			<owl:versionInfo>1.0</owl:versionInfo>
+	<!-- 		
+			<dct:validationHints>
+
+				<dct:validationHint>unit:km</dct:validationHint>
+
+			</dct:validationHints>
 
 
-		<!-- List of Parameters: 
-			this section is needed in order to describe the parameters of the service. 
-			E.g. in the case of a RESTful service, we may have "domain" as parameter, 
-			with type "string" and a list of allowed value terms specified by the value tag, 
-			e.g. 'seism','gps'  (i.e. namespace)-->
-		
-	<eposap:parameter>
-		<http:paramName>param_mintime</http:paramName>
-		<dct:type>
-			None
-		</dct:type>
-		<owl:versionInfo>1.0</owl:versionInfo>
-<!-- 		
-		
-		<dct:validationMessages>
-			
-			<dct:validationMessage>Validate parameter if ISO8601 Date time between &lt;1970-01-01T00:00:00.000&gt; and &lt;2017-06-12T14:26:07.072&gt;</dct:validationMessage>
-		    
-			<dct:validationMessage>UTC minimum date and time
-                     meaning: data are extracted if related time is greater equal to mintime
-                     standard reference:  ISO 8601 (YYYY-MM-DDThh:mm:ss.ccc)</dct:validationMessage>
-		    
-		</dct:validationMessages>
-		
- -->	</eposap:parameter>
+			<dct:validationMessages>
 
-	<eposap:parameter>
-		<http:paramName>param_maxtime</http:paramName>
-		<dct:type>
-			None
-		</dct:type>
-		<owl:versionInfo>1.0</owl:versionInfo>
-<!-- 		
-		
-		<dct:validationMessages>
-			
-			<dct:validationMessage>Validate parameter if ISO8601 Date time between &lt;1970-01-01T00:00:00.000&gt; and &lt;2017-06-12T14:26:07.073&gt;</dct:validationMessage>
-		    
-			<dct:validationMessage>UTC maximum date and time
-                     meaning: data are extracted if related time is less or equal to maxtime
-                     standard reference:  ISO 8601 (YYYY-MM-DDThh:mm:ss.ccc)</dct:validationMessage>
-		    
-		</dct:validationMessages>
-		
- -->	</eposap:parameter>
+				<dct:validationMessage>Validate number inside range range -9.0 - 6378.0</dct:validationMessage>
 
-	<eposap:parameter>
-		<http:paramName>param_minlat</http:paramName>
-		<dct:type>
-			None
-		</dct:type>
-		<owl:versionInfo>1.0</owl:versionInfo>
-<!-- 		
-		
-		<dct:validationMessages>
-			
-			<dct:validationMessage>Validate number inside range range -90 - 90</dct:validationMessage>
-		    
-			<dct:validationMessage>earthquakes and stations to calculate Vp/Vs are extracted if latitude is greater or equal to minlat
-                     standard reference:  ISO 6709</dct:validationMessage>
-		    
-		</dct:validationMessages>
-		
- -->	</eposap:parameter>
+				<dct:validationMessage>earthquakes to calculate Vp/Vs are extracted if depth is greater or equal to mineqdep
+			     standard reference:  ISO 6709 negative a.s.l. positive b.s.l.</dct:validationMessage>
 
-	<eposap:parameter>
-		<http:paramName>param_maxlat</http:paramName>
-		<dct:type>
-			None
-		</dct:type>
-		<owl:versionInfo>1.0</owl:versionInfo>
-<!-- 		
-		
-		<dct:validationMessages>
-			
-			<dct:validationMessage>Validate number inside range range -90 - 90</dct:validationMessage>
-		    
-			<dct:validationMessage>earthquakes and stations to calculate Vp/Vs are extracted if latitude is less or equal to maxlat
-                     standard reference:  ISO 6709</dct:validationMessage>
-		    
-		</dct:validationMessages>
-		
- -->	</eposap:parameter>
+			</dct:validationMessages>
 
-	<eposap:parameter>
-		<http:paramName>param_minlon</http:paramName>
-		<dct:type>
-			None
-		</dct:type>
-		<owl:versionInfo>1.0</owl:versionInfo>
-<!-- 		
-		
-		<dct:validationMessages>
-			
-			<dct:validationMessage>Validate number inside range range -180 - 180</dct:validationMessage>
-		    
-			<dct:validationMessage>earthquakes and stations to calculate Vp/Vs are extracted if longitude is greater or equal to minlon
-                     standard reference:  ISO 6709</dct:validationMessage>
-		    
-		</dct:validationMessages>
-		
- -->	</eposap:parameter>
+	 -->	</eposap:parameter>
 
-	<eposap:parameter>
-		<http:paramName>param_maxlon</http:paramName>
-		<dct:type>
-			None
-		</dct:type>
-		<owl:versionInfo>1.0</owl:versionInfo>
-<!-- 		
-		
-		<dct:validationMessages>
-			
-			<dct:validationMessage>Validate number inside range range -180 - 180</dct:validationMessage>
-		    
-			<dct:validationMessage>earthquakes and stations to calculate Vp/Vs are extracted if longitude is less or equal to maxlon
-                     standard reference:  ISO 6709</dct:validationMessage>
-		    
-		</dct:validationMessages>
-		
- -->	</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>param_maxeqdep</http:paramName>
+			<rdf:label>Maximum depth of earthquakes</rdf:label>
+			<dct:type>
+				None
+			</dct:type>
+			<owl:versionInfo>1.0</owl:versionInfo>
+	<!-- 		
+			<dct:validationHints>
 
-	<eposap:parameter>
-		<http:paramName>param_mineqdep</http:paramName>
-		<dct:type>
-			None
-		</dct:type>
-		<owl:versionInfo>1.0</owl:versionInfo>
-<!-- 		
-		<dct:validationHints>
-			
-			<dct:validationHint>unit:km</dct:validationHint>
-		    
-		</dct:validationHints>
-		
-		
-		<dct:validationMessages>
-			
-			<dct:validationMessage>Validate number inside range range -9.0 - 6378.0</dct:validationMessage>
-		    
-			<dct:validationMessage>earthquakes to calculate Vp/Vs are extracted if depth is greater or equal to mineqdep
-                     standard reference:  ISO 6709 negative a.s.l. positive b.s.l.</dct:validationMessage>
-		    
-		</dct:validationMessages>
-		
- -->	</eposap:parameter>
+				<dct:validationHint>unit:km</dct:validationHint>
 
-	<eposap:parameter>
-		<http:paramName>param_maxeqdep</http:paramName>
-		<dct:type>
-			None
-		</dct:type>
-		<owl:versionInfo>1.0</owl:versionInfo>
-<!-- 		
-		<dct:validationHints>
-			
-			<dct:validationHint>unit:km</dct:validationHint>
-		    
-		</dct:validationHints>
-		
-		
-		<dct:validationMessages>
-			
-			<dct:validationMessage>Validate number inside range range -9.0 - 6378.0</dct:validationMessage>
-		    
-			<dct:validationMessage>earthquakes to calculate Vp/Vs are extracted if depth is less or equal to mineqdep
-                     standard reference:  ISO 6709 negative a.s.l. positive b.s.l.</dct:validationMessage>
-		    
-		</dct:validationMessages>
-		
- -->	</eposap:parameter>
-
-	<eposap:parameter>
-		<http:paramName>param_minnp</http:paramName>
-		<dct:type>
-			None
-		</dct:type>
-		<owl:versionInfo>1.0</owl:versionInfo>
-<!-- 		
-		
-		<dct:validationMessages>
-			
-			<dct:validationMessage>Validate parameter if integer value</dct:validationMessage>
-		    
-			<dct:validationMessage>number of p-waves onset observations
-                     meaning: minimum number of p-waves onset observations, with quality hypoinverse standard weight less equal to maxpw, that one earthquake has to have to be extracted
-                     standard reference: integer, no standard</dct:validationMessage>
-		    
-		</dct:validationMessages>
-		
- -->	</eposap:parameter>
-
-	<eposap:parameter>
-		<http:paramName>param_minnp</http:paramName>
-		<dct:type>
-			None
-		</dct:type>
-		<owl:versionInfo>1.0</owl:versionInfo>
-<!-- 		
-		
-		<dct:validationMessages>
-			
-			<dct:validationMessage>Validate parameter if greater than minval 0</dct:validationMessage>
-		    
-			<dct:validationMessage>number of p-waves onset observations
-                     meaning: minimum number of p-waves onset observations, with quality hypoinverse standard weight less equal to maxpw, that one earthquake has to have to be extracted
-                     standard reference: integer, no standard</dct:validationMessage>
-		    
-		</dct:validationMessages>
-		
- -->	</eposap:parameter>
-
-	<eposap:parameter>
-		<http:paramName>param_minns</http:paramName>
-		<dct:type>
-			None
-		</dct:type>
-		<owl:versionInfo>1.0</owl:versionInfo>
-<!-- 		
-		
-		<dct:validationMessages>
-			
-			<dct:validationMessage>Validate parameter if integer value</dct:validationMessage>
-		    
-			<dct:validationMessage>number of s-waves onset observations
-                     meaning: minimum number of s-waves onset observations, with quality hypoinverse standard weight less equal to maxsw, that one earthquake has to have to be extracted
-                     standard reference: integer, no standard</dct:validationMessage>
-		    
-		</dct:validationMessages>
-		
- -->	</eposap:parameter>
-
-	<eposap:parameter>
-		<http:paramName>param_minns</http:paramName>
-		<dct:type>
-			None
-		</dct:type>
-		<owl:versionInfo>1.0</owl:versionInfo>
-<!-- 		
-		
-		<dct:validationMessages>
-			
-			<dct:validationMessage>Validate parameter if greater than minval 0</dct:validationMessage>
-		    
-			<dct:validationMessage>number of s-waves onset observations
-                     meaning: minimum number of s-waves onset observations, with quality hypoinverse standard weight less equal to maxsw, that one earthquake has to have to be extracted
-                     standard reference: integer, no standard</dct:validationMessage>
-		    
-		</dct:validationMessages>
-		
- -->	</eposap:parameter>
-
-	<eposap:parameter>
-		<http:paramName>param_maxpw</http:paramName>
-		<dct:type>
-			None
-		</dct:type>
-		<owl:versionInfo>1.0</owl:versionInfo>
-<!-- 		
-		
-		<dct:validationMessages>
-			
-			<dct:validationMessage>Validate parameter if integer value</dct:validationMessage>
-		    
-			<dct:validationMessage>quality hypoinverse standard weight
-                     meaning: maximum quality weight allowed for a p-wave reading so that it is counted for earthquake selection
-                     standard reference: integer, hypoinverse 2000 standard (0 high quality, 3 worse, 4 not used)</dct:validationMessage>
-		    
-		</dct:validationMessages>
-		
- -->	</eposap:parameter>
-
-	<eposap:parameter>
-		<http:paramName>param_maxpw</http:paramName>
-		<dct:type>
-			None
-		</dct:type>
-		<owl:versionInfo>1.0</owl:versionInfo>
-<!-- 		
-		
-		<dct:validationMessages>
-			
-			<dct:validationMessage>Validate number inside range range 0 - 4</dct:validationMessage>
-		    
-			<dct:validationMessage>quality hypoinverse standard weight
-                     meaning: maximum quality weight allowed for a p-wave reading so that it is counted for earthquake selection
-                     standard reference: integer, hypoinverse 2000 standard (0 high quality, 3 worse, 4 not used)</dct:validationMessage>
-		    
-		</dct:validationMessages>
-		
- -->	</eposap:parameter>
-
-	<eposap:parameter>
-		<http:paramName>param_maxsw</http:paramName>
-		<dct:type>
-			None
-		</dct:type>
-		<owl:versionInfo>1.0</owl:versionInfo>
-<!-- 		
-		
-		<dct:validationMessages>
-			
-			<dct:validationMessage>Validate parameter if integer value</dct:validationMessage>
-		    
-			<dct:validationMessage>mum quality weight allowed for a s-wave reading so that it is counted for earthquake selection
-                     standard reference: integer, hypoinverse 2000 standard (0 high quality, 3 worse, 4 not used)</dct:validationMessage>
-		    
-		</dct:validationMessages>
-		
- -->	</eposap:parameter>
-
-	<eposap:parameter>
-		<http:paramName>param_maxsw</http:paramName>
-		<dct:type>
-			None
-		</dct:type>
-		<owl:versionInfo>1.0</owl:versionInfo>
-<!-- 		
-		
-		<dct:validationMessages>
-			
-			<dct:validationMessage>Validate number inside range range 0 - 4</dct:validationMessage>
-		    
-			<dct:validationMessage>mum quality weight allowed for a s-wave reading so that it is counted for earthquake selection
-                     standard reference: integer, hypoinverse 2000 standard (0 high quality, 3 worse, 4 not used)</dct:validationMessage>
-		    
-		</dct:validationMessages>
-		
- -->	</eposap:parameter>
-
-	<eposap:parameter>
-		<http:paramName>param_minps</http:paramName>
-		<dct:type>
-			None
-		</dct:type>
-		<owl:versionInfo>1.0</owl:versionInfo>
-<!-- 		
-		
-		<dct:validationMessages>
-			
-			<dct:validationMessage>Validate parameter if integer value</dct:validationMessage>
-		    
-			<dct:validationMessage>minimum number of p- and s-waves observed at one single station, with quality hypoinverse
-                     standard weight less equal to maxpw and maxsw respectively, that one earthquake has to have to be extracted</dct:validationMessage>
-		    
-		</dct:validationMessages>
-		
- -->	</eposap:parameter>
-
-	<eposap:parameter>
-		<http:paramName>param_minps</http:paramName>
-		<dct:type>
-			None
-		</dct:type>
-		<owl:versionInfo>1.0</owl:versionInfo>
-<!-- 		
-		
-		<dct:validationMessages>
-			
-			<dct:validationMessage>Validate parameter if greater than minval 0</dct:validationMessage>
-		    
-			<dct:validationMessage>minimum number of p- and s-waves observed at one single station, with quality hypoinverse
-                     standard weight less equal to maxpw and maxsw respectively, that one earthquake has to have to be extracted</dct:validationMessage>
-		    
-		</dct:validationMessages>
-		
- -->	</eposap:parameter>
-
-	<eposap:parameter>
-		<http:paramName>param_maxgap</http:paramName>
-		<dct:type>
-			None
-		</dct:type>
-		<owl:versionInfo>1.0</owl:versionInfo>
-<!-- 		
-		
-		<dct:validationMessages>
-			
-			<dct:validationMessage>Validate number inside range range 0 - 360</dct:validationMessage>
-		    
-			<dct:validationMessage>maximum allowed azimuthal gap so that a earthquakes is selected;
-                     this parameters tends to guarantee a more feasible location and to exclude earthquakes
-                     at the edge of the network coverage</dct:validationMessage>
-		    
-		</dct:validationMessages>
-		
- -->	</eposap:parameter>
-
-	<eposap:parameter>
-		<http:paramName>param_midi</http:paramName>
-		<dct:type>
-			None
-		</dct:type>
-		<owl:versionInfo>1.0</owl:versionInfo>
-<!-- 		
-		<dct:validationHints>
-			
-			<dct:validationHint>unit:km</dct:validationHint>
-		    
-		</dct:validationHints>
-		
-		
-		<dct:validationMessages>
-			
-			<dct:validationMessage>Validate number inside range range 0 - 40000</dct:validationMessage>
-		    
-			<dct:validationMessage>maximum distance of the closest station from an earthquake so that it
-                     can be extracted, this parameters tends to guarantee a more feasible depth</dct:validationMessage>
-		    
-		</dct:validationMessages>
-		
- -->	</eposap:parameter>
-
-	<eposap:parameter>
-		<http:paramName>param_maxherr</http:paramName>
-		<dct:type>
-			None
-		</dct:type>
-		<owl:versionInfo>1.0</owl:versionInfo>
-<!-- 		
-		<dct:validationHints>
-			
-			<dct:validationHint>unit:km</dct:validationHint>
-		    
-		</dct:validationHints>
-		
-		
-		<dct:validationMessages>
-			
-			<dct:validationMessage>Validate number inside range range 0 - 40000</dct:validationMessage>
-		    
-			<dct:validationMessage>the mean formal horizontal error directly given by
-                     the location code or calculated as sqrt(errX²+errY*2) or from the uncertainty 2D or 3D ellipsoid parameters  (see the specific location code reference manual)</dct:validationMessage>
-		    
-		</dct:validationMessages>
-		
- -->	</eposap:parameter>
-
-	<eposap:parameter>
-		<http:paramName>param_maxverr</http:paramName>
-		<dct:type>
-			None
-		</dct:type>
-		<owl:versionInfo>1.0</owl:versionInfo>
-<!-- 		
-		<dct:validationHints>
-			
-			<dct:validationHint>unit:km</dct:validationHint>
-		    
-		</dct:validationHints>
-		
-		
-		<dct:validationMessages>
-			
-			<dct:validationMessage>Validate number inside range range 0 - 6378</dct:validationMessage>
-		    
-			<dct:validationMessage>is the mean formal vertical error directly given by the location code or calculated from the uncertainty 3D ellipsoid
-                     parameters (see the specific location code reference manual)</dct:validationMessage>
-		    
-		</dct:validationMessages>
-		
- -->	</eposap:parameter>
-
-	<eposap:parameter>
-		<http:paramName>param_maxvpvspw</http:paramName>
-		<dct:type>
-			None
-		</dct:type>
-		<owl:versionInfo>1.0</owl:versionInfo>
-<!-- 		
-		
-		<dct:validationMessages>
-			
-			<dct:validationMessage>Validate number inside range range 0 - 4</dct:validationMessage>
-		    
-		</dct:validationMessages>
-		
- -->	</eposap:parameter>
-
-	<eposap:parameter>
-		<http:paramName>param_maxvpvssw</http:paramName>
-		<dct:type>
-			None
-		</dct:type>
-		<owl:versionInfo>1.0</owl:versionInfo>
-<!-- 		
-		
-		<dct:validationMessages>
-			
-			<dct:validationMessage>Validate number inside range range 0 - 4</dct:validationMessage>
-		    
-		</dct:validationMessages>
-		
- -->	</eposap:parameter>
-
-	<eposap:parameter>
-		<http:paramName>param_maxvpvserr</http:paramName>
-		<dct:type>
-			None
-		</dct:type>
-		<owl:versionInfo>1.0</owl:versionInfo>
-<!-- 		
-		
-		<dct:validationMessages>
-			
-			<dct:validationMessage>Validate number inside range range 0 - 1000000000</dct:validationMessage>
-		    
-		</dct:validationMessages>
-		
- -->	</eposap:parameter>
-
-	<eposap:parameter>
-		<http:paramName>param_DIV</http:paramName>
-		<dct:type>
-			None
-		</dct:type>
-		<owl:versionInfo>1.0</owl:versionInfo>
-<!-- 		
-		
-		<dct:validationMessages>
-			
-			<dct:validationMessage>Validate number inside range range 1000000 - 1000000</dct:validationMessage>
-		    
-		</dct:validationMessages>
-		
- -->	</eposap:parameter>
-
-	<eposap:parameter>
-		<http:paramName>param_vpvsmin</http:paramName>
-		<dct:type>
-			None
-		</dct:type>
-		<owl:versionInfo>1.0</owl:versionInfo>
-<!-- 		
-		
-		<dct:validationMessages>
-			
-			<dct:validationMessage>Validate number inside range range 1.41 - 1.41</dct:validationMessage>
-		    
-		</dct:validationMessages>
-		
- -->	</eposap:parameter>
-
-	<eposap:parameter>
-		<http:paramName>param_modtype</http:paramName>
-		<dct:type>
-			None
-		</dct:type>
-		<owl:versionInfo>1.0</owl:versionInfo>
-<!-- 		
-		
-		<dct:validationMessages>
-			
-			<dct:validationMessage>Validate number inside range range 1 - 1</dct:validationMessage>
-		    
-		</dct:validationMessages>
-		
- -->	</eposap:parameter>
-
-	<eposap:parameter>
-		<http:paramName>param_codetype</http:paramName>
-		<dct:type>
-			None
-		</dct:type>
-		<owl:versionInfo>1.0</owl:versionInfo>
-<!-- 		
-		
-		<dct:validationMessages>
-			
-			<dct:validationMessage>Validate number inside range range 2 - 2</dct:validationMessage>
-		    
-		</dct:validationMessages>
-		
- -->	</eposap:parameter>
-
-	<eposap:parameter>
-		<http:paramName>param_mettype</http:paramName>
-		<dct:type>
-			None
-		</dct:type>
-		<owl:versionInfo>1.0</owl:versionInfo>
-<!-- 		
-		
-		<dct:validationMessages>
-			
-			<dct:validationMessage>Validate number inside range range 2 - 2</dct:validationMessage>
-		    
-		</dct:validationMessages>
-		
- -->	</eposap:parameter>
+			</dct:validationHints>
 
 
-	
+			<dct:validationMessages>
 
+				<dct:validationMessage>Validate number inside range range -9.0 - 6378.0</dct:validationMessage>
+
+				<dct:validationMessage>earthquakes to calculate Vp/Vs are extracted if depth is less or equal to mineqdep
+			     standard reference:  ISO 6709 negative a.s.l. positive b.s.l.</dct:validationMessage>
+
+			</dct:validationMessages>
+
+	 -->	</eposap:parameter>
+
+		<eposap:parameter>
+			<http:paramName>param_minnp</http:paramName>
+			<rdf:label>Minimum number of P waves</rdf:label>
+			<dct:type>
+				None
+			</dct:type>
+			<owl:versionInfo>1.0</owl:versionInfo>
+	<!-- 		
+
+			<dct:validationMessages>
+
+				<dct:validationMessage>Validate parameter if integer value</dct:validationMessage>
+
+				<dct:validationMessage>number of p-waves onset observations
+			     meaning: minimum number of p-waves onset observations, with quality hypoinverse standard weight less equal to maxpw, that one earthquake has to have to be extracted
+			     standard reference: integer, no standard</dct:validationMessage>
+
+			</dct:validationMessages>
+
+	 -->	</eposap:parameter>
+
+	 <!-- DUPLICATE PARAMETER	
+	      <eposap:parameter>
+			<http:paramName>param_minnp</http:paramName>
+			<rdf:label>Minimum number of P waves</rdf:label>
+			<dct:type>
+				None
+			</dct:type>
+			<owl:versionInfo>1.0</owl:versionInfo>	
+
+			<dct:validationMessages>
+
+				<dct:validationMessage>Validate parameter if greater than minval 0</dct:validationMessage>
+
+				<dct:validationMessage>number of p-waves onset observations
+			     meaning: minimum number of p-waves onset observations, with quality hypoinverse standard weight less equal to maxpw, that one earthquake has to have to be extracted
+			     standard reference: integer, no standard</dct:validationMessage>
+
+			</dct:validationMessages>
+
+		</eposap:parameter>-->
+
+		<eposap:parameter>
+			<http:paramName>param_minns</http:paramName>
+			<rdf:label>Minimum number of S waves</rdf:label>
+			<dct:type>
+				None
+			</dct:type>
+			<owl:versionInfo>1.0</owl:versionInfo>
+	<!-- 		
+
+			<dct:validationMessages>
+
+				<dct:validationMessage>Validate parameter if integer value</dct:validationMessage>
+
+				<dct:validationMessage>number of s-waves onset observations
+			     meaning: minimum number of s-waves onset observations, with quality hypoinverse standard weight less equal to maxsw, that one earthquake has to have to be extracted
+			     standard reference: integer, no standard</dct:validationMessage>
+
+			</dct:validationMessages>
+
+	 -->	</eposap:parameter>
+	<!-- DUPLICATE PARAMETER
+		<eposap:parameter>
+			<http:paramName>param_minns</http:paramName>
+			<dct:type>
+				None
+			</dct:type>
+			<owl:versionInfo>1.0</owl:versionInfo>		
+
+			<dct:validationMessages>
+
+				<dct:validationMessage>Validate parameter if greater than minval 0</dct:validationMessage>
+
+				<dct:validationMessage>number of s-waves onset observations
+			     meaning: minimum number of s-waves onset observations, with quality hypoinverse standard weight less equal to maxsw, that one earthquake has to have to be extracted
+			     standard reference: integer, no standard</dct:validationMessage>
+
+			</dct:validationMessages>
+
+		</eposap:parameter>-->
+
+		<eposap:parameter>
+			<http:paramName>param_maxpw</http:paramName>
+			<rdf:label>Minimum number of S waves</rdf:label>
+			<dct:type>
+				None
+			</dct:type>
+			<owl:versionInfo>1.0</owl:versionInfo>
+	<!-- 		
+
+			<dct:validationMessages>
+
+				<dct:validationMessage>Validate parameter if integer value</dct:validationMessage>
+
+				<dct:validationMessage>quality hypoinverse standard weight
+			     meaning: maximum quality weight allowed for a p-wave reading so that it is counted for earthquake selection
+			     standard reference: integer, hypoinverse 2000 standard (0 high quality, 3 worse, 4 not used)</dct:validationMessage>
+
+			</dct:validationMessages>
+
+	 -->	</eposap:parameter>
+
+		<eposap:parameter>
+			<http:paramName>param_maxpw</http:paramName>
+			<rdf:label>quality hypoinverse standard weight</rdf:label>
+			<dct:type>
+				None
+			</dct:type>
+			<owl:versionInfo>1.0</owl:versionInfo>
+	<!-- 		
+
+			<dct:validationMessages>
+
+				<dct:validationMessage>Validate number inside range range 0 - 4</dct:validationMessage>
+
+				<dct:validationMessage>quality hypoinverse standard weight
+			     meaning: maximum quality weight allowed for a p-wave reading so that it is counted for earthquake selection
+			     standard reference: integer, hypoinverse 2000 standard (0 high quality, 3 worse, 4 not used)</dct:validationMessage>
+
+			</dct:validationMessages>
+
+	 -->	</eposap:parameter>
+
+		<eposap:parameter>
+			<http:paramName>param_maxsw</http:paramName>
+			<rdf:label>quality hypoinverse standard weight</rdf:label>
+			<dct:type>
+				None
+			</dct:type>
+			<owl:versionInfo>1.0</owl:versionInfo>
+	<!-- 		
+
+			<dct:validationMessages>
+
+				<dct:validationMessage>Validate parameter if integer value</dct:validationMessage>
+
+				<dct:validationMessage>mum quality weight allowed for a s-wave reading so that it is counted for earthquake selection
+			     standard reference: integer, hypoinverse 2000 standard (0 high quality, 3 worse, 4 not used)</dct:validationMessage>
+
+			</dct:validationMessages>
+
+	 -->	</eposap:parameter>
+	<!-- DUPLICATE
+		<eposap:parameter>
+			<http:paramName>param_maxsw</http:paramName>
+			<dct:type>
+				None
+			</dct:type>
+			<owl:versionInfo>1.0</owl:versionInfo>	
+			<dct:validationMessages>
+
+				<dct:validationMessage>Validate number inside range range 0 - 4</dct:validationMessage>
+
+				<dct:validationMessage>mum quality weight allowed for a s-wave reading so that it is counted for earthquake selection
+			     standard reference: integer, hypoinverse 2000 standard (0 high quality, 3 worse, 4 not used)</dct:validationMessage>
+
+			</dct:validationMessages>
+
+		</eposap:parameter>
+	-->
+		<eposap:parameter>
+			<http:paramName>param_minps</http:paramName>
+			<rdf:label>number of P and S couples per earthquake</rdf:label>
+			<dct:type>
+				None
+			</dct:type>
+			<owl:versionInfo>1.0</owl:versionInfo>
+	<!-- 		
+
+			<dct:validationMessages>
+
+				<dct:validationMessage>Validate parameter if integer value</dct:validationMessage>
+
+				<dct:validationMessage>minimum number of p- and s-waves observed at one single station, with quality hypoinverse
+			     standard weight less equal to maxpw and maxsw respectively, that one earthquake has to have to be extracted</dct:validationMessage>
+
+			</dct:validationMessages>
+		-->	
+		</eposap:parameter>
+	<!-- DUPLICATE
+		<eposap:parameter>
+			<http:paramName>param_minps</http:paramName>
+			<rdf:label>number of P and S couples per earthquake</rdf:label>
+			<dct:type>
+				None
+			</dct:type>
+			<owl:versionInfo>1.0</owl:versionInfo>
+
+
+			<dct:validationMessages>
+
+				<dct:validationMessage>Validate parameter if greater than minval 0</dct:validationMessage>
+
+				<dct:validationMessage>minimum number of p- and s-waves observed at one single station, with quality hypoinverse
+			     standard weight less equal to maxpw and maxsw respectively, that one earthquake has to have to be extracted</dct:validationMessage>
+
+			</dct:validationMessages>
+
+		</eposap:parameter>
+	-->
+		<eposap:parameter>
+			<http:paramName>param_maxgap</http:paramName>
+			<rdf:label>degrees of azimuthal stations distribution gap per earthquake</rdf:label>
+			<dct:type>
+				None
+			</dct:type>
+			<owl:versionInfo>1.0</owl:versionInfo>
+	<!-- 		
+
+			<dct:validationMessages>
+
+				<dct:validationMessage>Validate number inside range range 0 - 360</dct:validationMessage>
+
+				<dct:validationMessage>maximum allowed azimuthal gap so that a earthquakes is selected;
+			     this parameters tends to guarantee a more feasible location and to exclude earthquakes
+			     at the edge of the network coverage</dct:validationMessage>
+
+			</dct:validationMessages>
+
+	 -->	</eposap:parameter>
+
+		<eposap:parameter>
+			<http:paramName>param_midi</http:paramName>
+			<rdf:label>horizontal distance of the closest station from a earthquake</rdf:label>
+			<dct:type>
+				None
+			</dct:type>
+			<owl:versionInfo>1.0</owl:versionInfo>
+	<!-- 		
+			<dct:validationHints>
+
+				<dct:validationHint>unit:km</dct:validationHint>
+
+			</dct:validationHints>
+
+
+			<dct:validationMessages>
+
+				<dct:validationMessage>Validate number inside range range 0 - 40000</dct:validationMessage>
+
+				<dct:validationMessage>maximum distance of the closest station from an earthquake so that it
+			     can be extracted, this parameters tends to guarantee a more feasible depth</dct:validationMessage>
+
+			</dct:validationMessages>
+
+	 -->	</eposap:parameter>
+
+		<eposap:parameter>
+			<http:paramName>param_maxherr</http:paramName>
+			<rdf:label>maximum allowed formal horizontal error in earthquake location</rdf:label>
+			<dct:type>
+				None
+			</dct:type>
+			<owl:versionInfo>1.0</owl:versionInfo>
+	<!-- 		
+			<dct:validationHints>
+
+				<dct:validationHint>unit:km</dct:validationHint>
+
+			</dct:validationHints>
+
+
+			<dct:validationMessages>
+
+				<dct:validationMessage>Validate number inside range range 0 - 40000</dct:validationMessage>
+
+				<dct:validationMessage>the mean formal horizontal error directly given by
+			     the location code or calculated as sqrt(errX²+errY*2) or from the uncertainty 2D or 3D ellipsoid parameters  (see the specific location code reference manual)</dct:validationMessage>
+
+			</dct:validationMessages>
+
+	 -->	</eposap:parameter>
+
+		<eposap:parameter>
+			<http:paramName>param_maxverr</http:paramName>
+			<rdf:label>maximum allowed formal vertical error in earthquake location</rdf:label>
+			<dct:type>
+				None
+			</dct:type>
+			<owl:versionInfo>1.0</owl:versionInfo>
+	<!-- 		
+			<dct:validationHints>
+
+				<dct:validationHint>unit:km</dct:validationHint>
+
+			</dct:validationHints>
+
+
+			<dct:validationMessages>
+
+				<dct:validationMessage>Validate number inside range range 0 - 6378</dct:validationMessage>
+
+				<dct:validationMessage>is the mean formal vertical error directly given by the location code or calculated from the uncertainty 3D ellipsoid
+			     parameters (see the specific location code reference manual)</dct:validationMessage>
+
+			</dct:validationMessages>
+
+	 -->	</eposap:parameter>
+
+		<eposap:parameter>
+			<http:paramName>param_maxvpvspw</http:paramName>
+			<rdf:label>Validation constraints</rdf:label>
+			<dct:type>
+				None
+			</dct:type>
+			<owl:versionInfo>1.0</owl:versionInfo>
+	<!-- 		
+
+			<dct:validationMessages>
+
+				<dct:validationMessage>Validate number inside range range 0 - 4</dct:validationMessage>
+
+			</dct:validationMessages>
+
+	 -->	</eposap:parameter>
+
+		<eposap:parameter>
+			<http:paramName>param_maxvpvssw</http:paramName>
+			<rdf:label>Validation constraints</rdf:label>
+			<dct:type>
+				None
+			</dct:type>
+			<owl:versionInfo>1.0</owl:versionInfo>
+	<!-- 		
+
+			<dct:validationMessages>
+
+				<dct:validationMessage>Validate number inside range range 0 - 4</dct:validationMessage>
+
+			</dct:validationMessages>
+
+	 -->	</eposap:parameter>
+
+		<eposap:parameter>
+			<http:paramName>param_maxvpvserr</http:paramName>
+			<rdf:label>Validation constraints</rdf:label>
+			<dct:type>
+				None
+			</dct:type>
+			<owl:versionInfo>1.0</owl:versionInfo>
+	<!-- 		
+
+			<dct:validationMessages>
+
+				<dct:validationMessage>Validate number inside range range 0 - 1000000000</dct:validationMessage>
+
+			</dct:validationMessages>
+
+	 -->	</eposap:parameter>
+
+		<eposap:parameter>
+			<http:paramName>param_DIV</http:paramName>
+			<rdf:label>Validation constraints</rdf:label>
+			<dct:type>
+				None
+			</dct:type>
+			<owl:versionInfo>1.0</owl:versionInfo>
+	<!-- 		
+
+			<dct:validationMessages>
+
+				<dct:validationMessage>Validate number inside range range 1000000 - 1000000</dct:validationMessage>
+
+			</dct:validationMessages>
+
+	 -->	</eposap:parameter>
+
+		<eposap:parameter>
+			<http:paramName>param_vpvsmin</http:paramName>
+			<rdf:label>Validation constraints</rdf:label>
+			<dct:type>
+				None
+			</dct:type>
+			<owl:versionInfo>1.0</owl:versionInfo>
+	<!-- 		
+
+			<dct:validationMessages>
+
+				<dct:validationMessage>Validate number inside range range 1.41 - 1.41</dct:validationMessage>
+
+			</dct:validationMessages>
+
+	 -->	</eposap:parameter>
+
+		<eposap:parameter>
+			<http:paramName>param_modtype</http:paramName>
+			<rdf:label>Validation constraints</rdf:label>
+			<dct:type>
+				None
+			</dct:type>
+			<owl:versionInfo>1.0</owl:versionInfo>
+	<!-- 		
+
+			<dct:validationMessages>
+
+				<dct:validationMessage>Validate number inside range range 1 - 1</dct:validationMessage>
+
+			</dct:validationMessages>
+
+	 -->	</eposap:parameter>
+
+		<eposap:parameter>
+			<http:paramName>param_codetype</http:paramName>
+			<rdf:label>Validation constraints</rdf:label>
+			<dct:type>
+				None
+			</dct:type>
+			<owl:versionInfo>1.0</owl:versionInfo>
+	<!-- 		
+
+			<dct:validationMessages>
+
+				<dct:validationMessage>Validate number inside range range 2 - 2</dct:validationMessage>
+
+			</dct:validationMessages>
+
+	 -->	</eposap:parameter>
+
+		<eposap:parameter>
+			<http:paramName>param_mettype</http:paramName>
+			<rdf:label>Validation constraints</rdf:label>
+			<dct:type>
+				None
+			</dct:type>
+			<owl:versionInfo>1.0</owl:versionInfo>
+	<!-- 		
+
+			<dct:validationMessages>
+
+				<dct:validationMessage>Validate number inside range range 2 - 2</dct:validationMessage>
+
+			</dct:validationMessages>
+
+	 -->	</eposap:parameter>
 		
 		<dcat:contactPoint>EPOS.NFO-IRPINIA.Luca_Elia</dcat:contactPoint> <!-- internal link to contact point (vcard:Individual) described in the same file in <eposap:Person> -->
-		<eposap:responsibleParty>EPOS.NFO-IRPINIA.Gaetano_Festa</eposap:responsibleParty> <!-- internal link to responsibleParty (vcard:Individual) described in the same file in <eposap:Person> -->
+		<eposap:publisher>EPOS.NFO-IRPINIA.Gaetano_Festa</eposap:publisher> <!-- internal link to responsibleParty (vcard:Individual) described in the same file in <eposap:Person> -->
 		<dct:spatial> <!-- Geographic location/spatial extent /bounding box -->
 			<dct:Location>
 				<locn:geometry>POLYGON(14.0 39.0,16.0 39.0,16.0 42.0,14.0 42.0,14.0 39.0)</locn:geometry>
@@ -762,10 +780,5 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 				<schema:endDate>2017-05-23T00:00:00</schema:endDate>
 			</dct:PeriodOfTime>
 		</dct:temporal>
-		<dct:provenance> <!-- Lineage -->
-			<dct:ProvenanceStatement>RISSC-Lab Provenance</dct:ProvenanceStatement>
-		</dct:provenance>
 	</eposap:WebService>
-
-
 </eposap:Epos>
