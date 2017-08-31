@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- AHEAD services description v1 (v4 internal). This file was created by Mario Locati (INGV, mario.locati@ingv.it) the 30 July 2017. -->
+<!-- AHEAD services description v1.1 (v5 internal). File created by Mario Locati (INGV, mario.locati@ingv.it) the 31st of August 2017. -->
 <eposap:Epos
 	xmlns:adms="http://www.w3.org/ns/adms#"
 	xmlns:cnt="http://www.w3.org/2008/content#"
@@ -148,362 +148,10 @@
 	</eposap:Project>
 	
 	<eposap:WebService>
-		<dct:title>AHEAD fdsnws-event (JSON output)</dct:title>
+		<dct:title>AHEAD fdsnws-event</dct:title>
 		<dct:description xml:lang="en">AHEAD, the European Archive of Historical Earthquake Data, fdsnws-event standard, a web service providing event parameters for historical earthquakes</dct:description>
 		<dct:issued>2017-07-30T12:00:00</dct:issued>
-		<dct:modified>2017-07-30T12:00:00</dct:modified>
-		<dct:license xml:lang="en">https://www.emidius.eu/AHEAD/introduction.php#copyright</dct:license><!-- temporary solution, valid until a proper CC license will be decided -->
-		<foaf:page>
-			<foaf:primaryTopic>https://www.emidius.eu/fdsnws/event/1/query?format=json&</foaf:primaryTopic>
-		</foaf:page>
-		<dct:format>
-			<dct:MediaTypeOrExtent>json</dct:MediaTypeOrExtent>
-		</dct:format>
-		<dct:rights>
-			<dct:RightsStatement>PUBLIC</dct:RightsStatement>
-		</dct:rights>
-		<dct:conformsTo>EPSG:4326</dct:conformsTo>
-		<dct:identifier>eu.ahead.services.fdsnws.event.1.json</dct:identifier>
-		<dct:created>2017-06-17T12:00:00</dct:created>
-		<eposap:domain>seismology</eposap:domain>
-		<eposap:subDomain>macroseismology</eposap:subDomain>
-		<dcat:keyword xml:lang="en">earthquakes, parameters, historical, macroseismic, intensity</dcat:keyword>
-		<eposap:operation>download</eposap:operation>
-		<dct:hasVersion>1.0</dct:hasVersion>
-		<eposap:parameter>
-			<http:paramName>starttime</http:paramName>
-			<rdf:label>timespan start time</rdf:label>
-			<dct:type>datetime</dct:type>
-			<schema:minValue>1000-01-01T00:00:00</schema:minValue>
-			<schema:maxValue>1899-12-31T23:59:59</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>endtime</http:paramName>
-			<rdf:label>timespan end time</rdf:label>
-			<dct:type>datetime</dct:type>
-			<schema:minValue>1000-01-01T00:00:00</schema:minValue>
-			<schema:maxValue>1899-12-31T23:59:59</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>eventid</http:paramName>
-			<rdf:label>event ID</rdf:label>
-			<dct:type>string</dct:type>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>updatedafter</http:paramName>
-			<rdf:label>update after</rdf:label>
-			<dct:type>datetime</dct:type>
-			<schema:minValue>2010-01-01T00:00:00</schema:minValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>minlatitude</http:paramName>
-			<rdf:label>min latitude</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>33.0000</schema:minValue>
-			<schema:maxValue>74.0000</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>maxlatitude</http:paramName>
-			<rdf:label>max latitude</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>33.0000</schema:minValue>
-			<schema:maxValue>74.0000</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>minlongitude</http:paramName>
-			<rdf:label>min longitude</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>-34.0000</schema:minValue>
-			<schema:maxValue>34.0000</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>maxlongitude</http:paramName>
-			<rdf:label>max longitude</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>-34.0000</schema:minValue>
-			<schema:maxValue>34.0000</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>latitude</http:paramName>
-			<rdf:label>center latitide</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>33.0000</schema:minValue>
-			<schema:maxValue>74.0000</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>longitude</http:paramName>
-			<rdf:label>center longitude</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>-34.0000</schema:minValue>
-			<schema:maxValue>34.0000</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>minradius</http:paramName>
-			<rdf:label>min search radius (degrees)</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>0.00</schema:minValue>
-			<schema:maxValue>5.00</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>maxradius</http:paramName>
-			<rdf:label>max search radius (degrees)</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>0.00</schema:minValue>
-			<schema:maxValue>5.00</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>minradiuskm</http:paramName>
-			<rdf:label>min search radius (in km)</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>0.00</schema:minValue>
-			<schema:maxValue>500.00</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>maxradiuskm</http:paramName>
-			<rdf:label>max search radius (in km)</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>0.00</schema:minValue>
-			<schema:maxValue>500.00</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>minmagnitude</http:paramName>
-			<rdf:label>min magnitude (Mw)</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>0.0</schema:minValue>
-			<schema:maxValue>10.0</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>maxmagnitude</http:paramName>
-			<rdf:label>max magnitude (Mw)</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>0.0</schema:minValue>
-			<schema:maxValue>10.0</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>orderby</http:paramName>
-			<rdf:label>output ordering</rdf:label>
-			<dct:type>string</dct:type>
-			<http:paramValue>time</http:paramValue>
-			<http:paramValue>time-asc</http:paramValue>
-			<http:paramValue>magnitude</http:paramValue>
-			<http:paramValue>magnitude-asc</http:paramValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>limit</http:paramName>
-			<rdf:label>limit the no. of output entries</rdf:label>
-			<dct:type>integer</dct:type>
-			<schema:minValue>1</schema:minValue>
-			<schema:maxValue>5000</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>nodata</http:paramName>
-			<rdf:label>status code for "no data" output</rdf:label>
-			<dct:type>string</dct:type>
-			<http:paramValue>204</http:paramValue>
-			<http:paramValue>404</http:paramValue>
-		</eposap:parameter>
-		<schema:documentation>doi:10.6092/INGV.IT-AHEAD</schema:documentation>
-		<schema:documentation>doi:10.1785/0220130113</schema:documentation>
-		<schema:documentation>doi:10.6092/INGV.IT-SHARE-SHEEC.1000-1899</schema:documentation>
-		<schema:documentation>doi:10.1007/s10950-012-9335-2</schema:documentation>
-		<schema:documentation>https://www.emidius.eu/AHEAD/services/event_fdsn.php</schema:documentation>
-		<dcat:contactPoint>orcid:0000-0003-2185-3267</dcat:contactPoint>
-		<eposap:publisher>pic:999472675</eposap:publisher>
-		<dct:spatial>
-			<dct:Location>
-				<locn:geometry>POLYGON((30 46.042855213988176,29.999500000000012 44.5764,30.001800000000003 43.7997,29.198599999999942 43.3793,28.982500000000073 43.1071,28.63220000000001 42.6094,28.716800000000035 42.303,28.794700000000034 42.2228,29.464200000000005 41.9704,29.89179999999999 41.7786,31.009599999999978 41.7616,31.805499999999938 42.0218,32 42.1491,32 34.1226,31.784099999999967 34.3097,30.485900000000015 35.015,29.10979999999995 34.1917,26.93769999999995 33.1445,22.971000000000004 33.3775,19.882100000000037 34.9,18.282100000000014 35.6,16.875800000000027 35.5305,14.993400000000065 34.5893,11.465100000000007 34.5278,11.447599999999966 35.5387,10.51649999999995 36.0692,10.942000000000007 37.2018,9.76419999999996 37.554,8.764699999999948 37.2324,7.522699999999986 37.2559,5.786499999999933 37.2601,4.350400000000036 37.055,3.520399999999995 37.3351,3.4519000000000233 37.3195,3.1742000000000417 37.256,3.064700000000016 36.9735,2.5570000000000164 37.0093,2.4488999999999805 37.0169,1.7010000000000218 36.7935,0.1631999999999607 36.2162,-1.9041999999999462 35.5438,-1.8772000000000162 35.1598,-1.848700000000008 34.7496,-3.6399999999999864 34.4728,-5.672699999999963 34.4001,-5.838700000000017 34.3956,-7.338500000000067 34.8107,-6.313499999999976 35.4393,-6.4266999999999825 36.414,-7.5774000000000115 35.7671,-8.97339999999997 35.9758,-9.33439999999996 36.2108,-9.824700000000007 35.3881,-11.218499999999949 35.9059,-12.59699999999998 36.2611,-14.870200000000068 36.5076,-19.423099999999977 37.0154,-24.127700000000004 36.0145,-29.832300000000032 37.758,-31.213799999999992 36.8142,-32.71539999999999 37.3599,-31.640999999999963 37.6061,-31.185000000000002 38.1463,-33.21119999999996 38.9277,-32.14009999999996 40.8497,-30.095199999999977 40.2579,-29.918999999999983 40.82,-30.11439999999999 41.8784,-27.998299999999972 45.9999,-29.11779999999999 48.4,-32.1995 52.4,-31.898199999999974 52.9002,-31.934399999999982 56.3289,-31.8202 59.6791,-24.287900000000036 64.6561,-25 64.9999,-25 67,-19.819999999999936 67,-18.35990000000004 69.11,-12.809999999999945 71.69,-10.039999999999964 71.7899,-8.275800000000004 71.4653,-0.2798999999999978 72.09,0.5299999999999727 71.8299,5.499900000000025 72,14 73.4999,16.5 73.4999,29.99860000000001 72,33.94990000000007 70.9799,33.94990000000007 68.0599,33.94990000000007 65.9499,33.94990000000007 64.49,30.12990000000002 59.9499,28.200000000000045 59.3,28.200000000000045 55.2699,28.199700000000007 51.5825,29.9991 51.6881,29.998699999999985 47.6018,29.992519921874987 46.042855213988176))</locn:geometry>
-			</dct:Location>
-		</dct:spatial>
-		<adms:representationTechnique>point</adms:representationTechnique>
-		<dct:temporal>
-			<dct:PeriodOfTime>
-				<schema:startDate>1000-01-01T00:00:00</schema:startDate>
-				<schema:endDate>1899-12-31T23:59:59</schema:endDate>
-			</dct:PeriodOfTime>
-		</dct:temporal>
-	</eposap:WebService>
-	
-	<eposap:WebService>
-		<dct:title>AHEAD fdsnws-event (CSV output)</dct:title>
-		<dct:description xml:lang="en">AHEAD, the European Archive of Historical Earthquake Data, fdsnws-event standard, a web service providing event parameters for historical earthquakes</dct:description>
-		<dct:issued>2017-07-30T12:00:00</dct:issued>
-		<dct:modified>2017-07-30T12:00:00</dct:modified>
-		<dct:license xml:lang="en">https://www.emidius.eu/AHEAD/introduction.php#copyright</dct:license><!-- temporary solution, valid until a proper CC license will be decided -->
-		<foaf:page>
-			<foaf:primaryTopic>https://www.emidius.eu/fdsnws/event/1/query?format=text&</foaf:primaryTopic>
-		</foaf:page>
-		<dct:format>
-			<dct:MediaTypeOrExtent>csv</dct:MediaTypeOrExtent>
-		</dct:format>
-		<dct:rights>
-			<dct:RightsStatement>PUBLIC</dct:RightsStatement>
-		</dct:rights>
-		<dct:conformsTo>EPSG:4326</dct:conformsTo>
-		<dct:identifier>eu.ahead.services.fdsnws.event.1.csv</dct:identifier>
-		<dct:created>2017-06-17T12:00:00</dct:created>
-		<eposap:domain>seismology</eposap:domain>
-		<eposap:subDomain>macroseismology</eposap:subDomain>
-		<dcat:keyword xml:lang="en">earthquakes, parameters, historical, macroseismic, intensity</dcat:keyword>
-		<eposap:operation>download</eposap:operation>
-		<dct:hasVersion>1.0</dct:hasVersion>
-		<eposap:parameter>
-			<http:paramName>starttime</http:paramName>
-			<rdf:label>timespan start time</rdf:label>
-			<dct:type>datetime</dct:type>
-			<schema:minValue>1000-01-01T00:00:00</schema:minValue>
-			<schema:maxValue>1899-12-31T23:59:59</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>endtime</http:paramName>
-			<rdf:label>timespan end time</rdf:label>
-			<dct:type>datetime</dct:type>
-			<schema:minValue>1000-01-01T00:00:00</schema:minValue>
-			<schema:maxValue>1899-12-31T23:59:59</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>eventid</http:paramName>
-			<rdf:label>event ID</rdf:label>
-			<dct:type>string</dct:type>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>updatedafter</http:paramName>
-			<rdf:label>update after</rdf:label>
-			<dct:type>datetime</dct:type>
-			<schema:minValue>2010-01-01T00:00:00</schema:minValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>minlatitude</http:paramName>
-			<rdf:label>min latitude</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>33.0000</schema:minValue>
-			<schema:maxValue>74.0000</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>maxlatitude</http:paramName>
-			<rdf:label>max latitude</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>33.0000</schema:minValue>
-			<schema:maxValue>74.0000</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>minlongitude</http:paramName>
-			<rdf:label>min longitude</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>-34.0000</schema:minValue>
-			<schema:maxValue>34.0000</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>maxlongitude</http:paramName>
-			<rdf:label>max longitude</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>-34.0000</schema:minValue>
-			<schema:maxValue>34.0000</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>latitude</http:paramName>
-			<rdf:label>center latitide</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>33.0000</schema:minValue>
-			<schema:maxValue>74.0000</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>longitude</http:paramName>
-			<rdf:label>center longitude</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>-34.0000</schema:minValue>
-			<schema:maxValue>34.0000</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>minradius</http:paramName>
-			<rdf:label>min search radius (degrees)</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>0.00</schema:minValue>
-			<schema:maxValue>5.00</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>maxradius</http:paramName>
-			<rdf:label>max search radius (degrees)</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>0.00</schema:minValue>
-			<schema:maxValue>5.00</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>minradiuskm</http:paramName>
-			<rdf:label>min search radius (in km)</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>0.00</schema:minValue>
-			<schema:maxValue>500.00</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>maxradiuskm</http:paramName>
-			<rdf:label>max search radius (in km)</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>0.00</schema:minValue>
-			<schema:maxValue>500.00</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>minmagnitude</http:paramName>
-			<rdf:label>min magnitude (Mw)</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>0.0</schema:minValue>
-			<schema:maxValue>10.0</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>maxmagnitude</http:paramName>
-			<rdf:label>max magnitude (Mw)</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>0.0</schema:minValue>
-			<schema:maxValue>10.0</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>orderby</http:paramName>
-			<rdf:label>output ordering</rdf:label>
-			<dct:type>string</dct:type>
-			<http:paramValue>time</http:paramValue>
-			<http:paramValue>time-asc</http:paramValue>
-			<http:paramValue>magnitude</http:paramValue>
-			<http:paramValue>magnitude-asc</http:paramValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>limit</http:paramName>
-			<rdf:label>limit the no. of output entries</rdf:label>
-			<dct:type>integer</dct:type>
-			<schema:minValue>1</schema:minValue>
-			<schema:maxValue>5000</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>nodata</http:paramName>
-			<rdf:label>status code for "no data" output</rdf:label>
-			<dct:type>string</dct:type>
-			<http:paramValue>204</http:paramValue>
-			<http:paramValue>404</http:paramValue>
-		</eposap:parameter>
-		<schema:documentation>doi:10.6092/INGV.IT-AHEAD</schema:documentation>
-		<schema:documentation>doi:10.1785/0220130113</schema:documentation>
-		<schema:documentation>doi:10.6092/INGV.IT-SHARE-SHEEC.1000-1899</schema:documentation>
-		<schema:documentation>doi:10.1007/s10950-012-9335-2</schema:documentation>
-		<schema:documentation>https://www.emidius.eu/AHEAD/services/event_fdsn.php</schema:documentation>
-		<dcat:contactPoint>orcid:0000-0003-2185-3267</dcat:contactPoint>
-		<eposap:publisher>pic:999472675</eposap:publisher>
-		<dct:spatial>
-			<dct:Location>
-				<locn:geometry>POLYGON((30 46.042855213988176,29.999500000000012 44.5764,30.001800000000003 43.7997,29.198599999999942 43.3793,28.982500000000073 43.1071,28.63220000000001 42.6094,28.716800000000035 42.303,28.794700000000034 42.2228,29.464200000000005 41.9704,29.89179999999999 41.7786,31.009599999999978 41.7616,31.805499999999938 42.0218,32 42.1491,32 34.1226,31.784099999999967 34.3097,30.485900000000015 35.015,29.10979999999995 34.1917,26.93769999999995 33.1445,22.971000000000004 33.3775,19.882100000000037 34.9,18.282100000000014 35.6,16.875800000000027 35.5305,14.993400000000065 34.5893,11.465100000000007 34.5278,11.447599999999966 35.5387,10.51649999999995 36.0692,10.942000000000007 37.2018,9.76419999999996 37.554,8.764699999999948 37.2324,7.522699999999986 37.2559,5.786499999999933 37.2601,4.350400000000036 37.055,3.520399999999995 37.3351,3.4519000000000233 37.3195,3.1742000000000417 37.256,3.064700000000016 36.9735,2.5570000000000164 37.0093,2.4488999999999805 37.0169,1.7010000000000218 36.7935,0.1631999999999607 36.2162,-1.9041999999999462 35.5438,-1.8772000000000162 35.1598,-1.848700000000008 34.7496,-3.6399999999999864 34.4728,-5.672699999999963 34.4001,-5.838700000000017 34.3956,-7.338500000000067 34.8107,-6.313499999999976 35.4393,-6.4266999999999825 36.414,-7.5774000000000115 35.7671,-8.97339999999997 35.9758,-9.33439999999996 36.2108,-9.824700000000007 35.3881,-11.218499999999949 35.9059,-12.59699999999998 36.2611,-14.870200000000068 36.5076,-19.423099999999977 37.0154,-24.127700000000004 36.0145,-29.832300000000032 37.758,-31.213799999999992 36.8142,-32.71539999999999 37.3599,-31.640999999999963 37.6061,-31.185000000000002 38.1463,-33.21119999999996 38.9277,-32.14009999999996 40.8497,-30.095199999999977 40.2579,-29.918999999999983 40.82,-30.11439999999999 41.8784,-27.998299999999972 45.9999,-29.11779999999999 48.4,-32.1995 52.4,-31.898199999999974 52.9002,-31.934399999999982 56.3289,-31.8202 59.6791,-24.287900000000036 64.6561,-25 64.9999,-25 67,-19.819999999999936 67,-18.35990000000004 69.11,-12.809999999999945 71.69,-10.039999999999964 71.7899,-8.275800000000004 71.4653,-0.2798999999999978 72.09,0.5299999999999727 71.8299,5.499900000000025 72,14 73.4999,16.5 73.4999,29.99860000000001 72,33.94990000000007 70.9799,33.94990000000007 68.0599,33.94990000000007 65.9499,33.94990000000007 64.49,30.12990000000002 59.9499,28.200000000000045 59.3,28.200000000000045 55.2699,28.199700000000007 51.5825,29.9991 51.6881,29.998699999999985 47.6018,29.992519921874987 46.042855213988176))</locn:geometry>
-			</dct:Location>
-		</dct:spatial>
-		<adms:representationTechnique>point</adms:representationTechnique>
-		<dct:temporal>
-			<dct:PeriodOfTime>
-				<schema:startDate>1000-01-01T00:00:00</schema:startDate>
-				<schema:endDate>1899-12-31T23:59:59</schema:endDate>
-			</dct:PeriodOfTime>
-		</dct:temporal>
-	</eposap:WebService>
-	
-	<eposap:WebService>
-		<dct:title>AHEAD fdsnws-event (QuakeML output)</dct:title>
-		<dct:description xml:lang="en">AHEAD, the European Archive of Historical Earthquake Data, fdsnws-event standard, a web service providing event parameters for historical earthquakes</dct:description>
-		<dct:issued>2017-07-30T12:00:00</dct:issued>
-		<dct:modified>2017-07-30T12:00:00</dct:modified>
+		<dct:modified>2017-08-31T12:00:00</dct:modified>
 		<dct:license xml:lang="en">https://www.emidius.eu/AHEAD/introduction.php#copyright</dct:license><!-- temporary solution, valid until a proper CC license will be decided -->
 		<foaf:page>
 			<foaf:primaryTopic>https://www.emidius.eu/fdsnws/event/1/query?</foaf:primaryTopic>
@@ -642,6 +290,14 @@
 			<dct:type>string</dct:type>
 		</eposap:parameter>
 		<eposap:parameter>
+			<http:paramName>format</http:paramName>
+			<rdf:label>output format</rdf:label>
+			<dct:type>string</dct:type>
+			<http:paramValue>xml</http:paramValue>
+			<http:paramValue>text</http:paramValue>
+			<http:paramValue>json</http:paramValue>
+		</eposap:parameter>
+		<eposap:parameter>
 			<http:paramName>orderby</http:paramName>
 			<rdf:label>output ordering</rdf:label>
 			<dct:type>string</dct:type>
@@ -683,7 +339,7 @@
 		<eposap:publisher>pic:999472675</eposap:publisher>
 		<dct:spatial>
 			<dct:Location>
-				<locn:geometry>POLYGON((30 46.042855213988176,29.999500000000012 44.5764,30.001800000000003 43.7997,29.198599999999942 43.3793,28.982500000000073 43.1071,28.63220000000001 42.6094,28.716800000000035 42.303,28.794700000000034 42.2228,29.464200000000005 41.9704,29.89179999999999 41.7786,31.009599999999978 41.7616,31.805499999999938 42.0218,32 42.1491,32 34.1226,31.784099999999967 34.3097,30.485900000000015 35.015,29.10979999999995 34.1917,26.93769999999995 33.1445,22.971000000000004 33.3775,19.882100000000037 34.9,18.282100000000014 35.6,16.875800000000027 35.5305,14.993400000000065 34.5893,11.465100000000007 34.5278,11.447599999999966 35.5387,10.51649999999995 36.0692,10.942000000000007 37.2018,9.76419999999996 37.554,8.764699999999948 37.2324,7.522699999999986 37.2559,5.786499999999933 37.2601,4.350400000000036 37.055,3.520399999999995 37.3351,3.4519000000000233 37.3195,3.1742000000000417 37.256,3.064700000000016 36.9735,2.5570000000000164 37.0093,2.4488999999999805 37.0169,1.7010000000000218 36.7935,0.1631999999999607 36.2162,-1.9041999999999462 35.5438,-1.8772000000000162 35.1598,-1.848700000000008 34.7496,-3.6399999999999864 34.4728,-5.672699999999963 34.4001,-5.838700000000017 34.3956,-7.338500000000067 34.8107,-6.313499999999976 35.4393,-6.4266999999999825 36.414,-7.5774000000000115 35.7671,-8.97339999999997 35.9758,-9.33439999999996 36.2108,-9.824700000000007 35.3881,-11.218499999999949 35.9059,-12.59699999999998 36.2611,-14.870200000000068 36.5076,-19.423099999999977 37.0154,-24.127700000000004 36.0145,-29.832300000000032 37.758,-31.213799999999992 36.8142,-32.71539999999999 37.3599,-31.640999999999963 37.6061,-31.185000000000002 38.1463,-33.21119999999996 38.9277,-32.14009999999996 40.8497,-30.095199999999977 40.2579,-29.918999999999983 40.82,-30.11439999999999 41.8784,-27.998299999999972 45.9999,-29.11779999999999 48.4,-32.1995 52.4,-31.898199999999974 52.9002,-31.934399999999982 56.3289,-31.8202 59.6791,-24.287900000000036 64.6561,-25 64.9999,-25 67,-19.819999999999936 67,-18.35990000000004 69.11,-12.809999999999945 71.69,-10.039999999999964 71.7899,-8.275800000000004 71.4653,-0.2798999999999978 72.09,0.5299999999999727 71.8299,5.499900000000025 72,14 73.4999,16.5 73.4999,29.99860000000001 72,33.94990000000007 70.9799,33.94990000000007 68.0599,33.94990000000007 65.9499,33.94990000000007 64.49,30.12990000000002 59.9499,28.200000000000045 59.3,28.200000000000045 55.2699,28.199700000000007 51.5825,29.9991 51.6881,29.998699999999985 47.6018,29.992519921874987 46.042855213988176))</locn:geometry>
+				<locn:geometry>POLYGON(-33.5 73.5, 34.0 73.5, 34.0 33.5, -33.5 33.5, -33.5 73.5)</locn:geometry>
 			</dct:Location>
 		</dct:spatial>
 		<adms:representationTechnique>point</adms:representationTechnique>
@@ -696,14 +352,10 @@
 	</eposap:WebService>
 	
 	<eposap:WebService>
-		<!--
-		warning: service heavily under development, will be ready by end of august 2017.
-		Please note that the geographical search still has to be implemented.
-		-->
-		<dct:title>AHEAD bibliography (XML output)</dct:title>
+		<dct:title>AHEAD bibliography</dct:title>
 		<dct:description xml:lang="en">AHEAD, the European Archive of Historical Earthquake Data, fdsnws-event standard, a web service providing event parameters for historical earthquakes</dct:description>
 		<dct:issued>2017-07-30T12:00:00</dct:issued>
-		<dct:modified>2017-07-30T12:00:00</dct:modified>
+		<dct:modified>2017-08-31T12:00:00</dct:modified>
 		<dct:license xml:lang="en">https://www.emidius.eu/AHEAD/introduction.php#copyright</dct:license><!-- temporary solution, valid until a proper CC license will be decided -->
 		<foaf:page>
 			<foaf:primaryTopic>https://www.emidius.eu/services/bibliography/query?</foaf:primaryTopic>
@@ -831,165 +483,12 @@
 			<schema:maxValue>10.0</schema:maxValue>
 		</eposap:parameter>
 		<eposap:parameter>
-			<http:paramName>orderby</http:paramName>
-			<rdf:label>output ordering</rdf:label>
+			<http:paramName>format</http:paramName>
+			<rdf:label>output format</rdf:label>
 			<dct:type>string</dct:type>
-			<http:paramValue>author</http:paramValue>
-			<http:paramValue>year</http:paramValue>
-			<http:paramValue>title</http:paramValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>nodata</http:paramName>
-			<rdf:label>status code for "no data" output</rdf:label>
-			<dct:type>string</dct:type>
-			<http:paramValue>204</http:paramValue>
-			<http:paramValue>404</http:paramValue>
-		</eposap:parameter>
-		<schema:documentation>https://www.emidius.eu/AHEAD/services/bibliography.php</schema:documentation>
-		<dcat:contactPoint>orcid:0000-0003-2185-3267</dcat:contactPoint>
-		<eposap:publisher>pic:999472675</eposap:publisher>
-		<dct:spatial>
-			<dct:Location>
-				<locn:geometry>POLYGON((30 46.042855213988176,29.999500000000012 44.5764,30.001800000000003 43.7997,29.198599999999942 43.3793,28.982500000000073 43.1071,28.63220000000001 42.6094,28.716800000000035 42.303,28.794700000000034 42.2228,29.464200000000005 41.9704,29.89179999999999 41.7786,31.009599999999978 41.7616,31.805499999999938 42.0218,32 42.1491,32 34.1226,31.784099999999967 34.3097,30.485900000000015 35.015,29.10979999999995 34.1917,26.93769999999995 33.1445,22.971000000000004 33.3775,19.882100000000037 34.9,18.282100000000014 35.6,16.875800000000027 35.5305,14.993400000000065 34.5893,11.465100000000007 34.5278,11.447599999999966 35.5387,10.51649999999995 36.0692,10.942000000000007 37.2018,9.76419999999996 37.554,8.764699999999948 37.2324,7.522699999999986 37.2559,5.786499999999933 37.2601,4.350400000000036 37.055,3.520399999999995 37.3351,3.4519000000000233 37.3195,3.1742000000000417 37.256,3.064700000000016 36.9735,2.5570000000000164 37.0093,2.4488999999999805 37.0169,1.7010000000000218 36.7935,0.1631999999999607 36.2162,-1.9041999999999462 35.5438,-1.8772000000000162 35.1598,-1.848700000000008 34.7496,-3.6399999999999864 34.4728,-5.672699999999963 34.4001,-5.838700000000017 34.3956,-7.338500000000067 34.8107,-6.313499999999976 35.4393,-6.4266999999999825 36.414,-7.5774000000000115 35.7671,-8.97339999999997 35.9758,-9.33439999999996 36.2108,-9.824700000000007 35.3881,-11.218499999999949 35.9059,-12.59699999999998 36.2611,-14.870200000000068 36.5076,-19.423099999999977 37.0154,-24.127700000000004 36.0145,-29.832300000000032 37.758,-31.213799999999992 36.8142,-32.71539999999999 37.3599,-31.640999999999963 37.6061,-31.185000000000002 38.1463,-33.21119999999996 38.9277,-32.14009999999996 40.8497,-30.095199999999977 40.2579,-29.918999999999983 40.82,-30.11439999999999 41.8784,-27.998299999999972 45.9999,-29.11779999999999 48.4,-32.1995 52.4,-31.898199999999974 52.9002,-31.934399999999982 56.3289,-31.8202 59.6791,-24.287900000000036 64.6561,-25 64.9999,-25 67,-19.819999999999936 67,-18.35990000000004 69.11,-12.809999999999945 71.69,-10.039999999999964 71.7899,-8.275800000000004 71.4653,-0.2798999999999978 72.09,0.5299999999999727 71.8299,5.499900000000025 72,14 73.4999,16.5 73.4999,29.99860000000001 72,33.94990000000007 70.9799,33.94990000000007 68.0599,33.94990000000007 65.9499,33.94990000000007 64.49,30.12990000000002 59.9499,28.200000000000045 59.3,28.200000000000045 55.2699,28.199700000000007 51.5825,29.9991 51.6881,29.998699999999985 47.6018,29.992519921874987 46.042855213988176))</locn:geometry>
-			</dct:Location>
-		</dct:spatial>
-		<adms:representationTechnique>point</adms:representationTechnique>
-	</eposap:WebService>
-	
-	<eposap:WebService>
-		<!--
-		warning: service heavily under development, will be ready by end of august 2017.
-		Please note that the geographical search still has to be implemented.
-		-->
-		<dct:title>AHEAD bibliography (RDF output)</dct:title>
-		<dct:description xml:lang="en">AHEAD, the European Archive of Historical Earthquake Data, fdsnws-event standard, a web service providing event parameters for historical earthquakes</dct:description>
-		<dct:issued>2017-07-30T12:00:00</dct:issued>
-		<dct:modified>2017-07-30T12:00:00</dct:modified>
-		<dct:license xml:lang="en">https://www.emidius.eu/AHEAD/introduction.php#copyright</dct:license><!-- temporary solution, valid until a proper CC license will be decided -->
-		<foaf:page>
-			<foaf:primaryTopic>https://www.emidius.eu/services/bibliography/query?format=rdf&</foaf:primaryTopic>
-		</foaf:page>
-		<dct:format>
-			<dct:MediaTypeOrExtent>rdf</dct:MediaTypeOrExtent>
-		</dct:format>
-		<dct:rights>
-			<dct:RightsStatement>PUBLIC</dct:RightsStatement>
-		</dct:rights>
-		<dct:conformsTo>EPSG:4326</dct:conformsTo>
-		<dct:identifier>eu.ahead.services.bibliography.xml_rdf</dct:identifier>
-		<dct:created>2017-06-17T12:00:00</dct:created>
-		<eposap:domain>seismology</eposap:domain>
-		<eposap:subDomain>macroseismology</eposap:subDomain>
-		<dcat:keyword xml:lang="en">bibliography, earthquakes, parameters, historical, macroseismic, intensity</dcat:keyword>
-		<eposap:operation>download</eposap:operation>
-		<dct:hasVersion>1.0</dct:hasVersion>
-		<eposap:parameter>
-			<http:paramName>biblioid</http:paramName>
-			<rdf:label>code of the publication as used in AHEAD</rdf:label>
-			<dct:type>string</dct:type>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>author</http:paramName>
-			<rdf:label>surname of one of the author of the publication</rdf:label>
-			<dct:type>string</dct:type>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>yearstart</http:paramName>
-			<rdf:label>year of publication timespan start</rdf:label>
-			<dct:type>integer</dct:type>
-			<schema:minValue>1900</schema:minValue>
-			<schema:maxValue>2017</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>yearend</http:paramName>
-			<rdf:label>year of publication timespan end</rdf:label>
-			<dct:type>integer</dct:type>
-			<schema:minValue>1900</schema:minValue>
-			<schema:maxValue>2017</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>minlatitude</http:paramName>
-			<rdf:label>min latitude</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>33.0000</schema:minValue>
-			<schema:maxValue>74.0000</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>maxlatitude</http:paramName>
-			<rdf:label>max latitude</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>33.0000</schema:minValue>
-			<schema:maxValue>74.0000</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>minlongitude</http:paramName>
-			<rdf:label>min longitude</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>-34.0000</schema:minValue>
-			<schema:maxValue>34.0000</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>maxlongitude</http:paramName>
-			<rdf:label>max longitude</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>-34.0000</schema:minValue>
-			<schema:maxValue>34.0000</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>latitude</http:paramName>
-			<rdf:label>center latitide</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>33.0000</schema:minValue>
-			<schema:maxValue>74.0000</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>longitude</http:paramName>
-			<rdf:label>center longitude</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>-34.0000</schema:minValue>
-			<schema:maxValue>34.0000</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>minradius</http:paramName>
-			<rdf:label>min search radius (degrees)</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>0.00</schema:minValue>
-			<schema:maxValue>5.00</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>maxradius</http:paramName>
-			<rdf:label>max search radius (degrees)</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>0.00</schema:minValue>
-			<schema:maxValue>5.00</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>minradiuskm</http:paramName>
-			<rdf:label>min search radius (in km)</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>0.00</schema:minValue>
-			<schema:maxValue>500.00</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>maxradiuskm</http:paramName>
-			<rdf:label>max search radius (in km)</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>0.00</schema:minValue>
-			<schema:maxValue>500.00</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>minmagnitude</http:paramName>
-			<rdf:label>min magnitude (Mw)</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>0.0</schema:minValue>
-			<schema:maxValue>10.0</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>maxmagnitude</http:paramName>
-			<rdf:label>max magnitude (Mw)</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>0.0</schema:minValue>
-			<schema:maxValue>10.0</schema:maxValue>
+			<http:paramValue>rdf</http:paramValue>
+			<http:paramValue>bib</http:paramValue>
+			<http:paramValue>xml</http:paramValue>
 		</eposap:parameter>
 		<eposap:parameter>
 			<http:paramName>orderby</http:paramName>
@@ -1011,168 +510,7 @@
 		<eposap:publisher>pic:999472675</eposap:publisher>
 		<dct:spatial>
 			<dct:Location>
-				<locn:geometry>POLYGON((30 46.042855213988176,29.999500000000012 44.5764,30.001800000000003 43.7997,29.198599999999942 43.3793,28.982500000000073 43.1071,28.63220000000001 42.6094,28.716800000000035 42.303,28.794700000000034 42.2228,29.464200000000005 41.9704,29.89179999999999 41.7786,31.009599999999978 41.7616,31.805499999999938 42.0218,32 42.1491,32 34.1226,31.784099999999967 34.3097,30.485900000000015 35.015,29.10979999999995 34.1917,26.93769999999995 33.1445,22.971000000000004 33.3775,19.882100000000037 34.9,18.282100000000014 35.6,16.875800000000027 35.5305,14.993400000000065 34.5893,11.465100000000007 34.5278,11.447599999999966 35.5387,10.51649999999995 36.0692,10.942000000000007 37.2018,9.76419999999996 37.554,8.764699999999948 37.2324,7.522699999999986 37.2559,5.786499999999933 37.2601,4.350400000000036 37.055,3.520399999999995 37.3351,3.4519000000000233 37.3195,3.1742000000000417 37.256,3.064700000000016 36.9735,2.5570000000000164 37.0093,2.4488999999999805 37.0169,1.7010000000000218 36.7935,0.1631999999999607 36.2162,-1.9041999999999462 35.5438,-1.8772000000000162 35.1598,-1.848700000000008 34.7496,-3.6399999999999864 34.4728,-5.672699999999963 34.4001,-5.838700000000017 34.3956,-7.338500000000067 34.8107,-6.313499999999976 35.4393,-6.4266999999999825 36.414,-7.5774000000000115 35.7671,-8.97339999999997 35.9758,-9.33439999999996 36.2108,-9.824700000000007 35.3881,-11.218499999999949 35.9059,-12.59699999999998 36.2611,-14.870200000000068 36.5076,-19.423099999999977 37.0154,-24.127700000000004 36.0145,-29.832300000000032 37.758,-31.213799999999992 36.8142,-32.71539999999999 37.3599,-31.640999999999963 37.6061,-31.185000000000002 38.1463,-33.21119999999996 38.9277,-32.14009999999996 40.8497,-30.095199999999977 40.2579,-29.918999999999983 40.82,-30.11439999999999 41.8784,-27.998299999999972 45.9999,-29.11779999999999 48.4,-32.1995 52.4,-31.898199999999974 52.9002,-31.934399999999982 56.3289,-31.8202 59.6791,-24.287900000000036 64.6561,-25 64.9999,-25 67,-19.819999999999936 67,-18.35990000000004 69.11,-12.809999999999945 71.69,-10.039999999999964 71.7899,-8.275800000000004 71.4653,-0.2798999999999978 72.09,0.5299999999999727 71.8299,5.499900000000025 72,14 73.4999,16.5 73.4999,29.99860000000001 72,33.94990000000007 70.9799,33.94990000000007 68.0599,33.94990000000007 65.9499,33.94990000000007 64.49,30.12990000000002 59.9499,28.200000000000045 59.3,28.200000000000045 55.2699,28.199700000000007 51.5825,29.9991 51.6881,29.998699999999985 47.6018,29.992519921874987 46.042855213988176))</locn:geometry>
-			</dct:Location>
-		</dct:spatial>
-		<adms:representationTechnique>point</adms:representationTechnique>
-	</eposap:WebService>
-	
-	<eposap:WebService>
-		<!--
-		warning: service heavily under development, will be ready by end of august 2017.
-		Please note that the geographical search still has to be implemented.
-		-->
-		<dct:title>AHEAD bibliography (bibtex output)</dct:title>
-		<dct:description xml:lang="en">AHEAD, the European Archive of Historical Earthquake Data, fdsnws-event standard, a web service providing event parameters for historical earthquakes</dct:description>
-		<dct:issued>2017-07-30T12:00:00</dct:issued>
-		<dct:modified>2017-07-30T12:00:00</dct:modified>
-		<dct:license xml:lang="en">https://www.emidius.eu/AHEAD/introduction.php#copyright</dct:license><!-- temporary solution, valid until a proper CC license will be decided -->
-		<foaf:page>
-			<foaf:primaryTopic>https://www.emidius.eu/services/bibliography/query?format=bib&</foaf:primaryTopic>
-		</foaf:page>
-		<dct:format>
-			<dct:MediaTypeOrExtent>text</dct:MediaTypeOrExtent>
-		</dct:format>
-		<dct:rights>
-			<dct:RightsStatement>PUBLIC</dct:RightsStatement>
-		</dct:rights>
-		<dct:conformsTo>EPSG:4326</dct:conformsTo>
-		<dct:identifier>eu.ahead.services.bibliography.bib</dct:identifier>
-		<dct:created>2017-06-17T12:00:00</dct:created>
-		<eposap:domain>seismology</eposap:domain>
-		<eposap:subDomain>macroseismology</eposap:subDomain>
-		<dcat:keyword xml:lang="en">bibliography, earthquakes, parameters, historical, macroseismic, intensity</dcat:keyword>
-		<eposap:operation>download</eposap:operation>
-		<dct:hasVersion>1.0</dct:hasVersion>
-		<eposap:parameter>
-			<http:paramName>biblioid</http:paramName>
-			<rdf:label>code of the publication as used in AHEAD</rdf:label>
-			<dct:type>string</dct:type>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>author</http:paramName>
-			<rdf:label>surname of one of the author of the publication</rdf:label>
-			<dct:type>string</dct:type>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>yearstart</http:paramName>
-			<rdf:label>year of publication timespan start</rdf:label>
-			<dct:type>integer</dct:type>
-			<schema:minValue>1900</schema:minValue>
-			<schema:maxValue>2017</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>yearend</http:paramName>
-			<rdf:label>year of publication timespan end</rdf:label>
-			<dct:type>integer</dct:type>
-			<schema:minValue>1900</schema:minValue>
-			<schema:maxValue>2017</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>minlatitude</http:paramName>
-			<rdf:label>min latitude</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>33.0000</schema:minValue>
-			<schema:maxValue>74.0000</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>maxlatitude</http:paramName>
-			<rdf:label>max latitude</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>33.0000</schema:minValue>
-			<schema:maxValue>74.0000</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>minlongitude</http:paramName>
-			<rdf:label>min longitude</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>-34.0000</schema:minValue>
-			<schema:maxValue>34.0000</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>maxlongitude</http:paramName>
-			<rdf:label>max longitude</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>-34.0000</schema:minValue>
-			<schema:maxValue>34.0000</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>latitude</http:paramName>
-			<rdf:label>center latitide</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>33.0000</schema:minValue>
-			<schema:maxValue>74.0000</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>longitude</http:paramName>
-			<rdf:label>center longitude</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>-34.0000</schema:minValue>
-			<schema:maxValue>34.0000</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>minradius</http:paramName>
-			<rdf:label>min search radius (degrees)</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>0.00</schema:minValue>
-			<schema:maxValue>5.00</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>maxradius</http:paramName>
-			<rdf:label>max search radius (degrees)</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>0.00</schema:minValue>
-			<schema:maxValue>5.00</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>minradiuskm</http:paramName>
-			<rdf:label>min search radius (in km)</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>0.00</schema:minValue>
-			<schema:maxValue>500.00</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>maxradiuskm</http:paramName>
-			<rdf:label>max search radius (in km)</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>0.00</schema:minValue>
-			<schema:maxValue>500.00</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>minmagnitude</http:paramName>
-			<rdf:label>min magnitude (Mw)</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>0.0</schema:minValue>
-			<schema:maxValue>10.0</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>maxmagnitude</http:paramName>
-			<rdf:label>max magnitude (Mw)</rdf:label>
-			<dct:type>float</dct:type>
-			<schema:minValue>0.0</schema:minValue>
-			<schema:maxValue>10.0</schema:maxValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>orderby</http:paramName>
-			<rdf:label>output ordering</rdf:label>
-			<dct:type>string</dct:type>
-			<http:paramValue>author</http:paramValue>
-			<http:paramValue>year</http:paramValue>
-			<http:paramValue>title</http:paramValue>
-		</eposap:parameter>
-		<eposap:parameter>
-			<http:paramName>nodata</http:paramName>
-			<rdf:label>status code for "no data" output</rdf:label>
-			<dct:type>string</dct:type>
-			<http:paramValue>204</http:paramValue>
-			<http:paramValue>404</http:paramValue>
-		</eposap:parameter>
-		<schema:documentation>https://www.emidius.eu/AHEAD/services/bibliography.php</schema:documentation>
-		<dcat:contactPoint>orcid:0000-0003-2185-3267</dcat:contactPoint>
-		<eposap:publisher>pic:999472675</eposap:publisher>
-		<dct:spatial>
-			<dct:Location>
-				<locn:geometry>POLYGON((30 46.042855213988176,29.999500000000012 44.5764,30.001800000000003 43.7997,29.198599999999942 43.3793,28.982500000000073 43.1071,28.63220000000001 42.6094,28.716800000000035 42.303,28.794700000000034 42.2228,29.464200000000005 41.9704,29.89179999999999 41.7786,31.009599999999978 41.7616,31.805499999999938 42.0218,32 42.1491,32 34.1226,31.784099999999967 34.3097,30.485900000000015 35.015,29.10979999999995 34.1917,26.93769999999995 33.1445,22.971000000000004 33.3775,19.882100000000037 34.9,18.282100000000014 35.6,16.875800000000027 35.5305,14.993400000000065 34.5893,11.465100000000007 34.5278,11.447599999999966 35.5387,10.51649999999995 36.0692,10.942000000000007 37.2018,9.76419999999996 37.554,8.764699999999948 37.2324,7.522699999999986 37.2559,5.786499999999933 37.2601,4.350400000000036 37.055,3.520399999999995 37.3351,3.4519000000000233 37.3195,3.1742000000000417 37.256,3.064700000000016 36.9735,2.5570000000000164 37.0093,2.4488999999999805 37.0169,1.7010000000000218 36.7935,0.1631999999999607 36.2162,-1.9041999999999462 35.5438,-1.8772000000000162 35.1598,-1.848700000000008 34.7496,-3.6399999999999864 34.4728,-5.672699999999963 34.4001,-5.838700000000017 34.3956,-7.338500000000067 34.8107,-6.313499999999976 35.4393,-6.4266999999999825 36.414,-7.5774000000000115 35.7671,-8.97339999999997 35.9758,-9.33439999999996 36.2108,-9.824700000000007 35.3881,-11.218499999999949 35.9059,-12.59699999999998 36.2611,-14.870200000000068 36.5076,-19.423099999999977 37.0154,-24.127700000000004 36.0145,-29.832300000000032 37.758,-31.213799999999992 36.8142,-32.71539999999999 37.3599,-31.640999999999963 37.6061,-31.185000000000002 38.1463,-33.21119999999996 38.9277,-32.14009999999996 40.8497,-30.095199999999977 40.2579,-29.918999999999983 40.82,-30.11439999999999 41.8784,-27.998299999999972 45.9999,-29.11779999999999 48.4,-32.1995 52.4,-31.898199999999974 52.9002,-31.934399999999982 56.3289,-31.8202 59.6791,-24.287900000000036 64.6561,-25 64.9999,-25 67,-19.819999999999936 67,-18.35990000000004 69.11,-12.809999999999945 71.69,-10.039999999999964 71.7899,-8.275800000000004 71.4653,-0.2798999999999978 72.09,0.5299999999999727 71.8299,5.499900000000025 72,14 73.4999,16.5 73.4999,29.99860000000001 72,33.94990000000007 70.9799,33.94990000000007 68.0599,33.94990000000007 65.9499,33.94990000000007 64.49,30.12990000000002 59.9499,28.200000000000045 59.3,28.200000000000045 55.2699,28.199700000000007 51.5825,29.9991 51.6881,29.998699999999985 47.6018,29.992519921874987 46.042855213988176))</locn:geometry>
+				<locn:geometry>POLYGON(-33.5 73.5, 34.0 73.5, 34.0 33.5, -33.5 33.5, -33.5 73.5)</locn:geometry>
 			</dct:Location>
 		</dct:spatial>
 		<adms:representationTechnique>point</adms:representationTechnique>
@@ -1246,7 +584,6 @@
 		<dct:format>
 			<dct:MediaTypeOrExtent>PDF</dct:MediaTypeOrExtent>
 		</dct:format>
-		
 	</eposap:Publication>
 
 </eposap:Epos>
