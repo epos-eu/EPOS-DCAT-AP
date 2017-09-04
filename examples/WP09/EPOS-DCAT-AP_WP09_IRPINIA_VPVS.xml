@@ -142,10 +142,10 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 		<dct:identifier>seismnet.fisica.unina.it/eposws/vpvs/1/</dct:identifier> <!-- Unique Resource Identifier: this is the entry point of the service -->
 		<dct:created>2017-06-08T12:00:00</dct:created> <!-- date of creation -->
 		<eposap:domain> <!-- This property refers to the domain of resource (e.g. Seismology, GNSS etc.) -->
-			Rock Physics
+			Near Fault Observations
 		</eposap:domain>
-		<eposap:subDomain>TBD</eposap:subDomain>
-		<dcat:keyword>NFO, rocks, seismic waves propagation</dcat:keyword> <!-- Keywords -->
+		<eposap:subDomain>Crustal velocity parameters</eposap:subDomain>
+		<dcat:keyword>NFO, rocks, seismic waves propagation, seismology</dcat:keyword> <!-- Keywords -->
                 <eposap:operation>TBDc</eposap:operation>  
 	<!-- List of Parameters: 
 		this section is needed in order to describe the parameters of the service. 
@@ -347,28 +347,6 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 			</dct:validationMessages>
 
 	 -->	</eposap:parameter>
-
-	 <!-- DUPLICATE PARAMETER	
-	      <eposap:parameter>
-			<http:paramName>param_minnp</http:paramName>
-			<rdf:label>Minimum number of P waves</rdf:label>
-			<dct:type>
-				None
-			</dct:type>
-			<owl:versionInfo>1.0</owl:versionInfo>	
-
-			<dct:validationMessages>
-
-				<dct:validationMessage>Validate parameter if greater than minval 0</dct:validationMessage>
-
-				<dct:validationMessage>number of p-waves onset observations
-			     meaning: minimum number of p-waves onset observations, with quality hypoinverse standard weight less equal to maxpw, that one earthquake has to have to be extracted
-			     standard reference: integer, no standard</dct:validationMessage>
-
-			</dct:validationMessages>
-
-		</eposap:parameter>-->
-
 		<eposap:parameter>
 			<http:paramName>param_minns</http:paramName>
 			<rdf:label>Minimum number of S waves</rdf:label>
@@ -389,26 +367,6 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 			</dct:validationMessages>
 
 	 -->	</eposap:parameter>
-	<!-- DUPLICATE PARAMETER
-		<eposap:parameter>
-			<http:paramName>param_minns</http:paramName>
-			<dct:type>
-				None
-			</dct:type>
-			<owl:versionInfo>1.0</owl:versionInfo>		
-
-			<dct:validationMessages>
-
-				<dct:validationMessage>Validate parameter if greater than minval 0</dct:validationMessage>
-
-				<dct:validationMessage>number of s-waves onset observations
-			     meaning: minimum number of s-waves onset observations, with quality hypoinverse standard weight less equal to maxsw, that one earthquake has to have to be extracted
-			     standard reference: integer, no standard</dct:validationMessage>
-
-			</dct:validationMessages>
-
-		</eposap:parameter>-->
-
 		<eposap:parameter>
 			<http:paramName>param_maxpw</http:paramName>
 			<rdf:label>Minimum number of S waves</rdf:label>
@@ -470,24 +428,6 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 			</dct:validationMessages>
 
 	 -->	</eposap:parameter>
-	<!-- DUPLICATE
-		<eposap:parameter>
-			<http:paramName>param_maxsw</http:paramName>
-			<dct:type>
-				None
-			</dct:type>
-			<owl:versionInfo>1.0</owl:versionInfo>	
-			<dct:validationMessages>
-
-				<dct:validationMessage>Validate number inside range range 0 - 4</dct:validationMessage>
-
-				<dct:validationMessage>mum quality weight allowed for a s-wave reading so that it is counted for earthquake selection
-			     standard reference: integer, hypoinverse 2000 standard (0 high quality, 3 worse, 4 not used)</dct:validationMessage>
-
-			</dct:validationMessages>
-
-		</eposap:parameter>
-	-->
 		<eposap:parameter>
 			<http:paramName>param_minps</http:paramName>
 			<rdf:label>number of P and S couples per earthquake</rdf:label>
@@ -507,27 +447,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 			</dct:validationMessages>
 		-->	
 		</eposap:parameter>
-	<!-- DUPLICATE
-		<eposap:parameter>
-			<http:paramName>param_minps</http:paramName>
-			<rdf:label>number of P and S couples per earthquake</rdf:label>
-			<dct:type>
-				None
-			</dct:type>
-			<owl:versionInfo>1.0</owl:versionInfo>
-
-
-			<dct:validationMessages>
-
-				<dct:validationMessage>Validate parameter if greater than minval 0</dct:validationMessage>
-
-				<dct:validationMessage>minimum number of p- and s-waves observed at one single station, with quality hypoinverse
-			     standard weight less equal to maxpw and maxsw respectively, that one earthquake has to have to be extracted</dct:validationMessage>
-
-			</dct:validationMessages>
-
-		</eposap:parameter>
-	-->
+	
 		<eposap:parameter>
 			<http:paramName>param_maxgap</http:paramName>
 			<rdf:label>degrees of azimuthal stations distribution gap per earthquake</rdf:label>
@@ -764,7 +684,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 	 -->	</eposap:parameter>
 		
 		<dcat:contactPoint>https://orcid.org/0000-0002-4553-2380</dcat:contactPoint> <!-- internal link to contact point (vcard:Individual) described in the same file in <eposap:Person> -->
-		<eposap:publisher>https://orcid.org/0000-0002-2588-8160</eposap:publisher> <!-- internal link to responsibleParty (vcard:Individual) described in the same file in <eposap:Person> -->
+		<eposap:publisher>PIC:999976590</eposap:publisher> <!-- internal link to responsibleParty (vcard:Individual) described in the same file in <eposap:Person> -->
 		<dct:spatial> <!-- Geographic location/spatial extent /bounding box -->
 			<dct:Location>
 				<locn:geometry>POLYGON(14.0 39.0,16.0 39.0,16.0 42.0,14.0 42.0,14.0 39.0)</locn:geometry>
