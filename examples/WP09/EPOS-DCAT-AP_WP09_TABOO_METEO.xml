@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <eposap:Epos
-xmlns:adms="http://www.w3.org/ns/adms#"
+        xmlns:adms="http://www.w3.org/ns/adms#"
 	xmlns:cnt="http://www.w3.org/2008/content#" xmlns:dcat="http://www.w3.org/ns/dcat#"
 	xmlns:dct="http://purl.org/dc/terms/" xmlns:eposap="http://www.epos-ip.org/terms.html"
 	xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:http="http://www.w3.org/2006/http#"
@@ -9,7 +9,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 	xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:vcard="http://www.w3.org/2006/vcard/ns#"
 	xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.epos-ip.org/terms.html https://raw.githubusercontent.com/epos-eu/EPOS-DCAT-AP/master/schemas/EPOS-DCAT-AP.xsd">
-
+	
 	<!-- EPOS Person -->
 	<eposap:Person>
 		<vcard:fn>Carluccio, Ivano</vcard:fn><!-- Last Name, Given Name -->
@@ -50,7 +50,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
         <vcard:hasURL>http://www.ingv.it</vcard:hasURL><!-- Website -->
         <vcard:hasLogo>http://roma2.rm.ingv.it/userfiles/file/Logo/INGV_Logo-abbr_colore.jpg</vcard:hasLogo><!-- Logo -->
         <dct:identifier>PIC:999472675</dct:identifier><!-- Unique Identifier -->
-        <eposap:scientificContact>http://orcid.org/0000-0002-8608-4289</eposap:scientificContact><!-- Scientific Contact -->
+        <eposap:scientificContact> http://orcid.org/0000-0002-8608-4289</eposap:scientificContact><!-- Scientific Contact -->
         <dct:spatial><!-- Spatial Coordinates -->
             <dct:Location>
                 <!-- POINT(lon lat elevation) -->
@@ -70,9 +70,9 @@ xmlns:adms="http://www.w3.org/ns/adms#"
     
 	<!-- EPOS WebService -->
 	<eposap:WebService>
-		<dct:title>Radon Web Service</dct:title> <!-- title -->
+		<dct:title>Meteo parameters Web Service</dct:title> <!-- title -->
 		<!-- abstract -->
-		<dct:description>This service retrieve Radon Gas concentration time series based on periodic counting of Rn gas at site</dct:description>
+		<dct:description>This service retrieve Meteo parameters time series based on periodic counting of water level, water conductivity, air temperature, water temperature, rain, humidity, atmospheric pressure at site</dct:description>
 		<dct:issued>2017-06-08T12:00:00</dct:issued><!-- date of publication -->
 		<dct:modified>2017-06-08T12:00:00</dct:modified><!-- date of revision -->
 		<!-- 
@@ -82,7 +82,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 		-->
 		<dct:license>Creative Commons for data, Open Source licences for software </dct:license> <!-- Access and Use Restrictions -->
 		<foaf:page> <!-- URI -->
-			<foaf:primaryTopic>http://webservices.ingv.it/ingvws/nfo_taboo/radon/1/query?</foaf:primaryTopic>
+			<foaf:primaryTopic>http://webservices.ingv.it/ingvws/nfo_taboo/meteo/1/query?</foaf:primaryTopic>
 		</foaf:page>
 		<dct:format><!-- distribution format, in case the service provides (also) access to binary data -->
 			<dct:MediaTypeOrExtent>json</dct:MediaTypeOrExtent>
@@ -104,21 +104,21 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 			The base URI is:
 			http://www.opengis.net/def/crs/ -->
                 <dct:conformsTo>EPSG:4326</dct:conformsTo> 
-		<dct:identifier>webservices.ingv.it/ingvws/nfo_taboo/radon</dct:identifier> <!-- Unique Resource Identifier: this is the entry point of the service -->
+		<dct:identifier>webservices.ingv.it/ingvws/nfo_taboo/meteo</dct:identifier> <!-- Unique Resource Identifier: this is the entry point of the service -->
 		<dct:created>2017-06-08T12:00:00</dct:created> <!-- date of creation -->
 		<eposap:domain> <!-- This property refers to the domain of resource (e.g. Seismology, Geodesy, 
 		Satellite data, Geomagnetic data, Geology, Geohazards, Georesources, Transnational access) -->
 			Near Fault Observations
 		</eposap:domain>
-                <eposap:subDomain> <!-- This property refers to the subdomain of resource (e.g. 
+        <eposap:subDomain> <!-- This property refers to the subdomain of resource (e.g. 
 		Earthquake parameters, Velocity models, GNSS station velocities, InSAR, Meteorology, 
 		Variation of geomagnetic field, 3D/4D structural models, Analog models, Numerical models, 
 		Geochemical data, Borehole data, Rock sample properties) -->
-			Radon concentration
+			Meteo parameters
 		</eposap:subDomain>
         
         <!-- Keywords, annotation. Simple and free (web annotation ontology in the future) -->
-		<dcat:keyword>Geochemical, Radon concentration, Radon counts, geochemistry, geohazards, long term continuos timeseries</dcat:keyword> <!-- Keywords -->
+		<dcat:keyword>Geochemical, geochemistry, meteo, water level, air temperature, air temperature, water temperature, water conductivity, rain, humidity, atmospheric pressure</dcat:keyword> <!-- Keywords -->
 		<eposap:operation>download, visualise, etc</eposap:operation>
 		<dct:hasVersion>0.1</dct:hasVersion>
         
@@ -127,6 +127,13 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 			E.g. in the case of a RESTful service, we may have "domain" as parameter,
 			with type "string" and a list of allowed value terms specified by the value tag,
 			e.g. 'seism','gps'  (i.e. namespace)-->
+        <eposap:parameter>
+			<http:paramName>param_name</http:paramName>
+			<rdf:label>Name of the physical parameter (water_level, air_temperature_ext, air_temperature_int, water_temperature, water_conductivity, rain, humidity, atmospheric_pressure)</rdf:label>
+			<dct:type> <!-- This property refers to parameter type -->
+				string
+			</dct:type>
+		</eposap:parameter>
         <eposap:parameter>
 			<http:paramName>mintime</http:paramName>
 			<rdf:label>minimum time</rdf:label>
@@ -192,68 +199,24 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 			<schema:minValue>-90</schema:minValue> 
 			<schema:maxValue>90</schema:maxValue>
 		</eposap:parameter>
-                <!-- -->
-        <eposap:parameter>
-			<http:paramName>minperiod</http:paramName>
-			<rdf:label>minimum "sampling period" allowed to extract data</rdf:label>
-			<dct:type> <!-- This property refers to parameter type -->
-				ISO 8601
-			</dct:type>
-			<!-- allowed vocabulary terms, optional tag -->
-			<schema:minValue>PT1S</schema:minValue> 
-			<schema:maxValue></schema:maxValue>
-		</eposap:parameter>
                 
         <eposap:parameter>
-			<http:paramName>maxeqdepth</http:paramName>
-			<rdf:label>maximum "sampling period" allowed to extract data</rdf:label>
-			<dct:type> <!-- This property refers to parameter type -->
-				ISO 8601
-			</dct:type>
-			<!-- allowed vocabulary terms, optional tag -->
-			<schema:minValue></schema:minValue> 
-			<schema:maxValue></schema:maxValue>
-		</eposap:parameter>
-                
-        <eposap:parameter>
-			<http:paramName>type_site</http:paramName>
+			<http:paramName>inst_type</http:paramName>
 			<rdf:label>nickname of type of installation</rdf:label>
 			<dct:type> <!-- This property refers to parameter type -->
 				string
 			</dct:type>
 		</eposap:parameter>
-                
-        <eposap:parameter>
-			<http:paramName>max_radon_err</http:paramName>
-			<rdf:label>maximum % uncertainty of the measure accepted for extraction</rdf:label>
-			<dct:type> <!-- This property refers to parameter type -->
-				integer
-			</dct:type>
-			<!-- allowed vocabulary terms, optional tag -->
-			<schema:minValue>0</schema:minValue> 
-			<schema:maxValue>100</schema:maxValue>
-		</eposap:parameter>
-                <!-- -->
-        <eposap:parameter>
-			<http:paramName>max_int_delta</http:paramName>
-			<rdf:label>maximum distance in time between internal temperature</rdf:label>
-			<dct:type> <!-- This property refers to parameter type -->
-				ISO 8601
-			</dct:type>
-			<!-- allowed vocabulary terms, optional tag -->
-            <schema:minValue>PT0S</schema:minValue> 
-			<schema:maxValue></schema:maxValue>
-		</eposap:parameter>
         
 		<!-- The document is meant to be human readable (e.g. PDF, doc, and so on). 
 			This will help a user who, for instance, does not understand something from the hints/label of the parameters. -->
-		<schema:documentation>https://docs.google.com/document/d/1bsU8ZIKsZjvKcmWi8VxET6mGZppyoikiZRP5vlVwMhs</schema:documentation>
+		<schema:documentation>https://docs.google.com/document/d/1BcI17A_7MEQsFgXdiF5Y6VydNTZZn0yiUBwXrJ_KA_w</schema:documentation>
 		<dcat:contactPoint>http://orcid.org/0000-0002-8608-4289</dcat:contactPoint> <!-- internal link to contact point (vcard:Individual) described in the same file in <eposap:Person> -->
 		<eposap:publisher>PIC:999472675</eposap:publisher> <!-- internal link to responsibleParty (vcard:Organisation) described in the same file in <eposap:Organisation> -->
 		<dct:spatial> <!-- Geographic location/spatial extent /bounding box -->
 			<dct:Location>
 				<!-- POLYGON(lon1 lat1, lon2 lat2,...) -->
-				<locn:geometry>POLYGON(11.78 43.95, 13.61 43.95, 13.61 42.8, 11.78 42.8, 11.78 43.95)</locn:geometry>
+				<locn:geometry>POLYGON(11.78 43.95, 13.61 43.95, 13.61 42.8, 11.78 42.8,11.78 43.95)</locn:geometry>
 			</dct:Location>
 		</dct:spatial>
 		<adms:representationTechnique> <!-- Spatial representation type -->
