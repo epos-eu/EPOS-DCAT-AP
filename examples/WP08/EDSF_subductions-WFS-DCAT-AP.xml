@@ -124,7 +124,7 @@
 	<eposap:WebService>
 		<dct:title>European Database of Seismogenic Faults | Subductions - Web Feature Service</dct:title> <!-- title -->
 		<!-- abstract -->
-		<dct:description>The European Database of Seismogenic Faults (EDSF) was compiled in the framework of the EU Project SHARE, Work Package 3, Task 3.2. EDSF includes only faults that are deemed to be capable of generating earthquakes of magnitude equal to or larger than 5.5 and aims at ensuring a homogeneous input for use in ground-shaking hazard assessment in the Euro-Mediterranean area. Several research institutions participated in this effort with the contribution of many scientists (see the Database section for a full list). This layer includes subduction contours lines. The EDSF database and website are hosted and maintained by INGV.</dct:description>
+		<dct:description>The European Database of Seismogenic Faults (EDSF) was compiled in the framework of the EU Project SHARE, Work Package 3, Task 3.2. EDSF includes only faults that are deemed to be capable of generating earthquakes of magnitude equal to or larger than 5.5 and aims at ensuring a homogeneous input for use in ground-shaking hazard assessment in the Euro-Mediterranean area. Several research institutions participated in this effort with the contribution of many scientists (see the Database section for a full list). This layer includes subduction zones. The EDSF database and website are hosted and maintained by INGV.</dct:description>
 		<dct:issued>2001-12-31T12:00:00</dct:issued><!-- date of publication -->
 		<dct:modified>2016-12-31T12:00:00</dct:modified><!-- date of revision -->
 		<!--
@@ -134,7 +134,7 @@
 		-->
 		<dct:license>https://creativecommons.org/licenses/by-sa/4.0/</dct:license> <!-- Access and Use Restrictions -->
 		<foaf:page> <!-- URI -->
-			<foaf:primaryTopic>http://services.seismofaults.eu/geoserver/EDSF/subduction_contours/wfs?</foaf:primaryTopic>
+			<foaf:primaryTopic>http://services.seismofaults.eu/geoserver/EDSF/subduction_zones/wfs?</foaf:primaryTopic>
 		</foaf:page>
 		<!-- All the parameters with no possible choices should be inserted in the base url for now at least IMHO -->
 		<dct:format><!-- distribution format, in case the service provides (also) access to binary data -->
@@ -165,10 +165,10 @@
 			Seismology
 		</eposap:domain>
 		<eposap:subDomain>
-			TBD
+			Active faults
 		</eposap:subDomain>
 		<!-- Keywords, annotation. Simple and free (web annotation ontology in the future) -->
-		<dcat:keyword>earthquakes, magnitude, slip rate, crustal fault sources, subduction fault sources, hazard model, faults, seismology, geology, geohazard, seismic hazard, seismogenic fault, seismogenic source</dcat:keyword> <!-- Keywords -->
+		<dcat:keyword>active fault, seismogenic fault, seismogenic source, seismogenic zone, earthquake, subduction, slab, hazard, earthquakes, magnitude, slip rate, crustal fault sources, subduction fault sources, hazard model, faults, seismology, geology, geohazard, seismic hazard</dcat:keyword> <!-- Keywords -->
 		<eposap:operation>TBD</eposap:operation>
 		<dct:hasVersion>2.0.0, 1.1.0, 1.0.0</dct:hasVersion> <!-- Several formats support is usual in OGC services -->
 
@@ -184,11 +184,41 @@
 			<http:paramValue>wfs</http:paramValue>
 		</eposap:parameter>
 		<eposap:parameter>
-			<http:paramName>request</http:paramName>
-			<rdf:label>request</rdf:label>
+			<http:paramName>version</http:paramName>
+			<rdf:label>WFS version</rdf:label>
 			<dct:type>string</dct:type>
-			<http:paramValue>GetCapabilities</http:paramValue>
+			<http:paramValue>2.0.0</http:paramValue> <!-- The first entry should be the default value -->
+			<http:paramValue>1.1.0</http:paramValue>
+			<http:paramValue>1.0.0</http:paramValue>
 		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>request</http:paramName>
+			<rdf:label>Request type</rdf:label>
+			<dct:type>string</dct:type>
+			<http:paramValue>GetFeature</http:paramValue>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>typeName</http:paramName>
+			<rdf:label>Layer to load</rdf:label>
+			<dct:type>string</dct:type>
+			<http:paramValue>EDSF:subduction_zones</http:paramValue>
+		</eposap:parameter>
+		<!-- DB parameters to call through CQL_FILTER have to be commented out for now -->
+<!--
+		<eposap:parameter>
+			<http:paramName>CQL_FILTER</http:paramName>
+			<rdf:label>Filter on DB parameters</rdf:label>
+			<dct:type>string</dct:type>
+			<http:paramValue>mindepth</http:paramValue>
+			<http:paramValue>maxdepth</http:paramValue>
+			<http:paramValue>dipdir</http:paramValue>
+			<http:paramValue>convazmin</http:paramValue>
+			<http:paramValue>convazmax</http:paramValue>
+			<http:paramValue>convrmin</http:paramValue>
+			<http:paramValue>convrmax</http:paramValue>
+			<http:paramValue>maxmag</http:paramValue>
+		</eposap:parameter>
+-->
 		<dcat:contactPoint>http://orcid.org/0000-0003-1208-9412</dcat:contactPoint> <!-- internal link to contact point (vcard:Individual) described in the same file in <eposap:Person> -->
 		<eposap:publisher>PIC:999472675</eposap:publisher> <!-- PIC of INGV -->
 		<dct:spatial> <!-- Geographic location/spatial extent /bounding box -->
