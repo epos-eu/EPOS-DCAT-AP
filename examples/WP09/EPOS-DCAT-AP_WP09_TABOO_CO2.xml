@@ -70,9 +70,9 @@
     
 	<!-- EPOS WebService -->
 	<eposap:WebService>
-		<dct:title>CO2 Web Service</dct:title> <!-- title -->
+		<dct:title>CO2 Gas soil flux measurements Web Service</dct:title> <!-- title -->
 		<!-- abstract -->
-		<dct:description>This service retrieve CO2 Gas concentration time series based on periodic counting of CO2 gas at site</dct:description>
+		<dct:description>This service retrieve CO2 Gas soil flux and concentration time series based on periodic counting of CO2 gas at site</dct:description>
 		<dct:issued>2017-06-08T12:00:00</dct:issued><!-- date of publication -->
 		<dct:modified>2017-06-08T12:00:00</dct:modified><!-- date of revision -->
 		<!-- 
@@ -103,12 +103,12 @@
 			the CRS should be specified with the relevant URI from the OGC EPSG register.
 			The base URI is:
 			http://www.opengis.net/def/crs/ -->
-        <dct:conformsTo>http://www.opengis.net/def/crs/EPSG/0/4326</dct:conformsTo> 
+                <dct:conformsTo>EPSG:4326</dct:conformsTo> 
 		<dct:identifier>webservices.ingv.it/ingvws/nfo_taboo/co2</dct:identifier> <!-- Unique Resource Identifier: this is the entry point of the service -->
 		<dct:created>2017-06-08T12:00:00</dct:created> <!-- date of creation -->
 		<eposap:domain> <!-- This property refers to the domain of resource (e.g. Seismology, Geodesy, 
 		Satellite data, Geomagnetic data, Geology, Geohazards, Georesources, Transnational access) -->
-			Geochemical
+			Near Fault Observations
 		</eposap:domain>
         <eposap:subDomain> <!-- This property refers to the subdomain of resource (e.g. 
 		Earthquake parameters, Velocity models, GNSS station velocities, InSAR, Meteorology, 
@@ -118,7 +118,7 @@
 		</eposap:subDomain>
         
         <!-- Keywords, annotation. Simple and free (web annotation ontology in the future) -->
-		<dcat:keyword>Geochemical, CO2 concentration</dcat:keyword> <!-- Keywords -->
+		<dcat:keyword>Geochemical, CO2 concentration, CO2 soil flux, geochemistry</dcat:keyword> <!-- Keywords -->
 		<eposap:operation>download, visualise, etc</eposap:operation>
 		<dct:hasVersion>0.1</dct:hasVersion>
         
@@ -127,6 +127,13 @@
 			E.g. in the case of a RESTful service, we may have "domain" as parameter,
 			with type "string" and a list of allowed value terms specified by the value tag,
 			e.g. 'seism','gps'  (i.e. namespace)-->
+        <eposap:parameter>
+			<http:paramName>param_name</http:paramName>
+			<rdf:label>name of the physical parameter (co2_flux, co2_concentration)</rdf:label>
+			<dct:type> <!-- This property refers to parameter type -->
+				string
+			</dct:type>
+		</eposap:parameter>
         <eposap:parameter>
 			<http:paramName>mintime</http:paramName>
 			<rdf:label>minimum time</rdf:label>
