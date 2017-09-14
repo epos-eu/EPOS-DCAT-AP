@@ -169,7 +169,7 @@
 		</eposap:subDomain>
 		<!-- Keywords, annotation. Simple and free (web annotation ontology in the future) -->
 		<dcat:keyword>active fault, seismogenic fault, seismogenic source, seismogenic zone, earthquake, subduction, slab, hazard, earthquakes, magnitude, slip rate, crustal fault sources, subduction fault sources, hazard model, faults, seismology, geology, geohazard, seismic hazard</dcat:keyword> <!-- Keywords -->
-		<eposap:operation>TBD</eposap:operation>
+		<eposap:operation>GetFeature</eposap:operation>
 		<dct:hasVersion>2.0.0, 1.1.0, 1.0.0</dct:hasVersion> <!-- Several formats support is usual in OGC services -->
 
 		<!-- List of Parameters:
@@ -179,7 +179,7 @@
 			e.g. 'seism','gps'  (i.e. namespace)-->
 		<eposap:parameter> <!-- Mapping server supports several output formats: the most importants ones were inserted here -->
 			<http:paramName>service</http:paramName>
-			<rdf:label>service</rdf:label>
+			<rdf:label>Service type</rdf:label>
 			<dct:type>string</dct:type>
 			<http:paramValue>wfs</http:paramValue>
 		</eposap:parameter>
@@ -187,7 +187,7 @@
 			<http:paramName>version</http:paramName>
 			<rdf:label>WFS version</rdf:label>
 			<dct:type>string</dct:type>
-			<http:paramValue>2.0.0</http:paramValue> <!-- The first entry should be the default value -->
+			<http:paramValue>2.0.0</http:paramValue>
 			<http:paramValue>1.1.0</http:paramValue>
 			<http:paramValue>1.0.0</http:paramValue>
 		</eposap:parameter>
@@ -218,7 +218,77 @@
 			<http:paramValue>convrmax</http:paramValue>
 			<http:paramValue>maxmag</http:paramValue>
 		</eposap:parameter>
--->
+		<eposap:parameter>
+			<http:paramName>mindepth</http:paramName>
+			<rdf:label>Minimum depth</rdf:label>
+			<dct:type>integer</dct:type>
+			<schema:minValue>10</schema:minValue>
+			<schema:maxValue>15</schema:maxValue>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>maxdepth</http:paramName>
+			<rdf:label>Maximum depth</rdf:label>
+			<dct:type>integer</dct:type>
+			<schema:minValue>45</schema:minValue>
+			<schema:maxValue>60</schema:maxValue>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>dipdir</http:paramName>
+			<rdf:label>Dip direction</rdf:label>
+			<dct:type>string</dct:type>
+			<http:paramValue>N</http:paramValue>
+			<http:paramValue>S</http:paramValue>
+			<http:paramValue>W</http:paramValue>
+			<http:paramValue>E</http:paramValue>
+			<http:paramValue>NE</http:paramValue>
+			<http:paramValue>NW</http:paramValue>
+			<http:paramValue>SE</http:paramValue>
+			<http:paramValue>SW</http:paramValue>
+			<http:paramValue>NNE</http:paramValue>
+			<http:paramValue>ENE</http:paramValue>
+			<http:paramValue>ESE</http:paramValue>
+			<http:paramValue>SSE</http:paramValue>
+			<http:paramValue>SSW</http:paramValue>
+			<http:paramValue>WSW</http:paramValue>
+			<http:paramValue>WNW</http:paramValue>
+			<http:paramValue>NNW</http:paramValue>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>convazmin</http:paramName>
+			<rdf:label>convazmin</rdf:label>
+			<dct:type>integer</dct:type>
+			<schema:minValue>10</schema:minValue>
+			<schema:maxValue>360</schema:maxValue>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>convazmax</http:paramName>
+			<rdf:label>convazmax</rdf:label>
+			<dct:type>integer</dct:type>
+			<schema:minValue>10</schema:minValue>
+			<schema:maxValue>360</schema:maxValue>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>convrmin</http:paramName>
+			<rdf:label>convrmin</rdf:label>
+			<dct:type>integer</dct:type>
+			<schema:minValue>1</schema:minValue>
+			<schema:maxValue>23</schema:maxValue>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>convrmax</http:paramName>
+			<rdf:label>convrmax</rdf:label>
+			<dct:type>integer</dct:type>
+			<schema:minValue>1</schema:minValue>
+			<schema:maxValue>35</schema:maxValue>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>maxmag</http:paramName>
+			<rdf:label>Maximum magnitude</rdf:label>
+			<dct:type>fload</dct:type>
+			<schema:minValue>5.5</schema:minValue>
+			<schema:maxValue>9.5</schema:maxValue>
+		</eposap:parameter>
+		
 		<dcat:contactPoint>http://orcid.org/0000-0003-1208-9412</dcat:contactPoint> <!-- internal link to contact point (vcard:Individual) described in the same file in <eposap:Person> -->
 		<eposap:publisher>PIC:999472675</eposap:publisher> <!-- PIC of INGV -->
 		<dct:spatial> <!-- Geographic location/spatial extent /bounding box -->
