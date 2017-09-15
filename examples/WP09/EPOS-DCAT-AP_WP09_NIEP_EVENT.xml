@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eposap:Epos
+xmlns:adms="http://www.w3.org/ns/adms#"
+    xmlns:cnt="http://www.w3.org/2008/content#" xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:dct="http://purl.org/dc/terms/" xmlns:eposap="http://www.epos-ip.org/terms.html"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:http="http://www.w3.org/2006/http#"
+    xmlns:locn="http://www.w3.org/ns/locn#" xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:schema="http://schema.org/"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:vcard="http://www.w3.org/2006/vcard/ns#"
+    xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.epos-ip.org/terms.html https://raw.githubusercontent.com/epos-eu/EPOS-DCAT-AP/master/schemas/EPOS-DCAT-AP.xsd">
+    <!-- EPOS Person -->
+    <eposap:Person>
+        <vcard:fn>Manea, Liviu Marius</vcard:fn><!-- Last Name, Given Name -->
+        <vcard:hasAddress><!-- Postal Address -->
+            <vcard:Address>
+                <vcard:street-address>Calugareni st., 12</vcard:street-address>
+                <vcard:locality>Magurele, Ilfov</vcard:locality>
+                <vcard:postal-code>077125</vcard:postal-code>
+                <vcard:country-name>Romania</vcard:country-name>
+            </vcard:Address>
+        </vcard:hasAddress>
+        <vcard:hasEmail>mlmarius@yahoo.com</vcard:hasEmail><!-- Email -->
+        <vcard:hasTelephone>+40722******</vcard:hasTelephone><!-- Phone -->
+        <dct:identifier>http://orcid.org/0000-0003-2431-1383</dct:identifier> <!-- Unique Identifier -->
+        <eposap:affiliation>PIC:999472675</eposap:affiliation> <!-- Organisation -->
+        <dct:language><!-- Language for contact -->
+            <dct:LinguisticSystem>EN</dct:LinguisticSystem>
+        </dct:language>
+        <schema:qualifications>IT</schema:qualifications><!-- Qualification -->
+        <vcard:hasURL><!-- CV -->
+            http://orcid.org/0000-0003-2431-1383
+        </vcard:hasURL>
+    </eposap:Person>
+
+    <!-- EPOS Organisation -->
+    <eposap:Organisation>
+        <vcard:fn>National Institute for Earth Physics</vcard:fn><!-- Title (english) -->
+        <vcard:organization-name xml:lang="en">National Institute for Earth Physics</vcard:organization-name><!-- Title (native lang) -->
+        <vcard:hasAddress><!-- Postal Address -->
+            <vcard:Address>
+                <vcard:street-address>Calugareni st., 12</vcard:street-address>
+                <vcard:locality>Magurele, Ilfov</vcard:locality>
+                <vcard:postal-code>077125</vcard:postal-code>
+                <vcard:country-name>Romania</vcard:country-name>
+            </vcard:Address>
+        </vcard:hasAddress>
+        <vcard:hasEmail>contact@infp.ro</vcard:hasEmail><!-- Email -->
+        <vcard:hasURL>http://www.infp.ro</vcard:hasURL><!-- Website -->
+        <vcard:hasLogo>http://intranet.infp.ro/wp-content/uploads/public_dirs/Materiale_vizibilitate_INFP/LOGO%20MAIN%20INFP_resize.gif</vcard:hasLogo><!-- Logo -->
+        <dct:identifier>PIC:999472675</dct:identifier><!-- Unique Identifier -->
+        <eposap:scientificContact>http://orcid.org/0000-0003-2431-1383</eposap:scientificContact><!-- Scientific Contact -->
+        <dct:spatial><!-- Spatial Coordinates -->
+            <dct:Location>
+                <!-- POINT(lon lat elevation) -->
+                <locn:geometry>POINT(26.027969 44.347747)</locn:geometry>
+            </dct:Location>
+        </dct:spatial>
+        <dct:type><!-- Type -->
+            Research Institute
+        </dct:type>
+        <eposap:legalContact>http://orcid.org/0000-0003-2431-1383</eposap:legalContact><!-- Legal Contact to be correct -->
+        <eposap:financialContact>http://orcid.org/0000-0003-2431-1383</eposap:financialContact><!-- Financial
+            Contact  to be correct-->
+        <!--<eposap:isPartOf>organisationID01</eposap:isPartOf> to remove // Is part of -->
+        <!--<eposap:associatedProjects>projectID01</eposap:associatedProjects>--><!-- Associated Project -->
+    </eposap:Organisation>
+    
+    
+    <!-- EPOS WebService -->
+    <eposap:WebService>
+        <dct:title>FDSN EVENT Web Service</dct:title> <!-- title -->
+        <!-- abstract -->
+        <dct:description>The fdsnws-event web service returns event (earthquake) information from the catalogs.
+        </dct:description>
+        <dct:issued>2001-12-31T12:00:00</dct:issued><!-- date of publication -->
+        <dct:modified>2016-12-31T12:00:00</dct:modified><!-- date of revision -->
+        <!--
+            Whenever possible, you should use URIs for licences.
+            A register of standard licences is available at:
+            http://publications.europa.eu/mdr/resource/authority/licence/html/licences-eng.html
+        -->
+        <dct:license>Creative Commons for data, Open Source licences for software </dct:license> <!-- Access and Use Restrictions -->
+        <foaf:page> <!-- URI -->
+            <foaf:primaryTopic>http://eida-sc3.infp.ro/fdsnws/event/1/query?</foaf:primaryTopic>
+        </foaf:page>
+        <dct:format><!-- distribution format, in case the service provides (also) access to binary data -->
+            <dct:MediaTypeOrExtent>zip</dct:MediaTypeOrExtent>
+        </dct:format>
+        <!-- public access limitations:
+            There a codelist for this, so you can check if it is suitable to you.
+            The description is here:
+            http://publications.europa.eu/mdr/resource/authority/access-right/html/access-right-eng.html
+            The base URI is:
+            http://publications.europa.eu/resource/authority/access-right/
+        -->
+        <dct:rights>
+            <dct:RightsStatement>open data</dct:RightsStatement>
+        </dct:rights>
+        <!--
+            Spatial Reference System
+            the CRS should be specified with the relevant URI.
+            The base URI is:
+            http://www.opengis.net/def/crs/ -->
+        <dct:conformsTo>EPSG:4326</dct:conformsTo> <!-- Spatial Reference System -->
+        <dct:identifier>eida-sc3.infp.ro</dct:identifier> <!-- Unique Resource Identifier: this is the entry point of the service -->
+        <dct:created>2017-06-08T12:00:00</dct:created> <!-- date of creation -->
+        <eposap:domain> <!-- This property refers to the domain of resource (e.g. Seismology, Geodesy, 
+        Satellite data, Geomagnetic data, Geology, Geohazards, Georesources, Transnational access) -->
+            Seismology
+        </eposap:domain>
+        <eposap:subDomain> <!-- This property refers to the subdomain of resource (e.g. 
+        Earthquake parameters, Velocity models, GNSS station velocities, InSAR, Meteorology, 
+        Variation of geomagnetic field, 3D/4D structural models, Analog models, Numerical models, 
+        Geochemical data, Borehole data, Rock sample properties) -->
+            Earthquake catalogue
+        </eposap:subDomain>
+        
+        <!-- Keywords, annotation. Simple and free (web annotation ontology in the future) -->
+        <dcat:keyword>Earthquake, Event, rocks, seismic waves propagation</dcat:keyword> <!-- Keywords -->
+        <eposap:operation>download</eposap:operation>
+        <dct:hasVersion>1.0</dct:hasVersion>
+
+        <!-- List of Parameters:
+            this section is needed in order to describe the parameters of the service.
+            E.g. in the case of a RESTful service, we may have "domain" as parameter,
+            with type "string" and a list of allowed value terms specified by the value tag,
+            e.g. 'seism','gps'  (i.e. namespace)-->
+        <eposap:parameter>
+            <http:paramName>starttime</http:paramName>
+            <rdf:label>start time</rdf:label>
+            <dct:type> <!-- This property refers to parameter type -->
+                datetime
+            </dct:type>
+            <!-- These properties refer to range value of the parameter -->
+            <schema:minValue>2001-12-31T12:00:00</schema:minValue> 
+            <schema:maxValue>2017-06-20T12:00:00</schema:maxValue>
+        </eposap:parameter>
+                
+        <eposap:parameter>
+            <http:paramName>endtime</http:paramName>
+            <rdf:label>end time</rdf:label>
+            <dct:type> <!-- This property refers to parameter type -->
+                datetime
+            </dct:type>
+            <!-- These properties refer to range value of the parameter -->
+            <schema:minValue>2001-12-31T12:00:00</schema:minValue> 
+            <schema:maxValue>2017-06-20T12:00:00</schema:maxValue>
+        </eposap:parameter>
+                
+        <eposap:parameter>
+            <http:paramName>minlatitude</http:paramName>
+            <rdf:label>minimum Latitude</rdf:label>
+            <dct:type> <!-- This property refers to parameter type -->
+                float
+            </dct:type>
+            <!-- allowed vocabulary terms, optional tag -->
+            <schema:minValue>-90</schema:minValue> 
+            <schema:maxValue>90</schema:maxValue>
+        </eposap:parameter>
+                
+        <eposap:parameter>
+            <http:paramName>maxlatitude</http:paramName>
+            <rdf:label>max Latitude</rdf:label>
+            <dct:type> <!-- This property refers to parameter type -->
+                float
+            </dct:type>
+            <!-- allowed vocabulary terms, optional tag -->
+            <schema:minValue>-90</schema:minValue> 
+            <schema:maxValue>90</schema:maxValue>
+        </eposap:parameter>
+                
+        <eposap:parameter>
+            <http:paramName>minlongitude</http:paramName>
+            <rdf:label>minimum Longitude</rdf:label>
+            <dct:type> <!-- This property refers to parameter type -->
+                float
+            </dct:type>
+            <!-- allowed vocabulary terms, optional tag -->
+            <schema:minValue>-90</schema:minValue> 
+            <schema:maxValue>90</schema:maxValue>
+        </eposap:parameter>
+                
+        <eposap:parameter>
+            <http:paramName>maxlongitude</http:paramName>
+            <rdf:label>max Longitude</rdf:label>
+            <dct:type> <!-- This property refers to parameter type -->
+                float
+            </dct:type>
+            <!-- allowed vocabulary terms, optional tag -->
+            <schema:minValue>-90</schema:minValue> 
+            <schema:maxValue>90</schema:maxValue>
+        </eposap:parameter>
+                <!-- -->
+        <eposap:parameter>
+            <http:paramName>mindepth</http:paramName>
+            <rdf:label>minimum Depth</rdf:label>
+            <dct:type> <!-- This property refers to parameter type -->
+                int
+            </dct:type>
+            <!-- allowed vocabulary terms, optional tag -->
+            <schema:minValue>-1</schema:minValue> 
+            <schema:maxValue>100</schema:maxValue>
+        </eposap:parameter>
+                
+        <eposap:parameter>
+            <http:paramName>maxdepth</http:paramName>
+            <rdf:label>max Depth</rdf:label>
+            <dct:type> <!-- This property refers to parameter type -->
+                int
+            </dct:type>
+            <!-- allowed vocabulary terms, optional tag -->
+            <schema:minValue>-1</schema:minValue> 
+            <schema:maxValue>100</schema:maxValue>
+        </eposap:parameter>
+                
+        <eposap:parameter>
+            <http:paramName>minmagnitude</http:paramName>
+            <rdf:label>minimum Magnitude</rdf:label>
+            <dct:type> <!-- This property refers to parameter type -->
+                float
+            </dct:type>
+            <!-- allowed vocabulary terms, optional tag -->
+            <schema:minValue>0</schema:minValue> 
+            <schema:maxValue>10</schema:maxValue>
+        </eposap:parameter>
+                
+        <eposap:parameter>
+            <http:paramName>maxmagnitude</http:paramName>
+            <rdf:label>max Magnitude</rdf:label>
+            <dct:type> <!-- This property refers to parameter type -->
+                float
+            </dct:type>
+            <!-- allowed vocabulary terms, optional tag -->
+            <schema:minValue>0</schema:minValue> 
+            <schema:maxValue>10</schema:maxValue>
+        </eposap:parameter>
+                <!-- -->
+                <eposap:parameter>
+            <http:paramName>includeallorigins</http:paramName>
+            <rdf:label>include all Origin</rdf:label>
+            <dct:type> <!-- This property refers to parameter type -->
+                boolean
+            </dct:type>
+            <!-- allowed vocabulary terms, optional tag -->
+            
+        </eposap:parameter>
+                
+        <eposap:parameter>
+            <http:paramName>includeallmagnitudes</http:paramName>
+            <rdf:label>include all mag</rdf:label>
+            <dct:type> <!-- This property refers to parameter type -->
+                boolean
+            </dct:type>
+            <!-- allowed vocabulary terms, optional tag -->
+            
+        </eposap:parameter>
+                
+        <eposap:parameter>
+            <http:paramName>includearrivals</http:paramName>
+            <rdf:label>include all arrivals</rdf:label>
+            <dct:type> <!-- This property refers to parameter type -->
+                boolean
+            </dct:type>
+            <!-- allowed vocabulary terms, optional tag -->
+            
+        </eposap:parameter>
+                
+        <eposap:parameter>
+            <http:paramName>eventid</http:paramName>
+            <rdf:label>Event ID</rdf:label>
+            <dct:type> <!-- This property refers to parameter type -->
+                string
+            </dct:type>
+            <!-- allowed vocabulary terms, optional tag -->
+            
+        </eposap:parameter>
+                
+        <eposap:parameter>
+            <http:paramName>limit</http:paramName>
+            <rdf:label>limit</rdf:label>
+            <dct:type> <!-- This property refers to parameter type -->
+                int
+            </dct:type>
+            <!-- allowed vocabulary terms, optional tag -->
+            
+        </eposap:parameter>
+                <!--  -->
+        <eposap:parameter>
+            <http:paramName>offset</http:paramName>
+            <rdf:label>offset</rdf:label>
+            <dct:type> <!-- This property refers to parameter type -->
+                int
+            </dct:type>
+            <!-- allowed vocabulary terms, optional tag -->
+            
+        </eposap:parameter>
+                
+        <eposap:parameter>
+            <http:paramName>orderby</http:paramName>
+            <rdf:label>orderby</rdf:label>
+            <dct:type> <!-- This property refers to parameter type -->
+                int
+            </dct:type>
+            <!-- allowed vocabulary terms, optional tag -->
+            
+        </eposap:parameter>
+                
+        <eposap:parameter>
+            <http:paramName>contributor</http:paramName>
+            <rdf:label>contributor</rdf:label>
+            <dct:type> <!-- This property refers to parameter type -->
+                string
+            </dct:type>
+            <!-- allowed vocabulary terms, optional tag -->
+            
+        </eposap:parameter>
+                
+        <eposap:parameter>
+            <http:paramName>catalog</http:paramName>
+            <rdf:label>Catalogue</rdf:label>
+            <dct:type> <!-- This property refers to parameter type -->
+                string
+            </dct:type>
+            <!-- allowed vocabulary terms, optional tag -->
+            
+        </eposap:parameter>
+                
+        <eposap:parameter>
+            <http:paramName>updatedafter</http:paramName>
+            <rdf:label>is update after</rdf:label>
+            <dct:type> <!-- This property refers to parameter type -->
+                datetime
+            </dct:type>
+            <!-- allowed vocabulary terms, optional tag -->
+            <schema:minValue>2001-12-31T12:00:00</schema:minValue> 
+            <schema:maxValue>2017-06-20T12:00:00</schema:maxValue>
+        </eposap:parameter>
+                <!-- * -->
+        <eposap:parameter>
+            <http:paramName>format</http:paramName>
+            <rdf:label>output format</rdf:label>
+            <dct:type> <!-- This property refers to parameter type -->
+                string
+            </dct:type>
+            <!-- allowed vocabulary terms, optional tag -->
+            <http:paramValue>xml</http:paramValue>
+                        <http:paramValue>kml</http:paramValue>
+                        <http:paramValue>txt</http:paramValue>
+        </eposap:parameter>
+                
+        <eposap:parameter>
+            <http:paramName>nodata</http:paramName>
+            <rdf:label>no data</rdf:label>
+            <dct:type> <!-- This property refers to parameter type -->
+                string
+            </dct:type>
+            <!-- allowed vocabulary terms, optional tag -->
+            
+        </eposap:parameter>
+                
+        <eposap:parameter>
+            <http:paramName>latitude</http:paramName>
+            <rdf:label>Latitude</rdf:label>
+            <dct:type> <!-- This property refers to parameter type -->
+                float
+            </dct:type>
+            <!-- allowed vocabulary terms, optional tag -->
+            <schema:minValue>-90</schema:minValue> 
+            <schema:maxValue>90</schema:maxValue>
+        </eposap:parameter>
+                
+        <eposap:parameter>
+            <http:paramName>longitude</http:paramName>
+            <rdf:label>Longitude</rdf:label>
+            <dct:type> <!-- This property refers to parameter type -->
+                float
+            </dct:type>
+            <!-- allowed vocabulary terms, optional tag -->
+            <schema:minValue>-90</schema:minValue> 
+            <schema:maxValue>90</schema:maxValue>
+        </eposap:parameter>
+                
+        <eposap:parameter>
+            <http:paramName>minradius</http:paramName>
+            <rdf:label>minradius</rdf:label>
+            <dct:type> <!-- This property refers to parameter type -->
+                float
+            </dct:type>
+            <!-- allowed vocabulary terms, optional tag -->
+            <schema:minValue>-90</schema:minValue> 
+            <schema:maxValue>90</schema:maxValue>
+        </eposap:parameter>
+                
+        <eposap:parameter>
+            <http:paramName>maxradius</http:paramName>
+            <rdf:label>maxradius</rdf:label>
+            <dct:type> <!-- This property refers to parameter type -->
+                float
+            </dct:type>
+            <!-- allowed vocabulary terms, optional tag -->
+            <schema:minValue>-90</schema:minValue> 
+            <schema:maxValue>90</schema:maxValue>
+        </eposap:parameter>
+        
+        <!-- The document is meant to be human readable (e.g. PDF, doc, and so on). 
+            This will help a user who, for instance, does not understand something from the hints/label of the parameters. -->
+        <schema:documentation>https://docs.google.com/document/d/1XnVBXJNpEkcJ4tnH6nVn7xIDbWV9ZLjXNLKZsiSg7nQ</schema:documentation>
+        <dcat:contactPoint>http://orcid.org/0000-0003-2431-1383</dcat:contactPoint> <!-- internal link to contact point (vcard:Individual) described in the same file in <eposap:Person> -->
+        <eposap:publisher>PIC:999472675</eposap:publisher> <!-- internal link to responsibleParty (vcard:Organisation) described in the same file in <eposap:Organisation> -->
+        <dct:spatial> <!-- Geographic location/spatial extent /bounding box -->
+            <dct:Location>
+                <!-- POLYGON(lon1 lat1, lon2 lat2,...) -->
+                <locn:geometry>POLYGON(19.50 49.00, 30.00 49.00, 30.00 42.0, 19.50 42.0, 19.50 49.00)</locn:geometry>
+            </dct:Location>
+        </dct:spatial>
+        <adms:representationTechnique> <!-- Spatial representation type -->
+            Vector
+        </adms:representationTechnique>
+        <dct:temporal> <!-- temporal extent -->
+            <dct:PeriodOfTime>
+                <schema:startDate>2010-04-01T00:00:00</schema:startDate>
+                <schema:endDate>2015-10-04T23:59:59</schema:endDate>
+            </dct:PeriodOfTime>
+        </dct:temporal>
+    </eposap:WebService>
+
+</eposap:Epos>
