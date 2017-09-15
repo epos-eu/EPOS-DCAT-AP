@@ -118,7 +118,7 @@
 		<dct:description>Some description</dct:description>
 	</eposap:Project>
 	-->
-
+	
 	<!-- EPOS WebService -->
 	<eposap:WebService>
 		<dct:title>European Database of Seismogenic Faults | Subductions | Web Map Service</dct:title> <!-- title -->
@@ -136,9 +136,9 @@
 			<foaf:primaryTopic>http://services.seismofaults.eu/geoserver/EDSF/subduction_contours/wms?</foaf:primaryTopic>
 		</foaf:page>
 		<!-- All the parameters with no possible choices should be inserted in the base url IMHO -->
-		<dct:format rdf:about="GetCapabilities">
+		<dct:format>
 			<!-- <dct:MediaTypeOrExtent>png</dct:MediaTypeOrExtent> -->
-			<dct:MediaTypeOrExtent>https://www.iana.org/assignments/media-types/text/xml</dct:MediaTypeOrExtent>
+			<dct:MediaTypeOrExtent>wms</dct:MediaTypeOrExtent>
 		</dct:format>
 		<!-- public access limitations:
 			There a codelist for this, so you can check if it is suitable to you.
@@ -157,7 +157,8 @@
 			http://www.opengis.net/def/crs/ -->
 		<!-- <dct:conformsTo>EPSG:4326</dct:conformsTo> -->
 		<dct:conformsTo>http://www.opengis.net/def/crs/EPSG/0/4326</dct:conformsTo>
-		<dct:identifier>services.seismofaults.eu/geoserver/EDSF/subduction_contours/wms</dct:identifier> <!-- Unique Resource Identifier: this is the entry point of the service -->
+
+		<dct:identifier>services.seismofaults.eu/geoserver/EDSF/subduction_zones/wms</dct:identifier> <!-- Unique Resource Identifier: this is the entry point of the service -->
 		<dct:created>2017-03-01T12:00:00</dct:created> <!-- date of creation -->
 		<eposap:domain> <!-- This property refers to the domain of resource (e.g. Seismology, Geodesy, 
 		Satellite data, Geomagnetic data, Geology, Geohazards, Georesources, Transnational access) -->
@@ -170,9 +171,11 @@
 			Active faults
 		</eposap:subDomain>
 		<!-- Keywords, annotation. Simple and free (web annotation ontology in the future) -->
-		<dcat:keyword>	active fault, seismogenic fault, seismogenic source, seismogenic zone, earthquake, subduction, slab, hazard, earthquakes, magnitude, slip rate, crustal fault sources, subduction fault sources, hazard model, faults, seismology, geology, geohazard, seismic hazard</dcat:keyword> <!-- Keywords -->
-		<eposap:operation>GetCapabilities</eposap:operation>
-		<dct:hasVersion>1.3.1, 1.1.1</dct:hasVersion>
+
+		<dcat:keyword>active fault, seismogenic fault, seismogenic source, seismogenic zone, earthquake, subduction, slab, hazard, earthquakes, magnitude, slip rate, crustal fault sources, subduction fault sources, hazard model, faults, seismology, geology, geohazard, seismic hazard</dcat:keyword> <!-- Keywords -->
+		<eposap:operation>GetMap</eposap:operation>
+		<dct:hasVersion>1.3.0 1.1.1</dct:hasVersion>
+
 		<!-- List of Parameters:
 			this section is needed in order to describe the parameters of the service.
 			E.g. in the case of a RESTful service, we may have "domain" as parameter,
@@ -185,11 +188,68 @@
 			<http:paramValue>wms</http:paramValue>
 		</eposap:parameter>
 		<eposap:parameter>
-			<http:paramName>request</http:paramName>
-			<rdf:label>request</rdf:label>
+			<http:paramName>version</http:paramName>
+			<rdf:label>WMS version</rdf:label>
 			<dct:type>string</dct:type>
-			<http:paramValue>GetCapabilities</http:paramValue>
+			<http:paramValue>1.3.0</http:paramValue> <!-- The first entry should be the default value -->
+			<http:paramValue>1.1.1</http:paramValue>
 		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>request</http:paramName>
+			<rdf:label>Request type</rdf:label>
+			<dct:type>string</dct:type>
+			<http:paramValue>GetMap</http:paramValue>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>layers</http:paramName>
+			<rdf:label>Layers</rdf:label>
+			<dct:type>string</dct:type>
+			<http:paramValue>EDSF:crustal_fault_sources_top</http:paramValue>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>srs</http:paramName>
+			<rdf:label>Spatial Reference System</rdf:label>
+			<dct:type>string</dct:type>
+			<http:paramValue>EPSG:4326</http:paramValue>
+		</eposap:parameter>
+		<eposap:parameter> <!-- Mapping server supports several output formats: the most importants ones were inserted here -->
+			<http:paramName>format</http:paramName>
+			<rdf:label>Output format</rdf:label>
+			<dct:type>string</dct:type>
+			<http:paramValue>image/png</http:paramValue>
+			<http:paramValue>image/jpeg</http:paramValue>
+			<http:paramValue>image/geotiff</http:paramValue>
+			<!-- <http:paramValue>kml</http:paramValue> -->
+			<!-- <http:paramValue>kmz</http:paramValue> -->
+			<!-- <http:paramValue>application/json;type=utfgrid</http:paramValue> -->
+			<!-- <http:paramValue>application/pdf</http:paramValue> -->
+			<!-- If OpenLayers will be supported by the EPOS GUI the following line will be uncommented -->
+			<!-- <http:paramValue>application/openlayers</http:paramValue> -->
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>width</http:paramName>
+			<rdf:label>Width of the output map</rdf:label>
+			<dct:type>string</dct:type>
+			<!-- <http:paramValue>800</http:paramValue>  -->
+			<!-- <http:paramValue>1024</http:paramValue> -->
+			<http:paramValue>1600</http:paramValue>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>height</http:paramName>
+			<rdf:label>Height of the output map</rdf:label>
+			<dct:type>string</dct:type>
+			<!-- <http:paramValue>600</http:paramValue> -->
+			<!-- <http:paramValue>768</http:paramValue> -->
+			<http:paramValue>1200</http:paramValue>
+		</eposap:parameter>
+		<!-- 
+		<eposap:parameter>
+			<http:paramName>bbox</http:paramName>
+			<rdf:label>Bounding Box for Map Extent</rdf:label>
+			<dct:type>string</dct:type>
+			<http:paramValue>-12.3924655914307,30.3032112121582,45.2714309692383,48.9775695800781</http:paramValue>
+		</eposap:parameter>
+		-->
 		<dcat:contactPoint>http://orcid0000-0003-1208-9412</dcat:contactPoint> <!-- internal link to contact point (vcard:Individual) described in the same file in <eposap:Person> -->
 		<eposap:publisher>PIC:999472675</eposap:publisher> <!-- PIC of INGV -->
 		<dct:spatial> <!-- Geographic location/spatial extent /bounding box -->
