@@ -138,8 +138,9 @@
 		</foaf:page>
 		<!-- All the parameters with no possible choices should be inserted in the base url for now at least IMHO -->
 		<dct:format><!-- distribution format, in case the service provides (also) access to binary data -->
+			<dct:MediaTypeOrExtent>xml</dct:MediaTypeOrExtent>
 			<!-- <dct:MediaTypeOrExtent>gml</dct:MediaTypeOrExtent> -->
-			<dct:MediaTypeOrExtent>https://www.iana.org/assignments/media-types/application/gml+xml</dct:MediaTypeOrExtent>
+			<!--<dct:MediaTypeOrExtent>https://www.iana.org/assignments/media-types/application/gml+xml</dct:MediaTypeOrExtent>-->
 		</dct:format>
 		<!-- public access limitations:
 			There a codelist for this, so you can check if it is suitable to you.
@@ -157,7 +158,7 @@
 			The base URI is:
 			http://www.opengis.net/def/crs/ -->
 		<!-- <dct:conformsTo>EPSG:4326</dct:conformsTo> -->
-		<dct:conformsTo>http://www.opengis.net/def/crs/EPSG/0/4326</dct:conformsTo>
+		<dct:conformsTo>EPSG:4326</dct:conformsTo>
 
 		<dct:identifier>services.seismofaults.eu/geoserver/EDSF/subduction_zones/wfs</dct:identifier> <!-- Unique Resource Identifier: this is the entry point of the service -->
 
@@ -172,7 +173,7 @@
 		<!-- Keywords, annotation. Simple and free (web annotation ontology in the future) -->
 		<dcat:keyword>active fault, seismogenic fault, seismogenic source, seismogenic zone, earthquake, subduction, slab, hazard, earthquakes, magnitude, slip rate, crustal fault sources, subduction fault sources, hazard model, faults, seismology, geology, geohazard, seismic hazard</dcat:keyword> <!-- Keywords -->
 
-		<eposap:operation>GetFeature</eposap:operation>
+		<eposap:operation>execute</eposap:operation>
 		<dct:hasVersion>2.0.0 1.1.0 1.0.0</dct:hasVersion> <!-- Several formats support is usual in OGC services -->
 
 		<!-- List of Parameters:
