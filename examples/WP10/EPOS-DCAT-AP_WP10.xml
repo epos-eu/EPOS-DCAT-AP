@@ -9,10 +9,8 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 	xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:vcard="http://www.w3.org/2006/vcard/ns#"
 	xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.epos-ip.org/terms.html https://raw.githubusercontent.com/epos-eu/EPOS-DCAT-AP/master/schemas/EPOS-DCAT-AP.xsd">
-
 	
-  
-  <!-- EPOS Person -->
+  <!-- EPOS Person Fernandes, Rui-->
   <eposap:Person>
     <vcard:fn>Fernandes, Rui</vcard:fn>
     <!-- Last Name, Given Name -->
@@ -42,7 +40,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
     <vcard:hasURL>http://orcid.org/0000-0002-9733-284X</vcard:hasURL>
   </eposap:Person>
   
-  <!-- EPOS Person -->
+  <!-- EPOS Person Crocker, Paul-->
   <eposap:Person>
     <vcard:fn>Crocker, Paul</vcard:fn>
     <!-- Last Name, Given Name -->
@@ -72,11 +70,40 @@ xmlns:adms="http://www.w3.org/ns/adms#"
     <vcard:hasURL>http://orcid.org/0000-0001-6824-6136</vcard:hasURL>
   </eposap:Person>
   
+  <!-- EPOS Person Vergnolle, Mathilde-->
+  <eposap:Person>
+    <vcard:fn>Vergnolle, Mathilde</vcard:fn>
+    <!-- Last Name, Given Name -->
+    <vcard:hasAddress>
+      <!-- Postal Address -->
+      <vcard:Address>
+        <vcard:street-address>250 rue Albert Einstein</vcard:street-address>
+        <vcard:locality>Valbonne</vcard:locality>
+        <vcard:postal-code>06560</vcard:postal-code>
+        <vcard:country-name>France</vcard:country-name>
+      </vcard:Address>
+    </vcard:hasAddress>
+    <vcard:hasEmail>mathilde.vergnolle@geoazur.unice.fr</vcard:hasEmail>
+    <!-- Email -->
+    <vcard:hasTelephone>+33483618627</vcard:hasTelephone>
+    <!-- Phone -->
+    <dct:identifier>ResearcherID:A-5326-2010</dct:identifier>
+    <!-- Unique Identifier -->
+    <eposap:affiliation>OCA</eposap:affiliation>
+    <!-- Organisation: PIC of ROB-->
+    <dct:language>
+      <!-- Language for contact -->
+      <dct:LinguisticSystem>EN</dct:LinguisticSystem>
+    </dct:language>
+    <schema:qualifications>Principal Researcher</schema:qualifications>
+    <!-- Qualification -->
+    <vcard:hasURL></vcard:hasURL>
+  </eposap:Person>
   
-  <!-- EPOS Organisation -->
+  <!-- EPOS Organisation UBI-->
   <eposap:Organisation>
     <vcard:fn>University of Beira Interior</vcard:fn><!-- Title(english) -->
-    <vcard:organization-name xml:lang="en">Universidade da Beira Interior</vcard:organization-name>  <!--Title (native lang) -->
+    <vcard:organization-name xml:lang="pt">Universidade da Beira Interior</vcard:organization-name>  <!--Title (native lang) -->
 	
     <vcard:hasAddress>
       <!-- Postal Address -->
@@ -117,9 +144,53 @@ xmlns:adms="http://www.w3.org/ns/adms#"
     <!-- <eposap:associatedProjects>projectID01</eposap:associatedProjects> -->
   </eposap:Organisation>
   
+  <!-- EPOS Organisation OCA-->
+  <eposap:Organisation>
+    <vcard:fn>Côte d’Azur Observatory</vcard:fn><!-- Title(english) -->
+    <vcard:organization-name xml:lang="fr">Observatoire de la Côte d'Azur</vcard:organization-name>  
+	<!--Title (native lang) -->
+
+    <vcard:hasAddress>
+      <!-- Postal Address -->
+      <vcard:Address>
+        <vcard:street-address>Boulevard de l’Observatoire CS 34229</vcard:street-address>
+        <vcard:locality>Nice</vcard:locality>
+        <vcard:postal-code>F-06304</vcard:postal-code>
+        <vcard:country-name>France</vcard:country-name>
+      </vcard:Address>
+    </vcard:hasAddress>
+    <vcard:hasEmail>mathilde.vergnolle@geoazur.unice.fr</vcard:hasEmail>
+    <!-- Email -->
+    <vcard:hasURL>https://www.oca.eu</vcard:hasURL>
+    <!-- Website -->
+    <vcard:hasLogo>https://www.oca.eu/images/Logos/logocaeu.png</vcard:hasLogo>
+    <!-- Logo -->
+    <dct:identifier>EPOS.OCA</dct:identifier>
+    <!-- Unique Identifier -->
+    <eposap:scientificContact>ResearcherID:A-5326-2010</eposap:scientificContact>
+    <!-- Scientific
+			Contact -->
+    <dct:spatial>
+      <!-- Spatial Coordinates -->
+      <dct:Location>
+         <!-- POINT(lon lat elevation) -->
+           <locn:geometry>POINT(7.299 43.727 350)</locn:geometry>
+      </dct:Location>
+    </dct:spatial>
+    <dct:type>
+      <!-- Type -->
+			Institute
+		</dct:type>
+    <eposap:legalContact></eposap:legalContact>
+    <!-- Legal Contact -->
+    <eposap:financialContact></eposap:financialContact>
+    <!-- FinancialContact -->
+    <!-- <eposap:isPartOf></eposap:isPartOf> -->
+    <!-- <eposap:associatedProjects>projectID01</eposap:associatedProjects> -->
+  </eposap:Organisation>
   
-  <!-- EPOS Project -->
-	<eposap:Project>
+  <!-- EPOS Project WP10-->
+  <eposap:Project>
 		<dct:identifier>EPOS.WP10</dct:identifier>
 		<dct:title>EPOS WP10</dct:title><!-- Name (Title) -->
 		<dct:description>EPOS WP10 GNSS</dct:description><!-- Description (Abstract) -->
@@ -134,8 +205,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
     <dct:license>GPL, Open Data</dct:license>
     <!-- Access and Use Restrictions -->
     <foaf:page>
-      <!-- URI whats the difference to distribuition below This property defines the link(s) to the resource and/or the link to additional information about the resource
--->
+      <!-- This property contains the URL of the web service without parameters.-->
       <foaf:primaryTopic>http://glass.unice.fr:8080/GlassFramework</foaf:primaryTopic>
     </foaf:page>
     <dct:format>
@@ -147,7 +217,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
     <dct:conformsTo>EPSG:3763</dct:conformsTo>
     <!-- Spatial Reference System [UBI?][http://spatialreference.org/ref/epsg/3763/] -->
     <dct:identifier>EPOS.WP10.DGW</dct:identifier>
-    <!-- Unique Resource Identifier: this is the entry point of the service [UBI?]-->
+    <!-- Unique Resource Identifier: this is the entry point of the service -->
     <dct:created>2017-06-30T12:00:00</dct:created>
     <!-- date of creation -->
     <eposap:domain>
@@ -158,7 +228,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 		Earthquake parameters, Velocity models, GNSS station velocities, InSAR, Meteorology, 
 		Variation of geomagnetic field, 3D/4D structural models, Analog models, Numerical models, 
 		Geochemical data, Borehole data, Rock sample properties) -->
-			GNSS Satellite Data, Station and Equipment MetaData
+			GNSS Satellite Data, Station and Equipment MetaData Portal
 		</eposap:subDomain>
     <!-- Keywords, annotation. Simple and free (web annotation ontology in the future) -->
     <dcat:keyword>GNSS</dcat:keyword>
@@ -166,9 +236,9 @@ xmlns:adms="http://www.w3.org/ns/adms#"
     <eposap:operation>data, portal, products, repository, visualization, download</eposap:operation>
     <dct:hasVersion>1.0</dct:hasVersion>
     <!--<dcat:Distribuition>http://glass.unice.fr/GlassFramework</dcat:Distribuition> -->
-    <dcat:contactPoint>orcid0000-0002-9733-284X</dcat:contactPoint>
+    <dcat:contactPoint>ResearcherID:A-5326-2010</dcat:contactPoint>
     <!-- internal link to contact point (vcard:Individual) described in the same file in <eposap:Person> or maybe organization -->
-    <eposap:publisher>EPOS.UBI</eposap:publisher>
+    <eposap:publisher>EPOS.OCA</eposap:publisher>
     <dct:spatial>
       <!-- Geographic location/spatial extent /bounding box -->
       <dct:Location>
@@ -181,15 +251,15 @@ xmlns:adms="http://www.w3.org/ns/adms#"
     <dct:temporal>
       <!-- temporal extent -->
       <dct:PeriodOfTime>
-        <schema:startDate>2013-03-01T12:00:00</schema:startDate>
+        <!-- <schema:startDate>2013-03-01T12:00:00</schema:startDate> -->
         <!-- 	<schema:endDate>2016-12-31T12:00:00</schema:endDate> endDate not applicable to EDSF -->
       </dct:PeriodOfTime>
     </dct:temporal>
   </eposap:WebService>
   
-    <!--All Station WebService -->
+   <!--All Station WebService -->
   <eposap:WebService>
-    <dct:title>Station  MetaData</dct:title>
+    <dct:title>Station MetaData</dct:title>
     <dct:description>This query returns the complete MetadaData for all stations (an array).</dct:description>
     <dct:issued>2017-09-14T23:00:00</dct:issued>
     <dct:modified>2017-09-14T23:00:00</dct:modified>
@@ -220,18 +290,18 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 		Earthquake parameters, Velocity models, GNSS station velocities, InSAR, Meteorology, 
 		Variation of geomagnetic field, 3D/4D structural models, Analog models, Numerical models, 
 		Geochemical data, Borehole data, Rock sample properties) -->
-			GNSS Satellite Data, Station and Equipment MetaData
+			GNSS Station and Site Equipment MetaData
 		</eposap:subDomain>
     <!-- Keywords, annotation. Simple and free (web annotation ontology in the future) -->
-    <dcat:keyword>GNSS Station Metadata</dcat:keyword>
+    <dcat:keyword>GNSS Station and Site Equipment Metadata</dcat:keyword>
     <!-- Keywords -->
     <eposap:operation>metadata</eposap:operation>
     <dct:hasVersion>1.0</dct:hasVersion>
     <!--<dcat:Distribuition>example http://glass.unice.fr:8080/GlassFramework/webresources/stations/files/marker/TROP</dcat:Distribuition> -->
    
-    <dcat:contactPoint>orcid0000-0002-9733-284X</dcat:contactPoint>
+    <dcat:contactPoint>ResearcherID:A-5326-2010</dcat:contactPoint>
     <!-- internal link to contact point (vcard:Individual) described in the same file in <eposap:Person> or maybe organization -->
-    <eposap:publisher>EPOS.UBI</eposap:publisher>
+    <eposap:publisher>EPOS.OCA</eposap:publisher>
     <dct:spatial>
       <!-- Geographic location/spatial extent /bounding box -->
       <dct:Location>
@@ -250,17 +320,16 @@ xmlns:adms="http://www.w3.org/ns/adms#"
     </dct:temporal>
   </eposap:WebService>
   
-     <!--All Station WebService from site name-->
+  <!--All Station WebService from site name-->
   <eposap:WebService>
-    <dct:title>All Station  MetaData from Site Name</dct:title>
+    <dct:title>All Station MetaData from Site Name</dct:title>
     <dct:description>This query returns the complete MetadaData for all files (an array) with a specific site name.</dct:description>
     <dct:issued>2017-09-14T23:00:00</dct:issued>
     <dct:modified>2017-09-14T23:00:00</dct:modified>
     <dct:license>GPL, Open Data</dct:license>
     <!-- Access and Use Restrictions -->
     <foaf:page>
-      <!-- URI whats the difference to distribuition below This property defines the link(s) to the resource and/or the link to additional information about the resource
--->
+      <!-- URI whats the difference to distribuition below This property defines the link(s) to the resource and/or the link to additional information about the resource-->
       <foaf:primaryTopic>http://glass.unice.fr:8080/GlassFramework/webresources/stations/site/</foaf:primaryTopic>
     </foaf:page>
     <dct:format>
@@ -283,10 +352,10 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 		Earthquake parameters, Velocity models, GNSS station velocities, InSAR, Meteorology, 
 		Variation of geomagnetic field, 3D/4D structural models, Analog models, Numerical models, 
 		Geochemical data, Borehole data, Rock sample properties) -->
-			GNSS Satellite Data, Station and Equipment MetaData
+			GNSS Station and Site Equipment MetaData
 		</eposap:subDomain>
     <!-- Keywords, annotation. Simple and free (web annotation ontology in the future) -->
-    <dcat:keyword>GNSS Station Metadata</dcat:keyword>
+    <dcat:keyword>GNSS Station and Site Equipment Metadata</dcat:keyword>
     <!-- Keywords -->
     <eposap:operation>metadata</eposap:operation>
     <dct:hasVersion>1.0</dct:hasVersion>
@@ -294,20 +363,16 @@ xmlns:adms="http://www.w3.org/ns/adms#"
     <eposap:parameter>
       <http:paramName>Site</http:paramName>
       <rdf:label>site</rdf:label>
-      <dct:type>
-        <!-- This property refers to parameter type 
- -->
-  string
- </dct:type>
+      <dct:type><!-- This property refers to parameter type --> string </dct:type>
       <!-- These properties refer to range value of the parameter 
 
  <schema:minValue>0</schema:minValue>
  <schema:maxValue>100</schema:maxValue>
   -->
     </eposap:parameter>
-    <dcat:contactPoint>orcid0000-0002-9733-284X</dcat:contactPoint>
+    <dcat:contactPoint>ResearcherID:A-5326-2010</dcat:contactPoint>
     <!-- internal link to contact point (vcard:Individual) described in the same file in <eposap:Person> or maybe organization -->
-    <eposap:publisher>EPOS.UBI</eposap:publisher>
+    <eposap:publisher>EPOS.OCA</eposap:publisher>
     <dct:spatial>
       <!-- Geographic location/spatial extent /bounding box -->
       <dct:Location>
@@ -326,8 +391,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
     </dct:temporal>
   </eposap:WebService>
   
-  
-   <!--All Station Data from Marker WebService -->
+  <!--All Station Data from Marker WebService -->
   <eposap:WebService>
     <dct:title>All Station Data from Marker Name (Glass T2 or Rinex Files)</dct:title>
     <dct:description>This query returns the metadata for the Data (Rinex) files  with a specific marker.</dct:description>
@@ -402,8 +466,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
       </dct:PeriodOfTime>
     </dct:temporal>
   </eposap:WebService>
-  
-  
+   
   <!-- EPOS WebService Product Portal Json-->
   <eposap:WebService>
     <dct:title>EPOS WP10 GNSS Products Portal</dct:title>
@@ -427,7 +490,6 @@ xmlns:adms="http://www.w3.org/ns/adms#"
     <dct:conformsTo>EPSG:3763</dct:conformsTo>
     <!-- Spatial Reference System [UBI?][http://spatialreference.org/ref/epsg/3763/] -->
     
-	
 	<dct:identifier>EPOS.WP10.PGW</dct:identifier>
     <!-- Unique Resource Identifier: this is the entry point of the service [UBI?]-->
     
@@ -443,7 +505,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 		Earthquake parameters, Velocity models, GNSS station velocities, InSAR, Meteorology, 
 		Variation of geomagnetic field, 3D/4D structural models, Analog models, Numerical models, 
 		Geochemical data, Borehole data, Rock sample properties) -->
-			GNSS Products Data and MetaData
+			GNSS Products Data and MetaData Portal
 		</eposap:subDomain>
     <!-- Keywords, annotation. Simple and free (web annotation ontology in the future) -->
     <dcat:keyword>GNSS</dcat:keyword>
@@ -474,7 +536,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 	<dct:temporal>
       <!-- temporal extent -->
       <dct:PeriodOfTime>
-        <schema:startDate>2013-03-01T12:00:00</schema:startDate>
+        <!-- <schema:startDate>2013-03-01T12:00:00</schema:startDate> -->
         <!-- 	<schema:endDate>2016-12-31T12:00:00</schema:endDate> endDate not applicable to EDSF -->
       </dct:PeriodOfTime>
     </dct:temporal>
@@ -482,10 +544,6 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 	
   </eposap:WebService>
   
-  
-  
-   
-   
   <!-- EPOS WebService GNSS Product Velocites xyz -->
   <eposap:WebService>
   
@@ -528,7 +586,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 		Earthquake parameters, Velocity models, GNSS station velocities, InSAR, Meteorology, 
 		Variation of geomagnetic field, 3D/4D structural models, Analog models, Numerical models, 
 		Geochemical data, Borehole data, Rock sample properties) -->
-			GNSS Products Data and MetaData
+			GNSS Products Velocities
 		</eposap:subDomain>
     <!-- Keywords, annotation. Simple and free (web annotation ontology in the future) -->
     <dcat:keyword>GNSS</dcat:keyword>
@@ -546,14 +604,15 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 	<eposap:parameter>
       <http:paramName>Agency</http:paramName>
       <rdf:label>agency</rdf:label>
-      <dct:type> <!-- This property refers to parameter type  --> string </dct:type>
+      <dct:type> <!-- EPOSDEMO OCA ING BFNK EUREF--> string </dct:type>
     </eposap:parameter>
 	
 	<eposap:parameter>
-      <http:paramName>SampplingPeriod></http:paramName>
-      <rdf:label>sampling_period</rdf:label>
-      <dct:type> <!-- This property refers to parameter type  --> string </dct:type>
+      <http:paramName>Format</http:paramName>
+      <rdf:label>format</rdf:label>
+      <dct:type> <!-- file format can be xml, json, hector, midas or pbo  --> string </dct:type>
     </eposap:parameter>
+	
 	
 	
 	<!--<dcat:Distribuition>http://glass.unice.fr/GlassFramework</dcat:Distribuition> -->
@@ -579,15 +638,14 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 	<dct:temporal>
       <!-- temporal extent -->
       <dct:PeriodOfTime>
-        <schema:startDate>2013-03-01T12:00:00</schema:startDate>
+        <!-- <schema:startDate>2013-03-01T12:00:00</schema:startDate> -->
         <!-- 	<schema:endDate>2016-12-31T12:00:00</schema:endDate> endDate not applicable to EDSF -->
       </dct:PeriodOfTime>
     </dct:temporal>
 	
   </eposap:WebService>
   
- 
-    <!-- EPOS WebService GNSS Product Time Series with xyz coordinates-->
+  <!-- EPOS WebService GNSS Product Time Series with xyz coordinates-->
   <eposap:WebService>
     <dct:title>Time Series XYZ </dct:title>
     <dct:description>EPOS WP10 GNSS Product Time Series with xyz coordinates</dct:description>
@@ -625,7 +683,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 		Earthquake parameters, Velocity models, GNSS station velocities, InSAR, Meteorology, 
 		Variation of geomagnetic field, 3D/4D structural models, Analog models, Numerical models, 
 		Geochemical data, Borehole data, Rock sample properties) -->
-			GNSS Products Data and MetaData
+			GNSS Products Time Series
 		</eposap:subDomain>
     <!-- Keywords, annotation. Simple and free (web annotation ontology in the future) -->
     <dcat:keyword>GNSS</dcat:keyword>
@@ -646,10 +704,10 @@ xmlns:adms="http://www.w3.org/ns/adms#"
       <dct:type> <!-- This property refers to parameter type  --> string </dct:type>
     </eposap:parameter>
 	
-	<eposap:parameter>
-      <http:paramName>Format</http:paramName>
-      <rdf:label>format</rdf:label>
-      <dct:type> <!-- This property refers to parameter type  --> string </dct:type>
+    <eposap:parameter>
+      <http:paramName>SamplingPeriod></http:paramName>
+      <rdf:label>sampling_period</rdf:label>
+      <dct:type> <!-- This is either daily or weekly  --> string </dct:type>
     </eposap:parameter>
 	
 	<!--<dcat:Distribuition>http://glass.unice.fr/GlassFramework</dcat:Distribuition> -->
@@ -675,15 +733,11 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 	<dct:temporal>
       <!-- temporal extent -->
       <dct:PeriodOfTime>
-        <schema:startDate>2013-03-01T12:00:00</schema:startDate>
+        <!-- <schema:startDate>2013-03-01T12:00:00</schema:startDate> -->
         <!-- 	<schema:endDate>2016-12-31T12:00:00</schema:endDate> endDate not applicable to EDSF -->
       </dct:PeriodOfTime>
     </dct:temporal>
 	
   </eposap:WebService>
  
-  
-  
-  
-	
 </eposap:Epos>
