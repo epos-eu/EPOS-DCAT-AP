@@ -372,19 +372,33 @@
 		<eposap:domain>Seismology</eposap:domain>
 		<eposap:subDomain>Historical earthquakes</eposap:subDomain>
 		<dcat:keyword>seismology, seismicity, earthquakes, seismic hazard, earth structure, earthquake intensity, macroseismic, macroseismic information, bibliography, earthquakes, parameters, historical, macroseismic, intensity</dcat:keyword>
-		<eposap:operation>GetCapabilities</eposap:operation>
+		<eposap:operation>execute</eposap:operation>
 		<dct:hasVersion>2.0.0</dct:hasVersion>
 		<eposap:parameter>
 			<http:paramName>service</http:paramName>
-			<rdf:label>service</rdf:label>
+			<rdf:label>service type</rdf:label>
 			<dct:type>string</dct:type>
-			<http:paramValue>WFS</http:paramValue>
+			<http:paramValue>wfs</http:paramValue>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>version</http:paramName>
+			<rdf:label>WFS version</rdf:label>
+			<dct:type>string</dct:type>
+			<http:paramValue>2.0.0</http:paramValue>
+			<http:paramValue>1.1.0</http:paramValue>
+			<http:paramValue>1.0.0</http:paramValue>
 		</eposap:parameter>
 		<eposap:parameter>
 			<http:paramName>request</http:paramName>
-			<rdf:label>request</rdf:label>
+			<rdf:label>Request type</rdf:label>
 			<dct:type>string</dct:type>
-			<http:paramValue>GetCapabilities</http:paramValue>
+			<http:paramValue>GetFeature</http:paramValue>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>typeName</http:paramName>
+			<rdf:label>SHEEC 1000-1899, the SHARE European Earthquake Catalogue 1000-1899</rdf:label>
+			<dct:type>string</dct:type>
+			<http:paramValue>sheec:SHEEC_1000_1899</http:paramValue>
 		</eposap:parameter>
 		<schema:documentation>https://www.emidius.eu/AHEAD/services/event_ogc.php</schema:documentation>
 		<dcat:contactPoint>http://orcid.org/0000-0003-2185-3267</dcat:contactPoint>
