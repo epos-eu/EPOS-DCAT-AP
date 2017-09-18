@@ -135,8 +135,65 @@
 	                <eposap:associatedProjects></eposap:associatedProjects>
 	</eposap:Organisation>
 
+	  <eposap:WebService>
+	    <dct:title>ShakeMap Input XML - Rapid Raw Strong Motion (RRSM)</dct:title>
+	    <dct:description>Resources can be used as input files for USGS ShakeMap program to create event shakemaps.</dct:description>
+	    <!-- DEPRECATED?: <dcat:accessURL>http://geofon.gfz-potsdam.de/fdsnws/dataselect/1/query</dcat:accessURL> -->
+	    <dct:issued>2017-04-01T00:00:00</dct:issued>
+	    <dct:modified>2017-04-01T00:00:00</dct:modified>
+	    <dct:license>To be defined!</dct:license>
+	    <foaf:page>
+	      <foaf:primaryTopic>http://www.orfeus-eu.org/odcws/rrsm/1/shakemap?</foaf:primaryTopic>
+	    </foaf:page>
+	    <dct:format>
+	      <dct:MediaTypeOrExtent>
+	       <!-- ShakeMapXML --> xml
+	      </dct:MediaTypeOrExtent>
+	    </dct:format>
+	    <dct:rights>
+	      <dct:RightsStatement>
+	        To be defined by EPOS!
+	      </dct:RightsStatement>
+	    </dct:rights>
+	    <dct:conformsTo>EPSG:4326</dct:conformsTo>
+	    <!-- If this is the proper way to define the identifier is still under
+	    discussion. TODO No special character are accepted here. -->
+	    <dct:identifier>org.orfeus-eu.eu:shakemap</dct:identifier>
+	    <dct:created>2017-04-01T00:00:00</dct:created>
+	    <!-- This property refers to the domain of resource (e.g. Seismology, GNSS etc.) -->
+	    <eposap:domain>
+	      Seismology
+	    </eposap:domain>
+	    <!-- TODO TCSs will have to provide a list of subdomain terms. -->
+	    <eposap:subDomain>
+	      Seismic Hazard products
+	    </eposap:subDomain>
+	    <dcat:keyword>Seismic Hazard, ODC, RRSM, Event, ShakeMap, ShakeMapXML, Strong Motion</dcat:keyword>
+	    <!-- TODO A list of terms has to be agreed with EPOS. -->
+	    <eposap:operation>
+	      execute
+	    </eposap:operation>
+	    <dct:hasVersion>1.0.0</dct:hasVersion>
+	    <eposap:parameter>
+	      <http:paramName>id</http:paramName>
+	      <rdf:label>Event ID</rdf:label>
+	      <dct:type>
+	              string
+	      </dct:type>
+	    </eposap:parameter>
+	
+	    <eposap:parameter>
+	      <http:paramName>type</http:paramName>
+	      <rdf:label>ShakeMapXML output file</rdf:label>
+	      <dct:type>
+	              string
+	      </dct:type>
+	      <http:paramValue>event</http:paramValue>
+	      <http:paramValue>event_dat</http:paramValue>
+	</eposap:parameter>
+
 	 <eposap:WebService>
-	    <dct:title>FDSN Dataselect - ORFEUS Data Center (GFZ)</dct:title>
+	    <dct:title>FDSN Dataselect - ORFEUS Data Center (ODC)</dct:title>
 	    <dct:description>FDSN Standard webservice at ODC to download waveform data</dct:description>
 	    <!-- DEPRECATED?: <dcat:accessURL>http://geofon.gfz-potsdam.de/fdsnws/dataselect/1/query</dcat:accessURL> -->
 	    <dct:issued>2016-01-01T00:00:00</dct:issued>
