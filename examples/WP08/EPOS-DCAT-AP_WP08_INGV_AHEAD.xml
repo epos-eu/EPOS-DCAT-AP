@@ -405,7 +405,7 @@
 	
 	<eposap:WebService>
 		<dct:title>Archive of Historical Earthquake Data (AHEAD) macroseismic data</dct:title>
-		<dct:description xml:lang="en">Macroseismic web service providing intensity data for historical earthquakes from AHEAD, the European Archive of Historical Earthquake Data. WARNING: This web service is a prototype under development, and it is based on the current QuakeML 2.0 macroseismic package which is not finalized yet.</dct:description>
+		<dct:description xml:lang="en">Macroseismic web service providing intensity data for historical earthquakes from AHEAD, the European Archive of Historical Earthquake Data.</dct:description>
 		<dct:issued>2017-09-14T12:00:00</dct:issued>
 		<dct:modified>2017-09-14T12:00:00</dct:modified>
 		<dct:license xml:lang="en">https://www.emidius.eu/AHEAD/introduction.php#copyright</dct:license><!-- temporary solution, valid until a proper CC license will be decided -->
@@ -555,7 +555,9 @@
 			<rdf:label>output format</rdf:label>
 			<dct:type>string</dct:type>
 			<http:paramValue>xml</http:paramValue>
+			<http:paramValue>json</http:paramValue>
 			<http:paramValue>text</http:paramValue>
+			<http:paramValue>textmacro</http:paramValue>
 		</eposap:parameter>
 		<eposap:parameter>
 			<http:paramName>orderby</http:paramName>
@@ -599,6 +601,11 @@
 			<dct:type>string</dct:type>
 			<http:paramValue>204</http:paramValue>
 			<http:paramValue>404</http:paramValue>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>macroseismicpackage</http:paramName>
+			<rdf:label>enable the QuakeML 2.0 macroseismic package</rdf:label>
+			<dct:type>boolean</dct:type>
 		</eposap:parameter>
 		<schema:documentation>doi:10.6092/INGV.IT-AHEAD</schema:documentation>
 		<schema:documentation>doi:10.1785/0220130113</schema:documentation>
