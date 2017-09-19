@@ -21,19 +21,21 @@
                                 <vcard:country-name>Greece</vcard:country-name>
                         </vcard:Address>
                 </vcard:hasAddress>
-                <vcard:hasEmail>cevan@noa.gr</vcard:hasEmail>
-                <vcard:hasTelephone>+302103490043</vcard:hasTelephone>
-                <vcard:hasURL>https://members.noa.gr/cevan/en/</vcard:hasURL>
-                <dct:identifier>orcid:0000-0001-8733-8984</dct:identifier>
-                <eposap:affiliation></eposap:affiliation>
-                <dct:language>
-			<dct:LinguisticSystem>en</dct:LinguisticSystem>
-		</dct:language>
-                <schema:qualifications>Researcher, Science and Data Management</schema:qualifications>
-</eposap:Person>
+		<vcard:hasEmail>cevan@noa.gr</vcard:hasEmail><!-- Email -->
+            <vcard:hasTelephone>+302103490043</vcard:hasTelephone><!-- Phone -->
+            <dct:identifier>http://orcid.org/0000-0001-8733-8984</dct:identifier> <!-- Unique Identifier -->
+            <eposap:affiliation></eposap:affiliation> <!-- Organisation -->
+            <dct:language><!-- Language for contact -->
+                    <dct:LinguisticSystem>EN</dct:LinguisticSystem>
+            </dct:language>
+            <schema:qualifications>Researcher, Science and Data Management</schema:qualifications><!-- Qualification -->
+            <vcard:hasURL><!-- CV -->
+                    http://orcid.org/0000-0001-8733-8984
+	    </vcard:hasURL> 
+       </eposap:Person>
 
   <!-- EPOS Person -->
-        <eposap:Person>
+       <eposap:Person>
                 <vcard:fn>Konstantinos, Boukouras</vcard:fn>
                 <vcard:hasAddress>
                         <vcard:Address>
@@ -45,15 +47,15 @@
                 </vcard:hasAddress>
                 <vcard:hasEmail>kbouk@noa.gr</vcard:hasEmail>
                 <vcard:hasTelephone>+302103490189</vcard:hasTelephone>
-                <vcard:hasURL></vcard:hasURL>
                 <dct:identifier></dct:identifier>
                 <eposap:affiliation></eposap:affiliation>
                 <dct:language>
 			<dct:LinguisticSystem>en</dct:LinguisticSystem>
 		</dct:language>
                 <schema:qualifications>IT and Data Management</schema:qualifications>
-</eposap:Person>
-
+		<vcard:hasURL></vcard:hasURL>
+        </eposap:Person>
+  
   <!-- EPOS Person -->
         <eposap:Person>
                 <vcard:fn>Nikolaos, Triantafyllis</vcard:fn>
@@ -67,20 +69,19 @@
                 </vcard:hasAddress>
                 <vcard:hasEmail>triantafyl@noa.gr</vcard:hasEmail>
                 <vcard:hasTelephone>+302103421013</vcard:hasTelephone>
-                <vcard:hasURL>http://students.ceid.upatras.gr/~triantafyl</vcard:hasURL>
-                <dct:identifier>orcid:0000-0002-4011-0971</dct:identifier>
+                <dct:identifier>http://orcid.org/0000-0002-4011-0971</dct:identifier>
                 <eposap:affiliation></eposap:affiliation>
                 <dct:language>
 			<dct:LinguisticSystem>en</dct:LinguisticSystem>
 		</dct:language>
                 <schema:qualifications>IT and Data Management</schema:qualifications>
-</eposap:Person>
+		<vcard:hasURL>http://orcid.org/0000-0002-4011-0971</vcard:hasURL>
+       </eposap:Person>
 
   <!-- EPOS Organisation -->
 	<eposap:Organisation>
-		<dct:identifier></dct:identifier>
 		<vcard:fn>NOA National Observatory of Athens</vcard:fn>
-		<vcard:organization-name>NOA National Observatory of Athens, Institute of Geodynamics</vcard:organization-name>
+		<vcard:organization-name xml:lang="en">NOA National Observatory of Athens, Institute of Geodynamics</vcard:organization-name>
 		<vcard:hasAddress>
 			<vcard:Address>
 				<vcard:street-address>Lofos Nymphon 1 - Thissio</vcard:street-address>
@@ -92,18 +93,19 @@
 		<vcard:hasEmail></vcard:hasEmail>
 		<vcard:hasURL>www.noa.gr</vcard:hasURL>
 		<vcard:hasLogo>http://eida.gein.noa.gr/logos/hl.png</vcard:hasLogo>
+		<dct:identifier></dct:identifier>
+		<eposap:scientificContact></eposap:scientificContact>
 		<dct:spatial>
 			<dct:Location>
-				<locn:geometry>POINT(23.7181785 37.9733941 0)</locn:geometry>
+				<locn:geometry>POINT(23.7181785 37.9733941)</locn:geometry>
 			</dct:Location>
 		</dct:spatial>
 		<dct:type>Governmental Research Institute</dct:type>
-		<eposap:scientificContact></eposap:scientificContact>
 		<eposap:legalContact></eposap:legalContact>
 		<eposap:financialContact></eposap:financialContact>
-		<eposap:isPartOf></eposap:isPartOf>
-		<eposap:associatedProjects></eposap:associatedProjects>
-</eposap:Organisation>
+		<!--<eposap:isPartOf></eposap:isPartOf>
+		<eposap:associatedProjects></eposap:associatedProjects>-->
+  </eposap:Organisation>
 
   <eposap:WebService>
     <dct:title>FDSN Dataselect - National Observatory of Athens (NOA)</dct:title>
@@ -117,7 +119,7 @@
     </foaf:page>
     <dct:format>
       <dct:MediaTypeOrExtent>
-        MiniSEED
+        binary
       </dct:MediaTypeOrExtent>
     </dct:format>
     <dct:rights>
@@ -128,7 +130,7 @@
     <dct:conformsTo>EPSG:4326</dct:conformsTo>
     <!-- If this is the proper way to define the identifier is still under
     discussion. TODO No special character are accepted here. -->
-    <dct:identifier>http://eida.gein.noa.gr/fdsnws/dataselect/1/query?</dct:identifier>
+    <dct:identifier>eida.gein.noa.gr/fdsnws/dataselect/1/query?</dct:identifier>
     <dct:created>2016-01-01T00:00:00</dct:created>
     <!-- This property refers to the domain of resource (e.g. Seismology, GNSS etc.) -->
     <eposap:domain>
@@ -141,7 +143,7 @@
     <dcat:keyword>seismology, seismicity, earthquakes, waveform, seismic hazard, earth structure, earthquake intensity, macroseismic, macroseismic information, waveform modeling, NOA, Dataselect,FDSN-WS,Seismic Waveform,EIDA</dcat:keyword>
     <!-- TODO A list of terms has to be agreed with EPOS. -->
     <eposap:operation>
-      download
+      execute
     </eposap:operation>
     <dct:hasVersion>1.1</dct:hasVersion>
     <eposap:parameter>
@@ -259,7 +261,7 @@
      <dct:conformsTo>EPSG:4326</dct:conformsTo>
      <!-- If this is the proper way to define the identifier is still under
      discussion. TODO No special character are accepted here. -->
-     <dct:identifier>http://eida.gein.noa.gr/fdsnws/station/1/query?</dct:identifier>
+     <dct:identifier>eida.gein.noa.gr/fdsnws/station/1/query?</dct:identifier>
      <dct:created>2016-01-01T00:00:00</dct:created>
      <!-- This property refers to the domain of resource (e.g. Seismology, GNSS etc.) -->
      <eposap:domain>
@@ -272,7 +274,7 @@
     <dcat:keyword>seismology, seismicity, earthquakes, waveform, seismic hazard, earth structure, earthquake intensity, macroseismic, macroseismic information, waveform modeling, NOA, Dataselect,FDSN-WS,Seismic Waveform,EIDA</dcat:keyword>
      <!-- TODO A list of terms has to be agreed with EPOS. -->
      <eposap:operation>
-       download
+       execute
      </eposap:operation>
      <dct:hasVersion>1.1</dct:hasVersion>
      <eposap:parameter>
