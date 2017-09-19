@@ -325,7 +325,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
     </dct:temporal>
   </eposap:WebService>
   
-  <!--All Station Data from Marker WebService -->
+  <!--All Rinex Station Data from Marker -->
   <eposap:WebService>
     <dct:title>GNSS Rinex File metadata from Marker Name</dct:title>
     <dct:description>Returns the metadata for the Data (Rinex) files  with a specific marker.</dct:description>
@@ -364,6 +364,78 @@ xmlns:adms="http://www.w3.org/ns/adms#"
       <rdf:label>The station marker</rdf:label>
       <dct:type>string</dct:type>
     </eposap:parameter>
+	
+    <dcat:contactPoint>ResearcherID:A-5326-2010</dcat:contactPoint>
+    <!-- internal link to contact point (vcard:Individual) described in the same file in <eposap:Person> or maybe organization -->
+    <eposap:publisher>PIC:991782030</eposap:publisher>
+    <dct:spatial>
+      <!-- Geographic location/spatial extent /bounding box -->
+      <dct:Location>
+        <!-- POLYGON(lon1 lat1, lon2) [europe UBI?]-->
+        <locn:geometry>POLYGON(-12.39 30.3, -12.39 49.0, 45.28 49.0, 45.28 30.3, -12.39 30.3)</locn:geometry>
+      </dct:Location>
+    </dct:spatial>
+    <!-- <adms:representationTechnique>vector</adms:representationTechnique>-->
+    <!-- representationTechnique not applicable for metadata -->
+    <dct:temporal>
+      <!-- temporal extent -->
+      <dct:PeriodOfTime>
+        <!-- <schema:startDate>2013-03-01T12:00:00</schema:startDate> -->
+        <!-- 	<schema:endDate>2016-12-31T12:00:00</schema:endDate> endDate not applicable to EDSF -->
+      </dct:PeriodOfTime>
+    </dct:temporal>
+  </eposap:WebService>
+  
+  <!--All Rinex station Data within a date range -->
+  <eposap:WebService>
+    <dct:title>GNSS Rinex File metadata from Marker Name</dct:title>
+    <dct:description>Returns the metadata for the Data (Rinex) files  with a specific marker.</dct:description>
+    <dct:issued>2017-09-14T23:00:00</dct:issued>
+    <dct:modified>2017-09-14T23:00:00</dct:modified>
+    <dct:license>GPL, Open Data</dct:license>
+    <!-- Access and Use Restrictions -->
+    
+	<foaf:page>
+      <foaf:primaryTopic>http://glass.unice.fr:8080/GlassFramework/webresources/stations/files/date_range/</foaf:primaryTopic>
+      <!-- ex http://glass.unice.fr:8080/GlassFramework/webresources/stations/files/date_range/2017-01-05&2017-09-06-->
+	</foaf:page>
+    
+	<dct:format>
+      <!-- distribution format, in case the service provides (also) access to binary data -->
+      <dct:MediaTypeOrExtent>json</dct:MediaTypeOrExtent>
+      <!-- gmd is used as an xml implementation also text and binary ??-->
+    </dct:format>
+    <!--Spatial Reference System the CRS should be specified with the relevant URI.The base URI is: http://www.opengis.net/def/crs/ -->
+    <dct:conformsTo>EPSG:3763</dct:conformsTo>
+    <!-- Spatial Reference System [UBI?][http://spatialreference.org/ref/epsg/3763/] -->
+    <dct:identifier>EPOS.WP10.DGW</dct:identifier>
+    <!-- Unique Resource Identifier: this is the entry point of the service [UBI?]-->
+    <dct:created>2017-06-30T12:00:00</dct:created>
+    <!-- date of creation -->
+   <eposap:domain>GNSS, Geodesy</eposap:domain>
+    <eposap:subDomain>GNSS Satellite Data</eposap:subDomain>
+    <!-- Keywords, annotation. Simple and free (web annotation ontology in the future) -->
+    <dcat:keyword>GNSS Station Data Rinex</dcat:keyword>
+    <!-- Keywords -->
+    <eposap:operation>metadata</eposap:operation>
+    <dct:hasVersion>1.0</dct:hasVersion>
+     
+	 <eposap:parameter>
+			<http:paramName>date_from</http:paramName>
+			<rdf:label>the begining of a time interval</rdf:label>
+			<dct:type>datetime</dct:type>
+			<!--<schema:minValue>2001-12-31T12:00:00</schema:minValue> 
+			<schema:maxValue>2017-06-20T12:00:00</schema:maxValue> -->
+	</eposap:parameter>
+                
+     <eposap:parameter>
+			<http:paramName>date_to</http:paramName>
+			<rdf:label>the end of a time interval</rdf:label>
+			<dct:type>datetime </dct:type>
+			<!--<schema:minValue>2001-12-31T12:00:00</schema:minValue> 
+			<schema:maxValue>2017-06-20T12:00:00</schema:maxValue>-->
+	</eposap:parameter>
+                
 	
     <dcat:contactPoint>ResearcherID:A-5326-2010</dcat:contactPoint>
     <!-- internal link to contact point (vcard:Individual) described in the same file in <eposap:Person> or maybe organization -->
@@ -594,22 +666,28 @@ Output : returns the full json information of all EPOS stations that contain a g
 Example that returns info with site names containing P
 http://glass.unice.fr:8080/GlassFramework/webresources/stations/site/P
 
-All Station Data from Marker WebService
+3  All Rinex Station Data from Marker WebService
+As above but searches on a date range
+example
+http://glass.unice.fr:8080/GlassFramework/webresources/stations/files/date_range/2017-01-05&2017-09-06
 
-**See documentation in the “GLASS Web Service API” document
 http://glass.unice.fr:8080/GlassFramework/webresources/stations/files/marker/ 
 Number of Required Parameters 1    
 Output : returns all RINEX files metadatas filtering by MARKER
 
-Example returs RINEX files from Cascais Station whose marker is CASC
+Example returns RINEX files from Cascais Station whose marker is CASC
 http://glass.unice.fr:8080/GlassFramework/webresources/stations/files/marker/CASC
 another with data as of 19/9/2017
 http://glass.unice.fr:8080/GlassFramework/webresources/stations/files/marker/SOPH 
 
 
+4 All Rinex station Data within a date range
+
+
+
 T4 Queries
 
-TIMESERIES Web Service
+5 TIMESERIES Web Service
 
 URL:  http://193.136.66.29:8102/GlassFramework/webresources/products/velocities/xyz/
 Number of Required Parameters 3, Number of Optional Parameters 4
@@ -620,7 +698,7 @@ http://193.136.66.29:8102/GlassFramework/webresources/products/timeseries/xyz/si
 
 T5 Queries
 
-VELOCITIES Web Service
+6 VELOCITIES Web Service
 
 URL:  http://193.136.66.29:8102/GlassFramework/webresources/products/velocities/xyz/
 Number of Required Parameters 3
