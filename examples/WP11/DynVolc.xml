@@ -281,7 +281,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 		<dct:spatial><!-- Spatial Coordinates -->
 			<dct:Location>
 				<!-- POINT(lon lat elevation) -->
-				<locn:geometry>POINT( 2.356752,48.845034)</locn:geometry>
+				<locn:geometry>POINT( 2.356752 48.845034)</locn:geometry>
 			</dct:Location>
 		</dct:spatial>
 		<dct:type><!-- Type -->
@@ -345,7 +345,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 		-->
 		<dct:license>http://creativecommons.org/licenses/by-nc/4.0/</dct:license> <!-- Access and Use Restrictions -->
 		<foaf:page> <!-- URI -->
-			<foaf:primaryTopic>http://opgc.fr/vobs/rest2/req.php/dynvolc/epos-dcat-ap/41</foaf:primaryTopic>
+			<foaf:primaryTopic>http://opgc.fr/vobs/rest2/req.php/dynvolc</foaf:primaryTopic>
 		</foaf:page>
 		<dct:format><!-- distribution format, in case the service provides (also) access to binary data -->
 			<dct:MediaTypeOrExtent>xml</dct:MediaTypeOrExtent>
@@ -370,46 +370,58 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 		<dct:created>2017-06-27T12:00:00</dct:created> <!-- date of creation -->
 		<eposap:domain> <!-- This property refers to the domain of resource (e.g. Seismology, Geodesy, 
 		Satellite data, Geomagnetic data, Geology, Geohazards, Georesources, Transnational access) -->
-			Volcanology
+			Volcano-Observations
 		</eposap:domain>
 		<eposap:subDomain> <!-- This property refers to the subdomain of resource (e.g. 
 		Earthquake parameters, Velocity models, GNSS station velocities, InSAR, Meteorology, 
 		Variation of geomagnetic field, 3D/4D structural models, Analog models, Numerical models, 
 		Geochemical data, Borehole data, Rock sample properties) -->
-			TBD
+			Geochemical-Data
 		</eposap:subDomain>
 		
 		<!-- Keywords, annotation. Simple and free (web annotation ontology in the future) -->
-		<dcat:keyword>Laboratories, rocks</dcat:keyword> <!-- Keywords -->
-		<eposap:operation>TBD</eposap:operation>
+		<dcat:keyword>Geochemistry, Laboratories, rocks</dcat:keyword> <!-- Keywords -->
+		<eposap:operation>execute</eposap:operation>
 		<dct:hasVersion>0.1</dct:hasVersion>
-
+                
+		<eposap:parameter>
+			<http:paramName>timestart</http:paramName>
+			<rdf:label>Start of the time</rdf:label>
+			<dct:type>
+				Date
+			</dct:type>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>timeend</http:paramName>
+			<rdf:label>End of the time</rdf:label>
+			<dct:type>
+				Date
+			</dct:type>
+		</eposap:parameter>
 		<!-- List of Parameters:
 			this section is needed in order to describe the parameters of the service.
 			E.g. in the case of a RESTful service, we may have "domain" as parameter,
 			with type "string" and a list of allowed value terms specified by the value tag,
 			e.g. 'seism','gps'  (i.e. namespace)-->
-		<eposap:parameter>
+		<!--<eposap:parameter>
 			<http:paramName>id</http:paramName>
 			<rdf:label>id</rdf:label>
-			<dct:type> <!-- This property refers to parameter type -->
+			<dct:type>
 				integer
 			</dct:type>
-			<!-- These properties refer to range value of the parameter -->
 			<schema:minValue>1</schema:minValue> 
 			<schema:maxValue>50</schema:maxValue>
 		</eposap:parameter>
 		<eposap:parameter>
 			<http:paramName>obsSyst</http:paramName>
 			<rdf:label>Observation system</rdf:label>
-			<dct:type> <!-- This property refers to parameter type -->
+			<dct:type>
 				string
 			</dct:type>
-			<!-- allowed vocabulary terms, optional tag -->
 			<http:paramValue>dynvolc</http:paramValue>
 			<http:paramValue>gazvolc</http:paramValue>
-			<owl:versionInfo>1.0</owl:versionInfo> <!-- version of parameter -->
-		</eposap:parameter>
+			<owl:versionInfo>1.0</owl:versionInfo>
+		</eposap:parameter>-->
 		<!-- The document is meant to be human readable (e.g. PDF, doc, and so on). 
 			This will help a user who, for instance, does not understand something from the hints/label of the parameters. -->
 		<dcat:contactPoint>http://orcid.org/0000-0002-5066-5153</dcat:contactPoint> <!-- internal link to contact point (vcard:Individual) described in the same file in <eposap:Person> -->
