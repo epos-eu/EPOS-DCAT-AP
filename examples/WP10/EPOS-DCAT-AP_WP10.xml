@@ -10,6 +10,12 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 	xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.epos-ip.org/terms.html https://raw.githubusercontent.com/epos-eu/EPOS-DCAT-AP/master/schemas/EPOS-DCAT-AP.xsd">
 	
+  <!-- 
+    PICS https://ec.europa.eu/research/participants/portal/desktop/en/organisations/register_sec.html
+    OCA PIC:991782030 UBI PIC:996437254 
+   -->
+    <!--Example Queries at the bottom of this file -->
+	
   <!-- EPOS Person Fernandes, Rui-->
   <eposap:Person>
     <vcard:fn>Fernandes, Rui</vcard:fn>
@@ -29,7 +35,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
     <!-- Phone -->
     <dct:identifier>http://orcid.org/0000-0002-9733-284X</dct:identifier>
     <!-- Unique Identifier -->
-    <eposap:affiliation>EPOS.UBI</eposap:affiliation>
+    <eposap:affiliation>PIC:996437254</eposap:affiliation>
     <!-- Organisation: PIC of UBI-->
     <dct:language>
       <!-- Language for contact -->
@@ -59,7 +65,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
     <!-- Phone -->
     <dct:identifier>http://orcid.org/0000-0001-6824-6136</dct:identifier>
     <!-- Unique Identifier -->
-    <eposap:affiliation>EPOS.UBI</eposap:affiliation>
+    <eposap:affiliation>PIC:996437254</eposap:affiliation>
     <!-- Organisation: PIC of UBI-->
     <dct:language>
       <!-- Language for contact -->
@@ -89,7 +95,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
     <!-- Phone -->
     <dct:identifier>ResearcherID:A-5326-2010</dct:identifier>
     <!-- Unique Identifier -->
-    <eposap:affiliation>OCA</eposap:affiliation>
+    <eposap:affiliation>PIC:991782030</eposap:affiliation>
     <!-- Organisation: PIC of ROB-->
     <dct:language>
       <!-- Language for contact -->
@@ -120,7 +126,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
     <!-- Website -->
     <vcard:hasLogo>http://www.ubi.pt/Ficheiros/Menus/1/logo_ubi_vhorizontalB.jpg</vcard:hasLogo>
     <!-- Logo TO BE CORRECTED -->
-    <dct:identifier>EPOS.UBI</dct:identifier>
+    <dct:identifier>PIC:996437254</dct:identifier>
     <!-- Unique Identifier -->
     <eposap:scientificContact>http://orcid.org/0000-0002-9733-284X</eposap:scientificContact>
     <!-- Scientific
@@ -165,7 +171,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
     <!-- Website -->
     <vcard:hasLogo>https://www.oca.eu/images/Logos/logocaeu.png</vcard:hasLogo>
     <!-- Logo -->
-    <dct:identifier>EPOS.OCA</dct:identifier>
+    <dct:identifier>OCA:991782030</dct:identifier>
     <!-- Unique Identifier -->
     <eposap:scientificContact>ResearcherID:A-5326-2010</eposap:scientificContact>
     <!-- Scientific
@@ -196,71 +202,10 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 		<dct:description>EPOS WP10 GNSS</dct:description><!-- Description (Abstract) -->
 	</eposap:Project>
   
-  <!-- EPOS Data Portal WebService -->
-  <eposap:WebService>
-    <dct:title>EPOS WP10 GNSS Data Portal</dct:title>
-    <dct:description>EPOS WP10 GNSS Data Portal</dct:description>
-    <dct:issued>2016-06-30T12:00:00</dct:issued>
-    <dct:modified>2016-12-31T12:00:00</dct:modified>
-    <dct:license>GPL, Open Data</dct:license>
-    <!-- Access and Use Restrictions -->
-    <foaf:page>
-      <!-- This property contains the URL of the web service without parameters.-->
-      <foaf:primaryTopic>http://glass.unice.fr:8080/GlassFramework</foaf:primaryTopic>
-    </foaf:page>
-    <dct:format>
-      <!-- distribution format, in case the service provides (also) access to binary data -->
-      <dct:MediaTypeOrExtent>text</dct:MediaTypeOrExtent>
-      <!-- gmd is used as an xml implementation also text and binary ??-->
-    </dct:format>
-    <!--Spatial Reference System the CRS should be specified with the relevant URI.The base URI is: http://www.opengis.net/def/crs/ -->
-    <dct:conformsTo>EPSG:3763</dct:conformsTo>
-    <!-- Spatial Reference System [UBI?][http://spatialreference.org/ref/epsg/3763/] -->
-    <dct:identifier>EPOS.WP10.DGW</dct:identifier>
-    <!-- Unique Resource Identifier: this is the entry point of the service -->
-    <dct:created>2017-06-30T12:00:00</dct:created>
-    <!-- date of creation -->
-    <eposap:domain>
-		Satellite Data, Geodesy
-	</eposap:domain>
-    <eposap:subDomain>
-      <!-- This property refers to the subdomain of resource (e.g. 
-		Earthquake parameters, Velocity models, GNSS station velocities, InSAR, Meteorology, 
-		Variation of geomagnetic field, 3D/4D structural models, Analog models, Numerical models, 
-		Geochemical data, Borehole data, Rock sample properties) -->
-			GNSS Satellite Data, Station and Equipment MetaData Portal
-		</eposap:subDomain>
-    <!-- Keywords, annotation. Simple and free (web annotation ontology in the future) -->
-    <dcat:keyword>GNSS</dcat:keyword>
-    <!-- Keywords -->
-    <eposap:operation>data, portal, products, repository, visualization, download</eposap:operation>
-    <dct:hasVersion>1.0</dct:hasVersion>
-    <!--<dcat:Distribuition>http://glass.unice.fr/GlassFramework</dcat:Distribuition> -->
-    <dcat:contactPoint>ResearcherID:A-5326-2010</dcat:contactPoint>
-    <!-- internal link to contact point (vcard:Individual) described in the same file in <eposap:Person> or maybe organization -->
-    <eposap:publisher>EPOS.OCA</eposap:publisher>
-    <dct:spatial>
-      <!-- Geographic location/spatial extent /bounding box -->
-      <dct:Location>
-        <!-- POLYGON(lon1 lat1, lon2) [europe UBI?]-->
-        <locn:geometry>POLYGON(-12.39 30.3, -12.39 49.0, 45.28 49.0, 45.28 30.3, -12.39 30.3)</locn:geometry>
-      </dct:Location>
-    </dct:spatial>
-    <!-- <adms:representationTechnique>vector</adms:representationTechnique>-->
-    <!-- representationTechnique not applicable for metadata -->
-    <dct:temporal>
-      <!-- temporal extent -->
-      <dct:PeriodOfTime>
-        <!-- <schema:startDate>2013-03-01T12:00:00</schema:startDate> -->
-        <!-- 	<schema:endDate>2016-12-31T12:00:00</schema:endDate> endDate not applicable to EDSF -->
-      </dct:PeriodOfTime>
-    </dct:temporal>
-  </eposap:WebService>
-  
    <!--All Station WebService -->
   <eposap:WebService>
-    <dct:title>Station MetaData</dct:title>
-    <dct:description>This query returns the complete MetadaData for all stations (an array).</dct:description>
+    <dct:title>All Station Full MetaData</dct:title>
+    <dct:description>Returns the complete MetadaData for all stations (an array).</dct:description>
     <dct:issued>2017-09-14T23:00:00</dct:issued>
     <dct:modified>2017-09-14T23:00:00</dct:modified>
     <dct:license>GPL, Open Data</dct:license>
@@ -282,9 +227,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
     <!-- Unique Resource Identifier: this is the entry point of the service [UBI?]-->
     <dct:created>2017-06-30T12:00:00</dct:created>
     <!-- date of creation -->
-    <eposap:domain>
-		Satellite Data, Geodesy
-	</eposap:domain>
+    <eposap:domain>GNSS, Geodesy</eposap:domain>
     <eposap:subDomain>
       <!-- This property refers to the subdomain of resource (e.g. 
 		Earthquake parameters, Velocity models, GNSS station velocities, InSAR, Meteorology, 
@@ -301,7 +244,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
    
     <dcat:contactPoint>ResearcherID:A-5326-2010</dcat:contactPoint>
     <!-- internal link to contact point (vcard:Individual) described in the same file in <eposap:Person> or maybe organization -->
-    <eposap:publisher>EPOS.OCA</eposap:publisher>
+    <eposap:publisher>PIC:991782030</eposap:publisher>
     <dct:spatial>
       <!-- Geographic location/spatial extent /bounding box -->
       <dct:Location>
@@ -309,12 +252,10 @@ xmlns:adms="http://www.w3.org/ns/adms#"
         <locn:geometry>POLYGON(-12.39 30.3, -12.39 49.0, 45.28 49.0, 45.28 30.3, -12.39 30.3)</locn:geometry>
       </dct:Location>
     </dct:spatial>
-    <!-- <adms:representationTechnique>vector</adms:representationTechnique>-->
-    <!-- representationTechnique not applicable for metadata -->
     <dct:temporal>
       <!-- temporal extent -->
       <dct:PeriodOfTime>
-        <schema:startDate>2013-03-01T12:00:00</schema:startDate>
+        <!--schema:startDate>2013-03-01T12:00:00</schema:startDate> -->
         <!-- 	<schema:endDate>2016-12-31T12:00:00</schema:endDate> endDate not applicable to EDSF -->
       </dct:PeriodOfTime>
     </dct:temporal>
@@ -323,7 +264,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
   <!--All Station WebService from site name-->
   <eposap:WebService>
     <dct:title>All Station MetaData from Site Name</dct:title>
-    <dct:description>This query returns the complete MetadaData for all files (an array) with a specific site name.</dct:description>
+    <dct:description>Returns the complete MetadaData for all files (an array) with matching site name.</dct:description>
     <dct:issued>2017-09-14T23:00:00</dct:issued>
     <dct:modified>2017-09-14T23:00:00</dct:modified>
     <dct:license>GPL, Open Data</dct:license>
@@ -344,9 +285,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
     <!-- Unique Resource Identifier: this is the entry point of the service [UBI?]-->
     <dct:created>2017-06-30T12:00:00</dct:created>
     <!-- date of creation -->
-    <eposap:domain>
-		Satellite Data, Geodesy
-	</eposap:domain>
+   <eposap:domain>GNSS, Geodesy</eposap:domain>
     <eposap:subDomain>
       <!-- This property refers to the subdomain of resource (e.g. 
 		Earthquake parameters, Velocity models, GNSS station velocities, InSAR, Meteorology, 
@@ -362,17 +301,12 @@ xmlns:adms="http://www.w3.org/ns/adms#"
     <!--<dcat:Distribuition>example http://glass.unice.fr:8080/GlassFramework/webresources/stations/files/marker/TROP</dcat:Distribuition> -->
     <eposap:parameter>
       <http:paramName>Site</http:paramName>
-      <rdf:label>site</rdf:label>
-      <dct:type><!-- This property refers to parameter type --> string </dct:type>
-      <!-- These properties refer to range value of the parameter 
-
- <schema:minValue>0</schema:minValue>
- <schema:maxValue>100</schema:maxValue>
-  -->
+      <rdf:label>The site name</rdf:label>
+      <dct:type>string </dct:type>
     </eposap:parameter>
     <dcat:contactPoint>ResearcherID:A-5326-2010</dcat:contactPoint>
     <!-- internal link to contact point (vcard:Individual) described in the same file in <eposap:Person> or maybe organization -->
-    <eposap:publisher>EPOS.OCA</eposap:publisher>
+    <eposap:publisher>PIC:991782030</eposap:publisher>
     <dct:spatial>
       <!-- Geographic location/spatial extent /bounding box -->
       <dct:Location>
@@ -385,26 +319,27 @@ xmlns:adms="http://www.w3.org/ns/adms#"
     <dct:temporal>
       <!-- temporal extent -->
       <dct:PeriodOfTime>
-        <schema:startDate>2013-03-01T12:00:00</schema:startDate>
+        <!-- <schema:startDate>2013-03-01T12:00:00</schema:startDate> -->
         <!-- 	<schema:endDate>2016-12-31T12:00:00</schema:endDate> endDate not applicable to EDSF -->
       </dct:PeriodOfTime>
     </dct:temporal>
   </eposap:WebService>
   
-  <!--All Station Data from Marker WebService -->
+  <!--All Rinex Station Data from Marker -->
   <eposap:WebService>
-    <dct:title>All Station Data from Marker Name (Glass T2 or Rinex Files)</dct:title>
-    <dct:description>This query returns the metadata for the Data (Rinex) files  with a specific marker.</dct:description>
+    <dct:title>GNSS Rinex File metadata from Marker Name</dct:title>
+    <dct:description>Returns the metadata for the Data (Rinex) files  with a specific marker.</dct:description>
     <dct:issued>2017-09-14T23:00:00</dct:issued>
     <dct:modified>2017-09-14T23:00:00</dct:modified>
     <dct:license>GPL, Open Data</dct:license>
     <!-- Access and Use Restrictions -->
-    <foaf:page>
-      <!-- URI whats the difference to distribuition below This property defines the link(s) to the resource and/or the link to additional information about the resource
--->
+    
+	<foaf:page>
       <foaf:primaryTopic>http://glass.unice.fr:8080/GlassFramework/webresources/stations/files/marker/</foaf:primaryTopic>
-    </foaf:page>
-    <dct:format>
+      <!-- ex http://glass.unice.fr:8080/GlassFramework/webresources/stations/files/marker/SOPH -->
+	</foaf:page>
+    
+	<dct:format>
       <!-- distribution format, in case the service provides (also) access to binary data -->
       <dct:MediaTypeOrExtent>json</dct:MediaTypeOrExtent>
       <!-- gmd is used as an xml implementation also text and binary ??-->
@@ -416,39 +351,23 @@ xmlns:adms="http://www.w3.org/ns/adms#"
     <!-- Unique Resource Identifier: this is the entry point of the service [UBI?]-->
     <dct:created>2017-06-30T12:00:00</dct:created>
     <!-- date of creation -->
-    <eposap:domain>
-		Satellite Data, Geodesy
-	</eposap:domain>
-    <eposap:subDomain>
-      <!-- This property refers to the subdomain of resource (e.g. 
-		Earthquake parameters, Velocity models, GNSS station velocities, InSAR, Meteorology, 
-		Variation of geomagnetic field, 3D/4D structural models, Analog models, Numerical models, 
-		Geochemical data, Borehole data, Rock sample properties) -->
-			GNSS Satellite Data, Station and Equipment MetaData
-		</eposap:subDomain>
+   <eposap:domain>GNSS, Geodesy</eposap:domain>
+    <eposap:subDomain>GNSS Satellite Data</eposap:subDomain>
     <!-- Keywords, annotation. Simple and free (web annotation ontology in the future) -->
-    <dcat:keyword>GNSS Station Metadata</dcat:keyword>
+    <dcat:keyword>GNSS Station Data Rinex</dcat:keyword>
     <!-- Keywords -->
     <eposap:operation>metadata</eposap:operation>
     <dct:hasVersion>1.0</dct:hasVersion>
-    <!--<dcat:Distribuition>example http://glass.unice.fr:8080/GlassFramework/webresources/stations/files/marker/TROP</dcat:Distribuition> -->
-    <eposap:parameter>
+     
+	<eposap:parameter>
       <http:paramName>Marker</http:paramName>
-      <rdf:label>marker</rdf:label>
-      <dct:type>
-        <!-- This property refers to parameter type 
- -->
-  string
- </dct:type>
-      <!-- These properties refer to range value of the parameter 
-
- <schema:minValue>0</schema:minValue>
- <schema:maxValue>100</schema:maxValue>
-  -->
+      <rdf:label>The station marker</rdf:label>
+      <dct:type>string</dct:type>
     </eposap:parameter>
-    <dcat:contactPoint>orcid0000-0002-9733-284X</dcat:contactPoint>
+	
+    <dcat:contactPoint>ResearcherID:A-5326-2010</dcat:contactPoint>
     <!-- internal link to contact point (vcard:Individual) described in the same file in <eposap:Person> or maybe organization -->
-    <eposap:publisher>EPOS.UBI</eposap:publisher>
+    <eposap:publisher>PIC:991782030</eposap:publisher>
     <dct:spatial>
       <!-- Geographic location/spatial extent /bounding box -->
       <dct:Location>
@@ -461,66 +380,66 @@ xmlns:adms="http://www.w3.org/ns/adms#"
     <dct:temporal>
       <!-- temporal extent -->
       <dct:PeriodOfTime>
-        <schema:startDate>2013-03-01T12:00:00</schema:startDate>
+        <!-- <schema:startDate>2013-03-01T12:00:00</schema:startDate> -->
         <!-- 	<schema:endDate>2016-12-31T12:00:00</schema:endDate> endDate not applicable to EDSF -->
       </dct:PeriodOfTime>
     </dct:temporal>
   </eposap:WebService>
-   
-  <!-- EPOS WebService Product Portal Json-->
+  
+  <!--All Rinex station Data within a date range -->
   <eposap:WebService>
-    <dct:title>EPOS WP10 GNSS Products Portal</dct:title>
-    <dct:description>EPOS WP10 GNSS Products Portal</dct:description>
-	
-	<dct:issued>2016-06-30T12:00:00</dct:issued>
+    <dct:title>GNSS Rinex File metadata from Marker Name</dct:title>
+    <dct:description>Returns the metadata for the Data (Rinex) files  with a specific marker.</dct:description>
+    <dct:issued>2017-09-14T23:00:00</dct:issued>
+    <dct:modified>2017-09-14T23:00:00</dct:modified>
+    <dct:license>GPL, Open Data</dct:license>
+    <!-- Access and Use Restrictions -->
     
-	<dct:modified>2016-12-31T12:00:00</dct:modified>
-   
-	<dct:license>GPL, Open Data</dct:license> <!-- Access and Use Restrictions -->
-	<foaf:page> 
-			<foaf:primaryTopic>http://193.136.66.29:8102/GlassFramework/swagger.json</foaf:primaryTopic>
+	<foaf:page>
+      <foaf:primaryTopic>http://glass.unice.fr:8080/GlassFramework/webresources/stations/files/date_range/</foaf:primaryTopic>
+      <!-- ex http://glass.unice.fr:8080/GlassFramework/webresources/stations/files/date_range/2017-01-05&2017-09-06-->
 	</foaf:page>
-	
-	<dct:format><!-- distribution format, in case the service provides (also) access to binary data -->
-			<dct:MediaTypeOrExtent>json</dct:MediaTypeOrExtent> <!-- gmd is used as an xml implementation also text and binary ??-->
-	</dct:format>
-	
-	 <!--Spatial Reference System the CRS should be specified with the relevant URI.The base URI is: http://www.opengis.net/def/crs/ -->
-
+    
+	<dct:format>
+      <!-- distribution format, in case the service provides (also) access to binary data -->
+      <dct:MediaTypeOrExtent>json</dct:MediaTypeOrExtent>
+      <!-- gmd is used as an xml implementation also text and binary ??-->
+    </dct:format>
+    <!--Spatial Reference System the CRS should be specified with the relevant URI.The base URI is: http://www.opengis.net/def/crs/ -->
     <dct:conformsTo>EPSG:3763</dct:conformsTo>
     <!-- Spatial Reference System [UBI?][http://spatialreference.org/ref/epsg/3763/] -->
-    
-	<dct:identifier>EPOS.WP10.PGW</dct:identifier>
+    <dct:identifier>EPOS.WP10.DGW</dct:identifier>
     <!-- Unique Resource Identifier: this is the entry point of the service [UBI?]-->
-    
-	<dct:created>2017-06-30T12:00:00</dct:created>
+    <dct:created>2017-06-30T12:00:00</dct:created>
     <!-- date of creation -->
-    
-	<eposap:domain>
-		Satellite Data, Geodesy
-	</eposap:domain>
-	
-    <eposap:subDomain>
-      <!-- This property refers to the subdomain of resource (e.g. 
-		Earthquake parameters, Velocity models, GNSS station velocities, InSAR, Meteorology, 
-		Variation of geomagnetic field, 3D/4D structural models, Analog models, Numerical models, 
-		Geochemical data, Borehole data, Rock sample properties) -->
-			GNSS Products Data and MetaData Portal
-		</eposap:subDomain>
+   <eposap:domain>GNSS, Geodesy</eposap:domain>
+    <eposap:subDomain>GNSS Satellite Data</eposap:subDomain>
     <!-- Keywords, annotation. Simple and free (web annotation ontology in the future) -->
-    <dcat:keyword>GNSS</dcat:keyword>
+    <dcat:keyword>GNSS Station Data Rinex</dcat:keyword>
     <!-- Keywords -->
-    <eposap:operation>data, portal, products, repository, visualization, download</eposap:operation>
+    <eposap:operation>metadata</eposap:operation>
     <dct:hasVersion>1.0</dct:hasVersion>
+     
+	 <eposap:parameter>
+			<http:paramName>date_from</http:paramName>
+			<rdf:label>the begining of a time interval</rdf:label>
+			<dct:type>datetime</dct:type>
+			<!--<schema:minValue>2001-12-31T12:00:00</schema:minValue> 
+			<schema:maxValue>2017-06-20T12:00:00</schema:maxValue> -->
+	</eposap:parameter>
+                
+     <eposap:parameter>
+			<http:paramName>date_to</http:paramName>
+			<rdf:label>the end of a time interval</rdf:label>
+			<dct:type>datetime </dct:type>
+			<!--<schema:minValue>2001-12-31T12:00:00</schema:minValue> 
+			<schema:maxValue>2017-06-20T12:00:00</schema:maxValue>-->
+	</eposap:parameter>
+                
 	
-	<!--<dcat:Distribuition>http://glass.unice.fr/GlassFramework</dcat:Distribuition> -->
-
-    <dcat:contactPoint>http://orcid.org/0000-0002-9733-284X</dcat:contactPoint>
-    
-	<!-- internal link to contact point (vcard:Individual) described in the same file in <eposap:Person> or maybe organization -->
-	
-	<eposap:publisher>EPOS.UBI</eposap:publisher>
-	
+    <dcat:contactPoint>ResearcherID:A-5326-2010</dcat:contactPoint>
+    <!-- internal link to contact point (vcard:Individual) described in the same file in <eposap:Person> or maybe organization -->
+    <eposap:publisher>PIC:991782030</eposap:publisher>
 
     <dct:spatial>
       <!-- Geographic location/spatial extent /bounding box -->
@@ -529,26 +448,22 @@ xmlns:adms="http://www.w3.org/ns/adms#"
         <locn:geometry>POLYGON(-12.39 30.3, -12.39 49.0, 45.28 49.0, 45.28 30.3, -12.39 30.3)</locn:geometry>
       </dct:Location>
     </dct:spatial>
-   
-   <!-- <adms:representationTechnique>vector</adms:representationTechnique>-->
-   <!-- representationTechnique not applicable for metadata -->
-    
-	<dct:temporal>
+    <!-- <adms:representationTechnique>vector</adms:representationTechnique>-->
+    <!-- representationTechnique not applicable for metadata -->
+    <dct:temporal>
       <!-- temporal extent -->
       <dct:PeriodOfTime>
         <!-- <schema:startDate>2013-03-01T12:00:00</schema:startDate> -->
         <!-- 	<schema:endDate>2016-12-31T12:00:00</schema:endDate> endDate not applicable to EDSF -->
       </dct:PeriodOfTime>
     </dct:temporal>
-	
-	
   </eposap:WebService>
   
   <!-- EPOS WebService GNSS Product Velocites xyz -->
   <eposap:WebService>
   
-    <dct:title>Velocities XYZ</dct:title>
-    <dct:description>EPOS WP10 GNSS Station Velocities with xyz coordinates</dct:description>
+    <dct:title>GNSS Station Velocities XYZ</dct:title>
+    <dct:description>Returns GNSS Station Velocities (xyz coordinates)</dct:description>
 	
     <dct:issued>2016-06-30T12:00:00</dct:issued>
     
@@ -564,66 +479,61 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 			<dct:MediaTypeOrExtent>json</dct:MediaTypeOrExtent> <!-- gmd is used as an xml implementation also text and binary ??-->
 	</dct:format>
 	
-	
-	 <!--Spatial Reference System the CRS should be specified with the relevant URI.The base URI is: http://www.opengis.net/def/crs/ -->
+	<!--Spatial Reference System the CRS should be specified with the relevant URI.The base URI is: http://www.opengis.net/def/crs/ -->
 
     <dct:conformsTo>EPSG:3763</dct:conformsTo>
     <!-- Spatial Reference System [UBI?][http://spatialreference.org/ref/epsg/3763/] -->
-    
-	
+   
 	<dct:identifier>EPOS.WP10.PGW</dct:identifier>
     <!-- Unique Resource Identifier: this is the entry point of the service [UBI?]-->
     
 	<dct:created>2017-06-30T12:00:00</dct:created>
     <!-- date of creation -->
     
-	<eposap:domain>
-		Satellite Data, Geodesy
-	</eposap:domain>
+    <eposap:domain>GNSS, Geodesy</eposap:domain>
 	
     <eposap:subDomain>
       <!-- This property refers to the subdomain of resource (e.g. 
 		Earthquake parameters, Velocity models, GNSS station velocities, InSAR, Meteorology, 
 		Variation of geomagnetic field, 3D/4D structural models, Analog models, Numerical models, 
 		Geochemical data, Borehole data, Rock sample properties) -->
-			GNSS Products Velocities
+			GNSS Products Velocities XYZ
 		</eposap:subDomain>
     <!-- Keywords, annotation. Simple and free (web annotation ontology in the future) -->
-    <dcat:keyword>GNSS</dcat:keyword>
+    <dcat:keyword>GNSS Products Velocities XYZ</dcat:keyword>
     <!-- Keywords -->
-    <eposap:operation>data, portal, products, repository, visualization, download</eposap:operation>
+    <eposap:operation>products, repository, visualization, download</eposap:operation>
     <dct:hasVersion>1.0</dct:hasVersion>
 	
 	
 	<eposap:parameter>
       <http:paramName>Site</http:paramName>
-      <rdf:label>site</rdf:label>
-      <dct:type> <!-- This property refers to parameter type  --> string </dct:type>
+      <rdf:label>Station site name</rdf:label>
+      <dct:type>string </dct:type>
     </eposap:parameter>
 	
 	<eposap:parameter>
       <http:paramName>Agency</http:paramName>
-      <rdf:label>agency</rdf:label>
-      <dct:type> <!-- EPOSDEMO OCA ING BFNK EUREF--> string </dct:type>
+      <rdf:label>The Processing Agency. NGV,UGA, BFHK, WUT or EPOSDEMO</rdf:label>
+      <dct:type>string </dct:type>
+	  <!-- This has one of the following values 
+	   NGV - PP solutions, UGA - DD solutions, BFHK - Combined EPOS solutions, 
+	   WUT - EUREF Solutions, EPOSDEMO - UBI Demos,  GEOTOP S.R.L. .. dummy Data 
+	   -->
     </eposap:parameter>
 	
 	<eposap:parameter>
       <http:paramName>Format</http:paramName>
-      <rdf:label>format</rdf:label>
+      <rdf:label>The format of the result. xml, json, hector, midas or pbo</rdf:label>
       <dct:type> <!-- file format can be xml, json, hector, midas or pbo  --> string </dct:type>
     </eposap:parameter>
 	
-	
-	
-	<!--<dcat:Distribuition>http://glass.unice.fr/GlassFramework</dcat:Distribuition> -->
 
     <dcat:contactPoint>http://orcid.org/0000-0002-9733-284X</dcat:contactPoint>
-    
-	<!-- internal link to contact point (vcard:Individual) described in the same file in <eposap:Person> or maybe organization -->
-	
-	<eposap:publisher>EPOS.UBI</eposap:publisher>
-	
+	<eposap:publisher>PIC:996437254</eposap:publisher>
 
+
+	
     <dct:spatial>
       <!-- Geographic location/spatial extent /bounding box -->
       <dct:Location>
@@ -647,8 +557,8 @@ xmlns:adms="http://www.w3.org/ns/adms#"
   
   <!-- EPOS WebService GNSS Product Time Series with xyz coordinates-->
   <eposap:WebService>
-    <dct:title>Time Series XYZ </dct:title>
-    <dct:description>EPOS WP10 GNSS Product Time Series with xyz coordinates</dct:description>
+    <dct:title>GNSS STATION Time Series (XYZ) </dct:title>
+    <dct:description>Returns GNSS Product Time Series (xyz coordinates)</dct:description>
 	
 	<dct:issued>2016-06-30T12:00:00</dct:issued>
 	<dct:modified>2016-12-31T12:00:00</dct:modified>
@@ -674,51 +584,48 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 	<dct:created>2017-06-30T12:00:00</dct:created>
     <!-- date of creation -->
     
-	<eposap:domain>
-		Satellite Data, Geodesy
-	</eposap:domain>
+	<eposap:domain>GNSS, Geodesy</eposap:domain>
 	
     <eposap:subDomain>
       <!-- This property refers to the subdomain of resource (e.g. 
 		Earthquake parameters, Velocity models, GNSS station velocities, InSAR, Meteorology, 
 		Variation of geomagnetic field, 3D/4D structural models, Analog models, Numerical models, 
 		Geochemical data, Borehole data, Rock sample properties) -->
-			GNSS Products Time Series
+			GNSS Products Time Series XYZ
 		</eposap:subDomain>
     <!-- Keywords, annotation. Simple and free (web annotation ontology in the future) -->
-    <dcat:keyword>GNSS</dcat:keyword>
+    <dcat:keyword>GNSS Products Time Series</dcat:keyword>
     <!-- Keywords -->
-    <eposap:operation>data, portal, products, repository, visualization, download</eposap:operation>
+    <eposap:operation>products, repository, visualization, download</eposap:operation>
     <dct:hasVersion>1.0</dct:hasVersion>
-	
 	
 	<eposap:parameter>
       <http:paramName>Site</http:paramName>
-      <rdf:label>site</rdf:label>
-      <dct:type> <!-- This property refers to parameter type  --> string </dct:type>
+      <rdf:label>Site Name</rdf:label>
+      <dct:type>string </dct:type>
     </eposap:parameter>
 	
 	<eposap:parameter>
       <http:paramName>Agency</http:paramName>
-      <rdf:label>agency</rdf:label>
-      <dct:type> <!-- This property refers to parameter type  --> string </dct:type>
+      <rdf:label>The Processing Agency. NGV,UGA, BFHK, WUT or EPOSDEMO</rdf:label>
+      <dct:type>string </dct:type>
+	  <!-- This has one of the following values 
+	   NGV - PP solutions, UGA - DD solutions, BFHK - Combined EPOS solutions, 
+	   WUT - EUREF Solutions, EPOSDEMO - UBI Demos,  GEOTOP S.R.L. .. dummy Data 
+	   -->
     </eposap:parameter>
 	
     <eposap:parameter>
       <http:paramName>SamplingPeriod></http:paramName>
-      <rdf:label>sampling_period</rdf:label>
-      <dct:type> <!-- This is either daily or weekly  --> string </dct:type>
+      <rdf:label>Sampling Period daily or weekly</rdf:label>
+      <dct:type>string </dct:type>
+	  <!-- This has value either daily or weekly  -->
     </eposap:parameter>
 	
-	<!--<dcat:Distribuition>http://glass.unice.fr/GlassFramework</dcat:Distribuition> -->
-
     <dcat:contactPoint>orcid0000-0002-9733-284X</dcat:contactPoint>
     
-	<!-- internal link to contact point (vcard:Individual) described in the same file in <eposap:Person> or maybe organization -->
+	<eposap:publisher>UBI PIC:996437254</eposap:publisher>
 	
-	<eposap:publisher>EPOS.UBI</eposap:publisher>
-	
-
     <dct:spatial>
       <!-- Geographic location/spatial extent /bounding box -->
       <dct:Location>
@@ -741,3 +648,80 @@ xmlns:adms="http://www.w3.org/ns/adms#"
   </eposap:WebService>
  
 </eposap:Epos>
+
+  <!--Examples
+  
+  EPOS DCAT AP XML MAPPED QUERIES
+  
+  Also see **See documentation in the “GLASS Web Service API” document
+
+1 All Station WebService
+
+http://glass.unice.fr:8080/GlassFramework/webresources/stations/
+Number of Required Parameters 0
+Output : returns the full json information of all EPOS stations
+
+2 All Station WebService from site name
+
+http://glass.unice.fr:8080/GlassFramework/webresources/stations/site/
+Number of Required Parameters 1
+Output : returns the full json information of all EPOS stations that contain a given site name
+
+Example that returns info with site names containing P
+http://glass.unice.fr:8080/GlassFramework/webresources/stations/site/P
+
+3  All Rinex Station Data from Marker WebService
+As above but searches on a date range
+example
+http://glass.unice.fr:8080/GlassFramework/webresources/stations/files/date_range/2017-01-05&2017-09-06
+
+http://glass.unice.fr:8080/GlassFramework/webresources/stations/files/marker/ 
+Number of Required Parameters 1    
+Output : returns all RINEX files metadatas filtering by MARKER
+
+Example returns RINEX files from Cascais Station whose marker is CASC
+http://glass.unice.fr:8080/GlassFramework/webresources/stations/files/marker/CASC
+another with data as of 19/9/2017
+http://glass.unice.fr:8080/GlassFramework/webresources/stations/files/marker/SOPH 
+
+
+4 All Rinex station Data within a date range
+
+
+
+T4 Queries
+
+5 TIMESERIES Web Service
+
+URL:  http://193.136.66.29:8102/GlassFramework/webresources/products/velocities/xyz/
+Number of Required Parameters 3, Number of Optional Parameters 4
+Output: Timeseries xyz in json format by default (xml format can be used adding to the url "format:xml"). In addition to the used parameters (which are required), the request may contain outlier, offsets, date_start e date_end.
+
+Example
+http://193.136.66.29:8102/GlassFramework/webresources/products/timeseries/xyz/site:ABAS&agency:GEOTOP S.R.L.&sampling_period:daily
+
+T5 Queries
+
+6 VELOCITIES Web Service
+
+URL:  http://193.136.66.29:8102/GlassFramework/webresources/products/velocities/xyz/
+Number of Required Parameters 3
+Output: Velocities xyz in xml or json formats
+Example
+
+http://193.136.66.29:8102/GlassFramework/webresources/products/velocities/xyz/site:ABAS&agency:GEOTOP S.R.L.&format:json
+
+
+
+Current Agency List
+
+GEOTOP S.R.L. .. dummy Data
+NGV - PP solutions
+UGA - DD solutions
+BFHK - the combined EPOS solutions (using EUREF+INGV+CNRS solutions)
+WUT - EUREF Solutions
+EPOSDEMO - UBI Demos
+
+Sampling Period is daily or weekly
+
+  -->
