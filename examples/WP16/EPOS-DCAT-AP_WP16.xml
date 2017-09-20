@@ -7,6 +7,9 @@
 	corrected version v0.2 - 07112017:
 	added free text search parameter
 	corrected header for validation
+	corrected version v0.3 - 09012017:
+	updated organisational information
+	corrected api-call web service
 	-->
 <eposap:Epos
 xmlns:adms="http://www.w3.org/ns/adms#"
@@ -24,8 +27,30 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 		<vcard:fn>Lange, Otto</vcard:fn><!-- Last Name, Given Name -->
 		<vcard:hasEmail>o.a.lange@uu.nl</vcard:hasEmail><!-- Email -->
 		<!-- Unique Identifier. ORCID or literal like mailto:support@institution will be supported as ID. -->
-		<dct:identifier>personID01</dct:identifier> 
-		<eposap:affiliation>organisationID01</eposap:affiliation> <!-- Organisation -->
+		<dct:identifier>mailto:o.a.lange@uu.nl</dct:identifier> 
+		<eposap:affiliation>PIC:99985805</eposap:affiliation> <!-- Organisation -->
+		<dct:language><!-- Language for contact.  Two-letters encoding (e.g. en). -->
+			<dct:LinguisticSystem>en</dct:LinguisticSystem>
+		</dct:language>
+	</eposap:Person>
+	
+	<eposap:Person>
+		<vcard:fn>Calignano, Elisa</vcard:fn><!-- Last Name, Given Name -->
+		<vcard:hasEmail>E.Calignano@uu.nl</vcard:hasEmail><!-- Email -->
+		<!-- Unique Identifier. ORCID or literal like mailto:support@institution will be supported as ID. -->
+		<dct:identifier>http://orcid.org/0000-0003-4953-4831</dct:identifier> 
+		<eposap:affiliation>PIC:99985805</eposap:affiliation> <!-- Organisation -->
+		<dct:language><!-- Language for contact.  Two-letters encoding (e.g. en). -->
+			<dct:LinguisticSystem>en</dct:LinguisticSystem>
+		</dct:language>
+	</eposap:Person>
+	
+	<eposap:Person>
+		<vcard:fn>Spiers, Christopher J.</vcard:fn><!-- Last Name, Given Name -->
+		<vcard:hasEmail>C.J.Spiers@uu.nl</vcard:hasEmail><!-- Email -->
+		<!-- Unique Identifier. ORCID or literal like mailto:support@institution will be supported as ID. -->
+		<dct:identifier>http://orcid.org/0000-0002-3436-8941</dct:identifier> 
+		<eposap:affiliation>PIC:99985805</eposap:affiliation> <!-- Organisation -->
 		<dct:language><!-- Language for contact.  Two-letters encoding (e.g. en). -->
 			<dct:LinguisticSystem>en</dct:LinguisticSystem>
 		</dct:language>
@@ -39,22 +64,22 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 			Title (native lang) -->
 		<vcard:hasAddress><!-- Postal Address -->
 			<vcard:Address>
-				<vcard:street-address>Street Address</vcard:street-address>
-				<vcard:locality>Locality</vcard:locality>
-				<vcard:postal-code>Postal-code</vcard:postal-code>
-				<vcard:country-name>Country-name</vcard:country-name>
+				<vcard:street-address>Domplein 29</vcard:street-address>
+				<vcard:locality>Utrecht</vcard:locality>
+				<vcard:postal-code>3512 JE</vcard:postal-code>
+				<vcard:country-name>Netherlands</vcard:country-name>
 			</vcard:Address>
 		</vcard:hasAddress>
-		<dct:identifier>organisationID01</dct:identifier><!-- Unique Identifier -->
-		<eposap:scientificContact>personID01</eposap:scientificContact><!-- Scientific
+		<dct:identifier>PIC:99985805</dct:identifier><!-- Unique Identifier -->
+		<eposap:scientificContact>http://orcid.org/0000-0002-3436-8941</eposap:scientificContact><!-- Scientific
 			Contact -->
 		<dct:type><!-- Type -->
 			University
 		</dct:type>
-		<eposap:legalContact>personID01</eposap:legalContact><!-- TBD -->
-		<eposap:financialContact>personID01</eposap:financialContact><!-- TBD -->
-		<eposap:isPartOf>organisationID01</eposap:isPartOf><!-- Is part of -->
-		<eposap:associatedProjects>projectID01</eposap:associatedProjects><!--
+		<eposap:legalContact>http://orcid.org/0000-0003-4953-4831</eposap:legalContact><!-- TBD -->
+		<eposap:financialContact>http://orcid.org/0000-0003-4953-4831</eposap:financialContact><!-- TBD -->
+	<!--	<eposap:isPartOf>PIC:99985805</eposap:isPartOf> Is part of -->
+<!--		<eposap:associatedProjects>projectID01</eposap:associatedProjects>
 			Associated Project -->
 	</eposap:Organisation>
 
@@ -82,7 +107,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 		<dct:license>http://www.fsf.org/licensing/licenses/agpl-3.0.html</dct:license> <!-- Access and Use Restrictions -->
 		
 		<foaf:page> <!-- The ENDPOINT will change because at the current stage the service is employed at a test server/domain -->
-			<foaf:primaryTopic>https://universiteit-utrecht-epos.prod.jcid.nl/api/3/action/package_search?</foaf:primaryTopic>
+			<foaf:primaryTopic>https://universiteit-utrecht-epos.prod.jcid.nl/api/3/action/package_search?q=</foaf:primaryTopic>
 		</foaf:page>
 		<dct:format>
 			<dct:MediaTypeOrExtent>xml</dct:MediaTypeOrExtent>
@@ -108,15 +133,17 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 		
 		<eposap:domain> <!-- This property refers to the domain of resource (e.g. Seismology, Geodesy, 
 		Satellite data, Geomagnetic data, Geology, Geohazards, Georesources, Transnational access) -->
-			Multi-scale laboratories data
+			Multi-scale Laboratory Data
 		</eposap:domain>
 		<eposap:subDomain> <!-- The MSL TCS has 4 sub domains, but the cardinality appears to be 1 -->
-			TBD
+			Multi-scale laboratories Catalogue Service
 		</eposap:subDomain>
 		
 		<!-- Keywords, annotation. Simple and free (web annotation ontology in the future). List of comma-separated values. -->
-		<dcat:keyword>Laboratories, analytical data, experimental data, rock properties, analogue models, tectonic processes, paleomagnetic data, magnetic data</dcat:keyword>
-		<eposap:operation>TBD</eposap:operation> <!-- still pending, please fill in with TBD (to be defined)-->
+		<dcat:keyword>
+		Geochemistry, Structural Geology, Paleomagnetism, Laboratories, analytical data, experimental data, rock properties, analogue models, tectonic processes, paleomagnetic data, magnetic data
+		</dcat:keyword>
+		<eposap:operation>execute</eposap:operation> <!-- still pending, please fill in with TBD (to be defined)-->
 		<dct:hasVersion>0.1</dct:hasVersion>
 
 		<!-- List of Parameters:
@@ -125,39 +152,52 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 			with type "string" and a list of allowed value terms specified by the value tag,
 			e.g. 'seism','gps'  (i.e. namespace)-->
 		<eposap:parameter>
-			<http:paramName>topic</http:paramName>
-			<rdf:label>Research domain</rdf:label>
+			<http:paramName>extras_subDomain</http:paramName>
+			<!-- the prefix extras refers to a non-standard CKAN field
+				search for textually partial matches is supported -->
+			<rdf:label>Discipline</rdf:label>
 			<dct:type> <!-- concerns a string from a fixed value list -->
 				string
 			</dct:type>
-			<http:paramValue>analogue modelling</http:paramValue>
-			<http:paramValue>rock physics</http:paramValue>
-			<http:paramValue>paleomagnetism</http:paramValue>
+			<http:paramValue>Analogue models of geologic processes</http:paramValue>
+			<http:paramValue>Rock and melt physical properties</http:paramValue>
+			<http:paramValue>Paleomagnetic and magnetic data</http:paramValue>
+			<http:paramValue>Geochemical data (elemental and isotope geochemistry)</http:paramValue>
 			<owl:versionInfo>1.5</owl:versionInfo> <!-- version of parameter: TBD -->
 		</eposap:parameter>
 		<eposap:parameter>
-			<http:paramName>freeText</http:paramName>
-			<rdf:label>Free text</rdf:label>
-			<dct:type>
+			<http:paramName>vocab_analogue_modelling</http:paramName>
+			<rdf:label>Analogue models of geologic processes</rdf:label>
+			<dct:type> <!-- values come initially from the extended MSL controlled vocabularies -->
 				string
 			</dct:type>
-			<owl:versionInfo>1.5</owl:versionInfo> <!-- version of parameter: TBD -->
+			<!-- this concerns a rather long list: figure out together how to deal with this.-->
 		</eposap:parameter>
 		<eposap:parameter>
-			<http:paramName>keyWord</http:paramName>
-			<rdf:label>keyword</rdf:label>
+			<http:paramName>vocab_rock_physics</http:paramName>
+			<rdf:label>Rock and melt physical properties</rdf:label>
+			<dct:type> <!-- values come initially from the extended MSL controlled vocabularies -->
+				string
+			</dct:type>
+			<!-- this concerns a rather long list: figure out together how to deal with this.-->
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>vocab_topics</http:paramName>
+			<rdf:label>GCMD Keywords</rdf:label>
 			<dct:type> <!-- values come from the extended MSL keywords lists -->
 				string
 			</dct:type>
-			<!-- this concerns a rather long list: figure out how to deal with this -->
 			<http:paramValue>..</http:paramValue>
 		</eposap:parameter>
+		<!-- Free text search must be further discussed. The parameter has an empty name
+		and the query can be concatenated directly to the base URI -->
 		
 		<!-- The document is meant to be human readable (e.g. PDF, doc, and so on). 
 			This will help a user who, for instance, does not understand something from the hints/label of the parameters. -->
-		<schema:documentation>URL pointing to the specification</schema:documentation> <!-- TBD -->
-		<dcat:contactPoint>personID01</dcat:contactPoint> <!-- internal link to contact point (vcard:Individual) described in the same file in <eposap:Person> -->
-		<eposap:publisher>organisationID01</eposap:publisher> <!-- internal link to responsibleParty (vcard:Organisation) described in the same file in <eposap:Organisation> -->
+		<!-- <schema:documentation>URL pointing to the specification</schema:documentation> -->
+		<!-- TBD; full (both human- and machine readable vocabulary service is under development -->
+		<dcat:contactPoint>mailto:o.a.lange@uu.nl</dcat:contactPoint> <!-- internal link to contact point (vcard:Individual) described in the same file in <eposap:Person> -->
+		<eposap:publisher>PIC:99985805</eposap:publisher> <!-- internal link to responsibleParty (vcard:Organisation) described in the same file in <eposap:Organisation> -->
 		<dct:spatial> <!-- Geographic location/spatial extent /bounding box. Multiple polygons will be supported. -->
 			<dct:Location>
 				<!-- POLYGON(lon1 lat1, lon2 lat2,...) -->
