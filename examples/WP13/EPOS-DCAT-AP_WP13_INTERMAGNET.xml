@@ -141,8 +141,8 @@ xsi:schemaLocation="http://www.epos-ip.org/terms.html https://raw.githubusercont
             <http:paramName>dataStartDate</http:paramName>
             <rdf:label>Date (yyyy-mm-dd)</rdf:label>
             <dct:type>ISO date</dct:type>
-            <schema:minValue>Temporal extent start</schema:minValue>
-            <schema:maxValue>Current date</schema:maxValue>
+            <schema:minValue>1999-01-01</schema:minValue>
+            <schema:maxValue></schema:maxValue>
         </eposap:parameter>
         <eposap:parameter>
             <http:paramName>dataDuration</http:paramName>
@@ -161,24 +161,17 @@ xsi:schemaLocation="http://www.epos-ip.org/terms.html https://raw.githubusercont
             <http:paramName>recordTermination</http:paramName>
             <rdf:label>Text file record termination</rdf:label>
             <dct:type>String</dct:type>
-            <schema:minValue>Windows; UNIX</schema:minValue>
+            <http:paramValue>Windows</http:paramValue>
+            <http:paramValue>UNIX</http:paramValue>
         </eposap:parameter>
         <eposap:parameter>
             <http:paramName>traceList</http:paramName>
             <rdf:label>Traces to display (plots only, not data files)</rdf:label>
             <dct:type>String</dct:type>
-            <schema:minValue>1 (first recorded component)
-2 (second recorded component)
-3 (third recorded component)
-4 (fourth recorded component)
-X (geographic X component)
-Y (geographic Y component)
-Z (vertical component)
-H (horizontal component)
-D (declination), I (inclination)
-F (total field calculated from vector data)
-S (F total field from a scalar instrument)
-C (difference in scalar and vector total field)</schema:minValue>
+            <http:paramValue>1234</http:paramValue>
+            <http:paramValue>XYZS</http:paramValue>
+            <http:paramValue>HDZS</http:paramValue>
+            <http:paramValue>DIFS</http:paramValue>
         </eposap:parameter>
         <eposap:parameter>
             <http:paramName>colourTraces</http:paramName>
