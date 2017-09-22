@@ -5,23 +5,23 @@
 	<eposap:Person>
 		<vcard:fn>Support BRGM</vcard:fn>
 		<!-- Last Name, Given Name -->
-		<!-- CSW GetCaps /csw:Capabilities/ows:ServiceProvider/ows:ServiceContact/ows:IndividualName -->
+		<!-- WMS GetCaps /WMS_Capabilities/Service/ContactInformation/ContactPersonPrimary/ContactPerson -->
 		<vcard:hasAddress>
 			<!-- Postal Address -->
 			<vcard:Address>
 				<vcard:street-address>3, avenue Claude Guillemin</vcard:street-address>
-				<!-- CSW GetCaps /csw:Capabilities/ows:ServiceProvider/ows:ServiceContact/ows:ContactInfo/ows:Address/ows:DeliveryPoint -->
+				<!-- WMS GetCaps /WMS_Capabilities/Service/ContactInformation/ContactAddress/Address -->
 				<vcard:locality>ORLEANS</vcard:locality>
-				<!-- CSW GetCaps /csw:Capabilities/ows:ServiceProvider/ows:ServiceContact/ows:ContactInfo/ows:Address/ows:City -->
+				<!-- WMS GetCaps /WMS_Capabilities/Service/ContactInformation/ContactAddress/City -->
 				<vcard:postal-code>45000</vcard:postal-code>
-				<!-- CSW GetCaps/csw:Capabilities/ows:ServiceProvider/ows:ServiceContact/ows:ContactInfo/ows:Address/ows:PostalCode -->
+				<!-- WMS GetCaps /WMS_Capabilities/Service/ContactInformation/ContactAddress/PostCode-->
 				<vcard:country-name>FRANCE</vcard:country-name>
-				<!-- CSW GetCaps /csw:Capabilities/ows:ServiceProvider/ows:ServiceContact/ows:ContactInfo/ows:Address/ows:Country -->
+				<!-- WMS GetCaps /WMS_Capabilities/Service/ContactInformation/ContactAddress/Country -->
 			</vcard:Address>
 		</vcard:hasAddress>
 		<vcard:hasEmail>contact-brgm@brgm.fr</vcard:hasEmail>
 		<!-- Email -->
-		<!-- CSW GetCaps /csw:Capabilities/ows:ServiceProvider/ows:ServiceContact/ows:ContactInfo/ows:Address/ows:ElectronicMailAddress -->
+		<!-- WMS GetCaps /WMS_Capabilities/Service/ContactInformation/ContactElectronicMailAddress -->
 		<vcard:hasTelephone/>
 		<dct:identifier>mailto:contact-brgm@brgm.fr</dct:identifier>
 		<!--<dct:identifier>http://TBD.support.brgm.fr</dct:identifier>-->
@@ -30,7 +30,7 @@
 		<eposap:affiliation>PIC:999993662</eposap:affiliation>
 		<dct:language>
 			<!-- Language for contact -->
-			<dct:LinguisticSystem>eng</dct:LinguisticSystem>
+			<dct:LinguisticSystem>en</dct:LinguisticSystem>
 			<!-- see https://github.com/epos-eu/EPOS-DCAT-AP/issues/19 -->
 		</dct:language>
 		<schema:qualifications/>
@@ -42,23 +42,23 @@
 	<eposap:Organisation>
 		<vcard:fn>BRGM (French Geological Survey)</vcard:fn>
 		<!-- Title (english) -->
-		<!-- CSW GetCaps /csw:Capabilities/ows:ServiceProvider/ows:ProviderName -->
+		<!-- WMS GetCaps /WMS_Capabilities/Service/ContactInformation/ContactPersonPrimary/ContactOrganization -->
 		<vcard:hasAddress>
 			<!-- Postal Address -->
 			<vcard:Address>
 				<vcard:street-address>3, avenue Claude Guillemin</vcard:street-address>
-				<!-- CSW GetCaps /csw:Capabilities/ows:ServiceProvider/ows:ServiceContact/ows:ContactInfo/ows:Address/ows:DeliveryPoint -->
+				<!-- WMS GetCaps /WMS_Capabilities/Service/ContactInformation/ContactAddress/Address -->
 				<vcard:locality>ORLEANS</vcard:locality>
-				<!-- CSW GetCaps /csw:Capabilities/ows:ServiceProvider/ows:ServiceContact/ows:ContactInfo/ows:Address/ows:City -->
+				<!-- WMS GetCaps /WMS_Capabilities/Service/ContactInformation/ContactAddress/City -->
 				<vcard:postal-code>45000</vcard:postal-code>
-				<!-- CSW GetCaps/csw:Capabilities/ows:ServiceProvider/ows:ServiceContact/ows:ContactInfo/ows:Address/ows:PostalCode -->
+				<!-- WMS GetCaps /WMS_Capabilities/Service/ContactInformation/ContactAddress/PostCode-->
 				<vcard:country-name>FRANCE</vcard:country-name>
-				<!-- CSW GetCaps /csw:Capabilities/ows:ServiceProvider/ows:ServiceContact/ows:ContactInfo/ows:Address/ows:Country -->
+				<!-- WMS GetCaps /WMS_Capabilities/Service/ContactInformation/ContactAddress/Country -->
 			</vcard:Address>
 		</vcard:hasAddress>
 		<vcard:hasEmail>contact-brgm@brgm.fr</vcard:hasEmail>
 		<!-- Email -->
-		<!-- CSW GetCaps /csw:Capabilities/ows:ServiceProvider/ows:ServiceContact/ows:ContactInfo/ows:Address/ows:ElectronicMailAddress -->
+		<!-- WMS GetCaps /WMS_Capabilities/Service/ContactInformation/ContactElectronicMailAddress -->
 		<vcard:hasURL>http://www.brgm.eu</vcard:hasURL>
 		<!-- TODO SG : -->
 		<!-- Website -->
@@ -93,47 +93,67 @@
 		<!-- <eposap:associatedProjects>projectID01</eposap:associatedProjects> -->
 	</eposap:Organisation>
 	<eposap:WebService>
-		<dct:title>EPOS Thematic Core Service - Geological Information and Modelling CSW</dct:title>
-		<!-- CSW GetCaps /csw:Capabilities/ows:ServiceIdentification/ows:Title-->
-		<dct:description>CSW endpoint for all datasets and services provided by the TCS Geological Information and Modelling</dct:description>
-		<!-- CSW GetCaps /csw:Capabilities/ows:ServiceIdentification/ows:Abstract-->
+		<dct:title>WMS EGDI Geological Map 1:1M Surface Lithology</dct:title>
+		<!-- WMS GetCaps /WMS_Capabilities/Service/Name-->
+		<dct:description>European 1:1M scale map of surface geology provided by the European Geological Data Infrastructure (building on OneGeology-Europe projects)</dct:description>
+		<!-- WMS GetCaps /WMS_Capabilities/Service/Abstract-->
 		<dct:issued>2016-10-27T00:00:00</dct:issued>
 		<dct:modified>2017-07-04T00:00:00</dct:modified>
 		<dct:license>TBD</dct:license>
-		<!-- CSW GetCaps /csw:Capabilities/ows:ServiceIdentification/ows:AccessConstraints -->
+		<!-- WMS GetCaps /WMS_Capabilities/Service/AccessConstraints-->
 		<foaf:page>
-			<foaf:primaryTopic>http://resource.europe-geology.eu/service/cswEpos?</foaf:primaryTopic>
+			<foaf:primaryTopic>http://mapsrefdev.brgm.fr/wxs/1GE/EGDI_1M_INSPIRE_geolUnits?</foaf:primaryTopic>
 		</foaf:page>
 		<dct:format rdf:about="GetCapabilities">
 			<dct:MediaTypeOrExtent>https://www.iana.org/assignments/media-types/text/xml</dct:MediaTypeOrExtent>
 		</dct:format>
-		<dct:identifier>http://resource.europe-geology.eu/service/cswEpos?</dct:identifier>
+		<!--<dct:format>
+			<dct:MediaTypeOrExtent>https://www.iana.org/assignments/media-types/image/png</dct:MediaTypeOrExtent>
+		</dct:format>-->
+		<dct:conformsTo>EPSG:4326</dct:conformsTo><!--question : no sense to define it at GetCapabilities level -->
+		<dct:identifier>http://mapsrefdev.brgm.fr/wxs/1GE/EGDI_1M_INSPIRE_geolUnits?</dct:identifier>
 		<dct:created>2016-10-27T09:30:00</dct:created>
 		<eposap:domain>Geology</eposap:domain>
-		<eposap:subDomain>Geology</eposap:subDomain> <!-- subDomain makes no sense here as this CSW contains all datasets and services provided by the TCS-->
+		<eposap:subDomain>Geological Map</eposap:subDomain>
 		<!--<dct:type>View Service</dct:type>-->
 		<!--<dcat:keyword>http://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceCategory/infoMapAccessService</dcat:keyword>-->
 		<!-- what type of keyword do you want ? kind of service type (see commented above) or domain (see below) ? -->
-		<dcat:keyword>Geology, EPOS, WP15, BoreholeView, scientific drilling, GeologicUnitView, MappedFeature</dcat:keyword>
-		<!-- CSW GetCaps /csw:Capabilities/ows:ServiceIdentification/ows:Keywords/ows:Keyword --> 
+		<dcat:keyword>GeologicUnit, Geology, INSPIRE geology, GeoSciML</dcat:keyword>
 		<eposap:operation>GetCapabilities</eposap:operation>
 		<dct:hasVersion>1.3.0</dct:hasVersion> <!-- question : version is not of use for a GetCapabilities-->
 		<!-- Several formats support is usual in OGC services -->
-		<!-- Decision WP6/7 - WP15 20170724 webconf: the GUI will be able to interact generically with standards OGC services -> thus just the GetCapabilities is mapped. Few fields are mandatory  according to OGC 07-006r1 (CSW 2.0.2) and OGC 05-008 (an older version of OWS Common) -->
-		<!-- This rationale implies that the ICS-C will learn dynamically the operations (GetRecords, DescribeRecords)-->
-		
+		<!-- Decision WP6/7 - WP15 20170724 webconf: the GUI will be able to interact generically with standards OGC services -> thus just the GetCapabilities is mapped. Few fields are mandatory  according to OGC 06-042 (WMS 1.3.0) -->
+		<!-- This rationale implies that the ICS-C will learn dynamically the layer to interact with and the operations (GetMap, GetFeatureInfo)-->
 		<eposap:parameter>
 			<http:paramName>service</http:paramName>
 			<rdf:label>service</rdf:label>
 			<dct:type>string</dct:type>
-			<http:paramValue>CSW</http:paramValue>
+			<http:paramValue>WMS</http:paramValue>
 		</eposap:parameter>
 		<eposap:parameter>
+			<http:paramName>version</http:paramName>
+			<rdf:label>WMS version</rdf:label>
+			<dct:type>string</dct:type>
+			<http:paramValue>1.3.0</http:paramValue>
+		</eposap:parameter>
+		<!--<eposap:parameter>
 			<http:paramName>request</http:paramName>
 			<rdf:label>request</rdf:label>
 			<dct:type>string</dct:type>
 			<http:paramValue>GetCapabilities</http:paramValue>
+		</eposap:parameter>-->
+		<eposap:parameter>
+			<http:paramName>request</http:paramName>
+			<rdf:label>Request type</rdf:label>
+			<dct:type>string</dct:type>
+			<http:paramValue>GetMap</http:paramValue>
 		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>layers</http:paramName>
+			<rdf:label>Layers</rdf:label>
+			<dct:type>string</dct:type>
+			<http:paramValue>EGDI_GE_GeologicUnit_EN_1M_Surface_Lithology</http:paramValue>
+		</eposap:parameter>		
 		<dcat:contactPoint>http://TBD.support.brgm.fr</dcat:contactPoint>
 		<eposap:publisher>PIC:999993662</eposap:publisher>
 		<!--<dct:spatial>TODO SG add some BBOX-->
@@ -142,7 +162,12 @@
 				<locn:geometry>POLYGON((32.5178 -9.37909, 63.1479 -9.37909, 37.8488 32.5178, 32.5178 -9.37909))</locn:geometry>
 			</dct:Location>
 		</dct:spatial>-->
-		<!--<adms:representationTechnique/> --> 
+		<adms:representationTechnique>
+			<!-- Spatial representation type -->
+			 http://registry.it.csiro.au/def/isotc211/MD_SpatialRepresentationTypeCode/grid
+			<!-- see https://github.com/epos-eu/EPOS-DCAT-AP/issues/29 -->
+			<!-- I picked the one at CSIRO not having another one at hand so far-->
+		</adms:representationTechnique>
 		<dct:temporal>
 			<!-- temporal extent -->
 			<dct:PeriodOfTime>
