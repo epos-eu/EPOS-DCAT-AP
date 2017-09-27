@@ -21,7 +21,7 @@
 		<!-- Email -->
 		<!-- WFS GetCaps /wfs:WFS_Capabilities/ows:ServiceProvider/ows:ServiceContact/ows:ContactInfo/ows:Address/ows:ElectronicMailAddress -->
 		<vcard:hasTelephone/>
-		<dct:identifier>http://TBD.support.brgm.fr</dct:identifier>
+		<dct:identifier>mailto:contact-brgm@brgm.fr</dct:identifier>
 		<!-- TBD : identifier of 'Support BRGM' ? within EPOS Granularity database ?-->
 		<!-- Unique Identifier -->
 		<eposap:affiliation>PIC:999993662</eposap:affiliation>
@@ -62,7 +62,7 @@
 		<!-- Unique Identifier of BRGM in which system ? within EPOS Granularity database ? -->
 		<!-- AFAIK, I cannot build a URI using BRGM PIC : 999993662 that will land on some ec.europa.eu webpage like ec.europa.eu/PIC/999993662 -->
 		<!-- http://viaf.org/viaf/150807757/ -->
-		<eposap:scientificContact>http://TBD.support.brgm.fr</eposap:scientificContact>
+		<eposap:scientificContact>mailto:contact-brgm@brgm.fr</eposap:scientificContact>
 		<!-- TBD : identifier of 'Support BRGM' ?-->
 		<!-- Scientific
 			Contact -->
@@ -77,10 +77,10 @@
 			<!-- Type -->
 			Research Institute
 		</dct:type>
-		<eposap:legalContact>http://TBD.support.brgm.fr</eposap:legalContact>
+		<eposap:legalContact>mailto:contact-brgm@brgm.fr</eposap:legalContact>
 		<!-- TBD : identifier of 'Support BRGM' ?-->
 		<!-- Legal Contact -->
-		<eposap:financialContact>http://TBD.support.brgm.fr</eposap:financialContact>
+		<eposap:financialContact>mailto:contact-brgm@brgm.fr</eposap:financialContact>
 		<!-- TBD : identifier of 'Support BRGM' ?-->
 		<!-- Financial
 			Contact -->
@@ -120,7 +120,6 @@
 			There a codelist for this, so you can check if it is suitable to you.
 			The description is here:
 			http://publications.europa.eu/mdr/resource/authority/access-right/html/access-right-eng.html
-
 			The base URI is:
 			http://publications.europa.eu/resource/authority/access-right/
 		-->
@@ -176,20 +175,16 @@
 			<http:paramValue>GetCapabilities</http:paramValue>
 		</eposap:parameter>
 		<schema:documentation>https://forge.brgm.fr/svnrepository/epos/trunk/Documents/EPOS_Borehole_V.1.0.1.docx</schema:documentation>
-		<dcat:contactPoint>http://TBD.support.brgm.fr</dcat:contactPoint>
+		<dcat:contactPoint>mailto:contact-brgm@brgm.fr</dcat:contactPoint>
 		<eposap:publisher>PIC:999993662</eposap:publisher>
-		<!--<dct:spatial>TODO SG add some BBOX-->
+		<dct:spatial>TODO SG add some BBOX-->
 		<!-- Geographic location/spatial extent /bounding box -->
-		<!--<dct:Location>-->
-		<!-- POLYGON(lon1 lat1, lon2 lat2,...) -->
-		<!--<locn:geometry>POLYGON(-12.39 30.3, -12.39 49.0, 45.28 49.0, 45.28 30.3, -12.39 30.3)</locn:geometry>
+		<dct:Location>
+		<locn:geometry>POLYGON(-6.0 40.0, -6.0 52.0, 10.0 52.0, 10.0 40.0, -6.0 40.0)</locn:geometry>
 			</dct:Location>
-		</dct:spatial>-->
+		</dct:spatial>
 		<adms:representationTechnique>
-			<!-- Spatial representation type -->
-			 http://registry.it.csiro.au/def/isotc211/MD_SpatialRepresentationTypeCode/vector 
-			<!-- see https://github.com/epos-eu/EPOS-DCAT-AP/issues/29 -->
-			<!-- I picked the one at CSIRO not having another one at hand so far-->
+			vector
 		</adms:representationTechnique>
 		<dct:temporal>
 			<!-- temporal extent -->

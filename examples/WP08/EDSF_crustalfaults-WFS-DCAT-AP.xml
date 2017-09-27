@@ -136,8 +136,8 @@
 		<foaf:page> <!-- URI -->
 			<foaf:primaryTopic>http://services.seismofaults.eu/geoserver/EDSF/crustal_fault_sources_top/wfs?</foaf:primaryTopic>
 		</foaf:page>
-		<dct:format rdf:about="GetCapabilities">
-			<dct:MediaTypeOrExtent>https://www.iana.org/assignments/media-types/text/xml</dct:MediaTypeOrExtent>
+		<dct:format>
+			<dct:MediaTypeOrExtent>xml</dct:MediaTypeOrExtent>
 		</dct:format>
 		<!-- public access limitations:
 			There a codelist for this, so you can check if it is suitable to you.
@@ -155,7 +155,7 @@
 			The base URI is:
 			http://www.opengis.net/def/crs/ -->
 		<!-- <dct:conformsTo>EPSG:4326</dct:conformsTo> -->
-		<dct:conformsTo>http://www.opengis.net/def/crs/EPSG/0/4326</dct:conformsTo>
+		<dct:conformsTo>EPSG:4326</dct:conformsTo>
 		<dct:identifier>services.seismofaults.eu/geoserver/EDSF/crustal_fault_sources_top/wfs</dct:identifier> <!-- Unique Resource Identifier: this is the entry point of the service -->
 		<dct:created>2017-03-01T12:00:00</dct:created> <!-- date of creation -->
 		<eposap:domain> <!-- This property refers to the domain of resource (e.g. Seismology, Geodesy, 
@@ -167,8 +167,9 @@
 		</eposap:subDomain>
 		<!-- Keywords, annotation. Simple and free (web annotation ontology in the future) -->
 		<dcat:keyword>active fault, seismogenic fault, seismogenic source, seismogenic zone, earthquake, subduction, slab, hazard, earthquakes, magnitude, slip rate, crustal fault sources, subduction fault sources, hazard model, faults, seismology, geology, geohazard, seismic hazard</dcat:keyword> <!-- Keywords -->
-		<eposap:operation>GetCapabilities</eposap:operation>
-		<dct:hasVersion>2.0.0</dct:hasVersion>
+
+                <eposap:operation>execute</eposap:operation>
+		<dct:hasVersion>2.0.0 1.1.0 1.0.0</dct:hasVersion>
 
 		<!-- List of Parameters:
 			this section is needed in order to describe the parameters of the service.
@@ -179,14 +180,138 @@
 			<http:paramName>service</http:paramName>
 			<rdf:label>service</rdf:label>
 			<dct:type>string</dct:type>
-			<http:paramValue>WFS</http:paramValue>
+			<http:paramValue>wfs</http:paramValue>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>version</http:paramName>
+			<rdf:label>WFS version</rdf:label>
+			<dct:type>string</dct:type>
+			<http:paramValue>2.0.0</http:paramValue> <!-- The first entry should be the default value -->
+			<http:paramValue>1.1.0</http:paramValue>
+			<http:paramValue>1.0.0</http:paramValue>
 		</eposap:parameter>
 		<eposap:parameter>
 			<http:paramName>request</http:paramName>
-			<rdf:label>request</rdf:label>
+			<rdf:label>Request type</rdf:label>
 			<dct:type>string</dct:type>
-			<http:paramValue>GetCapabilities</http:paramValue>
+			<http:paramValue>GetFeature</http:paramValue>
 		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>typeName</http:paramName>
+			<rdf:label>Layer to load</rdf:label>
+			<dct:type>string</dct:type>
+			<http:paramValue>EDSF:crustal_fault_sources_top</http:paramValue>
+		</eposap:parameter>
+<!-- DB parameters to call through CQL_FILTER have to be commented out for now -->
+<!--
+		<eposap:parameter>
+			<http:paramName>CQL_FILTER</http:paramName>
+			<rdf:label>Filter on DB parameters</rdf:label>
+			<dct:type>string</dct:type>
+			<http:paramValue>mindepth</http:paramValue>
+			<http:paramValue>maxdepth</http:paramValue>
+			<http:paramValue>strikemin</http:paramValue>
+			<http:paramValue>strikemax</http:paramValue>
+			<http:paramValue>dipmin</http:paramValue>
+			<http:paramValue>dipmax</http:paramValue>
+			<http:paramValue>rakemin</http:paramValue>
+			<http:paramValue>rakemax</http:paramValue>
+			<http:paramValue>srmin</http:paramValue>
+			<http:paramValue>srmax</http:paramValue>
+			<http:paramValue>maxmagn</http:paramValue>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>mindepth</http:paramName>
+			<rdf:label>Minimum depth of the fault</rdf:label>
+			<dct:type>float</dct:type>
+			<schema:minValue>0</schema:minValue>
+			<schema:maxValue>10</schema:maxValue>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>maxdepth</http:paramName>
+			<rdf:label>Maximum depth of the fault</rdf:label>
+			<dct:type>float</dct:type>
+			<schema:minValue>1</schema:minValue>
+			<schema:maxValue>50</schema:maxValue>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>strikemin</http:paramName>
+			<rdf:label>Minimum strike of the fault</rdf:label>
+			<dct:type>float</dct:type>
+			<schema:minValue>0</schema:minValue>
+			<schema:maxValue>360</schema:maxValue>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>strikemax</http:paramName>
+			<rdf:label>Maximum strike of the fault</rdf:label>
+			<dct:type>float</dct:type>
+			<schema:minValue>0</schema:minValue>
+			<schema:maxValue>360</schema:maxValue>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>dipmin<http:paramName>
+			<rdf:label>Minimum dip of the fault</rdf:label>
+			<dct:type>float</dct:type>
+			<schema:minValue>0</schema:minValue>
+			<schema:maxValue>90</schema:maxValue>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>dipmax<http:paramName>
+			<rdf:label>Maximum dip of the fault</rdf:label>
+			<dct:type>float</dct:type>
+			<schema:minValue>0</schema:minValue>
+			<schema:maxValue>90</schema:maxValue>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>rakemin<http:paramName>
+			<rdf:label>Minimum rake of the fault</rdf:label>
+			<dct:type>float</dct:type>
+			<schema:minValue>0</schema:minValue>
+			<schema:maxValue>360</schema:maxValue>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>rakemax<http:paramName>
+			<rdf:label>Maximum rake of the fault</rdf:label>
+			<dct:type>float</dct:type>
+			<schema:minValue>0</schema:minValue>
+			<schema:maxValue>360</schema:maxValue>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>dipmin<http:paramName>
+			<rdf:label>Minimum dip of the fault</rdf:label>
+			<dct:type>float</dct:type>
+			<schema:minValue>0</schema:minValue>
+			<schema:maxValue>90</schema:maxValue>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>dipmax<http:paramName>
+			<rdf:label>Maximum dip of the fault</rdf:label>
+			<dct:type>float</dct:type>
+			<schema:minValue>0</schema:minValue>
+			<schema:maxValue>90</schema:maxValue>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>srmin<http:paramName>
+			<rdf:label>Minimum slip rate of the fault</rdf:label>
+			<dct:type>float</dct:type>
+			<schema:minValue>0.01</schema:minValue>
+			<schema:maxValue>10</schema:maxValue>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>srmin<http:paramName>
+			<rdf:label>Maximum slip rate of the fault</rdf:label>
+			<dct:type>float</dct:type>
+			<schema:minValue>0.01</schema:minValue>
+			<schema:maxValue>10</schema:maxValue>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>maxmag<http:paramName>
+			<rdf:label>Maximum magnitude expected</rdf:label>
+			<dct:type>float</dct:type>
+			<schema:minValue>5.5</schema:minValue>
+			<schema:maxValue>9</schema:maxValue>
+		</eposap:parameter>
+-->
 		<dcat:contactPoint>http://orcid.org/0000-0003-1208-9412</dcat:contactPoint> <!-- internal link to contact point (vcard:Individual) described in the same file in <eposap:Person> -->
 		<eposap:publisher>PIC:999472675</eposap:publisher> <!-- PIC of INGV -->
 		<dct:spatial> <!-- Geographic location/spatial extent /bounding box -->
