@@ -83,7 +83,7 @@
             <foaf:primaryTopic>http://eida-sc3.infp.ro/fdsnws/dataselect/1/query?</foaf:primaryTopic>
         </foaf:page>
         <dct:format>
-            <dct:MediaTypeOrExtent>MiniSEED</dct:MediaTypeOrExtent>
+            <dct:MediaTypeOrExtent><!--MiniSEED--> binary</dct:MediaTypeOrExtent>
         </dct:format>
         <dct:rights>
             <dct:RightsStatement>To be defined by EPOS!</dct:RightsStatement>
@@ -92,7 +92,7 @@
         <!-- If this is the proper way to define the identifier is still under
     discussion. TODO No special character are accepted here. -->
         <!-- <dct:identifier>geofon.gfz-potsdam.de_fdsnws_dataselect_1</dct:identifier>-->
-        <dct:identifier>http://eida-sc3.infp.ro/fdsnws/dataselect/1/query?</dct:identifier>
+        <dct:identifier>eida-sc3.infp.ro/fdsnws/dataselect/1/query</dct:identifier>
         <dct:created>2016-01-01T00:00:00</dct:created>
         <!-- This property refers to the domain of resource (e.g. Seismology, GNSS etc.) -->
         <eposap:domain>Near Fault Observations</eposap:domain>
@@ -100,7 +100,7 @@
         <eposap:subDomain>Seismic waveforms</eposap:subDomain>
         <dcat:keyword>seismology, seismicity, earthquakes, waveform, continuous, velocity, acceleration, seismic hazard, earth structure, earthquake intensity, macroseismic, macroseismic information, waveform modeling, GFZ,Dataselect,FDSN-WS,Seismic Waveform,EIDA</dcat:keyword>
         <!-- TODO A list of terms has to be agreed with EPOS. -->
-        <eposap:operation>download</eposap:operation>
+        <eposap:operation>execute</eposap:operation>
         <dct:hasVersion>1.1</dct:hasVersion>
         <eposap:parameter>
             <http:paramName>starttime</http:paramName>
@@ -172,6 +172,8 @@
                 <schema:startDate>2010-04-01T00:00:00</schema:startDate>
             </dct:PeriodOfTime>
         </dct:temporal>
+				<eposap:DDSS-ID>WP09-DDSS-001/002</eposap:DDSS-ID>
+				<eposap:actions>download</eposap:actions>
     </eposap:WebService>
 
     <!-- STATION INFORMATION -->
@@ -185,7 +187,7 @@
             <foaf:primaryTopic>http://eida-sc3.infp.ro/fdsnws/fdsnws/station/1/query?</foaf:primaryTopic>
         </foaf:page>
         <dct:format>
-            <dct:MediaTypeOrExtent>StationXML</dct:MediaTypeOrExtent>
+            <dct:MediaTypeOrExtent><!-- StationXML--> xml</dct:MediaTypeOrExtent>
         </dct:format>
         <dct:rights>
             <dct:RightsStatement>To be defined by EPOS!</dct:RightsStatement>
@@ -194,7 +196,7 @@
         <!-- If this is the proper way to define the identifier is still under
         discussion. TODO No special character are accepted here. -->
         <!-- <dct:identifier>geofon.gfz-potsdam.de_fdsnws_station_1</dct:identifier>-->
-        <dct:identifier>http://eida-sc3.infp.ro/fdsnws/station/1/query?</dct:identifier>
+        <dct:identifier>eida-sc3.infp.ro/fdsnws/station/1/query</dct:identifier>
         <dct:created>2016-01-01T00:00:00</dct:created>
         <!-- This property refers to the domain of resource (e.g. Seismology, GNSS etc.) -->
         <eposap:domain>Near Fault Observations</eposap:domain>
@@ -202,7 +204,7 @@
         <eposap:subDomain>Seismic stations</eposap:subDomain>
         <dcat:keyword>seismology, seismicity, earthquakes, stations, waveform, seismic hazard, earth structure, earthquake intensity, macroseismic, macroseismic information, waveform modeling</dcat:keyword>
         <!-- TODO A list of terms has to be agreed with EPOS. -->
-        <eposap:operation>download</eposap:operation>
+        <eposap:operation>execute</eposap:operation>
         <dct:hasVersion>1.1</dct:hasVersion>
         <eposap:parameter>
             <http:paramName>starttime</http:paramName>
@@ -295,5 +297,7 @@
                 <schema:startDate>1993-01-01T00:00:00</schema:startDate>
             </dct:PeriodOfTime>
         </dct:temporal>
+				<eposap:DDSS-ID>WP09-DDSS-001b</eposap:DDSS-ID>
+				<eposap:actions>download,visualise</eposap:actions>
     </eposap:WebService>
 </eposap:Epos>
