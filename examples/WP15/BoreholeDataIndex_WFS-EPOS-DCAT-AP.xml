@@ -114,7 +114,7 @@
 			<foaf:primaryTopic>http://resource.europe-geology.eu/service/wfsBorehole?</foaf:primaryTopic>
 		</foaf:page>
 		<dct:format>
-			<dct:MediaTypeOrExtent>https://www.iana.org/assignments/media-types/application/gml+xml</dct:MediaTypeOrExtent>
+			<dct:MediaTypeOrExtent>xml</dct:MediaTypeOrExtent>
 			<!-- WFS GetCaps GetFeature Operation : /wfs:WFS_Capabilities/ows:OperationsMetadata/ows:Operation[3]/ows:Parameter[2]/ows:AllowedValues/ows:Value[1]   does not provide the reference to IANA -->
 			<!-- GML is published. -->
 		</dct:format>
@@ -156,9 +156,9 @@
 		<!-- Keywords, annotation. Simple and free (web annotation ontology in the future) -->
 		<!--<dcat:keyword>http://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceCategory/infoFeatureAccessService</dcat:keyword>-->
 		<!-- what type of keyword do you want ? kind of service type (see commented above) or domain (see below) ? -->
-		<dcat:keyword>Borehole, Borehole Index, Geology, INSPIRE:GE, GeoSciML</dcat:keyword>
+		<dcat:keyword>Borehole, Borehole Index, Geology, INSPIRE geology, GeoSciML</dcat:keyword>
 		<!-- Keywords -->
-		<eposap:operation>GetCapabilities</eposap:operation>
+		<eposap:operation>execute</eposap:operation>
 		<dct:hasVersion>2.0.2</dct:hasVersion> <!-- question : version is not of use for a GetCapabilities-->
 		<!-- WFS GetCaps GetCapabilities operation /wfs:WFS_Capabilities/ows:OperationsMetadata/ows:Operation[1]/ows:Parameter[1]/ows:AllowedValues-->
 		<!-- Several formats support is usual in OGC services -->
@@ -187,6 +187,12 @@
 			<rdf:label>FeatureType</rdf:label>
 			<dct:type>string</dct:type>
 			<http:paramValue>gsmlp:BoreholeView</http:paramValue>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>version</http:paramName>
+			<rdf:label>WFS version</rdf:label>
+			<dct:type>string</dct:type>
+			<http:paramValue>2.0.2</http:paramValue>
 		</eposap:parameter>
 		<schema:documentation>https://forge.brgm.fr/svnrepository/epos/trunk/Documents/EPOS_Borehole_V.1.0.1.docx</schema:documentation>
 		<dcat:contactPoint>mailto:contact-brgm@brgm.fr</dcat:contactPoint>
