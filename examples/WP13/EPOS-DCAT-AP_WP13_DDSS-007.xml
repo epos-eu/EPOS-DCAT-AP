@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eposap:Epos
+xmlns:adms="http://www.w3.org/ns/adms#"
+	xmlns:cnt="http://www.w3.org/2008/content#" xmlns:dcat="http://www.w3.org/ns/dcat#"
+	xmlns:dct="http://purl.org/dc/terms/" xmlns:eposap="http://www.epos-ip.org/terms.html"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:http="http://www.w3.org/2006/http#"
+	xmlns:locn="http://www.w3.org/ns/locn#" xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:schema="http://schema.org/"
+	xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:vcard="http://www.w3.org/2006/vcard/ns#"
+	xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.epos-ip.org/terms.html https://raw.githubusercontent.com/epos-eu/EPOS-DCAT-AP/master/schemas/EPOS-DCAT-AP.xsd">
+
+	<!-- EPOS Catalog -->
+	<eposap:Catalog>
+		<dct:title>WP13-DDSS-007</dct:title>
+		<dct:description>
+		The geomagnetic field exhibits variations due to different phenomena. 
+		It has regular variations (the clearest example is the daily variation) 
+		and irregular variations (such as geomagnetic storms), considered in this 
+		sense as magnetic disturbances. 
+		Lists of remarkable events provide:
+		- dates of magnetic quiet (Qdays or CKdays) or disturbed days (Ddays),
+		- dates and times of Sudden Commencements (Sudden Storm Commencement - SSC- or Sudden Impulse -SI-), and 
+		- dates and times of Solar Flare Events (SFE).
+		</dct:description>
+		<dct:publisher>
+			<foaf:name>ISGI</foaf:name>
+		</dct:publisher>
+		
+		
+		<eposap:Dataset><!-- EPOS Data -->
+			<dct:identifier>SC-Ebro</dct:identifier> <!-- Unique Resource Identifier -->
+			<dct:title>Sudden Commencement </dct:title><!-- Title -->
+			<dct:description>
+			The geomagnetic field exhibits variations due to different phenomena. 
+			It has regular variations but also irregular ones, such as geomagnetic storms, 
+			considered in this sense as magnetic disturbances. Often, the latter have a 
+			sudden onset. The phenomena listed here are Sudden commencement (SC), 
+			which can be Sudden Storm Commencement (SSC), if the geomagnetic field 
+			exhibits a subsequent magnetic disturbance, or Sudden Impulse (SI), if 
+			no further disturbance is seen.
+			</dct:description><!-- Abstract -->
+			<dct:issued>1973-06-15T12:00:00</dct:issued><!-- Date of Publication -->
+			<!-- TO CHECK: NEVER revised but on-going --> <dct:modified>9999-12-31T12:00:00</dct:modified><!-- Date of Revision -->
+			<dct:language><!-- Language. Two-letters encoding (e.g. en). -->
+				<dct:LinguisticSystem>en</dct:LinguisticSystem>
+			</dct:language>
+			<dct:provenance><!-- Lineage -->
+				<dct:ProvenanceStatement>Observatori de l'Ebre, Spain </dct:ProvenanceStatement>
+			</dct:provenance>
+			<dct:type><!-- Resource type -->
+				on-going time series of IAGA-endorsed list of remarkable events
+			</dct:type>
+			<dcat:keyword> GEO-EFFECTIVITY, GEOMAGNETIC STORM, GEOMAGNETISM, INTERPLANETARY MAGNETIC FIELD (IMF), 
+			IONOSPHERE, MAGNETIC FIELD, MAGNETISM, MAGNETOSPHERE, RAPID MAGNETIC VARIATIONS, REMARKABLE EVENT, 
+			SOLAR STORM, SPACE-WEATHER, SUDDEN STORM COMMENCEMENT, SUDDEN COMMENCEMENT, SUDDEN IMPULSE, 
+			TIME SERIES</dcat:keyword><!-- Keywords (key-phrase) -->
+			<dct:accessRights><!-- Public Access Limitations -->
+				<dct:RightsStatement>
+				open data under license: XXX. Publications must include an acknowledgement of, and citation to, the Observatori de l'Ebre (Spain) and ISGI.
+				</dct:RightsStatement>
+			</dct:accessRights>
+			<dcat:landingPage> <!-- Online resource -->
+			<!-- TO CHECK: SOON a DOI landing page --> <foaf:primaryTopic>http://www.obsebre.es/en/rapid and http://isgi.unistra.fr/events_ssc.php</foaf:primaryTopic>
+			</dcat:landingPage>
+			<dct:temporal><!-- Temporal extent -->
+				<dct:PeriodOfTime>
+					<schema:startDate>1869-01-01T00:00:00</schema:startDate>
+				</dct:PeriodOfTime>
+			</dct:temporal>
+			<eposap:distribution>
+				<dcat:Distribution>
+					<dct:title>via download pages or WebService</dct:title>
+					<dct:description>For download page: http://www.obsebre.es/en/rapid
+					For WebService: Web Service for scientific structures, organizations and institutions that request it.
+					</dct:description>
+					<dcat:accessURL/>
+					<dcat:downloadURL>http://www.obsebre.es/en/rapid</dcat:downloadURL>
+					<dct:format><!-- Distribution format -->
+						<dct:MediaTypeOrExtent>txt</dct:MediaTypeOrExtent>
+					</dct:format>
+					<dct:license><!-- Access and use description -->
+						URL of license 
+					</dct:license>
+				</dcat:Distribution>
+			</eposap:distribution>
+			<eposap:domain> <!-- Domain -->
+				GEOELECTROMAGNETISM
+			</eposap:domain>
+			<eposap:subDomain> <!-- subDomain -->
+				MAGNETIC ACTIVITY
+			</eposap:subDomain>
+			<dct:created>2017-06-15T12:00:00</dct:created> <!-- Data creation -->
+			<dct:subject><!-- Topic Category -->
+				EARTH SCIENCE
+			</dct:subject>
+			<cnt:characterEncoding>UTF-8</cnt:characterEncoding> <!-- Characterset -->
+			<dcat:contactPoint>http://orcid.org/0000-0001-6483-7449</dcat:contactPoint> <!--- Point of Contact -->
+			<eposap:responsibleParty>http://orcid.org/0000-0001-6483-7449</eposap:responsibleParty> <!---Responsible Party -->
+			<rdf:comment>
+			Spatial Resolution: Planetary list 
+			Collaborating observatories: 
+			BDV CNB DOU EBR ESK GCK GNG GUI HAD HRB KAK KNY LER LIV MMB NAG NGK NUR SOD SPT VAL WNG
+			</rdf:comment><!-- Spatial Resolution -->
+			<adms:representationTechnique> Lists of days </adms:representationTechnique>
+			<eposap:providedBy>PIC:996680918</eposap:providedBy> <!-- EBRO OBSERVATORY -->
+		</eposap:Dataset>
+
+		
+		<eposap:Dataset><!-- EPOS Data -->
+			<dct:identifier>SFE-Ebro</dct:identifier> <!-- Unique Resource Identifier -->
+			<dct:title>Solar Flare Effect </dct:title><!-- Title -->
+			<dct:description>
+			The geomagnetic field exhibits variations due to different phenomena. 
+			It has regular variations but also irregular ones, such as geomagnetic storms, 
+			considered in this sense as magnetic disturbances. Often, the latter have a 
+			sudden onset. 
+			The phenomena listed here are Solar Flare Effect: sudden perturbation in 
+			geomagnetic elements that follows the eruption of a solar flare. 
+			</dct:description><!-- Abstract -->
+			<dct:issued>1994-06-15T12:00:00</dct:issued><!-- Date of Publication -->
+			<!-- TO CHECK: NEVER revised but on-going --> <dct:modified>9999-12-31T12:00:00</dct:modified><!-- Date of Revision -->
+			<dct:language><!-- Language. Two-letters encoding (e.g. en). -->
+				<dct:LinguisticSystem>en</dct:LinguisticSystem>
+			</dct:language>
+			<dct:provenance><!-- Lineage -->
+				<dct:ProvenanceStatement>Observatori de l'Ebre, Spain </dct:ProvenanceStatement>
+			</dct:provenance>
+			<dct:type><!-- Resource type -->
+				on-going time series of IAGA-endorsed list of remarkable events
+			</dct:type>
+			<dcat:keyword> GEO-EFFECTIVITY, GEOMAGNETIC ACTIVITY, GEOMAGNETIC STORM, GEOMAGNETISM, INTERPLANETARY MAGNETIC FIELD (IMF), 
+			IONOSPHERE, MAGNETIC FIELD, MAGNETISM, MAGNETOSPHERE, RAPID MAGNETIC VARIATIONS, REMARKABLE EVENT, SOLAR FLARE, 
+			SOLAR FLARE EFFECT, SOLAR STORM, SPACE-WEATHER, TIME SERIES</dcat:keyword><!-- Keywords (key-phrase) -->
+			<dct:accessRights><!-- Public Access Limitations -->
+				<dct:RightsStatement>
+				open data under license: XXX. Publications must include an acknowledgement of, and citation to, the Observatori de l'Ebre (Spain) and ISGI.</dct:RightsStatement>
+			</dct:accessRights>
+			<dcat:landingPage> <!-- Online resource -->
+			<!-- TO CHECK: SOON a DOI landing page --> <foaf:primaryTopic>http://www.obsebre.es/en/rapid and http://isgi.unistra.fr/events_ssc.php</foaf:primaryTopic>
+			</dcat:landingPage>
+			<dct:temporal><!-- Temporal extent -->
+				<dct:PeriodOfTime>
+					<schema:startDate>1986-01-01T00:00:00</schema:startDate>
+					<!-- TO CHECK: On-going <schema:endDate>3000-12-31T12:00:00</schema:endDate> -->
+				</dct:PeriodOfTime>
+			</dct:temporal>
+			<eposap:distribution>
+				<dcat:Distribution>
+					<dct:title>via download pages or WebService</dct:title>
+					<dct:description>For download page: http://www.obsebre.es/en/rapid
+					For WebService: Web Service for scientific structures, organizations and institutions that request it.
+					</dct:description>
+					<dcat:accessURL/>
+					<dcat:downloadURL>http://www.obsebre.es/en/rapid</dcat:downloadURL>
+					<dct:format><!-- Distribution format -->
+						<dct:MediaTypeOrExtent>txt</dct:MediaTypeOrExtent>
+					</dct:format>
+					<dct:license><!-- Access and use description -->
+						URL of license 
+					</dct:license>
+				</dcat:Distribution>
+			</eposap:distribution>
+			<eposap:domain> <!-- Domain -->
+				GEOELECTROMAGNETISM
+			</eposap:domain>
+			<eposap:subDomain> <!-- subDomain -->
+				MAGNETIC ACTIVITY
+			</eposap:subDomain>
+			<dct:created>2014-12-31T12:00:00</dct:created> <!-- Data creation -->
+			<dct:subject><!-- Topic Category -->
+				EARTH SCIENCE
+			</dct:subject>
+			<cnt:characterEncoding>UTF-8</cnt:characterEncoding> <!-- Characterset -->
+			<dcat:contactPoint>http://orcid.org/0000-0001-6483-7449</dcat:contactPoint> <!--- Point of Contact -->
+			<eposap:responsibleParty>http://orcid.org/0000-0001-6483-7449</eposap:responsibleParty> <!---Responsible Party -->
+			<rdf:comment>
+			Spatial Resolution: Planetary list 
+			Collaborating observatories: 
+			BDV CNB DOU EBR ESK GCK GNG GUI HAD HRB KAK KNY LER LIV MMB NAG NGK NUR SOD SPT VAL WNG
+			</rdf:comment>
+			<adms:representationTechnique> Lists of days </adms:representationTechnique>
+			<eposap:providedBy>PIC:996680918</eposap:providedBy> <!-- EBRO OBSERVATORY-->
+		</eposap:Dataset>
+		
+		<eposap:Dataset><!-- EPOS Data -->
+			<dct:identifier>QDdays-GFZ</dct:identifier> <!-- Unique Resource Identifier -->
+			<dct:title>International quietest (Q-Days)and most disturbed days (</dct:title><!-- Title -->
+			<dct:description>
+			QDdays are periods of magnetic quietness from a ranking of the UT days of each month with regard to the irregular 
+			geomagnetic activity. The most popular outcomes are the lists of the 10 quietest and 5 most disturbed days of the month.
+			</dct:description><!-- Abstract -->
+			<dct:issued>1932-01-01T12:00:00</dct:issued><!-- Date of Publication -->
+			<!-- TO CHECK: NEVER revised but on-going --> <dct:modified>9999-12-31T12:00:00</dct:modified><!-- Date of Revision -->
+			<dct:language><!-- Language. Two-letters encoding (e.g. en). -->
+				<dct:LinguisticSystem>en</dct:LinguisticSystem>
+			</dct:language>
+			<dct:provenance><!-- Lineage -->
+				<dct:ProvenanceStatement>GFZ Potsdam, Germany</dct:ProvenanceStatement>
+			</dct:provenance>
+			<dct:type><!-- Resource type -->
+				on-going time series of IAGA-endorsed list of remarkable events
+			</dct:type>
+			<dcat:keyword> DISTURBED DAY, GEO-EFFECTIVITY, GEOMAGNETIC ACTIVITY, GEOMAGNETIC STORM, GEOMAGNETISM, INTERPLANETARY MAGNETIC FIELD (IMF), 
+			IONOSPHERE, MAGNETIC FIELD, MAGNETISM, MAGNETOSPHERE, QUIET DAY, RAPID MAGNETIC VARIATIONS, REMARKABLE EVENT, SOLAR QUIET, SOLAR STORM, 
+			SPACE-WEATHER, TIME SERIES</dcat:keyword><!-- Keywords (key-phrase) -->
+			<dct:accessRights><!-- Public Access Limitations -->
+				<dct:RightsStatement>open data under license: https://creativecommons.org/licenses/by/4.0/. 
+				Publications must include an acknowledgement of, and citation to, GFZ and ISGI.</dct:RightsStatement>
+			</dct:accessRights>
+		<dcat:landingPage> <!-- Online resource -->
+				<!-- TO CHECK: SOON a DOI landing page by GFZ --> 
+				<foaf:primaryTopic> http://www.gfz-potsdam.de/en/section/earths-magnetic-field/data-products-services/kp-index/ and http://isgi.unistra.fr/indices_kp.php </foaf:primaryTopic>
+			</dcat:landingPage>
+			<dct:temporal><!-- Temporal extent -->
+				<dct:PeriodOfTime>
+					<schema:startDate>1932-01-01T00:00:00</schema:startDate>
+				</dct:PeriodOfTime>
+			</dct:temporal>
+			<eposap:distribution>
+				<dcat:Distribution>
+					<dct:title>via FTP, download page or WebService</dct:title>
+					<dct:description>For download page: The download of QDdays is done in a two-steps procedure. At first, the 
+					availibility of the considered data is displayed. Then, data may be uploaded after providing your e-mail address 
+					(necessary/used for data service only). 
+					For WebService: Web Service for scientific structures, organizations and institutions that request it.
+					</dct:description>
+					<dcat:accessURL/>
+					<dcat:downloadURL>ftp://ftp.gfz-potsdam.de/pub/home/obs/kp-ap/ or http://isgi.unistra.fr/data_download.php</dcat:downloadURL>
+					<dct:format><!-- Distribution format -->
+						<dct:MediaTypeOrExtent>txt</dct:MediaTypeOrExtent>
+					</dct:format>
+					<dct:license><!-- Access and use description -->
+						https://creativecommons.org/licenses/by/4.0/
+					</dct:license>
+				</dcat:Distribution>
+			</eposap:distribution>
+			<eposap:domain> <!-- Domain -->
+				GEOELECTROMAGNETISM
+			</eposap:domain>
+			<eposap:subDomain> <!-- subDomain -->
+				MAGNETIC ACTIVITY
+			</eposap:subDomain>
+			<dct:created>2014-12-31T12:00:00</dct:created> <!-- Data creation -->
+			<dct:subject><!-- Topic Category -->
+				EARTH SCIENCE
+			</dct:subject>
+			<cnt:characterEncoding>UTF-8</cnt:characterEncoding> <!-- Characterset -->
+			<dcat:contactPoint>http://orcid.org/0000-0001-9926-2796</dcat:contactPoint> <!--- Point of Contact -->
+			<eposap:responsibleParty>http://orcid.org/0000-0001-9926-2796</eposap:responsibleParty> <!---Responsible Party -->
+			<rdf:comment>Spatial Resolution: Planetary lists </rdf:comment><!-- Spatial Resolution -->
+		    <adms:representationTechnique> Lists of days </adms:representationTechnique>
+			<eposap:providedBy>PIC:999994341</eposap:providedBy><!-- GFZ -->
+		</eposap:Dataset>
+		
+		
+<!-- Attribute specific to the metadata -->
+		<eposap:CatalogRecord><!-- ATTRIBUTE SPECIFIC TO METADATA -->
+			<foaf:primaryTopic>Lists of remarkable events WP13-DDSS-007</foaf:primaryTopic> <!-- Topic -->
+			<dct:modified>2017-09-17T12:00:00</dct:modified> <!-- Updated -->
+			<dct:language><!-- Language.  Two-letters encoding (e.g. en). -->
+				<dct:LinguisticSystem>en</dct:LinguisticSystem>
+			</dct:language>
+			<dct:title>Lists of remarkable events WP13-DDSS-007</dct:title><!-- Standard Name -->
+			<dct:identifier>WP13-DDSS-007</dct:identifier><!-- File identifier -->
+			<owl:versionInfo>0.1</owl:versionInfo><!-- Standard Version -->
+			<cnt:characterEncoding>UTF-8</cnt:characterEncoding><!-- Characterset -->
+			<dcat:contactPoint>http://orcid.org/0000-0001-8793-1315</dcat:contactPoint><!-- Point of contact -->
+			<dct:created>2017-08-01T12:00:00</dct:created> <!-- Created -->
+		</eposap:CatalogRecord>
+</eposap:Catalog>
+	
+	<!-- EPOS Person -->
+	<eposap:Person>
+		<vcard:fn>Curto, Juan Jose</vcard:fn><!-- Last Name, Given Name -->
+		<vcard:hasAddress><!-- Postal Address -->
+			<vcard:Address>
+				<vcard:street-address>Observatori de l'Ebre, C/ Horta Alta, 38</vcard:street-address>
+				<vcard:locality>Roquetes</vcard:locality>
+				<vcard:postal-code>43520</vcard:postal-code>
+				<vcard:country-name>Spain</vcard:country-name>
+			</vcard:Address>
+		</vcard:hasAddress>
+		<vcard:hasEmail>jjcurto@obsebre.es</vcard:hasEmail><!-- Email -->
+		<vcard:hasTelephone>+34977500511</vcard:hasTelephone><!-- Phone -->
+		<dct:identifier>http://orcid.org/0000-0001-6483-7449</dct:identifier> <!-- Unique Identifier.-->
+		 <eposap:affiliation>PIC:996680918</eposap:affiliation> <!-- Organisation -->
+		<dct:language><!-- Language for contact.  Two-letters encoding (e.g. en). -->
+			<dct:LinguisticSystem>en</dct:LinguisticSystem>
+		</dct:language>
+		<schema:qualifications>Director of Service on Rapid Magnetic Variations</schema:qualifications><!-- Qualification -->
+		<vcard:hasURL><!-- CV -->
+			XXX
+		</vcard:hasURL>
+	</eposap:Person>
+	
+	<!-- EPOS Person -->
+	<eposap:Person>
+		<vcard:fn>Alberca, Luis Felipe</vcard:fn><!-- Last Name, Given Name -->
+		<vcard:hasAddress><!-- Postal Address -->
+			<vcard:Address>
+				<vcard:street-address>Observatori de l'Ebre, C/ Horta Alta, 38</vcard:street-address>
+				<vcard:locality>Roquetes</vcard:locality>
+				<vcard:postal-code>43520</vcard:postal-code>
+				<vcard:country-name>Spain</vcard:country-name>
+			</vcard:Address>
+		</vcard:hasAddress>
+		<vcard:hasEmail>lfalberca@obsebre.es</vcard:hasEmail><!-- Email -->
+		<vcard:hasTelephone>+34977500511</vcard:hasTelephone><!-- Phone -->
+		<dct:identifier>lfalberca@obsebre.es</dct:identifier> <!-- Unique Identifier.-->
+		 <eposap:affiliation>PIC:996680918</eposap:affiliation> <!-- Organisation EBRO OBSERVATORY -->
+		<dct:language><!-- Language for contact.  Two-letters encoding (e.g. en). -->
+			<dct:LinguisticSystem>en</dct:LinguisticSystem>
+		</dct:language>
+		<schema:qualifications>Responsible of Data Compilation at Service on Rapid Magnetic Variations</schema:qualifications><!-- Qualification -->
+		<vcard:hasURL><!-- CV -->
+			XXX
+		</vcard:hasURL>
+	</eposap:Person>
+	
+		<!-- EPOS WebService -->
+	<eposap:WebService>
+		<dct:title>ISGI Data Download Web Service</dct:title> <!-- title -->
+		<dct:description>Since 2015, International Service of Geomagnetic Indices is hosted by EOST, Strasbourg, France. 
+		ISGI is a service of the International Association of Geomagnetism and Aeronomy (IAGA). ISGI is the Reference Service for validation, 
+		dissemination and stewardship of geomagnetic indices through its official Web portal.
+		</dct:description>
+		<dct:issued>2017-06-15T12:00:00</dct:issued><!-- When WS was started -->
+		<dct:modified>2017-08-01T12:00:00</dct:modified><!-- Last change or revision of the WS -->
+		<dct:license>https://creativecommons.org/licenses/by-nc/4.0/ </dct:license> <!-- Access and Use Restrictions -->
+		<foaf:page> <!-- URL -->
+			<foaf:primaryTopic>http://isgi.unistra.fr/ws?</foaf:primaryTopic>
+		</foaf:page>
+		<dct:format>
+			<dct:MediaTypeOrExtent>zip</dct:MediaTypeOrExtent>
+		</dct:format>
+		<dct:rights>
+			<dct:RightsStatement>PUBLIC</dct:RightsStatement>
+		</dct:rights>
+		<dct:identifier>http://isgi.unistra.fr/ws?</dct:identifier> <!-- Unique Resource Identifier: this is the entry point of the service -->
+		<dct:created>2017-06-15T12:00:00</dct:created> <!-- When WS was started -->
+		<eposap:domain> 
+			 GEOELECTROMAGNETISM
+		</eposap:domain>
+		<eposap:subDomain> 
+			MAGNETIC ACTIVITY
+		</eposap:subDomain>
+		<!-- Keywords, annotation. Simple and free (web annotation ontology in the future). List of comma-separated values. -->
+			<dcat:keyword> DISTURBED DAY, GEO-EFFECTIVITY, GEOMAGNETIC ACTIVITY, GEOMAGNETIC STORM, GEOMAGNETISM, INTERPLANETARY MAGNETIC FIELD (IMF), 
+			IONOSPHERE, MAGNETIC FIELD, MAGNETISM, MAGNETOSPHERE, QUIET DAY, RAPID MAGNETIC VARIATIONS, REMARKABLE EVENT, SOLAR FLARE, 
+			SOLAR FLARE EFFECT, SOLAR QUIET, SOLAR STORM, SPACE-WEATHER, SUDDEN STORM COMMENCEMENT, SUDDEN COMMENCEMENT,SUDDEN IMPULSE, 
+			TIME SERIES</dcat:keyword><!-- Keywords (key-phrase) -->
+		<eposap:operation>TBD</eposap:operation> <!-- still pending, please fill in with TBD (to be defined)-->
+		<dct:hasVersion>0.1</dct:hasVersion>
+
+		<!-- List of Parameters:
+			this section is needed in order to describe the parameters of the service.
+			E.g. in the case of a RESTful service, we may have "domain" as parameter,
+			with type "string" and a list of allowed value terms specified by the value tag,
+			e.g. 'seism','gps'  (i.e. namespace)-->
+		<eposap:parameter>
+			<http:paramName>user</http:paramName>
+			<rdf:label>user Name</rdf:label><!-- secured userName !! --> 
+			<dct:type> string </dct:type>
+			<http:paramValue>TBD</http:paramValue>
+		</eposap:parameter>
+		
+		<eposap:parameter>
+			<http:paramName>index</http:paramName>
+			<rdf:label>Geomagnetic Event</rdf:label>
+			<dct:type> string </dct:type>
+			<!-- allowed vocabulary terms, optional tag -->
+			<http:paramValue>SSC</http:paramValue>
+			<http:paramValue>SFE</http:paramValue>	
+			<http:paramValue>QDdays</http:paramValue>	
+			<http:paramValue>CKdays</http:paramValue>	
+			<owl:versionInfo>0.1</owl:versionInfo> <!-- version of parameter -->
+		</eposap:parameter>
+		
+		<eposap:parameter>
+			<http:paramName>StartTime</http:paramName>
+			<rdf:label>Start Time</rdf:label>
+			<dct:type> date format ISO8601 </dct:type>
+			<!-- allowed vocabulary terms, optional tag -->
+			<schema:minValue>0000-00-00</schema:minValue> 
+			<schema:maxValue>9999-12-31</schema:maxValue>
+			<owl:versionInfo>0.1</owl:versionInfo> <!-- version of parameter -->
+		</eposap:parameter>
+		
+		<eposap:parameter>
+			<http:paramName>EndTime</http:paramName>
+			<rdf:label>End Time</rdf:label>
+			<dct:type> date format ISO8601  </dct:type>
+			<!-- allowed vocabulary terms, optional tag -->
+			<schema:minValue>0000-00-00</schema:minValue> 
+			<schema:maxValue>9999-12-31</schema:maxValue>
+			<owl:versionInfo>0.1</owl:versionInfo> <!-- version of parameter -->
+		</eposap:parameter>
+		
+		<!-- The document is meant to be human readable (e.g. PDF, doc, and so on). 
+			This will help a user who, for instance, does not understand something from the hints/label of the parameters. -->
+		<schema:documentation>http://isgi.unistra.fr/ws</schema:documentation>
+		<dcat:contactPoint>http://orcid.org/0000-0001-8793-1315</dcat:contactPoint> <!-- internal link to contact point (vcard:Individual) described in the same file in <eposap:Person> -->
+		<eposap:publisher>ISGI</eposap:publisher> <!-- internal link to responsibleParty (vcard:Organisation) described in the same file in <eposap:Organisation> -->
+		<adms:representationTechnique> xml </adms:representationTechnique>
+	</eposap:WebService>
+	
+
+
+	<!--  EPOS Service -->
+	<eposap:Service>
+		<dct:identifier>ESGI</dct:identifier>
+	  <schema:name>European Service of Geomagnetic Indices</schema:name>
+	  <schema:serviceType>Data Provider</schema:serviceType>
+	  <dct:description>ESGI is the European sub-network of the International Service of Geomagnetic Indices</dct:description>
+	  <dct:license>https://creativecommons.org/licenses/by-nc/4.0/</dct:license>
+	  <dcat:contactPoint>http://orcid.org/0000-0001-8793-1315</dcat:contactPoint>
+  </eposap:Service>
+
+</eposap:Epos>  
