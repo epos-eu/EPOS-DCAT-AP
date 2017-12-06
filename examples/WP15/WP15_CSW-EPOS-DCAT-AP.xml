@@ -105,18 +105,19 @@
 			<foaf:primaryTopic>http://resource.europe-geology.eu/service/cswEpos?</foaf:primaryTopic>
 		</foaf:page>
 		<dct:format rdf:about="GetCapabilities">
-			<dct:MediaTypeOrExtent>https://www.iana.org/assignments/media-types/text/xml</dct:MediaTypeOrExtent>
+			<dct:MediaTypeOrExtent>xml</dct:MediaTypeOrExtent>
 		</dct:format>
+		<dct:conformsTo>EPSG:4326</dct:conformsTo>
 		<dct:identifier>http://resource.europe-geology.eu/service/cswEpos?</dct:identifier>
 		<dct:created>2016-10-27T09:30:00</dct:created>
 		<eposap:domain>Geology</eposap:domain>
-		<eposap:subDomain>Geology</eposap:subDomain> <!-- subDomain makes no sense here as this CSW contains all datasets and services provided by the TCS-->
+		<eposap:subDomain>Geological Data</eposap:subDomain> <!-- subDomain makes no sense here as this CSW contains all datasets and services provided by the TCS-->
 		<!--<dct:type>View Service</dct:type>-->
 		<!--<dcat:keyword>http://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceCategory/infoMapAccessService</dcat:keyword>-->
 		<!-- what type of keyword do you want ? kind of service type (see commented above) or domain (see below) ? -->
 		<dcat:keyword>Geology, EPOS, WP15, BoreholeView, scientific drilling, GeologicUnitView, MappedFeature</dcat:keyword>
 		<!-- CSW GetCaps /csw:Capabilities/ows:ServiceIdentification/ows:Keywords/ows:Keyword --> 
-		<eposap:operation>GetCapabilities</eposap:operation>
+		<eposap:operation>execute</eposap:operation>
 		<dct:hasVersion>1.3.0</dct:hasVersion> <!-- question : version is not of use for a GetCapabilities-->
 		<!-- Several formats support is usual in OGC services -->
 		<!-- Decision WP6/7 - WP15 20170724 webconf: the GUI will be able to interact generically with standards OGC services -> thus just the GetCapabilities is mapped. Few fields are mandatory  according to OGC 07-006r1 (CSW 2.0.2) and OGC 05-008 (an older version of OWS Common) -->
