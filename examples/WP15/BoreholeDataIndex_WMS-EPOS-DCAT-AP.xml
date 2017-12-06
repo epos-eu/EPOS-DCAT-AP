@@ -23,7 +23,8 @@
 		<!-- Email -->
 		<!-- WMS GetCaps /WMS_Capabilities/Service/ContactInformation/ContactElectronicMailAddress -->
 		<vcard:hasTelephone/>
-		<dct:identifier>http://TBD.support.brgm.fr</dct:identifier>
+		<dct:identifier>mailto:contact-brgm@brgm.fr</dct:identifier>
+		<!--<dct:identifier>http://TBD.support.brgm.fr</dct:identifier>-->
 		<!-- TBD : identifier of 'Support BRGM' ? within EPOS Granularity database ?-->
 		<!-- Unique Identifier -->
 		<eposap:affiliation>PIC:999993662</eposap:affiliation>
@@ -65,7 +66,8 @@
 		<!-- Unique Identifier of BRGM in which system ? within EPOS Granularity database ? -->
 		<!-- AFAIK, I cannot build a URI using BRGM PIC : 999993662 that will land on some ec.europa.eu webpage like 'ec.europa.eu/PIC/999993662' -->
 		<!-- http://viaf.org/viaf/150807757/ -->
-		<eposap:scientificContact>http://TBD.support.brgm.fr</eposap:scientificContact>
+		<!-- http://www.isni.org/isni/0000000121846484.xml -->
+		<eposap:scientificContact>mailto:contact-brgm@brgm.fr</eposap:scientificContact>
 		<!-- TBD : identifier of 'Support BRGM' ?-->
 		<!-- Scientific
 			Contact -->
@@ -108,7 +110,8 @@
 		<!--<dct:format>
 			<dct:MediaTypeOrExtent>https://www.iana.org/assignments/media-types/image/png</dct:MediaTypeOrExtent>
 		</dct:format>-->
-		<dct:conformsTo>EPSG:4326</dct:conformsTo><!--question : no sense to define it at GetCapabilities level -->
+		<dct:conformsTo>EPSG:4326</dct:conformsTo>
+		<!--question : no sense to define it at GetCapabilities level -->
 		<dct:identifier>http://resource.europe-geology.eu/service/wmsBorehole?</dct:identifier>
 		<dct:created>2016-10-27T09:30:00</dct:created>
 		<eposap:domain>Geology</eposap:domain>
@@ -118,11 +121,11 @@
 		<!-- what type of keyword do you want ? kind of service type (see commented above) or domain (see below) ? -->
 		<dcat:keyword>Borehole, Borehole Index, Geology, INSPIRE geology, GeoSciML</dcat:keyword>
 		<eposap:operation>GetCapabilities</eposap:operation>
-		<dct:hasVersion>1.3.0</dct:hasVersion> <!-- question : version is not of use for a GetCapabilities-->
+		<dct:hasVersion>1.3.0</dct:hasVersion>
+		<!-- question : version is not of use for a GetCapabilities-->
 		<!-- Several formats support is usual in OGC services -->
 		<!-- Decision WP6/7 - WP15 20170724 webconf: the GUI will be able to interact generically with standards OGC services -> thus just the GetCapabilities is mapped. Few fields are mandatory  according to OGC 06-042 (WMS 1.3.0) -->
 		<!-- This rationale implies that the ICS-C will learn dynamically the layer to interact with and the operations (GetMap, GetFeatureInfo)-->
-		
 		<eposap:parameter>
 			<http:paramName>service</http:paramName>
 			<rdf:label>service</rdf:label>
@@ -130,10 +133,28 @@
 			<http:paramValue>WMS</http:paramValue>
 		</eposap:parameter>
 		<eposap:parameter>
+			<http:paramName>version</http:paramName>
+			<rdf:label>WMS version</rdf:label>
+			<dct:type>string</dct:type>
+			<http:paramValue>1.3.0</http:paramValue>
+		</eposap:parameter>
+		<!--<eposap:parameter>
 			<http:paramName>request</http:paramName>
 			<rdf:label>request</rdf:label>
 			<dct:type>string</dct:type>
 			<http:paramValue>GetCapabilities</http:paramValue>
+		</eposap:parameter>-->
+		<eposap:parameter>
+			<http:paramName>request</http:paramName>
+			<rdf:label>Request type</rdf:label>
+			<dct:type>string</dct:type>
+			<http:paramValue>GetMap</http:paramValue>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>layers</http:paramName>
+			<rdf:label>Layers</rdf:label>
+			<dct:type>string</dct:type>
+			<http:paramValue>BoreholeViewSLD</http:paramValue>
 		</eposap:parameter>
 		<dcat:contactPoint>http://TBD.support.brgm.fr</dcat:contactPoint>
 		<eposap:publisher>PIC:999993662</eposap:publisher>

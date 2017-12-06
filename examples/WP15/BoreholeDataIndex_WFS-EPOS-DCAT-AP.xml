@@ -22,6 +22,7 @@
 		<!-- WFS GetCaps /wfs:WFS_Capabilities/ows:ServiceProvider/ows:ServiceContact/ows:ContactInfo/ows:Address/ows:ElectronicMailAddress -->
 		<vcard:hasTelephone/>
 		<dct:identifier>mailto:contact-brgm@brgm.fr</dct:identifier>
+		<!--<dct:identifier>http://TBD.support.brgm.fr</dct:identifier>-->
 		<!-- TBD : identifier of 'Support BRGM' ? within EPOS Granularity database ?-->
 		<!-- Unique Identifier -->
 		<eposap:affiliation>PIC:999993662</eposap:affiliation>
@@ -62,6 +63,7 @@
 		<!-- Unique Identifier of BRGM in which system ? within EPOS Granularity database ? -->
 		<!-- AFAIK, I cannot build a URI using BRGM PIC : 999993662 that will land on some ec.europa.eu webpage like ec.europa.eu/PIC/999993662 -->
 		<!-- http://viaf.org/viaf/150807757/ -->
+		<!-- http://www.isni.org/isni/0000000121846484.xml -->
 		<eposap:scientificContact>mailto:contact-brgm@brgm.fr</eposap:scientificContact>
 		<!-- TBD : identifier of 'Support BRGM' ?-->
 		<!-- Scientific
@@ -168,16 +170,28 @@
 			<dct:type>string</dct:type>
 			<http:paramValue>WFS</http:paramValue>
 		</eposap:parameter>
-		<eposap:parameter>
+		<!--<eposap:parameter>
 			<http:paramName>request</http:paramName>
 			<rdf:label>request</rdf:label>
 			<dct:type>string</dct:type>
 			<http:paramValue>GetCapabilities</http:paramValue>
+		</eposap:parameter>-->
+		<eposap:parameter>
+			<http:paramName>request</http:paramName>
+			<rdf:label>Request type</rdf:label>
+			<dct:type>string</dct:type>
+			<http:paramValue>GetFeature</http:paramValue>
+		</eposap:parameter>
+				<eposap:parameter>
+			<http:paramName>typenames</http:paramName>
+			<rdf:label>FeatureType</rdf:label>
+			<dct:type>string</dct:type>
+			<http:paramValue>gsmlp:BoreholeView</http:paramValue>
 		</eposap:parameter>
 		<schema:documentation>https://forge.brgm.fr/svnrepository/epos/trunk/Documents/EPOS_Borehole_V.1.0.1.docx</schema:documentation>
 		<dcat:contactPoint>mailto:contact-brgm@brgm.fr</dcat:contactPoint>
 		<eposap:publisher>PIC:999993662</eposap:publisher>
-		<dct:spatial>TODO SG add some BBOX-->
+		<dct:spatial>
 		<!-- Geographic location/spatial extent /bounding box -->
 		<dct:Location>
 		<locn:geometry>POLYGON(-6.0 40.0, -6.0 52.0, 10.0 52.0, 10.0 40.0, -6.0 40.0)</locn:geometry>
