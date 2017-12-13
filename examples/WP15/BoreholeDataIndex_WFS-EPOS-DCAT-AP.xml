@@ -114,7 +114,7 @@
 			<foaf:primaryTopic>http://resource.europe-geology.eu/service/wfsBorehole?</foaf:primaryTopic>
 		</foaf:page>
 		<dct:format>
-			<dct:MediaTypeOrExtent>xml</dct:MediaTypeOrExtent>
+			<dct:MediaTypeOrExtent>https://www.iana.org/assignments/media-types/application/gml+xml</dct:MediaTypeOrExtent>
 			<!-- WFS GetCaps GetFeature Operation : /wfs:WFS_Capabilities/ows:OperationsMetadata/ows:Operation[3]/ows:Parameter[2]/ows:AllowedValues/ows:Value[1]   does not provide the reference to IANA -->
 			<!-- GML is published. -->
 		</dct:format>
@@ -133,7 +133,8 @@
 			the CRS should be specified with the relevant URI.
 			The base URI is:
 			http://www.opengis.net/def/crs/ -->
-		<dct:conformsTo>EPSG:4326</dct:conformsTo> <!--question : no sense to define it at GetCapabilities level --> 
+		<dct:conformsTo>EPSG:4326</dct:conformsTo>
+		<!--question : no sense to define it at GetCapabilities level -->
 		<!-- WFS GetCaps FeatureType 'gsmlp:BoreholeView' /wfs:WFS_Capabilities/FeatureTypeList/FeatureType[1]/DefaultCRS-->
 		<!-- Spatial Reference System -->
 		<dct:identifier>http://resource.europe-geology.eu/service/wfsBorehole?</dct:identifier>
@@ -156,10 +157,11 @@
 		<!-- Keywords, annotation. Simple and free (web annotation ontology in the future) -->
 		<!--<dcat:keyword>http://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceCategory/infoFeatureAccessService</dcat:keyword>-->
 		<!-- what type of keyword do you want ? kind of service type (see commented above) or domain (see below) ? -->
-		<dcat:keyword>Borehole, Borehole Index, Geology, INSPIRE geology, GeoSciML</dcat:keyword>
+		<dcat:keyword>Borehole, Borehole Index, Geology, INSPIRE:GE, GeoSciML</dcat:keyword>
 		<!-- Keywords -->
-		<eposap:operation>execute</eposap:operation>
-		<dct:hasVersion>2.0.2</dct:hasVersion> <!-- question : version is not of use for a GetCapabilities-->
+		<eposap:operation>GetCapabilities</eposap:operation>
+		<dct:hasVersion>2.0.2</dct:hasVersion>
+		<!-- question : version is not of use for a GetCapabilities-->
 		<!-- WFS GetCaps GetCapabilities operation /wfs:WFS_Capabilities/ows:OperationsMetadata/ows:Operation[1]/ows:Parameter[1]/ows:AllowedValues-->
 		<!-- Several formats support is usual in OGC services -->
 		<!-- Decision WP6/7 - WP15 20170724 webconf: the GUI will be able to interact generically with standards OGC services -> thus just the GetCapabilities is mapped. Few fields are mandatory  according to OGC 09-025r2  (WFS 2.02) and OGC 06-121r9 (OWS Common)-->
@@ -182,7 +184,7 @@
 			<dct:type>string</dct:type>
 			<http:paramValue>GetFeature</http:paramValue>
 		</eposap:parameter>
-				<eposap:parameter>
+		<eposap:parameter>
 			<http:paramName>typenames</http:paramName>
 			<rdf:label>FeatureType</rdf:label>
 			<dct:type>string</dct:type>
@@ -198,9 +200,10 @@
 		<dcat:contactPoint>mailto:contact-brgm@brgm.fr</dcat:contactPoint>
 		<eposap:publisher>PIC:999993662</eposap:publisher>
 		<dct:spatial>
-		<!-- Geographic location/spatial extent /bounding box -->
-		<dct:Location>
-		<locn:geometry>POLYGON(-6.0 40.0, -6.0 52.0, 10.0 52.0, 10.0 40.0, -6.0 40.0)</locn:geometry>
+			<!-- Geographic location/spatial extent /bounding box -->
+			<dct:Location>
+				<!-- POLYGON(lon1 lat1, lon2 lat2,...) -->
+				<locn:geometry>POLYGON(-180 90, 180 90, 180 -90, -180 -90, -180 90)</locn:geometry>
 			</dct:Location>
 		</dct:spatial>
 		<adms:representationTechnique>
@@ -213,6 +216,6 @@
 			</dct:PeriodOfTime>
 		</dct:temporal>
 		<eposap:DDSS-ID>WP15-DDSS-001</eposap:DDSS-ID>
-    		<eposap:actions>download</eposap:actions>
+		<eposap:actions>download</eposap:actions>
 	</eposap:WebService>
 </eposap:Epos>
