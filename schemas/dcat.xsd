@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:adms="http://www.w3.org/ns/adms#" xmlns:dct="http://purl.org/dc/terms/" xmlns:dcat="http://www.w3.org/ns/dcat#" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:spdx="http://spdx.org/rdf/terms#" xmlns:vcard="http://www.w3.org/2006/vcard/ns#" targetNamespace="http://www.w3.org/ns/dcat#" elementFormDefault="qualified" attributeFormDefault="qualified">
+	<xs:annotation>
+		<xs:documentation xml:lang="en">
+      DCAT-AP 1.1 XML Schema
+      XML Schema for http://www.w3.org/ns/dcat# namespace
+      
+      Description: This is an XML Schema for the DCAT-AP specification. The schema is used by GeoNetwork for storing GeoNetwork data internally. The schema is intended to adhere to a 'normalized' RDF syntax.
+
+      Created 2016-05-31
+      Modified 2016-11-30
+
+      Author
+      Stijn Goedertier (stijn.goedertier@gim.be)
+
+    </xs:documentation>
+	</xs:annotation>
+	
+	<xs:import namespace="http://www.w3.org/ns/adms#" schemaLocation="https://raw.githubusercontent.com/epos-eu/EPOS-DCAT-AP/master/schemas/adms.xsd"/>
+	<xs:import namespace="http://purl.org/dc/terms/" schemaLocation="https://raw.githubusercontent.com/epos-eu/EPOS-DCAT-AP/master/schemas/dcterms.xsd"/>
+	<xs:import namespace="http://xmlns.com/foaf/0.1/" schemaLocation="https://raw.githubusercontent.com/epos-eu/EPOS-DCAT-AP/master/schemas/foaf.xsd"/>
+	<xs:import namespace="http://www.w3.org/2002/07/owl#" schemaLocation="https://raw.githubusercontent.com/epos-eu/EPOS-DCAT-AP/master/schemas/owl.xsd"/>
+	<xs:import namespace="http://www.w3.org/2004/02/skos/core#" schemaLocation="https://raw.githubusercontent.com/epos-eu/EPOS-DCAT-AP/master/schemas/skos.xsd"/>
+	<xs:import namespace="http://spdx.org/rdf/terms#" schemaLocation="https://raw.githubusercontent.com/epos-eu/EPOS-DCAT-AP/master/schemas/spdx.xsd"/>
+	<xs:import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" schemaLocation="https://raw.githubusercontent.com/epos-eu/EPOS-DCAT-AP/master/schemas/rdf.xsd"/>
+	<xs:import namespace="http://www.w3.org/2006/vcard/ns#" schemaLocation="https://raw.githubusercontent.com/epos-eu/EPOS-DCAT-AP/master/schemas/vcard.xsd"/>
+	
+	<!-- EPOS -->
+	<xs:element name="theme" type="rdf:PlainLiteral" />
+	<xs:element name="contactPoint" type="xs:anyURI"/>
+	<xs:element name="keyword" type="rdf:PlainLiteral"/>
+	<xs:element name="landingPage" type="foaf:Document" />
+	<xs:element name="accessURL" type="rdf:Resource"/>
+						
+    
+	
+	<!-- dcat:Catalog-->
+	<xs:element name="Catalog" type="dcat:Catalog"/>
+	<xs:complexType name="Catalog">
+		<xs:sequence>
+			<!-- mandatory properties for dcat:Catalog-->
+			<xs:element ref="dct:title" minOccurs="1" maxOccurs="unbounded"/>
+			<xs:element ref="dct:description" minOccurs="1" maxOccurs="unbounded"/>
+			<xs:element ref="dct:publisher" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="dataset" type="dcat:Dataset" minOccurs="1" maxOccurs="unbounded"/>
+			<!-- recommended properties for dcat:Catalog-->
+			<xs:element name="homepage" type="foaf:Document" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="dct:license" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="dct:language" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="dct:issued" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="dct:modified" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="themeTaxonomy" type="skos:ConceptScheme" minOccurs="0" maxOccurs="1"/>
+			<!-- optional properties for dcat:Catalog-->
+			<xs:element ref="dct:hasPart" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="dct:isPartOf" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="record" type="dcat:CatalogRecord" minOccurs="0"/>
+			<xs:element ref="dct:rights" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="dct:spatial" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="rdf:about"/>
+	</xs:complexType>
+	<!-- dcat:CatalogRecord-->
+	<xs:complexType name="CatalogRecord">
+		<xs:sequence>
+			<xs:element name="CatalogRecord">
+				<xs:complexType>
+					<xs:sequence>
+						<!-- mandatory properties for dcat:CatalogRecord-->
+						<xs:element ref="foaf:primaryTopic" minOccurs="1" maxOccurs="1"/>
+						<xs:element ref="dct:modified" minOccurs="1" maxOccurs="1"/>
+						<!-- recommended properties for dcat:CatalogRecord-->
+						<xs:element ref="dct:conformsTo" minOccurs="0" maxOccurs="1"/>
+						<xs:element ref="adms:status" minOccurs="0" maxOccurs="1"/>
+						<xs:element ref="dct:issued" minOccurs="0" maxOccurs="1"/>
+						<!-- optional properties for dcat:CatalogRecord-->
+						<xs:element ref="dct:description" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="dct:language" maxOccurs="unbounded"/>
+						<xs:element ref="dct:source" maxOccurs="1"/>
+						<xs:element ref="dct:title" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+					<xs:attribute ref="rdf:about"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- dcat:Dataset-->
+	<xs:complexType name="Dataset">
+		<xs:sequence>
+			<xs:element name="Dataset">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="dct:identifier" minOccurs="0" maxOccurs="1"/>
+						<xs:element ref="dct:title" minOccurs="1" maxOccurs="unbounded"/>
+						<xs:element ref="dct:description" minOccurs="1" maxOccurs="unbounded"/>
+						<xs:element ref="dct:issued" minOccurs="0" maxOccurs="1"/>
+						<xs:element ref="dct:modified" minOccurs="0" maxOccurs="1"/>
+						<xs:element name="contactPoint" type="vcard:Organization" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="dct:publisher" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element name="keyword" type="rdf:PlainLiteral" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element name="theme" type="skos:Concept" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="dct:accessRights" minOccurs="0" maxOccurs="1"/>
+						<xs:element ref="dct:conformsTo" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="foaf:page" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="dct:accrualPeriodicity" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="dct:hasVersion" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="dct:isVersionOf" minOccurs="0" maxOccurs="1"/>
+						<xs:element name="landingPage" type="rdf:Resource" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="dct:language" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="adms:identifier" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="dct:provenance" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="dct:relation" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="dct:source" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="dct:spatial" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="dct:temporal" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="dct:type" minOccurs="0" maxOccurs="1"/>
+						<xs:element ref="owl:versionInfo" minOccurs="0" maxOccurs="1"/>
+						<xs:element ref="adms:versionNotes" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element name="distribution" type="dcat:Distribution" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="adms:sample" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+					<xs:attribute ref="rdf:about"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- dcat:Distribution-->
+	<xs:complexType name="Distribution">
+		<xs:sequence>
+			<xs:element name="Distribution">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="dct:title" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="dct:description" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element name="accessURL" type="rdf:Resource" minOccurs="1" maxOccurs="unbounded"/>
+						<xs:element name="downloadURL" type="xs:anyURI" minOccurs="1" maxOccurs="1"/>
+						<xs:element ref="dct:issued" minOccurs="0" maxOccurs="1"/>
+						<xs:element ref="dct:modified" minOccurs="0" maxOccurs="1"/>
+						<xs:element ref="dct:format" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element name="mediaType" type="skos:Concept" minOccurs="0" maxOccurs="1"/>
+						<xs:element ref="dct:language" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="dct:license" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="dct:rights" minOccurs="0" maxOccurs="1"/>
+						<xs:element name="byteSize" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+						<xs:element ref="spdx:checksum" minOccurs="0" maxOccurs="1"/>
+						<xs:element ref="foaf:page" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="dct:conformsTo" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="adms:status" minOccurs="0" maxOccurs="1"/>
+					</xs:sequence>
+					<xs:attribute ref="rdf:about"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
