@@ -110,7 +110,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 			<foaf:primaryTopic>https://universiteit-utrecht-epos.prod.jcid.nl/api/3/action/package_search?q=</foaf:primaryTopic>
 		</foaf:page>
 		<dct:format>
-			<dct:MediaTypeOrExtent>xml</dct:MediaTypeOrExtent>
+			<dct:MediaTypeOrExtent>json</dct:MediaTypeOrExtent>
 		</dct:format>
 		
 		<!-- public access limitations:
@@ -127,7 +127,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 			http://www.opengis.net/def/crs/ -->
 		<dct:conformsTo>EPSG:4326</dct:conformsTo> <!-- to be confirmed -->
 		
-		<dct:identifier>https://universiteit-utrecht-epos.prod.jcid.nl</dct:identifier> <!-- Unique Resource Identifier: this is the entry point of the service -->
+		<dct:identifier>universiteit-utrecht-epos.prod.jcid.nl/api/3/action/package_search</dct:identifier> <!-- Unique Resource Identifier: this is the entry point of the service -->
 		
 		<dct:created>2001-12-31T12:00:00</dct:created> <!-- will be updated -->
 		
@@ -143,7 +143,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 		<dcat:keyword>
 		Geochemistry, Structural Geology, Paleomagnetism, Laboratories, analytical data, experimental data, rock properties, analogue models, tectonic processes, paleomagnetic data, magnetic data
 		</dcat:keyword>
-		<eposap:operation>TBD</eposap:operation> <!-- still pending, please fill in with TBD (to be defined)-->
+		<eposap:operation>execute</eposap:operation> <!-- still pending, please fill in with TBD (to be defined)-->
 		<dct:hasVersion>0.1</dct:hasVersion>
 
 		<!-- List of Parameters:
@@ -216,5 +216,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 				<schema:endDate>2016-12-31T12:00:00</schema:endDate>
 			</dct:PeriodOfTime>
 		</dct:temporal>
+		<eposap:DDSS-ID>WP16-DDSS-012</eposap:DDSS-ID>
+    		<eposap:actions>download</eposap:actions>
 	</eposap:WebService>
 </eposap:Epos>
