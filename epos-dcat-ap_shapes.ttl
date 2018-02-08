@@ -100,13 +100,13 @@ epos:Facility
   rdfs:label "Facility"@en  ;
   rdfs:subClassOf rdfs:Resource ;
 .
-epos:ModelCode
-  a owl:Class ;
-  rdfs:comment "EPOS specialisation of schema:SoftwareSourceCode"@en  ;
-  rdfs:isDefinedBy <http://www.epos-eu.org/epos/dcat-ap> ;
-  rdfs:label "ModelCode"@en  ;
-  rdfs:subClassOf schema:SoftwareSourceCode ;
-.
+#epos:ModelCode
+#  a owl:Class ;
+ # rdfs:comment "EPOS specialisation of schema:SoftwareSourceCode"@en  ;
+ # rdfs:isDefinedBy <http://www.epos-eu.org/epos/dcat-ap> ;
+ # rdfs:label "ModelCode"@en  ;
+ # rdfs:subClassOf schema:SoftwareSourceCode ;
+#.
 #epos:Operation
  # a owl:Class ;
   #rdfs:comment "EPOS Operation"@en  ;
@@ -166,13 +166,13 @@ epos:Publication
 #  rdfs:label "Service"@en  ;   
 #  rdfs:subClassOf schema:Service ;
 #.
-epos:Software
-  a owl:Class ;
-  rdfs:comment "EPOS specialisation of schema:SoftwareApplication"@en  ;
-  rdfs:isDefinedBy <http://www.epos-eu.org/epos/dcat-ap> ;
-  rdfs:label "Software"@en  ;   
-  rdfs:subClassOf schema:SoftwareApplication ;
-.
+#epos:Software
+ # a owl:Class ;
+ # rdfs:comment "EPOS specialisation of schema:SoftwareApplication"@en  ;
+ # rdfs:isDefinedBy <http://www.epos-eu.org/epos/dcat-ap> ;
+ # rdfs:label "Software"@en  ;   
+ # rdfs:subClassOf schema:SoftwareApplication ;
+#.
 epos:WebService
   a owl:Class ;
   rdfs:comment "It represents a WebService API "@en  ;  
@@ -200,7 +200,8 @@ dcat:contactPoint
   rdfs:domain schema:Organization ;
   rdfs:domain epos:Equipment ;
   ##rdfs:domain epos:CatalogRecord ;
-  rdfs:domain epos:Software ;
+  rdfs:domain schema:SoftwareApplication ;
+  rdfs:domain schema:SoftwareSourceCode;
   rdfs:domain epos:WebService ;
   rdfs:domain foaf:Project ;
   rdfs:domain epos:Facility ;
