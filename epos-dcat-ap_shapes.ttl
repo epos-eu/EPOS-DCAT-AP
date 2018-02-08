@@ -100,7 +100,8 @@ epos:Facility
   rdfs:label "Facility"@en  ;
   rdfs:subClassOf rdfs:Resource ;
 .
-#epos:ModelCode
+
+#epos:ModelCode 
 #  a owl:Class ;
  # rdfs:comment "EPOS specialisation of schema:SoftwareSourceCode"@en  ;
  # rdfs:isDefinedBy <http://www.epos-eu.org/epos/dcat-ap> ;
@@ -114,12 +115,12 @@ epos:Facility
 #.
 ##redefining schema:Organization and schema:Person 
 schema:Organization a owl:Class, rdfs:Class;
-    rdfs:subClassOf  schema:Thing, foaf:Agent; #, vcard:Kind;
+  #  rdfs:subClassOf  schema:Thing, foaf:Agent; #, vcard:Kind;
     owl:equivalentClass foaf:Organization; #, vcard:Organization;
     rdfs:label "Organization"@en;
 .
 schema:Person a owl:Class, rdfs:Class;
-    rdfs:subClassOf  schema:Thing, foaf:Agent; #vcard:Kind;
+    #rdfs:subClassOf  schema:Thing, foaf:Agent; #vcard:Kind;
     owl:equivalentClass foaf:Person; #, vcard:Individual;
     rdfs:label "Person"@en;
     
@@ -176,7 +177,7 @@ epos:Publication
 epos:WebService
   a owl:Class ;
   rdfs:comment "It represents a WebService API "@en  ;  
-  rdfs:subClassOf hydra:ApiDocumentation;
+  rdfs:subClassOf schema:Service;
   rdfs:subClassOf rdfs:Resource ;
   rdfs:label "WebService"@en  ;     
   rdfs:isDefinedBy <http://www.epos-eu.org/epos/dcat-ap> ;
@@ -193,8 +194,8 @@ epos:WebService
   ###
 
 ## we declare the equivalence of contactPoint in dcat and schema.org
-dcat:contactPoint owl:sameAs schema:contactPoint .
-dcat:keyword owl:sameAs schema:keywords .
+dcat:contactPoint owl:equivalentProperty schema:contactPoint .
+dcat:keyword owl:equivalentProperty schema:keywords .
 
 ##We extend range and domain of dcat:contactPoint
 dcat:contactPoint 
@@ -313,15 +314,15 @@ dcat:keyword
   rdfs:domain epos:Publication ;
   rdfs:range rdfs:Literal ;
 .
-epos:responsibleParty
-  rdf:type owl:ObjectProperty ;
+#epos:responsibleParty
+ # rdf:type owl:ObjectProperty ;
 ##  rdfs:domain epos:Dataset ;
-  rdfs:domain epos:WebService ;
-  rdfs:domain foaf:Project ;
-  rdfs:range schema:Person ;
-  rdfs:range schema:Organization ;
+  #rdfs:domain epos:WebService ;
+  #rdfs:domain foaf:Project ;
+  ##rdfs:range schema:Person ;
+  #rdfs:range schema:Organization ;
   
-.
+#.
 epos:scientificContact
   rdf:type owl:ObjectProperty ;
   rdfs:subPropertyOf dcat:contactPoint;
