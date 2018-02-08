@@ -194,6 +194,8 @@ epos:WebService
 
 ## we declare the equivalence of contactPoint in dcat and schema.org
 dcat:contactPoint owl:sameAs schema:contactPoint .
+dcat:keyword owl:sameAs schema:keywords .
+
 ##We extend range and domain of dcat:contactPoint
 dcat:contactPoint 
  rdf:type owl:ObjectProperty ;
@@ -304,9 +306,10 @@ epos:resolution
   rdfs:range rdfs:Literal ;
 .
 
-epos:keyword
+dcat:keyword
   rdf:type owl:DatatypeProperty ;
   rdfs:comment "This property represents one or more keywords "@en  ;
+  rdfs:domain dcat:Dataset ;
   rdfs:domain epos:Publication ;
   rdfs:range rdfs:Literal ;
 .
