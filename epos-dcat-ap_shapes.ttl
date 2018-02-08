@@ -145,13 +145,13 @@ schema:Person a owl:Class, rdfs:Class;
   #rdfs:label "Person"@en  ;   
   #rdfs:subClassOf vcard:Individual ;
 #.
-epos:Project
-  a owl:Class ;
-  rdfs:comment "EPOS specialisation of foaf:Project"@en  ;  
-  rdfs:isDefinedBy <http://www.epos-eu.org/epos/dcat-ap> ;
-  rdfs:label "Project"@en  ;    
-  rdfs:subClassOf foaf:Project ;
-.
+#epos:Project
+ # a owl:Class ;
+ # rdfs:comment "EPOS specialisation of foaf:Project"@en  ;  
+  #rdfs:isDefinedBy <http://www.epos-eu.org/epos/dcat-ap> ;
+  #rdfs:label "Project"@en  ;    
+  #rdfs:subClassOf foaf:Project ;
+#.
 epos:Publication
   a owl:Class ;
   rdfs:comment "EPOS specialisation of foaf:Document"@en  ;    
@@ -202,7 +202,7 @@ dcat:contactPoint
   ##rdfs:domain epos:CatalogRecord ;
   rdfs:domain epos:Software ;
   rdfs:domain epos:WebService ;
-  rdfs:domain epos:Project ;
+  rdfs:domain foaf:Project ;
   rdfs:domain epos:Facility ;
  rdfs:range vcard:Kind;
  rdfs:range schema:Organization ;
@@ -212,28 +212,28 @@ dcat:contactPoint
 epos:associatedProject
   rdf:type owl:ObjectProperty;
   rdfs:domain schema:Organization ;
-  rdfs:range epos:Project ;
+  rdfs:range foaf:Project ;
 .
-epos:affiliation
-  rdf:type owl:ObjectProperty ;
-  rdfs:domain schema:Person ;
-  rdfs:range schema:Organization ;
-.
+#epos:affiliation
+#  rdf:type owl:ObjectProperty ;
+#  rdfs:domain schema:Person ;
+#  rdfs:range schema:Organization ;
+#.
 epos:annotation
   rdf:type owl:ObjectProperty ;
   rdfs:domain rdfs:Resource ;
   rdfs:range oa:Annotation ;
 .
-epos:author
-  rdf:type owl:ObjectProperty ;
-  rdfs:domain epos:Publication ;
-  rdfs:range schema:Person ;
-.
-epos:contributor
-  rdf:type owl:ObjectProperty ;
-  rdfs:domain epos:Publication ;
-  rdfs:range schema:Person ;
-.
+#epos:author
+ # rdf:type owl:ObjectProperty ;
+ # rdfs:domain epos:Publication ;
+ # rdfs:range schema:Person ;
+#.
+#epos:contributor
+##  rdf:type owl:ObjectProperty ;
+ # rdfs:domain epos:Publication ;
+ # rdfs:range schema:Person ;
+#.
 dcat:theme
   rdf:type owl:ObjectProperty ;
   rdfs:comment "The main category/domain of the referred resource. It is an extension of dcat:theme"@en  ;
@@ -313,7 +313,7 @@ epos:responsibleParty
   rdf:type owl:ObjectProperty ;
 ##  rdfs:domain epos:Dataset ;
   rdfs:domain epos:WebService ;
-  rdfs:domain epos:Project ;
+  rdfs:domain foaf:Project ;
   rdfs:range schema:Person ;
   rdfs:range schema:Organization ;
   
