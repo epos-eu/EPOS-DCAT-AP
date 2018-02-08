@@ -1,0 +1,175 @@
+@base <www.orfeus-eu.org> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix epos: <http://www.epos-eu.org/epos/dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix bgs: <http://www.http://www.bgs.ac.uk#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+
+
+### Name defined in an external namespace i.e. orfeus
+<#LucaTrani> a schema:Person;
+			schema:identifier "myidentifier";
+			schema:nationality "it" ;
+			schema:familyName "Trani";
+			schema:givenName "Luca";
+			schema:email "trani@knmi.nl";
+			schema:address  "Utrechtseweg 297, De Bilt, 3731GA, Netherlands";
+			schema:affiliation <#KNMI>;
+			.
+
+
+<#KNMI> a schema:Organization;
+			schema:identifier "PICidentifier";
+			schema:legalName "Royal Netherlands Meteorological Institute";
+			schema:address [ a schema:PostalAddress;
+				schema:streetAddress "Utrechtseweg 297";
+				schema:addressLocality "De Bilt";
+				schema:postalCode "3731GA";
+				schema:addressCountry "Netherlands";
+			];
+			.
+<#EIDA/ODC/ContinuousSeismicWaveform> a dcat:Dataset;
+        dct:title "Primary Seismic Waveform Data"@en;
+        dct:identifier "WFDatasetID";
+        dct:description "Continuous seismic waveforms"@en;
+        ## example of frequency using a controlled vocabulary 
+        dct:accrualPeriodicity "http://purl.org/cld/freq/continuous";
+        dct:created "1993-01-01"^^xsd:date;
+        cnt:characterEncoding "UTF-8";
+        dct:type "http://purl.org/dc/dcmitype/Collection";
+        dct:subject "Seismic waveform"@en;
+        dcat:theme  <#SeismicWaveform> ;
+        dcat:keyword "seismic waveform","continuous waveform" ,"mseed" ;
+        dcat:contactPoint <#LucaTrani>;  #dcat:contactPoint equivalent to schema:contactPoint (points to schema:Person or schema:Organization)
+       
+        dct:publisher <#KNMI>;         #support a foaf:Agent <-> schema:Organization
+        
+        dcat:distribution <#EIDA/ODC/SeismicWaveformDistribution>;
+.
+
+<#EIDA/ODC/SeismicWaveformDistribution> a dcat:Distribution;
+               dct:identifier "WFDistributionID";
+               dct:description "Seismic Waveform Distribution";
+               dct:created "2017-09-01"^^xsd:date;
+               dct:type <http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE> ; 
+               dcat:accessURL <#FDSN/ODC/Dataselect/query>; ##do we explicitely put the parameters here?
+               #epos:accessMethod <#FDSN/ODC/Dataselect/query>;
+               dcat:mediaType "application/vnd.fdsn.mseed";
+               dct:conformsTo <#FDSN/ODC/Dataselect>;  ## an epos:Webservice
+.               
+<#FDSN/ODC/Dataselect> a epos:WebService;
+				dct:identifier "uniqueServiceID";
+				dct:title "FDSN Dataselect WebService at the Orfeus Data Centre";
+				dct:description "The FDSN Dataselect WebService provides access to Seismological time series data.";
+				dct:issued "2017-01-01"^^xsd:date;
+				dct:modified "2017-09-01"^^xsd:date;
+				hydra:entrypoint "http://www.orfeus-eu.org/fdsnws/dataselect/1/"^^xsd:string;
+				hydra:supportedOperation <#FDSN/ODC/Dataselect/query>;
+				.
+<#FDSN/ODC/Dataselect/query>  a hydra:Operation; 
+               hydra:method "GET"^^xsd:string;
+               hydra:IriTemplate[ a hydra:Rfc6570Template; 
+               hydra:template "http://www.orfeus-eu.org/fdsnws/dataselect/1/query/(?start,end,net,sta,cha)"^^xsd:string;
+               hydra:mapping[ a hydra:IriTemplateMapping;
+               	hydra:variable "start"^^xsd:string;
+               	hydra:required "true"^^xsd:boolean;
+               ];
+               hydra:mapping[ a hydra:IriTemplateMapping;
+               	hydra:variable "start"^^xsd:string;
+               	hydra:required "true"^^xsd:boolean;
+               ];
+               hydra:mapping[ a hydra:IriTemplateMapping;
+               	hydra:variable "end"^^xsd:string;
+               	hydra:required "true"^^xsd:boolean;
+               ];
+               hydra:mapping[ a hydra:IriTemplateMapping;
+               	hydra:variable "net"^^xsd:string;
+               	hydra:required "false"^^xsd:boolean;
+               ];
+               hydra:mapping[ a hydra:IriTemplateMapping;
+               	hydra:variable "sta"^^xsd:string;
+               	hydra:required "false"^^xsd:boolean;
+               ];
+                hydra:mapping[ a hydra:IriTemplateMapping;
+               	hydra:variable "cha"^^xsd:string;
+               	hydra:required "false"^^xsd:boolean;
+               ];
+               ];
+               .
+
+<bgs:#OGC/BGS/WMS> a epos:WebService;
+				dct:identifier "uniqueServiceID";
+				dct:title "BGS Web Map Service";
+				dct:description "Returns geological maps of ...";
+				dct:issued "2017-01-01"^^xsd:date;
+				dct:modified "2017-09-01"^^xsd:date;
+				hydra:entrypoint "https://map.bgs.ac.uk/arcgis/services/BGS_Detailed_Geology/MapServer/WMSServer"^^xsd:string;
+				hydra:supportedOperation <bgs:#OGC/BGS/WMS/getCapabilities>;
+				hydra:supportedOperation <bgs:#OGC/BGS/WMS/getMap>;
+				.			
+<bgs:#OGC/BGS/WMS/getCapabilities>  a hydra:Operation; 
+               hydra:method "GET"^^xsd:string;
+               hydra:IriTemplate[ a hydra:Rfc6570Template; 
+               hydra:template "https://map.bgs.ac.uk/arcgis/services/BGS_Detailed_Geology/MapServer/WMSServer(?service,version,request)"^^xsd:string;
+               hydra:mapping[ a hydra:IriTemplateMapping;
+               	hydra:variable "service"^^xsd:string;
+               	hydra:required "true"^^xsd:boolean;
+               ];
+               hydra:mapping[ a hydra:IriTemplateMapping;
+               	hydra:variable "version"^^xsd:string;
+               	hydra:required "true"^^xsd:boolean;
+               ];
+                hydra:mapping[ a hydra:IriTemplateMapping;
+               	hydra:variable "request"^^xsd:string;
+               	hydra:required "true"^^xsd:boolean;
+               	hydra:writeable "false"^^xsd:boolean;
+               	schema:defaultValue "GetCapabilities"^^xsd:string;
+               ];
+               ];			
+			.
+<bgs:#OGC/BGS/WMS/getMap>  a hydra:Operation; 
+               hydra:method "GET"^^xsd:string;
+               hydra:IriTemplate[ a hydra:Rfc6570Template; 
+               hydra:template "https://map.bgs.ac.uk/arcgis/services/BGS_Detailed_Geology/MapServer/WMSServer(?request,version,layers,style,format,crs,width,height)"^^xsd:string;
+               hydra:mapping[ a hydra:IriTemplateMapping;
+               	hydra:variable "request"^^xsd:string;
+               	hydra:required "true"^^xsd:boolean;
+               	hydra:writeable "false"^^xsd:boolean;
+               	schema:defaultValue "GetMap"^^xsd:string;
+               	
+               ];
+               hydra:mapping[ a hydra:IriTemplateMapping;
+               	hydra:variable "version"^^xsd:string;
+               	hydra:required "true"^^xsd:boolean;
+               ];
+                hydra:mapping[ a hydra:IriTemplateMapping;
+               	hydra:variable "layers"^^xsd:string;
+               	hydra:required "true"^^xsd:boolean;
+               ];
+                hydra:mapping[ a hydra:IriTemplateMapping;
+               	hydra:variable "style"^^xsd:string;
+               	hydra:required "false"^^xsd:boolean;
+               ];
+                hydra:mapping[ a hydra:IriTemplateMapping;
+               	hydra:variable "format"^^xsd:string;
+               	hydra:required "false"^^xsd:boolean;
+               ];
+                hydra:mapping[ a hydra:IriTemplateMapping;
+               	hydra:variable "crs"^^xsd:string;
+               	hydra:required "false"^^xsd:boolean;
+               ];
+               hydra:mapping[ a hydra:IriTemplateMapping;
+               	hydra:variable "width"^^xsd:string;
+               	hydra:required "false"^^xsd:boolean;
+               ];
+               hydra:mapping[ a hydra:IriTemplateMapping;
+               	hydra:variable "height"^^xsd:string;
+               	hydra:required "false"^^xsd:boolean;
+               ];
+               ];			
+			.
