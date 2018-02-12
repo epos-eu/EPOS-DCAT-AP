@@ -44,11 +44,29 @@
 
 <http://www.epos-eu.org/epos/dcat-ap>
   rdf:type owl:Ontology ;
-  dct:abstract "The EPOS DCAT Application Profile is a specialisation of the DCAT-AP for the EPOS community (www.epos-eu.org). It uses SHACL to express constraints and define the data structure (https://www.w3.org/TR/2017/REC-shacl-20170720/)"@en  ;
+  dct:abstract "The EPOS DCAT Application Profile is an extension of the DCAT-AP for the EPOS community (www.epos-eu.org). It uses SHACL to express constraints and define the data structure (https://www.w3.org/TR/2017/REC-shacl-20170720/)"@en  ;
   dct:creator [
       foaf:name "Luca Trani" ;
     ] ;
-  dct:created "2017-09-01"^^xsd:date ;
+  dct:contributor [
+  	foaf:name "Rossana Paciello" ;
+    ] ;
+  dct:contributor [
+  	foaf:name "Manuela Sbarra" ;
+    ] ;
+  dct:contributor [
+  	foaf:name "Damian Ulbricht" ;
+    ] ;
+  dct:contributor [
+  	foaf:name "Sylvain Grellet" ;
+    ] ;
+  dct:contributor [
+  	foaf:name "Andy Riddick" ;
+    ] ;
+  dct:contributor [
+  	foaf:name "Xiaoliang Wang" ;
+    ] ;    
+  dct:created "2018-02-09"^^xsd:date ;
   dct:relation <https://joinup.ec.europa.eu/node/69559> ;
   dct:title "EPOS DCAT Application Profile"@en  ;
   rdfs:comment "This document specifies the set of RDF classes, properties and shapes used in the EPOS DCAT Application Profile."@en  ;
@@ -58,34 +76,17 @@
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   owl:imports <http://www.w3.org/2006/vcard/ns> ;
   owl:imports <http://www.w3.org/2008/05/skos-xl> ;
- # owl:imports <http://www.w3.org/ns/adms> ;
   owl:imports <http://www.w3.org/ns/dcat> ;
   owl:imports <http://www.w3.org/ns/oa#> ;
   owl:imports org: ;
   owl:imports foaf: ;
-  owl:versionInfo "0.5" ;
+  owl:versionInfo "0.8" ;
   foaf:homepage <http://www.epos-eu.org/dcat-ap> ;
 .
   ####
   # Classes 
   ###
-##changed to dcat:Dataset no need to redefine it
-#epos:Dataset
- # a owl:Class ;
- # rdfs:comment "EPOS specialisation of dcat:Dataset"@en  ;
-  #rdfs:isDefinedBy <http://www.epos-eu.org/epos/dcat-ap> ;
-  #rdfs:label "Dataset"@en  ;
-  #rdfs:subClassOf dcat:Dataset ;
-#.
-##changed to dcat:Dataset
 
-#epos:Distribution
-#  a owl:Class ;
- # rdfs:comment "EPOS specialisation of dcat:Distribution"@en  ;
-  #rdfs:isDefinedBy <http://www.epos-eu.org/epos/dcat-ap> ;
-  #rdfs:label "Distribution"@en  ;
-  #rdfs:subClassOf dcat:Distribution ;
-#.
 epos:Equipment
   a owl:Class ;
   rdfs:comment "A resource representing a generic equipment. E.g. gps sensor, seismic station's channel"@en  ;
@@ -101,79 +102,24 @@ epos:Facility
   rdfs:subClassOf rdfs:Resource ;
 .
 
-#epos:ModelCode 
-#  a owl:Class ;
- # rdfs:comment "EPOS specialisation of schema:SoftwareSourceCode"@en  ;
- # rdfs:isDefinedBy <http://www.epos-eu.org/epos/dcat-ap> ;
- # rdfs:label "ModelCode"@en  ;
- # rdfs:subClassOf schema:SoftwareSourceCode ;
-#.
-#epos:Operation
- # a owl:Class ;
-  #rdfs:comment "EPOS Operation"@en  ;
-  #rdfs:isDefinedBy <http://www.epos-eu.org/epos/dcat-ap> ;
-#.
+
 ##redefining schema:Organization and schema:Person 
-schema:Organization a owl:Class, rdfs:Class;
-  #  rdfs:subClassOf  schema:Thing, foaf:Agent; #, vcard:Kind;
-    owl:equivalentClass foaf:Organization; #, vcard:Organization;
+schema:Organization a owl:Class;
+    owl:equivalentClass foaf:Organization; 
     rdfs:label "Organization"@en;
 .
-schema:Person a owl:Class, rdfs:Class;
-    #rdfs:subClassOf  schema:Thing, foaf:Agent; #vcard:Kind;
-    owl:equivalentClass foaf:Person; #, vcard:Individual;
-    rdfs:label "Person"@en;
-    
-#epos:Organisation
- # a owl:Class ;
-  #rdfs:comment "EPOS specialisation of vcard:Organisation"@en  ;
-  #rdfs:isDefinedBy <http://www.epos-eu.org/epos/dcat-ap> ;
-  #rdfs:label "Organisation"@en  ; 
-  #rdfs:subClassOf vcard:Organization ;
+schema:Person a owl:Class;
+    owl:equivalentClass foaf:Person;
+    rdfs:label "Person"@en;   
 .
-##changed to dcat:CatalogRecord no need to redefine it
-#epos:CatalogRecord
-#  a owl:Class ;
- # rdfs:comment "EPOS specialisation of dcat:CatalogRecord"@en  ;
-  #rdfs:isDefinedBy <http://www.epos-eu.org/epos/dcat-ap> ;
-  #rdfs:label "CatalogRecord"@en  ;   
-  #rdfs:subClassOf dcat:CatalogRecord ;
-#.
-#epos:Person
- # a owl:Class ;
-  #rdfs:comment "EPOS specialisation of vcard:Person"@en  ;  
-  #rdfs:isDefinedBy <http://www.epos-eu.org/epos/dcat-ap> ;
-  #rdfs:label "Person"@en  ;   
-  #rdfs:subClassOf vcard:Individual ;
-#.
-#epos:Project
- # a owl:Class ;
- # rdfs:comment "EPOS specialisation of foaf:Project"@en  ;  
-  #rdfs:isDefinedBy <http://www.epos-eu.org/epos/dcat-ap> ;
-  #rdfs:label "Project"@en  ;    
-  #rdfs:subClassOf foaf:Project ;
-#.
 epos:Publication
   a owl:Class ;
-  rdfs:comment "EPOS specialisation of foaf:Document"@en  ;    
+  rdfs:comment "EPOS specialisation of schema:CreativeWork"@en  ;    
   rdfs:isDefinedBy <http://www.epos-eu.org/epos/dcat-ap> ;
   rdfs:label "Publication"@en  ;   
   rdfs:subClassOf schema:CreativeWork ;
 .
-#epos:Service
-#  a owl:Class ;
-#  rdfs:comment "EPOS specialisation of schema:Service"@en  ;
-#  rdfs:isDefinedBy <http://www.epos-eu.org/epos/dcat-ap> ;
-#  rdfs:label "Service"@en  ;   
-#  rdfs:subClassOf schema:Service ;
-#.
-#epos:Software
- # a owl:Class ;
- # rdfs:comment "EPOS specialisation of schema:SoftwareApplication"@en  ;
- # rdfs:isDefinedBy <http://www.epos-eu.org/epos/dcat-ap> ;
- # rdfs:label "Software"@en  ;   
- # rdfs:subClassOf schema:SoftwareApplication ;
-#.
+
 epos:WebService
   a owl:Class ;
   rdfs:comment "It represents a WebService API "@en  ;  
@@ -182,18 +128,12 @@ epos:WebService
   rdfs:label "WebService"@en  ;     
   rdfs:isDefinedBy <http://www.epos-eu.org/epos/dcat-ap> ;
 .
-#epos:Operation
-#  a owl:Class ;
- # rdfs:comment "It represents an operation enabled by a WebService, i.e. API Method "@en  ;    
-  #rdfs:subClassOf hydra:Operation;
-  #rdfs:label "Operation"@en  ;       
-  #rdfs:isDefinedBy <http://www.epos-eu.org/epos/dcat-ap> ;
-#.
+
   ####
   # Properties 
   ###
 
-## we declare the equivalence of contactPoint in dcat and schema.org
+##We declare the equivalence of properties of dcat and schema.org
 dcat:contactPoint owl:equivalentProperty schema:contactPoint .
 dcat:keyword owl:equivalentProperty schema:keywords .
 
@@ -202,7 +142,6 @@ dcat:contactPoint
  rdf:type owl:ObjectProperty ;
   rdfs:domain schema:Organization ;
   rdfs:domain epos:Equipment ;
-  ##rdfs:domain epos:CatalogRecord ;
   rdfs:domain schema:SoftwareApplication ;
   rdfs:domain schema:SoftwareSourceCode;
   rdfs:domain epos:WebService ;
@@ -218,26 +157,14 @@ epos:associatedProject
   rdfs:domain schema:Organization ;
   rdfs:range foaf:Project ;
 .
-#epos:affiliation
-#  rdf:type owl:ObjectProperty ;
-#  rdfs:domain schema:Person ;
-#  rdfs:range schema:Organization ;
-#.
+
 epos:annotation
   rdf:type owl:ObjectProperty ;
   rdfs:domain rdfs:Resource ;
+  rdfs:domain foaf:Agent ;
   rdfs:range oa:Annotation ;
 .
-#epos:author
- # rdf:type owl:ObjectProperty ;
- # rdfs:domain epos:Publication ;
- # rdfs:range schema:Person ;
-#.
-#epos:contributor
-##  rdf:type owl:ObjectProperty ;
- # rdfs:domain epos:Publication ;
- # rdfs:range schema:Person ;
-#.
+
 dcat:theme
   rdf:type owl:ObjectProperty ;
   rdfs:comment "The main category/domain of the referred resource. It is an extension of dcat:theme"@en  ;
@@ -295,56 +222,19 @@ epos:owner
   rdfs:range schema:Organization ;
   rdfs:range schema:Person ;
 .
-epos:publisher
-  rdf:type owl:ObjectProperty ;
-  rdfs:domain epos:Publication ;
-  rdfs:range vcard:Kind ;
-.
+
 epos:resolution
   rdf:type owl:DatatypeProperty ;
   rdfs:comment "This property contains the resolution in nT"@en  ;
   rdfs:domain epos:Equipment ;
   rdfs:range rdfs:Literal ;
 .
-
-dcat:keyword
-  rdf:type owl:DatatypeProperty ;
-  rdfs:comment "This property represents one or more keywords "@en  ;
-  rdfs:domain dcat:Dataset ;
-  rdfs:domain epos:Publication ;
-  rdfs:range rdfs:Literal ;
-.
-#epos:responsibleParty
- # rdf:type owl:ObjectProperty ;
-##  rdfs:domain epos:Dataset ;
-  #rdfs:domain epos:WebService ;
-  #rdfs:domain foaf:Project ;
-  ##rdfs:range schema:Person ;
-  #rdfs:range schema:Organization ;
-  
-#.
 epos:scientificContact
   rdf:type owl:ObjectProperty ;
   rdfs:subPropertyOf dcat:contactPoint;
   rdfs:domain schema:Organization ;
   rdfs:range schema:Person ;
 .
-#epos:supportedOperation  
-#  rdf:type owl:ObjectProperty;
-#  rdfs:domain epos:WebService ;
-#  rdfs:range epos:Operation ;
-#.
-#epos:implements  
- # rdf:type owl:ObjectProperty;
- # rdfs:domain epos:Operation ;
- # rdfs:range dcat:Distribution ;
-#.
-
-#epos:accessMethod  
-#  rdf:type owl:ObjectProperty;
-#  rdfs:domain dcat:Distribution ;
-#  rdfs:range epos:Operation ;
-#.
 
   ####
   # Shapes 
