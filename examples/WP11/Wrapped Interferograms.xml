@@ -159,43 +159,46 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 		
 		<eposap:parameter>
 			<http:paramName>start</http:paramName><!-- this is the start time of the measurements -->
-			<rdf:label>time:start</rdf:label>
+			<rdf:label>start time: YYYY-MM-DD</rdf:label>
 			<dct:type>date</dct:type><!-- date format is UTC ISO yyyy-mm-dd -->
 		</eposap:parameter>
 		<eposap:parameter>
 			<http:paramName>stop</http:paramName><!-- this is the end time of the measurements -->
-			<rdf:label>time:stop</rdf:label>
+			<rdf:label>end time: YYYY-MM-DD</rdf:label>
 			<dct:type>date</dct:type><!-- date format is UTC ISO yyyy-mm-dd -->
 		</eposap:parameter>
 		<eposap:parameter>
 			<http:paramName>north</http:paramName><!-- filter result over a given area of interest as cardinal points-->
-			<rdf:label>geo:north</rdf:label>
+			<rdf:label>cardinal point north</rdf:label>
 			<dct:type>integer</dct:type><!-- north is defined by geographical coordinates XX.yyyyyy -->
 		</eposap:parameter>		
 		<eposap:parameter>
 			<http:paramName>east</http:paramName><!-- filter result over a given area of interest as cardinal points-->
-			<rdf:label>geo:east</rdf:label>
+			<rdf:label>cardinal point east</rdf:label>
 			<dct:type>integer</dct:type><!-- east is defined by geographical coordinates XX.yyyyyy -->
 		</eposap:parameter>
 		<eposap:parameter>
 			<http:paramName>south</http:paramName><!-- filter result over a given area of interest as cardinal points-->
-			<rdf:label>geo:south</rdf:label>
+			<rdf:label>cardinal point south</rdf:label>
 			<dct:type>integer</dct:type><!-- south is defined by geographical coordinates XX.yyyyyy -->
 		</eposap:parameter>	
 		<eposap:parameter>
 			<http:paramName>west</http:paramName><!-- filter result over a given area of interest as cardinal points-->
-			<rdf:label>geo:west</rdf:label>
+			<rdf:label>cardinal point west</rdf:label>
 			<dct:type>integer</dct:type><!-- west is defined by geographical coordinates XX.yyyyyy -->
 		</eposap:parameter>
 		<eposap:parameter>
 			<http:paramName>volcano-name</http:paramName><!-- Name of given Volcano -->
 			<rdf:label>volcano-name:Volcano</rdf:label>
 			<dct:type>string</dct:type>
+			<http:paramValue>ETNA</http:paramValue>
 		</eposap:parameter>	
 		<eposap:parameter>
 			<http:paramName>geometry</http:paramName><!-- filter result over a given area of interest as a generic geometry -->
 			<rdf:label>geometry</rdf:label>
 			<dct:type>string</dct:type><!-- geometry is Descending or Ascending -->
+			<http:paramValue>ascending</http:paramValue>
+			<http:paramValue>descending</http:paramValue>
 		</eposap:parameter>	
 		
 		<!-- The document is meant to be human readable (e.g. PDF, doc, and so on). 
