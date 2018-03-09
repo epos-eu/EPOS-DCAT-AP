@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- AHEAD services description v1.3 (v8 internal). This file was created by Mario Locati (INGV, mario.locati@ingv.it) the 31 of January 2018. -->
+<!-- AHEAD services description v1.4 (v9 internal). This file was created by Mario Locati (INGV, mario.locati@ingv.it) the 9 of March 2018. -->
 <eposap:Epos
 	xmlns:adms="http://www.w3.org/ns/adms#"
 	xmlns:cnt="http://www.w3.org/2008/content#"
@@ -152,7 +152,7 @@
 		<dct:description xml:lang="en">FDSN-event web service providing event parameters for historical earthquakes from AHEAD, the European Archive of Historical Earthquake Data</dct:description>
 		<dct:issued>2017-07-30T12:00:00</dct:issued>
 		<dct:modified>2017-08-31T12:00:00</dct:modified>
-		<dct:license xml:lang="en">https://www.emidius.eu/AHEAD/introduction.php#copyright</dct:license><!-- temporary solution, valid until a proper CC license will be decided -->
+		<dct:license xml:lang="en">https://www.emidius.eu/AHEAD/introduction.php#copyright</dct:license><!-- temporary solution, valid until a proper CC license will be selected -->
 		<foaf:page>
 			<foaf:primaryTopic>https://www.emidius.eu/fdsnws/event/1/query?</foaf:primaryTopic>
 		</foaf:page>
@@ -358,12 +358,11 @@
 		<dct:description xml:lang="en">The OGC WFS web service providing a point layer with event parameters for historical earthquakes from AHEAD, the European Archive of Historical Earthquake Data</dct:description>
 		<dct:issued>2017-09-14T23:00:00</dct:issued>
 		<dct:modified>2017-09-14T23:00:00</dct:modified>
-		<dct:license xml:lang="en">https://www.emidius.eu/AHEAD/introduction.php#copyright</dct:license><!-- temporary solution, valid until a proper CC license will be decided -->
+		<dct:license xml:lang="en">https://www.emidius.eu/AHEAD/introduction.php#copyright</dct:license><!-- temporary solution, valid until a proper CC license will be selected -->
 		<foaf:page>
 			<foaf:primaryTopic>https://www.emidius.eu/services/europe/wfs?</foaf:primaryTopic>
 		</foaf:page>
 		<dct:format>
-			<!--<dct:MediaTypeOrExtent>https://www.iana.org/assignments/media-types/application/gml+xml</dct:MediaTypeOrExtent>-->
 			<dct:MediaTypeOrExtent>xml</dct:MediaTypeOrExtent>
 		</dct:format>
 		<dct:rights>
@@ -374,7 +373,7 @@
 		<dct:created>2017-06-17T12:00:00</dct:created>
 		<eposap:domain>Seismology</eposap:domain>
 		<eposap:subDomain>Historical earthquakes</eposap:subDomain>
-		<dcat:keyword>seismology, seismicity, earthquakes, waveform, seismic hazard, earth structure, earthquake intensity, macroseismic, macroseismic information, waveform modeling, bibliography, earthquakes, parameters, historical, macroseismic, intensity</dcat:keyword>
+		<dcat:keyword xml:lang="en">seismology, seismicity, earthquakes, seismic hazard, earth structure, earthquake intensity, macroseismic, macroseismic information, bibliography, earthquakes, parameters, historical, macroseismic, intensity</dcat:keyword>
 		<eposap:operation>execute</eposap:operation>
 		<dct:hasVersion>2.0.0</dct:hasVersion>
 		<eposap:parameter>
@@ -423,11 +422,112 @@
 	</eposap:WebService>
 	
 	<eposap:WebService>
+		<dct:title>Archive of Historical Earthquake Data (AHEAD) event data (OGC Web Map Service)</dct:title>
+		<dct:description xml:lang="en">The OGC WMS web service providing a raster layer with epicentres for historical earthquakes from AHEAD, the European Archive of Historical Earthquake Data</dct:description>
+		<dct:issued>2018-03-09T12:00:00</dct:issued>
+		<dct:modified>2018-03-09T12:00:00</dct:modified>
+		<dct:license xml:lang="en">https://www.emidius.eu/AHEAD/introduction.php#copyright</dct:license><!-- temporary solution, valid until a proper CC license will be selected -->
+		<foaf:page>
+			<foaf:primaryTopic>https://www.emidius.eu/services/europe/wms?</foaf:primaryTopic>
+		</foaf:page>
+		<dct:format>
+			<dct:MediaTypeOrExtent>wms</dct:MediaTypeOrExtent>
+		</dct:format>
+		<dct:rights>
+			<dct:RightsStatement>PUBLIC</dct:RightsStatement>
+		</dct:rights>
+		<dct:conformsTo>EPSG:4326</dct:conformsTo>
+		<dct:identifier>eu.ahead.services.ogc.wms.event</dct:identifier>
+		<dct:created>2018-02-15T12:00:00</dct:created>
+		<eposap:domain>Seismology</eposap:domain>
+		<eposap:subDomain>Historical earthquakes</eposap:subDomain>
+		<dcat:keyword xml:lang="en">seismology, seismicity, earthquakes, seismic hazard, earth structure, earthquake intensity, macroseismic, macroseismic information, bibliography, earthquakes, parameters, historical, macroseismic, intensity</dcat:keyword>
+		<eposap:operation>getmap</eposap:operation>
+		<dct:hasVersion>1.1.1</dct:hasVersion>
+		<eposap:parameter>
+			<http:paramName>service</http:paramName>
+			<rdf:label>service</rdf:label>
+			<dct:type>string</dct:type>
+			<http:paramValue>WMS</http:paramValue>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>version</http:paramName>
+			<rdf:label>WMS version</rdf:label>
+			<dct:type>string</dct:type>
+			<http:paramValue>1.1.1</http:paramValue>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>request</http:paramName>
+			<rdf:label>Request type</rdf:label>
+			<dct:type>string</dct:type>
+			<http:paramValue>GetMap</http:paramValue>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>layers</http:paramName>
+			<rdf:label>Layers</rdf:label>
+			<dct:type>string</dct:type>
+			<http:paramValue>europe:SHEEC_1000_1899</http:paramValue>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>crs</http:paramName>
+			<rdf:label>Spatial Reference System</rdf:label>
+			<dct:type>string</dct:type>
+			<http:paramValue>EPSG:4326</http:paramValue>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>format</http:paramName>
+			<rdf:label>Output format</rdf:label>
+			<dct:type>string</dct:type>
+			<http:paramValue>image/png</http:paramValue>
+			<http:paramValue>image/jpeg</http:paramValue>
+			<http:paramValue>image/geotiff</http:paramValue>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>width</http:paramName>
+			<rdf:label>Width of the output map</rdf:label>
+			<dct:type>string</dct:type>
+			<http:paramValue>1536</http:paramValue>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>height</http:paramName>
+			<rdf:label>Height of the output map</rdf:label>
+			<dct:type>string</dct:type>
+			<http:paramValue>811</http:paramValue>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>styles</http:paramName>
+			<rdf:label>Symbols style</rdf:label>
+			<dct:type>string</dct:type>
+			<http:paramValue>europe:SHEEC_squares_colors</http:paramValue>
+			<http:paramValue>europe:SHEEC_squares_gray</http:paramValue>
+			<http:paramValue>europe:SHEEC_circles_colors</http:paramValue>
+			<http:paramValue>europe:SHEEC_circles_gray</http:paramValue>
+		</eposap:parameter>
+		<schema:documentation>https://www.emidius.eu/AHEAD/services/event_ogc.php</schema:documentation>
+		<dcat:contactPoint>http://orcid.org/0000-0003-2185-3267</dcat:contactPoint>
+		<eposap:publisher>PIC:999472675</eposap:publisher>
+		<dct:spatial>
+			<dct:Location>
+				<locn:geometry>POLYGON(-33.5 73.5, 34.0 73.5, 34.0 33.5, -33.5 33.5, -33.5 73.5)</locn:geometry>
+			</dct:Location>
+		</dct:spatial>
+		<adms:representationTechnique>raster</adms:representationTechnique>
+		<dct:temporal>
+			<dct:PeriodOfTime>
+				<schema:startDate>1000-01-01T00:00:00</schema:startDate>
+				<schema:endDate>1899-12-31T23:59:59</schema:endDate>
+			</dct:PeriodOfTime>
+		</dct:temporal>
+    <eposap:DDSS-ID>WP8-DDSS-025</eposap:DDSS-ID>
+    <eposap:actions>visualise</eposap:actions>
+	</eposap:WebService>
+	
+	<eposap:WebService>
 		<dct:title>Archive of Historical Earthquake Data (AHEAD) macroseismic data</dct:title>
 		<dct:description xml:lang="en">Macroseismic web service providing intensity data for historical earthquakes from AHEAD, the European Archive of Historical Earthquake Data.</dct:description>
 		<dct:issued>2017-09-14T12:00:00</dct:issued>
 		<dct:modified>2017-09-14T12:00:00</dct:modified>
-		<dct:license xml:lang="en">https://www.emidius.eu/AHEAD/introduction.php#copyright</dct:license><!-- temporary solution, valid until a proper CC license will be decided -->
+		<dct:license xml:lang="en">https://www.emidius.eu/AHEAD/introduction.php#copyright</dct:license><!-- temporary solution, valid until a proper CC license will be selected -->
 		<foaf:page>
 			<foaf:primaryTopic>https://www.emidius.eu/services/macroseismic/query?</foaf:primaryTopic>
 		</foaf:page>
@@ -654,7 +754,7 @@
 		<dct:description xml:lang="en">Bibliography web service providing bibliographical explanation of codes used in AHEAD, the European Archive of Historical Earthquake Data</dct:description>
 		<dct:issued>2017-07-30T12:00:00</dct:issued>
 		<dct:modified>2017-08-31T12:00:00</dct:modified>
-		<dct:license xml:lang="en">https://www.emidius.eu/AHEAD/introduction.php#copyright</dct:license><!-- temporary solution, valid until a proper CC license will be decided -->
+		<dct:license xml:lang="en">https://www.emidius.eu/AHEAD/introduction.php#copyright</dct:license><!-- temporary solution, valid until a proper CC license will be selected -->
 		<foaf:page>
 			<foaf:primaryTopic>https://www.emidius.eu/services/bibliography/query?</foaf:primaryTopic>
 		</foaf:page>
