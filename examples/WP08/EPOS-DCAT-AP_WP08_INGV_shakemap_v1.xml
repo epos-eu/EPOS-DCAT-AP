@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eposap:Epos
+        xmlns:adms="http://www.w3.org/ns/adms#"
+	xmlns:cnt="http://www.w3.org/2008/content#" xmlns:dcat="http://www.w3.org/ns/dcat#"
+	xmlns:dct="http://purl.org/dc/terms/" xmlns:eposap="http://www.epos-ip.org/terms.html"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:http="http://www.w3.org/2006/http#"
+	xmlns:locn="http://www.w3.org/ns/locn#" xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:schema="http://schema.org/"
+	xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:vcard="http://www.w3.org/2006/vcard/ns#"
+	xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.epos-ip.org/terms.html https://raw.githubusercontent.com/epos-eu/EPOS-DCAT-AP/master/schemas/EPOS-DCAT-AP.xsd">
+
+  <!-- EPOS Person -->
+  <eposap:Person>
+    <!-- Last Name, Given Name -->
+    <vcard:fn>Puglia, Rodolfo</vcard:fn>
+    <!-- Postal Address -->
+    <vcard:hasAddress>
+      <vcard:Address>
+        <vcard:street-address>via Alfonso Corti, 12</vcard:street-address>
+        <vcard:locality>Milano</vcard:locality>
+        <vcard:postal-code>20133</vcard:postal-code>
+        <vcard:country-name>Italy</vcard:country-name>
+      </vcard:Address>
+    </vcard:hasAddress>
+    <!-- Email -->
+    <vcard:hasEmail>rodolfo.puglia@ingv.it</vcard:hasEmail>
+    <!-- Phone -->
+    <vcard:hasTelephone>+390223699260</vcard:hasTelephone>
+    <!-- Unique Identifier -->
+    <dct:identifier>http://orcid.org/0000-0003-2480-1999</dct:identifier>
+    <!-- Organisation. Use the PIC from the European Commission. -->
+    <eposap:affiliation>PIC:999472675</eposap:affiliation>
+    <!-- Language for contact -->
+    <dct:language>
+      <dct:LinguisticSystem>en</dct:LinguisticSystem>
+    </dct:language>
+    <!-- Qualification -->
+    <schema:qualifications>Data Manager, Researcher</schema:qualifications>
+    <!-- CV It could be a webpage or electronic docvument. -->
+    <vcard:hasURL>http://orcid.org/0000-0003-2480-1999</vcard:hasURL>
+  </eposap:Person>
+
+  <!-- EPOS Organisation -->
+  <eposap:Organisation>
+    <!-- Title (english) -->
+    <vcard:fn>INGV National Institute of Geophysics and Volcanology</vcard:fn>
+    <!-- Title (native lang) -->
+    <vcard:organization-name xml:lang="it">INGV Istituto Nazionale di Geofisica e Vulcanologia</vcard:organization-name>
+    <!-- Postal Address -->
+    <vcard:hasAddress>
+      <vcard:Address>
+        <vcard:street-address>via di Vigna Murata, 605</vcard:street-address>
+        <vcard:locality>Rome</vcard:locality>
+        <vcard:postal-code>00143</vcard:postal-code>
+        <vcard:country-name>Italy</vcard:country-name>
+      </vcard:Address>
+    </vcard:hasAddress>
+    <!-- Email -->
+    <vcard:hasEmail>info@ingv.it</vcard:hasEmail>
+    <!-- Website -->
+    <vcard:hasURL>http://www.ingv.it</vcard:hasURL>
+    <!-- Logo -->
+    <vcard:hasLogo>http://roma2.rm.ingv.it/userfiles/file/Logo/INGV_Logo-abbr_colore.jpg</vcard:hasLogo>
+    <!-- Unique Identifier -->
+    <!-- GFZ PIC from the EU Research Council -->
+    <dct:identifier>PIC:999472675</dct:identifier>
+    <!-- Scientific Contact -->
+    <eposap:scientificContact>http://orcid.org/0000-0003-2480-1999</eposap:scientificContact>
+    <!-- Spatial Coordinates -->
+    <dct:spatial>
+      <dct:Location>
+        <!-- POINT(lon lat elevation) -->
+        <locn:geometry>POINT(12.5143823 41.8283177)</locn:geometry>
+      </dct:Location>
+    </dct:spatial>
+    <!-- Type -->
+    <dct:type>Public Research Institute</dct:type>
+    <!-- Legal Contact -->
+    <eposap:legalContact>http://orcid.org/0000-0003-2480-1999</eposap:legalContact>
+    <!-- Financial Contact -->
+    <eposap:financialContact>http://orcid.org/0000-0003-2480-1999</eposap:financialContact>
+    <!-- isPartOf TODO: Should we add INGV as part of ORFEUS? -->
+    <!-- <eposap:isPartOf>pic:997012076</eposap:isPartOf> -->
+  </eposap:Organisation>
+
+  <eposap:WebService>
+    <dct:title>ShakeMap Input XML - Engineering Strong-Motion database (ESM)</dct:title>
+    <dct:description>Resources can be used as input files for USGS ShakeMap program to create event shakemaps.</dct:description>
+    <!-- DEPRECATED?: <dcat:accessURL>http://geofon.gfz-potsdam.de/fdsnws/dataselect/1/query</dcat:accessURL> -->
+    <dct:issued>2017-04-01T00:00:00</dct:issued>
+    <dct:modified>2017-04-01T00:00:00</dct:modified>
+    <dct:license>To be defined!</dct:license>
+    <foaf:page>
+      <foaf:primaryTopic>http://esm.mi.ingv.it/esmws/shakemap/1/query?</foaf:primaryTopic>
+    </foaf:page>
+    <dct:format>
+      <dct:MediaTypeOrExtent>
+       <!-- ShakeMapXML --> xml
+      </dct:MediaTypeOrExtent>
+    </dct:format>
+    <dct:rights>
+      <dct:RightsStatement>
+        To be defined by EPOS!
+      </dct:RightsStatement>
+    </dct:rights>
+    <dct:conformsTo>EPSG:4326</dct:conformsTo>
+    <!-- If this is the proper way to define the identifier is still under
+    discussion. TODO No special character are accepted here. -->
+    <dct:identifier>esm.mi.ingv.it/esmws/shakemap/1/query</dct:identifier>
+    <dct:created>2017-04-01T00:00:00</dct:created>
+    <!-- This property refers to the domain of resource (e.g. Seismology, GNSS etc.) -->
+    <eposap:domain>
+      Seismology
+    </eposap:domain>
+    <!-- TODO TCSs will have to provide a list of subdomain terms. -->
+    <eposap:subDomain>
+      Seismic Hazard products
+    </eposap:subDomain>
+    <dcat:keyword>Seismic Hazard, INGV,ESM,Event,ShakeMap,ShakeMapXML,Strong Motion</dcat:keyword>
+    <!-- TODO A list of terms has to be agreed with EPOS. -->
+    <eposap:operation>
+      execute
+    </eposap:operation>
+    <dct:hasVersion>0.1</dct:hasVersion>
+    <eposap:parameter>
+      <http:paramName>eventid</http:paramName>
+      <rdf:label>Event ID</rdf:label>
+      <dct:type>
+              string
+      </dct:type>
+    </eposap:parameter>
+
+    <eposap:parameter>
+      <http:paramName>catalog</http:paramName>
+      <rdf:label>Catalog for the 'Event ID'</rdf:label>
+      <dct:type>
+              string
+      </dct:type>
+      <http:paramValue>ESM</http:paramValue>
+      <http:paramValue>ISC</http:paramValue>
+      <http:paramValue>USGS</http:paramValue>
+      <http:paramValue>EMSC</http:paramValue>
+      <http:paramValue>INGV</http:paramValue>
+    </eposap:parameter>
+
+    <eposap:parameter>
+      <http:paramName>format</http:paramName>
+      <rdf:label>ShakeMapXML format</rdf:label>
+      <dct:type>
+              string
+      </dct:type>
+      <http:paramValue>event</http:paramValue>
+      <http:paramValue>event_dat</http:paramValue>
+      <http:paramValue>event_fault</http:paramValue>
+    </eposap:parameter>
+    
+    <!-- FIXME A ':' character should be accepted to separate the schema from the ID. -->
+    <dcat:contactPoint>http://orcid.org/0000-0003-2480-1999</dcat:contactPoint>
+    <!-- Publisher (previously responsibleParty) -->
+    <!-- GFZ PIC from the EU Research Council -->
+    <!-- FIXME A ':' character should be accepted to separate the schema from the ID. -->
+    <eposap:publisher>PIC:999472675</eposap:publisher>
+    <dct:spatial>
+      <dct:Location>
+        <locn:geometry>POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)</locn:geometry>
+      </dct:Location>
+    </dct:spatial>
+    <adms:representationTechnique>point</adms:representationTechnique>
+    <dct:temporal>
+      <dct:PeriodOfTime>
+        <schema:startDate>1900-01-01T00:00:00</schema:startDate>
+      </dct:PeriodOfTime>
+    </dct:temporal>
+    <eposap:DDSS-ID>WP8-DDSS-048</eposap:DDSS-ID>
+    <eposap:actions>download</eposap:actions>
+  </eposap:WebService>
+</eposap:Epos>

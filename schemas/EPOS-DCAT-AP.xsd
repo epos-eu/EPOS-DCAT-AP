@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	xmlns:eposap="http://www.epos-ip.org/" xmlns:adms="http://www.w3.org/ns/adms#"
+	xmlns:eposap="http://www.epos-ip.org/terms.html" xmlns:adms="http://www.w3.org/ns/adms#"
 	xmlns:dct="http://purl.org/dc/terms/" xmlns:dcat="http://www.w3.org/ns/dcat#"
 	xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:owl="http://www.w3.org/2002/07/owl#"
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:skos="http://www.w3.org/2004/02/skos/core#"
 	xmlns:spdx="http://spdx.org/rdf/terms#" xmlns:vcard="http://www.w3.org/2006/vcard/ns#"
 	xmlns:locn="http://www.w3.org/ns/locn#" xmlns:schema="http://schema.org/"
 	xmlns:cnt="http://www.w3.org/2008/content#" xmlns:http="http://www.w3.org/2006/http#"
-	targetNamespace="http://www.epos-ip.org/" elementFormDefault="qualified"
+	targetNamespace="http://www.epos-ip.org/terms.html" elementFormDefault="qualified"
 	attributeFormDefault="qualified">
 
 	<xs:annotation>
@@ -31,20 +31,20 @@
 	<xs:import namespace="http://www.w3.org/2006/http#" schemaLocation="https://raw.githubusercontent.com/epos-eu/EPOS-DCAT-AP/master/schemas/http.xsd" />
 
 	<!-- EPOS roles -->
-	<xs:element name="responsibleParty" type="xs:IDREF" />
-	<xs:element name="affiliation" type="xs:IDREF" />
-	<xs:element name="legalContact" type="xs:IDREF" />
-	<xs:element name="financialContact" type="xs:IDREF" />
-	<xs:element name="scientificContact" type="xs:IDREF" />
-	<xs:element name="isPartOf" type="xs:IDREF" />
-	<xs:element name="associatedProjects" type="xs:IDREF" />
-	<xs:element name="authors" type="xs:IDREF" />
-	<xs:element name="publisher" type="xs:IDREF" />
-	<xs:element name="contributors" type="xs:IDREF" />
-	<xs:element name="facilityManager" type="xs:IDREF" />
-	<xs:element name="owner" type="xs:IDREF" />
-	<xs:element name="relatedTo" type="xs:IDREF" />
-	<xs:element name="providedBy" type="xs:IDREF" />
+	<xs:element name="responsibleParty" type="xs:anyURI" />
+	<xs:element name="affiliation" type="xs:anyURI" />
+	<xs:element name="legalContact" type="xs:anyURI" />
+	<xs:element name="financialContact" type="xs:anyURI" />
+	<xs:element name="scientificContact" type="xs:anyURI" />
+	<xs:element name="isPartOf" type="xs:anyURI" />
+	<xs:element name="associatedProjects" type="xs:anyURI" />
+	<xs:element name="authors" type="xs:anyURI" />
+	<xs:element name="publisher" type="xs:anyURI" />
+	<xs:element name="contributors" type="xs:anyURI" />
+	<xs:element name="facilityManager" type="xs:anyURI" />
+	<xs:element name="owner" type="xs:anyURI" />
+	<xs:element name="relatedTo" type="xs:anyURI" />
+	<xs:element name="providedBy" type="xs:anyURI" />
 	
 
 	<!-- eposap:Catalog -->
@@ -122,8 +122,8 @@
 	<xs:complexType name="WebService">
 		<xs:sequence>
 			<!-- dcat:Distribution properties -->
-			<xs:element ref="dct:title" minOccurs="1" maxOccurs="unbounded" />
-			<xs:element ref="dct:description" minOccurs="1" maxOccurs="unbounded" />
+			<xs:element ref="dct:title" minOccurs="1" maxOccurs="1" />
+			<xs:element ref="dct:description" minOccurs="1" maxOccurs="1" />
 			<xs:element ref="dct:issued" minOccurs="1" maxOccurs="1" />
 			<xs:element ref="dct:modified" minOccurs="1" maxOccurs="1" />
 			<xs:element ref="dct:license" minOccurs="0" maxOccurs="unbounded" />
@@ -156,10 +156,11 @@
 			<xs:element ref="schema:documentation" minOccurs="0" maxOccurs="unbounded" />
 			<xs:element ref="dcat:contactPoint" minOccurs="1" maxOccurs="unbounded" />
 			<xs:element ref="eposap:publisher" minOccurs="1" maxOccurs="1" />
-			<xs:element ref="dct:spatial" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element ref="dct:spatial" minOccurs="0" maxOccurs="1" />
 			<xs:element ref="adms:representationTechnique" minOccurs="0" maxOccurs="1" />
 			<xs:element ref="dct:temporal" minOccurs="0" maxOccurs="1" />
-			
+			<xs:element name="DDSS-ID" type="xs:string" minOccurs="1" maxOccurs="1" />
+			<xs:element name="actions" type="xs:string" minOccurs="1" maxOccurs="1" />
 		</xs:sequence>
 	</xs:complexType>
 
@@ -286,7 +287,7 @@
 		<xs:sequence>
 			<!-- vcard:Individual properties -->
 			<xs:element ref="vcard:fn" minOccurs="1" maxOccurs="1" />
-			<xs:element ref="vcard:hasAddress" minOccurs="1" maxOccurs="1" />
+			<xs:element ref="vcard:hasAddress" minOccurs="0" maxOccurs="1" />
 			<xs:element ref="vcard:hasEmail" minOccurs="0" maxOccurs="1" />			
 			<xs:element ref="vcard:hasTelephone" minOccurs="0" maxOccurs="1" />
 			
