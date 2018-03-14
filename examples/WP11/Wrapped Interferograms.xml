@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <eposap:Epos
-        xmlns:adms="http://www.w3.org/ns/adms#"
+xmlns:adms="http://www.w3.org/ns/adms#"
 	xmlns:cnt="http://www.w3.org/2008/content#" xmlns:dcat="http://www.w3.org/ns/dcat#"
 	xmlns:dct="http://purl.org/dc/terms/" xmlns:eposap="http://www.epos-ip.org/terms.html"
 	xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:http="http://www.w3.org/2006/http#"
@@ -10,9 +10,6 @@
 	xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.epos-ip.org/terms.html https://raw.githubusercontent.com/epos-eu/EPOS-DCAT-AP/master/schemas/EPOS-DCAT-AP.xsd">
 
-
-	<!-- In general some metadata must be revised -->
-	
 		<!-- EPOS Person -->
 	<eposap:Person>
 		<vcard:fn>Reitano, Danilo</vcard:fn><!-- Last Name, Given Name -->
@@ -25,7 +22,7 @@
 			</vcard:Address>
 		</vcard:hasAddress>
 		<vcard:hasEmail>danilo.reitano@ingv.it</vcard:hasEmail><!-- Email -->
-		<vcard:hasTelephone>+00397165800</vcard:hasTelephone><!-- Phone -->
+		<vcard:hasTelephone>+00390957165800</vcard:hasTelephone><!-- Phone -->
 		<dct:identifier>http://orcid.org/0000-0002-0915-3711</dct:identifier> <!-- Unique Identifier DANILO: we can't use chars at the moment-->
 		<eposap:affiliation>PIC:999472675</eposap:affiliation> <!-- Organisation -->
 		<dct:language><!-- Language for contact -->
@@ -37,11 +34,36 @@
 		</vcard:hasURL>
 	</eposap:Person>
 
+	<!-- EPOS Person -->
+	<eposap:Person>
+		<vcard:fn>Guglielmino, Francesco</vcard:fn><!-- Last Name, Given Name -->
+		<vcard:hasAddress><!-- Postal Address -->
+			<vcard:Address>
+				<vcard:street-address>Piazza Roma, 2</vcard:street-address>
+				<vcard:locality>Catania</vcard:locality>
+				<vcard:postal-code>95125</vcard:postal-code>
+				<vcard:country-name>Italy</vcard:country-name>
+			</vcard:Address>
+		</vcard:hasAddress>
+		<vcard:hasEmail>francesco.guglielmino@ingv.it</vcard:hasEmail><!-- Email -->
+		<vcard:hasTelephone>+00390957165800</vcard:hasTelephone><!-- Phone -->
+		<dct:identifier>http://orcid.org/0000-0003-3258-9975</dct:identifier> <!-- Unique Identifier DANILO: we can't use chars at the moment--> 
+		<eposap:affiliation>PIC:999472675</eposap:affiliation> <!-- Organisation -->
+		<dct:language><!-- Language for contact -->
+			<dct:LinguisticSystem>EN</dct:LinguisticSystem>
+		</dct:language>
+		<schema:qualifications>Geologist</schema:qualifications><!-- Qualification -->
+		<vcard:hasURL><!-- CV -->
+			http://orcid.org/0000-0003-3258-9975
+		</vcard:hasURL>
+	</eposap:Person>
+	
+		
 	<!-- EPOS Organisation -->
 	<eposap:Organisation>
 		<vcard:fn>National Institute of Geophysics and Volcanology</vcard:fn><!-- Title
 			(english) -->
-		<vcard:organization-name xml:lang="en">Istituto Nazionale di Geofisica e Vulcanologia</vcard:organization-name><!--
+		<vcard:organization-name xml:lang="it">Istituto Nazionale di Geofisica e Vulcanologia</vcard:organization-name><!--
 			Title (native lang) -->
 		<vcard:hasAddress><!-- Postal Address -->
 			<vcard:Address>
@@ -60,7 +82,7 @@
 		<dct:spatial><!-- Spatial Coordinates -->
 			<dct:Location>
 				<!-- POINT(lon lat elevation) -->
-				<locn:geometry>POINT(12.5150086 41.827223)</locn:geometry>
+				<locn:geometry>POINT(12.5150086 41.8272231)</locn:geometry>
 			</dct:Location>
 		</dct:spatial>
 		<dct:type><!-- Type -->
@@ -74,31 +96,23 @@
 			Associated Project -->
 	</eposap:Organisation>
 
-	<!-- EPOS Project 
-	<eposap:Project>
-		<dct:identifier>projectID01</dct:identifier>
-		<dct:title>Project name</dct:title> Name (Title)
-		<dct:description>Some description</dct:description> Description (Abstract)
-	</eposap:Project>-->
-
 	<!-- EPOS WebService -->
 	<eposap:WebService>
-		<dct:title>Tremor RMS Data Services</dct:title> <!-- title for example-->
-		<!-- abstract -->
-		<dct:description>Description of the service</dct:description> <!-- Use the description of the web service-->
-		<dct:issued>2017-06-22T12:00:00</dct:issued><!-- date of publication for example-->
-		<dct:modified>2017-06-22T12:00:00</dct:modified><!-- date of revision for example-->
+		<dct:title>Wrapped Differential Interferograms</dct:title> <!-- title for example-->
+		<dct:description>Wrapped Differential Interferograms (phase and amplitude)</dct:description> <!-- Use the description of the web service-->
+		<dct:issued>2018-02-26T12:00:00</dct:issued><!-- date of publication for example-->
+		<dct:modified>2018-02-26T12:00:00</dct:modified><!-- date of revision for example-->
 		<!--
 			Whenever possible, you should use URIs for licences.
 			A register of standard licences is available at:
 			http://publications.europa.eu/mdr/resource/authority/licence/html/licences-eng.html
 		-->
 		<dct:license>Creative Commons for data, Open Source licences for software </dct:license> <!-- Access and Use Restrictions -->
-		<foaf:page> <!-- URI -->
-			<foaf:primaryTopic>http://tsd.ct.ingv.it/tsdws/masterView.php?</foaf:primaryTopic>
+		<foaf:page> 
+			<foaf:primaryTopic>http://193.206.223.51:8081/rest/interferograms?</foaf:primaryTopic>
 		</foaf:page>
 		<dct:format><!-- distribution format, in case the service provides (also) access to binary data -->
-			<dct:MediaTypeOrExtent>zip</dct:MediaTypeOrExtent>
+			<dct:MediaTypeOrExtent>xml</dct:MediaTypeOrExtent>
 		</dct:format>
 		<!-- public access limitations:
 			There a codelist for this, so you can check if it is suitable to you.
@@ -116,23 +130,24 @@
 			the CRS should be specified with the relevant URI.
 			The base URI is:
 			http://www.opengis.net/def/crs/ -->
+			
 		<dct:conformsTo>EPSG:4326</dct:conformsTo> <!-- Spatial Reference System - check this point-->
-		<dct:identifier>tsd.ct.ingv.it</dct:identifier> <!-- Unique Resource Identifier: this is the entry point of the service - to be corrected-->
-		<dct:created>2017-06-22T12:00:00</dct:created> <!-- date of creation -->
+		<dct:identifier>http://193.206.223.51:8081/rest/interferograms?</dct:identifier> 
+		<dct:created>2018-02-26T12:00:00</dct:created> <!-- date of creation -->
 		<eposap:domain> <!-- This property refers to the domain of resource (e.g. Seismology, Geodesy, 
 		Satellite data, Geomagnetic data, Geology, Geohazards, Georesources, Transnational access) -->
-			Volcano-Observations
+			Satellite-Observations
 		</eposap:domain>
 		<eposap:subDomain> <!-- This property refers to the subdomain of resource (e.g. 
 		Earthquake parameters, Velocity models, GNSS station velocities, InSAR, Meteorology, 
 		Variation of geomagnetic field, 3D/4D structural models, Analog models, Numerical models, 
 		Geochemical data, Borehole data, Rock sample properties) -->
-			Seismic waveforms
+			InSAR
 		</eposap:subDomain>
 		
 		<!-- Keywords, annotation. Simple and free (web annotation ontology in the future) -->
-		<dcat:keyword>	Volcanology, Volcanic tremore amplitude</dcat:keyword> <!-- Keywords -->
-		<eposap:operation>download, visualise, etc</eposap:operation>
+		<dcat:keyword>InSAR, Etna, Interferograms</dcat:keyword> <!-- Keywords -->
+		<eposap:operation>download</eposap:operation>
 		<dct:hasVersion>0.1</dct:hasVersion>
 
 		<!-- List of Parameters:
@@ -140,48 +155,74 @@
 			E.g. in the case of a RESTful service, we may have "domain" as parameter,
 			with type "string" and a list of allowed value terms specified by the value tag,
 			e.g. 'seism','gps'  (i.e. namespace)
-			DANILO: Fill the field recovered for single xlm service
 			-->
+		
 		<eposap:parameter>
-			<http:paramName>id</http:paramName>
-			<rdf:label>id</rdf:label>
-			<dct:type> <!-- This property refers to parameter type -->
-				integer
-			</dct:type>
-			<!-- These properties refer to range value of the parameter -->
-			<schema:minValue>0</schema:minValue> 
-			<schema:maxValue>100</schema:maxValue>
+			<http:paramName>start</http:paramName><!-- this is the start time of the measurements -->
+			<rdf:label>start time: YYYY-MM-DD</rdf:label>
+			<dct:type>date</dct:type><!-- date format is UTC ISO yyyy-mm-dd -->
 		</eposap:parameter>
 		<eposap:parameter>
-			<http:paramName>statType</http:paramName>
-			<rdf:label>stationType</rdf:label>
-			<dct:type> <!-- This property refers to parameter type -->
-				string
-			</dct:type>
-			<!-- allowed vocabulary terms, optional tag -->
-			<http:paramValue>mobile</http:paramValue>
-			<http:paramValue>static</http:paramValue>	
-			<owl:versionInfo>1.5</owl:versionInfo> <!-- version of parameter -->
+			<http:paramName>stop</http:paramName><!-- this is the end time of the measurements -->
+			<rdf:label>end time: YYYY-MM-DD</rdf:label>
+			<dct:type>date</dct:type><!-- date format is UTC ISO yyyy-mm-dd -->
 		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>north</http:paramName><!-- filter result over a given area of interest as cardinal points-->
+			<rdf:label>cardinal point north</rdf:label>
+			<dct:type>integer</dct:type><!-- north is defined by geographical coordinates XX.yyyyyy -->
+		</eposap:parameter>		
+		<eposap:parameter>
+			<http:paramName>east</http:paramName><!-- filter result over a given area of interest as cardinal points-->
+			<rdf:label>cardinal point east</rdf:label>
+			<dct:type>integer</dct:type><!-- east is defined by geographical coordinates XX.yyyyyy -->
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>south</http:paramName><!-- filter result over a given area of interest as cardinal points-->
+			<rdf:label>cardinal point south</rdf:label>
+			<dct:type>integer</dct:type><!-- south is defined by geographical coordinates XX.yyyyyy -->
+		</eposap:parameter>	
+		<eposap:parameter>
+			<http:paramName>west</http:paramName><!-- filter result over a given area of interest as cardinal points-->
+			<rdf:label>cardinal point west</rdf:label>
+			<dct:type>integer</dct:type><!-- west is defined by geographical coordinates XX.yyyyyy -->
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>volcano-name</http:paramName><!-- Name of given Volcano -->
+			<rdf:label>volcano-name:Volcano</rdf:label>
+			<dct:type>string</dct:type>
+			<http:paramValue>ETNA</http:paramValue>
+		</eposap:parameter>	
+		<eposap:parameter>
+			<http:paramName>geometry</http:paramName><!-- filter result over a given area of interest as a generic geometry -->
+			<rdf:label>geometry</rdf:label>
+			<dct:type>string</dct:type><!-- geometry is Descending or Ascending -->
+			<http:paramValue>ascending</http:paramValue>
+			<http:paramValue>descending</http:paramValue>
+		</eposap:parameter>	
+		
 		<!-- The document is meant to be human readable (e.g. PDF, doc, and so on). 
 			This will help a user who, for instance, does not understand something from the hints/label of the parameters. -->
-		<schema:documentation>www.ct.ingv.it</schema:documentation>
+		<!--<schema:documentation>http://tsd.ct.ingv.it/tsdws/VolcanicCatalogs/1995-2015/</schema:documentation> -->
 		<dcat:contactPoint>http://orcid.org/0000-0002-0915-3711</dcat:contactPoint> <!-- internal link to contact point (vcard:Individual) described in the same file in <eposap:Person> -->
 		<eposap:publisher>PIC:999472675</eposap:publisher> <!-- internal link to responsibleParty (vcard:Organisation) described in the same file in <eposap:Organisation> -->
 		<dct:spatial> <!-- Geographic location/spatial extent /bounding box -->
 			<dct:Location>
 				<!-- POLYGON(lon1 lat1, lon2 lat2,...) DANILO: correct it for the right Polygon-->
-				<locn:geometry>POLYGON(-10.58 70.09,34.59 70.09,34.59 34.56,-10.58 34.56, -10.58 70.09)</locn:geometry>
+				<locn:geometry>POLYGON(14.7 37.9 ,14.7 37.6 , 15.7 37.9, 15.1 37.9)</locn:geometry>
 			</dct:Location>
 		</dct:spatial>
-		<adms:representationTechnique> <!-- Spatial representation type -->
+		<!-- <adms:representationTechnique> Spatial representation type
 			Vector
-		</adms:representationTechnique>
+		</adms:representationTechnique> -->
 		<dct:temporal> <!-- temporal extent -->
 			<dct:PeriodOfTime>
-				<schema:startDate>2017-06-22T12:00:00</schema:startDate>
-				<schema:endDate>2017-06-22T12:00:00</schema:endDate>
+				<schema:startDate>2018-02-26T12:00:00</schema:startDate>
+				<schema:endDate>2018-02-26T12:00:00</schema:endDate>
 			</dct:PeriodOfTime>
 		</dct:temporal>
+		<eposap:DDSS-ID>WP11-DDSS-50</eposap:DDSS-ID>
+    		<eposap:actions>download</eposap:actions>
 	</eposap:WebService>
+		
 </eposap:Epos>

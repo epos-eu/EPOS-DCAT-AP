@@ -11,7 +11,7 @@
 	xsi:schemaLocation="http://www.epos-ip.org/terms.html https://raw.githubusercontent.com/epos-eu/EPOS-DCAT-AP/master/schemas/EPOS-DCAT-AP.xsd">
 
 	
-    <eposap:Catalog>
+    <!--<eposap:Catalog>
       <dct:title>Anthropogenic Hazards</dct:title>
       <dct:description>Anthropogenic Hazards</dct:description>
       <dct:publisher>
@@ -83,23 +83,21 @@
         <dcat:contactPoint>http://orcid.org/0000-0002-4801-4888</dcat:contactPoint>
         <eposap:responsibleParty>mailto:jouni.nevalainen@oulu.fi</eposap:responsibleParty>
       </eposap:Dataset>
-  
-      <!-- We do not know what should be in this section, however, it cannot remove it as the XML would not pass the 
-        validation then. Therefore, the section is left with sample  -->
-      <eposap:CatalogRecord><!-- ATTRIBUTE SPECIFIC TO METADATA -->
-        <foaf:primaryTopic>Some topic</foaf:primaryTopic> <!-- Topic -->
-        <dct:modified>2001-12-31T12:00:00</dct:modified> <!-- Updated -->
-        <dct:language><!-- Language.  Two-letters encoding (e.g. en). -->
+
+      <eposap:CatalogRecord>
+        <foaf:primaryTopic>Some topic</foaf:primaryTopic>
+        <dct:modified>2001-12-31T12:00:00</dct:modified> 
+        <dct:language>
           <dct:LinguisticSystem>en</dct:LinguisticSystem>
         </dct:language>
-        <dct:title>Record name</dct:title><!-- Standard Name -->
-        <dct:identifier>idvalue3</dct:identifier><!-- File identifier -->
-        <owl:versionInfo>Record version</owl:versionInfo><!-- Standard Version -->
-        <cnt:characterEncoding>UTF-8</cnt:characterEncoding><!-- Characterset -->
-        <dcat:contactPoint>personID01</dcat:contactPoint><!-- Point of contact -->
-        <dct:created>2001-12-31T12:00:00</dct:created> <!-- Created -->
+        <dct:title>Record name</dct:title>
+        <dct:identifier>idvalue3</dct:identifier>
+        <owl:versionInfo>Record version</owl:versionInfo>
+        <cnt:characterEncoding>UTF-8</cnt:characterEncoding>
+        <dcat:contactPoint>personID01</dcat:contactPoint>
+        <dct:created>2001-12-31T12:00:00</dct:created> 
       </eposap:CatalogRecord>
-    </eposap:Catalog>
+    </eposap:Catalog>-->
     
     
     <eposap:Person>
@@ -257,7 +255,9 @@
         <dct:RightsStatement>RESTRICTED</dct:RightsStatement>
       </dct:rights>
       <dct:conformsTo>EPSG:4326</dct:conformsTo>
+
       <dct:identifier>https://tcs.ah-epos.eu/#episode:PYHASALMI_MINE</dct:identifier>
+
       <dct:created>2017-08-03T12:00:00</dct:created>
       <eposap:domain>Anthropogenic Hazard Observations</eposap:domain>
       <eposap:subDomain>Episodes</eposap:subDomain>
@@ -294,6 +294,8 @@
       <schema:documentation>https://tcs.ah-epos.eu/eprints/view/divisions/IP1.html</schema:documentation>
       <dcat:contactPoint>mailto:m.sterzel@cyfronet.pl</dcat:contactPoint>
       <eposap:publisher>PIC:999844573</eposap:publisher>
+      <eposap:DDSS-ID>WP14-DDSS-009</eposap:DDSS-ID>
+      <eposap:actions>download,visualise</eposap:actions>  
   </eposap:WebService>
 
 </eposap:Epos>

@@ -68,14 +68,14 @@ xmlns:adms="http://www.w3.org/ns/adms#"
     </eposap:Organisation>
 
     <eposap:WebService>
-    <dct:title>Velocity and Acceleration Seismic waveforms Continuous</dct:title>
-    <dct:description>The dataselect Web service provides access to time series data in miniSEED format. The data may be filtered e.g. by time, station and network parameters. The request type is HTTP-GET and HTTP-POST. Please refer to http://www.fdsn.org/webservice for a complete service description.</dct:description>
+    <dct:title>TABOO - Velocity and Acceleration Seismic waveforms Continuous</dct:title>
+    <dct:description>TABOO - The dataselect Web service provides access to time series data in miniSEED format. The data may be filtered e.g. by time, station and network parameters. The request type is HTTP-GET and HTTP-POST. Please refer to http://www.fdsn.org/webservice for a complete service description.</dct:description>
     
     <dct:issued>2016-01-01T00:00:00</dct:issued>
     <dct:modified>2016-01-01T00:00:00</dct:modified>
     <dct:license>To be defined!</dct:license>
     <foaf:page>
-        <foaf:primaryTopic>http://webservices.ingv.it/fdsnws/dataselect/1/query?network=_NFOTABOO</foaf:primaryTopic>
+        <foaf:primaryTopic>http://webservices.ingv.it/fdsnws/dataselect/1/query?</foaf:primaryTopic>
     </foaf:page>
     <dct:format>
         <dct:MediaTypeOrExtent>
@@ -101,7 +101,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
     <eposap:subDomain>
         Seismic waveforms
     </eposap:subDomain>
-    <dcat:keyword>seismology, seismicity, earthquakes, waveform, continuous, velocity, acceleration, seismic hazard, earth structure, earthquake intensity, macroseismic, macroseismic information, waveform modeling, GFZ,Dataselect,FDSN-WS,Seismic Waveform,EIDA</dcat:keyword>
+    <dcat:keyword>seismology, seismicity, earthquakes, waveform, seismic hazard, earth structure, earthquake intensity, macroseismic, macroseismic information, waveform modeling, TABOO, Dataselect, FDSN-WS, Seismic Waveform, EIDA</dcat:keyword>
     <!-- TODO A list of terms has to be agreed with EPOS. -->
     <eposap:operation>
         download
@@ -200,12 +200,14 @@ xmlns:adms="http://www.w3.org/ns/adms#"
         <schema:startDate>1993-01-01T00:00:00</schema:startDate>
         </dct:PeriodOfTime>
     </dct:temporal>
+		<eposap:DDSS-ID>WP09-DDSS-001/002</eposap:DDSS-ID>
+		<eposap:actions>download</eposap:actions>
     </eposap:WebService>
 
 
     <eposap:WebService>
-        <dct:title>Seismic Station Information</dct:title>
-        <dct:description>The fdsnws-station web service returns station metadata in FDSN StationXML format (schema here) or as delimited text. The purpose of the FDSN StationXML schema is to define an XML representation of the most important and commonly used structures of SEED 2.4 metadata. Results are available at multiple levels of granularity: network, station, channel and response.</dct:description>
+        <dct:title>TABOO - Seismic Station Information</dct:title>
+        <dct:description>TABOO - The fdsnws-station web service returns station metadata in FDSN StationXML format (schema here) or as delimited text. The purpose of the FDSN StationXML schema is to define an XML representation of the most important and commonly used structures of SEED 2.4 metadata. Results are available at multiple levels of granularity: network, station, channel and response.</dct:description>
         
         <dct:issued>2016-01-01T00:00:00</dct:issued>
         <dct:modified>2016-01-01T00:00:00</dct:modified>
@@ -237,7 +239,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
         <eposap:subDomain>
         Seismic stations
         </eposap:subDomain>
-        <dcat:keyword>seismology, seismicity, earthquakes, stations, waveform, seismic hazard, earth structure, earthquake intensity, macroseismic, macroseismic information, waveform modeling</dcat:keyword>
+        <dcat:keyword>seismology, seismicity, earthquakes, stations, waveform, seismic hazard, earth structure, earthquake intensity, macroseismic, macroseismic information, waveform modeling, TABOO</dcat:keyword>
         <!-- TODO A list of terms has to be agreed with EPOS. -->
         <eposap:operation>
         download
@@ -366,5 +368,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
             <schema:startDate>1993-01-01T00:00:00</schema:startDate>
         </dct:PeriodOfTime>
         </dct:temporal>
+				<eposap:DDSS-ID>WP09-DDSS-001b</eposap:DDSS-ID>
+				<eposap:actions>download,visualise</eposap:actions>
     </eposap:WebService>
 </eposap:Epos>
