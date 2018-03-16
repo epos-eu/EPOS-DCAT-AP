@@ -172,10 +172,11 @@ epos:annotation
 dcat:theme
   rdf:type owl:ObjectProperty ;
   rdfs:comment "The main category/domain of the referred resource. It is an extension of dcat:theme"@en  ;
+  rdfs:domain rdfs:Resource ;
   rdfs:domain dcat:Dataset ;
   rdfs:domain dcat:Distribution ;
-  rdfs:domain epos:Facility ;
-  rdfs:domain epos:WebService ;
+#  rdfs:domain epos:Facility ;
+ # rdfs:domain epos:WebService ;
   rdfs:range skos:Concept ;
 .
 epos:dynamicRange
