@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- AHEAD services description v1.4 (v9 internal). This file was created by Mario Locati (INGV, mario.locati@ingv.it) the 9 of March 2018. -->
+<!-- AHEAD services description v1.5 (v10 internal). This file was created by Mario Locati (INGV, mario.locati@ingv.it) the 21st of March 2018. -->
 <eposap:Epos
 	xmlns:adms="http://www.w3.org/ns/adms#"
 	xmlns:cnt="http://www.w3.org/2008/content#"
@@ -417,10 +417,13 @@
 				<schema:endDate>1899-12-31T23:59:59</schema:endDate>
 			</dct:PeriodOfTime>
 		</dct:temporal>
-    <eposap:DDSS-ID>WP8-DDSS-025</eposap:DDSS-ID>
-    <eposap:actions>download</eposap:actions>
+		<eposap:DDSS-ID>WP8-DDSS-025</eposap:DDSS-ID>
+		<eposap:actions>download</eposap:actions>
 	</eposap:WebService>
-	
+
+<!--
+Removed the OGC WMS because has the same DDSS-ID of the OGC WFS. Will re-enable it when it will be possible to obtain a dedicated ID, apparently the DDS table is now locked.
+
 	<eposap:WebService>
 		<dct:title>Archive of Historical Earthquake Data (AHEAD) event data (OGC Web Map Service)</dct:title>
 		<dct:description xml:lang="en">The OGC WMS web service providing a raster layer with epicentres for historical earthquakes from AHEAD, the European Archive of Historical Earthquake Data</dct:description>
@@ -518,10 +521,11 @@
 				<schema:endDate>1899-12-31T23:59:59</schema:endDate>
 			</dct:PeriodOfTime>
 		</dct:temporal>
-    <eposap:DDSS-ID>WP8-DDSS-025</eposap:DDSS-ID>
-    <eposap:actions>visualise</eposap:actions>
+		<eposap:DDSS-ID>WP8-DDSS-025</eposap:DDSS-ID>
+		<eposap:actions>visualise</eposap:actions>
 	</eposap:WebService>
-	
+-->
+
 	<eposap:WebService>
 		<dct:title>Archive of Historical Earthquake Data (AHEAD) macroseismic data</dct:title>
 		<dct:description xml:lang="en">Macroseismic web service providing intensity data for historical earthquakes from AHEAD, the European Archive of Historical Earthquake Data.</dct:description>
