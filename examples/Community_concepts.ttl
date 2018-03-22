@@ -4,6 +4,7 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#>.
 
+
 #####
 ##### Examples of classification of community concepts to be associated to EPOS Core Concepts such as Dataset, Webservice, ...
 #####
@@ -17,7 +18,7 @@
 .
 <epos:SeismicWaveform> a skos:Concept;
 	dct:description "Measurement of the dynamic displacement of the Earth"@en;
-	skos:inScheme <epos:Seismology>;
+	skos:inScheme <epos:Seismology>;	
 	skos:prefLabel "Seismic waveform"@en;
 	skos:prefLabel "Forma d'onda sismica"@it;
 	#can be used by applications for text based indexing/search (e.g. web interface) 
@@ -42,6 +43,14 @@
 	skos:inScheme <epos:VolcanoObservations>;
 	skos:prefLabel "Geochemical Data"@en;
     skos:altLabel "Geochemistry"@en;
+.
+
+### SeismicWaveform belongs to more that one conceptSchemes, i.e. it is a shared concept 
+<epos:SeismicWaveform> a skos:Concept;
+	dct:description "Measurement of the dynamic displacement of the Earth"@en;
+	skos:inScheme <epos:VolcanoObservations>;
+	skos:prefLabel "Seismic waveform"@en;
+	skos:altLabel "Seismology"@en;
 .
 
 
