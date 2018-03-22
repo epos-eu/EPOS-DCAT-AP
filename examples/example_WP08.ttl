@@ -1,0 +1,325 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix epos: <http://www.epos-eu.org/epos/dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix bgs: <http://www.bgs.ac.uk#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+
+<http://orcid.org/0000-0001-7750-7254> a schema:Person;
+			schema:identifier [ a schema:PropertyValue;
+          schema:propertyID  "orcid";
+          schema:value   "0000-0001-7750-7254";
+      ];
+			schema:identifier [ a schema:PropertyValue;
+          schema:propertyID  "Scopus";
+          schema:value   "55861456000";
+      ];
+			schema:familyName "Trani";
+			schema:givenName "Luca";
+      schema:address [ a schema:PostalAddress;
+	 	    schema:streetAddress "Utrechtseweg, 297";
+			  schema:addressLocality "De Bilt";
+			  schema:postalCode "3731GA";
+				schema:addressCountry "The Netherlands";
+			];
+      schema:email "luca.trani@gmail.com";
+      schema:telephone "+310302206297";
+      schema:url  "http://orcid.org/0000-0001-7750-7254"^^xsd:anyURI;
+			schema:qualifications "Senior Advisor, Researcher" ;
+			schema:affiliation <PIC:999518944>;
+.
+
+<http://orcid.org/0000-0002-6250-2474> a schema:Person;
+			schema:identifier "http://orcid.org/0000-0002-6250-2474";
+			schema:familyName "Koymans";
+			schema:givenName "Mathijs";
+        schema:address [ a schema:PostalAddress;
+	 	    schema:streetAddress "Utrechtseweg, 297";
+			  schema:addressLocality "De Bilt";
+			  schema:postalCode "3731GA";
+				schema:addressCountry "The Netherlands";
+			];
+      schema:telephone "+31302206911";
+      schema:url  "http://orcid.org/0000-0002-6250-2474"^^xsd:anyURI;
+			schema:qualifications "IT, Geology, Geophysics, Seismology, Paleomagnetism" ;
+			schema:affiliation <PIC:999518944>;
+			dcat:contactPoint <http://orcid.org/0000-0002-6250-2474/contactPoint>;
+.
+
+<http://orcid.org/0000-0002-6250-2474/contactPoint> a schema:ContactPoint;
+			schema:email "koymans@knmi@nl";
+			schema:availableLanguage "en" ;
+.
+
+<http://orcid.org/0000-0002-1928-5056> a schema:Person;
+			schema:identifier "http://orcid.org/0000-0002-1928-5056";
+			schema:availableLanguage "en" ;
+			schema:familyName "Sleeman";
+			schema:givenName "Reinoud";
+        schema:address [ a schema:PostalAddress;
+	 	    schema:streetAddress "Utrechtseweg, 297";
+			  schema:addressLocality "De Bilt";
+			  schema:postalCode "3731GA";
+				schema:addressCountry "The Netherlands";
+			];
+      schema:email "sleeman@knmi.nl";
+      schema:telephone "+31302206911";
+      schema:url  "http://www.knmi.nl/over-het-knmi/onze-mensen/reinoud-sleeman"^^xsd:anyURI;
+			schema:qualifications "IT, Geology, Geophysics, Seismology, Paleomagnetism" ;
+			schema:affiliation <PIC:999518944>;
+.
+
+<PIC:999518944> a schema:Organization;
+			schema:identifier [ a schema:PropertyValue;
+          schema:propertyID  "PIC";
+          schema:value   "999518944";
+      ];
+			schema:legalName "KNMI Dutch Royal Metereological Institute";
+			schema:address [ a schema:PostalAddress;
+        schema:streetAddress "Utrechtseweg, 297";
+        schema:addressLocality "De Bilt";
+        schema:postalCode "3731GA";
+        schema:addressCountry "The Netherlands";
+			];
+      schema:logo "http://cdn.knmi.nl/assets/logo_large-1f49334b8856e16f352187f1b52d0edf258976c6329407b0b75f5f109ea012fb.png"^^xsd:anyURI ;
+      schema:url "http://www.knmi.nl"^^xsd:anyURI  ;
+      epos:scientificContact <http://orcid.org/0000-0001-7750-7254>;
+      epos:legalContact <http://orcid.org/0000-0001-7750-7254>;
+      epos:financialContact <http://orcid.org/0000-0001-7750-7254>;
+      schema:memberOf <PIC:997012076>;
+
+.
+
+<PIC:997012076> a schema:Organization;
+
+			schema:identifier [ a schema:PropertyValue;
+          schema:propertyID  "PIC";
+          schema:value   "997012076";
+      ];
+			schema:legalName "ORFEUS Observatories and Research Facilities for European Seismology";
+			schema:address [ a schema:PostalAddress;
+        schema:streetAddress "Utrechtseweg, 297";
+        schema:addressLocality "De Bilt";
+        schema:postalCode "3731GA";
+        schema:addressCountry "The Netherlands";
+			];
+      #schema:logo ""^^xsd:anyURI ;
+      schema:url "http://www.orfeus-eu.org/"^^xsd:anyURI  ;
+      epos:scientificContact <http://orcid.org/0000-0001-7750-7254>;
+      epos:legalContact <http://orcid.org/0000-0001-7750-7254>;
+      epos:financialContact <http://orcid.org/0000-0001-7750-7254>;
+.
+
+<#Seismology> a skos:ConceptScheme;
+		dct:title "Seismology";
+		dct:description "It contains the concepts of the Seismology domain"; 
+		.
+
+<#SeismicWaveform> a skos:Concept;
+	dct:description "Measurement of the dynamic displacement of the Earth";
+	skos:inScheme <#Seismology>;
+	skos:prefLabel "Seismic waveform" ;
+.
+
+#-------------------------------------SHAKEMAP------------------------------
+<orfeus-eu.org/odcws/rrsm/1/shakemap> a epos:WebService;
+				schema:identifier "orfeus-eu.org/odcws/rrsm/1/shakemap";
+				schema:identifier [ a schema:PropertyValue;
+	          schema:propertyID  "DDSS-ID";
+	          schema:value   "WP8-DDSS-048";
+	      ];
+        schema:description "Resources can be used as input files for USGS ShakeMap program to create event shakemaps.";
+				schema:name "ShakeMap Input XML - Rapid Raw Strong Motion (RRSM)";
+				dcat:contactPoint <http://orcid.org/0000-0002-6250-2474/contactPoint> ;
+				dct:issued "2017-04-01T00:00:00Z"^^xsd:dateTime;
+				dct:modified "2017-04-01T00:00:00Z"^^xsd:dateTime;
+				schema:provider <PIC:999518944>;
+				dcat:theme  <#SeismicWaveform> ;
+ 				schema:keywords "Seismic Hazard", "ODC", "RRSM", "Event", "ShakeMap", "ShakeMapXML", "Strong Motion";
+				hydra:supportedOperation <ORFEUS/ODCWS/RRSM/shakemap>;
+.
+
+<ORFEUS/ODCWS/RRSM/shakemap> a hydra:Operation;
+ 			hydra:method "GET"^^xsd:string;
+			hydra:returns "xml";
+ 			hydra:IriTemplate[ a hydra:IriTemplate;
+            hydra:template "http://www.orfeus-eu.org/odcws/rrsm/1/shakemap/(?id,type)"^^xsd:string;
+            hydra:mapping[ a hydra:IriTemplateMapping;
+               hydra:variable "id"^^xsd:string;
+               hydra:required "true"^^xsd:boolean;
+            ];
+            hydra:mapping[ a hydra:IriTemplateMapping;
+            	hydra:variable "type"^^xsd:string;
+            	hydra:required "true"^^xsd:boolean;
+
+            ];
+          ];
+.
+
+#--------------- DATASELECT
+<orfeus-eu.org/fdsnws/dataselect/1/> a epos:WebService;
+ 				schema:identifier "orfeus-eu.org/fdsnws/dataselect/1/";
+				schema:identifier [ a schema:PropertyValue;
+	          schema:propertyID  "DDSS-ID";
+	          schema:value   "WP8-DDSS-001";
+	      ];
+        schema:description "FDSN Standard webservice at ODC to download waveform data";
+				schema:name "FDSN Dataselect - ORFEUS Data Center (ODC)";
+        dcat:contactPoint <http://orcid.org/0000-0002-6250-2474/contactPoint>;
+				dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime;
+				dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime;
+				schema:provider <PIC:999518944>;
+				hydra:entrypoint "http://www.orfeus-eu.org/fdsnws/dataselect/1/application.wadl"^^xsd:anyURI;
+				dcat:theme  <#SeismicWaveform> ;
+				schema:keywords "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "ODC", "Dataselect", "FDSN-WS", "Seismic Waveform", "EIDA";
+				hydra:supportedOperation <orfeus-eu.org/fdsnws/dataselect/1/query>;
+    .
+
+
+<orfeus-eu.org/fdsnws/dataselect/1/query> a hydra:Operation;
+ 				hydra:method "GET"^^xsd:string;
+				hydra:returns "binary";
+ 				hydra:IriTemplate[ a hydra:IriTemplate;
+              hydra:template "http://www.orfeus-eu.org/fdsnws/dataselect/1/query/(?starttime,endtime,network,station,location,channel,minimumlength,nodata)"^^xsd:string;
+              hydra:mapping[ a hydra:IriTemplateMapping;
+               hydra:variable "starttime"^^xsd:dateTime;
+               hydra:required "true"^^xsd:boolean;
+              ];
+              hydra:mapping[ a hydra:IriTemplateMapping;
+               hydra:variable "endtime"^^xsd:dateTime;
+               hydra:required "true"^^xsd:boolean;
+              ];
+              hydra:mapping[ a hydra:IriTemplateMapping;
+               	hydra:variable "network"^^xsd:string;
+               	hydra:required "false"^^xsd:boolean;
+               ];
+               hydra:mapping[ a hydra:IriTemplateMapping;
+               	hydra:variable "station"^^xsd:string;
+               	hydra:required "false"^^xsd:boolean;
+               ];
+                hydra:mapping[ a hydra:IriTemplateMapping;
+               	hydra:variable "location"^^xsd:string;
+               	hydra:required "false"^^xsd:boolean;
+               ];
+               hydra:mapping[ a hydra:IriTemplateMapping;
+                hydra:variable "channel"^^xsd:string;
+                hydra:required "false"^^xsd:boolean;
+              ];
+            #  hydra:mapping[ a hydra:IriTemplateMapping;
+            #   hydra:variable "quality"^^xsd:string;
+            #   hydra:required "false"^^xsd:boolean;
+            # ];
+               hydra:mapping[ a hydra:IriTemplateMapping;
+               hydra:variable "minimumlength"^^xsd:int;
+               hydra:required "false"^^xsd:boolean;
+               schema:minValue "0";
+           ];
+
+           hydra:mapping[ a hydra:IriTemplateMapping;
+               hydra:variable "nodata"^^xsd:int;
+               hydra:required "false"^^xsd:boolean;
+               #schema:minValue "0";
+           ];
+
+       ];
+.
+
+#------------------------STATION
+
+<orfeus-eu.org/fdsnws/station/1/> a epos:WebService;
+        schema:identifier "orfeus-eu.org/fdsnws/station/1/";
+				schema:identifier [ a schema:PropertyValue;
+	          schema:propertyID  "DDSS-ID";
+	          schema:value   "WP8-DDSS-049";
+	      ];
+        schema:description "FDSN Standard webservice at ODC to download seismic metadata";
+				schema:name "FDSN Station-WS - ORFEUS Data Center (ODC)";
+        dcat:contactPoint <http://orcid.org/0000-0002-6250-2474/contactPoint>;
+				dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime;
+				dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime;
+				schema:provider <PIC:999518944>;
+        dcat:theme  <#SeismicWaveform> ;
+				hydra:entrypoint "http://webservices.ingv.it/fdsnws/station/1/application.wadl"^^xsd:anyURI;
+        dcat:keyword "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling" ;
+        hydra:supportedOperation <orfeus-eu.org/fdsnws/station/1/query>;
+.
+
+<orfeus-eu.org/fdsnws/station/1/query> a hydra:Operation;
+ hydra:method "GET"^^xsd:string;
+ hydra:returns "xml";
+ hydra:IriTemplate[ a hydra:IriTemplate;
+              hydra:template "http://www.orfeus-eu.org/fdsnws/station/1/query/(?starttime,endtime,network,station,location,channel,minlatitude,maxlatitude,minlongitude,maxlongitude,level,nodata)"^^xsd:string;
+              hydra:mapping[ a hydra:IriTemplateMapping;
+               hydra:variable "starttime"^^xsd:dateTime;
+               hydra:required "true"^^xsd:boolean;
+              ];
+              hydra:mapping[ a hydra:IriTemplateMapping;
+               hydra:variable "endtime"^^xsd:dateTime;
+               hydra:required "true"^^xsd:boolean;
+              ];
+              hydra:mapping[ a hydra:IriTemplateMapping;
+               	hydra:variable "network"^^xsd:string;
+               	hydra:required "false"^^xsd:boolean;
+                schema:defaultValue "_NFOTABOO";
+               ];
+               hydra:mapping[ a hydra:IriTemplateMapping;
+               	hydra:variable "station"^^xsd:string;
+               	hydra:required "false"^^xsd:boolean;
+               ];
+                hydra:mapping[ a hydra:IriTemplateMapping;
+               	hydra:variable "location"^^xsd:string;
+               	hydra:required "false"^^xsd:boolean;
+               ];
+               hydra:mapping[ a hydra:IriTemplateMapping;
+                hydra:variable "channel"^^xsd:string;
+                hydra:required "false"^^xsd:boolean;
+              ];
+              hydra:mapping[ a hydra:IriTemplateMapping;
+                hydra:variable "minlatitude"^^xsd:float;
+                hydra:required "false"^^xsd:boolean;
+                schema:minValue "-90";
+                schema:maxValue "90";
+              ];
+               hydra:mapping[ a hydra:IriTemplateMapping;
+               hydra:variable "maxlatitude"^^xsd:float;
+               hydra:required "false"^^xsd:boolean;
+               schema:minValue "-90";
+               schema:maxValue "90";
+           ];
+           hydra:mapping[ a hydra:IriTemplateMapping;
+             hydra:variable "minlongitude"^^xsd:float;
+             hydra:required "false"^^xsd:boolean;
+             schema:minValue "-180";
+             schema:maxValue "180";
+           ];
+           hydra:mapping[ a hydra:IriTemplateMapping;
+               hydra:variable "maxlongitude"^^xsd:float;
+               hydra:required "false"^^xsd:boolean;
+               schema:minValue "-180";
+               schema:maxValue "180";
+           ];
+           hydra:mapping[ a hydra:IriTemplateMapping;
+               hydra:variable "level"^^xsd:string;
+               hydra:required "false"^^xsd:boolean;
+               #schema:minValue "network";
+               #schema:minValue "station";
+               #schema:minValue "channel";
+               #schema:minValue "response";
+           ];
+           hydra:mapping[ a hydra:IriTemplateMapping;
+               hydra:variable "nodata"^^xsd:string;
+               hydra:required "false"^^xsd:boolean;
+               #schema:minValue "0";
+           ];
+
+       ];
+.
