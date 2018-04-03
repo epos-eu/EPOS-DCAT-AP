@@ -1146,12 +1146,14 @@ epos:EquipmentShape
 
  sh:property [
       sh:path dct:isPartOf ;
-      sh:class epos:Equipment;
- ] ;
-
- sh:property [
-      sh:path dct:isPartOf ;
-      sh:class epos:Facility;
+      sh:or (
+        [
+          sh:class epos:Equipment;
+        ]
+        [
+          sh:class epos:Facility;
+        ]
+      );
  ] ;
 
  sh:property [
