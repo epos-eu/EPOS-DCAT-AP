@@ -2,6 +2,9 @@
 You have to fork it to your personal repo, work on it, push on your personal repo, and make a pull request. 
 See description down below in "How to contribute" section.
 
+## Contact
+Rossana Paciello rossana.paciello@ingv.it
+
 # EPOS-DCAT-AP
 DCAT-AP extension for Solid Earth Data, developed in the context of European Plate Observing System (EPOS) project www.epos-ip.org
 
