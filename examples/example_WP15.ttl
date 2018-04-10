@@ -12,17 +12,11 @@
 @prefix cnt: <http://www.w3.org/2011/content#> .
 @prefix locn: <http://www.w3.org/ns/locn#>.
 @prefix skos: <http://www.w3.org/2004/02/skos/core#>.
-
+@prefix http: <http://www.w3.org/2006/http#> .
 
 <contact-brgm@brgm.fr/contactPoint> a schema:ContactPoint;
 			schema:availableLanguage "fr" ;
 			schema:email "contact-brgm@brgm.fr";
-      schema:address [ a schema:PostalAddress;
-	 	        schema:streetAddress "3, avenue Claude Guillemin";
-			schema:addressLocality "ORLEANS";
-			schema:postalCode "45000";
-			schema:addressCountry "FRANCE";
-		     ];
 .
 
 <contact-brgm@brgm.fr/scientificContact> a schema:ContactPoint;
@@ -96,8 +90,8 @@
 
 <mapsrefdev.brgm.fr/wxs/1GE/EGDI_1M_INSPIRE_geolUnits/WMS/APIDocumentation> a hydra:APIDocumentation;
       hydra:title "documentation title" ;
-      hydra:description "some description" ;
-      hydra:entrypoint "entrypoint" ;
+      hydra:description "some description of API Documentation" ;
+      hydra:entrypoint "API Documentation entrypoint" ;
       hydra:statusCode 404 ;
 .
 
@@ -110,6 +104,8 @@
                hydra:mapping[ a hydra:IriTemplateMapping;
                	hydra:variable "service"^^xsd:string;
                	hydra:required "true"^^xsd:boolean;
+		rdf:label "service";
+		schema:defaultValue "WMS"
                ];
                hydra:mapping[ a hydra:IriTemplateMapping;
                	hydra:variable "version"^^xsd:string;
@@ -126,11 +122,12 @@
                ];
 ];
 .
+
 <mapsrefdev.brgm.fr/wxs/1GE/EGDI_1M_INSPIRE_geolUnits/WMS/getMap>  a hydra:Operation;
                hydra:method "GET"^^xsd:string;
 	       hydra:returns "image";
                hydra:IriTemplate[ a hydra:IriTemplate;
-               hydra:template "http://mapsrefdev.brgm.fr/wxs/1GE/EGDI_1M_INSPIRE_geolUnits(?request,version,layers,style,format,crs,width,height)"^^xsd:string;
+               hydra:template "http://mapsrefdev.brgm.fr/wxs/1GE/EGDI_1M_INSPIRE_geolUnits(?request,version,layers,format,crs,width,height)"^^xsd:string;
                hydra:mapping[ a hydra:IriTemplateMapping;
                	hydra:variable "request"^^xsd:string;
                	hydra:required "true"^^xsd:boolean;
@@ -149,11 +146,7 @@
                	hydra:required "true"^^xsd:boolean;
 		rdf:label "Layers";
 		schema:defaultValue "EGDI_GE_GeologicUnit_EN_1M_Surface_Lithology"; 
-               ];
-                hydra:mapping[ a hydra:IriTemplateMapping;
-               	hydra:variable "style"^^xsd:string;
-               	hydra:required "false"^^xsd:boolean;
-               ];
+               ];           
                 hydra:mapping[ a hydra:IriTemplateMapping;
                	hydra:variable "format"^^xsd:string;
                	hydra:required "false"^^xsd:boolean;
@@ -181,4 +174,4 @@
                	hydra:required "false"^^xsd:boolean;
                ];
             ];
-			.
+.
