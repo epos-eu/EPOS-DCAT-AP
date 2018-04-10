@@ -15,38 +15,57 @@
 
 
 <contact-brgm@brgm.fr/contactPoint> a schema:ContactPoint;
-			schema:identifier "contact-brgm@brgm.fr";
 			schema:availableLanguage "fr" ;
-			schema:name "BRGM Support";
 			schema:email "contact-brgm@brgm.fr";
       schema:address [ a schema:PostalAddress;
-	 	    schema:streetAddress "3, avenue Claude Guillemin";
-			  schema:addressLocality "ORLEANS";
-			  schema:postalCode "45000";
-				schema:addressCountry "FRANCE";
-			];
+	 	        schema:streetAddress "3, avenue Claude Guillemin";
+			schema:addressLocality "ORLEANS";
+			schema:postalCode "45000";
+			schema:addressCountry "FRANCE";
+		     ];
 .
 
-<PIC:999993662> a schema:Organization;
-			schema:identifier [ a schema:PropertyValue;
-          schema:propertyID  "PIC";
-          schema:value   "99999366";
-      ];
-			schema:legalName "BRGM (French Geological Survey)";
-			schema:address [ a schema:PostalAddress;
-				schema:streetAddress "3, avenue Claude Guillemin";
-				schema:addressLocality "ORLEANS";
-				schema:postalCode "45000";
-				schema:addressCountry "FRANCE";
-			];
-			schema:email "contact-brgm@brgm.fr" ;
-      schema:url "http://www.brgm.eu"^^xsd:anyURI  ;
+<contact-brgm@brgm.fr/scientificContact> a schema:ContactPoint;
+			schema:availableLanguage "fr" ;
+			schema:email "contact-brgm@brgm.fr";
+                        schema:contactType "scientificContact";
+.
 
+<contact-brgm@brgm.fr/financialContact> a schema: ContactPoint;
+			schema:availableLanguage "fr" ;
+			schema:email "contact-brgm@brgm.fr";
+			schema:contactType "financialContact";
+.
+
+<contact-brgm@brgm.fr/legalContact > a schema: ContactPoint;
+			schema:availableLanguage "fr" ;
+			schema:email "contact-brgm@brgm.fr";
+			schema:contactType "legalContact";.
+.
+
+
+<PIC:999993662> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+                      schema:propertyID  "PIC";
+             	      schema:value   "99999366";
+     	];
+	schema:legalName "BRGM (French Geological Survey)";
+	schema:address [ a schema:PostalAddress;
+	  	      schema:streetAddress "3, avenue Claude Guillemin";
+		      schema:addressLocality "ORLEANS";
+		      schema:postalCode "45000";
+		      schema:addressCountry "FRANCE";
+	];
+	schema:email "contact-brgm@brgm.fr" ;
+        schema:url "http://www.brgm.eu"^^xsd:anyURI  ;
+        schema:contactPoint <contact-brgm@brgm.fr/legalContact>;
+        schema:contactPoint <contact-brgm@brgm.fr/scientificContact>;
+        schema:contactPoint <contact-brgm@brgm.fr/financialContact>;
 .
 
 <#Geology> a skos:ConceptScheme;
-		dct:title "Geology";
-		dct:description "It contains the concepts of the Geology domain";
+	dct:title "Geology";
+	dct:description "It contains the concepts of the Geology domain";
  .
 
 <#GeologicalData> a skos:Concept;
@@ -57,21 +76,21 @@
 
 <mapsrefdev.brgm.fr/wxs/1GE/EGDI_1M_INSPIRE_geolUnits/WMS> a epos:WebService;
         schema:identifier "mapsrefdev.brgm.fr/wxs/1GE/EGDI_1M_INSPIRE_geolUnits/WMS";
-				schema:identifier [ a schema:PropertyValue;
+	schema:identifier [ a schema:PropertyValue;
 	          schema:propertyID  "DDSS-ID";
 	          schema:value   "WP15-DDSS-002a";
-	      ];
+	];
         schema:name "WMS EGDI Geological Map 1:1M Surface Lithology";
         schema:description "European 1:1M scale map of surface geology provided by the European Geological Data Infrastructure (building on OneGeology-Europe projects).";
         dcat:contactPoint <contact-brgm@brgm.fr/contactPoint>;
         schema:provider <PIC:999993662> ;
-		dct:issued "2016-10-27T00:00:00Z"^^xsd:dateTime;
-		dct:modified "2018-01-19T00:00:00Z"^^xsd:dateTime;
+	schema:datePublished "2016-10-27T00:00:00Z"^^xsd:dateTime;
+        schema:dateModified "2018-01-19T00:00:00Z"^^xsd:dateTime;
         dcat:theme  <#GeologicalData> ;
         schema:keywords "GeologicUnit", "Geology", "INSPIRE geology", "GeoSciML" ;
         dct:conformsTo <mapsrefdev.brgm.fr/wxs/1GE/EGDI_1M_INSPIRE_geolUnits/WMS/APIDocumentation> ;
         hydra:supportedOperation <mapsrefdev.brgm.fr/wxs/1GE/EGDI_1M_INSPIRE_geolUnits/WMS/getCapabilities>;
-				hydra:supportedOperation <mapsrefdev.brgm.fr/wxs/1GE/EGDI_1M_INSPIRE_geolUnits/WMS/getMap>;
+	hydra:supportedOperation <mapsrefdev.brgm.fr/wxs/1GE/EGDI_1M_INSPIRE_geolUnits/WMS/getMap>;
 
 .
 
@@ -84,7 +103,7 @@
 
 <mapsrefdev.brgm.fr/wxs/1GE/EGDI_1M_INSPIRE_geolUnits/WMS/getCapabilities>  a hydra:Operation ;
                hydra:method "GET"^^xsd:string;
-							 hydra:returns "xml";
+	       hydra:returns "xml";
                hydra:IriTemplate[ a hydra:IriTemplate;
                hydra:template "http://mapsrefdev.brgm.fr/wxs/1GE/EGDI_1M_INSPIRE_geolUnits(?service,version,request)"^^xsd:string;
 
