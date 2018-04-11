@@ -70,9 +70,9 @@ xmlns:adms="http://www.w3.org/ns/adms#"
     
 	<!-- EPOS WebService -->
 	<eposap:WebService>
-		<dct:title>Radon Web Service</dct:title> <!-- title -->
+		<dct:title>TABOO - Radon counts and local temperature Web Service</dct:title> <!-- title -->
 		<!-- abstract -->
-		<dct:description>This service retrieve Radon Gas concentration time series based on periodic counting of Rn gas at site</dct:description>
+		<dct:description>TABOO - This service retrieve Radon Gas concentration time series based on periodic counting of Rn gas at site</dct:description>
 		<dct:issued>2017-06-08T12:00:00</dct:issued><!-- date of publication -->
 		<dct:modified>2017-06-08T12:00:00</dct:modified><!-- date of revision -->
 		<!-- 
@@ -118,8 +118,8 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 		</eposap:subDomain>
         
         <!-- Keywords, annotation. Simple and free (web annotation ontology in the future) -->
-		<dcat:keyword>Geochemical, Radon concentration, Radon counts, geochemistry, geohazards, long term continuos timeseries</dcat:keyword> <!-- Keywords -->
-		<eposap:operation>download, visualise, etc</eposap:operation>
+		<dcat:keyword>Geochemical, Radon concentration, Radon counts, geochemistry, geohazards, long term continuos timeseries, local temperature</dcat:keyword> <!-- Keywords -->
+		<eposap:operation>execute</eposap:operation>
 		<dct:hasVersion>0.1</dct:hasVersion>
         
         <!-- List of Parameters:
@@ -265,6 +265,8 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 				<schema:endDate>2015-10-04T23:59:59</schema:endDate>
 			</dct:PeriodOfTime>
 		</dct:temporal>
+		<eposap:DDSS-ID>WP09-DDSS-024</eposap:DDSS-ID>
+		<eposap:actions>download,visualise</eposap:actions>
 	</eposap:WebService>
 
 </eposap:Epos>

@@ -88,7 +88,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 		</dct:type>
 		<eposap:legalContact>https://orcid.org/0000-0002-2588-8160</eposap:legalContact><!-- Legal Contact -->
 		<eposap:financialContact>https://orcid.org/0000-0002-2588-8160</eposap:financialContact><!-- Financial Contact -->
-		<eposap:isPartOf>PIC:999976590</eposap:isPartOf><!-- Is part of -->
+		<!-- <eposap:isPartOf>PIC:999976590</eposap:isPartOf> -->
 		<eposap:associatedProjects>EPOS.WP09</eposap:associatedProjects><!-- Associated Project -->
 
 	</eposap:Organisation>
@@ -143,16 +143,13 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 		<dct:identifier>lccepos.fisica.unina.it</dct:identifier> <!-- Unique Resource Identifier: this is the entry point of the service -->
 		<dct:created>2017-07-31T12:00:00</dct:created> <!-- date of creation -->
 		<eposap:domain> <!-- This property refers to the domain of resource (e.g. Seismology, GNSS etc.) -->
-			Seismology
+			Near Fault Observations
 		</eposap:domain>
 		<eposap:subDomain> <!-- This property refers to the subdomain of resource (to be defined, TBD...) -->
-			TBD
+			Earthquake Parameters
 		</eposap:subDomain>
-		<dct:type> <!-- RESOURCE TYPE This property refers to service type (E.g. "metadata service", "binary data service", "map service"...) -->
-			text data service
-		</dct:type>
-		<dcat:keyword>NFO, early warning, earthquakes, hazard, seismic source</dcat:keyword> <!-- Keywords -->
-
+		<dcat:keyword>NFO, early warning, earthquakes, hazard, seismic source, seismology</dcat:keyword> <!-- Keywords -->
+		<eposap:operation>execute</eposap:operation>
 		<!-- List of Parameters: 
 			this section is needed in order to describe the parameters of the service. 
 			E.g. in the case of a RESTful service, we may have "domain" as parameter, 
@@ -162,7 +159,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 		<!-- No parameters for now -->
 
 		<dcat:contactPoint>https://orcid.org/0000-0002-4553-2380</dcat:contactPoint> <!-- internal link to contact point (vcard:Individual) described in the same file in <eposap:Person> -->
-		<eposap:responsibleParty>https://orcid.org/0000-0002-2588-8160</eposap:responsibleParty> <!-- internal link to responsibleParty (vcard:Individual) described in the same file in <eposap:Person> -->
+		<eposap:publisher>PIC:999976590</eposap:publisher> <!-- internal link to responsibleParty (vcard:Individual) described in the same file in <eposap:Person> -->
 		<dct:spatial> <!-- Geographic location/spatial extent /bounding box -->
 			<dct:Location>
 				<locn:geometry>POLYGON(14.0 39.0,16.0 39.0,16.0 42.0,14.0 42.0,14.0 39.0)</locn:geometry>
@@ -177,9 +174,8 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 				<schema:endDate>2017-07-31T00:00:00</schema:endDate>
 			</dct:PeriodOfTime>
 		</dct:temporal>
-		<dct:provenance> <!-- Lineage -->
-			<dct:ProvenanceStatement>RISSC-Lab Provenance</dct:ProvenanceStatement>
-		</dct:provenance>
+		<eposap:DDSS-ID>WP09-DDSS-033</eposap:DDSS-ID>
+                <eposap:actions>download</eposap:actions>
 	</eposap:WebService>
 
 </eposap:Epos>

@@ -12,7 +12,7 @@
 
 	
     <!-- EPOS Catalog -->
-    <eposap:Catalog>
+ <!--   <eposap:Catalog>
       <dct:title>Anthropogenic Hazards</dct:title>
       <dct:description>Anthropogenic Hazards</dct:description>
       <dct:publisher>
@@ -46,7 +46,7 @@
         </dct:accessRights>
         <dct:conformsTo>http://www.opengis.net/def/crs/EPSG/0/4326</dct:conformsTo>
         <dcat:landingPage>
-          <foaf:primaryTopic>https://tcs.ah-epos.eu/#episodes:VDF</foaf:primaryTopic>
+          <foaf:primaryTopic>https://tcs.ah-epos.eu/#episode:VDF</foaf:primaryTopic>
         </dcat:landingPage>
         <dct:spatial>
           <dct:Location>
@@ -82,22 +82,21 @@
         <eposap:responsibleParty>http://orcid.org/0000-0003-2915-1446</eposap:responsibleParty>
       </eposap:Dataset>
   
-      <!-- We do not know what should be in this section, however, it cannot remove it as the XML would not pass the 
-        validation then. Therefore, the section is left with sample  -->
-      <eposap:CatalogRecord><!-- ATTRIBUTE SPECIFIC TO METADATA -->
-        <foaf:primaryTopic>Some topic</foaf:primaryTopic> <!-- Topic -->
-        <dct:modified>2001-12-31T12:00:00</dct:modified> <!-- Updated -->
-        <dct:language><!-- Language.  Two-letters encoding (e.g. en). -->
+      
+      <eposap:CatalogRecord>
+        <foaf:primaryTopic>Some topic</foaf:primaryTopic> 
+        <dct:modified>2001-12-31T12:00:00</dct:modified> 
+        <dct:language>
           <dct:LinguisticSystem>en</dct:LinguisticSystem>
         </dct:language>
-        <dct:title>Record name</dct:title><!-- Standard Name -->
-        <dct:identifier>idvalue3</dct:identifier><!-- File identifier -->
-        <owl:versionInfo>Record version</owl:versionInfo><!-- Standard Version -->
-        <cnt:characterEncoding>UTF-8</cnt:characterEncoding><!-- Characterset -->
-        <dcat:contactPoint>personID01</dcat:contactPoint><!-- Point of contact -->
-        <dct:created>2001-12-31T12:00:00</dct:created> <!-- Created -->
+        <dct:title>Record name</dct:title>
+        <dct:identifier>idvalue3</dct:identifier>
+        <owl:versionInfo>Record version</owl:versionInfo>
+        <cnt:characterEncoding>UTF-8</cnt:characterEncoding>
+        <dcat:contactPoint>personID01</dcat:contactPoint>
+        <dct:created>2001-12-31T12:00:00</dct:created> 
       </eposap:CatalogRecord>
-    </eposap:Catalog>
+    </eposap:Catalog>-->
     
     
     <eposap:Person>
@@ -217,7 +216,7 @@
         <eposap:scientificContact>http://orcid.org/0000-0002-4801-4888</eposap:scientificContact>
         <dct:spatial>
           <dct:Location>
-            <locn:geometry>POINT(52.246249, 20.939445)</locn:geometry>
+            <locn:geometry>POINT(20.939445 52.246249)</locn:geometry>
           </dct:Location>
         </dct:spatial>
         <dct:type>Scientific Unit</dct:type>
@@ -244,7 +243,7 @@
       <eposap:scientificContact>mailto:m.sterzel@cyfronet.pl</eposap:scientificContact>
       <dct:spatial>
         <dct:Location>
-          <locn:geometry>POINT(50.0689816, 19.9048248)</locn:geometry>
+          <locn:geometry>POINT(19.9048248 50.0689816)</locn:geometry>
         </dct:Location>
       </dct:spatial>
       <dct:type>Computer Centre</dct:type>
@@ -276,17 +275,41 @@
         <dct:RightsStatement>RESTRICTED</dct:RightsStatement>
       </dct:rights>
       <dct:conformsTo>EPSG:4326</dct:conformsTo>
-      <dct:identifier>https://tcs.ah-epos.eu/#episodes:VDF</dct:identifier>
+      <dct:identifier>tcs.ah-epos.eu/#episode:VDF</dct:identifier>
       <dct:created>2017-08-03T12:00:00</dct:created>
-      <eposap:domain>anthropogenic hazards</eposap:domain>
-      <eposap:subDomain>conventional hydrocarbon extraction</eposap:subDomain>
-      <dcat:keyword>conventional hydrocarbon extraction,wastewater injection,anthropogenic seismicity</dcat:keyword>
- 
-      <eposap:operation>TBD</eposap:operation> <!-- still pending, please fill in with TBD (to be defined)-->
+      <eposap:domain>Anthropogenic Hazard Observations</eposap:domain>
+      <eposap:subDomain>Episodes</eposap:subDomain>
+     <!-- <dcat:keyword>conventional hydrocarbon extraction,wastewater injection,anthropogenic seismicity</dcat:keyword>-->
+      <dcat:keyword> TCS AH, episode, episode element, download, seismology</dcat:keyword>
+      <eposap:operation>execute</eposap:operation> <!-- still pending, please fill in with TBD (to be defined)-->
       <dct:hasVersion>2.14</dct:hasVersion>
+      <eposap:parameter>
+        <http:paramName>dataType</http:paramName>
+        <rdf:label>Data type</rdf:label>
+        <dct:type>string</dct:type>
+        <http:paramValue>Catalog</http:paramValue>
+        <http:paramValue>Injection Volume</http:paramValue>
+        <http:paramValue>Seismic Stations</http:paramValue>
+        <http:paramValue>Velocity Model</http:paramValue>
+        <http:paramValue>Wellhead Pressure</http:paramValue>
+      </eposap:parameter>
+      <eposap:parameter>
+        <http:paramName>before</http:paramName>
+        <rdf:label>Items before this date (use ISO DateTime Format: yyyy-MM-dd'T'HH:mm:ss.SSSZ - 
+          e.g. 2000-10-31T01:30:00.000-0500)</rdf:label>
+        <dct:type>string</dct:type>
+      </eposap:parameter>
+      <eposap:parameter>
+        <http:paramName>after</http:paramName>
+        <rdf:label>Items before this date (use ISO DateTime Format: yyyy-MM-dd'T'HH:mm:ss.SSSZ - 
+          e.g. 2000-10-31T01:30:00.000-0500)</rdf:label>
+        <dct:type>string</dct:type>
+      </eposap:parameter>
       <schema:documentation>https://tcs.ah-epos.eu/eprints/view/divisions/IP6.html</schema:documentation>
       <dcat:contactPoint>mailto:m.sterzel@cyfronet.pl</dcat:contactPoint>
       <eposap:publisher>PIC:999844573</eposap:publisher>
+      <eposap:DDSS-ID>WP14-DDSS-019</eposap:DDSS-ID>
+      <eposap:actions>download</eposap:actions>  	    
   </eposap:WebService>
 
 </eposap:Epos>
