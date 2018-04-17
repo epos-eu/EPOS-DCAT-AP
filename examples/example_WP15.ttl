@@ -13,6 +13,7 @@
 @prefix locn: <http://www.w3.org/ns/locn#>.
 @prefix skos: <http://www.w3.org/2004/02/skos/core#>.
 @prefix http: <http://www.w3.org/2006/http#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 <contact-brgm@brgm.fr/contactPoint> a schema:ContactPoint;
 			schema:availableLanguage "fr" ;
@@ -104,20 +105,20 @@
                hydra:mapping[ a hydra:IriTemplateMapping;
                	hydra:variable "service"^^xsd:string;
                	hydra:required "true"^^xsd:boolean;
-		rdf:label "service";
+		rdfs:label "service";
 		schema:defaultValue "WMS"
                ];
                hydra:mapping[ a hydra:IriTemplateMapping;
                	hydra:variable "version"^^xsd:string;
                	hydra:required "true"^^xsd:boolean;
-		rdf:label "WMS version";
+		rdfs:label "WMS version";
 		schema:defaultValue "1.3.0";
                ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
                	hydra:variable "request"^^xsd:string;
                	hydra:required "true"^^xsd:boolean;
                	hydra:writeable "false"^^xsd:boolean;
-		rdf:label "Request type";
+		rdfs:label "Request type";
                	schema:defaultValue "GetCapabilities"^^xsd:string;
                ];
 ];
@@ -132,44 +133,44 @@
                	hydra:variable "request"^^xsd:string;
                	hydra:required "true"^^xsd:boolean;
                	hydra:writeable "false"^^xsd:boolean;
-		rdf:label "Request type";
+		rdfs:label "Request type";
                	schema:defaultValue "GetMap"^^xsd:string;
                ];
                hydra:mapping[ a hydra:IriTemplateMapping;
                	hydra:variable "version"^^xsd:string;
                	hydra:required "true"^^xsd:boolean;
-		rdf:label "WMS version";
+		rdfs:label "WMS version";
 		schema:defaultValue "1.3.0";
                ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
                	hydra:variable "layers"^^xsd:string;
                	hydra:required "true"^^xsd:boolean;
-		rdf:label "Layers";
+		rdfs:label "Layers";
 		schema:defaultValue "EGDI_GE_GeologicUnit_EN_1M_Surface_Lithology"; 
                ];           
                 hydra:mapping[ a hydra:IriTemplateMapping;
                	hydra:variable "format"^^xsd:string;
                	hydra:required "false"^^xsd:boolean;
-		rdf:label "Output format";
+		rdfs:label "Output format";
 		http:paramValue "image/png";
                	http:paramValue "image/jpeg";
                	http:paramValue "image/geotiff";
                ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
                	hydra:variable "crs"^^xsd:string;
-		rdf:label "Spatial Reference System";
+		rdfs:label "Spatial Reference System";
 		schema:defaultValue "EPSG:4326";
                	hydra:required "false"^^xsd:boolean;
                ];
                hydra:mapping[ a hydra:IriTemplateMapping;
                	hydra:variable "width"^^xsd:string;
-		rdf:label "Width of the output map";
+		rdfs:label "Width of the output map";
 		schema:defaultValue "1536"; 
                	hydra:required "false"^^xsd:boolean;
                ];
                hydra:mapping[ a hydra:IriTemplateMapping;
                	hydra:variable "height"^^xsd:string;
-		rdf:label "Height of the output map";
+		rdfs:label "Height of the output map";
 		schema:defaultValue "660"; 
                	hydra:required "false"^^xsd:boolean;
                ];
