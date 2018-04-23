@@ -1,92 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<eposap:Epos xmlns:adms="http://www.w3.org/ns/adms#" xmlns:cnt="http://www.w3.org/2008/content#" xmlns:dcat="http://www.w3.org/ns/dcat#" xmlns:dct="http://purl.org/dc/terms/" xmlns:eposap="http://www.epos-ip.org/terms.html" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:http="http://www.w3.org/2006/http#" xmlns:locn="http://www.w3.org/ns/locn#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:schema="http://schema.org/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:vcard="http://www.w3.org/2006/vcard/ns#" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.epos-ip.org/terms.html https://raw.githubusercontent.com/epos-eu/EPOS-DCAT-AP/master/schemas/EPOS-DCAT-AP.xsd">
-    <!-- EPOS Person -->
-    <eposap:Person>
-        <vcard:fn>Manea, Liviu Marius</vcard:fn>
-        <!-- Last Name, Given Name -->
-        <vcard:hasAddress>
-            <!-- Postal Address -->
-            <vcard:Address>
-                <vcard:street-address>Calugareni st., 12</vcard:street-address>
-                <vcard:locality>Magurele, Ilfov</vcard:locality>
-                <vcard:postal-code>077125</vcard:postal-code>
-                <vcard:country-name>Romania</vcard:country-name>
-            </vcard:Address>
-        </vcard:hasAddress>
-        <vcard:hasEmail>mlmarius@yahoo.com</vcard:hasEmail>
-        <!-- Email -->
-        <vcard:hasTelephone>+40722******</vcard:hasTelephone>
-        <!-- Phone -->
-        <dct:identifier>http://orcid.org/0000-0003-2431-1383</dct:identifier>
-        <!-- Unique Identifier -->
-        <eposap:affiliation>PIC:998181508</eposap:affiliation>
-        <!-- Organisation -->
-        <dct:language>
-            <!-- Language for contact -->
-            <dct:LinguisticSystem>EN</dct:LinguisticSystem>
-        </dct:language>
-        <schema:qualifications>EN</schema:qualifications>
-        <!-- Qualification -->
-        <vcard:hasURL>http://orcid.org/0000-0003-2431-1383</vcard:hasURL>
-    </eposap:Person>
-    <!-- EPOS Organisation -->
-    <eposap:Organisation>
-        <vcard:fn>National Institute for Earth Physics</vcard:fn>
-        <!-- Title (english) -->
-        <vcard:organization-name xml:lang="en">National Institute for Earth Physics</vcard:organization-name>
-        <!-- Title (native lang) -->
-        <vcard:hasAddress>
-            <!-- Postal Address -->
-            <vcard:Address>
-                <vcard:street-address>Calugareni st., 12</vcard:street-address>
-                <vcard:locality>Magurele, Ilfov</vcard:locality>
-                <vcard:postal-code>077125</vcard:postal-code>
-                <vcard:country-name>Romania</vcard:country-name>
-            </vcard:Address>
-        </vcard:hasAddress>
-        <vcard:hasEmail>contact@infp.ro</vcard:hasEmail>
-        <!-- Email -->
-        <vcard:hasURL>http://www.infp.ro</vcard:hasURL>
-        <!-- Website -->
-        <vcard:hasLogo>http://intranet.infp.ro/wp-content/uploads/public_dirs/Materiale_vizibilitate_INFP/LOGO%20MAIN%20INFP_resize.gif</vcard:hasLogo>
-        <!-- Logo -->
-        <dct:identifier>PIC:998181508</dct:identifier>
-        <!-- Unique Identifier -->
-        <eposap:scientificContact>http://orcid.org/0000-0003-2431-1383</eposap:scientificContact>
-        <!-- Scientific Contact -->
-        <dct:spatial>
-            <!-- Spatial Coordinates -->
-            <dct:Location>
-                <!-- POINT(lon lat elevation) -->
-                <locn:geometry>POINT(26.027969 44.347747)</locn:geometry>
-            </dct:Location>
-        </dct:spatial>
-        <dct:type>Research Institute</dct:type>
-        <eposap:legalContact>http://orcid.org/0000-0003-2431-1383</eposap:legalContact>
-        <!-- Legal Contact to be correct -->
-        <eposap:financialContact>http://orcid.org/0000-0003-2431-1383</eposap:financialContact>
-        <!-- Financial
-            Contact  to be correct-->
-        <!--<eposap:isPartOf>organisationID01</eposap:isPartOf>to remove // Is part of -->
-        <!--<eposap:associatedProjects>projectID01</eposap:associatedProjects>-->
-        <!-- Associated Project -->
-    </eposap:Organisation>
+<eposap:Epos
+xmlns:adms="http://www.w3.org/ns/adms#"
+	xmlns:cnt="http://www.w3.org/2008/content#" xmlns:dcat="http://www.w3.org/ns/dcat#"
+	xmlns:dct="http://purl.org/dc/terms/" xmlns:eposap="http://www.epos-ip.org/terms.html"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:http="http://www.w3.org/2006/http#"
+	xmlns:locn="http://www.w3.org/ns/locn#" xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:schema="http://schema.org/"
+	xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:vcard="http://www.w3.org/2006/vcard/ns#"
+	xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.epos-ip.org/terms.html https://raw.githubusercontent.com/epos-eu/EPOS-DCAT-AP/master/schemas/EPOS-DCAT-AP.xsd">
+	
+	<!-- EPOS Person -->
+	<eposap:Person>
+		<vcard:fn>Festa, Gaetano</vcard:fn><!-- Last Name, Given Name -->
+		<vcard:hasAddress><!-- Postal Address -->
+			<vcard:Address>
+				<vcard:street-address>Via Cintia</vcard:street-address>
+				<vcard:locality>Naples</vcard:locality>
+				<vcard:postal-code>80126</vcard:postal-code>
+				<vcard:country-name>Italy</vcard:country-name>
+			</vcard:Address>
+		</vcard:hasAddress>
+		<vcard:hasEmail>gaetano.festa@unina.it</vcard:hasEmail><!-- Email -->
+		<vcard:hasTelephone>+39081675248</vcard:hasTelephone><!-- Phone -->
+		<dct:identifier>https://orcid.org/0000-0002-2588-8160</dct:identifier> <!-- Unique Identifier -->
+		<eposap:affiliation>PIC:999976590</eposap:affiliation> <!-- Organisation -->
+		<dct:language><!-- Language for contact -->
+			<dct:LinguisticSystem>En</dct:LinguisticSystem>
+		</dct:language>
+		<schema:qualifications>Associate Professor of Earth and Atmosphere Physics</schema:qualifications><!-- Qualification -->
+		<vcard:hasURL><!-- CV -->
+		https://www.docenti.unina.it/gaetano.festa
+		</vcard:hasURL>
+	</eposap:Person>
 
+	<!-- EPOS Person -->
+	<eposap:Person>
+		<vcard:fn>Elia, Luca</vcard:fn><!-- Last Name, Given Name -->
+		<vcard:hasAddress><!-- Postal Address -->
+			<vcard:Address>
+				<vcard:street-address>Via Cintia</vcard:street-address>
+				<vcard:locality>Naples</vcard:locality>
+				<vcard:postal-code>80126</vcard:postal-code>
+				<vcard:country-name>Italy</vcard:country-name>
+			</vcard:Address>
+		</vcard:hasAddress>
+		<vcard:hasEmail>elia@fisica.unina.it</vcard:hasEmail><!-- Email -->
+		<vcard:hasTelephone>+39081679929</vcard:hasTelephone><!-- Phone -->
+		<dct:identifier>https://orcid.org/0000-0002-4553-2380</dct:identifier> <!-- Unique Identifier -->
+		<eposap:affiliation>PIC:999976590</eposap:affiliation> <!-- Organisation -->
+		<dct:language><!-- Language for contact -->
+			<dct:LinguisticSystem>En</dct:LinguisticSystem>
+		</dct:language>
+		<schema:qualifications>Contractor</schema:qualifications><!-- Qualification -->
+		<vcard:hasURL><!-- CV -->
+		</vcard:hasURL>
+	</eposap:Person>
 
-    <!-- EPOS WebService -->
-    <eposap:WebService>
-        <dct:title>NIEP - FDSN EVENT Web Service</dct:title> <!-- title -->
+	<!-- EPOS Organisation -->
+	<eposap:Organisation>
+		<vcard:fn>RISSC-Lab, University Federico II of Naples</vcard:fn><!-- Title
+			(english) -->
+		<vcard:organization-name xml:lang="it">RISSC-Lab, Università Fedrico II di Napoli</vcard:organization-name><!--
+			Title (native lang) -->
+		<vcard:hasAddress><!-- Postal Address -->
+			<vcard:Address>
+				<vcard:street-address>Via Cintia</vcard:street-address>
+				<vcard:locality>Naples</vcard:locality>
+				<vcard:postal-code>80126</vcard:postal-code>
+				<vcard:country-name>Italy</vcard:country-name>
+			</vcard:Address>
+		</vcard:hasAddress>
+		<vcard:hasEmail>inforissclab@unina.it</vcard:hasEmail><!-- Email -->
+		<vcard:hasURL>http://www.rissclab.unina.it/en/</vcard:hasURL><!-- Website -->
+		<vcard:hasLogo>http://www.rissclab.unina.it/images/unina/RSCCLogo.png</vcard:hasLogo><!-- Logo -->
+		<dct:identifier>PIC:999976590</dct:identifier><!-- Unique Identifier -->
+		<eposap:scientificContact>https://orcid.org/0000-0002-2588-8160</eposap:scientificContact><!-- Scientific
+			Contact -->
+		<dct:spatial><!-- Spatial Coordinates -->
+			<dct:Location>
+				<!-- POINT(lon lat elevation) -->
+				<locn:geometry>POINT(14.183455 40.837710)</locn:geometry>
+			</dct:Location>
+		</dct:spatial>
+		<dct:type><!-- Type -->
+			University laboratory
+		</dct:type>
+		<eposap:legalContact>https://orcid.org/0000-0002-2588-8160</eposap:legalContact><!-- Legal Contact -->
+		<eposap:financialContact>https://orcid.org/0000-0002-2588-8160</eposap:financialContact><!-- Financial Contact -->
+		<!--<eposap:isPartOf>PIC:999976590</eposap:isPartOf>--><!-- Is part of -->
+		<!--<eposap:associatedProjects>EPOS.WP09</eposap:associatedProjects> -->
+
+	</eposap:Organisation>
+
+	<!-- EPOS Project 
+	<eposap:Project>
+		<dct:identifier>EPOS.WP09</dct:identifier>
+		<dct:title>EPOS WP09</dct:title>
+		<dct:description>EPOS WP09 Near-Fault Observatories</dct:description>
+	</eposap:Project>
+        -->
+
+	<!-- EPOS WebService: FDSN Event -->
+
+	<eposap:WebService>
+        <dct:title>IRPINIA - FDSN EVENT Web Service</dct:title> <!-- title -->
         <!-- abstract -->
-        <dct:description>The fdsnws-event web service returns event (earthquake) information at the latest stage of knowledge of SED.
+        <dct:description>IRPINIA - The fdsnws-event web service returns event (earthquake) information
         </dct:description>
-        <dct:issued>2016-01-01T00:00:00</dct:issued>
-        <dct:modified>2016-01-01T00:00:00</dct:modified>
-        <dct:license>To be defined!</dct:license>
-        <foaf:page>
-            <foaf:primaryTopic>http://eida-sc3.infp.ro/fdsnws/event/1/query?</foaf:primaryTopic>
+        <dct:issued>2018-04-11T12:00:00</dct:issued><!-- date of publication -->
+        <dct:modified>2018-04-11T12:00:00</dct:modified><!-- date of revision -->
+        <!--
+            Whenever possible, you should use URIs for licences.
+            A register of standard licences is available at:
+            http://publications.europa.eu/mdr/resource/authority/licence/html/licences-eng.html
+        -->
+        <dct:license>https://creativecommons.org/licenses/by-sa/3.0/</dct:license> <!-- Access and Use Restrictions -->
+        <foaf:page> <!-- URI -->
+            <foaf:primaryTopic>http://isnet-bulletin.fisica.unina.it/cgi-bin/fdsnws/event/1/query?</foaf:primaryTopic>
         </foaf:page>
         <dct:format><!-- distribution format, in case the service provides (also) access to binary data -->
-            <dct:MediaTypeOrExtent>http://quakeml.org/xmlns/bed/1.2</dct:MediaTypeOrExtent>
+            <dct:MediaTypeOrExtent>xml</dct:MediaTypeOrExtent>
         </dct:format>
         <!-- public access limitations:
             There a codelist for this, so you can check if it is suitable to you.
@@ -96,7 +130,7 @@
             http://publications.europa.eu/resource/authority/access-right/
         -->
         <dct:rights>
-            <dct:RightsStatement>https://creativecommons.org/licenses/by-sa/3.0/en/</dct:RightsStatement>
+            <dct:RightsStatement>https://creativecommons.org/licenses/by-sa/3.0/</dct:RightsStatement>
         </dct:rights>
         <!--
             Spatial Reference System
@@ -104,8 +138,8 @@
             The base URI is:
             http://www.opengis.net/def/crs/ -->
         <dct:conformsTo>EPSG:4326</dct:conformsTo> <!-- Spatial Reference System -->
-        <dct:identifier>eida-sc3.infp.ro/fdsnws/event/1/query</dct:identifier>
-        <dct:created>2017-06-08T12:00:00</dct:created> <!-- date of creation -->
+        <dct:identifier>isnet-bulletin.fisica.unina.it/cgi-bin/fdsnws/event/1/query</dct:identifier> <!-- Unique Resource Identifier: this is the entry point of the service -->
+        <dct:created>2018-04-11T12:00:00</dct:created> <!-- date of creation -->
         <eposap:domain> <!-- This property refers to the domain of resource (e.g. Seismology, Geodesy, 
         Satellite data, Geomagnetic data, Geology, Geohazards, Georesources, Transnational access) -->
             Near Fault Observations
@@ -118,7 +152,7 @@
         </eposap:subDomain>
         
         <!-- Keywords, annotation. Simple and free (web annotation ontology in the future) -->
-        <dcat:keyword>Earthquake, Event, rocks, seismic waves propagation, seismology</dcat:keyword> <!-- Keywords -->
+        <dcat:keyword>NFO, earthquake, event, rocks, seismic source, seismic waves propagation, seismology</dcat:keyword> <!-- Keywords -->
         <eposap:operation>execute</eposap:operation>
         <dct:hasVersion>1.1.0</dct:hasVersion>
 
@@ -134,8 +168,8 @@
                 datetime
             </dct:type>
             <!-- These properties refer to range value of the parameter -->
-            <schema:minValue>2001-12-31T12:00:00</schema:minValue> 
-            <schema:maxValue>2017-06-20T12:00:00</schema:maxValue>
+            <schema:minValue>2000-01-01T00:00:00</schema:minValue> 
+            <schema:maxValue>2099-01-01T00:00:00</schema:maxValue>
         </eposap:parameter>
                 
         <eposap:parameter>
@@ -145,8 +179,8 @@
                 datetime
             </dct:type>
             <!-- These properties refer to range value of the parameter -->
-            <schema:minValue>2001-12-31T12:00:00</schema:minValue> 
-            <schema:maxValue>2017-06-20T12:00:00</schema:maxValue>
+            <schema:minValue>2000-01-01T00:00:00</schema:minValue> 
+            <schema:maxValue>2099-01-01T00:00:00</schema:maxValue>
         </eposap:parameter>
                 
         <eposap:parameter>
@@ -178,8 +212,8 @@
                 float
             </dct:type>
             <!-- allowed vocabulary terms, optional tag -->
-            <schema:minValue>-90</schema:minValue> 
-            <schema:maxValue>90</schema:maxValue>
+            <schema:minValue>-180</schema:minValue> 
+            <schema:maxValue>180</schema:maxValue>
         </eposap:parameter>
                 
         <eposap:parameter>
@@ -189,10 +223,10 @@
                 float
             </dct:type>
             <!-- allowed vocabulary terms, optional tag -->
-            <schema:minValue>-90</schema:minValue> 
-            <schema:maxValue>90</schema:maxValue>
+            <schema:minValue>-180</schema:minValue> 
+            <schema:maxValue>180</schema:maxValue>
         </eposap:parameter>
-                <!-- -->
+
         <eposap:parameter>
             <http:paramName>mindepth</http:paramName>
             <rdf:label>minimum Depth</rdf:label>
@@ -200,7 +234,7 @@
                 int
             </dct:type>
             <!-- allowed vocabulary terms, optional tag -->
-            <schema:minValue>-1</schema:minValue> 
+            <schema:minValue>-1</schema:minValue>
             <schema:maxValue>100</schema:maxValue>
         </eposap:parameter>
                 
@@ -227,17 +261,26 @@
         </eposap:parameter>
                 
         <eposap:parameter>
-            <http:paramName>maxmagnitude</http:paramName>
-            <rdf:label>max Magnitude</rdf:label>
+            <http:paramName>magnitudetype</http:paramName>
+            <rdf:label>type of Magnitude</rdf:label>
             <dct:type> <!-- This property refers to parameter type -->
-                float
+                string
             </dct:type>
             <!-- allowed vocabulary terms, optional tag -->
-            <schema:minValue>0</schema:minValue> 
-            <schema:maxValue>10</schema:maxValue>
+
         </eposap:parameter>
-                <!-- -->
-                <eposap:parameter>
+
+        <eposap:parameter>
+            <http:paramName>eventid</http:paramName>
+            <rdf:label>Event ID</rdf:label>
+            <dct:type> <!-- This property refers to parameter type -->
+                string
+            </dct:type>
+            <!-- allowed vocabulary terms, optional tag -->
+            
+        </eposap:parameter>
+
+		<eposap:parameter>
             <http:paramName>includeallorigins</http:paramName>
             <rdf:label>include all Origin</rdf:label>
             <dct:type> <!-- This property refers to parameter type -->
@@ -286,7 +329,7 @@
             <!-- allowed vocabulary terms, optional tag -->
             
         </eposap:parameter>
-                <!--  -->
+
         <eposap:parameter>
             <http:paramName>offset</http:paramName>
             <rdf:label>offset</rdf:label>
@@ -301,7 +344,7 @@
             <http:paramName>orderby</http:paramName>
             <rdf:label>orderby</rdf:label>
             <dct:type> <!-- This property refers to parameter type -->
-                int
+                string
             </dct:type>
             <!-- allowed vocabulary terms, optional tag -->
             
@@ -334,10 +377,10 @@
                 datetime
             </dct:type>
             <!-- allowed vocabulary terms, optional tag -->
-            <schema:minValue>2001-12-31T12:00:00</schema:minValue> 
-            <schema:maxValue>2017-06-20T12:00:00</schema:maxValue>
+            <schema:minValue>2000-01-01T00:00:00</schema:minValue> 
+            <schema:maxValue>2099-01-01T00:00:00</schema:maxValue>
         </eposap:parameter>
-                <!-- * -->
+
         <eposap:parameter>
             <http:paramName>format</http:paramName>
             <rdf:label>output format</rdf:label>
@@ -346,8 +389,7 @@
             </dct:type>
             <!-- allowed vocabulary terms, optional tag -->
             <http:paramValue>xml</http:paramValue>
-                        <http:paramValue>kml</http:paramValue>
-                        <http:paramValue>txt</http:paramValue>
+            <http:paramValue>text</http:paramValue>
         </eposap:parameter>
                 
         <eposap:parameter>
@@ -378,8 +420,8 @@
                 float
             </dct:type>
             <!-- allowed vocabulary terms, optional tag -->
-            <schema:minValue>-90</schema:minValue> 
-            <schema:maxValue>90</schema:maxValue>
+            <schema:minValue>-180</schema:minValue> 
+            <schema:maxValue>180</schema:maxValue>
         </eposap:parameter>
                 
         <eposap:parameter>
@@ -389,8 +431,8 @@
                 float
             </dct:type>
             <!-- allowed vocabulary terms, optional tag -->
-            <schema:minValue>-90</schema:minValue> 
-            <schema:maxValue>90</schema:maxValue>
+            <schema:minValue>-180</schema:minValue> 
+            <schema:maxValue>180</schema:maxValue>
         </eposap:parameter>
                 
         <eposap:parameter>
@@ -400,34 +442,32 @@
                 float
             </dct:type>
             <!-- allowed vocabulary terms, optional tag -->
-            <schema:minValue>-90</schema:minValue> 
-            <schema:maxValue>90</schema:maxValue>
+            <schema:minValue>-180</schema:minValue> 
+            <schema:maxValue>180</schema:maxValue>
         </eposap:parameter>
         
         <!-- The document is meant to be human readable (e.g. PDF, doc, and so on). 
             This will help a user who, for instance, does not understand something from the hints/label of the parameters. -->
         <schema:documentation>http://www.fdsn.org/webservices/FDSN-WS-Specifications-1.1.pdf</schema:documentation>
-
-        <dcat:contactPoint>http://orcid.org/0000-0003-2431-1383</dcat:contactPoint>
-        <!-- Publisher (previously responsibleParty) -->
-        <!-- GFZ PIC from the EU Research Council -->
-        <!-- FIXME A ':' character should be accepted to separate the schema from the ID. -->
-        <eposap:publisher>PIC:998181508</eposap:publisher>
-        <dct:spatial>
+        <dcat:contactPoint>https://orcid.org/0000-0002-4553-2380</dcat:contactPoint> <!-- internal link to contact point (vcard:Individual) described in the same file in <eposap:Person> -->
+        <eposap:publisher>PIC:999976590</eposap:publisher> <!-- internal link to responsibleParty (vcard:Organisation) described in the same file in <eposap:Organisation> -->
+        <dct:spatial> <!-- Geographic location/spatial extent /bounding box -->
             <dct:Location>
-                <locn:geometry>POLYGON(19.50 49.00, 30.00 49.00, 30.00 42.0, 19.50 42.0, 19.50 49.00)</locn:geometry>
+                <!-- POLYGON(lon1 lat1, lon2 lat2,...) -->
+				<locn:geometry>POLYGON(14.0 39.0,16.0 39.0,16.0 42.0,14.0 42.0,14.0 39.0)</locn:geometry>
             </dct:Location>
         </dct:spatial>
-        <adms:representationTechnique>point</adms:representationTechnique>
-        <dct:temporal>
+        <adms:representationTechnique> <!-- Spatial representation type -->
+            Vector
+        </adms:representationTechnique>
+        <dct:temporal> <!-- temporal extent -->
             <dct:PeriodOfTime>
-                <schema:startDate>1993-01-01T00:00:00</schema:startDate>
+				<schema:startDate>2005-01-08T00:00:00</schema:startDate>
+                <!--  <schema:endDate>2100-12-31T23:59:59</schema:endDate>-->
             </dct:PeriodOfTime>
         </dct:temporal>
-        <eposap:DDSS-ID>WP09-DDSS-001b</eposap:DDSS-ID>
-        <eposap:actions>download,visualise</eposap:actions>
-
+        <eposap:DDSS-ID>WP09-DDSS-006</eposap:DDSS-ID>
+        <eposap:actions>download</eposap:actions>
     </eposap:WebService>
-
 
 </eposap:Epos>
