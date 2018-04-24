@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <eposap:Epos
 xmlns:adms="http://www.w3.org/ns/adms#"
 	xmlns:cnt="http://www.w3.org/2008/content#" xmlns:dcat="http://www.w3.org/ns/dcat#"
@@ -520,19 +520,14 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 	
 	<eposap:parameter>
       <http:paramName>Station</http:paramName>
-      <rdf:label>Four letter station identification</rdf:label>
+      <rdf:label>Station site name</rdf:label>
       <dct:type>string </dct:type>
     </eposap:parameter>
 	
 	<eposap:parameter>
       <http:paramName>Analysis centre</http:paramName>
-      <rdf:label>The Processing Agency.</rdf:label>
+      <rdf:label>The Processing Agency. NGV,UGA, BFHK, WUT or EPOSDEMO</rdf:label>
       <dct:type>string </dct:type>
-      <http:paramValues>NGV</http:paramValues>
-       <http:paramValues>UGA</http:paramValues>
-        <http:paramValues>BFHK</http:paramValues>
-         <http:paramValues>WUT</http:paramValues>
-          <http:paramValues>EPOSDEMO</http:paramValues>
 	  <!-- This has one of the following values 
 	   NGV - PP solutions, UGA - DD solutions, BFHK - Combined EPOS solutions, 
 	   WUT - EUREF Solutions, EPOSDEMO - UBI Demos,  GEOTOP S.R.L. .. dummy Data 
@@ -541,10 +536,8 @@ xmlns:adms="http://www.w3.org/ns/adms#"
     
     <eposap:parameter>
       <http:paramName>coordinates_system</http:paramName>
-      <rdf:label>Coordinates system</rdf:label>
+      <rdf:label>Coordinates system: xyz or eru</rdf:label>
       <dct:type>string </dct:type>
-      <http:paramValues>xyz</http:paramValues>
-      <http:paramValues>enu</http:paramValues>
   
     </eposap:parameter>
 	
@@ -552,9 +545,6 @@ xmlns:adms="http://www.w3.org/ns/adms#"
       <http:paramName>Format</http:paramName>
       <rdf:label>The format of the result. xml or json</rdf:label>
       <dct:type> <!-- file format can be xml, json, hector, midas or pbo  --> string </dct:type>
-      <http:paramValues>pbo</http:paramValues>
-      <http:paramValues>xml</http:paramValues>
-      <http:paramValues>json</http:paramValues>
     </eposap:parameter>
 	
 
@@ -636,13 +626,8 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 	
 	<eposap:parameter>
       <http:paramName>Analysis Centre</http:paramName>
-      <rdf:label>The Processing Agency. </rdf:label>
+      <rdf:label>The Processing Agency. NGV,UGA, BFHK, WUT or EPOSDEMO</rdf:label>
       <dct:type>string </dct:type>
-      <http:paramValues>NGV</http:paramValues>
-      <http:paramValues>UGA</http:paramValues>
-      <http:paramValues>BFHK</http:paramValues>
-      <http:paramValues>WUT</http:paramValues>
-      <http:paramValues>EPOSDEMO</http:paramValues>
 	  <!-- This has one of the following values 
 	   NGV - PP solutions, UGA - DD solutions, BFHK - Combined EPOS solutions, 
 	   WUT - EUREF Solutions, EPOSDEMO - UBI Demos,  GEOTOP S.R.L. .. dummy Data 
@@ -651,10 +636,8 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 	
     <eposap:parameter>
       <http:paramName>SamplingPeriod></http:paramName>
-      <rdf:label>Sampling Period </rdf:label>
+      <rdf:label>Sampling Period daily or weekly</rdf:label>
       <dct:type>string </dct:type>
-      <http:paramValues>daily</http:paramValues>
-      <http:paramValues>weekly</http:paramValues>
 	  <!-- This has value either daily or weekly  -->
     </eposap:parameter>
     
@@ -662,8 +645,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
       <http:paramName>coordinates_system></http:paramName>
       <rdf:label>Coordinates system: xyz or enu</rdf:label>
       <dct:type>string </dct:type>
-      <http:paramValues>xyz</http:paramValues>
-      <http:paramValues>enu</http:paramValues>
+      
     </eposap:parameter>
     
       <eposap:parameter>
