@@ -495,7 +495,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
     <dct:conformsTo>EPSG:3763</dct:conformsTo>
     <!-- Spatial Reference System [UBI?][http://spatialreference.org/ref/epsg/3763/] -->
    
-	<dct:identifier>http://193.136.66.29:8102/GlassFramework/webresources/products/velocities/xyz</dct:identifier>
+	<dct:identifier>http://193.136.66.29:8102/GlassFramework/webresources/products/velocities/</dct:identifier>
     <!-- Unique Resource Identifier: this is the entry point of the service [UBI?]-->
     
 	<dct:created>2017-06-30T12:00:00</dct:created>
@@ -519,13 +519,13 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 	
 	
 	<eposap:parameter>
-      <http:paramName>Station</http:paramName>
+      <http:paramName>site</http:paramName>
       <rdf:label>Four letter station identification</rdf:label>
       <dct:type>string </dct:type>
     </eposap:parameter>
 	
 	<eposap:parameter>
-      <http:paramName>Analysis centre</http:paramName>
+      <http:paramName>analysis_centre</http:paramName>
       <rdf:label>The Processing Agency.</rdf:label>
       <dct:type>string </dct:type>
       <http:paramValues>NGV</http:paramValues>
@@ -549,7 +549,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
     </eposap:parameter>
 	
 	<eposap:parameter>
-      <http:paramName>Format</http:paramName>
+      <http:paramName>format</http:paramName>
       <rdf:label>The format of the result. xml or json</rdf:label>
       <dct:type> <!-- file format can be xml, json, hector, midas or pbo  --> string </dct:type>
       <http:paramValues>pbo</http:paramValues>
@@ -629,13 +629,13 @@ xmlns:adms="http://www.w3.org/ns/adms#"
     <dct:hasVersion>1.0</dct:hasVersion>
 	
 	<eposap:parameter>
-      <http:paramName>Site</http:paramName>
+      <http:paramName>site</http:paramName>
       <rdf:label>Site Name</rdf:label>
       <dct:type>string </dct:type>
     </eposap:parameter>
 	
 	<eposap:parameter>
-      <http:paramName>Analysis Centre</http:paramName>
+      <http:paramName>analysis_centre</http:paramName>
       <rdf:label>The Processing Agency. </rdf:label>
       <dct:type>string </dct:type>
       <http:paramValues>NGV</http:paramValues>
@@ -650,7 +650,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
     </eposap:parameter>
 	
     <eposap:parameter>
-      <http:paramName>SamplingPeriod></http:paramName>
+      <http:paramName>sampling_period></http:paramName>
       <rdf:label>Sampling Period </rdf:label>
       <dct:type>string </dct:type>
       <http:paramValues>daily</http:paramValues>
@@ -674,11 +674,60 @@ xmlns:adms="http://www.w3.org/ns/adms#"
       <http:paramValues>json</http:paramValues>
     </eposap:parameter>
     
+    <eposap:parameter>
+      <http:paramName>reference_frame></http:paramName>
+      <rdf:label>Reference frame</rdf:label>
+      <dct:type>string </dct:type>
+      <http:paramValues>fiducial</http:paramValues>
+      <http:paramValues>ITRF2008</http:paramValues>
+      <http:paramValues>Combined</http:paramValues>
+    </eposap:parameter>
     
+    <eposap:parameter>
+      <http:paramName>otl_model></http:paramName>
+      <rdf:label>OTL model used in GNSS analysis</rdf:label>
+      <dct:type>string </dct:type>
+    </eposap:parameter>
     
+    <eposap:parameter>
+      <http:paramName>antenna_model></http:paramName>
+      <rdf:label>Antenna model used in GNSS analysis</rdf:label>
+      <dct:type>string </dct:type>
+    </eposap:parameter>
     
+    <eposap:parameter>
+      <http:paramName>cut_of_angle></http:paramName>
+      <rdf:label>Cut of angle used in GNSS analysis</rdf:label>
+      <dct:type>string </dct:type>
+    </eposap:parameter>
     
-	
+    <eposap:parameter>
+      <http:paramName>remove_outliers></http:paramName>
+      <rdf:label> Remove outliers from time series or not. If nothing is given, outliers are removed by default</rdf:label>
+      <dct:type>string </dct:type>
+      <http:paramValues>1 or true</http:paramValues>
+      <http:paramValues>1 or false</http:paramValues>
+    </eposap:parameter>
+    
+    <eposap:parameter>
+      <http:paramName>apply_offsets></http:paramName>
+      <rdf:label>Apply estimated offsets to time series or not </rdf:label>
+      <dct:type>string </dct:type>
+      <http:paramValues>1 or true</http:paramValues>
+    </eposap:parameter>
+    
+    <eposap:parameter>
+      <http:paramName>epoch_start></http:paramName>
+      <rdf:label>Starting epoch (MJD)</rdf:label>
+      <dct:type>string </dct:type>
+    </eposap:parameter>
+    
+    <eposap:parameter>
+      <http:paramName>epoch_end></http:paramName>
+      <rdf:label>Last epoch (MJD)</rdf:label>
+      <dct:type>string </dct:type>
+    </eposap:parameter>
+
     <dcat:contactPoint>http://orcid.org/0000-0002-9733-284X</dcat:contactPoint>
     
 	<eposap:publisher>PIC:996437254</eposap:publisher>
