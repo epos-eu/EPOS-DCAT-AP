@@ -14,7 +14,6 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix http: <http://www.w3.org/2006/http#> .
 
-
 <http://orcid.org/0000-0002-9733-284X> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
         	schema:propertyID  "orcid";
@@ -199,49 +198,89 @@
  	hydra:method "GET"^^xsd:string;
 	hydra:returns "json";
  	hydra:IriTemplate[ a hydra:IriTemplate;
-	        	hydra:template "http://193.136.66.11:8080/GlassFramework/webresources/products/timeseries/{site}/{analysis_centre}/{sampling_period}/{coordinates_system}/{format}"^^xsd:string;
-        		hydra:mapping[ a hydra:IriTemplateMapping;
-               			hydra:variable "site"^^xsd:string;
-										rdf:label "site";
-               			hydra:required "true"^^xsd:boolean;
+	    hydra:template "http://193.136.66.11:8080/GlassFramework/webresources/products/timeseries/{site}/{analysis_centre}/{sampling_period}/{coordinates_system}/{format}"^^xsd:string;
+        	hydra:mapping[ a hydra:IriTemplateMapping;
+               	hydra:variable "site"^^xsd:string;
+					rdf:label "site";
+               		hydra:required "true"^^xsd:boolean;
 										#http:paramValue "value1";
 		            		#http:paramValue "valueN";
-
-            		];
-            		hydra:mapping[ a hydra:IriTemplateMapping;
-            			hydra:variable "analysis_centre"^^xsd:string;
-									rdf:label "analysis_centre";
-            			hydra:required "true"^^xsd:boolean;
+            ];
+            hydra:mapping[ a hydra:IriTemplateMapping;
+            	hydra:variable "analysis_centre"^^xsd:string;
+					rdf:label "analysis_centre";
+            		hydra:required "true"^^xsd:boolean;
 									#http:paramValue "value1";
 									#http:paramValue "valueN";
+            ];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+            	hydra:variable "sampling_period"^^xsd:string;
+					rdf:label "sampling_period";
+            		hydra:required "true"^^xsd:boolean;
+					http:paramValue "daily";
+					http:paramValue "weekly";
+            ];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+            	hydra:variable "coordinates_system"^^xsd:string;
+					rdf:label "coordinates_system";
+            		hydra:required "true"^^xsd:boolean;
+					http:paramValue "xyz";
+					http:paramValue "enu";
+            ];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+            	hydra:variable "format"^^xsd:string;
+					rdf:label "format";
+            		hydra:required "true"^^xsd:boolean;
+					http:paramValue "json";
+					ttp:paramValue "xml";
+            ];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+            	hydra:variable "reference_frame"^^xsd:string;
+					rdf:label "reference_frame";
+            		hydra:required "false"^^xsd:boolean;
+					http:paramValue "fiducial";
+					http:paramValue "ITRF2008";
+					http:paramValue "Combined";
+            ];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+            	hydra:variable "otl_model"^^xsd:string;
+					rdf:label "otl_model";
+            		hydra:required "false"^^xsd:boolean;
+            ];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+            	hydra:variable "antenna_model"^^xsd:string;
+					rdf:label "antenna_model";
+            		hydra:required "false"^^xsd:boolean;
+            ];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+            	hydra:variable "cut_of_angle"^^xsd:string;
+					rdf:label "cut_of_angle";
+            		hydra:required "false"^^xsd:boolean;
+            ];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+            	hydra:variable "remove_outliers"^^xsd:string;
+					rdf:label "remove_outliers - ( If nothing is given, outliers are removed by default) ";
+            		hydra:required "false"^^xsd:boolean;
+					http:paramValue "1";
+					http:paramValue "0";				
+            ];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+            	hydra:variable "apply_offsets"^^xsd:string;
+					rdf:label "apply_offsets - (1 to apply)";
+            		hydra:required "false"^^xsd:boolean;
+					http:paramValue "1";				
+            ];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+            	hydra:variable "epoch_start"^^xsd:string;
+					rdf:label "epoch_start";
+            		hydra:required "false"^^xsd:boolean;				
+            ];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+            	hydra:variable "epoch_end"^^xsd:string;
+					rdf:label "epoch_end";
+            		hydra:required "false"^^xsd:boolean;				
+            ];
 
-            		];
 
-								hydra:mapping[ a hydra:IriTemplateMapping;
-            			hydra:variable "sampling_period"^^xsd:string;
-									rdf:label "sampling_period";
-            			hydra:required "true"^^xsd:boolean;
-									#http:paramValue "value1";
-									#http:paramValue "valueN";
-
-            		];
-
-								hydra:mapping[ a hydra:IriTemplateMapping;
-            			hydra:variable "coordinates_system"^^xsd:string;
-									rdf:label "coordinates_system";
-            			hydra:required "true"^^xsd:boolean;
-									#http:paramValue "value1";
-									#http:paramValue "valueN";
-
-            		];
-
-								hydra:mapping[ a hydra:IriTemplateMapping;
-            			hydra:variable "format"^^xsd:string;
-									rdf:label "format";
-            			hydra:required "true"^^xsd:boolean;
-									http:paramValue "json";
-									http:paramValue "xml";
-
-            		];
-          	];
+    ];
 .
