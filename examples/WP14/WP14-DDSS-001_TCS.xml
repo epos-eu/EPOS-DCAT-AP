@@ -71,7 +71,7 @@
         <eposap:scientificContact>http://orcid.org/0000-0002-4801-4888</eposap:scientificContact>
         <dct:spatial>
           <dct:Location>
-            <locn:geometry>POINT(52.246249, 20.939445)</locn:geometry>
+            <locn:geometry>POINT(20.939445 52.246249)</locn:geometry>
           </dct:Location>
         </dct:spatial>
         <dct:type>Scientific Unit</dct:type>
@@ -98,7 +98,7 @@
       <eposap:scientificContact>mailto:m.sterzel@cyfronet.pl</eposap:scientificContact>
       <dct:spatial>
         <dct:Location>
-          <locn:geometry>POINT(50.0689816, 19.9048248)</locn:geometry>
+          <locn:geometry>POINT(19.9048248 50.0689816)</locn:geometry>
         </dct:Location>
       </dct:spatial>
       <dct:type>Computer Centre</dct:type>
@@ -114,27 +114,28 @@
 	</eposap:Project>
   
     <eposap:WebService>
-      <dct:title>Virtual Access to IS-EPOS Platform</dct:title>
-      <dct:description>Virtual Access to IS-EPOS Platform</dct:description>
+      <dct:title>IS-EPOS Platform episodes</dct:title>
+      <dct:description>Enables to browse and filter all available IS-EPOS Platform episodes and list their data</dct:description>
       <dct:issued>2015-10-20T10:17:00</dct:issued>
-      <dct:modified>2017-09-13T12:00:00</dct:modified>
+      <dct:modified>2017-09-26T12:00:00</dct:modified>
       <dct:license>https://creativecommons.org/licenses/by/4.0/</dct:license>
       <foaf:page>
-        <foaf:primaryTopic>https://tcs.ah-epos.eu</foaf:primaryTopic>
+        <foaf:primaryTopic>https://tcs.ah-epos.eu/api/epos/episodes?</foaf:primaryTopic>
       </foaf:page>
       <dct:format>
-        <dct:MediaTypeOrExtent>Web Application</dct:MediaTypeOrExtent>
+        <dct:MediaTypeOrExtent>JSON</dct:MediaTypeOrExtent>
       </dct:format>
       <dct:rights>
         <dct:RightsStatement>PUBLIC</dct:RightsStatement>
       </dct:rights>
       <dct:conformsTo>EPSG:4326</dct:conformsTo>
-      <dct:identifier>https://tcs.ah-epos.eu</dct:identifier>
+      <dct:identifier>tcs.ah-epos.eu/api/epos/episodes</dct:identifier>
       <dct:created>2015-10-20T10:17:00</dct:created>
-      <eposap:domain>anthropogenic hazards</eposap:domain>
-      <eposap:subDomain>hard rock mining,coal mining,open pit mining,reservoir impoundment,conventional hydrocarbon extraction,
+      <eposap:domain>Anthropogenic Hazard Observations</eposap:domain>
+      <!--<eposap:subDomain>hard rock mining,coal mining,open pit mining,reservoir impoundment,conventional hydrocarbon extraction,
         unconventional hydrocarbon extraction,geothermal energy production,underground gas storage,underground fluid deposition,
-        salt mining,salt solution mining</eposap:subDomain>
+	salt mining,salt solution mining</eposap:subDomain>-->
+      <eposap:subDomain>Episodes</eposap:subDomain>
       <dcat:keyword>hard rock mining,coal mining,open pit mining,reservoir impoundment,conventional hydrocarbon extraction,
         unconventional hydrocarbon extraction,geothermal energy production,underground gas storage,underground fluid deposition,
         salt mining,salt solution mining,underground mining,mining induced seismicity,injection induced seismicity,
@@ -142,11 +143,109 @@
         hydropower plants,conventional hydrocarbon exploitation,conventional oil extraction,conventional gas extraction,
         unconventional hydrocarbon exploitation,hydrofracturing,shale gas exploitation,anthropogenic seismicity</dcat:keyword>
  
-      <eposap:operation>TBD</eposap:operation> <!-- still pending, please fill in with TBD (to be defined)-->
+      <eposap:operation>execute</eposap:operation> <!-- still pending, please fill in with TBD (to be defined)-->
       <dct:hasVersion>2.14</dct:hasVersion>
+      <eposap:parameter>
+        <http:paramName>impactingFactor</http:paramName>
+        <rdf:label>Impacting Factor of the episode</rdf:label>
+        <dct:type>string</dct:type>
+        <http:paramValue>conventional hydrocarbon extraction</http:paramValue>
+        <http:paramValue>geothermal energy production</http:paramValue>
+        <http:paramValue>reservoir impoundment</http:paramValue>
+        <http:paramValue>unconventional hydrocarbon extraction</http:paramValue>
+        <http:paramValue>underground gas storage</http:paramValue>
+        <http:paramValue>underground mining</http:paramValue>
+        <http:paramValue>wastewater injection</http:paramValue>
+      </eposap:parameter>
       <schema:documentation>https://tcs.ah-epos.eu/eprints/</schema:documentation>
       <dcat:contactPoint>http://orcid.org/0000-0002-4801-4888</dcat:contactPoint>
       <eposap:publisher>PIC:996625337</eposap:publisher>
+      <eposap:DDSS-ID>WP14-DDSS-001</eposap:DDSS-ID>
+      <eposap:actions>download</eposap:actions>	    
+  </eposap:WebService>
+  
+  <eposap:WebService>
+      <dct:title>IS-EPOS Platform applications</dct:title>
+      <dct:description>Enables to browse and filter all available IS-EPOS Platform applications</dct:description>
+      <dct:issued>2015-10-20T10:17:00</dct:issued>
+      <dct:modified>2017-09-26T12:00:00</dct:modified>
+      <dct:license>https://creativecommons.org/licenses/by/4.0/</dct:license>
+      <foaf:page>
+        <foaf:primaryTopic>https://tcs.ah-epos.eu/api/epos/apps?</foaf:primaryTopic>
+      </foaf:page>
+      <dct:format>
+        <dct:MediaTypeOrExtent>JSON</dct:MediaTypeOrExtent>
+      </dct:format>
+      <dct:rights>
+        <dct:RightsStatement>PUBLIC</dct:RightsStatement>
+      </dct:rights>
+      <dct:conformsTo>EPSG:4326</dct:conformsTo>
+      <dct:identifier>https://tcs.ah-epos.eu/api/epos/apps</dct:identifier>
+      <dct:created>2015-10-20T10:17:00</dct:created>
+      <eposap:domain>Anthropogenic Hazard Observations</eposap:domain>
+      <eposap:subDomain>Episodes</eposap:subDomain>
+      <!--<eposap:subDomain>resource management applications,visualization applications,data handling applications,data processing applications</eposap:subDomain>-->
+      <dcat:keyword>Source parameters,Source location,Statistical analysis,Statistical properties of seismicity,
+        Parameter probabilistic distribution,Probabilistic seismic hazard analysis,Time-dependent hazard,
+        Production-dependent hazard,Production - seismicity interaction,Earthquake spectra,Data selection,
+        Data extraction,Data filtering,Data export,Waveform viewing,Stationary hazard,Geo-resource production impact,
+        Format conversion,Data download,Data conversion,Source mechanism,Moment tensor,Picking on waveform,
+        Episode-oriented graphics,Production data visualization,Data merging,Data reshaping,Stress modelling,
+        Stress inversion,Episode visualization,GIS data visualization,resource management applications,
+        visualization applications,data handling applications,data processing applications,anthropogenic seismicity</dcat:keyword>
+   
+      <eposap:operation>execute</eposap:operation> <!-- still pending, please fill in with TBD (to be defined)-->
+      <dct:hasVersion>2.14</dct:hasVersion>
+      <eposap:parameter>
+        <http:paramName>category</http:paramName>
+        <rdf:label>Category to filter applications</rdf:label>
+        <dct:type>string</dct:type>
+        <http:paramValue>Resource Management Applications</http:paramValue>
+        <http:paramValue>Visualization Applications</http:paramValue>
+        <http:paramValue>Data Handling Applications</http:paramValue>
+        <http:paramValue>Data Processing Applications</http:paramValue>
+      </eposap:parameter>
+      <eposap:parameter>
+        <http:paramName>keywords</http:paramName>
+        <rdf:label>Keywords to filter applications</rdf:label>
+        <dct:type>string</dct:type>
+        <http:paramValue>Source parameters</http:paramValue>
+        <http:paramValue>Source location</http:paramValue>
+        <http:paramValue>Statistical analysis</http:paramValue>
+        <http:paramValue>Statistical properties of seismicity</http:paramValue>
+        <http:paramValue>Parameter probabilistic distribution</http:paramValue>
+        <http:paramValue>Probabilistic seismic hazard analysis</http:paramValue>
+        <http:paramValue>Time-dependent hazard</http:paramValue>
+        <http:paramValue>Production-dependent hazard</http:paramValue>
+        <http:paramValue>Production - seismicity interaction</http:paramValue>
+        <http:paramValue>Earthquake spectra</http:paramValue>
+        <http:paramValue>Data selection</http:paramValue>
+        <http:paramValue>Data extraction</http:paramValue>
+        <http:paramValue>Data filtering</http:paramValue>
+        <http:paramValue>Data export</http:paramValue>
+        <http:paramValue>Waveform viewing</http:paramValue>
+        <http:paramValue>Stationary hazard</http:paramValue>
+        <http:paramValue>Geo-resource production impact</http:paramValue>
+        <http:paramValue>Format conversion</http:paramValue>
+        <http:paramValue>Data download</http:paramValue>
+        <http:paramValue>Data conversion</http:paramValue>
+        <http:paramValue>Source mechanism</http:paramValue>
+        <http:paramValue>Moment tensor</http:paramValue>
+        <http:paramValue>Picking on waveform</http:paramValue>
+        <http:paramValue>Episode-oriented graphics</http:paramValue>
+        <http:paramValue>Production data visualization</http:paramValue>
+        <http:paramValue>Data merging</http:paramValue>
+        <http:paramValue>Data reshaping</http:paramValue>
+        <http:paramValue>Stress modelling</http:paramValue>
+        <http:paramValue>Stress inversion</http:paramValue>
+        <http:paramValue>Episode visualization</http:paramValue>
+        <http:paramValue>GIS data visualization</http:paramValue>
+      </eposap:parameter>
+      <schema:documentation>https://tcs.ah-epos.eu/eprints/</schema:documentation>
+      <dcat:contactPoint>http://orcid.org/0000-0002-4801-4888</dcat:contactPoint>
+      <eposap:publisher>PIC:996625337</eposap:publisher>
+      <eposap:DDSS-ID>WP14-DDSS-001</eposap:DDSS-ID>
+      <eposap:actions>download</eposap:actions>		  
   </eposap:WebService>
 
 </eposap:Epos>
