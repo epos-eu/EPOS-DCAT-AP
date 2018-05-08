@@ -998,18 +998,22 @@ epos:ServiceShape
 # Service Mandatory properties
 ###
   sh:property [
-    sh:path schema:identifier ;
-    sh:or (
-    [
+      sh:path schema:identifier ;
+      sh:or (
+      [
       sh:datatype xsd:string;
-    ]
-    [
+      ]
+      [
       sh:datatype xsd:anyURI;
-    ]
+      ]
+      [
+      sh:class schema:PropertyValue;
+      ]
+
       ) ;
-    sh:minCount 1 ;
-    sh:maxCount 1 ;
- ] ;
+      sh:minCount 1 ;
+    ] ;
+
 
 
 
