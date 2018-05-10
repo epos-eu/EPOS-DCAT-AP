@@ -126,7 +126,6 @@
 	schema:contactPoint <http://orcid.org/0000-0002-9733-284X/scientificContact>;
 	schema:contactPoint <http://orcid.org/0000-0002-9733-284X/financialContact>;
 .
-
 <PIC:991782030> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
         	schema:propertyID  "PIC";
@@ -145,18 +144,20 @@
 	schema:contactPoint <ResearcherID:A-5326-2010/scientificContact>;
 	schema:contactPoint <http://orcid.org/0000-0002-9733-284X/financialContact>;
 .
-
 <#Geodesy> a skos:ConceptScheme;
 	dct:title "Geodesy";
 	dct:description "It contains the concepts of the Geodesy domain";
 .
-
 <#GNSSProductsPortal> a skos:Concept;
 	dct:description "GNSS Products Portal";
 	skos:inScheme <#Geodesy>;
 	skos:prefLabel "GNSS Products Portal" ;
 .
-
+<GlassFramework/APIDocumentation> a hydra:APIDocumentation;
+      hydra:title "Documentation for GlassFramework webresources" ;
+      hydra:description "some description of API Documentation" ;
+      hydra:entrypoint "http://193.136.66.11:8080/GlassFramework/swagger.json"^^xsd:anyURI ;
+.
 <GlassFramework/webresources/products/timeseries> a epos:WebService;
 	schema:identifier "GlassFramework/webresources/products/timeseries";
 	schema:identifier [ a schema:PropertyValue;
@@ -187,13 +188,6 @@
 	dct:conformsTo <GlassFramework/APIDocumentation> ;
 	hydra:supportedOperation <GlassFramework/webresources/products/timeseries/operation>;
 .
-
-<GlassFramework/APIDocumentation> a hydra:APIDocumentation;
-      hydra:title "Documentation for GlassFramework webresources" ;
-      hydra:description "some description of API Documentation" ;
-      hydra:entrypoint "http://193.136.66.11:8080/GlassFramework/swagger.json"^^xsd:anyURI ;
-.
-
 <GlassFramework/webresources/products/timeseries/operation> a hydra:Operation;
  	hydra:method "GET"^^xsd:string;
 	hydra:returns "json";
@@ -280,7 +274,103 @@
 					rdf:label "epoch_end";
             		hydra:required "false"^^xsd:boolean;				
             ];
-
-
     ];
+.
+<GlassFramework/webresources/products/attributes/> a epos:WebService;
+	schema:identifier "GlassFramework/webresources/products/attributes";
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "DDSS-ID";
+	  schema:value   "WP10-DDSS-009";
+	];
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "DDSS-ID";
+	  schema:value   "WP10-DDSS-010";
+	];
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "DDSS-ID";
+	  schema:value   "WP10-DDSS-014";
+	];
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "DDSS-ID";
+	  schema:value  "WP10-DDSS-018";
+	];
+  schema:description "Get DB entries for a specific set of attributes ";
+	schema:name "GET DIFFERENT DB DATA BASED ON ATTRIBUTE";
+	dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
+	schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
+	schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
+	schema:provider <PIC:996437254>;
+	dcat:theme  <#GNSSProductsPortal> ;
+	hydra:entrypoint "http://193.136.66.11:8080/GlassFramework/swagger.json"^^xsd:anyURI;
+ 	schema:keywords "Geodesy", "GNSS" ;
+	dct:conformsTo <GlassFramework/APIDocumentation> ;
+	hydra:supportedOperation <GlassFramework/webresources/products/attributes/operation>;
+.
+<GlassFramework/webresources/products/attributes/operation> a hydra:Operation;
+ 	hydra:method "GET"^^xsd:string;
+	hydra:returns "json";
+ 	hydra:IriTemplate[ a hydra:IriTemplate;
+	    hydra:template "http://193.136.66.11:8080/GlassFramework/webresources/products/attributes/{attribute}"^^xsd:string;
+        	hydra:mapping[ a hydra:IriTemplateMapping;
+               	hydra:variable "attribute"^^xsd:string;
+					rdf:label "attribute - string with attribute ";
+               		hydra:required "true"^^xsd:boolean;
+					http:paramValue "network";
+		            http:paramValue "analysisCenter";
+		            http:paramValue "referenceFrame";
+		            http:paramValue "otlModel";
+		            http:paramValue "antennaModel";
+		            http:paramValue "samplingPeriod";
+		            http:paramValue "format";			
+            ];
+	];
+.
+<GlassFramework/webresources/products/stations/> a epos:WebService;
+	schema:identifier "GlassFramework/webresources/products/stations";
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "DDSS-ID";
+	  schema:value   "WP10-DDSS-009";
+	];
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "DDSS-ID";
+	  schema:value   "WP10-DDSS-010";
+	];
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "DDSS-ID";
+	  schema:value   "WP10-DDSS-014";
+	];
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "DDSS-ID";
+	  schema:value  "WP10-DDSS-018";
+	];
+  schema:description "get Stations object for given parameters.";
+	schema:name "GET STATIONS WITH PRODUCTS";
+	dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
+	schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
+	schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
+	schema:provider <PIC:996437254>;
+	dcat:theme  <#GNSSProductsPortal> ;
+	hydra:entrypoint "http://193.136.66.11:8080/GlassFramework/swagger.json"^^xsd:anyURI;
+ 	schema:keywords "Geodesy", "GNSS" ;
+	dct:conformsTo <GlassFramework/APIDocumentation> ;
+	hydra:supportedOperation <GlassFramework/webresources/products/stations/operation>;
+.
+<GlassFramework/webresources/products/stations/operation> a hydra:Operation;
+ 	hydra:method "GET"^^xsd:string;
+	hydra:returns "json";
+ 	hydra:IriTemplate[ a hydra:IriTemplate;
+	    hydra:template "http://193.136.66.11:8080/GlassFramework/webresources/products/stations/{opcional_parameters}"^^xsd:string;
+        	hydra:mapping[ a hydra:IriTemplateMapping;
+               	hydra:variable "opcional_parameters"^^xsd:string;
+					rdf:label "opcional_parameters - Parameter1:value1,value2&Parameter2:value3,value4&…";
+               		hydra:required "true"^^xsd:boolean;
+		            http:paramValue "analysis_centre";
+		            http:paramValue "antenna_model";					
+		            http:paramValue "otl_model";
+		            http:paramValue "reference_frame";
+		            http:paramValue "cut_of_angle";
+		            http:paramValue "epoch_start";
+		            http:paramValue "coordinates";			
+            ];
+	];
 .
