@@ -46,7 +46,7 @@
     <!-- Title (english) -->
     <vcard:fn>INGV National Institute of Geophysics and Volcanology</vcard:fn>
     <!-- Title (native lang) -->
-    <vcard:organization-name xml:lang="en">INGV Istituto Nazionale di Geofisica e Vulcanologia</vcard:organization-name>
+    <vcard:organization-name xml:lang="it">INGV Istituto Nazionale di Geofisica e Vulcanologia</vcard:organization-name>
     <!-- Postal Address -->
     <vcard:hasAddress>
       <vcard:Address>
@@ -66,7 +66,7 @@
     <!-- GFZ PIC from the EU Research Council -->
     <dct:identifier>PIC:999472675</dct:identifier>
     <!-- Scientific Contact -->
-    <eposap:scientificContact>orcid_0000-0003-2480-1999</eposap:scientificContact>
+    <eposap:scientificContact>http://orcid.org/0000-0003-2480-1999</eposap:scientificContact>
     <!-- Spatial Coordinates -->
     <dct:spatial>
       <dct:Location>
@@ -77,9 +77,9 @@
     <!-- Type -->
     <dct:type>Public Research Institute</dct:type>
     <!-- Legal Contact -->
-    <eposap:legalContact>orcid_0000-0003-2480-1999</eposap:legalContact>
+    <eposap:legalContact>http://orcid.org/0000-0003-2480-1999</eposap:legalContact>
     <!-- Financial Contact -->
-    <eposap:financialContact>orcid_0000-0003-2480-1999</eposap:financialContact>
+    <eposap:financialContact>http://orcid.org/0000-0003-2480-1999</eposap:financialContact>
     <!-- isPartOf TODO: Should we add INGV as part of ORFEUS? -->
     <!-- <eposap:isPartOf>pic:997012076</eposap:isPartOf> -->
   </eposap:Organisation>
@@ -96,7 +96,7 @@
     </foaf:page>
     <dct:format>
       <dct:MediaTypeOrExtent>
-        ShakeMapXML
+       <!-- ShakeMapXML --> xml
       </dct:MediaTypeOrExtent>
     </dct:format>
     <dct:rights>
@@ -107,7 +107,7 @@
     <dct:conformsTo>EPSG:4326</dct:conformsTo>
     <!-- If this is the proper way to define the identifier is still under
     discussion. TODO No special character are accepted here. -->
-    <dct:identifier>esm.mi.ingv.it_esmws_shakemap_1</dct:identifier>
+    <dct:identifier>esm.mi.ingv.it/esmws/shakemap/1/query</dct:identifier>
     <dct:created>2017-04-01T00:00:00</dct:created>
     <!-- This property refers to the domain of resource (e.g. Seismology, GNSS etc.) -->
     <eposap:domain>
@@ -115,12 +115,12 @@
     </eposap:domain>
     <!-- TODO TCSs will have to provide a list of subdomain terms. -->
     <eposap:subDomain>
-      ShakeMap
+      Seismic Hazard products
     </eposap:subDomain>
-    <dcat:keyword>INGV,ESM,Event,ShakeMap,ShakeMapXML,Strong Motion</dcat:keyword>
+    <dcat:keyword>Seismic Hazard, INGV,ESM,Event,ShakeMap,ShakeMapXML,Strong Motion</dcat:keyword>
     <!-- TODO A list of terms has to be agreed with EPOS. -->
     <eposap:operation>
-      download
+      execute
     </eposap:operation>
     <dct:hasVersion>0.1</dct:hasVersion>
     <eposap:parameter>
@@ -172,5 +172,7 @@
         <schema:startDate>1900-01-01T00:00:00</schema:startDate>
       </dct:PeriodOfTime>
     </dct:temporal>
+    <eposap:DDSS-ID>WP8-DDSS-048</eposap:DDSS-ID>
+    <eposap:actions>download</eposap:actions>
   </eposap:WebService>
 </eposap:Epos>

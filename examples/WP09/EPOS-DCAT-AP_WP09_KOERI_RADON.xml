@@ -65,7 +65,35 @@
 
     <vcard:hasURL><!-- CV -->https://www.researchgate.net/profile/Yaman_Ozakin</vcard:hasURL>
   </eposap:Person>
-
+  <eposap:Person>
+    <vcard:fn>Ergintav,Semih</vcard:fn>
+    <!-- Last Name, Given Name -->
+    <vcard:hasAddress>
+      <!-- Postal Address -->
+      <vcard:Address>
+        <vcard:street-address>Kandilli Rasathanesi, Çengelköy</vcard:street-address>
+        <vcard:locality>İstanbul</vcard:locality>
+        <vcard:postal-code>34684</vcard:postal-code>
+        <vcard:country-name>TURKEY</vcard:country-name>
+      </vcard:Address>
+    </vcard:hasAddress>
+    <vcard:hasEmail>semih.ergintav@boun.edu.tr</vcard:hasEmail>
+    <!-- Email -->
+    <vcard:hasTelephone>+90535******</vcard:hasTelephone>
+    <!-- Phone -->
+    <dct:identifier>http://orcid.org/0000-0001-7080-183X</dct:identifier>
+    <!-- Unique Identifier -->
+    <eposap:affiliation>PIC:999882500</eposap:affiliation>
+    <!-- Organisation -->
+    <dct:language>
+      <!-- Language for contact -->
+      <dct:LinguisticSystem>EN</dct:LinguisticSystem>
+    </dct:language>
+    <schema:qualifications>TR</schema:qualifications>
+    <!-- Qualification -->
+    <vcard:hasURL><!-- CV -->http://jeodezi.boun.edu.tr/?q=tr/semihergintav</vcard:hasURL>
+</eposap:Person> 
+  
   <!-- EPOS Organisation -->
 
   <eposap:Organisation>
@@ -107,7 +135,7 @@
 
     <!-- Unique Identifier -->
 
-    <eposap:scientificContact>http://jeodezi.boun.edu.tr/?q=tr/semihergintav</eposap:scientificContact>
+    <eposap:scientificContact>http://orcid.org/0000-0001-7080-183X</eposap:scientificContact>
 
     <!-- Scientific Contact -->
 
@@ -117,7 +145,7 @@
       <dct:Location>
         <!-- POINT(lon lat elevation) -->
 
-        <locn:geometry>POINT(12.515116 41.827709 0)</locn:geometry>
+        <locn:geometry>POINT(12.515116 41.827709)</locn:geometry>
       </dct:Location>
     </dct:spatial>
 
@@ -125,11 +153,11 @@
 			Research Institute
 		</dct:type>
 
-    <eposap:legalContact>http://jeodezi.boun.edu.tr/?q=tr/semihergintav</eposap:legalContact>
+    <eposap:legalContact>http://orcid.org/0000-0001-7080-183X</eposap:legalContact>
 
     <!-- Legal Contact to be correct -->
 
-    <eposap:financialContact>http://jeodezi.boun.edu.tr/?q=tr/semihergintav</eposap:financialContact>
+    <eposap:financialContact>http://orcid.org/0000-0001-7080-183X</eposap:financialContact>
 
     <!-- Financial
 			Contact  to be correct-->
@@ -144,13 +172,13 @@
   <!-- EPOS WebService -->
 
   <eposap:WebService>
-    <dct:title>Radon Web Service</dct:title>
+    <dct:title>KOERI - Radon Web Service</dct:title>
 
     <!-- title -->
 
     <!-- abstract -->
 
-    <dct:description>This service retrieve Radon Gas concentration time series based on periodic counting of Rn gas at site</dct:description>
+    <dct:description>KOERI - This service retrieve Radon Gas concentration time series based on periodic counting of Rn gas at site</dct:description>
 
     <dct:issued>2017-06-08T12:00:00</dct:issued>
 
@@ -201,9 +229,9 @@
 			The base URI is:
 			http://www.opengis.net/def/crs/ -->
 
-    <dct:conformsTo>http://www.opengis.net/def/crs/EPSG/0/4326</dct:conformsTo>
+    <dct:conformsTo>EPSG:4326</dct:conformsTo>
 
-    <dct:identifier>toros.boun.edu.tr</dct:identifier>
+    <dct:identifier>toros.boun.edu.tr/nfo_marsite/radon</dct:identifier>
 
     <!-- Unique Resource Identifier: this is the entry point of the service -->
 
@@ -213,23 +241,23 @@
 
     <eposap:domain> <!-- This property refers to the domain of resource (e.g. Seismology, Geodesy, 
 		Satellite data, Geomagnetic data, Geology, Geohazards, Georesources, Transnational access) -->
-			Geochemical
-		</eposap:domain>
+			Near Fault Observations
+    </eposap:domain>
 
     <eposap:subDomain> <!-- This property refers to the subdomain of resource (e.g. 
 		Earthquake parameters, Velocity models, GNSS station velocities, InSAR, Meteorology, 
 		Variation of geomagnetic field, 3D/4D structural models, Analog models, Numerical models, 
 		Geochemical data, Borehole data, Rock sample properties) -->
 			Radon concentration
-		</eposap:subDomain>
+    </eposap:subDomain>
 
     <!-- Keywords, annotation. Simple and free (web annotation ontology in the future) -->
 
-    <dcat:keyword>Geochemical, Radon concentration</dcat:keyword>
+    <dcat:keyword>Geochemical, Radon concentration, geochemistry</dcat:keyword>
 
     <!-- Keywords -->
 
-    <eposap:operation>download, visualise, etc</eposap:operation>
+    <eposap:operation>execute</eposap:operation>
 
     <dct:hasVersion>0.1</dct:hasVersion>
 
@@ -354,7 +382,7 @@
     </eposap:parameter>
 
     <eposap:parameter>
-      <http:paramName>maxeqdepth</http:paramName>
+      <http:paramName>maxperiod</http:paramName>
 
       <rdf:label>maximum "sampling period" allowed to extract data</rdf:label>
 
@@ -428,7 +456,6 @@
 
     <dct:spatial>
       <!-- Geographic location/spatial extent /bounding box -->
-
       <dct:Location>
         <!-- POLYGON(lon1 lat1, lon2 lat2,...) -->
 
@@ -438,7 +465,7 @@
 
     <adms:representationTechnique> <!-- Spatial representation type -->
 			Vector
-		</adms:representationTechnique>
+    </adms:representationTechnique>
 
     <dct:temporal>
       <!-- temporal extent -->
@@ -449,5 +476,7 @@
         <schema:endDate>2015-10-04T23:59:59</schema:endDate>
       </dct:PeriodOfTime>
     </dct:temporal>
+		<eposap:DDSS-ID>WP09-DDSS-024</eposap:DDSS-ID>
+		<eposap:actions>download,visualise</eposap:actions>
   </eposap:WebService>
 </eposap:Epos>
