@@ -11,15 +11,16 @@
 @prefix cnt: <http://www.w3.org/2011/content#> .   
 @prefix locn: <http://www.w3.org/ns/locn#> . 
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix http: <http://www.w3.org/2006/http#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 <mailto:smf@bgs.ac.uk> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "";
+		schema:propertyID "mailto";
 		schema:value "mailto:smf@bgs.ac.uk";
 	]; 
 	schema:familyName "Flower";
-	schema:givenName " Simon";
+	schema:givenName "Simon";
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "The Lyell Centre, Research Avenue South";
 		schema:addressLocality "Edinburgh";
@@ -34,11 +35,11 @@
 
 <http://orcid.org/0000-0002-7677-5158> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "";
+		schema:propertyID "orcid";
 		schema:value "http://orcid.org/0000-0002-7677-5158";
 	]; 
 	schema:familyName "Thomson";
-	schema:givenName " Alan";
+	schema:givenName "Alan";
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "The Lyell Centre, Research Avenue South";
 		schema:addressLocality "Edinburgh";
@@ -53,11 +54,11 @@
 
 <mailto:petes@bgs.ac.uk> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "";
+		schema:propertyID "mailto";
 		schema:value "mailto:petes@bgs.ac.uk";
 	]; 
 	schema:familyName "Stevenson";
-	schema:givenName " Peter";
+	schema:givenName "Peter";
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "The Lyell Centre, Research Avenue South";
 		schema:addressLocality "Edinburgh";
@@ -77,13 +78,13 @@
 	]; 
 	schema:description "The World Data Centre for Geomagnetism (Edinburgh) is a node of the World Data System (WDS) established by the International Council for Science (ICSU). The Geomagnetic Data Master Catalogue contains digital minute and hourly mean geomagnetic data.";
 	schema:name "World Data Centre for Geomagnetism (Edinburgh)";
-	schema:datePublished "2013-08-02T00:00:00"^^xsd:dateTime;
-	schema:dateModified "2017-09-01T00:00:00"^^xsd:dateTime;
+	schema:datePublished "2013-08-02T00:00:00Z"^^xsd:dateTime;
+	schema:dateModified "2017-09-01T00:00:00Z"^^xsd:dateTime;
 	schema:provider <http://viaf.org/viaf/136554353/>;
 	schema:keywords "magnetism", "geomagentism", "observatory", "definitive";
 	#hydra:entrypoint "application.wadl"^^xsd:anyURI; 
 	hydra:supportedOperation <http://app.geomag.bgs.ac.uk/wdc/datasets/download/operation>;
-	dcat:theme <#Magnetic Field>
+	dcat:theme <#Magnetic Field> ;
 	schema:contactPoint <mailto:petes@bgs.ac.uk/contactPoint>;
 	schema:contactPoint <mailto:smf@bgs.ac.uk/contactPoint>;
 	schema:contactPoint <http://orcid.org/0000-0002-7677-5158/contactPoint>;
@@ -103,7 +104,7 @@
 
 <http://viaf.org/viaf/136554353/> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "";
+		schema:propertyID "VIAF";
 		schema:value "http://viaf.org/viaf/136554353/";
 	]; 
 	schema:legalName "British Geological Survey";
@@ -137,7 +138,7 @@
 
 <http://viaf.org/viaf/148537429/> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "";
+		schema:propertyID "VIAF";
 		schema:value "http://viaf.org/viaf/148537429/";
 	]; 
 	schema:legalName "Natural Environment Research Council";
@@ -167,7 +168,7 @@
 		schema:availableLanguage "en" ;
 		schema:contactType "financialContact" ;
 . 
-	<http://app.geomag.bgs.ac.uk/wdc/datasets/operation> a hydra:Operation;
+	<http://app.geomag.bgs.ac.uk/wdc/datasets/download/operation> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "xml, json, csv, iaga2002, wdc";
 		hydra:IriTemplate[ a hydra:IriTemplate;
@@ -212,7 +213,10 @@
 . 
 	<#Geoelectromagnetism> a skos:ConceptScheme;
 		dct:title "Geoelectromagnetism";
+                dct:description "It contains the concepts of the Geoelectromagnetism" ;
 . 
-	<#Magnetic Field> a skos:Concept;
+	<#MagneticField> a skos:Concept;
+                skos:definition "" ;
 		skos:inScheme <#Geoelectromagnetism>;
+                skos:prefLabel "Magnetic Field" ;
 .
