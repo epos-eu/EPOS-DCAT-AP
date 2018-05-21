@@ -172,7 +172,7 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "xml, json, csv, iaga2002, wdc";
 		hydra:IriTemplate[ a hydra:IriTemplate;
-			hydra:template "http://app.geomag.bgs.ac.uk/wdc/datasets/(cadence)/(obsyIagaCode)(date)(?format)"^^xsd:string;
+			hydra:template "http://app.geomag.bgs.ac.uk/wdc/datasets/{cadence}/{obsyIagaCode}/{date}/{format}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "cadence"^^xsd:string;
 					rdfs:label "Cadence";
