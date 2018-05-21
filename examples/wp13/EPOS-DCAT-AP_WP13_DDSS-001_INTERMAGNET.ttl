@@ -11,15 +11,16 @@
 @prefix cnt: <http://www.w3.org/2011/content#> .   
 @prefix locn: <http://www.w3.org/ns/locn#> . 
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix http: <http://www.w3.org/2006/http#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 <mailto:smf@bgs.ac.uk> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "";
+		schema:propertyID "mailto";
 		schema:value "mailto:smf@bgs.ac.uk";
 	]; 
 	schema:familyName "Flower";
-	schema:givenName " Simon";
+	schema:givenName "Simon";
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "The Lyell Centre, Research Avenue South";
 		schema:addressLocality "Edinburgh";
@@ -34,11 +35,11 @@
 
 <http://orcid.org/0000-0002-7677-5158> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "";
+		schema:propertyID "orcid";
 		schema:value "http://orcid.org/0000-0002-7677-5158";
 	]; 
 	schema:familyName "Thomson";
-	schema:givenName " Alan";
+	schema:givenName "Alan";
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "The Lyell Centre, Research Avenue South";
 		schema:addressLocality "Edinburgh";
@@ -59,15 +60,15 @@
 	]; 
 	schema:description "The INTERMAGNET programme exists to establish a global network of cooperating digital magnetic observatories, adopting modern standard specifications for measuring and recording equipment, in order to facilitate data exchanges and the production of geomagnetic products in close to real time. The INTERMAGNET web service makes available preliminary data from INTERMAGNET observatories.";
 	schema:name "INTERMAGNET observatory data";
-	schema:datePublished "2017-02-09T00:00:00"^^xsd:dateTime;
-	schema:dateModified "2017-02-09T00:00:00"^^xsd:dateTime;
+	schema:datePublished "2017-02-09T00:00:00Z"^^xsd:dateTime;
+	schema:dateModified "2017-02-09T00:00:00Z"^^xsd:dateTime;
 	schema:provider <http://viaf.org/viaf/136554353/>;
 	schema:keywords "magnetism", "geomagentism", "observatory", "provisional", "real time";
 	#hydra:entrypoint "application.wadl"^^xsd:anyURI; 
 	hydra:supportedOperation <http://app.geomag.bgs.ac.uk/GIN/GINServices/operation>;
-	dcat:theme <#Magnetic Field>
-	schema:contactPoint <mailto:smf@bgs.ac.uk/contactPoint>;
-	schema:contactPoint <http://orcid.org/0000-0002-7677-5158/contactPoint>;
+	dcat:theme <#MagneticField> ;
+	dcat:contactPoint <mailto:smf@bgs.ac.uk/contactPoint>;
+	dcat:contactPoint <http://orcid.org/0000-0002-7677-5158/contactPoint>;
 . 
 	<mailto:smf@bgs.ac.uk/contactPoint> a schema:ContactPoint;
 		schema:email "smf@bgs.ac.uk";
@@ -80,7 +81,7 @@
 
 <http://viaf.org/viaf/136554353/> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "";
+		schema:propertyID "VIAF";
 		schema:value "http://viaf.org/viaf/136554353/";
 	]; 
 	schema:legalName "British Geological Survey";
@@ -114,7 +115,7 @@
 
 <http://viaf.org/viaf/148537429/> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "";
+		schema:propertyID "VIAF";
 		schema:value "http://viaf.org/viaf/148537429/";
 	]; 
 	schema:legalName "Natural Environment Research Council";
@@ -169,7 +170,7 @@
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "dataStartDate"^^xsd:ISO date;
+					hydra:variable "dataStartDate"^^xsd:dateTime;
 					rdfs:label "Date (yyyy-mm-dd)";
 					schema:minValue "1999-01-01";
 					hydra:required "true"^^xsd:boolean;
@@ -227,7 +228,10 @@
 . 
 	<#Geoelectromagnetism> a skos:ConceptScheme;
 		dct:title "Geoelectromagnetism";
+                dct:description "It contains the concepts of Geoelectromagnetism" ;
 . 
-	<#Magnetic Field> a skos:Concept;
+	<#MagneticField> a skos:Concept;
+                skos:definition "" ;
 		skos:inScheme <#Geoelectromagnetism>;
+                skos:prefLabel "Magnetic Field" ;
 .
