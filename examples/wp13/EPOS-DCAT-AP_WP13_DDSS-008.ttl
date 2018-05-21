@@ -11,15 +11,16 @@
 @prefix cnt: <http://www.w3.org/2011/content#> .   
 @prefix locn: <http://www.w3.org/ns/locn#> . 
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix http: <http://www.w3.org/2006/http#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 <mailto:ari.viljanen@fmi.fi> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "";
+		schema:propertyID "mailto";
 		schema:value "mailto:ari.viljanen@fmi.fi";
 	]; 
 	schema:familyName "Viljanen";
-	schema:givenName " Ari";
+	schema:givenName "Ari";
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "Erik Palmenin aukio 1";
 		schema:addressLocality "Helsinki";
@@ -33,11 +34,11 @@
 
 <mailto:lasse.hakkinen@fmi.fi> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "";
+		schema:propertyID "mailto";
 		schema:value "mailto:lasse.hakkinen@fmi.fi";
 	]; 
 	schema:familyName "Häkkinen";
-	schema:givenName " Lasse";
+	schema:givenName "Lasse";
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "Erik Palmenin aukio 1";
 		schema:addressLocality "Helsinki";
@@ -57,15 +58,15 @@
 	]; 
 	schema:description "IMAGE electrojet indicators are simple estimates of the total eastward and westward currents crossing the magnetometer network.";
 	schema:name "Electrojet indicators";
-	schema:datePublished "2017-07-11T00:00:00"^^xsd:dateTime;
-	schema:dateModified "2017-07-11T00:00:00"^^xsd:dateTime;
+	schema:datePublished "2017-07-11T00:00:00Z"^^xsd:dateTime;
+	schema:dateModified "2017-07-11T00:00:00Z"^^xsd:dateTime;
 	schema:provider <PIC:999591306>;
 	schema:keywords "auroral electrojet", "geomagnetism", "magnetic field", "magnetism", "space weather", "substorm", "variometer";
 	#hydra:entrypoint "application.wadl"^^xsd:anyURI; 
 	hydra:supportedOperation <http://space.fmi.fi/cgi-bin/imagecgi/image-epos-indicators.cgi/operation>;
-	dcat:theme <#Magnetic Field>
-	schema:contactPoint <mailto:ari.viljanen@fmi.fi/contactPoint>;
-	schema:contactPoint <mailto:lasse.hakkinen@fmi.fi/contactPoint>;
+	dcat:theme <#MagneticField> ;
+	dcat:contactPoint <mailto:ari.viljanen@fmi.fi/contactPoint>;
+	dcat:contactPoint <mailto:lasse.hakkinen@fmi.fi/contactPoint>;
 . 
 	<mailto:ari.viljanen@fmi.fi/contactPoint> a schema:ContactPoint;
 		schema:email "ari.viljanen@fmi.fi";
@@ -78,7 +79,7 @@
 
 <PIC:999591306> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "";
+		schema:propertyID "PIC";
 		schema:value "PIC:999591306";
 	]; 
 	schema:legalName "Finnish Meteorological Institute";
@@ -143,7 +144,10 @@
 . 
 	<#Geoelectromagnetism> a skos:ConceptScheme;
 		dct:title "Geoelectromagnetism";
+                dct:description "It contains the concepts of Geoelectromagnetism" ;
 . 
-	<#Magnetic Field> a skos:Concept;
-		skos:inScheme <#Geoelectromagnetism>;
+	<#MagneticField> a skos:Concept;
+                skos:definition "" ;
+		skos:inScheme <#Geoelectromagnetism> ;
+                skos:prefLabel "Magnetic Field" ;
 .
