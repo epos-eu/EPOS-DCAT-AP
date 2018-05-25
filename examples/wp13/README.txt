@@ -14,10 +14,8 @@ WP 13 is providing 8 web services from 6 priority DDSS elements:
   
 Status of metadata RDF/TTL:
 
-  - WP13-DDSS-001 - INTERMAGNET: Converted from previously unvalidated XML file.
-                                 Waiting resolution of issue #175 (ability to use http digest authentication).
-                                 After a quick scan of the documentation I can't find evidence that hydra
-                                     provides a mechanism to specify authentication credentials.
+  - WP13-DDSS-001 - INTERMAGNET: Updated to access new WP13 proxy server
+                                 Avoids problems with digest authentication
   - WP13-DDSS-001 - WDC: Converted from previously unvalidated XML file
                          Waiting resolution of issue #158 (RESTful parameter types)
                          This seems possible with a Hydra:template and I've tried to implement a solution.
