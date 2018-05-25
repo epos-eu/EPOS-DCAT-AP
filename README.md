@@ -9,4 +9,8 @@ Main features of this profile are:
 * Representation with RDF + Shapes (https://www.w3.org/TR/shacl/)
 * Support for data collections (i.e. Dataset dct:isPartOf, dct:hasPart)
 
+# Contacts
+Rossana Paciello rossana.paciello@ingv.it
+Luca Trani Luca.Trani@knmi.nl
+
  

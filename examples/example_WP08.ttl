@@ -1,0 +1,395 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix epos: <http://www.epos-eu.org/epos/dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix bgs: <http://www.bgs.ac.uk#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http: <http://www.w3.org/2006/http#> .
+
+
+<http://orcid.org/0000-0001-7750-7254> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+        	schema:propertyID  "orcid";
+        	schema:value   "0000-0001-7750-7254";
+      	];
+	schema:identifier [ a schema:PropertyValue;
+          	schema:propertyID  "Scopus";
+          	schema:value   "55861456000";
+      	];
+	schema:familyName "Trani";
+	schema:givenName "Luca";
+      	schema:address [ a schema:PostalAddress;
+	 	schema:streetAddress "Utrechtseweg, 297";
+		schema:addressLocality "De Bilt";
+		schema:postalCode "3731GA";
+		schema:addressCountry "The Netherlands";
+	];
+      	schema:email "luca.trani@private.com";
+      	schema:telephone "+310302206297";
+      	schema:url  "http://orcid.org/0000-0001-7750-7254"^^xsd:anyURI;
+	schema:qualifications "Senior Advisor, Researcher" ;
+	schema:affiliation <PIC:999518944>;
+	schema:contactPoint <http://orcid.org/0000-0001-7750-7254/legalContact>;
+	schema:contactPoint <http://orcid.org/0000-0001-7750-7254/scientificContact>;
+	schema:contactPoint <http://orcid.org/0000-0001-7750-7254/financialContact>;
+.
+
+<http://orcid.org/0000-0001-7750-7254/legalContact> a schema:ContactPoint;
+	schema:email "luca.trani@knmi.nl ";
+	schema:availableLanguage "en" ;
+	schema:contactType "legalContact";
+.
+<http://orcid.org/0000-0001-7750-7254/financialContact> a schema:ContactPoint;
+	schema:email "luca.trani@knmi.nl ";
+	schema:availableLanguage "en" ;
+	schema:contactType "financialContact";
+.
+
+<http://orcid.org/0000-0001-7750-7254/scientificContact> a schema:ContactPoint;
+	schema:email "luca.trani@knmi.nl ";
+	schema:availableLanguage "en" ;
+	schema:contactType "scientificContact";
+.
+
+<http://orcid.org/0000-0002-6250-2474> a schema:Person;
+	schema:identifier "http://orcid.org/0000-0002-6250-2474";
+	schema:familyName "Koymans";
+	schema:givenName "Mathijs";
+        schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Utrechtseweg, 297";
+		schema:addressLocality "De Bilt";
+		schema:postalCode "3731GA";
+		schema:addressCountry "The Netherlands";
+	];
+      	schema:telephone "+31302206911";
+      	schema:url  "http://orcid.org/0000-0002-6250-2474"^^xsd:anyURI;
+	schema:qualifications "IT, Geology, Geophysics, Seismology, Paleomagnetism" ;
+	schema:affiliation <PIC:999518944>;
+	schema:contactPoint <http://orcid.org/0000-0002-6250-2474/contactPoint>;
+.
+
+<http://orcid.org/0000-0002-6250-2474/contactPoint> a schema:ContactPoint;
+	schema:email "koymans@knmi@nl";
+	schema:availableLanguage "en" ;
+.
+
+<http://orcid.org/0000-0002-1928-5056> a schema:Person;
+	schema:identifier "http://orcid.org/0000-0002-1928-5056";
+	schema:availableLanguage "en" ;
+	schema:familyName "Sleeman";
+	schema:givenName "Reinoud";
+        schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Utrechtseweg, 297";
+		schema:addressLocality "De Bilt";
+		schema:postalCode "3731GA";
+		schema:addressCountry "The Netherlands";
+	];
+      	schema:email "sleeman@knmi.nl";
+      	schema:telephone "+31302206911";
+      	schema:url  "http://www.knmi.nl/over-het-knmi/onze-mensen/reinoud-sleeman"^^xsd:anyURI;
+	schema:qualifications "IT, Geology, Geophysics, Seismology, Paleomagnetism" ;
+	schema:affiliation <PIC:999518944>;
+.
+
+<PIC:999518944> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+        	schema:propertyID  "PIC";
+        	schema:value   "999518944";
+      	];
+	schema:legalName "KNMI Dutch Royal Metereological Institute";
+	schema:address [ a schema:PostalAddress;
+        	schema:streetAddress "Utrechtseweg, 297";
+        	schema:addressLocality "De Bilt";
+        	schema:postalCode "3731GA";
+        	schema:addressCountry "The Netherlands";
+	];
+      	schema:logo "http://cdn.knmi.nl/assets/logo_large-1f49334b8856e16f352187f1b52d0edf258976c6329407b0b75f5f109ea012fb.png"^^xsd:anyURI ;
+      	schema:url "http://www.knmi.nl"^^xsd:anyURI  ;
+	schema:contactPoint <http://orcid.org/0000-0001-7750-7254/legalContact>;
+	schema:contactPoint <http://orcid.org/0000-0001-7750-7254/scientificContact>;
+	schema:contactPoint <http://orcid.org/0000-0001-7750-7254/financialContact>;
+      	schema:memberOf <PIC:997012076>;
+.
+
+<PIC:997012076> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+        	schema:propertyID  "PIC";
+         	schema:value   "997012076";
+      	];
+	schema:legalName "ORFEUS Observatories and Research Facilities for European Seismology";
+	schema:address [ a schema:PostalAddress;
+        	schema:streetAddress "Utrechtseweg, 297";
+        	schema:addressLocality "De Bilt";
+        	schema:postalCode "3731GA";
+        	schema:addressCountry "The Netherlands";
+	];
+      	schema:url "http://www.orfeus-eu.org/"^^xsd:anyURI  ;
+     	schema:contactPoint <http://orcid.org/0000-0001-7750-7254/legalContact>;
+	schema:contactPoint <http://orcid.org/0000-0001-7750-7254/scientificContact>;
+	schema:contactPoint <http://orcid.org/0000-0001-7750-7254/financialContact>;
+.
+
+<#Seismology> a skos:ConceptScheme;
+	dct:title "Seismology";
+	dct:description "It contains the concepts of the Seismology domain";
+.
+
+<#SeismicWaveform> a skos:Concept;
+	skos:definition "Measurement of the dynamic displacement of the Earth";
+	skos:inScheme <#Seismology>;
+	skos:prefLabel "Seismic waveform" ;
+.
+
+#-------------------------------------SHAKEMAP------------------------------
+<orfeus-eu.org/odcws/rrsm/1/shakemap> a epos:WebService;
+	schema:identifier "orfeus-eu.org/odcws/rrsm/1/shakemap";
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "DDSS-ID";
+	        schema:value   "WP8-DDSS-048";
+	];
+        schema:description "Resources can be used as input files for USGS ShakeMap program to create event shakemaps.";
+	schema:name "ShakeMap Input XML - Rapid Raw Strong Motion (RRSM)";
+	dcat:contactPoint <http://orcid.org/0000-0002-6250-2474/contactPoint> ;
+	schema:datePublished "2017-04-01T00:00:00Z"^^xsd:dateTime;
+	schema:dateModified "2017-04-01T00:00:00Z"^^xsd:dateTime;
+	schema:provider <PIC:999518944>;
+	dcat:theme  <#SeismicWaveform> ;
+ 	schema:keywords "Seismic Hazard", "ODC", "RRSM", "Event", "ShakeMap", "ShakeMapXML", "Strong Motion";
+	hydra:supportedOperation <ORFEUS/ODCWS/RRSM/shakemap>;
+.
+
+<ORFEUS/ODCWS/RRSM/shakemap> a hydra:Operation;
+ 	hydra:method "GET"^^xsd:string;
+	hydra:returns "xml";
+ 	hydra:IriTemplate[ a hydra:IriTemplate;
+        	hydra:template "http://www.orfeus-eu.org/odcws/rrsm/1/shakemap/(?id,type)"^^xsd:string;
+        		hydra:mapping[ a hydra:IriTemplateMapping;
+               			hydra:variable "id"^^xsd:string;
+				rdfs:label "Event ID";
+               			hydra:required "true"^^xsd:boolean;
+
+            		];
+            		hydra:mapping[ a hydra:IriTemplateMapping;
+            			hydra:variable "type"^^xsd:string;
+				rdfs:label "ShakeMapXML output file";
+            			hydra:required "true"^^xsd:boolean;
+				http:paramValue "event";
+	            		http:paramValue "event_dat";
+
+            		];
+          	];
+.
+
+#------------------------STATION
+
+<orfeus-eu.org/fdsnws/station/1/> a epos:WebService;
+        schema:identifier "orfeus-eu.org/fdsnws/station/1/";
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "DDSS-ID";
+	        schema:value   "WP8-DDSS-049";
+	];
+        schema:description "FDSN Standard webservice at ODC to download seismic metadata";
+	schema:name "FDSN Station-WS - ORFEUS Data Center (ODC)";
+        dcat:contactPoint <http://orcid.org/0000-0002-6250-2474/contactPoint>;
+	schema:datePublished "2016-01-01T00:00:00Z"^^xsd:dateTime;
+	schema:dateModified "2016-01-01T00:00:00Z"^^xsd:dateTime;
+	schema:provider <PIC:999518944>;
+        dcat:theme  <#SeismicWaveform> ;
+	hydra:entrypoint "http://webservices.ingv.it/fdsnws/station/1/application.wadl"^^xsd:anyURI;
+        schema:keywords "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling" ;
+        hydra:supportedOperation <orfeus-eu.org/fdsnws/station/1/query>;
+.
+
+<orfeus-eu.org/fdsnws/station/1/query> a hydra:Operation;
+	hydra:method "GET"^^xsd:string;
+ 	hydra:returns "xml";
+ 	hydra:IriTemplate[ a hydra:IriTemplate;
+        	hydra:template "http://www.orfeus-eu.org/fdsnws/station/1/query/(?starttime,endtime,network,station,location,channel,minlatitude,maxlatitude,minlongitude,maxlongitude,level,nodata)"^^xsd:string;
+              		hydra:mapping[ a hydra:IriTemplateMapping;
+              			hydra:variable "starttime"^^xsd:string;
+				rdfs:label "Start of the timespan";
+              			hydra:required "true"^^xsd:boolean;
+              		];
+              		hydra:mapping[ a hydra:IriTemplateMapping;
+              			hydra:variable "endtime"^^xsd:string;
+				rdfs:label "End of the timespan";
+              			hydra:required "true"^^xsd:boolean;
+              		];
+              		hydra:mapping[ a hydra:IriTemplateMapping;
+               			hydra:variable "network"^^xsd:string;
+				rdfs:label "Network code";
+               			hydra:required "false"^^xsd:boolean;
+                		schema:defaultValue "_NFOTABOO";
+               		];
+               		hydra:mapping[ a hydra:IriTemplateMapping;
+               			hydra:variable "station"^^xsd:string;
+				rdfs:label "Station code";
+               			hydra:required "false"^^xsd:boolean;
+               		];
+                	hydra:mapping[ a hydra:IriTemplateMapping;
+               			hydra:variable "location"^^xsd:string;
+				rdfs:label "Location code";
+               			hydra:required "false"^^xsd:boolean;
+               		];
+               		hydra:mapping[ a hydra:IriTemplateMapping;
+                		hydra:variable "channel"^^xsd:string;
+				rdfs:label "Channel code";
+                		hydra:required "false"^^xsd:boolean;
+              		];
+              		hydra:mapping[ a hydra:IriTemplateMapping;
+                		hydra:variable "minlatitude"^^xsd:string;
+				rdfs:label "Minimum Latitude";
+                		hydra:required "false"^^xsd:boolean;
+                		schema:minValue "-90";
+                		schema:maxValue "90";
+              		];
+               		hydra:mapping[ a hydra:IriTemplateMapping;
+               			hydra:variable "maxlatitude"^^xsd:string;
+				rdfs:label "Maximum Latitude";
+               			hydra:required "false"^^xsd:boolean;
+               			schema:minValue "-90";
+               			schema:maxValue "90";
+           		];
+           		hydra:mapping[ a hydra:IriTemplateMapping;
+             			hydra:variable "minlongitude"^^xsd:string;
+				rdfs:label "Minimum Longitude";
+             			hydra:required "false"^^xsd:boolean;
+             			schema:minValue "-180";
+             			schema:maxValue "180";
+           		];
+           		hydra:mapping[ a hydra:IriTemplateMapping;
+               			hydra:variable "maxlongitude"^^xsd:string;
+				rdfs:label "Maximum Longitude";
+               			hydra:required "false"^^xsd:boolean;
+               			schema:minValue "-180";
+               			schema:maxValue "180";
+           		];
+           		hydra:mapping[ a hydra:IriTemplateMapping;
+               			hydra:variable "level"^^xsd:string;
+				rdfs:label "Level";
+               			hydra:required "false"^^xsd:boolean;
+               			http:paramValue "network";
+               			http:paramValue "station";
+               			http:paramValue "channel";
+              		 	http:paramValue "response";
+           		];
+           		hydra:mapping[ a hydra:IriTemplateMapping;
+               			hydra:variable "nodata"^^xsd:string;
+               			hydra:required "false"^^xsd:boolean;
+               			http:paramValue "204";
+				http:paramValue "404";
+           ];
+
+       ];
+.
+
+
+#--------------- DATASELECT
+<orfeus-eu.org/fdsnws/dataselect/1/> a epos:WebService;
+ 	schema:identifier "orfeus-eu.org/fdsnws/dataselect/1/";
+	schema:identifier [ a schema:PropertyValue;
+	schema:propertyID  "DDSS-ID";
+		schema:value "WP8-DDSS-001";
+	];
+        schema:description "FDSN Standard webservice at ODC to download waveform data";
+	schema:name "FDSN Dataselect - ORFEUS Data Center (ODC)";
+        dcat:contactPoint <http://orcid.org/0000-0002-6250-2474/contactPoint>;
+	schema:datePublished "2016-01-01T00:00:00Z"^^xsd:dateTime;
+	schema:dateModified "2016-01-01T00:00:00Z"^^xsd:dateTime;
+	schema:provider <PIC:999518944>;
+	hydra:entrypoint "http://www.orfeus-eu.org/fdsnws/dataselect/1/application.wadl"^^xsd:anyURI;
+	dcat:theme  <#SeismicWaveform> ;
+	schema:keywords "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "ODC", "Dataselect", "FDSN-WS", "Seismic Waveform", "EIDA";
+	hydra:supportedOperation <orfeus-eu.org/fdsnws/dataselect/1/query>;
+.
+
+
+<orfeus-eu.org/fdsnws/dataselect/1/query> a hydra:Operation;
+ 	hydra:method "GET"^^xsd:string;
+	hydra:returns "binary";
+ 	hydra:IriTemplate[ a hydra:IriTemplate;
+        	hydra:template "http://www.orfeus-eu.org/fdsnws/dataselect/1/query/(?starttime,endtime,network,station,location,channel,minimumlength,nodata)"^^xsd:string;
+        		hydra:mapping[ a hydra:IriTemplateMapping;
+        			hydra:variable "starttime"^^xsd:string;
+				rdf:label "Start of the timespan";
+               			hydra:required "true"^^xsd:boolean;
+           		];
+              		hydra:mapping[ a hydra:IriTemplateMapping;
+               			hydra:variable "endtime"^^xsd:string;
+				rdf:label "End of the timespan";
+               			hydra:required "true"^^xsd:boolean;
+              		];
+              		hydra:mapping[ a hydra:IriTemplateMapping;
+               			hydra:variable "network"^^xsd:string;
+				rdfs:label "Network code";
+               			hydra:required "false"^^xsd:boolean;
+               		];
+               		hydra:mapping[ a hydra:IriTemplateMapping;
+               			hydra:variable "station"^^xsd:string;
+				rdfs:label "Station code";
+               			hydra:required "false"^^xsd:boolean;
+               		];
+                	hydra:mapping[ a hydra:IriTemplateMapping;
+               			hydra:variable "location"^^xsd:string;
+				rdfs:label "Location code";
+               			hydra:required "false"^^xsd:boolean;
+               		];
+               		hydra:mapping[ a hydra:IriTemplateMapping;
+                		hydra:variable "channel"^^xsd:string;
+				rdfs:label "Channel code";
+                		hydra:required "false"^^xsd:boolean;
+              		];
+               		hydra:mapping[ a hydra:IriTemplateMapping;
+               			hydra:variable "quality"^^xsd:string;
+				rdfs:label "Quality";
+               			hydra:required "false"^^xsd:boolean;
+				http:paramValue "B";
+				http:paramValue "M";
+              		];
+               		hydra:mapping[ a hydra:IriTemplateMapping;
+               			hydra:variable "minimumlength"^^xsd:string;
+               			hydra:required "false"^^xsd:boolean;
+               			schema:minValue "0";
+           		];
+           		hydra:mapping[ a hydra:IriTemplateMapping;
+               			hydra:variable "nodata"^^xsd:string;
+               			hydra:required "false"^^xsd:boolean;
+	       			http:paramValue "204";
+	       			http:paramValue "404";
+           		];
+
+       	];
+.
+
+<EIDA/ODC/ContinuousSeismicWaveform> a dcat:Dataset;
+        dct:title "Primary Seismic Waveform Data";
+        dct:identifier "WFDatasetID";
+        dct:description "Continuous seismic waveforms";
+        ## example of frequency using a controlled vocabulary
+	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+        dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
+        dct:created "1993-01-01"^^xsd:date;
+        dcat:theme  <#SeismicWaveform> ;
+        dcat:keyword "seismic waveform","continuous waveform" ,"mseed" ;
+        dcat:contactPoint <http://orcid.org/0000-0002-6250-2474/contactPoint>;
+	dct:publisher <PIC:999518944>;
+        dcat:distribution <EIDA/ODC/SeismicWaveformDistribution>;
+.
+
+<EIDA/ODC/SeismicWaveformDistribution> a dcat:Distribution;
+        dct:identifier "WFDistributionID";
+	dct:description "Seismic Waveform Distribution";
+	dct:created "2017-01-01"^^xsd:date;
+	dct:type "http://publications.europa.eu/resource/authority/distributiontype/WEB_SERVICE"^^xsd:anyURI;
+	dcat:accessURL <orfeus-eu.org/fdsnws/dataselect/1/query>;
+	dct:conformsTo <orfeus-eu.org/fdsnws/dataselect/1/>;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI;
+.

@@ -11,15 +11,16 @@
 @prefix cnt: <http://www.w3.org/2011/content#> .   
 @prefix locn: <http://www.w3.org/ns/locn#> . 
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix http: <http://www.w3.org/2006/http#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 <http://orcid.org/0000-0001-8793-1315> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "";
+		schema:propertyID "orcid";
 		schema:value "http://orcid.org/0000-0001-8793-1315";
 	]; 
 	schema:familyName "Chambodut";
-	schema:givenName " Aude";
+	schema:givenName "Aude";
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "EOST, 5 rue Rene Descartes";
 		schema:addressLocality "Strasbourg cedex";
@@ -35,11 +36,11 @@
 
 <mailto:binta.mesmacque@unistra.fr> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "";
+		schema:propertyID "mailto";
 		schema:value "mailto:binta.mesmacque@unistra.fr";
 	]; 
 	schema:familyName "Mesmacque";
-	schema:givenName " Binta";
+	schema:givenName "Binta";
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "EOST, 5 rue Rene Descartes";
 		schema:addressLocality "Strasbourg cedex";
@@ -61,14 +62,14 @@
 	]; 
 	schema:description "Since 2015, International Service of Geomagnetic Indices is hosted by EOST, Strasbourg, France. 		ISGI is a service of the International Association of Geomagnetism and Aeronomy (IAGA). ISGI is the Reference Service for validation, 		dissemination and stewardship of geomagnetic indices through its official Web portal.";
 	schema:name "ISGI Data Download Web Service";
-	schema:datePublished "2017-06-15T12:00:00"^^xsd:dateTime;
-	schema:dateModified "2017-08-01T12:00:00"^^xsd:dateTime;
+	schema:datePublished "2017-06-15T12:00:00Z"^^xsd:dateTime;
+	schema:dateModified "2017-08-01T12:00:00Z"^^xsd:dateTime;
 	schema:provider <PIC:999997930>;
 	schema:keywords "DISTURBED DAY", "GEO-EFFECTIVITY", "GEOMAGNETIC ACTIVITY", "GEOMAGNETIC STORM", "GEOMAGNETISM", "INTERPLANETARY MAGNETIC FIELD (IMF)", "			IONOSPHERE", "MAGNETIC FIELD", "MAGNETISM", "MAGNETOSPHERE", "QUIET DAY", "RAPID MAGNETIC VARIATIONS", "REMARKABLE EVENT", "SOLAR FLARE", "			SOLAR FLARE EFFECT", "SOLAR QUIET", "SOLAR STORM", "SPACE-WEATHER", "SUDDEN STORM COMMENCEMENT", "SUDDEN COMMENCEMENT,SUDDEN IMPULSE", "			TIME SERIES";
 	#hydra:entrypoint "application.wadl"^^xsd:anyURI; 
 	hydra:supportedOperation <http://isgi.unistra.fr/ws?/operation>;
-	dcat:theme <#MAGNETIC ACTIVITY>
-	schema:contactPoint <http://orcid.org/0000-0001-8793-1315/contactPoint>;
+	dcat:theme <#MagneticActivity> ;
+	dcat:contactPoint <http://orcid.org/0000-0001-8793-1315/contactPoint>;
 . 
 	<http://orcid.org/0000-0001-8793-1315/contactPoint> a schema:ContactPoint;
 		schema:email "aude.chambodut@unistra.fr";
@@ -77,7 +78,7 @@
 
 <PIC:999997930> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "";
+		schema:propertyID "PIC";
 		schema:value "PIC:999997930";
 	]; 
 	schema:legalName "International Service of Geomagnetic Indices";
@@ -129,14 +130,14 @@
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "StartTime"^^xsd:date format ISO8601;
+					hydra:variable "StartTime"^^xsd:dateTime;
 					rdfs:label "Start Time";
 					schema:minValue "0000-00-00";
 					schema:maxValue "9999-12-31";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "EndTime"^^xsd:date format ISO8601;
+					hydra:variable "EndTime"^^xsd:dateTime;
 					rdfs:label "End Time";
 					schema:minValue "0000-00-00";
 					schema:maxValue "9999-12-31";
@@ -144,9 +145,12 @@
 				];
 		] ;
 . 
-	<#GEOELECTROMAGNETISM> a skos:ConceptScheme;
-		dct:title "GEOELECTROMAGNETISM";
+	<#Geoelectromagnetism> a skos:ConceptScheme;
+		dct:title "Geoelectromagnetism";
+                dct:description "It contains the concepts of Geoelectromagnetism" ;
 . 
-	<#MAGNETIC ACTIVITY> a skos:Concept;
-		skos:inScheme <#GEOELECTROMAGNETISM>;
+	<#MagneticActivity> a skos:Concept;
+                skos:definition "" ;
+		skos:inScheme <#Geoelectromagnetism>;
+                skos:prefLabel "Magnetic Activity" ;
 .
