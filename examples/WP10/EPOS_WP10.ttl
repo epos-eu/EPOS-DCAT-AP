@@ -382,3 +382,192 @@
             ];
 	];
 .
+
+#WS operation products/velocities
+<GlassFramework/webresources/products/velocities/> a epos:WebService;
+	schema:identifier "GlassFramework/webresources/products/velocities";
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "DDSS-ID";
+	  schema:value   "WP10-DDSS-009";
+	];
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "DDSS-ID";
+	  schema:value   "WP10-DDSS-010";
+	];
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "DDSS-ID";
+	  schema:value   "WP10-DDSS-014";
+	];
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "DDSS-ID";
+	  schema:value  "WP10-DDSS-018";
+	];
+  schema:description "get velocities object for given parameters.";
+	schema:name "GET VELOCITIES";
+	dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
+	schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
+	schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
+	schema:provider <PIC:996437254>;
+	dcat:theme  <#GNSSProductsPortal> ;
+	hydra:entrypoint "http://193.136.66.29:8102/GlassFramework/swagger.json"^^xsd:anyURI;
+ 	schema:keywords "Geodesy", "GNSS" ;
+	dct:conformsTo <GlassFramework/APIDocumentation> ;
+	hydra:supportedOperation <GlassFramework/webresources/products/velocities/operation>;
+.
+
+#WS Operation products/velocities
+<GlassFramework/webresources/products/velocities/operation> a hydra:Operation;
+ 	hydra:method "GET"^^xsd:string;
+	hydra:returns "json/xml";
+ 	hydra:IriTemplate[ a hydra:IriTemplate;
+	hydra:template "http://193.136.66.29:8102/GlassFramework/webresources/products/velocities/{site}/{analysis_centre}/{coordinates_system}/{format}"^^xsd:string;
+      hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Station"^^xsd:string;
+					rdf:label "Four letter station identification";
+					hydra:required "true"^^xsd:boolean;
+      ];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Analysis_centre"^^xsd:string;
+					rdf:label "name of analysis_centre";
+					hydra:required "true"^^xsd:boolean;
+      ];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "coordinates_system"^^xsd:string;
+					rdf:label "coordinates system";
+					hydra:required "true"^^xsd:boolean;
+					http:paramValue "enu";
+					http:paramValue "xyz";
+      ];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "format"^^xsd:string;
+					rdf:label "output format";
+					hydra:required "true"^^xsd:boolean;
+					http:paramValue "xml";
+					http:paramValue "json";
+      ];
+			
+	];
+.
+
+#WS operation products/coordinates
+<GlassFramework/webresources/products/coordinates/> a epos:WebService;
+	schema:identifier "GlassFramework/webresources/products/coordinates";
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "DDSS-ID";
+	  schema:value   "WP10-DDSS-009";
+	];
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "DDSS-ID";
+	  schema:value   "WP10-DDSS-010";
+	];
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "DDSS-ID";
+	  schema:value   "WP10-DDSS-014";
+	];
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "DDSS-ID";
+	  schema:value  "WP10-DDSS-018";
+	];
+  schema:description "get coordinates object for given parameters.";
+	schema:name "GET Coordinates";
+	dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
+	schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
+	schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
+	schema:provider <PIC:996437254>;
+	dcat:theme  <#GNSSProductsPortal> ;
+	hydra:entrypoint "http://193.136.66.29:8102/GlassFramework/swagger.json"^^xsd:anyURI;
+ 	schema:keywords "Geodesy", "GNSS" ;
+	dct:conformsTo <GlassFramework/APIDocumentation> ;
+	hydra:supportedOperation <GlassFramework/webresources/products/coordinates>;
+.
+
+#WS Operation products/coordinates
+<GlassFramework/webresources/products/coordinates> a hydra:Operation;
+ 	hydra:method "GET"^^xsd:string;
+	hydra:returns "json/xml";
+ 	hydra:IriTemplate[ a hydra:IriTemplate;
+	hydra:template "http://193.136.66.29:8102/GlassFramework/webresources/products/coordinates/{site}/{analysis_centre}/{sampling_period}/{coordinates_system}/{format}/{optional_parameters}"^^xsd:string;
+      hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Station"^^xsd:string;
+					rdf:label "Four letter station identification";
+					hydra:required "true"^^xsd:boolean;
+      ];
+
+			hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Analysis_centre"^^xsd:string;
+					rdf:label "name of analysis_centre";
+					hydra:required "true"^^xsd:boolean;
+      ];
+
+			hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Sampling Period"^^xsd:string;
+					rdf:label "daily/weekly solutions";
+					hydra:required "true"^^xsd:boolean;
+					http:paramValue "daily";
+					http:paramValue "weekly";
+      ];
+		
+			hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "coordinates_system"^^xsd:string;
+					rdf:label "coordinates system";
+					hydra:required "true"^^xsd:boolean;
+					http:paramValue "enu";
+					http:paramValue "xyz";
+      ];
+
+			hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "format"^^xsd:string;
+					rdf:label "output format";
+					hydra:required "true"^^xsd:boolean;
+					http:paramValue "xml";
+					http:paramValue "json";
+      ];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+        	hydra:variable "reference_frame"^^xsd:string;
+					rdf:label "reference_frame";
+          hydra:required "false"^^xsd:boolean;
+					http:paramValue "fiducial";
+					http:paramValue "ITRF2008";
+					http:paramValue "Combined";
+      ];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "otl_model"^^xsd:string;
+					rdf:label "otl_model";
+          hydra:required "false"^^xsd:boolean;
+      ];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "antenna_model"^^xsd:string;
+					rdf:label "antenna_model";
+          hydra:required "false"^^xsd:boolean;
+      ];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "cut_of_angle"^^xsd:string;
+					rdf:label "cut_of_angle";
+          hydra:required "false"^^xsd:boolean;
+      ];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "remove_outliers"^^xsd:string;
+					rdf:label "remove_outliers - ( If nothing is given, outliers are removed by default) ";
+					hydra:required "false"^^xsd:boolean;
+					http:paramValue "1";
+					http:paramValue "0";				
+      ];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "apply_offsets"^^xsd:string;
+					rdf:label "apply_offsets - (1 to apply)";
+					hydra:required "false"^^xsd:boolean;
+					http:paramValue "1";				
+      ];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "epoch_start"^^xsd:string;
+					rdf:label "epoch_start";
+					hydra:required "false"^^xsd:boolean;				
+      ];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "epoch_end"^^xsd:string;
+					rdf:label "epoch_end";
+					hydra:required "false"^^xsd:boolean;				
+      ];
+			
+	];
+.
