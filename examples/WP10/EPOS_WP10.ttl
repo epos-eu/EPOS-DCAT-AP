@@ -173,11 +173,7 @@
 	];
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID  "DDSS-ID";
-	  schema:value   "WP10-DDSS-014";
-	];
-	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID  "DDSS-ID";
-	  schema:value  "WP10-DDSS-018";
+	  schema:value   "WP10-DDSS-011";
 	];
   schema:description "Returns GNSS Product Time Series (xyz coordinates)";
 	schema:name "GNSS STATION Time Series (XYZ)";
@@ -285,19 +281,7 @@
 	schema:identifier "GlassFramework/webresources/products/attributes";
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID  "DDSS-ID";
-	  schema:value   "WP10-DDSS-009";
-	];
-	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID  "DDSS-ID";
-	  schema:value   "WP10-DDSS-010";
-	];
-	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID  "DDSS-ID";
-	  schema:value   "WP10-DDSS-014";
-	];
-	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID  "DDSS-ID";
-	  schema:value  "WP10-DDSS-018";
+	  schema:value   "WP10-DDSS-002";
 	];
   schema:description "Get DB entries for a specific set of attributes ";
 	schema:name "GET DIFFERENT DB DATA BASED ON ATTRIBUTE";
@@ -336,19 +320,7 @@
 	schema:identifier "GlassFramework/webresources/products/stations";
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID  "DDSS-ID";
-	  schema:value   "WP10-DDSS-009";
-	];
-	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID  "DDSS-ID";
-	  schema:value   "WP10-DDSS-010";
-	];
-	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID  "DDSS-ID";
-	  schema:value   "WP10-DDSS-014";
-	];
-	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID  "DDSS-ID";
-	  schema:value  "WP10-DDSS-018";
+	  schema:value   "WP10-DDSS-002";
 	];
   schema:description "get Stations object for given parameters.";
 	schema:name "GET STATIONS WITH PRODUCTS";
@@ -383,16 +355,16 @@
 	];
 .
 
-#WS operation products/velocities
+#WS  products/velocities
 <GlassFramework/webresources/products/velocities/> a epos:WebService;
 	schema:identifier "GlassFramework/webresources/products/velocities";
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID  "DDSS-ID";
-	  schema:value   "WP10-DDSS-009";
+	  schema:value   "WP10-DDSS-012";
 	];
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID  "DDSS-ID";
-	  schema:value   "WP10-DDSS-010";
+	  schema:value   "WP10-DDSS-013";
 	];
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID  "DDSS-ID";
@@ -401,6 +373,10 @@
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID  "DDSS-ID";
 	  schema:value  "WP10-DDSS-018";
+	];
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "DDSS-ID";
+	  schema:value  "WP10-DDSS-022";
 	];
   schema:description "get velocities object for given parameters.";
 	schema:name "GET VELOCITIES";
@@ -449,24 +425,20 @@
 	];
 .
 
-#WS operation products/coordinates
+#WS products/coordinates
 <GlassFramework/webresources/products/coordinates/> a epos:WebService;
 	schema:identifier "GlassFramework/webresources/products/coordinates";
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID  "DDSS-ID";
-	  schema:value   "WP10-DDSS-009";
+	  schema:value   "WP10-DDSS-007";
 	];
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID  "DDSS-ID";
-	  schema:value   "WP10-DDSS-010";
+	  schema:value   "WP10-DDSS-008";
 	];
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID  "DDSS-ID";
-	  schema:value   "WP10-DDSS-014";
-	];
-	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID  "DDSS-ID";
-	  schema:value  "WP10-DDSS-018";
+	  schema:value   "WP10-DDSS-016";
 	];
   schema:description "get coordinates object for given parameters.";
 	schema:name "GET Coordinates";
@@ -569,5 +541,139 @@
 					hydra:required "false"^^xsd:boolean;				
       ];
 			
+	];
+.
+
+#WS products/files
+<GlassFramework/webresources/files/> a epos:WebService;
+	schema:identifier "GlassFramework/webresources/files";
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "DDSS-ID";
+	  schema:value   "WP10-DDSS-007";
+	];
+  schema:description "Returns the files(s) that match the criteria.";
+	schema:name "GET Files V2";
+	dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
+	schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
+	schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
+	schema:provider <PIC:996437254>;
+	dcat:theme  <#GNSSProductsPortal> ;
+	hydra:entrypoint "http://193.136.66.29:8102/GlassFramework/swagger.json"^^xsd:anyURI;
+ 	schema:keywords "Geodesy", "GNSS" ;
+	dct:conformsTo <GlassFramework/APIDocumentation> ;
+	hydra:supportedOperation <GlassFramework/webresources/files>;
+.
+
+#WS Operation /files
+<GlassFramework/webresources/files> a hydra:Operation;
+ 	hydra:method "GET"^^xsd:string;
+	hydra:returns "json/xml";
+ 	hydra:IriTemplate[ a hydra:IriTemplate;
+	hydra:template "http://193.136.66.29:8102/GlassFramework/webresources/files/{object_type}/{object_instance}/{output_format}"^^xsd:string;
+      hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "object_type"^^xsd:string;
+					rdf:label "the type of the criteria";
+					hydra:required "true"^^xsd:boolean;
+					http:paramValue "data_range";
+					rdf:label "date_from=X&date_to=X";
+					http:paramValue "site";
+      ];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "object_instance"^^xsd:string;
+					rdf:label " the value of the criteria";
+					hydra:required "true"^^xsd:boolean;
+      ];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "output_format"^^xsd:string;
+					rdf:label " the output format; default json";
+					hydra:required "false"^^xsd:boolean;
+					http:value "csv";
+					http:value "json";
+					http:value "xml";				
+      ];			
+	];
+.
+
+#WS stations/v2/list
+<GlassFramework/webresources/stations/v2/list/> a epos:WebService;
+	schema:identifier "GlassFramework/webresources/stations/v2/list/{data}";
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "DDSS-ID";
+	  schema:value   "WP10-DDSS-007";
+	];
+  schema:description "Returns a list containing existing data of the chosen type of data.";
+	schema:name "GET LIST V2";
+	dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
+	schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
+	schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
+	schema:provider <PIC:996437254>;
+	dcat:theme  <#GNSSProductsPortal> ;
+	hydra:entrypoint "http://193.136.66.29:8102/GlassFramework/swagger.json"^^xsd:anyURI;
+ 	schema:keywords "Geodesy", "GNSS" ;
+	dct:conformsTo <GlassFramework/APIDocumentation> ;
+	hydra:supportedOperation <GlassFramework/webresources/stations/v2/list/>;
+.
+
+#WS Operation stations/v2/list/
+<GlassFramework/webresources/stations/v2/list/> a hydra:Operation;
+ 	hydra:method "GET"^^xsd:string;
+	hydra:returns "json/xml";
+ 	hydra:IriTemplate[ a hydra:IriTemplate;
+	hydra:template "http://193.136.66.29:8102/GlassFramework/webresources/stations/v2/list/{data}"^^xsd:string;
+      hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "data"^^xsd:string;
+					rdf:label "the type of the data";
+					hydra:required "true"^^xsd:boolean;
+					http:paramValue "agency";
+					http:paramValue "antenna";
+					http:paramValue "city";
+					http:paramValue "country";
+					http:paramValue "files_type";
+					http:paramValue "network";
+					http:paramValue "radome";
+					http:paramValue "receiver";
+					http:paramValue "state";
+					http:paramValue "station";
+      ];
+			
+	];
+.
+
+#WS stations/v2/list/station
+<GlassFramework/webresources/stations/v2/list/station> a epos:WebService;
+	schema:identifier "GlassFramework/webresources/stations/v2/list/station";
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "DDSS-ID";
+	  schema:value   "WP10-DDSS-007";
+	];
+  schema:description " Returns a list with the name and marker of all the stations or the ones that match the given parameters.";
+	schema:name "GET STATION LIST V2";
+	dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
+	schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
+	schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
+	schema:provider <PIC:996437254>;
+	dcat:theme  <#GNSSProductsPortal> ;
+	hydra:entrypoint "http://193.136.66.29:8102/GlassFramework/swagger.json"^^xsd:anyURI;
+ 	schema:keywords "Geodesy", "GNSS" ;
+	dct:conformsTo <GlassFramework/APIDocumentation> ;
+	hydra:supportedOperation <GlassFramework/webresources/stations/v2/list/station>;
+.
+
+#WS Operation stations/v2/list/station
+<GlassFramework/webresources/stations/v2/list/station> a hydra:Operation;
+ 	hydra:method "GET"^^xsd:string;
+	hydra:returns "json/xml";
+ 	hydra:IriTemplate[ a hydra:IriTemplate;
+	rdf:label "Different parameters should be separated by & (AMPERSAND) ";
+	rdf:label "Multiple values for a parameter should be separated by , (COMMA) ";
+	hydra:template "http://193.136.66.29:8102/GlassFramework/webresources/stations/v2/list/station/{optional_parameters}"^^xsd:string;
+      hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "name"^^xsd:string;
+					hydra:required "false"^^xsd:boolean;
+      ];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "marker"^^xsd:string;
+					hydra:required "false"^^xsd:boolean;
+      ];		
 	];
 .
