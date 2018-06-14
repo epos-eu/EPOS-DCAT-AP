@@ -1,0 +1,321 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .  
+@prefix epos: <http://www.epos-eu.org/epos/dcat-ap#> .  
+@prefix dc: <http://purl.org/dc/elements/1.1/> .  
+@prefix dct: <http://purl.org/dc/terms/> .  
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .  
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .  
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .  
+@prefix bgs: <http://www.bgs.ac.uk#> .  
+@prefix schema: <http://schema.org/> .  
+@prefix dcat: <http://www.w3.org/ns/dcat#> .  
+@prefix cnt: <http://www.w3.org/2011/content#> .   
+@prefix locn: <http://www.w3.org/ns/locn#> . 
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http: <http://www.w3.org/2006/http#> .
+
+<http://orcid.org/0000-0002-1399-0379> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "";
+		schema:value "http://orcid.org/0000-0002-1399-0379";
+	]; 
+	schema:familyName "Fares";
+	schema:givenName "Massimo";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Via di Vigna Murata, 605";
+		schema:addressLocality "Roma";
+		schema:postalCode "00143";
+		schema:addressCountry "ITALY";
+	]; 
+	schema:email "massimo.fares@ingv.it";
+	schema:telephone "+3906******";
+	schema:url "http://orcid.org/0000-0002-1399-0379"^^xsd:anyURI;
+	schema:qualifications "IT";
+	schema:affiliation <PIC:999472675>;
+. 
+
+<webservices.ingv.it/fdsnws/dataselect/1/query> a epos:WebService;
+	schema:identifier "webservices.ingv.it/fdsnws/dataselect/1/query";
+	schema:identifier [ a schema:PropertyValue; 
+		schema:propertyID  "DDSS-ID"; 
+		schema:value  "WP8-DDSS-001"; 
+	]; 
+	schema:description "The dataselect Web service provides access to time series data in miniSEED format. The data may be filtered e.g. by time, station and network parameters. The request type is HTTP-GET and HTTP-POST. Please refer to http://www.fdsn.org/webservice for a complete service description.";
+	schema:name "FDSN Dataselect Web Service at CNT-INGV";
+	schema:datePublished "2016-01-01T00:00:00Z"^^xsd:dateTime;
+	schema:dateModified "2016-01-01T00:00:00Z"^^xsd:dateTime;
+	schema:provider <PIC:999472675>;
+	schema:keywords "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "GFZ,Dataselect,FDSN-WS,Seismic Waveform,EIDA";
+	#hydra:entrypoint "application.wadl"^^xsd:anyURI; 
+	hydra:supportedOperation <webservices.ingv.it/fdsnws/dataselect/1/query/operation>;
+	dcat:theme <#Seismicwaveforms>;
+	dcat:contactPoint <http://orcid.org/0000-0002-1399-0379/contactPoint>;
+	dcat:contactPoint <http://orcid.org/0000-0002-1399-0379/contactPoint>;
+. 
+	<http://orcid.org/0000-0002-1399-0379/contactPoint> a schema:ContactPoint;
+		schema:email "massimo.fares@ingv.it";
+		schema:availableLanguage "en" ;
+. 
+	<http://orcid.org/0000-0002-1399-0379/contactPoint> a schema:ContactPoint;
+		schema:email "massimo.fares@ingv.it";
+		schema:availableLanguage "en" ;
+. 
+
+<webservices.ingv.it/fdsnws/station/1/query> a epos:WebService;
+	schema:identifier "webservices.ingv.it/fdsnws/station/1/query";
+	schema:identifier [ a schema:PropertyValue; 
+		schema:propertyID  "DDSS-ID"; 
+		schema:value  "WP8-DDSS-002"; 
+	]; 
+	schema:description "The fdsnws-station web service returns station metadata in FDSN StationXML format (schema here) or as delimited text. The purpose of the FDSN StationXML schema is to define an XML representation of the most important and commonly used structures of SEED 2.4 metadata. Results are available at multiple levels of granularity: network, station, channel and response.";
+	schema:name "FDSN Station Web Service at CNT-INGV";
+	schema:datePublished "2016-01-01T00:00:00Z"^^xsd:dateTime;
+	schema:dateModified "2016-01-01T00:00:00Z"^^xsd:dateTime;
+	schema:provider <PIC:999472675>;
+	schema:keywords "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling";
+	#hydra:entrypoint "application.wadl"^^xsd:anyURI; 
+	hydra:supportedOperation <webservices.ingv.it/fdsnws/station/1/query/operation>;
+	dcat:theme <#Seismicstations>;
+	dcat:contactPoint <http://orcid.org/0000-0002-1399-0379/contactPoint>;
+	dcat:contactPoint <http://orcid.org/0000-0002-1399-0379/contactPoint>;
+. 
+	<http://orcid.org/0000-0002-1399-0379/contactPoint> a schema:ContactPoint;
+		schema:email "massimo.fares@ingv.it";
+		schema:availableLanguage "en" ;
+. 
+	<http://orcid.org/0000-0002-1399-0379/contactPoint> a schema:ContactPoint;
+		schema:email "massimo.fares@ingv.it";
+		schema:availableLanguage "en" ;
+. 
+
+<PIC:999472675> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "";
+		schema:value "PIC:999472675";
+	]; 
+	schema:legalName "INGV National Institute of Geophysics e Volcanology";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Via di Vigna Murata, 605";
+		schema:addressLocality "Rome";
+		schema:postalCode "00143";
+		schema:addressCountry "ITALY";
+	]; 
+	schema:logo "http://roma2.rm.ingv.it/userfiles/file/Logo/INGV_Logo-abbr_colore.jpg"^^xsd:anyURI;
+	schema:url "http://www.ingv.it"^^xsd:anyURI;
+	schema:contactPoint <http://orcid.org/0000-0002-1399-0379/scientificContact>;
+	schema:contactPoint <http://orcid.org/0000-0002-1399-0379/legalContact>;
+	schema:contactPoint <http://orcid.org/0000-0002-1399-0379/financialContact>;
+. 
+	<http://orcid.org/0000-0002-1399-0379/scientificContact> a schema:ContactPoint;
+		schema:email "massimo.fares@ingv.it";
+		schema:availableLanguage "en" ;
+		schema:contactType "scientificContact" ;
+. 
+	<http://orcid.org/0000-0002-1399-0379/legalContact> a schema:ContactPoint;
+		schema:email "massimo.fares@ingv.it";
+		schema:availableLanguage "en" ;
+		schema:contactType "legalContact" ;
+. 
+	<http://orcid.org/0000-0002-1399-0379/financialContact> a schema:ContactPoint;
+		schema:email "massimo.fares@ingv.it";
+		schema:availableLanguage "en" ;
+		schema:contactType "financialContact" ;
+. 
+	<webservices.ingv.it/fdsnws/dataselect/1/query/operation> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "binary";
+		hydra:IriTemplate[ a hydra:IriTemplate;
+			hydra:template "http://webservices.ingv.it/fdsnws/dataselect/1/query(?starttime, endtime, network, station, location, channel, quality, minimumlength, nodata)"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "starttime"^^xsd:string;
+					rdfs:label "Start of the timespan";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "endtime"^^xsd:string;
+					rdfs:label "End of the timespan";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "network"^^xsd:string;
+					rdfs:label "Network code";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "station"^^xsd:string;
+					rdfs:label "Station code";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "location"^^xsd:string;
+					rdfs:label "Location code";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "channel"^^xsd:string;
+					rdfs:label "Channel code";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "quality"^^xsd:string;
+					rdfs:label "Quality";
+					http:paramValue "D";
+					http:paramValue "R";
+					http:paramValue "Q";
+					http:paramValue "M";
+					http:paramValue "B";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "minimumlength"^^xsd:string;
+					rdfs:label "Minimum Length";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "nodata"^^xsd:string;
+					rdfs:label "HTTP error code if no data is found";
+					http:paramValue "204";
+					http:paramValue "404";
+					hydra:required "true"^^xsd:boolean;
+				];
+		] ;
+. 
+	<webservices.ingv.it/fdsnws/station/1/query/operation> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "xml";
+		hydra:IriTemplate[ a hydra:IriTemplate;
+			hydra:template "http://webservices.ingv.it/fdsnws/station/1/query(?starttime, endtime, network, station, location, channel, minlatitude, maxlatitude, minlongitude, maxlongitude, level, nodata)"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "starttime"^^xsd:string;
+					rdfs:label "Start of the timespan";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "endtime"^^xsd:string;
+					rdfs:label "End of the timespan";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "network"^^xsd:string;
+					rdfs:label "Network code";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "station"^^xsd:string;
+					rdfs:label "Station code";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "location"^^xsd:string;
+					rdfs:label "Location code";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "channel"^^xsd:string;
+					rdfs:label "Channel code";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "minlatitude"^^xsd:string;
+					rdfs:label "Minimum Latitude";
+					schema:minValue "-90.0";
+					schema:maxValue "90.0";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "maxlatitude"^^xsd:string;
+					rdfs:label "Maximum Latitude";
+					schema:minValue "-90.0";
+					schema:maxValue "90.0";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "minlongitude"^^xsd:string;
+					rdfs:label "Minimum Longitude";
+					schema:minValue "-180.0";
+					schema:maxValue "180.0";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "maxlongitude"^^xsd:string;
+					rdfs:label "Maximum Longitude";
+					schema:minValue "-180.0";
+					schema:maxValue "180.0";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "level"^^xsd:string;
+					rdfs:label "Level";
+					http:paramValue "network";
+					http:paramValue "station";
+					http:paramValue "channel";
+					http:paramValue "response";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "nodata"^^xsd:string;
+					rdfs:label "HTTP error code if no data is found";
+					http:paramValue "204";
+					http:paramValue "404";
+					hydra:required "true"^^xsd:boolean;
+				];
+		] ;
+. 
+	<#Seismology> a skos:ConceptScheme;
+		dct:title "Seismology";
+		dct:description "It contains the concepts of Seismology";
+. 
+	<#Seismicwaveforms> a skos:Concept;
+		skos:inScheme <#Seismology>;
+		skos:prefLabel "Seismic waveforms";
+. 
+	<#Seismicstations> a skos:Concept;
+		skos:inScheme <#Seismology>;
+		skos:prefLabel "Seismic stations";
+.
+<WP08/FDSN/DATASELECT> a dcat:Dataset;
+        dct:title "FDSN DATASELECT Dataset";
+        dct:identifier "WP08/FDSN/DATASELECT";
+        dct:description "The dataselect Web service provides access to time series data in miniSEED format. The data may be filtered e.g. by time, station and network parameters. The request type is HTTP-GET and HTTP-POST. Please refer to http://www.fdsn.org/webservice for a complete service description.";
+        ## example of frequency using a controlled vocabulary
+    	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+        dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
+        dct:created "2010-01-01"^^xsd:date;
+        dcat:theme  <#Seismicwaveforms> ;
+        dcat:keyword "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "INGV" , "Dataselect", "FDSN-WS", "Seismic Waveform", "EIDA" ;
+        dcat:contactPoint <http://orcid.org/0000-0002-1399-0379/contactPoint>;
+		dct:publisher <PIC:999472675>;
+        dcat:distribution <WP08/FDSN/DATASELECT/Distribution>;
+.
+<WP08/FDSN/DATASELECT/Distribution> a dcat:Distribution;
+    dct:identifier "WP08/FDSN/DATASELECT/Distribution";
+	dct:description "FDSN DATASELECT Distribution";
+	dct:created "2010-04-01"^^xsd:date;
+	dct:type "http://publications.europa.eu/resource/authority/distributiontype/WEB_SERVICE"^^xsd:anyURI;
+	dcat:accessURL <webservices.ingv.it/fdsnws/dataselect/1/query/operation>;
+	dct:conformsTo <webservices.ingv.it/fdsnws/dataselect/1/query>;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI;
+.
+<WP08/FDSN/STATION> a dcat:Dataset;
+        dct:title "FDSN STATION Dataset";
+        dct:identifier "WP08/FDSN/STATION";
+        dct:description "The dataselect Web service provides access to time series data in miniSEED format. The data may be filtered e.g. by time, station and network parameters. The request type is HTTP-GET and HTTP-POST. Please refer to http://www.fdsn.org/webservice for a complete service description.";
+        ## example of frequency using a controlled vocabulary
+    	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+        dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+        dct:created "2010-04-01"^^xsd:date;
+        dcat:theme  <#Seismicstations> ;
+        dcat:keyword "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "INGV" , "Dataselect", "FDSN-WS", "Seismic Waveform", "EIDA" ;
+        dcat:contactPoint <http://orcid.org/0000-0002-1399-0379/contactPoint>;
+		dct:publisher <PIC:999472675>;
+        dcat:distribution <WP08/FDSN/STATION/Distribution>;
+.
+<WP08/FDSN/STATION/Distribution> a dcat:Distribution;
+    dct:identifier "WP08/FDSN/STATION/Distribution";
+	dct:description "FDSN STATION Distribution";
+	dct:created "2010-01-01"^^xsd:date;
+	dct:type "http://publications.europa.eu/resource/authority/distributiontype/WEB_SERVICE"^^xsd:anyURI;
+	dcat:accessURL <webservices.ingv.it/fdsnws/station/1/query/operation>;
+	dct:conformsTo <webservices.ingv.it/fdsnws/station/1/query>;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
+.
