@@ -16,7 +16,7 @@
 
 <http://orcid.org/0000-0002-8608-4289> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "";
+		schema:propertyID "orcid";
 		schema:value "http://orcid.org/0000-0002-8608-4289";
 	]; 
 	schema:familyName "Carluccio";
@@ -32,11 +32,12 @@
 	schema:url "http://orcid.org/0000-0002-8608-4289"^^xsd:anyURI;
 	schema:qualifications "IT";
 	schema:affiliation <PIC:999472675>;
+        schema:contactPoint <http://orcid.org/0000-0002-8608-4289/contactPoint> ;
 . 
 
 <http://orcid.org/0000-0002-4130-5498> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "";
+		schema:propertyID "orcid";
 		schema:value "http://orcid.org/0000-0002-4130-5498";
 	]; 
 	schema:familyName "Caracausi";
@@ -52,11 +53,12 @@
 	schema:url "http://orcid.org/0000-0002-4130-5498"^^xsd:anyURI;
 	schema:qualifications "Researcher";
 	schema:affiliation <PIC:999472675>;
+        schema:contactPoint <http://orcid.org/0000-0002-4130-5498/scientificContact> ;
 . 
 
 <http://orcid.org/0000-0002-9697-6504> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "";
+		schema:propertyID "orcid";
 		schema:value "http://orcid.org/0000-0002-9697-6504";
 	]; 
 	schema:familyName "Chiaraluce";
@@ -76,7 +78,7 @@
 
 <http://orcid.org/0000-0002-8651-6387> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "";
+		schema:propertyID "orcid";
 		schema:value "http://orcid.org/0000-0002-8651-6387";
 	]; 
 	schema:familyName "Doglioni";
@@ -92,6 +94,28 @@
 	schema:url "http://orcid.org/0000-0002-8651-6387"^^xsd:anyURI;
 	schema:qualifications "Professor";
 	schema:affiliation <PIC:999472675>;
+	schema:contactPoint <http://orcid.org/0000-0002-8651-6387/legalContact> ;
+	schema:contactPoint <http://orcid.org/0000-0002-8651-6387/financialContact> ;
+. 
+
+<http://orcid.org/0000-0002-4130-5498/scientificContact> a schema:ContactPoint;
+		schema:email "antonio.caracausi@ingv.it";
+		schema:availableLanguage "en" ;
+		schema:contactType "scientificContact" ;
+. 
+<http://orcid.org/0000-0002-8651-6387/legalContact> a schema:ContactPoint;
+		schema:email "segreteria.presidenza@ingv.it";
+		schema:availableLanguage "en" ;
+		schema:contactType "legalContact" ;
+. 
+<http://orcid.org/0000-0002-8651-6387/financialContact> a schema:ContactPoint;
+		schema:email "segreteria.presidenza@ingv.it";
+		schema:availableLanguage "en" ;
+		schema:contactType "financialContact" ;
+.
+<http://orcid.org/0000-0002-8608-4289/contactPoint> a schema:ContactPoint;
+	schema:email "ivano.carluccio@ingv.it";
+	schema:availableLanguage "en" ;
 . 
 
 <webservices.ingv.it/ingvws/nfo_taboo/co2> a epos:WebService;
@@ -111,14 +135,10 @@
 	dcat:theme <#CO2concentration>;
 	dcat:contactPoint <http://orcid.org/0000-0002-8608-4289/contactPoint>;
 . 
-	<http://orcid.org/0000-0002-8608-4289/contactPoint> a schema:ContactPoint;
-		schema:email "ivano.carluccio@ingv.it";
-		schema:availableLanguage "en" ;
-. 
 
 <PIC:999472675> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "";
+		schema:propertyID "PIC";
 		schema:value "PIC:999472675";
 	]; 
 	schema:legalName "INGV National Institute of Geophysics e Volcanology";
@@ -134,21 +154,7 @@
 	schema:contactPoint <http://orcid.org/0000-0002-8651-6387/legalContact>;
 	schema:contactPoint <http://orcid.org/0000-0002-8651-6387/financialContact>;
 . 
-	<http://orcid.org/0000-0002-4130-5498/scientificContact> a schema:ContactPoint;
-		schema:email "antonio.caracausi@ingv.it";
-		schema:availableLanguage "en" ;
-		schema:contactType "scientificContact" ;
-. 
-	<http://orcid.org/0000-0002-8651-6387/legalContact> a schema:ContactPoint;
-		schema:email "segreteria.presidenza@ingv.it";
-		schema:availableLanguage "en" ;
-		schema:contactType "legalContact" ;
-. 
-	<http://orcid.org/0000-0002-8651-6387/financialContact> a schema:ContactPoint;
-		schema:email "segreteria.presidenza@ingv.it";
-		schema:availableLanguage "en" ;
-		schema:contactType "financialContact" ;
-. 
+	
 	<webservices.ingv.it/ingvws/nfo_taboo/co2/operation> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "json";
@@ -260,12 +266,12 @@
         dcat:theme  <#CO2concentration> ;
         dcat:keyword "Geochemical", "CO2 concentration", "CO2 flux", "geochemistry" ;
         dcat:contactPoint <http://orcid.org/0000-0002-8608-4289/contactPoint>;
-		dct:publisher <PIC:999472675>;
+	dct:publisher <PIC:999472675>;
         dcat:distribution <WP09/TABOO/CO2/Distribution>;
 .
 
 <WP09/TABOO/CO2/Distribution> a dcat:Distribution;
-    dct:identifier "WP09/TABOO/CO2/Distribution";
+    	dct:identifier "WP09/TABOO/CO2/Distribution";
 	dct:description "TABOO - CO2 Gas soil flux measurements Distribution";
 	dct:created "2017-03-01"^^xsd:date;
 	dct:type "http://publications.europa.eu/resource/authority/distributiontype/WEB_SERVICE"^^xsd:anyURI;
