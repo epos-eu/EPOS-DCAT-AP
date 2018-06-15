@@ -16,7 +16,7 @@
 
 <http://orcid.org/0000-0002-1399-0379> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "";
+		schema:propertyID "orcid";
 		schema:value "http://orcid.org/0000-0002-1399-0379";
 	]; 
 	schema:familyName "Fares";
@@ -31,7 +31,31 @@
 	schema:telephone "+3906******";
 	schema:url "http://orcid.org/0000-0002-1399-0379"^^xsd:anyURI;
 	schema:qualifications "IT";
-	schema:affiliation <PIC:999472675>;
+	schema:affiliation <PIC:999472675> ;
+        schema:contactPoint <http://orcid.org/0000-0002-1399-0379/contactPoint> ;
+	schema:contactPoint <http://orcid.org/0000-0002-1399-0379/scientificContact> ;
+	schema:contactPoint <http://orcid.org/0000-0002-1399-0379/legalContact> ;
+	schema:contactPoint <http://orcid.org/0000-0002-1399-0379/financialContact> ;
+.
+
+<http://orcid.org/0000-0002-1399-0379/contactPoint> a schema:ContactPoint;
+		schema:email "massimo.fares@ingv.it";
+		schema:availableLanguage "en" ;
+.
+<http://orcid.org/0000-0002-1399-0379/scientificContact> a schema:ContactPoint;
+		schema:email "massimo.fares@ingv.it";
+		schema:availableLanguage "en" ;
+		schema:contactType "scientificContact" ;
+. 
+<http://orcid.org/0000-0002-1399-0379/legalContact> a schema:ContactPoint;
+		schema:email "massimo.fares@ingv.it";
+		schema:availableLanguage "en" ;
+		schema:contactType "legalContact" ;
+. 
+<http://orcid.org/0000-0002-1399-0379/financialContact> a schema:ContactPoint;
+		schema:email "massimo.fares@ingv.it";
+		schema:availableLanguage "en" ;
+		schema:contactType "financialContact" ;
 . 
 
 <webservices.ingv.it/fdsnws/dataselect/1/query> a epos:WebService;
@@ -50,16 +74,8 @@
 	hydra:supportedOperation <webservices.ingv.it/fdsnws/dataselect/1/query/operation>;
 	dcat:theme <#Seismicwaveforms>;
 	dcat:contactPoint <http://orcid.org/0000-0002-1399-0379/contactPoint>;
-	dcat:contactPoint <http://orcid.org/0000-0002-1399-0379/contactPoint>;
 . 
-	<http://orcid.org/0000-0002-1399-0379/contactPoint> a schema:ContactPoint;
-		schema:email "massimo.fares@ingv.it";
-		schema:availableLanguage "en" ;
-. 
-	<http://orcid.org/0000-0002-1399-0379/contactPoint> a schema:ContactPoint;
-		schema:email "massimo.fares@ingv.it";
-		schema:availableLanguage "en" ;
-. 
+	
 
 <webservices.ingv.it/fdsnws/station/1/query> a epos:WebService;
 	schema:identifier "webservices.ingv.it/fdsnws/station/1/query";
@@ -77,20 +93,11 @@
 	hydra:supportedOperation <webservices.ingv.it/fdsnws/station/1/query/operation>;
 	dcat:theme <#Seismicstations>;
 	dcat:contactPoint <http://orcid.org/0000-0002-1399-0379/contactPoint>;
-	dcat:contactPoint <http://orcid.org/0000-0002-1399-0379/contactPoint>;
-. 
-	<http://orcid.org/0000-0002-1399-0379/contactPoint> a schema:ContactPoint;
-		schema:email "massimo.fares@ingv.it";
-		schema:availableLanguage "en" ;
-. 
-	<http://orcid.org/0000-0002-1399-0379/contactPoint> a schema:ContactPoint;
-		schema:email "massimo.fares@ingv.it";
-		schema:availableLanguage "en" ;
 . 
 
 <PIC:999472675> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "";
+		schema:propertyID "PIC";
 		schema:value "PIC:999472675";
 	]; 
 	schema:legalName "INGV National Institute of Geophysics e Volcanology";
@@ -106,22 +113,8 @@
 	schema:contactPoint <http://orcid.org/0000-0002-1399-0379/legalContact>;
 	schema:contactPoint <http://orcid.org/0000-0002-1399-0379/financialContact>;
 . 
-	<http://orcid.org/0000-0002-1399-0379/scientificContact> a schema:ContactPoint;
-		schema:email "massimo.fares@ingv.it";
-		schema:availableLanguage "en" ;
-		schema:contactType "scientificContact" ;
-. 
-	<http://orcid.org/0000-0002-1399-0379/legalContact> a schema:ContactPoint;
-		schema:email "massimo.fares@ingv.it";
-		schema:availableLanguage "en" ;
-		schema:contactType "legalContact" ;
-. 
-	<http://orcid.org/0000-0002-1399-0379/financialContact> a schema:ContactPoint;
-		schema:email "massimo.fares@ingv.it";
-		schema:availableLanguage "en" ;
-		schema:contactType "financialContact" ;
-. 
-	<webservices.ingv.it/fdsnws/dataselect/1/query/operation> a hydra:Operation;
+	
+<webservices.ingv.it/fdsnws/dataselect/1/query/operation> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "binary";
 		hydra:IriTemplate[ a hydra:IriTemplate;
@@ -273,6 +266,7 @@
 		skos:inScheme <#Seismology>;
 		skos:prefLabel "Seismic stations";
 .
+
 <WP08/FDSN/DATASELECT> a dcat:Dataset;
         dct:title "FDSN DATASELECT Dataset";
         dct:identifier "WP08/FDSN/DATASELECT";
@@ -284,11 +278,12 @@
         dcat:theme  <#Seismicwaveforms> ;
         dcat:keyword "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "INGV" , "Dataselect", "FDSN-WS", "Seismic Waveform", "EIDA" ;
         dcat:contactPoint <http://orcid.org/0000-0002-1399-0379/contactPoint>;
-		dct:publisher <PIC:999472675>;
+	dct:publisher <PIC:999472675>;
         dcat:distribution <WP08/FDSN/DATASELECT/Distribution>;
 .
+
 <WP08/FDSN/DATASELECT/Distribution> a dcat:Distribution;
-    dct:identifier "WP08/FDSN/DATASELECT/Distribution";
+    	dct:identifier "WP08/FDSN/DATASELECT/Distribution";
 	dct:description "FDSN DATASELECT Distribution";
 	dct:created "2010-04-01"^^xsd:date;
 	dct:type "http://publications.europa.eu/resource/authority/distributiontype/WEB_SERVICE"^^xsd:anyURI;
@@ -296,6 +291,7 @@
 	dct:conformsTo <webservices.ingv.it/fdsnws/dataselect/1/query>;
 	dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI;
 .
+
 <WP08/FDSN/STATION> a dcat:Dataset;
         dct:title "FDSN STATION Dataset";
         dct:identifier "WP08/FDSN/STATION";
@@ -307,11 +303,12 @@
         dcat:theme  <#Seismicstations> ;
         dcat:keyword "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "INGV" , "Dataselect", "FDSN-WS", "Seismic Waveform", "EIDA" ;
         dcat:contactPoint <http://orcid.org/0000-0002-1399-0379/contactPoint>;
-		dct:publisher <PIC:999472675>;
+	dct:publisher <PIC:999472675>;
         dcat:distribution <WP08/FDSN/STATION/Distribution>;
 .
+
 <WP08/FDSN/STATION/Distribution> a dcat:Distribution;
-    dct:identifier "WP08/FDSN/STATION/Distribution";
+	dct:identifier "WP08/FDSN/STATION/Distribution";
 	dct:description "FDSN STATION Distribution";
 	dct:created "2010-01-01"^^xsd:date;
 	dct:type "http://publications.europa.eu/resource/authority/distributiontype/WEB_SERVICE"^^xsd:anyURI;
