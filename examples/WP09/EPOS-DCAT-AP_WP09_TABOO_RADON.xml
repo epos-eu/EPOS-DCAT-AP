@@ -178,7 +178,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 			e.g. 'seism','gps'  (i.e. namespace)-->
         <eposap:parameter>
 			<http:paramName>mintime</http:paramName>
-			<rdf:label>minimum time</rdf:label>
+			<rdf:label>Minimum time</rdf:label>
 			<dct:type> <!-- This property refers to parameter type -->
 				datetime
 			</dct:type>
@@ -189,7 +189,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
                 
         <eposap:parameter>
 			<http:paramName>maxtime</http:paramName>
-			<rdf:label>maximum time</rdf:label>
+			<rdf:label>Maximum time</rdf:label>
 			<dct:type> <!-- This property refers to parameter type -->
 				datetime
 			</dct:type>
@@ -200,7 +200,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
                 
 		<eposap:parameter>
 			<http:paramName>minlat</http:paramName>
-			<rdf:label>minimum Latitude</rdf:label>
+			<rdf:label>Minimum Latitude</rdf:label>
 			<dct:type> <!-- This property refers to parameter type -->
 				float
 			</dct:type>
@@ -211,7 +211,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
                 
         <eposap:parameter>
 			<http:paramName>maxlat</http:paramName>
-			<rdf:label>maximum Latitude</rdf:label>
+			<rdf:label>Maximum Latitude</rdf:label>
 			<dct:type> <!-- This property refers to parameter type -->
 				float
 			</dct:type>
@@ -222,7 +222,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
                 
         <eposap:parameter>
 			<http:paramName>minlon</http:paramName>
-			<rdf:label>minimum Longitude</rdf:label>
+			<rdf:label>Minimum Longitude</rdf:label>
 			<dct:type> <!-- This property refers to parameter type -->
 				float
 			</dct:type>
@@ -233,7 +233,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
                 
         <eposap:parameter>
 			<http:paramName>maxlon</http:paramName>
-			<rdf:label>maximum Longitude</rdf:label>
+			<rdf:label>Maximum Longitude</rdf:label>
 			<dct:type> <!-- This property refers to parameter type -->
 				float
 			</dct:type>
@@ -244,20 +244,20 @@ xmlns:adms="http://www.w3.org/ns/adms#"
                 <!-- -->
         <eposap:parameter>
 			<http:paramName>minperiod</http:paramName>
-			<rdf:label>minimum "sampling period" allowed to extract data</rdf:label>
+			<rdf:label>Minimum "sampling period" allowed to extract data [minutes]</rdf:label>
 			<dct:type> <!-- This property refers to parameter type -->
-				ISO 8601
+				float
 			</dct:type>
 			<!-- allowed vocabulary terms, optional tag -->
-			<schema:minValue>PT1S</schema:minValue> 
+			<schema:minValue></schema:minValue> 
 			<schema:maxValue></schema:maxValue>
 		</eposap:parameter>
                 
         <eposap:parameter>
-			<http:paramName>maxeqdepth</http:paramName>
-			<rdf:label>maximum "sampling period" allowed to extract data</rdf:label>
+			<http:paramName>maxperiod</http:paramName>
+			<rdf:label>Maximum "sampling period" allowed to extract data [minutes]</rdf:label>
 			<dct:type> <!-- This property refers to parameter type -->
-				ISO 8601
+				float
 			</dct:type>
 			<!-- allowed vocabulary terms, optional tag -->
 			<schema:minValue></schema:minValue> 
@@ -266,10 +266,14 @@ xmlns:adms="http://www.w3.org/ns/adms#"
                 
         <eposap:parameter>
 			<http:paramName>type_site</http:paramName>
-			<rdf:label>nickname of type of installation</rdf:label>
+			<rdf:label>Nickname of type of installation</rdf:label>
 			<dct:type> <!-- This property refers to parameter type -->
 				string
 			</dct:type>
+			<http:paramValue>indoor</http:paramValue>
+			<http:paramValue>shelter</http:paramValue>
+			<http:paramValue>borehole</http:paramValue>
+			<http:paramValue>soil</http:paramValue>
 		</eposap:parameter>
                 
         <eposap:parameter>
@@ -287,10 +291,10 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 			<http:paramName>max_int_delta</http:paramName>
 			<rdf:label>maximum distance in time between internal temperature</rdf:label>
 			<dct:type> <!-- This property refers to parameter type -->
-				ISO 8601
+				float
 			</dct:type>
 			<!-- allowed vocabulary terms, optional tag -->
-            <schema:minValue>PT0S</schema:minValue> 
+            <schema:minValue>0</schema:minValue> 
 			<schema:maxValue></schema:maxValue>
 		</eposap:parameter>
         

@@ -200,29 +200,29 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 			e.g. 'seism','gps'  (i.e. namespace)-->
         <eposap:parameter>
 			<http:paramName>mintime</http:paramName>
-			<rdf:label>minimum time</rdf:label>
+			<rdf:label>Minimum Time</rdf:label>
 			<dct:type> <!-- This property refers to parameter type -->
 				datetime
 			</dct:type>
 			<!-- These properties refer to range value of the parameter -->
-			<schema:minValue>2001-12-31T12:00:00</schema:minValue> 
-			<schema:maxValue>2017-06-20T12:00:00</schema:maxValue>
+			<schema:minValue>2001-12-31T12:00:00.000Z</schema:minValue> 
+			<schema:maxValue>2017-06-20T12:00:00.000Z</schema:maxValue>
 		</eposap:parameter>
                 
         <eposap:parameter>
 			<http:paramName>maxtime</http:paramName>
-			<rdf:label>maximum time</rdf:label>
+			<rdf:label>Maximum Time</rdf:label>
 			<dct:type> <!-- This property refers to parameter type -->
 				datetime
 			</dct:type>
 			<!-- These properties refer to range value of the parameter -->
-			<schema:minValue>2001-12-31T12:00:00</schema:minValue> 
-			<schema:maxValue>2017-06-20T12:00:00</schema:maxValue>
+			<schema:minValue>2001-12-31T12:00:00.000Z</schema:minValue> 
+			<schema:maxValue>2017-06-20T12:00:00.000Z</schema:maxValue>
 		</eposap:parameter>
                 
 		<eposap:parameter>
 			<http:paramName>minlat</http:paramName>
-			<rdf:label>minimum Latitude</rdf:label>
+			<rdf:label>Minimum Latitude</rdf:label>
 			<dct:type> <!-- This property refers to parameter type -->
 				float
 			</dct:type>
@@ -233,7 +233,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
                 
         <eposap:parameter>
 			<http:paramName>maxlat</http:paramName>
-			<rdf:label>maximum Latitude</rdf:label>
+			<rdf:label>Maximum Latitude</rdf:label>
 			<dct:type> <!-- This property refers to parameter type -->
 				float
 			</dct:type>
@@ -244,7 +244,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
                 
         <eposap:parameter>
 			<http:paramName>minlon</http:paramName>
-			<rdf:label>minimum Longitude</rdf:label>
+			<rdf:label>Minimum Longitude</rdf:label>
 			<dct:type> <!-- This property refers to parameter type -->
 				float
 			</dct:type>
@@ -255,7 +255,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
                 
         <eposap:parameter>
 			<http:paramName>maxlon</http:paramName>
-			<rdf:label>maximum Longitude</rdf:label>
+			<rdf:label>Maximum Longitude</rdf:label>
 			<dct:type> <!-- This property refers to parameter type -->
 				float
 			</dct:type>
@@ -266,9 +266,9 @@ xmlns:adms="http://www.w3.org/ns/adms#"
                 <!-- -->
         <eposap:parameter>
 			<http:paramName>mineqdepth</http:paramName>
-			<rdf:label>minimum Earthquake Depth</rdf:label>
+			<rdf:label>Minimum Earthquake Depth</rdf:label>
 			<dct:type> <!-- This property refers to parameter type -->
-				int
+				integer
 			</dct:type>
 			<!-- allowed vocabulary terms, optional tag -->
 			<schema:minValue>-1</schema:minValue> 
@@ -277,9 +277,9 @@ xmlns:adms="http://www.w3.org/ns/adms#"
                 
         <eposap:parameter>
 			<http:paramName>maxeqdepth</http:paramName>
-			<rdf:label>maximum Earhquake Depth</rdf:label>
+			<rdf:label>Maximum Earhquake Depth</rdf:label>
 			<dct:type> <!-- This property refers to parameter type -->
-				int
+				integer
 			</dct:type>
 			<!-- allowed vocabulary terms, optional tag -->
 			<schema:minValue>-1</schema:minValue> 
@@ -288,7 +288,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
                 
         <eposap:parameter>
 			<http:paramName>minnp</http:paramName>
-			<rdf:label>number of p-waves onset observations</rdf:label>
+			<rdf:label>Number of p-waves onset observations</rdf:label>
 			<dct:type> <!-- This property refers to parameter type -->
 				integer
 			</dct:type>
@@ -299,7 +299,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
                 
         <eposap:parameter>
 			<http:paramName>minns</http:paramName>
-			<rdf:label>number of s-waves onset observations</rdf:label>
+			<rdf:label>Number of s-waves onset observations</rdf:label>
 			<dct:type> <!-- This property refers to parameter type -->
 				integer
 			</dct:type>
@@ -310,7 +310,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
                 <!-- -->
         <eposap:parameter>
 			<http:paramName>maxpw</http:paramName>
-			<rdf:label>quality hypoinverse standard weight</rdf:label>
+			<rdf:label>P-phase onset Hypoinverse standard quality weight</rdf:label>
 			<dct:type> <!-- This property refers to parameter type -->
 				integer
 			</dct:type>
@@ -321,7 +321,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
                 
         <eposap:parameter>
 			<http:paramName>maxsw</http:paramName>
-			<rdf:label>quality hypoinverse standard weight</rdf:label>
+			<rdf:label>S-phase onset Hypoinverse standard quality weight</rdf:label>
 			<dct:type> <!-- This property refers to parameter type -->
 				integer
 			</dct:type>
@@ -332,7 +332,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
                 
         <eposap:parameter>
 			<http:paramName>minps</http:paramName>
-			<rdf:label>number of P and S couples per earthquake</rdf:label>
+			<rdf:label>Number of P and S couples per earthquake</rdf:label>
 			<dct:type> <!-- This property refers to parameter type -->
 				integer
 			</dct:type>
@@ -343,7 +343,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
                 
         <eposap:parameter>
 			<http:paramName>maxgap</http:paramName>
-			<rdf:label>degrees of azimuthal stations distribution gap per earthquake</rdf:label>
+			<rdf:label>Degrees of azimuthal stations distribution gap per earthquake</rdf:label>
             <dct:type> <!-- This property refers to parameter type -->
 				float
 			</dct:type>
@@ -354,35 +354,35 @@ xmlns:adms="http://www.w3.org/ns/adms#"
                 
         <eposap:parameter>
 			<http:paramName>midi</http:paramName>
-			<rdf:label>horizontal distance of the closest station from a earthquake</rdf:label>
+			<rdf:label>Horizontal distance of the closest station from a earthquake</rdf:label>
 			<dct:type> <!-- This property refers to parameter type -->
 				float
 			</dct:type>
 			<!-- allowed vocabulary terms, optional tag -->
-			<schema:minValue>0,00</schema:minValue> 
-			<schema:maxValue>40000,00</schema:maxValue>
+			<schema:minValue>0.00</schema:minValue> 
+			<schema:maxValue>40000.00</schema:maxValue>
 		</eposap:parameter>
                 <!--  -->
         <eposap:parameter>
 			<http:paramName>maxherr</http:paramName>
-			<rdf:label>maximum allowed formal horizontal error in earthquake location</rdf:label>
+			<rdf:label>Maximum allowed formal horizontal error in earthquake location</rdf:label>
 			<dct:type> <!-- This property refers to parameter type -->
 				float
 			</dct:type>
 			<!-- allowed vocabulary terms, optional tag -->
-			<schema:minValue>0,00</schema:minValue> 
-			<schema:maxValue>40000,00</schema:maxValue>
+			<schema:minValue>0.00</schema:minValue> 
+			<schema:maxValue>40000.00</schema:maxValue>
 		</eposap:parameter>
         
         <eposap:parameter>
 			<http:paramName>maxverr</http:paramName>
-			<rdf:label>maximum allowed formal vertical error in earthquake location</rdf:label>
+			<rdf:label>Maximum allowed formal vertical error in earthquake location</rdf:label>
 			<dct:type> <!-- This property refers to parameter type -->
 				float
 			</dct:type>
 			<!-- allowed vocabulary terms, optional tag -->
-			<schema:minValue>0,00</schema:minValue> 
-			<schema:maxValue>6378,00</schema:maxValue>
+			<schema:minValue>0.00</schema:minValue> 
+			<schema:maxValue>6378.00</schema:maxValue>
 		</eposap:parameter>
         
 		<!-- The document is meant to be human readable (e.g. PDF, doc, and so on). 
