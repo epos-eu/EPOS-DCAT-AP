@@ -191,7 +191,7 @@
 		</eposap:subDomain>
         
         <!-- Keywords, annotation. Simple and free (web annotation ontology in the future) -->
-		<dcat:keyword>Geochemical, CO2 concentration, geochemistry</dcat:keyword> <!-- Keywords -->
+		<dcat:keyword>Geochemical, CO2 concentration, CO2 flux, geochemistry</dcat:keyword> <!-- Keywords -->
 		<eposap:operation>execute</eposap:operation>
 		<dct:hasVersion>0.1</dct:hasVersion>
         
@@ -202,36 +202,38 @@
 			e.g. 'seism','gps'  (i.e. namespace)-->
         <eposap:parameter>
 			<http:paramName>param_name</http:paramName>
-			<rdf:label>name of the physical parameter (co2_flux, co2_concentration)</rdf:label>
+			<rdf:label>Physical parameter</rdf:label>
 			<dct:type> <!-- This property refers to parameter type -->
 				string
 			</dct:type>
+			<http:paramValue>co2_flux</http:paramValue>
+			<http:paramValue>co2_concentration</http:paramValue>
 		</eposap:parameter>
         <eposap:parameter>
 			<http:paramName>mintime</http:paramName>
-			<rdf:label>minimum time</rdf:label>
+			<rdf:label>Minimum time</rdf:label>
 			<dct:type> <!-- This property refers to parameter type -->
 				datetime
 			</dct:type>
 			<!-- These properties refer to range value of the parameter -->
-			<schema:minValue>2001-12-31T12:00:00.000</schema:minValue> 
-			<schema:maxValue>2017-06-20T12:00:00.000</schema:maxValue>
+			<schema:minValue>2001-12-31T12:00:00.000Z</schema:minValue> 
+			<schema:maxValue>2017-06-20T12:00:00.000Z</schema:maxValue>
 		</eposap:parameter>
                 
         <eposap:parameter>
 			<http:paramName>maxtime</http:paramName>
-			<rdf:label>maximum time</rdf:label>
+			<rdf:label>Maximum time</rdf:label>
 			<dct:type> <!-- This property refers to parameter type -->
 				datetime
 			</dct:type>
 			<!-- These properties refer to range value of the parameter -->
-			<schema:minValue>2001-12-31T12:00:00.000</schema:minValue> 
-			<schema:maxValue>2017-06-20T12:00:00.000</schema:maxValue>
+			<schema:minValue>2001-12-31T12:00:00.000Z</schema:minValue> 
+			<schema:maxValue>2017-06-20T12:00:00.000Z</schema:maxValue>
 		</eposap:parameter>
                 
 		<eposap:parameter>
 			<http:paramName>minlat</http:paramName>
-			<rdf:label>minimum Latitude</rdf:label>
+			<rdf:label>Minimum Latitude</rdf:label>
 			<dct:type> <!-- This property refers to parameter type -->
 				float
 			</dct:type>
@@ -242,7 +244,7 @@
                 
         <eposap:parameter>
 			<http:paramName>maxlat</http:paramName>
-			<rdf:label>maximum Latitude</rdf:label>
+			<rdf:label>Maximum Latitude</rdf:label>
 			<dct:type> <!-- This property refers to parameter type -->
 				float
 			</dct:type>
@@ -253,7 +255,7 @@
                 
         <eposap:parameter>
 			<http:paramName>minlon</http:paramName>
-			<rdf:label>minimum Longitude</rdf:label>
+			<rdf:label>Minimum Longitude</rdf:label>
 			<dct:type> <!-- This property refers to parameter type -->
 				float
 			</dct:type>
@@ -264,7 +266,7 @@
                 
         <eposap:parameter>
 			<http:paramName>maxlon</http:paramName>
-			<rdf:label>maximum Longitude</rdf:label>
+			<rdf:label>Maximum Longitude</rdf:label>
 			<dct:type> <!-- This property refers to parameter type -->
 				float
 			</dct:type>
@@ -273,33 +275,48 @@
 			<schema:maxValue>90</schema:maxValue>
 		</eposap:parameter>
                 <!-- -->
-        <eposap:parameter>
+      <eposap:parameter>
 			<http:paramName>minperiod</http:paramName>
-			<rdf:label>minimum "sampling period" allowed to extract data</rdf:label>
+			<rdf:label>Minimum "sampling period" allowed to extract data [minutes]</rdf:label>
 			<dct:type> <!-- This property refers to parameter type -->
-				ISO 8601
+				float
 			</dct:type>
 			<!-- allowed vocabulary terms, optional tag -->
-			<schema:minValue>PT1S</schema:minValue> 
+			<schema:minValue></schema:minValue> 
+			<schema:maxValue></schema:maxValue>
+		</eposap:parameter>
+                
+        <eposap:parameter>
+			<http:paramName>maxperiod</http:paramName>
+			<rdf:label>Maximum "sampling period" allowed to extract data [minutes]</rdf:label>
+			<dct:type> <!-- This property refers to parameter type -->
+				float
+			</dct:type>
+			<!-- allowed vocabulary terms, optional tag -->
+			<schema:minValue></schema:minValue> 
 			<schema:maxValue></schema:maxValue>
 		</eposap:parameter>
                 
         <eposap:parameter>
 			<http:paramName>inst_type</http:paramName>
-			<rdf:label>nickname of type of installation</rdf:label>
+			<rdf:label>Nickname of type of installation</rdf:label>
 			<dct:type> <!-- This property refers to parameter type -->
 				string
 			</dct:type>
+			<http:paramValue>indoor</http:paramValue>
+			<http:paramValue>shelter</http:paramValue>
+			<http:paramValue>borehole</http:paramValue>
+			<http:paramValue>soil</http:paramValue>
 		</eposap:parameter>
                 
         <eposap:parameter>
 			<http:paramName>max_int_delta</http:paramName>
-			<rdf:label>maximum distance in time between internal temperature</rdf:label>
+			<rdf:label>Maximum distance in time between internal temperature</rdf:label>
 			<dct:type> <!-- This property refers to parameter type -->
-				ISO 8601
+				float
 			</dct:type>
 			<!-- allowed vocabulary terms, optional tag -->
-            <schema:minValue>PT0S</schema:minValue> 
+            <schema:minValue>0</schema:minValue> 
 			<schema:maxValue></schema:maxValue>
 		</eposap:parameter>
         
