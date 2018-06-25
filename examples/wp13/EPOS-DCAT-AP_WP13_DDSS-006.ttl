@@ -87,7 +87,7 @@
 	schema:provider <PIC:999997930>;
 	schema:keywords "GEO-EFFECTIVITY", "GEOMAGNETIC ACTIVITY", "GEOMAGNETIC INDEX", "GEOMAGNETIC STORM", "GEOMAGNETISM", "INTERPLANETARY MAGNETIC FIELD (IMF)", "			IONOSPHERE", "MAGNETIC FIELD", "MAGNETISM", "MAGNETOSPHERE", "RAPID MAGNETIC VARIATIONS", "SOLAR CYCLE", "SOLAR QUIET", "SOLAR STORM", "SPACE-WEATHER", "			TIME SERIES";
 	#hydra:entrypoint "application.wadl"^^xsd:anyURI; 
-	hydra:supportedOperation <http://isgi.unistra.fr/ws?/operation>;
+	hydra:supportedOperation <http://geomag.bgs.ac.uk/EPOS/WP13/isgi/operation>;
 	dcat:theme <#MagneticActivity> ;
 	dcat:contactPoint <http://orcid.org/0000-0001-8793-1315/contactPoint>;
 . 
@@ -129,17 +129,11 @@
 		schema:availableLanguage "en" ;
 		schema:contactType "financialContact" ;
 . 
-	<http://isgi.unistra.fr/ws?/operation> a hydra:Operation;
+	<http://geomag.bgs.ac.uk/EPOS/WP13/isgi/operation> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "zip";
 		hydra:IriTemplate[ a hydra:IriTemplate;
-			hydra:template "http://isgi.unistra.fr/ws(?user, index, StartTime, EndTime)"^^xsd:string;
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "user"^^xsd:string;
-					rdfs:label "userName";
-					http:paramValue "TBD";
-					hydra:required "true"^^xsd:boolean;
-				];
+			hydra:template "http://geomag.bgs.ac.uk/EPOS/WP13/isgi/(?index, StartTime, EndTime)"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "index"^^xsd:string;
 					rdfs:label "GeomagneticIndex";
