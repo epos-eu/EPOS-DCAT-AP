@@ -17,13 +17,17 @@ Status of metadata RDF/TTL:
   - WP13-DDSS-001 - INTERMAGNET: Updated to access new WP13 proxy server
                                  Avoids problems with digest authentication
   - WP13-DDSS-001 - WDC: Converted from previously unvalidated XML file
-                         Waiting resolution of issue #158 (RESTful parameter types)
-                         This seems possible with a Hydra:template and I've tried to implement a solution.
+                         Updated to use hydra template - allows use of 
+                         RESTful parameter types
   - WP13-DDSS-002 - IMAGE: Converted from previously validated XML file
   - WP13-DDSS-006 - ISGI: Converted from previously unvalidated XML file
-                          Waiting resolution of issue #215 (Hidden web service parameters)
+                          Updated to access new WP13 proxy server
+                          Gets around 'hidden parameter' problem while
+                          we investigate AAAI
   - WP13-DDSS-007 - ISGI: Converted from previously unvalidated XML file
-                          Waiting resolution of issue #215 (Hidden web service parameters)
+                          Updated to access new WP13 proxy server
+                          Gets around 'hidden parameter' problem while
+                          we investigate AAAI
   - WP13-DDSS-008 - IMAGE: Converted from previously validated XML file
   - WP13-DDSS-013 - WMM: Converted from previously validated XML file
   - WP13-DDSS-013 - IGRF: Converted from previously validated XML file
