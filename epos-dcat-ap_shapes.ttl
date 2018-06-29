@@ -519,6 +519,11 @@ epos:CatalogRecordShape
       sh:path dct:title ;
       sh:datatype xsd:string;
     ] ;
+
+  sh:property [
+      sh:path dct:description ;
+      sh:datatype xsd:string;
+    ] ;
   .
 
 #shapes
@@ -915,6 +920,11 @@ epos:WebServiceShape
 ####
 # WebService Optional properties
 ###
+
+ sh:property [
+      sh:path dct:spatial ;
+      sh:class dct:Location;
+    ] ;
 
   sh:property [
       sh:path hydra:supportedOperation ;
@@ -1572,6 +1582,9 @@ epos:DistributionShape
         [
       sh:class hydra:Operation ;
         ]
+	[
+      sh:datatype xsd:anyURI;
+        ]
       ) ;
 
       sh:minCount 1 ;
@@ -1718,7 +1731,8 @@ epos:DistributionShape
 
   sh:property [
       sh:path dcat:downloadURL ;
-      sh:class rdfs:Resource ;
+      #sh:class rdfs:Resource ;
+      sh:datatype xsd:anyURI;
     ] ;
 
   sh:property [
