@@ -239,7 +239,7 @@ epos:DateOrDateTimeDataType
 epos:ContactPointType
   a sh:NodeShape ;
   sh:description "A vcard:Kind or schema:ContactPoint"@en  ;
-  sh:message "The values must be data either vcard:Kind or       schema:ContactPoint"@en  ;
+  sh:message "The values must be data either vcard:Kind or schema:ContactPoint"@en  ;
   sh:or (
       [
         sh:class vcard:Kind ;
@@ -753,7 +753,7 @@ epos:ContactPointShape
       sh:minCount 1 ;
       sh:message "contactType is recommended. Please fill in a value (i.e., legalContact OR financialContact OR scientificContact OR manager"@en  ;
       sh:severity sh:Warning ;
-      sh:in ( "legalContact" "financialContact" "scientificContact" "manager" );
+      #sh:in ( "legalContact" "financialContact" "scientificContact" "manager" );
 
     ] ;
 
@@ -1086,13 +1086,13 @@ epos:EquipmentShape
 # Equipment Mandatory properties
 ###
  sh:property [
-      sh:path dct:description ;
+      sh:path schema:description ;
       sh:minCount 1 ;
       sh:maxCount 1 ;
       sh:datatype xsd:string;
  ] ;
  sh:property [
-      sh:path dct:identifier ;
+      sh:path schema:identifier ;
       sh:or (
         [
           sh:datatype xsd:string;
@@ -1105,7 +1105,7 @@ epos:EquipmentShape
       sh:maxCount 1 ;
  ] ;
  sh:property [
-      sh:path dct:title ;
+      sh:path schema:name ;
       sh:minCount 1 ;
       sh:maxCount 1 ;
       sh:datatype xsd:string;
@@ -1210,6 +1210,26 @@ epos:EquipmentShape
       sh:path epos:annotation ;
       sh:class oa:Annotation;
  ] ;
+
+sh:property [
+      sh:path schema:startDate ;
+      sh:node epos:DateOrDateTimeDataType ;
+ ] ;
+
+sh:property [
+      sh:path schema:endDate ;
+      sh:node epos:DateOrDateTimeDataType ;
+ ] ;
+
+sh:property [
+      sh:path dct:relation ;
+      sh:class rdfs:Resource ;
+] ;
+
+sh:property [
+     sh:path dcat:theme ;
+     sh:class skos:Concept ;
+] ;
 .
 
 epos:DatasetShape
@@ -1527,6 +1547,12 @@ epos:FacilityShape
   ####
   # Facility Optional properties
   ###
+
+   sh:property [
+      sh:path dct:isPartOf ;
+      sh:class epos:Facility;
+   ] ;
+
    sh:property [
       sh:path vcard:hasAddress ;
       sh:class vcard:Address;
