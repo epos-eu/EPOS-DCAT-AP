@@ -22,6 +22,7 @@
 		<!-- WFS GetCaps /wfs:WFS_Capabilities/ows:ServiceProvider/ows:ServiceContact/ows:ContactInfo/ows:Address/ows:ElectronicMailAddress -->
 		<vcard:hasTelephone/>
 		<dct:identifier>mailto:contact-brgm@brgm.fr</dct:identifier>
+		<!--<dct:identifier>http://TBD.support.brgm.fr</dct:identifier>-->
 		<!-- TBD : identifier of 'Support BRGM' ? within EPOS Granularity database ?-->
 		<!-- Unique Identifier -->
 		<eposap:affiliation>PIC:999993662</eposap:affiliation>
@@ -62,6 +63,7 @@
 		<!-- Unique Identifier of BRGM in which system ? within EPOS Granularity database ? -->
 		<!-- AFAIK, I cannot build a URI using BRGM PIC : 999993662 that will land on some ec.europa.eu webpage like ec.europa.eu/PIC/999993662 -->
 		<!-- http://viaf.org/viaf/150807757/ -->
+		<!-- http://www.isni.org/isni/0000000121846484.xml -->
 		<eposap:scientificContact>mailto:contact-brgm@brgm.fr</eposap:scientificContact>
 		<!-- TBD : identifier of 'Support BRGM' ?-->
 		<!-- Scientific
@@ -89,15 +91,15 @@
 	</eposap:Organisation>
 	<!-- EPOS WebService -->
 	<eposap:WebService>
-		<dct:title>EPOS TCS Geological Information and Modelling index discovery service</dct:title>
+		<dct:title>Borehole Data Index Discovery Service</dct:title>
 		<!-- WFS GetCaps /wfs:WFS_Capabilities/ows:ServiceIdentification/ows:Title -->
 		<!-- abstract -->
-		<dct:description>This WFS enables searching through various indices provided by EPOS TCS Geological Information and Modelling.</dct:description>
+		<dct:description>This WFS enables to discover boreholes entities through spatial and attribute based queries.</dct:description>
 		<!-- WFS GetCaps /wfs:WFS_Capabilities/ows:ServiceIdentification/ows:Abstract -->
 		<dct:issued>2016-10-27T00:00:00</dct:issued>
 		<!-- WFS GetCaps ? -->
 		<!-- date of publication -->
-		<dct:modified>2017-07-04T00:00:00</dct:modified>
+		<dct:modified>2018-01-19T00:00:00</dct:modified>
 		<!-- WFS GetCaps ? -->
 		<!-- date of revision -->
 		<!--
@@ -131,7 +133,8 @@
 			the CRS should be specified with the relevant URI.
 			The base URI is:
 			http://www.opengis.net/def/crs/ -->
-		<dct:conformsTo>EPSG:4326</dct:conformsTo> <!--question : no sense to define it at GetCapabilities level --> 
+		<dct:conformsTo>EPSG:4326</dct:conformsTo>
+		<!--question : no sense to define it at GetCapabilities level -->
 		<!-- WFS GetCaps FeatureType 'gsmlp:BoreholeView' /wfs:WFS_Capabilities/FeatureTypeList/FeatureType[1]/DefaultCRS-->
 		<!-- Spatial Reference System -->
 		<dct:identifier>http://resource.europe-geology.eu/service/wfsBorehole?</dct:identifier>
@@ -157,9 +160,11 @@
 		<dcat:keyword>Borehole, Borehole Index, Geology, INSPIRE:GE, GeoSciML</dcat:keyword>
 		<!-- Keywords -->
 		<eposap:operation>GetCapabilities</eposap:operation>
-		<dct:hasVersion>2.0.2</dct:hasVersion> <!-- question : version is not of use for a GetCapabilities-->
+		<dct:hasVersion>2.0.2</dct:hasVersion>
+		<!-- question : version is not of use for a GetCapabilities-->
 		<!-- WFS GetCaps GetCapabilities operation /wfs:WFS_Capabilities/ows:OperationsMetadata/ows:Operation[1]/ows:Parameter[1]/ows:AllowedValues-->
 		<!-- Several formats support is usual in OGC services -->
+		<!-- Decision WP6/7 - WP15 session in KeyWorth ICS-C meeting 20171213: we explicitely list the attributes in the xsd to help test the connexion of the GUI to the service-->
 		<!-- Decision WP6/7 - WP15 20170724 webconf: the GUI will be able to interact generically with standards OGC services -> thus just the GetCapabilities is mapped. Few fields are mandatory  according to OGC 09-025r2  (WFS 2.02) and OGC 06-121r9 (OWS Common)-->
 		<!-- This rationale implies that the ICS-C will learn from the WFS DescribeFeatureType operation response the structure of the BoreholeIndex (xsd + link to vocabularies)-->
 		<eposap:parameter>
@@ -168,23 +173,226 @@
 			<dct:type>string</dct:type>
 			<http:paramValue>WFS</http:paramValue>
 		</eposap:parameter>
-		<eposap:parameter>
+		<!--<eposap:parameter>
 			<http:paramName>request</http:paramName>
 			<rdf:label>request</rdf:label>
 			<dct:type>string</dct:type>
 			<http:paramValue>GetCapabilities</http:paramValue>
+		</eposap:parameter>-->
+		<eposap:parameter>
+			<http:paramName>request</http:paramName>
+			<rdf:label>Request type</rdf:label>
+			<dct:type>string</dct:type>
+			<http:paramValue>GetFeature</http:paramValue>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>typenames</http:paramName>
+			<rdf:label>FeatureType</rdf:label>
+			<dct:type>string</dct:type>
+			<http:paramValue>gsmlp:BoreholeView</http:paramValue>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>version</http:paramName>
+			<rdf:label>WFS version</rdf:label>
+			<dct:type>string</dct:type>
+			<http:paramValue>2.0.2</http:paramValue>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>count</http:paramName>
+			<rdf:label>WFS count parameter</rdf:label>
+			<!-- just here for test purpose to limit the number of Features requested-->
+			<dct:type>
+		string
+	</dct:type>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>gml:identifier</http:paramName>
+			<rdf:label>index identifier</rdf:label>
+			<dct:type>
+				<!--gml:CodeWithAuthorityType-->
+				<!--list the allowed types-->
+		string
+	</dct:type>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>name</http:paramName>
+			<!-- gsmlp:BoreholeView/gml:name-->
+			<rdf:label>name</rdf:label>
+			<dct:type>
+		string
+	</dct:type>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>purpose</http:paramName>
+			<!-- gsmlp:BoreholeView/gsmlp:purpose -->
+			<rdf:label>purpose</rdf:label>
+			<dct:type>
+		string <!--list the allowed types-->
+			</dct:type>
+			<!-- vocab endpoint http://inspire.ec.europa.eu/codelist/BoreholePurposeValue -->
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>status</http:paramName>
+			<!-- gsmlp:BoreholeView/an so on for the XPath ... -->
+			<rdf:label>status</rdf:label>
+			<dct:type>
+		string <!-- gml:ReferenceType --><!-- is gml:ReferenceType in the xsd but I guess we should put string or anyURI type-->
+			</dct:type>
+			<!-- vocab endpoint http://resource.europe-geology.eu/vocabs/BoreholeStatus -->
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>drillingMethod</http:paramName>
+			<rdf:label>drillingMethod</rdf:label>
+			<dct:type>
+		string <!-- gml:ReferenceType --><!-- is gml:ReferenceType in the xsd but I guess we should put string or anyURI type-->
+			</dct:type>
+			<!-- vocab endpoint http://resource.europe-geology.eu/vocabs/DrillingMethod -->
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>operator</http:paramName>
+			<rdf:label>operator</rdf:label>
+			<dct:type>
+		string
+	</dct:type>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>driller</http:paramName>
+			<rdf:label>driller</rdf:label>
+			<dct:type>
+		string
+	</dct:type>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>drillStartDate</http:paramName>
+			<rdf:label>drillStartDate</rdf:label>
+			<dct:type>
+		date
+	</dct:type>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>drillEndDate</http:paramName>
+			<rdf:label>drillEndDate</rdf:label>
+			<dct:type>
+		date
+	</dct:type>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>startPoint</http:paramName>
+			<rdf:label>startPoint</rdf:label>
+			<dct:type>
+		string <!-- gml:ReferenceType --><!-- is gml:ReferenceType in the xsd but I guess we should put string or anyURI type-->
+			</dct:type>
+			<http:paramValue>http://resource.europe-geology.eu/vocabs/StartPoint/artificialLandSurface</http:paramValue>
+			<http:paramValue>http://resource.europe-geology.eu/vocabs/StartPoint/naturalLandSurface</http:paramValue>
+			<http:paramValue>http://resource.europe-geology.eu/vocabs/StartPoint/openPitFloor</http:paramValue>
+			<http:paramValue>http://resource.europe-geology.eu/vocabs/StartPoint/openPitWall</http:paramValue>
+			<http:paramValue>http://resource.europe-geology.eu/vocabs/StartPoint/seaFloor</http:paramValue>
+			<http:paramValue>http://resource.europe-geology.eu/vocabs/StartPoint/underground</http:paramValue>
+			<!-- vocab endpoint http://resource.europe-geology.eu/vocabs/StartPoint -->
+			<!-- I just developped the content of that CodeList because it's 6 entries. Could be a dropdown list in the GUI for example -->
+			<!-- actually this should be stored in a key / value approach ex : artificialLandSurface being the label in the GUI and 'http://resource.europe-geology.eu/vocabs/StartPoint/artificialLandSurface' submitted in the GetFeature request -->
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>inclinationType</http:paramName>
+			<rdf:label>inclinationType</rdf:label>
+			<dct:type>
+		string <!-- gml:ReferenceType --><!-- is gml:ReferenceType in the xsd but I guess we should put string or anyURI type-->
+			</dct:type>
+			<!-- vocab endpoint http://resource.europe-geology.eu/vocabs/BoreholeInclinationType -->
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>boreholeMaterialCustodian</http:paramName>
+			<rdf:label>boreholeMaterialCustodian</rdf:label>
+			<dct:type>
+		string
+	</dct:type>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>boreholeLength_m</http:paramName>
+			<rdf:label>boreholeLength_m</rdf:label>
+			<dct:type>
+		gml:MeasureType <!--list the allowed types-->
+			</dct:type>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>elevation_m</http:paramName>
+			<rdf:label>elevation_m</rdf:label>
+			<dct:type>
+		gml:MeasureType <!--list the allowed types-->
+			</dct:type>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>elevation_srs</http:paramName>
+			<rdf:label>elevation_srs</rdf:label>
+			<dct:type>
+		anyURI <!--list the allowed types-->
+			</dct:type>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>positionalAccuracy</http:paramName>
+			<rdf:label>positionalAccuracy</rdf:label>
+			<dct:type>
+		string
+	</dct:type>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>source</http:paramName>
+			<rdf:label>source</rdf:label>
+			<dct:type>
+		string
+	</dct:type>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>parentBorehole_uri</http:paramName>
+			<rdf:label>parentBorehole_uri</rdf:label>
+			<dct:type>
+		anyURI <!--list the allowed types-->
+			</dct:type>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>metadata_uri</http:paramName>
+			<rdf:label>metadata_uri</rdf:label>
+			<dct:type>
+		anyURI <!--list the allowed types-->
+			</dct:type>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>cored</http:paramName>
+			<rdf:label>cored</rdf:label>
+			<dct:type>
+		boolean
+	</dct:type>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>accessToPhysicalDrillCore</http:paramName>
+			<rdf:label>accessToPhysicalDrillCore</rdf:label>
+			<dct:type>
+		boolean
+	</dct:type>
+		</eposap:parameter>
+		<eposap:parameter>
+			<http:paramName>boreholeUse</http:paramName>
+			<rdf:label>boreholeUse</rdf:label>
+			<dct:type>
+		string <!-- gml:ReferenceType --><!-- is gml:ReferenceType in the xsd but I guess we should put string or anyURI type-->
+			</dct:type>
+			<!-- vocab endpoint http://inspire.ec.europa.eu/codelist/BoreholePurposeValue -->
 		</eposap:parameter>
 		<schema:documentation>https://forge.brgm.fr/svnrepository/epos/trunk/Documents/EPOS_Borehole_V.1.0.1.docx</schema:documentation>
 		<dcat:contactPoint>mailto:contact-brgm@brgm.fr</dcat:contactPoint>
 		<eposap:publisher>PIC:999993662</eposap:publisher>
-		<dct:spatial>TODO SG add some BBOX-->
-		<!-- Geographic location/spatial extent /bounding box -->
-		<dct:Location>
-		<locn:geometry>POLYGON(-6.0 40.0, -6.0 52.0, 10.0 52.0, 10.0 40.0, -6.0 40.0)</locn:geometry>
+		<dct:spatial>
+			<!-- Geographic location/spatial extent /bounding box -->
+			<dct:Location>
+				<!-- POLYGON(lon1 lat1, lon2 lat2,...) -->
+				<locn:geometry>POLYGON(-180 90, 180 90, 180 -90, -180 -90, -180 90)</locn:geometry>
 			</dct:Location>
 		</dct:spatial>
 		<adms:representationTechnique>
 			vector
+			<!-- see https://github.com/epos-eu/EPOS-DCAT-AP/issues/29 -->
+			<!-- I picked the one at CSIRO not having another one at hand so far-->
+			<!--http://registry.it.csiro.au/def/isotc211/MD_SpatialRepresentationTypeCode/vector-->
 		</adms:representationTechnique>
 		<dct:temporal>
 			<!-- temporal extent -->
@@ -192,5 +400,7 @@
 				<schema:startDate>2016-10-27T00:00:00</schema:startDate>
 			</dct:PeriodOfTime>
 		</dct:temporal>
+		<eposap:DDSS-ID>WP15-DDSS-001i</eposap:DDSS-ID>
+		<eposap:actions>download</eposap:actions>
 	</eposap:WebService>
 </eposap:Epos>

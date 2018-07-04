@@ -72,120 +72,18 @@
         <!-- Associated Project -->
     </eposap:Organisation>
 
-    <!-- DATA SELECT -->
-    <eposap:WebService>
-        <dct:title>Velocity and Acceleration Seismic waveforms Continuous</dct:title>
-        <dct:description>The dataselect Web service provides access to time series data in miniSEED format. The data may be filtered e.g. by time, station and network parameters. The request type is HTTP-GET and HTTP-POST. Please refer to http://www.fdsn.org/webservice for a complete service description.</dct:description>
-        <dct:issued>2016-01-01T00:00:00</dct:issued>
-        <dct:modified>2016-01-01T00:00:00</dct:modified>
-        <dct:license>To be defined!</dct:license>
-        <foaf:page>
-            <foaf:primaryTopic>http://eida-sc3.infp.ro/fdsnws/dataselect/1/query?</foaf:primaryTopic>
-        </foaf:page>
-        <dct:format>
-            <dct:MediaTypeOrExtent>MiniSEED</dct:MediaTypeOrExtent>
-        </dct:format>
-        <dct:rights>
-            <dct:RightsStatement>To be defined by EPOS!</dct:RightsStatement>
-        </dct:rights>
-        <dct:conformsTo>EPSG:4326</dct:conformsTo>
-        <!-- If this is the proper way to define the identifier is still under
-    discussion. TODO No special character are accepted here. -->
-        <!-- <dct:identifier>geofon.gfz-potsdam.de_fdsnws_dataselect_1</dct:identifier>-->
-        <dct:identifier>http://eida-sc3.infp.ro/fdsnws/dataselect/1/query?</dct:identifier>
-        <dct:created>2016-01-01T00:00:00</dct:created>
-        <!-- This property refers to the domain of resource (e.g. Seismology, GNSS etc.) -->
-        <eposap:domain>Near Fault Observations</eposap:domain>
-        <!-- TODO TCSs will have to provide a list of subdomain terms. -->
-        <eposap:subDomain>Seismic waveforms</eposap:subDomain>
-        <dcat:keyword>seismology, seismicity, earthquakes, waveform, continuous, velocity, acceleration, seismic hazard, earth structure, earthquake intensity, macroseismic, macroseismic information, waveform modeling, GFZ,Dataselect,FDSN-WS,Seismic Waveform,EIDA</dcat:keyword>
-        <!-- TODO A list of terms has to be agreed with EPOS. -->
-        <eposap:operation>download</eposap:operation>
-        <dct:hasVersion>1.1</dct:hasVersion>
-        <eposap:parameter>
-            <http:paramName>starttime</http:paramName>
-            <rdf:label>Start of the timespan</rdf:label>
-            <dct:type>date</dct:type>
-        </eposap:parameter>
-        <eposap:parameter>
-            <http:paramName>endtime</http:paramName>
-            <rdf:label>End of the timespan</rdf:label>
-            <dct:type>date</dct:type>
-        </eposap:parameter>
-        <eposap:parameter>
-            <http:paramName>network</http:paramName>
-            <rdf:label>Network code</rdf:label>
-            <dct:type>string</dct:type>
-        </eposap:parameter>
-        <eposap:parameter>
-            <http:paramName>station</http:paramName>
-            <rdf:label>Station code</rdf:label>
-            <dct:type>string</dct:type>
-        </eposap:parameter>
-        <eposap:parameter>
-            <http:paramName>location</http:paramName>
-            <rdf:label>Location code</rdf:label>
-            <dct:type>string</dct:type>
-        </eposap:parameter>
-        <eposap:parameter>
-            <http:paramName>channel</http:paramName>
-            <rdf:label>Channel code</rdf:label>
-            <dct:type>string</dct:type>
-        </eposap:parameter>
-        <eposap:parameter>
-            <http:paramName>quality</http:paramName>
-            <rdf:label>Quality</rdf:label>
-            <dct:type>string</dct:type>
-            <http:paramValue>D</http:paramValue>
-            <http:paramValue>R</http:paramValue>
-            <http:paramValue>Q</http:paramValue>
-            <http:paramValue>M</http:paramValue>
-            <http:paramValue>B</http:paramValue>
-        </eposap:parameter>
-        <eposap:parameter>
-            <http:paramName>minimumlength</http:paramName>
-            <rdf:label>Minimum Length</rdf:label>
-            <dct:type>integer</dct:type>
-            <schema:minValue>0</schema:minValue>
-        </eposap:parameter>
-        <eposap:parameter>
-            <http:paramName>nodata</http:paramName>
-            <rdf:label>HTTP error code if no data is found</rdf:label>
-            <dct:type>integer</dct:type>
-            <http:paramValue>204</http:paramValue>
-            <http:paramValue>404</http:paramValue>
-        </eposap:parameter>
-        <!-- FIXME A ':' character should be accepted to separate the schema from the ID. -->
-        <dcat:contactPoint>http://orcid.org/0000-0003-2431-1383</dcat:contactPoint>
-        <!-- Publisher (previously responsibleParty) -->
-        <!-- GFZ PIC from the EU Research Council -->
-        <!-- FIXME A ':' character should be accepted to separate the schema from the ID. -->
-        <eposap:publisher>PIC:998181508</eposap:publisher>
-        <dct:spatial>
-            <dct:Location>
-                <locn:geometry>POLYGON(19.50 49.00, 30.00 49.00, 30.00 42.0, 19.50 42.0, 19.50 49.00)</locn:geometry>
-            </dct:Location>
-        </dct:spatial>
-        <adms:representationTechnique>point</adms:representationTechnique>
-        <dct:temporal>
-            <dct:PeriodOfTime>
-                <schema:startDate>2010-04-01T00:00:00</schema:startDate>
-            </dct:PeriodOfTime>
-        </dct:temporal>
-    </eposap:WebService>
-
     <!-- STATION INFORMATION -->
     <eposap:WebService>
-        <dct:title>Seismic Station Information</dct:title>
-        <dct:description>The fdsnws-station web service returns station metadata in FDSN StationXML format (schema here) or as delimited text. The purpose of the FDSN StationXML schema is to define an XML representation of the most important and commonly used structures of SEED 2.4 metadata. Results are available at multiple levels of granularity: network, station, channel and response.</dct:description>
+        <dct:title>NIEP -Seismic Station Information</dct:title>
+        <dct:description>NIEP -The fdsnws-station web service returns station metadata in FDSN StationXML format (schema here) or as delimited text. The purpose of the FDSN StationXML schema is to define an XML representation of the most important and commonly used structures of SEED 2.4 metadata. Results are available at multiple levels of granularity: network, station, channel and response.</dct:description>
         <dct:issued>2016-01-01T00:00:00</dct:issued>
         <dct:modified>2016-01-01T00:00:00</dct:modified>
         <dct:license>To be defined!</dct:license>
         <foaf:page>
-            <foaf:primaryTopic>http://eida-sc3.infp.ro/fdsnws/fdsnws/station/1/query?</foaf:primaryTopic>
+            <foaf:primaryTopic>http://eida-sc3.infp.ro/fdsnws/station/1/query?</foaf:primaryTopic>
         </foaf:page>
         <dct:format>
-            <dct:MediaTypeOrExtent>StationXML</dct:MediaTypeOrExtent>
+            <dct:MediaTypeOrExtent><!-- StationXML--> xml</dct:MediaTypeOrExtent>
         </dct:format>
         <dct:rights>
             <dct:RightsStatement>To be defined by EPOS!</dct:RightsStatement>
@@ -194,15 +92,15 @@
         <!-- If this is the proper way to define the identifier is still under
         discussion. TODO No special character are accepted here. -->
         <!-- <dct:identifier>geofon.gfz-potsdam.de_fdsnws_station_1</dct:identifier>-->
-        <dct:identifier>http://eida-sc3.infp.ro/fdsnws/station/1/query?</dct:identifier>
+        <dct:identifier>eida-sc3.infp.ro/fdsnws/station/1/query</dct:identifier>
         <dct:created>2016-01-01T00:00:00</dct:created>
         <!-- This property refers to the domain of resource (e.g. Seismology, GNSS etc.) -->
         <eposap:domain>Near Fault Observations</eposap:domain>
         <!-- TODO TCSs will have to provide a list of subdomain terms. -->
         <eposap:subDomain>Seismic stations</eposap:subDomain>
-        <dcat:keyword>seismology, seismicity, earthquakes, stations, waveform, seismic hazard, earth structure, earthquake intensity, macroseismic, macroseismic information, waveform modeling</dcat:keyword>
+        <dcat:keyword>seismology, seismicity, earthquakes, stations, waveform, seismic hazard, earth structure, earthquake intensity, macroseismic, macroseismic information, waveform modeling, NIEP</dcat:keyword>
         <!-- TODO A list of terms has to be agreed with EPOS. -->
-        <eposap:operation>download</eposap:operation>
+        <eposap:operation>execute</eposap:operation>
         <dct:hasVersion>1.1</dct:hasVersion>
         <eposap:parameter>
             <http:paramName>starttime</http:paramName>
@@ -295,5 +193,7 @@
                 <schema:startDate>1993-01-01T00:00:00</schema:startDate>
             </dct:PeriodOfTime>
         </dct:temporal>
+				<eposap:DDSS-ID>WP09-DDSS-001b</eposap:DDSS-ID>
+				<eposap:actions>download,visualise</eposap:actions>
     </eposap:WebService>
 </eposap:Epos>

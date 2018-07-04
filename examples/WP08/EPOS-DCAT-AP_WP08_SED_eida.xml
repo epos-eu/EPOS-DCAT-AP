@@ -80,8 +80,8 @@
         <dct:type><!-- Type -->
           Research Institute, Observatory
         </dct:type>
-        <eposap:legalContact>http://orcid.org/orcid.org/0000-0002-4919-3283</eposap:legalContact><!-- Legal Contact to be correct -->
-        <eposap:financialContact>http://orcid.org/orcid.org/0000-0002-4919-3283</eposap:financialContact><!-- Financial
+        <eposap:legalContact>http://orcid.org/0000-0001-8626-2703</eposap:legalContact><!-- Legal Contact to be correct -->
+        <eposap:financialContact>http://orcid.org/0000-0001-8626-2703</eposap:financialContact><!-- Financial
             Contact  to be correct-->
         <!--<eposap:isPartOf>organisationID01</eposap:isPartOf> to remove // Is part of -->
         <!--<eposap:associatedProjects>projectID01</eposap:associatedProjects>--><!-- Associated Project -->
@@ -118,7 +118,7 @@
     <dct:conformsTo>EPSG:4326</dct:conformsTo>
     <!-- i guess this should actually a public ID of the service, not its http location-->
     <!-- <dct:identifier>geofon.gfz-potsdam.de_fdsnws_dataselect_1</dct:identifier> -->
-    <dct:identifier>eida.ethz.ch/fdsnws/dataselect/1/query?</dct:identifier>
+    <dct:identifier>eida.ethz.ch/fdsnws/dataselect/1/query</dct:identifier>
     <dct:created>2015-01-01T00:00:00</dct:created>
     <!-- This property refers to the domain of resource (e.g. Seismology, GNSS etc.) -->
     <eposap:domain>
@@ -207,7 +207,7 @@
     </eposap:parameter>
 
     <!-- FIXME A ':' character should be accepted to separate the schema from the ID. -->
-    <dcat:contactPoint>http://orcid.org/orcid.org/0000-0001-8667-8549</dcat:contactPoint>
+    <dcat:contactPoint>http://orcid.org/0000-0001-8667-8549</dcat:contactPoint>
     <eposap:publisher>PIC:999979015</eposap:publisher>
     <dct:spatial>
       <dct:Location>
@@ -220,6 +220,8 @@
         <schema:startDate>1980-01-01T00:00:00</schema:startDate>
       </dct:PeriodOfTime>
     </dct:temporal>
+    <eposap:DDSS-ID>WP8-DDSS-001</eposap:DDSS-ID>
+    <eposap:actions>download</eposap:actions>
   </eposap:WebService>
 
 
@@ -254,7 +256,7 @@
      <!-- If this is the proper way to define the identifier is still under
      discussion. TODO No special character are accepted here. -->
      <!-- <dct:identifier>geofon.gfz-potsdam.de_fdsnws_station_1</dct:identifier> -->
-     <dct:identifier>eida.ethz.ch/fdsnws/station/1/query?</dct:identifier>
+     <dct:identifier>eida.ethz.ch/fdsnws/station/1/query</dct:identifier>
      <dct:created>2015-01-01T00:00:00</dct:created>
      <!-- This property refers to the domain of resource (e.g. Seismology, GNSS etc.) -->
      <eposap:domain>
@@ -377,7 +379,7 @@
      </eposap:parameter>
 
      <!-- FIXME A ':' character should be accepted to separate the schema from the ID. -->
-    <dcat:contactPoint>http://orcid.org/orcid.org/0000-0001-8667-8549</dcat:contactPoint>
+    <dcat:contactPoint>http://orcid.org/0000-0001-8667-8549</dcat:contactPoint>
      <!-- Publisher (previously responsibleParty) -->
      <!-- GFZ PIC from the EU Research Council -->
      <!-- FIXME A ':' character should be accepted to separate the schema from the ID. -->
@@ -393,6 +395,8 @@
          <schema:startDate>1980-01-01T00:00:00</schema:startDate>
        </dct:PeriodOfTime>
      </dct:temporal>
+     <eposap:DDSS-ID>WP8-DDSS-002</eposap:DDSS-ID>
+     <eposap:actions>download, visualise</eposap:actions>
   </eposap:WebService>
       
       <eposap:WebService>
@@ -417,7 +421,7 @@
         <dct:conformsTo>EPSG:4326</dct:conformsTo>
         <!-- If this is the proper way to define the identifier is still under
      discussion. TODO No special character are accepted here. -->
-        <dct:identifier>http://eida.ethz.ch/fdsnws/station/1/query?</dct:identifier>
+        <dct:identifier>eida.ethz.ch/eidaws/routing/1/query</dct:identifier>
         <dct:created>2017-01-01T00:00:00</dct:created>
         <!-- This property refers to the domain of resource (e.g. Seismology, GNSS etc.) -->
         <eposap:domain>
@@ -543,7 +547,7 @@
           </dct:type>
         </eposap:parameter>
         
-        <dcat:contactPoint>http://orcid.org/rcid.org/0000-0001-8667-8549</dcat:contactPoint>
+        <dcat:contactPoint>http://orcid.org/0000-0001-8667-8549</dcat:contactPoint>
          <eposap:publisher>PIC:999979015</eposap:publisher>
         <dct:spatial>
           <dct:Location>
@@ -556,9 +560,11 @@
             <schema:startDate>2017-01-01T00:00:00</schema:startDate>
           </dct:PeriodOfTime>
         </dct:temporal>
+        <eposap:DDSS-ID>WP8-DDSS-004</eposap:DDSS-ID>
+        <eposap:actions>download</eposap:actions>
       </eposap:WebService>
       
-        <eposap:WebService>
+     <eposap:WebService>
           <dct:title>EIDA WFcatalog - Swiss Seismological Service at ETH Zurich</dct:title>
           <dct:description>access to Seismic to availability and quality metadata for seismic waveforms archived at SED. Service implements FDSN station web service 1.0 standard</dct:description>
           <dct:issued>2015-01-01T00:00:00</dct:issued>
@@ -569,7 +575,7 @@
           </foaf:page>
           <dct:format>
             <dct:MediaTypeOrExtent>
-              XML
+              xml
             </dct:MediaTypeOrExtent>
           </dct:format>
           <dct:rights>
@@ -584,18 +590,15 @@
               No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
             </dct:RightsStatement>
           </dct:rights>
-          <dct:conformsTo>EPSG:4326</dct:conformsTo>
-          <!-- If this is the proper way to define the identifier is still under
-     discussion. TODO No special character are accepted here. -->
-          <dct:identifier>http://eida.ethz.ch/eidaws/wfcatalog/1/query?</dct:identifier>
+          <dct:conformsTo>EPSG:4326</dct:conformsTo>   
+          <dct:identifier>eida.ethz.ch/eidaws/wfcatalog/1/query</dct:identifier>
           <dct:created>2017-09-01T00:00:00</dct:created>
-          <!-- This property refers to the domain of resource (e.g. Seismology, GNSS etc.) -->
-          <eposap:domain>seismology</eposap:domain>
+          <eposap:domain>Seismology</eposap:domain>
           <eposap:subDomain>waveform quality</eposap:subDomain>
           <dcat:keyword>
             EIDA,ODC,dataquality,availability,metrics,waveform,metadata
           </dcat:keyword>
-          <eposap:operation>download</eposap:operation>
+          <eposap:operation>execute</eposap:operation>
           <dct:hasVersion>1.0.0</dct:hasVersion>
          <eposap:parameter>
             <http:paramName>starttime</http:paramName>
@@ -752,7 +755,7 @@
             <http:paramValue>header</http:paramValue>
             <http:paramValue>all</http:paramValue>
           </eposap:parameter>
-          <dcat:contactPoint>orcid.org/0000-0001-8667-8549</dcat:contactPoint>
+          <dcat:contactPoint>http://orcid.org/0000-0001-8667-8549</dcat:contactPoint>
           <eposap:publisher>PIC:999979015</eposap:publisher>
           <dct:spatial>
             <dct:Location>
@@ -766,8 +769,7 @@
               <schema:startDate>2011-01-01T00:00:00</schema:startDate>
             </dct:PeriodOfTime>
           </dct:temporal>
+         <eposap:DDSS-ID>WP8-DDSS-049</eposap:DDSS-ID>
+         <eposap:actions>download</eposap:actions>
           </eposap:WebService>
-
-      
-      
 </eposap:Epos>

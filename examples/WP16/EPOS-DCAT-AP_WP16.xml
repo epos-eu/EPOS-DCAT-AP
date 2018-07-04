@@ -73,6 +73,11 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 		<dct:identifier>PIC:99985805</dct:identifier><!-- Unique Identifier -->
 		<eposap:scientificContact>http://orcid.org/0000-0002-3436-8941</eposap:scientificContact><!-- Scientific
 			Contact -->
+		<dct:spatial>
+			<dct:Location>
+				<locn:geometry>POINT(5.122601753922893 52.09015264452545)</locn:geometry>
+			</dct:Location>
+		</dct:spatial>
 		<dct:type><!-- Type -->
 			University
 		</dct:type>
@@ -110,7 +115,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 			<foaf:primaryTopic>https://universiteit-utrecht-epos.prod.jcid.nl/api/3/action/package_search?q=</foaf:primaryTopic>
 		</foaf:page>
 		<dct:format>
-			<dct:MediaTypeOrExtent>xml</dct:MediaTypeOrExtent>
+			<dct:MediaTypeOrExtent>json</dct:MediaTypeOrExtent>
 		</dct:format>
 		
 		<!-- public access limitations:
@@ -127,7 +132,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 			http://www.opengis.net/def/crs/ -->
 		<dct:conformsTo>EPSG:4326</dct:conformsTo> <!-- to be confirmed -->
 		
-		<dct:identifier>https://universiteit-utrecht-epos.prod.jcid.nl</dct:identifier> <!-- Unique Resource Identifier: this is the entry point of the service -->
+		<dct:identifier>universiteit-utrecht-epos.prod.jcid.nl/api/3/action/package_search</dct:identifier> <!-- Unique Resource Identifier: this is the entry point of the service -->
 		
 		<dct:created>2001-12-31T12:00:00</dct:created> <!-- will be updated -->
 		
@@ -216,5 +221,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 				<schema:endDate>2016-12-31T12:00:00</schema:endDate>
 			</dct:PeriodOfTime>
 		</dct:temporal>
+		<eposap:DDSS-ID>WP16-DDSS-012</eposap:DDSS-ID>
+    		<eposap:actions>download</eposap:actions>
 	</eposap:WebService>
 </eposap:Epos>

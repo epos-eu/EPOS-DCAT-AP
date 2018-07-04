@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-    <eposap:Epos
+<eposap:Epos
         xmlns:adms="http://www.w3.org/ns/adms#" xmlns:cnt="http://www.w3.org/2008/content#"
         xmlns:dcat="http://www.w3.org/ns/dcat#" xmlns:dct="http://purl.org/dc/terms/"
         xmlns:eposap="http://www.epos-ip.org/terms.html" xmlns:foaf="http://xmlns.com/foaf/0.1/"
@@ -70,8 +70,7 @@
                     Associated Project -->
     </eposap:Organisation>
         
-        
-    <eposap:WebService>
+<eposap:WebService>
     <dct:title>FDSN Dataselect Web Service at CNT-INGV</dct:title>
     <dct:description>The dataselect Web service provides access to time series data in miniSEED format. The data may be filtered e.g. by time, station and network parameters. The request type is HTTP-GET and HTTP-POST. Please refer to http://www.fdsn.org/webservice for a complete service description.</dct:description>
     
@@ -95,7 +94,7 @@
     <!-- If this is the proper way to define the identifier is still under
     discussion. TODO No special character are accepted here. -->
     <!-- <dct:identifier>geofon.gfz-potsdam.de_fdsnws_dataselect_1</dct:identifier> -->
-    <dct:identifier>http://webservices.ingv.it/fdsnws/dataselect/1/query?</dct:identifier>
+    <dct:identifier>webservices.ingv.it/fdsnws/dataselect/1/query</dct:identifier>
     <dct:created>2016-01-01T00:00:00</dct:created>
     <!-- This property refers to the domain of resource (e.g. Seismology, GNSS etc.) -->
     <eposap:domain>
@@ -204,13 +203,13 @@
         <schema:startDate>1993-01-01T00:00:00</schema:startDate>
         </dct:PeriodOfTime>
     </dct:temporal>
-    </eposap:WebService>
-
-
-    <eposap:WebService>
-        <dct:title>FDSN Station Web Service at CNT-INGV</dct:title>
-        <dct:description>The fdsnws-station web service returns station metadata in FDSN StationXML format (schema here) or as delimited text. The purpose of the FDSN StationXML schema is to define an XML representation of the most important and commonly used structures of SEED 2.4 metadata. Results are available at multiple levels of granularity: network, station, channel and response.</dct:description>
+    <eposap:DDSS-ID>WP8-DDSS-001</eposap:DDSS-ID>
+    <eposap:actions>download</eposap:actions>
+  </eposap:WebService>
         
+  <eposap:WebService>
+        <dct:title>FDSN Station Web Service at CNT-INGV</dct:title>
+        <dct:description>The fdsnws-station web service returns station metadata in FDSN StationXML format (schema here) or as delimited text. The purpose of the FDSN StationXML schema is to define an XML representation of the most important and commonly used structures of SEED 2.4 metadata. Results are available at multiple levels of granularity: network, station, channel and response.</dct:description> 
         <dct:issued>2016-01-01T00:00:00</dct:issued>
         <dct:modified>2016-01-01T00:00:00</dct:modified>
         <dct:license>To be defined!</dct:license>
@@ -219,7 +218,7 @@
         </foaf:page>
         <dct:format>
         <dct:MediaTypeOrExtent>
-            StationXML
+            <!--StationXML--> xml
         </dct:MediaTypeOrExtent>
         </dct:format>
         <dct:rights>
@@ -231,7 +230,7 @@
         <!-- If this is the proper way to define the identifier is still under
         discussion. TODO No special character are accepted here. -->
         <!-- <dct:identifier>geofon.gfz-potsdam.de_fdsnws_station_1</dct:identifier> -->
-        <dct:identifier>http://webservices.ingv.it/fdsnws/station/1/query?</dct:identifier>
+        <dct:identifier>webservices.ingv.it/fdsnws/station/1/query</dct:identifier>
         <dct:created>2016-01-01T00:00:00</dct:created>
         <!-- This property refers to the domain of resource (e.g. Seismology, GNSS etc.) -->
         <eposap:domain>
@@ -370,5 +369,7 @@
             <schema:startDate>1993-01-01T00:00:00</schema:startDate>
         </dct:PeriodOfTime>
         </dct:temporal>
-    </eposap:WebService>
+        <eposap:DDSS-ID>WP8-DDSS-002</eposap:DDSS-ID>
+        <eposap:actions>download, visualise</eposap:actions>
+  </eposap:WebService>
 </eposap:Epos>

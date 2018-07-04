@@ -171,7 +171,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
     <!-- Website -->
     <vcard:hasLogo>https://www.oca.eu/images/Logos/logocaeu.png</vcard:hasLogo>
     <!-- Logo -->
-    <dct:identifier>OCA:991782030</dct:identifier>
+    <dct:identifier>PIC:991782030</dct:identifier>
     <!-- Unique Identifier -->
     <eposap:scientificContact>ResearcherID:A-5326-2010</eposap:scientificContact>
     <!-- Scientific
@@ -185,22 +185,22 @@ xmlns:adms="http://www.w3.org/ns/adms#"
     </dct:spatial>
     <dct:type>
       <!-- Type -->
-			Institute
-		</dct:type>
-    <eposap:legalContact></eposap:legalContact>
+        Institute
+    </dct:type>
+    <eposap:legalContact>http://orcid.org/0000-0002-9733-284X</eposap:legalContact>
     <!-- Legal Contact -->
-    <eposap:financialContact></eposap:financialContact>
+    <eposap:financialContact>http://orcid.org/0000-0002-9733-284X</eposap:financialContact>
     <!-- FinancialContact -->
     <!-- <eposap:isPartOf></eposap:isPartOf> -->
     <!-- <eposap:associatedProjects>projectID01</eposap:associatedProjects> -->
   </eposap:Organisation>
   
-  <!-- EPOS Project WP10-->
+  <!-- EPOS Project WP10
   <eposap:Project>
 		<dct:identifier>EPOS.WP10</dct:identifier>
-		<dct:title>EPOS WP10</dct:title><!-- Name (Title) -->
-		<dct:description>EPOS WP10 GNSS</dct:description><!-- Description (Abstract) -->
-	</eposap:Project>
+		<dct:title>EPOS WP10</dct:title>
+		<dct:description>EPOS WP10 GNSS</dct:description>
+  </eposap:Project>-->
   
    <!--All Station WebService -->
   <eposap:WebService>
@@ -223,22 +223,23 @@ xmlns:adms="http://www.w3.org/ns/adms#"
     <!--Spatial Reference System the CRS should be specified with the relevant URI.The base URI is: http://www.opengis.net/def/crs/ -->
     <dct:conformsTo>EPSG:3763</dct:conformsTo>
     <!-- Spatial Reference System [UBI?][http://spatialreference.org/ref/epsg/3763/] -->
-    <dct:identifier>EPOS.WP10.DGW</dct:identifier>
+    <dct:identifier>glass.unice.fr:8080/GlassFramework/webresources/stations</dct:identifier>
     <!-- Unique Resource Identifier: this is the entry point of the service [UBI?]-->
     <dct:created>2017-06-30T12:00:00</dct:created>
     <!-- date of creation -->
-    <eposap:domain>GNSS, Geodesy</eposap:domain>
+    <eposap:domain>Geodesy</eposap:domain>
     <eposap:subDomain>
       <!-- This property refers to the subdomain of resource (e.g. 
 		Earthquake parameters, Velocity models, GNSS station velocities, InSAR, Meteorology, 
 		Variation of geomagnetic field, 3D/4D structural models, Analog models, Numerical models, 
 		Geochemical data, Borehole data, Rock sample properties) -->
-			GNSS Station and Site Equipment MetaData
-		</eposap:subDomain>
+			GNSS Products Portal
+    </eposap:subDomain>
     <!-- Keywords, annotation. Simple and free (web annotation ontology in the future) -->
-    <dcat:keyword>GNSS Station and Site Equipment Metadata</dcat:keyword>
+    <dcat:keyword>Geodesy, GNSS</dcat:keyword>
     <!-- Keywords -->
-    <eposap:operation>metadata</eposap:operation>
+<!-- <eposap:operation>metadata</eposap:operation> -->
+    <eposap:operation>execute</eposap:operation>
     <dct:hasVersion>1.0</dct:hasVersion>
     <!--<dcat:Distribuition>example http://glass.unice.fr:8080/GlassFramework/webresources/stations/files/marker/TROP</dcat:Distribuition> -->
    
@@ -259,6 +260,8 @@ xmlns:adms="http://www.w3.org/ns/adms#"
         <!-- 	<schema:endDate>2016-12-31T12:00:00</schema:endDate> endDate not applicable to EDSF -->
       </dct:PeriodOfTime>
     </dct:temporal>
+		<eposap:DDSS-ID>WP10-DDSS-002</eposap:DDSS-ID>
+		<eposap:actions>download,visualise</eposap:actions>
   </eposap:WebService>
   
   <!--All Station WebService from site name-->
@@ -281,22 +284,23 @@ xmlns:adms="http://www.w3.org/ns/adms#"
     <!--Spatial Reference System the CRS should be specified with the relevant URI.The base URI is: http://www.opengis.net/def/crs/ -->
     <dct:conformsTo>EPSG:3763</dct:conformsTo>
     <!-- Spatial Reference System [UBI?][http://spatialreference.org/ref/epsg/3763/] -->
-    <dct:identifier>EPOS.WP10.DGW</dct:identifier>
+    <dct:identifier>glass.unice.fr:8080/GlassFramework/webresources/stations/site</dct:identifier>
     <!-- Unique Resource Identifier: this is the entry point of the service [UBI?]-->
     <dct:created>2017-06-30T12:00:00</dct:created>
     <!-- date of creation -->
-   <eposap:domain>GNSS, Geodesy</eposap:domain>
+   <eposap:domain>Geodesy</eposap:domain>
     <eposap:subDomain>
       <!-- This property refers to the subdomain of resource (e.g. 
 		Earthquake parameters, Velocity models, GNSS station velocities, InSAR, Meteorology, 
 		Variation of geomagnetic field, 3D/4D structural models, Analog models, Numerical models, 
 		Geochemical data, Borehole data, Rock sample properties) -->
-			GNSS Station and Site Equipment MetaData
+			GNSS Products Portal
 		</eposap:subDomain>
     <!-- Keywords, annotation. Simple and free (web annotation ontology in the future) -->
-    <dcat:keyword>GNSS Station and Site Equipment Metadata</dcat:keyword>
+    <dcat:keyword>Geodesy, GNSS</dcat:keyword>
     <!-- Keywords -->
-    <eposap:operation>metadata</eposap:operation>
+    <eposap:operation>execute</eposap:operation>
+<!-- <eposap:operation>metadata</eposap:operation> -->
     <dct:hasVersion>1.0</dct:hasVersion>
     <!--<dcat:Distribuition>example http://glass.unice.fr:8080/GlassFramework/webresources/stations/files/marker/TROP</dcat:Distribuition> -->
     <eposap:parameter>
@@ -323,6 +327,8 @@ xmlns:adms="http://www.w3.org/ns/adms#"
         <!-- 	<schema:endDate>2016-12-31T12:00:00</schema:endDate> endDate not applicable to EDSF -->
       </dct:PeriodOfTime>
     </dct:temporal>
+		<eposap:DDSS-ID>WP10-DDSS-002</eposap:DDSS-ID>
+		<eposap:actions>download,visualise</eposap:actions>
   </eposap:WebService>
   
   <!--All Rinex Station Data from Marker -->
@@ -347,16 +353,17 @@ xmlns:adms="http://www.w3.org/ns/adms#"
     <!--Spatial Reference System the CRS should be specified with the relevant URI.The base URI is: http://www.opengis.net/def/crs/ -->
     <dct:conformsTo>EPSG:3763</dct:conformsTo>
     <!-- Spatial Reference System [UBI?][http://spatialreference.org/ref/epsg/3763/] -->
-    <dct:identifier>EPOS.WP10.DGW</dct:identifier>
+    <dct:identifier>glass.unice.fr:8080/GlassFramework/webresources/stations/files/marker</dct:identifier>
     <!-- Unique Resource Identifier: this is the entry point of the service [UBI?]-->
     <dct:created>2017-06-30T12:00:00</dct:created>
     <!-- date of creation -->
-   <eposap:domain>GNSS, Geodesy</eposap:domain>
-    <eposap:subDomain>GNSS Satellite Data</eposap:subDomain>
+   <eposap:domain>Geodesy</eposap:domain>
+    <eposap:subDomain>GNSS Products Portal</eposap:subDomain>
     <!-- Keywords, annotation. Simple and free (web annotation ontology in the future) -->
-    <dcat:keyword>GNSS Station Data Rinex</dcat:keyword>
+    <dcat:keyword>Geodesy, GNSS</dcat:keyword>
     <!-- Keywords -->
-    <eposap:operation>metadata</eposap:operation>
+<!-- <eposap:operation>metadata</eposap:operation> -->
+    <eposap:operation>execute</eposap:operation>
     <dct:hasVersion>1.0</dct:hasVersion>
      
 	<eposap:parameter>
@@ -384,6 +391,8 @@ xmlns:adms="http://www.w3.org/ns/adms#"
         <!-- 	<schema:endDate>2016-12-31T12:00:00</schema:endDate> endDate not applicable to EDSF -->
       </dct:PeriodOfTime>
     </dct:temporal>
+		<eposap:DDSS-ID>WP10-DDSS-004</eposap:DDSS-ID>
+		<eposap:actions>download</eposap:actions>
   </eposap:WebService>
   
   <!--All Rinex station Data within a date range -->
@@ -408,16 +417,17 @@ xmlns:adms="http://www.w3.org/ns/adms#"
     <!--Spatial Reference System the CRS should be specified with the relevant URI.The base URI is: http://www.opengis.net/def/crs/ -->
     <dct:conformsTo>EPSG:3763</dct:conformsTo>
     <!-- Spatial Reference System [UBI?][http://spatialreference.org/ref/epsg/3763/] -->
-    <dct:identifier>EPOS.WP10.DGW</dct:identifier>
+    <dct:identifier>glass.unice.fr:8080/GlassFramework/webresources/stations/files/date_range</dct:identifier>
     <!-- Unique Resource Identifier: this is the entry point of the service [UBI?]-->
     <dct:created>2017-06-30T12:00:00</dct:created>
     <!-- date of creation -->
-   <eposap:domain>GNSS, Geodesy</eposap:domain>
-    <eposap:subDomain>GNSS Satellite Data</eposap:subDomain>
+   <eposap:domain>Geodesy</eposap:domain>
+    <eposap:subDomain>GNSS Products Portal</eposap:subDomain>
     <!-- Keywords, annotation. Simple and free (web annotation ontology in the future) -->
     <dcat:keyword>GNSS Station Data Rinex</dcat:keyword>
     <!-- Keywords -->
-    <eposap:operation>metadata</eposap:operation>
+    <eposap:operation>execute</eposap:operation>
+    <!-- <eposap:operation>metadata</eposap:operation> -->
     <dct:hasVersion>1.0</dct:hasVersion>
      
 	 <eposap:parameter>
@@ -457,6 +467,8 @@ xmlns:adms="http://www.w3.org/ns/adms#"
         <!-- 	<schema:endDate>2016-12-31T12:00:00</schema:endDate> endDate not applicable to EDSF -->
       </dct:PeriodOfTime>
     </dct:temporal>
+		<eposap:DDSS-ID>WP10-DDSS-004</eposap:DDSS-ID>
+		<eposap:actions>download</eposap:actions>
   </eposap:WebService>
   
   <!-- EPOS WebService GNSS Product Velocites xyz -->
@@ -484,25 +496,26 @@ xmlns:adms="http://www.w3.org/ns/adms#"
     <dct:conformsTo>EPSG:3763</dct:conformsTo>
     <!-- Spatial Reference System [UBI?][http://spatialreference.org/ref/epsg/3763/] -->
    
-	<dct:identifier>EPOS.WP10.PGW</dct:identifier>
+	<dct:identifier>http://193.136.66.29:8102/GlassFramework/webresources/products/velocities/xyz</dct:identifier>
     <!-- Unique Resource Identifier: this is the entry point of the service [UBI?]-->
     
 	<dct:created>2017-06-30T12:00:00</dct:created>
     <!-- date of creation -->
     
-    <eposap:domain>GNSS, Geodesy</eposap:domain>
+    <eposap:domain>Geodesy</eposap:domain>
 	
     <eposap:subDomain>
       <!-- This property refers to the subdomain of resource (e.g. 
 		Earthquake parameters, Velocity models, GNSS station velocities, InSAR, Meteorology, 
 		Variation of geomagnetic field, 3D/4D structural models, Analog models, Numerical models, 
 		Geochemical data, Borehole data, Rock sample properties) -->
-			GNSS Products Velocities XYZ
-		</eposap:subDomain>
+			GNSS Products Portal
+    </eposap:subDomain>
     <!-- Keywords, annotation. Simple and free (web annotation ontology in the future) -->
-    <dcat:keyword>GNSS Products Velocities XYZ</dcat:keyword>
+    <dcat:keyword>Geodesy, GNSS </dcat:keyword>
     <!-- Keywords -->
-    <eposap:operation>products, repository, visualization, download</eposap:operation>
+    <!--<eposap:operation>products, repository, visualization, download</eposap:operation>-->
+    <eposap:operation>execute</eposap:operation>
     <dct:hasVersion>1.0</dct:hasVersion>
 	
 	
@@ -530,10 +543,7 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 	
 
     <dcat:contactPoint>http://orcid.org/0000-0002-9733-284X</dcat:contactPoint>
-	<eposap:publisher>PIC:996437254</eposap:publisher>
-
-
-	
+    <eposap:publisher>PIC:996437254</eposap:publisher>
     <dct:spatial>
       <!-- Geographic location/spatial extent /bounding box -->
       <dct:Location>
@@ -552,7 +562,9 @@ xmlns:adms="http://www.w3.org/ns/adms#"
         <!-- 	<schema:endDate>2016-12-31T12:00:00</schema:endDate> endDate not applicable to EDSF -->
       </dct:PeriodOfTime>
     </dct:temporal>
-	
+		<eposap:DDSS-ID>WP10-DDSS-012,WP10-DDSS-013,WP10-DDSS-014,WP10-DDSS-018</eposap:DDSS-ID>
+		<eposap:actions>download</eposap:actions>
+
   </eposap:WebService>
   
   <!-- EPOS WebService GNSS Product Time Series with xyz coordinates-->
@@ -578,25 +590,26 @@ xmlns:adms="http://www.w3.org/ns/adms#"
     <dct:conformsTo>EPSG:3763</dct:conformsTo>
     <!-- Spatial Reference System [UBI?][http://spatialreference.org/ref/epsg/3763/] -->
     
-	<dct:identifier>EPOS.WP10.PGW</dct:identifier>
+	<dct:identifier>http://193.136.66.29:8102/GlassFramework/webresources/products/timeseries/xyz</dct:identifier>
     <!-- Unique Resource Identifier: this is the entry point of the service [UBI?]-->
     
 	<dct:created>2017-06-30T12:00:00</dct:created>
     <!-- date of creation -->
     
-	<eposap:domain>GNSS, Geodesy</eposap:domain>
+	<eposap:domain>Geodesy</eposap:domain>
 	
-    <eposap:subDomain>
+        <eposap:subDomain>
       <!-- This property refers to the subdomain of resource (e.g. 
 		Earthquake parameters, Velocity models, GNSS station velocities, InSAR, Meteorology, 
 		Variation of geomagnetic field, 3D/4D structural models, Analog models, Numerical models, 
 		Geochemical data, Borehole data, Rock sample properties) -->
-			GNSS Products Time Series XYZ
+			GNSS Products Portal
 		</eposap:subDomain>
     <!-- Keywords, annotation. Simple and free (web annotation ontology in the future) -->
-    <dcat:keyword>GNSS Products Time Series</dcat:keyword>
+    <dcat:keyword>Geodesy, GNSS</dcat:keyword>
     <!-- Keywords -->
-    <eposap:operation>products, repository, visualization, download</eposap:operation>
+    <eposap:operation>execute</eposap:operation>
+   <!-- <eposap:operation>products, repository, visualization, download</eposap:operation>-->
     <dct:hasVersion>1.0</dct:hasVersion>
 	
 	<eposap:parameter>
@@ -622,9 +635,9 @@ xmlns:adms="http://www.w3.org/ns/adms#"
 	  <!-- This has value either daily or weekly  -->
     </eposap:parameter>
 	
-    <dcat:contactPoint>orcid0000-0002-9733-284X</dcat:contactPoint>
+    <dcat:contactPoint>http://orcid.org/0000-0002-9733-284X</dcat:contactPoint>
     
-	<eposap:publisher>UBI PIC:996437254</eposap:publisher>
+	<eposap:publisher>PIC:996437254</eposap:publisher>
 	
     <dct:spatial>
       <!-- Geographic location/spatial extent /bounding box -->
@@ -644,6 +657,9 @@ xmlns:adms="http://www.w3.org/ns/adms#"
         <!-- 	<schema:endDate>2016-12-31T12:00:00</schema:endDate> endDate not applicable to EDSF -->
       </dct:PeriodOfTime>
     </dct:temporal>
+
+		<eposap:DDSS-ID>WP10-DDSS-009,WP10-DDSS-010,WP10-DDSS-014,WP10-DDSS-018</eposap:DDSS-ID>
+		<eposap:actions>download</eposap:actions>
 	
   </eposap:WebService>
  

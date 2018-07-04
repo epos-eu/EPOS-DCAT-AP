@@ -11,7 +11,7 @@
 	xsi:schemaLocation="http://www.epos-ip.org/terms.html https://raw.githubusercontent.com/epos-eu/EPOS-DCAT-AP/master/schemas/EPOS-DCAT-AP.xsd">
 
 	
-    <!-- EPOS Catalog -->
+    <!-- EPOS Catalog 
     <eposap:Catalog>
       <dct:title>Anthropogenic Hazards</dct:title>
       <dct:description>Anthropogenic Hazards</dct:description>
@@ -46,7 +46,7 @@
         </dct:accessRights>
         <dct:conformsTo>http://www.opengis.net/def/crs/EPSG/0/4326</dct:conformsTo>
         <dcat:landingPage>
-          <foaf:primaryTopic>https://tcs.ah-epos.eu/#episodes:BOBREK</foaf:primaryTopic>
+          <foaf:primaryTopic>https://tcs.ah-epos.eu/#episode:BOBREK</foaf:primaryTopic>
         </dcat:landingPage>
         <dct:spatial>
           <dct:Location>
@@ -82,23 +82,22 @@
         <eposap:responsibleParty>http://orcid.org/0000-0001-8181-0758</eposap:responsibleParty>
       </eposap:Dataset>
   
-      <!-- We do not know what should be in this section, however, it cannot remove it as the XML would not pass the 
-        validation then. Therefore, the section is left with sample  -->
-      <eposap:CatalogRecord><!-- ATTRIBUTE SPECIFIC TO METADATA -->
-        <foaf:primaryTopic>Some topic</foaf:primaryTopic> <!-- Topic -->
-        <dct:modified>2001-12-31T12:00:00</dct:modified> <!-- Updated -->
-        <dct:language><!-- Language.  Two-letters encoding (e.g. en). -->
+      
+      <eposap:CatalogRecord>
+        <foaf:primaryTopic>Some topic</foaf:primaryTopic> 
+        <dct:modified>2001-12-31T12:00:00</dct:modified> 
+        <dct:language>
           <dct:LinguisticSystem>en</dct:LinguisticSystem>
         </dct:language>
-        <dct:title>Record name</dct:title><!-- Standard Name -->
-        <dct:identifier>idvalue3</dct:identifier><!-- File identifier -->
-        <owl:versionInfo>Record version</owl:versionInfo><!-- Standard Version -->
-        <cnt:characterEncoding>UTF-8</cnt:characterEncoding><!-- Characterset -->
-        <dcat:contactPoint>personID01</dcat:contactPoint><!-- Point of contact -->
-        <dct:created>2001-12-31T12:00:00</dct:created> <!-- Created -->
+        <dct:title>Record name</dct:title>
+        <dct:identifier>idvalue3</dct:identifier>
+        <owl:versionInfo>Record version</owl:versionInfo>
+        <cnt:characterEncoding>UTF-8</cnt:characterEncoding>
+        <dcat:contactPoint>personID01</dcat:contactPoint>
+        <dct:created>2001-12-31T12:00:00</dct:created>
       </eposap:CatalogRecord>
     </eposap:Catalog>
-    
+    -->
         
     <eposap:Person>
       <vcard:fn>Mutke, Grzegorz</vcard:fn>
@@ -175,6 +174,11 @@
         <vcard:hasLogo>https://www.gig.eu/sites/default/files/gig-logo.png</vcard:hasLogo>
         <dct:identifier>PIC:999516616</dct:identifier>
         <eposap:scientificContact>http://orcid.org/0000-0001-8181-0758</eposap:scientificContact>
+	<dct:spatial>
+		<dct:Location>
+			<locn:geometry>POINT(5.122601753922893 52.09015264452545)</locn:geometry>
+		</dct:Location>
+	</dct:spatial>
         <dct:type>Scientific Unit</dct:type>
         <eposap:legalContact>http://orcid.org/0000-0001-8181-0758</eposap:legalContact>
         <eposap:financialContact>http://orcid.org/0000-0001-8181-0758</eposap:financialContact>
@@ -258,7 +262,9 @@
         <dct:RightsStatement>PUBLIC</dct:RightsStatement>
       </dct:rights>
       <dct:conformsTo>EPSG:4326</dct:conformsTo>
-      <dct:identifier>tcs.ah-epos.eu/#episodes:BOBREK</dct:identifier>
+
+      <dct:identifier>tcs.ah-epos.eu/#episode:BOBREK</dct:identifier>
+
       <dct:created>2017-08-03T12:00:00</dct:created>
       <eposap:domain>Anthropogenic Hazard Observations</eposap:domain>
       <eposap:subDomain>Episodes</eposap:subDomain>
@@ -293,6 +299,8 @@
       <schema:documentation>https://tcs.ah-epos.eu/eprints/view/divisions/EPOS-ESI1.html</schema:documentation>
       <dcat:contactPoint>mailto:m.sterzel@cyfronet.pl</dcat:contactPoint>
       <eposap:publisher>PIC:999844573</eposap:publisher>
+      <eposap:DDSS-ID>WP14-DDSS-007</eposap:DDSS-ID>
+      <eposap:actions>download,visualise</eposap:actions>    
   </eposap:WebService>
 
 </eposap:Epos>
