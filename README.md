@@ -9,7 +9,7 @@ Main features of this profile are:
 * Representation with RDF + Shapes (https://www.w3.org/TR/shacl/)
 * Support for data collections (i.e. Dataset dct:isPartOf, dct:hasPart)
 
- ![Simplified EPOS-DCAT-AP class diagram](EPOS-DCAT-AP/EPOS-DCAT-AP-Simplified.png) 
+ ![Simplified EPOS-DCAT-AP class diagram](https://raw.githubusercontent.com/epos-eu/EPOS-DCAT-AP/EPOS-DCAT-AP-shapes/EPOS-DCAT-AP-Simplified.png) 
 *A Simplified UML Class Diagram of the EPOS-DCAT-AP model. It extends DCAT-AP 1.1 introducing additional classes (in yellow) and relationships*
 
 # Contacts
