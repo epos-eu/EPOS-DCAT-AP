@@ -191,7 +191,7 @@
 <GlassFramework/webresources/products/timeseries/operation> a hydra:Operation;
  	hydra:method "GET"^^xsd:string;
 	hydra:returns "json";
- 	hydra:IriTemplate[ a hydra:IriTemplate;
+ 	hydra:property[ a hydra:IriTemplate;
 	hydra:template "http://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/timeseries/{site}/{analysis_centre}/{sampling_period}/{coordinates_system}/{format}/{opcional_parameters}"^^xsd:string;
       hydra:mapping[ a hydra:IriTemplateMapping;
       		hydra:variable "site"^^xsd:string;
@@ -256,23 +256,23 @@
 					rdf:label "remove_outliers - ( If nothing is given, outliers are removed by default) ";
 					hydra:required "false"^^xsd:boolean;
 					http:paramValue "1";
-					http:paramValue "0";				
+					http:paramValue "0";
       ];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "apply_offsets"^^xsd:string;
 					rdf:label "apply_offsets - (1 to apply)";
 					hydra:required "false"^^xsd:boolean;
-					http:paramValue "1";				
+					http:paramValue "1";
       ];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "epoch_start"^^xsd:string;
 					rdf:label "epoch_start";
-					hydra:required "false"^^xsd:boolean;				
+					hydra:required "false"^^xsd:boolean;
       ];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "epoch_end"^^xsd:string;
 					rdf:label "epoch_end";
-					hydra:required "false"^^xsd:boolean;				
+					hydra:required "false"^^xsd:boolean;
       ];
     ];
 .
@@ -299,7 +299,7 @@
 <GlassFramework/webresources/products/attributes/operation> a hydra:Operation;
  	hydra:method "GET"^^xsd:string;
 	hydra:returns "json";
- 	hydra:IriTemplate[ a hydra:IriTemplate;
+ 	hydra:property[ a hydra:IriTemplate;
 	    hydra:template "http://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/attributes/{attribute}"^^xsd:string;
         	hydra:mapping[ a hydra:IriTemplateMapping;
                	hydra:variable "attribute"^^xsd:string;
@@ -311,7 +311,7 @@
 		            http:paramValue "otlModel";
 		            http:paramValue "antennaModel";
 		            http:paramValue "samplingPeriod";
-		            http:paramValue "format";			
+		            http:paramValue "format";
             ];
 	];
 .
@@ -338,19 +338,19 @@
 <GlassFramework/webresources/products/stations/operation> a hydra:Operation;
  	hydra:method "GET"^^xsd:string;
 	hydra:returns "json";
- 	hydra:IriTemplate[ a hydra:IriTemplate;
+ 	hydra:property[ a hydra:IriTemplate;
 	    hydra:template "http://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/stations/{opcional_parameters}"^^xsd:string;
         	hydra:mapping[ a hydra:IriTemplateMapping;
                	hydra:variable "opcional_parameters"^^xsd:string;
 					rdf:label "opcional_parameters - Parameter1:value1,value2&Parameter2:value3,value4&…";
                		hydra:required "true"^^xsd:boolean;
 		            http:paramValue "analysis_centre";
-		            http:paramValue "antenna_model";					
+		            http:paramValue "antenna_model";
 		            http:paramValue "otl_model";
 		            http:paramValue "reference_frame";
 		            http:paramValue "cut_of_angle";
 		            http:paramValue "epoch_start";
-		            http:paramValue "coordinates";			
+		            http:paramValue "coordinates";
             ];
 	];
 .
@@ -395,7 +395,7 @@
 <GlassFramework/webresources/products/velocities/operation> a hydra:Operation;
  	hydra:method "GET"^^xsd:string;
 	hydra:returns "json/xml";
- 	hydra:IriTemplate[ a hydra:IriTemplate;
+ 	hydra:property[ a hydra:IriTemplate;
 	hydra:template "http://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/velocities/{site}/{analysis_centre}/{coordinates_system}/{format}"^^xsd:string;
       hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "Station"^^xsd:string;
@@ -421,7 +421,7 @@
 					http:paramValue "xml";
 					http:paramValue "json";
       ];
-			
+
 	];
 .
 
@@ -457,7 +457,7 @@
 <GlassFramework/webresources/products/coordinates> a hydra:Operation;
  	hydra:method "GET"^^xsd:string;
 	hydra:returns "json/xml";
- 	hydra:IriTemplate[ a hydra:IriTemplate;
+ 	hydra:property[ a hydra:IriTemplate;
 	hydra:template "http://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/coordinates/{site}/{analysis_centre}/{sampling_period}/{coordinates_system}/{format}/{optional_parameters}"^^xsd:string;
       hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "Station"^^xsd:string;
@@ -478,7 +478,7 @@
 					http:paramValue "daily";
 					http:paramValue "weekly";
       ];
-		
+
 			hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "coordinates_system"^^xsd:string;
 					rdf:label "coordinates system";
@@ -522,25 +522,25 @@
 					rdf:label "remove_outliers - ( If nothing is given, outliers are removed by default) ";
 					hydra:required "false"^^xsd:boolean;
 					http:paramValue "1";
-					http:paramValue "0";				
+					http:paramValue "0";
       ];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "apply_offsets"^^xsd:string;
 					rdf:label "apply_offsets - (1 to apply)";
 					hydra:required "false"^^xsd:boolean;
-					http:paramValue "1";				
+					http:paramValue "1";
       ];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "epoch_start"^^xsd:string;
 					rdf:label "epoch_start";
-					hydra:required "false"^^xsd:boolean;				
+					hydra:required "false"^^xsd:boolean;
       ];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "epoch_end"^^xsd:string;
 					rdf:label "epoch_end";
-					hydra:required "false"^^xsd:boolean;				
+					hydra:required "false"^^xsd:boolean;
       ];
-			
+
 	];
 .
 
@@ -568,7 +568,7 @@
 <GlassFramework/webresources/files> a hydra:Operation;
  	hydra:method "GET"^^xsd:string;
 	hydra:returns "json/xml";
- 	hydra:IriTemplate[ a hydra:IriTemplate;
+ 	hydra:property[ a hydra:IriTemplate;
 	hydra:template "http://glass.epos.ubi.pt:8080/GlassFramework/webresources/files/{object_type}/{object_instance}/{output_format}"^^xsd:string;
       hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "object_type"^^xsd:string;
@@ -589,8 +589,8 @@
 					hydra:required "false"^^xsd:boolean;
 					http:value "csv";
 					http:value "json";
-					http:value "xml";				
-      ];			
+					http:value "xml";
+      ];
 	];
 .
 
@@ -618,7 +618,7 @@
 <GlassFramework/webresources/stations/v2/list/> a hydra:Operation;
  	hydra:method "GET"^^xsd:string;
 	hydra:returns "json/xml";
- 	hydra:IriTemplate[ a hydra:IriTemplate;
+ 	hydra:property[ a hydra:IriTemplate;
 	hydra:template "http://glass.unice.fr:8080/GlassFramework/webresources/stations/v2/list/{data}"^^xsd:string;
       hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "data"^^xsd:string;
@@ -635,7 +635,7 @@
 					http:paramValue "state";
 					http:paramValue "station";
       ];
-			
+
 	];
 .
 
@@ -663,7 +663,7 @@
 <GlassFramework/webresources/stations/v2/list/station> a hydra:Operation;
  	hydra:method "GET"^^xsd:string;
 	hydra:returns "json/xml";
- 	hydra:IriTemplate[ a hydra:IriTemplate;
+ 	hydra:property[ a hydra:IriTemplate;
 	rdf:label "Different parameters should be separated by & (AMPERSAND) ";
 	rdf:label "Multiple values for a parameter should be separated by , (COMMA) ";
 	hydra:template "http://glass.unice.fr:8080GlassFramework/webresources/stations/v2/list/station/{optional_parameters}"^^xsd:string;
@@ -674,6 +674,6 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "marker"^^xsd:string;
 					hydra:required "false"^^xsd:boolean;
-      ];		
+      ];
 	];
 .

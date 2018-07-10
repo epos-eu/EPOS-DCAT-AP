@@ -1,15 +1,15 @@
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .  
-@prefix epos: <http://www.epos-eu.org/epos/dcat-ap#> .  
-@prefix dc: <http://purl.org/dc/elements/1.1/> .  
-@prefix dct: <http://purl.org/dc/terms/> .  
-@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .  
-@prefix hydra: <http://www.w3.org/ns/hydra/core#> .  
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .  
-@prefix bgs: <http://www.bgs.ac.uk#> .  
-@prefix schema: <http://schema.org/> .  
-@prefix dcat: <http://www.w3.org/ns/dcat#> .  
-@prefix cnt: <http://www.w3.org/2011/content#> .   
-@prefix locn: <http://www.w3.org/ns/locn#> . 
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix epos: <http://www.epos-eu.org/epos/dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix bgs: <http://www.bgs.ac.uk#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix http: <http://www.w3.org/2006/http#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -18,7 +18,7 @@
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "mailto";
 		schema:value "mailto:ari.viljanen@fmi.fi";
-	]; 
+	];
 	schema:familyName "Viljanen";
 	schema:givenName "Ari";
 	schema:address [ a schema:PostalAddress;
@@ -26,17 +26,17 @@
 		schema:addressLocality "Helsinki";
 		schema:postalCode "FI-00560";
 		schema:addressCountry "Finland";
-	]; 
+	];
 	schema:email "ari.viljanen@fmi.fi";
 	schema:telephone "0295394668";
 	schema:affiliation <PIC:999591306>;
-. 
+.
 
 <mailto:lasse.hakkinen@fmi.fi> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "mailto";
 		schema:value "mailto:lasse.hakkinen@fmi.fi";
-	]; 
+	];
 	schema:familyName "Häkkinen";
 	schema:givenName "Lasse";
 	schema:address [ a schema:PostalAddress;
@@ -44,74 +44,74 @@
 		schema:addressLocality "Helsinki";
 		schema:postalCode "FI-00560";
 		schema:addressCountry "Finland";
-	]; 
+	];
 	schema:email "lasse.hakkinen@fmi.fi";
 	schema:telephone "0295394634";
 	schema:affiliation <PIC:999591306>;
-. 
+.
 
 <http://space.fmi.fi/cgi-bin/imagecgi/image-epos.cgi> a epos:WebService;
 	schema:identifier "http://space.fmi.fi/cgi-bin/imagecgi/image-epos.cgi";
-	schema:identifier [ a schema:PropertyValue; 
-		schema:propertyID  "DDSS-ID"; 
-		schema:value  "WP13-DDSS-002"; 
-	]; 
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "DDSS-ID";
+		schema:value  "WP13-DDSS-002";
+	];
 	schema:description "IMAGE consists of 35 magnetometer stations maintained by 10 institutes from Estonia, Finland, Germany, Norway, Poland, Russia and Sweden. The prime objectives of IMAGE are to study auroral electrojets and moving two-dimensional current systems. The long profile covering geographic latitudes from 54 to 79 degrees is especially favourable for electrojet studies. Together with other ground-based recordings (by radars, riometers, all-sky cameras) and satellite observations, IMAGE is an essential part in the investigations of high-latitude magnetospheric-ionospheric physics. Together with its predecessor, the EISCAT magnetometer cross started in 1982, IMAGE also provides high-quality data useful for studies of geomagnetic induction and long-term geomagnetic activity in the auroral region.";
 	schema:name "Magnetometer data of the International Monitor for Auroral Geomagnetic Effects (IMAGE)";
 	schema:datePublished "2017-07-11T00:00:00Z"^^xsd:dateTime;
 	schema:dateModified "2017-07-11T00:00:00Z"^^xsd:dateTime;
 	schema:provider <PIC:999591306>;
 	schema:keywords "auroral electrojet", "geomagnetism", "magnetic field", "magnetism", "space weather", "substorm", "variometer";
-	#hydra:entrypoint "application.wadl"^^xsd:anyURI; 
+	#hydra:entrypoint "application.wadl"^^xsd:anyURI;
 	hydra:supportedOperation <http://space.fmi.fi/cgi-bin/imagecgi/image-epos.cgi/operation>;
 	dcat:theme <#MagneticField> ;
 	dcat:contactPoint <mailto:ari.viljanen@fmi.fi/contactPoint>;
 	dcat:contactPoint <mailto:lasse.hakkinen@fmi.fi/contactPoint>;
-. 
+.
 	<mailto:ari.viljanen@fmi.fi/contactPoint> a schema:ContactPoint;
 		schema:email "ari.viljanen@fmi.fi";
 		schema:availableLanguage "en" ;
-. 
+.
 	<mailto:lasse.hakkinen@fmi.fi/contactPoint> a schema:ContactPoint;
 		schema:email "lasse.hakkinen@fmi.fi";
 		schema:availableLanguage "en" ;
-. 
+.
 
 <PIC:999591306> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "PIC";
 		schema:value "PIC:999591306";
-	]; 
+	];
 	schema:legalName "Finnish Meteorological Institute";
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "Erik Palmenin aukio 1";
 		schema:addressLocality "Helsinki";
 		schema:postalCode "FI-00560";
 		schema:addressCountry "Finland";
-	]; 
+	];
 	schema:contactPoint <mailto:ari.viljanen@fmi.fi/scientificContact>;
 	schema:contactPoint <mailto:lasse.hakkinen@fmi.fi/legalContact>;
 	schema:contactPoint <mailto:lasse.hakkinen@fmi.fi/financialContact>;
-. 
+.
 	<mailto:ari.viljanen@fmi.fi/scientificContact> a schema:ContactPoint;
 		schema:email "ari.viljanen@fmi.fi";
 		schema:availableLanguage "en" ;
 		schema:contactType "scientificContact" ;
-. 
+.
 	<mailto:lasse.hakkinen@fmi.fi/legalContact> a schema:ContactPoint;
 		schema:email "lasse.hakkinen@fmi.fi";
 		schema:availableLanguage "en" ;
 		schema:contactType "legalContact" ;
-. 
+.
 	<mailto:lasse.hakkinen@fmi.fi/financialContact> a schema:ContactPoint;
 		schema:email "lasse.hakkinen@fmi.fi";
 		schema:availableLanguage "en" ;
 		schema:contactType "financialContact" ;
-. 
+.
 	<http://space.fmi.fi/cgi-bin/imagecgi/image-epos.cgi/operation> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "txt";
-		hydra:IriTemplate[ a hydra:IriTemplate;
+		hydra:property[ a hydra:IriTemplate;
 			hydra:template "http://space.fmi.fi/cgi-bin/imagecgi/image-epos.cgi(?start, yourname, institute, email, submit)"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "start"^^xsd:integer;
@@ -141,11 +141,11 @@
 					hydra:required "true"^^xsd:boolean;
 				];
 		] ;
-. 
+.
 	<#Geoelectromagnetism> a skos:ConceptScheme;
 		dct:title "Geoelectromagnetism";
                 dct:description "It contains the concepts of Geoelectromagnetism" ;
-. 
+.
 	<#MagneticField> a skos:Concept;
                 skos:definition "" ;
 		skos:inScheme <#Geoelectromagnetism>;

@@ -1,15 +1,15 @@
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .  
-@prefix epos: <http://www.epos-eu.org/epos/dcat-ap#> .  
-@prefix dc: <http://purl.org/dc/elements/1.1/> .  
-@prefix dct: <http://purl.org/dc/terms/> .  
-@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .  
-@prefix hydra: <http://www.w3.org/ns/hydra/core#> .  
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .  
-@prefix bgs: <http://www.bgs.ac.uk#> .  
-@prefix schema: <http://schema.org/> .  
-@prefix dcat: <http://www.w3.org/ns/dcat#> .  
-@prefix cnt: <http://www.w3.org/2011/content#> .   
-@prefix locn: <http://www.w3.org/ns/locn#> . 
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix epos: <http://www.epos-eu.org/epos/dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix bgs: <http://www.bgs.ac.uk#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix http: <http://www.w3.org/2006/http#> .
@@ -18,7 +18,7 @@
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "ORCID";
 		schema:value "http://orcid.org/0000-0002-0915-3711";
-	]; 
+	];
 	schema:familyName "Reitano";
 	schema:givenName "Danilo";
 	schema:address [ a schema:PostalAddress;
@@ -26,19 +26,19 @@
 		schema:addressLocality "Catania";
 		schema:postalCode "95125";
 		schema:addressCountry "Italy";
-	]; 
+	];
 	schema:email "danilo.reitano@ingv.it";
 	schema:telephone "+00390957165800";
 	schema:url "http://orcid.org/0000-0002-0915-3711"^^xsd:anyURI;
 	schema:qualifications "Technologist";
 	schema:affiliation <PIC:999472675>;
-. 
+.
 
 <http://orcid.org/0000-0001-6137-8806> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "ORCID";
 		schema:value "http://orcid.org/0000-0001-6137-8806";
-	]; 
+	];
 	schema:familyName "Corsaro";
 	schema:givenName "Rosa Anna";
 	schema:address [ a schema:PostalAddress;
@@ -46,19 +46,19 @@
 		schema:addressLocality "Catania";
 		schema:postalCode "95125";
 		schema:addressCountry "Italy";
-	]; 
+	];
 	schema:email "rosanna.corsaro@ingv.it";
 	schema:telephone "+00390957165800";
 	schema:url "http://orcid.org/0000-0001-6137-8806"^^xsd:anyURI;
 	schema:qualifications "Volcanologist";
 	schema:affiliation <PIC:999472675>;
-. 
+.
 
 <http://orcid.org/0000-0001-8887-2580> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "ORCID";
 		schema:value "http://orcid.org/0000-0001-8887-2580";
-	]; 
+	];
 	schema:familyName "Federico";
 	schema:givenName "Cinzia";
 	schema:address [ a schema:PostalAddress;
@@ -66,73 +66,73 @@
 		schema:addressLocality "Palermo";
 		schema:postalCode "90146";
 		schema:addressCountry "Italy";
-	]; 
+	];
 	schema:email "cinzia.federico@ingv.it";
 	schema:telephone "+00390916890965";
 	schema:url "http://orcid.org/0000-0001-8887-2580"^^xsd:anyURI;
 	schema:qualifications "Geochemist";
 	schema:affiliation <PIC:999472675>;
-. 
+.
 
 <rest/bulk-rock> a epos:WebService;
 	schema:identifier "rest/bulk-rock";
-	schema:identifier [ a schema:PropertyValue; 
-		schema:propertyID  "DDSS-ID"; 
-		schema:value  "WP11-DDSS-036"; 
-	]; 
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "DDSS-ID";
+		schema:value  "WP11-DDSS-036";
+	];
 	schema:description "Bulk chemical analysis (major and trace elements) in volcanic rocks erupted by Etna volcano from 1995 to 2015";
 	schema:name "Bulk Rock Analysis";
 	schema:datePublished "2017-08-20T12:00:00Z"^^xsd:dateTime;
 	schema:dateModified "2017-09-15T12:00:00Z"^^xsd:dateTime;
 	schema:provider <PIC:999472675>;
 	schema:keywords "Petrology", "Volcanology", "Etna", "Magma composition", "Bulk Rock Analysis";
-	#hydra:entrypoint "application.wadl"^^xsd:anyURI; 
+	#hydra:entrypoint "application.wadl"^^xsd:anyURI;
 	hydra:supportedOperation <rest/bulk-rock/operation>;
 	dcat:theme <#Geochemical-Data>;
 	dcat:contactPoint <http://orcid.org/0000-0002-0915-3711/contactPoint>;
-. 
+.
 	<http://orcid.org/0000-0002-0915-3711/contactPoint> a schema:ContactPoint;
 		schema:email "danilo.reitano@ingv.it";
 		schema:availableLanguage "en" ;
-. 
+.
 
 <PIC:999472675> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "PIC";
 		schema:value "999472675";
-	]; 
+	];
 	schema:legalName "National Institute of Geophysics and Volcanology";
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "Via di Vigna Murata, 605";
 		schema:addressLocality "Rome";
 		schema:postalCode "00143";
 		schema:addressCountry "Italy";
-	]; 
+	];
 	schema:logo "http://roma2.rm.ingv.it/userfiles/file/Logo/INGV_Logo-abbr_colore.jpg"^^xsd:anyURI;
 	schema:url "http://www.ingv.it/"^^xsd:anyURI;
 	schema:contactPoint <http://orcid.org/0000-0002-0915-3711/scientificContact>;
 	schema:contactPoint <http://orcid.org/0000-0002-0915-3711/legalContact>;
 	schema:contactPoint <http://orcid.org/0000-0002-0915-3711/financialContact>;
-. 
+.
 	<http://orcid.org/0000-0002-0915-3711/scientificContact> a schema:ContactPoint;
 		schema:email "rosanna.corsaro@ingv.it";
 		schema:availableLanguage "en" ;
 		schema:contactType "scientificContact" ;
-. 
+.
 	<http://orcid.org/0000-0002-0915-3711/legalContact> a schema:ContactPoint;
 		schema:email "danilo.reitano@ingv.it";
 		schema:availableLanguage "en" ;
 		schema:contactType "legalContact" ;
-. 
+.
 	<http://orcid.org/0000-0002-0915-3711/financialContact> a schema:ContactPoint;
 		schema:email "danilo.reitano@ingv.it";
 		schema:availableLanguage "en" ;
 		schema:contactType "financialContact" ;
-. 
+.
 	<rest/bulk-rock/operation> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "json";
-		hydra:IriTemplate[ a hydra:IriTemplate;
+		hydra:property[ a hydra:IriTemplate;
 			hydra:template "http://193.206.223.51:8081/rest/bulk-rock(?type-sample, min_sio2, min_tio2, min_rb, min_cs)"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "type-sample"^^xsd:string;
@@ -170,16 +170,16 @@
 					hydra:required "false"^^xsd:boolean;
 				];
 		] ;
-. 
+.
 	<#Volcano-Observations> a skos:ConceptScheme;
 		dct:title "Volcano-Observations";
 		dct:description "It contains the concepts of Volcano-Observations";
-. 
+.
 	<#Geochemical-Data> a skos:Concept;
 		skos:inScheme <#Volcano-Observations>;
 		skos:prefLabel "Geochemical-Data";
-		
-		
+
+
 .
 
 <WP11/Bulksample> a dcat:Dataset;
