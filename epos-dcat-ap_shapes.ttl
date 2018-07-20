@@ -1,10 +1,10 @@
-@prefix : <http://www.epos-eu.org/epos/dcat-ap#> .
+@prefix : <https://www.epos-eu.org/epos-dcat-ap#> .
 @prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
-@prefix epos: <http://www.epos-eu.org/epos/dcat-ap#> .
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix cnt: <http://www.w3.org/2011/content#> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
@@ -27,7 +27,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 
-<http://www.epos-eu.org/epos/dcat-ap>
+<http://www.epos-eu.org/epos-dcat-ap>
   rdf:type owl:Ontology ;
   dct:abstract "The EPOS DCAT Application Profile is an extension of the DCAT-AP for the EPOS community (www.epos-eu.org). It uses SHACL to express constraints and define the data structure (https://www.w3.org/TR/2017/REC-shacl-20170720/)"@en  ;
   dct:creator [
@@ -67,7 +67,7 @@
   owl:imports org: ;
   owl:imports foaf: ;
   owl:versionInfo "0.12" ;
-  foaf:homepage <http://www.epos-eu.org/dcat-ap> ;
+  foaf:homepage <http://www.epos-eu.org/epos-dcat-ap> ;
 .
 
 ####
@@ -77,7 +77,7 @@
 epos:Equipment
   a owl:Class ;
   rdfs:comment "A resource representing a generic equipment. E.g. gps sensor, seismic station's channel"@en  ;
-  rdfs:isDefinedBy <http://www.epos-eu.org/epos/dcat-ap> ;
+  rdfs:isDefinedBy <http://www.epos-eu.org/epos-dcat-ap> ;
   rdfs:label "Equipment"@en  ;
   rdfs:subClassOf rdfs:Resource ;
   rdfs:subClassOf schema:Product ;
@@ -86,7 +86,7 @@ epos:Equipment
 epos:Facility
   a owl:Class ;
   rdfs:comment "A resource representing a Facility. E.g. seismic station"@en  ;
-  rdfs:isDefinedBy <http://www.epos-eu.org/epos/dcat-ap> ;
+  rdfs:isDefinedBy <http://www.epos-eu.org/epos-dcat-ap> ;
   rdfs:label "Facility"@en  ;
   rdfs:subClassOf rdfs:Resource ;
 .
@@ -111,7 +111,7 @@ schema:ContactPoint a owl:Class;
 epos:Publication
   a owl:Class ;
   rdfs:comment "EPOS specialisation of schema:CreativeWork"@en  ;
-  rdfs:isDefinedBy <http://www.epos-eu.org/epos/dcat-ap> ;
+  rdfs:isDefinedBy <http://www.epos-eu.org/epos-dcat-ap> ;
   rdfs:label "Publication"@en  ;
   rdfs:subClassOf schema:CreativeWork ;
 .
@@ -122,7 +122,7 @@ epos:WebService
   rdfs:subClassOf schema:Service;
   rdfs:subClassOf rdfs:Resource ;
   rdfs:label "WebService"@en  ;
-  rdfs:isDefinedBy <http://www.epos-eu.org/epos/dcat-ap> ;
+  rdfs:isDefinedBy <http://www.epos-eu.org/epos-dcat-ap> ;
 .
 
 ####
