@@ -1649,8 +1649,20 @@ epos:FacilityShape
   ] ;
 
   sh:property [
-        sh:path dct:relation ;
-        sh:class rdfs:Resource ;
+       sh:path dct:relation ;
+       sh:or (
+        [
+          sh:class rdfs:Resource ;
+        ]
+        [
+          sh:class dcat:Dataset ;
+        ]
+	[
+          sh:class epos:WebService ;
+        ]
+	       
+      );
+        
   ] ;
 
   sh:property [
