@@ -1,0 +1,136 @@
+[schema:address]
+    schema:streetAddress
+    schema:addressLocality
+    schema:postalCode
+    schema:addressCountry
+
+[schema:identifier]
+    schema:propertyID
+    schema:value
+    
+[schema:identifier]
+
+[dct:spatial]
+    dct:Location
+    
+[dct:temporal]
+    dct:PeriodOfTime
+    
+[hydra:property]
+    hydra:template
+    hydra:mapping 1..N
+    
+[hydra:mapping]
+    hydra:variable 
+    rdf:label
+    hydra:required
+    rdfs:range
+    schema:defaultValue
+    schema:minValue 0..1
+    schema:maxValue 0..1
+    http:paramValue 0..N
+
+------------------------------------------------------------------
+
+schema:Person
+    schema:identifier 1..N
+    schema:familyName
+    schema:givenName
+    schema:address
+    schema:email
+    schema:telephone
+    schema:url
+    schema:qualifications
+    schema:affiliation
+    schema:contactPoint 1..N
+    
+schema:ContactPoint
+    schema:email
+    schema:availableLanguage
+    schema:contactType
+    
+schema:Organization
+    schema:identifier
+    schema:legalName
+    schema:leiCode
+    schema:address
+    schema:logo
+    schema:url
+    schema:email
+    schema:telephone
+    schema:contactPoint 1..N
+    schema:memberOf
+    schema:owns
+    
+dcat:Dataset
+    dct:identifier
+    dct:title
+    dct:description
+    adms:identifier
+    dct:created
+    dct:issued
+    dct:modified
+    owl:versionInfo
+    dct:type
+    dct:accrualPeriodicity
+    dcat:theme
+    dcat:keyword
+    dcat:contactPoint
+    dct:publisher
+    dcat:distribution
+    dct:spatial
+    dct:temporal
+    dct:hasVersion
+    dct:isVersionOf
+    dct:isPartOf
+    dct:hasPart
+    
+dcat:Distribution
+    dct:identifierr
+    dct:title
+    dct:title
+    dct:issued
+    dct:modified
+    dct:type
+    dct:conformsTo
+    dcat:accessUTL
+    dct:format
+    dcat:byteSize
+    dct:license
+    dcat:downloadURL
+    
+epos:WebService
+    schema:identifier
+    schema:description
+    schema:name
+    dcat:contactPoint
+    schema:datePublished
+    schema:dateModified
+    schema:provider
+    hydra:entrypoint
+    dcat:theme
+    schema:keywords
+    hydra:supportedOperation
+    dct:conformsTo
+    dct:spatial
+    dct:temporal
+    dct:license
+    
+hydra:APIDocumentation
+    hydra:title
+    hydra:description
+    hydra:entrypoint
+    
+hydra:Operation
+    hydra:method
+    hydra:returns
+    hydra:property
+    
+skos:conceptScheme
+    dct:title
+    dct:description
+    
+skos:Concept
+    skos:definition
+    skos:inScheme
+    skos:prefLabel
