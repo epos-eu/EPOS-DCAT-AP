@@ -1,36 +1,5 @@
-[schema:address]
-    schema:streetAddress
-    schema:addressLocality
-    schema:postalCode
-    schema:addressCountry
-
-[schema:identifier]
-    schema:propertyID
-    schema:value
-    
-[schema:identifier]
-
-[dct:spatial]
-    dct:Location
-    
-[dct:temporal]
-    dct:PeriodOfTime
-    
-[hydra:property]
-    hydra:template
-    hydra:mapping 1..N
-    
-[hydra:mapping]
-    hydra:variable 
-    rdf:label
-    hydra:required
-    rdfs:range
-    schema:defaultValue
-    schema:minValue 0..1
-    schema:maxValue 0..1
-    http:paramValue 0..N
-
-------------------------------------------------------------------
+August 2018, Fields from WP6 example
+------------------------------------
 
 schema:Person
     schema:identifier 1..N
@@ -86,9 +55,9 @@ dcat:Dataset
     dct:hasPart
     
 dcat:Distribution
-    dct:identifierr
+    dct:identifier
     dct:title
-    dct:title
+    dct:description
     dct:issued
     dct:modified
     dct:type
@@ -134,3 +103,43 @@ skos:Concept
     skos:definition
     skos:inScheme
     skos:prefLabel
+
+    
+Nested vocabularies
+-------------------
+
+[schema:address] type schema:PostalAddress
+    schema:streetAddress
+    schema:addressLocality
+    schema:postalCode
+    schema:addressCountry
+
+[schema:identifier] type schema:PropertyValue
+    schema:propertyID
+    schema:value
+    
+[adms:identifier] type admsIdentifier
+    adms:schemaAgency
+    skos:notation
+
+[dct:spatial] type dct:Location
+    locn:geometry
+    
+[dct:temporal] type dct:PeriodOfTime
+    schema:startDate
+    schema:endDate
+    
+[hydra:property] type hydra:IriTemplate
+    hydra:template
+    hydra:mapping 1..N
+    
+[hydra:mapping] type hydra:IriTemplateMapping
+    hydra:variable 
+    rdf:label
+    hydra:required
+    rdfs:range
+    schema:defaultValue
+    schema:minValue 0..1
+    schema:maxValue 0..1
+    http:paramValue 0..N
+
