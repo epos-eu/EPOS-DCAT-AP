@@ -1,11 +1,11 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix epos: <http://www.epos-eu.org/epos/dcat-ap#> .
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix hydra: <http://www.w3.org/ns/hydra/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix bgs: <http://www.bgs.ac.uk#> .
 @prefix schema: <http://schema.org/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix cnt: <http://www.w3.org/2011/content#> .
@@ -13,7 +13,8 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix http: <http://www.w3.org/2006/http#> .
-
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
 <http://orcid.org/0000-0001-7750-7254> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
@@ -21,7 +22,7 @@
         	schema:value   "0000-0001-7750-7254";
       	];
 	schema:identifier [ a schema:PropertyValue;
-          	schema:propertyID  "Scopus";
+          	schema:propertyID  "ScopusAuthorID";
           	schema:value   "55861456000";
       	];
 	schema:familyName "Trani";
@@ -169,7 +170,7 @@
 <ORFEUS/ODCWS/RRSM/shakemap> a hydra:Operation;
  	hydra:method "GET"^^xsd:string;
 	hydra:returns "xml";
- 	hydra:IriTemplate[ a hydra:IriTemplate;
+ 	hydra:property[ a hydra:IriTemplate;
         	hydra:template "http://www.orfeus-eu.org/odcws/rrsm/1/shakemap/(?id,type)"^^xsd:string;
         		hydra:mapping[ a hydra:IriTemplateMapping;
                			hydra:variable "id"^^xsd:string;
@@ -211,7 +212,7 @@
 <orfeus-eu.org/fdsnws/station/1/query> a hydra:Operation;
 	hydra:method "GET"^^xsd:string;
  	hydra:returns "xml";
- 	hydra:IriTemplate[ a hydra:IriTemplate;
+ 	hydra:property[ a hydra:IriTemplate;
         	hydra:template "http://www.orfeus-eu.org/fdsnws/station/1/query/(?starttime,endtime,network,station,location,channel,minlatitude,maxlatitude,minlongitude,maxlongitude,level,nodata)"^^xsd:string;
               		hydra:mapping[ a hydra:IriTemplateMapping;
               			hydra:variable "starttime"^^xsd:string;
@@ -315,7 +316,7 @@
 <orfeus-eu.org/fdsnws/dataselect/1/query> a hydra:Operation;
  	hydra:method "GET"^^xsd:string;
 	hydra:returns "binary";
- 	hydra:IriTemplate[ a hydra:IriTemplate;
+ 	hydra:property[ a hydra:IriTemplate;
         	hydra:template "http://www.orfeus-eu.org/fdsnws/dataselect/1/query/(?starttime,endtime,network,station,location,channel,minimumlength,nodata)"^^xsd:string;
         		hydra:mapping[ a hydra:IriTemplateMapping;
         			hydra:variable "starttime"^^xsd:string;
@@ -388,7 +389,7 @@
         dct:identifier "WFDistributionID";
 	dct:description "Seismic Waveform Distribution";
 	dct:created "2017-01-01"^^xsd:date;
-	dct:type "http://publications.europa.eu/resource/authority/distributiontype/WEB_SERVICE"^^xsd:anyURI;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 	dcat:accessURL <orfeus-eu.org/fdsnws/dataselect/1/query>;
 	dct:conformsTo <orfeus-eu.org/fdsnws/dataselect/1/>;
 	dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI;

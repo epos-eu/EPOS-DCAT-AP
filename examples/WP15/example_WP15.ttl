@@ -1,19 +1,20 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix epos: <http://www.epos-eu.org/epos/dcat-ap#> .
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix hydra: <http://www.w3.org/ns/hydra/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix bgs: <http://www.bgs.ac.uk#> .
 @prefix schema: <http://schema.org/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix cnt: <http://www.w3.org/2011/content#> .
-@prefix locn: <http://www.w3.org/ns/locn#>.
-@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
-@prefix http: <http://www.w3.org/2006/http#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http: <http://www.w3.org/2006/http#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
 <contact-brgm@brgm.fr/contactPoint> a schema:ContactPoint;
 			schema:availableLanguage "fr" ;
@@ -99,7 +100,7 @@
 <mapsrefdev.brgm.fr/wxs/1GE/EGDI_1M_INSPIRE_geolUnits/WMS/getCapabilities>  a hydra:Operation ;
                hydra:method "GET"^^xsd:string;
 	       hydra:returns "xml";
-               hydra:IriTemplate[ a hydra:IriTemplate;
+               hydra:property[ a hydra:IriTemplate;
                hydra:template "http://mapsrefdev.brgm.fr/wxs/1GE/EGDI_1M_INSPIRE_geolUnits(?service,version,request)"^^xsd:string;
 
                hydra:mapping[ a hydra:IriTemplateMapping;
@@ -127,7 +128,7 @@
 <mapsrefdev.brgm.fr/wxs/1GE/EGDI_1M_INSPIRE_geolUnits/WMS/getMap>  a hydra:Operation;
                hydra:method "GET"^^xsd:string;
 	       hydra:returns "image";
-               hydra:IriTemplate[ a hydra:IriTemplate;
+               hydra:property[ a hydra:IriTemplate;
                hydra:template "http://mapsrefdev.brgm.fr/wxs/1GE/EGDI_1M_INSPIRE_geolUnits(?request,version,layers,format,crs,width,height)"^^xsd:string;
                hydra:mapping[ a hydra:IriTemplateMapping;
                	hydra:variable "request"^^xsd:string;
@@ -146,8 +147,8 @@
                	hydra:variable "layers"^^xsd:string;
                	hydra:required "true"^^xsd:boolean;
 		rdfs:label "Layers";
-		schema:defaultValue "EGDI_GE_GeologicUnit_EN_1M_Surface_Lithology"; 
-               ];           
+		schema:defaultValue "EGDI_GE_GeologicUnit_EN_1M_Surface_Lithology";
+               ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
                	hydra:variable "format"^^xsd:string;
                	hydra:required "false"^^xsd:boolean;
@@ -165,13 +166,13 @@
                hydra:mapping[ a hydra:IriTemplateMapping;
                	hydra:variable "width"^^xsd:string;
 		rdfs:label "Width of the output map";
-		schema:defaultValue "1536"; 
+		schema:defaultValue "1536";
                	hydra:required "false"^^xsd:boolean;
                ];
                hydra:mapping[ a hydra:IriTemplateMapping;
                	hydra:variable "height"^^xsd:string;
 		rdfs:label "Height of the output map";
-		schema:defaultValue "660"; 
+		schema:defaultValue "660";
                	hydra:required "false"^^xsd:boolean;
                ];
             ];

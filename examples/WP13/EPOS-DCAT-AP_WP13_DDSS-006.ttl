@@ -1,24 +1,26 @@
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .  
-@prefix epos: <http://www.epos-eu.org/epos/dcat-ap#> .  
-@prefix dc: <http://purl.org/dc/elements/1.1/> .  
-@prefix dct: <http://purl.org/dc/terms/> .  
-@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .  
-@prefix hydra: <http://www.w3.org/ns/hydra/core#> .  
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .  
-@prefix bgs: <http://www.bgs.ac.uk#> .  
-@prefix schema: <http://schema.org/> .  
-@prefix dcat: <http://www.w3.org/ns/dcat#> .  
-@prefix cnt: <http://www.w3.org/2011/content#> .   
-@prefix locn: <http://www.w3.org/ns/locn#> . 
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix http: <http://www.w3.org/2006/http#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http: <http://www.w3.org/2006/http#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
 <http://orcid.org/0000-0001-8793-1315> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "orcid";
 		schema:value "http://orcid.org/0000-0001-8793-1315";
-	]; 
+	];
 	schema:familyName "Chambodut";
 	schema:givenName "Aude";
 	schema:address [ a schema:PostalAddress;
@@ -26,19 +28,39 @@
 		schema:addressLocality "Strasbourg cedex";
 		schema:postalCode "67084";
 		schema:addressCountry "France";
-	]; 
+	];
 	schema:email "aude.chambodut@unistra.fr";
 	schema:telephone "+33368850081";
 	schema:url "http://eost.unistra.fr/recherche/ipgs/dgda/dgda-perso/aude-chambodut/"^^xsd:anyURI;
 	schema:qualifications "Director of ISGI, responsible of aa and am geomagnetic indices";
 	schema:affiliation <PIC:999997930>;
-. 
+.
+
+<http://orcid.org/0000-0002-0186-7138> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "orcid";
+		schema:value "http://orcid.org/0000-0002-0186-7138";
+	];
+	schema:familyName "Masson";
+	schema:givenName "Frederic";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "EOST, 5 rue Rene Descartes";
+		schema:addressLocality "Strasbourg cedex";
+		schema:postalCode "67084";
+		schema:addressCountry "France";
+	];
+	schema:email "frederic.masson@unistra.fr";
+	schema:telephone "+33368855029";
+	schema:url "https://eost.unistra.fr/en/research/ipgs/dgda/dgda-perso/frederic-masson/"^^xsd:anyURI;
+	schema:qualifications "Director of Ecole et Observatoire des Sciences de la Terre (EOST)";
+	schema:affiliation <PIC:999997930>;
+.
 
 <mailto:binta.mesmacque@unistra.fr> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "mailto";
 		schema:value "mailto:binta.mesmacque@unistra.fr";
-	]; 
+	];
 	schema:familyName "Mesmacque";
 	schema:givenName "Binta";
 	schema:address [ a schema:PostalAddress;
@@ -46,111 +68,105 @@
 		schema:addressLocality "Strasbourg cedex";
 		schema:postalCode "67084";
 		schema:addressCountry "France";
-	]; 
+	];
 	schema:email "binta.mesmacque@unistra.fr";
 	schema:telephone "+33368850023";
 	schema:url "https://eost.unistra.fr/en/research/ipgs/dgda/dgda-perso/frederic-masson/"^^xsd:anyURI;
 	schema:qualifications "financial office of CNRS at EOST";
 	schema:affiliation <PIC:999997930>;
-. 
+.
 
 <http://isgi.unistra.fr/ws?> a epos:WebService;
 	schema:identifier "http://isgi.unistra.fr/ws?";
-	schema:identifier [ a schema:PropertyValue; 
-		schema:propertyID  "DDSS-ID"; 
-		schema:value  "WP13-DDSS-007"; 
-	]; 
-	schema:description "Since 2015, International Service of Geomagnetic Indices is hosted by EOST, Strasbourg, France. 		ISGI is a service of the International Association of Geomagnetism and Aeronomy (IAGA). ISGI is the Reference Service for validation, 		dissemination and stewardship of geomagnetic indices through its official Web portal.";
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "DDSS-ID";
+		schema:value  "WP13-DDSS-006";
+	];
+	schema:description "Since 2015, International Service of Geomagnetic Indices is hosted by EOST, Strasbourg, France. ISGI is a service of the International Association of Geomagnetism and Aeronomy (IAGA). ISGI is the Reference Service for validation, dissemination and stewardship of geomagnetic indices through its official Web portal.";
 	schema:name "ISGI Data Download Web Service";
 	schema:datePublished "2017-06-15T12:00:00Z"^^xsd:dateTime;
 	schema:dateModified "2017-08-01T12:00:00Z"^^xsd:dateTime;
 	schema:provider <PIC:999997930>;
-	schema:keywords "DISTURBED DAY", "GEO-EFFECTIVITY", "GEOMAGNETIC ACTIVITY", "GEOMAGNETIC STORM", "GEOMAGNETISM", "INTERPLANETARY MAGNETIC FIELD (IMF)", "			IONOSPHERE", "MAGNETIC FIELD", "MAGNETISM", "MAGNETOSPHERE", "QUIET DAY", "RAPID MAGNETIC VARIATIONS", "REMARKABLE EVENT", "SOLAR FLARE", "			SOLAR FLARE EFFECT", "SOLAR QUIET", "SOLAR STORM", "SPACE-WEATHER", "SUDDEN STORM COMMENCEMENT", "SUDDEN COMMENCEMENT,SUDDEN IMPULSE", "			TIME SERIES";
-	#hydra:entrypoint "application.wadl"^^xsd:anyURI; 
-	hydra:supportedOperation <http://isgi.unistra.fr/ws?/operation>;
+	schema:keywords "GEO-EFFECTIVITY", "GEOMAGNETIC ACTIVITY", "GEOMAGNETIC INDEX", "GEOMAGNETIC STORM", "GEOMAGNETISM", "INTERPLANETARY MAGNETIC FIELD (IMF)", "			IONOSPHERE", "MAGNETIC FIELD", "MAGNETISM", "MAGNETOSPHERE", "RAPID MAGNETIC VARIATIONS", "SOLAR CYCLE", "SOLAR QUIET", "SOLAR STORM", "SPACE-WEATHER", "			TIME SERIES";
+	#hydra:entrypoint "application.wadl"^^xsd:anyURI;
+	hydra:supportedOperation <http://geomag.bgs.ac.uk/EPOS/WP13/isgi/operation>;
 	dcat:theme <#MagneticActivity> ;
 	dcat:contactPoint <http://orcid.org/0000-0001-8793-1315/contactPoint>;
-. 
+.
 	<http://orcid.org/0000-0001-8793-1315/contactPoint> a schema:ContactPoint;
 		schema:email "aude.chambodut@unistra.fr";
 		schema:availableLanguage "en" ;
-. 
+.
 
 <PIC:999997930> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "PIC";
 		schema:value "PIC:999997930";
-	]; 
+	];
 	schema:legalName "International Service of Geomagnetic Indices";
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "at EOST, 5 rue Rene Descartes";
 		schema:addressLocality "Strasbourg Cedex";
 		schema:postalCode "67084";
 		schema:addressCountry "France";
-	]; 
+	];
 	schema:logo "http://isgi.unistra.fr/Images/logo_ISGI.gif"^^xsd:anyURI;
 	schema:url "http://isgi.unistra.fr/"^^xsd:anyURI;
 	schema:contactPoint <http://orcid.org/0000-0001-8793-1315/scientificContact>;
 	schema:contactPoint <http://orcid.org/0000-0001-8793-1315/legalContact>;
 	schema:contactPoint <mailto:binta.mesmacque@unistra.fr/financialContact>;
-. 
+.
 	<http://orcid.org/0000-0001-8793-1315/scientificContact> a schema:ContactPoint;
 		schema:email "aude.chambodut@unistra.fr";
 		schema:availableLanguage "en" ;
 		schema:contactType "scientificContact" ;
-. 
+.
 	<http://orcid.org/0000-0001-8793-1315/legalContact> a schema:ContactPoint;
 		schema:email "aude.chambodut@unistra.fr";
 		schema:availableLanguage "en" ;
 		schema:contactType "legalContact" ;
-. 
+.
 	<mailto:binta.mesmacque@unistra.fr/financialContact> a schema:ContactPoint;
 		schema:email "binta.mesmacque@unistra.fr";
 		schema:availableLanguage "en" ;
 		schema:contactType "financialContact" ;
-. 
-	<http://isgi.unistra.fr/ws?/operation> a hydra:Operation;
+.
+	<http://geomag.bgs.ac.uk/EPOS/WP13/isgi/operation> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "zip";
-		hydra:IriTemplate[ a hydra:IriTemplate;
-			hydra:template "http://isgi.unistra.fr/ws(?user, index, StartTime, EndTime)"^^xsd:string;
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "user"^^xsd:string;
-					rdfs:label "user Name";
-					http:paramValue "TBD";
-					hydra:required "true"^^xsd:boolean;
-				];
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "http://geomag.bgs.ac.uk/EPOS/WP13/isgi/(?index, StartTime, EndTime)"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "index"^^xsd:string;
-					rdfs:label "Geomagnetic Event";
-					http:paramValue "SSC";
-					http:paramValue "SFE";
-					http:paramValue "QDdays";
-					http:paramValue "CKdays";
+					rdfs:label "GeomagneticIndex";
+					http:paramValue "aa";
+					http:paramValue "am";
+					http:paramValue "Kp";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "StartTime"^^xsd:dateTime;
-					rdfs:label "Start Time";
+					rdfs:label "StartTime";
 					schema:minValue "0000-00-00";
 					schema:maxValue "9999-12-31";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "EndTime"^^xsd:dateTime;
-					rdfs:label "End Time";
+					rdfs:label "EndTime";
 					schema:minValue "0000-00-00";
 					schema:maxValue "9999-12-31";
 					hydra:required "true"^^xsd:boolean;
 				];
 		] ;
-. 
+.
 	<#Geoelectromagnetism> a skos:ConceptScheme;
 		dct:title "Geoelectromagnetism";
                 dct:description "It contains the concepts of Geoelectromagnetism" ;
-. 
+.
 	<#MagneticActivity> a skos:Concept;
                 skos:definition "" ;
 		skos:inScheme <#Geoelectromagnetism>;
                 skos:prefLabel "Magnetic Activity" ;
+
 .

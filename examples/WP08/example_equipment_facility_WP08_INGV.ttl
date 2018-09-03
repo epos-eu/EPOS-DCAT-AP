@@ -1,22 +1,20 @@
 @prefix adms: <http://www.w3.org/ns/adms#> .
-@prefix cnt: <http://www.w3.org/2011/content#> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dct: <http://purl.org/dc/terms/> .
-@prefix epos: <http://www.epos-eu.org/epos/dcat-ap#> .
-@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
-@prefix locn: <http://www.w3.org/ns/locn#> .
-@prefix oa: <http://www.w3.org/ns/oa#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <http://schema.org/> .
-@prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix spdx: <http://spdx.org/rdf/terms#> .
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http: <http://www.w3.org/2006/http#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
 </EPOS/ORGANIZATION/INGV> a schema:Organization ;
     schema:address [ a schema:PostalAddress ;
@@ -32,12 +30,33 @@
     schema:logo "http://roma2.rm.ingv.it/userfiles/file/Logo/INGV_Logo-abbr_colore.jpg"^^xsd:anyURI ;
     schema:url "http://www.ingv.it"^^xsd:anyURI .
 
+<http://orcid.org/0000-0002-1399-0379> a schema:Person;
+    	schema:identifier [ a schema:PropertyValue;
+    		schema:propertyID "orcid";
+    		schema:value "http://orcid.org/0000-0002-1399-0379";
+    	];
+    	schema:familyName "Fares";
+    	schema:givenName "Massimo";
+    	schema:address [ a schema:PostalAddress;
+    		schema:streetAddress "Via di Vigna Murata, 605";
+    		schema:addressLocality "Roma";
+    		schema:postalCode "00143";
+    		schema:addressCountry "ITALY";
+    	];
+    	schema:email "massimo.fares@ingv.it";
+    	schema:telephone "+390651860540";
+    	schema:url "http://orcid.org/0000-0002-1399-0379"^^xsd:anyURI;
+    	schema:qualifications "IT";
+    	schema:affiliation </EPOS/ORGANIZATION/INGV>;
+      schema:contactPoint </EPOS/ORFEUS/EIDA/INGV/MFARES>;
+    .
+
+
 </EPOS/ORFEUS/EIDA/INGV/MFARES> a schema:ContactPoint ;
     schema:availableLanguage "IT, EN"^^xsd:string ;
     schema:contactType "scientificContact"^^xsd:string ;
     schema:email "massimo.fares@ingv.it"^^xsd:string ;
-    schema:name "Massimo Fares"^^xsd:string ;
-    schema:telephone "00390651860540"^^xsd:string .
+.
 
 <#Seismology> a skos:ConceptScheme;
     dct:title "Seismology";
@@ -69580,24 +69599,3 @@
     schema:manufacturer </EPOS/ORGANIZATION/INGV> ;
     schema:serialNumber "IV.ZCCA"^^xsd:string ;
     dcat:contactPoint </EPOS/ORFEUS/EIDA/INGV/MFARES> .
-
-</EPOS/ORGANIZATION/INGV> a schema:Organization ;
-    schema:address [ a schema:PostalAddress ;
-            schema:addressCountry "Italy"^^xsd:string ;
-            schema:addressLocality "Rome"^^xsd:string ;
-            schema:postalCode "00143"^^xsd:string ;
-            schema:streetAddress "Via di Vigna Murata, 605"^^xsd:string ] ;
-    schema:identifier [ a schema:PropertyValue ;
-            schema:propertyID "PIC"^^xsd:string ;
-            schema:value "999472675"^^xsd:string ] ;
-    schema:legalName "INGV National Institute of Geophysics e Volcanology"^^xsd:string ;
-    schema:leiCode "Whatever"^^xsd:string ;
-    schema:logo "http://roma2.rm.ingv.it/userfiles/file/Logo/INGV_Logo-abbr_colore.jpg"^^xsd:anyURI ;
-    schema:url "http://www.ingv.it"^^xsd:anyURI .
-
-</EPOS/ORFEUS/EIDA/INGV/MFARES> a schema:ContactPoint ;
-    schema:availableLanguage "IT, EN"^^xsd:string ;
-    schema:contactType "scientificContact"^^xsd:string ;
-    schema:email "massimo.fares@ingv.it"^^xsd:string ;
-    schema:name "Massimo Fares"^^xsd:string ;
-    schema:telephone "00390651860540"^^xsd:string .
