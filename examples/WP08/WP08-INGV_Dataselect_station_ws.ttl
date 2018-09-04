@@ -44,16 +44,19 @@
 		schema:email "massimo.fares@ingv.it";
 		schema:availableLanguage "en" ;
 .
+
 <http://orcid.org/0000-0002-1399-0379/scientificContact> a schema:ContactPoint;
 		schema:email "massimo.fares@ingv.it";
 		schema:availableLanguage "en" ;
 		schema:contactType "scientificContact" ;
 .
+
 <http://orcid.org/0000-0002-1399-0379/legalContact> a schema:ContactPoint;
 		schema:email "massimo.fares@ingv.it";
 		schema:availableLanguage "en" ;
 		schema:contactType "legalContact" ;
 .
+
 <http://orcid.org/0000-0002-1399-0379/financialContact> a schema:ContactPoint;
 		schema:email "massimo.fares@ingv.it";
 		schema:availableLanguage "en" ;
@@ -79,8 +82,9 @@
 	schema:contactPoint <http://orcid.org/0000-0002-1399-0379/financialContact>;
 .
 
+# -----------------------------------------------------------------------------------
 
-
+# ############################## WebService Dataselect
 
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001";
@@ -106,16 +110,14 @@
 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 .
 
-
+# Documentation
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/APIDocumentation> a hydra:APIDocumentation ;
       hydra:title "documentation title" ;
       hydra:description "some description of API Documentation" ;
       hydra:entrypoint "webservices.ingv.it/fdsnws/dataselect/1/documentation" ; # fake
 .
 
-
-
-
+# Params
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001> a hydra:Operation;
 		hydra:method "GET";
 		hydra:returns "application/vnd.fdsn.mseed";
@@ -195,19 +197,17 @@
 		] ;
 .
 
-	<#Seismology> a skos:ConceptScheme;
+# Concept
+	<epos:Seismology> a skos:ConceptScheme;
 		dct:title "Seismology";
 		dct:description "It contains the concepts of Seismology";
 .
-	<#Seismicwaveforms> a skos:Concept;
-		skos:inScheme <#Seismology>;
+	<epos:SeismicWaveform> a skos:Concept;
+		skos:inScheme <epos:Seismology>;
 		skos:prefLabel "Seismic waveforms";
 .
-	<#Seismicstations> a skos:Concept;
-		skos:inScheme <#Seismology>;
-		skos:prefLabel "Seismic stations";
-.
 
+# Dataset
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001> a dcat:Dataset;
         dct:title "Primary Seismic Waveform Data";
         dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001";
@@ -237,6 +237,7 @@
 	] ;
 .
 
+# Distribution
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001> a dcat:Distribution;
     	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001";
 	dct:description "Description of Seismic Waveform Distribution :: FDSN DATASELECT ";
@@ -250,16 +251,152 @@
 
 .
 
+# -----------------------------------------------------------------------------------
 
-<epos:Seismology> a skos:ConceptScheme ;
-	dct:title "Seismology" ;
-	dct:description "It contains the concepts of the Seismology domain" ;
+# ############################## WebService Station
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002> a epos:WebService;
+	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002";
+
+	schema:description "The fdsnws-station web service returns station metadata in FDSN StationXML format (schema here) or as delimited text. The purpose of the FDSN StationXML schema is to define an XML representation of the most important and commonly used structures of SEED 2.4 metadata. Results are available at multiple levels of granularity: network, station, channel and response.";
+	schema:name "FDSN Station Web Service at CNT-INGV";
+	schema:datePublished "2016-01-01T00:00:00Z"^^xsd:dateTime;
+	schema:dateModified "2016-01-01T00:00:00Z"^^xsd:dateTime;
+	schema:provider <PIC:999472675>;
+	schema:keywords "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling";
+	hydra:entrypoint "webservices.ingv.it/fdsnws/station/1/application.wadl"^^xsd:anyURI;
+	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/Operation/002>;
+	dcat:theme <epos:SeismicNetwork>;
+	dcat:contactPoint <http://orcid.org/0000-0002-1399-0379/contactPoint>;
+        dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/APIDocumentation> ;
+        dct:spatial [ a dct:Location ;
+    		locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral ;
+  	];
+  	dct:temporal [ a dct:PeriodOfTime ;
+          	schema:startDate "1988-01-01T00:00:00"^^xsd:dateTime ;
+          	#schema:endDate "YYYY-MM-DDThh:mm:ss"^^xsd:dateTime ;
+  	] ;
+	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 .
 
-<epos:SeismicWaveform> a skos:Concept ;
-	skos:definition "Measurement of the dynamic displacement of the Earth" ;
-	skos:inScheme <epos:Seismology> ;
-	skos:prefLabel "Seismic waveform" ;
+# Documentation
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/APIDocumentation> a hydra:APIDocumentation ;
+      hydra:title "documentation title" ;
+      hydra:description "some description of API Documentation" ;
+      hydra:entrypoint "webservices.ingv.it/fdsnws/dataselect/1/documentation" ; # fake
+.
+
+# Params
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/Operation/002> a hydra:Operation;
+		hydra:method "GET";
+		hydra:returns "application/xml";
+		hydra:property
+		[ 
+		    a hydra:IriTemplate;
+			hydra:template "http://webservices.ingv.it/fdsnws/station/1/query(?starttime, endtime, network, station, location, channel,  minlatitude, maxlatitude, minlongitude, maxlongitude, level, nodata)"^^xsd:string;
+			
+			hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "starttime"^^xsd:string;
+					rdfs:label "Start of the timespan";
+					hydra:required "true"^^xsd:boolean;
+					rdfs:range "xsd:dateTime" ;
+					schema:defaultValue "2012-01-01T00:00:00T" ;
+					
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "endtime"^^xsd:string;
+					rdfs:label "End of the timespan";
+					hydra:required "true"^^xsd:boolean;
+					rdfs:range "xsd:dateTime" ;
+					schema:defaultValue "2012-02-01T00:00:00T" ;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "network"^^xsd:string;
+					rdfs:label "Network code";
+					hydra:required "true"^^xsd:boolean;
+					rdfs:range "xsd:string" ;
+					schema:defaultValue "IV" ;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "station"^^xsd:string;
+					rdfs:label "Station code";
+					hydra:required "true"^^xsd:boolean;
+					rdfs:range "xsd:string" ;
+					schema:defaultValue "ACER" ;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "location"^^xsd:string;
+					rdfs:label "Location code";
+					hydra:required "true"^^xsd:boolean;
+					rdfs:range "xsd:string" ;
+					schema:defaultValue "" ;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "channel"^^xsd:string;
+					rdfs:label "Channel code";
+					hydra:required "true"^^xsd:boolean;
+					rdfs:range "xsd:string" ;
+					schema:defaultValue "HHE" ;
+				];
+				 
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "minlatitude"^^xsd:string;
+					rdfs:label "Minimum Latitude";
+					schema:minValue "-90.0";
+					schema:maxValue "90.0";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "36.61" ;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "maxlatitude"^^xsd:string;
+					rdfs:label "Maximum Latitude";
+					schema:minValue "-90.0";
+					schema:maxValue "90.0";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "47.11" ;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "minlongitude"^^xsd:string;
+					rdfs:label "Minimum Longitude";
+					schema:minValue "-180.0";
+					schema:maxValue "180.0";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "6.74" ;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "maxlongitude"^^xsd:string;
+					rdfs:label "Maximum Longitude";
+					schema:minValue "-180.0";
+					schema:maxValue "180.0";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "18.48" ;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "level"^^xsd:string;
+					rdfs:label "Level";
+					http:paramValue "network";
+					http:paramValue "station";
+					http:paramValue "channel";
+					http:paramValue "response";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "station" ;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "nodata"^^xsd:string;
+					rdfs:label "HTTP error code if no data is found";
+					http:paramValue "204";
+					http:paramValue "404";
+					hydra:required "true"^^xsd:boolean;
+					rdfs:range "xsd:string" ;
+					schema:defaultValue "404" ;
+				];
+			];
+.
+
+# Concept
+<epos:Seismology> a skos:ConceptScheme;
+		dct:title "Seismology";
+		dct:description "It contains the concepts of Seismology";
 .
 
 <epos:SeismicNetwork> a skos:Concept ;
@@ -267,3 +404,47 @@
     skos:inScheme <epos:Seismology> ;
 skos:prefLabel "Seismic Network" ;
 .
+
+# Dataset
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002> a dcat:Dataset;
+        dct:title "Primary Seismic Waveform Data";
+        dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001";
+        dct:description "Seismic Stations ";
+        adms:identifier [ a adms:Identifier ;
+            adms:schemaAgency "DDSS-ID" ;
+            skos:notation "WP8-DDSS-002" ;
+        ];
+        dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        owl:versionInfo "1.0.0" ;
+
+    	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+        dct:accrualPeriodicity "http://purl.org/cld/freq/Irregular"^^xsd:anyURI;
+        dcat:theme  <epos:SeismicNetwork> ;
+        dcat:keyword "seismology", "seismicity", "earthquakes", "seismic station", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "station information", "waveform modeling", "INGV" , "Station", "FDSN-WS", "Seismic Station", "EIDA" ;
+        dcat:contactPoint <http://orcid.org/0000-0002-1399-0379/contactPoint>;
+	dct:publisher <PIC:999472675>;
+        dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002>;
+        dct:spatial [ a dct:Location ;
+                      locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral ;
+        ];
+        dct:temporal [ a dct:PeriodOfTime ;
+                schema:startDate "1988-01-01T00:00:00Z"^^xsd:dateTime ;
+                #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
+	] ;
+.
+
+# Distribution
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002> a dcat:Distribution;
+    	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002";
+	dct:description "Description of Seismic Stations  :: FDSN STATION ";
+	dct:issued "2017-01-01"^^xsd:date ;
+	dct:modified "2017-01-01"^^xsd:date ;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/Operation/002>;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002>;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
+ 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+.
+
