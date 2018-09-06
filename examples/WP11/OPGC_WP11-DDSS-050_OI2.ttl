@@ -1,0 +1,456 @@
+
+@prefix adms: <http://www.w3.org/nd/adms#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .  
+@prefix dc: <http://purl.org/dc/elements/1.1/> .  
+@prefix dct: <http://purl.org/dc/terms/> .  
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .  
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .  
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .    
+@prefix schema: <http://schema.org/> .  
+@prefix dcat: <http://www.w3.org/ns/dcat#> .  
+@prefix cnt: <http://www.w3.org/2011/content#> .   
+@prefix locn: <http://www.w3.org/ns/locn#> . 
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http: <http://www.w3.org/2006/http#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+
+<fournaise_S1_S6_AR_09491_10016_ext7.5m> a dcat:Dataset;
+    dct:title "InSar Observatory of Indian Ocean - Wrapped Differential Interferograms - fournaise_S1_S6_AR_09491_10016_ext7.5m"^^xsd:string;
+    dct:identifier "fournaise_S1_S6_AR_09491_10016_ext7.5m";
+    dct:description "A Wrapped Differential Interferogram made using data from SENTINEL Satellite - target: Piton de la Fournaise - Reunion island FRANCE";
+    adms:identifier [ a adms:Identifier;
+        adms:schemaAgency "DDSS-ID";
+        skos:notation "WP11-DDSS-050";
+    ];
+    dct:type "http://purl.org/dc/dcmitype/Image"^^xsd:anyURI;
+    dct:format "http://publications.europa.eu/mdr/resource/authority/file-type/html/filetypes-eng.html#JPEG"^^xsd:anyURI;
+    dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+    dct:temporal [ a dct:PeriodOfTime;
+        schema:startDate "2016-01-14 14:52:44"^^xsd:dateTime;
+        schema:endDate "2016-02-19 14:53:07"^^xsd:dateTime;
+    ];
+    dct:issued "2017-06-21"^^xsd:dateTime;
+    dct:modified "2017-06-21"^^xsd:dateTime;
+    dct:spatial [ a dct:Location;
+        locn:geometry "POLYGON(-21.182913 55.622471, -21.184441 55.82473, -21.338009 55.823513, -21.33647 55.62104)"^^xsd:string;
+    ];
+    dcat:theme <#RadarInterferometry>;
+    dcat:keyword "radar", "interferometry", "Reunion", "Piton de la Fournaise", "deformation", "SENTINEL", "COSMOSKYMED", "ALOS-PALSAR";
+    dcat:contactPoint <http://www.researcherid.com/rid/O-8042-2014/contactPoint>;
+    dct:publisher <http://isni.org/isni/0000000109416043>;
+    schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+    dcat:distribution <fournaise_S1_S6_AR_09491_10016_ext7.5m/DownloadFile>;
+.
+    <fournaise_S1_S6_AR_09491_10016_ext7.5m/DownloadFile> a dcat:Distribution;
+        dct:identifier "fournaise_S1_S6_AR_09491_10016_ext7.5m/DownloadFile";
+        dct:description "The way to download the OI2 product : fournaise_S1_S6_AR_09491_10016_ext7.5m";
+        dct:issued "2017-06-21"^^xsd:dateTime;
+        dct:type "http://publications.europa.eu/mdr/resource/authority/distribution-type/html/distribution-types-eng.html#DOWNLOADABLE_FILE"^^xsd:anyURI;
+        dcat:accessURL <wwwobs.univ-bpclermont.fr/casoar/data-download>;
+        dcat:downloadURL "https://wwwobs.univ-bpclermont.fr/casoar/download.php?type=SentInterf&uri=fournaise_S1_S6_AR_09491_10016_ext7.5m"^^xsd:anyURI;
+        dct:conformsTo <wwwobs.univ-bpclermont.fr/casoar>;
+        dct:format "http://publications.europa.eu/mdr/resource/authority/file-type/html/filetypes-eng.html#ZIP"^^xsd:anyURI;
+.
+
+<http://www.researcherid.com/rid/O-8042-2014> a schema:Person;
+    schema:identifier [ a schema:PropertyValue;
+        schema:protertyID "RESEARCHID";
+        schema:value "http://www.researcherid.com/rid/O-8042-2014";
+    ];
+    schema:familyName "Froger";
+    schema:givenName "Jean-Luc";
+    schema:address [ a schema:PostalAddress;
+        schema:streetAddress "Laboratoire Magmas et Volcans, 6 Avenue Blaise Pascal"^^xsd:string;
+        schema:addressLocality "AUBIERE CEDEX";
+        schema:postalCode "TSA 60026 - CS 60026, 63178";
+        schema:addressCountry "FRANCE";
+    ];
+    schema:email "j.l.froger@opgc.fr";
+    schema:telephone "+33473346769";
+    schema:url "http://lmv.uca.fr/froger-jean-luc/"^^xsd:anyURI;
+    schema:qualifications "Lead Scientist of the InSar Observatory of Indian Ocean (OI2) observation service";
+    schema:affiliation <http://isni.org/isni/0000000109416043>;
+.
+
+<http://orcid.org/0000-0002-4518-3328> a schema:Person;
+    schema:identifier [ a schema:PropertyValue;
+        schema:propertyID "ORCID";
+        schema:value "http://orcid.org/0000-0002-4518-3328";
+    ];
+    schema:familyName "Labazuy";
+    schema:givenName "Philippe";
+    schema:address [ a schema:PostalAddress;
+        schema:streetAddress "Laboratoire Magmas et Volcans, 6 Avenue Blaise Pascal"^^xsd:string;
+        schema:addressLocality "AUBIERE CEDEX";
+        schema:postalCode "TSA 60026 - CS 60026, 63178";
+        schema:addressCountry "FRANCE";
+    ];
+    schema:email "p.labazuy@opgc.fr";
+    schema:telephone "+33473346729";
+    schema:url "http://orcid.org/0000-0002-4518-3328"^^xsd:anyURI;
+    schema:qualifications "Deputy Director of OPGC";
+    schema:affiliation <http://isni.org/isni/0000000109416043>;
+.
+
+<http://orcid.org/0000-0002-0108-5486> a schema:Person;
+    schema:identifier [ a schema:PropertyValue;
+        schema:propertyID "ORCID";
+        schema:value "http://orcid.org/0000-0002-0108-5486";
+    ];
+    schema:familyName "Huret";
+    schema:givenName "Nathalie";
+    schema:address [ a schema:PostalAddress;
+        schema:streetAddress "OPGC, 4 Avenue Blaise Pascal"^^xsd:string;
+        schema:addressLocality "AUBIERE CEDEX";
+        schema:postalCode "TSA 60026 - CS 60026, 63178";
+        schema:addressCountry "FRANCE";
+    ];
+    schema:email "n.huret@opgc.fr";
+    schema:telephone "+33473407381";
+    schema:url "http://orcid.org/0000-0002-0108-5486"^^xsd:anyURI;
+    schema:qualifications "Director of OPGC";
+    schema:affiliation <http://isni.org/isni/0000000109416043>;
+.
+
+<http://isni.org/isni/0000000109416043> a schema:Organization;
+    schema:identifier [ a schema:PropertyValue;
+        schema:propertyID "ISNI";
+        schema:value "http://isni.org/isni/0000000109416043";
+    ];
+    schema:legalName "Earth Physics Observatory of Clermont-Ferrand"^^xsd:string;
+    schema:alternateName "Observatoire de Physique du Globe de Clermont-Ferrand"^^xsd:string;
+    schema:alternateName "OPGC"^^xsd:string;
+    schema:address [ a schema:PostalAddress;
+        schema:streetAddress "OPGC, 4 Avenue Blaise Pascal";
+        schema:addressLocality "AUBIERE CEDEX";
+        schema:postalCode "TSA 60026 - CS 60026, 63178";
+        schema:addressCountry "FRANCE";
+    ];
+    dct:spatial [ a dct:location ;
+        locn:geometry <geo:45.761,3.110,u=407,crs=wgs84>;
+    ];
+    schema:logo "http://wwwobs.univ-bpclermont.fr/opgc/images/LogoOPGCTransparent.png"^^xsd:anyURI;
+    schema:url "http://opgc.fr"^^xsd:anyURI;
+    schema:contactPoint <http://orcid.org/0000-0002-4518-3328/scientificContact>;
+    schema:contactPoint <http://orcid.org/0000-0002-0108-5486/legalContact>;
+    schema:contactPoint <http://orcid.org/0000-0002-0108-5486/financialContact>;
+    schema:memberOf <http://isni.org/isni/0000000121129282>;
+.
+    <http://orcid.org/0000-0002-4518-3328/scientificContact> a schema:ContactPoint;
+        schema:email "p.labazuy@opgc.fr";
+        schema:availableLanguage "en", "fr" ;
+	schema:contactType "scientificContact" ;
+. 
+    <http://orcid.org/0000-0002-0108-5486/legalContact> a schema:ContactPoint;
+        schema:email "n.huret@opgc.fr";
+        schema:availableLanguage "en", "fr" ;
+        schema:contactType "legalContact" ;
+.
+    <http://orcid.org/0000-0002-0108-5486/financialContact> a schema:ContactPoint;
+        schema:email "n.huret@opgc.fr";
+        schema:availableLanguage "en", "fr" ;
+        schema:contactType "financialContact" ;
+.
+
+<http://isni.org/isni/0000000121129282> a schema:Organization;
+    schema:identifier [ a schema:PropertyValue;
+        schema:propertyID "ISNI";
+        schema:value "http://isni.org/isni/0000000121129282";
+    ];
+    schema:legalName "The National Center for Scientific Research"^^xsd:string;
+    schema:alternateName "CNRS: Le Centre National de la Recherche Scientifique"^^xsd:string;
+    schema:alternateName "CNRS"^^xsd:string;
+    schema:address [ a schema:PostalAddress;
+        schema:streetAddress "CNRS, 3 rue Michel-Ange";
+        schema:addressLocality "PARIS CEDEX 16";
+        schema:postalCode "75794";
+        schema:addressCountry "FRANCE";
+    ];
+    dct:spatial [ a dct:location ;
+        locn:geometry <geo:48.847,2.262,u=0,crs=wgs84>;
+    ];
+    schema:logo "http://www.cnrs.fr/fr/z-tools/newune/themes/CNRSTheme/images/logocnrs.png"^^xsd:anyURI;
+    schema:url "http://cnrs.fr"^^xsd:anyURI;
+.
+
+<opgc.fr/vobs/WP11/DDSS-050> a epos:WebService;
+    schema:identifier "opgc.fr/vobs/WP11/DDSS-050";
+    adms:identifier [ a adms:identifier;
+        schema:propertyID "DDSS-ID";
+        schema:value "WP11/DDSS-050";
+    ];
+    schema:description "Since september 2017, OPGC assigns Digital Object Identifiers (DOI) to datasets. These datasets are archived by and published through OPGC Data Services and cover all geoscientific disciplines. They range from large dynamic datasets deriving from data intensive global monitoring networks with real-time data acquisition to the full suite of highly variable datasets collected by individual researchers or small teams. These highly variable data (‘long-tail data’) are small in size, but represent an important part of the total scientific output. This web service allow to retrieve data from the InSar Observatory of Indian Ocean (OI2) observation service. The Observation Service, OI2, is a recognised component of the National Service for Volcanological Observations. The mission of OI2 is the regular monitoring of ground movements brought about by the volcanic activity of Piton de la Fournaise volcano, Reunion Island, using InSAR data.";
+    schema:name "OPGC Virtual Observatory - OI2 Entry Point - EPOS - WP11/DDSS-050";
+    schema:datePublished "2016-05-26T08:00:00Z"^^xsd:dateTime;
+    schema:dateModified "2018-02-27T16:00:00Z"^^xsd:dateTime;
+    schema:provider <http://isni.org/isni/0000000109416043>;
+    schema:keywords "Virtual Observatory", "Database", "Data Catalog", "Remote Sensing",  "Radar", "Interferometry", "Reunion", "Piton de la Fournaise", "Deformation", "SENTINEL", "COSMOSKYMED", "ALOS-PALSAR", "Volcanology";
+    hydra:entrypoint "http://opgc.fr/vobs/"^^xsd:anyURI;
+    hydra:supportedOperation <opgc.fr/vobs/oi2/WP11/DDSS-050/data-catalog>;
+    dcat:theme <#RadarInterferometry>;
+    schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+    dct:conformsTo <opgc.fr/vobs/APIDocumentation>;
+    dcat:contactPoint <http://www.researcherid.com/rid/O-8042-2014/contactPoint>;
+.
+    <http://www.researcherid.com/rid/O-8042-2014/contactPoint> a schema:ContactPoint;
+        schema:email "j.l.froger@opgc.fr";
+        schema:availableLanguage "en", "fr";
+        schema:contactType "manager";
+.
+    <opgc.fr/vobs/APIDocumentation> a hydra:APIDocumentation;
+        hydra:title "OPGC Virtual Observatory - API Documentation";
+        hydra:description "A documentation describing how to use OPGC Virtual Observatory API to find and download data";
+        hydra:entrypoint "http://opgc.fr/vobs/api.php"^^xsd:anyURI;
+.
+
+    <opgc.fr/vobs/oi2/WP11/DDSS-050/data-catalog> a hydra:Operation;
+        hydra:method "GET"^^xsd:string;
+        hydra:returns "JSON, XML, TURTLE-RDF-EPOS-DCAT-AP";
+        hydra:property [ a hydra:IriTemplate;
+            hydra:template "http://opgc.fr/vobs/rest2/req.php/oi2(?sat, start_date, stop_date, mas_orb_min, mas_orb_max, sla_orb_min, sla_orb_max, mas_pol, sla_pol, mode, ah_min, ah_max, swath, track, beam, output, onscreen)"^^xsd:string; 
+                hydra:mapping [ a hydra:IriTemplateMapping;
+                    hydra:variable "sat"^^xsd:string;
+                    rdfs:label "Satellite ID to limit the query to interferogram produce from a specific satellite data";
+                    http:paramValue "SENTINEL";
+                    http:paramValue "ALOS";
+                    http:paramValue "CSK";
+                    dct:type "string";
+                    hydra:required "false"^^xsd:boolean;
+                ];
+                hydra:mapping [ a hydra:IriTemplateMapping;
+                    hydra:variable "start_date"^^xsd:datetime;
+                    rdfs:label "Starting datetime of the time interval query (format YYYY-MM-DDThh:mm:ss:Z)";
+                    dct:type "datetime";
+                    schema:minValue "1990-01-01T00:00:00Z"^^xsd:dateTime;
+                    schema:maxValue "9999-12-31T23:59:59Z"^^xsd:dateTime;
+                    hydra:required "false"^^xsd:boolean;
+                ];
+                hydra:mapping [ a hydra:IriTemplateMapping;
+                    hydra:variable "stop_date"^^xsd:datetime;
+                    rdfs:labe "Ending datetime of the time interval query (format YYYY-MM-DDThh:mm:ssZ)";
+                    dct:type "datetime";
+                    schema:minValue "1990-01-01T00:00:00Z"^^xsd:dateTime;
+                    schema:maxValue "9999-12-31T23:59:59Z"^^xsd:dateTime;
+                    hydra:required "false"^^xsd:boolean;
+                ];
+                hydra:mapping [ a hydra:IriTemplateMapping;
+                    hydra:variable "mas_orb_min"^^xsd:integer;
+                    rdfs:label "The minimum satellite orbit number allowed for the master scene";
+                    dct:type "integer";
+                    schema:minValue "0"^^xsd:integer;
+                    schema:maxValue "99999"^^xsd:integer;
+                    hydra:required "false"^^xsd:boolean;
+                ];
+                hydra:mapping [ a hydra:IriTemplateMapping;
+                    hydra:variable "mas_orb_max"^^xsd:integer;
+                    rdfs:label "The maximum satellite orbit number allowed for the master scene";
+                    dct:type "integer";
+                    schema:minValue "0"^^xsd:integer;
+                    schema:maxValue "99999"^^xsd:integer;
+                    hydra:required "false"^^xsd:boolean;
+                ];
+                hydra:mapping [ a hydra:IriTemplateMapping;
+                    hydra:variable "sla_orb_min"^^xsd:integer;
+                    rdfs:label "The minimum satellite orbit number allowed for the slave scene";
+                    dct:type "integer";
+                    schema:minValue "0"^^xsd:integer;
+                    schema:maxValue "99999"^^xsd:integer;
+                    hydra:required "false"^^xsd:boolean;
+                ];
+                hydra:mapping [ a hydra:IriTemplateMapping;
+                    hydra:variable "sla_orb_max"^^xsd:integer;
+                    rdfs:label "The maximum satellite orbit number allowed for the slave scene";
+                    dct:type "integer";
+                    schema:minValue "0"^^xsd:integer;
+                    schema:maxValue "99999"^^xsd:integer;
+                    hydra:required "false"^^xsd:boolean;
+                ];
+                hydra:mapping [ a hydra:IriTemplateMapping;
+                    hydra:variable "mas_pol"^^xsd:string;
+                    rdfs:label "The polarisation type of the master scene";
+                    http:paramValue "HH";
+                    http:paramValue "HV";
+                    http:paramValue "VH";
+                    http:paramValue "VV";
+                    dct:type "string";
+                    hydra:required "false"^^xsd:boolean;
+                ];
+                hydra:mapping [ a hydra:IriTemplateMapping;
+                    hydra:variable "sla_pol"^^xsd:string;
+                    rdfs:label "The polarisation type of the slave scene";
+                    http:paramValue "HH";
+                    http:paramValue "HV";
+                    http:paramValue "VH";
+                    http:paramValue "VV";
+                    dct:type "string";
+                    hydra:required "false"^^xsd:boolean;
+                ];
+                hydra:mapping [ a hydra:IriTemplateMapping;
+                    hydra:variable "mode"^^xsd:string;
+                    rdfs:label "The acquisition orbit direction";
+                    http:paramValue "Asc.";
+                    http:paramValue "Des.";
+                    dct:type "string";
+                    hydra:required "false"^^xsd:boolean;
+                ];
+                hydra:mapping [ a hydra:IriTemplateMapping;
+                    hydra:variable "ah_min"^^xsd:float;
+                    rdfs:label "The minium ambiguity height allowed";
+                    dct:type "float";
+                    schema:minValue "-99999.0"^^xsd:float;
+                    schema:maxValue "99999.0"^^xsd:float;
+                    hydra:required "false"^^xsd:boolean;
+                ];
+                hydra:mapping [ a hydra:IriTemplateMapping;
+                    hydra:variable "ah_max"^^xsd:float;
+                    rdfs:label "The maximum ambiguity height allowed";
+                    dct:type "float";
+                    schema:minValue "-99999.0"^^xsd:float;
+                    schema:maxValue "99999.0"^^xsd:float;
+                    hydra:required "false"^^xsd:boolean;
+                ];
+                hydra:mapping [ a hydra:IriTemplateMapping;
+                    hydra:variable "swath"^^xsd:string;
+                    rdfs:label "Limit the query of Sentinel data to those acquired from a specific Swath";
+                    http:paramValue "S4";
+                    http:paramValue "S6";
+                    dct:type "string";
+                    hydra:required "false"^^xsd:boolean;
+                ];
+                hydra:mapping [ a hydra:IriTemplateMapping;
+                    hydra:variable "track"^^xsd:integer;
+                    rdfs:label "Limit the query of Alos-Palsar data to those acquired from a specific Track";
+                    http:paramValue "66";
+                    http:paramValue "162";
+                    http:paramValue "539";
+                    http:paramValue "540";
+                    http:paramValue "514";
+                    dct:type "integer";
+                    hydra:required "false"^^xsd:boolean;
+                ];
+                hydra:mapping [ a hydra:IriTemplateMapping;
+                    hydra:variable "beam"^^xsd:string;
+                    rdfs:label "Limit the query of CosmoSkymed data to those acquired from a specific Beam";
+                    http:paramValue "H4-05";
+                    http:paramValue "H4-09";
+                    http:paramValue "H4-15";
+                    http:paramValue "H4-18";
+                    dct:type "string";
+                    hydra:required "false"^^xsd:boolean;
+                ];
+                hydra:mapping[ a hydra:IriTemplateMapping;
+                        hydra:variable "output"^^xsd:string;
+                        rdfs:label "The format of the query output";
+                        http:paramValue "JSON";
+                        http:paramValue "XML";
+                        http:paramValue "TURTLE-RDF-EPOS-DCAT-AP";
+                        schema:defaultValue "TURTLE-RDF-EPOS-DCAT-AP";
+                        dct:type "string";
+                        hydra:required "false"^^xsd:boolean;
+                    ];
+                hydra:mapping[ a hydra:IriTemplateMapping;
+                    hydra:variable "onscreen"^^xsd:boolean;
+                    rdfs:label "Display output on screen or as downloadable file ?";
+                    http:paramValue "true"^^xsd:boolean;
+                    http:paramValue "false"^^xsd:boolean;
+                    schema:defaultValue "true"^^xsd:boolean;
+                    dct:type "boolean";
+                    hydra:required "false"^^xsd:boolean;
+                ];
+        ];
+.
+
+<wwwobs.univ-bpclermont.fr/casoar> a epos:WebService;
+    schema:identifier "wwwobs.univ-bpclermont.fr/casoar";
+    adms:identifier [ a adms:Identifier;
+        schema:propertyID "DDSS-ID";
+        schema:value "WP11/DDSS-050";
+    ];
+    schema:description "CASOAR is a tool dedicated to sorting, selecting, visualizing and sharing large-radar-images-databases. It includes a set of processing components and a WEB interface. Firstly the new data is extracted, formated, processed and recorded of new data onto the database. This part of CASOAR is mainly written in Python and also uses external software and libraries such as SNAP (ESA), DIAPASON (Altamira©), ImageJ, ImageMagik, Manip_Raster , etc... At this step, particular attention was given to achieve maximum automation of the procedures so that the updating and maintenance of the database requires minimal operator intervention. The second component of CASOAR consists of a WEB interface developed in PHP, MySQL and Google API. This interface allows partial or total access to the database by means of a login/password connection with different levels of permissions.";
+    schema:name "CASOAR - OI2 - EPOS - WP11/DDSS-050";
+    schema:datePublished "2007-01-01T00:00:00Z"^^xsd:dateTime;
+    schema:dateModified "2018-02-07T16:30:00Z"^^xsd:dateTime;
+    schema:provider <http://isni.org/isni/0000000109416043>;
+    schema:keywords "Database", "Data Catalog", "Remote Sensing",  "Radar", "Interferometry", "Reunion", "Piton de la Fournaise", "Deformation", "SENTINEL", "COSMOSKYMED", "ALOS-PALSAR", "Volcanology";
+    hydra:entrypoint "https://wwwobs.univ-bpclermont.fr/casoar/index_liste.php"^^xsd:anyURI;
+    hydra:supportedOperation <wwwobs.univ-bpclermont.fr/casoar/data-visualization>;
+    hydra:supportedOperation <wwwobs.univ-bpclermont.fr/casoar/data-download>;
+    dcat:theme <#RadarInterferometry>;
+    schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+    dct:conformsTo <wwwobs.univ-bpclermont.fr/casoar/APIDocumentation>;
+    dcat:contactPoint <http://www.researcherid.com/rid/O-8042-2014/contactPoint>;
+.
+    <http://www.researcherid.com/rid/O-8042-2014/contactPoint> a schema:ContactPoint;
+        schema:email "j.l.froger@opgc.fr";
+        schema:availableLanguage "en", "fr";
+        schema:contactType "manager";
+.
+    <wwwobs.univ-bpclermont.fr/casoar/APIDocumentation> a hydra:APIDocumentation;
+        hydra:title "CASOAR - OI2 - Documentation";
+        hydra:description "A documentation describing how to use the CASOAR Web Interface to find, visualize and download data from OI2 databases";
+        hydra:entrypoint "https://wwwobs.univ-bpclermont.fr/casoar/casoar_ug.php"^^xsd:anyURI;
+.
+    <wwwobs.univ-bpclermont.fr/casoar/data-visualization> a hydra:Operation;
+        hydra:method "GET"^^xsd:string;
+        hydra:returns "HTML";
+        hydra:property [ a hydra:IriTemplate;
+            hydra:template "https://wwwobs.univ-bpclermont.fr/casoar/visu.php(?Type, Folder, Data)"^^xsd:string;
+                hydra:mapping [ a hydra:IriTemplateMapping;
+                    hydra:variable "Type"^^xsd:string;
+                    rdfs:label "The OI2 product type";
+                    http:paramValue "SentInterf";
+                    http:paramValue "AlosInterf";
+                    http:paramValue "CSKInterf";
+                    dct:type "string";
+                    hydra:required "true"^^xsd:boolean;
+                ];
+                hydra:mapping [ a hydra:IriTemplateMapping;
+                    hydra:variable "Folder"^^xsd:string;
+                    rdfs:label "The ID of the project to which the data are related";
+                    http:paramValue "OI2_REU";
+                    schema:defaultValue "OI2_REU"^^xsd:string;
+                    dct:type "string";
+                    hydra:required "true"^^xsd:boolean;
+                ];
+                hydra:mapping [ a hydra:IriTemplateMapping;
+                    hydra:varaible "Data"^^xsd:string;
+                    rdfs:label "The unique identifier of the data";
+                    dct:type "string";
+                    hydra:required "true"^^xsd:boolean;
+                ];
+        ];
+.
+    <wwwobs.univ-bpclermont.fr/casoar/data-download> a hydra:Operation;
+        hydra:method "GET"^^xsd:string;
+        hydra:returns "ZIP";
+        hydra:property [ a hydra:IriTemplate;
+            hydra:template "https://wwwobs.univ-bpclermont.fr/casoar/download.php(?type, uri)"^^xsd:string;
+                hydra:mapping [ a hydra:IriTemplateMapping;
+                    hydra:variable "type"^^xsd:string;
+                    rdfs:label "The OI2 product type";
+                    http:paramValue "SentInterf";
+                    http:paramValue "AlosInterf";
+                    http:paramValue "CSKInterf";
+                    dct:type "string";
+                    hydra:required "true"^^xsd:boolean;
+                ];
+                hydra:mapping [ a hydra:IriTemplateMapping;
+                    hydra:varaible "uri"^^xsd:string;
+                    rdfs:label "The unique identifier of the data";
+                    dct:type "string";
+                    hydra:required "true"^^xsd:boolean;
+                ];
+        ];
+.
+
+    <#Volcano-Observations> a skos:ConceptScheme;
+        dct:title "Volcano-Observations";
+        dct:description "It contains the concept of Volcanological observations";
+.
+    <#RadarInterferometry> a skos:Concept;
+        skos:inScheme <#Volcano-Observations>;
+        skos:prefLabel "Radar Interferometry";
+.
