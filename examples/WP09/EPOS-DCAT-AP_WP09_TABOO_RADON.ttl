@@ -155,12 +155,13 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "json";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "http://webservices.ingv.it/ingvws/nfo_taboo/radon/1/query(?mintime, maxtime, minlat, maxlat, minlon, maxlon, minperiod, maxeqdepth, type_site, max_radon_err, max_int_delta)"^^xsd:string;
+			hydra:template "http://webservices.ingv.it/ingvws/nfo_taboo/radon/1/query(?mintime, maxtime, minlat, maxlat, minlon, maxlon, minperiod, maxperiod, maxeqdepth, type_site, max_radon_err, max_int_delta)"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "mintime"^^xsd:string;
 					rdfs:label "Minimum Time";
 					schema:minValue "2010-04-01T00:00:00.000Z";
 					schema:maxValue "2017-12-31T00:00:00.000Z";
+					schema:defaultValue "2010-04-01T00:00:00.000Z";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
@@ -168,6 +169,7 @@
 					rdfs:label "Maximum Time";
 					schema:minValue "2010-04-01T00:00:00.000Z";
 					schema:maxValue "2017-12-31T00:00:00.000Z";
+					schema:defaultValue "2010-05-01T00:00:00.000Z";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
@@ -239,12 +241,12 @@
 				];
 		] ;
 .
-	<#Near Fault Observations> a skos:ConceptScheme;
+	<#NearFaultObservations> a skos:ConceptScheme;
 		dct:title "Near Fault Observations";
 		dct:description "It contains the concepts of Near Fault Observations";
 .
 	<#Radonconcentration> a skos:Concept;
-		skos:inScheme <#Near Fault Observations>;
+		skos:inScheme <#NearFaultObservations>;
 		skos:prefLabel "Radon concentration";
 .
 

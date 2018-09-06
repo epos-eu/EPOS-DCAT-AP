@@ -1,0 +1,152 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http: <http://www.w3.org/2006/http#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+
+<http://orcid.org/0000-0000-0000-0000> a schema:Person ;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "ORCID";
+		schema:value "http://orcid.org/0000-0000-0000-0000";
+	];	  
+	schema:familyName "Vogfjörd Kristin";
+	schema:address [ a schema:PostalAddress;
+	        schema:streetAddress "" ;
+		schema:addressLocality "Reykjavík";
+		schema:postalCode "150";
+		schema:addressCountry "Iceland";
+	]; 
+	schema:email "vogfjord@vedur.is";
+	schema:telephone "+3545226000";
+	schema:url  "http://orcid.org/0000-0000-0000-0000"^^xsd:anyURI ;
+	schema:qualifications "Group Leader of Geoscience Research";
+	schema:affiliation <PIC:123456789> ;
+	schema:contactPoint <http://orcid.org/0000-0000-0000-0000/scientificContact>;
+	schema:contactPoint <http://orcid.org/0000-0000-0000-0000/legalContact>;
+	schema:contactPoint <http://orcid.org/0000-0000-0000-0000/financialContact>;
+	schema:contactPoint <http://orcid.org/0000-0000-0000-0000/contactPoint> ;
+.
+
+
+<http://orcid.org/0000-0000-0000-0000/legalContact> a schema:ContactPoint ;
+	schema:email "vogfjord@vedur.is ";
+	schema:availableLanguage "en" ;
+	schema:contactType "legalContact";
+.
+
+<http://orcid.org/0000-0000-0000-0000/financialContact> a schema:ContactPoint ;
+	schema:email "vogfjord@vedur.is ";
+	schema:availableLanguage "en" ;
+	schema:contactType "financialContact" ;
+.
+
+<http://orcid.org/0000-0000-0000-0000/scientificContact> a schema:ContactPoint ;
+	schema:email "vogfjord@vedur.is ";
+	schema:availableLanguage "en" ;
+	schema:contactType "scientificContact" ;
+.
+
+<http://orcid.org/0000-0000-0000-0000/contactPoint> a schema:ContactPoint ;
+	schema:email "vogfjord@vedur.is " ;
+	schema:availableLanguage "en" ;
+  schema:contactType "manager";
+
+.
+<PIC:123456789> a schema:Organization ;
+	schema:identifier [ a schema:PropertyValue ;
+        	schema:propertyID  "PIC" ;
+         	schema:value   "123456789" ;
+      	];
+	schema:legalName "Icelandic Meteorological Office (IMO)" ;
+  schema:leiCode "Legal Entity Identifier Search: http://www.lei-lookup.com/#!search" ;
+	schema:address [ a schema:PostalAddress ;
+        	schema:streetAddress "Bustadavegur 7-9" ;
+        	schema:addressLocality "Reykjavík" ;
+        	schema:postalCode "150" ;
+        	schema:addressCountry "Iceland" ;
+	];
+  schema:url "http://vedur.is/"^^xsd:anyURI ;
+  schema:email "name_example@email" ;
+  schema:telephone "+3545226000" ;
+  schema:contactPoint <http://orcid.org/0000-0000-0000-0000/legalContact> ;
+  schema:contactPoint <http://orcid.org/0000-0000-0000-0000/scientificContact> ;
+  schema:contactPoint <http://orcid.org/0000-0000-0000-0000/financialContact> ;
+.
+
+<WP11/EffectSample> a dcat:Dataset ;
+        dct:identifier "WP11/EffectSample" ;
+        dct:title "Effects on heath" ;
+        dct:description "Health Effects of Short-term Volcanic SO2 Exposure and Recommended Actions" ;
+        adms:identifier [ a adms:Identifier ;
+            adms:schemaAgency "DDSS-ID" ;
+            skos:notation "WP11-DDSS-064" ;
+
+        ];
+        dct:created "2018-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:issued "2018-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:modified "2018-01-01T00:00:00Z"^^xsd:dateTime ;
+        owl:versionInfo "1.0.0" ;
+
+        # This property refers to the type of the Dataset. Example of frequency using a controlled vocabulary http://dublincore.org/2012/06/14/dctype
+	      dct:type "http://purl.org/dc/dcmitype/Text"^^xsd:anyURI ;
+
+        # This property refers to the frequency at which the Dataset is updated
+        dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI ;
+
+        # This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
+        dcat:theme  <epos:EffectSample> ;
+
+        dcat:keyword "Volcanoes", "Volcanic SO2" ;
+        dcat:contactPoint <http://orcid.org/0000-0000-0000-0000/contactPoint> ;
+
+        # This property refers to an Organisation responsible for making the Dataset available.
+	      dct:publisher <PIC:123456789> ;
+		 
+		# This property links the Dataset to an available Distribution.
+        dcat:distribution <WP11/EffectSample/FileDistribution> ;
+
+        # This property refers to a geographic region that is covered by the Dataset.
+        dct:spatial [ a dct:Location ;
+          locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral ;
+        ];
+
+        # This property refers to a temporal period that the Dataset covers.
+        dct:temporal [ a dct:PeriodOfTime ;
+                schema:startDate "2018-01-01T00:00:00Z"^^xsd:dateTime ;
+                #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
+        ] ;
+.
+
+<WP11/EffectSample/FileDistribution> a dcat:Distribution;
+        dct:identifier "WP11/EffectSample/FileDistribution";
+	dct:description "Effect on Health FileDistribution";
+	dct:created "2018-01-01"^^xsd:date;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
+	dcat:accessURL "http://futurevolc.vedur.is/"^^xsd:anyURI;
+	dcat:downloadURL "https://api.vedur.is/epos/v1/volcanicexposure"^^xsd:anyURI;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/PDF"^^xsd:anyURI;
+	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+
+.
+<epos:Volcano-Observations> a skos:ConceptScheme;
+		dct:title "Volcano-Observations";
+		dct:description "It contains the concepts of Volcano-Observations";
+.
+
+<epos:EffectSample> a skos:Concept ;
+    skos:definition "Health Effects of Short-term Volcanic SO2 Exposure and Recommended Actions" ;
+    skos:inScheme <epos:Volcano-Observations> ;
+    skos:prefLabel "EffectSample" ;
+.
