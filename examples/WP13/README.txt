@@ -1,5 +1,34 @@
-Work on WP13 metadata to incorporate new metadata entities, August 2018
------------------------------------------------------------------------
+Status of WP13 EPOS-DCAT-AP RDF/TTL metadata, at 06/09/2018
+-----------------------------------------------------------
+
+WP 13 is providing 10 web services from 8 DDSS elements:
+
+- WP13-DDSS-001 - INTERMAGNET observatory data web service
+- WP13-DDSS-001 - WDC Geomagnetism World Data Centre web service
+- WP13-DDSS-002 - IMAGE variometer network web service
+- WP13-DDSS-003 - WDC global survey data
+- WP13-DDSS-006 - ISGI Geomagnetic Indices web service
+- WP13-DDSS-007 - ISGI Geomagentic Events web service
+- WP13-DDSS-008 - IMAGE electrojet indices web service
+- WP13-DDSS-009 - IMAGE substorm events
+- WP13-DDSS-013 - WMM World Magnetic Model web service
+- WP13-DDSS-013 - IGRF Internal Geomagnetic Reference Field model web service
+  
+Status of metadata:
+
+- WP13-DDSS-001 - INTERMAGNET:  Validated
+- WP13-DDSS-001 - WDC:          Validated
+- WP13-DDSS-002 - IMAGE:        Old version of metadata
+- WP13-DDSS-003 - Survey data:  Validated
+- WP13-DDSS-006 - ISGI:         Old version of metadata
+- WP13-DDSS-007 - ISGI:         Old version of metadata
+- WP13-DDSS-008 - IMAGE:        Old version of metadata
+- WP13-DDSS-013 - WMM:          Old version of metadata
+- WP13-DDSS-013 - IGRF:         Old version of metadata
+ 
+
+Understanding SHACL / Turtle
+----------------------------
 
 EPOS metadata is described using SHACL. It can be verified using this tool:
 
@@ -87,6 +116,9 @@ Useful links
 
 Link to EPOS metadata editor:
     http://epos.cineca.it/apache/mde/public/index.php
+    
+Link to SHACL validation website:
+    http://shacl.org/playground/
   
 Hydra metadata description:
     http://www.hydra-cg.com/spec/latest/core/
