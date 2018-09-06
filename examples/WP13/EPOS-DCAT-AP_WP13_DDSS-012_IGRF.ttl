@@ -1,24 +1,26 @@
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .  
-@prefix epos: <http://www.epos-eu.org/epos/dcat-ap#> .  
-@prefix dc: <http://purl.org/dc/elements/1.1/> .  
-@prefix dct: <http://purl.org/dc/terms/> .  
-@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .  
-@prefix hydra: <http://www.w3.org/ns/hydra/core#> .  
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .  
-@prefix bgs: <http://www.bgs.ac.uk#> .  
-@prefix schema: <http://schema.org/> .  
-@prefix dcat: <http://www.w3.org/ns/dcat#> .  
-@prefix cnt: <http://www.w3.org/2011/content#> .   
-@prefix locn: <http://www.w3.org/ns/locn#> . 
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix http: <http://www.w3.org/2006/http#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http: <http://www.w3.org/2006/http#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
 <mailto:smf@bgs.ac.uk> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "mailto";
 		schema:value "mailto:smf@bgs.ac.uk";
-	]; 
+	];
 	schema:familyName "Flower";
 	schema:givenName "Simon";
 	schema:address [ a schema:PostalAddress;
@@ -26,18 +28,18 @@
 		schema:addressLocality "Edinburgh";
 		schema:postalCode "EH14 4AP";
 		schema:addressCountry "United Kingdom";
-	]; 
+	];
 	schema:email "smf@bgs.ac.uk";
 	schema:telephone "0131 650 0238";
 	schema:url "http://www.bgs.ac.uk/staff/profiles/0447.html"^^xsd:anyURI;
 	schema:affiliation <http://viaf.org/viaf/136554353/>;
-. 
+.
 
 <http://orcid.org/0000-0002-7677-5158> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "orcid";
 		schema:value "http://orcid.org/0000-0002-7677-5158";
-	]; 
+	];
 	schema:familyName "Thomson";
 	schema:givenName "Alan";
 	schema:address [ a schema:PostalAddress;
@@ -45,110 +47,110 @@
 		schema:addressLocality "Edinburgh";
 		schema:postalCode "EH14 4AP";
 		schema:addressCountry "United Kingdom";
-	]; 
+	];
 	schema:email "awpt@bgs.ac.uk";
 	schema:telephone "0131 650 0257";
 	schema:url "http://www.bgs.ac.uk/staff/profiles/1939.html"^^xsd:anyURI;
 	schema:affiliation <http://viaf.org/viaf/136554353/>;
-. 
+.
 
 <http://www.geomag.bgs.ac.uk/web_service/GMModels/igrf/12> a epos:WebService;
 	schema:identifier "http://www.geomag.bgs.ac.uk/web_service/GMModels/igrf/12";
-	schema:identifier [ a schema:PropertyValue; 
-		schema:propertyID  "DDSS-ID"; 
-		schema:value  "WP13-DDSS-012"; 
-	]; 
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "DDSS-ID";
+		schema:value  "WP13-DDSS-012";
+	];
 	schema:description "The International Geomagnetic Reference Field (IGRF) is released by the International Association of Geomagnetism and Aeronomy (IAGA). It consists of a standard mathematical description of the Earth's main magnetic field that is used widely in studies of the Earth's deep interior, its crust and its ionosphere and magnetosphere. The current revision of the model is number 12, revisions are made approximately every 12 years. The coefficients for this degree and order 13 main field model were finalized by a task force of IAGA in December 2014. The IGRF is the product of a collaborative effort between magnetic field modellers and the institutes involved in collecting and disseminating magnetic field data from satellites and from observatories and surveys around the world.";
 	schema:name "International Geomagnetic Reference Field (IGRF)";
 	schema:datePublished "2016-09-01T00:00:00Z"^^xsd:dateTime;
 	schema:dateModified "2014-12-15T00:00:00Z"^^xsd:dateTime;
 	schema:provider <http://viaf.org/viaf/136554353/>;
 	schema:keywords "magnetism", "core", "world model";
-	#hydra:entrypoint "application.wadl"^^xsd:anyURI; 
+	#hydra:entrypoint "application.wadl"^^xsd:anyURI;
 	hydra:supportedOperation <http://www.geomag.bgs.ac.uk/web_service/GMModels/igrf/12/operation>;
 	dcat:theme <#MagneticField> ;
 	dcat:contactPoint <mailto:smf@bgs.ac.uk/contactPoint>;
 	dcat:contactPoint <http://orcid.org/0000-0002-7677-5158/contactPoint>;
-. 
+.
 	<mailto:smf@bgs.ac.uk/contactPoint> a schema:ContactPoint;
 		schema:email "smf@bgs.ac.uk";
 		schema:availableLanguage "en" ;
-. 
+.
 	<http://orcid.org/0000-0002-7677-5158/contactPoint> a schema:ContactPoint;
 		schema:email "awpt@bgs.ac.uk";
 		schema:availableLanguage "en" ;
-. 
+.
 
 <http://viaf.org/viaf/136554353/> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "VIAF";
 		schema:value "http://viaf.org/viaf/136554353/";
-	]; 
+	];
 	schema:legalName "British Geological Survey";
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "The Lyell Centre, Research Avenue South";
 		schema:addressLocality "Edinburgh";
 		schema:postalCode "EH14 4AP";
 		schema:addressCountry "United Kingdom";
-	]; 
+	];
 	schema:url "www.bgs.ac.uk"^^xsd:anyURI;
 	schema:contactPoint <http://orcid.org/0000-0002-7677-5158/scientificContact>;
 	schema:contactPoint <mailto:smf@bgs.ac.uk/legalContact>;
 	schema:contactPoint <http://orcid.org/0000-0002-7677-5158/financialContact>;
 	schema:memberOf <http://viaf.org/viaf/148537429/>;
-. 
+.
 	<http://orcid.org/0000-0002-7677-5158/scientificContact> a schema:ContactPoint;
 		schema:email "awpt@bgs.ac.uk";
 		schema:availableLanguage "en" ;
 		schema:contactType "scientificContact" ;
-. 
+.
 	<mailto:smf@bgs.ac.uk/legalContact> a schema:ContactPoint;
 		schema:email "smf@bgs.ac.uk";
 		schema:availableLanguage "en" ;
 		schema:contactType "legalContact" ;
-. 
+.
 	<http://orcid.org/0000-0002-7677-5158/financialContact> a schema:ContactPoint;
 		schema:email "awpt@bgs.ac.uk";
 		schema:availableLanguage "en" ;
 		schema:contactType "financialContact" ;
-. 
+.
 
 <http://viaf.org/viaf/148537429/> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "VIAF";
 		schema:value "http://viaf.org/viaf/148537429/";
-	]; 
+	];
 	schema:legalName "Natural Environment Research Council";
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "Polaris House, North Star Avenue";
 		schema:addressLocality "Swindon";
 		schema:postalCode "SN2 1EU";
 		schema:addressCountry "United Kingdom";
-	]; 
+	];
 	schema:url "www.nerc.ac.uk"^^xsd:anyURI;
 	schema:contactPoint <http://orcid.org/0000-0002-7677-5158/scientificContact>;
 	schema:contactPoint <mailto:smf@bgs.ac.uk/legalContact>;
 	schema:contactPoint <http://orcid.org/0000-0002-7677-5158/financialContact>;
-. 
+.
 	<http://orcid.org/0000-0002-7677-5158/scientificContact> a schema:ContactPoint;
 		schema:email "awpt@bgs.ac.uk";
 		schema:availableLanguage "en" ;
 		schema:contactType "scientificContact" ;
-. 
+.
 	<mailto:smf@bgs.ac.uk/legalContact> a schema:ContactPoint;
 		schema:email "smf@bgs.ac.uk";
 		schema:availableLanguage "en" ;
 		schema:contactType "legalContact" ;
-. 
+.
 	<http://orcid.org/0000-0002-7677-5158/financialContact> a schema:ContactPoint;
 		schema:email "awpt@bgs.ac.uk";
 		schema:availableLanguage "en" ;
 		schema:contactType "financialContact" ;
-. 
+.
 	<http://www.geomag.bgs.ac.uk/web_service/GMModels/igrf/12/operation> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "XML, JSON, CSV, TXT, HTML";
-		hydra:IriTemplate[ a hydra:IriTemplate;
+		hydra:property[ a hydra:IriTemplate;
 			hydra:template "http://www.geomag.bgs.ac.uk/web_service/GMModels/igrf/12(?latitude, longitude, altitude, date, format)"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "latitude"^^xsd:float;
@@ -189,11 +191,11 @@
 					hydra:required "true"^^xsd:boolean;
 				];
 		] ;
-. 
+.
 	<#Geoelectromagnetism> a skos:ConceptScheme;
 		dct:title "Geoelectromagnetism";
                 dct:description "It contains the concepts of Geoelectromagnetism" ;
-. 
+.
 	<#MagneticField> a skos:Concept;
                 skos:definition "" ;
 		skos:inScheme <#Geoelectromagnetism> ;

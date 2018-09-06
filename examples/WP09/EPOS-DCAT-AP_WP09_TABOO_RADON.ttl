@@ -1,24 +1,26 @@
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .  
-@prefix epos: <http://www.epos-eu.org/epos/dcat-ap#> .  
-@prefix dc: <http://purl.org/dc/elements/1.1/> .  
-@prefix dct: <http://purl.org/dc/terms/> .  
-@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .  
-@prefix hydra: <http://www.w3.org/ns/hydra/core#> .  
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .  
-@prefix bgs: <http://www.bgs.ac.uk#> .  
-@prefix schema: <http://schema.org/> .  
-@prefix dcat: <http://www.w3.org/ns/dcat#> .  
-@prefix cnt: <http://www.w3.org/2011/content#> .   
-@prefix locn: <http://www.w3.org/ns/locn#> . 
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix http: <http://www.w3.org/2006/http#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
 <http://orcid.org/0000-0002-8608-4289> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "orcid";
 		schema:value "http://orcid.org/0000-0002-8608-4289";
-	]; 
+	];
 	schema:familyName "Carluccio";
 	schema:givenName "Ivano";
 	schema:address [ a schema:PostalAddress;
@@ -26,7 +28,7 @@
 		schema:addressLocality "Ancona";
 		schema:postalCode "60126";
 		schema:addressCountry "ITALY";
-	]; 
+	];
 	schema:email "ivano.carluccio@ingv.it";
 	schema:telephone "+390718067762";
 	schema:url "http://orcid.org/0000-0002-8608-4289"^^xsd:anyURI;
@@ -38,7 +40,7 @@
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "orcid";
 		schema:value "http://orcid.org/0000-0002-6711-2264";
-	]; 
+	];
 	schema:familyName "Cannelli";
 	schema:givenName "Valentina";
 	schema:address [ a schema:PostalAddress;
@@ -46,7 +48,7 @@
 		schema:addressLocality "Roma";
 		schema:postalCode "00143";
 		schema:addressCountry "ITALY";
-	]; 
+	];
 	schema:email "valentina.cannelli@ingv.it";
 	schema:telephone "+390651860583";
 	schema:url "http://orcid.org/0000-0002-6711-2264"^^xsd:anyURI;
@@ -58,7 +60,7 @@
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "orcid";
 		schema:value "http://orcid.org/0000-0002-9697-6504";
-	]; 
+	];
 	schema:familyName "Chiaraluce";
 	schema:givenName "Lauro";
 	schema:address [ a schema:PostalAddress;
@@ -66,19 +68,19 @@
 		schema:addressLocality "Roma";
 		schema:postalCode "00143";
 		schema:addressCountry "ITALY";
-	]; 
+	];
 	schema:email "lauro.chiaraluce@ingv.it";
 	schema:telephone "+390651860432";
 	schema:url "http://orcid.org/0000-0002-9697-6504"^^xsd:anyURI;
 	schema:qualifications "Researcher";
 	schema:affiliation <PIC:999472675>;
-. 
+.
 
 <http://orcid.org/0000-0002-8651-6387> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "orcid";
 		schema:value "http://orcid.org/0000-0002-8651-6387";
-	]; 
+	];
 	schema:familyName "Doglioni";
 	schema:givenName "Carlo";
 	schema:address [ a schema:PostalAddress;
@@ -86,74 +88,74 @@
 		schema:addressLocality "Rome";
 		schema:postalCode "00143";
 		schema:addressCountry "Italy";
-	]; 
+	];
 	schema:email "segreteria.presidenza@ingv.it";
 	schema:telephone "+3906518601";
 	schema:url "http://orcid.org/0000-0002-8651-6387"^^xsd:anyURI;
 	schema:qualifications "Professor";
 	schema:affiliation <PIC:999472675>;
-. 
+.
 
 <webservices.ingv.it/ingvws/nfo_taboo/radon> a epos:WebService;
 	schema:identifier "webservices.ingv.it/ingvws/nfo_taboo/radon";
-	schema:identifier [ a schema:PropertyValue; 
-		schema:propertyID  "DDSS-ID"; 
-		schema:value  "WP09-DDSS-024"; 
-	]; 
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "DDSS-ID";
+		schema:value  "WP09-DDSS-024";
+	];
 	schema:description "Radon counts and local temperature Web Service allow to retrieve Radon Gas concentration time series based on periodic counting of Rn gas at site";
 	schema:name "TABOO - Radon counts and local temperature Web Service";
 	schema:datePublished "2017-06-08T12:00:00Z"^^xsd:dateTime;
 	schema:dateModified "2017-06-08T12:00:00Z"^^xsd:dateTime;
 	schema:provider <PIC:999472675>;
 	schema:keywords "Geochemical", "Radon concentration", "Radon counts", "geochemistry", "geohazards", "long term continuos timeseries", "local temperature";
-	#hydra:entrypoint "application.wadl"^^xsd:anyURI; 
+	#hydra:entrypoint "application.wadl"^^xsd:anyURI;
 	hydra:supportedOperation <webservices.ingv.it/ingvws/nfo_taboo/radon/operation>;
 	dcat:theme <#Radonconcentration>;
 	dcat:contactPoint <http://orcid.org/0000-0002-8608-4289/contactPoint>;
-. 
+.
 	<http://orcid.org/0000-0002-8608-4289/contactPoint> a schema:ContactPoint;
 		schema:email "ivano.carluccio@ingv.it";
 		schema:availableLanguage "en" ;
-. 
+.
 
 <PIC:999472675> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "PIC";
 		schema:value "999472675";
-	]; 
+	];
 	schema:legalName "INGV National Institute of Geophysics e Volcanology";
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "Via di Vigna Murata, 605";
 		schema:addressLocality "Rome";
 		schema:postalCode "00143";
 		schema:addressCountry "ITALY";
-	]; 
+	];
 	schema:logo "http://roma2.rm.ingv.it/userfiles/file/Logo/INGV_Logo-abbr_colore.jpg"^^xsd:anyURI;
 	schema:url "http://www.ingv.it"^^xsd:anyURI;
 	schema:contactPoint <http://orcid.org/0000-0002-6711-2264/scientificContact>;
 	schema:contactPoint <http://orcid.org/0000-0002-8651-6387/legalContact>;
 	schema:contactPoint <http://orcid.org/0000-0002-8651-6387/financialContact>;
-. 
+.
 	<http://orcid.org/0000-0002-6711-2264/scientificContact> a schema:ContactPoint;
 		schema:email "valentina.cannelli@ingv.it";
 		schema:availableLanguage "en" ;
 		schema:contactType "scientificContact" ;
-. 
+.
 	<http://orcid.org/0000-0002-8651-6387/legalContact> a schema:ContactPoint;
 		schema:email "segreteria.presidenza@ingv.it";
 		schema:availableLanguage "en" ;
 		schema:contactType "legalContact" ;
-. 
+.
 	<http://orcid.org/0000-0002-8651-6387/financialContact> a schema:ContactPoint;
 		schema:email "segreteria.presidenza@ingv.it";
 		schema:availableLanguage "en" ;
 		schema:contactType "financialContact" ;
-. 
+.
 	<webservices.ingv.it/ingvws/nfo_taboo/radon/operation> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "json";
-		hydra:IriTemplate[ a hydra:IriTemplate;
-			hydra:template "http://webservices.ingv.it/ingvws/nfo_taboo/radon/1/query(?mintime, maxtime, minlat, maxlat, minlon, maxlon, minperiod, maxeqdepth, type_site, max_radon_err, max_int_delta)"^^xsd:string;
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "http://webservices.ingv.it/ingvws/nfo_taboo/radon/1/query(?mintime, maxtime, minlat, maxlat, minlon, maxlon, minperiod, maxperiod, maxeqdepth, type_site, max_radon_err, max_int_delta)"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "mintime"^^xsd:string;
 					rdfs:label "Minimum Time";
@@ -238,13 +240,13 @@
 					hydra:required "false"^^xsd:boolean;
 				];
 		] ;
-. 
-	<#Near Fault Observations> a skos:ConceptScheme;
+.
+	<#NearFaultObservations> a skos:ConceptScheme;
 		dct:title "Near Fault Observations";
 		dct:description "It contains the concepts of Near Fault Observations";
-. 
+.
 	<#Radonconcentration> a skos:Concept;
-		skos:inScheme <#Near Fault Observations>;
+		skos:inScheme <#NearFaultObservations>;
 		skos:prefLabel "Radon concentration";
 .
 

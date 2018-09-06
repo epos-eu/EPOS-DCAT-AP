@@ -1,24 +1,26 @@
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .  
-@prefix epos: <http://www.epos-eu.org/epos/dcat-ap#> .  
-@prefix dc: <http://purl.org/dc/elements/1.1/> .  
-@prefix dct: <http://purl.org/dc/terms/> .  
-@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .  
-@prefix hydra: <http://www.w3.org/ns/hydra/core#> .  
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .  
-@prefix bgs: <http://www.bgs.ac.uk#> .  
-@prefix schema: <http://schema.org/> .  
-@prefix dcat: <http://www.w3.org/ns/dcat#> .  
-@prefix cnt: <http://www.w3.org/2011/content#> .   
-@prefix locn: <http://www.w3.org/ns/locn#> . 
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix http: <http://www.w3.org/2006/http#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http: <http://www.w3.org/2006/http#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
 <mailto:ari.viljanen@fmi.fi> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "mailto";
 		schema:value "mailto:ari.viljanen@fmi.fi";
-	]; 
+	];
 	schema:familyName "Viljanen";
 	schema:givenName "Ari";
 	schema:address [ a schema:PostalAddress;
@@ -26,17 +28,17 @@
 		schema:addressLocality "Helsinki";
 		schema:postalCode "FI-00560";
 		schema:addressCountry "Finland";
-	]; 
+	];
 	schema:email "ari.viljanen@fmi.fi";
 	schema:telephone "295394668";
 	schema:affiliation <PIC:999591306>;
-. 
+.
 
 <mailto:lasse.hakkinen@fmi.fi> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "mailto";
 		schema:value "mailto:lasse.hakkinen@fmi.fi";
-	]; 
+	];
 	schema:familyName "Häkkinen";
 	schema:givenName "Lasse";
 	schema:address [ a schema:PostalAddress;
@@ -44,74 +46,74 @@
 		schema:addressLocality "Helsinki";
 		schema:postalCode "FI-00560";
 		schema:addressCountry "Finland";
-	]; 
+	];
 	schema:email "lasse.hakkinen@fmi.fi";
 	schema:telephone "295394634";
 	schema:affiliation <PIC:999591306>;
-. 
+.
 
 <http://space.fmi.fi/cgi-bin/imagecgi/image-epos-indicators.cgi> a epos:WebService;
 	schema:identifier "http://space.fmi.fi/cgi-bin/imagecgi/image-epos-indicators.cgi";
-	schema:identifier [ a schema:PropertyValue; 
-		schema:propertyID  "DDSS-ID"; 
-		schema:value  "WP13-DDSS-008"; 
-	]; 
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "DDSS-ID";
+		schema:value  "WP13-DDSS-008";
+	];
 	schema:description "IMAGE electrojet indicators are simple estimates of the total eastward and westward currents crossing the magnetometer network.";
 	schema:name "Electrojet indicators";
 	schema:datePublished "2017-07-11T00:00:00Z"^^xsd:dateTime;
 	schema:dateModified "2017-07-11T00:00:00Z"^^xsd:dateTime;
 	schema:provider <PIC:999591306>;
 	schema:keywords "auroral electrojet", "geomagnetism", "magnetic field", "magnetism", "space weather", "substorm", "variometer";
-	#hydra:entrypoint "application.wadl"^^xsd:anyURI; 
+	#hydra:entrypoint "application.wadl"^^xsd:anyURI;
 	hydra:supportedOperation <http://space.fmi.fi/cgi-bin/imagecgi/image-epos-indicators.cgi/operation>;
 	dcat:theme <#MagneticField> ;
 	dcat:contactPoint <mailto:ari.viljanen@fmi.fi/contactPoint>;
 	dcat:contactPoint <mailto:lasse.hakkinen@fmi.fi/contactPoint>;
-. 
+.
 	<mailto:ari.viljanen@fmi.fi/contactPoint> a schema:ContactPoint;
 		schema:email "ari.viljanen@fmi.fi";
 		schema:availableLanguage "en" ;
-. 
+.
 	<mailto:lasse.hakkinen@fmi.fi/contactPoint> a schema:ContactPoint;
 		schema:email "lasse.hakkinen@fmi.fi";
 		schema:availableLanguage "en" ;
-. 
+.
 
 <PIC:999591306> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "PIC";
 		schema:value "PIC:999591306";
-	]; 
+	];
 	schema:legalName "Finnish Meteorological Institute";
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "Erik Palmenin aukio 1";
 		schema:addressLocality "Helsinki";
 		schema:postalCode "FI-00560";
 		schema:addressCountry "Finland";
-	]; 
+	];
 	schema:contactPoint <mailto:ari.viljanen@fmi.fi/scientificContact>;
 	schema:contactPoint <mailto:lasse.hakkinen@fmi.fi/legalContact>;
 	schema:contactPoint <mailto:lasse.hakkinen@fmi.fi/financialContact>;
-. 
+.
 	<mailto:ari.viljanen@fmi.fi/scientificContact> a schema:ContactPoint;
 		schema:email "ari.viljanen@fmi.fi";
 		schema:availableLanguage "en" ;
 		schema:contactType "scientificContact" ;
-. 
+.
 	<mailto:lasse.hakkinen@fmi.fi/legalContact> a schema:ContactPoint;
 		schema:email "lasse.hakkinen@fmi.fi";
 		schema:availableLanguage "en" ;
 		schema:contactType "legalContact" ;
-. 
+.
 	<mailto:lasse.hakkinen@fmi.fi/financialContact> a schema:ContactPoint;
 		schema:email "lasse.hakkinen@fmi.fi";
 		schema:availableLanguage "en" ;
 		schema:contactType "financialContact" ;
-. 
+.
 	<http://space.fmi.fi/cgi-bin/imagecgi/image-epos-indicators.cgi/operation> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "txt";
-		hydra:IriTemplate[ a hydra:IriTemplate;
+		hydra:property[ a hydra:IriTemplate;
 			hydra:template "http://space.fmi.fi/cgi-bin/imagecgi/image-epos-indicators.cgi(?start, yourname, institute, email, submit)"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "start"^^xsd:integer;
@@ -141,11 +143,11 @@
 					hydra:required "true"^^xsd:boolean;
 				];
 		] ;
-. 
+.
 	<#Geoelectromagnetism> a skos:ConceptScheme;
 		dct:title "Geoelectromagnetism";
                 dct:description "It contains the concepts of Geoelectromagnetism" ;
-. 
+.
 	<#MagneticField> a skos:Concept;
                 skos:definition "" ;
 		skos:inScheme <#Geoelectromagnetism> ;

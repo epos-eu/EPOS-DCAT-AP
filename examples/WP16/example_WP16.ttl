@@ -1,0 +1,165 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .  
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .  
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .  
+@prefix dc: <http://purl.org/dc/elements/1.1/> .  
+@prefix dct: <http://purl.org/dc/terms/> .  
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .  
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .  
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .  
+@prefix schema: <http://schema.org/> .  
+@prefix dcat: <http://www.w3.org/ns/dcat#> .  
+@prefix cnt: <http://www.w3.org/2011/content#> .  
+@prefix locn: <http://www.w3.org/ns/locn#> .  
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .  
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .  
+@prefix http: <http://www.w3.org/2006/http#> .  
+@prefix owl: <http://www.w3.org/2002/07/owl#> .  
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .  
+
+<ORCID:0000-0003-3560-988X> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "";
+		schema:value "ORCID:0000-0003-3560-988X";
+	]; 
+	schema:familyName "Lange";
+	schema:givenName "Otto";
+	schema:address [ a schema:PostalAddress;
+		schema:addressCountry "Netherlands";
+	]; 
+	schema:email "o.a.lange@uu.nl";
+	schema:affiliation <PIC:99985805>;
+. 
+
+<PIC:99985805> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "";
+		schema:value "PIC:99985805";
+	]; 
+	schema:legalName "Utrecht University";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Domplein 29";
+		schema:addressLocality "Utrecht";
+		schema:postalCode "3512 JE";
+		schema:addressCountry "netherlands";
+	]; 
+. 
+
+<https://epos-msl.uu.nl> a epos:WebService;
+	schema:identifier "https://epos-msl.uu.nl";
+	schema:identifier [ a schema:PropertyValue; 
+		schema:propertyID  "DDSS-ID"; 
+		schema:value  ""; 
+	]; 
+	schema:description "The MSL Catalogue service assists in the discovery of data publications, which contain analytical and experimental data on rock properties, analogue models on tectonic processes, and paleomagnetic and magnetic data. Metadata is available in standard ISO19115 format, extended with domain specific keywords.";
+	dcat:theme <#Analoguemodelsofgeologicprocesses>;
+	dcat:theme <#Rockandmeltphysicalproperties>;
+	dcat:theme <#Paleomagneticandmagneticdata>;
+	dcat:theme <#Geochemicaldata>;
+	schema:name "Multiscale Laboratories Data Catalogue Service";
+	hydra:entrypoint "https://epos-msl.uu.nl/data_search?"^^xsd:anyURI; 
+	schema:provider <PIC:99985805>;
+	schema:datePublished "2017-09-21Z"^^xsd:dateTime;
+	schema:dateModified "2018-08-08Z"^^xsd:dateTime;
+	hydra:supportedOperation <https://epos-msl.uu.nl/api>;
+	schema:keywords "Laboratories"," analytical data"," experimental data"," rock properties"," analogue models"," tectonic processes"," paleomagnetic data"," magnetic data";
+	dct:license "http://www.fsf.org/licensing/licenses/agpl-3.0.html"^^xsd:anyURI;
+	dcat:contactPoint <ORCID:0000-0003-3560-988X/contactPoint>;
+. 
+	<#Multi-scale laboratories> a skos:ConceptScheme;
+		dct:title "Multi-scale laboratories";
+		dct:description "The Multi-scale laboratories TCS includes a wide range of world-class experimental laboratory infrastructures: from high pressure-temperature rock and fault mechanics and rock physics facilities, to electron microscopy, micro-beam analysis, analogue modelling and paleomagnetic laboratories.";
+. 
+	<#Paleomagneticandmagneticdata> a skos:Concept;
+		skos:inScheme <#Multi-scale laboratories>;
+		skos:prefLabel "Paleomagnetic and magnetic data";
+. 
+	<#Geochemicaldata> a skos:Concept;
+		skos:inScheme <#Multi-scale laboratories>;
+		skos:prefLabel "Geochemical data (elemental and isotope geochemistry)";
+. 
+	<#Rockandmeltphysicalproperties> a skos:Concept;
+		skos:inScheme <#Multi-scale laboratories>;
+		skos:prefLabel "Rock and melt physical properties";
+. 
+	<#Analoguemodelsofgeologicprocesses> a skos:Concept;
+		skos:inScheme <#Multi-scale laboratories>;
+		skos:prefLabel "Analogue models of geologic processes";
+. 
+	<https://epos-msl.uu.nl/api> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://epos-msl.uu.nl/api/data_search(?Author, supplementTo, Publisher, publicationYear, Keyword, Title, Description, DOI, Lab, Institution, freeTextAllFields)"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Author"^^xsd:string;
+					rdfs:label "Author";
+					schema:defaultValue "*";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "supplementTo"^^xsd:string;
+					rdfs:label "Dataset is supplement to";
+					schema:defaultValue "*";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Publisher"^^xsd:string;
+					rdfs:label "Publisher";
+					schema:defaultValue "*";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "publicationYear"^^xsd:string;
+					rdfs:label "Year of (data) publication";
+					schema:defaultValue "2018";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Keyword"^^xsd:string;
+					rdfs:label "Keyword(s)";
+					schema:defaultValue "*";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Title"^^xsd:string;
+					rdfs:label "Title of data publication";
+					schema:defaultValue "*";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Description"^^xsd:string;
+					rdfs:label "Description of data publication";
+					schema:defaultValue "*";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "DOI"^^xsd:string;
+					rdfs:label "DOI assigned to data publication or related articles";
+					schema:defaultValue "*";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Lab"^^xsd:string;
+					rdfs:label "Lab(s) where data was collected";
+					schema:defaultValue "*";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Institution"^^xsd:string;
+					rdfs:label "Institution(s) where data was collected";
+					schema:defaultValue "*";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "freeTextAllFields"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Search in all fields";
+					schema:defaultValue "*";
+					hydra:required "false"^^xsd:boolean;
+				];
+		] ;
+. 
+	<ORCID:0000-0003-3560-988X/contactPoint> a schema:ContactPoint;
+		schema:email "o.a.lange@uu.nl";
+		schema:availableLanguage "en" ;
+.
