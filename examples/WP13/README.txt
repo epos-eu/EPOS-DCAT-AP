@@ -18,11 +18,12 @@ Status of metadata:
 
 - WP13-DDSS-001 - INTERMAGNET:  Validated
 - WP13-DDSS-001 - WDC:          Validated
-- WP13-DDSS-002 - IMAGE:        Old version of metadata
+- WP13-DDSS-002 - IMAGE:        Validated
 - WP13-DDSS-003 - Survey data:  Validated
 - WP13-DDSS-006 - ISGI:         Old version of metadata
 - WP13-DDSS-007 - ISGI:         Old version of metadata
 - WP13-DDSS-008 - IMAGE:        Old version of metadata
+- WP13-DDSS-009 - IMAGE subst   Not created yet
 - WP13-DDSS-013 - WMM:          Old version of metadata
 - WP13-DDSS-013 - IGRF:         Old version of metadata
  
