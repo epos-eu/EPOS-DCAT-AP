@@ -20,12 +20,12 @@ Status of metadata:
 - WP13-DDSS-001 - WDC:          Validated
 - WP13-DDSS-002 - IMAGE:        Validated
 - WP13-DDSS-003 - Survey data:  Validated
-- WP13-DDSS-006 - ISGI:         Updated
-- WP13-DDSS-007 - ISGI:         Updated
+- WP13-DDSS-006 - ISGI:         Validated
+- WP13-DDSS-007 - ISGI:         Validated
 - WP13-DDSS-008 - IMAGE:        Old version of metadata
 - WP13-DDSS-009 - IMAGE subst   Not created yet
-- WP13-DDSS-012 - WMM:          Old version of metadata
-- WP13-DDSS-012 - IGRF:         Updated
+- WP13-DDSS-012 - WMM:          Validated
+- WP13-DDSS-012 - IGRF:         Validated
  
 
 Understanding SHACL / Turtle
