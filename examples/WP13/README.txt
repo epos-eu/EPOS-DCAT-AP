@@ -22,8 +22,8 @@ Status of metadata:
 - WP13-DDSS-003 - Survey data:  Validated
 - WP13-DDSS-006 - ISGI:         Validated
 - WP13-DDSS-007 - ISGI:         Validated
-- WP13-DDSS-008 - IMAGE:        Old version of metadata
-- WP13-DDSS-009 - IMAGE subst   Not created yet
+- WP13-DDSS-008 - IMAGE:        Validated
+- WP13-DDSS-009 - IMAGE subst:  Validated
 - WP13-DDSS-012 - WMM:          Validated
 - WP13-DDSS-012 - IGRF:         Validated
  
@@ -80,8 +80,8 @@ WP 13 is providing 8 web services from 6 priority DDSS elements:
 - WP13-DDSS-006 - ISGI Geomagnetic Indices web service
 - WP13-DDSS-007 - ISGI Geomagentic Events web service
 - WP13-DDSS-008 - IMAGE electrojet indices web service
-- WP13-DDSS-013 - WMM World Magnetic Model web service
-- WP13-DDSS-013 - IGRF Internal Geomagnetic Reference Field model web service
+- WP13-DDSS-012 - WMM World Magnetic Model web service
+- WP13-DDSS-012 - IGRF Internal Geomagnetic Reference Field model web service
   
 Status of metadata RDF/TTL:
 
@@ -100,8 +100,8 @@ Status of metadata RDF/TTL:
                         Gets around 'hidden parameter' problem while
                         we investigate AAAI
 - WP13-DDSS-008 - IMAGE: Converted from previously validated XML file
-- WP13-DDSS-013 - WMM: Converted from previously validated XML file
-- WP13-DDSS-013 - IGRF: Converted from previously validated XML file
+- WP13-DDSS-012 - WMM: Converted from previously validated XML file
+- WP13-DDSS-012 - IGRF: Converted from previously validated XML file
  
 A number of other noncritical issues were also raised that affect the
 effectiveness and ease with which WP13 web services can be called:
