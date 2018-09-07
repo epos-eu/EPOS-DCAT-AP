@@ -45,11 +45,11 @@
     <gazvolc/data/id/41/DownloadFile> a dcat:Distribution;
         dct:identifier "gazvolc/data/id/41/DownloadFile";
         dct:description "The way to download the gazvolc product: June 2014";
-        dct:type "http://publications.europa.eu/mdr/resource/authority/distribution-type/html/distribution-types-eng.html#DOWNLOADABLE_FILE"^^xsd:anyURI;
+        dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
         dcat:accessURL <opgc.fr/vobs/gazvolc/WP11/DDSS-036/data-download>;
         dcat:downloadURL "http://opgc.fr/vobs/rest2/req.php/gazvolc/data/id/41"^^xsd:anyURI;
         dct:conformsTo <opgc.fr/vobs/gazvolc/WP11/DDSS-036>;
-        dct:format "http://publications.europa.eu/mdr/resource/authority/file-type/html/filetypes-eng.html#ZIP"^^xsd:anyURI;
+        dct:format "http://publications.europa.eu/resource/authority/file-type/ZIP"^^xsd:anyURI;
 .
 
 <http://orcid.org/0000-0002-8485-0154> a schema:Person;
@@ -223,10 +223,6 @@
 
 <opgc.fr/vobs/gazvolc/WP11/DDSS-036> a epos:WebService;
     schema:identifier "opgc.fr/vobs/gazvolc/WP11/DDSS-036";
-    adms:identifier [ a adms:identifier;
-        schema:propertyID "DDSS-ID";
-        schema:value "WP11-DDSS-036";
-    ];
     schema:description "Since september 2017, OPGC assigns Digital Object Identifiers (DOI) to datasets. These datasets are archived by and published through OPGC Data Services and cover all geoscientific disciplines. They range from large dynamic datasets deriving from data intensive global monitoring networks with real-time data acquisition to the full suite of highly variable datasets collected by individual researchers or small teams. These highly variable data (‘long-tail data’) are small in size, but represent an important part of the total scientific output. This web service allow to retrive data from the gazvolc observation service. GAZVOLC is an observation system within France's National Service for Volcanological Observation (SNOV).The system contributes databases for volcanic gas emission. The study of magmatic degassing and of hydrothermal systems is of the utmost importance in furthering our understanding of the hazards these systems pose, and of paramount importance to optimise their monitoring. As the speed of gas ascent towards the surface is much greater than that of the magma, any change in composition or flux of magmatic gases and/or volcanic fluids at the surface will thus bring us information on what is occurring at depth (i.e. the physio-chemical interactions between volcanic gases, surrounding rocks and rain water, and the arrival at depth of new magma and gas inputs). Magmatic gases and/or volcanic fluids are thus a privileged interface between deep magma and the surface, and they are therefore an important tool for monitoring both quiescent and active volcanoes. Time series of gas fluxes and composition can be correlated with geophysical dataset to provide robust assessment of volcanic activity and for the interpretation of its time and space evolution.";
     schema:name "OPGC Virtual Observatory - GAZVOLC Entry Point - EPOS - WP11-DDSS-036";
     schema:datePublished "2016-05-26T08:00:00Z"^^xsd:dateTime;
@@ -253,13 +249,14 @@
 .
     <opgc.fr/vobs/gazvolc/WP11/DDSS-036/data-catalog> a hydra:Operation;
         hydra:method "GET"^^xsd:string;
-        hydra:returns "JSON, TURTLE-RDF-EPOS-DCAT-AP";
+        hydra:returns "application/json";
+        #hydra:returns "JSON, TURTLE-RDF-EPOS-DCAT-AP";
         hydra:property [ a hydra:IriTemplate;
             hydra:template "http://opgc.fr/vobs/rest2/req.php/gazvolc(?timestart, timeend, output, onscreen)"^^xsd:string;
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "timestart"^^xsd:dateTime;
                     rdfs:label "Starting datetime of the time interval query (format YYYY-MM-DDThh:mm:ss:Z)";
-                    dct:type "datetime";
+                    rdfs:range "xsd:dateTime";
                     schema:minValue "0001-01-01T00:00:00Z"^^xsd:dateTime;
                     schema:maxValue "9999-12-31T23:59:59Z"^^xsd:dateTime;
                     hydra:required "false"^^xsd:boolean;
@@ -267,7 +264,7 @@
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "timeend"^^xsd:dateTime;
                     rdfs:label "Ending datetime of the time interval query (format YYYY-MM-DDThh:mm:ssZ)";
-                    dct:type "datetime";
+                    rdfs:range "xsd:dateTime";
                     schema:minValue "0001-01-01T00:00:00Z"^^xsd:dateTime;
                     schema:maxValue "9999-12-31T23:59:59Z"^^xsd:dateTime;
                     hydra:required "false"^^xsd:boolean;
@@ -278,7 +275,7 @@
                     http:paramValue "JSON";
                     http:paramValue "TURTLE-RDF-EPOS-DCAT-AP";
                     schema:defaultValue "TURTLE-RDF-EPOS-DCAT-AP";
-                    dct:type "string";
+                    rdfs:range "xsd:string";
                     hydra:required "false"^^xsd:boolean;
                 ];
                 hydra:mapping [ a hydra:IriTemplateMapping;
@@ -287,27 +284,27 @@
                     http:paramValue "true"^^xsd:boolean;
                     http:paramValue "false"^^xsd:boolean;
                     schema:defaultValue "true"^^xsd:boolean;
-                    dct:type "boolean";
+                    rdfs:range "xsd:boolean";
                     hydra:required "false"^^xsd:boolean;
                 ];
         ];
 .
     <opgc.fr/vobs/gazvolc/WP11/DDSS-036/data-download> a hydra:Operation;
         hydra:method "GET"^^xsd:string;
-        hydra:returns "ZIP";
+        hydra:returns "application/zip";
         hydra:property [ a hydra:IriTemplate;
             hydra:template "http://opgc.fr/vobs/rest2/req.php/gazvolc/data/id/{uri}(/{format})"^^xsd:string;
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "uri"^^xsd:integer;
                     rdfs:label "The data id number";
-                    dct:type "integer";
+                    rdfs:range "xsd:integer";
                     schema:minValue "1"^^xsd:integer;
                     hydra:required "true"^^xsd:boolean;
                 ];
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "format"^^xsd:string;
                     rdfs:label "The output format";
-                    dct:type "string";
+                    rdfs:range "xsd:string";
                     http:paramValue "JSON"^^xsd:string;
                     http:paramValue "CSV"^^xsd:string;
                     schema:defaultValue "JSON"^^xsd:string;
