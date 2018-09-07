@@ -39,7 +39,7 @@
 <http://orcid.org/0000-0002-8608-4289/contactPoint> a schema:ContactPoint;
 	schema:email "ivano.carluccio@ingv.it";
 	schema:availableLanguage "en" ;
-	schema:contactType "ContactPoint";
+	#schema:contactType "ContactPoint";
 .
 
 <http://orcid.org/0000-0002-6711-2264> a schema:Person;
@@ -148,7 +148,7 @@
 	dct:title "TABOO Radon decay counts and local temperature Dataset";
 	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/RADON/Dataset/001";
 	dct:description "Radon decay counts and local temperature dataset contains Radon Gas concentration time series based on periodic counting of Rn gas at site";
-	schema:identifier [ a adms:Identifier; 
+	adms:identifier [ a adms:Identifier; 
 		adms:schemaAgency "DDSS-ID";
 		skos:notation "WP09-DDSS-024"; 
 	];
@@ -215,7 +215,7 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/RADON/WebService/001/Operation/001> a hydra:Operation;
 	hydra:method "GET"^^xsd:string;
-	hydra:returns "json";
+	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
 		hydra:template "http://fridge-services.rm.ingv.it/radon/(?mintime, maxtime, minlat, maxlat, minlon, maxlon, minperiod, maxperiod, maxeqdepth, type_site, max_radon_err, max_int_delta)"^^xsd:string;
 		# type of parameter "xsd:string" "xsd:boolean" "xsd:date" " xsd:dateTime" "xsd:decimal" "xsd:double" "xsd:float" "xsd:int" "xsd:integer" "xsd:long"
