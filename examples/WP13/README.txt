@@ -11,8 +11,8 @@ WP 13 is providing 10 web services from 8 DDSS elements:
 - WP13-DDSS-007 - ISGI Geomagentic Events web service
 - WP13-DDSS-008 - IMAGE electrojet indices web service
 - WP13-DDSS-009 - IMAGE substorm events
-- WP13-DDSS-013 - WMM World Magnetic Model web service
-- WP13-DDSS-013 - IGRF Internal Geomagnetic Reference Field model web service
+- WP13-DDSS-012 - WMM World Magnetic Model web service
+- WP13-DDSS-012 - IGRF Internal Geomagnetic Reference Field model web service
   
 Status of metadata:
 
@@ -20,12 +20,12 @@ Status of metadata:
 - WP13-DDSS-001 - WDC:          Validated
 - WP13-DDSS-002 - IMAGE:        Validated
 - WP13-DDSS-003 - Survey data:  Validated
-- WP13-DDSS-006 - ISGI:         Old version of metadata
-- WP13-DDSS-007 - ISGI:         Old version of metadata
+- WP13-DDSS-006 - ISGI:         Updated
+- WP13-DDSS-007 - ISGI:         Updated
 - WP13-DDSS-008 - IMAGE:        Old version of metadata
 - WP13-DDSS-009 - IMAGE subst   Not created yet
-- WP13-DDSS-013 - WMM:          Old version of metadata
-- WP13-DDSS-013 - IGRF:         Old version of metadata
+- WP13-DDSS-012 - WMM:          Old version of metadata
+- WP13-DDSS-012 - IGRF:         Updated
  
 
 Understanding SHACL / Turtle
