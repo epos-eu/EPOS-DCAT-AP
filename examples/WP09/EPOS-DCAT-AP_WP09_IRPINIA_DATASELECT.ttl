@@ -1,0 +1,245 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http: <http://www.w3.org/2006/http#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+
+<https://orcid.org/0000-0002-2588-8160> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "orcid";
+		schema:value "https://orcid.org/0000-0002-2588-8160";
+	];
+	schema:familyName "Festa";
+	schema:givenName "Gaetano";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Via Cintia";
+		schema:addressLocality "Naples";
+		schema:postalCode "80126";
+		schema:addressCountry "Italy";
+	];
+	schema:email "gaetano.festa@unina.it";
+	schema:telephone "+39081675248";
+	schema:url "https://www.docenti.unina.it/gaetano.festa"^^xsd:anyURI;
+	schema:qualifications "Associate Professor of Earth and Atmosphere Physics";
+	schema:affiliation <PIC:999976590>;
+	schema:contactPoint <https://orcid.org/0000-0002-2588-8160/scientificContact>;
+	schema:contactPoint <https://orcid.org/0000-0002-2588-8160/legalContact>;
+	schema:contactPoint <https://orcid.org/0000-0002-2588-8160/financialContact>;
+.
+
+<https://orcid.org/0000-0002-4553-2380> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "orcid";
+		schema:value "https://orcid.org/0000-0002-4553-2380";
+	];
+	schema:familyName "Elia";
+	schema:givenName "Luca";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Via Cintia";
+		schema:addressLocality "Naples";
+		schema:postalCode "80126";
+		schema:addressCountry "Italy";
+	];
+	schema:email "elia@fisica.unina.it";
+	schema:telephone "+39081679929";
+	schema:qualifications "Contractor";
+	schema:affiliation <PIC:999976590>;
+	schema:contactPoint <https://orcid.org/0000-0002-4553-2380/technicalContact>;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/dataselect/WebService/001> a epos:WebService;
+	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/dataselect/WebService/001";
+	schema:description "IRPINIA - The dataselect Web service provides access to time series data in miniSEED format. The data may be filtered e.g. by time, station and network parameters. The request type is HTTP-GET and HTTP-POST. Please refer to http://www.fdsn.org/webservice for a complete service description.";
+	dcat:theme <#Seismicwaveforms>;
+	schema:name "IRPINIA - FDSN Dataselect Web Service";
+	# INGV entrypoint:
+	hydra:entrypoint "http://webservices.ingv.it/fdsnws/dataselect/1/query?"^^xsd:anyURI;
+	schema:provider <PIC:999976590>;
+	schema:datePublished "2016-01-01"^^xsd:dateTime;
+	schema:dateModified "2016-01-01"^^xsd:dateTime;
+	dct:spatial [ a dct:Location;
+		locn:geometry "POLYGON(14.0 39.0,16.0 39.0,16.0 42.0,14.0 42.0,14.0 39.0)"^^gsp:wktLiteral;
+	];
+	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/dataselect/Operation/001>;
+	schema:keywords "seismology","seismicity","earthquakes","waveform","seismic hazard","earth structure","earthquake intensity","macroseismic","macroseismic information","waveform modeling","IRPINIA","Dataselect","FDSN-WS","Seismic Waveform","EIDA";
+	dct:license "https://creativecommons.org/licenses/by-sa/3.0/"^^xsd:anyURI;
+	dct:temporal [ a dct:PeriodOfTime;
+		schema:startDate "2003-01-01T00:00:00Z"^^xsd:dateTime;
+	];
+	schema:contactPoint <https://orcid.org/0000-0002-4553-2380/technicalContact>;
+.
+
+<PIC:999976590> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "PIC";
+		schema:value "999976590";
+	];
+	schema:legalName "RISSC-Lab, University Federico II of Naples";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Via Cintia";
+		schema:addressLocality "Naples";
+		schema:postalCode "80126";
+		schema:addressCountry "Italy";
+	];
+	schema:logo "http://www.rissclab.unina.it/images/unina/RSCCLogo.png"^^xsd:anyURI;
+	schema:url "http://www.rissclab.unina.it/en/"^^xsd:anyURI;
+	schema:email "inforissclab@unina.it";
+	schema:contactPoint <https://orcid.org/0000-0002-2588-8160/scientificContact>;
+	schema:contactPoint <https://orcid.org/0000-0002-2588-8160/legalContact>;
+	schema:contactPoint <https://orcid.org/0000-0002-2588-8160/financialContact>;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/dataselect/Operation/001> a hydra:Operation;
+	hydra:method "GET"^^xsd:string;
+	hydra:returns "application/octet-stream";
+	hydra:property[ a hydra:IriTemplate;
+		# INGV entrypoint:
+		hydra:template "http://webservices.ingv.it/fdsnws/dataselect/1/query(?starttime, endtime, network, station, location, channel, quality, minimumlength, nodata)"^^xsd:string;
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "starttime"^^xsd:string;
+				rdfs:range "xsd:dateTime";
+				rdfs:label "Start of the timespan";
+				#schema:minValue "2000-01-01T00:00:00";
+				#schema:maxValue "2099-01-01T00:00:00";
+				schema:defaultValue "2018-09-10T12:00:00";
+				hydra:required "true"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "endtime"^^xsd:string;
+				rdfs:range "xsd:dateTime";
+				rdfs:label "End of the timespan";
+				#schema:minValue "2000-01-01T00:00:00";
+				#schema:maxValue "2099-01-01T00:00:00";
+				schema:defaultValue "2018-09-10T12:00:30";
+				hydra:required "true"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "network"^^xsd:string;
+				rdfs:range "xsd:string";
+				rdfs:label "Network code";
+				#schema:defaultValue "_NFOIRPINA";
+				schema:defaultValue "IX";
+				hydra:required "true"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "station"^^xsd:string;
+				rdfs:range "xsd:string";
+				rdfs:label "Station code";
+				schema:defaultValue "AND3";
+				hydra:required "true"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "location"^^xsd:string;
+				rdfs:range "xsd:string";
+				rdfs:label "Location code";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "channel"^^xsd:string;
+				rdfs:range "xsd:string";
+				rdfs:label "Channel code";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "quality"^^xsd:string;
+				rdfs:range "xsd:string";
+				rdfs:label "Quality";
+				http:paramValue "D";
+				http:paramValue "R";
+				http:paramValue "Q";
+				http:paramValue "M";
+				http:paramValue "B";
+				schema:defaultValue "D";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "minimumlength"^^xsd:string;
+				rdfs:range "xsd:integer";
+				rdfs:label "Minimum Length";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "nodata"^^xsd:string;
+				rdfs:range "xsd:integer";
+				rdfs:label "HTTP error code if no data is found";
+				http:paramValue "204";
+				http:paramValue "404";
+				schema:defaultValue "204";
+				hydra:required "false"^^xsd:boolean;
+			];
+	];
+.
+
+<#NearFaultObservations> a skos:ConceptScheme;
+	dct:title "Near Fault Observations";
+	dct:description "It contains the concepts of Near Fault Observations";
+.
+
+<#Seismicwaveforms> a skos:Concept;
+	skos:inScheme <#NearFaultObservations>;
+	skos:prefLabel "Seismic waveforms";
+.
+
+<https://orcid.org/0000-0002-2588-8160/scientificContact> a schema:ContactPoint;
+	schema:email "gaetano.festa@unina.it";
+	schema:availableLanguage "en";
+	schema:contactType "scientificContact";
+.
+
+<https://orcid.org/0000-0002-2588-8160/legalContact> a schema:ContactPoint;
+	schema:email "gaetano.festa@unina.it";
+	schema:availableLanguage "en";
+	schema:contactType "legalContact";
+.
+
+<https://orcid.org/0000-0002-2588-8160/financialContact> a schema:ContactPoint;
+	schema:email "gaetano.festa@unina.it";
+	schema:availableLanguage "en";
+	schema:contactType "financialContact";
+.
+
+<https://orcid.org/0000-0002-4553-2380/technicalContact> a schema:ContactPoint;
+	schema:email "elia@fisica.unina.it";
+	schema:availableLanguage "en";
+	#schema:contactType "technicalContact";
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/dataselect/Dataset/001> a dcat:Dataset;
+	dct:title "IRPINIA - Velocity and Acceleration Seismic Waveforms Dataset (Continuous)";
+	adms:identifier [ a adms:Identifier;
+		adms:schemaAgency "DDSS-ID";
+		skos:notation "WP09-DDSS-001/002";
+	];
+	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/dataselect/Dataset/001";
+	dct:description "Accelerometric and velocimetric waveforms from the the seismic stations and sensors comprising the Irpinia Near Fault Observatory (southern Italy). Includes stations from the Irpinia Seismic Network (ISNet) and from the National Institute of Geophysics and Volcanology (INGV).";
+	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+	dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+	dct:created "2003-01-01"^^xsd:date;
+	dcat:theme  <#Seismicwaveforms>;
+	dcat:keyword "seismology","seismicity","earthquakes","waveform","seismic hazard","earth structure","earthquake intensity","macroseismic","macroseismic information","waveform modeling","IRPINIA","Dataselect","FDSN-WS","Seismic Waveform","EIDA";
+	dcat:contactPoint <https://orcid.org/0000-0002-4553-2380/technicalContact>;
+	dct:publisher <PIC:999976590>;
+	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/dataselect/Distribution/001>;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/dataselect/Distribution/001> a dcat:Distribution;
+	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/dataselect/Distribution/001";
+	dct:description "IRPINIA Velocity and Acceleration Seismic Waveforms Distribution (Continuous)";
+	dct:created "2003-01-01"^^xsd:date;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/dataselect/Operation/001>;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/dataselect/WebService/001>;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI;
+.
