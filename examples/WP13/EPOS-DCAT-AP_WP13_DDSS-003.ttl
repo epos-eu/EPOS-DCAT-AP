@@ -72,7 +72,6 @@
 	schema:telephone "+44 131 650 0257";
 	schema:url "http://www.bgs.ac.uk/staff/profiles/1939.html"^^xsd:anyURI;
 	schema:affiliation <http://viaf.org/viaf/136554353/>;
-	schema:contactPoint <http://orcid.org/0000-0002-7677-5158/contactPoint>;
 	schema:contactPoint <http://orcid.org/0000-0002-7677-5158/scientificContact>;
 	schema:contactPoint <http://orcid.org/0000-0002-7677-5158/legalContact>;
 	schema:contactPoint <http://orcid.org/0000-0002-7677-5158/financialContact>;
@@ -86,26 +85,17 @@
 	schema:email "smf@bgs.ac.uk";
 	schema:availableLanguage "en" ;
 	schema:contactType "contactPoint" ;
-.
-
-<http://orcid.org/0000-0002-7677-5158/contactPoint> a schema:ContactPoint;
-	schema:email "awpt@bgs.ac.uk";
-	schema:availableLanguage "en" ;
-	schema:contactType "contactPoint" ;
-.
-
+. 
 <http://orcid.org/0000-0002-7677-5158/scientificContact> a schema:ContactPoint;
 	schema:email "awpt@bgs.ac.uk";
 	schema:availableLanguage "en" ;
 	schema:contactType "scientificContact" ;
-.
-
+. 
 <http://orcid.org/0000-0002-7677-5158/legalContact> a schema:ContactPoint;
 	schema:email "awpt@bgs.ac.uk";
 	schema:availableLanguage "en" ;
 	schema:contactType "legalContact" ;
-.
-
+. 
 <http://orcid.org/0000-0002-7677-5158/financialContact> a schema:ContactPoint;
 	schema:email "awpt@bgs.ac.uk";
 	schema:availableLanguage "en" ;
@@ -164,13 +154,13 @@
 ### Data set ###
 ###############################################################################
 
-<https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/INTERMAGNET/Dataset> a dcat:Dataset;
-	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/INTERMAGNET/Dataset";
-	dct:title "INTERMAGNET Geomagnetic Observatory Data";
-	dct:description "The INTERMAGNET programme exists to establish a global network of cooperating digital magnetic observatories, adopting modern standard specifications for measuring and recording equipment, in order to facilitate data exchanges and the production of geomagnetic products in close to real time.";
+<https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-003/SurveyData/Dataset> a dcat:Dataset;
+	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-003/SurveyData/Dataset";
+	dct:title "Global geomagnetic survey data collected by the World Data Centre (WDC)";
+	dct:description "The World Data Centre for Geomagnetism (Edinburgh) is a node of the World Data System (WDS) established by the International Council for Science (ICSU). The WDC holds details of individual readings of the Earth's magnetic field ('spot values') made for the purposes of surveying and monitoring long-term changes in the field.";
 	adms:identifier [ a adms:Identifier;
 		adms:schemaAgency "DDSS-ID";
-		skos:notation "WP13-DDSS-001";
+		skos:notation "WP13-DDSS-003";
 	]; 
 	dct:created "2018-08-31"^^xsd:date;
 	dct:modified "2018-08-31"^^xsd:date;
@@ -180,14 +170,13 @@
     dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
     dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI ;
     dcat:theme  <#Magneticfield> ;
-	dcat:keyword "magnetism", "geomagnetism", "observatory", "provisional", "real time" ;
+	dcat:keyword "magnetism", "geomagnetism", "global model", "magnetic model", "magnetic survey", "main field", "model", "secular variation", "world model" ;
     dcat:contactPoint <mailto:smf@bgs.ac.uk/contactPoint> ;
-	dcat:contactPoint <http://orcid.org/0000-0002-7677-5158/contactPoint>;
 	dct:publisher <http://viaf.org/viaf/136554353/>;
-	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/INTERMAGNET/Distribution>;
+	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-003/SurveyData/Distribution>;
 
     dct:temporal [ a dct:PeriodOfTime; 
-		schema:startDate "1991-01-01T00:00:00Z"^^xsd:dateTime; 
+		schema:startDate "1900-01-01T00:00:00Z"^^xsd:dateTime; 
 		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
 	]; 
 	dct:spatial [ a dct:Location; 
@@ -199,41 +188,40 @@
 ### Distributions ###
 ###############################################################################
 
-<https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/INTERMAGNET/Distribution> a dcat:Distribution;
-	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/INTERMAGNET/Distribution";
-	dct:title "Distribution of INTERMAGNET data";
-	dct:description "INTERMAGNET data is distributed via web service, ftp and on physical media (CD/DVD/USB stick)";
+<https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-003/SurveyData/Distribution> a dcat:Distribution;
+	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-003/SurveyData/Distribution";
+	dct:title "Distribution of global geomagnetic survey data";
+	dct:description "World Data Centre geomagnetic survey data is distributed via web service";
 	dct:issued "2018-08-31"^^xsd:date;
 	dct:modified "2018-08-31"^^xsd:date;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/INTERMAGNET/Webservice>;
-    dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/INTERMAGNET/Operation> ;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-003/SurveyData/Webservice>;
+    dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-003/SurveyData/Operation> ;
 	dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI ;
-    dct:format "text/csv; text/html; text/xml; application/json; text/plain; image/png, image/jpeg, application/pdf"^^xsd:string ;
+    dct:format "text/csv; application/json; application/vnd.geo+json"^^xsd:string ;
 . 
 
 ###############################################################################
 ### Web services ###
 ###############################################################################
 
-<https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/INTERMAGNET/Webservice> a epos:WebService;
-	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/INTERMAGNET/Webservice";
-	schema:description "The INTERMAGNET web service makes available preliminary data from INTERMAGNET observatories.";
-	schema:name "INTERMAGNET web service";
+<https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-003/SurveyData/Webservice> a epos:WebService;
+	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-003/SurveyData/Webservice";
+	schema:description "The WDC survey data web service makes available individual observations of the geomagnetic field from around the world.";
+	schema:name "WDC global survey data web service";
 	dcat:contactPoint <mailto:smf@bgs.ac.uk/contactPoint>;
-	dcat:contactPoint <http://orcid.org/0000-0002-7677-5158/contactPoint>;
 	schema:datePublished "2018-08-31Z"^^xsd:dateTime;
 	schema:dateModified "2018-08-31Z"^^xsd:dateTime;
 	schema:provider <http://viaf.org/viaf/136554353/>;
-	hydra:entrypoint "http://app.geomag.bgs.ac.uk/GIN/"^^xsd:anyURI ;
+	hydra:entrypoint "http://geomag.bgs.ac.uk/gifs/wdc/global-survey/"^^xsd:anyURI ;
     dcat:theme  <#Magneticfield> ;
-	schema:keywords "magnetism"," geomagnetism"," observatory"," provisional"," real time";
-    hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/INTERMAGNET/Operation> ;
+	schema:keywords "magnetism", "geomagnetism", "global model", "magnetic model", "magnetic survey", "main field", "model", "secular variation", "world model" ;
+    hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-003/SurveyData/Operation> ;
 	dct:spatial [ a dct:Location; 
         locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral ;
 	]; 
 	dct:temporal [ a dct:PeriodOfTime; 
-		schema:startDate "1991-01-01T00:00:00Z"^^xsd:dateTime; 
+		schema:startDate "1900-01-01T00:00:00Z"^^xsd:dateTime; 
 		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
 	]; 
 	dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
@@ -243,113 +231,82 @@
 ### Web service operations ###
 ###############################################################################
 
-<https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/INTERMAGNET/Operation> a hydra:Operation;
+<https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-003/SurveyData/Operation> a hydra:Operation;
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "text/csv; text/html; text/xml; application/json; text/plain; image/png, image/jpeg, application/pdf";
 	hydra:property[ a hydra:IriTemplate;
-		hydra:template "http://geomag.bgs.ac.uk/EPOS/WP13/intermagnet/(?Request, observatoryIagaCode, SamplesPerDay, dataStartDate, dataDuration, publicationState, recordTermination, traceList, colourTraces, pictureSize, pdfSize, dataScale)"^^xsd:string;
+		hydra:template "http://geomag.bgs.ac.uk/gifs/wdc/global-survey/data/(?start-year, end-year, north-latitude, south-latitude, west-longitude, east-longitude, add-source-information, format)"^^xsd:string;
 			hydra:mapping[ a hydra:IriTemplateMapping;
-				hydra:variable "Request"^^xsd:string;
-				rdfs:label "No Label";
-                rdfs:range "xsd:string" ;
-				schema:defaultValue "GetData";
-				http:paramValue "GetData";
-				hydra:required "true"^^xsd:boolean;
-			];
-			hydra:mapping[ a hydra:IriTemplateMapping;
-				hydra:variable "observatoryIagaCode"^^xsd:string;
-				rdfs:label "Observatory IAGA code";
-                rdfs:range "xsd:string" ;
-				schema:defaultValue "ESK";
-				hydra:required "true"^^xsd:boolean;
-			];
-			hydra:mapping[ a hydra:IriTemplateMapping;
-				hydra:variable "SamplesPerDay"^^xsd:string;
-				rdfs:label "Samples per day";
-				schema:defaultValue "Minute";
-                rdfs:range "xsd:string" ;
-				http:paramValue "1440";
-				http:paramValue "Minute";
-				http:paramValue "86400";
-				http:paramValue "Second";
-				hydra:required "true"^^xsd:boolean;
-			];
-			hydra:mapping[ a hydra:IriTemplateMapping;
-				hydra:variable "dataStartDate"^^xsd:string;
-				rdfs:label "Date (yyyy-mm-dd)";
-                rdfs:range "xsd:date" ;
-				schema:defaultValue "2018-01-01";
+				hydra:variable "start-year"^^xsd:string;
+				rdfs:label "Start year";
+                rdfs:range "xsd:decimal" ;
+				schema:defaultValue "1980.0";
+				schema:minValue "1900.0";
+				schema:maxValue "2100.0";
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
-				hydra:variable "dataDuration"^^xsd:string;
-				rdfs:label "Duration (days)";
-                rdfs:range "xsd:int" ;
-				schema:minValue "1";
-				schema:maxValue "28";
-				schema:defaultValue "1";
+				hydra:variable "end-year"^^xsd:string;
+				rdfs:label "End year";
+                rdfs:range "xsd:decimal" ;
+				schema:defaultValue "1980.5";
+				schema:minValue "1900.0";
+				schema:maxValue "2100.0";
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
-				hydra:variable "publicationState"^^xsd:string;
-				rdfs:label "Publication state";
-                rdfs:range "xsd:string" ;
-				schema:defaultValue "adj-or-rep";
-				http:paramValue "reported";
-				http:paramValue "provisional";
-				http:paramValue "adjusted";
-				http:paramValue "adj-or-rep";
-				http:paramValue "definitive";
+				hydra:variable "north-latitude"^^xsd:string;
+				rdfs:label "North latitude";
+                rdfs:range "xsd:decimal";
+				schema:defaultValue "90.0";
+				schema:minValue "-90.0";
+				schema:maxValue "90.0";
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
-				hydra:variable "recordTermination"^^xsd:string;
-				rdfs:label "Text file record termination";
-                rdfs:range "xsd:string" ;
-				schema:defaultValue "Windows";
-				http:paramValue "Windows";
-				http:paramValue "UNIX";
+				hydra:variable "south-latitude"^^xsd:string;
+				rdfs:label "South latitude";
+                rdfs:range "xsd:decimal";
+				schema:defaultValue "-90.0";
+				schema:minValue "-90.0";
+				schema:maxValue "90.0";
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
-				hydra:variable "traceList"^^xsd:string;
-				rdfs:label "Traces to display (plots only, not data files)";
-                rdfs:range "xsd:string" ;
-				schema:defaultValue "1234";
-				http:paramValue "1234";
-				http:paramValue "XYZS";
-				http:paramValue "HDZS";
-				http:paramValue "DIFS";
-				hydra:required "true"^^xsd:boolean;
+				hydra:variable "west-longitude"^^xsd:string;
+				rdfs:label "West longitude";
+                rdfs:range "xsd:decimal";
+				schema:defaultValue "-180.0";
+				schema:minValue "-180.0";
+				schema:maxValue "180.0";
+				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
-				hydra:variable "colourTraces"^^xsd:string;
-				rdfs:label "Colour plot";
-                rdfs:range "xsd:boolean" ;
-				schema:defaultValue "True";
+				hydra:variable "east-longitude"^^xsd:string;
+				rdfs:label "East longitude";
+                rdfs:range "xsd:decimal";
+				schema:defaultValue "180.0";
+				schema:minValue "-180.0";
+				schema:maxValue "180.0";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "add-source-information"^^xsd:string;
+				rdfs:label "Add source information";
+                rdfs:range "xsd:boolean";
+				schema:defaultValue "False";
 				http:paramValue "True";
 				http:paramValue "False";
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
-				hydra:variable "pictureSize"^^xsd:string;
-				rdfs:label "Size of jpg or png plot (pixels: 'xxx,yyy')";
-                rdfs:range "xsd:string" ;
-				schema:defaultValue "640,480";
-				hydra:required "false"^^xsd:boolean;
-			];
-			hydra:mapping[ a hydra:IriTemplateMapping;
-				hydra:variable "pdfSize"^^xsd:string;
-				rdfs:label "Size of pdf plot (pixels: 'xxx,yyy')";
-                rdfs:range "xsd:string" ;
-				schema:defaultValue "640,480";
-				hydra:required "false"^^xsd:boolean;
-			];
-			hydra:mapping[ a hydra:IriTemplateMapping;
-				hydra:variable "dataScale"^^xsd:string;
-				rdfs:label "Scale for plot ('XX nT / YY minutes')";
-                rdfs:range "xsd:string" ;
-				schema:defaultValue "100 nT / 10 minutes";
+				hydra:variable "format"^^xsd:string;
+				rdfs:label "Format";
+                rdfs:range "xsd:string";
+				schema:defaultValue "json";
+				http:paramValue "json";
+				http:paramValue "geo-json";
+				http:paramValue "csv";
 				hydra:required "false"^^xsd:boolean;
 			];
 	] ;
