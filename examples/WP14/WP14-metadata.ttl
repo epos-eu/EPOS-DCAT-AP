@@ -247,6 +247,22 @@
 	schema:url "https://www.sgsw.ch"^^xsd:anyURI;
 	schema:contactPoint <mailto:thomas.bloch@sgsw.ch/contactPoint>;
 .
+<https://eost.unistra.fr> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "";
+		schema:value "https://eost.unistra.fr";
+	]; 
+	schema:legalName "Ecole et Observatoire des Sciences de la Terre";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "5 Rue René Descartes";
+		schema:addressLocality "Strasbourg";
+		schema:postalCode "67084";
+		schema:addressCountry "france";
+	]; 
+	schema:url "https://eost.unistra.fr"^^xsd:anyURI;
+	schema:email "contact@eost.unistra.fr";
+	schema:contactPoint <https://orcid.org/0000-0003-4017-4673/contactPoint>;
+.
 
 
 <http://orcid.org/0000-0002-4801-4888> a schema:Person;
@@ -322,7 +338,8 @@
 		schema:propertyID "mailto";
 		schema:value "giangnv@igp-vast.vn";
 	]; 
-	schema:familyName "Nguyen Van Giang";
+	schema:familyName "Van Giang";
+	schema:givenName "Nguyen";
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "A8 Building - 18 Hoang Quoc Viet - Cau Giay - Hanoi - Vietnam";
 		schema:addressLocality "Hanoi";
@@ -433,8 +450,8 @@
 		schema:propertyID "orcid";
 		schema:value "0000-0002-9580-7864";
 	]; 
-	schema:familyName "Jean-Robert";
-	schema:givenName "Grasso";
+	schema:familyName "Grasso";
+	schema:givenName "Jean-Robert";
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "38058 GRENOBLE Cedex 9";
 		schema:addressLocality "Grenoble";
@@ -450,8 +467,8 @@
 		schema:propertyID "mailto";
 		schema:value "abror.karimov@univ-grenoble-alpes.fr";
 	]; 
-	schema:familyName "Abror";
-	schema:givenName "Karimov";
+	schema:familyName "Karimov";
+	schema:givenName "Abror";
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "38058 GRENOBLE Cedex 9";
 		schema:addressLocality "Grenoble";
@@ -467,8 +484,8 @@
 		schema:propertyID "orcid";
 		schema:value "0000-0001-8078-9416";
 	]; 
-	schema:familyName "Matteo";
-	schema:givenName "Picozzi";
+	schema:familyName "Picozzi";
+	schema:givenName "Matteo";
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "Via Nuova Agnano, 11";
 		schema:addressLocality "Naples";
@@ -517,8 +534,8 @@
 		schema:propertyID "mailto";
 		schema:value "thomas.bloch@sgsw.ch";
 	]; 
-	schema:familyName "Thomas";
-	schema:givenName "Bloch";
+	schema:familyName "Bloch";
+	schema:givenName "Thomas";
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "Vadianstrasse 8";
 		schema:addressLocality "St.Gallen";
@@ -529,7 +546,24 @@
 	schema:affiliation <https://www.sgsw.ch>;
 	schema:contactPoint <mailto:thomas.bloch@sgsw.ch/contactPoint>;
 . 
- 
+<http://orcid.org/0000-0003-4017-4673> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "orcid";
+		schema:value "0000-0003-4017-4673";
+	]; 
+	schema:familyName "Schaming";
+	schema:givenName "Marc";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "5 Rue René Descartes";
+		schema:addressLocality "Strasbourg";
+		schema:postalCode "67084";
+		schema:addressCountry "france";
+	]; 
+	schema:email "Marc.Schaming@unistra.fr";
+	schema:telephone "+33368850093";
+	schema:affiliation <https://eost.unistra.fr>;
+	schema:contactPoint <http://orcid.org/0000-0003-4017-4673/contactPoint>;
+. 
 
 	<#Anthropogenichazards> a skos:ConceptScheme;
 		dct:title "Anthropogenic hazards";
@@ -799,6 +833,32 @@
 		dcat:distribution <anthropogenic_hazards/distribution/episodes/MONTEYNARD>;
 		dcat:distribution <anthropogenic_hazards/distribution/episode-elements/MONTEYNARD>;
 		dcat:distribution <anthropogenic_hazards/distribution/files/MONTEYNARD>;
+. 
+	<anthropogenic_hazards/dataset/episode/SSFS1993> a dcat:Dataset;
+		dct:title "1993 Soultz-sous-Forêts Stimulation";
+		dct:identifier "anthropogenic_hazards/dataset/episode/SSFS1993";
+		adms:identifier [ a adms:Identifier;
+			adms:schemaAgency "DDSS-ID";
+			skos:notation "WP14-DDSS-012";
+		]; 
+		dct:description "In 1993, during the development of the european enhanced geothermal system field of Soultz-sous-Forêts (Alsace), 44000 m3 of water have been injected to create the reservoir by stimulating the natural fracture system of the granitic rock mass. Some 16000 microseismic events have been recorded by a network consisting of a hydrophone and 3 four-component accelerometers, cemented in the granite at the bottom of observation wells.";
+		dct:created "2018-09-28"^^xsd:date;
+		dct:modified "2018-09-28"^^xsd:date;
+		dct:issued "2018-09-28"^^xsd:date;
+		dct:temporal [ a dct:PeriodOfTime; 
+			schema:startDate "1993-09-02T00:00:00Z"^^xsd:dateTime;
+			schema:endDate "1993-10-26T00:00:00Z"^^xsd:dateTime;
+		];
+		dct:spatial [ a dct:Location;
+	        locn:geometry "POLYGON(7.86 48.93, 7.87 48.94)"^^gsp:wktLiteral;
+	    ];
+		dcat:theme <#Geothermalenergyproduction>;
+		dcat:keyword "injection induced seismicity", "anthropogenic seismicity";
+		dct:publisher <https://eost.unistra.fr>;
+		dcat:contactPoint <https://orcid.org/0000-0003-4017-4673/contactPoint>;
+		dcat:distribution <anthropogenic_hazards/distribution/episodes/SSFS1993>;
+		dcat:distribution <anthropogenic_hazards/distribution/episode-elements/SSFS1993>;
+		dcat:distribution <anthropogenic_hazards/distribution/files/SSFS1993>;
 . 
 	<anthropogenic_hazards/dataset/episode/GISOS-CERVILLE> a dcat:Dataset;
 		dct:title "GISOS-CERVILLE: underground solution mining";
@@ -1557,6 +1617,33 @@
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
 		dcat:downloadURL "https://tcs.ah-epos.eu/api/epos/files/{fileId}"^^xsd:anyURI;
 . 
+	<anthropogenic_hazards/distribution/episodes/SSFS1993> a dcat:Distribution;
+		dct:identifier "anthropogenic_hazards/distribution/episodes/SSFS1993";
+		dct:title "Soultz-sous-Forêts Stimulation episode information";
+		dct:description "Enables to view/download information about the episode" ; 
+		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes>;
+		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
+		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
+.
+	<anthropogenic_hazards/distribution/episode-elements/SSFS1993> a dcat:Distribution;
+		dct:identifier "anthropogenic_hazards/distribution/episode-elements/SSFS1993";
+		dct:title "Data contained in episode Soultz-sous-Forêts Stimulation";
+		dct:description "Enables to list data items contained in the episode and information about them, features filtering"; 
+		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements>;
+		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
+		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
+. 
+	<anthropogenic_hazards/distribution/files/SSFS1993> a dcat:Distribution;
+		dct:identifier "anthropogenic_hazards/distribution/files/SSFS1993";
+		dct:title "Download Soultz-sous-Forêts Stimulation episode file";
+		dct:description "Enables to download a file from the episode. Search for a file using the anthropogenic_hazards/webservice/is-epos_platform/episode-elements operation with parameter episode set to 'SSFS1993' and other parameters defining your search, use the 'id' property from one of the returned entities as '{fileId}' in the url to download the file.";
+		dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
+		dcat:downloadURL "https://tcs.ah-epos.eu/api/epos/files/{fileId}"^^xsd:anyURI;
+. 
 	<anthropogenic_hazards/distribution/episodes/GISOS-CERVILLE> a dcat:Distribution;
 		dct:identifier "anthropogenic_hazards/distribution/episodes/GISOS-CERVILLE";
 		dct:title "GISOS-CERVILLE episode information";
@@ -1913,46 +2000,57 @@
 	<http://orcid.org/0000-0002-4801-4888/contactPoint> a schema:ContactPoint;
 		schema:email "lizurek@igf.edu.pl";
 		schema:availableLanguage "en" ;
+		schema:contactType "contactPoint" ;
 . 
 	<mailto:m.sterzel@cyfronet.pl/contactPoint> a schema:ContactPoint;
 		schema:email "m.sterzel@cyfronet.pl";
 		schema:availableLanguage "en" ;
+		schema:contactType "contactPoint" ;
 . 
 	<mailto:a_blanke@gfz-potsdam.de/contactPoint> a schema:ContactPoint;
 		schema:email "a_blanke@gfz-potsdam.de";
 		schema:availableLanguage "en" ;
+		schema:contactType "contactPoint" ;
 . 
 	<http://orcid.org/0000-0003-1076-615X/contactPoint> a schema:ContactPoint;
 		schema:email "kwiatek@gfz-potsdam.de";
 		schema:availableLanguage "en" ;
+		schema:contactType "contactPoint" ;
 . 
 	<mailto:giangnv@igp-vast.vn/contactPoint> a schema:ContactPoint;
 		schema:email "giangnv@igp-vast.vn";
 		schema:availableLanguage "en" ;
+		schema:contactType "contactPoint" ;
 . 
 	<http://orcid.org/0000-0001-8181-0758/contactPoint> a schema:ContactPoint;
 		schema:email "gmutke@gig.eu";
 		schema:availableLanguage "en" ;
+		schema:contactType "contactPoint" ;
 . 
 	<mailto:jannes-l.kinscher@ineris.fr/contactPoint> a schema:ContactPoint;
 		schema:email "jannes-l.kinscher@ineris.fr";
 		schema:availableLanguage "en" ;
+		schema:contactType "contactPoint" ;
 . 
 	<mailto:jouni.nevalainen@oulu.fi/contactPoint> a schema:ContactPoint;
 		schema:email "jouni.nevalainen@oulu.fi";
 		schema:availableLanguage "en" ;
+		schema:contactType "contactPoint" ;
 . 
 	<http://orcid.org/0000-0003-2915-1446/contactPoint> a schema:ContactPoint;
 		schema:email "gilberto.saccorotti@ingv.it";
 		schema:availableLanguage "en" ;
+		schema:contactType "contactPoint" ;
 . 
 	<http://orcid.org/0000-0003-3844-5059/contactPoint> a schema:ContactPoint;
 		schema:email "pamela.roselli@ingv.it";
 		schema:availableLanguage "en" ;
+		schema:contactType "contactPoint" ;
 . 
 	<http://orcid.org/0000-0003-0961-6066/contactPoint> a schema:ContactPoint;
 		schema:email "s.m.toon@keele.ac.uk";
 		schema:availableLanguage "en" ;
+		schema:contactType "contactPoint" ;
 . 
 	<http://orcid.org/0000-0003-0961-6066/contactPoint> a schema:ContactPoint;
 		schema:email "s.m.toon@keele.ac.uk";
@@ -1986,6 +2084,11 @@
 .
 	<mailto:thomas.bloch@sgsw.ch/contactPoint> a schema:ContactPoint;
 		schema:email "thomas.bloch@sgsw.ch";
+		schema:availableLanguage "en" ;
+		schema:contactType "contactPoint" ;
+.
+	<http://orcid.org/0000-0003-4017-4673/contactPoint> a schema:ContactPoint;
+		schema:email "Marc.Schaming@unistra.fr";
 		schema:availableLanguage "en" ;
 		schema:contactType "contactPoint" ;
 .
