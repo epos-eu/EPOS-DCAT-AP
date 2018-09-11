@@ -285,7 +285,7 @@
 		schema:propertyID  "DDSS-ID";
 	  schema:value   "WP10-DDSS-002";
 	];
-  schema:description "Gets attributes for application in other requests";
+  schema:description "Gets attributes so it can be used in other requests";
 	schema:name "Gets attributes for application in other requests";
 	dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
 	schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
@@ -309,11 +309,11 @@
 							rdf:label "attribute - string with attribute ";
               hydra:required "true"^^xsd:boolean;
 							http:paramValue "network";
-		          http:paramValue "analysisCenter";
-		          http:paramValue "referenceFrame";
-		          http:paramValue "otlModel";
-		          http:paramValue "antennaModel";
-		          http:paramValue "samplingPeriod";
+		          http:paramValue "analysis_center";
+		          http:paramValue "reference_frame";
+		          http:paramValue "otl_model";
+		          http:paramValue "calibration_model";
+		          http:paramValue "sampling_period";
 		          http:paramValue "format";			
             ];
 	];
@@ -341,7 +341,7 @@
 <GlassFramework/webresources/products/stations/operation> a hydra:Operation;
  	hydra:method "GET"^^xsd:string;
 	hydra:returns "json";
-	rdf:label "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/stations?epoch_start=2015-02-23&analysis_center=WUT";
+	rdf:label "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/stations?epoch_start=2015-02-23&analysis_center=WUT";	
  	hydra:IriTemplate[ a hydra:IriTemplate;
 	    hydra:template "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/stations?{opcional_parameters}"^^xsd:string;
         	hydra:mapping[ a hydra:IriTemplateMapping;
