@@ -1,0 +1,502 @@
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http: <http://www.w3.org/2006/http#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+<http://orcid.org/0000-0002-6250-2474>
+  a schema:Person ;
+  schema:identifier [
+    a schema:PropertyValue ;
+    schema:propertyID "orcid" ;
+    schema:value "http://orcid.org/0000-0002-6250-2474"
+  ] ;
+  schema:familyName "Koymans" ;
+  schema:givenName "Mathijs" ;
+  schema:address [
+    a schema:PostalAddress ;
+    schema:streetAddress "Utrechtseweg 297" ;
+    schema:addressLocality "De Bilt" ;
+    schema:postalCode "3731 GA" ;
+    schema:addressRegion "Utrecht" ;
+    schema:addressCountry "NL"
+  ] ;
+  schema:email "koymans@knmi.nl" ;
+  schema:telephone "+31302206911" ;
+  schema:url "http://orcid.org/0000-0002-6250-2474"^^xsd:anyURI ;
+  schema:qualifications "IT" ;
+  schema:affiliation <PIC:999518944> ;
+  schema:contactPoint <http://orcid.org/0000-0002-6250-2474/contactPoint>, <http://orcid.org/0000-0002-6250-2474/scientificContact>, <http://orcid.org/0000-0002-6250-2474/legalContact>, <http://orcid.org/0000-0002-6250-2474/financialContact> .
+
+<http://orcid.org/0000-0002-6250-2474/contactPoint>
+  a schema:ContactPoint ;
+  schema:email "koymans@knmi.nl" ;
+  schema:contactType "genericContact" ;
+  schema:availableLanguage "en" .
+
+<http://orcid.org/0000-0002-6250-2474/scientificContact>
+  a schema:ContactPoint ;
+  schema:email "koymans@knmi.nl" ;
+  schema:availableLanguage "en" ;
+  schema:contactType "scientificContact" .
+
+<http://orcid.org/0000-0002-6250-2474/legalContact>
+  a schema:ContactPoint ;
+  schema:email "koymans@knmi.nl" ;
+  schema:availableLanguage "en" ;
+  schema:contactType "legalContact" .
+
+<http://orcid.org/0000-0002-6250-2474/financialContact>
+  a schema:ContactPoint ;
+  schema:email "koymans@knmi.nl" ;
+  schema:availableLanguage "en" ;
+  schema:contactType "financialContact" .
+
+<PIC:999518944>
+  a schema:Organization ;
+  schema:identifier [
+    a schema:PropertyValue ;
+    schema:propertyID "PIC" ;
+    schema:value "999518944"
+  ] ;
+  schema:legalName "Koninklijk Nederlands Meteorologisch Instituut" ;
+  schema:leiCode "Whatever this is and why is it required" ;
+  schema:address [
+    a schema:PostalAddress ;
+    schema:streetAddress "Utrechtseweg 297" ;
+    schema:addressLocality "De Bilt" ;
+    schema:postalCode "3731 GA" ;
+    schema:addressRegion "Utrecht" ;
+    schema:addressCountry "NL"
+  ] ;
+  schema:logo "https://cdn.knmi.nl/assets/logo_large-a9be0e49aed0aa1f72a7da54d348d14ce94d070e7950f67dbc85039f0574ca48.png"^^xsd:anyURI ;
+  schema:url "https://www.knmi.nl"^^xsd:anyURI ;
+  schema:contactPoint <http://orcid.org/0000-0002-6250-2474/scientificContact>, <http://orcid.org/0000-0002-6250-2474/legalContact>, <http://orcid.org/0000-0002-6250-2474/financialContact> .
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/ODC>
+  a <https://www.epos-eu.org/epos-dcat-ap#WebService> ;
+  schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/ODC" ;
+  schema:description "The dataselect Web service provides access to time series data in miniSEED format. The data may be filtered e.g. by time, station and network parameters. The request type is HTTP-GET and HTTP-POST. Please refer to http://www.fdsn.org/webservice for a complete service description." ;
+  schema:name "FDSN Dataselect Web Service at ORFEUS Data Center" ;
+  schema:datePublished "2014-01-01T00:00:00Z"^^xsd:dateTime ;
+  schema:dateModified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  schema:provider <PIC:999518944> ;
+  schema:keywords "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "EIDA" ;
+  hydra:entrypoint "https://www.orfeus-eu.org/fdsnws/dataselect/1/application.wadl"^^xsd:anyURI ;
+  hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001/ODC> ;
+  dcat:theme <epos:SeismicWaveform> ;
+  dcat:contactPoint <http://orcid.org/0000-0002-6250-2474/contactPoint> ;
+  dc:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/APIDocumentation> ;
+  dc:spatial [
+    a dc:Location ;
+    locn:geometry "POLYGON((-180, -90, 180, -90, 180, 90, -180, 90, -180, -90))"^^gsp:wktLiteral
+  ] ;
+  dc:temporal [
+    a dc:PeriodOfTime ;
+    schema:startDate "1988-01-01T00:00:00"^^xsd:dateTime
+  ] ;
+  dc:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI .
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/APIDocumentation>
+  a hydra:APIDocumentation ;
+  hydra:title "FDSNWS Dataselect usage specifications" ;
+  hydra:description "some description of API Documentation" ;
+  hydra:entrypoint "https://www.orfeus-eu.org/data/eida/webservices/dataselect/" .
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001/ODC>
+  a hydra:Operation ;
+  hydra:method "GET" ;
+  hydra:returns "application/vnd.fdsn.mseed" ;
+  hydra:property [
+    a hydra:IriTemplate ;
+    hydra:template "https://www.orfeus-eu/org/fdsnws/dataselect/1/query{?starttime, endtime, network, station, location, channel, quality, minimumlength, nodata}"^^xsd:string ;
+    hydra:mapping [
+      a hydra:IriTemplateMapping ;
+      hydra:variable "starttime"^^xsd:string ;
+      rdfs:label "Start of the timespan" ;
+      hydra:required true ;
+      rdfs:range "xsd:dateTime" ;
+      schema:defaultValue "2012-01-01T00:00:00"
+    ], [
+      a hydra:IriTemplateMapping ;
+      hydra:variable "endtime"^^xsd:string ;
+      rdfs:label "End of the timespan" ;
+      hydra:required true ;
+      rdfs:range "xsd:dateTime" ;
+      schema:defaultValue "2012-02-01T00:00:00"
+    ], [
+      a hydra:IriTemplateMapping ;
+      hydra:variable "network"^^xsd:string ;
+      rdfs:label "Network code" ;
+      hydra:required true ;
+      schema:defaultValue "NL" ;
+      rdfs:range "xsd:string"
+    ], [
+      a hydra:IriTemplateMapping ;
+      hydra:variable "station"^^xsd:string ;
+      rdfs:label "Station code" ;
+      schema:defaultValue "HGN" ;
+      hydra:required true ;
+      rdfs:range "xsd:string"
+    ], [
+      a hydra:IriTemplateMapping ;
+      hydra:variable "location"^^xsd:string ;
+      rdfs:label "Location code" ;
+      schema:defaultValue "02" ;
+      hydra:required false ;
+      rdfs:range "xsd:string"
+    ], [
+      a hydra:IriTemplateMapping ;
+      hydra:variable "channel"^^xsd:string ;
+      rdfs:label "Channel code" ;
+      schema:defaultValue "BHZ" ;
+      hydra:required false ;
+      rdfs:range "xsd:string"
+    ], [
+      a hydra:IriTemplateMapping ;
+      hydra:variable "quality"^^xsd:string ;
+      rdfs:label "Quality" ;
+      http:paramValue "D", "R", "Q", "M", "B" ;
+      hydra:required false ;
+      rdfs:range "xsd:string"
+    ], [
+      a hydra:IriTemplateMapping ;
+      hydra:variable "minimumlength"^^xsd:string ;
+      rdfs:label "Minimum Length" ;
+      hydra:required false ;
+      rdfs:range "xsd:string"
+    ], [
+      a hydra:IriTemplateMapping ;
+      hydra:variable "nodata"^^xsd:string ;
+      rdfs:label "HTTP error code if no data is found" ;
+      http:paramValue "204", "404" ;
+      hydra:required false ;
+      rdfs:range "xsd:string"
+    ]
+  ] .
+
+<epos:Seismology>
+  a skos:ConceptScheme ;
+  dc:title "Seismology" ;
+  dc:description "It contains the concepts of Seismology" .
+
+<epos:SeismicWaveform>
+  a skos:Concept ;
+  skos:inScheme <epos:Seismology> ;
+  skos:prefLabel "Seismic waveforms" .
+
+<epos:SeismicNetwork>
+  a skos:Concept ;
+  skos:inScheme <epos:Seismology> ;
+  skos:prefLabel "Concept for seismic networks" .
+
+<epos:StrongMotion>
+  a skos:Concept ;
+  skos:inScheme <epos:Seismology> ;
+  skos:prefLabel "Concept for strong motion seismology" .
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/ODC>
+  a dcat:Dataset ;
+  dc:title "Primary Seismic Waveform Data" ;
+  dc:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/ODC" ;
+  dc:description "Continuous seismic waveforms" ;
+  adms:identifier [
+    a adms:Identifier ;
+    adms:schemaAgency "DDSS-ID" ;
+    skos:notation "WP08-DDSS-001"
+  ] ;
+  dc:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  dc:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  dc:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  owl:versionInfo "1.0.0" ;
+  dc:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
+  dc:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI ;
+  dcat:theme <epos:SeismicWaveform> ;
+  dcat:keyword "seismology", "seismicity", "earthquakes", "seismic waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "INGV", "Dataselect", "FDSN-WS", "Seismic Waveform", "EIDA" ;
+  dcat:contactPoint <http://orcid.org/0000-0002-6250-2474/contactPoint> ;
+  dc:publisher <PIC:999518944> ;
+  dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/ODC> ;
+  dc:spatial [
+    a dc:Location ;
+    locn:geometry "POLYGON((-180, -90, 180, -90, 180, 90, -180, 90, -180, -90))"^^gsp:wktLiteral
+  ] ;
+  dc:temporal [
+    a dc:PeriodOfTime ;
+    schema:startDate "1988-01-01T00:00:00Z"^^xsd:dateTime
+  ] .
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/ODC>
+  a dcat:Distribution ;
+  dc:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/ODC" ;
+  dc:description "Description of Seismic Waveform Distribution :: FDSN DATASELECT " ;
+  dc:issued "2017-01-01"^^xsd:date ;
+  dc:modified "2017-01-01"^^xsd:date ;
+  dc:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI ;
+  dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001/ODC> ;
+  dc:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/ODC> ;
+  dc:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI ;
+  dc:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI .
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/ODC>
+  a <https://www.epos-eu.org/epos-dcat-ap#WebService> ;
+  schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/ODC" ;
+  schema:description "The fdsnws-station web service returns station metadata in FDSN StationXML format (schema here) or as delimited text. The purpose of the FDSN StationXML schema is to define an XML representation of the most important and commonly used structures of SEED 2.4 metadata. Results are available at multiple levels of granularity: network, station, channel and response." ;
+  schema:name "FDSN Station Web Service at ORFEUS Data Center" ;
+  schema:datePublished "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  schema:dateModified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  schema:provider <PIC:999518944> ;
+  schema:keywords "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling" ;
+  hydra:entrypoint "https://www.orfeus-eu.org/fdsnws/station/1/application.wadl"^^xsd:anyURI ;
+  hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/Operation/002/ODC> ;
+  dcat:theme <epos:SeismicNetwork> ;
+  dcat:contactPoint <http://orcid.org/0000-0002-6250-2474/contactPoint> ;
+  dc:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/APIDocumentation> ;
+  dc:spatial [
+    a dc:Location ;
+    locn:geometry "POLYGON((-180, -90, 180, -90, 180, 90, -180, 90, -180, -90))"^^gsp:wktLiteral
+  ] ;
+  dc:temporal [
+    a dc:PeriodOfTime ;
+    schema:startDate "1988-01-01T00:00:00"^^xsd:dateTime
+  ] ;
+  dc:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI .
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/APIDocumentation>
+  a hydra:APIDocumentation ;
+  hydra:title "FDSNWS Station API Description" ;
+  hydra:description "some description of API Documentation" ;
+  hydra:entrypoint "https://www.orfeus-eu.org/data/eida/webservices/station/" .
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/Operation/002/ODC>
+  a hydra:Operation ;
+  hydra:method "GET" ;
+  hydra:returns "application/xml" ;
+  hydra:property [
+    a hydra:IriTemplate ;
+    hydra:template "https://www.orfeus-eu.org/fdsnws/station/1/query{?starttime, endtime, network, station, location, channel,  minlatitude, maxlatitude, minlongitude, maxlongitude, level, nodata}"^^xsd:string ;
+    hydra:mapping [
+      a hydra:IriTemplateMapping ;
+      hydra:variable "starttime"^^xsd:string ;
+      rdfs:label "Start of the timespan" ;
+      hydra:required true ;
+      rdfs:range "xsd:dateTime"
+    ], [
+      a hydra:IriTemplateMapping ;
+      hydra:variable "endtime"^^xsd:string ;
+      rdfs:label "End of the timespan" ;
+      hydra:required true ;
+      rdfs:range "xsd:dateTime"
+    ], [
+      a hydra:IriTemplateMapping ;
+      hydra:variable "network"^^xsd:string ;
+      rdfs:label "Network code" ;
+      hydra:required true ;
+      schema:defaultValue "NL" ;
+      rdfs:range "xsd:string"
+    ], [
+      a hydra:IriTemplateMapping ;
+      hydra:variable "station"^^xsd:string ;
+      rdfs:label "Station code" ;
+      hydra:required true ;
+      schema:defaultValue "HGN" ;
+      rdfs:range "xsd:string"
+    ], [
+      a hydra:IriTemplateMapping ;
+      hydra:variable "location"^^xsd:string ;
+      rdfs:label "Location code" ;
+      hydra:required false ;
+      rdfs:range "xsd:string"
+    ], [
+      a hydra:IriTemplateMapping ;
+      hydra:variable "channel"^^xsd:string ;
+      rdfs:label "Channel code" ;
+      hydra:required false ;
+      rdfs:range "xsd:string"
+    ], [
+      a hydra:IriTemplateMapping ;
+      hydra:variable "minlatitude"^^xsd:string ;
+      rdfs:label "Minimum Latitude" ;
+      schema:minValue "-90.0" ;
+      schema:maxValue "90.0" ;
+      hydra:required false
+    ], [
+      a hydra:IriTemplateMapping ;
+      hydra:variable "maxlatitude"^^xsd:string ;
+      rdfs:label "Maximum Latitude" ;
+      schema:minValue "-90.0" ;
+      schema:maxValue "90.0" ;
+      hydra:required false
+    ], [
+      a hydra:IriTemplateMapping ;
+      hydra:variable "minlongitude"^^xsd:string ;
+      rdfs:label "Minimum Longitude" ;
+      schema:minValue "-180.0" ;
+      schema:maxValue "180.0" ;
+      hydra:required false
+    ], [
+      a hydra:IriTemplateMapping ;
+      hydra:variable "maxlongitude"^^xsd:string ;
+      rdfs:label "Maximum Longitude" ;
+      schema:minValue "-180.0" ;
+      schema:maxValue "180.0" ;
+      hydra:required false
+    ], [
+      a hydra:IriTemplateMapping ;
+      hydra:variable "level"^^xsd:string ;
+      rdfs:label "Level of instrument detail" ;
+      http:paramValue "network", "station", "channel", "response" ;
+      hydra:required false
+    ], [
+      a hydra:IriTemplateMapping ;
+      hydra:variable "nodata"^^xsd:string ;
+      rdfs:label "HTTP error code if no data is found" ;
+      http:paramValue "204", "404" ;
+      hydra:required false ;
+      rdfs:range "xsd:string"
+    ]
+  ] .
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/ODC>
+  a dcat:Dataset ;
+  dc:title "Primary Seismic Waveform Data" ;
+  dc:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/ODC" ;
+  dc:description "Seismic Stations " ;
+  adms:identifier [
+    a adms:Identifier ;
+    adms:schemaAgency "DDSS-ID" ;
+    skos:notation "WP08-DDSS-002"
+  ] ;
+  dc:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  dc:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  dc:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  owl:versionInfo "1.0.0" ;
+  dc:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
+  dc:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI ;
+  dcat:theme <epos:SeismicNetwork> ;
+  dcat:keyword "seismology", "seismicity", "earthquakes", "seismic station", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "station information", "waveform modeling", "INGV", "Station", "FDSN-WS", "Seismic Station", "EIDA" ;
+  dcat:contactPoint <http://orcid.org/0000-0002-6250-2474/contactPoint> ;
+  dc:publisher <PIC:999518944> ;
+  dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/ODC> ;
+  dc:spatial [
+    a dc:Location ;
+    locn:geometry "POLYGON((-180, -90, 180, -90, 180, 90, -180, 90, -180, -90))"^^gsp:wktLiteral
+  ] ;
+  dc:temporal [
+    a dc:PeriodOfTime ;
+    schema:startDate "1988-01-01T00:00:00Z"^^xsd:dateTime
+  ] .
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/ODC>
+  a dcat:Distribution ;
+  dc:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/ODC" ;
+  dc:description "Description of Seismic Stations  :: FDSN STATION " ;
+  dc:issued "2017-01-01"^^xsd:date ;
+  dc:modified "2017-01-01"^^xsd:date ;
+  dc:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI ;
+  dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/Operation/002/ODC> ;
+  dc:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/ODC> ;
+  dc:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI ;
+  dc:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI .
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/048/ODC>
+  a dcat:Dataset ;
+  dc:title "USGS Shakemap Input Files" ;
+  dc:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/048" ;
+  dc:description "USGS Shakemap input xml files" ;
+  adms:identifier [
+    a adms:Identifier ;
+    adms:schemaAgency "DDSS-ID" ;
+    skos:notation "WP08-DDSS-048"
+  ] ;
+  dc:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  dc:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  dc:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  owl:versionInfo "1.0.0" ;
+  dc:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
+  dc:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI ;
+  dcat:theme <epos:StrongMotion> ;
+  dcat:keyword "seismology", "shakemap", "seismicity", "earthquakes", "seismic station", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "station information", "waveform modeling", "Seismic Station", "EIDA" ;
+  dcat:contactPoint <http://orcid.org/0000-0002-6250-2474/contactPoint> ;
+  dc:publisher <PIC:999518944> ;
+  dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/048/Distribution/048> ;
+  dc:spatial [
+    a dc:Location ;
+    locn:geometry "POLYGON((-180, -90, 180, -90, 180, 90, -180, 90, -180, -90))"^^gsp:wktLiteral
+  ] ;
+  dc:temporal [
+    a dc:PeriodOfTime ;
+    schema:startDate "2005-01-01T00:00:00Z"^^xsd:dateTime
+  ] .
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/048/Distribution/048>
+  a dcat:Distribution ;
+  dc:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/048/Distribution/048" ;
+  dc:description "Distribution for USGS Shakemap Input files for the RRSM" ;
+  dc:issued "2017-01-01"^^xsd:date ;
+  dc:modified "2017-01-01"^^xsd:date ;
+  dc:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI ;
+  dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/048/Operation/048> ;
+  dc:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/048> ;
+  dc:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI ;
+  dc:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI .
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/048/Operation/048>
+  a hydra:Operation ;
+  hydra:method "GET" ;
+  hydra:returns "application/xml" ;
+  hydra:property [
+    a hydra:IriTemplate ;
+    hydra:template "https://www.orfeus-eu.org/fdsnws/station/1/query{?eventid,type}"^^xsd:string ;
+    hydra:mapping [
+      a hydra:IriTemplateMapping ;
+      hydra:variable "eventid"^^xsd:string ;
+      rdfs:label "EMSC Identifier of the event" ;
+      hydra:required true ;
+      schema:defaultValue "20180910_0000114" ;
+      rdfs:range "xsd:string"
+    ], [
+      a hydra:IriTemplateMapping ;
+      hydra:variable "type"^^xsd:string ;
+      rdfs:label "Type of the output file" ;
+      hydra:required false ;
+      http:paramValue "event", "shakie" ;
+      rdfs:range "xsd:string"
+    ]
+  ] .
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/048/APIDocumentation>
+  a hydra:APIDocumentation ;
+  hydra:title "RRSM Shakemap Description" ;
+  hydra:description "Some description of API Documentation" ;
+  hydra:entrypoint "https://www.orfeus-eu.org/data/eida/webservices/station/" .
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/048>
+  a <https://www.epos-eu.org/epos-dcat-ap#WebService> ;
+  schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/048" ;
+  schema:description "Webservice for getting USGS shakemap input files" ;
+  schema:name "RRSM Shakemaps at ORFEUS Data Center" ;
+  schema:datePublished "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  schema:dateModified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  schema:provider <PIC:999518944> ;
+  schema:keywords "shakemap", "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling" ;
+  hydra:entrypoint "https://www.orfeus-eu.org/odcws/rrsm/1/application.wadl"^^xsd:anyURI ;
+  hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/048/Operation/048> ;
+  dcat:theme <epos:StrongMotion> ;
+  dcat:contactPoint <http://orcid.org/0000-0002-6250-2474/contactPoint> ;
+  dc:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/048/APIDocumentation> ;
+  dc:spatial [
+    a dc:Location ;
+    locn:geometry "POLYGON((-180, -90, 180, -90, 180, 90, -180, 90, -180, -90))"^^gsp:wktLiteral
+  ] ;
+  dc:temporal [
+    a dc:PeriodOfTime ;
+    schema:startDate "2005-01-01T00:00:00"^^xsd:dateTime
+  ] ;
+  dc:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI .
