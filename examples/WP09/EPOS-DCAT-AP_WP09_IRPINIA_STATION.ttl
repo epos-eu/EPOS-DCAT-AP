@@ -106,7 +106,7 @@
 	hydra:returns "application/xml";
 	hydra:property[ a hydra:IriTemplate;
 		# INGV entrypoint:
-		hydra:template "http://webservices.ingv.it/fdsnws/station/1/query(?starttime, endtime, network, station, location, channel, minlatitude, maxlatitude, minlongitude, maxlongitude, level, format, nodata)"^^xsd:string;
+		hydra:template "http://webservices.ingv.it/fdsnws/station/1/query{?starttime, endtime, network, station, location, channel, minlatitude, maxlatitude, minlongitude, maxlongitude, level, format, nodata}"^^xsd:string;
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "starttime"^^xsd:string;
 				rdfs:range "xsd:dateTime";
