@@ -35,7 +35,7 @@
     dct:spatial [ a dct:Location;
         locn:geometry "POLYGON(-5 51.5, 8.25 51.5, 8.25 42, -5 42)"^^gsp:wktLiteral;
     ];
-    dcat:theme <#Atmosphericmonitoring>;
+    dcat:theme <epos:Atmosphericmonitoring>;
     dcat:keyword "volcanic ash", "brightness temperature difference", "geotiff", "atmospheric monitoring";
     dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
     dct:publisher <http://isni.org/isni/0000000109416043>;
@@ -64,7 +64,7 @@
     schema:address [ a schema:PostalAddress;
         schema:streetAddress "Laboratoire Magmas et Volcans, 6 Avenue Blaise Pascal"^^xsd:string;
         schema:addressLocality "AUBIERE CEDEX";
-        schema:postalCode "TSA 60026 - CS 60026, 63178";
+        schema:postalCode "63178";
         schema:addressCountry "FRANCE";
     ];
     schema:email "m.gouhier@opgc.fr";
@@ -85,7 +85,7 @@
     schema:address [ a schema:PostalAddress;
         schema:streetAddress "Laboratoire Magmas et Volcans, 6 Avenue Blaise Pascal"^^xsd:string;
         schema:addressLocality "AUBIERE CEDEX";
-        schema:postalCode "TSA 60026 - CS 60026, 63178";
+        schema:postalCode "63178";
         schema:addressCountry "FRANCE";
     ];
     schema:email "p.labazuy@opgc.fr";
@@ -106,7 +106,7 @@
     schema:address [ a schema:PostalAddress;
         schema:streetAddress "OPGC, 4 Avenue Blaise Pascal"^^xsd:string;
         schema:addressLocality "AUBIERE CEDEX";
-        schema:postalCode "TSA 60026 - CS 60026, 63178";
+        schema:postalCode "63178";
         schema:addressCountry "FRANCE";
     ];
     schema:email "n.huret@opgc.fr";
@@ -129,7 +129,7 @@
     schema:address [ a schema:PostalAddress;
         schema:streetAddress "OPGC, 4 Avenue Blaise Pascal";
         schema:addressLocality "AUBIERE CEDEX";
-        schema:postalCode "TSA 60026 - CS 60026, 63178";
+        schema:postalCode "63178";
         schema:addressCountry "FRANCE";
     ];
     schema:logo "http://wwwobs.univ-bpclermont.fr/opgc/images/LogoOPGCTransparent.png"^^xsd:anyURI;
@@ -187,7 +187,7 @@
     # hydra:entrypoint "http://hotvolc.opgc.fr/www/php/application.php"^^xsd:anyURI;
     hydra:supportedOperation <hotvolc.opgc.fr/data-search/WP11/DDSS-047>;
     hydra:supportedOperation <hotvolc.opgc.fr/data-download>;
-    dcat:theme <#Atmosphericmonitoring>;
+    dcat:theme <epos:Atmosphericmonitoring>;
     schema:publication <http://dx.doi.org/10.1144/SP426.31>;
     schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
     dct:conformsTo <hotvolc.opgc.fr/WP11/DDSS-047/APIDocumentation>;
@@ -210,7 +210,7 @@
         # hydra:returns "application/json";
         # hydra:returns "application/xml";
         hydra:property[ a hydra:IriTemplate;
-            hydra:template "http://hotvolc.opgc.fr/www/php/data_catalog.php(?date_begin, date_end, bbox, volcano, zone, type, ddss, output, onscreen)"^^xsd:string;
+            hydra:template "http://hotvolc.opgc.fr/www/php/data_catalog.php{?date_begin, date_end, bbox, volcano, zone, type, ddss, output, onscreen}"^^xsd:string;
                 hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "date_begin"^^xsd:datetime;
                     rdfs:label "Specific datetime query or starting datetime of the time interval query (format YYYY-MM-DDThh:mm:ssZ)";
@@ -323,7 +323,7 @@
         hydra:method "GET"^^xsd:string;
         hydra:returns "application/zip";
         hydra:IriTemplate[ a hydra:IriTemplate;
-            hydra:template "http://hotvolc.opgc.fr/www/php/data_download.php(?uri)"^^xsd:string;
+            hydra:template "http://hotvolc.opgc.fr/www/php/data_download.php{?uri}"^^xsd:string;
                 hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "uri"^^xsd:string;
                     rdfs:label "The unique identifier of an HOTVOLC product, use data_catalog.php to find data uri";
@@ -332,21 +332,21 @@
                 ];
         ];
 .    
-    <#Volcano-Observations> a skos:ConceptScheme;
+    <epos:Volcano-Observations> a skos:ConceptScheme;
         dct:title "Volcanolo-Observations";
         dct:description "It contains the concepts of Volcanological Observations";
 .
-    <#Atmosphericmonitoring> a skos:Concept;
-        skos:inScheme <#Volcano-Observations>;
+    <epos:Atmosphericmonitoring> a skos:Concept;
+        skos:inScheme <epos:Volcano-Observations>;
         skos:prefLabel "Atmospheric monitoring";
 .
-    <#Meteorology> a skos:ConceptScheme;
+    <epos:Meteorology> a skos:ConceptScheme;
         dct:title "Meteorology";
         dct:description "It contains the concepts of Meteorology";
 .
     
-    <#Weatherforecast> a skos:Concept;
-        skos:inScheme <#Meteorology>;
+    <epos:Weatherforecast> a skos:Concept;
+        skos:inScheme <epos:Meteorology>;
         skos:prefLabel "Weather forecast";
 .
 
@@ -376,7 +376,7 @@
         schema:unitCode "KEL";
         schema:unitText "Kelvin"^^xsd:string;
     ];
-    dcat:theme <#Weatherforecast>;
+    dcat:theme <epos:Weatherforecast>;
     epos:owner <http://isni.org/isni/0000000406217921>;   
     dct:isPartOf <hotvolc.opgc.fr/Equipment/MSG>;
 .
@@ -396,7 +396,7 @@
     ];
     schema:serialNumber "METEOSAT 10 - MSG 3"^^xsd:string;
     schema:numberOfItems "1"^^xsd:integer; 
-    dcat:theme <#Weatherforecast>;
+    dcat:theme <epos:Weatherforecast>;
     epos:owner <http://isni.org/isni/0000000406217921>;   
     dct:isPartOf <http://isni.org/isni/0000000406217921>;  
 .
@@ -410,7 +410,7 @@
     dct:title "EUMETSAT - The European Organisation for the Exploitation of Meteorological Satellites";
     dct:description "EUMETSAT is an intergovernmental organisation and was founded in 1986. Our purpose is to supply weather and climate-related satellite data, images and products – 24 hours a day, 365 days a year – to the National Meteorological Services of our Member and Cooperating States in Europe, and other users worldwide";
     dct:type "https://www.eumetsat.int/website/home/AboutUs/WhoWeAre/index.html"^^xsd:anyURI;
-    dcat:theme <#Weatherforecast>;
+    dcat:theme <epos:Weatherforecast>;
     schema:address [ a schema:PostalAddress;
         schema:streetAddress "EUMETSAT - Eumetsat Allee 1";
         schema:addressLocality "Darmstadt";
