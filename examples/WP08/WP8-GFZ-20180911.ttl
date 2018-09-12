@@ -106,10 +106,10 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003";
-	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID  "DDSS-ID";
-		schema:value  "WP8-DDSS-003";
-	];
+	#schema:identifier [ a schema:PropertyValue;
+		#schema:propertyID  "DDSS-ID";
+		#schema:value  "WP8-DDSS-003";
+	#];
 	schema:description "Web service which returns waveform metadata and data quality metrics";
 	dcat:theme <#waveformquality>;
 	dcat:contactPoint <http://orcid.org/0000-0001-9993-4003/contactPoint>;
@@ -126,16 +126,16 @@
 	dct:license "Creative Commons for data, Open Source licences for software"^^xsd:anyURI;
 	dct:temporal [ a dct:PeriodOfTime;
 		schema:startDate "1993-01-01T00:00:00Z"^^xsd:dateTime;
-		schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
+		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
 	];
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001";
-	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID  "DDSS-ID";
-		schema:value  "WP8-DDSS-001";
-	];
+	#schema:identifier [ a schema:PropertyValue;
+		#schema:propertyID  "DDSS-ID";
+		#schema:value  "WP8-DDSS-001";
+	#];
 	schema:description "FDSN Standard webservice at GFZ to download waveform data";
 	dcat:theme <#Seismicwaveforms>;
 	dcat:contactPoint <http://orcid.org/0000-0001-9993-4003/contactPoint>;
@@ -152,16 +152,16 @@
 	dct:license "To be defined!"^^xsd:anyURI;
 	dct:temporal [ a dct:PeriodOfTime;
 		schema:startDate "1993-01-01T00:00:00Z"^^xsd:dateTime;
-		schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
+		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
 	];
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002";
-	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID  "DDSS-ID";
-		schema:value  "WP8-DDSS-002";
-	];
+	#schema:identifier [ a schema:PropertyValue;
+		#schema:propertyID  "DDSS-ID";
+		#schema:value  "WP8-DDSS-002";
+	#];
 	schema:description "FDSN Standard webservice at GFZ to download seismic metadata";
 	dcat:theme <#Seismicstations>;
 	dcat:contactPoint <http://orcid.org/0000-0001-9993-4003/contactPoint>;
@@ -178,7 +178,7 @@
 	dct:license "To be defined!"^^xsd:anyURI;
 	dct:temporal [ a dct:PeriodOfTime;
 		schema:startDate "1993-01-01T00:00:00Z"^^xsd:dateTime;
-		schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
+		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
 	];
 .
 
@@ -205,7 +205,7 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "http://geofon.gfz-potsdam.de/eidaws/wfcatalog/1/query(?starttime, endtime, percent_availability_gt, percent_availability_lt, num_gaps_gt, num_gaps_lt, num_overlaps_gt, num_overlaps_lt, sample_stdev_gt, sample_stdev_lt, sample_rms_gt, sample_rms_lt, max_gap_gt, max_gap_lt, sample_min_gt, sample_min_lt, sample_max_gt, sample_max_lt, sample_mean_gt, sample_mean_lt, network, station, location, channel, csegments, longestonly, minlen, include)"^^xsd:string;
+			hydra:template "http://geofon.gfz-potsdam.de/eidaws/wfcatalog/1/query{?starttime, endtime, percent_availability_gt, percent_availability_lt, num_gaps_gt, num_gaps_lt, num_overlaps_gt, num_overlaps_lt, sample_stdev_gt, sample_stdev_lt, sample_rms_gt, sample_rms_lt, max_gap_gt, max_gap_lt, sample_min_gt, sample_min_lt, sample_max_gt, sample_max_lt, sample_mean_gt, sample_mean_lt, network, station, location, channel, csegments, longestonly, minlen, include}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "starttime"^^xsd:string;
 					rdfs:range "xsd:dateTime";
@@ -386,7 +386,7 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/vnd.fdsn.mseed";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "http://geofon.gfz-potsdam.de/fdsnws/dataselect/1/query(?starttime, endtime, network, station, location, channel, quality, minimumlength, nodata)"^^xsd:string;
+			hydra:template "http://geofon.gfz-potsdam.de/fdsnws/dataselect/1/query{?starttime, endtime, network, station, location, channel, quality, minimumlength, nodata}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "starttime"^^xsd:string;
 					rdfs:range "xsd:dateTime";
@@ -451,7 +451,7 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/xml";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "http://geofon.gfz-potsdam.de/fdsnws/station/1/query(?starttime, endtime, network, station, location, channel, minlatitude, maxlatitude, minlongitude, maxlongitude, level, nodata)"^^xsd:string;
+			hydra:template "http://geofon.gfz-potsdam.de/fdsnws/station/1/query{?starttime, endtime, network, station, location, channel, minlatitude, maxlatitude, minlongitude, maxlongitude, level, nodata}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "starttime"^^xsd:string;
 					rdfs:range "xsd:dateTime";
