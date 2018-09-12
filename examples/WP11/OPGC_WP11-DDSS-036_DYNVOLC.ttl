@@ -30,10 +30,10 @@
         schema:startDate "2014-06-20T21:35:00Z"^^xsd:dateTime;
         schema:endDate "2014-06-21T17:09:00Z"^^xsd:dateTime;
     ];
-    dct:spatial [ a dct:Location;
-        locn:geometry <geo:-21.249499,55.713684,u=2524,crs=wgs84>;
-    ];
-    dcat:theme <#Geochemical-Data>;
+    #dct:spatial [ a dct:Location;
+        #locn:geometry <geo:-21.249499,55.713684,u=2524,crs=wgs84>;
+    #];
+    dcat:theme <epos:Geochemical-Data>;
     dcat:keyword "eruption", "rock", "bulk rock", "volcanic glass", "mineral", "texture", "thin section", "particle", "major element", "vesicle crystal";
     dcat:contactPoint <http://orcid.org/0000-0002-5066-5153/contactPoint>;
     dct:publisher <http://isni.org/isni/0000000109416043>;
@@ -62,7 +62,7 @@
     schema:address [ a schema:PostalAddress;
         schema:streetAddress "Laboratoire Magmas et Volcans, 6 Avenue Blaise Pascal"^^xsd:string;
         schema:addressLocality "AUBIERE CEDEX";
-        schema:postalCode "TSA 60026 - CS 60026, 63178";
+        schema:postalCode "63178";
         schema:addressCountry "FRANCE";
     ];
     schema:email "lucia.gurioli@uca.fr";
@@ -83,7 +83,7 @@
     schema:address [ a schema:PostalAddress;
         schema:streetAddress "Laboratoire Magmas et Volcans, 6 Avenue Blaise Pascal"^^xsd:string;
         schema:addressLocality "AUBIERE CEDEX";
-        schema:postalCode "TSA 60026 - CS 60026, 63178";
+        schema:postalCode "63178";
         schema:addressCountry "FRANCE";
     ];
     schema:email "p.labazuy@opgc.fr";
@@ -104,7 +104,7 @@
     schema:address [ a schema:PostalAddress;
         schema:streetAddress "OPGC, 4 Avenue Blaise Pascal"^^xsd:string;
         schema:addressLocality "AUBIERE CEDEX";
-        schema:postalCode "TSA 60026 - CS 60026, 63178";
+        schema:postalCode "63178";
         schema:addressCountry "FRANCE";
     ];
     schema:email "n.huret@opgc.fr";
@@ -127,7 +127,7 @@
         schema:streetAddress "IPGP - 14RN3 - Km 27"^^xsd:string;
         schema:addressLocality "La Plaine des Cafres";
         schema:postalCode "97418";
-        schema:addressCountry "La Reunion - FRANCE";
+        schema:addressCountry "FRANCE";
     ];
     schema:email "dimuro@ipgp.fr";
     schema:telephone "+33262275012";
@@ -148,7 +148,7 @@
     schema:address [ a schema:PostalAddress;
         schema:streetAddress "OPGC, 4 Avenue Blaise Pascal";
         schema:addressLocality "AUBIERE CEDEX";
-        schema:postalCode "TSA 60026 - CS 60026, 63178";
+        schema:postalCode "63178";
         schema:addressCountry "FRANCE";
     ];
     schema:logo "http://wwwobs.univ-bpclermont.fr/opgc/images/LogoOPGCTransparent.png"^^xsd:anyURI;
@@ -233,7 +233,7 @@
     hydra:entrypoint "http://opgc.fr/vobs/rest2/req.php/application/dynvolc"^^xsd:anyURI;
     hydra:supportedOperation <opgc.fr/vobs/dynvolc/WP11/DDSS-036/data-catalog>;
     hydra:supportedOperation <opgc.fr/vobs/dynvolc/WP11/DDSS-036/data-download>;
-    dcat:theme <#Geochemical-Data>;
+    dcat:theme <epos:Geochemical-Data>;
     schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
     dct:conformsTo <opgc.fr/vobs/APIDocumentation>;
     dcat:contactPoint <http://orcid.org/0000-0002-5066-5153/contactPoint>;
@@ -253,7 +253,7 @@
         hydra:returns "text/turtle";
         # hydra:returns "application/json";
         hydra:property [ a hydra:IriTemplate;
-            hydra:template "http://opgc.fr/vobs/rest2/req.php/dynvolc(?timestart, timeend, eruptive_style, elevation_min, elevation_max, output, onscreen)"^^xsd:string;
+            hydra:template "http://opgc.fr/vobs/rest2/req.php/dynvolc{?timestart, timeend, eruptive_style, elevation_min, elevation_max, output, onscreen}"^^xsd:string;
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "timestart"^^xsd:dateTime;
                     rdfs:label "Starting datetime of the time interval query (format YYYY-MM-DDThh:mm:ss:Z)";
@@ -341,11 +341,11 @@
         ];
 .
 
-    <#Volcano-Observations> a skos:ConceptSchema;
+    <epos:Volcano-Observations> a skos:ConceptSchema;
         dct:title "Volcano-Observations";
         dct:description "It contains the concept of Volcanological observations";
 .
-    <#Geochemical-Data> a skos:Concept;
-            skos:inScheme <#Volcano-Observations>;
+    <epos:Geochemical-Data> a skos:Concept;
+            skos:inScheme <epos:Volcano-Observations>;
             skos:prefLabel "Geochemical data";
 .
