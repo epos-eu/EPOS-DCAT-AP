@@ -257,7 +257,7 @@
         hydra:returns "text/turtle";
         #hydra:returns "application/json";
         hydra:property [ a hydra:IriTemplate;
-            hydra:template "http://opgc.fr/vobs/rest2/req.php/gazvolc(?timestart, timeend, output, onscreen)"^^xsd:string;
+            hydra:template "http://opgc.fr/vobs/rest2/req.php/gazvolc{?timestart, timeend, output, onscreen}"^^xsd:string;
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "timestart"^^xsd:dateTime;
                     rdfs:label "Starting datetime of the time interval query (format YYYY-MM-DDThh:mm:ss:Z)";
