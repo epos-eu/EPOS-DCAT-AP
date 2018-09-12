@@ -634,7 +634,7 @@
 	schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
 	schema:provider <PIC:996437254>;
 	dcat:theme  <#GNSSProductsPortal> ;
-	hydra:entrypoint "https://glass.epos.ubi.pt:8081/GlassFramework/swagger.json"^^xsd:anyURI;
+	hydra:entrypoint "http://glass.unice.fr:8080/GlassFramework/swagger.json"^^xsd:anyURI;
  	schema:keywords "Geodesy", "GNSS" ;
 	dct:conformsTo <GlassFramework/APIDocumentation> ;
 	hydra:supportedOperation <GlassFramework/webresources/stations/v2/list/>;
@@ -645,8 +645,8 @@
  	hydra:method "GET"^^xsd:string;
 	hydra:returns "json";
  	hydra:IriTemplate[ a hydra:IriTemplate;
-	rdf:label "https://glass.epos.ubi.pt:8081/GlassFramework/webresources/stations/v2/list/city";
-	hydra:template "https://glass.epos.ubi.pt:8081/GlassFramework/webresources/stations/v2/list/{data}"^^xsd:string;
+	rdf:label "http://glass.unice.fr:8080/GlassFramework/webresources/stations/v2/list/city";
+	hydra:template "http://glass.unice.fr:8080/GlassFramework/webresources/stations/v2/list/{data}"^^xsd:string;
       hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "data"^^xsd:string;
 					rdf:label "the type of the data";
@@ -680,7 +680,7 @@
 	schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
 	schema:provider <PIC:996437254>;
 	dcat:theme  <#GNSSProductsPortal> ;
-	hydra:entrypoint "https://glass.epos.ubi.pt:8081/GlassFramework/swagger.json"^^xsd:anyURI;
+	hydra:entrypoint "http://glass.unice.fr:8080/GlassFramework/swagger.json"^^xsd:anyURI;
  	schema:keywords "Geodesy", "GNSS" ;
 	dct:conformsTo <GlassFramework/APIDocumentation> ;
 	hydra:supportedOperation <GlassFramework/webresources/stations/v2/list/station>;
@@ -693,8 +693,8 @@
  	hydra:IriTemplate[ a hydra:IriTemplate;
 	rdf:label "Different parameters should be separated by & (AMPERSAND) ";
 	rdf:label "Multiple values for a parameter should be separated by , (COMMA) ";
-	rdf:label "https://glass.epos.ubi.pt:8081/GlassFramework/webresources/stations/v2/list/station?marker=SOPH,ALAC&name=Almeria";
-	hydra:template "https://glass.epos.ubi.pt:8081/GlassFramework/webresources/stations/v2/list/station?{optional_parameters}"^^xsd:string;
+	rdf:label "http://glass.unice.fr:8080/GlassFramework/webresources/stations/v2/list/station?marker=SOPH,FILF&name=Gambatesa";
+	hydra:template "http://glass.unice.fr:8080/GlassFramework/webresources/stations/v2/list/station?{optional_parameters}"^^xsd:string;
       hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "name"^^xsd:string;
 					hydra:required "false"^^xsd:boolean;
