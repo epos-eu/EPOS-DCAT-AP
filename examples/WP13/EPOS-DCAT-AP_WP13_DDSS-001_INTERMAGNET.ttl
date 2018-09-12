@@ -247,7 +247,7 @@
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "text/csv; text/html; text/xml; application/json; text/plain; image/png, image/jpeg, application/pdf";
 	hydra:property[ a hydra:IriTemplate;
-		hydra:template "http://geomag.bgs.ac.uk/EPOS/WP13/intermagnet/(?Request, observatoryIagaCode, SamplesPerDay, dataStartDate, dataDuration, publicationState, recordTermination, traceList, colourTraces, pictureSize, pdfSize, dataScale)"^^xsd:string;
+		hydra:template "http://geomag.bgs.ac.uk/EPOS/WP13/intermagnet/{?Request, observatoryIagaCode, SamplesPerDay, dataStartDate, dataDuration, publicationState, recordTermination, traceList, colourTraces, pictureSize, pdfSize, dataScale}"^^xsd:string;
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "Request"^^xsd:string;
 				rdfs:label "No Label";
