@@ -35,7 +35,7 @@
     dct:spatial [ a dct:Location;
         locn:geometry "POLYGON(55.622471 -21.182913, 55.82473 -21.184441, 55.823513 -21.338009, 55.62104 -21.33647)"^^gsp:wktLiteral;
     ];
-    dcat:theme <#RadarInterferometry>;
+    dcat:theme <epos:RadarInterferometry>;
     dcat:keyword "radar", "interferometry", "Reunion", "Piton de la Fournaise", "deformation", "SENTINEL", "COSMOSKYMED", "ALOS-PALSAR";
     dcat:contactPoint <http://www.researcherid.com/rid/O-8042-2014/contactPoint>;
     dct:publisher <http://isni.org/isni/0000000109416043>;
@@ -64,7 +64,7 @@
     schema:address [ a schema:PostalAddress;
         schema:streetAddress "Laboratoire Magmas et Volcans, 6 Avenue Blaise Pascal"^^xsd:string;
         schema:addressLocality "AUBIERE CEDEX";
-        schema:postalCode "TSA 60026 - CS 60026, 63178";
+        schema:postalCode "63178";
         schema:addressCountry "FRANCE";
     ];
     schema:email "j.l.froger@opgc.fr";
@@ -85,7 +85,7 @@
     schema:address [ a schema:PostalAddress;
         schema:streetAddress "Laboratoire Magmas et Volcans, 6 Avenue Blaise Pascal"^^xsd:string;
         schema:addressLocality "AUBIERE CEDEX";
-        schema:postalCode "TSA 60026 - CS 60026, 63178";
+        schema:postalCode "63178";
         schema:addressCountry "FRANCE";
     ];
     schema:email "p.labazuy@opgc.fr";
@@ -106,7 +106,7 @@
     schema:address [ a schema:PostalAddress;
         schema:streetAddress "OPGC, 4 Avenue Blaise Pascal"^^xsd:string;
         schema:addressLocality "AUBIERE CEDEX";
-        schema:postalCode "TSA 60026 - CS 60026, 63178";
+        schema:postalCode "63178";
         schema:addressCountry "FRANCE";
     ];
     schema:email "n.huret@opgc.fr";
@@ -129,7 +129,7 @@
     schema:address [ a schema:PostalAddress;
         schema:streetAddress "OPGC, 4 Avenue Blaise Pascal";
         schema:addressLocality "AUBIERE CEDEX";
-        schema:postalCode "TSA 60026 - CS 60026, 63178";
+        schema:postalCode "63178";
         schema:addressCountry "FRANCE";
     ];
     schema:logo "http://wwwobs.univ-bpclermont.fr/opgc/images/LogoOPGCTransparent.png"^^xsd:anyURI;
@@ -186,7 +186,7 @@
     schema:keywords "Virtual Observatory", "Database", "Data Catalog", "Remote Sensing",  "Radar", "Interferometry", "Reunion", "Piton de la Fournaise", "Deformation", "SENTINEL", "COSMOSKYMED", "ALOS-PALSAR", "Volcanology";
     hydra:entrypoint "http://opgc.fr/vobs/rest2/req.php/application/oi2"^^xsd:anyURI;
     hydra:supportedOperation <opgc.fr/vobs/oi2/WP11/DDSS-050/data-catalog>;
-    dcat:theme <#RadarInterferometry>;
+    dcat:theme <epos:RadarInterferometry>;
     schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
     dct:conformsTo <opgc.fr/vobs/APIDocumentation>;
     dcat:contactPoint <http://www.researcherid.com/rid/O-8042-2014/contactPoint>;
@@ -208,7 +208,7 @@
         # hydra:returns "application/xml";
         # hydra:returns "application/json";
         hydra:property [ a hydra:IriTemplate;
-            hydra:template "http://opgc.fr/vobs/rest2/req.php/oi2(?sat, start_date, stop_date, mas_orb_min, mas_orb_max, sla_orb_min, sla_orb_max, mas_pol, sla_pol, mode, ah_min, ah_max, swath, track, beam, output, onscreen)"^^xsd:string; 
+            hydra:template "http://opgc.fr/vobs/rest2/req.php/oi2{?sat, start_date, stop_date, mas_orb_min, mas_orb_max, sla_orb_min, sla_orb_max, mas_pol, sla_pol, mode, ah_min, ah_max, swath, track, beam, output, onscreen}"^^xsd:string; 
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "sat"^^xsd:string;
                     rdfs:label "Satellite ID to limit the query to interferogram produce from a specific satellite data";
@@ -391,7 +391,7 @@
         hydra:method "GET"^^xsd:string;
         hydra:returns "application/html";
         hydra:property [ a hydra:IriTemplate;
-            hydra:template "https://wwwobs.univ-bpclermont.fr/casoar/visu.php(?Type, Folder, Data)"^^xsd:string;
+            hydra:template "https://wwwobs.univ-bpclermont.fr/casoar/visu.php{?Type, Folder, Data}"^^xsd:string;
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "Type"^^xsd:string;
                     rdfs:label "The OI2 product type";
@@ -421,7 +421,7 @@
         hydra:method "GET"^^xsd:string;
         hydra:returns "application/zip";
         hydra:property [ a hydra:IriTemplate;
-            hydra:template "https://wwwobs.univ-bpclermont.fr/casoar/export/download.php(?type, uri)"^^xsd:string;
+            hydra:template "https://wwwobs.univ-bpclermont.fr/casoar/export/download.php{?type, uri}"^^xsd:string;
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "type"^^xsd:string;
                     rdfs:label "The OI2 product type";
@@ -440,11 +440,11 @@
         ];
 .
 
-    <#Volcano-Observations> a skos:ConceptScheme;
+    <epos:Volcano-Observations> a skos:ConceptScheme;
         dct:title "Volcano-Observations";
         dct:description "It contains the concept of Volcanological observations";
 .
-    <#RadarInterferometry> a skos:Concept;
-        skos:inScheme <#Volcano-Observations>;
+    <epos:RadarInterferometry> a skos:Concept;
+        skos:inScheme <epos:Volcano-Observations>;
         skos:prefLabel "Radar Interferometry";
 .
