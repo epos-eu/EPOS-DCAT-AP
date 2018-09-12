@@ -111,7 +111,7 @@
 		#schema:value  "WP8-DDSS-003";
 	#];
 	schema:description "Web service which returns waveform metadata and data quality metrics";
-	dcat:theme <#waveformquality>;
+	dcat:theme <epos:waveformquality>;
 	dcat:contactPoint <http://orcid.org/0000-0001-9993-4003/contactPoint>;
 	schema:name "WFCatalog - German Research Centre for Geosciences (GFZ)";
 	hydra:entrypoint "http://geofon.gfz-potsdam.de/eidaws/wfcatalog/1/query?"^^xsd:anyURI;
@@ -137,7 +137,7 @@
 		#schema:value  "WP8-DDSS-001";
 	#];
 	schema:description "FDSN Standard webservice at GFZ to download waveform data";
-	dcat:theme <#Seismicwaveforms>;
+	dcat:theme <epos:Seismicwaveforms>;
 	dcat:contactPoint <http://orcid.org/0000-0001-9993-4003/contactPoint>;
 	schema:name "FDSN Dataselect - German Research Centre for Geosciences (GFZ)";
 	hydra:entrypoint "http://geofon.gfz-potsdam.de/fdsnws/dataselect/1/query?"^^xsd:anyURI;
@@ -163,7 +163,7 @@
 		#schema:value  "WP8-DDSS-002";
 	#];
 	schema:description "FDSN Standard webservice at GFZ to download seismic metadata";
-	dcat:theme <#Seismicstations>;
+	dcat:theme <epos:Seismicstations>;
 	dcat:contactPoint <http://orcid.org/0000-0001-9993-4003/contactPoint>;
 	schema:name "FDSN Station-WS - German Research Centre for Geosciences (GFZ)";
 	hydra:entrypoint "http://geofon.gfz-potsdam.de/fdsnws/station/1/query?"^^xsd:anyURI;
@@ -540,24 +540,22 @@
 				];
 		] ;
 .
-	<#Seismology> a skos:ConceptScheme;
+	<epos:Seismology> a skos:ConceptScheme;
 		dct:title "Seismology";
 		dct:description "It contains the concepts of Seismology";
 .
-	<#waveformquality> a skos:Concept;
-		skos:inScheme <#Seismology>;
+	<epos:waveformquality> a skos:Concept;
+		skos:inScheme <epos:Seismology>;
 		skos:prefLabel "waveform quality";
 .
-	<#Seismicwaveforms> a skos:Concept;
-		skos:inScheme <#Seismology>;
+	<epos:Seismicwaveforms> a skos:Concept;
+		skos:inScheme <epos:Seismology>;
 		skos:prefLabel "Seismic waveforms";
 .
-	<#Seismicstations> a skos:Concept;
-		skos:inScheme <#Seismology>;
+	<epos:Seismicstations> a skos:Concept;
+		skos:inScheme <epos:Seismology>;
 		skos:prefLabel "Seismic stations";
 .
-
-
 
 
 
