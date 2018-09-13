@@ -58,36 +58,42 @@
 					rdfs:range "xsd:date";
 					rdfs:label "Start of the timespan";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "1980-01-01T00:00:00"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "endtime"^^xsd:string;
 					rdfs:range "xsd:date";
 					rdfs:label "End of the timespan";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "2019-01-01T00:00:00"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "network"^^xsd:string;
 					rdfs:range "xsd:string";
 					rdfs:label "Network code";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "*"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "station"^^xsd:string;
 					rdfs:range "xsd:string";
 					rdfs:label "Station code";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "*"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "location"^^xsd:string;
 					rdfs:range "xsd:string";
 					rdfs:label "Location code";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "*"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "channel"^^xsd:string;
 					rdfs:range "xsd:string";
 					rdfs:label "Channel code";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "*"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "quality"^^xsd:string;
@@ -123,36 +129,42 @@
 					rdfs:range "xsd:date";
 					rdfs:label "Start of the timespan";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "1980-01-01T00:00:00"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "endtime"^^xsd:string;
 					rdfs:range "xsd:date";
 					rdfs:label "End of the timespan";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "2019-01-01T00:00:00"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "network"^^xsd:string;
 					rdfs:range "xsd:string";
 					rdfs:label "Network code";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "*"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "station"^^xsd:string;
 					rdfs:range "xsd:string";
 					rdfs:label "Station code";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "*"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "location"^^xsd:string;
 					rdfs:range "xsd:string";
 					rdfs:label "Location code";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "*"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "channel"^^xsd:string;
 					rdfs:range "xsd:string";
 					rdfs:label "Channel code";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "*"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "minlatitude"^^xsd:string;
@@ -161,6 +173,7 @@
 					schema:minValue "-90.0";
 					schema:maxValue "90.0";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "-90.0"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "maxlatitude"^^xsd:string;
@@ -169,6 +182,7 @@
 					schema:minValue "-90.0";
 					schema:maxValue "90.0";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "90.0"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "minlongitude"^^xsd:string;
@@ -177,6 +191,7 @@
 					schema:minValue "-180.0";
 					schema:maxValue "180.0";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "-180.0"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "maxlongitude"^^xsd:string;
@@ -185,6 +200,7 @@
 					schema:minValue "-180.0";
 					schema:maxValue "180.0";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "180.0"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "level"^^xsd:string;
@@ -195,6 +211,7 @@
 					http:paramValue "channel";
 					http:paramValue "response";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "station"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "nodata"^^xsd:string;
@@ -216,12 +233,14 @@
 					rdfs:range "xsd:time";
 					rdfs:label "Starttime of documents";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "1980-01-01T00:00:00"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "endtime"^^xsd:string;
 					rdfs:range "xsd:time";
 					rdfs:label "Endtime of documents";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "2019-01-01T00:00:00"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "percent_availability_gt"^^xsd:string;
@@ -481,6 +500,95 @@
 		schema:startDate "1993-01-01T00:00:00Z"^^xsd:dateTime; 
 		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
 	]; 
+.
+# Dataset
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/NIEP> a dcat:Dataset;
+        dct:title "Primary Seismic Waveform Data";
+        dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/NIEP";
+        dct:description "Continuous seismic waveforms";
+        adms:identifier [ a adms:Identifier ;
+        adms:schemaAgency "DDSS-ID" ;
+        skos:notation "WP8-DDSS-001" ;
+        ];
+        dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        owl:versionInfo "1.0.0" ;
+
+    	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+        dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
+        dcat:theme  <epos:SeismicWaveforms> ;
+        dcat:keyword "seismology", "seismicity", "earthquakes", "seismic waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "NIEP" , "Dataselect", "FDSN-WS", "Seismic Waveform", "EIDA" ;
+        dcat:contactPoint <https://orcid.org/0000-0002-6247-0687/contactPoint>;
+	dct:publisher <PIC:998181508>;
+        dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/NIEP>;
+        dct:spatial [ a dct:Location ;
+                      locn:geometry "POLYGON(-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0)"^^gsp:wktLiteral;
+        ];
+        dct:temporal [ a dct:PeriodOfTime ;
+                schema:startDate "1980-01-01T00:00:00Z"^^xsd:dateTime ;
+                #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
+	] ;
+.
+
+# Distribution
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/NIEP> a dcat:Distribution;
+    	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/NIEP";
+	dct:description "Description of Seismic Waveform Distribution :: FDSN DATASELECT ";
+	dct:issued "2017-01-01"^^xsd:date ;
+	dct:modified "2017-01-01"^^xsd:date ;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001/NIEP>;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/NIEP>;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI;
+ 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+
+.
+
+
+# Dataset
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/NIEP> a dcat:Dataset;
+        dct:title "Primary Seismic Waveform Data";
+        dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/NIEP";
+        dct:description "Seismic Stations ";
+        adms:identifier [ a adms:Identifier ;
+            adms:schemaAgency "DDSS-ID" ;
+            skos:notation "WP8-DDSS-002" ;
+        ];
+        dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        owl:versionInfo "1.0.0" ;
+
+    	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+        dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+        dcat:theme  <epos:Seismicstations> ;
+        dcat:keyword "seismology", "seismicity", "earthquakes", "seismic station", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "station information", "waveform modeling", "NIEP" , "Station", "FDSN-WS", "Seismic Station", "EIDA" ;
+        dcat:contactPoint <https://orcid.org/0000-0002-6247-0687/contactPoint>;
+	dct:publisher <PIC:998181508>;
+        dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/NIEP>;
+        dct:spatial [ a dct:Location ;
+											locn:geometry "POLYGON(-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0)"^^gsp:wktLiteral;
+        ];
+        dct:temporal [ a dct:PeriodOfTime ;
+                schema:startDate "1980-01-01T00:00:00Z"^^xsd:dateTime ;
+                #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
+	];
+.
+
+# Distribution
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/NIEP> a dcat:Distribution;
+    	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/NIEP";
+	dct:description "Description of Seismic Stations  :: FDSN STATION ";
+	dct:issued "2017-01-01"^^xsd:date ;
+	dct:modified "2017-01-01"^^xsd:date ;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/Operation/002/NIEP>;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/NIEP>;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
+ 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+	
+	
 	dcat:contactPoint <https://orcid.org/0000-0002-6247-0687/contactPoint>;
 . 
 	<https://orcid.org/0000-0002-6247-0687/contactPoint> a schema:ContactPoint;
