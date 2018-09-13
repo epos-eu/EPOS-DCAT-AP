@@ -1,5 +1,7 @@
 
-This basic operation checker tries to build a URL based on the HYDRA operation using the **required** parameters and their **default values**. It can be called on a single file or on a directory containing several `.ttl` files. If the call is successful it presents a summary of the returned text or a list of files in a zip file. It does not handle other binary formats. 
+This basic operation checker tries to build a URL based on the HYDRA operation using the **required** parameters and their **default values**. It can be called on a single file or on a directory containing several `.ttl` files. If the call is successful it presents a summary of the returned text or a list of files in a zip file. It does not handle other binary formats.
+
+Note: this code require Python 3.6, please see `Pipfile` for full requirements.
 
 THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
 
