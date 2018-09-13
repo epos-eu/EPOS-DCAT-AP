@@ -104,8 +104,8 @@
 	schema:availableLanguage "en" ;
 .
 
-<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003> a epos:WebService;
-	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003";
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003/GFZ> a epos:WebService;
+	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003/GFZ";
 	#schema:identifier [ a schema:PropertyValue;
 		#schema:propertyID  "DDSS-ID";
 		#schema:value  "WP8-DDSS-003";
@@ -121,7 +121,7 @@
 	dct:spatial [ a dct:Location;
 		locn:geometry "POLYGON(-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0)"^^gsp:wktLiteral;
 	];
-	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003/Operation/003>;
+	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003/Operation/003/GFZ>;
 	schema:keywords "EIDA"," GFZ"," data quality"," availability"," metrics"," waveform"," metadata";
 	dct:license "Creative Commons for data, Open Source licences for software"^^xsd:anyURI;
 	dct:temporal [ a dct:PeriodOfTime;
@@ -130,8 +130,8 @@
 	];
 .
 
-<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001> a epos:WebService;
-	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001";
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/GFZ> a epos:WebService;
+	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/GFZ";
 	#schema:identifier [ a schema:PropertyValue;
 		#schema:propertyID  "DDSS-ID";
 		#schema:value  "WP8-DDSS-001";
@@ -147,7 +147,7 @@
 	dct:spatial [ a dct:Location;
 		locn:geometry "POLYGON(180.0 -90.0,-180.0 -90.0,-180.0 90.0,180.0 90.0,180.0 -90.0)"^^gsp:wktLiteral;
 	];
-	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001>;
+	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001/GFZ>;
 	schema:keywords "seismology"," seismicity"," earthquakes"," waveform"," seismic hazard"," earth structure"," earthquake intensity"," macroseismic"," macroseismic information"," waveform modeling"," GFZ","Dataselect","FDSN-WS","Seismic Waveform","EIDA";
 	dct:license "To be defined!"^^xsd:anyURI;
 	dct:temporal [ a dct:PeriodOfTime;
@@ -156,8 +156,8 @@
 	];
 .
 
-<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002> a epos:WebService;
-	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002";
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/GFZ> a epos:WebService;
+	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/GFZ";
 	#schema:identifier [ a schema:PropertyValue;
 		#schema:propertyID  "DDSS-ID";
 		#schema:value  "WP8-DDSS-002";
@@ -173,7 +173,7 @@
 	dct:spatial [ a dct:Location;
 		locn:geometry "POLYGON(180.0 -90.0,-180.0 -90.0,-180.0 90.0,180.0 90.0,180.0 -90.0)"^^gsp:wktLiteral;
 	];
-	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/Operation/002>;
+	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/Operation/002/GFZ>;
 	schema:keywords "seismology"," seismicity"," earthquakes"," waveform"," seismic hazard"," earth structure"," earthquake intensity"," macroseismic"," macroseismic information"," waveform modeling";
 	dct:license "To be defined!"^^xsd:anyURI;
 	dct:temporal [ a dct:PeriodOfTime;
@@ -201,7 +201,7 @@
 	schema:contactPoint <mailto:marko.blau@gfz-potsdam.de/legalContact>;
 	schema:contactPoint <mailto:stephan.ott@gfz-potsdam.de/financialContact>;
 .
-	<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003/Operation/003> a hydra:Operation;
+	<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003/Operation/003/GFZ> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
@@ -211,12 +211,14 @@
 					rdfs:range "xsd:dateTime";
 					rdfs:label "Starttime of documents";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "1980-01-01T00:00:00"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "endtime"^^xsd:string;
 					rdfs:range "xsd:dateTime";
 					rdfs:label "Endtime of documents";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "2019-01-01T00:00:00"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "percent_availability_gt"^^xsd:string;
@@ -382,7 +384,7 @@
 				];
 		] ;
 .
-	<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001> a hydra:Operation;
+	<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001/GFZ> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/vnd.fdsn.mseed";
 		hydra:property[ a hydra:IriTemplate;
@@ -392,36 +394,42 @@
 					rdfs:range "xsd:dateTime";
 					rdfs:label "Start of the timespan";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "1980-01-01T00:00:00"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "endtime"^^xsd:string;
 					rdfs:range "xsd:dateTime";
 					rdfs:label "End of the timespan";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "2019-01-01T00:00:00"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "network"^^xsd:string;
 					rdfs:range "string";
 					rdfs:label "Network code";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "*"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "station"^^xsd:string;
 					rdfs:range "string";
 					rdfs:label "Station code";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "*"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "location"^^xsd:string;
 					rdfs:range "string";
 					rdfs:label "Location code";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "*"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "channel"^^xsd:string;
 					rdfs:range "string";
 					rdfs:label "Channel code";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "*"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "quality"^^xsd:string;
@@ -447,7 +455,7 @@
 				];
 		] ;
 .
-	<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/Operation/002> a hydra:Operation;
+	<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/Operation/002/GFZ> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/xml";
 		hydra:property[ a hydra:IriTemplate;
@@ -457,36 +465,42 @@
 					rdfs:range "xsd:dateTime";
 					rdfs:label "Start of the timespan";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "1980-01-01T00:00:00"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "endtime"^^xsd:string;
 					rdfs:range "xsd:dateTime";
 					rdfs:label "End of the timespan";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "2019-01-01T00:00:00"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "network"^^xsd:string;
 					rdfs:range "string";
 					rdfs:label "Network code";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "*"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "station"^^xsd:string;
 					rdfs:range "string";
 					rdfs:label "Station code";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "*"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "location"^^xsd:string;
 					rdfs:range "string";
 					rdfs:label "Location code";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "*"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "channel"^^xsd:string;
 					rdfs:range "string";
 					rdfs:label "Channel code";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "*"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "minlatitude"^^xsd:string;
@@ -495,6 +509,7 @@
 					schema:minValue "-90.0";
 					schema:maxValue "90.0";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "-90.0"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "maxlatitude"^^xsd:string;
@@ -503,6 +518,7 @@
 					schema:minValue "-90.0";
 					schema:maxValue "90.0";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "90.0"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "minlongitude"^^xsd:string;
@@ -511,6 +527,7 @@
 					schema:minValue "-180.0";
 					schema:maxValue "180.0";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "-180.0"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "maxlongitude"^^xsd:string;
@@ -519,6 +536,7 @@
 					schema:minValue "-180.0";
 					schema:maxValue "180.0";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "180.0"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "level"^^xsd:string;
@@ -529,6 +547,7 @@
 					http:paramValue "channel";
 					http:paramValue "response";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "station"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "nodata"^^xsd:string;
@@ -561,9 +580,9 @@
 
 
 # Dataset
-<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001> a dcat:Dataset;
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/GFZ> a dcat:Dataset;
         dct:title "Primary Seismic Waveform Data";
-        dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001";
+        dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/GFZ";
         dct:description "Continuous seismic waveforms";
         adms:identifier [ a adms:Identifier ;
         adms:schemaAgency "DDSS-ID" ;
@@ -580,7 +599,7 @@
         dcat:keyword "seismology", "seismicity", "earthquakes", "seismic waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "INGV" , "Dataselect", "FDSN-WS", "Seismic Waveform", "EIDA" ;
         dcat:contactPoint <http://orcid.org/0000-0001-9993-4003/contactPoint>;
 	dct:publisher <PIC:999994341>;
-        dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001>;
+        dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/GFZ>;
         dct:spatial [ a dct:Location ;
                       locn:geometry "POLYGON(-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0)"^^gsp:wktLiteral;
         ];
@@ -591,14 +610,14 @@
 .
 
 # Distribution
-<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001> a dcat:Distribution;
-    	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001";
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/gfz> a dcat:Distribution;
+    	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/GFZ";
 	dct:description "Description of Seismic Waveform Distribution :: FDSN DATASELECT ";
 	dct:issued "2017-01-01"^^xsd:date ;
 	dct:modified "2017-01-01"^^xsd:date ;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001>;
-	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001>;
+	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001/GFZ>;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/GFZ>;
 	dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI;
  	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 
@@ -606,9 +625,9 @@
 
 
 # Dataset
-<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002> a dcat:Dataset;
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/GFZ> a dcat:Dataset;
         dct:title "Primary Seismic Waveform Data";
-        dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002";
+        dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/GFZ";
         dct:description "Seismic Stations ";
         adms:identifier [ a adms:Identifier ;
             adms:schemaAgency "DDSS-ID" ;
@@ -625,7 +644,7 @@
         dcat:keyword "seismology", "seismicity", "earthquakes", "seismic station", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "station information", "waveform modeling", "INGV" , "Station", "FDSN-WS", "Seismic Station", "EIDA" ;
         dcat:contactPoint <http://orcid.org/0000-0001-9993-4003/contactPoint>;
 	dct:publisher <PIC:999994341>;
-        dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002>;
+        dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/GFZ>;
         dct:spatial [ a dct:Location ;
 											locn:geometry "POLYGON(-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0)"^^gsp:wktLiteral;
         ];
@@ -636,14 +655,14 @@
 .
 
 # Distribution
-<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002> a dcat:Distribution;
-    	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002";
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/GFZ> a dcat:Distribution;
+    	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/GFZ";
 	dct:description "Description of Seismic Stations  :: FDSN STATION ";
 	dct:issued "2017-01-01"^^xsd:date ;
 	dct:modified "2017-01-01"^^xsd:date ;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/Operation/002>;
-	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002>;
+	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/Operation/002/GFZ>;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/GFZ>;
 	dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
  	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 .
