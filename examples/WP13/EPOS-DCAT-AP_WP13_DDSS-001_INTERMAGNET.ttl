@@ -245,7 +245,7 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/INTERMAGNET/Operation> a hydra:Operation;
     hydra:method "GET"^^xsd:string;
-    hydra:returns "text/csv; text/html; text/xml; application/json; text/plain; image/png, image/jpeg, application/pdf";
+    hydra:returns "text/xml";
     hydra:property[ a hydra:IriTemplate;
         hydra:template "http://geomag.bgs.ac.uk/EPOS/WP13/intermagnet/{?Request, observatoryIagaCode, SamplesPerDay, dataStartDate, dataDuration, publicationState, recordTermination, traceList, colourTraces, pictureSize, pdfSize, dataScale}"^^xsd:string;
             hydra:mapping[ a hydra:IriTemplateMapping;
@@ -320,7 +320,7 @@
                 http:paramValue "XYZS";
                 http:paramValue "HDZS";
                 http:paramValue "DIFS";
-                hydra:required "true"^^xsd:boolean;
+                hydra:required "false"^^xsd:boolean;
             ];
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "colourTraces"^^xsd:string;
