@@ -169,7 +169,7 @@
         #schema:endDate "YYYY-MM-DDThh:mm:ss"^^xsd:dateTime ;
     ];
 	dcat:theme  <#Seismicwaveforms> ;
-	dcat:keyword "seismology", "seismicity", "earthquakes", "Velocity", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "TABOO" ;
+	dcat:keyword "seismology", "seismicity", "earthquakes", "Velocity", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "NFO", "Near Fault Observatory", "TABOO";
 	dcat:contactPoint <http://orcid.org/0000-0003-3489-7453/scientificContact>;
 	dct:publisher <PIC:999472675>;
 	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/VEL_WAVEFORM_CONTINUOUS/Distribution/001>;
@@ -199,7 +199,7 @@
         #schema:endDate "YYYY-MM-DDThh:mm:ss"^^xsd:dateTime ;
     ];
 	dcat:theme  <#Seismicwaveforms> ;
-	dcat:keyword "seismology", "seismicity", "earthquakes", "Acceleration", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "TABOO" ;
+	dcat:keyword "seismology", "seismicity", "earthquakes", "Acceleration", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "NFO", "Near Fault Observatory", "TABOO";
 	dcat:contactPoint <http://orcid.org/0000-0003-3489-7453/scientificContact>;
 	dct:publisher <PIC:999472675>;
 	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/ACC_WAVEFORM_CONTINUOUS/Distribution/001>;
@@ -332,7 +332,9 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "network"^^xsd:string;
 			rdfs:label "Network code";
-			rdfs:range "xsd:string" ;
+			rdfs:range "xsd:string";
+			http:paramValue "IV";
+			http:paramValue "TV";
 			schema:defaultValue "IV,TV";
 			hydra:required "true"^^xsd:boolean;
 		];
