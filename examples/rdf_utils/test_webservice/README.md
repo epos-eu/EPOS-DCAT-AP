@@ -1,10 +1,12 @@
-Can be called on a single file
 
-$ python webservice.py python webservice.py ..\WP13\EPOS-DCAT-AP_WP13_DDSS-001_INTERMAGNET.ttl
+This basic operation checker tries to build a URL based on the HYDRA operation using the **required** parameters and their **default values**. It can be called on a single file or on a directory containing several `.ttl` files. If the call is successful it presents a summary of the returned text or a list of files in a zip file. It does not handle other binary formats. 
 
-or on a directory containing several EPOS-DCAT-AP TTL files.
+THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
 
 
+Calling the checker on the W13 directory with the resulting output:
+
+```
 $ python webservice.py ..\WP13\
 INFO:root:
 Processing: ..\WP13\EPOS-DCAT-AP_WP13_DDSS-001_INTERMAGNET.ttl
@@ -253,3 +255,4 @@ INFO:root:Text:
 </geomagnetic-field-model-result>
 
 INFO:root:==================================================
+```
