@@ -1,0 +1,210 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .  
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .  
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .  
+@prefix dc: <http://purl.org/dc/elements/1.1/> .  
+@prefix dct: <http://purl.org/dc/terms/> .  
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .  
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .  
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .  
+@prefix schema: <http://schema.org/> .  
+@prefix dcat: <http://www.w3.org/ns/dcat#> .  
+@prefix cnt: <http://www.w3.org/2011/content#> .  
+@prefix locn: <http://www.w3.org/ns/locn#> .  
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .  
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .  
+@prefix http: <http://www.w3.org/2006/http#> .  
+@prefix owl: <http://www.w3.org/2002/07/owl#> .  
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .  
+
+<http://orcid.org/0000-0003-2431-1383> a schema:Person;
+    schema:identifier [ a schema:PropertyValue;
+        schema:propertyID "orcid";
+        schema:value "http://orcid.org/0000-0003-2431-1383";
+    ]; 
+    schema:familyName "Manea";
+    schema:givenName "Liviu Marius";
+    schema:address [ a schema:PostalAddress;
+        schema:streetAddress "Calugareni st., 12";
+        schema:addressLocality "Magurele, Ilfov";
+        schema:postalCode "077125";
+        schema:addressCountry "Romania";
+    ]; 
+    schema:email "mlmarius@yahoo.com";
+    schema:telephone "+40722734132";
+    schema:url "http://orcid.org/0000-0003-2431-1383"^^xsd:anyURI;
+    schema:qualifications "IT";
+    schema:affiliation <PIC:998181508>;
+    schema:contactPoint <http://orcid.org/0000-0003-2431-1383/scientificContact>;
+. 
+
+<https://orcid.org/0000-0002-2181-4471> a schema:Person;
+    schema:identifier [ a schema:PropertyValue;
+        schema:propertyID "orcid";
+        schema:value "https://orcid.org/0000-0002-2181-4471";
+    ]; 
+    schema:familyName "Marmureanu";
+    schema:givenName "Alexandru";
+    schema:address [ a schema:PostalAddress;
+        schema:streetAddress "Calugareni st., 12";
+        schema:addressLocality "Magurele, Ilfov";
+        schema:postalCode "077125";
+        schema:addressCountry "Romania";
+    ]; 
+    schema:email "marmura@infp.ro";
+    schema:telephone "+40755077722";
+    schema:url "https://orcid.org/0000-0002-2181-4471"^^xsd:anyURI;
+    schema:qualifications "IT";
+    schema:affiliation <PIC:998181508>;
+    schema:contactPoint <https://orcid.org/0000-0002-2181-4471/scientificContact>;
+. 
+
+<https://radon.infp.ro/epos-dcat-ap/NearFaultObjservatory/NIEP/RADON/Webservice/001> a epos:WebService;
+    schema:identifier "https://radon.infp.ro/epos-dcat-ap/NearFaultObjservatory/NIEP/RADON/Webservice/001";
+    schema:description "Radon counts and local temperature Web Service allow to retrieve Radon Gas concentration time series based on periodic counting of Rn gas at site";
+    schema:name "NIEP Radon counts and local temperature Web Service";
+    schema:datePublished "2017-06-08T12:00:00Z"^^xsd:dateTime;
+    schema:dateModified "2017-06-08T12:00:00Z"^^xsd:dateTime;
+    schema:provider <PIC:998181508>;
+    schema:keywords "Geochemical", "Radon concentration", "Radon decay counts", "geochemistry", "geohazards", "long term continuos timeseries", "local temperature";
+    hydra:operation <https://radon.infp.ro/epos-dcat-ap/NearFaultObjservatory/NIEP/RADON/Webservice/001/Operation/001>;
+    dcat:theme <#Radonconcentration>;
+    dcat:contactPoint <http://orcid.org/0000-0003-2431-1383/contactPoint>;
+.
+    <http://orcid.org/0000-0003-2431-1383/contactPoint> a schema:ContactPoint;
+        schema:email "mlmarius@yahoo.com";
+        schema:availableLanguage "en";
+.
+
+
+<PIC:998181508> a schema:Organization;
+    schema:identifier [ a schema:PropertyValue;
+        schema:propertyID "pic";
+        schema:value "998181508";
+    ]; 
+    schema:legalName "National Institute for Earth Physics";
+    schema:address [ a schema:PostalAddress;
+        schema:streetAddress "Calugareni st., 12";
+        schema:addressLocality "Magurele, Ilfov";
+        schema:postalCode "077125";
+        schema:addressCountry "ROMANIA";
+    ]; 
+    schema:logo "http://intranet.infp.ro/wp-content/uploads/public_dirs/Materiale_vizibilitate_INFP/LOGO MAIN INFP_resize.gif"^^xsd:anyURI;
+    schema:url "http://www.infp.ro"^^xsd:anyURI;
+    schema:email "contact@infp.ro";
+.
+    <https://orcid.org/0000-0002-2181-4471/scientificContact> a schema:ContactPoint;
+        schema:email "marmura@infp.ro";
+        schema:availableLanguage "en" ;
+        schema:contactType "scientificContact" ;
+.
+    <http://orcid.org/0000-0003-2431-1383/scientificContact> a schema:ContactPoint;
+        schema:email "mlmarius@yahoo.com";
+        schema:availableLanguage "en" ;
+        schema:contactType "scientificContact" ;
+. 
+    <radon.infp.ro/operation> a hydra:Operation;
+        hydra:method "GET"^^xsd:string;
+        hydra:returns "application/json";
+        hydra:property[ a hydra:IriTemplate;
+            hydra:template "https://radon.infp.ro/query(?mintime, maxtime, minlat, maxlat, minlon, maxlon, max_radon_error)"^^xsd:string;
+                hydra:mapping[ a hydra:IriTemplateMapping;
+                    hydra:variable "mintime"^^xsd:string;
+                    rdfs:range "datetime";
+                    rdfs:label "minimum time";
+                    schema:minValue "2000-01-01T00:00:00.0000Z";
+                    schema:maxValue "2018-09-20T12:00:00.0000Z";
+                    schema:defaultValue "2000-03-01T00:00:00.0000Z";
+                    hydra:required "true"^^xsd:boolean;
+                ];
+                hydra:mapping[ a hydra:IriTemplateMapping;
+                    hydra:variable "maxtime"^^xsd:string;
+                    rdfs:range "datetime";
+                    rdfs:label "maximum time";
+                    schema:minValue "2000-01-01T00:00:00.0000Z";
+                    schema:maxValue "2018-09-20T12:00:00.0000Z";
+                    schema:defaultValue "2001-05-01T00:00:00.0000Z";
+                    hydra:required "true"^^xsd:boolean;
+                ];
+                hydra:mapping[ a hydra:IriTemplateMapping;
+                    hydra:variable "minlat"^^xsd:string;
+                    rdfs:range "float";
+                    rdfs:label "minimum Latitude";
+                    schema:minValue "-90";
+                    schema:maxValue "90";
+                    schema:defaultValue "-90";
+                    hydra:required "true"^^xsd:boolean;
+                ];
+                hydra:mapping[ a hydra:IriTemplateMapping;
+                    hydra:variable "maxlat"^^xsd:string;
+                    rdfs:range "float";
+                    rdfs:label "maximum Latitude";
+                    schema:minValue "-90";
+                    schema:maxValue "90";
+                    schema:defaultValue "90";
+                    hydra:required "true"^^xsd:boolean;
+                ];
+                hydra:mapping[ a hydra:IriTemplateMapping;
+                    hydra:variable "minlon"^^xsd:string;
+                    rdfs:range "float";
+                    rdfs:label "minimum Longitude";
+                    schema:minValue "-180";
+                    schema:maxValue "180";
+                    schema:defaultValue "-180";
+                    hydra:required "true"^^xsd:boolean;
+                ];
+                hydra:mapping[ a hydra:IriTemplateMapping;
+                    hydra:variable "maxlon"^^xsd:string;
+                    rdfs:range "float";
+                    rdfs:label "maximum Longitude";
+                    schema:minValue "-180";
+                    schema:maxValue "180";
+                    schema:defaultValue "180";
+                    hydra:required "true"^^xsd:boolean;
+                ];
+                hydra:mapping[ a hydra:IriTemplateMapping;
+                    hydra:variable "max_radon_error"^^xsd:string;
+                    rdfs:range "int";
+                    rdfs:label "maximum error";
+                    schema:minValue "0";
+                    schema:maxValue "100";
+                    schema:defaultValue "100";
+                    hydra:required "true"^^xsd:boolean;
+                ];
+        ] ;
+. 
+
+
+
+    <#NearFaultObservations> a skos:ConceptScheme;
+        dct:title "Near Fault Observations";
+        dct:description "It contains the concepts of Near Fault Observations";
+.
+    <#Radonconcentration> a skos:Concept;
+        skos:inScheme <#NearFaultObservations>;
+        skos:prefLabel "Radon concentration";
+.
+
+<WP09/NIEP/RADON> a dcat:Dataset;
+        dct:title "NIEP - Radon Dataset";
+        dct:identifier "WP09/NIEP/RADON";
+        dct:description "Radon counts and local temperature dataset contains Radon Gas concentration time series based on periodic counting of Rn gas at site";
+        ## example of frequency using a controlled vocabulary
+        dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+        dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
+        dct:created "2010-04-01"^^xsd:date;
+        dcat:theme  <#Radonconcentration> ;
+        dcat:keyword "Geochemical", "Radon concentration", "Radon counts", "geochemistry", "geohazards", "long term continuos timeseries", "local temperature" ;
+        dcat:contactPoint <http://orcid.org/0000-0003-2431-1383/contactPoint>;
+        dct:publisher <PIC:998181508>;
+        dcat:distribution <WP09/NIEP/RADON/Distribution>;
+.
+
+<WP09/NIEP/RADON/Distribution> a dcat:Distribution;
+    dct:identifier "WP09/NIEP/RADON/Distribution";
+    dct:description "NIEP Radon counts and local temperature Distribution";
+    dct:created "2010-04-01"^^xsd:date;
+    dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+    dcat:accessURL <radon.infp.ro/operation>;
+    dct:conformsTo <https://radon.infp.ro/epos-dcat-ap/NearFaultObjservatory/NIEP/RADON/Webservice/001>;
+    dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
+.
