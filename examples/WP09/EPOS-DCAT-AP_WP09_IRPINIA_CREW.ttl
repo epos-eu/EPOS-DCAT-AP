@@ -1,0 +1,174 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http: <http://www.w3.org/2006/http#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+
+<https://orcid.org/0000-0002-2588-8160> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "orcid";
+		schema:value "https://orcid.org/0000-0002-2588-8160";
+	];
+	schema:familyName "Festa";
+	schema:givenName "Gaetano";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Via Cintia";
+		schema:addressLocality "Naples";
+		schema:postalCode "80126";
+		schema:addressCountry "Italy";
+	];
+	schema:email "gaetano.festa@unina.it";
+	schema:telephone "+39081675248";
+	schema:url "https://www.docenti.unina.it/gaetano.festa"^^xsd:anyURI;
+	schema:qualifications "Associate Professor of Earth and Atmosphere Physics";
+	schema:affiliation <PIC:999976590>;
+	schema:contactPoint <https://orcid.org/0000-0002-2588-8160/scientificContact>;
+	schema:contactPoint <https://orcid.org/0000-0002-2588-8160/legalContact>;
+	schema:contactPoint <https://orcid.org/0000-0002-2588-8160/financialContact>;
+.
+
+<https://orcid.org/0000-0002-4553-2380> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "orcid";
+		schema:value "https://orcid.org/0000-0002-4553-2380";
+	];
+	schema:familyName "Elia";
+	schema:givenName "Luca";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Via Cintia";
+		schema:addressLocality "Naples";
+		schema:postalCode "80126";
+		schema:addressCountry "Italy";
+	];
+	schema:email "elia@fisica.unina.it";
+	schema:telephone "+39081679929";
+	schema:qualifications "Contractor";
+	schema:affiliation <PIC:999976590>;
+	schema:contactPoint <https://orcid.org/0000-0002-4553-2380/technicalContact>;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/crew/WebService/001> a epos:WebService;
+	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/crew/WebService/001";
+	schema:description "IRPINIA - This service provides (visualizes) the outputs and performance evaluation of different Early Warning systems. Each system runs on the Testing Center in real-time on the same streams of ground motion data recorded by the NFO stations. The outputs include the real-time estimates of source parameters (location, magnitude) for all earthquakes detected in the area for each system. The performance includes the time of the first alert and the correctness of the outputs compared to reference bulletins. Initially tests involve these Early Warning software: PRESTo (stand-alone) and Virtual Seismology (in SeisComP3). The Irpinia Near-Fault Observatory is deployed in the Southern Apennines of Italy, along the active fault system responsible for the 1980, November 23, MS 6.9 Campania–Lucania earthquake. It comprises about 30 stations and covers an area of about 100 × 70 km2. Each site is equipped with strong motion accelerometer and a short-period velocimeter, while a few stations are equipped with broad-band velocimeters.";
+	dcat:theme <#EarthquakeParameters>;
+	schema:name "IRPINIA - CREW: Testing Center for Early Warning and Source Characterization (Irpinia Near-Fault Observatory)";
+	# NFO entrypoint:
+	hydra:entrypoint "http://lccepos.fisica.unina.it/"^^xsd:anyURI;
+	schema:provider <PIC:999976590>;
+	schema:datePublished "2017-07-31"^^xsd:date;
+	schema:dateModified "2017-07-31"^^xsd:date;
+	dct:spatial [ a dct:Location;
+		locn:geometry "POLYGON(14.0 39.0,16.0 39.0,16.0 42.0,14.0 42.0,14.0 39.0)"^^gsp:wktLiteral;
+	];
+	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/crew/Operation/001>;
+	schema:keywords "NFO","early warning","earthquakes","hazard","seismic source","seismology";
+	dct:license "https://creativecommons.org/licenses/by-sa/3.0/"^^xsd:anyURI;
+	dct:temporal [ a dct:PeriodOfTime;
+		schema:startDate "2016-10-20T00:00:00Z"^^xsd:dateTime;
+	];
+	schema:contactPoint <https://orcid.org/0000-0002-4553-2380/technicalContact>;
+.
+
+<PIC:999976590> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "PIC";
+		schema:value "999976590";
+	];
+	schema:legalName "RISSC-Lab, University Federico II of Naples";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Via Cintia";
+		schema:addressLocality "Naples";
+		schema:postalCode "80126";
+		schema:addressCountry "Italy";
+	];
+	schema:logo "http://www.rissclab.unina.it/images/unina/RSCCLogo.png"^^xsd:anyURI;
+	schema:url "http://www.rissclab.unina.it/en/"^^xsd:anyURI;
+	schema:email "inforissclab@unina.it";
+	schema:contactPoint <https://orcid.org/0000-0002-2588-8160/scientificContact>;
+	schema:contactPoint <https://orcid.org/0000-0002-2588-8160/legalContact>;
+	schema:contactPoint <https://orcid.org/0000-0002-2588-8160/financialContact>;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/crew/Operation/001> a hydra:Operation;
+	hydra:method "GET"^^xsd:string;
+	hydra:returns "text/html";
+	hydra:property[ a hydra:IriTemplate;
+		# NFO entrypoint:
+		hydra:template "http://lccepos.fisica.unina.it/"^^xsd:string;
+	];
+.
+
+<#NearFaultObservations> a skos:ConceptScheme;
+	dct:title "Near Fault Observations";
+	dct:description "It contains the concepts of Near Fault Observations";
+.
+
+<#EarthquakeParameters> a skos:Concept;
+	skos:inScheme <#NearFaultObservations>;
+	skos:prefLabel "Earthquake Parameters";
+.
+
+<https://orcid.org/0000-0002-2588-8160/scientificContact> a schema:ContactPoint;
+	schema:email "gaetano.festa@unina.it";
+	schema:availableLanguage "en";
+	schema:contactType "scientificContact";
+.
+
+<https://orcid.org/0000-0002-2588-8160/legalContact> a schema:ContactPoint;
+	schema:email "gaetano.festa@unina.it";
+	schema:availableLanguage "en";
+	schema:contactType "legalContact";
+.
+
+<https://orcid.org/0000-0002-2588-8160/financialContact> a schema:ContactPoint;
+	schema:email "gaetano.festa@unina.it";
+	schema:availableLanguage "en";
+	schema:contactType "financialContact";
+.
+
+<https://orcid.org/0000-0002-4553-2380/technicalContact> a schema:ContactPoint;
+	schema:email "elia@fisica.unina.it";
+	schema:availableLanguage "en";
+	#schema:contactType "technicalContact";
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/crew/Dataset/001> a dcat:Dataset;
+	dct:title "IRPINIA - CREW: Early Warning Outputs and Performance Data Set";
+	adms:identifier [ a adms:Identifier;
+		adms:schemaAgency "DDSS-ID";
+		skos:notation "WP09-DDSS-033";
+	];
+	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/crew/Dataset/001";
+	dct:description "IRPINIA - Outputs and performance evaluation of different Early Warning systems. The performance statistics include the time of the first alert and the correctness of the outputs compared to reference bulletins. Initially tests involve these Early Warning software: PRESTo (stand-alone) and Virtual Seismology (in SeisComP3).";
+	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+	dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+	dct:created "2016-10-20"^^xsd:date;
+	dcat:theme <#EarthquakeParameters>;
+	dcat:keyword "NFO","early warning","earthquakes","hazard","seismic source","seismology";
+	dcat:contactPoint <https://orcid.org/0000-0002-4553-2380/technicalContact>;
+	dct:publisher <PIC:999976590>;
+	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/crew/Distribution/001>;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/crew/Distribution/001> a dcat:Distribution;
+	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/crew/Distribution/001";
+	dct:description "IRPINIA - CREW: Early Warning Outputs and Performance Distribution";
+	dct:created "2017-07-31"^^xsd:date;
+	#dct:type "http://publications.europa.eu/resource/authority/distribution-type/VISUALIZATION"^^xsd:anyURI;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/crew/Operation/001>;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/crew/WebService/001>;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/HTML"^^xsd:anyURI;
+.
