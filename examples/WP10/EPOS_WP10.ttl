@@ -878,6 +878,42 @@
 
 .
 
+<https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/stations/Distribution/001> a dcat:Distribution ;
+        dct:identifier "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/stations/Distribution/001" ;
+        dct:title "Station Metadada" ;
+	dct:description "Description of Station Metadata" ;
+	dct:issued "2017-01-01"^^xsd:date ;
+        dct:modified "2017-01-01"^^xsd:date ;
+
+        # This property refers to the type of the Distribution. The possible types are
+        # (http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE
+        # OR
+        # http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE)
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI ;
+
+        # If the type of Distribution is WEB SERVICE, this property refers to the Web Service that gives access to a Distribution of the Dataset. Otherwise, this property is optional.
+	    # dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001> ;
+
+        # This property contains a URL that gives access to a Distribution of the Dataset. The resource at the access URL may contain # information about how to get the Dataset.
+        # If the type of Distribution is WEB SERVICE, this property refers to the Operation of the Web Service to which the Distribution conforms.
+        dcat:accessURL <http://glass.unice.fr:8080/GlassFramework/webresources/stations/v2/list/station> ;
+
+        # This property refers to the file format of the Distribution. 
+        # The possible types are here: http://publications.europa.eu/mdr/resource/authority/file-type/html/filetypes-eng.html
+		# we can have many types txt, json  xml...ummm
+        dct:format "http://publications.europa.eu/resource/authority/file-type/TXT"^^xsd:anyURI ;
+
+        # This property contains the size of a Distribution in bytes.
+        # dcat:byteSize "1024"^^xsd:decimal ;
+
+        # This property refers to the licence under which the Distribution is made available.
+        dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+
+        # If the type of Distribution is DOWNLOADABLE FILE, this property contains a URL that is a direct link to a downloadable file in a given format. Otherwise, this property is optional.
+        #dcat:downloadURL "URL that is a direct link to a downloadable file in a given format"^^xsd:anyURI ;
+.
+
+
 <http://glass.unice.fr:8080/GlassFramework/webresources/files> a dcat:Dataset ;
         dct:identifier "GlassFramework/webresources/files" ;
         dct:title "Get Stations objects" ;
