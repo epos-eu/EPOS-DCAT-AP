@@ -1,12 +1,47 @@
+Introduction
+------------
 
-This basic operation checker tries to build a URL based on the HYDRA operation using the **required** parameters and their **default values**. It can be called on a single file or on a directory containing several `.ttl` files. If the call is successful it presents a summary of the returned text or a list of files in a zip file. It does not handle other binary formats.
+The EPOS web service metadata is written in RDF using the Turtle langauge (https://www.w3.org/TR/turtle/) and includes fields that describe a template for a URL and a set of parameters. Together these metadata fields define how to construct URLs to call the web service. The  template and parameters comform to the HYDRA specification, a vocabulary for hypermedia-driven web APIs: https://www.hydra-cg.com/spec/latest/core/.
 
-Note: this code require Python 3.6, please see `Pipfile` for full requirements.
+The code in this folder implements a basic operation checker for a web service described using EPOS web service metadata written in Turtle. It attempts to build a URL based on the HYDRA 'operation' (the URL template) using the **required** parameters and their **default values**, as described in the metadata. Having built the URL, this code calls the web service using the constructed URL, to check that the call returns valid data. The code can be used with a single metadata file or a directory containing several `.ttl` (Turtle) metadata files. If the call is successful it presents a summary of the data returned from the web service or, where the web service returns a zip archive, a list of the files in the zip file. It does not handle other binary formats.
+
 
 THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
 
 
-Calling the checker on the W13 directory with the resulting output:
+Installation
+------------
+
+This code require Python 3.6 (please see `Pipfile` for full requirements).
+To install the code as described below will require a 'git' command line client
+
+From a shell (DOS prompt on Windows), create an empty folder and make it your current folder, then:
+         
+# clone the Github repository:
+git clone https://github.com/epos-eu/EPOS-DCAT-AP/ -b EPOS-DCAT-AP-shapes
+
+# make sure you have the latest version of pip:
+python -m pip install --upgrade pip
+
+# use pip to install pipenv:
+pip install pipenv
+
+# set up your envrionment for running the code:
+cd EPOS-DCAT-AP/examples/rdf_utils/test_webservice
+pipenv shell
+
+# use pipenv to install the dependencies for the code:
+pipenv install
+
+# run the code to check WP13's metadata
+python webservice.py ../../WP13
+
+
+
+Example Output
+--------------
+
+Calling the checker on the W13 directory results in the following output:
 
 ```
 $ python webservice.py ..\WP13\
