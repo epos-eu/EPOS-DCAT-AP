@@ -15,18 +15,20 @@
 @prefix http: <http://www.w3.org/2006/http#> .  
 @prefix owl: <http://www.w3.org/2002/07/owl#> .  
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .  
-	<#Seismology> a skos:ConceptScheme;
+
+
+	<epos:Seismology> a skos:ConceptScheme;
 		dct:title "Seismology";
 		dct:description "It contains the concepts of Seismology";
 . 
-	<#waveformquality> a skos:Concept;
-		skos:inScheme <#Seismology>;
+	<epos:waveformquality> a skos:Concept;
+		skos:inScheme <epos:Seismology>;
 . 
-	<#Seismicwaveforms> a skos:Concept;
-		skos:inScheme <#Seismology>;
+	<epos:Seismicwaveforms> a skos:Concept;
+		skos:inScheme <epos:Seismology>;
 . 
-	<#Seismicstations> a skos:Concept;
-		skos:inScheme <#Seismology>;
+	<epos:Seismicstations> a skos:Concept;
+		skos:inScheme <epos:Seismology>;
 . 
 
 <https://orcid.org/0000-0002-6247-0687> a schema:Person;
@@ -433,7 +435,7 @@
 		#schema:value  ""; 
 	#]; 
 	schema:description "FDSN Standard webservice at NIEP to download seismic metadata";
-	dcat:theme <#Seismicstations>;
+	dcat:theme <epos:Seismicstations>;
 	schema:name "FDSN Station-WS - National Institute for Earth Physics (NIEP)";
 	hydra:entrypoint "http://eida-sc3.infp.ro/fdsnws/station/1/query?"^^xsd:anyURI; 
 	schema:provider <PIC:998181508>;
@@ -459,7 +461,7 @@
 		#schema:value  ""; 
 	#]; 
 	schema:description "FDSN Standard webservice at NIEP to download waveform data";
-	dcat:theme <#Seismicwaveforms>;
+	dcat:theme <epos:Seismicwaveforms>;
 	schema:name "FDSN Dataselect - National Institute for Earth Physics (NIEP)";
 	hydra:entrypoint "http://eida-sc3.infp.ro/fdsnws/dataselect/1/query?"^^xsd:anyURI; 
 	schema:provider <PIC:998181508>;
@@ -485,7 +487,7 @@
 		#schema:value  ""; 
 	#]; 
 	schema:description "Web service which returns waveform metadata and data quality metrics";
-	dcat:theme <#waveformquality>;
+	dcat:theme <epos:waveformquality>;
 	schema:name "WFCatalog - National Institute for Earth Physics (NIEP)";
 	hydra:entrypoint "http://eida-sc3.infp.ro/eidaws/wfcatalog/alpha/query?"^^xsd:anyURI; 
 	schema:provider <PIC:998181508>;
@@ -499,7 +501,8 @@
 	dct:temporal [ a dct:PeriodOfTime; 
 		schema:startDate "1993-01-01T00:00:00Z"^^xsd:dateTime; 
 		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
-	]; 
+	];
+	dcat:contactPoint <https://orcid.org/0000-0002-6247-0687/contactPoint>;
 .
 # Dataset
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/NIEP> a dcat:Dataset;
@@ -517,7 +520,7 @@
 
     	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
         dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
-        dcat:theme  <epos:SeismicWaveforms> ;
+        dcat:theme  <epos:Seismicwaveforms> ;
         dcat:keyword "seismology", "seismicity", "earthquakes", "seismic waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "NIEP" , "Dataselect", "FDSN-WS", "Seismic Waveform", "EIDA" ;
         dcat:contactPoint <https://orcid.org/0000-0002-6247-0687/contactPoint>;
 	dct:publisher <PIC:998181508>;
@@ -588,8 +591,6 @@
 	dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
  	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 	
-	
-	dcat:contactPoint <https://orcid.org/0000-0002-6247-0687/contactPoint>;
 . 
 	<https://orcid.org/0000-0002-6247-0687/contactPoint> a schema:ContactPoint;
 		schema:email "cristian.neagoe@infp.ro";
