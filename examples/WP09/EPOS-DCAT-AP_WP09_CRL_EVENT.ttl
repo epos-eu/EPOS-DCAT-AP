@@ -1,0 +1,476 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http: <http://www.w3.org/2006/http#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+
+#   Domain    
+#---------------------------------------------------------------------------------------------------------
+<#NearFaultObservations> a skos:ConceptScheme;
+	dct:title "Near Fault Observations";
+	dct:description "It contains the concepts of Near Fault Observations";
+.
+
+<#EarthquakeParameters> a skos:Concept;
+	skos:inScheme <#NearFaultObservations>;
+	skos:prefLabel "Earthquake Parameters";
+.
+
+#   Persons    
+#---------------------------------------------------------------------------------------------------------
+<https://orcid.org/0000-0003-1078-3419> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "orcid";
+		schema:value "https://orcid.org/0000-0003-1078-3419";
+	];
+	schema:familyName "Lambotte";
+	schema:givenName "Sophie";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "EOST, 5 rue Rene Descartes";
+		schema:addressLocality "Strasbourg cedex";
+		schema:postalCode "67084";
+		schema:addressCountry "France";
+	];
+	schema:email "sophie.lambotte@unistra.fr";
+	schema:telephone "+33368850086";
+	schema:qualifications "Researcher, Seismologist";
+	schema:affiliation <PIC:999997930>;
+	schema:contactPoint <https://orcid.org/0000-0003-1078-3419/scientificContact>;
+.
+
+<mailto:marc.grunberg@unistra.fr> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "mailto";
+		schema:value "mailto:marc.grunberg@unistra.fr";
+	];
+	schema:familyName "Grunberg";
+	schema:givenName "Marc";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "EOST, 5 rue Rene Descartes";
+		schema:addressLocality "Strasbourg cedex";
+		schema:postalCode "67084";
+		schema:addressCountry "France";
+	];
+	schema:email "marc.grunberg@unistra.fr";
+	schema:telephone "+33368850033";
+	schema:qualifications "Research Engineer";
+	schema:affiliation <PIC:999997930>;
+	schema:contactPoint <mailto:marc.grunberg@unistra.fr/technicalContact>;
+.
+
+<mailto:fabien.engels@unistra.fr> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "mailto";
+		schema:value "mailto:fabien.engels@unistra.fr";
+	];
+	schema:familyName "Engels";
+	schema:givenName "Fabien";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "EOST, 5 rue Rene Descartes";
+		schema:addressLocality "Strasbourg cedex";
+		schema:postalCode "67084";
+		schema:addressCountry "France";
+	];
+	schema:email "fabien.engels@unistra.fr";
+	schema:telephone "+33368850056";
+	schema:qualifications "Engineer";
+	schema:affiliation <PIC:999997930>;
+	schema:contactPoint <mailto:fabien.engels@unistra.fr/technicalContact>;
+.
+
+<https://orcid.org/0000-0002-0186-7138> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "orcid";
+		schema:value "https://orcid.org/0000-0002-0186-7138";
+	];
+	schema:familyName "Masson";
+	schema:givenName "Frederic";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "EOST, 5 rue Rene Descartes";
+		schema:addressLocality "Strasbourg cedex";
+		schema:postalCode "67084";
+		schema:addressCountry "France";
+	];
+	schema:email "frederic.masson@unistra.fr";
+	schema:telephone "+33368855029";
+	schema:url "https://eost.unistra.fr/en/research/ipgs/dgda/dgda-perso/frederic-masson/"^^xsd:anyURI;
+	schema:qualifications "Director of Ecole et Observatoire des Sciences de la Terre (EOST)";
+	schema:affiliation <PIC:999997930>;
+	schema:contactPoint <https://orcid.org/0000-0002-0186-7138/legalContact>;
+	schema:contactPoint <https://orcid.org/0000-0002-0186-7138/scientificContact>;
+.
+
+<mailto:binta.mesmacque@unistra.fr> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "mailto";
+		schema:value "mailto:binta.mesmacque@unistra.fr";
+	];
+	schema:familyName "Mesmacque";
+	schema:givenName "Binta";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "EOST, 5 rue Rene Descartes";
+		schema:addressLocality "Strasbourg cedex";
+		schema:postalCode "67084";
+		schema:addressCountry "France";
+	];
+	schema:email "binta.mesmacque@unistra.fr";
+	schema:telephone "+33368850023";
+	schema:qualifications "financial office of CNRS at EOST";
+	schema:affiliation <PIC:999997930>;
+	schema:contactPoint <mailto:binta.mesmacque@unistra.fr/financialContact>;
+.
+
+#   ContactPoints 
+#---------------------------------------------------------------------------------------------------------
+
+<https://orcid.org/0000-0003-1078-3419/scientificContact> a schema:ContactPoint;
+	schema:email "sophie.lambotte@unistra.fr";
+	schema:availableLanguage "en" ;
+	schema:contactType "scientificContact";
+.
+
+<mailto:marc.grunberg@unistra.fr/technicalContact> a schema:ContactPoint;
+	schema:email "marc.grunberg@unistra.fr";
+	schema:availableLanguage "en";
+	#schema:contactType "technicalContact";
+.
+
+<mailto:fabien.engels@unistra.fr/technicalContact> a schema:ContactPoint;
+	schema:email "fabien.engels@unistra.fr";
+	schema:availableLanguage "en";
+	#schema:contactType "technicalContact";
+.
+
+<https://orcid.org/0000-0002-0186-7138/legalContact> a schema:ContactPoint;
+	schema:email "frederic.masson@unistra.fr";
+	schema:availableLanguage "en" ;
+	schema:contactType "legalContact";
+.
+
+<https://orcid.org/0000-0002-0186-7138/scientificContact> a schema:ContactPoint;
+	schema:email "frederic.masson@unistra.fr";
+	schema:availableLanguage "en" ;
+	schema:contactType "scientificContact";
+.
+
+<mailto:binta.mesmacque@unistra.fr/financialContact> a schema:ContactPoint;
+	schema:email "binta.mesmacque@unistra.fr";
+	schema:availableLanguage "en" ;
+	schema:contactType "financialContact" ;
+.
+
+#   Organisations 
+#---------------------------------------------------------------------------------------------------------
+<PIC:999997930> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "PIC";
+		schema:value "PIC:999997930";
+	];
+	schema:legalName "Ecole et Observatoire des Sciences de la Terre";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "EOST, 5 rue Rene Descartes";
+		schema:addressLocality "Strasbourg cedex";
+		schema:postalCode "67084";
+		schema:addressCountry "France";
+	];
+	schema:logo "http://eost.unistra.fr/fileadmin/templates/DUN/eost-v2/images/logo.png"^^xsd:anyURI;
+	schema:url "http://eost.unistra.fr/en/"^^xsd:anyURI;
+	schema:contactPoint <https://orcid.org/0000-0002-0186-7138/scientificContact>;
+	schema:contactPoint <https://orcid.org/0000-0002-0186-7138/legalContact>;
+	schema:contactPoint <mailto:binta.mesmacque@unistra.fr/financialContact>;
+.
+
+#  Dataset
+#---------------------------------------------------------------------------------------------------------
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/event/Dataset/001> a dcat:Dataset;
+	dct:title "CORINTH RIFT LABORATORY Event Dataset";
+		adms:identifier [ a adms:Identifier;
+		adms:schemaAgency "DDSS-ID";
+		skos:notation "WP09-DDSS-006";
+	];
+	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/event/Dataset/001";
+	dct:description "Corinth Rift Laboratory (Greece) - The fdsnws-event web service returns event (earthquake) information";
+	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+	dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+	dct:created "2018-07-06"^^xsd:date;
+	dcat:theme  <#EarthquakeParameters>;
+	dcat:keyword "NFO", "Earthquake", "Event", "Seismic source", "Seismic waves propagation", "Seismology";
+	dcat:contactPoint <https://orcid.org/0000-0003-1078-3419/scientificContact>;
+	dcat:contactPoint <mailto:marc.grunberg@unistra.fr/technicalContact>;
+	dct:publisher <PIC:999997930>;
+	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/event/Distribution/001>;
+.
+
+#  Distribution
+#--------------------------------------------------------------------------------------------------------
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/event/Distribution/001> a dcat:Distribution;
+	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/event/Distribution/001";
+	dct:description "CRLNET Event Distribution";
+	dct:created "2018-07-06"^^xsd:date;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/event/Operation/001>;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/event/WebService/001>;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
+.
+
+#   Webservices 
+#--------------------------------------------------------------------------------------------------------
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/event/WebService/001> a epos:WebService;
+	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/event/WebService/001";
+	schema:description "Corinth Rift Laboratory (Greece) - The fdsnws-event web service returns event (earthquake) information";
+	dcat:theme <#EarthquakeParameters>;
+	schema:name "Corinth Rift Laboratory - FDSN Event Web Service";
+	hydra:entrypoint "http://nfocrl.u-strasbg.fr/fdsnws/event/1/query?"^^xsd:anyURI;
+	schema:provider <PIC:999997930>;
+	schema:datePublished "2018-07-06"^^xsd:date;
+	schema:dateModified "2018-07-06"^^xsd:date;
+	dct:spatial [ a dct:Location;
+		locn:geometry "POLYGON(22.5 38.0, 21.35 38.0, 21.35 38.65, 22.5 38.65, 22.5 38.0)"^^gsp:wktLiteral;
+	];
+	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/event/Operation/001>;
+	schema:keywords "NFO","Earthquake","Event","Seismic source","Seismic waves propagation","Seismology";
+	dct:license "https://creativecommons.org/licenses/by-sa/3.0/"^^xsd:anyURI;
+	dct:temporal [ a dct:PeriodOfTime;
+		schema:startDate "2000-05-20T00:00:00Z"^^xsd:dateTime;
+	];
+	schema:contactPoint <mailto:marc.grunberg@unistra.fr/technicalContact>;
+	schema:contactPoint <mailto:fabien.engels@unistra.fr/technicalContact>;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/event/Operation/001> a hydra:Operation;
+	hydra:method "GET"^^xsd:string;
+	hydra:returns "application/xml";
+	hydra:property[ a hydra:IriTemplate;
+		hydra:template "http://nfocrl.u-strasbg.fr/fdsnws/event/1/query{?starttime, endtime, minlatitude, maxlatitude, minlongitude, maxlongitude, mindepth, maxdepth, minmagnitude, maxmagnitude, magnitudetype, includeallorigins, includeallmagnitudes, includearrivals, eventid, limit, offset, orderby, contributor, catalog, updatedafter, format, nodata, latitude, longitude, minradius, maxradius}"^^xsd:string;
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "starttime"^^xsd:string;
+				rdfs:range "xsd:dateTime";
+				rdfs:label "Start Time";
+				schema:minValue "2000-05-20T00:00:00";
+				schema:maxValue "2999-01-01T00:00:00";
+				schema:defaultValue "2016-01-01T00:00:00";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "endtime"^^xsd:string;
+				rdfs:range "xsd:dateTime";
+				rdfs:label "End Time";
+				schema:minValue "2000-05-20T00:00:00";
+				schema:maxValue "2999-01-01T00:00:00";
+				schema:defaultValue "2016-01-01T00:00:00";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "minlatitude"^^xsd:string;
+				rdfs:range "xsd:float";
+				rdfs:label "Minimum Latitude";
+				schema:minValue "-90";
+				schema:maxValue "90";
+				schema:defaultValue "38.0";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "maxlatitude"^^xsd:string;
+				rdfs:range "xsd:float";
+				rdfs:label "Maximum Latitude";
+				schema:minValue "-90";
+				schema:maxValue "90";
+				schema:defaultValue "38.65";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "minlongitude"^^xsd:string;
+				rdfs:range "xsd:float";
+				rdfs:label "Minimum Longitude";
+				schema:minValue "-180";
+				schema:maxValue "180";
+				schema:defaultValue "21.35";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "maxlongitude"^^xsd:string;
+				rdfs:range "xsd:float";
+				rdfs:label "Maximum Longitude";
+				schema:minValue "-180";
+				schema:maxValue "180";
+				schema:defaultValue "22.5";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "mindepth"^^xsd:string;
+				rdfs:range "xsd:integer";
+				rdfs:label "Minimum Depth";
+				schema:minValue "-10";
+				schema:maxValue "6378";
+				schema:defaultValue "0";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "maxdepth"^^xsd:string;
+				rdfs:range "xsd:integer";
+				rdfs:label "Maximum Depth";
+				schema:minValue "-10";
+				schema:maxValue "6378";
+				schema:defaultValue "15";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "minmagnitude"^^xsd:string;
+				rdfs:range "xsd:float";
+				rdfs:label "Minimum Magnitude";
+				#schema:minValue "-10";
+				#schema:maxValue "10";
+				schema:defaultValue "1.5";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "maxmagnitude"^^xsd:string;
+				rdfs:range "xsd:float";
+				rdfs:label "Maximum Magnitude";
+				#schema:minValue "-10";
+				#schema:maxValue "10";
+				schema:defaultValue "5";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "magnitudetype"^^xsd:string;
+				rdfs:range "xsd:string";
+				rdfs:label "Type of Magnitude";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "includeallorigins"^^xsd:string;
+				rdfs:range "xsd:boolean";
+				rdfs:label "Include All Origins";
+				schema:defaultValue "false";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "includeallmagnitudes"^^xsd:string;
+				rdfs:range "xsd:boolean";
+				rdfs:label "Include All Magnitudes";
+				schema:defaultValue "false";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "includearrivals"^^xsd:string;
+				rdfs:range "xsd:boolean";
+				rdfs:label "Include All Arrivals";
+				schema:defaultValue "false";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "eventid"^^xsd:string;
+				rdfs:range "xsd:string";
+				rdfs:label "Event ID";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "limit"^^xsd:string;
+				rdfs:range "xsd:integer";
+				rdfs:label "Limit";
+				schema:minValue "1";
+				schema:defaultValue "30";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "offset"^^xsd:string;
+				rdfs:range "xsd:integer";
+				rdfs:label "Offset";
+				schema:minValue "1";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "orderby"^^xsd:string;
+				rdfs:range "xsd:string";
+				rdfs:label "Order By";
+				http:paramValue "time";
+				http:paramValue "time-asc";
+				http:paramValue "magnitude";
+				http:paramValue "magnitude-asc";
+				schema:defaultValue "time";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "contributor"^^xsd:string;
+				rdfs:range "xsd:string";
+				rdfs:label "Contributor";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "catalog"^^xsd:string;
+				rdfs:range "xsd:string";
+				rdfs:label "Catalogue";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "updatedafter"^^xsd:string;
+				rdfs:range "xsd:dateTime";
+				rdfs:label "Is Updated After";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "format"^^xsd:string;
+				rdfs:range "xsd:string";
+				rdfs:label "Output Format";
+				http:paramValue "xml";
+				http:paramValue "text";
+				schema:defaultValue "xml";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "nodata"^^xsd:string;
+				rdfs:range "xsd:string";
+				rdfs:label "HTTP status code for 'no data', either '204' (default) or '404'";
+				http:paramValue "204";
+				http:paramValue "404";
+				schema:defaultValue "204";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "latitude"^^xsd:string;
+				rdfs:range "xsd:float";
+				rdfs:label "Latitude (Radius Search)";
+				schema:minValue "-90";
+				schema:maxValue "90";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "longitude"^^xsd:string;
+				rdfs:range "xsd:float";
+				rdfs:label "Longitude (Radius Search)";
+				schema:minValue "-180";
+				schema:maxValue "180";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "minradius"^^xsd:string;
+				rdfs:range "xsd:float";
+				rdfs:label "Minimum Radius (Radius Search)";
+				schema:minValue "-180";
+				schema:maxValue "180";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "maxradius"^^xsd:string;
+				rdfs:range "xsd:float";
+				rdfs:label "Maximum Radius (Radius Search)";
+				schema:minValue "-180";
+				schema:maxValue "180";
+				hydra:required "false"^^xsd:boolean;
+			];
+	];
+.
+
