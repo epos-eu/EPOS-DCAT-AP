@@ -1,0 +1,291 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http: <http://www.w3.org/2006/http#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+
+<http://orcid.org/0000-0002-4088-1792> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+        	schema:propertyID  "orcid";
+        	schema:value   "0000-0002-4088-1792";
+      	];
+	schema:familyName "Wassermann";
+	schema:givenName "Joachim";
+      	schema:address [ a schema:PostalAddress;
+	 	schema:streetAddress "Ludwigshöhe 8";
+		schema:addressLocality "Fürstenfeldbruck";
+		schema:postalCode "82256";
+		schema:addressCountry "Germany";
+	];
+      	schema:email "j.wassermann@lmu.de";
+      	schema:telephone "+4989218073962";
+      	schema:url  "http://orcid.org/0000-0002-4088-1792"^^xsd:anyURI;
+	schema:qualifications "Researcher" ;
+	schema:affiliation <PIC:999978433>;
+	schema:contactPoint <http://orcid.org/0000-0002-4088-1792/legalContact>;
+	schema:contactPoint <http://orcid.org/0000-0002-4088-1792/scientificContact>;
+	schema:contactPoint <http://orcid.org/0000-0002-4088-1792/financialContact>;
+.
+
+<http://orcid.org/0000-0002-4088-1792/legalContact> a schema:ContactPoint;
+	schema:email "j.wassermann@lmu.de";
+	schema:availableLanguage "en" ;
+	schema:contactType "legalContact";
+.
+<http://orcid.org/0000-0002-4088-1792/financialContact> a schema:ContactPoint;
+	schema:email "j.wassermann@lmu.de";
+	schema:availableLanguage "en" ;
+	schema:contactType "financialContact";
+.
+<http://orcid.org/0000-0002-4088-1792/scientificContact> a schema:ContactPoint;
+	schema:email "j.wassermann@lmu.de";
+	schema:availableLanguage "en" ;
+	schema:contactType "scientificContact";
+.
+
+<PIC:999978433> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+        	schema:propertyID  "PIC";
+         	schema:value   "999978433";
+      	];
+	schema:legalName "Ludwig-Maximilians-Universität München";
+	schema:address [ a schema:PostalAddress;
+        	schema:streetAddress "Geschwister-Scholl-Platz 1";
+        	schema:addressLocality "München";
+        	schema:postalCode "80539";
+        	schema:addressCountry "Germany";
+	];
+      	schema:url "http://www.uni-muenchen.de/"^^xsd:anyURI  ;
+     	schema:contactPoint <http://orcid.org/0000-0002-4088-1792/legalContact>;
+	schema:contactPoint <http://orcid.org/0000-0002-4088-1792/scientificContact>;
+	schema:contactPoint <http://orcid.org/0000-0002-4088-1792/financialContact>;
+.
+
+<#Seismology> a skos:ConceptScheme;
+	dct:title "Seismology";
+	dct:description "It contains the concepts of the Seismology domain";
+.
+
+<#SeismicWaveform> a skos:Concept;
+	skos:definition "Measurement of the dynamic displacement of the Earth";
+	skos:inScheme <#Seismology>;
+	skos:prefLabel "Seismic waveform" ;
+.
+
+#------------------------STATION
+
+<erde.geophysik.uni-muenchen.de/fdsnws/station/1/> a epos:WebService;
+        schema:identifier "erde.geophysik.uni-muenchen.de/fdsnws/station/1/";
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "DDSS-ID";
+	        schema:value   "WP8-DDSS-049";
+	];
+        schema:description "FDSN Standard webservice at LMU to download seismic metadata";
+	schema:name "FDSN Station-WS - LMU München, Geophysik (LMU)";
+        dcat:contactPoint <http://orcid.org/0000-0002-4088-1792/scientificContact>;
+	schema:datePublished "2016-01-01T00:00:00Z"^^xsd:dateTime;
+	schema:dateModified "2016-01-01T00:00:00Z"^^xsd:dateTime;
+	schema:provider <PIC:999978433>;
+        dcat:theme  <#SeismicWaveform> ;
+	hydra:entrypoint "https://erde.geophysik.uni-muenchen.de/fdsnws/station/1/application.wadl"^^xsd:anyURI;
+        schema:keywords "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling" ;
+        hydra:supportedOperation <erde.geophysik.uni-muenchen.de/fdsnws/station/1/query>;
+.
+
+<erde.geophysik.uni-muenchen.de/fdsnws/station/1/query> a hydra:Operation;
+	hydra:method "GET"^^xsd:string;
+ 	hydra:returns "xml";
+ 	hydra:property[ a hydra:IriTemplate;
+        	hydra:template "https://erde.geophysik.uni-muenchen.de/fdsnws/station/1/query/(?starttime,endtime,network,station,location,channel,minlatitude,maxlatitude,minlongitude,maxlongitude,level,nodata)"^^xsd:string;
+              		hydra:mapping[ a hydra:IriTemplateMapping;
+              			hydra:variable "starttime"^^xsd:string;
+				rdfs:label "Start of the timespan";
+              			hydra:required "true"^^xsd:boolean;
+              		];
+              		hydra:mapping[ a hydra:IriTemplateMapping;
+              			hydra:variable "endtime"^^xsd:string;
+				rdfs:label "End of the timespan";
+              			hydra:required "true"^^xsd:boolean;
+              		];
+              		hydra:mapping[ a hydra:IriTemplateMapping;
+               			hydra:variable "network"^^xsd:string;
+				rdfs:label "Network code";
+               			hydra:required "false"^^xsd:boolean;
+                		schema:defaultValue "_NFOTABOO";
+               		];
+               		hydra:mapping[ a hydra:IriTemplateMapping;
+               			hydra:variable "station"^^xsd:string;
+				rdfs:label "Station code";
+               			hydra:required "false"^^xsd:boolean;
+               		];
+                	hydra:mapping[ a hydra:IriTemplateMapping;
+               			hydra:variable "location"^^xsd:string;
+				rdfs:label "Location code";
+               			hydra:required "false"^^xsd:boolean;
+               		];
+               		hydra:mapping[ a hydra:IriTemplateMapping;
+                		hydra:variable "channel"^^xsd:string;
+				rdfs:label "Channel code";
+                		hydra:required "false"^^xsd:boolean;
+              		];
+              		hydra:mapping[ a hydra:IriTemplateMapping;
+                		hydra:variable "minlatitude"^^xsd:string;
+				rdfs:label "Minimum Latitude";
+                		hydra:required "false"^^xsd:boolean;
+                		schema:minValue "-90";
+                		schema:maxValue "90";
+              		];
+               		hydra:mapping[ a hydra:IriTemplateMapping;
+               			hydra:variable "maxlatitude"^^xsd:string;
+				rdfs:label "Maximum Latitude";
+               			hydra:required "false"^^xsd:boolean;
+               			schema:minValue "-90";
+               			schema:maxValue "90";
+           		];
+           		hydra:mapping[ a hydra:IriTemplateMapping;
+             			hydra:variable "minlongitude"^^xsd:string;
+				rdfs:label "Minimum Longitude";
+             			hydra:required "false"^^xsd:boolean;
+             			schema:minValue "-180";
+             			schema:maxValue "180";
+           		];
+           		hydra:mapping[ a hydra:IriTemplateMapping;
+               			hydra:variable "maxlongitude"^^xsd:string;
+				rdfs:label "Maximum Longitude";
+               			hydra:required "false"^^xsd:boolean;
+               			schema:minValue "-180";
+               			schema:maxValue "180";
+           		];
+           		hydra:mapping[ a hydra:IriTemplateMapping;
+               			hydra:variable "level"^^xsd:string;
+				rdfs:label "Level";
+               			hydra:required "false"^^xsd:boolean;
+               			http:paramValue "network";
+               			http:paramValue "station";
+               			http:paramValue "channel";
+              		 	http:paramValue "response";
+           		];
+           		hydra:mapping[ a hydra:IriTemplateMapping;
+               			hydra:variable "nodata"^^xsd:string;
+               			hydra:required "false"^^xsd:boolean;
+               			http:paramValue "204";
+				http:paramValue "404";
+           ];
+
+       ];
+.
+
+
+#--------------- DATASELECT
+
+<erde.geophysik.uni-muenchen.de/fdsnws/dataselect/1/> a epos:WebService;
+ 	schema:identifier "erde.geophysik.uni-muenchen.de/fdsnws/dataselect/1/";
+	schema:identifier [ a schema:PropertyValue;
+	schema:propertyID  "DDSS-ID";
+		schema:value "WP8-DDSS-001";
+	];
+        schema:description "FDSN Standard webservice at LMU to download waveform data";
+	schema:name "FDSN Dataselect - LMU München, Geophysik (LMU)";
+        dcat:contactPoint <http://orcid.org/0000-0002-4088-1792/scientificContact>;
+	schema:datePublished "2016-01-01T00:00:00Z"^^xsd:dateTime;
+	schema:dateModified "2016-01-01T00:00:00Z"^^xsd:dateTime;
+	schema:provider <PIC:999978433>;
+	hydra:entrypoint "https://erde.geophysik.uni-muenchen.de/fdsnws/dataselect/1/application.wadl"^^xsd:anyURI;
+	dcat:theme  <#SeismicWaveform> ;
+	schema:keywords "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "LMU", "Dataselect", "FDSN-WS", "Seismic Waveform", "EIDA";
+	hydra:supportedOperation <erde.geophysik.uni-muenchen.de/fdsnws/dataselect/1/query>;
+.
+
+<erde.geophysik.uni-muenchen.de/fdsnws/dataselect/1/query> a hydra:Operation;
+ 	hydra:method "GET"^^xsd:string;
+	hydra:returns "binary";
+ 	hydra:property[ a hydra:IriTemplate;
+        	hydra:template "https://erde.geophysik.uni-muenchen.de/fdsnws/dataselect/1/query/(?starttime,endtime,network,station,location,channel,minimumlength,nodata)"^^xsd:string;
+        		hydra:mapping[ a hydra:IriTemplateMapping;
+        			hydra:variable "starttime"^^xsd:string;
+				rdf:label "Start of the timespan";
+               			hydra:required "true"^^xsd:boolean;
+           		];
+              		hydra:mapping[ a hydra:IriTemplateMapping;
+               			hydra:variable "endtime"^^xsd:string;
+				rdf:label "End of the timespan";
+               			hydra:required "true"^^xsd:boolean;
+              		];
+              		hydra:mapping[ a hydra:IriTemplateMapping;
+               			hydra:variable "network"^^xsd:string;
+				rdfs:label "Network code";
+               			hydra:required "false"^^xsd:boolean;
+               		];
+               		hydra:mapping[ a hydra:IriTemplateMapping;
+               			hydra:variable "station"^^xsd:string;
+				rdfs:label "Station code";
+               			hydra:required "false"^^xsd:boolean;
+               		];
+                	hydra:mapping[ a hydra:IriTemplateMapping;
+               			hydra:variable "location"^^xsd:string;
+				rdfs:label "Location code";
+               			hydra:required "false"^^xsd:boolean;
+               		];
+               		hydra:mapping[ a hydra:IriTemplateMapping;
+                		hydra:variable "channel"^^xsd:string;
+				rdfs:label "Channel code";
+                		hydra:required "false"^^xsd:boolean;
+              		];
+               		hydra:mapping[ a hydra:IriTemplateMapping;
+               			hydra:variable "quality"^^xsd:string;
+				rdfs:label "Quality";
+               			hydra:required "false"^^xsd:boolean;
+				http:paramValue "B";
+				http:paramValue "M";
+              		];
+               		hydra:mapping[ a hydra:IriTemplateMapping;
+               			hydra:variable "minimumlength"^^xsd:string;
+               			hydra:required "false"^^xsd:boolean;
+               			schema:minValue "0";
+           		];
+           		hydra:mapping[ a hydra:IriTemplateMapping;
+               			hydra:variable "nodata"^^xsd:string;
+               			hydra:required "false"^^xsd:boolean;
+	       			http:paramValue "204";
+	       			http:paramValue "404";
+           		];
+
+       	];
+.
+
+<EIDA/LMU/ContinuousSeismicWaveform> a dcat:Dataset;
+        dct:title "Primary Seismic Waveform Data";
+        dct:identifier "WFDatasetID";
+        dct:description "Continuous seismic waveforms";
+        ## example of frequency using a controlled vocabulary
+	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+        dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
+        dct:created "1993-01-01"^^xsd:date;
+        dcat:theme  <#SeismicWaveform> ;
+        dcat:keyword "seismic waveform","continuous waveform" ,"mseed" ;
+        dcat:contactPoint <http://orcid.org/0000-0002-4088-1792/scientificContact>;
+	dct:publisher <PIC:999978433>;
+        dcat:distribution <EIDA/LMU/SeismicWaveformDistribution>;
+.
+
+<EIDA/LMU/SeismicWaveformDistribution> a dcat:Distribution;
+        dct:identifier "WFDistributionID";
+	dct:description "Seismic Waveform Distribution";
+	dct:created "2017-01-01"^^xsd:date;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+	dcat:accessURL <erde.geophysik.uni-muenchen.de/fdsnws/dataselect/1/query>;
+	dct:conformsTo <erde.geophysik.uni-muenchen.de/fdsnws/dataselect/1/>;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI;
+.
