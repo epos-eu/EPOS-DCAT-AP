@@ -1,0 +1,184 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http: <http://www.w3.org/2006/http#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+
+<http://orcid.org/0000-0002-8608-4289> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "orcid";
+		schema:value "http://orcid.org/0000-0002-8608-4289";
+	];
+	schema:familyName "Carluccio";
+	schema:givenName "Ivano";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Via di Colle Ameno, 5";
+		schema:addressLocality "Ancona";
+		schema:postalCode "60126";
+		schema:addressCountry "ITALY";
+	];
+	schema:email "ivano.carluccio@ingv.it";
+	schema:telephone "+390718067762";
+	schema:url "http://orcid.org/0000-0002-8608-4289"^^xsd:anyURI;
+	schema:qualifications "IT";
+	schema:affiliation <PIC:999472675>;
+	schema:contactPoint <http://orcid.org/0000-0002-8608-4289/contactPoint>;
+.
+<http://orcid.org/0000-0002-8608-4289/contactPoint> a schema:ContactPoint;
+	schema:email "ivano.carluccio@ingv.it";
+	schema:availableLanguage "en" ;
+	schema:contactType "manager";
+.
+
+<http://orcid.org/0000-0002-9697-6504> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "orcid";
+		schema:value "http://orcid.org/0000-0002-9697-6504";
+	];
+	schema:familyName "Chiaraluce";
+	schema:givenName "Lauro";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Via di Vigna Murata, 605";
+		schema:addressLocality "Roma";
+		schema:postalCode "00143";
+		schema:addressCountry "ITALY";
+	];
+	schema:email "lauro.chiaraluce@ingv.it";
+	schema:telephone "+390651860432";
+	schema:url "http://orcid.org/0000-0002-9697-6504"^^xsd:anyURI;
+	schema:qualifications "Researcher";
+	schema:affiliation <PIC:999472675>;
+	schema:contactPoint <http://orcid.org/0000-0002-9697-6504/scientificContact> ;
+.
+<http://orcid.org/0000-0002-9697-6504/scientificContact> a schema:ContactPoint;
+	schema:email "lauro.chiaraluce@ingv.it";
+	schema:availableLanguage "en" ;
+	schema:contactType "scientificContact" ;
+.
+
+<http://orcid.org/0000-0002-8651-6387> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "orcid";
+		schema:value "http://orcid.org/0000-0002-8651-6387";
+	];
+	schema:familyName "Doglioni";
+	schema:givenName "Carlo";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Via di Vigna Murata 605";
+		schema:addressLocality "Rome";
+		schema:postalCode "00143";
+		schema:addressCountry "Italy";
+	];
+	schema:email "segreteria.presidenza@ingv.it";
+	schema:telephone "+3906518601";
+	schema:url "http://orcid.org/0000-0002-8651-6387"^^xsd:anyURI;
+	schema:qualifications "Professor";
+	schema:affiliation <PIC:999472675>;
+	schema:contactPoint <http://orcid.org/0000-0002-8651-6387/legalContact> ;
+	schema:contactPoint <http://orcid.org/0000-0002-8651-6387/financialContact>;
+.
+<http://orcid.org/0000-0002-8651-6387/legalContact> a schema:ContactPoint;
+	schema:email "segreteria.presidenza@ingv.it";
+	schema:availableLanguage "en" ;
+	schema:contactType "legalContact" ;
+.
+<http://orcid.org/0000-0002-8651-6387/financialContact> a schema:ContactPoint;
+	schema:email "segreteria.presidenza@ingv.it";
+	schema:availableLanguage "en" ;
+	schema:contactType "financialContact" ;
+.
+
+<PIC:999472675> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "PIC";
+		schema:value "999472675";
+	];
+	schema:legalName "INGV National Institute of Geophysics e Volcanology";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Via di Vigna Murata, 605";
+		schema:addressLocality "Rome";
+		schema:postalCode "00143";
+		schema:addressCountry "ITALY";
+	];
+	schema:logo "http://roma2.rm.ingv.it/userfiles/file/Logo/INGV_Logo-abbr_colore.jpg"^^xsd:anyURI;
+	schema:url "http://www.ingv.it"^^xsd:anyURI;
+	schema:contactPoint <http://orcid.org/0000-0002-9697-6504/scientificContact>;
+	schema:contactPoint <http://orcid.org/0000-0002-8651-6387/legalContact>;
+	schema:contactPoint <http://orcid.org/0000-0002-8651-6387/financialContact>;
+.
+
+<http://orcid.org/0000-0003-2431-1383> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "orcid";
+		schema:value "http://orcid.org/0000-0003-2431-1383";
+	];
+	schema:familyName "Manea";
+	schema:givenName "Liviu Marius";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Calugareni st., 12";
+		schema:addressLocality "Magurele, Ilfov";
+		schema:postalCode "077125";
+		schema:addressCountry "Romania";
+	];
+	schema:email "mlmarius@yahoo.com";
+	schema:telephone "+40722******";
+	schema:url "http://orcid.org/0000-0003-2431-1383"^^xsd:anyURI;
+	schema:qualifications "IT";
+	schema:affiliation <PIC:998181508>;
+.
+<http://orcid.org/0000-0003-2431-1383/scientificContact> a schema:ContactPoint;
+	schema:email "mlmarius@yahoo.com";
+	schema:availableLanguage "en" ;
+	schema:contactType "scientificContact" ;
+.
+<PIC:998181508> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "PIC";
+		schema:value "998181508";
+	];
+	schema:legalName "National Institute for Earth Physics";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Calugareni st., 12";
+		schema:addressLocality "Magurele, Ilfov";
+		schema:postalCode "077125";
+		schema:addressCountry "Romania";
+	];
+	schema:logo "http://intranet.infp.ro/wp-content/uploads/public_dirs/Materiale_vizibilitate_INFP/LOGO MAIN INFP_resize.gif"^^xsd:anyURI;
+	schema:url "http://www.infp.ro"^^xsd:anyURI;
+	schema:contactPoint <http://orcid.org/0000-0003-2431-1383/scientificContact>;
+	schema:contactPoint <http://orcid.org/0000-0003-2431-1383/legalContact>;
+	schema:contactPoint <http://orcid.org/0000-0003-2431-1383/financialContact>;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/FRIDGE/WebService/001> a epos:WebService;
+	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/FRIDGE/WebService/001";
+	adms:identifier [ a adms:Identifier; 
+		adms:schemaAgency "DDSS-ID";
+		skos:notation "WP09-DDSS-034"; 
+	]; 
+	schema:description "FedeRated specIfic Data GatEway (FRIDGE).";
+	schema:name "FedeRated specIfic Data GatEway (FRIDGE)";
+	schema:datePublished "2017-06-08T12:00:00Z"^^xsd:dateTime;
+	schema:dateModified "2017-06-08T12:00:00Z"^^xsd:dateTime;
+	schema:provider <PIC:999472675>;
+	schema:keywords "Near Fault Observations", "FRIDGE", "federator";
+	hydra:entrypoint "fridge-services.rm.ingv.it/services"^^xsd:anyURI; 
+	dcat:contactPoint <http://orcid.org/0000-0002-8608-4289/contactPoint>;
+.
+
+<#NearFaultObservations> a skos:ConceptScheme;
+	dct:title "Near Fault Observations";
+	dct:description "It contains the concepts of Near Fault Observations";
+.
