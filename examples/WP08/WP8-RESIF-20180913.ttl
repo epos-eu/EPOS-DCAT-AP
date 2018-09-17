@@ -122,14 +122,14 @@
 
 # Webservice WFcatalog
 
-<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003/RESIF> a epos:WebService ;
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003/RESIF> a <https://www.epos-eu.org/epos-dcat-ap#WebService> ;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003/RESIF";
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID  "DDSS-ID";
 		schema:value  "WP8-DDSS-003";
 	];
 	schema:description "Web service which returns waveform metadata and data quality metrics";
-	dcat:theme <epos:waveformquality>;
+	dcat:theme <#waveformquality>;
 	dcat:contactPoint <https://orcid.org/0000-0002-9956-9971/contactPoint>;
 	schema:name "EIDAWS - WFCatalog - Réseau Sismologique et géodésique Français (RESIF)";
 	hydra:entrypoint "http://ws.resif.fr/eidaws/wfcatalog/1/query?"^^xsd:anyURI;
@@ -144,19 +144,19 @@
 	dct:license "Etalab licence for data"^^xsd:anyURI;
 	dct:temporal [ a dct:PeriodOfTime;
 		schema:startDate "1982-01-01T00:00:00Z"^^xsd:dateTime;
-		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
+		schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
 	];
 .
 # Webservice Dataselect
 
-<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/RESIF> a epos:WebService ;
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/RESIF> a <https://www.epos-eu.org/epos-dcat-ap#WebService> ;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/RESIF";
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID  "DDSS-ID";
 		schema:value  "WP8-DDSS-001";
 	];
 	schema:description "FDSN Standard webservice at RESIF to download waveform data";
-	dcat:theme <epos:Seismicwaveforms>;
+	dcat:theme <#Seismicwaveforms>;
 	dcat:contactPoint <https://orcid.org/0000-0002-9956-9971/contactPoint>;
 	schema:name "FDSN Dataselect-WS - Resif data center (RESIF)";
 	hydra:entrypoint "http://ws.resif.fr/fdsnws/dataselect/1/query?"^^xsd:anyURI; 
@@ -171,19 +171,19 @@
 	dct:license "To be defined!"^^xsd:anyURI;
 	dct:temporal [ a dct:PeriodOfTime; 
 		schema:startDate "1982-01-01T00:00:00Z"^^xsd:dateTime; 
-		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
+		schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
 	]; 
 . 
 
 # Webservice Station 
-<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/RESIF> a epos:WebService ;
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/RESIF> a <https://www.epos-eu.org/epos-dcat-ap#WebService> ;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/RESIF";
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID  "DDSS-ID";
 		schema:value  "WP8-DDSS-002";
 	];
 	schema:description "FDSN Standard webservice at RESIF to download seismic metadata";
-	dcat:theme <epos:Seismicstations>;
+	dcat:theme <#Seismicstations>;
 	dcat:contactPoint <https://orcid.org/0000-0002-9956-9971/contactPoint>;
 	schema:name "FDSN Station-WS - Resif data center (RESIF)";
 	hydra:entrypoint "http://ws.resif.fr/fdsnws/station/1/query?"^^xsd:anyURI; 
@@ -198,7 +198,7 @@
 	dct:license "To be defined!"^^xsd:anyURI;
 	dct:temporal [ a dct:PeriodOfTime; 
 		schema:startDate "1992-01-01T00:00:00Z"^^xsd:dateTime; 
-		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
+		schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
 	]; 
 . 
 # Operation
@@ -213,168 +213,170 @@
 					rdfs:range "xsd:dateTime";
 					rdfs:label "Starttime of documents";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "1980-01-01T00:00:00"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "endtime"^^xsd:string;
 					rdfs:range "xsd:dateTime";
 					rdfs:label "Endtime of documents";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "2019-01-01T00:00:00"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "percent_availability_gt"^^xsd:string;
-					rdfs:range "xsd:float";
+					rdfs:range "float";
 					rdfs:label "Data availability percentage greater than";
 					schema:maxValue "100";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "percent_availability_lt"^^xsd:string;
-					rdfs:range "xsd:float";
+					rdfs:range "float";
 					rdfs:label "Data availability percentage smaller than";
 					schema:maxValue "100";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "num_gaps_gt"^^xsd:string;
-					rdfs:range "xsd:integer";
+					rdfs:range "integer";
 					rdfs:label "Number of data gaps greater than";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "num_gaps_lt"^^xsd:string;
-					rdfs:range "xsd:integer";
+					rdfs:range "integer";
 					rdfs:label "Number of data gaps smaller than";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "num_overlaps_gt"^^xsd:string;
-					rdfs:range "xsd:integer";
+					rdfs:range "integer";
 					rdfs:label "Number of data overlaps greater than";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "num_overlaps_lt"^^xsd:string;
-					rdfs:range "xsd:integer";
+					rdfs:range "integer";
 					rdfs:label "Number of data overlaps smaller than";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "sample_stdev_gt"^^xsd:string;
-					rdfs:range "xsd:float";
+					rdfs:range "float";
 					rdfs:label "Standard deviation of samples greater than";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "sample_stdev_lt"^^xsd:string;
-					rdfs:range "xsd:float";
+					rdfs:range "float";
 					rdfs:label "Standard deviation of samples smaller than";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "sample_rms_gt"^^xsd:string;
-					rdfs:range "xsd:float";
+					rdfs:range "float";
 					rdfs:label "Standard quadratic mean of samples greater than";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "sample_rms_lt"^^xsd:string;
-					rdfs:range "xsd:float";
+					rdfs:range "float";
 					rdfs:label "Standard quadratic mean of samples smaller than";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "max_gap_gt"^^xsd:string;
-					rdfs:range "xsd:float";
+					rdfs:range "float";
 					rdfs:label "Maximum data gap greater than";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "max_gap_lt"^^xsd:string;
-					rdfs:range "xsd:float";
+					rdfs:range "float";
 					rdfs:label "Maximum data gap smaller than";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "sample_min_gt"^^xsd:string;
-					rdfs:range "xsd:float";
+					rdfs:range "float";
 					rdfs:label "Minimum data sample value greater than";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "sample_min_lt"^^xsd:string;
-					rdfs:range "xsd:float";
+					rdfs:range "float";
 					rdfs:label "Minimum data sample value smaller than";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "sample_max_gt"^^xsd:string;
-					rdfs:range "xsd:float";
+					rdfs:range "float";
 					rdfs:label "Maximum data sample value greater than";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "sample_max_lt"^^xsd:string;
-					rdfs:range "xsd:float";
+					rdfs:range "float";
 					rdfs:label "Maximum data sample value smaller than";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "sample_mean_gt"^^xsd:string;
-					rdfs:range "xsd:float";
+					rdfs:range "float";
 					rdfs:label "Mean data sample value greater than";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "sample_mean_lt"^^xsd:string;
-					rdfs:range "xsd:float";
+					rdfs:range "float";
 					rdfs:label "Mean data sample value smaller than";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "network"^^xsd:string;
-					rdfs:range "xsd:string";
+					rdfs:range "string";
 					rdfs:label "Stream network code";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "station"^^xsd:string;
-					rdfs:range "xsd:string";
+					rdfs:range "string";
 					rdfs:label "Stream station code";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "location"^^xsd:string;
-					rdfs:range "xsd:string";
+					rdfs:range "string";
 					rdfs:label "Stream location code";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "channel"^^xsd:string;
-					rdfs:range "xsd:string";
+					rdfs:range "string";
 					rdfs:label "Stream channel code";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "csegments"^^xsd:string;
-					rdfs:range "xsd:boolean";
+					rdfs:range "boolean";
 					rdfs:label "Include continuous segments in result";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "longestonly"^^xsd:string;
-					rdfs:range "xsd:boolean";
+					rdfs:range "boolean";
 					rdfs:label "Include only the longest continuous segment";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "minlen"^^xsd:string;
-					rdfs:range "xsd:float";
+					rdfs:range "float";
 					rdfs:label "Limit continuous segments to this length";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "include"^^xsd:string;
-					rdfs:range "xsd:string";
+					rdfs:range "string";
 					rdfs:label "The included level of detail in response";
 					http:paramValue "default";
 					http:paramValue "samples";
@@ -387,49 +389,58 @@
 # Operation dataselect
  <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001/RESIF> a hydra:Operation;
 	hydra:method "GET"^^xsd:string;
-	hydra:returns "application/vnd.fdsn.mseed";	
+	hydra:returns "application/vnd.fdsn.mseed";
 	hydra:property[ a hydra:IriTemplate;
 	hydra:template "http://ws.resif.fr/fdsnws/dataselect/1/query(?starttime, endtime, network, station, location, channel, quality, minimumlength, nodata)"^^xsd:string;
-	
+	hydra:method "GET"^^xsd:string;
+	hydra:returns "MiniSEED";
+	hydra:property[ a hydra:IriTemplate;
+	hydra:template "(?starttime, endtime, network, station, location, channel, quality, minimumlength, nodata)"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "starttime"^^xsd:string;
-				rdfs:range "xsd:date";
+				rdfs:range "date";
 				rdfs:label "Start of the timespan";
 				hydra:required "true"^^xsd:boolean;
+				schema:defaultValue "1980-01-01T00:00:00"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "endtime"^^xsd:string;
-					rdfs:range "xsd:date";
+					rdfs:range "date";
 					rdfs:label "End of the timespan";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "2019-01-01T00:00:00"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "network"^^xsd:string;
-					rdfs:range "xsd:string";
+					rdfs:range "string";
 					rdfs:label "Network code";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "*"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "station"^^xsd:string;
-					rdfs:range "xsd:string";
+					rdfs:range "string";
 					rdfs:label "Station code";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "*"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "location"^^xsd:string;
-					rdfs:range "xsd:string";
+					rdfs:range "string";
 					rdfs:label "Location code";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "*"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "channel"^^xsd:string;
-					rdfs:range "xsd:string";
+					rdfs:range "string";
 					rdfs:label "Channel code";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "*"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "quality"^^xsd:string;
-					rdfs:range "xsd:string";
+					rdfs:range "string";
 					rdfs:label "Quality";
 					http:paramValue "B";
 					http:paramValue "M";
@@ -440,20 +451,20 @@
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "minimumlength"^^xsd:string;
-					rdfs:range "xsd:integer";
+					rdfs:range "integer";
 					rdfs:label "Minimum Length";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "nodata"^^xsd:string;
-					rdfs:range "xsd:integer";
+					rdfs:range "integer";
 					rdfs:label "HTTP error code if no data is found";
 					http:paramValue "204";
 					http:paramValue "404";
 					hydra:required "true"^^xsd:boolean;
 				];
 		];
-	
+	];
 .
 
 # Operation station
@@ -465,85 +476,96 @@
 		hydra:template "http:ws.resif.fr/fdsnws/station/1/query(?starttime, endtime, network, station, location, channel, minlatitude, maxlatitude, minlongitude, maxlongitude, level, nodata, matchtimeseries)"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "starttime"^^xsd:string;
-					rdfs:range "xsd:date";
+					rdfs:range "date";
 					rdfs:label "Start of the timespan";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "1980-01-01T00:00:00"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "endtime"^^xsd:string;
-					rdfs:range "xsd:date";
+					rdfs:range "date";
 					rdfs:label "End of the timespan";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "2019-01-01T00:00:00"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "network"^^xsd:string;
-					rdfs:range "xsd:string";
+					rdfs:range "string";
 					rdfs:label "Network code";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "*"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "station"^^xsd:string;
-					rdfs:range "xsd:string";
+					rdfs:range "string";
 					rdfs:label "Station code";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "*"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "location"^^xsd:string;
-					rdfs:range "xsd:string";
+					rdfs:range "string";
 					rdfs:label "Location code";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "*"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "channel"^^xsd:string;
-					rdfs:range "xsd:string";
+					rdfs:range "string";
 					rdfs:label "Channel code";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "*"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "minlatitude"^^xsd:string;
-					rdfs:range "xsd:float";
+					rdfs:range "float";
 					rdfs:label "Minimum Latitude";
 					schema:minValue "-90.0";
 					schema:maxValue "90.0";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "-90.0"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "maxlatitude"^^xsd:string;
-					rdfs:range "xsd:float";
+					rdfs:range "float";
 					rdfs:label "Maximum Latitude";
 					schema:minValue "-90.0";
 					schema:maxValue "90.0";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "90.0"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "minlongitude"^^xsd:string;
-					rdfs:range "xsd:float";
+					rdfs:range "float";
 					rdfs:label "Minimum Longitude";
 					schema:minValue "-180.0";
 					schema:maxValue "180.0";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "-180.0"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "maxlongitude"^^xsd:string;
-					rdfs:range "xsd:float";
+					rdfs:range "float";
 					rdfs:label "Maximum Longitude";
 					schema:minValue "-180.0";
 					schema:maxValue "180.0";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "180.0"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "level"^^xsd:string;
-					rdfs:range "xsd:string";
+					rdfs:range "string";
 					rdfs:label "Level";
 					http:paramValue "network";
 					http:paramValue "station";
 					http:paramValue "channel";
 					http:paramValue "response";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "station"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "nodata"^^xsd:string;
-					rdfs:range "xsd:integer";
+					rdfs:range "integer";
 					rdfs:label "HTTP error code if no data is found";
 					http:paramValue "204";
 					http:paramValue "404";
@@ -551,34 +573,27 @@
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "matchtimeseries"^^xsd:string;
-					rdfs:range "xsd:boolean";
+					rdfs:range "boolean";
 					rdfs:label "Matchtimeseries";
 					http:paramValue "true";
 					http:paramValue "false";
+					hydra:required "true"^^xsd:boolean;
 					hydra:required "true"^^xsd:boolean;
 				];
 		];
 . 
 
-	<epos:Seismology> a skos:ConceptScheme;
+	<#Seismology> a skos:ConceptScheme;
 		dct:title "Seismology";
 		dct:description "It contains the concepts of Seismology";
 . 
-	<epos:Seismicwaveforms> a skos:Concept;
-		skos:inScheme <epos:Seismology>;
+	<#Seismicwaveforms> a skos:Concept;
+		skos:inScheme <#Seismology>;
 		skos:prefLabel "Seismic waveforms";
 . 
-	<epos:Seismicstations> a skos:Concept;
-		skos:inScheme <epos:Seismology>;
+	<#Seismicstations> a skos:Concept;
+		skos:inScheme <#Seismology>;
 		skos:prefLabel "Seismic stations";
-. 
-	<epos:waveformquality> a skos:Concept;
-		skos:inScheme <epos:Seismology>;
-		skos:prefLabel "waveform quality";
-. 
-	<epos:SeismicNetwork> a skos:Concept;
-		skos:inScheme <epos:Seismology>;
-		skos:prefLabel "Seismic Network";
 . 
 
 
@@ -597,7 +612,7 @@
         owl:versionInfo "1.0.0" ;
     	  dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
         dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
-        dcat:theme  <epos:Seismicwaveforms> ;
+        dcat:theme  <epos:SeismicWaveform> ;
         dcat:keyword "seismology", "seismicity", "earthquakes", "seismic waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "RESIF" , "Dataselect", "FDSN-WS", "Seismic Waveform", "EIDA" ;
         dcat:contactPoint <https://orcid.org/0000-0003-2936-8047/scientificContact>;
 	     dct:publisher <PIC:999997930>;
@@ -607,7 +622,7 @@
         ];
         dct:temporal [ a dct:PeriodOfTime ;
                 schema:startDate "1982-01-01T00:00:00Z"^^xsd:dateTime ;
-                #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
+                schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
 	];
 .
 # Distribution
@@ -684,7 +699,7 @@
 
     	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
         dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
-        dcat:theme  <epos:Seismicwaveforms> ;
+        dcat:theme  <epos:SeismicWaveform> ;
         dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/Distribution/003/RESIF>;
         dcat:keyword "seismology", "seismicity", "seismic waveform", "dataquality", "metric", "RESIF" , "WfCatalog", "EIDA-WS", "EIDA" ;
         dcat:contactPoint <https://orcid.org/0000-0003-2936-8047/scientificContact>;
