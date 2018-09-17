@@ -228,7 +228,7 @@
   hydra:returns "application/vnd.fdsn.mseed" ;
 
   hydra:property[ a hydra:IriTemplate ;
-        	hydra:template "https://erde.geophysik.uni-muenchen.de/fdsnws/dataselect/1/query/{?starttime,endtime,network,quality}"^^xsd:string ;
+        	hydra:template "https://erde.geophysik.uni-muenchen.de/fdsnws/dataselect/1/query/{?starttime,endtime,network,quality,station,location,channel,minimumlength,longestonly,nodata,format}"^^xsd:string ;
         		hydra:mapping[ a hydra:IriTemplateMapping ;
                   # This property contains the name of the parameter as required by web service specifications
                   hydra:variable "starttime"^^xsd:string ;
@@ -244,7 +244,7 @@
                   rdfs:range "xsd:dateTime" ;
 
                   # This property contains the default value of the parameter
-                  schema:defaultValue "2012-01-01T00:00:00T" ;
+                  schema:defaultValue "" ;
 
                   # The minimum value of the parameter
                   # schema:minValue "2012-01-01T00:00:00T" ;
@@ -261,7 +261,7 @@
 				            rdf:label "End of the timespan" ;
                			hydra:required "true"^^xsd:boolean ;
                     rdfs:range "xsd:dateTime" ;
-                    schema:defaultValue "2012-02-01T00:00:00T" ;
+                    schema:defaultValue "" ;
 
               		];
               		hydra:mapping[ a hydra:IriTemplateMapping ;
@@ -269,7 +269,59 @@
 				            rdfs:label "Network code" ;
                			hydra:required "false"^^xsd:boolean ;
                     rdfs:range "xsd:string" ;
-                    schema:defaultValue "BE" ;
+                    schema:defaultValue "*" ;
+               		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "station"^^xsd:string ;
+				            rdfs:label "Station code" ;
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:string" ;
+                    schema:defaultValue "*" ;
+               		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "location"^^xsd:string ;
+				            rdfs:label "Location code" ;
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:string" ;
+                    schema:defaultValue "*" ;
+               		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "channel"^^xsd:string ;
+				            rdfs:label "Channel code" ;
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:string" ;
+                    schema:defaultValue "*" ;
+               		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "minimumlength"^^xsd:string ;
+				            rdfs:label "Limit results to continuous data segments of a minimum length specified in seconds" ;
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:float" ;
+                    schema:defaultValue "0.0" ;
+               		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "longestonly"^^xsd:string ;
+				            rdfs:label "Limit results to the longest continuous segment per channel." ;
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:boolean" ;
+                    schema:defaultValue "false" ;
+               		];
+                    hydra:mapping[ a hydra:IriTemplateMapping;
+                        hydra:variable "nodata"^^xsd:string;
+                        rdfs:label "HTTP error code if no data is found";
+                        http:paramValue "204";
+                        http:paramValue "404";
+                        hydra:required "false"^^xsd:boolean;
+                        rdfs:range "xsd:string" ;
+                        schema:defaultValue "204" ;
+                    ];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "format"^^xsd:string ;
+				            rdfs:label "Specify the format of the data returned." ;
+                        http:paramValue "mseed";
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:string" ;
+                    schema:defaultValue "mseed" ;
                		];
                		hydra:mapping[ a hydra:IriTemplateMapping ;
                			hydra:variable "quality"^^xsd:string ;
@@ -429,7 +481,7 @@
   hydra:returns "application/xml" ;
 
   hydra:property[ a hydra:IriTemplate ;
-        	hydra:template "https://erde.geophysik.uni-muenchen.de/fdsnws/station/1/query/{?starttime,endtime,network}"^^xsd:string ;
+        	hydra:template "https://erde.geophysik.uni-muenchen.de/fdsnws/station/1/query/{?starttime,endtime,network,startbefore,startafter,endbefore,endafter,station,location,channel,minlatitude,maxlatitude,minlongitude,maxlongitude,latitude,longitude,maxradius,minradius,level,format,nodata}"^^xsd:string ;
         		hydra:mapping[ a hydra:IriTemplateMapping ;
                   # This property contains the name of the parameter as required by web service specifications
                   hydra:variable "starttime"^^xsd:string ;
@@ -438,14 +490,14 @@
 				          rdf:label "Start of the timespan" ;
 
                   # This property contains true if the property is required, false otherwise.
-               		hydra:required "true"^^xsd:boolean ;
+               		hydra:required "false"^^xsd:boolean ;
 
                   # This property contains the type of parameter. 
 		  # The possible values for this property are: "xsd:string" "xsd:boolean" "xsd:date" " xsd:dateTime" "xsd:decimal" "xsd:double" "xsd:float" "xsd:int" "xsd:integer" "xsd:long";
                   rdfs:range "xsd:dateTime" ;
 
                   # This property contains the default value of the parameter
-                  schema:defaultValue "2012-01-01T00:00:00T" ;
+                  schema:defaultValue "" ;
 
                   # The minimum value of the parameter
                   # schema:minValue "2012-01-01T00:00:00T" ;
@@ -460,17 +512,150 @@
               		hydra:mapping[ a hydra:IriTemplateMapping ;
                			hydra:variable "endtime"^^xsd:string ;
 				            rdf:label "End of the timespan" ;
-               			hydra:required "true"^^xsd:boolean ;
+               			hydra:required "false"^^xsd:boolean ;
                     rdfs:range "xsd:dateTime" ;
-                    schema:defaultValue "2012-02-01T00:00:00T" ;
-
+                    schema:defaultValue "" ;
+              		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "startbefore"^^xsd:string ;
+				            rdf:label "Limit to metadata epochs starting before specified time. Applied to channel epochs." ;
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:dateTime" ;
+                    schema:defaultValue "" ;
+              		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "startafter"^^xsd:string ;
+				            rdf:label "Limit to metadata epochs starting after specified time. Applied to channel epochs." ;
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:dateTime" ;
+                    schema:defaultValue "" ;
+              		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "endbefore"^^xsd:string ;
+				            rdf:label "Limit to metadata epochs ending before specified time. Applied to channel epochs." ;
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:dateTime" ;
+                    schema:defaultValue "" ;
+              		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "endafter"^^xsd:string ;
+				            rdf:label "Limit to metadata epochs ending after specified time. Applied to channel epochs." ;
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:dateTime" ;
+                    schema:defaultValue "" ;
               		];
               		hydra:mapping[ a hydra:IriTemplateMapping ;
                			hydra:variable "network"^^xsd:string ;
 				            rdfs:label "Network code" ;
                			hydra:required "false"^^xsd:boolean ;
                     rdfs:range "xsd:string" ;
-                    schema:defaultValue "BE" ;
+                    schema:defaultValue "*" ;
+               		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "station"^^xsd:string ;
+				            rdfs:label "Station code" ;
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:string" ;
+                    schema:defaultValue "*" ;
+               		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "location"^^xsd:string ;
+				            rdfs:label "Location code" ;
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:string" ;
+                    schema:defaultValue "*" ;
+               		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "channel"^^xsd:string ;
+				            rdfs:label "Channel code" ;
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:string" ;
+                    schema:defaultValue "*" ;
+               		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "latitude"^^xsd:string ;
+				            rdfs:label "Specify the central latitude point." ;
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:float" ;
+                    schema:defaultValue "" ;
+               		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "longitude"^^xsd:string ;
+				            rdfs:label "Specify the central longitude point." ;
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:float" ;
+                    schema:defaultValue "" ;
+               		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "minlatitude"^^xsd:string ;
+				            rdfs:label "Southern boundary." ;
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:float" ;
+                    schema:defaultValue "-90" ;
+               		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "minlongitude"^^xsd:string ;
+				            rdfs:label "Western boundary." ;
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:float" ;
+                    schema:defaultValue "-180" ;
+               		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "maxlatitude"^^xsd:string ;
+				            rdfs:label "Northern boundary." ;
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:float" ;
+                    schema:defaultValue "90" ;
+               		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "maxlongitude"^^xsd:string ;
+				            rdfs:label "Eastern boundary." ;
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:float" ;
+                    schema:defaultValue "180" ;
+               		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "maxradius"^^xsd:string ;
+				            rdfs:label "Specify maximum distance from the geographic point defined by latitude and longitude." ;
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:float" ;
+                    schema:defaultValue "" ;
+               		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "minradius"^^xsd:string ;
+				            rdfs:label "Specify minimum distance from the geographic point defined by latitude and longitude." ;
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:float" ;
+                    schema:defaultValue "0" ;
+               		];
+                    hydra:mapping[ a hydra:IriTemplateMapping;
+                        hydra:variable "nodata"^^xsd:string;
+                        rdfs:label "HTTP error code if no data is found";
+                        http:paramValue "204";
+                        http:paramValue "404";
+                        hydra:required "false"^^xsd:boolean;
+                        rdfs:range "xsd:string" ;
+                        schema:defaultValue "204" ;
+                    ];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "format"^^xsd:string ;
+				            rdfs:label "Specify the format of the data returned." ;
+                        http:paramValue "xml";
+                        http:paramValue "text";
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:string" ;
+                    schema:defaultValue "xml" ;
+               		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "level"^^xsd:string ;
+				            rdfs:label "Specify level of detail using network, station, channel or response." ;
+                        http:paramValue "network";
+                        http:paramValue "station";
+                        http:paramValue "channel";
+                        http:paramValue "response";
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:string" ;
+                    schema:defaultValue "station" ;
                		];
        	];
 .
