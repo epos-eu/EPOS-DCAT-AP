@@ -99,7 +99,7 @@
 <http://www.epos-eu.org/epos-dcat-ap/Seismology/SeismicHazardproducts/ShakeMapInput/Dataset/001> a dcat:Dataset ;
         dct:identifier "http://www.epos-eu.org/epos-dcat-ap/Seismology/SeismicHazardproducts/ShakeMapInput/Dataset/001" ;
         dct:title "ESM Shakemap Web-Service" ;
-        dct:description "The ESM Shakemap Web-Service provides machine-friendly access to ShakeMap input-files derived from data and metadata included in the ESM Database" ;
+        dct:description "The ESM Shakemap Web-Service provides machine-friendly access to ShakeMap input-files derived from data and metadata included in the ESM Database (http://esm.mi.ingv.it)" ;
         adms:identifier [ a adms:Identifier ;
             adms:schemaAgency "DDSS-ID" ;
             skos:notation "WP08-DDSS-048" ;
@@ -148,7 +148,7 @@
 <http://www.epos-eu.org/epos-dcat-ap/Seismology/EngineeringStrongMotionDatabase/Dataset/001> a dcat:Dataset ;
         dct:identifier "http://www.epos-eu.org/epos-dcat-ap/Seismology/EngineeringStrongMotionDatabase/Dataset/001" ;
         dct:title "ESM - Engineering Strong-Motion portal" ;
-        dct:description "ESM allows users to query earthquake and station information and download earthquake waveforms and response spectra for events with magnitude ≥ 4.0 mainly recorded in the European-Mediterranean and the middle-East regions" ;
+        dct:description "ESM (http://esm.mi.ingv.it) allows users to query earthquake and station information and download earthquake waveforms and response spectra for events with magnitude ≥ 4.0 mainly recorded in the European-Mediterranean and the middle-East regions" ;
         adms:identifier [ a adms:Identifier ;
             adms:schemaAgency "DDSS-ID" ;
             skos:notation "WP08-DDSS-010" ;
@@ -191,7 +191,7 @@
 <http://www.epos-eu.org/epos-dcat-ap/Seismology/SeismicHazardproducts/ShakeMapInput/Dataset/001/Distribution/001> a dcat:Distribution ;
         dct:identifier "http://www.epos-eu.org/epos-dcat-ap/Seismology/SeismicHazardproducts/ShakeMapInput/Dataset/001/Distribution/001" ;
         dct:title "ESM Shakemap Web-Service" ;
-        dct:description "The ESM Shakemap Web-Service provides machine-friendly access to ShakeMap input-files derived from data and metadata included in the ESM Database" ;
+        dct:description "The ESM Shakemap Web-Service provides machine-friendly access to ShakeMap input-files derived from data and metadata included in the ESM Database (http://esm.mi.ingv.it)" ;
         dct:issued "2017-01-01"^^xsd:date ;
         dct:modified "2017-01-01"^^xsd:date ;
 
@@ -228,7 +228,7 @@
 		#schema:propertyID  "DDSS-ID"; 
 		#schema:value  ""; 
 	#]; 
-	schema:description "Web-service generates input files for USGS ShakeMap software";
+	schema:description "Web-service generates input files for USGS ShakeMap software based on Engineering Strong-Motion database (http://esm.mi.ingv.it)";
 	dcat:theme <epos:EarthquakeHazardAndRiskServices>;
 	schema:name "ShakeMap Input XML - Engineering Strong-Motion database (ESM)";
 	hydra:entrypoint "http://esm.mi.ingv.it/esmws/shakemap/1/application.wadl"^^xsd:anyURI; 
@@ -240,10 +240,10 @@
 		locn:geometry "POLYGON(180.0 -90.0,-180.0 -90.0,-180.0 90.0,180.0 90.0,180.0 -90.0)"^^gsp:wktLiteral; 
 	]; 
 	hydra:supportedOperation <http://esm.mi.ingv.it/esmws/shakemap/1/query/operation>;
-	schema:keywords "Seismic Hazard"," INGV","ESM","Event","ShakeMap","ShakeMapXML","Strong Motion";
-	dct:license "To be defined!"^^xsd:anyURI;
+	schema:keywords "Seismic Hazard","INGV","ESM","Event","ShakeMap","ShakeMapXML","Strong-Motion";
+	dct:license "http://creativecommons.org/licenses/by-nd/4.0/"^^xsd:anyURI ;
 	dct:temporal [ a dct:PeriodOfTime; 
-		schema:startDate "1900-01-01T00:00:00Z"^^xsd:dateTime; 
+		schema:startDate "1960-01-01T00:00:00Z"^^xsd:dateTime; 
 		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
 	]; 
 . 
@@ -252,17 +252,17 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "xml";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "(?eventid, catalog, format, flag, encoding)"^^xsd:string;
+			hydra:template "http://esm.mi.ingv.it/esmws/shakemap/1/query(?eventid, catalog, format, flag, encoding)"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "eventid"^^xsd:string;
-					rdfs:range "string";
+					rdfs:range "xsd:string";
 					rdfs:label "Event ID";
                     schema:defaultValue "IT-2012-0061";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "catalog"^^xsd:string;
-					rdfs:range "string";
+					rdfs:range "xsd:string";
 					rdfs:label "Catalog for the 'Event ID'";
 					http:paramValue "ESM";
 					http:paramValue "ISC";
@@ -273,7 +273,7 @@
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "format"^^xsd:string;
-					rdfs:range "string";
+					rdfs:range "xsd:string";
 					rdfs:label "ShakeMapXML format";
 					http:paramValue "event";
 					http:paramValue "event_dat";
@@ -282,7 +282,7 @@
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "flag"^^xsd:string;
-					rdfs:range "string";
+					rdfs:range "xsd:string";
 					rdfs:label "Include problematic data. Valid values are: '0' (problematic data are not included) or 'all' (problematic data are included and marked with flag='1' in 'event_dat' output)";
 					http:paramValue "0";
 					http:paramValue "all";
@@ -290,7 +290,7 @@
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "encoding"^^xsd:string;
-					rdfs:range "string";
+					rdfs:range "xsd:string";
 					rdfs:label "Character encoding of 'event_dat' output. This parameter is ignored when output 'event' and 'event_fault' are chosen";
 					http:paramValue "UTF-8";
 					http:paramValue "US-ASCII";
