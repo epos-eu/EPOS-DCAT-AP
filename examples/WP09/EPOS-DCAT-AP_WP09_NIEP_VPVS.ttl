@@ -143,7 +143,7 @@
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
-		hydra:template "http://fridge-services.rm.ingv.it/vpvs/(?mintime, maxtime, minlat, maxlat, minlon, maxlon, mineqdepth, maxeqdepth, minnp, minns, maxpw, maxsw, minps, maxgap, midi, maxherr, maxverr)"^^xsd:string;
+		hydra:template "http://fridge-services.rm.ingv.it/vpvs/{?mintime, maxtime, minlat, maxlat, minlon, maxlon, mineqdepth, maxeqdepth, minnp, minns, maxpw, maxsw, minps, maxgap, midi, maxherr, maxverr}"^^xsd:string;
 		# type of parameter "xsd:string" "xsd:boolean" "xsd:date" " xsd:dateTime" "xsd:decimal" "xsd:double" "xsd:float" "xsd:int" "xsd:integer" "xsd:long"
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "mintime"^^xsd:string;
