@@ -62,7 +62,7 @@
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/crew/WebService/001> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/crew/WebService/001";
 	schema:description "IRPINIA - This service provides (visualizes) the outputs and performance evaluation of different Early Warning systems. Each system runs on the Testing Center in real-time on the same streams of ground motion data recorded by the NFO stations. The outputs include the real-time estimates of source parameters (location, magnitude) for all earthquakes detected in the area for each system. The performance includes the time of the first alert and the correctness of the outputs compared to reference bulletins. Initially tests involve these Early Warning software: PRESTo (stand-alone) and Virtual Seismology (in SeisComP3). The Irpinia Near-Fault Observatory is deployed in the Southern Apennines of Italy, along the active fault system responsible for the 1980, November 23, MS 6.9 Campania–Lucania earthquake. It comprises about 30 stations and covers an area of about 100 × 70 km2. Each site is equipped with strong motion accelerometer and a short-period velocimeter, while a few stations are equipped with broad-band velocimeters.";
-	dcat:theme <#EarthquakeParameters>;
+	dcat:theme <epos:EarthquakeParameters>;
 	schema:name "IRPINIA - CREW: Testing Center for Early Warning and Source Characterization (Irpinia Near-Fault Observatory)";
 	# NFO entrypoint:
 	hydra:entrypoint "http://lccepos.fisica.unina.it/"^^xsd:anyURI;
@@ -110,13 +110,13 @@
 	];
 .
 
-<#NearFaultObservations> a skos:ConceptScheme;
+<epos:NearFaultObservations> a skos:ConceptScheme;
 	dct:title "Near Fault Observations";
 	dct:description "It contains the concepts of Near Fault Observations";
 .
 
-<#EarthquakeParameters> a skos:Concept;
-	skos:inScheme <#NearFaultObservations>;
+<epos:EarthquakeParameters> a skos:Concept;
+	skos:inScheme <epos:NearFaultObservations>;
 	skos:prefLabel "Earthquake Parameters";
 .
 
@@ -141,7 +141,7 @@
 <https://orcid.org/0000-0002-4553-2380/technicalContact> a schema:ContactPoint;
 	schema:email "elia@fisica.unina.it";
 	schema:availableLanguage "en";
-	#schema:contactType "technicalContact";
+	schema:contactType "manager";
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/crew/Dataset/001> a dcat:Dataset;
@@ -155,7 +155,7 @@
 	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
 	dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
 	dct:created "2016-10-20"^^xsd:date;
-	dcat:theme <#EarthquakeParameters>;
+	dcat:theme <epos:EarthquakeParameters>;
 	dcat:keyword "NFO","early warning","earthquakes","hazard","seismic source","seismology";
 	dcat:contactPoint <https://orcid.org/0000-0002-4553-2380/technicalContact>;
 	dct:publisher <PIC:999976590>;
