@@ -62,7 +62,7 @@
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/dataselect/WebService/001> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/dataselect/WebService/001";
 	schema:description "IRPINIA - The dataselect Web service provides access to time series data in miniSEED format. The data may be filtered e.g. by time, station and network parameters. The request type is HTTP-GET and HTTP-POST. Please refer to http://www.fdsn.org/webservice for a complete service description.";
-	dcat:theme <#Seismicwaveforms>;
+	dcat:theme <epos:Seismicwaveforms>;
 	schema:name "IRPINIA - FDSN Dataselect Web Service";
 	# INGV entrypoint:
 	hydra:entrypoint "http://webservices.ingv.it/fdsnws/dataselect/1/query?"^^xsd:anyURI;
@@ -106,7 +106,7 @@
 	hydra:returns "application/octet-stream";
 	hydra:property[ a hydra:IriTemplate;
 		# INGV entrypoint:
-		hydra:template "http://webservices.ingv.it/fdsnws/dataselect/1/query(?starttime, endtime, network, station, location, channel, quality, minimumlength, nodata)"^^xsd:string;
+		hydra:template "http://webservices.ingv.it/fdsnws/dataselect/1/query{?starttime, endtime, network, station, location, channel, quality, minimumlength, nodata}"^^xsd:string;
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "starttime"^^xsd:string;
 				rdfs:range "xsd:dateTime";
@@ -182,13 +182,13 @@
 	];
 .
 
-<#NearFaultObservations> a skos:ConceptScheme;
+<epos:NearFaultObservations> a skos:ConceptScheme;
 	dct:title "Near Fault Observations";
 	dct:description "It contains the concepts of Near Fault Observations";
 .
 
-<#Seismicwaveforms> a skos:Concept;
-	skos:inScheme <#NearFaultObservations>;
+<epos:Seismicwaveforms> a skos:Concept;
+	skos:inScheme <epos:NearFaultObservations>;
 	skos:prefLabel "Seismic waveforms";
 .
 
@@ -213,7 +213,7 @@
 <https://orcid.org/0000-0002-4553-2380/technicalContact> a schema:ContactPoint;
 	schema:email "elia@fisica.unina.it";
 	schema:availableLanguage "en";
-	#schema:contactType "technicalContact";
+	schema:contactType "manager";
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/dataselect/Dataset/001> a dcat:Dataset;
@@ -227,7 +227,7 @@
 	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
 	dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
 	dct:created "2003-01-01"^^xsd:date;
-	dcat:theme  <#Seismicwaveforms>;
+	dcat:theme  <epos:Seismicwaveforms>;
 	dcat:keyword "seismology","seismicity","earthquakes","waveform","seismic hazard","earth structure","earthquake intensity","macroseismic","macroseismic information","waveform modeling","IRPINIA","Dataselect","FDSN-WS","Seismic Waveform","EIDA";
 	dcat:contactPoint <https://orcid.org/0000-0002-4553-2380/technicalContact>;
 	dct:publisher <PIC:999976590>;
