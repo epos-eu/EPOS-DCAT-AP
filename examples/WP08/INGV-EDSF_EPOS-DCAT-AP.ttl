@@ -188,7 +188,7 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "image/png";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "http://services.seismofaults.eu/geoserver/EDSF/ows(?service, version, request, layers, bbox, width, height, srs, format)"^^xsd:string;
+			hydra:template "http://services.seismofaults.eu/geoserver/EDSF/ows{?service, version, request, layers, bbox, width, height, srs, format}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "service"^^xsd:string;
 					rdfs:label "Service type";
@@ -267,7 +267,7 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/gml+xml";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "http://services.seismofaults.eu/geoserver/EDSF/ows(?service, version, request, typeName, outputFormat)"^^xsd:string;
+			hydra:template "http://services.seismofaults.eu/geoserver/EDSF/ows{?service, version, request, typeName, outputFormat}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "service"^^xsd:string;
 					rdfs:label "Service";
@@ -316,7 +316,7 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/gml+xml";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "http://services.seismofaults.eu/geoserver/EDSF/ows(?service, version, request, typeName, outputFormat)"^^xsd:string;
+			hydra:template "http://services.seismofaults.eu/geoserver/EDSF/ows{?service, version, request, typeName, outputFormat}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "service"^^xsd:string;
 					rdfs:label "Service";
