@@ -109,7 +109,7 @@
             hydra:template "https://radon.infp.ro/query{?mintime, maxtime, minlat, maxlat, minlon, maxlon, max_radon_error}"^^xsd:string;
                 hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "mintime"^^xsd:string;
-                    rdfs:range "datetime";
+                    rdfs:range "xsd:dateTime";
                     rdfs:label "minimum time";
                     schema:minValue "2000-01-01T00:00:00.0000Z";
                     schema:maxValue "2018-09-20T12:00:00.0000Z";
@@ -118,7 +118,7 @@
                 ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "maxtime"^^xsd:string;
-                    rdfs:range "datetime";
+                    rdfs:range "xsd:dateTime";
                     rdfs:label "maximum time";
                     schema:minValue "2000-01-01T00:00:00.0000Z";
                     schema:maxValue "2018-09-20T12:00:00.0000Z";
@@ -127,7 +127,7 @@
                 ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "minlat"^^xsd:string;
-                    rdfs:range "float";
+                    rdfs:range "xsd:float";
                     rdfs:label "minimum Latitude";
                     schema:minValue "-90";
                     schema:maxValue "90";
@@ -136,7 +136,7 @@
                 ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "maxlat"^^xsd:string;
-                    rdfs:range "float";
+                    rdfs:range "xsd:float";
                     rdfs:label "maximum Latitude";
                     schema:minValue "-90";
                     schema:maxValue "90";
@@ -145,7 +145,7 @@
                 ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "minlon"^^xsd:string;
-                    rdfs:range "float";
+                    rdfs:range "xsd:float";
                     rdfs:label "minimum Longitude";
                     schema:minValue "-180";
                     schema:maxValue "180";
@@ -154,7 +154,7 @@
                 ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "maxlon"^^xsd:string;
-                    rdfs:range "float";
+                    rdfs:range "xsd:float";
                     rdfs:label "maximum Longitude";
                     schema:minValue "-180";
                     schema:maxValue "180";
@@ -163,7 +163,7 @@
                 ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "max_radon_error"^^xsd:string;
-                    rdfs:range "int";
+                    rdfs:range "xsd:int";
                     rdfs:label "maximum error";
                     schema:minValue "0";
                     schema:maxValue "100";
