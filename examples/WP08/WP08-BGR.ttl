@@ -156,7 +156,7 @@
 	hydra:method "GET";
 	hydra:returns "application/vnd.fdsn.mseed";
 	hydra:property[ a hydra:IriTemplate;
-	hydra:template "http://eida.bgr.de/fdsnws/dataselect/1/query(?starttime, endtime, network, station, location, channel, nodata)"^^xsd:string;
+	hydra:template "http://eida.bgr.de/fdsnws/dataselect/1/query{?starttime, endtime, network, station, location, channel, nodata}"^^xsd:string;
 	hydra:mapping[ a hydra:IriTemplateMapping;
 	hydra:variable "starttime"^^xsd:string;
 	rdfs:label "Start of the timespan";
@@ -265,7 +265,10 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/BGR> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/BGR";
-
+        schema:identifier [ a schema:PropertyValue; 
+		schema:propertyID  "DDSS-ID"; 
+		schema:value  "WP08-DDSS-002"; 
+        ]; 
 	schema:description "The fdsnws-station web service returns station metadata in FDSN StationXML format (schema here) or as delimited text. The purpose of the FDSN StationXML schema is to define an XML representation of the most important and commonly used structures of SEED 2.4 metadata. Results are available at multiple levels of granularity: network, station, channel and response.";
 	schema:name "FDSN Station Web Service at BGR";
 	schema:datePublished "1976-01-01T00:00:00Z"^^xsd:dateTime;
@@ -300,7 +303,7 @@
 	hydra:property
 	[ 
 	a hydra:IriTemplate;
-	hydra:template "http://eida.bgr.de/fdsnws/station/1/query(?starttime, endtime, network, station, location, channel,  minlatitude, maxlatitude, minlongitude, maxlongitude, level, nodata)"^^xsd:string;
+	hydra:template "http://eida.bgr.de/fdsnws/station/1/query{?starttime, endtime, network, station, location, channel,  minlatitude, maxlatitude, minlongitude, maxlongitude, level, nodata}"^^xsd:string;
 			
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "starttime"^^xsd:string;
