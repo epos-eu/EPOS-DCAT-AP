@@ -186,7 +186,7 @@
 	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/RADON/WebService/001>;
 	dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 	# This property refers to the licence under which the Distribution is made available.
-	# dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/RADON/WebService/001> a epos:WebService;
@@ -204,7 +204,7 @@
 	# This property refers to the API documentation. (Optional)
 	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/RADON/WebService/001/APIDocumentation> ;
 	# This property refers to the licence under which the Distribution is made available.
-	# dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/RADON/WebService/001/APIDocumentation> a hydra:APIDocumentation ;
@@ -217,7 +217,7 @@
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
-		hydra:template "http://fridge-services.rm.ingv.it/radon/(?mintime, maxtime, minlat, maxlat, minlon, maxlon, minperiod, maxperiod, maxeqdepth, type_site, max_radon_err, max_int_delta)"^^xsd:string;
+		hydra:template "http://fridge-services.rm.ingv.it/radon/(?mintime, maxtime, minlat, maxlat, minlon, maxlon, minperiod, maxperiod, type_site, max_radon_err, max_int_delta)"^^xsd:string;
 		# type of parameter "xsd:string" "xsd:boolean" "xsd:date" " xsd:dateTime" "xsd:decimal" "xsd:double" "xsd:float" "xsd:int" "xsd:integer" "xsd:long"
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "mintime"^^xsd:string;
