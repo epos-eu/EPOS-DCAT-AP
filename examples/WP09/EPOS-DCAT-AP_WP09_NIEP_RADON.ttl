@@ -67,7 +67,7 @@
     schema:provider <PIC:998181508>;
     schema:keywords "Geochemical", "Radon concentration", "Radon decay counts", "geochemistry", "geohazards", "long term continuos timeseries", "local temperature";
     hydra:operation <https://radon.infp.ro/epos-dcat-ap/NearFaultObjservatory/NIEP/RADON/Webservice/001/Operation/001>;
-    dcat:theme <#Radonconcentration>;
+    dcat:theme <epos:Radonconcentration>;
     dcat:contactPoint <http://orcid.org/0000-0003-2431-1383/contactPoint>;
 .
     <http://orcid.org/0000-0003-2431-1383/contactPoint> a schema:ContactPoint;
@@ -106,7 +106,7 @@
         hydra:method "GET"^^xsd:string;
         hydra:returns "application/json";
         hydra:property[ a hydra:IriTemplate;
-            hydra:template "https://radon.infp.ro/query(?mintime, maxtime, minlat, maxlat, minlon, maxlon, max_radon_error)"^^xsd:string;
+            hydra:template "https://radon.infp.ro/query{?mintime, maxtime, minlat, maxlat, minlon, maxlon, max_radon_error}"^^xsd:string;
                 hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "mintime"^^xsd:string;
                     rdfs:range "datetime";
@@ -175,12 +175,12 @@
 
 
 
-    <#NearFaultObservations> a skos:ConceptScheme;
+    <epos:NearFaultObservations> a skos:ConceptScheme;
         dct:title "Near Fault Observations";
         dct:description "It contains the concepts of Near Fault Observations";
 .
-    <#Radonconcentration> a skos:Concept;
-        skos:inScheme <#NearFaultObservations>;
+    <epos:Radonconcentration> a skos:Concept;
+        skos:inScheme <epos:NearFaultObservations>;
         skos:prefLabel "Radon concentration";
 .
 
@@ -192,7 +192,7 @@
         dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
         dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
         dct:created "2010-04-01"^^xsd:date;
-        dcat:theme  <#Radonconcentration> ;
+        dcat:theme  <epos:Radonconcentration> ;
         dcat:keyword "Geochemical", "Radon concentration", "Radon counts", "geochemistry", "geohazards", "long term continuos timeseries", "local temperature" ;
         dcat:contactPoint <http://orcid.org/0000-0003-2431-1383/contactPoint>;
         dct:publisher <PIC:998181508>;
