@@ -115,7 +115,7 @@
 	<https://orcid.org/0000-0001-6501-6853/contactPoint> a schema:ContactPoint;
 		schema:email "erichodon.muhire@bgr.de";
 		schema:availableLanguage "en" ;
-		schema:contactType "manager" ;
+		schema:contactType "contactPoint" ;
 . 
 
 ##################### FDSN Webservices Dataselect
@@ -156,7 +156,7 @@
 	hydra:method "GET";
 	hydra:returns "application/vnd.fdsn.mseed";
 	hydra:property[ a hydra:IriTemplate;
-	hydra:template "http://eida.bgr.de/fdsnws/dataselect/1/query{?starttime, endtime, network, station, location, channel, nodata}"^^xsd:string;
+	hydra:template "http://eida.bgr.de/fdsnws/dataselect/1/query{?starttime, endtime, network, station, location, channel, quality, format, nodata}"^^xsd:string;
 	hydra:mapping[ a hydra:IriTemplateMapping;
 	hydra:variable "starttime"^^xsd:string;
 	rdfs:label "Start of the timespan";
@@ -200,13 +200,29 @@
 	schema:defaultValue "HHZ" ;
 	];
 	hydra:mapping[ a hydra:IriTemplateMapping;
+	hydra:variable "quality"^^xsd:string;
+	rdfs:label "Quality";
+	http:paramValue "M";
+	http:paramValue "B";
+	hydra:required "true"^^xsd:boolean;
+	rdfs:range "xsd:string" ;
+	schema:defaultValue "B" ;
+	];	
+	hydra:mapping[ a hydra:IriTemplateMapping;
+	hydra:variable "format"^^xsd:string;
+	rdfs:label "Format";
+	hydra:required "true"^^xsd:boolean;
+	rdfs:range "xsd:string" ;
+	schema:defaultValue "miniseed" ;
+	];	
+	hydra:mapping[ a hydra:IriTemplateMapping;
 	hydra:variable "nodata"^^xsd:string;
 	rdfs:label "HTTP error code if no data is found";
 	http:paramValue "204";
 	http:paramValue "404";
 	hydra:required "true"^^xsd:boolean;
 	rdfs:range "xsd:string" ;
-	schema:defaultValue "404" ;
+	schema:defaultValue "204" ;
 	];
 	] ;
 .
@@ -396,7 +412,7 @@
 				http:paramValue "404";
 				hydra:required "true"^^xsd:boolean;
 				rdfs:range "xsd:string" ;
-				schema:defaultValue "404" ;
+				schema:defaultValue "204" ;
 			];
 			];
 .
