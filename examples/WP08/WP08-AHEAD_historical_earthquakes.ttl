@@ -154,30 +154,30 @@
 	schema:contactType "manager" ;
 .
 
-<https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/AHEAD> a epos:Facility ;
-    dct:title "AHEAD" ;
-	dct:description "European Archive of Historical Earthquake Data" ;
-    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/AHEAD" ;
-	adms:identifier [ a adms:Identifier;
-		adms:schemaAgency "DOI";
-		skos:notation "10.6092/INGV.IT-AHEAD";
-	];
-    dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
-    dcat:theme <epos:Historicalearthquakes> ;
-	hydra:entrypoint "https://www.emidius.eu/AHEAD"^^xsd:anyURI;
-    vcard:hasAddress [ a vcard:Address ;
-						vcard:country-name "Italy" ;
-						vcard:locality "Milano" ;
-						vcard:postal-code "20133" ;
-						vcard:region "Lombardia" ;
-						vcard:street-address "Via Alfonso Corti 12" ;
-	];
-    dcat:contactPoint <https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/AHEAD/contactPoint> ;
-    dct:relation <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/AHEAD/events> ;
-    dct:relation <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/AHEAD/events/SHEEC>;
-    dct:relation <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/AHEAD/macroseismic>;
-    dct:relation <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/AHEAD/bibliography>;
-.
+#<https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/AHEAD> a epos:Facility ;
+#    dct:title "AHEAD" ;
+#	dct:description "European Archive of Historical Earthquake Data" ;
+#    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/AHEAD" ;
+#	adms:identifier [ a adms:Identifier;
+#		adms:schemaAgency "DOI";
+#		skos:notation "10.6092/INGV.IT-AHEAD";
+#	];
+#    dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
+#    dcat:theme <epos:Historicalearthquakes> ;
+#	hydra:entrypoint "https://www.emidius.eu/AHEAD"^^xsd:anyURI;
+#    vcard:hasAddress [ a vcard:Address ;
+#						vcard:country-name "Italy" ;
+#						vcard:locality "Milano" ;
+#						vcard:postal-code "20133" ;
+#						vcard:region "Lombardia" ;
+#						vcard:street-address "Via Alfonso Corti 12" ;
+#	];
+#    dcat:contactPoint <https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/AHEAD/contactPoint> ;
+#    dct:relation <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/AHEAD/events> ;
+#    dct:relation <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/AHEAD/events/SHEEC>;
+#    dct:relation <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/AHEAD/macroseismic>;
+#    dct:relation <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/AHEAD/bibliography>;
+#.
 
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/AHEAD/events> a dcat:Dataset;
 	dct:title "AHEAD event data";
@@ -407,7 +407,7 @@
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/xml";
 	hydra:property[ a hydra:IriTemplate;
-		hydra:template "https://www.emidius.eu/fdsnws/event/1/query(?starttime, endtime, eventid, updatedafter, minlatitude, maxlatitude, minlongitude, maxlongitude, latitude, longitude, minradius, maxradius, minradiuskm, maxradiuskm, minmagnitude, maxmagnitude, contributor, contributorid, format, orderby, includeallorigins, includeallmagnitudes, limit, nodata)"^^xsd:string;
+		hydra:template "https://www.emidius.eu/fdsnws/event/1/query{?starttime, endtime, eventid, updatedafter, minlatitude, maxlatitude, minlongitude, maxlongitude, latitude, longitude, minradius, maxradius, minradiuskm, maxradiuskm, minmagnitude, maxmagnitude, contributor, contributorid, format, orderby, includeallorigins, includeallmagnitudes, limit, nodata}"^^xsd:string;
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "starttime"^^xsd:string;
 				rdfs:range "xsd:dateTime";
@@ -612,7 +612,7 @@
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/gml+xml";
 	hydra:property[ a hydra:IriTemplate;
-		hydra:template "https://www.emidius.eu/services/europe/wfs(?service, version, request, outputFormat, typeName)"^^xsd:string;
+		hydra:template "https://www.emidius.eu/services/europe/wfs{?service, version, request, outputFormat, typeName}"^^xsd:string;
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "service"^^xsd:string;
 				rdfs:range "xsd:string";
@@ -680,7 +680,7 @@
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "image/png";
 	hydra:property[ a hydra:IriTemplate;
-		hydra:template "https://www.emidius.eu/services/europe/wms(?service, version, request, layers, crs, format, width, height, styles)"^^xsd:string;
+		hydra:template "https://www.emidius.eu/services/europe/wms{?service, version, request, layers, crs, format, width, height, styles}"^^xsd:string;
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "service"^^xsd:string;
 				rdfs:range "xsd:string";
@@ -6636,7 +6636,7 @@
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/xml";
 	hydra:property[ a hydra:IriTemplate;
-		hydra:template "https://www.emidius.eu/services/macroseismic/query(?starttime, endtime, eventid, mdpsetid, updatedafter, minlatitude, maxlatitude, minlongitude, maxlongitude, latitude, longitude, minradius, maxradius, minradiuskm, maxradiuskm, minmagnitude, maxmagnitude, contributor, contributorid, format, orderby, includeallorigins, includeallmagnitudes, includeallmdpsets, includemdps, limit, nodata, macroseismicpackage)"^^xsd:string;
+		hydra:template "https://www.emidius.eu/services/macroseismic/query{?starttime, endtime, eventid, mdpsetid, updatedafter, minlatitude, maxlatitude, minlongitude, maxlongitude, latitude, longitude, minradius, maxradius, minradiuskm, maxradiuskm, minmagnitude, maxmagnitude, contributor, contributorid, format, orderby, includeallorigins, includeallmagnitudes, includeallmdpsets, includemdps, limit, nodata, macroseismicpackage}"^^xsd:string;
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "starttime"^^xsd:string;
 				rdfs:range "xsd:dateTime";
@@ -6863,7 +6863,7 @@
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/xml";
 	hydra:property[ a hydra:IriTemplate;
-		hydra:template "https://www.emidius.eu/services/bibliography/query(?biblioid, author, title, journal, publisher, doi, year, yearstart, yearend, minlatitude, maxlatitude, minlongitude, maxlongitude, latitude, longitude, minradius, maxradius, minradiuskm, maxradiuskm, minmagnitude, maxmagnitude, format, orderby, nodata)"^^xsd:string;
+		hydra:template "https://www.emidius.eu/services/bibliography/query{?biblioid, author, title, journal, publisher, doi, year, yearstart, yearend, minlatitude, maxlatitude, minlongitude, maxlongitude, latitude, longitude, minradius, maxradius, minradiuskm, maxradiuskm, minmagnitude, maxmagnitude, format, orderby, nodata}"^^xsd:string;
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "biblioid"^^xsd:string;
 				rdfs:range "xsd:string";
