@@ -18,12 +18,12 @@
 
 #   Domain    
 #---------------------------------------------------------------------------------------------------------
-<#NearFaultObservations> a skos:ConceptScheme;
+<epos:NearFaultObservations> a skos:ConceptScheme;
 	dct:title "Near Fault Observations";
 	dct:description "It contains the concepts of Near Fault Observations";
 .
 
-<#EarthquakeParameters> a skos:Concept;
+<epos:EarthquakeParameters> a skos:Concept;
 	skos:inScheme <#NearFaultObservations>;
 	skos:prefLabel "Earthquake Parameters";
 .
@@ -144,13 +144,13 @@
 <mailto:marc.grunberg@unistra.fr/technicalContact> a schema:ContactPoint;
 	schema:email "marc.grunberg@unistra.fr";
 	schema:availableLanguage "en";
-	#schema:contactType "technicalContact";
+	schema:contactType "manager";
 .
 
 <mailto:fabien.engels@unistra.fr/technicalContact> a schema:ContactPoint;
 	schema:email "fabien.engels@unistra.fr";
 	schema:availableLanguage "en";
-	#schema:contactType "technicalContact";
+	schema:contactType "manager";
 .
 
 <https://orcid.org/0000-0002-0186-7138/legalContact> a schema:ContactPoint;
@@ -205,7 +205,7 @@
 	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
 	dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
 	dct:created "2018-07-06"^^xsd:date;
-	dcat:theme  <#EarthquakeParameters>;
+	dcat:theme  <epos:EarthquakeParameters>;
 	dcat:keyword "NFO", "Earthquake", "Event", "Seismic source", "Seismic waves propagation", "Seismology";
 	dcat:contactPoint <https://orcid.org/0000-0003-1078-3419/scientificContact>;
 	dcat:contactPoint <mailto:marc.grunberg@unistra.fr/technicalContact>;
@@ -230,7 +230,7 @@
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/event/WebService/001> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/event/WebService/001";
 	schema:description "Corinth Rift Laboratory (Greece) - The fdsnws-event web service returns event (earthquake) information";
-	dcat:theme <#EarthquakeParameters>;
+	dcat:theme <epos:EarthquakeParameters>;
 	schema:name "Corinth Rift Laboratory - FDSN Event Web Service";
 	hydra:entrypoint "http://nfocrl.u-strasbg.fr/fdsnws/event/1/query?"^^xsd:anyURI;
 	schema:provider <PIC:999997930>;
