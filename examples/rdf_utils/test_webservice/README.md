@@ -12,31 +12,41 @@ THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
 Installation
 ------------
 
-This code require Python 3.6 (please see `Pipfile` for full requirements).
-To install the code as described below will require a 'git' command line client
+This code requires Python 3.6 (please see `Pipfile` for full requirements).
+To install the code as described below will require a `git` command line client
 
 From a shell (DOS prompt on Windows), create an empty folder and make it your current folder, then:
          
-# clone the Github repository:
+#### clone the Github repository:
+```
 git clone https://github.com/epos-eu/EPOS-DCAT-AP/ -b EPOS-DCAT-AP-shapes
+```
 
-# make sure you have the latest version of pip:
+#### make sure you have the latest version of pip:
+```
 python -m pip install --upgrade pip
+```
 
-# use pip to install pipenv:
+#### use pip to install pipenv:
+```
 pip install pipenv
+```
 
-# set up your envrionment for running the code:
+#### set up your envrionment for running the code:
+```
 cd EPOS-DCAT-AP/examples/rdf_utils/test_webservice
 pipenv shell
+```
 
-# use pipenv to install the dependencies for the code:
+#### use pipenv to install the dependencies for the code:
+```
 pipenv install
+```
 
-# run the code to check WP13's metadata
+#### run the code to check WP13's metadata
+```
 python webservice.py ../../WP13
-
-
+```
 
 Example Output
 --------------
