@@ -62,7 +62,7 @@
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/vpvs/WebService/001> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/vpvs/WebService/001";
 	schema:description "The Irpinia Near-Fault Observatory is deployed in the Southern Apennines of Italy, along the active fault system responsible for the 1980, November 23, MS 6.9 Campania–Lucania earthquake. It comprises about 30 stations and covers an area of about 100 × 70 km2. Each site is equipped with strong motion accelerometer and a short-period velocimeter, while a few stations are equipped with broad-band velocimeters.		This service provides measurements of VP over VS at the seismic stations, recorded for all earthquakes detected in the area.";
-	dcat:theme <#Crustalvelocityparameters>;
+	dcat:theme <epos:Crustalvelocityparameters>;
 	schema:name "IRPINIA - VP/VS Web Service for Irpinia Near-Fault Observatory";
 	# NFO entrypoint:
 	#hydra:entrypoint "http://seismnet.fisica.unina.it/eposws/vpvs/1/query?"^^xsd:anyURI;
@@ -110,7 +110,7 @@
 		# NFO entrypoint:
 		#hydra:template "http://seismnet.fisica.unina.it/eposws/vpvs/1/query(?mintime, maxtime, minlat, maxlat, minlon, maxlon, mineqdepth, maxeqdepth, minnp, minns, maxpw, maxsw, minps, maxgap, midi, maxherr, maxverr, vpvsmin, maxvpvserr, maxvpvspw, maxvpvssw)"^^xsd:string;
 		# FRIDGE entrypoint:
-		hydra:template "http://fridge-services.rm.ingv.it/vpvs/(?mintime, maxtime, minlat, maxlat, minlon, maxlon, mineqdepth, maxeqdepth, minnp, minns, maxpw, maxsw, minps, maxgap, midi, maxherr, maxverr, vpvsmin, maxvpvserr, maxvpvspw, maxvpvssw)"^^xsd:string;
+		hydra:template "http://fridge-services.rm.ingv.it/vpvs/{?mintime, maxtime, minlat, maxlat, minlon, maxlon, mineqdepth, maxeqdepth, minnp, minns, maxpw, maxsw, minps, maxgap, midi, maxherr, maxverr, vpvsmin, maxvpvserr, maxvpvspw, maxvpvssw}"^^xsd:string;
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "mintime"^^xsd:string;
 				rdfs:range "xsd:dateTime";
@@ -303,13 +303,13 @@
 	];
 .
 
-<#NearFaultObservations> a skos:ConceptScheme;
+<epos:NearFaultObservations> a skos:ConceptScheme;
 	dct:title "Near Fault Observations";
 	dct:description "It contains the concepts of Near Fault Observations";
 .
 
-<#Crustalvelocityparameters> a skos:Concept;
-	skos:inScheme <#NearFaultObservations>;
+<epos:Crustalvelocityparameters> a skos:Concept;
+	skos:inScheme <epos:NearFaultObservations>;
 	skos:prefLabel "Crustal velocity parameters";
 .
 
@@ -334,7 +334,7 @@
 <https://orcid.org/0000-0002-4553-2380/technicalContact> a schema:ContactPoint;
 	schema:email "elia@fisica.unina.it";
 	schema:availableLanguage "en";
-	#schema:contactType "technicalContact";
+	schema:contactType "manager";
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/vpvs/Dataset/001> a dcat:Dataset;
@@ -348,7 +348,7 @@
 	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
 	dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
 	dct:created "2007-12-07"^^xsd:date;
-	dcat:theme  <#Crustalvelocityparameters>;
+	dcat:theme  <epos:Crustalvelocityparameters>;
 	dcat:keyword "Earthquake", "Event", "rocks", "seismic waves propagation", "VpVs ratio", "seismology";
 	dcat:contactPoint <https://orcid.org/0000-0002-4553-2380/technicalContact>;
 	dct:publisher <PIC:999976590>;

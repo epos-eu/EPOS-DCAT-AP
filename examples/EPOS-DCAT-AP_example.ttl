@@ -282,7 +282,7 @@
   hydra:returns "application/vnd.fdsn.mseed" ;
 
   hydra:property[ a hydra:IriTemplate ;
-        	hydra:template "http://www.orfeus-eu.org/fdsnws/dataselect/1/query/(?starttime,endtime,network,quality)"^^xsd:string ;
+        	hydra:template "http://www.orfeus-eu.org/fdsnws/dataselect/1/query/{?starttime,endtime,network,quality}"^^xsd:string ;
         		hydra:mapping[ a hydra:IriTemplateMapping ;
                   # This property contains the name of the parameter as required by web service specifications
                   hydra:variable "starttime"^^xsd:string ;

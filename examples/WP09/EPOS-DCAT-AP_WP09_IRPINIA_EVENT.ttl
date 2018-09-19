@@ -62,7 +62,7 @@
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/event/WebService/001> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/event/WebService/001";
 	schema:description "The fdsnws-event web service returns information for the earthquakes (events) occurred in Irpinia (Southern Italy), at the latest stage of knowledge of the University Federico II of Naples";
-	dcat:theme <#EarthquakeParameters>;
+	dcat:theme <epos:EarthquakeParameters>;
 	schema:name "IRPINIA - FDSN Event Web Service";
 	# NFO entrypoint:
 	hydra:entrypoint "http://isnet-bulletin.fisica.unina.it/cgi-bin/fdsnws/event/1/query?"^^xsd:anyURI;
@@ -108,7 +108,7 @@
 	hydra:returns "application/xml";
 	hydra:property[ a hydra:IriTemplate;
 		# NFO entrypoint:
-		hydra:template "http://isnet-bulletin.fisica.unina.it/cgi-bin/fdsnws/event/1/query(?starttime, endtime, minlatitude, maxlatitude, minlongitude, maxlongitude, mindepth, maxdepth, minmagnitude, maxmagnitude, magnitudetype, includeallorigins, includeallmagnitudes, includearrivals, eventid, limit, offset, orderby, contributor, catalog, updatedafter, format, nodata, latitude, longitude, minradius, maxradius)"^^xsd:string;
+		hydra:template "http://isnet-bulletin.fisica.unina.it/cgi-bin/fdsnws/event/1/query{?starttime, endtime, minlatitude, maxlatitude, minlongitude, maxlongitude, mindepth, maxdepth, minmagnitude, maxmagnitude, magnitudetype, includeallorigins, includeallmagnitudes, includearrivals, eventid, limit, offset, orderby, contributor, catalog, updatedafter, format, nodata, latitude, longitude, minradius, maxradius}"^^xsd:string;
 		# FRIDGE entrypoint: <- not available yet
 		#hydra:template "http://fridge-services.rm.ingv.it/event/query(?starttime, endtime, minlatitude, maxlatitude, minlongitude, maxlongitude, mindepth, maxdepth, minmagnitude, maxmagnitude, magnitudetype, includeallorigins, includeallmagnitudes, includearrivals, eventid, limit, offset, orderby, contributor, catalog, updatedafter, format, nodata, latitude, longitude, minradius, maxradius)"^^xsd:string;
 			hydra:mapping[ a hydra:IriTemplateMapping;
@@ -333,13 +333,13 @@
 	];
 .
 
-<#NearFaultObservations> a skos:ConceptScheme;
+<epos:NearFaultObservations> a skos:ConceptScheme;
 	dct:title "Near Fault Observations";
 	dct:description "It contains the concepts of Near Fault Observations";
 .
 
-<#EarthquakeParameters> a skos:Concept;
-	skos:inScheme <#NearFaultObservations>;
+<epos:EarthquakeParameters> a skos:Concept;
+	skos:inScheme <epos:NearFaultObservations>;
 	skos:prefLabel "Earthquake Parameters";
 .
 
@@ -364,7 +364,7 @@
 <https://orcid.org/0000-0002-4553-2380/technicalContact> a schema:ContactPoint;
 	schema:email "elia@fisica.unina.it";
 	schema:availableLanguage "en";
-	#schema:contactType "technicalContact";
+	schema:contactType "manager";
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/event/Dataset/001> a dcat:Dataset;
@@ -378,7 +378,7 @@
 	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
 	dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
 	dct:created "2007-12-07"^^xsd:date;
-	dcat:theme  <#EarthquakeParameters>;
+	dcat:theme  <epos:EarthquakeParameters>;
 	dcat:keyword "NFO", "earthquake", "event", "rocks", "seismic source", "seismic waves propagation", "seismology";
 	dcat:contactPoint <https://orcid.org/0000-0002-4553-2380/technicalContact>;
 	dct:publisher <PIC:999976590>;

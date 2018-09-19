@@ -1,0 +1,731 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .  
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .  
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .  
+@prefix dc: <http://purl.org/dc/elements/1.1/> .  
+@prefix dct: <http://purl.org/dc/terms/> .  
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .  
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .  
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .  
+@prefix schema: <http://schema.org/> .  
+@prefix dcat: <http://www.w3.org/ns/dcat#> .  
+@prefix cnt: <http://www.w3.org/2011/content#> .  
+@prefix locn: <http://www.w3.org/ns/locn#> .  
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .  
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .  
+@prefix http: <http://www.w3.org/2006/http#> .  
+@prefix owl: <http://www.w3.org/2002/07/owl#> .  
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .  
+
+# Personnes
+
+<https://orcid.org/0000-0003-2936-8047> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "orcid";
+		schema:value "https://orcid.org/0000-0003-2936-8047";
+	]; 
+	schema:familyName "Pedersen";
+	schema:givenName "Helle";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Université Grenoble Alpes,ISTerre,CS 40700";
+		schema:addressLocality "Grenoble Cedex 9";
+		schema:postalCode "38058";
+		schema:addressCountry "France";
+	]; 
+	schema:email "mailto:Helle.Pedersen@univ-grenoble-alpes.fr";
+	schema:telephone "+33476635200";
+	schema:url "https://isterre.fr/annuaire/pages-web-du-personnel/helle-pedersen/?id_auteur=58"^^xsd:anyURI;
+	schema:qualifications "Researcher, Science Management, Scientific leader of the RESIF Data Center";
+	schema:affiliation <PIC:999997930>;
+	schema:contactPoint <https://orcid.org/0000-0003-2936-8047/scientificContact>;
+. 
+<https://orcid.org/0000-0003-1777-9172> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "orcid";
+		schema:value "https://orcid.org/0000-0003-1777-9172";
+	]; 
+	schema:familyName "Walpersdorf";
+	schema:givenName "Andrea";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Université Grenoble Alpes,ISTerre,CS 40700";
+		schema:addressLocality "Grenoble Cedex 9";
+		schema:postalCode "38058";
+		schema:addressCountry "France";
+	]; 
+	schema:email "mailto:Andrea.Walsperdorf@univ-grenoble-alpes.fr";
+	schema:telephone "+33476635200";
+	schema:url "https://isterre.fr/annuaire/pages-web-du-personnel/andrea-walpersdorf/?id_auteur=76/"^^xsd:anyURI;
+	schema:qualifications "Researcher, Science Management, Director of RESIF (Réseau Sismologique et géodésique Français)";
+	schema:affiliation <PIC:999997930>;
+	schema:contactPoint <https://orcid.org/0000-0003-1777-9172/legalContact>;
+.
+
+<https://orcid.org/0000-0002-9956-9971> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "orcid";
+		schema:value "https://orcid.org/0000-0002-9956-9971";
+	]; 
+	schema:familyName "Péquegnat";
+	schema:givenName "Catherine";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Université Grenoble Alpes,ISTerre,CS 40700";
+		schema:addressLocality "Grenoble Cedex 9";
+		schema:postalCode "38058";
+		schema:addressCountry "France";
+	]; 
+	schema:email "mailto:Catherine.Pequegnat@univ-grenoble-alpes.fr";
+	schema:telephone "+33476635200";
+	schema:qualifications "Data and services technicalContact, Seismological services";
+	schema:url "https://www.isterre.fr/spip.php?page=auteur&id_auteur=59&lang=fr/"^^xsd:anyURI;
+	schema:qualifications "Engineer, technical leader of the RESIF Data Center";
+	schema:affiliation <PIC:999997930>;
+	schema:contactPoint <https://orcid.org/0000-0002-9956-9971/contactPoint> ;
+. 
+
+# Organization
+
+<PIC:999997930> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "pic";
+		schema:value "999997930";
+	]; 
+	schema:legalName "RESIF Data Center";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Université Grenoble Alpes,ISTerre,CS 40700";
+		schema:addressLocality "Grenoble Cedex 9";
+		schema:postalCode "38058";
+		schema:addressCountry "France";
+	]; 
+	schema:url "http://seismology.resif.fr/"^^xsd:anyURI;
+	schema:email "datacenter@resif.fr";
+   schema:contactPoint <https://orcid.org/0000-0003-2936-8047/scientificContact>;
+   schema:contactPoint <https://orcid.org/0000-0003-1777-9172/legalContact>;
+   schema:contactPoint <https://orcid.org/0000-0002-9956-9971/contactPoint>;
+.
+
+# Contacts
+
+<https://orcid.org/0000-0002-9956-9971/contactPoint> a schema:ContactPoint;
+	schema:email "Catherine.Pequegnat@@univ-grenoble-alpes.fr";
+	schema:availableLanguage "en" ;
+	schema:contactType "contactPoint" ;	
+.
+<https://orcid.org/0000-0003-2936-8047/scientificContact> a schema:ContactPoint;
+		schema:email "Helle.Pedersen@univ-grenoble-alpes.fr";
+		schema:availableLanguage "en" ;
+		schema:contactType "scientificContact" ;
+.
+<https://orcid.org/0000-0003-1777-9172/legalContact> a schema:ContactPoint;
+		schema:email "Andrea.Walpersdorf@univ-grenoble-alpes.fr";
+		schema:availableLanguage "en" ;
+		schema:contactType "legalContact" ;	
+.
+
+# Webservice WFcatalog
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003/RESIF> a epos:WebService;
+	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003/RESIF";
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "DDSS-ID";
+		schema:value  "WP8-DDSS-003";
+	];
+	schema:description "Web service which returns waveform metadata and data quality metrics";
+	dcat:theme <epos:waveformquality>;
+	dcat:contactPoint <https://orcid.org/0000-0002-9956-9971/contactPoint>;
+	schema:name "EIDAWS - WFCatalog - Réseau Sismologique et géodésique Français (RESIF)";
+	hydra:entrypoint "http://ws.resif.fr/eidaws/wfcatalog/1/query?"^^xsd:anyURI;
+	schema:provider <PIC:999997930>;
+	schema:datePublished "2017-09-01Z"^^xsd:dateTime;
+	schema:dateModified "2017-09-01Z"^^xsd:dateTime;
+	dct:spatial [ a dct:Location;
+		locn:geometry "POLYGON(-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0)"^^gsp:wktLiteral;
+	];
+	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003/Operation/003/RESIF>;
+	schema:keywords "EIDA"," RESIF"," data quality"," availability"," metrics"," waveform"," metadata";
+	dct:license "Etalab licence for data"^^xsd:anyURI;
+	dct:temporal [ a dct:PeriodOfTime;
+		schema:startDate "1982-01-01T00:00:00Z"^^xsd:dateTime;
+		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
+	];
+.
+# Webservice Dataselect
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/RESIF> a epos:WebService ;
+	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/RESIF";
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "DDSS-ID";
+		schema:value  "WP8-DDSS-001";
+	];
+	schema:description "FDSN Standard webservice at RESIF to download waveform data";
+	dcat:theme <epos:Seismicwaveforms>;
+	dcat:contactPoint <https://orcid.org/0000-0002-9956-9971/contactPoint>;
+	schema:name "FDSN Dataselect-WS - Resif data center (RESIF)";
+	hydra:entrypoint "http://ws.resif.fr/fdsnws/dataselect/1/query?"^^xsd:anyURI; 
+	schema:provider <PIC:999997930>;
+	schema:datePublished "2013-01-01Z"^^xsd:dateTime;
+	schema:dateModified "2017-09-12Z"^^xsd:dateTime;
+	dct:spatial [ a dct:Location; 
+		locn:geometry "POLYGON(180.0 -90.0,-180.0 -90.0,-180.0 90.0,180.0 90.0,180.0 -90.0)"^^gsp:wktLiteral; 
+	]; 
+	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001/RESIF>;
+	schema:keywords "seismology"," seismicity"," earthquakes"," waveform"," seismic hazard"," earth structure","earthquake intensity"," macroseismic"," macroseismic information"," waveformmodeling"," RESIF"," Dataselect"," FDSN-WS","Seismic Waveform"," EIDA";
+	dct:license "To be defined!"^^xsd:anyURI;
+	dct:temporal [ a dct:PeriodOfTime; 
+		schema:startDate "1982-01-01T00:00:00Z"^^xsd:dateTime; 
+		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
+	]; 
+. 
+
+# Webservice Station 
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/RESIF> a epos:WebService ;
+	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/RESIF";
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "DDSS-ID";
+		schema:value  "WP8-DDSS-002";
+	];
+	schema:description "FDSN Standard webservice at RESIF to download seismic metadata";
+	dcat:theme <epos:Seismicstations>;
+	dcat:contactPoint <https://orcid.org/0000-0002-9956-9971/contactPoint>;
+	schema:name "FDSN Station-WS - Resif data center (RESIF)";
+	hydra:entrypoint "http://ws.resif.fr/fdsnws/station/1/query?"^^xsd:anyURI; 
+	schema:provider <PIC:999997930>;
+	schema:datePublished "2013-01-01Z"^^xsd:dateTime;
+	schema:dateModified "2017-09-12Z"^^xsd:dateTime;
+	dct:spatial [ a dct:Location; 
+		locn:geometry "POLYGON(180.0 -90.0,-180.0 -90.0,-180.0 90.0,180.0 90.0,180.0 -90.0)"^^gsp:wktLiteral; 
+	]; 
+	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/Operation/002/RESIF>;
+	schema:keywords "seismology"," seismicity"," earthquakes"," metadata"," seismic hazard"," earth structure"," earthquake intensity"," macroseismic"," macroseismic information"," RESIF"," stationXML modeling";
+	dct:license "To be defined!"^^xsd:anyURI;
+	dct:temporal [ a dct:PeriodOfTime; 
+		schema:startDate "1992-01-01T00:00:00Z"^^xsd:dateTime; 
+		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
+	]; 
+. 
+# Operation
+# WfCatalog
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003/Operation/003/RESIF> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "http://ws.resif.fr/eidaws/wfcatalog/1/query{?starttime, endtime, percent_availability_gt, percent_availability_lt, num_gaps_gt, num_gaps_lt, num_overlaps_gt, num_overlaps_lt, sample_stdev_gt, sample_stdev_lt, sample_rms_gt, sample_rms_lt, max_gap_gt, max_gap_lt, sample_min_gt, sample_min_lt, sample_max_gt, sample_max_lt, sample_mean_gt, sample_mean_lt, network, station, location, channel, csegments, longestonly, minlen, include}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "starttime"^^xsd:string;
+					rdfs:range "xsd:dateTime";
+					rdfs:label "Starttime of documents";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "2016-01-01T00:00:00"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "endtime"^^xsd:string;
+					rdfs:range "xsd:dateTime";
+					rdfs:label "Endtime of documents";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "2017-01-01T00:00:00"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "percent_availability_gt"^^xsd:string;
+					rdfs:range "xsd:float";
+					rdfs:label "Data availability percentage greater than";
+					schema:maxValue "100";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "percent_availability_lt"^^xsd:string;
+					rdfs:range "xsd:float";
+					rdfs:label "Data availability percentage smaller than";
+					schema:maxValue "100";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "num_gaps_gt"^^xsd:string;
+					rdfs:range "xsd:integer";
+					rdfs:label "Number of data gaps greater than";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "num_gaps_lt"^^xsd:string;
+					rdfs:range "xsd:integer";
+					rdfs:label "Number of data gaps smaller than";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "num_overlaps_gt"^^xsd:string;
+					rdfs:range "xsd:integer";
+					rdfs:label "Number of data overlaps greater than";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "num_overlaps_lt"^^xsd:string;
+					rdfs:range "xsd:integer";
+					rdfs:label "Number of data overlaps smaller than";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "sample_stdev_gt"^^xsd:string;
+					rdfs:range "xsd:float";
+					rdfs:label "Standard deviation of samples greater than";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "sample_stdev_lt"^^xsd:string;
+					rdfs:range "xsd:float";
+					rdfs:label "Standard deviation of samples smaller than";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "sample_rms_gt"^^xsd:string;
+					rdfs:range "xsd:float";
+					rdfs:label "Standard quadratic mean of samples greater than";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "sample_rms_lt"^^xsd:string;
+					rdfs:range "xsd:float";
+					rdfs:label "Standard quadratic mean of samples smaller than";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "max_gap_gt"^^xsd:string;
+					rdfs:range "xsd:float";
+					rdfs:label "Maximum data gap greater than";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "max_gap_lt"^^xsd:string;
+					rdfs:range "xsd:float";
+					rdfs:label "Maximum data gap smaller than";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "sample_min_gt"^^xsd:string;
+					rdfs:range "xsd:float";
+					rdfs:label "Minimum data sample value greater than";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "sample_min_lt"^^xsd:string;
+					rdfs:range "xsd:float";
+					rdfs:label "Minimum data sample value smaller than";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "sample_max_gt"^^xsd:string;
+					rdfs:range "xsd:float";
+					rdfs:label "Maximum data sample value greater than";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "sample_max_lt"^^xsd:string;
+					rdfs:range "xsd:float";
+					rdfs:label "Maximum data sample value smaller than";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "sample_mean_gt"^^xsd:string;
+					rdfs:range "xsd:float";
+					rdfs:label "Mean data sample value greater than";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "sample_mean_lt"^^xsd:string;
+					rdfs:range "xsd:float";
+					rdfs:label "Mean data sample value smaller than";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "network"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Stream network code";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "station"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Stream station code";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "location"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Stream location code";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "channel"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Stream channel code";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "csegments"^^xsd:string;
+					rdfs:range "xsd:boolean";
+					rdfs:label "Include continuous segments in result";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "longestonly"^^xsd:string;
+					rdfs:range "xsd:boolean";
+					rdfs:label "Include only the longest continuous segment";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "minlen"^^xsd:string;
+					rdfs:range "xsd:float";
+					rdfs:label "Limit continuous segments to this length";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "include"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "The included level of detail in response";
+					http:paramValue "default";
+					http:paramValue "samples";
+					http:paramValue "header";
+					http:paramValue "all";
+					hydra:required "true"^^xsd:boolean;
+				];
+		];
+.
+# Operation dataselect
+ <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001/RESIF> a hydra:Operation;
+	hydra:method "GET"^^xsd:string;
+	hydra:returns "application/vnd.fdsn.mseed";
+	hydra:property[ a hydra:IriTemplate;
+	hydra:template "http://ws.resif.fr/fdsnws/dataselect/1/query{?starttime, endtime, network, station, location, channel, quality, minimumlength, nodata}"^^xsd:string;
+	hydra:method "GET"^^xsd:string;
+	hydra:returns "MiniSEED";
+	hydra:property[ a hydra:IriTemplate;
+	hydra:template "(?starttime, endtime, network, station, location, channel, quality, minimumlength, nodata)"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "starttime"^^xsd:string;
+				rdfs:range "xsd:dateTime";
+				rdfs:label "Start of the timespan";
+				hydra:required "true"^^xsd:boolean;
+				schema:defaultValue "2016-01-01T00:00:00"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "endtime"^^xsd:string;
+					rdfs:range "xsd:dateTime";
+					rdfs:label "End of the timespan";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "2017-01-01T00:00:00"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "network"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Network code";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "*"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "station"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Station code";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "*"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "location"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Location code";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "*"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "channel"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Channel code";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "*"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "quality"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Quality";
+					http:paramValue "B";
+					http:paramValue "M";
+					http:paramValue "Q";
+					http:paramValue "R";
+					http:paramValue "D";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "D"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "minimumlength"^^xsd:string;
+					rdfs:range "xsd:integer";
+					rdfs:label "Minimum Length";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "nodata"^^xsd:string;
+					rdfs:range "xsd:integer";
+					rdfs:label "HTTP error code if no data is found";
+					http:paramValue "204";
+					http:paramValue "404";
+					hydra:required "true"^^xsd:boolean;
+				];
+		];
+	];
+.
+
+# Operation station
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/Operation/002/RESIF> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/xml";
+		hydra:property[ a hydra:IriTemplate;
+		hydra:template "http:ws.resif.fr/fdsnws/station/1/query{?starttime, endtime, network, station, location, channel, minlatitude, maxlatitude, minlongitude, maxlongitude, level, nodata, matchtimeseries}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "starttime"^^xsd:string;
+					rdfs:range "xsd:dateTime";
+					rdfs:label "Start of the timespan";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "2016-01-01T00:00:00"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "endtime"^^xsd:string;
+					rdfs:range "xsd:dateTimexsd:";
+					rdfs:label "End of the timespan";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "2017-01-01T00:00:00"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "network"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Network code";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "*"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "station"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Station code";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "*"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "location"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Location code";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "*"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "channel"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Channel code";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "*"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "minlatitude"^^xsd:string;
+					rdfs:range "xsd:float";
+					rdfs:label "Minimum Latitude";
+					schema:minValue "-90.0";
+					schema:maxValue "90.0";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "-90.0"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "maxlatitude"^^xsd:string;
+					rdfs:range "xsd:float";
+					rdfs:label "Maximum Latitude";
+					schema:minValue "-90.0";
+					schema:maxValue "90.0";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "90.0"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "minlongitude"^^xsd:string;
+					rdfs:range "xsd:float";
+					rdfs:label "Minimum Longitude";
+					schema:minValue "-180.0";
+					schema:maxValue "180.0";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "-180.0"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "maxlongitude"^^xsd:string;
+					rdfs:range "xsd:float";
+					rdfs:label "Maximum Longitude";
+					schema:minValue "-180.0";
+					schema:maxValue "180.0";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "180.0"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "level"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Level";
+					http:paramValue "network";
+					http:paramValue "station";
+					http:paramValue "channel";
+					http:paramValue "response";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "station"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "nodata"^^xsd:string;
+					rdfs:range "xsd:integer";
+					rdfs:label "HTTP error code if no data is found";
+					http:paramValue "204";
+					http:paramValue "404";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "matchtimeseries"^^xsd:string;
+					rdfs:range "xsd:boolean";
+					rdfs:label "Matchtimeseries";
+					http:paramValue "true";
+					http:paramValue "false";
+					hydra:required "true"^^xsd:boolean;
+					hydra:required "true"^^xsd:boolean;
+				];
+		];
+. 
+
+	<#Seismology> a skos:ConceptScheme;
+		dct:title "Seismology";
+		dct:description "It contains the concepts of Seismology";
+. 
+	<#Seismicwaveforms> a skos:Concept;
+		skos:inScheme <#Seismology>;
+		skos:prefLabel "Seismic waveforms";
+. 
+	<#Seismicstations> a skos:Concept;
+		skos:inScheme <#Seismology>;
+		skos:prefLabel "Seismic stations";
+. 
+
+
+# Dataset
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/RESIF> a dcat:Dataset;
+        dct:title "Primary Seismic Waveform Data";
+        dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/RESIF";
+        dct:description "Continuous seismic waveforms";
+        adms:identifier [ a adms:Identifier ;
+        adms:schemaAgency "DDSS-ID" ;
+        skos:notation "WP8-DDSS-001" ;
+        ];
+        dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        owl:versionInfo "1.0.0" ;
+    	  dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+        dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
+        dcat:theme  <epos:SeismicWaveform> ;
+        dcat:keyword "seismology", "seismicity", "earthquakes", "seismic waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "RESIF" , "Dataselect", "FDSN-WS", "Seismic Waveform", "EIDA" ;
+        dcat:contactPoint <https://orcid.org/0000-0003-2936-8047/scientificContact>;
+	     dct:publisher <PIC:999997930>;
+        dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/RESIF>;
+        dct:spatial [ a dct:Location ;
+                      locn:geometry "POLYGON(-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0)"^^gsp:wktLiteral;
+        ];
+        dct:temporal [ a dct:PeriodOfTime ;
+                schema:startDate "1982-01-01T00:00:00Z"^^xsd:dateTime ;
+                #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
+	];
+.
+# Distribution
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/RESIF> a dcat:Distribution;
+   dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/RESIF";
+	dct:description "Description of Seismic Waveform Distribution :: FDSN DATASELECT ";
+	dct:issued "2017-01-01"^^xsd:date ;
+	dct:modified "2017-01-01"^^xsd:date ;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001/RESIF>;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/RESIF>;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI;
+ 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+ 	# RESIF : normally we should refer to dct:license "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Open_Licence.pdf" ;
+
+.
+# Dataset
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/RESIF> a dcat:Dataset;
+        dct:title "Primary Seismic Metadata for stations ";
+        dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/RESIF";
+        dct:description "Seismic Stations ";
+        adms:identifier [ a adms:Identifier ;
+            adms:schemaAgency "DDSS-ID" ;
+            skos:notation "WP8-DDSS-002" ;
+        ];
+        dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        owl:versionInfo "1.0.0" ;
+
+    	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+        dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+        dcat:theme  <epos:SeismicNetwork> ;
+        dcat:keyword "seismology", "seismicity", "earthquakes", "seismic station", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "station information", "waveform modeling", "RESIF" , "Station", "FDSN-WS", "Seismic Station", "EIDA" ;
+        dcat:contactPoint <https://orcid.org/0000-0003-2936-8047/scientificContact>;
+	dct:publisher <PIC:999997930>;
+        dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/RESIF>;
+        dct:spatial [ a dct:Location ;
+	locn:geometry "POLYGON(-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0)"^^gsp:wktLiteral;
+        ];
+        dct:temporal [ a dct:PeriodOfTime ;
+                schema:startDate "1882-01-01T00:00:00Z"^^xsd:dateTime ;
+                #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
+	];
+.
+
+# Distribution 
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/RESIF> a dcat:Distribution;
+    	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/RESIF";
+	dct:description "Description of Seismic Stations  :: FDSN STATION ";
+	dct:issued "2016-01-01"^^xsd:date ;
+	dct:modified "2016-01-01"^^xsd:date ;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/Operation/002/RESIF>;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/RESIF>;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
+ 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+ 	# RESIF : normally we should refer to dct:license "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Open_Licence.pdf" ;
+.
+
+# Dataset
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/RESIF> a dcat:Dataset;
+        dct:title "Waveform metadata and data quality metrics";
+        dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/RESIF";
+        dct:description "Waveform metadata and data quality metrics";
+        adms:identifier [ a adms:Identifier ;
+        adms:schemaAgency "DDSS-ID" ;
+        skos:notation "WP8-DDSS-003" ;
+        ];
+        dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        owl:versionInfo "1.0.0" ;
+
+    	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+        dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
+        dcat:theme  <epos:SeismicWaveform> ;
+        dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/Distribution/003/RESIF>;
+        dcat:keyword "seismology", "seismicity", "seismic waveform", "dataquality", "metric", "RESIF" , "WfCatalog", "EIDA-WS", "EIDA" ;
+        dcat:contactPoint <https://orcid.org/0000-0003-2936-8047/scientificContact>;
+	dct:publisher <PIC:999997930>;
+        dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/Distribution/003/RESIF>;
+        dct:spatial [ a dct:Location ;
+                      locn:geometry "POLYGON(-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0)"^^gsp:wktLiteral;
+        ];
+        dct:temporal [ a dct:PeriodOfTime ;
+                schema:startDate "1982-01-01T00:00:00Z"^^xsd:dateTime ;
+                #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
+	];
+.
+
+# Distribution
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/Distribution/003/RESIF> a dcat:Distribution;
+    	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/Distribution/003/RESIF";
+	dct:description "Waveform metadata and data quality metrics :: EIDAWS WGCATALOG ";
+	dct:issued "2017-01-01"^^xsd:date ;
+	dct:modified "2017-01-01"^^xsd:date ;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003/Operation/003/RESIF>;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003/RESIF>;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI;
+ 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+ 	# RESIF : normally we should refer to dct:license "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Open_Licence.pdf" ;
+.

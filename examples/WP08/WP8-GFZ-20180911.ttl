@@ -1,0 +1,689 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http: <http://www.w3.org/2006/http#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+
+<http://orcid.org/0000-0001-9993-4003> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "orcid";
+		schema:value "http://orcid.org/0000-0001-9993-4003";
+	];
+	schema:familyName "Quinteros";
+	schema:givenName "Javier";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Telegrafenberg";
+		schema:addressLocality "Potsdam";
+		schema:postalCode "14473";
+		schema:addressCountry "Germany";
+	];
+	schema:email "javier@gfz-potsdam.de";
+	schema:telephone "+493312881931";
+	schema:url "http://www.gfz-potsdam.de/en/staff/javier-quinteros/"^^xsd:anyURI;
+	schema:qualifications "Researcher, Data Manager, Seismological services";
+	schema:affiliation <PIC:999994341>;
+	schema:contactPoint <http://orcid.org/0000-0001-9993-4003/contactPoint> ;
+.
+
+<http://orcid.org/0000-0002-3580-651X> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "orcid";
+		schema:value "http://orcid.org/0000-0002-3580-651X";
+	];
+	schema:familyName "Lauterjung";
+	schema:givenName "Jörn";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Telegrafenberg";
+		schema:addressLocality "Potsdam";
+		schema:postalCode "14473";
+		schema:addressCountry "Germany";
+	];
+	schema:email "lau@gfz-potsdam.de";
+	schema:url "http://www.gfz-potsdam.de/en/staff/joern-lauterjung/"^^xsd:anyURI;
+	schema:qualifications "Science Management";
+	schema:affiliation <PIC:999994341>;
+	schema:contactPoint <http://orcid.org/0000-0002-3580-651X/scientificContact>;
+.
+
+<mailto:marko.blau@gfz-potsdam.de> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "mailto";
+		schema:value "mailto:marko.blau@gfz-potsdam.de";
+	];
+	schema:familyName "Blau";
+	schema:givenName "Marko";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Telegrafenberg";
+		schema:addressLocality "Potsdam";
+		schema:postalCode "14473";
+		schema:addressCountry "Germany";
+	];
+	schema:email "rechtsabteilung@gfz-potsdam.de";
+	schema:telephone "+493312881052";
+	schema:url "http://www.gfz-potsdam.de/en/staff/marko-blau/"^^xsd:anyURI;
+	schema:qualifications "Lawer";
+	schema:affiliation <PIC:999994341>;
+	schema:contactPoint <mailto:marko.blau@gfz-potsdam.de/legalContact>;
+.
+
+<mailto:stephan.ott@gfz-potsdam.de> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "mailto";
+		schema:value "mailto:stephan.ott@gfz-potsdam.de";
+	];
+	schema:familyName "Ott";
+	schema:givenName "Stephan";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Telegrafenberg";
+		schema:addressLocality "Potsdam";
+		schema:postalCode "14473";
+		schema:addressCountry "Germany";
+	];
+	schema:email "stephan.ott@gfz-potsdam.de";
+	schema:telephone "+4933128827515";
+	schema:qualifications "Financial Advisor";
+	schema:affiliation <PIC:999994341>;
+	schema:contactPoint <mailto:stephan.ott@gfz-potsdam.de/financialContact>;
+.
+
+# Contacts
+<http://orcid.org/0000-0001-9993-4003/contactPoint> a schema:ContactPoint;
+	schema:email "javier@gfz-potsdam.de";
+	schema:availableLanguage "en" ;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003/GFZ> a epos:WebService;
+	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003/GFZ";
+	#schema:identifier [ a schema:PropertyValue;
+		#schema:propertyID  "DDSS-ID";
+		#schema:value  "WP8-DDSS-003";
+	#];
+	schema:description "Web service which returns waveform metadata and data quality metrics";
+	dcat:theme <epos:waveformquality>;
+	dcat:contactPoint <http://orcid.org/0000-0001-9993-4003/contactPoint>;
+	schema:name "WFCatalog - German Research Centre for Geosciences (GFZ)";
+	hydra:entrypoint "http://geofon.gfz-potsdam.de/eidaws/wfcatalog/1/query?"^^xsd:anyURI;
+	schema:provider <PIC:999994341>;
+	schema:datePublished "2017-09-01Z"^^xsd:dateTime;
+	schema:dateModified "2017-09-01Z"^^xsd:dateTime;
+	dct:spatial [ a dct:Location;
+		locn:geometry "POLYGON(-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0)"^^gsp:wktLiteral;
+	];
+	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003/Operation/003/GFZ>;
+	schema:keywords "EIDA"," GFZ"," data quality"," availability"," metrics"," waveform"," metadata";
+	dct:license "Creative Commons for data, Open Source licences for software"^^xsd:anyURI;
+	dct:temporal [ a dct:PeriodOfTime;
+		schema:startDate "1993-01-01T00:00:00Z"^^xsd:dateTime;
+		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
+	];
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/GFZ> a epos:WebService;
+	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/GFZ";
+	#schema:identifier [ a schema:PropertyValue;
+		#schema:propertyID  "DDSS-ID";
+		#schema:value  "WP8-DDSS-001";
+	#];
+	schema:description "FDSN Standard webservice at GFZ to download waveform data";
+	dcat:theme <epos:SeismicWaveforms>;
+	dcat:contactPoint <http://orcid.org/0000-0001-9993-4003/contactPoint>;
+	schema:name "FDSN Dataselect - German Research Centre for Geosciences (GFZ)";
+	hydra:entrypoint "http://geofon.gfz-potsdam.de/fdsnws/dataselect/1/query?"^^xsd:anyURI;
+	schema:provider <PIC:999994341>;
+	schema:datePublished "2016-01-01Z"^^xsd:dateTime;
+	schema:dateModified "2016-01-01Z"^^xsd:dateTime;
+	dct:spatial [ a dct:Location;
+		locn:geometry "POLYGON(180.0 -90.0,-180.0 -90.0,-180.0 90.0,180.0 90.0,180.0 -90.0)"^^gsp:wktLiteral;
+	];
+	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001/GFZ>;
+	schema:keywords "seismology"," seismicity"," earthquakes"," waveform"," seismic hazard"," earth structure"," earthquake intensity"," macroseismic"," macroseismic information"," waveform modeling"," GFZ","Dataselect","FDSN-WS","Seismic Waveform","EIDA";
+	dct:license "To be defined!"^^xsd:anyURI;
+	dct:temporal [ a dct:PeriodOfTime;
+		schema:startDate "1993-01-01T00:00:00Z"^^xsd:dateTime;
+		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
+	];
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/GFZ> a epos:WebService;
+	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/GFZ";
+	#schema:identifier [ a schema:PropertyValue;
+		#schema:propertyID  "DDSS-ID";
+		#schema:value  "WP8-DDSS-002";
+	#];
+	schema:description "FDSN Standard webservice at GFZ to download seismic metadata";
+	dcat:theme <epos:Seismicstations>;
+	dcat:contactPoint <http://orcid.org/0000-0001-9993-4003/contactPoint>;
+	schema:name "FDSN Station-WS - German Research Centre for Geosciences (GFZ)";
+	hydra:entrypoint "http://geofon.gfz-potsdam.de/fdsnws/station/1/query?"^^xsd:anyURI;
+	schema:provider <PIC:999994341>;
+	schema:datePublished "2016-01-01Z"^^xsd:dateTime;
+	schema:dateModified "2016-01-01Z"^^xsd:dateTime;
+	dct:spatial [ a dct:Location;
+		locn:geometry "POLYGON(180.0 -90.0,-180.0 -90.0,-180.0 90.0,180.0 90.0,180.0 -90.0)"^^gsp:wktLiteral;
+	];
+	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/Operation/002/GFZ>;
+	schema:keywords "seismology"," seismicity"," earthquakes"," waveform"," seismic hazard"," earth structure"," earthquake intensity"," macroseismic"," macroseismic information"," waveform modeling";
+	dct:license "To be defined!"^^xsd:anyURI;
+	dct:temporal [ a dct:PeriodOfTime;
+		schema:startDate "1993-01-01T00:00:00Z"^^xsd:dateTime;
+		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
+	];
+.
+
+<PIC:999994341> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "pic";
+		schema:value "999994341";
+	];
+	schema:legalName "GFZ German Research Centre for Geosciences";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Telegrafenberg";
+		schema:addressLocality "Potsdam";
+		schema:postalCode "14473";
+		schema:addressCountry "Germany";
+	];
+	#schema:logo "https://media.gfz-potsdam.de/gfz/wv/05_Medien_Kommunikation/Bildarchiv/GFZ Logo/temp_xs/LOGO-GFZ-en-mitFreistellungsraum_RGB_24bit_300dpi_546x390-jpg.jpg"^^xsd:anyURI;
+	schema:url "http://www.gfz-potsdam.de/"^^xsd:anyURI;
+	schema:email "info@gfz-potsdam.de";
+	schema:contactPoint <http://orcid.org/0000-0002-3580-651X/scientificContact>;
+	schema:contactPoint <mailto:marko.blau@gfz-potsdam.de/legalContact>;
+	schema:contactPoint <mailto:stephan.ott@gfz-potsdam.de/financialContact>;
+.
+	<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003/Operation/003/GFZ> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "http://geofon.gfz-potsdam.de/eidaws/wfcatalog/1/query{?starttime, endtime, percent_availability_gt, percent_availability_lt, num_gaps_gt, num_gaps_lt, num_overlaps_gt, num_overlaps_lt, sample_stdev_gt, sample_stdev_lt, sample_rms_gt, sample_rms_lt, max_gap_gt, max_gap_lt, sample_min_gt, sample_min_lt, sample_max_gt, sample_max_lt, sample_mean_gt, sample_mean_lt, network, station, location, channel, csegments, longestonly, minlen, include}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "starttime"^^xsd:string;
+					rdfs:range "xsd:dateTime";
+					rdfs:label "Starttime of documents";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "1980-01-01T00:00:00"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "endtime"^^xsd:string;
+					rdfs:range "xsd:dateTime";
+					rdfs:label "Endtime of documents";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "2019-01-01T00:00:00"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "percent_availability_gt"^^xsd:string;
+					rdfs:range "xsd:float";
+					rdfs:label "Data availability percentage greater than";
+					schema:maxValue "100";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "percent_availability_lt"^^xsd:string;
+					rdfs:range "xsd:float";
+					rdfs:label "Data availability percentage smaller than";
+					schema:maxValue "100";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "num_gaps_gt"^^xsd:string;
+					rdfs:range "xsd:integer";
+					rdfs:label "Number of data gaps greater than";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "num_gaps_lt"^^xsd:string;
+					rdfs:range "xsd:integer";
+					rdfs:label "Number of data gaps smaller than";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "num_overlaps_gt"^^xsd:string;
+					rdfs:range "xsd:integer";
+					rdfs:label "Number of data overlaps greater than";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "num_overlaps_lt"^^xsd:string;
+					rdfs:range "xsd:integer";
+					rdfs:label "Number of data overlaps smaller than";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "sample_stdev_gt"^^xsd:string;
+					rdfs:range "xsd:float";
+					rdfs:label "Standard deviation of samples greater than";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "sample_stdev_lt"^^xsd:string;
+					rdfs:range "xsd:float";
+					rdfs:label "Standard deviation of samples smaller than";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "sample_rms_gt"^^xsd:string;
+					rdfs:range "xsd:float";
+					rdfs:label "Standard quadratic mean of samples greater than";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "sample_rms_lt"^^xsd:string;
+					rdfs:range "xsd:float";
+					rdfs:label "Standard quadratic mean of samples smaller than";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "max_gap_gt"^^xsd:string;
+					rdfs:range "xsd:float";
+					rdfs:label "Maximum data gap greater than";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "max_gap_lt"^^xsd:string;
+					rdfs:range "xsd:float";
+					rdfs:label "Maximum data gap smaller than";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "sample_min_gt"^^xsd:string;
+					rdfs:range "xsd:float";
+					rdfs:label "Minimum data sample value greater than";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "sample_min_lt"^^xsd:string;
+					rdfs:range "xsd:float";
+					rdfs:label "Minimum data sample value smaller than";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "sample_max_gt"^^xsd:string;
+					rdfs:range "xsd:float";
+					rdfs:label "Maximum data sample value greater than";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "sample_max_lt"^^xsd:string;
+					rdfs:range "xsd:float";
+					rdfs:label "Maximum data sample value smaller than";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "sample_mean_gt"^^xsd:string;
+					rdfs:range "xsd:float";
+					rdfs:label "Mean data sample value greater than";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "sample_mean_lt"^^xsd:string;
+					rdfs:range "xsd:float";
+					rdfs:label "Mean data sample value smaller than";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "network"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Stream network code";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "station"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Stream station code";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "location"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Stream location code";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "channel"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Stream channel code";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "csegments"^^xsd:string;
+					rdfs:range "xsd:boolean";
+					rdfs:label "Include continuous segments in result";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "longestonly"^^xsd:string;
+					rdfs:range "xsd:boolean";
+					rdfs:label "Include only the longest continuous segment";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "minlen"^^xsd:string;
+					rdfs:range "xsd:float";
+					rdfs:label "Limit continuous segments to this length";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "include"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "The included level of detail in response";
+					http:paramValue "default";
+					http:paramValue "samples";
+					http:paramValue "header";
+					http:paramValue "all";
+					hydra:required "true"^^xsd:boolean;
+				];
+		] ;
+.
+	<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001/GFZ> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/vnd.fdsn.mseed";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "http://geofon.gfz-potsdam.de/fdsnws/dataselect/1/query{?starttime, endtime, network, station, location, channel, quality, minimumlength, nodata}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "starttime"^^xsd:string;
+					rdfs:range "xsd:dateTime";
+					rdfs:label "Start of the timespan";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "2018-01-01T00:00:00"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "endtime"^^xsd:string;
+					rdfs:range "xsd:dateTime";
+					rdfs:label "End of the timespan";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "2018-01-01T01:00:00"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "network"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Network code";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "*"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "station"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Station code";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "*"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "location"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Location code";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "*"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "channel"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Channel code";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "*"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "quality"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Quality";
+					http:paramValue "B";
+					http:paramValue "M";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "minimumlength"^^xsd:string;
+					rdfs:range "xsd:integer";
+					rdfs:label "Minimum Length";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "nodata"^^xsd:string;
+					rdfs:range "xsd:integer";
+					rdfs:label "HTTP error code if no data is found";
+					http:paramValue "204";
+					http:paramValue "404";
+					hydra:required "true"^^xsd:boolean;
+				];
+		] ;
+.
+	<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/Operation/002/GFZ> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/xml";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "http://geofon.gfz-potsdam.de/fdsnws/station/1/query{?starttime, endtime, network, station, location, channel, minlatitude, maxlatitude, minlongitude, maxlongitude, level, nodata}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "starttime"^^xsd:string;
+					rdfs:range "xsd:dateTime";
+					rdfs:label "Start of the timespan";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "2018-01-01T00:00:00"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "endtime"^^xsd:string;
+					rdfs:range "xsd:dateTime";
+					rdfs:label "End of the timespan";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "2018-01-01T01:00:00"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "network"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Network code";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "*"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "station"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Station code";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "*"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "location"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Location code";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "*"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "channel"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Channel code";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "*"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "minlatitude"^^xsd:string;
+					rdfs:range "xsd:float";
+					rdfs:label "Minimum Latitude";
+					schema:minValue "-90.0";
+					schema:maxValue "90.0";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "-90.0"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "maxlatitude"^^xsd:string;
+					rdfs:range "xsd:float";
+					rdfs:label "Maximum Latitude";
+					schema:minValue "-90.0";
+					schema:maxValue "90.0";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "90.0"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "minlongitude"^^xsd:string;
+					rdfs:range "xsd:float";
+					rdfs:label "Minimum Longitude";
+					schema:minValue "-180.0";
+					schema:maxValue "180.0";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "-180.0"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "maxlongitude"^^xsd:string;
+					rdfs:range "xsd:float";
+					rdfs:label "Maximum Longitude";
+					schema:minValue "-180.0";
+					schema:maxValue "180.0";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "180.0"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "level"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Level";
+					http:paramValue "network";
+					http:paramValue "station";
+					http:paramValue "channel";
+					http:paramValue "response";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "station"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "nodata"^^xsd:string;
+					rdfs:range "xsd:integer";
+					rdfs:label "HTTP error code if no data is found";
+					http:paramValue "204";
+					http:paramValue "404";
+					hydra:required "true"^^xsd:boolean;
+				];
+		] ;
+.
+	<epos:Seismology> a skos:ConceptScheme;
+		dct:title "Seismology";
+		dct:description "It contains the concepts of Seismology";
+.
+	<epos:waveformquality> a skos:Concept;
+		skos:inScheme <epos:Seismology>;
+		skos:prefLabel "waveform quality";
+.
+	<epos:SeismicWaveforms> a skos:Concept;
+		skos:inScheme <epos:Seismology>;
+		skos:prefLabel "Seismic waveforms";
+.
+	<epos:Seismicstations> a skos:Concept;
+		skos:inScheme <epos:Seismology>;
+		skos:prefLabel "Seismic stations";
+.
+
+
+
+
+# Dataset
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/GFZ> a dcat:Dataset;
+        dct:title "Primary Seismic Waveform Data";
+        dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/GFZ";
+        dct:description "Continuous seismic waveforms";
+        adms:identifier [ a adms:Identifier ;
+        adms:schemaAgency "DDSS-ID" ;
+        skos:notation "WP8-DDSS-001" ;
+        ];
+        dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        owl:versionInfo "1.0.0" ;
+
+    	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+        dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
+        dcat:theme  <epos:SeismicWaveforms> ;
+        dcat:keyword "seismology", "seismicity", "earthquakes", "seismic waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "INGV" , "Dataselect", "FDSN-WS", "Seismic Waveform", "EIDA" ;
+        dcat:contactPoint <http://orcid.org/0000-0001-9993-4003/contactPoint>;
+	dct:publisher <PIC:999994341>;
+        dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/GFZ>;
+        dct:spatial [ a dct:Location ;
+                      locn:geometry "POLYGON(-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0)"^^gsp:wktLiteral;
+        ];
+        dct:temporal [ a dct:PeriodOfTime ;
+                schema:startDate "1980-01-01T00:00:00Z"^^xsd:dateTime ;
+                #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
+	] ;
+.
+
+# Distribution
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/GFZ> a dcat:Distribution;
+    	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/GFZ";
+	dct:description "Description of Seismic Waveform Distribution :: FDSN DATASELECT ";
+	dct:issued "2017-01-01"^^xsd:date ;
+	dct:modified "2017-01-01"^^xsd:date ;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001/GFZ>;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/GFZ>;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI;
+ 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+
+.
+
+
+# Dataset
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/GFZ> a dcat:Dataset;
+        dct:title "Primary Seismic Waveform Data";
+        dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/GFZ";
+        dct:description "Seismic Stations ";
+        adms:identifier [ a adms:Identifier ;
+            adms:schemaAgency "DDSS-ID" ;
+            skos:notation "WP8-DDSS-002" ;
+        ];
+        dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        owl:versionInfo "1.0.0" ;
+
+    	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+        dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+        dcat:theme  <epos:Seismicstations> ;
+        dcat:keyword "seismology", "seismicity", "earthquakes", "seismic station", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "station information", "waveform modeling", "INGV" , "Station", "FDSN-WS", "Seismic Station", "EIDA" ;
+        dcat:contactPoint <http://orcid.org/0000-0001-9993-4003/contactPoint>;
+	dct:publisher <PIC:999994341>;
+        dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/GFZ>;
+        dct:spatial [ a dct:Location ;
+	locn:geometry "POLYGON(-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0)"^^gsp:wktLiteral;
+        ];
+        dct:temporal [ a dct:PeriodOfTime ;
+                schema:startDate "1980-01-01T00:00:00Z"^^xsd:dateTime ;
+                #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
+	];
+.
+
+# Distribution
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/GFZ> a dcat:Distribution;
+    	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/GFZ";
+	dct:description "Description of Seismic Stations  :: FDSN STATION ";
+	dct:issued "2017-01-01"^^xsd:date ;
+	dct:modified "2017-01-01"^^xsd:date ;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/Operation/002/GFZ>;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/GFZ>;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
+ 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+.
+
+
+
+
+
+
+	<http://orcid.org/0000-0002-3580-651X/scientificContact> a schema:ContactPoint;
+		schema:email "lau@gfz-potsdam.de";
+		schema:availableLanguage "en" ;
+		schema:contactType "scientificContact" ;
+.
+	<mailto:marko.blau@gfz-potsdam.de/legalContact> a schema:ContactPoint;
+		schema:email "rechtsabteilung@gfz-potsdam.de";
+		schema:availableLanguage "en" ;
+		schema:contactType "legalContact" ;
+.
+	<mailto:stephan.ott@gfz-potsdam.de/financialContact> a schema:ContactPoint;
+		schema:email "stephan.ott@gfz-potsdam.de";
+		schema:availableLanguage "en" ;
+		schema:contactType "financialContact" ;
+.
