@@ -50,7 +50,7 @@
 	schema:affiliation <PIC:998181508>;
 	schema:contactPoint <https://orcid.org/0000-0002-6247-0687/legalContact>;
 . 
-	<eida-sc3.infp.ro/fdsnws/dataselect/1/query/operation> a hydra:Operation;
+	<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001/NIEP> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "binary";
 		hydra:property[ a hydra:IriTemplate;
@@ -121,7 +121,7 @@
 				];
 		] ;
 . 
-	<eida-sc3.infp.ro/fdsnws/station/1/query/operation> a hydra:Operation;
+	<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/Operation/002/NIEP> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "xml";
 		hydra:property[ a hydra:IriTemplate;
@@ -428,7 +428,7 @@
 	schema:contactPoint <https://orcid.org/0000-0002-6247-0687/legalContact>;
 . 
 
-<eida-sc3.infp.ro/fdsnws/station/1/query> a epos:WebService;
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/NIEP> a epos:WebService;
 	schema:identifier "eida-sc3.infp.ro/fdsnws/station/1/query";
 	#schema:identifier [ a schema:PropertyValue; 
 		#schema:propertyID  "DDSS-ID"; 
@@ -454,7 +454,7 @@
 	dcat:contactPoint <https://orcid.org/0000-0002-6247-0687/contactPoint>;
 . 
 
-<eida-sc3.infp.ro/fdsnws/dataselect/1/query> a epos:WebService;
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/NIEP> a epos:WebService;
 	schema:identifier "eida-sc3.infp.ro/fdsnws/dataselect/1/query";
 	#schema:identifier [ a schema:PropertyValue; 
 		#schema:propertyID  "DDSS-ID"; 
@@ -480,30 +480,30 @@
 	dcat:contactPoint <https://orcid.org/0000-0002-6247-0687/contactPoint>;
 . 
 
-<eida-sc3.infp.ro/eidaws/wfcatalog/alpha/query> a epos:WebService;
-	schema:identifier "eida-sc3.infp.ro/eidaws/wfcatalog/alpha/query";
-	#schema:identifier [ a schema:PropertyValue; 
+#<eida-sc3.infp.ro/eidaws/wfcatalog/alpha/query> a epos:WebService;
+#	schema:identifier "eida-sc3.infp.ro/eidaws/wfcatalog/alpha/query";
+#	#schema:identifier [ a schema:PropertyValue; 
 		#schema:propertyID  "DDSS-ID"; 
 		#schema:value  ""; 
 	#]; 
-	schema:description "Web service which returns waveform metadata and data quality metrics";
-	dcat:theme <epos:waveformquality>;
-	schema:name "WFCatalog - National Institute for Earth Physics (NIEP)";
-	hydra:entrypoint "http://eida-sc3.infp.ro/eidaws/wfcatalog/alpha/query?"^^xsd:anyURI; 
-	schema:provider <PIC:998181508>;
-	schema:datePublished "2017-09-01"^^xsd:date;
-	schema:dateModified "2017-09-01"^^xsd:date;
-	dct:spatial [ a dct:Location; 
-		locn:geometry "POLYGON(-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0)"^^gsp:wktLiteral; 
-	]; 
-	schema:keywords "EIDA"," NIEP"," data quality"," availability"," metrics"," waveform"," metadata";
-	dct:license "Creative Commons for data, Open Source licences for software"^^xsd:anyURI;
-	dct:temporal [ a dct:PeriodOfTime; 
-		schema:startDate "1993-01-01T00:00:00Z"^^xsd:dateTime; 
+#	schema:description "Web service which returns waveform metadata and data quality metrics";
+#	dcat:theme <epos:waveformquality>;
+#	schema:name "WFCatalog - National Institute for Earth Physics (NIEP)";
+#	hydra:entrypoint "http://eida-sc3.infp.ro/eidaws/wfcatalog/alpha/query?"^^xsd:anyURI; 
+#	schema:provider <PIC:998181508>;
+#	schema:datePublished "2017-09-01"^^xsd:date;
+#	schema:dateModified "2017-09-01"^^xsd:date;
+#	dct:spatial [ a dct:Location; 
+#		locn:geometry "POLYGON(-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0)"^^gsp:wktLiteral; 
+#	]; 
+#	schema:keywords "EIDA"," NIEP"," data quality"," availability"," metrics"," waveform"," metadata";
+#	dct:license "Creative Commons for data, Open Source licences for software"^^xsd:anyURI;
+#	dct:temporal [ a dct:PeriodOfTime; 
+#		schema:startDate "1993-01-01T00:00:00Z"^^xsd:dateTime; 
 		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
-	];
-	dcat:contactPoint <https://orcid.org/0000-0002-6247-0687/contactPoint>;
-.
+#	];
+#	dcat:contactPoint <https://orcid.org/0000-0002-6247-0687/contactPoint>;
+#.
 # Dataset
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/NIEP> a dcat:Dataset;
         dct:title "Primary Seismic Waveform Data";
@@ -541,8 +541,8 @@
 	dct:issued "2017-01-01"^^xsd:date ;
 	dct:modified "2017-01-01"^^xsd:date ;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-	dcat:accessURL <eida-sc3.infp.ro/eidaws/wfcatalog/alpha/operation>;
-	dct:conformsTo <eida-sc3.infp.ro/fdsnws/dataselect/1/query>;
+	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001/NIEP>;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/NIEP>;
 	dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI;
  	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 
@@ -586,8 +586,8 @@
 	dct:issued "2017-01-01"^^xsd:date ;
 	dct:modified "2017-01-01"^^xsd:date ;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-	dcat:accessURL <eida-sc3.infp.ro/eidaws/wfcatalog/alpha/operation>;
-	dct:conformsTo <eida-sc3.infp.ro/fdsnws/station/1/query>;
+	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/Operation/002/NIEP>;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/NIEP>;
 	dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
  	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 	
