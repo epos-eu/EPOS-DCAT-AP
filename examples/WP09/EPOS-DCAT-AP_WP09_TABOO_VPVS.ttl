@@ -173,7 +173,7 @@
         #schema:endDate "YYYY-MM-DDThh:mm:ss"^^xsd:dateTime ;
     ];
 	# This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
-	dcat:theme  <#Crustalvelocityparameters> ;
+	dcat:theme  <epos:Crustalvelocityparameters> ;
 	dcat:keyword "Earthquake", "Event", "rocks", "seismic waves propagation", "Vp/Vs ratio", "VpVs", "seismology", "NFO", "Near Fault Observatory", "TABOO", "FRIDGE";
     dcat:contactPoint <http://orcid.org/0000-0003-3489-7453/scientificContact>;
 	dct:publisher <PIC:999472675>;
@@ -203,7 +203,7 @@
 	schema:keywords "Earthquake", "Event", "rocks", "seismic waves propagation", "Vp/Vs ratio", "VpVs", "seismology", "NFO", "Near Fault Observatory", "TABOO", "FRIDGE";
 	# hydra:entrypoint "application.wadl"^^xsd:anyURI; 
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/VPVS/WebService/001/Operation/001>;
-	dcat:theme <#Crustalvelocityparameters>;
+	dcat:theme <epos:Crustalvelocityparameters>;
 	dcat:contactPoint <http://orcid.org/0000-0002-8608-4289/contactPoint>;
 	# This property refers to the API documentation. (Optional)
 	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/VPVS/WebService/001/APIDocumentation>;
@@ -221,7 +221,7 @@
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
-		hydra:template "http://fridge-services.rm.ingv.it/vpvs/(?mintime, maxtime, minlat, maxlat, minlon, maxlon, mineqdepth, maxeqdepth, minnp, minns, maxpw, maxsw, minps, maxgap, midi, maxherr, maxverr)"^^xsd:string;
+		hydra:template "http://fridge-services.rm.ingv.it/vpvs/{?mintime, maxtime, minlat, maxlat, minlon, maxlon, mineqdepth, maxeqdepth, minnp, minns, maxpw, maxsw, minps, maxgap, midi, maxherr, maxverr}"^^xsd:string;
 		# type of parameter "xsd:string" "xsd:boolean" "xsd:date" "xsd:dateTime" "xsd:decimal" "xsd:double" "xsd:float" "xsd:int" "xsd:integer" "xsd:long"
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "mintime"^^xsd:string;
@@ -370,12 +370,12 @@
 	] ;
 .
 
-<#NearFaultObservations> a skos:ConceptScheme;
+<epos:NearFaultObservations> a skos:ConceptScheme;
 	dct:title "Near Fault Observations";
 	dct:description "It contains the concepts of Near Fault Observations";
 .
 
-<#Crustalvelocityparameters> a skos:Concept;
-	skos:inScheme <#NearFaultObservations>;
+<epos:Crustalvelocityparameters> a skos:Concept;
+	skos:inScheme <epos:NearFaultObservations>;
 	skos:prefLabel "Crustal velocity parameters";
 .
