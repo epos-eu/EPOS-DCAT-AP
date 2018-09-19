@@ -98,103 +98,7 @@
     schema:availableLanguage "en" ;
     schema:contactType "scientificContact" ;
 . 
-<<<<<<< HEAD
-<radon.infp.ro/operation> a hydra:Operation;
-    hydra:method "GET"^^xsd:string;
-    hydra:returns "application/json";
-    hydra:property[ a hydra:IriTemplate;
-        hydra:template "http://fridge-services.rm/ingv.it/radon/(?mintime, maxtime, minlat, maxlat, minlon, maxlon, max_radon_error)"^^xsd:string;
-            hydra:mapping[ a hydra:IriTemplateMapping;
-                hydra:variable "mintime"^^xsd:string;
-                rdfs:range "datetime";
-                rdfs:label "minimum time";
-                schema:minValue "2000-01-01T00:00:00.0000Z";
-                schema:maxValue "2018-09-20T12:00:00.0000Z";
-                schema:defaultValue "2000-03-01T00:00:00.0000Z";
-                hydra:required "true"^^xsd:boolean;
-            ];
-            hydra:mapping[ a hydra:IriTemplateMapping;
-                hydra:variable "maxtime"^^xsd:string;
-                rdfs:range "datetime";
-                rdfs:label "maximum time";
-                schema:minValue "2000-01-01T00:00:00.0000Z";
-                schema:maxValue "2018-09-20T12:00:00.0000Z";
-                schema:defaultValue "2001-05-01T00:00:00.0000Z";
-                hydra:required "true"^^xsd:boolean;
-            ];
-            hydra:mapping[ a hydra:IriTemplateMapping;
-                hydra:variable "minlat"^^xsd:string;
-                rdfs:range "float";
-                rdfs:label "minimum Latitude";
-                schema:minValue "-90";
-                schema:maxValue "90";
-                schema:defaultValue "-90";
-                hydra:required "true"^^xsd:boolean;
-            ];
-            hydra:mapping[ a hydra:IriTemplateMapping;
-                hydra:variable "maxlat"^^xsd:string;
-                rdfs:range "float";
-                rdfs:label "maximum Latitude";
-                schema:minValue "-90";
-                schema:maxValue "90";
-                schema:defaultValue "90";
-                hydra:required "true"^^xsd:boolean;
-            ];
-            hydra:mapping[ a hydra:IriTemplateMapping;
-                hydra:variable "minlon"^^xsd:string;
-                rdfs:range "float";
-                rdfs:label "minimum Longitude";
-                schema:minValue "-180";
-                schema:maxValue "180";
-                schema:defaultValue "-180";
-                hydra:required "true"^^xsd:boolean;
-            ];
-            hydra:mapping[ a hydra:IriTemplateMapping;
-                hydra:variable "maxlon"^^xsd:string;
-                rdfs:range "float";
-                rdfs:label "maximum Longitude";
-                schema:minValue "-180";
-                schema:maxValue "180";
-                schema:defaultValue "180";
-                hydra:required "true"^^xsd:boolean;
-            ];
-            hydra:mapping[ a hydra:IriTemplateMapping;
-                hydra:variable "max_radon_error"^^xsd:string;
-                rdfs:range "int";
-                rdfs:label "maximum error";
-                schema:minValue "0";
-                schema:maxValue "100";
-                schema:defaultValue "100";
-                hydra:required "true"^^xsd:boolean;
-            ];
-    ] ;
-. 
-<#NearFaultObservations> a skos:ConceptScheme;
-    dct:title "Near Fault Observations";
-    dct:description "It contains the concepts of Near Fault Observations";
-.
-<#Radonconcentration> a skos:Concept;
-    skos:inScheme <#NearFaultObservations>;
-    skos:prefLabel "Radon concentration";
-.
-<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/RADON/Dataset/001> a dcat:Dataset;
-    dct:title "NIEP - Radon Dataset";
-    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/RADON/Dataset/001";
-    adms:identifier [ a adms:Identifier; 
-        adms:schemaAgency "DDSS-ID";
-        skos:notation "WP09-DDSS-024"; 
-    ];
-    dct:description "Radon counts and local temperature dataset contains Radon Gas concentration time series based on periodic counting of Rn gas at site";
-    ## example of frequency using a controlled vocabulary
-    dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
-    dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
-    dct:created "2010-04-01"^^xsd:date;
-    dcat:theme  <#Radonconcentration> ;
-    dcat:keyword "Geochemical", "Radon concentration", "Radon counts", "geochemistry", "geohazards", "long term continuos timeseries", "local temperature" ;
-    dcat:contactPoint <http://orcid.org/0000-0003-2431-1383/contactPoint>;
-    dct:publisher <PIC:998181508>;
-    dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/RADON/Distribution/001>;
-=======
+
     <radon.infp.ro/operation> a hydra:Operation;
         hydra:method "GET"^^xsd:string;
         hydra:returns "application/json";
@@ -267,7 +171,6 @@
 . 
 
 
-
     <epos:NearFaultObservations> a skos:ConceptScheme;
         dct:title "Near Fault Observations";
         dct:description "It contains the concepts of Near Fault Observations";
@@ -279,8 +182,8 @@
 
 <WP09/NIEP/RADON> a dcat:Dataset;
         adms:identifier [ a adms:Identifier ;
-        	adms:schemaAgency "DDSS-ID" ;
-        	skos:notation "" ;
+        	adms:schemaAgency "DDSS-ID";
+            skos:notation "WP09-DDSS-024";
         ];
         dct:title "NIEP - Radon Dataset";
         dct:identifier "WP09/NIEP/RADON";
@@ -293,8 +196,8 @@
         dcat:keyword "Geochemical", "Radon concentration", "Radon counts", "geochemistry", "geohazards", "long term continuos timeseries", "local temperature" ;
         dcat:contactPoint <http://orcid.org/0000-0003-2431-1383/contactPoint>;
         dct:publisher <PIC:998181508>;
-        dcat:distribution <WP09/NIEP/RADON/Distribution>;
->>>>>>> upstream/EPOS-DCAT-AP-shapes
+        dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/RADON/Distribution/001>;
+
 .
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/RADON/Distribution/001> a dcat:Distribution;
     dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/RADON/Distribution/001";
