@@ -546,7 +546,7 @@
         dct:description "NIEP Acceleration Waveform Continuous Dataset";
         adms:identifier [ a adms:Identifier ;
             adms:schemaAgency "DDSS-ID" ;
-            skos:notation "WP8-DDSS-002" ;
+            skos:notation "WP09-DDSS-002" ;
         ];
         dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
@@ -592,49 +592,7 @@
         schema:contactType "legalContact" ;
 .
 
-# Dataset
-<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/SEISMIC_STATION/Dataset/001/NIEP> a dcat:Dataset;
-        dct:title "NIEP Seismic Station Information Dataset";
-        dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/SEISMIC_STATION/Dataset/001/NIEP";
-        dct:description "NIEP Seismic Station Information Dataset";
-        adms:identifier [ a adms:Identifier ;
-            adms:schemaAgency "DDSS-ID" ;
-            skos:notation "WP09-DDSS-001b" ;
-        ];
-        dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
-        dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
-        dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
-        owl:versionInfo "1.0.0" ;
-        dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
-        dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
-        dcat:theme  <epos:Seismicstations> ;
-        dcat:keyword "seismology", "seismicity", "earthquakes", "seismic station", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "station information", "waveform modeling", "NIEP" , "Station", "FDSN-WS", "Seismic Station", "EIDA" ;
-        dcat:contactPoint <https://orcid.org/0000-0002-6247-0687/contactPoint>;
-        dct:publisher <PIC:998181508>;
-        dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/SEISMIC_STATION/Distribution/001/NIEP>;
-        dct:spatial [ a dct:Location ;
-            locn:geometry "POLYGON(19.50 49.00,30.00 49.00,30.00 42.0,19.50 42.0,19.50 49.00 )"^^gsp:wktLiteral;
-        ];
-        dct:temporal [ a dct:PeriodOfTime ;
-            schema:startDate "1980-01-01T00:00:00Z"^^xsd:dateTime ;
-            # schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
-    ];
-.
 
-# Distribution
-<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/SEISMIC_STATION/Distribution/001/NIEP> a dcat:Distribution;
-    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/SEISMIC_STATION/Dataset/001/NIEP";
-    dct:description "Description of Seismic Stations  :: FDSN STATION";
-    dct:issued "2017-01-01"^^xsd:date ;
-    dct:modified "2017-01-01"^^xsd:date ;
-    dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-    dcat:accessURL <eida-sc3.infp.ro/eidaws/wfcatalog/alpha/operation>;
-    dct:conformsTo <eida-sc3.infp.ro/fdsnws/station/1/query>;
-    dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
-    dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
-
-    
-. 
     <https://orcid.org/0000-0002-6247-0687/contactPoint> a schema:ContactPoint;
         schema:email "cristian.neagoe@infp.ro";
         schema:availableLanguage "en" ;
