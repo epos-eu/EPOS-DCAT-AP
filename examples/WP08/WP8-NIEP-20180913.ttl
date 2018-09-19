@@ -52,7 +52,7 @@
 . 
 	<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001/NIEP> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
-		hydra:returns "binary";
+		hydra:returns "application/vnd.fdsn.mseed";
 		hydra:property[ a hydra:IriTemplate;
 			hydra:template "http://eida-sc3.infp.ro/fdsnws/dataselect/1/query{?starttime, endtime, network, station, location, channel, quality, minimumlength, nodata}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
@@ -123,7 +123,7 @@
 . 
 	<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/Operation/002/NIEP> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
-		hydra:returns "xml";
+		hydra:returns "application/xml";
 		hydra:property[ a hydra:IriTemplate;
 			hydra:template "http://eida-sc3.infp.ro/fdsnws/station/1/query{?starttime, endtime, network, station, location, channel, minlatitude, maxlatitude, minlongitude, maxlongitude, level, nodata}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
