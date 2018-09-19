@@ -44,6 +44,7 @@
 # Contacts
 <http://orcid.org/0000-0002-1399-0379/contactPoint> a schema:ContactPoint;
 	schema:email "massimo.fares@ingv.it";
+	schema:contactType "manager" ;
 	schema:availableLanguage "en" ;
 .
 
@@ -72,6 +73,7 @@
 	schema:value "999472675";
 	];
 	schema:legalName "INGV National Institute of Geophysics e Volcanology";
+	schema:leiCode "????";
 	schema:address [ a schema:PostalAddress;
 	schema:streetAddress "Via di Vigna Murata, 605";
 	schema:addressLocality "Rome";
@@ -117,7 +119,7 @@
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/APIDocumentation> a hydra:APIDocumentation ;
       	hydra:title "documentation title" ;
       	hydra:description "some description of API Documentation" ;
-      	hydra:entrypoint "webservices.ingv.it/fdsnws/dataselect/1/documentation" ; # fake
+      	hydra:entrypoint "https://www.orfeus-eu.org/data/eida/webservices/dataselect/" ;
 .
 
 # Params
@@ -216,7 +218,7 @@
         dct:description "Continuous seismic waveforms";
         adms:identifier [ a adms:Identifier ;
         adms:schemaAgency "DDSS-ID" ;
-        skos:notation "WP8-DDSS-001" ;
+        skos:notation "WP08-DDSS-001" ;
         ];
         dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
@@ -284,7 +286,7 @@
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/APIDocumentation> a hydra:APIDocumentation ;
       	hydra:title "documentation title" ;
       	hydra:description "some description of API Documentation" ;
-      	hydra:entrypoint "webservices.ingv.it/fdsnws/dataselect/1/documentation" ; # fake
+      	hydra:entrypoint "https://www.orfeus-eu.org/data/eida/webservices/station/" ;
 .
 
 # Params
@@ -411,7 +413,7 @@
         dct:description "Seismic Stations ";
         adms:identifier [ a adms:Identifier ;
             adms:schemaAgency "DDSS-ID" ;
-            skos:notation "WP8-DDSS-002" ;
+            skos:notation "WP08-DDSS-002" ;
         ];
         dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;

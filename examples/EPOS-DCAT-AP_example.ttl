@@ -146,10 +146,12 @@
         dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         owl:versionInfo "1.0.0" ;
 
-        # This property refers to the type of the Dataset. Example of frequency using a controlled vocabulary http://dublincore.org/2012/06/14/dctype
-	      dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
+        # This property refers to the type of the Dataset. 
+        # Example of frequency using a controlled vocabulary http://dublincore.org/2012/06/14/dctype
+	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
 
-        # This property refers to the frequency at which the Dataset is updated
+        # This property refers to the frequency at which the Dataset is updated.
+        # The possible types are here: http://purl.org/cld/freq/
         dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI ;
 
         # This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
@@ -159,7 +161,7 @@
         dcat:contactPoint <http://orcid.org/0000-0002-6250-2474/contactPoint> ;
 
         # This property refers to an Organisation responsible for making the Dataset available.
-	      dct:publisher <PIC:999518944> ;
+	dct:publisher <PIC:999518944> ;
 
         # This property links the Dataset to an available Distribution.
         dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001> ;
@@ -192,24 +194,25 @@
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001> a dcat:Distribution ;
         dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001" ;
         dct:title "Title of Seismic Waveform Distribution" ;
-	      dct:description "Description of Seismic Waveform Distribution" ;
-	      dct:issued "2017-01-01"^^xsd:date ;
+	dct:description "Description of Seismic Waveform Distribution" ;
+	dct:issued "2017-01-01"^^xsd:date ;
         dct:modified "2017-01-01"^^xsd:date ;
 
         # This property refers to the type of the Distribution. The possible types are
         # (http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE
         # OR
         # http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE)
-	      dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI ;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI ;
 
         # If the type of Distribution is WEB SERVICE, this property refers to the Web Service that gives access to a Distribution of the Dataset. Otherwise, this property is optional.
-	      dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001> ;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001> ;
 
         # This property contains a URL that gives access to a Distribution of the Dataset. The resource at the access URL may contain # information about how to get the Dataset.
         # If the type of Distribution is WEB SERVICE, this property refers to the Operation of the Web Service to which the Distribution conforms.
         dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001> ;
 
-        # This property refers to the file format of the Distribution.
+        # This property refers to the file format of the Distribution. 
+        # The possible types are here: http://publications.europa.eu/mdr/resource/authority/file-type/html/filetypes-eng.html
         dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI ;
 
         # This property contains the size of a Distribution in bytes.
@@ -276,11 +279,10 @@
 
   # This property is used to specify the output format of the Operation.
   # The possible values are listed here:  https://www.iana.org/assignments/media-types/media-types.xhtml
-
   hydra:returns "application/vnd.fdsn.mseed" ;
 
   hydra:property[ a hydra:IriTemplate ;
-        	hydra:template "http://www.orfeus-eu.org/fdsnws/dataselect/1/query/(?starttime,endtime,network,quality)"^^xsd:string ;
+        	hydra:template "http://www.orfeus-eu.org/fdsnws/dataselect/1/query/{?starttime,endtime,network,quality}"^^xsd:string ;
         		hydra:mapping[ a hydra:IriTemplateMapping ;
                   # This property contains the name of the parameter as required by web service specifications
                   hydra:variable "starttime"^^xsd:string ;
@@ -291,7 +293,8 @@
                   # This property contains true if the property is required, false otherwise.
                		hydra:required "true"^^xsd:boolean ;
 
-                  # This property contains the type of parameter. The possible values for this property are: "xsd:string" "xsd:boolean" "xsd:date" " xsd:dateTime" "xsd:decimal" "xsd:double" "xsd:float" "xsd:int" "xsd:integer" "xsd:long";
+                  # This property contains the type of parameter. 
+		  # The possible values for this property are: "xsd:string" "xsd:boolean" "xsd:date" " xsd:dateTime" "xsd:decimal" "xsd:double" "xsd:float" "xsd:int" "xsd:integer" "xsd:long";
                   rdfs:range "xsd:dateTime" ;
 
                   # This property contains the default value of the parameter

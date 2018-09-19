@@ -1,0 +1,138 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .  
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .  
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .  
+@prefix dc: <http://purl.org/dc/elements/1.1/> .  
+@prefix dct: <http://purl.org/dc/terms/> .  
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .  
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .  
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .  
+@prefix schema: <http://schema.org/> .  
+@prefix dcat: <http://www.w3.org/ns/dcat#> .  
+@prefix cnt: <http://www.w3.org/2011/content#> .  
+@prefix locn: <http://www.w3.org/ns/locn#> .  
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .  
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .  
+@prefix http: <http://www.w3.org/2006/http#> .  
+@prefix owl: <http://www.w3.org/2002/07/owl#> .  
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .  
+
+<mailto:contact-brgm@brgm.fr> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "mailto";
+		schema:value "mailto:contact-brgm@brgm.fr";
+	]; 
+	schema:familyName "Support BRGM";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "3, avenue Claude Guillemin";
+		schema:addressLocality "ORLEANS";
+		schema:postalCode "45000";
+		schema:addressCountry "FRANCE";
+	]; 
+	schema:email "contact-brgm@brgm.fr";
+	schema:affiliation <PIC:999993662>;
+	schema:contactPoint <mailto:contact-brgm@brgm.fr/scientificContact>;
+	schema:contactPoint <mailto:contact-brgm@brgm.fr/legalContact>;
+	schema:contactPoint <mailto:contact-brgm@brgm.fr/financialContact>;
+. 
+
+<PIC:999993662> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "PIC";
+		schema:value "999993662";
+	]; 
+	schema:legalName "BRGM (French Geological Survey)";
+	schema:leiCode "Legal Entity Identifier Search: http://www.lei-lookup.com/#!search" ;
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "3, avenue Claude Guillemin";
+		schema:addressLocality "ORLEANS";
+		schema:postalCode "45000";
+		schema:addressCountry "FRANCE";
+	]; 
+	schema:url "http://www.brgm.eu"^^xsd:anyURI;
+	schema:email "contact-brgm@brgm.fr";
+	schema:contactPoint <mailto:contact-brgm@brgm.fr/scientificContact>;
+	schema:contactPoint <mailto:contact-brgm@brgm.fr/legalContact>;
+	schema:contactPoint <mailto:contact-brgm@brgm.fr/financialContact>;
+. 
+
+
+
+	<mailto:contact-brgm@brgm.fr> a schema:ContactPoint;
+		schema:email "contact-brgm@brgm.fr";
+		schema:availableLanguage "en" ;
+		schema:contactType "manager" ;
+. 
+
+	<mailto:contact-brgm@brgm.fr/scientificContact> a schema:ContactPoint;
+		schema:email "contact-brgm@brgm.fr";
+		schema:availableLanguage "en" ;
+		schema:contactType "scientificContact" ;
+. 
+	<mailto:contact-brgm@brgm.fr/legalContact> a schema:ContactPoint;
+		schema:email "contact-brgm@brgm.fr";
+		schema:availableLanguage "en" ;
+		schema:contactType "legalContact" ;
+. 
+	<mailto:contact-brgm@brgm.fr/financialContact> a schema:ContactPoint;
+		schema:email "contact-brgm@brgm.fr";
+		schema:availableLanguage "en" ;
+		schema:contactType "financialContact" ;
+.
+
+
+	<#Geology> a skos:ConceptScheme;
+		dct:title "Geology";
+		dct:description "It contains the concepts of Geology";
+. 
+
+	<#GeologicalData> a skos:Concept;
+		skos:inScheme <epos:Geology>;
+.
+
+<http://resource.europe-geology.eu/service/cswEpos> a epos:WebService;
+	schema:identifier "http://resource.europe-geology.eu/service/cswEpos";
+	schema:identifier [ a schema:PropertyValue; 
+		schema:propertyID  "DDSS-ID"; 
+		schema:value  "WP15-DDSS-007"; 
+	]; 
+	schema:description "This CSW service exposes a catalogue of all datasets and services provided by the TCS Geological Information and Modelling and provides a hook to EGDI catalogue. Only new datasets and services provided by EPOS WP15 are registered in this catalogue, and a dedicated metadata record describing EGDI catalogue (its CSW) is created to enable EGDI integration within EPOS. Indeed the interaction with the ICS-C requires extra information that are not required in an INSPIRE compliant catalogue. It is thus easier protyping it on a small controlled system as the ICS-C requirement mature than revisiting the entire EGDI catalogue (2109 entries as of today)";
+	dcat:theme <#GeologicalData>;
+	schema:name "WP15 Catalogue service";
+	hydra:entrypoint "http://resource.europe-geology.eu/service/cswEpos"^^xsd:anyURI; 
+	schema:provider <PIC:999993662>;
+	schema:datePublished "2016-10-27Z"^^xsd:dateTime;
+	schema:dateModified "2018-01-19Z"^^xsd:dateTime;
+	dct:spatial [ a dct:Location; 
+		locn:geometry "POLYGON(-180 90,180 90,180 -90,-180 -90,-180 90)"^^gsp:wktLiteral; 
+	]; 
+	hydra:supportedOperation <http://resource.europe-geology.eu/service/cswEpos/operation>;
+	schema:keywords "Geology","EPOS","WP15","BoreholeView","scientific drilling","GeologicUnitView","MappedFeature", "ModelView", "EGDI";
+	dct:license "TBD"^^xsd:anyURI;
+	dct:temporal [ a dct:PeriodOfTime; 
+		schema:startDate "2016-10-27T00:00:00Z"^^xsd:dateTime; 
+		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
+	]; 
+	dcat:contactPoint <mailto:contact-brgm@brgm.fr>;
+. 
+
+	<http://resource.europe-geology.eu/service/cswEpos/operation> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/xml";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "http://resource.europe-geology.eu/service/cswEpos{?service, request}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "service"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "service";
+					schema:defaultValue "CSW";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "request"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "request";
+					schema:defaultValue "GetCapabilities";
+					hydra:required "true"^^xsd:boolean;
+				];
+		] ;
+. 

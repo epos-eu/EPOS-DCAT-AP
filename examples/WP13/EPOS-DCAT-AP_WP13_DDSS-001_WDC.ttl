@@ -1,214 +1,314 @@
-@prefix adms: <http://www.w3.org/ns/adms#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix dct: <http://purl.org/dc/terms/> .
-@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
-@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix schema: <http://schema.org/> .
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix cnt: <http://www.w3.org/2011/content#> .
-@prefix locn: <http://www.w3.org/ns/locn#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix http: <http://www.w3.org/2006/http#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .  
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .  
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .  
+@prefix dc: <http://purl.org/dc/elements/1.1/> .  
+@prefix dct: <http://purl.org/dc/terms/> .  
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .  
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .  
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .  
+@prefix schema: <http://schema.org/> .  
+@prefix dcat: <http://www.w3.org/ns/dcat#> .  
+@prefix cnt: <http://www.w3.org/2011/content#> .  
+@prefix locn: <http://www.w3.org/ns/locn#> .  
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .  
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .  
+@prefix http: <http://www.w3.org/2006/http#> .  
+@prefix owl: <http://www.w3.org/2002/07/owl#> .  
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .  
+
+###############################################################################
+### Domain and subdomain ###
+###############################################################################
+
+<#Geoelectromagnetism> a skos:ConceptScheme;
+    dct:title "Geoelectromagnetism";
+    dct:description "Relating to the electric or magnetic field of the Earth";
+.
+
+<#Magneticfield> a skos:Concept;
+    skos:definition "Geomagnetic data and models without restriction in scale or frequency";
+    skos:inScheme <#Geoelectromagnetism>;
+    skos:prefLabel "Geomagnetic data and models without restriction in scale or frequency";
+.
+
+###############################################################################
+### People ###
+###############################################################################
 
 <mailto:smf@bgs.ac.uk> a schema:Person;
-	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "mailto";
-		schema:value "mailto:smf@bgs.ac.uk";
-	];
-	schema:familyName "Flower";
-	schema:givenName "Simon";
-	schema:address [ a schema:PostalAddress;
-		schema:streetAddress "The Lyell Centre, Research Avenue South";
-		schema:addressLocality "Edinburgh";
-		schema:postalCode "EH14 4AP";
-		schema:addressCountry "United Kingdom";
-	];
-	schema:email "smf@bgs.ac.uk";
-	schema:telephone "0131 650 0238";
-	schema:url "http://www.bgs.ac.uk/staff/profiles/0447.html"^^xsd:anyURI;
-	schema:affiliation <http://viaf.org/viaf/136554353/>;
-.
+    schema:identifier [ a schema:PropertyValue;
+        schema:propertyID "mailto";
+        schema:value "smf@bgs.ac.uk";
+    ]; 
+    schema:familyName "Flower";
+    schema:givenName "Simon";
+    schema:address [ a schema:PostalAddress;
+        schema:streetAddress "The Lyell Centre, Research Avenue South";
+        schema:addressLocality "Edinburgh";
+        schema:postalCode "EH14 4AP";
+        schema:addressCountry "United Kingdom";
+    ]; 
+    schema:email "smf@bgs.ac.uk";
+    schema:telephone "+44 131 650 0238";
+    schema:url "http://www.bgs.ac.uk/staff/profiles/0447.html"^^xsd:anyURI;
+    schema:affiliation <http://viaf.org/viaf/136554353/>;
+    schema:contactPoint <mailto:smf@bgs.ac.uk/contactPoint>;
+. 
 
 <http://orcid.org/0000-0002-7677-5158> a schema:Person;
-	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "orcid";
-		schema:value "http://orcid.org/0000-0002-7677-5158";
-	];
-	schema:familyName "Thomson";
-	schema:givenName "Alan";
-	schema:address [ a schema:PostalAddress;
-		schema:streetAddress "The Lyell Centre, Research Avenue South";
-		schema:addressLocality "Edinburgh";
-		schema:postalCode "EH14 4AP";
-		schema:addressCountry "United Kingdom";
-	];
-	schema:email "awpt@bgs.ac.uk";
-	schema:telephone "0131 650 0257";
-	schema:url "http://www.bgs.ac.uk/staff/profiles/1939.html"^^xsd:anyURI;
-	schema:affiliation <http://viaf.org/viaf/136554353/>;
-.
+    schema:identifier [ a schema:PropertyValue;
+        schema:propertyID "orcid";
+        schema:value "0000-0002-7677-5158";
+    ]; 
+    schema:familyName "Thomson";
+    schema:givenName "Alan";
+    schema:address [ a schema:PostalAddress;
+        schema:streetAddress "The Lyell Centre, Research Avenue South";
+        schema:addressLocality "Edinburgh";
+        schema:postalCode "EH14 4AP";
+        schema:addressCountry "United Kingdom";
+    ]; 
+    schema:email "awpt@bgs.ac.uk";
+    schema:telephone "+44 131 650 0257";
+    schema:url "http://www.bgs.ac.uk/staff/profiles/1939.html"^^xsd:anyURI;
+    schema:affiliation <http://viaf.org/viaf/136554353/>;
+    schema:contactPoint <http://orcid.org/0000-0002-7677-5158/contactPoint>;
+    schema:contactPoint <http://orcid.org/0000-0002-7677-5158/scientificContact>;
+    schema:contactPoint <http://orcid.org/0000-0002-7677-5158/legalContact>;
+    schema:contactPoint <http://orcid.org/0000-0002-7677-5158/financialContact>;
+. 
 
 <mailto:petes@bgs.ac.uk> a schema:Person;
-	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "mailto";
-		schema:value "mailto:petes@bgs.ac.uk";
-	];
-	schema:familyName "Stevenson";
-	schema:givenName "Peter";
-	schema:address [ a schema:PostalAddress;
-		schema:streetAddress "The Lyell Centre, Research Avenue South";
-		schema:addressLocality "Edinburgh";
-		schema:postalCode "EH14 4AP";
-		schema:addressCountry "United Kingdom";
-	];
-	schema:email "petes@bgs.ac.uk";
-	schema:telephone "0131 650 0251";
-	schema:affiliation <http://viaf.org/viaf/136554353/>;
+    schema:identifier [ a schema:PropertyValue;
+        schema:propertyID "mailto";
+        schema:value "mailto:petes@bgs.ac.uk";
+    ];
+    schema:familyName "Stevenson";
+    schema:givenName "Peter";
+    schema:address [ a schema:PostalAddress;
+        schema:streetAddress "The Lyell Centre, Research Avenue South";
+        schema:addressLocality "Edinburgh";
+        schema:postalCode "EH14 4AP";
+        schema:addressCountry "United Kingdom";
+    ];
+    schema:email "petes@bgs.ac.uk";
+    schema:telephone "+44 131 650 0251";
+    schema:affiliation <http://viaf.org/viaf/136554353/>;
+    schema:contactPoint <mailto:petes@bgs.ac.uk/contactPoint>;
 .
 
-<http://app.geomag.bgs.ac.uk/wdc/datasets/download> a epos:WebService;
-	schema:identifier "http://app.geomag.bgs.ac.uk/wdc/datasets/download";
-	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID  "DDSS-ID";
-		schema:value  "WP13-DDSS-001";
-	];
-	schema:description "The World Data Centre for Geomagnetism (Edinburgh) is a node of the World Data System (WDS) established by the International Council for Science (ICSU). The Geomagnetic Data Master Catalogue contains digital minute and hourly mean geomagnetic data.";
-	schema:name "World Data Centre for Geomagnetism (Edinburgh)";
-	schema:datePublished "2013-08-02T00:00:00Z"^^xsd:dateTime;
-	schema:dateModified "2017-09-01T00:00:00Z"^^xsd:dateTime;
-	schema:provider <http://viaf.org/viaf/136554353/>;
-	schema:keywords "magnetism", "geomagentism", "observatory", "definitive";
-	#hydra:entrypoint "application.wadl"^^xsd:anyURI;
-	hydra:supportedOperation <http://app.geomag.bgs.ac.uk/wdc/datasets/download/operation>;
-	dcat:theme <#MagneticField> ;
-	dcat:contactPoint <mailto:petes@bgs.ac.uk/contactPoint>;
-	dcat:contactPoint <mailto:smf@bgs.ac.uk/contactPoint>;
-	dcat:contactPoint <http://orcid.org/0000-0002-7677-5158/contactPoint>;
+
+###############################################################################
+### ContactPoint links ###
+###############################################################################
+
+<mailto:smf@bgs.ac.uk/contactPoint> a schema:ContactPoint;
+    schema:email "smf@bgs.ac.uk";
+    schema:availableLanguage "en" ;
+    schema:contactType "contactPoint" ;
 .
-	<mailto:petes@bgs.ac.uk/contactPoint> a schema:ContactPoint;
-		schema:email "petes@bgs.ac.uk";
-		schema:availableLanguage "en" ;
+
+<mailto:petes@bgs.ac.uk/contactPoint> a schema:ContactPoint;
+    schema:email "petes@bgs.ac.uk";
+    schema:availableLanguage "en" ;
+    schema:contactType "contactPoint" ;
+. 
+
+<http://orcid.org/0000-0002-7677-5158/contactPoint> a schema:ContactPoint;
+    schema:email "awpt@bgs.ac.uk";
+    schema:availableLanguage "en" ;
+    schema:contactType "contactPoint" ;
 .
-	<mailto:smf@bgs.ac.uk/contactPoint> a schema:ContactPoint;
-		schema:email "smf@bgs.ac.uk";
-		schema:availableLanguage "en" ;
-.
-	<http://orcid.org/0000-0002-7677-5158/contactPoint> a schema:ContactPoint;
-		schema:email "awpt@bgs.ac.uk";
-		schema:availableLanguage "en" ;
-.
+
+<http://orcid.org/0000-0002-7677-5158/scientificContact> a schema:ContactPoint;
+    schema:email "awpt@bgs.ac.uk";
+    schema:availableLanguage "en" ;
+    schema:contactType "scientificContact" ;
+. 
+
+<http://orcid.org/0000-0002-7677-5158/legalContact> a schema:ContactPoint;
+    schema:email "awpt@bgs.ac.uk";
+    schema:availableLanguage "en" ;
+    schema:contactType "legalContact" ;
+. 
+
+<http://orcid.org/0000-0002-7677-5158/financialContact> a schema:ContactPoint;
+    schema:email "awpt@bgs.ac.uk";
+    schema:availableLanguage "en" ;
+    schema:contactType "financialContact" ;
+. 
+
+###############################################################################
+### Organisations ###
+###############################################################################
 
 <http://viaf.org/viaf/136554353/> a schema:Organization;
-	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "VIAF";
-		schema:value "http://viaf.org/viaf/136554353/";
-	];
-	schema:legalName "British Geological Survey";
-	schema:address [ a schema:PostalAddress;
-		schema:streetAddress "The Lyell Centre, Research Avenue South";
-		schema:addressLocality "Edinburgh";
-		schema:postalCode "EH14 4AP";
-		schema:addressCountry "United Kingdom";
-	];
-	schema:url "www.bgs.ac.uk"^^xsd:anyURI;
-	schema:contactPoint <http://orcid.org/0000-0002-7677-5158/scientificContact>;
-	schema:contactPoint <mailto:smf@bgs.ac.uk/legalContact>;
-	schema:contactPoint <http://orcid.org/0000-0002-7677-5158/financialContact>;
-	schema:memberOf <http://viaf.org/viaf/148537429/>;
-.
-	<http://orcid.org/0000-0002-7677-5158/scientificContact> a schema:ContactPoint;
-		schema:email "awpt@bgs.ac.uk";
-		schema:availableLanguage "en" ;
-		schema:contactType "scientificContact" ;
-.
-	<mailto:smf@bgs.ac.uk/legalContact> a schema:ContactPoint;
-		schema:email "smf@bgs.ac.uk";
-		schema:availableLanguage "en" ;
-		schema:contactType "legalContact" ;
-.
-	<http://orcid.org/0000-0002-7677-5158/financialContact> a schema:ContactPoint;
-		schema:email "awpt@bgs.ac.uk";
-		schema:availableLanguage "en" ;
-		schema:contactType "financialContact" ;
-.
+    schema:identifier [ a schema:PropertyValue;
+        schema:propertyID "viaf";
+        schema:value "http://viaf.org/viaf/136554353/";
+    ]; 
+    schema:legalName "British Geological Survey";
+    schema:leiCode "Legal Entity Identifier Search: http://www.lei-lookup.com/#!search" ;
+    schema:address [ a schema:PostalAddress;
+        schema:streetAddress "The Lyell Centre, Research Avenue South";
+        schema:addressLocality "Edinburgh";
+        schema:postalCode "EH14 4AP";
+        schema:addressCountry "unknown";
+    ]; 
+    schema:url "www.bgs.ac.uk"^^xsd:anyURI;
+    schema:email "enquiries@bgs.ac.uk";
+    schema:telephone "+44 131 667 1000";
+    schema:memberOf <http://viaf.org/viaf/148537429/>;
+    schema:contactPoint <http://orcid.org/0000-0002-7677-5158/scientificContact>;
+    schema:contactPoint <http://orcid.org/0000-0002-7677-5158/legalContact>;
+    schema:contactPoint <http://orcid.org/0000-0002-7677-5158/financialContact>;
+    schema:contactPoint <mailto:smf@bgs.ac.uk/contactPoint>;
+. 
 
 <http://viaf.org/viaf/148537429/> a schema:Organization;
-	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "VIAF";
-		schema:value "http://viaf.org/viaf/148537429/";
-	];
-	schema:legalName "Natural Environment Research Council";
-	schema:address [ a schema:PostalAddress;
-		schema:streetAddress "Polaris House, North Star Avenue";
-		schema:addressLocality "Swindon";
-		schema:postalCode "SN2 1EU";
-		schema:addressCountry "United Kingdom";
-	];
-	schema:url "www.nerc.ac.uk"^^xsd:anyURI;
-	schema:contactPoint <http://orcid.org/0000-0002-7677-5158/scientificContact>;
-	schema:contactPoint <mailto:smf@bgs.ac.uk/legalContact>;
-	schema:contactPoint <http://orcid.org/0000-0002-7677-5158/financialContact>;
+    schema:identifier [ a schema:PropertyValue;
+        schema:propertyID "viaf";
+        schema:value "http://viaf.org/viaf/148537429/";
+    ]; 
+    schema:legalName "Natural Environment Research Council";
+    schema:leiCode "Legal Entity Identifier Search: http://www.lei-lookup.com/#!search" ;
+    schema:address [ a schema:PostalAddress;
+        schema:streetAddress "Polaris House, North Star Avenue";
+        schema:addressLocality "Swindon";
+        schema:postalCode "SN2 1EU";
+        schema:addressCountry "United Kingdom";
+    ]; 
+    schema:url "www.nerc.ac.uk"^^xsd:anyURI;
+    schema:email "pressoffice@nerc.ac.uk";
+    schema:contactPoint <http://orcid.org/0000-0002-7677-5158/scientificContact>;
+    schema:contactPoint <http://orcid.org/0000-0002-7677-5158/legalContact>;
+    schema:contactPoint <http://orcid.org/0000-0002-7677-5158/financialContact>;
+    schema:contactPoint <mailto:smf@bgs.ac.uk/contactPoint>;
+. 
+
+###############################################################################
+### Data set ###
+###############################################################################
+
+<https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/WDC/Dataset> a dcat:Dataset;
+    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/WDC/Dataset";
+    dct:title "World Data Centre (WDC) Geomagnetic Observatory Data";
+    dct:description "The World Data Centre for Geomagnetism (Edinburgh) is a node of the World Data System (WDS) established by the International Council for Science (ICSU). The Geomagnetic Data Master Catalogue contains continuous digital recordings of the Earth's magnetic field at minute and hourly and daily sample periods.";
+    adms:identifier [ a adms:Identifier;
+        adms:schemaAgency "DDSS-ID";
+        skos:notation "WP13-DDSS-001";
+    ]; 
+    dct:created "2018-08-31"^^xsd:date;
+    dct:modified "2018-08-31"^^xsd:date;
+    dct:issued "2018-08-31"^^xsd:date;
+    owl:versionInfo "1.0.0" ;
+    
+    dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
+    dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI ;
+    dcat:theme  <#Magneticfield> ;
+    dcat:keyword "magnetism", "geomagnetism", "observatory", "definitive" ;
+    dcat:contactPoint <mailto:smf@bgs.ac.uk/contactPoint> ;
+    dcat:contactPoint <mailto:petes@bgs.ac.uk/contactPoint> ;
+    dcat:contactPoint <http://orcid.org/0000-0002-7677-5158/contactPoint>;
+    dct:publisher <http://viaf.org/viaf/136554353/>;
+    dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/WDC/Distribution>;
+
+    dct:temporal [ a dct:PeriodOfTime; 
+        schema:startDate "1883-01-01T00:00:00Z"^^xsd:dateTime; 
+        #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
+    ]; 
+    dct:spatial [ a dct:Location; 
+        locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral; 
+    ]; 
 .
-	<http://orcid.org/0000-0002-7677-5158/scientificContact> a schema:ContactPoint;
-		schema:email "awpt@bgs.ac.uk";
-		schema:availableLanguage "en" ;
-		schema:contactType "scientificContact" ;
+
+###############################################################################
+### Distributions ###
+###############################################################################
+
+<https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/WDC/Distribution> a dcat:Distribution;
+    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/WDC/Distribution";
+    dct:title "Distribution of WDC data";
+    dct:description "WDC data is distributed via web service and ftp";
+    dct:issued "2018-08-31"^^xsd:date;
+    dct:modified "2018-08-31"^^xsd:date;
+    dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+    dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/WDC/Webservice>;
+    dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/WDC/Operation> ;
+    dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI ;
+    dct:format "text/csv; text/xml; application/json; text/plain"^^xsd:string ;
+. 
+
+###############################################################################
+### Web services ###
+###############################################################################
+
+<https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/WDC/Webservice> a epos:WebService;
+    schema:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/WDC/Webservice";
+    schema:description "The World Data Centre (WDC) web service makes available definitive data from global observatories.";
+    schema:name "WDC web service";
+    dcat:contactPoint <mailto:smf@bgs.ac.uk/contactPoint>;
+    dcat:contactPoint <mailto:petes@bgs.ac.uk/contactPoint>;
+    dcat:contactPoint <http://orcid.org/0000-0002-7677-5158/contactPoint>;
+    schema:datePublished "2018-08-31Z"^^xsd:dateTime;
+    schema:dateModified "2018-08-31Z"^^xsd:dateTime;
+    schema:provider <http://viaf.org/viaf/136554353/>;
+    hydra:entrypoint "http://www.wdc.bgs.ac.uk/contact.html"^^xsd:anyURI ;
+    dcat:theme  <#Magneticfield> ;
+    schema:keywords "magnetism"," geomagnetism"," observatory"," provisional"," real time";
+    hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/WDC/Operation> ;
+    dct:spatial [ a dct:Location; 
+        locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral ;
+    ]; 
+    dct:temporal [ a dct:PeriodOfTime; 
+        schema:startDate "1991-01-01T00:00:00Z"^^xsd:dateTime; 
+        #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
+    ]; 
+    dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 .
-	<mailto:smf@bgs.ac.uk/legalContact> a schema:ContactPoint;
-		schema:email "smf@bgs.ac.uk";
-		schema:availableLanguage "en" ;
-		schema:contactType "legalContact" ;
-.
-	<http://orcid.org/0000-0002-7677-5158/financialContact> a schema:ContactPoint;
-		schema:email "awpt@bgs.ac.uk";
-		schema:availableLanguage "en" ;
-		schema:contactType "financialContact" ;
-.
-	<http://app.geomag.bgs.ac.uk/wdc/datasets/download/operation> a hydra:Operation;
-		hydra:method "GET"^^xsd:string;
-		hydra:returns "xml, json, csv, iaga2002, wdc";
-		hydra:property[ a hydra:IriTemplate;
-			hydra:template "http://app.geomag.bgs.ac.uk/wdc/datasets/{cadence}/{obsyIagaCode}{date}/{media}"^^xsd:string;
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "cadence"^^xsd:string;
-					rdfs:label "Cadence";
-					http:paramValue "minute";
-					http:paramValue "hour";
-					http:paramValue "day";
-					hydra:required "true"^^xsd:boolean;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "obsyIagaCode"^^xsd:String;
-					rdfs:label "Observatory IAGA code";
-					hydra:required "true"^^xsd:boolean;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "date"^^xsd:Integer;
-					rdfs:label "Date (yyyy or yyyymmdd)";
-					hydra:required "true"^^xsd:boolean;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "media"^^xsd:string;
-					rdfs:label "Format";
-					http:paramValue "xml";
-					http:paramValue "json";
-					http:paramValue "csv";
-					hydra:required "true"^^xsd:boolean;
-				];
-		] ;
-.
-	<#Geoelectromagnetism> a skos:ConceptScheme;
-		dct:title "Geoelectromagnetism";
-                dct:description "It contains the concepts of Geoelectromagnetism" ;
-.
-	<#MagneticField> a skos:Concept;
-                skos:definition "" ;
-		skos:inScheme <#Geoelectromagnetism>;
-                skos:prefLabel "Magnetic Field" ;
-.
+
+###############################################################################
+### Web service operations ###
+###############################################################################
+
+<https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/WDC/Operation> a hydra:Operation;
+    hydra:method "GET"^^xsd:string;
+    hydra:returns "text/xml";
+    hydra:property[ a hydra:IriTemplate;
+        hydra:template "http://app.geomag.bgs.ac.uk/wdc/datasets/{cadence}/{obsyIagaCode}{date}{?media}"^^xsd:string;
+            hydra:mapping[ a hydra:IriTemplateMapping;
+                hydra:variable "cadence"^^xsd:string;
+                rdfs:label "Cadence";
+                rdfs:range "xsd:string" ;
+                schema:defaultValue "hour";
+                http:paramValue "minute";
+                http:paramValue "hour";
+                http:paramValue "day";
+                hydra:required "true"^^xsd:boolean;
+            ];
+            hydra:mapping[ a hydra:IriTemplateMapping;
+                hydra:variable "obsyIagaCode"^^xsd:string;
+                rdfs:label "Observatory IAGA code";
+                rdfs:range "xsd:string" ;
+                schema:defaultValue "ESK";
+                hydra:required "true"^^xsd:boolean;
+            ];
+            hydra:mapping[ a hydra:IriTemplateMapping;
+                hydra:variable "date"^^xsd:string;
+                rdfs:label "Date (yyyy or yyyymmdd)";
+                rdfs:range "xsd:int" ;
+                schema:defaultValue "2016";
+                hydra:required "true"^^xsd:boolean;
+            ];
+            hydra:mapping[ a hydra:IriTemplateMapping;
+                hydra:variable "media"^^xsd:string;
+                rdfs:label "Format";
+                rdfs:range "xsd:string" ;
+                schema:defaultValue "xml";
+                http:paramValue "xml";
+                http:paramValue "json";
+                http:paramValue "csv";
+                hydra:required "false"^^xsd:boolean;
+            ];
+    ] ;
+. 
