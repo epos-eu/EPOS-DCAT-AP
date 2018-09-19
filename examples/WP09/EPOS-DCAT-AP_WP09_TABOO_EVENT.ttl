@@ -167,7 +167,7 @@
         schema:startDate "2010-04-01T00:00:00"^^xsd:dateTime ;
         #schema:endDate "YYYY-MM-DDThh:mm:ss"^^xsd:dateTime ;
     ];
-	dcat:theme  <#EarthquakeParameters>;
+	dcat:theme  <epos:EarthquakeParameters>;
 	dcat:keyword "earthquake", "event", "rocks", "seismic source", "seismic waves propagation", "seismology", "NFO", "Near Fault Observatory", "TABOO", "FRIDGE";
 	dcat:contactPoint <http://orcid.org/0000-0003-3489-7453/scientificContact>;
 	dct:publisher <PIC:999472675>;
@@ -194,7 +194,7 @@
 	schema:keywords "earthquake", "event", "rocks", "seismic source", "seismic waves propagation", "seismology", "NFO", "Near Fault Observatory", "TABOO", "FRIDGE";
 	# hydra:entrypoint "application.wadl"^^xsd:anyURI; 
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/Event/WebService/001/Operation/001>;
-	dcat:theme <#Crustalvelocityparameters>;
+	dcat:theme <epos:Crustalvelocityparameters>;
 	dcat:contactPoint <http://orcid.org/0000-0002-8608-4289/contactPoint>;
 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 .
@@ -426,12 +426,16 @@
 	];
 .
 
-<#NearFaultObservations> a skos:ConceptScheme;
+<epos:NearFaultObservations> a skos:ConceptScheme;
 	dct:title "Near Fault Observations";
 	dct:description "It contains the concepts of Near Fault Observations";
 .
 
-<#EarthquakeParameters> a skos:Concept;
-	skos:inScheme <#NearFaultObservations>;
+<epos:EarthquakeParameters> a skos:Concept;
+	skos:inScheme <epos:NearFaultObservations>;
 	skos:prefLabel "Earthquake Parameters";
+.
+<epos:Crustalvelocityparameters> a skos:Concept;
+	skos:inScheme <epos:NearFaultObservations>;
+	skos:prefLabel "Crustal velocity parameters";
 .
