@@ -128,7 +128,7 @@
         hydra:method "GET"^^xsd:string;
         hydra:returns "application/xml";
         hydra:property[ a hydra:IriTemplate;
-            hydra:template "http://eida-sc3.infp.ro/fdsnws/station/1/query(?starttime, endtime, network, station, location, channel, minlatitude, maxlatitude, minlongitude, maxlongitude, level, nodata)"^^xsd:string;
+            hydra:template "http://eida-sc3.infp.ro/fdsnws/station/1/query{?starttime, endtime, network, station, location, channel, minlatitude, maxlatitude, minlongitude, maxlongitude, level, nodata}"^^xsd:string;
                 hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "starttime"^^xsd:string;
                     rdfs:range "xsd:date";
@@ -232,7 +232,7 @@
         hydra:method "GET"^^xsd:string;
         hydra:returns "application/json";
         hydra:property[ a hydra:IriTemplate;
-            hydra:template "http://eida-sc3.infp.ro/eidaws/wfcatalog/alpha/query(?starttime, endtime, percent_availability_gt, percent_availability_lt, num_gaps_gt, num_gaps_lt, num_overlaps_gt, num_overlaps_lt, sample_stdev_gt, sample_stdev_lt, sample_rms_gt, sample_rms_lt, max_gap_gt, max_gap_lt, sample_min_gt, sample_min_lt, sample_max_gt, sample_max_lt, sample_mean_gt, sample_mean_lt, network, station, location, channel, csegments, longestonly, minlen, include)"^^xsd:string;
+            hydra:template "http://eida-sc3.infp.ro/eidaws/wfcatalog/alpha/query{?starttime, endtime, percent_availability_gt, percent_availability_lt, num_gaps_gt, num_gaps_lt, num_overlaps_gt, num_overlaps_lt, sample_stdev_gt, sample_stdev_lt, sample_rms_gt, sample_rms_lt, max_gap_gt, max_gap_lt, sample_min_gt, sample_min_lt, sample_max_gt, sample_max_lt, sample_mean_gt, sample_mean_lt, network, station, location, channel, csegments, longestonly, minlen, include}"^^xsd:string;
                 hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "starttime"^^xsd:string;
                     rdfs:range "xsd:time";
@@ -761,7 +761,7 @@
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/xml";
 	hydra:property[ a hydra:IriTemplate;
-		hydra:template "http://eida-sc3.infp.ro/fdsnws/event/1/query(?mintime, maxtime, minlat, maxlat, minlon, maxlon, mineqdepth, maxeqdepth, minnp, minns, maxpw, maxsw, minps, maxgap, midi, maxherr, maxverr)"^^xsd:string;
+		hydra:template "http://eida-sc3.infp.ro/fdsnws/event/1/query{?mintime, maxtime, minlat, maxlat, minlon, maxlon, mineqdepth, maxeqdepth, minnp, minns, maxpw, maxsw, minps, maxgap, midi, maxherr, maxverr}"^^xsd:string;
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "starttime"^^xsd:string;
 			rdfs:range "xsd:dateTime";
