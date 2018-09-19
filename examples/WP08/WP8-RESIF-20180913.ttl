@@ -144,7 +144,7 @@
 	dct:license "Etalab licence for data"^^xsd:anyURI;
 	dct:temporal [ a dct:PeriodOfTime;
 		schema:startDate "1982-01-01T00:00:00Z"^^xsd:dateTime;
-		schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
+		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
 	];
 .
 # Webservice Dataselect
@@ -171,7 +171,7 @@
 	dct:license "To be defined!"^^xsd:anyURI;
 	dct:temporal [ a dct:PeriodOfTime; 
 		schema:startDate "1982-01-01T00:00:00Z"^^xsd:dateTime; 
-		schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
+		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
 	]; 
 . 
 
@@ -198,7 +198,7 @@
 	dct:license "To be defined!"^^xsd:anyURI;
 	dct:temporal [ a dct:PeriodOfTime; 
 		schema:startDate "1992-01-01T00:00:00Z"^^xsd:dateTime; 
-		schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
+		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
 	]; 
 . 
 # Operation
@@ -213,14 +213,14 @@
 					rdfs:range "xsd:dateTime";
 					rdfs:label "Starttime of documents";
 					hydra:required "true"^^xsd:boolean;
-					schema:defaultValue "1980-01-01T00:00:00"
+					schema:defaultValue "2016-01-01T00:00:00"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "endtime"^^xsd:string;
 					rdfs:range "xsd:dateTime";
 					rdfs:label "Endtime of documents";
 					hydra:required "true"^^xsd:boolean;
-					schema:defaultValue "2019-01-01T00:00:00"
+					schema:defaultValue "2017-01-01T00:00:00"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "percent_availability_gt"^^xsd:string;
@@ -401,14 +401,14 @@
 				rdfs:range "xsd:dateTime";
 				rdfs:label "Start of the timespan";
 				hydra:required "true"^^xsd:boolean;
-				schema:defaultValue "1980-01-01T00:00:00"
+				schema:defaultValue "2016-01-01T00:00:00"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "endtime"^^xsd:string;
 					rdfs:range "xsd:dateTime";
 					rdfs:label "End of the timespan";
 					hydra:required "true"^^xsd:boolean;
-					schema:defaultValue "2019-01-01T00:00:00"
+					schema:defaultValue "2017-01-01T00:00:00"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "network"^^xsd:string;
@@ -480,14 +480,14 @@
 					rdfs:range "xsd:dateTime";
 					rdfs:label "Start of the timespan";
 					hydra:required "true"^^xsd:boolean;
-					schema:defaultValue "1980-01-01T00:00:00"
+					schema:defaultValue "2016-01-01T00:00:00"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "endtime"^^xsd:string;
 					rdfs:range "xsd:dateTimexsd:";
 					rdfs:label "End of the timespan";
 					hydra:required "true"^^xsd:boolean;
-					schema:defaultValue "2019-01-01T00:00:00"
+					schema:defaultValue "2017-01-01T00:00:00"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "network"^^xsd:string;
@@ -623,7 +623,7 @@
         ];
         dct:temporal [ a dct:PeriodOfTime ;
                 schema:startDate "1982-01-01T00:00:00Z"^^xsd:dateTime ;
-                schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
+                #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
 	];
 .
 # Distribution
