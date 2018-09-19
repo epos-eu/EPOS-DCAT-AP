@@ -80,6 +80,10 @@
 		schema:startDate "1980-01-01T00:00:00Z"^^xsd:dateTime; 
 		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
 	]; 
+	schema:contactPoint <orcid.org/0000-0001-8626-2703/scientificContact>;
+	schema:contactPoint <orcid.org/0000-0001-8667-8549/legalContact>;
+	schema:contactPoint <orcid.org/0000-0001-8667-8549/financialContact>;
+
 . 
 
 <http://eida.ethz.ch/fdsnws/station/1/query?> a epos:WebService;
@@ -106,10 +110,14 @@
 		schema:startDate "1980-01-01T00:00:00Z"^^xsd:dateTime; 
 		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
 	]; 
+	schema:contactPoint <orcid.org/0000-0001-8626-2703/scientificContact>;
+	schema:contactPoint <orcid.org/0000-0001-8667-8549/legalContact>;
+	schema:contactPoint <orcid.org/0000-0001-8667-8549/financialContact>;
+
 . 
 
-<http://eida.ethz.ch/fdsnws/station/1/query?> a epos:WebService;
-	schema:identifier "http://eida.ethz.ch/fdsnws/station/1/query?";
+<http://eida.ethz.ch/eidaws/routing/1/query?> a epos:WebService;
+	schema:identifier "http://eida.ethz.ch/eidaws/routing/1/query?";
 	#schema:identifier [ a schema:PropertyValue; 
 		#schema:propertyID  "DDSS-ID"; 
 		#schema:value  ""; 
@@ -124,14 +132,17 @@
 	dct:spatial [ a dct:Location; 
 		locn:geometry "POLYGON(-180 -90,-180 90,180 90,180 -90,-180 -90)"^^gsp:wktLiteral; 
 	]; 
-	hydra:supportedOperation <http://eida.ethz.ch/fdsnws/station/1/query?/operation>;
-	hydra:supportedOperation <http://eida.ethz.ch/fdsnws/station/1/query?/operation>;
+	hydra:supportedOperation <http://eida.ethz.ch/fdsnws/routing/1/query?/operation>;
 	schema:keywords "seismology"," seismicity"," earthquakes"," waveform"," instrumentation","SED","ETHZ","metadata";
 	dct:license "to be defined by EIDA"^^xsd:anyURI;
 	dct:temporal [ a dct:PeriodOfTime; 
-		schema:startDate "2017-01-01T00:00:00Z"^^xsd:dateTime; 
+		schema:startDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
 		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
 	]; 
+	schema:contactPoint <orcid.org/0000-0001-8626-2703/scientificContact>;
+	schema:contactPoint <orcid.org/0000-0001-8667-8549/legalContact>;
+	schema:contactPoint <orcid.org/0000-0001-8667-8549/financialContact>;
+
 . 
 
 <http://eida.ethz.ch/eidaws/wfcatalog/1/query?> a epos:WebService;
@@ -157,6 +168,10 @@
 		schema:startDate "2011-01-01T00:00:00Z"^^xsd:dateTime; 
 		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
 	]; 
+	schema:contactPoint <orcid.org/0000-0001-8626-2703/scientificContact>;
+	schema:contactPoint <orcid.org/0000-0001-8667-8549/legalContact>;
+	schema:contactPoint <orcid.org/0000-0001-8667-8549/financialContact>;
+
 . 
 
 <PIC:999979015> a schema:Organization;
@@ -177,6 +192,8 @@
 	schema:contactPoint <orcid.org/0000-0001-8667-8549/legalContact>;
 	schema:contactPoint <orcid.org/0000-0001-8667-8549/financialContact>;
 . 
+
+
 	<http://eida.ethz.ch/fdsnws/dataselect/1/query?/operation> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "binary";
@@ -352,7 +369,8 @@
 				];
 		] ;
 . 
-	<http://eida.ethz.ch/fdsnws/station/1/query?/operation> a hydra:Operation;
+
+	<http://eida.ethz.ch/fdsnws/routing/1/query?/operation> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "XML";
 		hydra:property[ a hydra:IriTemplate;
@@ -444,6 +462,8 @@
 					rdfs:range "xsd:string";
 					rdfs:label "Response Format";
 					http:paramValue "xml";
+					http:paramValue "get";
+					http:paramValue "post";
 					http:paramValue "json";
 					schema:defaultValue "xml";
 					hydra:required "false"^^xsd:boolean;
