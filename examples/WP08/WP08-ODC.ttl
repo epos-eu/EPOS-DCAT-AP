@@ -1,15 +1,20 @@
-@prefix schema: <http://schema.org/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dc: <http://purl.org/dc/terms/> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
 @prefix locn: <http://www.w3.org/ns/locn#> .
-@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix http: <http://www.w3.org/2006/http#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
 <http://orcid.org/0000-0002-6250-2474>
   a schema:Person ;
@@ -87,8 +92,7 @@
   schema:contactPoint <http://orcid.org/0000-0002-6250-2474/financialContact> ; 
 .
 
-<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/ODC>
-  a <https://www.epos-eu.org/epos-dcat-ap#WebService> ;
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/ODC> a epos:WebService;
   schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/ODC" ;
   schema:description "The dataselect Web service provides access to time series data in miniSEED format. The data may be filtered e.g. by time, station and network parameters. The request type is HTTP-GET and HTTP-POST. Please refer to http://www.fdsn.org/webservice for a complete service description." ;
   schema:name "FDSN Dataselect Web Service at ORFEUS Data Center" ;
@@ -123,7 +127,7 @@
   hydra:returns "application/vnd.fdsn.mseed" ;
   hydra:property [
     a hydra:IriTemplate ;
-    hydra:template "https://www.orfeus-eu/org/fdsnws/dataselect/1/query(?starttime, endtime, network, station, location, channel, quality, minimumlength, nodata)"^^xsd:string ;
+    hydra:template "https://www.orfeus-eu/org/fdsnws/dataselect/1/query{?starttime, endtime, network, station, location, channel, quality, minimumlength, nodata}"^^xsd:string ;
     hydra:mapping [
       a hydra:IriTemplateMapping ;
       hydra:variable "starttime"^^xsd:string ;
@@ -251,8 +255,7 @@
   dc:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI ;
   dc:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI .
 
-<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/ODC>
-  a <https://www.epos-eu.org/epos-dcat-ap#WebService> ;
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/ODC> a epos:WebService;
   schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/ODC" ;
   schema:description "The fdsnws-station web service returns station metadata in FDSN StationXML format (schema here) or as delimited text. The purpose of the FDSN StationXML schema is to define an XML representation of the most important and commonly used structures of SEED 2.4 metadata. Results are available at multiple levels of granularity: network, station, channel and response." ;
   schema:name "FDSN Station Web Service at ORFEUS Data Center" ;
@@ -287,7 +290,7 @@
   hydra:returns "application/xml" ;
   hydra:property [
     a hydra:IriTemplate ;
-    hydra:template "https://www.orfeus-eu.org/fdsnws/station/1/query(?starttime, endtime, network, station, location, channel,  minlatitude, maxlatitude, minlongitude, maxlongitude, level, nodata)"^^xsd:string ;
+    hydra:template "https://www.orfeus-eu.org/fdsnws/station/1/query{?starttime, endtime, network, station, location, channel,  minlatitude, maxlatitude, minlongitude, maxlongitude, level, nodata}"^^xsd:string ;
     hydra:mapping [
       a hydra:IriTemplateMapping ;
       hydra:variable "starttime"^^xsd:string ;
