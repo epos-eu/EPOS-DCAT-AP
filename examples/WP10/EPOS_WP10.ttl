@@ -185,7 +185,7 @@
 #WS Operation products/attributes
 <GlassFramework/webresources/products/attributes/operation> a hydra:Operation;
 	hydra:method "GET"^^xsd:string;
- 	hydra:returns "json";
+ 	hydra:returns "application/json";
  	rdfs:label "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/attributes/network";
 	hydra:property[ a hydra:IriTemplate;
 		hydra:template "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/attributes/{attribute}"^^xsd:string;
@@ -224,7 +224,7 @@
 #WS Operation /files
 <GlassFramework/webresources/files/operation> a hydra:Operation;
 	hydra:method "GET"^^xsd:string;
- 	hydra:returns "json/xml/application/octet-stream";
+ 	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
  	rdfs:label "http://glass.unice.fr:8080/GlassFramework/webresources/files/marker/AGDE/json";
  	hydra:template "http://glass.unice.fr:8080/GlassFramework/webresources/files/{object_type}/{object_instance}/{output_format}"^^xsd:string;
@@ -291,7 +291,7 @@
 #WS Operation products/stations
 <GlassFramework/webresources/products/stations/operation> a hydra:Operation;
 	hydra:method "GET"^^xsd:string;
-	hydra:returns "json";
+	hydra:returns "application/json";
 	rdfs:label "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/stations?epoch_start=2015-02-23&analysis_center=WUT";
 	hydra:property[ a hydra:IriTemplate;
 		hydra:template "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/stations{?analysis_center,reference_frame,otl_model,calibration_model,cut_of_angle,epoch_start,epoch_end,coordinates}"^^xsd:string;
@@ -369,7 +369,7 @@
 #WS Operation products/timeseries
 <GlassFramework/webresources/products/timeseries/operation> a hydra:Operation;
 	hydra:method "GET"^^xsd:string;
-	hydra:returns "json/xml";
+	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
 			rdfs:label "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/timeseries/BLIX/UGA/daily/xyz/json?epoch_start=2015-02-23&remove_outliers=1";
 			hydra:template "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/timeseries/{station}/{analysis_centre}/{sampling_period}/{coordinates_system}/{format/{?reference_frame,otl_model,calibration_model,cut_of_angle,remove_outliers,apply_offsets,epoch_start,epoch_end}"^^xsd:string;
@@ -488,7 +488,7 @@
 #WS Operation products/velocities
 <GlassFramework/webresources/products/velocities/operation> a hydra:Operation;
 	hydra:method "GET"^^xsd:string;
- 	hydra:returns "json/xml";
+ 	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
 		rdfs:label "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/velocities/BLIX/UGA/xyz/json";
 		hydra:template "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/velocities/{station}/{analysis_centre}/{coordinates_system}/{format}"^^xsd:string;
@@ -544,7 +544,7 @@
 #WS Operation products/coordinates
 <GlassFramework/webresources/products/coordinates/operation> a hydra:Operation;
 	hydra:method "GET"^^xsd:string;
- 	hydra:returns "json/xml";
+ 	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
 		rdfs:label "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/coordinates/BLIX/UGA/daily/xyz/json?epoch_start=2015-02-23&remove_outliers=1";
     hydra:template "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/timeseries/{station}/{analysis_centre}/{sampling_period}/{coordinates_system}/{format/{?reference_frame,otl_model,calibration_model,cut_of_angle,remove_outliers,apply_offsets,epoch_start,epoch_end}"^^xsd:string;
@@ -663,7 +663,7 @@
 #WS Operation stations/v2/list/
 <GlassFramework/webresources/stations/v2/list/operation> a hydra:Operation;
 	hydra:method "GET"^^xsd:string;
- 	hydra:returns "json";
+ 	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
 		rdfs:label "http://glass.unice.fr:8080/GlassFramework/webresources/stations/v2/list/city";
 		hydra:template "http://glass.unice.fr:8080/GlassFramework/webresources/stations/v2/list/{data}"^^xsd:string;
@@ -705,7 +705,7 @@
 #WS Operation stations/v2/list/station
 <GlassFramework/webresources/stations/v2/list/station/operation> a hydra:Operation;
 	hydra:method "GET"^^xsd:string;
-	hydra:returns "json/xml";
+	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
  		rdfs:label "Different parameters should be separated by & (AMPERSAND), multiple values for a parameter should be separated by , (COMMA) ";
  		hydra:template "http://glass.unice.fr:8080/GlassFramework/webresources/stations/v2/list/station{?name,marker}"^^xsd:string;
