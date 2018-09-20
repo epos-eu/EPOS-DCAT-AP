@@ -149,37 +149,33 @@
  schema:contactPoint <ResearcherID:A-5326-2010/scientificContact>;
  schema:contactPoint <http://orcid.org/0000-0002-9733-284X/financialContact>;
 .
-<#Geodesy> a skos:ConceptScheme;
+<epos:Geodesy> a skos:ConceptScheme;
  dct:title "Geodesy";
  dct:description "It contains the concepts of the Geodesy domain";
 .
 
-<#GNSSProductsPortal> a skos:Concept;
+<epos:GNSSProductsPortal> a skos:Concept;
  dct:description "GNSS Products Portal";
- skos:inScheme <#Geodesy>;
+ skos:inScheme <epos:Geodesy>;
  skos:prefLabel "GNSS Products Portal" ;
 .
 
 <GlassFramework/APIDocumentation> a hydra:APIDocumentation;
 			hydra:title "Documentation for GlassFramework webresources" ;
 			hydra:description "some description of API Documentation" ;
-			hydra:entrypoint "https://glass.epos.ubi.pt:8081/GlassFramework/swagger.json"^^xsd:anyURI ;
+			hydra:entrypoint "https://glass.epos.ubi.pt:8080/GlassFramework/swagger.json"^^xsd:anyURI ;
 .
 
 #WS products/attributes
 <GlassFramework/webresources/products/attributes/> a epos:WebService;
 	schema:identifier "GlassFramework/webresources/products/attributes";
- 	#schema:identifier [ a schema:PropertyValue;
-		#schema:propertyID  "DDSS-ID";
-	 	#schema:value   "WP10-DDSS-002";
- 	#];
 	schema:description "Gets attributes so it can be used in other requests";
 	schema:name "Gets attributes for application in other requests";
  	dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
  	schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
  	schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
  	schema:provider <PIC:996437254>;
- 	dcat:theme  <#GNSSProductsPortal> ;
+ 	dcat:theme  <epos:GNSSProductsPortal> ;
  	hydra:entrypoint "https://glass.epos.ubi.pt:8080/GlassFramework/swagger.json"^^xsd:anyURI;
 	schema:keywords "Geodesy", "GNSS" ;
  	dct:conformsTo <GlassFramework/APIDocumentation> ;
@@ -190,180 +186,102 @@
 <GlassFramework/webresources/products/attributes/operation> a hydra:Operation;
 	hydra:method "GET"^^xsd:string;
  	hydra:returns "json";
- 	rdf:label "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/attributes/network";
-	hydra:IriTemplate[ a hydra:IriTemplate;
+ 	rdfs:label "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/attributes/network";
+	hydra:property[ a hydra:IriTemplate;
 		hydra:template "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/attributes/{attribute}"^^xsd:string;
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "attribute"^^xsd:string;
-			rdf:label "attribute - string with attribute ";
+			rdfs:label "attribute - string with attribute ";
 			hydra:required "true"^^xsd:boolean;
 			http:paramValue "network";
-				http:paramValue "analysis_center";
-				http:paramValue "reference_frame";
-				http:paramValue "otl_model";
-				http:paramValue "calibration_model";
-				http:paramValue "sampling_period";
-				http:paramValue "format";			
+			http:paramValue "analysis_center";
+			http:paramValue "reference_frame";
+			http:paramValue "otl_model";
+			http:paramValue "calibration_model";
+			http:paramValue "sampling_period";
+			http:paramValue "format";
+      schema:defaultValue "network";
 		];
  	];
 .
 
-#WS products/timeseries
-<GlassFramework/webresources/products/timeseries> a epos:WebService;
- 	schema:identifier "GlassFramework/webresources/products/timeseries";
- 	
-	#schema:identifier [ a schema:PropertyValue;
-		#schema:propertyID  "DDSS-ID";
-		#schema:value   "WP10-DDSS-009";
-	#];
- 	#schema:identifier [ a schema:PropertyValue;
-		#schema:propertyID  "DDSS-ID";
-		#schema:value   "WP10-DDSS-010";
-	#];
- 	#schema:identifier [ a schema:PropertyValue;
-		#schema:propertyID  "DDSS-ID";
-		#schema:value   "WP10-DDSS-011";
-	#];
-	schema:description "Returns GNSS Product Time Series (xyz coordinates)";
- 	schema:name "GNSS STATION Time Series (XYZ)";
- 	dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
- 	schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
- 	schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
- 	schema:provider <PIC:996437254>;
- 	dcat:theme  <#GNSSProductsPortal> ;
- 	hydra:entrypoint "https://glass.epos.ubi.pt:8080/GlassFramework/swagger.json"^^xsd:anyURI;
+#WS products/files
+<GlassFramework/webresources/files> a epos:WebService;
+	schema:identifier "GlassFramework/webresources/files";
+	schema:description "Returns the files(s) that match the criteria.";
+	schema:name "GET Files V2";
+	dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
+	schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
+	schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
+	schema:provider <PIC:996437254>;
+	dcat:theme  <epos:GNSSProductsPortal> ;
+	hydra:entrypoint "http://glass.unice.fr:8080/GlassFramework/swagger.json"^^xsd:anyURI;
 	schema:keywords "Geodesy", "GNSS" ;
  	dct:conformsTo <GlassFramework/APIDocumentation> ;
- 	hydra:supportedOperation <GlassFramework/webresources/products/timeseries/operation>;
+ 	hydra:supportedOperation <GlassFramework/webresources/files/operation>;
 .
 
-#WS Operation products/timeseries
-<GlassFramework/webresources/products/timeseries/operation> a hydra:Operation;
+#WS Operation /files
+<GlassFramework/webresources/files/operation> a hydra:Operation;
 	hydra:method "GET"^^xsd:string;
-	hydra:returns "json/xml";
-	hydra:IriTemplate[ a hydra:IriTemplate;
-			rdf:label "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/timeseries/BLIX/UGA/daily/xyz/json?epoch_start=2015-02-23&remove_outliers=1";
-			hydra:template "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/timeseries/{station}/{analysis_centre}/{sampling_period}/{coordinates_system}/{format}?{optional_parameters}"^^xsd:string;
-		 	hydra:mapping[ a hydra:IriTemplateMapping;
-				hydra:variable "station"^^xsd:string;
-				rdf:label "Four letter station identification";
-				rdfs:range "xds:string";
-				hydra:required "true"^^xsd:boolean;
-			 
-		 	];
-		 	hydra:mapping[ a hydra:IriTemplateMapping;
-				hydra:variable "analysis_centre"^^xsd:string;
-				rdf:label "analysis_centre; use the following operation to get the all the formats available";
-				hydra:supportedOperation <GlassFramework/webresources/products/attributes/operation>;
-				rdfs:range "xds:string";
-				hydra:required "true"^^xsd:boolean;
-			 
-		 	];
-		 	hydra:mapping[ a hydra:IriTemplateMapping;
-				hydra:variable "sampling_period"^^xsd:string;
-				rdf:label "sampling_period";
-				rdfs:range "xds:string";
-				hydra:required "true"^^xsd:boolean;
-				http:paramValue "daily";
-				http:paramValue "weekly";
-		 	];
-		 	hydra:mapping[ a hydra:IriTemplateMapping;
-				hydra:variable "coordinates_system"^^xsd:string;
-				rdf:label "coordinates_system";
-				rdfs:range "xds:string";
-				hydra:required "true"^^xsd:boolean;
-				http:paramValue "xyz";
-				http:paramValue "enu";
-		 	];
-		 	hydra:mapping[ a hydra:IriTemplateMapping;
-				hydra:variable "format"^^xsd:string;
-				rdf:label "format; use the following operation to get the all the formats available";
-				hydra:supportedOperation <GlassFramework/webresources/products/attributes/operation>;
-				rdfs:range "xds:string";
-				hydra:required "true"^^xsd:boolean;	
-		 	];
-			hydra:mapping[ a hydra:IriTemplateMapping;
-				hydra:variable "optional_parameters"^^xsd:string;
-				rdf:label "list of all available parameters";
-				rdf:label "The optional parameters should be separated by & (AMPERSAND)";
-				hydra:required "false"^^xsd:boolean;
-				http:paramValue[ a hydra:IriTemplateMapping; 
-					hydra:mapping[ a hydra:IriTemplateMapping;
-						hydra:variable "reference_frame"^^xsd:string;
-						rdf:label "reference_frame; use the following operation to get the all the reference frames available";
-						hydra:supportedOperation <GlassFramework/webresources/products/attributes/operation>;
-						rdfs:range "xds:string";
-						hydra:required "false"^^xsd:boolean;
-					];
-					hydra:mapping[ a hydra:IriTemplateMapping;
-						hydra:variable "otl_model"^^xsd:string;
-						rdf:label "otl_model; use the following operation to get the all the otl models available";
-						hydra:supportedOperation <GlassFramework/webresources/products/attributes/operation>;
-						rdfs:range "xds:string";
-						hydra:required "false"^^xsd:boolean;
-					];
-					hydra:mapping[ a hydra:IriTemplateMapping;
-						hydra:variable "calibration_model"^^xsd:string;
-						rdf:label "calibration_model; use the following operation to get the all the calibration models available ";
-						hydra:supportedOperation <GlassFramework/webresources/products/attributes/operation>;
-						rdfs:range "xds:string";
-						hydra:required "false"^^xsd:boolean;
-					];
-					hydra:mapping[ a hydra:IriTemplateMapping;
-						hydra:variable "cut_of_angle"^^xsd:string;
-						rdf:label "cut_of_angle";
-						rdfs:range "xsd:double";
-						hydra:required "false"^^xsd:boolean;
-					];
-					hydra:mapping[ a hydra:IriTemplateMapping;
-						hydra:variable "remove_outliers"^^xsd:string;
-						rdf:label "remove_outliers";
-						schema:defaultValue "1";
-						rdfs:range "xds:boolean";
-						hydra:required "false"^^xsd:boolean;
-						http:paramValue "1";
-						http:paramValue "0";				
-					];
-					hydra:mapping[ a hydra:IriTemplateMapping;
-						hydra:variable "apply_offsets"^^xsd:string;
-						rdf:label "apply_offsets";
-						schema:defaultValue "0";
-						rdfs:range "xds:boolean";
-						hydra:required "false"^^xsd:boolean;
-						http:paramValue "1";
-						http:paramValue "0";				
-					];
-					hydra:mapping[ a hydra:IriTemplateMapping;
-						hydra:variable "epoch_start"^^xsd:string;
-						rdf:label "epoch_start (date format YYYY-MM-DD)";
-						rdfs:range "xsd:dateTime";
-						hydra:required "false"^^xsd:boolean;
-					];
-					hydra:mapping[ a hydra:IriTemplateMapping;
-						hydra:variable "epoch_end"^^xsd:string;
-						rdf:label "epoch_end (date format YYYY-MM-DD)";
-						rdfs:range "xsd:dateTime";
-						hydra:required "false"^^xsd:boolean;				
-					];
-				];
-			];
-	];
+ 	hydra:returns "json/xml/application/octet-stream";
+	hydra:property[ a hydra:IriTemplate;
+ 	rdfs:label "http://glass.unice.fr:8080/GlassFramework/webresources/files/marker/AGDE/json";
+ 	hydra:template "http://glass.unice.fr:8080/GlassFramework/webresources/files/{object_type}/{object_instance}/{output_format}"^^xsd:string;
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "object_type"^^xsd:string;
+			rdfs:label "the type of the criteria";
+			hydra:required "true"^^xsd:boolean;
+      schema:defaultValue "marker";
+			http:paramValue "agency";
+			http:paramValue "antenna";
+			http:paramValue "city";
+			http:paramValue "combination";
+			http:paramValue "coordinates";
+			http:paramValue "country";
+			http:paramValue "data_range";
+			http:paramValue "format";
+			http:paramValue "length";
+			http:paramValue "marker";
+			http:paramValue "network";
+			http:paramValue "publish_date";
+			http:paramValue "radome";
+			http:paramValue "receiver";
+			http:paramValue "sampling_frequency";
+			http:paramValue "site";
+			http:paramValue "state";
+			http:paramValue "station_date";
+			http:paramValue "type";
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "object_instance"^^xsd:string;
+			rdfs:label " the value of the criteria";
+      schema:defaultValue "AGDE";
+			hydra:required "true"^^xsd:boolean;
+		];
+	 	hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "output_format"^^xsd:string;
+			rdfs:label " the output format";
+			rdfs:range "xds:string";
+			hydra:required "true"^^xsd:boolean;
+      schema:defaultValue "json";
+			http:value "csv";
+			http:value "json";
+			http:value "xml";
+		];
+ ];
 .
 
 #WS products/stations
 <GlassFramework/webresources/products/stations/> a epos:WebService;
 	schema:identifier "GlassFramework/webresources/products/stations";
-	#schema:identifier [ a schema:PropertyValue;
-	#schema:propertyID  "DDSS-ID";
-		#schema:value   "WP10-DDSS-002";
- 	#];
 	schema:description "Returns Stations objects for a given parameters.";
 	schema:name "GET STATIONS WITH PRODUCTS";
 	dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
 	schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
 	schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
 	schema:provider <PIC:996437254>;
-	dcat:theme  <#GNSSProductsPortal> ;
+	dcat:theme  <epos:GNSSProductsPortal> ;
 	hydra:entrypoint "https://glass.epos.ubi.pt:8080/GlassFramework/swagger.json"^^xsd:anyURI;
 	schema:keywords "Geodesy", "GNSS" ;
 	dct:conformsTo <GlassFramework/APIDocumentation> ;
@@ -374,107 +292,193 @@
 <GlassFramework/webresources/products/stations/operation> a hydra:Operation;
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "json";
-	rdf:label "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/stations?epoch_start=2015-02-23&analysis_center=WUT";	
-	hydra:IriTemplate[ a hydra:IriTemplate;
-		hydra:template "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/stations?{optional_parameters}"^^xsd:string;
+	rdfs:label "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/stations?epoch_start=2015-02-23&analysis_center=WUT";
+	hydra:property[ a hydra:IriTemplate;
+		hydra:template "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/stations{?analysis_center,reference_frame,otl_model,calibration_model,cut_of_angle,epoch_start,epoch_end,coordinates}"^^xsd:string;
 		hydra:mapping[ a hydra:IriTemplateMapping;
-			hydra:variable "optional_parameters"^^xsd:string;
-			rdf:label "list of all available parameters";
-			rdf:label "The optional parameters should be separated by & (AMPERSAND)";
+			hydra:variable "analysis_center"^^xsd:string;
+			rdfs:label "analysis_center; use the following operation to get the all the formats available";
+			rdfs:range "xds:string";
 			hydra:required "false"^^xsd:boolean;
-			http:paramValue[ a hydra:IriTemplateMapping;
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "analysis_center"^^xsd:string;
-					rdf:label "analysis_center; use the following operation to get the all the formats available";
-					hydra:supportedOperation <GlassFramework/webresources/products/attributes/operation>;
-					rdfs:range "xds:string";
-					hydra:required "false"^^xsd:boolean;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "reference_frame"^^xsd:string;
-					rdf:label "reference_frame; use the following operation to get the all the reference frames available";
-					hydra:supportedOperation <GlassFramework/webresources/products/attributes/operation>;
-					rdfs:range "xds:string";
-					hydra:required "false"^^xsd:boolean;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "otl_model"^^xsd:string;
-					rdf:label "otl_model; use the following operation to get the all the otl models available";
-					hydra:supportedOperation <GlassFramework/webresources/products/attributes/operation>;
-					rdfs:range "xds:string";
-					hydra:required "false"^^xsd:boolean;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "calibration_model"^^xsd:string;
-					rdf:label "calibration_model; use the following operation to get the all the calibration models available ";
-					hydra:supportedOperation <GlassFramework/webresources/products/attributes/operation>;
-					rdfs:range "xds:string";
-					hydra:required "false"^^xsd:boolean;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "cut_of_angle"^^xsd:string;
-					rdf:label "cut_of_angle";
-					rdfs:range "xsd:double";
-					hydra:required "false"^^xsd:boolean;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "epoch_start"^^xsd:string;
-					rdf:label "epoch_start (date format YYYY-MM-DD)";
-					rdfs:range "xsd:dateTime";
-					hydra:required "false"^^xsd:boolean;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "epoch_end"^^xsd:string;
-					rdf:label "epoch_end (date format YYYY-MM-DD)";
-					rdfs:range "xsd:dateTime";
-					hydra:required "false"^^xsd:boolean;				
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "coordinates"^^xsd:string;
-					rdf:label "type of bounding box";
-					http:paramValue	"rectangle";
-					rdf:label "min_lat,max_lat,min_lon,max_lat (all coordinates must be provided in decimal degree format (-8.1234))";			
-					http:paramValue	"circle";
-					rdf:label "lat,lon,radius (coordinates must be provided in decimal degree format (-8.1234) and radius in meters)";			
-					http:paramValue	"polygon";		
-					rdf:label "[coordinates_list] (all coordinates must be provided in decimal degree format (-8.1234))";			
-				];
-			];
+      schema:defaultValue "WUT";
 		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "reference_frame"^^xsd:string;
+			rdfs:label "reference_frame; use the following operation to get the all the reference frames available";
+			rdfs:range "xds:string";
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "otl_model"^^xsd:string;
+			rdfs:label "otl_model; use the following operation to get the all the otl models available";
+			rdfs:range "xds:string";
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "calibration_model"^^xsd:string;
+			rdfs:label "calibration_model; use the following operation to get the all the calibration models available ";
+			rdfs:range "xds:string";
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "cut_of_angle"^^xsd:string;
+			rdfs:label "cut_of_angle";
+			rdfs:range "xsd:double";
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "epoch_start"^^xsd:string;
+			rdfs:label "epoch_start (date format YYYY-MM-DD)";
+			rdfs:range "xsd:dateTime";
+			hydra:required "false"^^xsd:boolean;
+      schema:defaultValue "2015-02-23";
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "epoch_end"^^xsd:string;
+			rdfs:label "epoch_end (date format YYYY-MM-DD)";
+			rdfs:range "xsd:dateTime";
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "coordinates"^^xsd:string;
+      rdfs:label	"coordinates";
+      http:paramValue	"rectangle";
+			http:paramValue	"circle";
+			http:paramValue	"polygon";
+      hydra:required "false"^^xsd:boolean;
+		];
+	];
+.
+
+#WS products/timeseries
+<GlassFramework/webresources/products/timeseries> a epos:WebService;
+ 	schema:identifier "GlassFramework/webresources/products/timeseries";
+	schema:description "Returns GNSS Product Time Series (xyz coordinates)";
+ 	schema:name "GNSS STATION Time Series (XYZ)";
+ 	dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
+ 	schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
+ 	schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
+ 	schema:provider <PIC:996437254>;
+ 	dcat:theme  <epos:GNSSProductsPortal> ;
+ 	hydra:entrypoint "https://glass.epos.ubi.pt:8080/GlassFramework/swagger.json"^^xsd:anyURI;
+	schema:keywords "Geodesy", "GNSS" ;
+ 	dct:conformsTo <GlassFramework/APIDocumentation> ;
+ 	hydra:supportedOperation <GlassFramework/webresources/products/timeseries/operation>;
+.
+
+#WS Operation products/timeseries
+<GlassFramework/webresources/products/timeseries/operation> a hydra:Operation;
+	hydra:method "GET"^^xsd:string;
+	hydra:returns "json/xml";
+	hydra:property[ a hydra:IriTemplate;
+			rdfs:label "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/timeseries/BLIX/UGA/daily/xyz/json?epoch_start=2015-02-23&remove_outliers=1";
+			hydra:template "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/timeseries/{station}/{analysis_centre}/{sampling_period}/{coordinates_system}/{format/{?reference_frame,otl_model,calibration_model,cut_of_angle,remove_outliers,apply_offsets,epoch_start,epoch_end}"^^xsd:string;
+		 	hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "station"^^xsd:string;
+				rdfs:label "Four letter station identification";
+				rdfs:range "xds:string";
+				hydra:required "true"^^xsd:boolean;
+        schema:defaultValue "BLIX";
+		 	];
+		 	hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "analysis_centre"^^xsd:string;
+				rdfs:label "analysis_centre; use the following operation to get the all the formats available";
+				rdfs:range "xds:string";
+				hydra:required "true"^^xsd:boolean;
+        schema:defaultValue "UGA";
+		 	];
+		 	hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "sampling_period"^^xsd:string;
+				rdfs:label "sampling_period";
+				rdfs:range "xds:string";
+				hydra:required "true"^^xsd:boolean;
+				http:paramValue "daily";
+				http:paramValue "weekly";
+        schema:defaultValue "daily";
+		 	];
+		 	hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "coordinates_system"^^xsd:string;
+				rdfs:label "coordinates_system";
+				rdfs:range "xds:string";
+				hydra:required "true"^^xsd:boolean;
+				http:paramValue "xyz";
+				http:paramValue "enu";
+        schema:defaultValue "xyz";
+		 	];
+		 	hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "format"^^xsd:string;
+				rdfs:label "format; use the following operation to get the all the formats available";
+				rdfs:range "xds:string";
+				hydra:required "true"^^xsd:boolean;
+        schema:defaultValue "json";
+		 	];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "reference_frame"^^xsd:string;
+				rdfs:label "reference_frame; use the following operation to get the all the reference frames available";
+				rdfs:range "xds:string";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "otl_model"^^xsd:string;
+				rdfs:label "otl_model; use the following operation to get the all the otl models available";
+				rdfs:range "xds:string";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "calibration_model"^^xsd:string;
+				rdfs:label "calibration_model; use the following operation to get the all the calibration models available ";
+				rdfs:range "xds:string";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "cut_of_angle"^^xsd:string;
+				rdfs:label "cut_of_angle";
+				rdfs:range "xsd:double";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "remove_outliers"^^xsd:string;
+				rdfs:label "remove_outliers";
+				schema:defaultValue "1";
+				rdfs:range "xds:boolean";
+				hydra:required "false"^^xsd:boolean;
+				http:paramValue "1";
+				http:paramValue "0";
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "apply_offsets"^^xsd:string;
+				rdfs:label "apply_offsets";
+				schema:defaultValue "0";
+				rdfs:range "xds:boolean";
+				hydra:required "false"^^xsd:boolean;
+				http:paramValue "1";
+				http:paramValue "0";
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "epoch_start"^^xsd:string;
+				rdfs:label "epoch_start (date format YYYY-MM-DD)";
+				rdfs:range "xsd:dateTime";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "epoch_end"^^xsd:string;
+				rdfs:label "epoch_end (date format YYYY-MM-DD)";
+				rdfs:range "xsd:dateTime";
+				hydra:required "false"^^xsd:boolean;
+			];
 	];
 .
 
 #WS  products/velocities
 <GlassFramework/webresources/products/velocities/> a epos:WebService;
-
 	schema:identifier "GlassFramework/webresources/products/velocities";
-	#schema:identifier [ a schema:PropertyValue;
-		#schema:propertyID  "DDSS-ID";
-		#schema:value   "WP10-DDSS-012";
-	#];
-	#schema:identifier [ a schema:PropertyValue;
-		#schema:propertyID  "DDSS-ID";
-		#schema:value   "WP10-DDSS-013";
-	#];
-	#schema:identifier [ a schema:PropertyValue;
-		#schema:propertyID  "DDSS-ID";
-		#schema:value   "WP10-DDSS-014";
-	#];
-	#schema:identifier [ a schema:PropertyValue;
-		#schema:propertyID  "DDSS-ID";
-		#schema:value  "WP10-DDSS-018";
-	#];
-	#schema:identifier [ a schema:PropertyValue;
-		#schema:propertyID  "DDSS-ID";
-		#schema:value  "WP10-DDSS-022";
-	#];
 	schema:description "get velocities object for given parameters.";
 	schema:name "GET VELOCITIES";
 	dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
 	schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
 	schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
 	schema:provider <PIC:996437254>;
-	dcat:theme  <#GNSSProductsPortal> ;
+	dcat:theme  <epos:GNSSProductsPortal> ;
 	hydra:entrypoint "https://glass.epos.ubi.pt:8080/GlassFramework/swagger.json"^^xsd:anyURI;
 	schema:keywords "Geodesy", "GNSS" ;
 	dct:conformsTo <GlassFramework/APIDocumentation> ;
@@ -485,284 +489,187 @@
 <GlassFramework/webresources/products/velocities/operation> a hydra:Operation;
 	hydra:method "GET"^^xsd:string;
  	hydra:returns "json/xml";
-	hydra:IriTemplate[ a hydra:IriTemplate;
-		rdf:label "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/velocities/BLIX/UGA/xyz/json";
+	hydra:property[ a hydra:IriTemplate;
+		rdfs:label "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/velocities/BLIX/UGA/xyz/json";
 		hydra:template "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/velocities/{station}/{analysis_centre}/{coordinates_system}/{format}"^^xsd:string;
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "Station"^^xsd:string;
-			rdf:label "Four letter station identification";
+			rdfs:label "Four letter station identification";
 			rdfs:range "xds:string";
 			hydra:required "true"^^xsd:boolean;
+      schema:defaultValue "BLIX";
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
-			hydra:variable "Analysis_centre"^^xsd:string;
-			rdf:label "name of the analysis centre; use the following operation to get the all the formats available";
-			hydra:supportedOperation <GlassFramework/webresources/products/attributes/operation>;
+			hydra:variable "analysis_centre"^^xsd:string;
+			rdfs:label "name of the analysis centre; use the following operation to get the all the formats available";
 			rdfs:range "xds:string";
 			hydra:required "true"^^xsd:boolean;
+      schema:defaultValue "UGA";
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "coordinates_system"^^xsd:string;
-			rdf:label "coordinates system";
+			rdfs:label "coordinates system";
 			rdfs:range "xds:string";
 			hydra:required "true"^^xsd:boolean;
 			http:paramValue "enu";
 			http:paramValue "xyz";
+      schema:defaultValue "xyz";
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "format"^^xsd:string;
-			rdf:label "format; use the following operation to get the all the formats available";
-			hydra:supportedOperation <GlassFramework/webresources/products/attributes/operation>;
+			rdfs:label "format; use the following operation to get the all the formats available";
 			rdfs:range "xds:string";
 			hydra:required "true"^^xsd:boolean;
-		];	 
+      schema:defaultValue "json";
+		];
  	];
 .
 
 #WS products/coordinates
 <GlassFramework/webresources/products/coordinates/> a epos:WebService;
  schema:identifier "GlassFramework/webresources/products/coordinates";
- #schema:identifier [ a schema:PropertyValue;
-	#schema:propertyID  "DDSS-ID";
-	 #schema:value   "WP10-DDSS-007";
- #];
- #schema:identifier [ a schema:PropertyValue;
-	#schema:propertyID  "DDSS-ID";
-	 #schema:value   "WP10-DDSS-008";
- #];
- #schema:identifier [ a schema:PropertyValue;
-	#schema:propertyID  "DDSS-ID";
-	 #schema:value   "WP10-DDSS-016";
- #];
 	schema:description "get coordinates object for a given parameters.";
  schema:name "GET Coordinates";
  dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
  schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
  schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
  schema:provider <PIC:996437254>;
- dcat:theme  <#GNSSProductsPortal> ;
+ dcat:theme  <epos:GNSSProductsPortal> ;
  hydra:entrypoint "https://glass.epos.ubi.pt:8080/GlassFramework/swagger.json"^^xsd:anyURI;
 	schema:keywords "Geodesy", "GNSS" ;
  dct:conformsTo <GlassFramework/APIDocumentation> ;
- hydra:supportedOperation <GlassFramework/webresources/products/coordinates>;
+ hydra:supportedOperation <GlassFramework/webresources/products/coordinates/operation>;
 .
 
 #WS Operation products/coordinates
-<GlassFramework/webresources/products/coordinates> a hydra:Operation;
+<GlassFramework/webresources/products/coordinates/operation> a hydra:Operation;
 	hydra:method "GET"^^xsd:string;
  	hydra:returns "json/xml";
-	hydra:IriTemplate[ a hydra:IriTemplate;
-		rdf:label "The optional parameters should be separated by & (AMPERSAND)";
-		rdf:label "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/coordinates/BLIX/UGA/daily/xyz/json?epoch_start=2015-02-23&remove_outliers=1";
-		hydra:template "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/coordinates/{station}/{analysis_centre}/{sampling_period}/{coordinates_system}/{format}?{optional_parameters}"^^xsd:string;
-		hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "station"^^xsd:string;
-					rdf:label "Four letter station identification";
-					rdfs:range "xds:string";
-					hydra:required "true"^^xsd:boolean;
-				
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "analysis_centre"^^xsd:string;
-					rdf:label "analysis_centre; use the following operation to get the all the formats available";
-					hydra:supportedOperation <GlassFramework/webresources/products/attributes/operation>;
-					rdfs:range "xds:string";
-					hydra:required "true"^^xsd:boolean;
-				
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "sampling_period"^^xsd:string;
-					rdf:label "sampling_period";
-					rdfs:range "xds:string";
-					hydra:required "true"^^xsd:boolean;
-					http:paramValue "daily";
-					http:paramValue "weekly";
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "coordinates_system"^^xsd:string;
-					rdf:label "coordinates_system";
-					rdfs:range "xds:string";
-					hydra:required "true"^^xsd:boolean;
-					http:paramValue "xyz";
-					http:paramValue "enu";
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "format"^^xsd:string;
-					rdf:label "format; use the following operation to get the all the formats available";
-					hydra:supportedOperation <GlassFramework/webresources/products/attributes/operation>;
-					rdfs:range "xds:string";
-					hydra:required "true"^^xsd:boolean;	
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "optional_parameters"^^xsd:string;
-					rdf:label "list of all available parameters";
-					rdf:label "The optional parameters should be separated by & (AMPERSAND)";
-					hydra:required "false"^^xsd:boolean;
-					http:paramValue[ a hydra:IriTemplateMapping; 
-						hydra:mapping[ a hydra:IriTemplateMapping;
-							hydra:variable "reference_frame"^^xsd:string;
-							rdf:label "reference_frame; use the following operation to get the all the reference frames available";
-							hydra:supportedOperation <GlassFramework/webresources/products/attributes/operation>;
-							rdfs:range "xds:string";
-							hydra:required "false"^^xsd:boolean;
-						];
-						hydra:mapping[ a hydra:IriTemplateMapping;
-							hydra:variable "otl_model"^^xsd:string;
-							rdf:label "otl_model; use the following operation to get the all the otl models available";
-							hydra:supportedOperation <GlassFramework/webresources/products/attributes/operation>;
-							rdfs:range "xds:string";
-							hydra:required "false"^^xsd:boolean;
-						];
-						hydra:mapping[ a hydra:IriTemplateMapping;
-							hydra:variable "calibration_model"^^xsd:string;
-							rdf:label "calibration_model; use the following operation to get the all the calibration models available ";
-							hydra:supportedOperation <GlassFramework/webresources/products/attributes/operation>;
-							rdfs:range "xds:string";
-							hydra:required "false"^^xsd:boolean;
-						];
-						hydra:mapping[ a hydra:IriTemplateMapping;
-							hydra:variable "cut_of_angle"^^xsd:string;
-							rdf:label "cut_of_angle";
-							rdfs:range "xsd:double";
-							hydra:required "false"^^xsd:boolean;
-						];
-						hydra:mapping[ a hydra:IriTemplateMapping;
-							hydra:variable "remove_outliers"^^xsd:string;
-							rdf:label "remove_outliers";
-							schema:defaultValue "1";
-							rdfs:range "xds:boolean";
-							hydra:required "false"^^xsd:boolean;
-							http:paramValue "1";
-							http:paramValue "0";				
-						];
-						hydra:mapping[ a hydra:IriTemplateMapping;
-							hydra:variable "apply_offsets"^^xsd:string;
-							rdf:label "apply_offsets";
-							schema:defaultValue "0";
-							rdfs:range "xds:boolean";
-							hydra:required "false"^^xsd:boolean;
-							http:paramValue "1";
-							http:paramValue "0";				
-						];
-						hydra:mapping[ a hydra:IriTemplateMapping;
-							hydra:variable "epoch_start"^^xsd:string;
-							rdf:label "epoch_start (date format YYYY-MM-DD)";
-							rdfs:range "xsd:dateTime";
-							hydra:required "false"^^xsd:boolean;
-						];
-						hydra:mapping[ a hydra:IriTemplateMapping;
-							hydra:variable "epoch_end"^^xsd:string;
-							rdf:label "epoch_end (date format YYYY-MM-DD)";
-							rdfs:range "xsd:dateTime";
-							hydra:required "false"^^xsd:boolean;				
-						];
-					];
-				];
- 	];
-.
-
-#WS products/files
-<GlassFramework/webresources/files/> a epos:WebService;
-	schema:identifier "GlassFramework/webresources/files";
- 	#schema:identifier [ a schema:PropertyValue;
-		#schema:propertyID  "DDSS-ID";
-		#schema:value   "WP10-DDSS-007";
- 	#];
-	schema:description "Returns the files(s) that match the criteria.";
-	schema:name "GET Files V2";
-	dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
-	schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
-	schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
-	schema:provider <PIC:996437254>;
-	dcat:theme  <#GNSSProductsPortal> ;
-	hydra:entrypoint "http://glass.unice.fr:8080/GlassFramework/swagger.json"^^xsd:anyURI;
-	schema:keywords "Geodesy", "GNSS" ;
- 	dct:conformsTo <GlassFramework/APIDocumentation> ;
- 	hydra:supportedOperation <GlassFramework/webresources/files>;
-.
-
-#WS Operation /files
-<GlassFramework/webresources/files> a hydra:Operation;
-	hydra:method "GET"^^xsd:string;
- 	hydra:returns "json/xml/application/octet-stream";
-	hydra:IriTemplate[ a hydra:IriTemplate;
- 	rdf:label "http://glass.unice.fr:8080/GlassFramework/webresources/files/marker/AGDE/json";
- 	hydra:template "http://glass.unice.fr:8080/GlassFramework/webresources/files/{object_type}/{object_instance}/{output_format}"^^xsd:string;
-		hydra:mapping[ a hydra:IriTemplateMapping;
-			hydra:variable "object_type"^^xsd:string;
-			rdf:label "the type of the criteria";
-			hydra:required "true"^^xsd:boolean;
-			http:paramValue "agency";
-			http:paramValue "antenna";
-			http:paramValue "city";
-			http:paramValue "combination";
-			http:paramValue "coordinates";
-			rdf:label "minLat=X&maxLat=X&minLon=X&maxLon=X";
-			http:paramValue "country";
-			http:paramValue "data_range";
-			rdf:label "date_from=X&date_to=X";
-			http:paramValue "format";
-			http:paramValue "length";
-			http:paramValue "marker";
-			http:paramValue "network";
-			http:paramValue "publish_date";
-			rdf:label "date_from=X&date_to=X";
-			http:paramValue "radome";
-			http:paramValue "receiver";
-			http:paramValue "sampling_frequency";
-			http:paramValue "site";
-			http:paramValue "state";
-			http:paramValue "station_date";
-			rdf:label "date_from=X&date_to=X";
-			http:paramValue "type";			
-		];
-		hydra:mapping[ a hydra:IriTemplateMapping;
-			hydra:variable "object_instance"^^xsd:string;
-			rdf:label " the value of the criteria";
-			hydra:required "true"^^xsd:boolean;
-		];
-	 	hydra:mapping[ a hydra:IriTemplateMapping;
-			hydra:variable "output_format"^^xsd:string;
-			rdf:label " the output format";
-			rdfs:range "xds:string";
-			hydra:required "true"^^xsd:boolean;
-			http:value "csv";
-			http:value "json";
-			http:value "xml";				
-		];			
- ];
+	hydra:property[ a hydra:IriTemplate;
+		rdfs:label "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/coordinates/BLIX/UGA/daily/xyz/json?epoch_start=2015-02-23&remove_outliers=1";
+    hydra:template "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/timeseries/{station}/{analysis_centre}/{sampling_period}/{coordinates_system}/{format/{?reference_frame,otl_model,calibration_model,cut_of_angle,remove_outliers,apply_offsets,epoch_start,epoch_end}"^^xsd:string;
+    hydra:mapping[ a hydra:IriTemplateMapping;
+      hydra:variable "station"^^xsd:string;
+      rdfs:label "Four letter station identification";
+      rdfs:range "xds:string";
+      hydra:required "true"^^xsd:boolean;
+      schema:defaultValue "BLIX";
+    ];
+    hydra:mapping[ a hydra:IriTemplateMapping;
+      hydra:variable "analysis_centre"^^xsd:string;
+      rdfs:label "analysis_centre; use the following operation to get the all the formats available";
+      rdfs:range "xds:string";
+      hydra:required "true"^^xsd:boolean;
+      schema:defaultValue "UGA";
+    ];
+    hydra:mapping[ a hydra:IriTemplateMapping;
+      hydra:variable "sampling_period"^^xsd:string;
+      rdfs:label "sampling_period";
+      rdfs:range "xds:string";
+      hydra:required "true"^^xsd:boolean;
+      http:paramValue "daily";
+      http:paramValue "weekly";
+      schema:defaultValue "daily";
+    ];
+    hydra:mapping[ a hydra:IriTemplateMapping;
+      hydra:variable "coordinates_system"^^xsd:string;
+      rdfs:label "coordinates_system";
+      rdfs:range "xds:string";
+      hydra:required "true"^^xsd:boolean;
+      http:paramValue "xyz";
+      http:paramValue "enu";
+      schema:defaultValue "xyz";
+    ];
+    hydra:mapping[ a hydra:IriTemplateMapping;
+      hydra:variable "format"^^xsd:string;
+      rdfs:label "format; use the following operation to get the all the formats available";
+      rdfs:range "xds:string";
+      hydra:required "true"^^xsd:boolean;
+      schema:defaultValue "json";
+    ];
+    hydra:mapping[ a hydra:IriTemplateMapping;
+      hydra:variable "reference_frame"^^xsd:string;
+      rdfs:label "reference_frame; use the following operation to get the all the reference frames available";
+      rdfs:range "xds:string";
+      hydra:required "false"^^xsd:boolean;
+    ];
+    hydra:mapping[ a hydra:IriTemplateMapping;
+      hydra:variable "otl_model"^^xsd:string;
+      rdfs:label "otl_model; use the following operation to get the all the otl models available";
+      rdfs:range "xds:string";
+      hydra:required "false"^^xsd:boolean;
+    ];
+    hydra:mapping[ a hydra:IriTemplateMapping;
+      hydra:variable "calibration_model"^^xsd:string;
+      rdfs:label "calibration_model; use the following operation to get the all the calibration models available ";
+      rdfs:range "xds:string";
+      hydra:required "false"^^xsd:boolean;
+    ];
+    hydra:mapping[ a hydra:IriTemplateMapping;
+      hydra:variable "cut_of_angle"^^xsd:string;
+      rdfs:label "cut_of_angle";
+      rdfs:range "xsd:double";
+      hydra:required "false"^^xsd:boolean;
+    ];
+    hydra:mapping[ a hydra:IriTemplateMapping;
+      hydra:variable "remove_outliers"^^xsd:string;
+      rdfs:label "remove_outliers";
+      schema:defaultValue "1";
+      rdfs:range "xds:boolean";
+      hydra:required "false"^^xsd:boolean;
+      http:paramValue "1";
+      http:paramValue "0";
+    ];
+    hydra:mapping[ a hydra:IriTemplateMapping;
+      hydra:variable "apply_offsets"^^xsd:string;
+      rdfs:label "apply_offsets";
+      schema:defaultValue "0";
+      rdfs:range "xds:boolean";
+      hydra:required "false"^^xsd:boolean;
+      http:paramValue "1";
+      http:paramValue "0";
+    ];
+    hydra:mapping[ a hydra:IriTemplateMapping;
+      hydra:variable "epoch_start"^^xsd:string;
+      rdfs:label "epoch_start (date format YYYY-MM-DD)";
+      rdfs:range "xsd:dateTime";
+      hydra:required "false"^^xsd:boolean;
+    ];
+    hydra:mapping[ a hydra:IriTemplateMapping;
+      hydra:variable "epoch_end"^^xsd:string;
+      rdfs:label "epoch_end (date format YYYY-MM-DD)";
+      rdfs:range "xsd:dateTime";
+      hydra:required "false"^^xsd:boolean;
+    ];
+];
 .
 
 #WS stations/v2/list
 <GlassFramework/webresources/stations/v2/list/> a epos:WebService;
 	schema:identifier "GlassFramework/webresources/stations/v2/list/{data}";
-	#schema:identifier [ a schema:PropertyValue;
-		#schema:propertyID  "DDSS-ID";
-		#schema:value   "WP10-DDSS-007";
-	#];
 	schema:description "Returns a list containing existing data of the chosen type of data.";
 	schema:name "GET LIST V2";
 	dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
 	schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
 	schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
 	schema:provider <PIC:996437254>;
-	dcat:theme  <#GNSSProductsPortal> ;
+	dcat:theme  <epos:GNSSProductsPortal> ;
 	hydra:entrypoint "http://glass.unice.fr:8080/GlassFramework/swagger.json"^^xsd:anyURI;
 	schema:keywords "Geodesy", "GNSS" ;
 	dct:conformsTo <GlassFramework/APIDocumentation> ;
-	hydra:supportedOperation <GlassFramework/webresources/stations/v2/list/>;
+	hydra:supportedOperation <GlassFramework/webresources/stations/v2/list/operation>;
 .
 
 #WS Operation stations/v2/list/
-<GlassFramework/webresources/stations/v2/list/> a hydra:Operation;
+<GlassFramework/webresources/stations/v2/list/operation> a hydra:Operation;
 	hydra:method "GET"^^xsd:string;
  	hydra:returns "json";
-	hydra:IriTemplate[ a hydra:IriTemplate;
-		rdf:label "http://glass.unice.fr:8080/GlassFramework/webresources/stations/v2/list/city";
+	hydra:property[ a hydra:IriTemplate;
+		rdfs:label "http://glass.unice.fr:8080/GlassFramework/webresources/stations/v2/list/city";
 		hydra:template "http://glass.unice.fr:8080/GlassFramework/webresources/stations/v2/list/{data}"^^xsd:string;
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "data"^^xsd:string;
-			rdf:label "the type of the data";
+			rdfs:label "the type of the data";
 			hydra:required "true"^^xsd:boolean;
 			http:paramValue "agency";
 			http:paramValue "antenna";
@@ -774,6 +681,7 @@
 			http:paramValue "receiver";
 			http:paramValue "state";
 			http:paramValue "station";
+      schema:defaultValue "city";
 		];
 	];
 .
@@ -781,47 +689,45 @@
 #WS stations/v2/list/station
 <GlassFramework/webresources/stations/v2/list/station> a epos:WebService;
  schema:identifier "GlassFramework/webresources/stations/v2/list/station";
- #schema:identifier [ a schema:PropertyValue;
-	#schema:propertyID  "DDSS-ID";
-	 #schema:value   "WP10-DDSS-007";
- #];
- schema:description " Returns a list with the name and marker of all the stations or the ones that match the given parameters.";
+	schema:description " Returns a list with the name and marker of all the stations or the ones that match the given parameters.";
  schema:name "GET STATION LIST V2";
  dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
  schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
  schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
  schema:provider <PIC:996437254>;
- dcat:theme  <#GNSSProductsPortal> ;
+ dcat:theme  <epos:GNSSProductsPortal> ;
  hydra:entrypoint "http://glass.unice.fr:8080/GlassFramework/swagger.json"^^xsd:anyURI;
 	schema:keywords "Geodesy", "GNSS" ;
  dct:conformsTo <GlassFramework/APIDocumentation> ;
- hydra:supportedOperation <GlassFramework/webresources/stations/v2/list/station>;
+ hydra:supportedOperation <GlassFramework/webresources/stations/v2/list/station/operation>;
 .
 
 #WS Operation stations/v2/list/station
-<GlassFramework/webresources/stations/v2/list/station> a hydra:Operation;
+<GlassFramework/webresources/stations/v2/list/station/operation> a hydra:Operation;
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "json/xml";
-	hydra:IriTemplate[ a hydra:IriTemplate;
- 		rdf:label "Different parameters should be separated by & (AMPERSAND) ";
- 		rdf:label "Multiple values for a parameter should be separated by , (COMMA) ";
- 		rdf:label "http://glass.unice.fr:8080/GlassFramework/webresources/stations/v2/list/station?marker=SOPH,FILF&name=Gambatesa";
- 		hydra:template "http://glass.unice.fr:8080/GlassFramework/webresources/stations/v2/list/station?{optional_parameters}"^^xsd:string;
+	hydra:property[ a hydra:IriTemplate;
+ 		rdfs:label "Different parameters should be separated by & (AMPERSAND), multiple values for a parameter should be separated by , (COMMA) ";
+ 		hydra:template "http://glass.unice.fr:8080/GlassFramework/webresources/stations/v2/list/station{?name,marker}"^^xsd:string;
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "name"^^xsd:string;
-			rdfs:range "xds:string";
+      rdfs:range "xds:string";
+      rdfs:label "Name of the station(s)";
 		 	hydra:required "false"^^xsd:boolean;
 		];
 	 	hydra:mapping[ a hydra:IriTemplateMapping;
 		 	hydra:variable "marker"^^xsd:string;
 			rdfs:range "xds:string";
+      rdfs:label "Marker of the station(s)";
 		 	hydra:required "false"^^xsd:boolean;
-		];		
+		];
 	];
 .
 
+#<------------>#
 <https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/stations> a dcat:Dataset ;
-        dct:identifier "GlassFramework/webresources/products/stations" ;
+        dct:identifier "GlassFramework/webresources/products/stations/" ;
+		    dct:description "Returns Stations objects for a given parameters";
         dct:title "Get Stations objects" ;
         adms:identifier [ a adms:Identifier ;
             adms:schemaAgency "DDSS-ID" ;
@@ -832,27 +738,28 @@
         dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         owl:versionInfo "1.0.0" ;
 
-        # This property refers to the type of the Dataset. 
+        # This property refers to the type of the Dataset.
         # Example of frequency using a controlled vocabulary http://dublincore.org/2012/06/14/dctype
-		dct:type "http://purl.org/dc/dcmitype/Service"^^xsd:anyURI ;
+		    dct:type "http://purl.org/dc/dcmitype/Service"^^xsd:anyURI ;
 
         # This property refers to the frequency at which the Dataset is updated.
         # The possible types are here: http://purl.org/cld/freq/
         dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI ;
 
         # This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
-        dcat:theme  <epos:GNSS> ;
+        dcat:theme  <epos:GNSSProductsPortal> ;
 
         dcat:keyword "GNSS stations Metadata";
-		# Rui
-        dcat:contactPoint <http://orcid.org/0000-0002-9733-284X> ;
+
+		    # Rui
+        dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
 
         # This property refers to an Organisation responsible for making the Dataset available.
-		# Data portal France
-		dct:publisher <PIC:991782030> ;
+    		# Data portal France
+    		dct:publisher <PIC:991782030> ;
 
         # This property links the Dataset to an available Distribution.
-        #dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001> ;
+        dcat:distribution <GlassFramework/webresources/products/stations/Distribution/001> ;
 
         # This property refers to a geographic region that is covered by the Dataset.
         #dct:spatial [ a dct:Location ;
@@ -879,45 +786,46 @@
 
 .
 
-<https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/stations/Distribution/001> a dcat:Distribution ;
-        dct:identifier "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/stations/Distribution/001" ;
-        dct:title "Station Metadada" ;
+<GlassFramework/webresources/products/stations/Distribution/001> a dcat:Distribution ;
+	dct:identifier "GlassFramework/webresources/products/stations/Distribution/001" ;
+    dct:title "Station Metadata" ;
 	dct:description "Description of Station Metadata" ;
 	dct:issued "2017-01-01"^^xsd:date ;
-        dct:modified "2017-01-01"^^xsd:date ;
+    dct:modified "2017-01-01"^^xsd:date ;
 
-        # This property refers to the type of the Distribution. The possible types are
-        # (http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE
-        # OR
-        # http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE)
+    # This property refers to the type of the Distribution. The possible types are
+    # (http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE
+    # OR
+    # http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE)
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI ;
 
-        # If the type of Distribution is WEB SERVICE, this property refers to the Web Service that gives access to a Distribution of the Dataset. Otherwise, this property is optional.
-	    # dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001> ;
+    # If the type of Distribution is WEB SERVICE, this property refers to the Web Service that gives access to a Distribution of the Dataset. Otherwise, this property is optional.
+	  dct:conformsTo <GlassFramework/webresources/products/stations/> ;
 
-        # This property contains a URL that gives access to a Distribution of the Dataset. The resource at the access URL may contain # information about how to get the Dataset.
-        # If the type of Distribution is WEB SERVICE, this property refers to the Operation of the Web Service to which the Distribution conforms.
-        dcat:accessURL <http://glass.unice.fr:8080/GlassFramework/webresources/stations/v2/list/station> ;
+    # This property contains a URL that gives access to a Distribution of the Dataset. The resource at the access URL may contain # information about how to get the Dataset.
+    # If the type of Distribution is WEB SERVICE, this property refers to the Operation of the Web Service to which the Distribution conforms.
+    dcat:accessURL <GlassFramework/webresources/products/stations/operation> ;
 
-        # This property refers to the file format of the Distribution. 
-        # The possible types are here: http://publications.europa.eu/mdr/resource/authority/file-type/html/filetypes-eng.html
-		# we can have many types txt, json  xml...ummm
-        dct:format "http://publications.europa.eu/resource/authority/file-type/TXT"^^xsd:anyURI ;
+    # This property refers to the file format of the Distribution.
+    # The possible types are here: http://publications.europa.eu/mdr/resource/authority/file-type/html/filetypes-eng.html
+	# we can have many types txt, json  xml...ummm
+    dct:format "http://publications.europa.eu/resource/authority/file-type/TXT"^^xsd:anyURI ;
 
-        # This property contains the size of a Distribution in bytes.
-        # dcat:byteSize "1024"^^xsd:decimal ;
+    # This property contains the size of a Distribution in bytes.
+    # dcat:byteSize "1024"^^xsd:decimal ;
 
-        # This property refers to the licence under which the Distribution is made available.
-        dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+    # This property refers to the licence under which the Distribution is made available.
+    dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 
-        # If the type of Distribution is DOWNLOADABLE FILE, this property contains a URL that is a direct link to a downloadable file in a given format. Otherwise, this property is optional.
-        #dcat:downloadURL "URL that is a direct link to a downloadable file in a given format"^^xsd:anyURI ;
+    # If the type of Distribution is DOWNLOADABLE FILE, this property contains a URL that is a direct link to a downloadable file in a given format. Otherwise, this property is optional.
+    #dcat:downloadURL "URL that is a direct link to a downloadable file in a given format"^^xsd:anyURI ;
 .
 
-
+#<------------>#
 <http://glass.unice.fr:8080/GlassFramework/webresources/files> a dcat:Dataset ;
         dct:identifier "GlassFramework/webresources/files" ;
-        dct:title "Get Stations objects" ;
+        dct:title "GET Files V2" ;
+		    dct:description "Returns the files(s) that match the criteria.";
         adms:identifier [ a adms:Identifier ;
             adms:schemaAgency "DDSS-ID" ;
             skos:notation "WP10-DDSS-002" ;
@@ -927,7 +835,7 @@
         dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         owl:versionInfo "1.0.0" ;
 
-        # This property refers to the type of the Dataset. 
+        # This property refers to the type of the Dataset.
         # Example of frequency using a controlled vocabulary http://dublincore.org/2012/06/14/dctype
 		dct:type "http://purl.org/dc/dcmitype/Service"^^xsd:anyURI ;
 
@@ -936,18 +844,18 @@
         dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI ;
 
         # This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
-        dcat:theme  <epos:GNSS> ;
+        dcat:theme  <epos:GNSSProductsPortal> ;
 
         dcat:keyword "GNSS rinex Metadata";
 		# Rui
-        dcat:contactPoint <http://orcid.org/0000-0002-9733-284X> ;
+        dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
 
         # This property refers to an Organisation responsible for making the Dataset available.
 		# Data portal France
 		dct:publisher <PIC:991782030> ;
 
         # This property links the Dataset to an available Distribution.
-        #dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001> ;
+        dcat:distribution <GlassFramework/webresources/files/Distribution/001> ;
 
         # This property refers to a geographic region that is covered by the Dataset.
         #dct:spatial [ a dct:Location ;
@@ -974,10 +882,47 @@
 
 .
 
-<https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/coordinates/PPP> a dcat:Dataset ;
+<GlassFramework/webresources/files/Distribution/001> a dcat:Distribution ;
+	dct:identifier "GlassFramework/webresources/files/Distribution/001" ;
+    dct:title "GET Files V2" ;
+	dct:description "Returns the files(s) that match the criteria." ;
+	dct:issued "2017-01-01"^^xsd:date ;
+    dct:modified "2017-01-01"^^xsd:date ;
+
+	# This property refers to the type of the Distribution. The possible types are
+	# (http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE
+	# OR
+	# http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE)
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI ;
+
+	# If the type of Distribution is WEB SERVICE, this property refers to the Web Service that gives access to a Distribution of the Dataset. Otherwise, this property is optional.
+	dct:conformsTo <GlassFramework/webresources/files> ;
+
+	# This property contains a URL that gives access to a Distribution of the Dataset. The resource at the access URL may contain # information about how to get the Dataset.
+	# If the type of Distribution is WEB SERVICE, this property refers to the Operation of the Web Service to which the Distribution conforms.
+	dcat:accessURL <GlassFramework/webresources/files/operation> ;
+
+	# This property refers to the file format of the Distribution.
+	# The possible types are here: http://publications.europa.eu/mdr/resource/authority/file-type/html/filetypes-eng.html
+	# we can have many types txt, json xml...ummm
+	dct:format "http://publications.europa.eu/resource/authority/file-type/TXT"^^xsd:anyURI ;
+
+	# This property contains the size of a Distribution in bytes.
+	# dcat:byteSize "1024"^^xsd:decimal ;
+
+	# This property refers to the licence under which the Distribution is made available.
+	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+
+	# If the type of Distribution is DOWNLOADABLE FILE, this property contains a URL that is a direct link to a downloadable file in a given format. Otherwise, this property is optional.
+	#dcat:downloadURL "URL that is a direct link to a downloadable file in a given format"^^xsd:anyURI ;
+.
+
+#<------------>#
+<GlassFramework/webresources/products/coordinates/PPP> a dcat:Dataset ;
         dct:identifier "GlassFramework/webresources/products/coordinates/PPP" ;
         dct:title "Get coordinates position via PPP processing" ;
-        adms:identifier [ a adms:PropertyValue;
+		dct:description "Get coordinates position via PPP processing";
+        adms:identifier [ a adms:Identifier;
 			adms:propertyID  "DDSS-ID";
 	 		schema:value   "WP10-DDSS-007";
 		 ];
@@ -986,7 +931,7 @@
         dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         owl:versionInfo "1.0.0" ;
 
-        # This property refers to the type of the Dataset. 
+        # This property refers to the type of the Dataset.
         # Example of frequency using a controlled vocabulary http://dublincore.org/2012/06/14/dctype
 		dct:type "http://purl.org/dc/dcmitype/Service"^^xsd:anyURI ;
 
@@ -995,7 +940,7 @@
         dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI ;
 
         # This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
-        dcat:theme  <epos:GNSS> ;
+        dcat:theme  <epos:GNSSProductsPortal> ;
 
         dcat:keyword "GNSS coordinates position PPP";
 		# MAthilde
@@ -1006,7 +951,7 @@
 		dct:publisher <PIC:996437254> ;
 
         # This property links the Dataset to an available Distribution.
-        #dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001> ;
+        dcat:distribution <GlassFramework/webresources/products/coordinates/PPP/Distribution/001> ;
 
         # This property refers to a geographic region that is covered by the Dataset.
         #dct:spatial [ a dct:Location ;
@@ -1033,10 +978,47 @@
 
 .
 
-<https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/coordinates/DD> a dcat:Dataset ;
+<GlassFramework/webresources/products/coordinates/PPP/Distribution/001> a dcat:Distribution ;
+	dct:identifier "GlassFramework/webresources/products/coordinates/PPP/Distribution/001" ;
+    dct:title "Get Stations coordinates via PPP";
+	dct:description "Get Stations coordinates via PPP";
+	dct:issued "2017-01-01"^^xsd:date ;
+    dct:modified "2017-01-01"^^xsd:date ;
+
+	# This property refers to the type of the Distribution. The possible types are
+	# (http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE
+	# OR
+	# http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE)
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI ;
+
+	# If the type of Distribution is WEB SERVICE, this property refers to the Web Service that gives access to a Distribution of the Dataset. Otherwise, this property is optional.
+	dct:conformsTo <GlassFramework/webresources/products/coordinates/>;
+
+	# This property contains a URL that gives access to a Distribution of the Dataset. The resource at the access URL may contain # information about how to get the Dataset.
+	# If the type of Distribution is WEB SERVICE, this property refers to the Operation of the Web Service to which the Distribution conforms.
+	dcat:accessURL <GlassFramework/webresources/products/coordinates/operation> ;
+
+	# This property refers to the file format of the Distribution.
+	# The possible types are here: http://publications.europa.eu/mdr/resource/authority/file-type/html/filetypes-eng.html
+	# we can have many types txt, json  xml...ummm
+	dct:format "http://publications.europa.eu/resource/authority/file-type/TXT"^^xsd:anyURI ;
+
+	# This property contains the size of a Distribution in bytes.
+	# dcat:byteSize "1024"^^xsd:decimal ;
+
+	# This property refers to the licence under which the Distribution is made available.
+	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+
+	# If the type of Distribution is DOWNLOADABLE FILE, this property contains a URL that is a direct link to a downloadable file in a given format. Otherwise, this property is optional.
+	#dcat:downloadURL "URL that is a direct link to a downloadable file in a given format"^^xsd:anyURI ;
+.
+
+#<------------>#
+<GlassFramework/webresources/products/coordinates/DD> a dcat:Dataset ;
         dct:identifier "GlassFramework/webresources/products/coordinates/DD" ;
         dct:title "Get coordinates position via DD processing" ;
-        adms:identifier [ a adms:PropertyValue;
+		dct:description "Get Stations coordinates via DD processing";
+        adms:identifier [ a adms:Identifier;
 			adms:propertyID  "DDSS-ID";
 	 		schema:value   "WP10-DDSS-008";
 		 ];
@@ -1045,7 +1027,7 @@
         dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         owl:versionInfo "1.0.0" ;
 
-        # This property refers to the type of the Dataset. 
+        # This property refers to the type of the Dataset.
         # Example of frequency using a controlled vocabulary http://dublincore.org/2012/06/14/dctype
 		dct:type "http://purl.org/dc/dcmitype/Service"^^xsd:anyURI ;
 
@@ -1054,7 +1036,7 @@
         dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI ;
 
         # This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
-        dcat:theme  <epos:GNSS> ;
+        dcat:theme  <epos:GNSSProductsPortal> ;
 
         dcat:keyword "GNSS coordinates position";
 		# Mathilde
@@ -1065,7 +1047,7 @@
 		dct:publisher <PIC:996437254> ;
 
         # This property links the Dataset to an available Distribution.
-        #dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001> ;
+        dcat:distribution <GlassFramework/webresources/products/coordinates/DD/Distribution/001> ;
 
         # This property refers to a geographic region that is covered by the Dataset.
         #dct:spatial [ a dct:Location ;
@@ -1092,10 +1074,47 @@
 
 .
 
-<https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/timeseries/PPP> a dcat:Dataset ;
+<GlassFramework/webresources/products/coordinates/DD/Distribution/001> a dcat:Distribution ;
+	dct:identifier "GlassFramework/webresources/products/coordinates/DD/Distribution/001" ;
+    dct:title "Get Stations coordinates via DD processing";
+	dct:description "Get Stations coordinates via DD processing";
+	dct:issued "2017-01-01"^^xsd:date ;
+    dct:modified "2017-01-01"^^xsd:date ;
+
+	# This property refers to the type of the Distribution. The possible types are
+	# (http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE
+	# OR
+	# http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE)
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI ;
+
+	# If the type of Distribution is WEB SERVICE, this property refers to the Web Service that gives access to a Distribution of the Dataset. Otherwise, this property is optional.
+	dct:conformsTo <GlassFramework/webresources/products/coordinates/>;
+
+	# This property contains a URL that gives access to a Distribution of the Dataset. The resource at the access URL may contain # information about how to get the Dataset.
+	# If the type of Distribution is WEB SERVICE, this property refers to the Operation of the Web Service to which the Distribution conforms.
+	dcat:accessURL <GlassFramework/webresources/products/coordinates/operation> ;
+
+	# This property refers to the file format of the Distribution.
+	# The possible types are here: http://publications.europa.eu/mdr/resource/authority/file-type/html/filetypes-eng.html
+	# we can have many types txt, json  xml...ummm
+	dct:format "http://publications.europa.eu/resource/authority/file-type/TXT"^^xsd:anyURI ;
+
+	# This property contains the size of a Distribution in bytes.
+	# dcat:byteSize "1024"^^xsd:decimal ;
+
+	# This property refers to the licence under which the Distribution is made available.
+	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+
+	# If the type of Distribution is DOWNLOADABLE FILE, this property contains a URL that is a direct link to a downloadable file in a given format. Otherwise, this property is optional.
+	#dcat:downloadURL "URL that is a direct link to a downloadable file in a given format"^^xsd:anyURI ;
+.
+
+#<------------>#
+<GlassFramework/webresources/products/timeseries/PPP> a dcat:Dataset ;
         dct:identifier "GlassFramework/webresources/products/timeseries/PPP" ;
         dct:title "Get position timeseries via PPP processing" ;
-        adms:identifier [ a adms:PropertyValue;
+		dct:description "Get Stations timeseries via PPP processing";
+        adms:identifier [ a adms:Identifier;
 			adms:propertyID  "DDSS-ID";
 	 		schema:value   "WP10-DDSS-009";
 		 ];
@@ -1104,7 +1123,7 @@
         dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         owl:versionInfo "1.0.0" ;
 
-        # This property refers to the type of the Dataset. 
+        # This property refers to the type of the Dataset.
         # Example of frequency using a controlled vocabulary http://dublincore.org/2012/06/14/dctype
 		dct:type "http://purl.org/dc/dcmitype/Service"^^xsd:anyURI ;
 
@@ -1113,7 +1132,7 @@
         dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI ;
 
         # This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
-        dcat:theme  <epos:GNSS> ;
+        dcat:theme  <epos:GNSSProductsPortal> ;
 
         dcat:keyword "GNSS position timeseries";
 		# Mathilde
@@ -1124,7 +1143,7 @@
 		dct:publisher <PIC:996437254> ;
 
         # This property links the Dataset to an available Distribution.
-        #dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001> ;
+        dcat:distribution <GlassFramework/webresources/products/timeseries/PPP/Distribution/001> ;
 
         # This property refers to a geographic region that is covered by the Dataset.
         #dct:spatial [ a dct:Location ;
@@ -1151,10 +1170,48 @@
 
 .
 
-<https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/timeseries/DD> a dcat:Dataset ;
+<GlassFramework/webresources/products/timeseries/PPP/Distribution/001> a dcat:Distribution ;
+	dct:identifier "GlassFramework/webresources/products/timeseries/PPP/Distribution/001" ;
+    dct:title "Get position timeseries via PPP processing";
+	dct:description "Get Stations timeseries via PPP processing";
+	dct:issued "2017-01-01"^^xsd:date ;
+    dct:modified "2017-01-01"^^xsd:date ;
+
+	# This property refers to the type of the Distribution. The possible types are
+	# (http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE
+	# OR
+	# http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE)
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI ;
+
+	# If the type of Distribution is WEB SERVICE, this property refers to the Web Service that gives access to a Distribution of the Dataset. Otherwise, this property is optional.
+	dct:conformsTo <GlassFramework/webresources/products/timeseries>;
+
+	# This property contains a URL that gives access to a Distribution of the Dataset. The resource at the access URL may contain # information about how to get the Dataset.
+	# If the type of Distribution is WEB SERVICE, this property refers to the Operation of the Web Service to which the Distribution conforms.
+	dcat:accessURL <GlassFramework/webresources/products/timeseries/operation> ;
+
+	# This property refers to the file format of the Distribution.
+	# The possible types are here: http://publications.europa.eu/mdr/resource/authority/file-type/html/filetypes-eng.html
+	# we can have many types txt, json  xml...ummm
+	dct:format "http://publications.europa.eu/resource/authority/file-type/TXT"^^xsd:anyURI ;
+
+	# This property contains the size of a Distribution in bytes.
+	# dcat:byteSize "1024"^^xsd:decimal ;
+
+	# This property refers to the licence under which the Distribution is made available.
+	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+
+	# If the type of Distribution is DOWNLOADABLE FILE, this property contains a URL that is a direct link to a downloadable file in a given format. Otherwise, this property is optional.
+	#dcat:downloadURL "URL that is a direct link to a downloadable file in a given format"^^xsd:anyURI ;
+.
+
+#<------------>#
+<GlassFramework/webresources/products/timeseries/DD> a dcat:Dataset ;
         dct:identifier "GlassFramework/webresources/products/timeseries/DD" ;
         dct:title "Get position timeseries via DD processing" ;
-        adms:identifier [ a adms:PropertyValue;
+		dct:description "Get Stations timeseries via DD processing";
+
+        adms:identifier [ a adms:Identifier;
 			adms:propertyID  "DDSS-ID";
 	 		schema:value   "WP10-DDSS-010";
 		 ];
@@ -1163,7 +1220,7 @@
         dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         owl:versionInfo "1.0.0" ;
 
-        # This property refers to the type of the Dataset. 
+        # This property refers to the type of the Dataset.
         # Example of frequency using a controlled vocabulary http://dublincore.org/2012/06/14/dctype
 		dct:type "http://purl.org/dc/dcmitype/Service"^^xsd:anyURI ;
 
@@ -1172,7 +1229,7 @@
         dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI ;
 
         # This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
-        dcat:theme  <epos:GNSS> ;
+        dcat:theme  <epos:GNSSProductsPortal> ;
 
         dcat:keyword "GNSS position timeseries";
 		# Mathilde
@@ -1183,7 +1240,7 @@
 		dct:publisher <PIC:996437254> ;
 
         # This property links the Dataset to an available Distribution.
-        #dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001> ;
+        dcat:distribution <GlassFramework/webresources/products/timeseries/DD/Distribution/001> ;
 
         # This property refers to a geographic region that is covered by the Dataset.
         #dct:spatial [ a dct:Location ;
@@ -1210,10 +1267,47 @@
 
 .
 
-<https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/timeseries/combined> a dcat:Dataset ;
+<GlassFramework/webresources/products/timeseries/DD/Distribution/001> a dcat:Distribution ;
+	dct:identifier "GlassFramework/webresources/products/timeseries/DD/Distribution/001" ;
+    dct:title "Get position timeseries via DD processing";
+	dct:description "Get Stations timeseries via DD processing";
+	dct:issued "2017-01-01"^^xsd:date ;
+    dct:modified "2017-01-01"^^xsd:date ;
+
+	# This property refers to the type of the Distribution. The possible types are
+	# (http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE
+	# OR
+	# http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE)
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI ;
+
+	# If the type of Distribution is WEB SERVICE, this property refers to the Web Service that gives access to a Distribution of the Dataset. Otherwise, this property is optional.
+	dct:conformsTo <GlassFramework/webresources/products/timeseries>;
+
+	# This property contains a URL that gives access to a Distribution of the Dataset. The resource at the access URL may contain # information about how to get the Dataset.
+	# If the type of Distribution is WEB SERVICE, this property refers to the Operation of the Web Service to which the Distribution conforms.
+	dcat:accessURL <GlassFramework/webresources/products/timeseries/operation> ;
+
+	# This property refers to the file format of the Distribution.
+	# The possible types are here: http://publications.europa.eu/mdr/resource/authority/file-type/html/filetypes-eng.html
+	# we can have many types txt, json  xml...ummm
+	dct:format "http://publications.europa.eu/resource/authority/file-type/TXT"^^xsd:anyURI ;
+
+	# This property contains the size of a Distribution in bytes.
+	# dcat:byteSize "1024"^^xsd:decimal ;
+
+	# This property refers to the licence under which the Distribution is made available.
+	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+
+	# If the type of Distribution is DOWNLOADABLE FILE, this property contains a URL that is a direct link to a downloadable file in a given format. Otherwise, this property is optional.
+	#dcat:downloadURL "URL that is a direct link to a downloadable file in a given format"^^xsd:anyURI ;
+.
+
+#<------------>#
+<GlassFramework/webresources/products/timeseries/combined> a dcat:Dataset ;
         dct:identifier "GlassFramework/webresources/products/timeseries/combined" ;
         dct:title "Get position timeseries via combined processing" ;
-        adms:identifier [ a adms:PropertyValue;
+		dct:description "Get Stations timeseries via combined processing";
+        adms:identifier [ a adms:Identifier;
 			adms:propertyID  "DDSS-ID";
 	 		schema:value   "WP10-DDSS-009";
 		 ];
@@ -1222,7 +1316,7 @@
         dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         owl:versionInfo "1.0.0" ;
 
-        # This property refers to the type of the Dataset. 
+        # This property refers to the type of the Dataset.
         # Example of frequency using a controlled vocabulary http://dublincore.org/2012/06/14/dctype
 		dct:type "http://purl.org/dc/dcmitype/Service"^^xsd:anyURI ;
 
@@ -1231,7 +1325,7 @@
         dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI ;
 
         # This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
-        dcat:theme  <epos:GNSS> ;
+        dcat:theme  <epos:GNSSProductsPortal> ;
 
         dcat:keyword "GNSS position timeseries";
 		# Mathilde
@@ -1242,7 +1336,7 @@
 		dct:publisher <PIC:996437254> ;
 
         # This property links the Dataset to an available Distribution.
-        #dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001> ;
+        dcat:distribution <GlassFramework/webresources/products/timeseries/combined/Distribution/001> ;
 
         # This property refers to a geographic region that is covered by the Dataset.
         #dct:spatial [ a dct:Location ;
@@ -1269,10 +1363,47 @@
 
 .
 
-<https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/velocities/PPP> a dcat:Dataset ;
+<GlassFramework/webresources/products/timeseries/combined/Distribution/001> a dcat:Distribution ;
+	dct:identifier "GlassFramework/webresources/products/timeseries/combined/Distribution/001" ;
+    dct:title "Get position timeseries via combined processing";
+	dct:description "Get Stations timeseries via combined processing";
+	dct:issued "2017-01-01"^^xsd:date ;
+    dct:modified "2017-01-01"^^xsd:date ;
+
+	# This property refers to the type of the Distribution. The possible types are
+	# (http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE
+	# OR
+	# http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE)
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI ;
+
+	# If the type of Distribution is WEB SERVICE, this property refers to the Web Service that gives access to a Distribution of the Dataset. Otherwise, this property is optional.
+	dct:conformsTo <GlassFramework/webresources/products/timeseries>;
+
+	# This property contains a URL that gives access to a Distribution of the Dataset. The resource at the access URL may contain # information about how to get the Dataset.
+	# If the type of Distribution is WEB SERVICE, this property refers to the Operation of the Web Service to which the Distribution conforms.
+	dcat:accessURL <GlassFramework/webresources/products/timeseries/operation> ;
+
+	# This property refers to the file format of the Distribution.
+	# The possible types are here: http://publications.europa.eu/mdr/resource/authority/file-type/html/filetypes-eng.html
+	# we can have many types txt, json  xml...ummm
+	dct:format "http://publications.europa.eu/resource/authority/file-type/TXT"^^xsd:anyURI ;
+
+	# This property contains the size of a Distribution in bytes.
+	# dcat:byteSize "1024"^^xsd:decimal ;
+
+	# This property refers to the licence under which the Distribution is made available.
+	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+
+	# If the type of Distribution is DOWNLOADABLE FILE, this property contains a URL that is a direct link to a downloadable file in a given format. Otherwise, this property is optional.
+	#dcat:downloadURL "URL that is a direct link to a downloadable file in a given format"^^xsd:anyURI ;
+.
+
+#<------------>#
+<GlassFramework/webresources/products/velocities/PPP> a dcat:Dataset ;
         dct:identifier "GlassFramework/webresources/products/velocities/PPP" ;
         dct:title "Get stations velocities via PPP processing" ;
-        adms:identifier [ a adms:PropertyValue;
+		dct:description "Get stations velocities via PPP processing";
+        adms:identifier [ a adms:Identifier;
 			adms:propertyID  "DDSS-ID";
 	 		schema:value   "WP10-DDSS-013";
 		 ];
@@ -1281,7 +1412,7 @@
         dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         owl:versionInfo "1.0.0" ;
 
-        # This property refers to the type of the Dataset. 
+        # This property refers to the type of the Dataset.
         # Example of frequency using a controlled vocabulary http://dublincore.org/2012/06/14/dctype
 		dct:type "http://purl.org/dc/dcmitype/Service"^^xsd:anyURI ;
 
@@ -1290,7 +1421,7 @@
         dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI ;
 
         # This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
-        dcat:theme  <epos:GNSS> ;
+        dcat:theme  <epos:GNSSProductsPortal> ;
 
         dcat:keyword "GNSS stations velocities PPP";
 		# Mathilde
@@ -1301,7 +1432,7 @@
 		dct:publisher <PIC:996437254> ;
 
         # This property links the Dataset to an available Distribution.
-        #dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001> ;
+        dcat:distribution <GlassFramework/webresources/products/velocities/PPP/Distribution/001> ;
 
         # This property refers to a geographic region that is covered by the Dataset.
         #dct:spatial [ a dct:Location ;
@@ -1328,10 +1459,47 @@
 
 .
 
-<https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/velocities/DD> a dcat:Dataset ;
+<GlassFramework/webresources/products/velocities/PPP/Distribution/001> a dcat:Distribution ;
+	dct:identifier "GlassFramework/webresources/products/velocities/PPP/Distribution/001" ;
+    dct:title "Get stations velocities via PPP processing";
+	dct:description "Get stations velocities via PPP processing";
+	dct:issued "2017-01-01"^^xsd:date ;
+    dct:modified "2017-01-01"^^xsd:date ;
+
+	# This property refers to the type of the Distribution. The possible types are
+	# (http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE
+	# OR
+	# http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE)
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI ;
+
+	# If the type of Distribution is WEB SERVICE, this property refers to the Web Service that gives access to a Distribution of the Dataset. Otherwise, this property is optional.
+	dct:conformsTo <GlassFramework/webresources/products/velocities/>;
+
+	# This property contains a URL that gives access to a Distribution of the Dataset. The resource at the access URL may contain # information about how to get the Dataset.
+	# If the type of Distribution is WEB SERVICE, this property refers to the Operation of the Web Service to which the Distribution conforms.
+	dcat:accessURL <GlassFramework/webresources/products/velocities/operation> ;
+
+	# This property refers to the file format of the Distribution.
+	# The possible types are here: http://publications.europa.eu/mdr/resource/authority/file-type/html/filetypes-eng.html
+	# we can have many types txt, json  xml...ummm
+	dct:format "http://publications.europa.eu/resource/authority/file-type/TXT"^^xsd:anyURI ;
+
+	# This property contains the size of a Distribution in bytes.
+	# dcat:byteSize "1024"^^xsd:decimal ;
+
+	# This property refers to the licence under which the Distribution is made available.
+	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+
+	# If the type of Distribution is DOWNLOADABLE FILE, this property contains a URL that is a direct link to a downloadable file in a given format. Otherwise, this property is optional.
+	#dcat:downloadURL "URL that is a direct link to a downloadable file in a given format"^^xsd:anyURI ;
+.
+
+#<------------>#
+<GlassFramework/webresources/products/velocities/DD> a dcat:Dataset ;
         dct:identifier "GlassFramework/webresources/products/velocities/DD" ;
-        dct:title "Get stations velocities via DD processing" ;
-        adms:identifier [ a adms:PropertyValue;
+        dct:title "Get stations velocities via DD processing";
+		dct:description "Get stations velocities via DD processing";
+        adms:identifier [ a adms:Identifier;
 			adms:propertyID  "DDSS-ID";
 	 		schema:value   "WP10-DDSS-012";
 		 ];
@@ -1340,7 +1508,7 @@
         dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         owl:versionInfo "1.0.0" ;
 
-        # This property refers to the type of the Dataset. 
+        # This property refers to the type of the Dataset.
         # Example of frequency using a controlled vocabulary http://dublincore.org/2012/06/14/dctype
 		dct:type "http://purl.org/dc/dcmitype/Service"^^xsd:anyURI ;
 
@@ -1349,7 +1517,7 @@
         dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI ;
 
         # This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
-        dcat:theme  <epos:GNSS> ;
+        dcat:theme  <epos:GNSSProductsPortal> ;
 
         dcat:keyword "GNSS stations velocities DD";
 		# Mathilde
@@ -1360,7 +1528,7 @@
 		dct:publisher <PIC:996437254> ;
 
         # This property links the Dataset to an available Distribution.
-        #dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001> ;
+        dcat:distribution <GlassFramework/webresources/products/velocities/DD/Distribution/001> ;
 
         # This property refers to a geographic region that is covered by the Dataset.
         #dct:spatial [ a dct:Location ;
@@ -1387,10 +1555,47 @@
 
 .
 
-<https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/velocities/combined> a dcat:Dataset ;
+<GlassFramework/webresources/products/velocities/DD/Distribution/001> a dcat:Distribution ;
+	dct:identifier "GlassFramework/webresources/products/velocities/DD/Distribution/001" ;
+    dct:title "Get stations velocities via DD processing";
+	dct:description "Get stations velocities via DD processing";
+	dct:issued "2017-01-01"^^xsd:date ;
+    dct:modified "2017-01-01"^^xsd:date ;
+
+	# This property refers to the type of the Distribution. The possible types are
+	# (http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE
+	# OR
+	# http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE)
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI ;
+
+	# If the type of Distribution is WEB SERVICE, this property refers to the Web Service that gives access to a Distribution of the Dataset. Otherwise, this property is optional.
+	dct:conformsTo <GlassFramework/webresources/products/velocities/>;
+
+	# This property contains a URL that gives access to a Distribution of the Dataset. The resource at the access URL may contain # information about how to get the Dataset.
+	# If the type of Distribution is WEB SERVICE, this property refers to the Operation of the Web Service to which the Distribution conforms.
+	dcat:accessURL <GlassFramework/webresources/products/velocities/operation> ;
+
+	# This property refers to the file format of the Distribution.
+	# The possible types are here: http://publications.europa.eu/mdr/resource/authority/file-type/html/filetypes-eng.html
+	# we can have many types txt, json  xml...ummm
+	dct:format "http://publications.europa.eu/resource/authority/file-type/TXT"^^xsd:anyURI ;
+
+	# This property contains the size of a Distribution in bytes.
+	# dcat:byteSize "1024"^^xsd:decimal ;
+
+	# This property refers to the licence under which the Distribution is made available.
+	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+
+	# If the type of Distribution is DOWNLOADABLE FILE, this property contains a URL that is a direct link to a downloadable file in a given format. Otherwise, this property is optional.
+	#dcat:downloadURL "URL that is a direct link to a downloadable file in a given format"^^xsd:anyURI ;
+.
+
+#<------------>#
+<GlassFramework/webresources/products/velocities/combined> a dcat:Dataset ;
         dct:identifier "GlassFramework/webresources/products/velocities/combined" ;
         dct:title "Get stations velocities via combined processing" ;
-        adms:identifier [ a adms:PropertyValue;
+		dct:description "Get stations velocities via combined processing";
+        adms:identifier [ a adms:Identifier;
 			adms:propertyID  "DDSS-ID";
 	 		schema:value   "WP10-DDSS-014";
 		 ];
@@ -1399,7 +1604,7 @@
         dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         owl:versionInfo "1.0.0" ;
 
-        # This property refers to the type of the Dataset. 
+        # This property refers to the type of the Dataset.
         # Example of frequency using a controlled vocabulary http://dublincore.org/2012/06/14/dctype
 		dct:type "http://purl.org/dc/dcmitype/Service"^^xsd:anyURI ;
 
@@ -1408,7 +1613,7 @@
         dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI ;
 
         # This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
-        dcat:theme  <epos:GNSS> ;
+        dcat:theme  <epos:GNSSProductsPortal> ;
 
         dcat:keyword "GNSS stations velocities combined";
 		# Mathilde
@@ -1419,7 +1624,7 @@
 		dct:publisher <PIC:996437254> ;
 
         # This property links the Dataset to an available Distribution.
-        #dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001> ;
+        dcat:distribution <GlassFramework/webresources/products/velocities/combined/Distribution/001> ;
 
         # This property refers to a geographic region that is covered by the Dataset.
         #dct:spatial [ a dct:Location ;
@@ -1446,61 +1651,37 @@
 
 .
 
-<https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/strain> a dcat:Dataset ;
-        dct:identifier "GlassFramework/webresources/products/strain" ;
-        dct:title "Get strain rate maps" ;
-        adms:identifier [ a adms:PropertyValue;
-			adms:propertyID  "DDSS-ID";
-	 		schema:value   "WP10-DDSS-014";
-		 ];
-        dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
-        dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
-        dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
-        owl:versionInfo "1.0.0" ;
+<GlassFramework/webresources/products/velocities/combined/Distribution/001> a dcat:Distribution ;
+	dct:identifier "GlassFramework/webresources/products/velocities/combined/Distribution/001" ;
+    dct:title "Get stations velocities via combined processing";
+	dct:description "Get stations velocities via combined processing";
+	dct:issued "2017-01-01"^^xsd:date ;
+    dct:modified "2017-01-01"^^xsd:date ;
 
-        # This property refers to the type of the Dataset. 
-        # Example of frequency using a controlled vocabulary http://dublincore.org/2012/06/14/dctype
-		dct:type "http://purl.org/dc/dcmitype/Service"^^xsd:anyURI ;
+	# This property refers to the type of the Distribution. The possible types are
+	# (http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE
+	# OR
+	# http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE)
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI ;
 
-        # This property refers to the frequency at which the Dataset is updated.
-        # The possible types are here: http://purl.org/cld/freq/
-        dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI ;
+	# If the type of Distribution is WEB SERVICE, this property refers to the Web Service that gives access to a Distribution of the Dataset. Otherwise, this property is optional.
+	dct:conformsTo <GlassFramework/webresources/products/velocities/>;
 
-        # This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
-        dcat:theme  <epos:GNSS> ;
+	# This property contains a URL that gives access to a Distribution of the Dataset. The resource at the access URL may contain # information about how to get the Dataset.
+	# If the type of Distribution is WEB SERVICE, this property refers to the Operation of the Web Service to which the Distribution conforms.
+	dcat:accessURL <GlassFramework/webresources/products/velocities/operation> ;
 
-        dcat:keyword "GNSS strain rate maps";
-		# Mathilde
-        dcat:contactPoint <ResearcherID:A-5326-2010/scientificContact> ;
+	# This property refers to the file format of the Distribution.
+	# The possible types are here: http://publications.europa.eu/mdr/resource/authority/file-type/html/filetypes-eng.html
+	# we can have many types txt, json  xml...ummm
+	dct:format "http://publications.europa.eu/resource/authority/file-type/TXT"^^xsd:anyURI ;
 
-        # This property refers to an Organisation responsible for making the Dataset available.
-		# product portal UBI
-		dct:publisher <PIC:996437254> ;
+	# This property contains the size of a Distribution in bytes.
+	# dcat:byteSize "1024"^^xsd:decimal ;
 
-        # This property links the Dataset to an available Distribution.
-        #dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001> ;
+	# This property refers to the licence under which the Distribution is made available.
+	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 
-        # This property refers to a geographic region that is covered by the Dataset.
-        #dct:spatial [ a dct:Location ;
-         # locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral ;
-        #];
-
-        # This property refers to a temporal period that the Dataset covers.
-        dct:temporal [ a dct:PeriodOfTime ;
-                schema:startDate "1988-01-01T00:00:00Z"^^xsd:dateTime ;
-                #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
-        ] ;
-
-        # This property refers to a related Dataset of which the described Dataset is a version, edition, or adaptation.
-        # dct:hasVersion <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
-
-        # This property refers to a related Dataset of which the described Dataset is a version, edition, or adaptation.
-        # dct:isVersionOf <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
-
-        # This property refers to a related Dataset in which the described Dataset is physically or logically included.
-        # dct:isPartOf <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
-
-        # This property refers to a related Dataset that is part of the described Dataset.
-        # dct:hasPart <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
-
+	# If the type of Distribution is DOWNLOADABLE FILE, this property contains a URL that is a direct link to a downloadable file in a given format. Otherwise, this property is optional.
+	#dcat:downloadURL "URL that is a direct link to a downloadable file in a given format"^^xsd:anyURI ;
 .
