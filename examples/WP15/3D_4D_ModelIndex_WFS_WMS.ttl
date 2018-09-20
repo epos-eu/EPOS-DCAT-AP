@@ -79,11 +79,11 @@
 		schema:contactType "financialContact" ;
 .
 
-	<#Geology> a skos:ConceptScheme;
+	<epos:Geology> a skos:ConceptScheme;
 		dct:title "Geology";
 		dct:description "It contains the concepts of Geology";
 . 
-	<#3D/4Dmodels> a skos:Concept;
+	<epos:3D/4Dmodels> a skos:Concept;
 		skos:inScheme <#Geology>;
 		skos:prefLabel "3D/4D models";
 .
@@ -172,7 +172,7 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/gml+xml";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "http://resource.europe-geology.eu/service/wfsModel(?service, request, typenames, version, count, BBOX, gml:identifier, gml:name, creationDate, releaseDate, updateDate, versionNumber, type, purpose, status, individualName, organisationName, projectName, projectURI, boundingBox, zMin, zMax, verticalSRS, positionalAccuracy, areaOfInterest, modelledGeologicFeature, modellingSoftwareToolName, modellingSoftwareToolVersion, outputGeometryReference, outputGeometry, distributionFormat, meshGridType, volumeUnitRepresentationType, exportVisualisationLink, previewLink, onlineResource, reportOnlineResource, useLimitation, pointOfContact)"^^xsd:string;
+			hydra:template "http://resource.europe-geology.eu/service/wfsModel{?service, request, typenames, version, count, BBOX, gml:identifier, gml:name, creationDate, releaseDate, updateDate, versionNumber, type, purpose, status, individualName, organisationName, projectName, projectURI, boundingBox, zMin, zMax, verticalSRS, positionalAccuracy, areaOfInterest, modelledGeologicFeature, modellingSoftwareToolName, modellingSoftwareToolVersion, outputGeometryReference, outputGeometry, distributionFormat, meshGridType, volumeUnitRepresentationType, exportVisualisationLink, previewLink, onlineResource, reportOnlineResource, useLimitation, pointOfContact}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "service"^^xsd:string;
 					rdfs:range "xsd:string";
@@ -448,7 +448,7 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "image/png";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "http://resource.europe-geology.eu/service/wmsModel(?service, version, request, layers, crs, format, width, height)"^^xsd:string;
+			hydra:template "http://resource.europe-geology.eu/service/wmsModel{?service, version, request, layers, crs, format, width, height}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "service"^^xsd:string;
 					rdfs:range "xsd:string";
