@@ -23,12 +23,18 @@
 . 
 	<epos:waveformquality> a skos:Concept;
 		skos:inScheme <epos:Seismology>;
+		skos:definition "waveform quality" ;
+		skos:prefLabel "waveform quality" ;
 . 
 	<epos:Seismicwaveforms> a skos:Concept;
 		skos:inScheme <epos:Seismology>;
+		skos:definition "Seismic waveforms" ;
+		skos:prefLabel "Seismic waveforms" ;
 . 
 	<epos:Seismicstations> a skos:Concept;
 		skos:inScheme <epos:Seismology>;
+		skos:definition "Seismic stations" ;
+		skos:prefLabel "Seismic stations" ;
 . 
 
 <https://orcid.org/0000-0002-6247-0687> a schema:Person;
@@ -60,14 +66,14 @@
 					rdfs:range "xsd:dateTime";
 					rdfs:label "Start of the timespan";
 					hydra:required "true"^^xsd:boolean;
-					schema:defaultValue "1980-01-01T00:00:00"
+					schema:defaultValue "2018-01-01T00:00:00"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "endtime"^^xsd:string;
 					rdfs:range "xsd:dateTime";
 					rdfs:label "End of the timespan";
 					hydra:required "true"^^xsd:boolean;
-					schema:defaultValue "2019-01-01T00:00:00"
+					schema:defaultValue "2018-01-01T01:00:00"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "network"^^xsd:string;
@@ -511,7 +517,7 @@
         dct:description "Continuous seismic waveforms";
         adms:identifier [ a adms:Identifier ;
         adms:schemaAgency "DDSS-ID" ;
-        skos:notation "WP8-DDSS-001" ;
+        skos:notation "WP08-DDSS-001" ;
         ];
         dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
@@ -537,6 +543,7 @@
 # Distribution
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/NIEP> a dcat:Distribution;
     	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/NIEP";
+	dct:title "Seismic Waveform Distribution :: FDSN DATASELECT";
 	dct:description "Description of Seismic Waveform Distribution :: FDSN DATASELECT ";
 	dct:issued "2017-01-01"^^xsd:date ;
 	dct:modified "2017-01-01"^^xsd:date ;
@@ -556,7 +563,7 @@
         dct:description "Seismic Stations ";
         adms:identifier [ a adms:Identifier ;
             adms:schemaAgency "DDSS-ID" ;
-            skos:notation "WP8-DDSS-002" ;
+            skos:notation "WP08-DDSS-002" ;
         ];
         dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
@@ -582,6 +589,7 @@
 # Distribution
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/NIEP> a dcat:Distribution;
     	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/NIEP";
+	dct:title "Seismic Stations  :: FDSN STATION ";
 	dct:description "Description of Seismic Stations  :: FDSN STATION ";
 	dct:issued "2017-01-01"^^xsd:date ;
 	dct:modified "2017-01-01"^^xsd:date ;

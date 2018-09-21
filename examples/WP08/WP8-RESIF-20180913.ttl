@@ -34,7 +34,7 @@
 	schema:email "mailto:Helle.Pedersen@univ-grenoble-alpes.fr";
 	schema:telephone "+33476635200";
 	schema:url "https://isterre.fr/annuaire/pages-web-du-personnel/helle-pedersen/?id_auteur=58"^^xsd:anyURI;
-	schema:qualifications "Researcher, Science Management, Scientific leader of the RESIF Data Center";
+	#schema:qualifications "Researcher", "Science Management", "Scientific leader of the RESIF Data Center";
 	schema:affiliation <PIC:999997930>;
 	schema:contactPoint <https://orcid.org/0000-0003-2936-8047/scientificContact>;
 . 
@@ -54,7 +54,7 @@
 	schema:email "mailto:Andrea.Walsperdorf@univ-grenoble-alpes.fr";
 	schema:telephone "+33476635200";
 	schema:url "https://isterre.fr/annuaire/pages-web-du-personnel/andrea-walpersdorf/?id_auteur=76/"^^xsd:anyURI;
-	schema:qualifications "Researcher, Science Management, Director of RESIF (Réseau Sismologique et géodésique Français)";
+	#schema:qualifications "Researcher", "Science Management", "Director of RESIF (Réseau Sismologique et géodésique Français)";
 	schema:affiliation <PIC:999997930>;
 	schema:contactPoint <https://orcid.org/0000-0003-1777-9172/legalContact>;
 .
@@ -74,9 +74,8 @@
 	]; 
 	schema:email "mailto:Catherine.Pequegnat@univ-grenoble-alpes.fr";
 	schema:telephone "+33476635200";
-	schema:qualifications "Data and services technicalContact, Seismological services";
 	schema:url "https://www.isterre.fr/spip.php?page=auteur&id_auteur=59&lang=fr/"^^xsd:anyURI;
-	schema:qualifications "Engineer, technical leader of the RESIF Data Center";
+	#schema:qualifications "Engineer", "technical leader of the RESIF Data Center";
 	schema:affiliation <PIC:999997930>;
 	schema:contactPoint <https://orcid.org/0000-0002-9956-9971/contactPoint> ;
 . 
@@ -124,10 +123,6 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003/RESIF> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003/RESIF";
-	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID  "DDSS-ID";
-		schema:value  "WP8-DDSS-003";
-	];
 	schema:description "Web service which returns waveform metadata and data quality metrics";
 	dcat:theme <epos:waveformquality>;
 	dcat:contactPoint <https://orcid.org/0000-0002-9956-9971/contactPoint>;
@@ -151,10 +146,6 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/RESIF> a epos:WebService ;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/RESIF";
-	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID  "DDSS-ID";
-		schema:value  "WP8-DDSS-001";
-	];
 	schema:description "FDSN Standard webservice at RESIF to download waveform data";
 	dcat:theme <epos:Seismicwaveforms>;
 	dcat:contactPoint <https://orcid.org/0000-0002-9956-9971/contactPoint>;
@@ -178,10 +169,6 @@
 # Webservice Station 
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/RESIF> a epos:WebService ;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/RESIF";
-	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID  "DDSS-ID";
-		schema:value  "WP8-DDSS-002";
-	];
 	schema:description "FDSN Standard webservice at RESIF to download seismic metadata";
 	dcat:theme <epos:Seismicstations>;
 	dcat:contactPoint <https://orcid.org/0000-0002-9956-9971/contactPoint>;
@@ -392,11 +379,8 @@
 	hydra:returns "application/vnd.fdsn.mseed";
 	hydra:property[ a hydra:IriTemplate;
 	hydra:template "http://ws.resif.fr/fdsnws/dataselect/1/query{?starttime, endtime, network, station, location, channel, quality, minimumlength, nodata}"^^xsd:string;
-	hydra:method "GET"^^xsd:string;
-	hydra:returns "MiniSEED";
-	hydra:property[ a hydra:IriTemplate;
-	hydra:template "(?starttime, endtime, network, station, location, channel, quality, minimumlength, nodata)"^^xsd:string;
-				hydra:mapping[ a hydra:IriTemplateMapping;
+	
+	hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "starttime"^^xsd:string;
 				rdfs:range "xsd:dateTime";
 				rdfs:label "Start of the timespan";
@@ -465,7 +449,7 @@
 					hydra:required "true"^^xsd:boolean;
 				];
 		];
-	];
+	
 .
 
 # Operation station
@@ -474,7 +458,7 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/xml";
 		hydra:property[ a hydra:IriTemplate;
-		hydra:template "http:ws.resif.fr/fdsnws/station/1/query{?starttime, endtime, network, station, location, channel, minlatitude, maxlatitude, minlongitude, maxlongitude, level, nodata, matchtimeseries}"^^xsd:string;
+		hydra:template "http://ws.resif.fr/fdsnws/station/1/query{?starttime, endtime, network, station, location, channel, minlatitude, maxlatitude, minlongitude, maxlongitude, level, nodata, matchtimeseries}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "starttime"^^xsd:string;
 					rdfs:range "xsd:dateTime";
@@ -484,7 +468,7 @@
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "endtime"^^xsd:string;
-					rdfs:range "xsd:dateTimexsd:";
+					rdfs:range "xsd:dateTime";
 					rdfs:label "End of the timespan";
 					hydra:required "true"^^xsd:boolean;
 					schema:defaultValue "2017-01-01T00:00:00"
@@ -584,17 +568,25 @@
 		];
 . 
 
-	<#Seismology> a skos:ConceptScheme;
+	<epos:Seismology> a skos:ConceptScheme;
 		dct:title "Seismology";
 		dct:description "It contains the concepts of Seismology";
 . 
-	<#Seismicwaveforms> a skos:Concept;
-		skos:inScheme <#Seismology>;
+	<epos:Seismicwaveforms> a skos:Concept;
+		skos:inScheme <epos:Seismology>;
 		skos:prefLabel "Seismic waveforms";
 . 
-	<#Seismicstations> a skos:Concept;
-		skos:inScheme <#Seismology>;
+	<epos:Seismicstations> a skos:Concept;
+		skos:inScheme <epos:Seismology>;
 		skos:prefLabel "Seismic stations";
+. 
+	<epos:SeismicNetwork> a skos:Concept;
+		skos:inScheme <epos:Seismology>;
+		skos:prefLabel "Seismic Network";
+. 
+	<epos:waveformquality> a skos:Concept;
+		skos:inScheme <epos:Seismology>;
+		skos:prefLabel "waveform quality";
 . 
 
 
@@ -605,7 +597,7 @@
         dct:description "Continuous seismic waveforms";
         adms:identifier [ a adms:Identifier ;
         adms:schemaAgency "DDSS-ID" ;
-        skos:notation "WP8-DDSS-001" ;
+        skos:notation "WP08-DDSS-001" ;
         ];
         dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
@@ -613,7 +605,7 @@
         owl:versionInfo "1.0.0" ;
     	  dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
         dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
-        dcat:theme  <epos:SeismicWaveform> ;
+        dcat:theme  <epos:Seismicwaveforms> ;
         dcat:keyword "seismology", "seismicity", "earthquakes", "seismic waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "RESIF" , "Dataselect", "FDSN-WS", "Seismic Waveform", "EIDA" ;
         dcat:contactPoint <https://orcid.org/0000-0003-2936-8047/scientificContact>;
 	     dct:publisher <PIC:999997930>;
@@ -629,7 +621,8 @@
 # Distribution
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/RESIF> a dcat:Distribution;
    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/RESIF";
-	dct:description "Description of Seismic Waveform Distribution :: FDSN DATASELECT ";
+	dct:title "Seismic Waveform Distribution :: FDSN DATASELECT ";
+	dct:description "Description of Seismic Waveform Distribution :: FDSN DATASELECT ";	
 	dct:issued "2017-01-01"^^xsd:date ;
 	dct:modified "2017-01-01"^^xsd:date ;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
@@ -647,7 +640,7 @@
         dct:description "Seismic Stations ";
         adms:identifier [ a adms:Identifier ;
             adms:schemaAgency "DDSS-ID" ;
-            skos:notation "WP8-DDSS-002" ;
+            skos:notation "WP08-DDSS-002" ;
         ];
         dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
@@ -673,6 +666,7 @@
 # Distribution 
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/RESIF> a dcat:Distribution;
     	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/RESIF";
+	dct:title "Seismic Stations  :: FDSN STATION ";
 	dct:description "Description of Seismic Stations  :: FDSN STATION ";
 	dct:issued "2016-01-01"^^xsd:date ;
 	dct:modified "2016-01-01"^^xsd:date ;
@@ -691,7 +685,7 @@
         dct:description "Waveform metadata and data quality metrics";
         adms:identifier [ a adms:Identifier ;
         adms:schemaAgency "DDSS-ID" ;
-        skos:notation "WP8-DDSS-003" ;
+        skos:notation "WP08-DDSS-003" ;
         ];
         dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
@@ -700,7 +694,7 @@
 
     	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
         dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
-        dcat:theme  <epos:SeismicWaveform> ;
+        dcat:theme  <epos:Seismicwaveforms> ;
         dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/Distribution/003/RESIF>;
         dcat:keyword "seismology", "seismicity", "seismic waveform", "dataquality", "metric", "RESIF" , "WfCatalog", "EIDA-WS", "EIDA" ;
         dcat:contactPoint <https://orcid.org/0000-0003-2936-8047/scientificContact>;
@@ -719,6 +713,7 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/Distribution/003/RESIF> a dcat:Distribution;
     	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/Distribution/003/RESIF";
+	dct:title "Waveform metadata and data quality metrics :: EIDAWS WGCATALOG";
 	dct:description "Waveform metadata and data quality metrics :: EIDAWS WGCATALOG ";
 	dct:issued "2017-01-01"^^xsd:date ;
 	dct:modified "2017-01-01"^^xsd:date ;

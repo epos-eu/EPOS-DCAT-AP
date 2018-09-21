@@ -80,13 +80,14 @@
 .
 
 
-	<#Geology> a skos:ConceptScheme;
+	<epos:Geology> a skos:ConceptScheme;
 		dct:title "Geology";
 		dct:description "It contains the concepts of Geology";
 . 
 
-	<#GeologicalData> a skos:Concept;
+	<epos:GeologicalData> a skos:Concept;
 		skos:inScheme <epos:Geology>;
+                skos:prefLabel "Geological data"
 .
 
 <http://resource.europe-geology.eu/service/cswEpos> a epos:WebService;
@@ -96,7 +97,7 @@
 		schema:value  "WP15-DDSS-007"; 
 	]; 
 	schema:description "This CSW service exposes a catalogue of all datasets and services provided by the TCS Geological Information and Modelling and provides a hook to EGDI catalogue. Only new datasets and services provided by EPOS WP15 are registered in this catalogue, and a dedicated metadata record describing EGDI catalogue (its CSW) is created to enable EGDI integration within EPOS. Indeed the interaction with the ICS-C requires extra information that are not required in an INSPIRE compliant catalogue. It is thus easier protyping it on a small controlled system as the ICS-C requirement mature than revisiting the entire EGDI catalogue (2109 entries as of today)";
-	dcat:theme <#GeologicalData>;
+	dcat:theme <epos:GeologicalData>;
 	schema:name "WP15 Catalogue service";
 	hydra:entrypoint "http://resource.europe-geology.eu/service/cswEpos"^^xsd:anyURI; 
 	schema:provider <PIC:999993662>;

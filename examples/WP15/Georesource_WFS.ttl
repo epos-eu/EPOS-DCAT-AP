@@ -80,13 +80,13 @@
 .
 
 
-	<#Geology> a skos:ConceptScheme;
+	<epos:Geology> a skos:ConceptScheme;
 		dct:title "Geology";
 		dct:description "It contains the concepts of Geology";
 . 
 
-	<#GeologicalData> a skos:Concept;
-		skos:inScheme <#Geology>;
+	<epos:GeologicalData> a skos:Concept;
+		skos:inScheme <epos:Geology>;
 		skos:prefLabel "Geological Data";
 . 
 
@@ -98,7 +98,7 @@
 		schema:value  "WP15-DDSS-010a";
 	]; 
 	schema:description "Based on Minerals4EU dataset, this WFS allows to explore and discover available mineral resources  datasets in a given area.";
-	dcat:theme <#GeologicalData>;
+	dcat:theme <epos:GeologicalData>;
 	schema:name "Georesources";
 	hydra:entrypoint "http://resource.europe-geology.eu/service/wfsMine"^^xsd:anyURI;
 	schema:provider <PIC:999993662>;

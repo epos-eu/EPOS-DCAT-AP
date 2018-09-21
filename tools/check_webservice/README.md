@@ -17,7 +17,7 @@ To install the code as described below will require a `git` command line client
 
 From a shell (DOS prompt on Windows), create an empty folder and make it your current folder, then:
          
-#### clone the Github repository:
+#### clone the GitHub repository:
 ```
 git clone https://github.com/epos-eu/EPOS-DCAT-AP/ -b EPOS-DCAT-AP-shapes
 ```
@@ -32,9 +32,9 @@ python -m pip install --upgrade pip
 pip install pipenv
 ```
 
-#### set up your envrionment for running the code:
+#### set up your environment for running the code:
 ```
-cd EPOS-DCAT-AP/examples/rdf_utils/test_webservice
+cd EPOS-DCAT-AP/tools/check_webservice
 pipenv shell
 ```
 
@@ -45,7 +45,7 @@ pipenv install
 
 #### run the code to check WP13's metadata
 ```
-python webservice.py ../../WP13
+python webservice.py ../../examples/WP13
 ```
 
 Example Output
