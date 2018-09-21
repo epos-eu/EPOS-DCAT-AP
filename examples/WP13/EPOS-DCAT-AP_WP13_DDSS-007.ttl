@@ -20,15 +20,16 @@
 ### Domain and subdomain ###
 ###############################################################################
 
-<#Geoelectromagnetism> a skos:ConceptScheme;
+<epos:Geoelectromagnetism> a skos:ConceptScheme;
     dct:title "Geoelectromagnetism";
     dct:description "Relating to the electric or magnetic field of the Earth";
 .
 
-<#Magneticactivity> a skos:Concept;
+<epos:Magneticactivity> a skos:Concept;
     skos:definition "Geo-effectivity at the Earth’s surface described by planetary geomagnetic indices or lists of remarkable events" ;
-    skos:inScheme <#Geoelectromagnetism>;
-    skos:prefLabel "Geo-effectivity at the Earth’s surface described by planetary geomagnetic indices or lists of remarkable events" ;
+    skos:inScheme <epos:Geoelectromagnetism>;
+    #skos:prefLabel "Geo-effectivity at the Earth’s surface described by planetary geomagnetic indices or lists of remarkable events" ;
+    skos:prefLabel "Magneticactivity" ;
 .
 
 ###############################################################################
@@ -150,7 +151,7 @@
 
     dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
     dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI ;
-    dcat:theme  <#Magneticactivity> ;
+    dcat:theme  <epos:Magneticactivity> ;
     dcat:keyword "DISTURBED DAY", "GEO-EFFECTIVITY", "GEOMAGNETIC ACTIVITY", "GEOMAGNETIC STORM", "GEOMAGNETISM", "INTERPLANETARY MAGNETIC FIELD (IMF)", "IONOSPHERE", "MAGNETIC FIELD", "MAGNETISM", "MAGNETOSPHERE", "QUIET DAY", "RAPID MAGNETIC VARIATIONS", "REMARKABLE EVENT", "SOLAR FLARE", "SOLAR FLARE EFFECT", "SOLAR QUIET", "SOLAR STORM", "SPACE-WEATHER", "SUDDEN STORM COMMENCEMENT", "SUDDEN COMMENCEMENT", "SUDDEN IMPULSE", "TIME SERIES";
     dcat:contactPoint <http://orcid.org/0000-0001-8793-1315/contactPoint>;
     dct:publisher <PIC:999997930>;
@@ -179,7 +180,7 @@
     dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-007/Webservice>;
     dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-007/Operation> ;
     dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI ;
-    dct:format "application/zip"^^xsd:string ;
+    dct:format "http://publications.europa.eu/resource/authority/file-type/ZIP"^^xsd:string ;
 .
 
 ###############################################################################
@@ -195,7 +196,7 @@
     schema:dateModified "2018-08-31Z"^^xsd:dateTime;
     schema:provider <PIC:999997930>;
     hydra:entrypoint "http://isgi.unistra.fr/"^^xsd:anyURI ;
-    dcat:theme  <#Magneticactivity> ;
+    dcat:theme  <epos:Magneticactivity> ;
     schema:keywords "DISTURBED DAY", "GEO-EFFECTIVITY", "GEOMAGNETIC ACTIVITY", "GEOMAGNETIC STORM", "GEOMAGNETISM", "INTERPLANETARY MAGNETIC FIELD (IMF)", "IONOSPHERE", "MAGNETIC FIELD", "MAGNETISM", "MAGNETOSPHERE", "QUIET DAY", "RAPID MAGNETIC VARIATIONS", "REMARKABLE EVENT", "SOLAR FLARE", "SOLAR FLARE EFFECT", "SOLAR QUIET", "SOLAR STORM", "SPACE-WEATHER", "SUDDEN STORM COMMENCEMENT", "SUDDEN COMMENCEMENT", "SUDDEN IMPULSE", "TIME SERIES";
     hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-007/Operation> ;
     dct:spatial [ a dct:Location;

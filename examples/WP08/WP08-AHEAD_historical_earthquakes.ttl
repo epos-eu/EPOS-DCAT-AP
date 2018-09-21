@@ -21,23 +21,33 @@
 	dct:description "It contains the concepts of Seismology";
 .
 
-<epos:Seismologicalproducts> a skos:Concept;
+#<epos:Seismologicalproducts> a skos:Concept;
+#	skos:prefLabel "Seismological products";
+#	skos:definition "Results of extensive research and technological activies based on the data.";
+#	skos:inScheme <epos:Seismology>;
+#.
+
+<epos:Seismologicalproducts> a skos:Concept ;
 	skos:prefLabel "Seismological products";
 	skos:definition "Results of extensive research and technological activies based on the data.";
 	skos:inScheme <epos:Seismology>;
+	skos:narrower <epos:Historicalearthquakes>, <epos:Macroseismicdata>, <epos:StudiesonEarthquakes> ;
 .
+
 
 <epos:Historicalearthquakes> a skos:Concept;
 	skos:prefLabel "Historical earthquakes";
 	skos:definition "Earthquakes described by a set of numerical parameters such as origin time, epicentre and some description of its effects, most notably magnitude, number of Macroseismic Data Points (MDP) available, and the maximum observed intensity.";
 	#skos:inScheme <epos:Seismologicalproducts>;
+	skos:broader <epos:Seismologicalproducts>;
         skos:inScheme <epos:Seismology>;
 .
 
 <epos:Macroseismicdata> a skos:Concept;
 	skos:prefLabel "Macroseismic Data Points";
 	skos:definition "The study of any effects of earthquakes that are observable without instruments, such as felt by people, landslides, fissures, knocked-down chimneys, etc. Semi-quantitative expression of the earthquake effects, as derived from written accounts, questionnaires, etc, formalized in terms of macroseismic intensity at a given location. Usually abbreviated as MDP.";
-	#skos:inScheme <epos:Seismologicalproducts>;     
+	#skos:inScheme <epos:Seismologicalproducts>; 
+	skos:broader <epos:Seismologicalproducts>;
         skos:inScheme <epos:Seismology>;
 .
 
@@ -45,6 +55,7 @@
 	skos:prefLabel "Studies on earthquakes";
 	skos:definition "Published results of scientific investigations.";
 	#skos:inScheme <epos:Seismologicalproducts>;
+	skos:broader <epos:Seismologicalproducts>;
         skos:inScheme <epos:Seismology>;
 .
 
@@ -182,32 +193,32 @@
 #    dct:relation <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/AHEAD/bibliography>;
 #.
 
-#<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/AHEAD/events> a dcat:Dataset;
-#	dct:title "AHEAD event data";
-#	dct:description "Event data (e.g. epicentre, magnitude) for earthquakes archived in AHEAD";
-#	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/AHEAD/events";
-#	adms:identifier [ a adms:Identifier;
-#		adms:schemaAgency "DDSS-ID";
-#		skos:notation "WP08-DDSS-024";
-#	];
-#	dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI ;
-#	dct:created "2010-06-01"^^xsd:date;
-#	dct:modified "2018-09-10"^^xsd:date;
-#	dct:temporal [ a dct:PeriodOfTime;
-#		schema:startDate "1000-01-01T00:00:00Z"^^xsd:dateTime;
-#		schema:endDate "1899-12-31T23:59:59Z"^^xsd:dateTime;
-#	];
-#	dct:spatial [ a dct:Location;
-#		locn:geometry "POLYGON(-34 74,45 74,45 33,-34 33,-34 74)"^^gsp:wktLiteral;
-#	];
-#	dcat:theme <epos:Historicalearthquakes>;
-#	dcat:keyword "events", "seismicity", "catalogue";
-#	dcat:contactPoint <https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/AHEAD/scientificContact>;
-#	dcat:contactPoint <https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/AHEAD/contactPoint>;
-#	dct:publisher <PIC:999472675>;
-#	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/AHEAD/events/distribution/restful>;
-#	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/AHEAD/macroseismic/distribution/restful>;
-#.
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/AHEAD/events> a dcat:Dataset;
+	dct:title "AHEAD event data";
+	dct:description "Event data (e.g. epicentre, magnitude) for earthquakes archived in AHEAD";
+	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/AHEAD/events";
+	adms:identifier [ a adms:Identifier;
+		adms:schemaAgency "DDSS-ID";
+		skos:notation "WP08-DDSS-024";
+	];
+	dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI ;
+	dct:created "2010-06-01"^^xsd:date;
+	dct:modified "2018-09-10"^^xsd:date;
+	dct:temporal [ a dct:PeriodOfTime;
+		schema:startDate "1000-01-01T00:00:00Z"^^xsd:dateTime;
+		schema:endDate "1899-12-31T23:59:59Z"^^xsd:dateTime;
+	];
+	dct:spatial [ a dct:Location;
+		locn:geometry "POLYGON(-34 74,45 74,45 33,-34 33,-34 74)"^^gsp:wktLiteral;
+	];
+	dcat:theme <epos:Historicalearthquakes>;
+	dcat:keyword "events", "seismicity", "catalogue";
+	dcat:contactPoint <https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/AHEAD/scientificContact>;
+	dcat:contactPoint <https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/AHEAD/contactPoint>;
+	dct:publisher <PIC:999472675>;
+	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/AHEAD/events/distribution/restful>;
+	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/AHEAD/macroseismic/distribution/restful>;
+.
 
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/AHEAD/events/SHEEC> a dcat:Dataset;
 	dct:title "SHEEC catalogue 1000-1899";

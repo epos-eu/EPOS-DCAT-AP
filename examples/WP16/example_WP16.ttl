@@ -90,7 +90,7 @@
 		dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
 		
 		# This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
-        dcat:theme <#Analoguemodelsofgeologicprocesses> ;
+        dcat:theme <epos:Analoguemodelsofgeologicprocesses> ;
         
         dcat:keyword "analogue materials" ;
         dcat:contactPoint <http://orcid.org/0000-0003-3560-988X/contactPoint> ;
@@ -135,10 +135,10 @@
 		schema:value  "WP16-DDSS-012"; 
 	]; 
 	schema:description "The MSL Catalogue service assists in the discovery of data publications, which contain analytical and experimental data on rock properties, analogue models on tectonic processes, geochemistry data, and paleomagnetic and magnetic data. Metadata is available in standard ISO19115 format, extended with domain specific keywords.";
-	dcat:theme <#Analoguemodelsofgeologicprocesses>;
-	dcat:theme <#Rockandmeltphysicalproperties>;
-	dcat:theme <#Paleomagneticandmagneticdata>;
-	dcat:theme <#Geochemicaldata>;
+	dcat:theme <epos:Analoguemodelsofgeologicprocesses>;
+	dcat:theme <epos:Rockandmeltphysicalproperties>;
+	dcat:theme <epos:Paleomagneticandmagneticdata>;
+	dcat:theme <epos:Geochemicaldata>;
 	schema:name "Multiscale Laboratories Data Catalogue Service";
 	hydra:entrypoint "https://epos-msl.uu.nl/ics/api.php?"^^xsd:anyURI; 
 	schema:provider <PIC:99985805>;
@@ -149,24 +149,24 @@
 	dct:license "http://www.fsf.org/licensing/licenses/agpl-3.0.html"^^xsd:anyURI;
 	dcat:contactPoint <http://orcid.org/0000-0003-3560-988X/contactPoint>;
 . 
-	<#Multi-scale laboratories> a skos:ConceptScheme;
+	<epos:Multi-scale-laboratories> a skos:ConceptScheme;
 		dct:title "Multi-scale laboratories";
 		dct:description "The Multi-scale laboratories TCS includes a wide range of world-class experimental laboratory infrastructures: from high pressure-temperature rock and fault mechanics and rock physics facilities, to electron microscopy, micro-beam analysis, analogue modelling and paleomagnetic laboratories.";
 . 
-	<#Paleomagneticandmagneticdata> a skos:Concept;
-		skos:inScheme <#Multi-scale laboratories>;
+	<epos:Paleomagneticandmagneticdata> a skos:Concept;
+		skos:inScheme <epos:Multi-scale-laboratories>;
 		skos:prefLabel "Paleomagnetic and magnetic data";
 . 
-	<#Geochemicaldata> a skos:Concept;
-		skos:inScheme <#Multi-scale laboratories>;
+	<epos:Geochemicaldata> a skos:Concept;
+		skos:inScheme <epos:Multi-scale-laboratories>;
 		skos:prefLabel "Geochemical data (elemental and isotope geochemistry)";
 . 
-	<#Rockandmeltphysicalproperties> a skos:Concept;
-		skos:inScheme <#Multi-scale laboratories>;
+	<epos:Rockandmeltphysicalproperties> a skos:Concept;
+		skos:inScheme <epos:Multi-scale-laboratories>;
 		skos:prefLabel "Rock and melt physical properties";
 . 
-	<#Analoguemodelsofgeologicprocesses> a skos:Concept;
-		skos:inScheme <#Multi-scale laboratories>;
+	<epos:Analoguemodelsofgeologicprocesses> a skos:Concept;
+		skos:inScheme <epos:Multi-scale-laboratories>;
 		skos:prefLabel "Analogue models of geologic processes";
 . 
 	<https://epos-msl.uu.nl/ics/api.php> a hydra:Operation;

@@ -62,7 +62,7 @@
 
 <https://www.researchgate.net/profile/Konstantinos_Boukouras> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "researchID";
+		schema:propertyID "researcherID";
 		schema:value "https://www.researchgate.net/profile/Konstantinos_Boukouras";
 	]; 
 	schema:familyName "Boukouras";
@@ -164,10 +164,6 @@
 # FDSN - Dataselect
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/NOA> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/NOA";
-	#schema:identifier [ a schema:PropertyValue;
-		#schema:propertyID  "DDSS-ID";
-		#schema:value  "WP8-DDSS-001";
-	#];
 	schema:description "FDSN Standard Webservice at NOA to download waveform data";
 	dcat:theme <epos:SeismicWaveforms>;
 	dcat:contactPoint <http://orcid.org/0000-0002-4011-0971/contactPoint>;
@@ -192,10 +188,6 @@
 # FDSN - Station
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/NOA> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/NOA";
-	#schema:identifier [ a schema:PropertyValue;
-		#schema:propertyID  "DDSS-ID";
-		#schema:value  "WP8-DDSS-002";
-	#];
 	schema:description "FDSN Standard Webservice at NOA to download seismic metadata";
 	dcat:theme <epos:SeismicStations>;
 	dcat:contactPoint <http://orcid.org/0000-0002-4011-0971/contactPoint>;
@@ -220,10 +212,6 @@
 # WFCatalog
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003/NOA> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003/NOA";
-	#schema:identifier [ a schema:PropertyValue;
-		#schema:propertyID  "DDSS-ID";
-		#schema:value  "WP8-DDSS-003";
-	#];
 	schema:description "Web service which returns waveform metadata and data quality metrics";
 	dcat:theme <epos:Seismicdataservices>;
 	dcat:contactPoint <http://orcid.org/0000-0002-4011-0971/contactPoint>;
@@ -248,10 +236,6 @@
 # Routing
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/004/NOA> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/004/NOA";
-	#schema:identifier [ a schema:PropertyValue;
-		#schema:propertyID  "DDSS-ID";
-		#schema:value  "WP8-DDSS-004";
-	#];
 	schema:description "Web service which has access to routing information for FDSN station-WS, FDSN dataselect-WS and WFCatalog web services";
 	dcat:theme <epos:SeismicHazardproducts>;
 	dcat:contactPoint <http://orcid.org/0000-0002-4011-0971/contactPoint>;
@@ -419,7 +403,7 @@
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "location"^^xsd:string;
-					rdfs:range "xsd:xsd:string";
+					rdfs:range "xsd:string";
 					rdfs:label "Location code";
 					hydra:required "true"^^xsd:boolean;
 					schema:defaultValue "*"
@@ -433,7 +417,7 @@
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "minlatitude"^^xsd:string;
-					rdfs:range "xsd:xsd:float";
+					rdfs:range "xsd:float";
 					rdfs:label "Minimum Latitude";
 					schema:minValue "-90.0";
 					schema:maxValue "90.0";
@@ -451,7 +435,7 @@
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "minlongitude"^^xsd:string;
-					rdfs:range "xsd:xsd:xsd:float";
+					rdfs:range "xsd:float";
 					rdfs:label "Minimum Longitude";
 					schema:minValue "-180.0";
 					schema:maxValue "180.0";
@@ -460,7 +444,7 @@
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "maxlongitude"^^xsd:string;
-					rdfs:range "xsd:xsd:float";
+					rdfs:range "xsd:float";
 					rdfs:label "Maximum Longitude";
 					schema:minValue "-180.0";
 					schema:maxValue "180.0";
@@ -500,14 +484,14 @@
 					rdfs:range "xsd:dateTime";
 					rdfs:label "Starttime of documents";
 					hydra:required "true"^^xsd:boolean;
-				        schema:defaultValue "2010-01-01T00:00:00"
+				        schema:defaultValue "2018-01-01T00:00:00"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "endtime"^^xsd:string;
 					rdfs:range "xsd:dateTime";
 					rdfs:label "Endtime of documents";
 					hydra:required "true"^^xsd:boolean;
-					schema:defaultValue "2019-01-01T00:00:00"
+					schema:defaultValue "2018-01-01T01:00:00"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "percent_availability_gt"^^xsd:string;
@@ -782,7 +766,7 @@
         dct:description "Continuous seismic waveforms";
         adms:identifier [ a adms:Identifier ;
         adms:schemaAgency "DDSS-ID" ;
-        skos:notation "WP8-DDSS-001" ;
+        skos:notation "WP08-DDSS-001" ;
         ];
         dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
@@ -812,7 +796,7 @@
         dct:description "Seismic stations";
         adms:identifier [ a adms:Identifier ;
             adms:schemaAgency "DDSS-ID" ;
-            skos:notation "WP8-DDSS-002" ;
+            skos:notation "WP08-DDSS-002" ;
         ];
         dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
@@ -842,7 +826,7 @@
         dct:description "Seismic stations";
         adms:identifier [ a adms:Identifier ;
             adms:schemaAgency "DDSS-ID" ;
-            skos:notation "WP8-DDSS-003" ;
+            skos:notation "WP08-DDSS-003" ;
         ];
         dct:created "2017-09-01T00:00:00Z"^^xsd:dateTime ;
         dct:issued "2017-09-01T00:00:00Z"^^xsd:dateTime ;
@@ -872,7 +856,7 @@
         dct:description "Seismic stations";
         adms:identifier [ a adms:Identifier ;
             adms:schemaAgency "DDSS-ID" ;
-            skos:notation "WP8-DDSS-004" ;
+            skos:notation "WP08-DDSS-004" ;
         ];
         dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
@@ -900,6 +884,7 @@
 # FDSN dataselect
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/NOA> a dcat:Distribution;
     	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/NOA";
+	dct:title "Seismic Waveforms  :: FDSN DATASELECT ";
 	dct:description "Description of Waveforms  :: FDSN DATASELECT ";
 	dct:issued "2016-01-01"^^xsd:date ;
 	dct:modified "2016-01-01"^^xsd:date ;
@@ -913,6 +898,7 @@
 # FDSN station
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/NOA> a dcat:Distribution;
     	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/NOA";
+	dct:title "Seismic Stations  :: FDSN STATION";
 	dct:description "Description of Seismic Stations  :: FDSN STATION ";
 	dct:issued "2016-01-01"^^xsd:date ;
 	dct:modified "2016-01-01"^^xsd:date ;
@@ -926,6 +912,7 @@
 # WFCatalog
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/Distribution/003/NOA> a dcat:Distribution;
     	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/Distribution/003/NOA";
+	dct:title "Waveforms metadata  :: WFCATALOG";
 	dct:description "Description of Waveforms metadata  :: WFCATALOG ";
 	dct:issued "2017-09-01"^^xsd:date ;
 	dct:modified "2017-09-01"^^xsd:date ;
@@ -939,6 +926,7 @@
 # Routing
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/Distribution/004/NOA> a dcat:Distribution;
     	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/Distribution/004/NOA";
+	dct:title "routing of the Web Services  :: ROUTING";
 	dct:description "Description of routing of the Web Services  :: ROUTING ";
 	dct:issued "2016-01-01"^^xsd:date ;
 	dct:modified "2016-01-01"^^xsd:date ;

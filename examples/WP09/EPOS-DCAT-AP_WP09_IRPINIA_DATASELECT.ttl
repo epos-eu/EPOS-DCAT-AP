@@ -161,7 +161,6 @@
 				http:paramValue "Q";
 				http:paramValue "M";
 				http:paramValue "B";
-				schema:defaultValue "D";
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
@@ -176,7 +175,6 @@
 				rdfs:label "HTTP error code if no data is found";
 				http:paramValue "204";
 				http:paramValue "404";
-				schema:defaultValue "204";
 				hydra:required "false"^^xsd:boolean;
 			];
 	];
@@ -220,7 +218,11 @@
 	dct:title "IRPINIA - Velocity and Acceleration Seismic Waveforms Dataset (Continuous)";
 	adms:identifier [ a adms:Identifier;
 		adms:schemaAgency "DDSS-ID";
-		skos:notation "WP09-DDSS-001/002";
+		skos:notation "WP09-DDSS-001";
+	];
+	adms:identifier [ a adms:Identifier;
+		adms:schemaAgency "DDSS-ID";
+		skos:notation "WP09-DDSS-002";
 	];
 	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/dataselect/Dataset/001";
 	dct:description "Accelerometric and velocimetric waveforms from the the seismic stations and sensors comprising the Irpinia Near Fault Observatory (southern Italy). Includes stations from the Irpinia Seismic Network (ISNet) and from the National Institute of Geophysics and Volcanology (INGV).";
@@ -236,6 +238,7 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/dataselect/Distribution/001> a dcat:Distribution;
 	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/dataselect/Distribution/001";
+	dct:title "IRPINIA Velocity and Acceleration Seismic Waveforms Distribution (Continuous)";
 	dct:description "IRPINIA Velocity and Acceleration Seismic Waveforms Distribution (Continuous)";
 	dct:created "2003-01-01"^^xsd:date;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;

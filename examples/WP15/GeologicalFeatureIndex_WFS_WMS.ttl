@@ -79,13 +79,13 @@
 		schema:contactType "financialContact" ;
 .
 
-	<#Geology> a skos:ConceptScheme;
+	<epos:Geology> a skos:ConceptScheme;
 		dct:title "Geology";
 		dct:description "It contains the concepts of Geology";
 . 
 
-	<#GeologicalData> a skos:Concept;
-		skos:inScheme <#Geology>;
+	<epos:GeologicalData> a skos:Concept;
+		skos:inScheme <epos:Geology>;
 		skos:prefLabel "Geological Data";
 . 
 
@@ -105,7 +105,7 @@
 	dct:spatial [ a dct:Location; 
 		locn:geometry "POLYGON(-180 90,180 90,180 -90,-180 90,-180 90)"^^gsp:wktLiteral; 
 	]; 
-		dcat:theme <#GeologicalData>;
+		dcat:theme <epos:GeologicalData>;
 		dcat:keyword "GeologicUnit", "MappedFeature", "Geology", "INSPIRE:GE", "GeoSciML";
 		dcat:contactPoint <mailto:contact-brgm@brgm.fr>;
 		dcat:distribution <http://resource.europe-geology.eu/dataset/geologicunit/distributionWfs>;
@@ -150,7 +150,7 @@
 		schema:value  "WP15-DDSS-002a"; 
 	]; 
 	schema:description "This WFS allows to find geological features appearing on the  EGDI 1:1,000,000 geological map.";
-	dcat:theme <#GeologicalData>;
+	dcat:theme <epos:GeologicalData>;
 	schema:name "Geological Feature Index Discovery Service";
 	hydra:entrypoint "http://resource.europe-geology.eu/service/wfsGeologicUnit"^^xsd:anyURI; 
 	schema:provider <PIC:999993662>;
@@ -174,7 +174,7 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/gml+xml";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "http://resource.europe-geology.eu/service/wfsGeologicUnit(?service, request, typenames, version, count, BBOX, gml:identifier, gml:name, geologicUnitType, rank, lithology, geologicHistory, observationMethod, positionalAccuracy, geologicUnitType_uri, representativeLithology_uri, representativeOlderAge_uri, representativeYoungerAge_uri, specification_uri)"^^xsd:string;
+			hydra:template "http://resource.europe-geology.eu/service/wfsGeologicUnit{?service, request, typenames, version, count, BBOX, gml:identifier, gml:name, geologicUnitType, rank, lithology, geologicHistory, observationMethod, positionalAccuracy, geologicUnitType_uri, representativeLithology_uri, representativeOlderAge_uri, representativeYoungerAge_uri, specification_uri}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "service"^^xsd:string;
 					rdfs:range "xsd:string";
@@ -306,7 +306,7 @@
 		schema:value  "WP15-DDSS-002a"; 
 	]; 
 	schema:description "The WMS provides an interface for requesting map visualization of geological map of Europe.";
-	dcat:theme <#GeologicalData>;
+	dcat:theme <epos:GeologicalData>;
 	schema:name "Geological Map 1:1,000,000 (OneGeology-Europe layer)";
 	hydra:entrypoint "http://resource.europe-geology.eu/service/wmsGeologicUnit?"^^xsd:anyURI; 
 	schema:provider <PIC:999993662>;
@@ -329,7 +329,7 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "image/png";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "http://resource.europe-geology.eu/service/wmsGeologicUnit(?service, version, request, layers, crs, format, width, height)"^^xsd:string;
+			hydra:template "http://resource.europe-geology.eu/service/wmsGeologicUnit{?service, version, request, layers, crs, format, width, height}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "service"^^xsd:string;
 					rdfs:range "xsd:string";
