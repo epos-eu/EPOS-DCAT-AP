@@ -176,6 +176,14 @@
 	dcat:contactPoint <http://orcid.org/0000-0002-8608-4289/contactPoint>;
 .
 
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/FRIDGE/WebService/001/Operation/001> a hydra:Operation;
+	hydra:method "GET"^^xsd:string;
+	hydra:returns "application/json";
+	hydra:property[ a hydra:IriTemplate;
+		hydra:template "http://fridge-services.rm.ingv.it/services{?}"^^xsd:string;
+	];
+.
+
 <#NearFaultObservations> a skos:ConceptScheme;
 	dct:title "Near Fault Observations";
 	dct:description "It contains the concepts of Near Fault Observations";
