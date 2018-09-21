@@ -70,7 +70,7 @@
 . 
 <https://www.igp-vast.vn/> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "";
+		schema:propertyID "URL";
 		schema:value "https://www.igp-vast.vn/";
 	]; 
 	schema:legalName "Institute of Geophysics Vietnam Academy of Science and Technology";
@@ -102,7 +102,7 @@
 . 
 <http://www.ineris.fr> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "";
+		schema:propertyID "URL";
 		schema:value "http://www.ineris.fr";
 	]; 
 	schema:legalName "INERIS, Institut National de l'Environnement Industriel et des Risques";
@@ -169,7 +169,7 @@
 . 
 <https://isterre.fr> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "";
+		schema:propertyID "URL";
 		schema:value "https://isterre.fr";
 	]; 
 	schema:legalName "CNRS, ISTerre, Université Grenoble Alpes";
@@ -234,7 +234,7 @@
 .
 <https://www.sgsw.ch> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "";
+		schema:propertyID "URL";
 		schema:value "https://www.sgsw.ch";
 	]; 
 	schema:legalName "St.Galler Stadtwerke";
@@ -249,7 +249,7 @@
 .
 <https://eost.unistra.fr> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "";
+		schema:propertyID "URL";
 		schema:value "https://eost.unistra.fr";
 	]; 
 	schema:legalName "Ecole et Observatoire des Sciences de la Terre";
@@ -261,7 +261,7 @@
 	]; 
 	schema:url "https://eost.unistra.fr"^^xsd:anyURI;
 	schema:email "contact@eost.unistra.fr";
-	schema:contactPoint <https://orcid.org/0000-0003-4017-4673/contactPoint>;
+	schema:contactPoint <http://orcid.org/0000-0003-4017-4673/contactPoint>;
 .
 
 
@@ -572,36 +572,36 @@
 	schema:contactPoint <http://orcid.org/0000-0003-4017-4673/contactPoint>;
 . 
 
-	<#Anthropogenichazards> a skos:ConceptScheme;
+	<epos:Anthropogenichazards> a skos:ConceptScheme;
 		dct:title "Anthropogenic hazards";
 		dct:description "It contains the concepts of anthropogenic hazards";
 . 
-	<#Reservoirimpoundment> a skos:Concept;
-		skos:inScheme <#anthropogenichazards>;
+	<epos:Reservoirimpoundment> a skos:Concept;
+		skos:inScheme <epos:anthropogenichazards>;
 		skos:prefLabel "reservoir impoundment";
 . 
-	<#Geothermalenergyproduction> a skos:Concept;
-		skos:inScheme <#Anthropogenichazards>;
+	<epos:Geothermalenergyproduction> a skos:Concept;
+		skos:inScheme <epos:Anthropogenichazards>;
 		skos:prefLabel "geothermal energy production";
 . 
-	<#Hardrockmining> a skos:Concept;
-		skos:inScheme <#Anthropogenichazards>;
+	<epos:Hardrockmining> a skos:Concept;
+		skos:inScheme <epos:Anthropogenichazards>;
 		skos:prefLabel "hard rock mining";
 . 
-	<#Coalmining> a skos:Concept;
-		skos:inScheme <#Anthropogenichazards>;
+	<epos:Coalmining> a skos:Concept;
+		skos:inScheme <epos:Anthropogenichazards>;
 		skos:prefLabel "coal mining";
 . 
-	<#Saltsolutionsmining> a skos:Concept;
-		skos:inScheme <#Anthropogenichazards>;
+	<epos:Saltsolutionsmining> a skos:Concept;
+		skos:inScheme <epos:Anthropogenichazards>;
 		skos:prefLabel "salt solutions mining";
 . 
-	<#Unconventionalhydrocarbonextraction> a skos:Concept;
-		skos:inScheme <#Anthropogenichazards>;
+	<epos:Unconventionalhydrocarbonextraction> a skos:Concept;
+		skos:inScheme <epos:Anthropogenichazards>;
 		skos:prefLabel "unconventional hydrocarbon extraction";
 . 
-	<#Conventionalhydrocarbonextraction> a skos:Concept;
-		skos:inScheme <#Anthropogenichazards>;
+	<epos:Conventionalhydrocarbonextraction> a skos:Concept;
+		skos:inScheme <epos:Anthropogenichazards>;
 		skos:prefLabel "conventional hydrocarbon extraction";
 . 
 
@@ -616,13 +616,13 @@
 		dct:description "Virtual access to IS-EPOS Platform";
 		dct:created "2015-10-20"^^xsd:date;
 		dct:modified "2018-07-30"^^xsd:date;
-		dcat:theme <#Reservoirimpoundment>;
-		dcat:theme <#Geothermalenergyproduction>;
-		dcat:theme <#Hardrockmining>;
-		dcat:theme <#Coalmining>;
-		dcat:theme <#Saltsolutionsmining>;
-		dcat:theme <#Conventionalhydrocarbonextraction>;
-		dcat:theme <#Unconventionalhydrocarbonextraction>;
+		dcat:theme <epos:Reservoirimpoundment>;
+		dcat:theme <epos:Geothermalenergyproduction>;
+		dcat:theme <epos:Hardrockmining>;
+		dcat:theme <epos:Coalmining>;
+		dcat:theme <epos:Saltsolutionsmining>;
+		dcat:theme <epos:Conventionalhydrocarbonextraction>;
+		dcat:theme <epos:Unconventionalhydrocarbonextraction>;
 		dcat:keyword "anthropogenic hazards","tcs ah","is-epos platform","web platform","multiservice","research environment","workspace","applications","episodes","document repository";
 		dct:publisher <PIC:996625337>;
 		dcat:contactPoint <mailto:m.sterzel@cyfronet.pl/contactPoint>;
@@ -647,7 +647,7 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(20.323325 49.419624)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Reservoirimpoundment>;
+		dcat:theme <epos:Reservoirimpoundment>;
 		dcat:keyword " hydropower plants", "reservoir triggered seismicity", "anthropogenic seismicity";
 		dct:publisher <PIC:996625337>;
 		dcat:contactPoint <http://orcid.org/0000-0002-4801-4888/contactPoint>;
@@ -672,7 +672,7 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(13.653131 52.915086)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Geothermalenergyproduction>;
+		dcat:theme <epos:Geothermalenergyproduction>;
 		dcat:keyword "injection induced seismicity", "anthropogenic seismicity";
 		dct:publisher <PIC:999994341>;
 		dcat:contactPoint <http://orcid.org/0000-0003-1076-615X/contactPoint>;
@@ -698,7 +698,7 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(16.106551 51.501023)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Hardrockmining>;
+		dcat:theme <epos:Hardrockmining>;
 		dcat:keyword "underground mining", "anthropogenic seismicity", "mining induced seismicity";
 		dct:publisher <PIC:996625337>;
 		dcat:contactPoint <http://orcid.org/0000-0002-4801-4888/contactPoint>;
@@ -723,7 +723,7 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(108.1482 15.3311)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Reservoirimpoundment>;
+		dcat:theme <epos:Reservoirimpoundment>;
 		dcat:keyword "hydropower plans", "reservoir triggered seismicity", "anthropogenic seismicity";
 		dct:publisher <PIC:996625337>;
 		dcat:contactPoint <http://orcid.org/0000-0002-4801-4888/contactPoint>;
@@ -749,7 +749,7 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(19.080085 50.244433)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Coalmining>;
+		dcat:theme <epos:Coalmining>;
 		dcat:keyword "underground mining", "anthropogenic seismicity", "mining induced seismicity";
 		dct:publisher <PIC:999516616>;
 		dcat:contactPoint <http://orcid.org/0000-0001-8181-0758/contactPoint>;
@@ -774,7 +774,7 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(18.867014 50.351483)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Coalmining>;
+		dcat:theme <epos:Coalmining>;
 		dcat:keyword "underground mining", "anthropogenic seismicity", "mining induced seismicity";
 		dct:publisher <PIC:999516616>;
 		dcat:contactPoint <http://orcid.org/0000-0001-8181-0758/contactPoint>;
@@ -799,7 +799,7 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(26.042500 63.658889)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Hardrockmining>;
+		dcat:theme <epos:Hardrockmining>;
 		dcat:keyword "underground mining", "anthropogenic seismicity", "mining induced seismicity";
 		dct:publisher <mailto:university.of.oulu@oulu.fi>;
 		dcat:contactPoint <mailto:jouni.nevalainen@oulu.fi/contactPoint>;
@@ -821,7 +821,7 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(-0.6 43.55)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Conventionalhydrocarbonextraction>;
+		dcat:theme <epos:Conventionalhydrocarbonextraction>;
 		dcat:keyword "anthropogenic seismicity";
 		dct:publisher <https://isterre.fr>;
 		dcat:contactPoint <http://orcid.org/0000-0002-9580-7864/contactPoint>;
@@ -847,7 +847,7 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(0.540 44.560)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Reservoirimpoundment>;
+		dcat:theme <epos:Reservoirimpoundment>;
 		dcat:keyword "reservoir triggered seismicity", "anthropogenic seismicity";
 		dct:publisher <https://isterre.fr>;
 		dcat:contactPoint <http://orcid.org/0000-0002-9580-7864/contactPoint>;
@@ -873,10 +873,10 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POLYGON(7.86 48.93, 7.87 48.94)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Geothermalenergyproduction>;
+		dcat:theme <epos:Geothermalenergyproduction>;
 		dcat:keyword "injection induced seismicity", "anthropogenic seismicity";
 		dct:publisher <https://eost.unistra.fr>;
-		dcat:contactPoint <https://orcid.org/0000-0003-4017-4673/contactPoint>;
+		dcat:contactPoint <http://orcid.org/0000-0003-4017-4673/contactPoint>;
 		dcat:distribution <anthropogenic_hazards/distribution/episodes/SSFS1993>;
 		dcat:distribution <anthropogenic_hazards/distribution/episode-elements/SSFS1993>;
 . 
@@ -898,7 +898,7 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(6.321185 48.676043)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Saltsolutionsmining>;
+		dcat:theme <epos:Saltsolutionsmining>;
 		dcat:keyword "underground mining", "anthropogenic seismicity", "mining induced seismicity";
 		dct:publisher <http://www.ineris.fr>;
 		dcat:contactPoint <mailto:jannes-l.kinscher@ineris.fr/contactPoint>;
@@ -923,7 +923,7 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(6.308847 48.638295)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Unconventionalhydrocarbonextraction>;
+		dcat:theme <epos:Unconventionalhydrocarbonextraction>;
 		dcat:keyword "anthropogenic seismicity";
 		dct:publisher <http://www.ineris.fr>;
 		dcat:contactPoint <mailto:jannes-l.kinscher@ineris.fr/contactPoint>;
@@ -948,7 +948,7 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(-122.82784 38.84046)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Geothermalenergyproduction>;
+		dcat:theme <epos:Geothermalenergyproduction>;
 		dcat:keyword "injection induced seismicity", "anthropogenic seismicity";
 		dct:publisher <PIC:999994341>;
 		dcat:contactPoint <http://orcid.org/0000-0003-1076-615X/contactPoint>;
@@ -974,7 +974,7 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(-122.83269 38.798440)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Geothermalenergyproduction>;
+		dcat:theme <epos:Geothermalenergyproduction>;
 		dcat:keyword "injection induced seismicity", "anthropogenic seismicity";
 		dct:publisher <PIC:999527286>;
 		dcat:contactPoint <https://orcid.org/0000-0001-8078-9416/contactPoint>;
@@ -999,7 +999,7 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(15.9893 40.3247)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Conventionalhydrocarbonextraction>;
+		dcat:theme <epos:Conventionalhydrocarbonextraction>;
 		dcat:keyword "anthropogenic seismicity";
 		dct:publisher <PIC:999472675>;
 		dcat:contactPoint <http://orcid.org/0000-0003-2915-1446/contactPoint>;
@@ -1025,7 +1025,7 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(15.9180 40.2270)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Reservoirimpoundment>;
+		dcat:theme <epos:Reservoirimpoundment>;
 		dcat:keyword "reservoir triggered seismicity", "anthropogenic seismicity";
 		dct:publisher <PIC:999472675>;
 		dcat:contactPoint <http://orcid.org/0000-0003-2915-1446/contactPoint>;
@@ -1051,7 +1051,7 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(-2.9442207 53.8219037)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Unconventionalhydrocarbonextraction>;
+		dcat:theme <epos:Unconventionalhydrocarbonextraction>;
 		dcat:keyword "hydrofracturing", "injection seismicity", "anthropogenic seismicity";
 		dct:publisher <PIC:999862324>;
 		dcat:contactPoint <http://orcid.org/0000-0002-0769-5277/contactPoint>;
@@ -1076,8 +1076,8 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(-97.341 36.036)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Unconventionalhydrocarbonextraction>;
-		dcat:theme <#Conventionalhydrocarbonextraction>;
+		dcat:theme <epos:Unconventionalhydrocarbonextraction>;
+		dcat:theme <epos:Conventionalhydrocarbonextraction>;
 		dcat:keyword "hydrofracturing", "injection seismicity", "anthropogenic seismicity";
 		dct:publisher <PIC:999862324>;
 		dcat:contactPoint <http://orcid.org/0000-0002-0769-5277/contactPoint>;
@@ -1102,7 +1102,7 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(6.707173 53.284546)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Conventionalhydrocarbonextraction>;
+		dcat:theme <epos:Conventionalhydrocarbonextraction>;
 		dcat:keyword "anthropogenic seismicity";
 		dct:publisher <PIC:999518944>;
 		dcat:contactPoint <http://orcid.org/0000-0001-7153-5115/contactPoint>;
@@ -1127,7 +1127,7 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(18.148734 54.72094)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Unconventionalhydrocarbonextraction>;
+		dcat:theme <epos:Unconventionalhydrocarbonextraction>;
 		dcat:keyword "hydrofracturing", "injection seismicity", "anthropogenic seismicity";
 		dct:publisher <PIC:996625337>;
 		dcat:contactPoint <http://orcid.org/0000-0002-4801-4888/contactPoint>;
@@ -1152,7 +1152,7 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(18.3039 54.09417)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Unconventionalhydrocarbonextraction>;
+		dcat:theme <epos:Unconventionalhydrocarbonextraction>;
 		dcat:keyword "hydrofracturing", "injection seismicity", "anthropogenic seismicity";
 		dct:publisher <PIC:996625337>;
 		dcat:contactPoint <http://orcid.org/0000-0002-4801-4888/contactPoint>;
@@ -1177,7 +1177,7 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(-21.314849 64.058189)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Geothermalenergyproduction>;
+		dcat:theme <epos:Geothermalenergyproduction>;
 		dcat:keyword "injection induced seismicity", "anthropogenic seismicity";
 		dct:publisher <PIC:974007459>;
 		dcat:contactPoint <https://orcid.org/0000-0003-2989-1663/contactPoint>;
@@ -1202,7 +1202,7 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(9.321 47.422)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Geothermalenergyproduction>;
+		dcat:theme <epos:Geothermalenergyproduction>;
 		dcat:keyword "injection induced seismicity", "anthropogenic seismicity";
 		dct:publisher <https://www.sgsw.ch>;
 		dcat:contactPoint <mailto:thomas.bloch@sgsw.ch/contactPoint>;
@@ -1267,13 +1267,13 @@
 	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/CARBFIX>;
 	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episodes/SG>;
 	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/SG>;
-	dcat:theme <#Reservoirimpoundment>;
-	dcat:theme <#Geothermalenergyproduction>;
-	dcat:theme <#Hardrockmining>;
-	dcat:theme <#Coalmining>;
-	dcat:theme <#Saltsolutionsmining>;
-	dcat:theme <#Conventionalhydrocarbonextraction>;
-	dcat:theme <#Unconventionalhydrocarbonextraction>;
+	dcat:theme <epos:Reservoirimpoundment>;
+	dcat:theme <epos:Geothermalenergyproduction>;
+	dcat:theme <epos:Hardrockmining>;
+	dcat:theme <epos:Coalmining>;
+	dcat:theme <epos:Saltsolutionsmining>;
+	dcat:theme <epos:Conventionalhydrocarbonextraction>;
+	dcat:theme <epos:Unconventionalhydrocarbonextraction>;
 	schema:keywords "anthropogenic hazards","tcs ah","is-epos platform","web platform","multiservice","research environment","workspace","applications","episodes","document repository";
 	dcat:contactPoint <http://orcid.org/0000-0002-4801-4888/contactPoint>;
 	dcat:contactPoint <mailto:m.sterzel@cyfronet.pl/contactPoint>;
@@ -1349,7 +1349,15 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements?episode=CZORSZTYN{?dataType, before, after}"^^xsd:string;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "episode name";
+					schema:defaultValue "CZORSZTYN";
+					http:paramValue "CZORSZTYN" ;
+					hydra:required "true"^^xsd:boolean;
+				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "dataType"^^xsd:string;
 					rdfs:range "xsd:string";
@@ -1384,7 +1392,15 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements?episode=GS{?dataType, before, after}"^^xsd:string;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "episode name";
+					schema:defaultValue "GS";
+					http:paramValue "GS" ;
+					hydra:required "true"^^xsd:boolean;
+				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "dataType"^^xsd:string;
 					rdfs:range "xsd:string";
@@ -1419,7 +1435,15 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements?episode=LGCD{?dataType, before, after}"^^xsd:string;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "episode name";
+					schema:defaultValue "LGCD";
+					http:paramValue "LGCD" ;
+					hydra:required "true"^^xsd:boolean;
+				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "dataType"^^xsd:string;
 					rdfs:range "xsd:string";
@@ -1454,7 +1478,15 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements?episode=SONG_TRANH{?dataType, before, after}"^^xsd:string;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "episode name";
+					schema:defaultValue "SONG_TRANH";
+					http:paramValue "SONG_TRANH" ;
+					hydra:required "true"^^xsd:boolean;
+				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "dataType"^^xsd:string;
 					rdfs:range "xsd:string";
@@ -1489,7 +1521,15 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements?episode=USCB{?dataType, before, after}"^^xsd:string;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "episode name";
+					schema:defaultValue "USCB";
+					http:paramValue "USCB" ;
+					hydra:required "true"^^xsd:boolean;
+				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "dataType"^^xsd:string;
 					rdfs:range "xsd:string";
@@ -1524,7 +1564,15 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements?episode=BOBREK{?dataType, before, after}"^^xsd:string;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "episode name";
+					schema:defaultValue "BOBREK";
+					http:paramValue "BOBREK" ;
+					hydra:required "true"^^xsd:boolean;
+				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "dataType"^^xsd:string;
 					rdfs:range "xsd:string";
@@ -1559,7 +1607,15 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements?episode=PYHASALMI_MINE{?dataType, before, after}"^^xsd:string;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "episode name";
+					schema:defaultValue "PYHASALMI_MINE";
+					http:paramValue "PYHASALMI_MINE" ;
+					hydra:required "true"^^xsd:boolean;
+				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "dataType"^^xsd:string;
 					rdfs:range "xsd:string";
@@ -1594,7 +1650,15 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements?episode=LGF{?dataType, before, after}"^^xsd:string;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "episode name";
+					schema:defaultValue "LGF";
+					http:paramValue "LGF" ;
+					hydra:required "true"^^xsd:boolean;
+				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "dataType"^^xsd:string;
 					rdfs:range "xsd:string";
@@ -1629,7 +1693,15 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements?episode=MONTEYNARD{?dataType, before, after}"^^xsd:string;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "episode name";
+					schema:defaultValue "MONTEYNARD";
+					http:paramValue "MONTEYNARD" ;
+					hydra:required "true"^^xsd:boolean;
+				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "dataType"^^xsd:string;
 					rdfs:range "xsd:string";
@@ -1664,7 +1736,15 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements?episode=SSFS1993{?dataType, before, after}"^^xsd:string;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "episode name";
+					schema:defaultValue "SSFS1993";
+					http:paramValue "SSFS1993" ;
+					hydra:required "true"^^xsd:boolean;
+				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "dataType"^^xsd:string;
 					rdfs:range "xsd:string";
@@ -1699,7 +1779,15 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements?episode=GISOS-CERVILLE{?dataType, before, after}"^^xsd:string;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "episode name";
+					schema:defaultValue "GISOS-CERVILLE";
+					http:paramValue "GISOS-CERVILLE" ;
+					hydra:required "true"^^xsd:boolean;
+				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "dataType"^^xsd:string;
 					rdfs:range "xsd:string";
@@ -1734,7 +1822,15 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements?episode=STARFISH{?dataType, before, after}"^^xsd:string;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "episode name";
+					schema:defaultValue "STARFISH";
+					http:paramValue "STARFISH" ;
+					hydra:required "true"^^xsd:boolean;
+				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "dataType"^^xsd:string;
 					rdfs:range "xsd:string";
@@ -1769,7 +1865,15 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements?episode=THE_GEYSERS_Prati_9_and_Prati_29_cluster{?dataType, before, after}"^^xsd:string;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "episode name";
+					schema:defaultValue "THE_GEYSERS_Prati_9_and_Prati_29_cluster";
+					http:paramValue "THE_GEYSERS_Prati_9_and_Prati_29_cluster" ;
+					hydra:required "true"^^xsd:boolean;
+				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "dataType"^^xsd:string;
 					rdfs:range "xsd:string";
@@ -1804,7 +1908,15 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements?episode=THE_GEYSERS{?dataType, before, after}"^^xsd:string;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "episode name";
+					schema:defaultValue "THE_GEYSERS";
+					http:paramValue "THE_GEYSERS" ;
+					hydra:required "true"^^xsd:boolean;
+				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "dataType"^^xsd:string;
 					rdfs:range "xsd:string";
@@ -1839,7 +1951,15 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements?episode=VDF{?dataType, before, after}"^^xsd:string;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "episode name";
+					schema:defaultValue "VDF";
+					http:paramValue "VDF" ;
+					hydra:required "true"^^xsd:boolean;
+				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "dataType"^^xsd:string;
 					rdfs:range "xsd:string";
@@ -1874,7 +1994,15 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements?episode=VD{?dataType, before, after}"^^xsd:string;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "episode name";
+					schema:defaultValue "VD";
+					http:paramValue "VD" ;
+					hydra:required "true"^^xsd:boolean;
+				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "dataType"^^xsd:string;
 					rdfs:range "xsd:string";
@@ -1909,7 +2037,15 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements?episode=PREESE_HALL{?dataType, before, after}"^^xsd:string;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "episode name";
+					schema:defaultValue "PREESE_HALL";
+					http:paramValue "PREESE_HALL" ;
+					hydra:required "true"^^xsd:boolean;
+				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "dataType"^^xsd:string;
 					rdfs:range "xsd:string";
@@ -1944,7 +2080,15 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements?episode=OK{?dataType, before, after}"^^xsd:string;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "episode name";
+					schema:defaultValue "OK";
+					http:paramValue "OK" ;
+					hydra:required "true"^^xsd:boolean;
+				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "dataType"^^xsd:string;
 					rdfs:range "xsd:string";
@@ -1979,7 +2123,15 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements?episode=GRONINGEN_FIELD{?dataType, before, after}"^^xsd:string;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "episode name";
+					schema:defaultValue "GRONINGEN_FIELD";
+					http:paramValue "GRONINGEN_FIELD" ;
+					hydra:required "true"^^xsd:boolean;
+				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "dataType"^^xsd:string;
 					rdfs:range "xsd:string";
@@ -2014,7 +2166,15 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements?episode=LUBOCINO{?dataType, before, after}"^^xsd:string;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "episode name";
+					schema:defaultValue "LUBOCINO";
+					http:paramValue "LUBOCINO" ;
+					hydra:required "true"^^xsd:boolean;
+				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "dataType"^^xsd:string;
 					rdfs:range "xsd:string";
@@ -2049,7 +2209,15 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements?episode=WYSIN{?dataType, before, after}"^^xsd:string;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "episode name";
+					schema:defaultValue "WYSIN";
+					http:paramValue "WYSIN" ;
+					hydra:required "true"^^xsd:boolean;
+				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "dataType"^^xsd:string;
 					rdfs:range "xsd:string";
@@ -2084,7 +2252,15 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements?episode=CARBFIX{?dataType, before, after}"^^xsd:string;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "episode name";
+					schema:defaultValue "CARBFIX";
+					http:paramValue "CARBFIX" ;
+					hydra:required "true"^^xsd:boolean;
+				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "dataType"^^xsd:string;
 					rdfs:range "xsd:string";
@@ -2119,7 +2295,15 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements?episode=SG{?dataType, before, after}"^^xsd:string;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "episode name";
+					schema:defaultValue "SG";
+					http:paramValue "SG" ;
+					hydra:required "true"^^xsd:boolean;
+				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "dataType"^^xsd:string;
 					rdfs:range "xsd:string";
