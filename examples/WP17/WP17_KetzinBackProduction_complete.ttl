@@ -1,0 +1,185 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .  
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .  
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .  
+@prefix dc: <http://purl.org/dc/elements/1.1/> .  
+@prefix dct: <http://purl.org/dc/terms/> .  
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .  
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .  
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .  
+@prefix schema: <http://schema.org/> .  
+@prefix dcat: <http://www.w3.org/ns/dcat#> .  
+@prefix cnt: <http://www.w3.org/2011/content#> .  
+@prefix locn: <http://www.w3.org/ns/locn#> .  
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .  
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .  
+@prefix http: <http://www.w3.org/2006/http#> .  
+@prefix owl: <http://www.w3.org/2002/07/owl#> .  
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .  
+
+<PIC:999994341> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "PIC";
+		schema:value "999994341";
+	]; 
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "";
+		schema:value "";
+	]; 
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "";
+		schema:value "";
+	]; 
+	schema:legalName "GFZ German Research Centre for Geosciences";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Telegrafenberg";
+		schema:addressLocality "Potsdam";
+		schema:postalCode "14473";
+		schema:addressCountry "Germany";
+	]; 
+	schema:logo "https://media.gfz-potsdam.de/gfz/wv/05_Medien_Kommunikation/Bildarchiv/GFZ Logo/temp_xs/LOGO-GFZ-en-mitFreistellungsraum_RGB_24bit_300dpi_546x390-jpg.jpg"^^xsd:anyURI;
+	schema:url "http://www.gfz-potsdam.de/"^^xsd:anyURI;
+	schema:email "info@gfz-potsdam.de";
+	schema:contactPoint <axel.liebscher@gfz-potsdam.de/scientificContact>;
+. 
+
+<http://orcid.org/0000-0001-6877-8327> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "ORCID";
+		schema:value "http://orcid.org/0000-0001-6877-8327";
+	]; 
+	schema:familyName "Moeller";
+	schema:givenName "Fabian";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Telegrafenberg";
+		schema:addressLocality "Potsdam";
+		schema:postalCode "14473";
+		schema:addressCountry "Germany";
+	]; 
+	schema:email "fabian.moeller@gfz-potsdam.de";
+	schema:telephone "+493312881529";
+	schema:url "https://www.gfz-potsdam.de/staff/fabian-moeller/sec63/"^^xsd:anyURI;
+	schema:qualifications "Scientist - Geological Storage";
+	schema:affiliation <PIC:999994341>;
+. 
+
+<mailto:sonja.martens@gfz-potsdam.de> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "mailto";
+		schema:value "mailto:sonja.martens@gfz-potsdam.de";
+	]; 
+	schema:familyName "Martens";
+	schema:givenName "Sonja";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Telegrafenberg";
+		schema:addressLocality "Potsdam";
+		schema:postalCode "14473";
+		schema:addressCountry "Germany";
+	]; 
+	schema:email "sonja.martens@gfz-potsdam.de";
+	schema:telephone "+493312881529";
+	schema:url "https://www.gfz-potsdam.de/en/staff/sonja-martens/sec34/"^^xsd:anyURI;
+	schema:affiliation <PIC:999994341>;
+. 
+
+<mailto:martin.streibel@gfz-potsdam.de> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "mailto:";
+		schema:value "mailto:martin.streibel@gfz-potsdam.de";
+	]; 
+	schema:familyName "Streibel";
+	schema:givenName "Martin";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Telegrafenberg";
+		schema:addressLocality "Potsdam";
+		schema:postalCode "14473";
+		schema:addressCountry "Germany";
+	]; 
+	schema:email "martin.streibel@gfz-potsdam.de";
+	schema:affiliation <PIC:999994341>;
+. 
+
+<mailto:axel.liebscher@gfz-potsdam.de> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "mailto";
+		schema:value "mailto:axel.liebscher@gfz-potsdam.de";
+	]; 
+	schema:familyName "Liebscher";
+	schema:givenName "Axel";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Telegrafenberg";
+		schema:addressLocality "POtsdam";
+		schema:postalCode "14473";
+		schema:addressCountry "Germany";
+	]; 
+	schema:email "axel.liebscher@gfz-potsdam.de";
+	schema:affiliation <PIC:999994341>;
+	schema:contactPoint <axel.liebscher@gfz-potsdam.de/scientificContact>;
+. 
+	<axel.liebscher@gfz-potsdam.de/scientificContact> a schema:ContactPoint;
+		schema:email "axel.liebscher@gfz-potsdam.de";
+		schema:availableLanguage "en" ;
+		schema:contactType "scientificContact" ;
+.
+
+<GFZ.CGS.2015.001> a dcat:Dataset;
+		dct:title "WP17-DDSS-003 Ketzin Back Production Data";
+		dct:identifier "GFZ.CGS.2015.001";
+		adms:identifier [ a adms:Identifier;
+			adms:schemaAgency "DDSS-ID";
+			skos:notation "WP17-DDSS-003";
+		]; 
+		dct:description "Dataset of the Back-production Test at the CO2 Storage Pilot Site Ketzin, Germany ";
+		dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
+		dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
+		dct:created "2017-04-27"^^xsd:date;
+		dct:modified "2017-04-27"^^xsd:date;
+		dct:issued "2017-04-27"^^xsd:date;
+	dct:temporal [ a dct:PeriodOfTime; 
+		schema:startDate "2008-06-01T00:00:00Z"^^xsd:dateTime; 
+		schema:endDate "2013-08-31T00:00:00Z"^^xsd:dateTime; 
+	]; 
+	dct:spatial [ a dct:Location; 
+		locn:geometry "POLYGON(12.869530 52.491578,12.869530 52.491578,12.869530 52.491578,12.869530 52.491578,12.869530 52.491578)"^^gsp:wktLiteral; 
+	]; 
+		dcat:keyword "CO2 Back-production Test Ketzin", "CO2", "back-production", "storage", "pressure", "temperature", "production", "saline aquifer", "CCS", "EPOS", "geo-energy test beds";
+		dct:publisher <PIC:999994341>;
+. 
+
+<epos:GeoEnergyTestbeds> a skos:ConceptScheme;
+		dct:title "GeoEnergy Testbeds";
+		dct:description "It contains the concepts of GeoEnergy Testbeds";
+. 
+	<epos:Storage> a skos:Concept;
+		skos:inScheme <epos:GeoEnergyTestbeds>;
+. 
+	<WP17-002 Download> a dcat:Distribution;
+		dct:identifier "WP17-003 Download";
+		dct:title "Ketzin back production data";
+	      dct:issued "2017-04-27"^^xsd:date;
+		dct:modified "2017-04-27"^^xsd:date;
+		dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
+		dcat:downloadURL "http://dataservices.gfz-potsdam.de/panmetaworks/showshort.php?id=escidoc:987898 "^^xsd:anyURI;
+		dct:license "https://creativecommons.org/licenses/by/4.0/";
+		dct:format "http://publications.europa.eu/resource/authority/file-type/XLS"^^xsd:anyURI;
+. 
+	<http://orcid.org/0000-0001-6877-8327/scientificContact> a schema:ContactPoint;
+		schema:email "fabian.moeller@gfz-potsdam.de";
+		schema:availableLanguage "en" ;
+		schema:contactType "scientificContact" ;
+. 
+	<mailto:sonja.martens@gfz-potsdam.de/scientificContact> a schema:ContactPoint;
+		schema:email "sonja.martens@gfz-potsdam.de";
+		schema:availableLanguage "en" ;
+		schema:contactType "scientificContact" ;
+. 
+	<mailto:martin.streibel@gfz-potsdam.de/scientificContact> a schema:ContactPoint;
+		schema:email "martin.streibel@gfz-potsdam.de";
+		schema:availableLanguage "en" ;
+		schema:contactType "scientificContact" ;
+. 
+	<mailto:axel.liebscher@gfz-potsdam.de/scientificContact> a schema:ContactPoint;
+		schema:email "axel.liebscher@gfz-potsdam.de";
+		schema:availableLanguage "en" ;
+		schema:contactType "scientificContact" ;
+. 
+
