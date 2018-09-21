@@ -20,15 +20,16 @@
 ### Domain and subdomain ###
 ###############################################################################
 
-<#Geoelectromagnetism> a skos:ConceptScheme;
+<epos:Geoelectromagnetism> a skos:ConceptScheme;
     dct:title "Geoelectromagnetism";
     dct:description "Relating to the electric or magnetic field of the Earth";
 .
 
-<#Magneticfield> a skos:Concept;
+<epos:Magneticfield> a skos:Concept;
     skos:definition "Geomagnetic data and models without restriction in scale or frequency";
-    skos:inScheme <#Geoelectromagnetism>;
-    skos:prefLabel "Geomagnetic data and models without restriction in scale or frequency";
+    skos:inScheme <epos:Geoelectromagnetism>;
+    #skos:prefLabel "Geomagnetic data and models without restriction in scale or frequency";
+    skos:prefLabel "Magneticfield data";
 .
 
 ###############################################################################
@@ -169,7 +170,7 @@
     
     dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
     dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI ;
-    dcat:theme  <#Magneticfield> ;
+    dcat:theme  <epos:Magneticfield> ;
     dcat:keyword "magnetism", "geomagnetism", "global model", "magnetic model", "magnetic survey", "main field", "model", "secular variation", "world model" ;
     dcat:contactPoint <mailto:smf@bgs.ac.uk/contactPoint> ;
     dct:publisher <http://viaf.org/viaf/136554353/>;
@@ -214,7 +215,7 @@
     schema:dateModified "2018-08-31Z"^^xsd:dateTime;
     schema:provider <http://viaf.org/viaf/136554353/>;
     hydra:entrypoint "http://geomag.bgs.ac.uk/gifs/wdc/global-survey/"^^xsd:anyURI ;
-    dcat:theme  <#Magneticfield> ;
+    dcat:theme  <epos:Magneticfield> ;
     schema:keywords "magnetism", "geomagnetism", "global model", "magnetic model", "magnetic survey", "main field", "model", "secular variation", "world model" ;
     hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-003/SurveyData/Operation> ;
     dct:spatial [ a dct:Location; 
