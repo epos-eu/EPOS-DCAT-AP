@@ -105,7 +105,7 @@
 	dct:spatial [ a dct:Location; 
 		locn:geometry "POLYGON(-180 90,180 90,180 -90,-180 90,-180 90)"^^gsp:wktLiteral; 
 	]; 
-		dcat:theme <epos:GeologicalData>;
+		dcat:theme <#GeologicalData>;
 		dcat:keyword "GeologicUnit", "MappedFeature", "Geology", "INSPIRE:GE", "GeoSciML";
 		dcat:contactPoint <mailto:contact-brgm@brgm.fr>;
 		dcat:distribution <http://resource.europe-geology.eu/dataset/geologicunit/distributionWfs>;
@@ -366,6 +366,12 @@
 					http:paramValue "EGDI_GE_GeologicUnit_EN_1M_Surface_Age";
 					hydra:required "true"^^xsd:boolean;
 				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "BBOX"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "WMS BBOX filter parameter";
+					hydra:required "false"^^xsd:boolean;
+				];	
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "crs"^^xsd:string;
 					rdfs:range "xsd:string";

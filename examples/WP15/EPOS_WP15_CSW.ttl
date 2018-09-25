@@ -87,8 +87,46 @@
 
 	<epos:GeologicalData> a skos:Concept;
 		skos:inScheme <epos:Geology>;
-                skos:prefLabel "Geological data"
+        skos:prefLabel "Geological data"
 .
+
+<http://resource.europe-geology.eu/dataset/catalogue> a dcat:Dataset;
+		dct:title "WP15 metadata for datasets and services provided by the TCS Geological Information.";
+		dct:identifier "http://resource.europe-geology.eu/dataset/catalogue"; 
+		adms:identifier [ a adms:Identifier;
+			adms:schemaAgency "DDSS-ID";
+			skos:notation "WP15-DDSS-007";
+		]; 
+		dct:description "Metadata for WP15 datasets and services provided by the TCS Geological Information and Modelling and along with one metadata record for EGDI catalogue.";
+		dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+		dct:created "2017-10-27"^^xsd:date;
+		dct:modified "2018-09-07"^^xsd:date;
+		dct:issued "2017-10-27"^^xsd:date;
+	dct:spatial [ a dct:Location; 
+		locn:geometry "POLYGON(-180 90,180 90,180 -90,-180 90,-180 90)"^^gsp:wktLiteral; 
+	]; 
+		dcat:theme <#GeologicalData>;
+		dcat:keyword "Geology","EPOS","WP15","BoreholeView","scientific drilling","GeologicUnitView","MappedFeature", "ModelView", "EGDI";
+		dcat:contactPoint <mailto:contact-brgm@brgm.fr>;
+		dcat:distribution <http://resource.europe-geology.eu/dataset/catalogue/distributionCsw>;
+		dct:publisher <PIC:999993662>;
+. 
+
+
+	<http://resource.europe-geology.eu/dataset/catalogue/distributionCsw> a dcat:Distribution;
+		dct:identifier "http://resource.europe-geology.eu/dataset/catalogue/distributionCsw";
+		dct:title "Geological Map 1:1,000,000 (OneGeology-Europe layer)";
+		dct:description "The CSW provides an interface for requesting catalogue records exposed by WP15 metadata catalogue";
+		dct:issued "2016-10-27"^^xsd:date;
+		dct:modified "2018-01-19"^^xsd:date;
+		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+		dct:conformsTo <http://resource.europe-geology.eu/service/cswEpos>;
+		dcat:accessURL <http://resource.europe-geology.eu/service/cswEpos/operation>;
+		dct:license "TBD"^^xsd:anyURI ;
+		dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
+		#dct:format "https://www.iana.org/assignments/media-types/application/xml"^^xsd:anyURI;
+. 
+
 
 <http://resource.europe-geology.eu/service/cswEpos> a epos:WebService;
 	schema:identifier "http://resource.europe-geology.eu/service/cswEpos";
