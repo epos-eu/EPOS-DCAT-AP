@@ -16,9 +16,35 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
+<PIC:999994341> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "PIC";
+		schema:value "999994341";
+	];
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "";
+		schema:value "";
+	];
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "";
+		schema:value "";
+	];
+	schema:legalName "GFZ German Research Centre for Geosciences";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Telegrafenberg";
+		schema:addressLocality "Potsdam";
+		schema:postalCode "14473";
+		schema:addressCountry "Germany";
+	];
+	schema:logo "https://media.gfz-potsdam.de/gfz/wv/05_Medien_Kommunikation/Bildarchiv/GFZ Logo/temp_xs/LOGO-GFZ-en-mitFreistellungsraum_RGB_24bit_300dpi_546x390-jpg.jpg"^^xsd:anyURI;
+	schema:url "http://www.gfz-potsdam.de/"^^xsd:anyURI;
+	schema:email "info@gfz-potsdam.de";
+	schema:contactPoint <axel.liebscher@gfz-potsdam.de/scientificContact>;
+.
+
 <http://orcid.org/0000-0001-6877-8327> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "orcid";
+		schema:propertyID "ORCID";
 		schema:value "http://orcid.org/0000-0001-6877-8327";
 	];
 	schema:familyName "Moeller";
@@ -34,96 +60,94 @@
 	schema:url "https://www.gfz-potsdam.de/staff/fabian-moeller/sec63/"^^xsd:anyURI;
 	schema:qualifications "Scientist - Geological Storage";
 	schema:affiliation <PIC:999994341>;
-	schema:contactPoint <http://orcid.org/0000-0001-6877-8327/scientificContact>;
-	schema:contactPoint <http://orcid.org/0000-0001-6877-8327/contactPoint>;
 .
 
-<mailto:marko.blau@gfz-potsdam.de> a schema:Person;
+<mailto:sonja.martens@gfz-potsdam.de> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "mailto";
-		schema:value "mailto:marko.blau@gfz-potsdam.de";
+		schema:value "mailto:sonja.martens@gfz-potsdam.de";
 	];
-	schema:familyName "Blau";
-	schema:givenName "Marko";
+	schema:familyName "Martens";
+	schema:givenName "Sonja";
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "Telegrafenberg";
 		schema:addressLocality "Potsdam";
 		schema:postalCode "14473";
 		schema:addressCountry "Germany";
 	];
-	schema:email "rechtsabteilung@gfz-potsdam.de";
-	schema:telephone "+493312881052";
-	schema:url "http://www.gfz-potsdam.de/en/staff/marko-blau/"^^xsd:anyURI;
-	schema:qualifications "Lawyer";
+	schema:email "sonja.martens@gfz-potsdam.de";
+	schema:telephone "+493312881529";
+	schema:url "https://www.gfz-potsdam.de/en/staff/sonja-martens/sec34/"^^xsd:anyURI;
 	schema:affiliation <PIC:999994341>;
-	schema:contactPoint <mailto:marko.blau@gfz-potsdam.de/legalContact>;
 .
 
-<mailto:stephan.ott@gfz-potsdam.de> a schema:Person;
+<mailto:martin.streibel@gfz-potsdam.de> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "mailto:";
+		schema:value "mailto:martin.streibel@gfz-potsdam.de";
+	];
+	schema:familyName "Streibel";
+	schema:givenName "Martin";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Telegrafenberg";
+		schema:addressLocality "Potsdam";
+		schema:postalCode "14473";
+		schema:addressCountry "Germany";
+	];
+	schema:email "martin.streibel@gfz-potsdam.de";
+	schema:affiliation <PIC:999994341>;
+.
+
+<mailto:axel.liebscher@gfz-potsdam.de> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "mailto";
-		schema:value "mailto:stephan.ott@gfz-potsdam.de";
+		schema:value "mailto:axel.liebscher@gfz-potsdam.de";
 	];
-	schema:familyName "Ott";
-	schema:givenName "Stephan";
+	schema:familyName "Liebscher";
+	schema:givenName "Axel";
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "Telegrafenberg";
-		schema:addressLocality "Potsdam";
+		schema:addressLocality "POtsdam";
 		schema:postalCode "14473";
 		schema:addressCountry "Germany";
 	];
-	schema:email "stephan.ott@gfz-potsdam.de";
-	schema:telephone "+4933128827515";
-	schema:qualifications "Financial Advisor";
+	schema:email "axel.liebscher@gfz-potsdam.de";
 	schema:affiliation <PIC:999994341>;
-	schema:contactPoint <mailto:stephan.ott@gfz-potsdam.de/financialContact>;
+	schema:contactPoint <axel.liebscher@gfz-potsdam.de/scientificContact>;
+.
+	<axel.liebscher@gfz-potsdam.de/scientificContact> a schema:ContactPoint;
+		schema:email "axel.liebscher@gfz-potsdam.de";
+		schema:availableLanguage "en" ;
+		schema:contactType "scientificContact" ;
 .
 
-<PIC:999994341> a schema:Organization;
-	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "pic";
-		schema:value "999994341";
-	];
-	schema:legalName "GFZ German Research Centre for Geosciences";
-	schema:address [ a schema:PostalAddress;
-		schema:streetAddress "Telegrafenberg";
-		schema:addressLocality "Potsdam";
-		schema:postalCode "14473";
-		schema:addressCountry "Germany";
-	];
-	schema:logo "https://media.gfz-potsdam.de/gfz/wv/05_Medien_Kommunikation/Bildarchiv/GFZ Logo/temp_xs/LOGO-GFZ-en-mitFreistellungsraum_RGB_24bit_300dpi_546x390-jpg.jpg"^^xsd:anyURI;
-	schema:url "http://www.gfz-potsdam.de/"^^xsd:anyURI;
-	schema:email "info@gfz-potsdam.de";
-	schema:contactPoint <http://orcid.org/0000-0001-6877-8327/scientificContact>;
-	schema:contactPoint <mailto:marko.blau@gfz-potsdam.de/legalContact>;
-	schema:contactPoint <mailto:stephan.ott@gfz-potsdam.de/financialContact>;
-.
-	<GFZ.6.3.2016.001> a dcat:Dataset;
-		dct:title "WP17-DDSS-002 Ketzin Brine Injection Data";
-		dct:identifier "GFZ.6.3.2016.001";
+<GFZ.CGS.2015.001> a dcat:Dataset;
+		dct:title "WP17-DDSS-003 Ketzin Back Production Data";
+		dct:identifier "GFZ.CGS.2015.001";
 		adms:identifier [ a adms:Identifier;
 			adms:schemaAgency "DDSS-ID";
-			skos:notation "WP17-DDSS-002";
+			skos:notation "WP17-DDSS-003";
 		];
-		dct:description "Dataset of the Brine Injection at the CO2 Storage Pilot Site Ketzin, Germany";
+		dct:description "Dataset of the Back-production Test at the CO2 Storage Pilot Site Ketzin, Germany ";
+		dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
 		dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
-		dct:created "2016-05-19"^^xsd:date;
-		dct:modified "2016-05-19"^^xsd:date;
-		dct:issued "2016-05-19"^^xsd:date;
-	dct:temporal [ a dct:PeriodOfTime;
-		schema:startDate "2015-10-01T00:00:00Z"^^xsd:dateTime;
-		schema:endDate "2016-01-31T00:00:00Z"^^xsd:dateTime;
+		dct:created "2017-04-27"^^xsd:date;
+		dct:modified "2017-04-27"^^xsd:date;
+		dct:issued "2017-04-27"^^xsd:date;
+		dct:temporal [ a dct:PeriodOfTime;
+		schema:startDate "2008-06-01T00:00:00Z"^^xsd:dateTime;
+		schema:endDate "2013-08-31T00:00:00Z"^^xsd:dateTime;
 	];
+	dcat:theme <epos:Storage>;
 	dct:spatial [ a dct:Location;
-		locn:geometry "POLYGON(12.868592 52.491326,12.868592 52.491326,12.868592 52.491326,12.868592 52.491326,12.868592 52.491326)"^^gsp:wktLiteral;
+		locn:geometry "POLYGON(12.869530 52.491578,12.869530 52.491578,12.869530 52.491578,12.869530 52.491578,12.869530 52.491578)"^^gsp:wktLiteral;
 	];
-		dcat:theme <epos:Storage>;
-		dcat:keyword "CO2", "brine injection", "residual saturation", "Ketzin", "remediation";
-		dcat:contactPoint <http://orcid.org/0000-0001-6877-8327/contactPoint>;
+		dcat:keyword "CO2 Back-production Test Ketzin", "CO2", "back-production", "storage", "pressure", "temperature", "production", "saline aquifer", "CCS", "EPOS", "geo-energy test beds";
 		dct:publisher <PIC:999994341>;
 		dcat:distribution <WP17-002 Download>;
 .
-	<epos:GeoEnergyTestbeds> a skos:ConceptScheme;
+
+<epos:GeoEnergyTestbeds> a skos:ConceptScheme;
 		dct:title "GeoEnergy Testbeds";
 		dct:description "It contains the concepts of GeoEnergy Testbeds";
 .
@@ -131,33 +155,34 @@
 		skos:inScheme <epos:GeoEnergyTestbeds>;
 .
 	<WP17-002 Download> a dcat:Distribution;
-		dct:identifier "WP17-002 Download";
-		dct:title "Ketzin brine injection data";
-		dct:description "Contains operational data (flow rate, cumulative mass, density, injection temperature, electrical conductivity and in-well pressure data) recorded during a field experiment on brine injection at the Ketzin pilot site during October 2015 to January 2015";
-		dct:issued "2016-05-19"^^xsd:date;
-		dct:modified "2016-05-19"^^xsd:date;
+		dct:identifier "WP17-003 Download";
+		dct:title "Ketzin back production data";
+		dct:description "Ketzin back production data";
+	      dct:issued "2017-04-27"^^xsd:date;
+		dct:modified "2017-04-27"^^xsd:date;
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
-		dcat:downloadURL "http://dataservices.gfz-potsdam.de/panmetaworks/showshort.php?id=escidoc:1528889"^^xsd:anyURI;
+		dcat:downloadURL "http://dataservices.gfz-potsdam.de/panmetaworks/showshort.php?id=escidoc:987898"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/XLS"^^xsd:anyURI;
 		dcat:accessURL "http://www.bgs.ac.uk"^^xsd:anyURI;
-.
-	<http://orcid.org/0000-0001-6877-8327/contactPoint> a schema:ContactPoint;
-		schema:email "fabian.moeller@gfz-potsdam.de";
-		schema:availableLanguage "en" ;
 .
 	<http://orcid.org/0000-0001-6877-8327/scientificContact> a schema:ContactPoint;
 		schema:email "fabian.moeller@gfz-potsdam.de";
 		schema:availableLanguage "en" ;
 		schema:contactType "scientificContact" ;
 .
-	<mailto:marko.blau@gfz-potsdam.de/legalContact> a schema:ContactPoint;
-		schema:email "rechtsabteilung@gfz-potsdam.de";
+	<mailto:sonja.martens@gfz-potsdam.de/scientificContact> a schema:ContactPoint;
+		schema:email "sonja.martens@gfz-potsdam.de";
 		schema:availableLanguage "en" ;
-		schema:contactType "legalContact" ;
+		schema:contactType "scientificContact" ;
 .
-	<mailto:stephan.ott@gfz-potsdam.de/financialContact> a schema:ContactPoint;
-		schema:email "stephan.ott@gfz-potsdam.de";
+	<mailto:martin.streibel@gfz-potsdam.de/scientificContact> a schema:ContactPoint;
+		schema:email "martin.streibel@gfz-potsdam.de";
 		schema:availableLanguage "en" ;
-		schema:contactType "financialContact" ;
+		schema:contactType "scientificContact" ;
+.
+	<mailto:axel.liebscher@gfz-potsdam.de/scientificContact> a schema:ContactPoint;
+		schema:email "axel.liebscher@gfz-potsdam.de";
+		schema:availableLanguage "en" ;
+		schema:contactType "scientificContact" ;
 .
