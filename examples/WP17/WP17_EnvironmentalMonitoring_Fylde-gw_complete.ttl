@@ -32,47 +32,50 @@
 	schema:email "enquiries@bgs.ac.uk";
 	schema:contactPoint <bbap@bgs.ac.uk/scientificContact>;
 .
-	<BGS_VoP_GW> a dcat:Dataset;
-		dct:title "Environmental baseline monitoring in the Vale of Pickering (UK) - groundwater quality data (in real time)";
-		dct:identifier "BGS_VoP_GW";
+	<BGS_Fylde_gw> a dcat:Dataset;
+		dct:title "Environmental baseline monitoring in the Fylde area of Lancashire (UK) -Real time groundwater quality data";
+		dct:identifier "BGS_Fylde_gw";
 		adms:identifier [ a adms:Identifier;
 			adms:schemaAgency "DDSS-ID";
-			skos:notation "WP17-DDSS-004";
+			skos:notation "WP17-DDSS-005";
 		];
-		dct:description "Real time groundwater quality data forming part of environmental monitoring undertaken in the Vale of Pickering (UK), from November 2016 to September 2018, and on-going";
-		dct:created "2016-11-01"^^xsd:date;
-		dct:modified "2016-11-01"^^xsd:date;
-		dct:issued "2016-11-01"^^xsd:date;
+		dct:description "Real time groundwater quality data forming part of the environmental monitoring undertaken in the Fylde Area (Lancashire UK), from July 2016 to September 2018, and on-going";
+		dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
+		dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
+		dct:created "2016-07-01"^^xsd:date;
+		dct:modified "2016-07-01"^^xsd:date;
+		dct:issued "2016-07-01"^^xsd:date;
 	dct:temporal [ a dct:PeriodOfTime;
-		schema:startDate "2016-11-01T00:00:00Z"^^xsd:dateTime;
+		schema:startDate "2016-07-01T00:00:00Z"^^xsd:dateTime;
 		schema:endDate "2018-09-01T00:00:00Z"^^xsd:dateTime;
 	];
 	dct:spatial [ a dct:Location;
-		locn:geometry "POLYGON(-1.233142 54.303168,-0.311432 54.303168,-0.311432 54.123437,-1.233142 54.123437,-1.233142 54.303168)"^^gsp:wktLiteral;
+		locn:geometry "POLYGON(-3.049568 53.924079,-2.793807 53.924079,-2.793807 53.743356,-3.049568 53.743356,-3.049568 53.924079)"^^gsp:wktLiteral;
 	];
-		dcat:theme <#shale>;
-		dcat:keyword "environmental monitoring", "baseline", "real time", "ground water", "Vale of Pickering";
-		dcat:contactPoint <rswa@bgs.ac.uk/contactPoint>;
+		dcat:theme <epos:shale>;
+		dcat:keyword "environmental monitoring", "baseline", "real time", "ground water", "Fylde";
+		dcat:distribution <WP17-005 Download>;
 		dct:publisher <http://viaf.org/viaf/136554353/>;
-		dcat:distribution <WP17-004 Download>;
 .
-
-<WP17-004 Download> a dcat:Distribution;
-		dct:identifier "WP17-004 Download";
-		dct:title "Vale of Pickering real time groundwater data";
-		dct:issued "2016-11-01"^^xsd:date;
-		dct:modified "2016-11-01"^^xsd:date;
+	<WP17-005 Download> a dcat:Distribution;
+		dct:identifier "WP17-005 Download";
+		dct:description "WP17-005 Download";
+		dct:title "Fylde real time ground water data";
+		dct:issued "2016-07-01"^^xsd:date;
+		dct:modified "2016-07-01"^^xsd:date;
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
-		dcat:downloadURL "https://www.bgs.ac.uk/research/groundwater/shaleGas/monitoring/vopDataSummary.html"^^xsd:anyURI;
-		dct:license "https://creativecommons.org/licenses/by/4.0/";
+		dcat:downloadURL "http://www.bgs.ac.uk/research/groundwater/shaleGas/monitoring/lancsDataSummary.html"^^xsd:anyURI;
+		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/ZIP"^^xsd:anyURI;
+		dcat:accessURL "http://www.bgs.ac.uk"^^xsd:anyURI;
 .
-	<epos:Geoenergy test beds> a skos:ConceptScheme;
+	<epos:Geoenergytestbeds> a skos:ConceptScheme;
 		dct:title "Geoenergy test beds";
 		dct:description "It contains the concepts of Geoenergy test beds";
 .
 	<epos:shale> a skos:Concept;
 		skos:inScheme <epos:Geoenergytestbeds>;
+
 .
 	<rswa@bgs.ac.uk/contactPoint> a schema:ContactPoint;
 		schema:email "rswa@bgs.ac.uk";
@@ -155,4 +158,3 @@
 	schema:affiliation <http://viaf.org/viaf/136554353/>;
 	schema:contactPoint <bbap@bgs.ac.uk/scientificContact>;
 .
-	

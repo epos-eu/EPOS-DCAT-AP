@@ -134,15 +134,17 @@
 		dct:created "2017-04-27"^^xsd:date;
 		dct:modified "2017-04-27"^^xsd:date;
 		dct:issued "2017-04-27"^^xsd:date;
-	dct:temporal [ a dct:PeriodOfTime;
+		dct:temporal [ a dct:PeriodOfTime;
 		schema:startDate "2008-06-01T00:00:00Z"^^xsd:dateTime;
 		schema:endDate "2013-08-31T00:00:00Z"^^xsd:dateTime;
 	];
+	dcat:theme <epos:Storage>;
 	dct:spatial [ a dct:Location;
 		locn:geometry "POLYGON(12.869530 52.491578,12.869530 52.491578,12.869530 52.491578,12.869530 52.491578,12.869530 52.491578)"^^gsp:wktLiteral;
 	];
 		dcat:keyword "CO2 Back-production Test Ketzin", "CO2", "back-production", "storage", "pressure", "temperature", "production", "saline aquifer", "CCS", "EPOS", "geo-energy test beds";
 		dct:publisher <PIC:999994341>;
+		dcat:distribution <WP17-002 Download>;
 .
 
 <epos:GeoEnergyTestbeds> a skos:ConceptScheme;
@@ -155,12 +157,14 @@
 	<WP17-002 Download> a dcat:Distribution;
 		dct:identifier "WP17-003 Download";
 		dct:title "Ketzin back production data";
+		dct:description "Ketzin back production data";
 	      dct:issued "2017-04-27"^^xsd:date;
 		dct:modified "2017-04-27"^^xsd:date;
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
-		dcat:downloadURL "http://dataservices.gfz-potsdam.de/panmetaworks/showshort.php?id=escidoc:987898 "^^xsd:anyURI;
-		dct:license "https://creativecommons.org/licenses/by/4.0/";
+		dcat:downloadURL "http://dataservices.gfz-potsdam.de/panmetaworks/showshort.php?id=escidoc:987898"^^xsd:anyURI;
+		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/XLS"^^xsd:anyURI;
+		dcat:accessURL "http://www.bgs.ac.uk"^^xsd:anyURI;
 .
 	<http://orcid.org/0000-0001-6877-8327/scientificContact> a schema:ContactPoint;
 		schema:email "fabian.moeller@gfz-potsdam.de";
