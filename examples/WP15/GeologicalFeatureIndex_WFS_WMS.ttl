@@ -95,6 +95,10 @@
 		dct:identifier "http://resource.europe-geology.eu/dataset/geologicunit";
 		adms:identifier [ a adms:Identifier;
 			adms:schemaAgency "DDSS-ID";
+			skos:notation "WP15-DDSS-002a";
+		]; 
+		adms:identifier [ a adms:Identifier;
+			adms:schemaAgency "DDSS-ID";
 			skos:notation "WP15-DDSS-002b";
 		]; 
 		dct:description "This dataset is created from the harvesting of map geological features initially collected for EGDI (original national datasets from OneGeology-Europe). It aims at supporting search and discovery of geological features (bedrock or surface information).";
@@ -145,10 +149,6 @@
 
 <http://resource.europe-geology.eu/service/wfsGeologicUnit> a epos:WebService;
 	schema:identifier "http://resource.europe-geology.eu/service/wfsGeologicUnit";
-	schema:identifier [ a schema:PropertyValue; 
-		schema:propertyID  "DDSS-ID"; 
-		schema:value  "WP15-DDSS-002a"; 
-	]; 
 	schema:description "This WFS allows to find geological features appearing on the  EGDI 1:1,000,000 geological map.";
 	dcat:theme <epos:GeologicalData>;
 	schema:name "Geological Feature Index Discovery Service";
@@ -301,10 +301,6 @@
 
 <http://resource.europe-geology.eu/service/wmsGeologicUnit> a epos:WebService;
 	schema:identifier "http://resource.europe-geology.eu/service/wmsGeologicUnit";
-	schema:identifier [ a schema:PropertyValue; 
-		schema:propertyID  "DDSS-ID"; 
-		schema:value  "WP15-DDSS-002a"; 
-	]; 
 	schema:description "The WMS provides an interface for requesting map visualization of geological map of Europe.";
 	dcat:theme <epos:GeologicalData>;
 	schema:name "Geological Map 1:1,000,000 (OneGeology-Europe layer)";
@@ -329,7 +325,7 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "image/png";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "http://resource.europe-geology.eu/service/wmsGeologicUnit{?service, version, request, layers, crs, format, width, height}"^^xsd:string;
+			hydra:template "http://resource.europe-geology.eu/service/wmsGeologicUnit{?service, version, request, layers, crs, format, width, height,BBOX}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "service"^^xsd:string;
 					rdfs:range "xsd:string";
@@ -370,7 +366,8 @@
 					hydra:variable "BBOX"^^xsd:string;
 					rdfs:range "xsd:string";
 					rdfs:label "WMS BBOX filter parameter";
-					hydra:required "false"^^xsd:boolean;
+					schema:defaultValue "-180,-90,180,90";
+					hydra:required "true"^^xsd:boolean;
 				];	
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "crs"^^xsd:string;
@@ -386,6 +383,7 @@
 					http:paramValue "image/png";
 					http:paramValue "image/jpeg";
 					http:paramValue "image/geotiff";
+					schema:defaultValue "image/png";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
