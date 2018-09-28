@@ -136,7 +136,7 @@
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
-		hydra:template "http://fridge-services.rm.ingv.it/vpvs/{?mintime, maxtime, minlat, maxlat, minlon, maxlon, mineqdepth, maxeqdepth, minnp, minns, maxpw, maxsw, minps, maxgap, midi, maxherr, maxverr}"^^xsd:string;
+		hydra:template "http://fridge-services.rm.ingv.it/vpvs/{?mintime, maxtime, minlat, maxlat, minlon, maxlon, mineqdep, maxeqdep, minnp, minns, maxpw, maxsw, minps, maxgap, midi, maxherr, maxverr}"^^xsd:string;
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "mintime"^^xsd:string;
 			rdfs:label "Minimum Time";
@@ -192,7 +192,7 @@
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
-			hydra:variable "mineqdepth"^^xsd:string;
+			hydra:variable "mineqdep"^^xsd:string;
 			rdfs:label "Minimum Earthquake Depth";
 			rdfs:range "xsd:float";
 			schema:minValue "-1";
@@ -201,7 +201,7 @@
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
-			hydra:variable "maxeqdepth"^^xsd:string;
+			hydra:variable "maxeqdep"^^xsd:string;
 			rdfs:label "Maximum Earhquake Depth";
 			rdfs:range "xsd:float";
 			schema:minValue "-1";
