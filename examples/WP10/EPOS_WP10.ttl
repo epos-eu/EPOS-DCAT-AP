@@ -496,14 +496,16 @@
 			rdfs:label "Four letter station identification";
 			rdfs:range "xsd:string";
 			hydra:required "true"^^xsd:boolean;
-      schema:defaultValue "BLIX";
+      			#schema:defaultValue "BLIX";
+			schema:defaultValue "HOBU" ; 
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "analysis_centre"^^xsd:string;
 			rdfs:label "name of the analysis centre; use the following operation to get the all the formats available";
 			rdfs:range "xsd:string";
 			hydra:required "true"^^xsd:boolean;
-      schema:defaultValue "UGA";
+      			#schema:defaultValue "UGA";
+			schema:defaultValue "BFKH" ;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "coordinates_system"^^xsd:string;
@@ -512,14 +514,15 @@
 			hydra:required "true"^^xsd:boolean;
 			http:paramValue "enu";
 			http:paramValue "xyz";
-      schema:defaultValue "xyz";
+      			#schema:defaultValue "xyz";
+			schema:defaultValue "enu";
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "format"^^xsd:string;
 			rdfs:label "format; use the following operation to get the all the formats available";
 			rdfs:range "xsd:string";
 			hydra:required "true"^^xsd:boolean;
-      schema:defaultValue "json";
+      			schema:defaultValue "json";
 		];
  	];
 .
