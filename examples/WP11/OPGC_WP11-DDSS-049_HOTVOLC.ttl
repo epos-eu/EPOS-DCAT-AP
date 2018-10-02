@@ -39,18 +39,31 @@
     dcat:keyword "spectral radiance", "lava monitoring", "nti*", "geotiff", "hot spots", "thermal anomalies";
     dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
     dct:publisher <http://isni.org/isni/0000000109416043>;      
-    dcat:distribution <WP11/DDSS-049/IMHOT_201809050000_12_00/DownloadFile>;
+    dcat:distribution <WP11/DDSS-049/DataDownload>;
 .
-    <WP11/DDSS-049/IMHOT_201809050000_12_00/DownloadFile> a dcat:Distribution;
-        dct:identifier "WP11/DDSS-049/IMHOT_201809050000_12_00/DownloadFile";
-        dct:title "HOTVOLC distribution of the product WP11/DDSS-049/IMHOT_201809050000_12_00";
-        dct:description "The way to download the HOTVOLC product: WP11/DDSS-049/IMHOT_201809050000_12_00";
+
+<WP11/DDSS-049/DataDownload> a dcat:Distribution;
+        dct:identifier "WP11/DDSS-049/DataDownload";
+        dct:title "HOTVOLC distribution of the product WP11 DDSS-049";
+        dct:description "The way to download the HOTVOLC product";
         dct:issued "2018-09-05T00:00:00Z"^^xsd:dateTime;
-        dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
+        dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
         dcat:accessURL <hotvolc.opgc.fr/data-download>;
-        dcat:downloadURL "http://hotvolc.opgc.fr/www/php/data_download.php?uri=IMHOT_201809050000_12_00"^^xsd:anyURI;
+        #dcat:downloadURL "http://hotvolc.opgc.fr/www/php/data_download.php?uri=IMHOT_201809050000_12_00"^^xsd:anyURI;
         dct:conformsTo <hotvolc.opgc.fr/WP11/DDSS-049>;        
         dct:format "http://publications.europa.eu/resource/authority/file-type/ZIP"^^xsd:anyURI;
+        schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+.
+
+<WP11/DDSS-049/DataCatalog> a dcat:Distribution;
+        dct:identifier "WP11/DDSS-049/DataCatalog";
+        dct:title "HOTVOLC distribution of the product WP11 DDSS-049 - Data Catalog";
+        dct:description "The way to query the HOTVOLC Data Catalog";
+        dct:issued "2018-09-05T00:00:00Z"^^xsd:dateTime;
+        dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
+        dcat:accessURL <hotvolc.opgc.fr/data-search/WP11/DDSS-049>;
+        dct:conformsTo <hotvolc.opgc.fr/WP11/DDSS-049>;        
+        dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
         schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 .
 
@@ -318,7 +331,7 @@
                 ];
         ];
 .
-    <hotvolc.opgc.fr/data-download> a hydra:Operation;
+ <hotvolc.opgc.fr/data-download> a hydra:Operation;
         hydra:method "GET"^^xsd:string;
         hydra:returns "application/zip";
          hydra:property[ a hydra:IriTemplate;
