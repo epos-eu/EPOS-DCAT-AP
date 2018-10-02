@@ -1,4 +1,4 @@
-﻿@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
@@ -128,14 +128,8 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://api.vedur.is/epos/v1/gps/station{?station_marker}"^^xsd:string;
-			# Missing item!! 
-			hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "station_marker"^^xsd:string;
-					rdfs:label "Four uppercase character designation for the station, or integer index number of station in database.";
-					hydra:required "true"^^xsd:boolean;
-					schema:defaultValue "RHOF" ;
-					] ;
+			hydra:template "https://api.vedur.is/epos/v1/gps/station{?}"^^xsd:string;
+			
 		] ;
 .
 	<0000-0002-0069-9144/contactPoint> a schema:ContactPoint;
