@@ -230,12 +230,14 @@
 
 # Dataset Domain and subdomain
 
-	<epos:Volcano-Observations> a skos:ConceptScheme;
-		dct:title "Volcano-Observations";
+	<epos:VolcanoObservations> a skos:ConceptScheme;
+		dct:title "Volcano Observations";
 		dct:description "It contains the concepts of Volcano-Observations";
 .
 	<epos:Seismicwaveforms> a skos:Concept;
-		skos:inScheme <epos:Volcano-Observations>;
+		skos:inScheme <epos:VolcanoObservations>;
+		skos:prefLabel "Seismic waveform" ;
+		skos:definition "Seismic waveforms" ;
 .
 	<WP11/seismicdata/DDSS001> a dcat:Dataset;
 		dct:title "Seismic Stations and Waveform";
@@ -263,7 +265,9 @@
 		dcat:contactPoint <https://orcid.org/0000-0002-9956-9971/contactPoint>;
 .
 	<epos:Seismicstations> a skos:Concept;
-		skos:inScheme <epos:Volcano-Observations>;
+		skos:inScheme <epos:VolcanoObservations>;
+		skos:prefLabel "Seismic station" ;
+		skos:definition "Seismic stations" ;
 .
 
 # Webservice WFcatalog
