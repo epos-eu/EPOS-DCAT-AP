@@ -1,4 +1,4 @@
-﻿@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
@@ -18,14 +18,15 @@
 	<epos:Volcanological-Data> a skos:Concept;
 		skos:definition "Reports on volcanic activity";
 		skos:inScheme <epos:VolcanoObservations>;
+		skos:prefLabel "Volcanological Data" ;
 .
 	<epos:VolcanoObservations> a skos:ConceptScheme;
 		dct:title "Volcano Observations";
 		dct:description "Volcanic activity";
 .
 
-<www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/031/Volcanic activity> a epos:WebService;
-	schema:identifier "www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/031/Volcanic activity";
+<www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/031/Volcanic-activity> a epos:WebService;
+	schema:identifier "www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/031/Volcanic-activity";
 	#schema:identifier [ a schema:PropertyValue;
 		#schema:propertyID  "DDSS-ID";
 		#schema:value  "";
@@ -45,14 +46,14 @@
 	];
 	dcat:theme <epos:Volcanological-Data>;
 	schema:provider <PIC:997168343>;
-	dcat:contactPoint < 0000-0001-5750-0872/contactPoint>;
-	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Volcano Observations/Dataset/031/Volcanic-activity/operation>;
+	dcat:contactPoint <0000-0001-5750-0872/contactPoint>;
+	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Volcano-Observations/Dataset/031/Volcanic-activity/operation>;
 .
 
-< 0000-0001-5750-0872> a schema:Person;
+<0000-0001-5750-0872> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "ORCID";
-		schema:value " 0000-0001-5750-0872";
+		schema:value "0000-0001-5750-0872";
 	];
 	schema:familyName "Sara Barsotti";
 	schema:address [ a schema:PostalAddress;
@@ -65,9 +66,9 @@
 	schema:telephone "+3545226162";
 	schema:url "http://en.vedur.is"^^xsd:anyURI;
 	schema:qualifications "WP11 participant";
-	schema:contactPoint < 0000-0001-5750-0872/scientificContact>;
-	schema:contactPoint < 0000-0001-5750-0872/contactPoint>;
-	schema:contactPoint < 0000-0001-5750-0872/contactPoint>;
+	schema:contactPoint <0000-0001-5750-0872/scientificContact>;
+	schema:contactPoint <0000-0001-5750-0872/contactPoint>;
+	schema:contactPoint <0000-0001-5750-0872/contactPoint>;
 .
 
 <PIC:997168343> a schema:Organization;
@@ -86,10 +87,10 @@
 	schema:url "http://en.vedur.is"^^xsd:anyURI;
 	schema:email "office@vedur.is";
 	schema:telephone "+3545226200";
-	schema:contactPoint < 0000-0001-5750-0872/scientificContact>;
-	schema:contactPoint < 0000-0001-5750-0872/contactPoint>;
+	schema:contactPoint <0000-0001-5750-0872/scientificContact>;
+	schema:contactPoint <0000-0001-5750-0872/contactPoint>;
 .
-	<https://www.epos-eu.org/epos-dcat-ap/Volcano Observations/Dataset/031/Volcanic-activity/operation> a hydra:Operation;
+	<https://www.epos-eu.org/epos-dcat-ap/Volcano-Observations/Dataset/031/Volcanic-activity/operation> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
@@ -116,9 +117,9 @@
 		] ;
 .
 
-	<www.epos-eu.org/epos-dcat-ap/Volcano Observations/Dataset/031/Volcanic activity/data> a dcat:Dataset;
+	<www.epos-eu.org/epos-dcat-ap/Volcano-Observations/Dataset/031/Volcanic activity/data> a dcat:Dataset;
 		dct:title "Reports on volcanic activity";
-		dct:identifier "www.epos-eu.org/epos-dcat-ap/Volcano Observations/Dataset/031/Volcanic activity/data";
+		dct:identifier "www.epos-eu.org/epos-dcat-ap/Volcano-Observations/Dataset/031/Volcanic activity/data";
 		adms:identifier [ a adms:Identifier;
 			adms:schemaAgency "DDSS-ID";
 			skos:notation "WP11-DDSS-031";
@@ -136,15 +137,15 @@
 	];
 		dcat:theme <epos:Volcanological-Data>;
 		dcat:keyword "Volcanic activity";
-		dcat:contactPoint < 0000-0001-5750-0872/contactPoint>;
-		dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Volcano Observations/Dataset/031/Volcanic activity>;
+		dcat:contactPoint <0000-0001-5750-0872/contactPoint>;
+		dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Volcano-Observations/Dataset/031/Volcanic-activity/distribution>;
 		owl:versionInfo "V1.0";
 		dct:publisher <PIC:997168343>;
 .
-	<https://www.epos-eu.org/epos-dcat-ap/Volcano Observations/Dataset/031/Volcanic activity> a dcat:Distribution;
-		dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Volcano Observations/Dataset/031/Volcanic activity";
-		dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Volcano Observations/Dataset/031/Volcanic-activity/operation>;
-		dct:conformsTo <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/031/Volcanic activity>;
+	<https://www.epos-eu.org/epos-dcat-ap/Volcano-Observations/Dataset/031/Volcanic-activity/distribution> a dcat:Distribution;
+		dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Volcano-Observations/Dataset/031/Volcanic-activity/distribution";
+		dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Volcano-Observations/Dataset/031/Volcanic-activity/operation>;
+		dct:conformsTo <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/031/Volcanic-activity>;
 		dct:title "Volcanic activity";
 		dct:description "Reports containing the description of the status of the volcanoes on a weekly basis";
 		dct:issued "2014-10-01"^^xsd:date;
@@ -153,16 +154,16 @@
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 .
 
-	< 0000-0001-5750-0872/contactPoint> a schema:ContactPoint;
+	<0000-0001-5750-0872/contactPoint> a schema:ContactPoint;
 		schema:email "sara@vedur.is";
 		schema:availableLanguage "en" ;
 .
-	< 0000-0001-5750-0872/scientificContact> a schema:ContactPoint;
+	<0000-0001-5750-0872/scientificContact> a schema:ContactPoint;
 		schema:email "sara@vedur.is";
 		schema:availableLanguage "en" ;
 		schema:contactType "scientificContact" ;
 .
-	< 0000-0001-5750-0872/contactPoint> a schema:ContactPoint;
+	<0000-0001-5750-0872/contactPoint> a schema:ContactPoint;
 		schema:email "sara@vedur.is";
 		schema:availableLanguage "en" ;
 .
