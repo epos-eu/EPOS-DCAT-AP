@@ -372,7 +372,7 @@
     # hydra:entrypoint "https://wwwobs.univ-bpclermont.fr/casoar/index_liste.php"^^xsd:anyURI;
     hydra:supportedOperation <wwwobs.univ-bpclermont.fr/casoar/data-visualization>;
     hydra:supportedOperation <wwwobs.univ-bpclermont.fr/casoar/data-download>;
-    dcat:theme <#RadarInterferometry>;
+    dcat:theme <epos:RadarInterferometry>;
     schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
     dct:conformsTo <wwwobs.univ-bpclermont.fr/casoar/APIDocumentation>;
     dcat:contactPoint <http://www.researcherid.com/rid/O-8042-2014/contactPoint>;
@@ -440,11 +440,12 @@
         ];
 .
 
-    <epos:Volcano-Observations> a skos:ConceptScheme;
+    <epos:VolcanoObservations> a skos:ConceptScheme;
         dct:title "Volcano-Observations";
         dct:description "It contains the concept of Volcanological observations";
 .
     <epos:RadarInterferometry> a skos:Concept;
-        skos:inScheme <epos:Volcano-Observations>;
+        skos:inScheme <epos:VolcanoObservations>;
         skos:prefLabel "Radar Interferometry";
+	skos:definition "Radar Interferometry";
 .
