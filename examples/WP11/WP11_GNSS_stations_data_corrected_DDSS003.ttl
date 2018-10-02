@@ -15,11 +15,12 @@
 @prefix http: <http://www.w3.org/2006/http#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
-	<epos:VolcanoObservations> a skos:ConceptScheme;
+
+<epos:VolcanoObservations> a skos:ConceptScheme;
 		dct:title "Volcano Observations";
 		dct:description "Get information of specific GNSS station";
 .
-	<epos:Geodetic-Data> a skos:Concept;
+<epos:GeodeticData> a skos:Concept;
 		skos:definition "RINEX data (15 sec)";
 		skos:inScheme <epos:VolcanoObservations>;
 .
@@ -79,7 +80,7 @@
 	dct:spatial [ a dct:Location;
 		locn:geometry "POLYGON(-25.0 63.0,-25.0 68.5,-10.0 68.5,-10.0 63.0,-25.0 63.0)"^^gsp:wktLiteral;
 	];
-		dcat:theme <epos:Geodetic-Data>;
+		dcat:theme <epos:GeodeticData>;
 		dcat:keyword "Faults";
 		dcat:contactPoint <0000-0002-0069-9144/contactPoint>;
 		dcat:distribution <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/003/data>;
@@ -107,7 +108,7 @@
 		schema:startDate "2014-10-01T00:00:00Z"^^xsd:dateTime;
 		schema:endDate "2025-01-01T00:00:00Z"^^xsd:dateTime;
 	];
-	dcat:theme <epos:Geodetic-Data>;
+	dcat:theme <epos:GeodeticData>;
 	dcat:contactPoint <0000-0002-0069-9144/contactPoint>;
 	schema:provider <PIC:997168343>;
 .
@@ -120,7 +121,7 @@
 					hydra:variable "station_marker"^^xsd:string;
 					rdfs:label "Four uppercase character designation for the station, or integer index number of station in database.";
 					hydra:required "true"^^xsd:boolean;
-          schema:defaultValue "RHOF" ;
+          				schema:defaultValue "RHOF" ;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "date_from	"^^xsd:string;
