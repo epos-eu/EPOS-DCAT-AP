@@ -80,13 +80,18 @@
 		dct:format "http://publications.europa.eu/resource/authority/file-type/ZIP"^^xsd:anyURI;
 		dcat:accessURL "http://www.bgs.ac.uk"^^xsd:anyURI;
 .
-	<epos:Geoenergytestbeds> a skos:ConceptScheme;
-		dct:title "Geoenergy test beds";
-		dct:description "It contains the concepts of Geoenergy test beds";
+
+<epos:GeoEnergyTestbeds> a skos:ConceptScheme;
+	dct:title "Geoenergy test beds";
+	dct:description "It contains the concepts of Geoenergy test beds";
 .
-	<epos:shale> a skos:Concept;
-		skos:inScheme <epos:Geoenergytestbeds>;
+
+<epos:shale> a skos:Concept ;
+   skos:definition "Shale Gas – investigation and exploration" ;
+   skos:inScheme <epos:GeoEnergyTestbeds> ;
+   skos:prefLabel "Shale Gas" ;
 .
+
 	<rswa@bgs.ac.uk/contactPoint> a schema:ContactPoint;
 		schema:email "rswa@bgs.ac.uk";
 		schema:availableLanguage "en" ;
