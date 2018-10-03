@@ -16,43 +16,6 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
-<WP11/DDSS-047/IMASH_201809050000_12_00> a dcat:Dataset;
-    dct:title "201809050000_France_ASH3.tif"^^xsd:string;
-    dct:identifier "WP11/DDSS-047/IMASH_201809050000_12_00";    
-    dct:description "HOTVOLC product: Flagged volcanic ash - zone: France";
-    adms:identifier [ a adms:Identifier;
-        adms:schemaAgency "DDSS-ID";
-        skos:notation "WP11-DDSS-047"
-    ];
-    dct:type "http://purl.org/dc/dcmitype/Image"^^xsd:anyURI;
-    dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
-    dct:temporal [ a dct:PeriodOfTime;
-        schema:startDate "2018-09-05T00:00:00Z"^^xsd:dateTime;
-        schema:endDate "2018-09-05T00:00:00Z"^^xsd:dateTime;
-    ];
-    dct:issued "2018-09-05T00:00:00Z"^^xsd:dateTime;
-    dct:modified "2018-09-05T02:15:17Z"^^xsd:dateTime;
-    dct:spatial [ a dct:Location;
-        locn:geometry "POLYGON(-5 51.5, 8.25 51.5, 8.25 42, -5 42)"^^gsp:wktLiteral;
-    ];
-    dcat:theme <epos:Atmosphericmonitoring>;
-    dcat:keyword "volcanic ash", "brightness temperature difference", "geotiff", "atmospheric monitoring";
-    dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
-    dct:publisher <http://isni.org/isni/0000000109416043>;
-    schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
-    dcat:distribution <WP11/DDSS-047/IMASH_201809050000_12_00/DownloadFile>;
-.
-    <WP11/DDSS-047/IMASH_201809050000_12_00/DownloadFile> a dcat:Distribution;
-        dct:identifier "WP11/DDSS-047/IMASH_201809050000_12_00/DownloadFile";
-        dct:description "The way to download the HOTVOLC product: WP11/DDSS-047/IMASH_201809050000_12_00";
-        dct:issued "2018-09-05T00:00:00Z"^^xsd:dateTime;
-        dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
-        dcat:accessURL <hotvolc.opgc.fr/data-download>;
-        dcat:downloadURL "http://hotvolc.opgc.fr/www/php/data_download.php?uri=IMASH_201809050000_12_00"^^xsd:anyURI;
-        dct:conformsTo <hotvolc.opgc.fr/WP11/DDSS-047>;        
-        dct:format "http://publications.europa.eu/resource/authority/file-type/ZIP"^^xsd:anyURI;
-        schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
-.
 
 <http://orcid.org/0000-0001-8720-7300> a schema:Person;
     schema:identifier [ a schema:PropertyValue;
@@ -175,7 +138,44 @@
     schema:url "http://cnrs.fr"^^xsd:anyURI;
     schema:telephone "+33144964000";
 .
-                
+
+<WP11/dataset/047> a dcat:Dataset;
+    dct:title "Flagged volcanic ash"^^xsd:string;
+    dct:identifier "WP11/dataset/047";    
+    dct:description "HOTVOLC product: Flagged volcanic ash ";
+    adms:identifier [ a adms:Identifier;
+        adms:schemaAgency "DDSS-ID";
+        skos:notation "WP11-DDSS-047"
+    ];
+    dct:type "http://purl.org/dc/dcmitype/Image"^^xsd:anyURI;
+    dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+    dct:temporal [ a dct:PeriodOfTime;
+        schema:startDate "2018-09-05T00:00:00Z"^^xsd:dateTime;
+        schema:endDate "2018-09-05T00:00:00Z"^^xsd:dateTime;
+    ];
+    dct:issued "2018-09-05T00:00:00Z"^^xsd:dateTime;
+    dct:modified "2018-09-05T02:15:17Z"^^xsd:dateTime;
+    dct:spatial [ a dct:Location;
+        locn:geometry "POLYGON(-5 51.5, 8.25 51.5, 8.25 42, -5 42)"^^gsp:wktLiteral;
+    ];
+    dcat:theme <epos:Atmosphericmonitoring>;
+    dcat:keyword "volcanic ash", "brightness temperature difference", "geotiff", "atmospheric monitoring";
+    dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
+    dct:publisher <http://isni.org/isni/0000000109416043>;
+    schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+    dcat:distribution <WP11/DDSS-047/IMASH_201809050000_12_00/DownloadFile>;
+.
+    <WP11/dataset/047/distribution/ws> a dcat:Distribution;
+        dct:identifier "WP11/DDSS-047/IMASH_201809050000_12_00/DownloadFile";
+        dct:description "The way to download the HOTVOLC product: WP11/DDSS-047/IMASH_201809050000_12_00";
+        dct:issued "2018-09-05T00:00:00Z"^^xsd:dateTime;
+        dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
+        dcat:accessURL <hotvolc.opgc.fr/data-download>;
+        dct:conformsTo <hotvolc.opgc.fr/WP11/DDSS-047>;        
+        dct:format "http://publications.europa.eu/resource/authority/file-type/ZIP"^^xsd:anyURI;
+        schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+.
+
 <hotvolc.opgc.fr/WP11/DDSS-047> a epos:WebService;
     schema:identifier "hotvolc.opgc.fr/WP11/DDSS-047";
     schema:description "HOTVOLC is a web-based satellite-data-driven reporting system dedicated to the real-time observation of volcanic products. This application is developed and managed by the Observatoire de Physique du Globe de Clermont-Ferrand (OPGC). It uses on-site automated ingestion of MSG-SEVIRI geostationary satellite data from EUMETSAT primary dissemination protocol using the Digital Video Broadcasting - Satellite 2 (DVB-S2) service. This allows acquisition of High Rate Information Transmission (HRIT) level 1.5 format, corresponding to image data that have been corrected for unwanted radiometric and geometric effects. Images are geolocated, calibrated and radiance linearized. HRIT digital numbers are converted into spectral radiance (in Wm-2.sr-1.μm-1) and then processed through validated algorithm for direct dissemination of ready-to-use products on a full web-GIS interface.This application allows you to interactively browse satellite imagery and associated products for both real-time (RT) and past events.";
@@ -184,8 +184,6 @@
     schema:dateModified "2018-07-12T16:00:00Z"^^xsd:dateTime;
     schema:provider <http://isni.org/isni/0000000109416043>;
     schema:keywords "WebGIS", "Real Time", "Remote Sensing", "Satellite", "Infrared", "Volcanology", "Ash", "SO2", "Atmospheric Monitoring";
-    # hydra:entrypoint "http://hotvolc.opgc.fr/www/php/application.php"^^xsd:anyURI;
-    hydra:supportedOperation <hotvolc.opgc.fr/data-search/WP11/DDSS-047>;
     hydra:supportedOperation <hotvolc.opgc.fr/data-download>;
     dcat:theme <epos:Atmosphericmonitoring>;
     schema:publication <http://dx.doi.org/10.1144/SP426.31>;
@@ -204,121 +202,7 @@
         hydra:entrypoint "http://hotvolc.opgc.fr/www/php/hotvolc_api.php"^^xsd:anyURI;
 .
 
-    <hotvolc.opgc.fr/data-search/WP11/DDSS-047> a hydra:Operation;
-        hydra:method "GET"^^xsd:string;
-        hydra:returns "text/turtle";
-        # hydra:returns "application/json";
-        # hydra:returns "application/xml";
-        hydra:property[ a hydra:IriTemplate;
-            hydra:template "http://hotvolc.opgc.fr/www/php/data_catalog.php{?date_begin, date_end, bbox, volcano, zone, type, ddss, output, onscreen}"^^xsd:string;
-                hydra:mapping[ a hydra:IriTemplateMapping;
-                    hydra:variable "date_begin"^^xsd:datetime;
-                    rdfs:label "Specific datetime query or starting datetime of the time interval query (format YYYY-MM-DDThh:mm:ssZ)";
-                    rdfs:range "xsd:dateTime";
-                    schema:minValue "2010-01-01T00:00:00Z"^^xsd:datetime;
-                    schema:maxValue "9999-12-31T23:59:59Z"^^xsd:datetime;
-                    hydra:required "false"^^xsd:boolean;
-                ];
-                hydra:mapping[ a hydra:IriTemplateMapping;
-                    hydra:variable "date_end"^^xsd:datetime;
-                    rdfs:label "Ending datetime the time interval query (format YYYY-MM-DDThh:mm:ssZ)";
-                    rdfs:range "xsd:dateTime";
-                    schema:minValue "2010-01-01T00:00:00Z"^^xsd:datetime;
-                    schema:maxValue "9999-12-31T23:59:59Z"^^xsd:datetime;
-                    hydra:required "false"^^xsd:boolean;
-                ];
-                hydra:mapping[ a hydra:IriTemplateMapping;
-                    hydra:variable "bbox"^^xsd:string;
-                    rdfs:label "Bounding box in one of this two format: (lon, lat) for a POINT or (lon_min, lat_min, lon_max, lat_max) for a POLYGON";
-                    schema:minValue "(-180.0, -90.0) or (-180.0, -90.0, -180.0, -90.0)";
-                    schema:maxValue "(180.0, 90.0) or (180.0, 90.0, 180.0, 90.0)";
-                    rdfs:range "xsd:string";
-                    hydra:required "false"^^xsd:boolean;
-                ];
-                hydra:mapping[ a hydra:IriTemplateMapping;
-                    hydra:variable "volcano"^^xsd:string;
-                    rdfs:label "Volcano name";
-                    http:paramValue "Hekla";
-                    http:paramValue "Eyjafjallajokull";
-                    http:paramValue "Katla";
-                    http:paramValue "Bardarbunga";
-                    http:paramValue "Grimsvotn";
-                    http:paramValue "Askja";
-                    http:paramValue "Krafla";
-                    http:paramValue "Fayal";
-                    http:paramValue "Vulcano";
-                    http:paramValue "Stromboli";
-                    http:paramValue "Vesuvius";
-                    http:paramValue "Santorini";
-                    http:paramValue "La_Palma";
-                    http:paramValue "Tenerife";
-                    http:paramValue "Soufriere_Hills";
-                    http:paramValue "Soufriere_de_Guadeloupe";
-                    http:paramValue "Morne_Watt";
-                    http:paramValue "Pelee";
-                    http:paramValue "Soufriere_St._Vincent";
-                    http:paramValue "Kick_em_Jenny";
-                    http:paramValue "Fogo";
-                    http:paramValue "Jabal_Yar";
-                    http:paramValue "Harras_of_Dhamar";
-                    http:paramValue "Jebel_at_Tair";
-                    http:paramValue "Dalaffilla";
-                    http:paramValue "Erta_Ale";
-                    http:paramValue "Dabbahu";
-                    http:paramValue "Manda_Hararo";
-                    http:paramValue "Cameroon";
-                    http:paramValue "Santa_Isabel";
-                    http:paramValue "The_Barrier";
-                    http:paramValue "Nyamuragira";
-                    http:paramValue "Nyiragongo";
-                    http:paramValue "Visoke";
-                    http:paramValue "Ol_Doinyo_Lengai";
-                    http:paramValue "Meru";
-                    http:paramValue "Karthala";
-                    http:paramValue "Piton_de_la_Fournaise";
-                    http:paramValue "Chaine_des_Puys";
-                    http:paramValue "Etna";
-                    rdfs:range "xsd:string";
-                    hydra:required "false"^^xsd:boolean;
-                ];
-                hydra:mapping[ a hydra:IriTemplateMapping;
-                    hydra:variable "zone"^^xsd:string;
-                    rdfs:label "Volcanic zone name";
-                    http:paramValue "Iceland";
-                    http:paramValue "Azores";
-                    http:paramValue "Italy";
-                    http:paramValue "Canary";
-                    http:paramValue "West_Indies";
-                    http:paramValue "Cape_Verde";
-                    http:paramValue "Rift";
-                    http:paramValue "Cameroon";
-                    http:paramValue "East_Africa";
-                    http:paramValue "Karthala";
-                    http:paramValue "Reunion";
-                    http:paramValue "France";
-                    rdfs:range "xsd:string";
-                    hydra:required "false"^^xsd:boolean;
-                ];
-                hydra:mapping[ a hydra:IriTemplateMapping;
-                    hydra:variable "output"^^xsd:string;
-                    rdfs:label "The format of the query output";
-                    http:paramValue "XML-EPOS-DCAT-AP";
-                    http:paramValue "TURTLE-RDF-EPOS-DCAT-AP";
-                    schema:defaultValue "TURTLE-RDF-EPOS-DCAT-AP";
-                    rdfs:range "xsd:string";
-                    hydra:required "false"^^xsd:boolean;
-                ];
-                hydra:mapping[ a hydra:IriTemplateMapping;
-                    hydra:variable "onscreen"^^xsd:boolean;
-                    rdfs:label "Display output on screen or as downloadable file ?";
-                    http:paramValue "true"^^xsd:boolean;
-                    http:paramValue "false"^^xsd:boolean;
-                    schema:defaultValue "true"^^xsd:boolean;
-                    rdfs:range "xsd:boolean";
-                    hydra:required "false"^^xsd:boolean;
-                ];
-        ];
-.
+
     <hotvolc.opgc.fr/data-download> a hydra:Operation;
         hydra:method "GET"^^xsd:string;
         hydra:returns "application/zip";
