@@ -19,9 +19,9 @@
 #Person Rui Fernandes
 <http://orcid.org/0000-0002-9733-284X> a schema:Person;
  schema:identifier [ a schema:PropertyValue;
-				 schema:propertyID  "orcid";
-				 schema:value  "0000-0002-9733-284X";
-	];
+	schema:propertyID  "orcid";
+	schema:value  "0000-0002-9733-284X";
+];
 
  schema:familyName "Fernandes";
  schema:givenName "Rui";
@@ -67,14 +67,14 @@
 #Person Paul Crocker
 <http://orcid.org/0000-0001-6824-6136> a schema:Person;
  schema:identifier [ a schema:PropertyValue;
-				 schema:propertyID  "orcid";
-				 schema:value   "0000-0001-6824-6136";
-			 ];
+	schema:propertyID  "orcid";
+	schema:value   "0000-0001-6824-6136";
+];
 
  schema:familyName "Crocker";
  schema:givenName "Paul";
 	schema:address [ a schema:PostalAddress;
-	 schema:streetAddress "Rua Marques D'Avila e Bolama";
+	schema:streetAddress "Rua Marques D'Avila e Bolama";
 	schema:addressLocality "Covilha";
 	schema:postalCode "P-6100-001";
 	schema:addressCountry "Portugal";
@@ -88,9 +88,9 @@
 #Person Mathilde Mathilde
 <ResearcherID:A-5326-2010> a schema:Person;
  schema:identifier [ a schema:PropertyValue;
-				 schema:propertyID "researcherID";
-				 schema:value "A-5326-2010";
-			 ];
+	schema:propertyID "researcherID";
+	schema:value "A-5326-2010";
+];
 
  schema:familyName "Mathilde";
  schema:givenName "Mathilde";
@@ -115,9 +115,9 @@
 
 <PIC:996437254> a schema:Organization;
  schema:identifier [ a schema:PropertyValue;
-				 schema:propertyID  "PIC";
-				 schema:value   "996437254";
-			 ];
+	schema:propertyID  "PIC";
+	schema:value   "996437254";
+];
  schema:legalName "University of Beira Interior";
  schema:address [ a schema:PostalAddress;
 				 schema:streetAddress "Rua Marques D'Avila e Bolama";
@@ -133,9 +133,9 @@
 .
 <PIC:991782030> a schema:Organization;
  schema:identifier [ a schema:PropertyValue;
-				 schema:propertyID  "PIC";
-				 schema:value   "991782030";
-			 ];
+	schema:propertyID  "PIC";
+	schema:value   "991782030";
+];
  schema:legalName "Côte d’Azur Observatory";
  schema:address [ a schema:PostalAddress;
 				 schema:streetAddress "Boulevard de l’Observatoire CS 34229";
@@ -186,11 +186,11 @@
 <GlassFramework/webresources/products/attributes/operation> a hydra:Operation;
 	hydra:method "GET"^^xsd:string;
  	hydra:returns "application/json";
- 	rdfs:label "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/attributes/network";
 	hydra:property[ a hydra:IriTemplate;
 		hydra:template "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/attributes/{attribute}"^^xsd:string;
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "attribute"^^xsd:string;
+      rdfs:range "xsd:string";
 			rdfs:label "attribute - string with attribute ";
 			hydra:required "true"^^xsd:boolean;
 			http:paramValue "network";
@@ -226,11 +226,11 @@
 	hydra:method "GET"^^xsd:string;
  	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
- 	rdfs:label "http://glass.unice.fr:8080/GlassFramework/webresources/files/marker/AGDE/json";
  	hydra:template "http://glass.unice.fr:8080/GlassFramework/webresources/files/{object_type}/{object_instance}/{output_format}"^^xsd:string;
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "object_type"^^xsd:string;
 			rdfs:label "the type of the criteria";
+      rdfs:range "xsd:string";
 			hydra:required "true"^^xsd:boolean;
       schema:defaultValue "marker";
 			http:paramValue "agency";
@@ -256,6 +256,7 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "object_instance"^^xsd:string;
 			rdfs:label " the value of the criteria";
+      rdfs:range "xsd:string";
       schema:defaultValue "AGDE";
 			hydra:required "true"^^xsd:boolean;
 		];
@@ -292,7 +293,6 @@
 <GlassFramework/webresources/products/stations/operation> a hydra:Operation;
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/json";
-	rdfs:label "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/stations?epoch_start=2015-02-23&analysis_center=WUT";
 	hydra:property[ a hydra:IriTemplate;
 		hydra:template "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/stations{?analysis_center,reference_frame,otl_model,calibration_model,cut_of_angle,epoch_start,epoch_end,coordinates}"^^xsd:string;
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -342,6 +342,7 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "coordinates"^^xsd:string;
       rdfs:label	"coordinates";
+      rdfs:range "xsd:string";
       http:paramValue	"rectangle";
 			http:paramValue	"circle";
 			http:paramValue	"polygon";
@@ -371,8 +372,7 @@
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
-			rdfs:label "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/timeseries/BLIX/UGA/daily/xyz/json?epoch_start=2015-02-23&remove_outliers=1";
-			hydra:template "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/timeseries/{station}/{analysis_centre}/{sampling_period}/{coordinates_system}/{format/{?reference_frame,otl_model,calibration_model,cut_of_angle,remove_outliers,apply_offsets,epoch_start,epoch_end}"^^xsd:string;
+			hydra:template "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/timeseries/{station}/{analysis_centre}/{sampling_period}/{coordinates_system}/{format}/{?reference_frame,otl_model,calibration_model,cut_of_angle,remove_outliers,apply_offsets,epoch_start,epoch_end}"^^xsd:string;
 		 	hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "station"^^xsd:string;
 				rdfs:label "Four letter station identification";
@@ -490,21 +490,22 @@
 	hydra:method "GET"^^xsd:string;
  	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
-		rdfs:label "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/velocities/BLIX/UGA/xyz/json";
 		hydra:template "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/velocities/{station}/{analysis_centre}/{coordinates_system}/{format}"^^xsd:string;
 		hydra:mapping[ a hydra:IriTemplateMapping;
-			hydra:variable "Station"^^xsd:string;
+			hydra:variable "station"^^xsd:string;
 			rdfs:label "Four letter station identification";
 			rdfs:range "xsd:string";
 			hydra:required "true"^^xsd:boolean;
-      schema:defaultValue "BLIX";
+      			#schema:defaultValue "BLIX";
+			schema:defaultValue "HOBU" ; 
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "analysis_centre"^^xsd:string;
 			rdfs:label "name of the analysis centre; use the following operation to get the all the formats available";
 			rdfs:range "xsd:string";
 			hydra:required "true"^^xsd:boolean;
-      schema:defaultValue "UGA";
+      			#schema:defaultValue "UGA";
+			schema:defaultValue "BFKH" ;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "coordinates_system"^^xsd:string;
@@ -513,14 +514,15 @@
 			hydra:required "true"^^xsd:boolean;
 			http:paramValue "enu";
 			http:paramValue "xyz";
-      schema:defaultValue "xyz";
+      			#schema:defaultValue "xyz";
+			schema:defaultValue "enu";
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "format"^^xsd:string;
 			rdfs:label "format; use the following operation to get the all the formats available";
 			rdfs:range "xsd:string";
 			hydra:required "true"^^xsd:boolean;
-      schema:defaultValue "json";
+      			schema:defaultValue "json";
 		];
  	];
 .
@@ -546,8 +548,7 @@
 	hydra:method "GET"^^xsd:string;
  	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
-		rdfs:label "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/coordinates/BLIX/UGA/daily/xyz/json?epoch_start=2015-02-23&remove_outliers=1";
-    hydra:template "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/timeseries/{station}/{analysis_centre}/{sampling_period}/{coordinates_system}/{format/{?reference_frame,otl_model,calibration_model,cut_of_angle,remove_outliers,apply_offsets,epoch_start,epoch_end}"^^xsd:string;
+    hydra:template "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/timeseries/{station}/{analysis_centre}/{sampling_period}/{coordinates_system}/{format}/{?reference_frame,otl_model,calibration_model,cut_of_angle,remove_outliers,apply_offsets,epoch_start,epoch_end}"^^xsd:string;
     hydra:mapping[ a hydra:IriTemplateMapping;
       hydra:variable "station"^^xsd:string;
       rdfs:label "Four letter station identification";
@@ -646,7 +647,7 @@
 
 #WS stations/v2/list
 <GlassFramework/webresources/stations/v2/list/> a epos:WebService;
-	schema:identifier "GlassFramework/webresources/stations/v2/list/{data}";
+	schema:identifier "GlassFramework/webresources/stations/v2/list/";
 	schema:description "Returns a list containing existing data of the chosen type of data.";
 	schema:name "GET LIST V2";
 	dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
@@ -665,10 +666,10 @@
 	hydra:method "GET"^^xsd:string;
  	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
-		rdfs:label "http://glass.unice.fr:8080/GlassFramework/webresources/stations/v2/list/city";
 		hydra:template "http://glass.unice.fr:8080/GlassFramework/webresources/stations/v2/list/{data}"^^xsd:string;
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "data"^^xsd:string;
+      rdfs:range "xsd:string";
 			rdfs:label "the type of the data";
 			hydra:required "true"^^xsd:boolean;
 			http:paramValue "agency";
@@ -707,7 +708,6 @@
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
- 		rdfs:label "Different parameters should be separated by & (AMPERSAND), multiple values for a parameter should be separated by , (COMMA) ";
  		hydra:template "http://glass.unice.fr:8080/GlassFramework/webresources/stations/v2/list/station{?name,marker}"^^xsd:string;
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "name"^^xsd:string;
@@ -726,8 +726,8 @@
 
 #<------------>#
 <https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/stations> a dcat:Dataset ;
-        dct:identifier "GlassFramework/webresources/products/stations/" ;
-		    dct:description "Returns Stations objects for a given parameters";
+	dct:identifier "GlassFramework/webresources/products/stations/" ;
+	dct:description "Returns Stations objects for a given parameters";
         dct:title "Get Stations objects" ;
         adms:identifier [ a adms:Identifier ;
             adms:schemaAgency "DDSS-ID" ;
@@ -788,7 +788,7 @@
 
 <GlassFramework/webresources/products/stations/Distribution/001> a dcat:Distribution ;
 	dct:identifier "GlassFramework/webresources/products/stations/Distribution/001" ;
-    dct:title "Station Metadata" ;
+	dct:title "Station Metadata" ;
 	dct:description "Description of Station Metadata" ;
 	dct:issued "2017-01-01"^^xsd:date ;
     dct:modified "2017-01-01"^^xsd:date ;
@@ -823,9 +823,9 @@
 
 #<------------>#
 <http://glass.unice.fr:8080/GlassFramework/webresources/files> a dcat:Dataset ;
-        dct:identifier "GlassFramework/webresources/files" ;
-        dct:title "GET Files V2" ;
-		    dct:description "Returns the files(s) that match the criteria.";
+	dct:identifier "GlassFramework/webresources/files" ;
+	dct:title "GET Files V2" ;
+	dct:description "Returns the files(s) that match the criteria.";
         adms:identifier [ a adms:Identifier ;
             adms:schemaAgency "DDSS-ID" ;
             skos:notation "WP10-DDSS-002" ;
@@ -884,10 +884,10 @@
 
 <GlassFramework/webresources/files/Distribution/001> a dcat:Distribution ;
 	dct:identifier "GlassFramework/webresources/files/Distribution/001" ;
-    dct:title "GET Files V2" ;
+	dct:title "GET Files V2" ;
 	dct:description "Returns the files(s) that match the criteria." ;
 	dct:issued "2017-01-01"^^xsd:date ;
-    dct:modified "2017-01-01"^^xsd:date ;
+    	dct:modified "2017-01-01"^^xsd:date ;
 
 	# This property refers to the type of the Distribution. The possible types are
 	# (http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE
@@ -919,13 +919,13 @@
 
 #<------------>#
 <GlassFramework/webresources/products/coordinates/PPP> a dcat:Dataset ;
-        dct:identifier "GlassFramework/webresources/products/coordinates/PPP" ;
-        dct:title "Get coordinates position via PPP processing" ;
-		dct:description "Get coordinates position via PPP processing";
+	dct:identifier "GlassFramework/webresources/products/coordinates/PPP" ;
+	dct:title "Get coordinates position via PPP processing" ;
+	dct:description "Get coordinates position via PPP processing";
         adms:identifier [ a adms:Identifier;
-			adms:propertyID  "DDSS-ID";
-	 		schema:value   "WP10-DDSS-007";
-		 ];
+    			adms:schemaAgency  "DDSS-ID";
+    	 		skos:notation   "WP10-DDSS-007";
+		    ];
         dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
@@ -980,10 +980,10 @@
 
 <GlassFramework/webresources/products/coordinates/PPP/Distribution/001> a dcat:Distribution ;
 	dct:identifier "GlassFramework/webresources/products/coordinates/PPP/Distribution/001" ;
-    dct:title "Get Stations coordinates via PPP";
+	dct:title "Get Stations coordinates via PPP";
 	dct:description "Get Stations coordinates via PPP";
 	dct:issued "2017-01-01"^^xsd:date ;
-    dct:modified "2017-01-01"^^xsd:date ;
+    	dct:modified "2017-01-01"^^xsd:date ;
 
 	# This property refers to the type of the Distribution. The possible types are
 	# (http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE
@@ -1016,12 +1016,13 @@
 #<------------>#
 <GlassFramework/webresources/products/coordinates/DD> a dcat:Dataset ;
         dct:identifier "GlassFramework/webresources/products/coordinates/DD" ;
-        dct:title "Get coordinates position via DD processing" ;
-		dct:description "Get Stations coordinates via DD processing";
-        adms:identifier [ a adms:Identifier;
-			adms:propertyID  "DDSS-ID";
-	 		schema:value   "WP10-DDSS-008";
-		 ];
+	dct:title "Get coordinates position via DD processing" ;
+	dct:description "Get Stations coordinates via DD processing";
+
+         adms:identifier [ a adms:Identifier ;
+             adms:schemaAgency "DDSS-ID" ;
+             skos:notation "WP10-DDSS-008" ;
+         ];
         dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
@@ -1076,10 +1077,10 @@
 
 <GlassFramework/webresources/products/coordinates/DD/Distribution/001> a dcat:Distribution ;
 	dct:identifier "GlassFramework/webresources/products/coordinates/DD/Distribution/001" ;
-    dct:title "Get Stations coordinates via DD processing";
+	dct:title "Get Stations coordinates via DD processing";
 	dct:description "Get Stations coordinates via DD processing";
 	dct:issued "2017-01-01"^^xsd:date ;
-    dct:modified "2017-01-01"^^xsd:date ;
+	dct:modified "2017-01-01"^^xsd:date ;
 
 	# This property refers to the type of the Distribution. The possible types are
 	# (http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE
@@ -1111,13 +1112,15 @@
 
 #<------------>#
 <GlassFramework/webresources/products/timeseries/PPP> a dcat:Dataset ;
-        dct:identifier "GlassFramework/webresources/products/timeseries/PPP" ;
+	dct:identifier "GlassFramework/webresources/products/timeseries/PPP" ;
         dct:title "Get position timeseries via PPP processing" ;
-		dct:description "Get Stations timeseries via PPP processing";
-        adms:identifier [ a adms:Identifier;
-			adms:propertyID  "DDSS-ID";
-	 		schema:value   "WP10-DDSS-009";
-		 ];
+	dct:description "Get Stations timeseries via PPP processing";
+
+         adms:identifier [ a adms:Identifier ;
+             adms:schemaAgency "DDSS-ID" ;
+             skos:notation "WP10-DDSS-009" ;
+         ];
+
         dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
@@ -1172,7 +1175,7 @@
 
 <GlassFramework/webresources/products/timeseries/PPP/Distribution/001> a dcat:Distribution ;
 	dct:identifier "GlassFramework/webresources/products/timeseries/PPP/Distribution/001" ;
-    dct:title "Get position timeseries via PPP processing";
+	dct:title "Get position timeseries via PPP processing";
 	dct:description "Get Stations timeseries via PPP processing";
 	dct:issued "2017-01-01"^^xsd:date ;
     dct:modified "2017-01-01"^^xsd:date ;
@@ -1207,14 +1210,15 @@
 
 #<------------>#
 <GlassFramework/webresources/products/timeseries/DD> a dcat:Dataset ;
-        dct:identifier "GlassFramework/webresources/products/timeseries/DD" ;
+	dct:identifier "GlassFramework/webresources/products/timeseries/DD" ;
         dct:title "Get position timeseries via DD processing" ;
-		dct:description "Get Stations timeseries via DD processing";
+	dct:description "Get Stations timeseries via DD processing";
 
-        adms:identifier [ a adms:Identifier;
-			adms:propertyID  "DDSS-ID";
-	 		schema:value   "WP10-DDSS-010";
-		 ];
+         adms:identifier [ a adms:Identifier ;
+             adms:schemaAgency "DDSS-ID" ;
+             skos:notation "WP10-DDSS-010" ;
+         ];
+
         dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
@@ -1269,7 +1273,7 @@
 
 <GlassFramework/webresources/products/timeseries/DD/Distribution/001> a dcat:Distribution ;
 	dct:identifier "GlassFramework/webresources/products/timeseries/DD/Distribution/001" ;
-    dct:title "Get position timeseries via DD processing";
+	dct:title "Get position timeseries via DD processing";
 	dct:description "Get Stations timeseries via DD processing";
 	dct:issued "2017-01-01"^^xsd:date ;
     dct:modified "2017-01-01"^^xsd:date ;
@@ -1304,13 +1308,15 @@
 
 #<------------>#
 <GlassFramework/webresources/products/timeseries/combined> a dcat:Dataset ;
-        dct:identifier "GlassFramework/webresources/products/timeseries/combined" ;
-        dct:title "Get position timeseries via combined processing" ;
+	dct:identifier "GlassFramework/webresources/products/timeseries/combined" ;
+	dct:title "Get position timeseries via combined processing" ;
 		dct:description "Get Stations timeseries via combined processing";
-        adms:identifier [ a adms:Identifier;
-			adms:propertyID  "DDSS-ID";
-	 		schema:value   "WP10-DDSS-009";
-		 ];
+
+         adms:identifier [ a adms:Identifier ;
+             adms:schemaAgency "DDSS-ID" ;
+             skos:notation "WP10-DDSS-009" ;
+         ];
+
         dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
@@ -1365,7 +1371,7 @@
 
 <GlassFramework/webresources/products/timeseries/combined/Distribution/001> a dcat:Distribution ;
 	dct:identifier "GlassFramework/webresources/products/timeseries/combined/Distribution/001" ;
-    dct:title "Get position timeseries via combined processing";
+	dct:title "Get position timeseries via combined processing";
 	dct:description "Get Stations timeseries via combined processing";
 	dct:issued "2017-01-01"^^xsd:date ;
     dct:modified "2017-01-01"^^xsd:date ;
@@ -1400,13 +1406,15 @@
 
 #<------------>#
 <GlassFramework/webresources/products/velocities/PPP> a dcat:Dataset ;
-        dct:identifier "GlassFramework/webresources/products/velocities/PPP" ;
-        dct:title "Get stations velocities via PPP processing" ;
+	dct:identifier "GlassFramework/webresources/products/velocities/PPP" ;
+	dct:title "Get stations velocities via PPP processing" ;
 		dct:description "Get stations velocities via PPP processing";
-        adms:identifier [ a adms:Identifier;
-			adms:propertyID  "DDSS-ID";
-	 		schema:value   "WP10-DDSS-013";
-		 ];
+
+         adms:identifier [ a adms:Identifier ;
+             adms:schemaAgency "DDSS-ID" ;
+             skos:notation "WP10-DDSS-013" ;
+         ];
+
         dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
@@ -1461,7 +1469,7 @@
 
 <GlassFramework/webresources/products/velocities/PPP/Distribution/001> a dcat:Distribution ;
 	dct:identifier "GlassFramework/webresources/products/velocities/PPP/Distribution/001" ;
-    dct:title "Get stations velocities via PPP processing";
+	dct:title "Get stations velocities via PPP processing";
 	dct:description "Get stations velocities via PPP processing";
 	dct:issued "2017-01-01"^^xsd:date ;
     dct:modified "2017-01-01"^^xsd:date ;
@@ -1496,13 +1504,15 @@
 
 #<------------>#
 <GlassFramework/webresources/products/velocities/DD> a dcat:Dataset ;
-        dct:identifier "GlassFramework/webresources/products/velocities/DD" ;
-        dct:title "Get stations velocities via DD processing";
-		dct:description "Get stations velocities via DD processing";
-        adms:identifier [ a adms:Identifier;
-			adms:propertyID  "DDSS-ID";
-	 		schema:value   "WP10-DDSS-012";
-		 ];
+	dct:identifier "GlassFramework/webresources/products/velocities/DD" ;
+	dct:title "Get stations velocities via DD processing";
+	dct:description "Get stations velocities via DD processing";
+
+         adms:identifier [ a adms:Identifier ;
+             adms:schemaAgency "DDSS-ID" ;
+             skos:notation "WP10-DDSS-012" ;
+         ];
+
         dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
@@ -1557,7 +1567,7 @@
 
 <GlassFramework/webresources/products/velocities/DD/Distribution/001> a dcat:Distribution ;
 	dct:identifier "GlassFramework/webresources/products/velocities/DD/Distribution/001" ;
-    dct:title "Get stations velocities via DD processing";
+	dct:title "Get stations velocities via DD processing";
 	dct:description "Get stations velocities via DD processing";
 	dct:issued "2017-01-01"^^xsd:date ;
     dct:modified "2017-01-01"^^xsd:date ;
@@ -1592,13 +1602,15 @@
 
 #<------------>#
 <GlassFramework/webresources/products/velocities/combined> a dcat:Dataset ;
-        dct:identifier "GlassFramework/webresources/products/velocities/combined" ;
+	dct:identifier "GlassFramework/webresources/products/velocities/combined" ;
         dct:title "Get stations velocities via combined processing" ;
-		dct:description "Get stations velocities via combined processing";
-        adms:identifier [ a adms:Identifier;
-			adms:propertyID  "DDSS-ID";
-	 		schema:value   "WP10-DDSS-014";
-		 ];
+	dct:description "Get stations velocities via combined processing";
+
+     adms:identifier [ a adms:Identifier ;
+         adms:schemaAgency "DDSS-ID" ;
+         skos:notation "WP10-DDSS-014" ;
+     ];
+
         dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
@@ -1653,7 +1665,7 @@
 
 <GlassFramework/webresources/products/velocities/combined/Distribution/001> a dcat:Distribution ;
 	dct:identifier "GlassFramework/webresources/products/velocities/combined/Distribution/001" ;
-    dct:title "Get stations velocities via combined processing";
+	dct:title "Get stations velocities via combined processing";
 	dct:description "Get stations velocities via combined processing";
 	dct:issued "2017-01-01"^^xsd:date ;
     dct:modified "2017-01-01"^^xsd:date ;

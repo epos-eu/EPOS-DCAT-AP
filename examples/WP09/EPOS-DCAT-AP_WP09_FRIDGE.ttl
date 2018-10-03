@@ -167,6 +167,7 @@
 		skos:notation "WP09-DDSS-034"; 
 	]; 
 	schema:description "FedeRated specIfic Data GatEway (FRIDGE).";
+	dcat:theme  <epos:NearFaultObservations> ;
 	schema:name "FedeRated specIfic Data GatEway (FRIDGE)";
 	schema:datePublished "2017-06-08T12:00:00Z"^^xsd:dateTime;
 	schema:dateModified "2017-06-08T12:00:00Z"^^xsd:dateTime;
@@ -176,7 +177,22 @@
 	dcat:contactPoint <http://orcid.org/0000-0002-8608-4289/contactPoint>;
 .
 
-<#NearFaultObservations> a skos:ConceptScheme;
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/FRIDGE/WebService/001/Operation/001> a hydra:Operation;
+	hydra:method "GET"^^xsd:string;
+	hydra:returns "application/json";
+	hydra:property[ a hydra:IriTemplate;
+		hydra:template "http://fridge-services.rm.ingv.it/services{?}"^^xsd:string;
+	];
+.
+
+<epos:NearFaultObservations> a skos:ConceptScheme;
 	dct:title "Near Fault Observations";
 	dct:description "It contains the concepts of Near Fault Observations";
 .
+
+<epos:NearFaultObservations> a skos:Concept ;
+    skos:definition "Near Fault Observations" ;
+    skos:inScheme <epos:NearFaultObservations> ;
+    skos:prefLabel "Near Fault Observations" ;
+.
+

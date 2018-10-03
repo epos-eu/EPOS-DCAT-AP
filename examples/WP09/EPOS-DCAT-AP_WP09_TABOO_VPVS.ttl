@@ -221,7 +221,7 @@
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
-		hydra:template "http://fridge-services.rm.ingv.it/vpvs/{?mintime, maxtime, minlat, maxlat, minlon, maxlon, mineqdepth, maxeqdepth, minnp, minns, maxpw, maxsw, minps, maxgap, midi, maxherr, maxverr}"^^xsd:string;
+		hydra:template "http://fridge-services.rm.ingv.it/vpvs/{?mintime, maxtime, minlat, maxlat, minlon, maxlon, mineqdep, maxeqdep, minnp, minns, maxpw, maxsw, minps, maxgap, midi, maxvpvspw, maxvpvssw, maxherr, maxverr}"^^xsd:string;
 		# type of parameter "xsd:string" "xsd:boolean" "xsd:date" "xsd:dateTime" "xsd:decimal" "xsd:double" "xsd:float" "xsd:int" "xsd:integer" "xsd:long"
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "mintime"^^xsd:string;
@@ -278,7 +278,7 @@
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
-			hydra:variable "mineqdepth"^^xsd:string;
+			hydra:variable "mineqdep"^^xsd:string;
 			rdfs:label "Minimum Earthquake Depth";
 			rdfs:range "xsd:float";
 			schema:minValue "-1";
@@ -287,7 +287,7 @@
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
-			hydra:variable "maxeqdepth"^^xsd:string;
+			hydra:variable "maxeqdep"^^xsd:string;
 			rdfs:label "Maximum Earhquake Depth";
 			rdfs:range "xsd:float";
 			schema:minValue "-1";
@@ -366,6 +366,24 @@
 			schema:maxValue "6378.00";
 			schema:defaultValue "200";
 			hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "maxvpvspw"^^xsd:string;
+			rdfs:label "Maximum quality weight allowed for a p-wave reading";
+			rdfs:range "xsd:integer";
+			schema:minValue "0";
+			schema:maxValue "4";
+			schema:defaultValue "3";
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "maxvpvssw"^^xsd:string;
+			rdfs:label "Maximum quality weight allowed for a s-wave reading";
+			rdfs:range "xsd:integer";
+			schema:minValue "0";
+			schema:maxValue "4";
+			schema:defaultValue "3";
+			hydra:required "false"^^xsd:boolean;
 		];
 	] ;
 .

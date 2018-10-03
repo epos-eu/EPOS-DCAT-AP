@@ -16,10 +16,10 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
-<WP11/DDSS-049/IMHOT_201809050000_12_00> a dcat:Dataset;
-    dct:title "201809050000_France_NTI_flag.tif"^^xsd:string;
-    dct:identifier "WP11/DDSS-049/IMHOT_201809050000_12_00";    
-    dct:description "HOTVOLC product: Flagged thermal anomalies - zone: France";
+<WP11/Dataset/DDSS-049/IMHOT> a dcat:Dataset;
+    dct:title "HOTVOLC product: Flagged thermal anomalies"^^xsd:string;
+    dct:identifier "WP11/Dataset/DDSS-049/IMHOT";    
+    dct:description "HOTVOLC product: Flagged thermal anomalies";
     adms:identifier [ a adms:Identifier;
         adms:schemaAgency "DDSS-ID";
         skos:notation "WP11-DDSS-049"
@@ -28,7 +28,7 @@
     dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
     dct:temporal [ a dct:PeriodOfTime;
         schema:startDate "2018-09-05T00:00:00Z"^^xsd:dateTime;
-        schema:endDate "2018-09-05T00:00:00Z"^^xsd:dateTime;
+        #schema:endDate "2018-09-05T00:00:00Z"^^xsd:dateTime;
     ];
     dct:issued "2018-09-05T00:00:00Z"^^xsd:dateTime;
     dct:modified "2018-09-05T02:15:17Z"^^xsd:dateTime;
@@ -39,18 +39,32 @@
     dcat:keyword "spectral radiance", "lava monitoring", "nti*", "geotiff", "hot spots", "thermal anomalies";
     dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
     dct:publisher <http://isni.org/isni/0000000109416043>;      
-    dcat:distribution <WP11/DDSS-049/IMHOT_201809050000_12_00/DownloadFile>;
+    dcat:distribution <WP11/DDSS-049/DataDownload>;
+    dcat:distribution <WP11/DDSS-049/DataCatalog>;
 .
-    <WP11/DDSS-049/IMHOT_201809050000_12_00/DownloadFile> a dcat:Distribution;
-        dct:identifier "WP11/DDSS-049/IMHOT_201809050000_12_00/DownloadFile";
-        dct:title "HOTVOLC distribution of the product WP11/DDSS-049/IMHOT_201809050000_12_00";
-        dct:description "The way to download the HOTVOLC product: WP11/DDSS-049/IMHOT_201809050000_12_00";
+
+<WP11/DDSS-049/DataDownload> a dcat:Distribution;
+        dct:identifier "WP11/DDSS-049/DataDownload";
+        dct:title "HOTVOLC distribution of the product WP11 DDSS-049";
+        dct:description "The way to download the HOTVOLC product";
         dct:issued "2018-09-05T00:00:00Z"^^xsd:dateTime;
-        dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
+        dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
         dcat:accessURL <hotvolc.opgc.fr/data-download>;
-        dcat:downloadURL "http://hotvolc.opgc.fr/www/php/data_download.php?uri=IMHOT_201809050000_12_00"^^xsd:anyURI;
+        #dcat:downloadURL "http://hotvolc.opgc.fr/www/php/data_download.php?uri=IMHOT_201809050000_12_00"^^xsd:anyURI;
         dct:conformsTo <hotvolc.opgc.fr/WP11/DDSS-049>;        
         dct:format "http://publications.europa.eu/resource/authority/file-type/ZIP"^^xsd:anyURI;
+        schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+.
+
+<WP11/DDSS-049/DataCatalog> a dcat:Distribution;
+        dct:identifier "WP11/DDSS-049/DataCatalog";
+        dct:title "HOTVOLC distribution of the product WP11 DDSS-049 - Data Catalog";
+        dct:description "The way to query the HOTVOLC Data Catalog";
+        dct:issued "2018-09-05T00:00:00Z"^^xsd:dateTime;
+        dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+        dcat:accessURL <hotvolc.opgc.fr/data-search/WP11/DDSS-049>;
+        dct:conformsTo <hotvolc.opgc.fr/WP11/DDSS-049>;        
+        dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
         schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 .
 
@@ -205,25 +219,25 @@
 
     <hotvolc.opgc.fr/data-search/WP11/DDSS-049> a hydra:Operation;
         hydra:method "GET"^^xsd:string;
-        hydra:returns "text/turtle";
-        # hydra:returns "application/json";
+        #hydra:returns "text/turtle";
+        hydra:returns "application/json";
         # hydra:returns "application/xml";
         hydra:property[ a hydra:IriTemplate;
             hydra:template "http://hotvolc.opgc.fr/www/php/data_catalog.php{?date_begin, date_end, bbox, volcano, zone, type, ddss, output, onscreen}"^^xsd:string;
                 hydra:mapping[ a hydra:IriTemplateMapping;
-                    hydra:variable "date_begin"^^xsd:datetime;
+                    hydra:variable "date_begin"^^xsd:dateTime;
                     rdfs:label "Specific datetime query or starting datetime of the time interval query (format YYYY-MM-DDThh:mm:ssZ)";
                     rdfs:range "xsd:dateTime";
-                    schema:minValue "2010-01-01T00:00:00Z"^^xsd:datetime;
-                    schema:maxValue "9999-12-31T23:59:59Z"^^xsd:datetime;
+                    schema:minValue "2010-01-01T00:00:00Z"^^xsd:dateTime;
+                    schema:maxValue "9999-12-31T23:59:59Z"^^xsd:dateTime;
                     hydra:required "false"^^xsd:boolean;
                 ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
-                    hydra:variable "date_end"^^xsd:datetime;
+                    hydra:variable "date_end"^^xsd:dateTime;
                     rdfs:label "Ending datetime the time interval query (format YYYY-MM-DDThh:mm:ssZ)";
                     rdfs:range "xsd:dateTime";
-                    schema:minValue "2010-01-01T00:00:00Z"^^xsd:datetime;
-                    schema:maxValue "9999-12-31T23:59:59Z"^^xsd:datetime;
+                    schema:minValue "2010-01-01T00:00:00Z"^^xsd:dateTime;
+                    schema:maxValue "9999-12-31T23:59:59Z"^^xsd:dateTime;
                     hydra:required "false"^^xsd:boolean;
                 ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
@@ -318,10 +332,10 @@
                 ];
         ];
 .
-    <hotvolc.opgc.fr/data-download> a hydra:Operation;
+ <hotvolc.opgc.fr/data-download> a hydra:Operation;
         hydra:method "GET"^^xsd:string;
-        hydra:returns "ZIP";
-        hydra:IriTemplate[ a hydra:IriTemplate;
+        hydra:returns "application/zip";
+         hydra:property[ a hydra:IriTemplate;
             hydra:template "http://hotvolc.opgc.fr/www/php/data_download.php{?uri}"^^xsd:string;
                 hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "uri"^^xsd:string;
@@ -331,13 +345,14 @@
                 ];
         ];
 .    
-    <epos:Volcano-Observations> a skos:ConceptScheme;
-        dct:title "Volcanolo-Observations";
+    <epos:VolcanoObservations> a skos:ConceptScheme;
+        dct:title "Volcano Observations";
         dct:description "It contains the concepts of Volcanological Observations";
 .
     <epos:Thermalmonitoring> a skos:Concept;
-        skos:inScheme <epos:Volcano-Observations>;
+        skos:inScheme <epos:VolcanoObservations>;
         skos:prefLabel "Thermal monitoring";
+	skos:definition "Thermal monitoring" ;
 .
     <epos:Meteorology> a skos:ConceptScheme;
         dct:title "Meteorology";
@@ -347,6 +362,7 @@
     <epos:Weatherforecast> a skos:Concept;
         skos:inScheme <epos:Meteorology>;
         skos:prefLabel "Weather forecast";
+	skos:definition "Weather forecast" ;
 .
 
 # <hotvolc.opgc.fr/Equipment/SEVIRI> a epos:Equipment;

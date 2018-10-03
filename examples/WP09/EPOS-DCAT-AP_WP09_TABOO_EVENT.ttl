@@ -204,7 +204,7 @@
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/xml";
 	hydra:property[ a hydra:IriTemplate;
-		hydra:template "http://webservices.ingv.it/fdsnws/event_taboo/1/query(?mintime, maxtime, minlat, maxlat, minlon, maxlon, mineqdepth, maxeqdepth, minnp, minns, maxpw, maxsw, minps, maxgap, midi, maxherr, maxverr)"^^xsd:string;
+		hydra:template "http://webservices.ingv.it/fdsnws/event_taboo/1/query{?starttime, endtime, minlatitude, maxlatitude, minlongitude, maxlongitude, mindepth, maxdepth, minmagnitude, maxmagnitude, includeallorigins, includeallmagnitudes, includearrivals, eventid, limit, offset, orderby, contributor, catalog, updatedafter, format, nodata, latitude, longitude, minradius, maxradius}"^^xsd:string;
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "starttime"^^xsd:string;
 			rdfs:range "xsd:dateTime";
@@ -220,7 +220,7 @@
 			rdfs:label "End Time";
 			schema:minValue "2010-04-01T00:00:00";
 			schema:maxValue "2018-12-31T00:00:00";
-			schema:defaultValue "2015-03-02T00:00:00";
+			schema:defaultValue "2015-03-03T00:00:00";
 			hydra:required "false"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -283,7 +283,7 @@
 			rdfs:label "Minimum Magnitude";
 			#schema:minValue "-10";
 			#schema:maxValue "10";
-			schema:defaultValue "3";
+			schema:defaultValue "1";
 			hydra:required "false"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -347,11 +347,16 @@
 			hydra:variable "orderby"^^xsd:string;
 			rdfs:range "xsd:string";
 			rdfs:label "Order By";
-			http:paramValue "time";
-			http:paramValue "time-asc";
-			http:paramValue "magnitude";
-			http:paramValue "magnitude-asc";
-			schema:defaultValue "time";
+			http:paramValue "id";
+			http:paramValue "id-asc";
+			http:paramValue "id-desc";
+			http:paramValue "modified";
+			http:paramValue "modified-asc";
+			http:paramValue "modified-desc";
+			http:paramValue "ot-asc";
+			http:paramValue "ot-desc";
+			http:paramValue "mag-asc";
+			http:paramValue "mag-desc";
 			hydra:required "false"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;

@@ -448,7 +448,7 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "image/png";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "http://resource.europe-geology.eu/service/wmsModel{?service, version, request, layers, crs, format, width, height}"^^xsd:string;
+			hydra:template "http://resource.europe-geology.eu/service/wmsModel{?service, version, request, layers, crs, format, width, height, BBOX}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "service"^^xsd:string;
 					rdfs:range "xsd:string";
@@ -478,6 +478,13 @@
 					hydra:required "true"^^xsd:boolean;
 				];		
 				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "BBOX"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "WMS BBOX filter parameter";
+					schema:defaultValue "-180,-90,180,90";
+					hydra:required "true"^^xsd:boolean;
+				];	
+				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "crs"^^xsd:string;
 					rdfs:range "xsd:string";
 					rdfs:label "Spatial Reference System";
@@ -491,6 +498,7 @@
 					http:paramValue "image/png";
 					http:paramValue "image/jpeg";
 					http:paramValue "image/geotiff";
+					schema:defaultValue "image/png";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;

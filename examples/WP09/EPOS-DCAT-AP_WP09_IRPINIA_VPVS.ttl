@@ -108,9 +108,9 @@
 	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
 		# NFO entrypoint:
-		#hydra:template "http://seismnet.fisica.unina.it/eposws/vpvs/1/query(?mintime, maxtime, minlat, maxlat, minlon, maxlon, mineqdepth, maxeqdepth, minnp, minns, maxpw, maxsw, minps, maxgap, midi, maxherr, maxverr, vpvsmin, maxvpvserr, maxvpvspw, maxvpvssw)"^^xsd:string;
+		#hydra:template "http://seismnet.fisica.unina.it/eposws/vpvs/1/query(?mintime, maxtime, minlat, maxlat, minlon, maxlon, mineqdep, maxeqdep, minnp, minns, maxpw, maxsw, minps, maxgap, midi, maxherr, maxverr, vpvsmin, maxvpvserr, maxvpvspw, maxvpvssw)"^^xsd:string;
 		# FRIDGE entrypoint:
-		hydra:template "http://fridge-services.rm.ingv.it/vpvs/{?mintime, maxtime, minlat, maxlat, minlon, maxlon, mineqdepth, maxeqdepth, minnp, minns, maxpw, maxsw, minps, maxgap, midi, maxherr, maxverr, vpvsmin, maxvpvserr, maxvpvspw, maxvpvssw}"^^xsd:string;
+		hydra:template "http://fridge-services.rm.ingv.it/vpvs/{?mintime, maxtime, minlat, maxlat, minlon, maxlon, mineqdep, maxeqdep, minnp, minns, maxpw, maxsw, minps, maxgap, midi, maxherr, maxverr, vpvsmin, maxvpvserr, maxvpvspw, maxvpvssw}"^^xsd:string;
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "mintime"^^xsd:string;
 				rdfs:range "xsd:dateTime";
@@ -166,22 +166,22 @@
 				hydra:required "true"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
-				hydra:variable "mineqdepth"^^xsd:string;
+				hydra:variable "mineqdep"^^xsd:string;
 				rdfs:range "xsd:integer";
 				rdfs:label "Minimum Earthquake Depth [km]";
 				schema:minValue "-9";
 				schema:maxValue "6378";
 				schema:defaultValue "0";
-				hydra:required "false"^^xsd:boolean;
+				hydra:required "true"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
-				hydra:variable "maxeqdepth"^^xsd:string;
+				hydra:variable "maxeqdep"^^xsd:string;
 				rdfs:range "xsd:integer";
 				rdfs:label "Maximum Earthquake Depth [km]";
 				schema:minValue "-9";
 				schema:maxValue "6378";
 				schema:defaultValue "40";
-				hydra:required "false"^^xsd:boolean;
+				hydra:required "true"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "minnp"^^xsd:string;

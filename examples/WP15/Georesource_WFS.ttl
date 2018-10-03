@@ -90,6 +90,43 @@
 		skos:prefLabel "Geological Data";
 . 
 
+
+	<http://resource.europe-geology.eu/dataset/mine> a dcat:Dataset;
+		dct:title "Georesource occurence data";
+		dct:identifier "http://resource.europe-geology.eu/dataset/mine"; 
+		adms:identifier [ a adms:Identifier;
+			adms:schemaAgency "DDSS-ID";
+			skos:notation "WP15-DDSS-010a";
+		]; 
+		dct:description "Based on Minerals4EU dataset, this dataset allows to explore and discover available mineral resources datasets in a given area.";
+		dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+		dct:created "2017-10-27"^^xsd:date;
+		dct:modified "2018-09-07"^^xsd:date;
+		dct:issued "2017-10-27"^^xsd:date;
+	dct:spatial [ a dct:Location; 
+		locn:geometry "POLYGON(-180 90,180 90,180 -90,-180 90,-180 90)"^^gsp:wktLiteral; 
+	]; 
+		dcat:theme <epos:GeologicalData>;
+		dcat:keyword "Mine", "INSPIRE:MR", "EarthResourceML";
+		dcat:contactPoint <mailto:contact-brgm@brgm.fr>;
+		dcat:distribution <http://resource.europe-geology.eu/dataset/mine/distributionWfs>;
+		dct:publisher <PIC:999993662>;
+. 
+
+	<http://resource.europe-geology.eu/dataset/mine/distributionWfs> a dcat:Distribution;
+		dct:identifier "http://resource.europe-geology.eu/dataset/mine/distributionWfs";
+		dct:title "Geological Feature Index Discovery Service";
+		dct:description "Based on Minerals4EU dataset, this WFS allows to explore and discover available mineral resources  datasets in a given area.";
+		dct:issued "2016-10-27"^^xsd:date;
+		dct:modified "2018-01-19"^^xsd:date;
+		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+		dct:conformsTo <http://resource.europe-geology.eu/service/wfsMine>;
+		dcat:accessURL <http://resource.europe-geology.eu/service/wfsMine/operation>;
+		dct:license "TBD"^^xsd:anyURI ;
+		dct:format "http://publications.europa.eu/resource/authority/file-type/GML"^^xsd:anyURI;
+		#dct:format "https://www.iana.org/assignments/media-types/application/gml+xml"^^xsd:anyURI;
+. 
+
 	
 <http://resource.europe-geology.eu/service/wfsMine> a epos:WebService;
 	schema:identifier "http://resource.europe-geology.eu/service/wfsMine";

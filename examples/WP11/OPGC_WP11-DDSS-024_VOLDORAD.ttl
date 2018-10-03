@@ -33,7 +33,7 @@
     #dct:spatial [ a dct:Location;
         #locn:geometry <geo:37.7188888888889,15.0036111111111,u=2610,crs=wgs84>;
     #];
-    dcat:theme <epos:Doppler-Radar>;
+    dcat:theme <epos:DopplerRadar>;
     dcat:keyword "ground-based", "remote-sensing", "doppler effect", "radar", "power", "velocity", "particles", "source parameters";
     dcat:contactPoint <http://orcid.org/0000-0001-8293-1340/contactPoint>;
     dct:publisher <http://isni.org/isni/0000000109416043>;
@@ -130,9 +130,9 @@
         schema:postalCode "63178";
         schema:addressCountry "FRANCE";
     ];
-    dct:spatial [ a dct:location ;
-        locn:geometry <geo:45.761,3.110,u=407,crs=wgs84>;
-    ];
+    #dct:spatial [ a dct:location ;
+    #    locn:geometry <geo:45.761,3.110,u=407,crs=wgs84>;
+    #];
     schema:logo "http://wwwobs.univ-bpclermont.fr/opgc/images/LogoOPGCTransparent.png"^^xsd:anyURI;
     schema:url "http://opgc.fr"^^xsd:anyURI;
     schema:email "g.delcampo@opgc.fr";
@@ -191,7 +191,7 @@
     hydra:entrypoint "http://opgc.fr/vobs/rest2/req.php/application/voldorad"^^xsd:anyURI;
     hydra:supportedOperation <opgc.fr/vobs/voldorad/WP11/DDSS-024/data-catalog>;
     hydra:supportedOperation <opgc.fr/vobs/voldorad/WP11/DDSS-024/data-download>;
-    dcat:theme <epos:Doppler-Radar>;
+    dcat:theme <epos:DopplerRadar>;
     schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
     dct:conformsTo <opgc.fr/vobs/APIDocumentation>;
     dcat:contactPoint <http://orcid.org/0000-0001-8293-1340/contactPoint>;
@@ -298,11 +298,11 @@
         ];
 .
 
-    <epos:Volcano-Observations> a skos:ConceptSchema;
-        dct:title "Volcano-Observations";
+    <epos:VolcanoObservations> a skos:ConceptScheme;
+        dct:title "Volcano Observations";
         dct:description "It contains the concept of Volcanological observations";
 .
-    <epos:Doppler-Radar> a skos:Concept;
-            skos:inScheme <epos:Volcano-Observations>;
+    <epos:DopplerRadar> a skos:Concept;
+            skos:inScheme <epos:VolcanoObservations>;
             skos:prefLabel "Doppler Radar";
 .

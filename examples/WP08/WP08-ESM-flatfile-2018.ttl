@@ -104,6 +104,10 @@
             adms:schemaAgency "DDSS-ID" ;
             skos:notation "WP08-DDSS-053" ;
         ];
+	adms:identifier [ a adms:Identifier ;
+    	    adms:schemaAgency "DDSS-ID" ;
+    	    skos:notation "WP08-DDSS-010" ;
+ 	 ];
         dct:created "2018-01-01T00:00:00Z"^^xsd:dateTime ;
         dct:issued "2018-01-01T00:00:00Z"^^xsd:dateTime ;
         dct:modified "2018-01-01T00:00:00Z"^^xsd:dateTime ;
@@ -146,48 +150,48 @@
 
 .
 
-<http://www.epos-eu.org/epos-dcat-ap/Seismology/EngineeringStrongMotionDatabase/Dataset/001> a dcat:Dataset ;
-        dct:identifier "http://www.epos-eu.org/epos-dcat-ap/Seismology/EngineeringStrongMotionDatabase/Dataset/001" ;
-        dct:title "ESM - Engineering Strong-Motion portal" ;
-        dct:description "ESM (http://esm.mi.ingv.it) allows users to query earthquake and station information and download earthquake waveforms and response spectra for events with magnitude ≥ 4.0 mainly recorded in the European-Mediterranean and the middle-East regions" ;
-        adms:identifier [ a adms:Identifier ;
-            adms:schemaAgency "DDSS-ID" ;
-            skos:notation "WP08-DDSS-010" ;
-        ];
-        dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
-        dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
-        dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
-        owl:versionInfo "1.0.0" ;
+#<http://www.epos-eu.org/epos-dcat-ap/Seismology/EngineeringStrongMotionDatabase/Dataset/001> a dcat:Dataset ;
+#        dct:identifier "http://www.epos-eu.org/epos-dcat-ap/Seismology/EngineeringStrongMotionDatabase/Dataset/001" ;
+#        dct:title "ESM - Engineering Strong-Motion portal" ;
+#        dct:description "ESM (http://esm.mi.ingv.it) allows users to query earthquake and station information and download earthquake waveforms and response spectra for events with magnitude ≥ 4.0 mainly recorded in the European-Mediterranean and the middle-East regions" ;
+#        adms:identifier [ a adms:Identifier ;
+#            adms:schemaAgency "DDSS-ID" ;
+#            skos:notation "WP08-DDSS-010" ;
+#        ];
+#        dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+#        dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+#        dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+#        owl:versionInfo "1.0.0" ;
 
         # This property refers to the type of the Dataset. 
         # Example of frequency using a controlled vocabulary http://dublincore.org/2012/06/14/dctype
-        dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI ;
+#        dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI ;
 
         # This property refers to the frequency at which the Dataset is updated.
         # The possible types are here: http://purl.org/cld/freq/
-        dct:accrualPeriodicity "http://purl.org/cld/freq/daily"^^xsd:anyURI ;
+#        dct:accrualPeriodicity "http://purl.org/cld/freq/daily"^^xsd:anyURI ;
 
         # This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
-        dcat:theme <epos:SeismologicalProducts> ;
+#        dcat:theme <epos:SeismologicalProducts> ;
 
-        dcat:keyword "strong-motion waveforms","strong-motion parameters","event parameters","station characterization" ;
-        dcat:contactPoint <http://orcid.org/0000-0003-4312-580X/scientificContact> ;
+#        dcat:keyword "strong-motion waveforms","strong-motion parameters","event parameters","station characterization" ;
+#        dcat:contactPoint <http://orcid.org/0000-0003-4312-580X/scientificContact> ;
 
         # This property refers to an Organisation responsible for making the Dataset available.
-        dct:publisher <PIC:999472675> ;
+ #       dct:publisher <PIC:999472675> ;
 
         # This property refers to a geographic region that is covered by the Dataset.
-        dct:spatial [ a dct:Location ;
-          locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral ;
-        ];
+#        dct:spatial [ a dct:Location ;
+#          locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral ;
+#        ];
 
         # This property refers to a temporal period that the Dataset covers.
-        dct:temporal [ a dct:PeriodOfTime ;
-                schema:startDate "1960-01-01T00:00:00Z"^^xsd:dateTime ;
+#        dct:temporal [ a dct:PeriodOfTime ;
+#                schema:startDate "1960-01-01T00:00:00Z"^^xsd:dateTime ;
                 #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
-        ] ;
+#        ] ;
 
-.
+#.
 
 <http://www.epos-eu.org/epos-dcat-ap/Seismology/SeismologicalProducts/ESMFlatFile/Dataset/001/Distribution/001> a dcat:Distribution ;
         dct:identifier "http://www.epos-eu.org/epos-dcat-ap/Seismology/SeismologicalProducts/ESMFlatFile/Dataset/001/Distribution/001" ;
