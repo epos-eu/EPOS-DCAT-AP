@@ -16,57 +16,6 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
-<WP11/Dataset/HOTVOLC/DDSS-049> a dcat:Dataset;
-    dct:title "HOTVOLC product: thermal anomalies"^^xsd:string;
-    dct:identifier "WP11/Dataset/HOTVOLC/DDSS-049";    
-    dct:description "HOTVOLC product: thermal anomalies";
-    adms:identifier [ a adms:Identifier;
-        adms:schemaAgency "DDSS-ID";
-        skos:notation "WP11-DDSS-049"
-    ];
-    dct:type "http://purl.org/dc/dcmitype/Image"^^xsd:anyURI;
-    dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
-    dct:temporal [ a dct:PeriodOfTime;
-        schema:startDate "2018-09-05T00:00:00Z"^^xsd:dateTime;
-        #schema:endDate "2018-09-05T00:00:00Z"^^xsd:dateTime;
-    ];
-    dct:issued "2018-09-05T00:00:00Z"^^xsd:dateTime;
-    dct:modified "2018-09-05T02:15:17Z"^^xsd:dateTime;
-    dct:spatial [ a dct:Location;
-        locn:geometry "POLYGON(-5 51.5, 8.25 51.5, 8.25 42, -5 42)"^^gsp:wktLiteral;
-    ];
-    dcat:theme <epos:Thermalmonitoring>;
-    dcat:keyword "spectral radiance", "lava monitoring", "nti*", "geotiff", "hot spots", "thermal anomalies";
-    dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
-    dct:publisher <http://isni.org/isni/0000000109416043>;      
-    dcat:distribution <WP11/DDSS-049/DataDownload>;
-    dcat:distribution <WP11/DDSS-049/DataCatalog>;
-.
-
-<WP11/DDSS-049/DataDownload> a dcat:Distribution;
-        dct:identifier "WP11/DDSS-049/DataDownload";
-        dct:title "HOTVOLC distribution of the product WP11 DDSS-049";
-        dct:description "The way to download the HOTVOLC product";
-        dct:issued "2018-09-05T00:00:00Z"^^xsd:dateTime;
-        dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-        dcat:accessURL <hotvolc.opgc.fr/data-download>;
-        #dcat:downloadURL "http://hotvolc.opgc.fr/www/php/data_download.php?uri=IMHOT_201809050000_12_00"^^xsd:anyURI;
-        dct:conformsTo <hotvolc.opgc.fr/WP11/DDSS-049>;        
-        dct:format "http://publications.europa.eu/resource/authority/file-type/ZIP"^^xsd:anyURI;
-        schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
-.
-
-<WP11/DDSS-049/DataCatalog> a dcat:Distribution;
-        dct:identifier "WP11/DDSS-049/DataCatalog";
-        dct:title "HOTVOLC distribution of the product WP11 DDSS-049 - Data Catalog";
-        dct:description "The way to query the HOTVOLC Data Catalog";
-        dct:issued "2018-09-05T00:00:00Z"^^xsd:dateTime;
-        dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-        dcat:accessURL <hotvolc.opgc.fr/data-search/WP11/DDSS-049>;
-        dct:conformsTo <hotvolc.opgc.fr/WP11/DDSS-049>;        
-        dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
-        schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
-.
 
 <http://orcid.org/0000-0001-8720-7300> a schema:Person;
     schema:identifier [ a schema:PropertyValue;
@@ -189,24 +138,8 @@
     schema:url "http://cnrs.fr"^^xsd:anyURI;
     schema:telephone "+33144964000";
 .
-                
-<hotvolc.opgc.fr/WP11/DDSS-049> a epos:WebService;
-    schema:identifier "hotvolc.opgc.fr/WP11/DDSS-049";
-    schema:description "HOTVOLC is a web-based satellite-data-driven reporting system dedicated to the real-time observation of volcanic products. This application is developed and managed by the Observatoire de Physique du Globe de Clermont-Ferrand (OPGC). It uses on-site automated ingestion of MSG-SEVIRI geostationary satellite data from EUMETSAT primary dissemination protocol using the Digital Video Broadcasting - Satellite 2 (DVB-S2) service. This allows acquisition of High Rate Information Transmission (HRIT) level 1.5 format, corresponding to image data that have been corrected for unwanted radiometric and geometric effects. Images are geolocated, calibrated and radiance linearized. HRIT digital numbers are converted into spectral radiance (in Wm-2.sr-1.μm-1) and then processed through validated algorithm for direct dissemination of ready-to-use products on a full web-GIS interface.This application allows you to interactively browse satellite imagery and associated products for both real-time (RT) and past events.";
-    schema:name "HOTVOLC Observing System - EPOS - WP11/DDSS-049";
-    schema:datePublished "2015-08-24T12:00:00Z"^^xsd:dateTime;
-    schema:dateModified "2018-07-12T16:00:00Z"^^xsd:dateTime;
-    schema:provider <http://isni.org/isni/0000000109416043>;
-    schema:keywords "WebGIS", "Real Time", "Remote Sensing", "Satellite", "Infrared", "Volcanology", "Hotspot", "Lava", "Thermal Monitoring";
-    # hydra:entrypoint "http://hotvolc.opgc.fr/www/php/application.php"^^xsd:anyURI;
-    hydra:supportedOperation <hotvolc.opgc.fr/data-search/WP11/DDSS-049>;
-    hydra:supportedOperation <hotvolc.opgc.fr/data-download>;
-    dcat:theme <epos:Thermalmonitoring>;
-    schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
-    dct:conformsTo <hotvolc.opgc.fr/WP11/DDSS-049/APIDocumentation>;
-    dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
-.
-    <http://orcid.org/0000-0001-8720-7300/contactPoint> a schema:ContactPoint;
+
+<http://orcid.org/0000-0001-8720-7300/contactPoint> a schema:ContactPoint;
         schema:email "m.gouhier@opgc.fr";
         schema:availableLanguage "en", "fr";
         schema:contactType "manager" ;
@@ -217,7 +150,77 @@
         hydra:entrypoint "http://hotvolc.opgc.fr/www/php/hotvolc_api.php"^^xsd:anyURI;
 .
 
-    <hotvolc.opgc.fr/data-search/WP11/DDSS-049> a hydra:Operation;
+
+<WP11/Dataset/HOTVOLC/DDSS-049> a dcat:Dataset;
+    dct:title "HOTVOLC product: thermal anomalies"^^xsd:string;
+    dct:identifier "WP11/Dataset/HOTVOLC/DDSS-049";    
+    dct:description "HOTVOLC product: thermal anomalies";
+    adms:identifier [ a adms:Identifier;
+        adms:schemaAgency "DDSS-ID";
+        skos:notation "WP11-DDSS-049"
+    ];
+    dct:type "http://purl.org/dc/dcmitype/Image"^^xsd:anyURI;
+    dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+    dct:temporal [ a dct:PeriodOfTime;
+        schema:startDate "2018-09-05T00:00:00Z"^^xsd:dateTime;
+        #schema:endDate "2018-09-05T00:00:00Z"^^xsd:dateTime;
+    ];
+    dct:issued "2018-09-05T00:00:00Z"^^xsd:dateTime;
+    dct:modified "2018-09-05T02:15:17Z"^^xsd:dateTime;
+    dct:spatial [ a dct:Location;
+        locn:geometry "POLYGON(-5 51.5, 8.25 51.5, 8.25 42, -5 42)"^^gsp:wktLiteral;
+    ];
+    dcat:theme <epos:Thermalmonitoring>;
+    dcat:keyword "spectral radiance", "lava monitoring", "nti*", "geotiff", "hot spots", "thermal anomalies";
+    dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
+    dct:publisher <http://isni.org/isni/0000000109416043>;      
+    dcat:distribution <WP11/Dataset/HOTVOLC/DDSS-049/Distribution/DataDownload>;
+    dcat:distribution <WP11/Dataset/HOTVOLC/DDSS-049/Distribution/DataCatalog>;
+.
+
+<WP11/Dataset/HOTVOLC/DDSS-049/Distribution/DataDownload> a dcat:Distribution;
+        dct:identifier "WP11/Dataset/HOTVOLC/DDSS-049/Distribution/DataDownload";
+        dct:title "HOTVOLC distribution of the product WP11 DDSS-049 - Data Download";
+        dct:description "The way to download the HOTVOLC product";
+        dct:issued "2018-09-05T00:00:00Z"^^xsd:dateTime;
+        dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+        dcat:accessURL <hotvolc.opgc.fr/WP11/WebService/DDSS-049/operation/data-download>;
+        #dcat:downloadURL "http://hotvolc.opgc.fr/www/php/data_download.php?uri=IMHOT_201809050000_12_00"^^xsd:anyURI;
+        dct:conformsTo <hotvolc.opgc.fr/WP11/WebService/DDSS-049>;        
+        dct:format "http://publications.europa.eu/resource/authority/file-type/ZIP"^^xsd:anyURI;
+        schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+.
+
+<WP11/Dataset/HOTVOLC/DDSS-049/Distribution/DataCatalog> a dcat:Distribution;
+        dct:identifier "WP11/Dataset/HOTVOLC/DDSS-049/Distribution/DataCatalog";
+        dct:title "HOTVOLC distribution of the product WP11 DDSS-049 - Data Catalog";
+        dct:description "The way to query the HOTVOLC Data Catalog";
+        dct:issued "2018-09-05T00:00:00Z"^^xsd:dateTime;
+        dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+        dcat:accessURL <hotvolc.opgc.fr/WP11/WebService/DDSS-049/operation/data-search>;
+        dct:conformsTo <hotvolc.opgc.fr/WP11/WebService/DDSS-049>;        
+        dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
+        schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+.
+                
+<hotvolc.opgc.fr/WP11/WebService/DDSS-049> a epos:WebService;
+    schema:identifier "hotvolc.opgc.fr/WP11/DDSS-049";
+    schema:description "HOTVOLC is a web-based satellite-data-driven reporting system dedicated to the real-time observation of volcanic products. This application is developed and managed by the Observatoire de Physique du Globe de Clermont-Ferrand (OPGC). It uses on-site automated ingestion of MSG-SEVIRI geostationary satellite data from EUMETSAT primary dissemination protocol using the Digital Video Broadcasting - Satellite 2 (DVB-S2) service. This allows acquisition of High Rate Information Transmission (HRIT) level 1.5 format, corresponding to image data that have been corrected for unwanted radiometric and geometric effects. Images are geolocated, calibrated and radiance linearized. HRIT digital numbers are converted into spectral radiance (in Wm-2.sr-1.μm-1) and then processed through validated algorithm for direct dissemination of ready-to-use products on a full web-GIS interface.This application allows you to interactively browse satellite imagery and associated products for both real-time (RT) and past events.";
+    schema:name "HOTVOLC Observing System - EPOS - WP11/DDSS-049";
+    schema:datePublished "2015-08-24T12:00:00Z"^^xsd:dateTime;
+    schema:dateModified "2018-07-12T16:00:00Z"^^xsd:dateTime;
+    schema:provider <http://isni.org/isni/0000000109416043>;
+    schema:keywords "WebGIS", "Real Time", "Remote Sensing", "Satellite", "Infrared", "Volcanology", "Hotspot", "Lava", "Thermal Monitoring";
+    # hydra:entrypoint "http://hotvolc.opgc.fr/www/php/application.php"^^xsd:anyURI;
+    hydra:supportedOperation <hotvolc.opgc.fr/WP11/WebService/DDSS-049/operation/data-search>;
+    hydra:supportedOperation <hotvolc.opgc.fr/WP11/WebService/DDSS-049/operation/data-download>;
+    dcat:theme <epos:Thermalmonitoring>;
+    schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+    dct:conformsTo <hotvolc.opgc.fr/WP11/DDSS-049/APIDocumentation>;
+    dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
+.
+    
+    <hotvolc.opgc.fr/WP11/WebService/DDSS-049/operation/data-search> a hydra:Operation;
         hydra:method "GET"^^xsd:string;
         #hydra:returns "text/turtle";
         hydra:returns "application/json";
@@ -332,7 +335,7 @@
                 ];
         ];
 .
- <hotvolc.opgc.fr/data-download> a hydra:Operation;
+ <hotvolc.opgc.fr/WP11/WebService/DDSS-049/operation/data-download> a hydra:Operation;
         hydra:method "GET"^^xsd:string;
         hydra:returns "application/zip";
          hydra:property[ a hydra:IriTemplate;
@@ -342,6 +345,7 @@
                     rdfs:label "The unique identifier of an HOTVOLC product, use data_catalog.php to find data uri";
                     rdfs:range "xsd:string";
                     hydra:required "true"^^xsd:boolean;
+		    schema:defaultValue "IMHOT_201809050000_12_00";
                 ];
         ];
 .    
