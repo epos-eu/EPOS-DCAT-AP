@@ -199,7 +199,7 @@
         dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
         dcat:accessURL <hotvolc.opgc.fr/WP11/WebService/DDSS-049/operation/data-search>;
         dct:conformsTo <hotvolc.opgc.fr/WP11/WebService/DDSS-049>;        
-        dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
+        dct:format "http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE"^^xsd:anyURI;
         schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 .
                 
@@ -222,8 +222,8 @@
     
     <hotvolc.opgc.fr/WP11/WebService/DDSS-049/operation/data-search> a hydra:Operation;
         hydra:method "GET"^^xsd:string;
-        #hydra:returns "text/turtle";
-        hydra:returns "application/json";
+        hydra:returns "text/turtle";
+        #hydra:returns "application/json";
         # hydra:returns "application/xml";
         hydra:property[ a hydra:IriTemplate;
             hydra:template "http://hotvolc.opgc.fr/www/php/data_catalog.php{?date_begin, date_end, bbox, volcano, zone, type, ddss, output, onscreen}"^^xsd:string;
