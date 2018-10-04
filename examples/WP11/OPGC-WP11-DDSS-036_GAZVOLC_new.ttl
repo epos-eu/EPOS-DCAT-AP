@@ -16,6 +16,29 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
+<gazvolc/dataset/036> a dcat:Dataset;
+    dct:title "Melt inclusion and groundmass glass compositions - explosive_effusive";
+    dct:identifier "gazvolc/dataset/036";
+    dct:description "Melt inclusion and groundmass glass compositions - explosive_effusive";
+    adms:identifier [ a adms:Identifier;
+        adms:schemaAgency "DDSS-ID";	
+        skos:notation "WP11-DDSS-036";
+    ];
+    dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
+    dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+    dct:temporal [ a dct:PeriodOfTime;
+        schema:startDate "0001-01-01T00:00:00Z"^^xsd:dateTime;
+        schema:endDate "9999-12-31T23:59:59Z"^^xsd:dateTime;
+    ];
+    #dct:spatial [ a dct:Location;
+        #locn:geometry <geo:-21.249499,55.713684,u=2524,crs=wgs84>;
+    #];
+    dcat:theme <epos:GeochemicalData>;
+    dcat:keyword "chemical data set", "melt inclusion", "volatile elements", "major elements", "trace elements", "groundmass", "host minerals";
+    dcat:contactPoint <http://orcid.org/0000-0002-8485-0154/contactPoint>;
+    dct:publisher <http://isni.org/isni/0000000109416043>;
+    dcat:distribution <gazvolc/dataset/036/distribution/ws>;
+.
 
 <http://orcid.org/0000-0002-8485-0154> a schema:Person;
     schema:identifier [ a schema:PropertyValue;
@@ -197,30 +220,7 @@
         schema:contactType "manager";
 .
 
-<gazvolc/dataset/036> a dcat:Dataset;
-    dct:title "Melt inclusion and groundmass glass compositions - explosive_effusive";
-    dct:identifier "gazvolc/dataset/036";
-    dct:description "Melt inclusion and groundmass glass compositions - explosive_effusive";
-    adms:identifier [ a adms:Identifier;
-        adms:schemaAgency "DDSS-ID";
-        skos:notation "WP11-DDSS-036";
-    ];
-    dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
-    dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
-    dct:temporal [ a dct:PeriodOfTime;
-        schema:startDate "0001-01-01T00:00:00Z"^^xsd:dateTime;
-        schema:endDate "9999-12-31T23:59:59Z"^^xsd:dateTime;
-    ];
-    #dct:spatial [ a dct:Location;
-        #locn:geometry <geo:-21.249499,55.713684,u=2524,crs=wgs84>;
-    #];
-    dcat:theme <epos:GeochemicalData>;
-    dcat:keyword "chemical data set", "melt inclusion", "volatile elements", "major elements", "trace elements", "groundmass", "host minerals";
-    dcat:contactPoint <http://orcid.org/0000-0002-8485-0154/contactPoint>;
-    dct:publisher <http://isni.org/isni/0000000109416043>;
-    dcat:distribution <gazvolc/dataset/036/distribution/ws>;
-.
-    <gazvolc/dataset/036/distribution/ws> a dcat:Distribution;
+<gazvolc/dataset/036/distribution/ws> a dcat:Distribution;
         dct:identifier "gazvolc/dataset/036/distribution/ws";
         dct:title "OPGC-VO distribution of GAZVOLC dataset";
         dct:description "The way to download the gazvolc product";
