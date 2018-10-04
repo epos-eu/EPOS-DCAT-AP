@@ -16,6 +16,34 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
+<https://www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/050> a dcat:Dataset ;
+        dct:identifier "https://www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/050" ;
+        dct:title "InSar Observatory of Indian Ocean - Wrapped Differential Interferograms" ;
+        dct:description "A Wrapped Differential Interferogram made using data from SENTINEL Satellite" ;
+        adms:identifier [ a adms:Identifier;
+            adms:schemaAgency "DDSS-ID";
+            skos:notation "WP11-DDSS-0050";
+        ];
+    dct:type "http://purl.org/dc/dcmitype/Image"^^xsd:anyURI;
+    dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+    dct:temporal [ a dct:PeriodOfTime;
+        schema:startDate "2016-01-14T14:52:44Z"^^xsd:dateTime;
+        schema:endDate "2016-02-19T14:53:07Z"^^xsd:dateTime;
+    ];
+    dct:issued "2017-06-21"^^xsd:dateTime;
+    dct:modified "2017-06-21"^^xsd:dateTime;
+    dct:spatial [ a dct:Location;
+        locn:geometry "POLYGON(55.622471 -21.182913, 55.82473 -21.184441, 55.823513 -21.338009, 55.62104 -21.33647)"^^gsp:wktLiteral;
+    ];
+    dcat:theme <epos:RadarInterferometry>;
+    dcat:keyword "radar", "interferometry", "Reunion", "Piton de la Fournaise", "deformation", "SENTINEL", "COSMOSKYMED", "ALOS-PALSAR";
+    dcat:contactPoint <http://www.researcherid.com/rid/O-8042-2014/contactPoint>;
+    dct:publisher <http://isni.org/isni/0000000109416043>;
+    dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/050/Distribution/DataDownload>;
+    dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/050/Distribution/DataCatalog>;
+.
+
+
 <http://www.researcherid.com/rid/O-8042-2014> a schema:Person ;
     schema:identifier [ a schema:PropertyValue;
         schema:protertyID "RESEARCHID";
@@ -155,34 +183,6 @@
         schema:contactType "manager";
 .
 
-<https://www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/050> a dcat:Dataset ;
-        dct:identifier "https://www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/050" ;
-        dct:title "InSar Observatory of Indian Ocean - Wrapped Differential Interferograms" ;
-        dct:description "A Wrapped Differential Interferogram made using data from SENTINEL Satellite" ;
-        
-	adms:identifier [ a adms:Identifier ;
-            adms:schemaAgency "DDSS-ID" ;
-            skos:notation "WP11-DDSS-0050" ;
-
-        ];
-    dct:type "http://purl.org/dc/dcmitype/Image"^^xsd:anyURI;
-    dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
-    dct:temporal [ a dct:PeriodOfTime;
-        schema:startDate "2016-01-14T14:52:44Z"^^xsd:dateTime;
-        schema:endDate "2016-02-19T14:53:07Z"^^xsd:dateTime;
-    ];
-    dct:issued "2017-06-21"^^xsd:dateTime;
-    dct:modified "2017-06-21"^^xsd:dateTime;
-    dct:spatial [ a dct:Location;
-        locn:geometry "POLYGON(55.622471 -21.182913, 55.82473 -21.184441, 55.823513 -21.338009, 55.62104 -21.33647)"^^gsp:wktLiteral;
-    ];
-    dcat:theme <epos:RadarInterferometry>;
-    dcat:keyword "radar", "interferometry", "Reunion", "Piton de la Fournaise", "deformation", "SENTINEL", "COSMOSKYMED", "ALOS-PALSAR";
-    dcat:contactPoint <http://www.researcherid.com/rid/O-8042-2014/contactPoint>;
-    dct:publisher <http://isni.org/isni/0000000109416043>;
-    dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/050/Distribution/DataDownload>;
-    dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/050/Distribution/DataCatalog>;
-.
 
  <https://www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/050/Distribution/DataDownload> a dcat:Distribution;
         dct:identifier "https://www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/050/Distribution/DataDownload";
