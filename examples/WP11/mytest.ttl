@@ -178,6 +178,34 @@
         dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 .
 
+<hotvolc.opgc.fr/WP11/webservice/DDSS-047> a epos:WebService;
+    schema:identifier "hotvolc.opgc.fr/WP11/webservice/DDSS-047";
+    #schema:description "HOTVOLC is a web-based satellite-data-driven reporting system dedicated to the real-time observation of volcanic products. This application is developed and managed by the Observatoire de Physique du Globe de Clermont-Ferrand (OPGC). It uses on-site automated ingestion of MSG-SEVIRI geostationary satellite data from EUMETSAT primary dissemination protocol using the Digital Video Broadcasting - Satellite 2 (DVB-S2) service. This allows acquisition of High Rate Information Transmission (HRIT) level 1.5 format, corresponding to image data that have been corrected for unwanted radiometric and geometric effects. Images are geolocated, calibrated and radiance linearized. HRIT digital numbers are converted into spectral radiance (in Wm-2.sr-1.μm-1) and then processed through validated algorithm for direct dissemination of ready-to-use products on a full web-GIS interface.This application allows you to interactively browse satellite imagery and associated products for both real-time (RT) and past events.";
+    schema:description "HOTVOLC"     
+    schema:name "HOTVOLC Observing System - EPOS - WP11/DDSS-047";
+    schema:datePublished "2015-08-24T12:00:00Z"^^xsd:dateTime;
+    schema:dateModified "2018-07-12T16:00:00Z"^^xsd:dateTime;
+    schema:provider <http://isni.org/isni/0000000109416043>;
+    schema:keywords "WebGIS", "Real Time", "Remote Sensing", "Satellite", "Infrared", "Volcanology", "Ash", "SO2", "Atmospheric Monitoring";
+    #hydra:supportedOperation <hotvolc.opgc.fr/WP11/webservice/DDSS-047/operation/data-download>;
+    #hydra:supportedOperation <hotvolc.opgc.fr/WP11/webservice/DDSS-047/operation/data-catalog>;
+    dcat:theme <epos:Atmosphericmonitoring>;
+    schema:publication <http://dx.doi.org/10.1144/SP426.31>;
+    schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+    dct:conformsTo <hotvolc.opgc.fr/WP11/DDSS-047/APIDocumentation>;
+    dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
+.
+    <http://orcid.org/0000-0001-8720-7300/contactPoint> a schema:ContactPoint;
+        schema:email "m.gouhier@opgc.fr";
+        schema:availableLanguage "en" ;
+        schema:contactType "manager" ;
+.
+    <hotvolc.opgc.fr/WP11/DDSS-047/APIDocumentation> a hydra:APIDocumentation;
+        hydra:title "HOTVOLC Observing System - API Documentation";
+        hydra:description "A documentation describing how to use HOTVOLC API, to find and download data";
+        hydra:entrypoint "http://hotvolc.opgc.fr/www/php/hotvolc_api.php"^^xsd:anyURI;
+.
+
     <epos:VolcanoObservations> a skos:ConceptScheme;
         dct:title "Volcano-Observations";
         dct:description "It contains the concepts of Volcanological Observations";
