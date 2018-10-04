@@ -138,6 +138,7 @@
     schema:url "http://cnrs.fr"^^xsd:anyURI;
     schema:telephone "+33144964000";
 .
+#--------------------------------------------------------------------------
 
 <WP11/dataset/DDSS047> a dcat:Dataset;
     dct:title "Volcanic ash"^^xsd:string;
@@ -166,7 +167,7 @@
     dcat:distribution <WP11/dataset/047/distribution/DataDownload>;
 .
 
-    <WP11/dataset/047/distribution/DataDownload> a dcat:Distribution;
+<WP11/dataset/047/distribution/DataDownload> a dcat:Distribution;
         dct:identifier "WP11/dataset/047/distribution/DataDownload";
         dct:description "The way to download the HOTVOLC products";
         dct:title "HOTVOLC product: volcanic ash";
@@ -205,16 +206,18 @@
         hydra:description "A documentation describing how to use HOTVOLC API, to find and download data";
         hydra:entrypoint "http://hotvolc.opgc.fr/www/php/hotvolc_api.php"^^xsd:anyURI;
 .
+#.......................................................................
 
     <hotvolc.opgc.fr/WP11/webservice/DDSS-047/operation/data-download> a hydra:Operation;
-        hydra:method "GET"^^xsd:string;
+        hydra:method "GET";
         hydra:returns "application/zip";
-        hydra:IriTemplate[ a hydra:IriTemplate;
+        hydra:IriTemplate [ a hydra:IriTemplate;
             hydra:template "http://hotvolc.opgc.fr/www/php/data_download.php{?uri}"^^xsd:string;
-                hydra:mapping[ a hydra:IriTemplateMapping;
+            hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "uri"^^xsd:string;
-                    rdfs:label "The unique identifier of an HOTVOLC product, use data_catalog.php to find data uri";
-                    rdfs:range "xsd:string";
+                    #rdf:label "The unique identifier of an HOTVOLC product, use data_catalog.php to find data uri";
+                    rdfs:label "The unique identifier";
+		    rdfs:range "xsd:string";
 		    schema:defaultValue "IMASH_201809050000_12_00";
                     hydra:required "true"^^xsd:boolean;
                 ];
