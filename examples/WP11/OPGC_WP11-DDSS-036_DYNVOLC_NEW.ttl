@@ -257,7 +257,7 @@
         hydra:returns "application/zip";
         # hydra:returns "application/json";
         hydra:property [ a hydra:IriTemplate;
-            hydra:template "http://opgc.fr/vobs/rest2/req.php/dynvolc/data/id/{uri}(/{format})"^^xsd:string;
+            hydra:template "http://opgc.fr/vobs/rest2/req.php/dynvolc/data/id/{uri}/{format}"^^xsd:string;
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "uri"^^xsd:integer;
                     rdfs:label "The data id number";
