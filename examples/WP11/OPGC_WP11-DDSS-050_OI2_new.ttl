@@ -1,15 +1,15 @@
 @prefix adms: <http://www.w3.org/nd/adms#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .  
-@prefix dc: <http://purl.org/dc/elements/1.1/> .  
-@prefix dct: <http://purl.org/dc/terms/> .  
-@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .  
-@prefix hydra: <http://www.w3.org/ns/hydra/core#> .  
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .    
-@prefix schema: <http://schema.org/> .  
-@prefix dcat: <http://www.w3.org/ns/dcat#> .  
-@prefix cnt: <http://www.w3.org/2011/content#> .   
-@prefix locn: <http://www.w3.org/ns/locn#> . 
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix http: <http://www.w3.org/2006/http#> .
@@ -55,8 +55,8 @@
     schema:telephone "+33473346729";
     schema:url "http://orcid.org/0000-0002-4518-3328"^^xsd:anyURI;
     schema:qualifications "Deputy Director of OPGC";
-    schema:affiliation <http://isni.org/isni/0000000109416043>; 
-    schema:contactPoint <http://orcid.org/0000-0002-4518-3328/scientificContact>; 
+    schema:affiliation <http://isni.org/isni/0000000109416043>;
+    schema:contactPoint <http://orcid.org/0000-0002-4518-3328/scientificContact>;
 .
 
 <http://www.researcherid.com/rid/O-8042-2014/contactPoint> a schema:ContactPoint;
@@ -119,7 +119,7 @@
         schema:email "p.labazuy@opgc.fr";
         schema:availableLanguage "en", "fr" ;
 	schema:contactType "scientificContact" ;
-. 
+.
     <http://orcid.org/0000-0002-0108-5486/legalContact> a schema:ContactPoint;
         schema:email "n.huret@opgc.fr";
         schema:availableLanguage "en", "fr" ;
@@ -214,11 +214,11 @@
     dct:conformsTo <wwwobs.univ-bpclermont.fr/casoar/APIDocumentation>;
     dcat:contactPoint <http://www.researcherid.com/rid/O-8042-2014/contactPoint>;
 .
-    
+
  <wwwobs.univ-bpclermont.fr/casoar/data-download> a hydra:Operation;
         hydra:method "GET";
         hydra:returns "application/zip";
-        
+
 	hydra:property [ a hydra:IriTemplate;
             hydra:template "https://wwwobs.univ-bpclermont.fr/casoar/export/download.php{?type, uri}"^^xsd:string;
                 hydra:mapping [ a hydra:IriTemplateMapping;
@@ -306,7 +306,7 @@
     dct:conformsTo <opgc.fr/vobs/APIDocumentation>;
     dcat:contactPoint <http://www.researcherid.com/rid/O-8042-2014/contactPoint>;
 .
-    
+
 
     <opgc.fr/vobs/oi2/WP11/DDSS-050/data-catalog> a hydra:Operation;
         hydra:method "GET"^^xsd:string;
@@ -314,7 +314,7 @@
         # hydra:returns "application/xml";
         # hydra:returns "application/json";
         hydra:property [ a hydra:IriTemplate;
-            hydra:template "http://opgc.fr/vobs/rest2/req.php/oi2{?sat, start_date, stop_date, mas_orb_min, mas_orb_max, sla_orb_min, sla_orb_max, mas_pol, sla_pol, mode, ah_min, ah_max, swath, track, beam, output, onscreen}"^^xsd:string; 
+            hydra:template "http://opgc.fr/vobs/rest2/req.php/oi2{?sat, start_date, stop_date, mas_orb_min, mas_orb_max, sla_orb_min, sla_orb_max, mas_pol, sla_pol, mode, ah_min, ah_max, swath, track, beam, output, onscreen}"^^xsd:string;
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "sat"^^xsd:string;
                     rdfs:label "Satellite ID to limit the query to interferogram produce from a specific satellite data";
@@ -467,14 +467,12 @@
         ];
 .
 
-
-
 <epos:VolcanoObservations> a skos:ConceptScheme;
         dct:title "Volcano-Observations";
-        dct:description "It contains the concept of Volcanological observations";
+        dct:description "It contains the concept of Volcanological observations" ;
 .
 
-<epos:RadarInterferometry> a skos:Concept;
+<epos:RadarInterferometry> a skos:Concept ;
         skos:inScheme <epos:VolcanoObservations>;
         skos:prefLabel "Radar Interferometry";
 	skos:definition "Radar Interferometry";
