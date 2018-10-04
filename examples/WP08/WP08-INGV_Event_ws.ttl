@@ -111,7 +111,7 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/034/INGV> a dcat:Dataset;
 	dct:identifier https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/034/INGV";
-	dct:description "Information about the earthquakes (events) occurred in the Alta Val Tiberina (Central Italy) Near Fault Observatory Area.";
+	dct:description "Information about the earthquakes events occurred in Italy Area.";
 	dct:title "INGV FDSN Event Dataset";
 		adms:identifier [ a adms:Identifier;
 		adms:schemaAgency "DDSS-ID";
@@ -132,7 +132,7 @@
         #schema:endDate "YYYY-MM-DDThh:mm:ss"^^xsd:dateTime ;
     ];
 	dcat:theme  <epos:EarthquakeParameters>;
-	dcat:keyword "earthquake", "event", "rocks", "seismic source", "seismic waves propagation", "seismology", "NFO", "Near Fault Observatory", "TABOO", "FRIDGE";
+	dcat:keyword "earthquake", "event", "rocks", "seismic source", "seismic waves propagation", "seismology", "INGV", ;
 	dcat:contactPoint <http://orcid.org/0000-0002-1399-0379/contactPoint>;
 	dct:publisher <PIC:999472675>;
 	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/034/INGV/Distribution/001>;
@@ -150,15 +150,15 @@
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/INGV/Event/WebService/001> a epos:WebService;
-	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/Event/WebService/001";
-	schema:description "Information about the earthquakes (events) occurred in the Alta Val Tiberina (Central Italy) Near Fault Observatory Area.";
-	schema:name "TABOO FDSN Event Web Service";
+	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/INGV/Event/WebService/001";
+	schema:description "Information about the earthquakes events occurred in  Italy Area.";
+	schema:name "INGV FDSN Event Web Service";
 	schema:datePublished "2017-06-08T12:00:00Z"^^xsd:dateTime;
 	schema:dateModified "2017-06-08T12:00:00Z"^^xsd:dateTime;
 	schema:provider <PIC:999472675>;
-	schema:keywords "earthquake", "event", "rocks", "seismic source", "seismic waves propagation", "seismology", "NFO", "Near Fault Observatory", "TABOO", "FRIDGE";
+	schema:keywords "earthquake", "event", "rocks", "seismic source", "seismic waves propagation", "seismology", "INGV";
 	# hydra:entrypoint "application.wadl"^^xsd:anyURI; 
-	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/Event/WebService/001/Operation/001>;
+	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/INGV/Event/WebService/001/Operation/001>;
 	dcat:theme <epos:Crustalvelocityparameters>;
 	dcat:contactPoint <http://orcid.org/0000-0002-8608-4289/contactPoint>;
 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
@@ -168,7 +168,7 @@
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/xml";
 	hydra:property[ a hydra:IriTemplate;
-		hydra:template "http://webservices.ingv.it/fdsnws/event_taboo/1/query{?starttime, endtime, minlatitude, maxlatitude, minlongitude, maxlongitude, mindepth, maxdepth, minmagnitude, maxmagnitude, includeallorigins, includeallmagnitudes, includearrivals, eventid, limit, offset, orderby, contributor, catalog, updatedafter, format, nodata, latitude, longitude, minradius, maxradius}"^^xsd:string;
+		hydra:template "http://webservices.ingv.it/fdsnws/event/1/query{?starttime, endtime, minlatitude, maxlatitude, minlongitude, maxlongitude, mindepth, maxdepth, minmagnitude, maxmagnitude, includeallorigins, includeallmagnitudes, includearrivals, eventid, limit, offset, orderby, contributor, catalog, updatedafter, format, nodata, latitude, longitude, minradius, maxradius}"^^xsd:string;
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "starttime"^^xsd:string;
 			rdfs:range "xsd:dateTime";
