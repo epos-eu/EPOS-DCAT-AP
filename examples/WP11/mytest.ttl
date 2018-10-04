@@ -139,3 +139,95 @@
     schema:telephone "+33144964000";
 .
 
+<WP11/dataset/DDSS047> a dcat:Dataset;
+    dct:title "Volcanic ash"^^xsd:string;
+    dct:identifier "WP11/dataset/DDSS047";    
+    dct:description "HOTVOLC product: volcanic ash ";
+    adms:identifier [ a adms:Identifier;
+        adms:schemaAgency "DDSS-ID";
+        skos:notation "WP11-DDSS-047"
+    ];
+    dct:type "http://purl.org/dc/dcmitype/Image"^^xsd:anyURI;
+    dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+    dct:temporal [ a dct:PeriodOfTime;
+        schema:startDate "2010-01-01T00:00:00Z"^^xsd:dateTime;
+        #schema:endDate "2018-09-05T00:00:00Z"^^xsd:dateTime;
+    ];
+    dct:issued "2018-09-05T00:00:00Z"^^xsd:dateTime;
+    dct:modified "2018-09-05T02:15:17Z"^^xsd:dateTime;
+    dct:spatial [ a dct:Location;
+        locn:geometry "POLYGON(-5 51.5, 8.25 51.5, 8.25 42, -5 42)"^^gsp:wktLiteral;
+    ];
+    dcat:theme <epos:Atmosphericmonitoring>;
+    dcat:keyword "volcanic ash", "brightness temperature difference", "geotiff", "atmospheric monitoring";
+    dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
+    dct:publisher <http://isni.org/isni/0000000109416043>;
+    dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+    dcat:distribution <WP11/dataset/047/distribution/DataDownload>;
+.
+    <WP11/dataset/047/distribution/DataDownload> a dcat:Distribution;
+        dct:identifier "WP11/dataset/047/distribution/DataDownload";
+        dct:description "The way to download the HOTVOLC products";
+        dct:title "HOTVOLC product: volcanic ash";
+        dct:issued "2018-09-05T00:00:00Z"^^xsd:dateTime;
+        dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+        dcat:accessURL <hotvolc.opgc.fr/WP11/webservice/DDSS-047/operation/data-download>;
+        dct:conformsTo <hotvolc.opgc.fr/WP11/webservice/DDSS-047>;        
+        dct:format "http://publications.europa.eu/resource/authority/file-type/ZIP"^^xsd:anyURI;
+        dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+.
+
+<hotvolc.opgc.fr/WP11/webservice/DDSS-047> a epos:WebService;
+    schema:identifier "hotvolc.opgc.fr/WP11/webservice/DDSS-047";
+    schema:description "HOTVOLC is a web-based satellite-data-driven reporting system dedicated to the real-time observation of volcanic products. This application is developed and managed by the Observatoire de Physique du Globe de Clermont-Ferrand (OPGC). It uses on-site automated ingestion of MSG-SEVIRI geostationary satellite data from EUMETSAT primary dissemination protocol using the Digital Video Broadcasting - Satellite 2 (DVB-S2) service. This allows acquisition of High Rate Information Transmission (HRIT) level 1.5 format, corresponding to image data that have been corrected for unwanted radiometric and geometric effects. Images are geolocated, calibrated and radiance linearized. HRIT digital numbers are converted into spectral radiance (in Wm-2.sr-1.μm-1) and then processed through validated algorithm for direct dissemination of ready-to-use products on a full web-GIS interface.This application allows you to interactively browse satellite imagery and associated products for both real-time (RT) and past events.";
+    schema:name "HOTVOLC Observing System - EPOS - WP11/DDSS-047";
+    schema:datePublished "2015-08-24T12:00:00Z"^^xsd:dateTime;
+    schema:dateModified "2018-07-12T16:00:00Z"^^xsd:dateTime;
+    schema:provider <http://isni.org/isni/0000000109416043>;
+    schema:keywords "WebGIS", "Real Time", "Remote Sensing", "Satellite", "Infrared", "Volcanology", "Ash", "SO2", "Atmospheric Monitoring";
+    hydra:supportedOperation <hotvolc.opgc.fr/WP11/webservice/DDSS-047/operation/data-download>;
+    hydra:supportedOperation <hotvolc.opgc.fr/WP11/webservice/DDSS-047/operation/data-catalog>;
+    dcat:theme <epos:Atmosphericmonitoring>;
+    schema:publication <http://dx.doi.org/10.1144/SP426.31>;
+    schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+    dct:conformsTo <hotvolc.opgc.fr/WP11/DDSS-047/APIDocumentation>;
+    dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
+.
+    <http://orcid.org/0000-0001-8720-7300/contactPoint> a schema:ContactPoint;
+        schema:email "m.gouhier@opgc.fr";
+        schema:availableLanguage "en" ;
+        schema:contactType "manager" ;
+.
+
+    <hotvolc.opgc.fr/WP11/webservice/DDSS-047/operation/data-download> a hydra:Operation;
+        hydra:method "GET"^^xsd:string;
+        hydra:returns "application/zip";
+        hydra:IriTemplate[ a hydra:IriTemplate;
+            hydra:template "http://hotvolc.opgc.fr/www/php/data_download.php{?uri}"^^xsd:string;
+                hydra:mapping[ a hydra:IriTemplateMapping;
+                    hydra:variable "uri"^^xsd:string;
+                    rdfs:label "The unique identifier of an HOTVOLC product, use data_catalog.php to find data uri";
+                    rdfs:range "xsd:string";
+		    schema:defaultValue "IMASH_201809050000_12_00";
+                    hydra:required "true"^^xsd:boolean;
+                ];
+        ];
+. 
+    <epos:VolcanoObservations> a skos:ConceptScheme;
+        dct:title "Volcano-Observations";
+        dct:description "It contains the concepts of Volcanological Observations";
+.
+    <epos:Atmosphericmonitoring> a skos:Concept;
+        skos:inScheme <epos:VolcanoObservations>;
+        skos:prefLabel "Atmospheric monitoring";
+.
+    <epos:Meteorology> a skos:ConceptScheme;
+        dct:title "Meteorology";
+        dct:description "It contains the concepts of Meteorology";
+.
+    
+    <epos:Weatherforecast> a skos:Concept;
+        skos:inScheme <epos:Meteorology>;
+        skos:prefLabel "Weather forecast";
+.
+
