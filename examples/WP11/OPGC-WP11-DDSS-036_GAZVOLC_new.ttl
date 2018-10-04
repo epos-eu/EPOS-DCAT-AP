@@ -1,38 +1,35 @@
-@prefix adms: <http://www.w3.org/nd/adms#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .  
-@prefix dc: <http://purl.org/dc/elements/1.1/> .  
-@prefix dct: <http://purl.org/dc/terms/> .  
-@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .  
-@prefix hydra: <http://www.w3.org/ns/hydra/core#> .  
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .    
-@prefix schema: <http://schema.org/> .  
-@prefix dcat: <http://www.w3.org/ns/dcat#> .  
-@prefix cnt: <http://www.w3.org/2011/content#> .   
-@prefix locn: <http://www.w3.org/ns/locn#> . 
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix http: <http://www.w3.org/2006/http#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
-<gazvolc/dataset/036> a dcat:Dataset;
-    dct:title "Melt inclusion and groundmass glass compositions - explosive_effusive";
-    dct:identifier "gazvolc/dataset/036";
-    dct:description "Melt inclusion and groundmass glass compositions - explosive_effusive";
-    adms:identifier [ a adms:Identifier;
-        adms:schemaAgency "DDSS-ID";	
-        skos:notation "WP11-DDSS-036";
-    ];
+<gazvolc/dataset/036> a dcat:Dataset ;
+        dct:identifier "gazvolc/dataset/036" ;
+        dct:title "Melt inclusion and groundmass glass compositions - explosive_effusive" ;
+        dct:description "Melt inclusion and groundmass glass compositions - explosive_effusive" ;
+        adms:identifier [ a adms:Identifier;
+            adms:schemaAgency "DDSS-ID";
+            skos:notation "WP11-DDSS-036";
+        ];
     dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
     dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
     dct:temporal [ a dct:PeriodOfTime;
         schema:startDate "0001-01-01T00:00:00Z"^^xsd:dateTime;
         schema:endDate "9999-12-31T23:59:59Z"^^xsd:dateTime;
     ];
-    #dct:spatial [ a dct:Location;
-        #locn:geometry <geo:-21.249499,55.713684,u=2524,crs=wgs84>;
-    #];
     dcat:theme <epos:GeochemicalData>;
     dcat:keyword "chemical data set", "melt inclusion", "volatile elements", "major elements", "trace elements", "groundmass", "host minerals";
     dcat:contactPoint <http://orcid.org/0000-0002-8485-0154/contactPoint>;
