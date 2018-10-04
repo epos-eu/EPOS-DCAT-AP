@@ -139,32 +139,47 @@
     schema:telephone "+33144964000";
 .
 #--------------------------------------------------------------------------
+<WP11/dataset/DDSS047> a dcat:Dataset ;
+        dct:identifier "WP11/dataset/DDSS047" ;
+        dct:title "volcanic " ;
+        dct:description "volcanic" ;
+        adms:identifier [ a adms:Identifier ;
+            adms:schemaAgency "DDSS-ID" ;
+            skos:notation "WP11-DDSS-047" ;
 
-<WP11/dataset/DDSS047> a dcat:Dataset;
-    dct:title "Volcanic ash"^^xsd:string;
-    dct:identifier "WP11/dataset/DDSS047";    
-    dct:description "HOTVOLC product: volcanic ash ";
-    adms:identifier [ a adms:Identifier;
-        adms:schemaAgency "DDSS-ID";
-        skos:notation "WP11-DDSS-047"
-    ];
-    dct:type "http://purl.org/dc/dcmitype/Image"^^xsd:anyURI;
-    dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
-    dct:temporal [ a dct:PeriodOfTime;
-        schema:startDate "2010-01-01T00:00:00Z"^^xsd:dateTime;
+        ];
+        dct:created "2010-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime;
+        owl:versionInfo "1.0.0";
+        dct:publisher <http://isni.org/isni/0000000109416043>;
+        dcat:distribution <WP11/dataset/047/distribution/DataDownload>;
+
+#<WP11/dataset/DDSS047> a dcat:Dataset;
+#    dct:title "Volcanic ash"^^xsd:string;
+#    dct:identifier "WP11/dataset/DDSS047";    
+#    dct:description "HOTVOLC product: volcanic ash ";
+#    adms:identifier [ a adms:Identifier;
+#        adms:schemaAgency "DDSS-ID";
+#        skos:notation "WP11-DDSS-047"
+#    ];
+#    dct:type "http://purl.org/dc/dcmitype/Image"^^xsd:anyURI;
+#    dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+#    dct:temporal [ a dct:PeriodOfTime;
+#        schema:startDate "2010-01-01T00:00:00Z"^^xsd:dateTime;
         #schema:endDate "2018-09-05T00:00:00Z"^^xsd:dateTime;
-    ];
-    dct:issued "2018-09-05T00:00:00Z"^^xsd:dateTime;
-    dct:modified "2018-09-05T02:15:17Z"^^xsd:dateTime;
-    dct:spatial [ a dct:Location;
-        locn:geometry "POLYGON(-5 51.5, 8.25 51.5, 8.25 42, -5 42)"^^gsp:wktLiteral;
-    ];
-    dcat:theme <epos:Atmosphericmonitoring>;
-    dcat:keyword "volcanic ash", "brightness temperature difference", "geotiff", "atmospheric monitoring";
-    dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
-    dct:publisher <http://isni.org/isni/0000000109416043>;
-    dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
-    dcat:distribution <WP11/dataset/047/distribution/DataDownload>;
+#    ];
+#    dct:issued "2018-09-05T00:00:00Z"^^xsd:dateTime;
+#    dct:modified "2018-09-05T02:15:17Z"^^xsd:dateTime;
+#    dct:spatial [ a dct:Location;
+#        locn:geometry "POLYGON(-5 51.5, 8.25 51.5, 8.25 42, -5 42)"^^gsp:wktLiteral;
+#    ];
+#    dcat:theme <epos:Atmosphericmonitoring>;
+#    dcat:keyword "volcanic ash", "brightness temperature difference", "geotiff", "atmospheric monitoring";
+#    dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
+#    dct:publisher <http://isni.org/isni/0000000109416043>;
+#    dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+#    dcat:distribution <WP11/dataset/047/distribution/DataDownload>;
 .
 
 <WP11/dataset/047/distribution/DataDownload> a dcat:Distribution;
@@ -216,10 +231,10 @@
             hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "uri"^^xsd:string;
                     #rdf:label "The unique identifier of an HOTVOLC product, use data_catalog.php to find data uri";
-                    rdfs:label "The unique identifier";
+		    rdfs:label "The unique identifier";
 		    rdfs:range "xsd:string";
 		    schema:defaultValue "IMASH_201809050000_12_00";
-                    hydra:required "true"^^xsd:boolean;
+		    hydra:required "true"^^xsd:boolean;
                 ];
         ];
 . 
