@@ -223,7 +223,7 @@
             hydra:template "https://wwwobs.univ-bpclermont.fr/casoar/export/download.php{?type, uri}"^^xsd:string;
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "type"^^xsd:string;
-                    rdf:label "The OI2 product type";
+                    rdfs:label "The OI2 product type";
                     http:paramValue "SentInterf";
                     http:paramValue "AlosInterf";
                     http:paramValue "CSKInterf";
@@ -233,7 +233,7 @@
                 ];
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:varaible "uri"^^xsd:string;
-                    rdf:label "The unique identifier of the data";
+                    rdfs:label "The unique identifier of the data";
                     rdfs:range "xsd:string";
                     hydra:required "true"^^xsd:boolean;
 		    schema:defaultValue "fournaise_S1_S6_AR_09491_10016_ext7.5m";
@@ -248,7 +248,7 @@
             hydra:template "https://wwwobs.univ-bpclermont.fr/casoar/visu.php{?Type, Folder, Data}"^^xsd:string;
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "Type"^^xsd:string;
-                    rdf:label "The OI2 product type";
+                    rdfs:label "The OI2 product type";
                     http:paramValue "SentInterf";
                     http:paramValue "AlosInterf";
                     http:paramValue "CSKInterf";
@@ -257,7 +257,7 @@
                 ];
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "Folder"^^xsd:string;
-                    rdf:label "The ID of the project to which the data are related";
+                    rdfs:label "The ID of the project to which the data are related";
                     http:paramValue "OI2_REU";
                     schema:defaultValue "OI2_REU"^^xsd:string;
                     rdfs:range "xsd:string";
@@ -265,7 +265,7 @@
                 ];
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:varaible "Data"^^xsd:string;
-                    rdf:label "The unique identifier of the data";
+                    rdfs:label "The unique identifier of the data";
                     rdfs:range "xsd:string";
                     hydra:required "true"^^xsd:boolean;
                 ];
@@ -317,7 +317,7 @@
             hydra:template "http://opgc.fr/vobs/rest2/req.php/oi2{?sat, start_date, stop_date, mas_orb_min, mas_orb_max, sla_orb_min, sla_orb_max, mas_pol, sla_pol, mode, ah_min, ah_max, swath, track, beam, output, onscreen}"^^xsd:string; 
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "sat"^^xsd:string;
-                    rdf:label "Satellite ID to limit the query to interferogram produce from a specific satellite data";
+                    rdfs:label "Satellite ID to limit the query to interferogram produce from a specific satellite data";
                     http:paramValue "SENTINEL";
                     http:paramValue "ALOS";
                     http:paramValue "CSK";
@@ -326,7 +326,7 @@
                 ];
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "start_date"^^xsd:datetime;
-                    rdf:label "Starting datetime of the time interval query (format YYYY-MM-DDThh:mm:ss:Z)";
+                    rdfs:label "Starting datetime of the time interval query (format YYYY-MM-DDThh:mm:ss:Z)";
                     rdfs:range "xsd:dateTime";
                     schema:minValue "1990-01-01T00:00:00Z"^^xsd:dateTime;
                     schema:maxValue "9999-12-31T23:59:59Z"^^xsd:dateTime;
@@ -334,7 +334,7 @@
                 ];
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "stop_date"^^xsd:datetime;
-                    rdf:label "Ending datetime of the time interval query (format YYYY-MM-DDThh:mm:ssZ)";
+                    rdfs:label "Ending datetime of the time interval query (format YYYY-MM-DDThh:mm:ssZ)";
                     rdfs:range "xsd:dateTime";
                     schema:minValue "1990-01-01T00:00:00Z"^^xsd:dateTime;
                     schema:maxValue "9999-12-31T23:59:59Z"^^xsd:dateTime;
@@ -342,7 +342,7 @@
                 ];
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "mas_orb_min"^^xsd:integer;
-                    rdf:label "The minimum satellite orbit number allowed for the master scene";
+                    rdfs:label "The minimum satellite orbit number allowed for the master scene";
                     rdfs:range "xsd:integer";
                     schema:minValue "0"^^xsd:integer;
                     schema:maxValue "99999"^^xsd:integer;
@@ -350,7 +350,7 @@
                 ];
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "mas_orb_max"^^xsd:integer;
-                    rdf:label "The maximum satellite orbit number allowed for the master scene";
+                    rdfs:label "The maximum satellite orbit number allowed for the master scene";
                     rdfs:range "xsd:integer";
                     schema:minValue "0"^^xsd:integer;
                     schema:maxValue "99999"^^xsd:integer;
@@ -358,7 +358,7 @@
                 ];
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "sla_orb_min"^^xsd:integer;
-                    rdf:label "The minimum satellite orbit number allowed for the slave scene";
+                    rdfs:label "The minimum satellite orbit number allowed for the slave scene";
                     rdfs:range "xsd:integer";
                     schema:minValue "0"^^xsd:integer;
                     schema:maxValue "99999"^^xsd:integer;
@@ -366,7 +366,7 @@
                 ];
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "sla_orb_max"^^xsd:integer;
-                    rdf:label "The maximum satellite orbit number allowed for the slave scene";
+                    rdfs:label "The maximum satellite orbit number allowed for the slave scene";
                     rdfs:range "xsd:integer";
                     schema:minValue "0"^^xsd:integer;
                     schema:maxValue "99999"^^xsd:integer;
@@ -374,7 +374,7 @@
                 ];
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "mas_pol"^^xsd:string;
-                    rdf:label "The polarisation type of the master scene";
+                    rdfs:label "The polarisation type of the master scene";
                     http:paramValue "HH";
                     http:paramValue "HV";
                     http:paramValue "VH";
@@ -384,7 +384,7 @@
                 ];
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "sla_pol"^^xsd:string;
-                    rdf:label "The polarisation type of the slave scene";
+                    rdfs:label "The polarisation type of the slave scene";
                     http:paramValue "HH";
                     http:paramValue "HV";
                     http:paramValue "VH";
@@ -394,7 +394,7 @@
                 ];
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "mode"^^xsd:string;
-                    rdf:label "The acquisition orbit direction";
+                    rdfs:label "The acquisition orbit direction";
                     http:paramValue "Asc.";
                     http:paramValue "Des.";
                     rdfs:range "xsd:string";
@@ -402,7 +402,7 @@
                 ];
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "ah_min"^^xsd:float;
-                    rdf:label "The minium ambiguity height allowed";
+                    rdfs:label "The minium ambiguity height allowed";
                     rdfs:range "xsd:float";
                     schema:minValue "-99999.0"^^xsd:float;
                     schema:maxValue "99999.0"^^xsd:float;
@@ -410,7 +410,7 @@
                 ];
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "ah_max"^^xsd:float;
-                    rdf:label "The maximum ambiguity height allowed";
+                    rdfs:label "The maximum ambiguity height allowed";
                     rdfs:range "xsd:float";
                     schema:minValue "-99999.0"^^xsd:float;
                     schema:maxValue "99999.0"^^xsd:float;
@@ -418,7 +418,7 @@
                 ];
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "swath"^^xsd:string;
-                    rdf:label "Limit the query of Sentinel data to those acquired from a specific Swath";
+                    rdfs:label "Limit the query of Sentinel data to those acquired from a specific Swath";
                     http:paramValue "S4";
                     http:paramValue "S6";
                     rdfs:range "xsd:string";
@@ -426,7 +426,7 @@
                 ];
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "track"^^xsd:integer;
-                    rdf:label "Limit the query of Alos-Palsar data to those acquired from a specific Track";
+                    rdfs:label "Limit the query of Alos-Palsar data to those acquired from a specific Track";
                     http:paramValue "66";
                     http:paramValue "162";
                     http:paramValue "539";
@@ -437,7 +437,7 @@
                 ];
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "beam"^^xsd:string;
-                    rdf:label "Limit the query of CosmoSkymed data to those acquired from a specific Beam";
+                    rdfs:label "Limit the query of CosmoSkymed data to those acquired from a specific Beam";
                     http:paramValue "H4-05";
                     http:paramValue "H4-09";
                     http:paramValue "H4-15";
@@ -447,7 +447,7 @@
                 ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
                         hydra:variable "output"^^xsd:string;
-                        rdf:label "The format of the query output";
+                        rdfs:label "The format of the query output";
                         http:paramValue "JSON";
                         http:paramValue "XML";
                         http:paramValue "TURTLE-RDF-EPOS-DCAT-AP";
@@ -457,7 +457,7 @@
                     ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "onscreen"^^xsd:boolean;
-                    rdf:label "Display output on screen or as downloadable file ?";
+                    rdfs:label "Display output on screen or as downloadable file ?";
                     http:paramValue "true"^^xsd:boolean;
                     http:paramValue "false"^^xsd:boolean;
                     schema:defaultValue "true"^^xsd:boolean;
