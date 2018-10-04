@@ -172,7 +172,7 @@
         dct:title "HOTVOLC product: volcanic ash";
         dct:issued "2018-09-05T00:00:00Z"^^xsd:dateTime;
         dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-        #dcat:accessURL <hotvolc.opgc.fr/WP11/webservice/DDSS-047/operation/data-download>;
+        dcat:accessURL <hotvolc.opgc.fr/WP11/webservice/DDSS-047/operation/data-download>;
         dct:conformsTo <hotvolc.opgc.fr/WP11/webservice/DDSS-047>;        
         dct:format "http://publications.europa.eu/resource/authority/file-type/ZIP"^^xsd:anyURI;
         dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
@@ -187,7 +187,7 @@
     schema:dateModified "2018-07-12T16:00:00Z"^^xsd:dateTime;
     schema:provider <http://isni.org/isni/0000000109416043>;
     schema:keywords "WebGIS", "Real Time", "Remote Sensing", "Satellite", "Infrared", "Volcanology", "Ash", "SO2", "Atmospheric Monitoring";
-    #hydra:supportedOperation <hotvolc.opgc.fr/WP11/webservice/DDSS-047/operation/data-download>;
+    hydra:supportedOperation <hotvolc.opgc.fr/WP11/webservice/DDSS-047/operation/data-download>;
     #hydra:supportedOperation <hotvolc.opgc.fr/WP11/webservice/DDSS-047/operation/data-catalog>;
     dcat:theme <epos:Atmosphericmonitoring>;
     schema:publication <http://dx.doi.org/10.1144/SP426.31>;
@@ -206,6 +206,20 @@
         hydra:entrypoint "http://hotvolc.opgc.fr/www/php/hotvolc_api.php"^^xsd:anyURI;
 .
 
+    <hotvolc.opgc.fr/WP11/webservice/DDSS-047/operation/data-download> a hydra:Operation;
+        hydra:method "GET"^^xsd:string;
+        hydra:returns "application/zip";
+        hydra:IriTemplate[ a hydra:IriTemplate;
+            hydra:template "http://hotvolc.opgc.fr/www/php/data_download.php{?uri}"^^xsd:string;
+                hydra:mapping[ a hydra:IriTemplateMapping;
+                    hydra:variable "uri"^^xsd:string;
+                    rdfs:label "The unique identifier of an HOTVOLC product, use data_catalog.php to find data uri";
+                    rdfs:range "xsd:string";
+		    schema:defaultValue "IMASH_201809050000_12_00";
+                    hydra:required "true"^^xsd:boolean;
+                ];
+        ];
+. 
     <epos:VolcanoObservations> a skos:ConceptScheme;
         dct:title "Volcano-Observations";
         dct:description "It contains the concepts of Volcanological Observations";
