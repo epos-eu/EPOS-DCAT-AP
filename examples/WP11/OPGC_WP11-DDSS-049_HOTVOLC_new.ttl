@@ -1,20 +1,50 @@
-@prefix adms: <http://www.w3.org/nd/adms#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .  
-@prefix dc: <http://purl.org/dc/elements/1.1/> .  
-@prefix dct: <http://purl.org/dc/terms/> .  
-@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .  
-@prefix hydra: <http://www.w3.org/ns/hydra/core#> .  
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .    
-@prefix schema: <http://schema.org/> .  
-@prefix dcat: <http://www.w3.org/ns/dcat#> .  
-@prefix cnt: <http://www.w3.org/2011/content#> .   
-@prefix locn: <http://www.w3.org/ns/locn#> . 
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix http: <http://www.w3.org/2006/http#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+
+<WP11/Dataset/HOTVOLC/DDSS-049> a dcat:Dataset ;
+        dct:identifier "WP11/Dataset/HOTVOLC/DDSS-049" ;
+        dct:title "HOTVOLC product: thermal anomalies" ;
+        dct:description "HOTVOLC product: thermal anomalies" ;
+        adms:identifier [ a adms:Identifier;
+            adms:schemaAgency "DDSS-ID";
+            skos:notation "WP11-DDSS-049";
+        ];
+        dct:created "2010-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime;
+        owl:versionInfo "1.0.0";
+        dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+        dct:temporal [ a dct:PeriodOfTime;
+                     schema:startDate "2010-01-01T00:00:00Z"^^xsd:dateTime;
+                     ];
+        dct:spatial [ a dct:Location;
+                    locn:geometry "POLYGON(-5 51.5, 8.25 51.5, 8.25 42, -5 42)"^^gsp:wktLiteral;
+		    ];
+        dcat:theme <epos:Thermalmonitoring>;
+        dcat:keyword "spectral radiance", "lava monitoring", "nti*", "geotiff", "hot spots", "thermal anomalies";
+        dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
+        dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+
+        dct:publisher <http://isni.org/isni/0000000109416043>;
+        dcat:distribution <WP11/Dataset/HOTVOLC/DDSS-049/Distribution/DataDownload>;
+        dcat:distribution <WP11/Dataset/HOTVOLC/DDSS-049/Distribution/DataCatalog>;
+.
+
 
 
 <http://orcid.org/0000-0001-8720-7300> a schema:Person;
@@ -149,37 +179,6 @@
         hydra:description "A documentation describing how to use HOTVOLC API, to find and download data";
         hydra:entrypoint "http://hotvolc.opgc.fr/www/php/hotvolc_api.php"^^xsd:anyURI;
 .
-
-#--------------------------------------------------------------------------------
-<WP11/Dataset/HOTVOLC/DDSS-049> a dcat:Dataset ;
-        dct:identifier "WP11/Dataset/HOTVOLC/DDSS-049" ;
-        dct:title "HOTVOLC product: thermal anomalies" ;
-        dct:description "HOTVOLC product: volcanic ash" ;
-        adms:identifier [ a adms:Identifier;
-            adms:schemaAgency "DDSS-ID";
-            skos:notation "WP11-DDSS-049";
-        ];
-        dct:created "2010-01-01T00:00:00Z"^^xsd:dateTime ;
-        dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
-        dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime;
-        owl:versionInfo "1.0.0";
-        dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
-        dct:temporal [ a dct:PeriodOfTime;
-                     schema:startDate "2010-01-01T00:00:00Z"^^xsd:dateTime;
-                     ];
-        dct:spatial [ a dct:Location;
-                    locn:geometry "POLYGON(-5 51.5, 8.25 51.5, 8.25 42, -5 42)"^^gsp:wktLiteral;
-		    ];
-        dcat:theme <epos:Thermalmonitoring>;
-        dcat:keyword "spectral radiance", "lava monitoring", "nti*", "geotiff", "hot spots", "thermal anomalies";
-        dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
-        dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
-
-        dct:publisher <http://isni.org/isni/0000000109416043>;
-        dcat:distribution <WP11/Dataset/HOTVOLC/DDSS-049/Distribution/DataDownload>;
-        dcat:distribution <WP11/Dataset/HOTVOLC/DDSS-049/Distribution/DataCatalog>;
-.
-
 
 <WP11/Dataset/HOTVOLC/DDSS-049/Distribution/DataDownload> a dcat:Distribution;
         dct:identifier "WP11/Dataset/HOTVOLC/DDSS-049/Distribution/DataDownload";
