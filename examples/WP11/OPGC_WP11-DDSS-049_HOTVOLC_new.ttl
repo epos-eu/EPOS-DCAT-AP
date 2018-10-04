@@ -150,33 +150,36 @@
         hydra:entrypoint "http://hotvolc.opgc.fr/www/php/hotvolc_api.php"^^xsd:anyURI;
 .
 
+#--------------------------------------------------------------------------------
+<WP11/Dataset/HOTVOLC/DDSS-049> a dcat:Dataset ;
+        dct:identifier "WP11/Dataset/HOTVOLC/DDSS-049" ;
+        dct:title "HOTVOLC product: thermal anomalies" ;
+        dct:description "HOTVOLC product: volcanic ash" ;
+        adms:identifier [ a adms:Identifier;
+            adms:schemaAgency "DDSS-ID";
+            skos:notation "WP11-DDSS-049";
+        ];
+        dct:created "2010-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime;
+        owl:versionInfo "1.0.0";
+        dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+        dct:temporal [ a dct:PeriodOfTime;
+                     schema:startDate "2010-01-01T00:00:00Z"^^xsd:dateTime;
+                     ];
+        dct:spatial [ a dct:Location;
+                    locn:geometry "POLYGON(-5 51.5, 8.25 51.5, 8.25 42, -5 42)"^^gsp:wktLiteral;
+		    ];
+        dcat:theme <epos:Thermalmonitoring>;
+        dcat:keyword "spectral radiance", "lava monitoring", "nti*", "geotiff", "hot spots", "thermal anomalies";
+        dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
+        dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 
-<WP11/Dataset/HOTVOLC/DDSS-049> a dcat:Dataset;
-    dct:title "HOTVOLC product: thermal anomalies"^^xsd:string;
-    dct:identifier "WP11/Dataset/HOTVOLC/DDSS-049";    
-    dct:description "HOTVOLC product: thermal anomalies";
-    adms:identifier [ a adms:Identifier;
-        adms:schemaAgency "DDSS-ID";
-        skos:notation "WP11-DDSS-049";
-    ];
-    dct:type "http://purl.org/dc/dcmitype/Image"^^xsd:anyURI;
-    dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
-    dct:temporal [ a dct:PeriodOfTime;
-        schema:startDate "2018-09-05T00:00:00Z"^^xsd:dateTime;
-        #schema:endDate "2018-09-05T00:00:00Z"^^xsd:dateTime;
-    ];
-    dct:issued "2018-09-05T00:00:00Z"^^xsd:dateTime;
-    dct:modified "2018-09-05T02:15:17Z"^^xsd:dateTime;
-    dct:spatial [ a dct:Location;
-        locn:geometry "POLYGON(-5 51.5, 8.25 51.5, 8.25 42, -5 42)"^^gsp:wktLiteral;
-    ];
-    dcat:theme <epos:Thermalmonitoring>;
-    dcat:keyword "spectral radiance", "lava monitoring", "nti*", "geotiff", "hot spots", "thermal anomalies";
-    dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
-    dct:publisher <http://isni.org/isni/0000000109416043>;      
-    dcat:distribution <WP11/Dataset/HOTVOLC/DDSS-049/Distribution/DataDownload>;
-    dcat:distribution <WP11/Dataset/HOTVOLC/DDSS-049/Distribution/DataCatalog>;
+        dct:publisher <http://isni.org/isni/0000000109416043>;
+        dcat:distribution <WP11/Dataset/HOTVOLC/DDSS-049/Distribution/DataDownload>;
+        dcat:distribution <WP11/Dataset/HOTVOLC/DDSS-049/Distribution/DataCatalog>;
 .
+
 
 <WP11/Dataset/HOTVOLC/DDSS-049/Distribution/DataDownload> a dcat:Distribution;
         dct:identifier "WP11/Dataset/HOTVOLC/DDSS-049/Distribution/DataDownload";
@@ -185,7 +188,6 @@
         dct:issued "2018-09-05T00:00:00Z"^^xsd:dateTime;
         dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
         dcat:accessURL <hotvolc.opgc.fr/WP11/WebService/DDSS-049/operation/data-download>;
-        #dcat:downloadURL "http://hotvolc.opgc.fr/www/php/data_download.php?uri=IMHOT_201809050000_12_00"^^xsd:anyURI;
         dct:conformsTo <hotvolc.opgc.fr/WP11/WebService/DDSS-049>;        
         dct:format "http://publications.europa.eu/resource/authority/file-type/ZIP"^^xsd:anyURI;
         dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
@@ -211,7 +213,6 @@
     schema:dateModified "2018-07-12T16:00:00Z"^^xsd:dateTime;
     schema:provider <http://isni.org/isni/0000000109416043>;
     schema:keywords "WebGIS", "Real Time", "Remote Sensing", "Satellite", "Infrared", "Volcanology", "Hotspot", "Lava", "Thermal Monitoring";
-    # hydra:entrypoint "http://hotvolc.opgc.fr/www/php/application.php"^^xsd:anyURI;
     hydra:supportedOperation <hotvolc.opgc.fr/WP11/WebService/DDSS-049/operation/data-search>;
     hydra:supportedOperation <hotvolc.opgc.fr/WP11/WebService/DDSS-049/operation/data-download>;
     dcat:theme <epos:Thermalmonitoring>;
@@ -219,7 +220,19 @@
     dct:conformsTo <hotvolc.opgc.fr/WP11/DDSS-049/APIDocumentation>;
     dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
 .
-    
+   <http://orcid.org/0000-0001-8720-7300/contactPoint> a schema:ContactPoint;
+        schema:email "m.gouhier@opgc.fr";
+        schema:availableLanguage "en" ;
+        schema:contactType "manager" ;
+.
+    <hotvolc.opgc.fr/WP11/DDSS-047/APIDocumentation> a hydra:APIDocumentation;
+        hydra:title "HOTVOLC Observing System - API Documentation";
+        hydra:description "A documentation describing how to use HOTVOLC API, to find and download data";
+        hydra:entrypoint "http://hotvolc.opgc.fr/www/php/hotvolc_api.php"^^xsd:anyURI;
+.  
+
+#...............................................................................................
+
     <hotvolc.opgc.fr/WP11/WebService/DDSS-049/operation/data-search> a hydra:Operation;
         hydra:method "GET"^^xsd:string;
         hydra:returns "text/turtle";
