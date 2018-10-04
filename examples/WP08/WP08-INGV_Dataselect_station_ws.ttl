@@ -232,7 +232,7 @@
 
 # Dataset
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/INGV> a dcat:Dataset;
-        dct:title "Primary Seismic Waveform Data";
+        dct:title "INGV Seismic Waveform Data";
         dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/INGV";
         dct:description "Continuous seismic waveforms";
         adms:identifier [ a adms:Identifier ;
@@ -263,7 +263,7 @@
 # Distribution
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/INGV> a dcat:Distribution;
     	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/INGV";
-	dct:title "Seismic Waveform Distribution :: FDSN DATASELECT ";
+	dct:title "Seismic Waveform Distribution :: INGV ";
 	dct:description "Description of Seismic Waveform Distribution :: FDSN DATASELECT ";
 	dct:issued "2017-01-01"^^xsd:date ;
 	dct:modified "2017-01-01"^^xsd:date ;
@@ -330,7 +330,7 @@
 				rdfs:label "End of the timespan";
 				hydra:required "true"^^xsd:boolean;
 				rdfs:range "xsd:dateTime" ;
-				schema:defaultValue "2012-02-01T00:00:00" ;
+				schema:defaultValue "2018-02-01T00:00:00" ;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "network"^^xsd:string;
@@ -344,14 +344,14 @@
 				rdfs:label "Station code";
 				hydra:required "true"^^xsd:boolean;
 				rdfs:range "xsd:string" ;
-				schema:defaultValue "ACER" ;
+				schema:defaultValue "*" ;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "location"^^xsd:string;
 				rdfs:label "Location code";
 				hydra:required "true"^^xsd:boolean;
 				rdfs:range "xsd:string" ;
-				schema:defaultValue "" ;
+				schema:defaultValue "*" ;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "channel"^^xsd:string;
@@ -459,7 +459,7 @@
 # Distribution
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/INGV> a dcat:Distribution;
     	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/INGV";
-	dct:description "Description of Seismic Stations  :: FDSN STATION ";
+	dct:description "Description of Seismic Stations  :: INGV";
 	dct:issued "2017-01-01"^^xsd:date ;
 	dct:modified "2017-01-01"^^xsd:date ;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
