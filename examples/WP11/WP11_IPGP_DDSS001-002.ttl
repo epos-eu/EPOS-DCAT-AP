@@ -266,17 +266,41 @@
 		dcat:theme <epos:Seismicstations>;
 		dcat:keyword "volcanology", "seismology","seismicity", "waveform", "macroseismic","IPGP", "RESIF", "Dataselect", "FDSN-WS", "EIDA" ,"StationXML","miniseed";
 		dct:publisher <PIC:999597417>;
-		dcat:distribution <http://ws.resif.fr/fdsnws/dataselect/1/query?>;
-		dcat:distribution <http://ws.resif.fr/fdsnws/station/1/query?>;
+		dcat:distribution <http://ws.resif.fr/fdsnws/dataselect/1/query>;
+		dcat:distribution <http://ws.resif.fr/fdsnws/station/1/query>;
 		owl:versionInfo "0";
 		dcat:contactPoint <https://orcid.org/0000-0002-9956-9971/contactPoint>;
 .
 
-
+# distribution
+	<http://ws.resif.fr/fdsnws/dataselect/1/query> a dcat:Distribution;
+		dct:identifier "http://ws.resif.fr/fdsnws/dataselect/1/query";
+		dct:title "Seismic waveform";
+		dct:description "Seismic waveform";
+		dct:issued "2013-01-01"^^xsd:date;
+		dct:modified "2017-12-09"^^xsd:date;
+		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+		dct:conformsTo <ws.resif.fr/fdsnws/dataselect/ws>;
+		dcat:accessURL <ws.resif.fr/fdsnws/dataselect/>;
+		dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+		dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI;
+.
+	<http://ws.resif.fr/fdsnws/station/1/query> a dcat:Distribution;
+		dct:identifier "http://ws.resif.fr/fdsnws/station/1/query";
+		dct:title "seismic meta-data";
+		dct:description "StationXML meta-data";
+		dct:issued "2013-01-01"^^xsd:date;
+		dct:modified "2017-12-09"^^xsd:date;
+		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+		dct:conformsTo <ws.resif.fr/fdsnws/station/ws>;
+		dcat:accessURL <ws.resif.fr/fdsnws/station>;
+		dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+		dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
+.
 # Webservice Dataselect
 
 <ws.resif.fr/fdsnws/dataselect/ws> a epos:WebService;
-	schema:identifier "ws.resif.fr/fdsnws/";
+	schema:identifier "ws.resif.fr/fdsnws/dataselect/ws";
 	#schema:identifier [ a schema:PropertyValue;
 		#schema:propertyID  "DDSS-ID";
 		#schema:value  "";
@@ -303,7 +327,7 @@
 .
 # Webservice Station
 <ws.resif.fr/fdsnws/station/ws> a epos:WebService;
-	schema:identifier "ws.resif.fr/fdsnws/";
+	schema:identifier "ws.resif.fr/fdsnws/station/ws";
 	#schema:identifier [ a schema:PropertyValue;
 		#schema:propertyID  "DDSS-ID";
 		#schema:value  "";
@@ -336,14 +360,14 @@
 			hydra:template "http://ws.resif.fr/fdsnws/dataselect/1/query{?starttime, endtime, network, station, location, channel, quality, minimumlength, longestonly}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "starttime"^^xsd:dateTime;
-					rdfs:range "xsd:date";
+					rdfs:range "xsd:dateTime";
 					rdfs:label "start of the timespan of requested data (format:YYYY-MM-DD or YYYY-MM-DDTHH:MM:SS)";
           schema:defaultValue "2018-01-01T00:00:00";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "endtime"^^xsd:dateTime;
-					rdfs:range "xsd:date";
+					rdfs:range "xsd:dateTime";
 					rdfs:label "end of the timespan of requested data (format:YYYY-MM-DD  or YYYY-MM-DDTHH:MM:SS)";
           schema:defaultValue "2018-01-02T00:00:00";
 					hydra:required "true"^^xsd:boolean;
@@ -509,27 +533,4 @@
 				];
 		] ;
 .
-	<http://ws.resif.fr/fdsnws/dataselect/1/query?> a dcat:Distribution;
-		dct:identifier "http://ws.resif.fr/fdsnws/dataselect/1/query?";
-		dct:title "Seismic waveform";
-		dct:description "Seismic waveform";
-		dct:issued "2013-01-01"^^xsd:date;
-		dct:modified "2017-12-09"^^xsd:date;
-		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-		dct:conformsTo <ws.resif.fr/fdsnws/dataselect/ws>;
-		dcat:accessURL <ws.resif.fr/fdsnws/dataselect/>;
-		dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
-		dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI;
-.
-	<http://ws.resif.fr/fdsnws/station/1/query?> a dcat:Distribution;
-		dct:identifier "http://ws.resif.fr/fdsnws/station/1/query?";
-		dct:title "seismic meta-data";
-		dct:description "StationXML meta-data";
-		dct:issued "2013-01-01"^^xsd:date;
-		dct:modified "2017-12-09"^^xsd:date;
-		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-		dct:conformsTo <ws.resif.fr/fdsnws/station/ws>;
-		dcat:accessURL <ws.resif.fr/fdsnws/station>;
-		dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
-		dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
-.
+
