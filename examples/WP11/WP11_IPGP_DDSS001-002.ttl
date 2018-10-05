@@ -228,7 +228,7 @@
 	schema:contactType "legalContact" ;
 .
 
-# Dataset Domain and subdomain
+# Domain and subdomain
 
 	<epos:VolcanoObservations> a skos:ConceptScheme;
 		dct:title "Volcano Observations";
@@ -239,6 +239,13 @@
 		skos:prefLabel "Seismic waveform" ;
 		skos:definition "Seismic waveforms" ;
 .
+	<epos:Seismicstations> a skos:Concept;
+		skos:inScheme <epos:VolcanoObservations>;
+		skos:prefLabel "Seismic station" ;
+		skos:definition "Seismic stations" ;
+.
+# Dataset 
+
 	<WP11/seismicdata/DDSS001> a dcat:Dataset;
 		dct:title "Seismic Stations and Waveform";
 		dct:identifier "WP11/seismicdata/DDSS001";
@@ -256,7 +263,7 @@
 		locn:geometry "POLYGON(180 -90,-180 -90,-180 90,180 90,180 -90)"^^gsp:wktLiteral;
 	];
 		dcat:theme <epos:Seismicwaveforms>;
-		#dcat:theme <epos:Seismicstations>;
+		dcat:theme <epos:Seismicstations>;
 		dcat:keyword "volcanology", "seismology","seismicity", "waveform", "macroseismic","IPGP", "RESIF", "Dataselect", "FDSN-WS", "EIDA" ,"StationXML","miniseed";
 		dct:publisher <PIC:999597417>;
 		dcat:distribution <http://ws.resif.fr/fdsnws/dataselect/1/query?>;
@@ -264,15 +271,11 @@
 		owl:versionInfo "0";
 		dcat:contactPoint <https://orcid.org/0000-0002-9956-9971/contactPoint>;
 .
-	<epos:Seismicstations> a skos:Concept;
-		skos:inScheme <epos:VolcanoObservations>;
-		skos:prefLabel "Seismic station" ;
-		skos:definition "Seismic stations" ;
-.
 
-# Webservice WFcatalog
 
-<ws.resif.fr/fdsnws/> a epos:WebService;
+# Webservice Dataselect
+
+<ws.resif.fr/fdsnws/dataselect/ws> a epos:WebService;
 	schema:identifier "ws.resif.fr/fdsnws/";
 	#schema:identifier [ a schema:PropertyValue;
 		#schema:propertyID  "DDSS-ID";
@@ -280,7 +283,6 @@
 	#];
 	schema:description "FDSN Standard webservice at RESIF to download waveform data and stationXML metadata";
 	dcat:theme <epos:Seismicwaveforms>;
-	#dcat:theme <epos:Seismicstations>;
 	schema:name "FDSN-WS - Resif data center (RESIF)";
 	hydra:entrypoint "http://ws.resif.fr/fdsnws/"^^xsd:anyURI;
 	schema:provider <PIC:999997930>;
@@ -290,6 +292,33 @@
 		locn:geometry "POLYGON(180.0 -90.0,-180.0 -90.0,-180.0 90.0,180.0 90.0,180.0 -90.0)"^^gsp:wktLiteral;
 	];
 	hydra:supportedOperation <ws.resif.fr/fdsnws/dataselect>;
+	
+	schema:keywords "Seismology"," IPGP","RESIF-SI","dataselect","FDSN-WS","seismic waveforms";
+	dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+	dct:temporal [ a dct:PeriodOfTime;
+		schema:startDate "1982-01-01T00:00:00Z"^^xsd:dateTime;
+		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
+	];
+	dcat:contactPoint <https://orcid.org/0000-0002-9956-9971/contactPoint>;
+.
+# Webservice Station
+<ws.resif.fr/fdsnws/station/ws> a epos:WebService;
+	schema:identifier "ws.resif.fr/fdsnws/";
+	#schema:identifier [ a schema:PropertyValue;
+		#schema:propertyID  "DDSS-ID";
+		#schema:value  "";
+	#];
+	schema:description "FDSN Standard webservice at RESIF to download waveform data and stationXML metadata";
+	dcat:theme <epos:Seismicstations>;
+	schema:name "FDSN-WS - Resif data center (RESIF)";
+	hydra:entrypoint "http://ws.resif.fr/fdsnws/"^^xsd:anyURI;
+	schema:provider <PIC:999997930>;
+	schema:datePublished "2013-01-01"^^xsd:date;
+	schema:dateModified "2017-09-12"^^xsd:date;
+	dct:spatial [ a dct:Location;
+		locn:geometry "POLYGON(180.0 -90.0,-180.0 -90.0,-180.0 90.0,180.0 90.0,180.0 -90.0)"^^gsp:wktLiteral;
+	];
+	
 	hydra:supportedOperation <ws.resif.fr/fdsnws/station>;
 	schema:keywords "Seismology"," IPGP","RESIF-SI","dataselect","FDSN-WS","seismic waveforms";
 	dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
@@ -299,6 +328,7 @@
 	];
 	dcat:contactPoint <https://orcid.org/0000-0002-9956-9971/contactPoint>;
 .
+
 	<ws.resif.fr/fdsnws/dataselect> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/vnd.fdsn.mseed";
@@ -486,8 +516,8 @@
 		dct:issued "2013-01-01"^^xsd:date;
 		dct:modified "2017-12-09"^^xsd:date;
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-		dct:conformsTo <ws.resif.fr/fdsnws/>;
-		dcat:accessURL <ws.resif.fr/fdsnws/dataselect>;
+		dct:conformsTo <ws.resif.fr/fdsnws/dataselect/ws>;
+		dcat:accessURL <ws.resif.fr/fdsnws/dataselect/>;
 		dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI;
 .
@@ -498,7 +528,7 @@
 		dct:issued "2013-01-01"^^xsd:date;
 		dct:modified "2017-12-09"^^xsd:date;
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-		dct:conformsTo <ws.resif.fr/fdsnws/>;
+		dct:conformsTo <ws.resif.fr/fdsnws/station/ws>;
 		dcat:accessURL <ws.resif.fr/fdsnws/station>;
 		dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
