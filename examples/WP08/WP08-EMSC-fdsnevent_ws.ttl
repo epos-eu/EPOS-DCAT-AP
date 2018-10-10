@@ -1,0 +1,393 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .  
+@prefix epos: <http://www.epos-eu.org/epos/dcat-ap#> .  
+@prefix dc: <http://purl.org/dc/elements/1.1/> .  
+@prefix dct: <http://purl.org/dc/terms/> .  
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .  
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .  
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .  
+@prefix bgs: <http://www.bgs.ac.uk#> .  
+@prefix schema: <http://schema.org/> .  
+@prefix dcat: <http://www.w3.org/ns/dcat#> .  
+@prefix cnt: <http://www.w3.org/2011/content#> .   
+@prefix locn: <http://www.w3.org/ns/locn#> . 
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<PIC:998779222> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "";
+		schema:value "PIC:998779222";
+	]; 
+	schema:legalName "European-Mediterranean Seismological Centre";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "chemin du Ru";
+		schema:addressLocality "Bruyeres-le-chatel";
+		schema:postalCode "91680";
+		schema:addressCountry "unknown";
+	]; 
+	schema:logo "https://www.emsc-csem.org/Css/img/logo.png"^^xsd:anyURI;
+	schema:url "http://www.emsc-csem.org"^^xsd:anyURI;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/scientificContact>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/legalContact>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/financialContact>;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/scientificContact> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+		schema:contactType "scientificContact" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/legalContact> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+		schema:contactType "legalContact" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/financialContact> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+		schema:contactType "financialContact" ;
+. 
+
+<mailto:aurelien.dupont@emsc-csem.org> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "";
+		schema:value "mailto:aurelien.dupont@emsc-csem.org";
+	]; 
+	schema:familyName "Dupont";
+	schema:givenName " Aurelien";
+	schema:address [ a schema:PostalAddress;
+		schema:addressLocality "Bruyeres-le-chatel";
+		schema:postalCode "91680";
+	]; 
+	schema:qualifications "Seismologist";
+	schema:affiliation <PIC:998779222>;
+. 
+
+<seismicportal.eu/fdsnws/event/1/query> a epos:WebService;
+	schema:identifier "seismicportal.eu/fdsnws/event/1/query";
+	schema:identifier [ a schema:PropertyValue; 
+		schema:propertyID  "DDSS-ID"; 
+		schema:value  ""; 
+	]; 
+	schema:description "The fdsnws-event web service returns event (earthquake) information from EMSC catalogs. Events may be selected based on location, time and internal identifiers. The results include origin and magnitude for each event. By default results are returned as XML in QuakeML format (schema), but may also be requested in text formats. This service is an implementation of the FDSN web service specification version 1.";
+	schema:name "SeismicPortal FDSN event web service 1.0.1";
+	schema:datePublished "2017-10-25 00:00:00"^^xsd:dateTime;
+	schema:dateModified "2017-10-25 00:00:00"^^xsd:dateTime;
+	schema:provider <PIC:998779222>;
+	schema:keywords "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "Earthquake", "Event", "rocks", "seismic waves propagation";
+	#hydra:entrypoint "application.wadl"^^xsd:anyURI; 
+	schema:contactPoint <PIC:998779222/contactPoint>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/contactPoint>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/contactPoint>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/contactPoint>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/contactPoint>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/contactPoint>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/contactPoint>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/contactPoint>;
+. 
+	<PIC:998779222/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+
+<http://www.seismicportal.eu/testimonies-ws> a epos:WebService;
+	schema:identifier "http://www.seismicportal.eu/testimonies-ws";
+	schema:identifier [ a schema:PropertyValue; 
+		schema:propertyID  "DDSS-ID"; 
+		schema:value  ""; 
+	]; 
+	schema:description "Gives access to all felt reports collected through EMSC website, Lastquake mobile application";
+	schema:name "Seismic Portal Testimonies web service 1.0.1";
+	schema:datePublished "2017-10-25 00:00:00"^^xsd:dateTime;
+	schema:dateModified "2017-10-25 00:00:00"^^xsd:dateTime;
+	schema:provider <PIC:998779222>;
+	schema:keywords "earthquake", "intensity", "macroseismology", "eyewitness", "magnitude", "region", "felt report", "magnitude";
+	#hydra:entrypoint "application.wadl"^^xsd:anyURI; 
+	schema:contactPoint <PIC:998779222/contactPoint>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/contactPoint>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/contactPoint>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/contactPoint>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/contactPoint>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/contactPoint>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/contactPoint>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/contactPoint>;
+. 
+	<PIC:998779222/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+
+<seismicportal.eu/srcmodws/> a epos:WebService;
+	schema:identifier "seismicportal.eu/srcmodws/";
+	schema:identifier [ a schema:PropertyValue; 
+		schema:propertyID  "DDSS-ID"; 
+		schema:value  ""; 
+	]; 
+	schema:description "Finite-fault rupture models of past earthquakes. These earthquake source models are obtained from inversion or modeling of seismic, geodetic and other geophysical data, and characterize the space-time distribution of kinematic rupture parameters. SRCMOD data come from the research work of Pr. M. Mai.";
+	schema:name "SeismicPortal Rupture Models web service 1.0.1";
+	schema:datePublished "2017-10-25 00:00:00"^^xsd:dateTime;
+	schema:dateModified "2017-10-25 00:00:00"^^xsd:dateTime;
+	schema:provider <PIC:998779222>;
+	schema:keywords "earthquake", "event", "seismic source", "seismology", "magnitude", "author", "publication", "finite-fault", "rupture models", "past earthquakes", "source models", "inversion", "modeling", "seismic", "geodetic data", "kinematic rupture";
+	#hydra:entrypoint "application.wadl"^^xsd:anyURI; 
+	schema:contactPoint <PIC:998779222/contactPoint>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/contactPoint>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/contactPoint>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/contactPoint>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/contactPoint>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/contactPoint>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/contactPoint>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/contactPoint>;
+. 
+	<PIC:998779222/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+
+<seismicportal.eu/eventid/api/convert> a epos:WebService;
+	schema:identifier "seismicportal.eu/eventid/api/convert";
+	schema:identifier [ a schema:PropertyValue; 
+		schema:propertyID  "DDSS-ID"; 
+		schema:value  ""; 
+	]; 
+	schema:description "The service allows to retrieve origin parameters of the EMSC catalogue from a unified identifier and vice versa";
+	schema:name "SeismicPortal EventID web service 1.0.1";
+	schema:datePublished "2017-10-25 00:00:00"^^xsd:dateTime;
+	schema:dateModified "2017-10-25 00:00:00"^^xsd:dateTime;
+	schema:provider <PIC:998779222>;
+	schema:keywords "identifier", "orgin time", "earthquake", "magnitude";
+	#hydra:entrypoint "application.wadl"^^xsd:anyURI; 
+	schema:contactPoint <PIC:998779222/contactPoint>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/contactPoint>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/contactPoint>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/contactPoint>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/contactPoint>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/contactPoint>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/contactPoint>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/contactPoint>;
+. 
+	<PIC:998779222/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+
+<seismicportal.eu/mtws/api/search> a epos:WebService;
+	schema:identifier "seismicportal.eu/mtws/api/search";
+	schema:identifier [ a schema:PropertyValue; 
+		schema:propertyID  "DDSS-ID"; 
+		schema:value  ""; 
+	]; 
+	schema:description "Query and retrieval of all EMSC moment tensors";
+	schema:name "SeismicPortal Moment Tensors web service 1.0.1";
+	schema:datePublished "2017-10-25 00:00:00"^^xsd:dateTime;
+	schema:dateModified "2017-10-25 00:00:00"^^xsd:dateTime;
+	schema:provider <PIC:998779222>;
+	schema:keywords "earthquake", "event", "seismic source", "seismology", "magnitude", "centroid", "deviatoric", "CLVD";
+	#hydra:entrypoint "application.wadl"^^xsd:anyURI; 
+	schema:contactPoint <PIC:998779222/contactPoint>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/contactPoint>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/contactPoint>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/contactPoint>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/contactPoint>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/contactPoint>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/contactPoint>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/contactPoint>;
+. 
+	<PIC:998779222/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+
+<seismicportal.eu/fe_regions_ws/query> a epos:WebService;
+	schema:identifier "seismicportal.eu/fe_regions_ws/query";
+	schema:identifier [ a schema:PropertyValue; 
+		schema:propertyID  "DDSS-ID"; 
+		schema:value  ""; 
+	]; 
+	schema:description "The service identifies the Flinn-Engdahl region from a geolocalisation - For all EMSC data/services: opendata, no authentification";
+	schema:name "Seismic Portal Flinn-Engdahl Lookup web service 1.0.1";
+	schema:datePublished "2017-10-25 00:00:00"^^xsd:dateTime;
+	schema:dateModified "2017-10-25 00:00:00"^^xsd:dateTime;
+	schema:provider <PIC:998779222>;
+	schema:keywords "region", "location", "earthquake", "event", "seismology";
+	#hydra:entrypoint "application.wadl"^^xsd:anyURI; 
+	schema:contactPoint <PIC:998779222/contactPoint>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/contactPoint>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/contactPoint>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/contactPoint>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/contactPoint>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/contactPoint>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/contactPoint>;
+	schema:contactPoint <mailto:aurelien.dupont@emsc-csem.org/contactPoint>;
+. 
+	<PIC:998779222/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+. 
+	<mailto:aurelien.dupont@emsc-csem.org/contactPoint> a schema:ContactPoint;
+		schema:email "";
+		schema:availableLanguage "en" ;
+.
