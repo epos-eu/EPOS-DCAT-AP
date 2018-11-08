@@ -228,22 +228,7 @@
 	schema:contactType "legalContact" ;
 .
 
-# Domain and subdomain
 
-	<epos:VolcanoObservations> a skos:ConceptScheme;
-		dct:title "Volcano Observations";
-		dct:description "It contains the concepts of Volcano-Observations";
-.
-	#<epos:Seismicwaveforms> a skos:Concept;
-	#	skos:inScheme <epos:VolcanoObservations>;
-	#	skos:prefLabel "Seismic waveform" ;
-	#	skos:definition "Seismic waveforms" ;
-#.
-	<epos:Seismicstations> a skos:Concept;
-		skos:inScheme <epos:VolcanoObservations>;
-		skos:prefLabel "Seismic station" ;
-		skos:definition "Seismic stations" ;
-.
 # Dataset 
 
 	<WP11/seismicdata/DDSS001> a dcat:Dataset;
@@ -532,5 +517,22 @@
 					hydra:required "false"^^xsd:boolean;
 				];
 		] ;
+.
+
+# Domain and subdomain
+
+	<epos:VolcanoObservations> a skos:ConceptScheme;
+		dct:title "Volcano Observations";
+		dct:description "It contains the concepts of Volcano-Observations";
+.
+	#<epos:Seismicwaveforms> a skos:Concept;
+	#	skos:inScheme <epos:VolcanoObservations>;
+	#	skos:prefLabel "Seismic waveform" ;
+	#	skos:definition "Seismic waveforms" ;
+#.
+	<epos:Seismicstations> a skos:Concept;
+		skos:inScheme <epos:VolcanoObservations>;
+		skos:prefLabel "Seismic station" ;
+		skos:definition "Seismic stations" ;
 .
 
