@@ -266,7 +266,7 @@
 		dct:modified "2017-12-09"^^xsd:date;
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <ws.resif.fr/fdsnws/dataselect/ws>;
-		dcat:accessURL <ws.resif.fr/fdsnws/dataselect>;
+		dcat:accessURL <ws.resif.fr/fdsnws/dataselect/operation>;
 		dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI;
 .
@@ -300,7 +300,7 @@
 	dct:spatial [ a dct:Location;
 		locn:geometry "POLYGON(180.0 -90.0,-180.0 -90.0,-180.0 90.0,180.0 90.0,180.0 -90.0)"^^gsp:wktLiteral;
 	];
-	hydra:supportedOperation <ws.resif.fr/fdsnws/dataselect>;
+	hydra:supportedOperation <ws.resif.fr/fdsnws/dataselect/operation>;
 	
 	schema:keywords "Seismology"," IPGP","RESIF-SI","dataselect","FDSN-WS","seismic waveforms";
 	dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
@@ -338,7 +338,7 @@
 	dcat:contactPoint <https://orcid.org/0000-0002-9956-9971/contactPoint>;
 .
 
-	<ws.resif.fr/fdsnws/dataselect> a hydra:Operation;
+	<ws.resif.fr/fdsnws/dataselect/operation> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/vnd.fdsn.mseed";
 		hydra:property[ a hydra:IriTemplate;
