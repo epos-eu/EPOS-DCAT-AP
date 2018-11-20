@@ -361,6 +361,45 @@
     skos:prefLabel "Seismic Station" ;
 .
 
+<https://github.com/Jollyfant/EPOS-TURTLE> a schema:SoftwareSourceCode;
+  schema:identifier "https://github.com/Jollyfant/EPOS-TURTLE" ;
+  schema:name "Python library for EPOS-RDF conversion" ;
+  schema:description "Python library for EPOS-RDF conversion" ;
+
+  # This property contains contact information that can be used for sending comments about the software.
+  schema:contactPoint <http://orcid.org/0000-0002-6250-2474/contactPoint> ;
+
+  # Link to the repository where the un-compiled, human readable code and related code is located (SVN, github, CodePlex).
+  schema:codeRepository "https://github.com/Jollyfant/EPOS-TURTLE"^^xsd:anyURI ;
+
+  # This property refers to the licence under which the Distribution is made available.
+  schema:license "https://github.com/Jollyfant/EPOS-TURTLE/blob/master/LICENSE"^^xsd:anyURI ;
+
+  # This property refers to the version of the software.
+  schema:softwareVersion "1.0";
+
+  # The computer programming language.
+  schema:programmingLanguage "Python";
+.
+
+<softwareID> a schema:SoftwareApplication;
+  schema:identifier "softwareID" ;
+  schema:name "name of the software" ;
+  schema:description "description of the software" ;
+
+  # This property contains contact information that can be used for sending comments about the software.
+  schema:contactPoint  <http://orcid.org/0000-0002-6250-2474/contactPoint> ;
+
+  # This property refers to the URL to download the software.
+  schema:downloadUrl "URL to download the software"^^xsd:anyURI ;
+
+  # This property refers to the licence under which the Distribution is made available.
+  schema:license "https://www.gnu.org/licenses/gpl.html"^^xsd:anyURI ;
+
+  # This property refers to the version of the software.
+  schema:softwareVersion "1.1";
+.
+
 <https://doi.org/10.21944/e970fd34-23b9-3411-b366-e4f72877d2c5> a epos:Facility ;
 
     # This property contains the main identifier for the Facility.
@@ -394,47 +433,6 @@
 
     # This property refers to a related resource (e.g., Dataset, WebService).
     dct:relation <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001> ;
-
-.
-
-<https://github.com/Jollyfant/EPOS-TURTLE> a schema:SoftwareSourceCode;
-  schema:identifier "https://github.com/Jollyfant/EPOS-TURTLE" ;
-  schema:name "Python library for EPOS-RDF conversion" ;
-  schema:description "Python library for EPOS-RDF conversion" ;
-
-  # This property contains contact information that can be used for sending comments about the software.
-  schema:contactPoint <http://orcid.org/0000-0002-6250-2474/contactPoint> ;
-
-  # Link to the repository where the un-compiled, human readable code and related code is located (SVN, github, CodePlex).
-  schema:codeRepository "https://github.com/Jollyfant/EPOS-TURTLE"^^xsd:anyURI ;
-
-  # This property refers to the licence under which the Distribution is made available.
-  schema:license "https://github.com/Jollyfant/EPOS-TURTLE/blob/master/LICENSE"^^xsd:anyURI ;
-
-  # This property refers to the version of the software.
-  schema:softwareVersion "1.0";
-
-  # The computer programming language.
-  schema:programmingLanguage "Python";
-
-.
-
-<softwareID> a schema:SoftwareApplication;
-  schema:identifier "softwareID" ;
-  schema:name "name of the software" ;
-  schema:description "description of the software" ;
-
-  # This property contains contact information that can be used for sending comments about the software.
-  schema:contactPoint  <http://orcid.org/0000-0002-6250-2474/contactPoint> ;
-
-  # This property refers to the URL to download the software.
-  schema:downloadUrl "URL to download the software"^^xsd:anyURI ;
-
-  # This property refers to the licence under which the Distribution is made available.
-  schema:license "https://www.gnu.org/licenses/gpl.html"^^xsd:anyURI ;
-
-  # This property refers to the version of the software.
-  schema:softwareVersion "1.1";
 .
 
 <https://www.fdsn.org/networks/NL/station/DBN> a epos:Equipment;
