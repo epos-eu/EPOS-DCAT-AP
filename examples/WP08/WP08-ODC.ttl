@@ -1,3 +1,4 @@
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix hydra: <http://www.w3.org/ns/hydra/core#> .
@@ -26,7 +27,7 @@
     schema:addressLocality "De Bilt" ;
     schema:postalCode "3731 GA" ;
     schema:addressRegion "Utrecht" ;
-    schema:addressCountry "NL"
+    schema:addressCountry "The Netherlands"
   ] ;
   schema:email "koymans@knmi.nl" ;
   schema:telephone "+31302206911" ;
@@ -78,7 +79,7 @@
     schema:addressLocality "De Bilt" ;
     schema:postalCode "3731 GA" ;
     schema:addressRegion "Utrecht" ;
-    schema:addressCountry "NL"
+    schema:addressCountry "The Netherlands"
   ] ;
   schema:logo "https://cdn.knmi.nl/assets/logo_large-a9be0e49aed0aa1f72a7da54d348d14ce94d070e7950f67dbc85039f0574ca48.png"^^xsd:anyURI ;
   schema:url "https://www.knmi.nl"^^xsd:anyURI ;
@@ -87,8 +88,7 @@
   schema:contactPoint <http://orcid.org/0000-0002-6250-2474/financialContact> ; 
 .
 
-<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/ODC>
-  a <https://www.epos-eu.org/epos-dcat-ap#WebService> ;
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/ODC> a epos:WebService;
   schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/ODC" ;
   schema:description "The dataselect Web service provides access to time series data in miniSEED format. The data may be filtered e.g. by time, station and network parameters. The request type is HTTP-GET and HTTP-POST. Please refer to http://www.fdsn.org/webservice for a complete service description." ;
   schema:name "FDSN Dataselect Web Service at ORFEUS Data Center" ;
@@ -123,7 +123,7 @@
   hydra:returns "application/vnd.fdsn.mseed" ;
   hydra:property [
     a hydra:IriTemplate ;
-    hydra:template "https://www.orfeus-eu/org/fdsnws/dataselect/1/query(?starttime, endtime, network, station, location, channel, quality, minimumlength, nodata)"^^xsd:string ;
+    hydra:template "https://www.orfeus-eu.org/fdsnws/dataselect/1/query{?starttime, endtime, network, station, location, channel, quality, minimumlength, nodata}"^^xsd:string ;
     hydra:mapping [
       a hydra:IriTemplateMapping ;
       hydra:variable "starttime"^^xsd:string ;
@@ -242,6 +242,7 @@
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/ODC>
   a dcat:Distribution ;
   dc:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/ODC" ;
+  dc:title "Seismic Waveform Distribution :: FDSN DATASELECT" ;
   dc:description "Description of Seismic Waveform Distribution :: FDSN DATASELECT " ;
   dc:issued "2017-01-01"^^xsd:date ;
   dc:modified "2017-01-01"^^xsd:date ;
@@ -251,8 +252,7 @@
   dc:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI ;
   dc:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI .
 
-<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/ODC>
-  a <https://www.epos-eu.org/epos-dcat-ap#WebService> ;
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/ODC> a epos:WebService;
   schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/ODC" ;
   schema:description "The fdsnws-station web service returns station metadata in FDSN StationXML format (schema here) or as delimited text. The purpose of the FDSN StationXML schema is to define an XML representation of the most important and commonly used structures of SEED 2.4 metadata. Results are available at multiple levels of granularity: network, station, channel and response." ;
   schema:name "FDSN Station Web Service at ORFEUS Data Center" ;
@@ -287,7 +287,7 @@
   hydra:returns "application/xml" ;
   hydra:property [
     a hydra:IriTemplate ;
-    hydra:template "https://www.orfeus-eu.org/fdsnws/station/1/query(?starttime, endtime, network, station, location, channel,  minlatitude, maxlatitude, minlongitude, maxlongitude, level, nodata)"^^xsd:string ;
+    hydra:template "https://www.orfeus-eu.org/fdsnws/station/1/query{?starttime, endtime, network, station, location, channel,  minlatitude, maxlatitude, minlongitude, maxlongitude, level, nodata}"^^xsd:string ;
     hydra:mapping [
       a hydra:IriTemplateMapping ;
       hydra:variable "starttime"^^xsd:string ;
@@ -403,6 +403,7 @@
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/ODC>
   a dcat:Distribution ;
   dc:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/ODC" ;
+  dc:title "Seismic Stations  :: FDSN STATION" ;
   dc:description "Description of Seismic Stations  :: FDSN STATION " ;
   dc:issued "2017-01-01"^^xsd:date ;
   dc:modified "2017-01-01"^^xsd:date ;
@@ -445,6 +446,7 @@
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/048/Distribution/048>
   a dcat:Distribution ;
   dc:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/048/Distribution/048" ;
+  dc:title "USGS Shakemap Input files for the RRSM" ;
   dc:description "Distribution for USGS Shakemap Input files for the RRSM" ;
   dc:issued "2017-01-01"^^xsd:date ;
   dc:modified "2017-01-01"^^xsd:date ;

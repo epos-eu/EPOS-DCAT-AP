@@ -168,8 +168,8 @@
 	dcat:theme <#Activefaults>;
 	schema:name "European Database of Seismogenic Faults";
 	schema:provider <PIC:999472675>;
-	schema:datePublished "2017-01-01"^^xsd:dateTime;
-	schema:dateModified "2017-01-01"^^xsd:dateTime;
+	schema:datePublished "2017-01-01"^^xsd:date;
+	schema:dateModified "2017-01-01"^^xsd:date;
 	dct:spatial [ a dct:Location;
 		locn:geometry "POLYGON(-12.39 30.3,-12.39 49.0,45.28 49,45.28 30.3,-12.39 30.3)"^^gsp:wktLiteral;
 	];
@@ -188,9 +188,10 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "image/png";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "http://services.seismofaults.eu/geoserver/EDSF/ows(?service, version, request, layers, bbox, width, height, srs, format)"^^xsd:string;
+			hydra:template "http://services.seismofaults.eu/geoserver/EDSF/ows{?service, version, request, layers, bbox, width, height, srs, format}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "service"^^xsd:string;
+					rdfs:range "xsd:string";
 					rdfs:label "Service type";
 					schema:defaultValue "WMS";
 					http:paramValue "WMS";
@@ -198,6 +199,7 @@
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "version"^^xsd:string;
+					rdfs:range "xsd:string";
 					rdfs:label "Service version";
 					schema:defaultValue "1.1.0";
 					http:paramValue "1.1.0";
@@ -205,6 +207,7 @@
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "request"^^xsd:string;
+					rdfs:range "xsd:string";
 					rdfs:label "Request type";
 					schema:defaultValue "GetMap";
 					http:paramValue "GetMap";
@@ -212,6 +215,7 @@
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "layers"^^xsd:string;
+					rdfs:range "xsd:string";
 					rdfs:label "Layer to load";
 					schema:defaultValue "EDSF:EDSF";
 					http:paramValue "EDSF:EDSF";
@@ -225,6 +229,7 @@
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "bbox"^^xsd:string;
+					rdfs:range "xsd:string";
 					rdfs:label "Bounding box";
 					schema:defaultValue "-12.3925075531006,30.303092956543,45.2800407409668,49.0013656616211";
 					http:paramValue "-12.3925075531006,30.303092956543,45.2800407409668,49.0013656616211";
@@ -232,6 +237,7 @@
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "width"^^xsd:string;
+					rdfs:range "xsd:integer";
 					rdfs:label "Image width";
 					schema:defaultValue "768";
 					http:paramValue "768";
@@ -239,6 +245,7 @@
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "height"^^xsd:string;
+					rdfs:range "xsd:integer";
 					rdfs:label "Image height";
 					schema:defaultValue "330";
 					http:paramValue "330";
@@ -246,6 +253,7 @@
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "srs"^^xsd:string;
+					rdfs:range "xsd:string";
 					rdfs:label "Spatial Reference System";
 					schema:defaultValue "EPSG:4326";
 					http:paramValue "EPSG:4326";
@@ -253,6 +261,7 @@
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "format"^^xsd:string;
+					rdfs:range "xsd:string";
 					rdfs:label "Output format";
 					schema:defaultValue "image/png";
 					http:paramValue "image/png";
@@ -267,9 +276,10 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/gml+xml";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "http://services.seismofaults.eu/geoserver/EDSF/ows(?service, version, request, typeName, outputFormat)"^^xsd:string;
+			hydra:template "http://services.seismofaults.eu/geoserver/EDSF/ows{?service, version, request, typeName, outputFormat}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "service"^^xsd:string;
+					rdfs:range "xsd:string";
 					rdfs:label "Service";
 					schema:defaultValue "WFS";
 					http:paramValue "WFS";
@@ -277,6 +287,7 @@
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "version"^^xsd:string;
+					rdfs:range "xsd:string";
 					rdfs:label "Service version";
 					schema:defaultValue "1.0.0";
 					http:paramValue "1.0.0";
@@ -286,6 +297,7 @@
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "request"^^xsd:string;
+					rdfs:range "xsd:string";
 					rdfs:label "Request type";
 					schema:defaultValue "GetFeature";
 					http:paramValue "GetFeature";
@@ -293,6 +305,7 @@
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "typeName"^^xsd:string;
+					rdfs:range "xsd:string";
 					rdfs:label "Feature layer to load";
 					schema:defaultValue "EDSF:crustal_fault_sources_top";
 					http:paramValue "EDSF:crustal_fault_sources_top";
@@ -301,6 +314,7 @@
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "outputFormat"^^xsd:string;
+					rdfs:range "xsd:string";
 					rdfs:label "Output format";
 					schema:defaultValue "text/xml; subtype=gml/2.1.2 ";
 					http:paramValue "text/xml; subtype=gml/2.1.2 ";
@@ -316,9 +330,10 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/gml+xml";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "http://services.seismofaults.eu/geoserver/EDSF/ows(?service, version, request, typeName, outputFormat)"^^xsd:string;
+			hydra:template "http://services.seismofaults.eu/geoserver/EDSF/ows{?service, version, request, typeName, outputFormat}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "service"^^xsd:string;
+					rdfs:range "xsd:string";
 					rdfs:label "Service";
 					schema:defaultValue "WFS";
 					http:paramValue "WFS";
@@ -326,6 +341,7 @@
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "version"^^xsd:string;
+					rdfs:range "xsd:string";
 					rdfs:label "Service version";
 					schema:defaultValue "1.0.0";
 					http:paramValue "1.0.0";
@@ -335,6 +351,7 @@
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "request"^^xsd:string;
+					rdfs:range "xsd:string";
 					rdfs:label "Request type";
 					schema:defaultValue "GetFeature";
 					http:paramValue "GetFeature";
@@ -342,6 +359,7 @@
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "typeName"^^xsd:string;
+					rdfs:range "xsd:string";
 					rdfs:label "Feature layer to load";
 					schema:defaultValue "EDSF:subduction_contours";
 					http:paramValue "EDSF:subduction_zones";
@@ -350,6 +368,7 @@
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "outputFormat"^^xsd:string;
+					rdfs:range "xsd:string";
 					rdfs:label "Output format";
 					schema:defaultValue "text/xml; subtype=gml/2.1.2 ";
 					http:paramValue "text/xml; subtype=gml/2.1.2 ";

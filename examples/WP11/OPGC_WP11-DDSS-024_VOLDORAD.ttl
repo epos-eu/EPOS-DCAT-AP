@@ -1,4 +1,3 @@
-
 @prefix adms: <http://www.w3.org/nd/adms#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .  
@@ -26,30 +25,31 @@
         skos:notation "WP11-DDSS-024";
     ];
     dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
-    dct:format "http://publications.europa.eu/mdr/resource/authority/file-type/html/filetypes-eng.html#CSV"^^xsd:anyURI;
     dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
     dct:temporal [ a dct:PeriodOfTime;
         schema:startDate "2015-12-03T00:00:00Z"^^xsd:dateTime;
         schema:endDate "2015-12-03T24:00:00Z"^^xsd:dateTime;
     ];
-    dct:spatial [ a dct:Location;
-        locn:geometry <geo:37.7188888888889,15.0036111111111,u=2610,crs=wgs84>;
-    ];
-    dcat:theme <#Doppler-Radar>;
+    #dct:spatial [ a dct:Location;
+        #locn:geometry <geo:37.7188888888889,15.0036111111111,u=2610,crs=wgs84>;
+    #];
+    dcat:theme <epos:DopplerRadar>;
     dcat:keyword "ground-based", "remote-sensing", "doppler effect", "radar", "power", "velocity", "particles", "source parameters";
     dcat:contactPoint <http://orcid.org/0000-0001-8293-1340/contactPoint>;
     dct:publisher <http://isni.org/isni/0000000109416043>;
-    schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
     dcat:distribution <voldorad/data/id/3/DownloadFile>;
 .
     <voldorad/data/id/3/DownloadFile> a dcat:Distribution;
         dct:identifier "voldorad/data/id/3/DownloadFile";
+        dct:title "OPGC-VO distribution of VOLDORAD dataset 3";
         dct:description "The way to download the voldorad product: MONT_20151203";
-        dct:type "http://publications.europa.eu/mdr/resource/authority/distribution-type/html/distribution-types-eng.html#DOWNLOADABLE_FILE"^^xsd:anyURI;
+        dct:issued "2015-12-03"^^xsd:date;
+        dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
         dcat:accessURL <opgc.fr/vobs/voldorad/WP11/DDSS-024/data-download>;
         dcat:downloadURL "http://opgc.fr/vobs/rest2/req.php/voldorad/data/id/3"^^xsd:anyURI;
         dct:conformsTo <opgc.fr/vobs/voldorad/WP11/DDSS-024>;
-        dct:format "http://publications.europa.eu/mdr/resource/authority/file-type/html/filetypes-eng.html#ZIP"^^xsd:anyURI;
+        dct:format "http://publications.europa.eu/resource/authority/file-type/ZIP"^^xsd:anyURI;
+        dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 .
 
 <http://orcid.org/0000-0001-8293-1340> a schema:Person;
@@ -62,7 +62,7 @@
     schema:address [ a schema:PostalAddress;
         schema:streetAddress "Laboratoire Magmas et Volcans, 6 Avenue Blaise Pascal"^^xsd:string;
         schema:addressLocality "AUBIERE CEDEX";
-        schema:postalCode "TSA 60026 - CS 60026, 63178";
+        schema:postalCode "63178";
         schema:addressCountry "FRANCE";
     ];
     schema:email "f.donnadieu@opgc.fr";
@@ -70,6 +70,7 @@
     schema:url "http://lmv.uca.fr/donnadieu-franck/"^^xsd:anyURI;
     schema:qualifications "Lead Scientist of the VOLDORAD observation service";
     schema:affiliation <http://isni.org/isni/0000000109416043>;
+    schema:contactPoint <http://orcid.org/0000-0001-8293-1340/contactPoint>;
 .
 
 <http://orcid.org/0000-0002-4518-3328> a schema:Person;
@@ -82,7 +83,7 @@
     schema:address [ a schema:PostalAddress;
         schema:streetAddress "Laboratoire Magmas et Volcans, 6 Avenue Blaise Pascal"^^xsd:string;
         schema:addressLocality "AUBIERE CEDEX";
-        schema:postalCode "TSA 60026 - CS 60026, 63178";
+        schema:postalCode "63178";
         schema:addressCountry "FRANCE";
     ];
     schema:email "p.labazuy@opgc.fr";
@@ -90,6 +91,7 @@
     schema:url "http://orcid.org/0000-0002-4518-3328"^^xsd:anyURI;
     schema:qualifications "Deputy Director of OPGC";
     schema:affiliation <http://isni.org/isni/0000000109416043>;
+    schema:contactPoint <http://orcid.org/0000-0002-4518-3328/scientificContact>; 
 .
 
 <http://orcid.org/0000-0002-0108-5486> a schema:Person;
@@ -102,7 +104,7 @@
     schema:address [ a schema:PostalAddress;
         schema:streetAddress "OPGC, 4 Avenue Blaise Pascal"^^xsd:string;
         schema:addressLocality "AUBIERE CEDEX";
-        schema:postalCode "TSA 60026 - CS 60026, 63178";
+        schema:postalCode "63178";
         schema:addressCountry "FRANCE";
     ];
     schema:email "n.huret@opgc.fr";
@@ -110,6 +112,8 @@
     schema:url "http://orcid.org/0000-0002-0108-5486"^^xsd:anyURI;
     schema:qualifications "Director of OPGC";
     schema:affiliation <http://isni.org/isni/0000000109416043>;
+    schema:contactPoint <http://orcid.org/0000-0002-0108-5486/legalContact>;
+    schema:contactPoint <http://orcid.org/0000-0002-0108-5486/financialContact>; 
 .
 
 <http://isni.org/isni/0000000109416043> a schema:Organization;
@@ -118,19 +122,21 @@
         schema:value "http://isni.org/isni/0000000109416043";
     ];
     schema:legalName "Earth Physics Observatory of Clermont-Ferrand"^^xsd:string;
-    schema:alternateName "Observatoire de Physique du Globe de Clermont-Ferrand"^^xsd:string;
-    schema:alternateName "OPGC"^^xsd:string;
+    # schema:alternateName "Observatoire de Physique du Globe de Clermont-Ferrand"^^xsd:string;
+    # schema:alternateName "OPGC"^^xsd:string;
     schema:address [ a schema:PostalAddress;
         schema:streetAddress "OPGC, 4 Avenue Blaise Pascal";
         schema:addressLocality "AUBIERE CEDEX";
-        schema:postalCode "TSA 60026 - CS 60026, 63178";
+        schema:postalCode "63178";
         schema:addressCountry "FRANCE";
     ];
-    dct:spatial [ a dct:location ;
-        locn:geometry <geo:45.761,3.110,u=407,crs=wgs84>;
-    ];
+    #dct:spatial [ a dct:location ;
+    #    locn:geometry <geo:45.761,3.110,u=407,crs=wgs84>;
+    #];
     schema:logo "http://wwwobs.univ-bpclermont.fr/opgc/images/LogoOPGCTransparent.png"^^xsd:anyURI;
     schema:url "http://opgc.fr"^^xsd:anyURI;
+    schema:email "g.delcampo@opgc.fr";
+    schema:telephone "+33473407380";
     schema:contactPoint <http://orcid.org/0000-0002-4518-3328/scientificContact>;
     schema:contactPoint <http://orcid.org/0000-0002-0108-5486/legalContact>;
     schema:contactPoint <http://orcid.org/0000-0002-0108-5486/financialContact>;
@@ -158,37 +164,34 @@
         schema:value "http://isni.org/isni/0000000121129282";
     ];
     schema:legalName "The National Center for Scientific Research"^^xsd:string;
-    schema:alternateName "CNRS: Le Centre National de la Recherche Scientifique"^^xsd:string;
-    schema:alternateName "CNRS"^^xsd:string;
+    # schema:alternateName "CNRS: Le Centre National de la Recherche Scientifique"^^xsd:string;
+    # schema:alternateName "CNRS"^^xsd:string;
     schema:address [ a schema:PostalAddress;
         schema:streetAddress "CNRS, 3 rue Michel-Ange";
         schema:addressLocality "PARIS CEDEX 16";
         schema:postalCode "75794";
         schema:addressCountry "FRANCE";
     ];
-    dct:spatial [ a dct:location ;
-        locn:geometry <geo:48.847,2.262,u=0,crs=wgs84>;
-    ];
+    #dct:spatial [ a dct:location ;
+        #locn:geometry <geo:48.847,2.262,u=0,crs=wgs84>;
+    #];
     schema:logo "http://www.cnrs.fr/fr/z-tools/newune/themes/CNRSTheme/images/logocnrs.png"^^xsd:anyURI;
     schema:url "http://cnrs.fr"^^xsd:anyURI;
+    schema:telephone "+33144964000";
 .
 
 <opgc.fr/vobs/voldorad/WP11/DDSS-024> a epos:WebService;
     schema:identifier "opgc.fr/vobs/voldorad/WP11/DDSS-024";
-    adms:identifier [ a adms:identifier;
-        schema:propertyID "DDSS-ID";
-        schema:value "WP11-DDSS-024";
-    ];
-    schema:description "Since september 2017, OPGC assigns Digital Object Identifiers (DOI) to datasets. These datasets are archived by and published through OPGC Data Services and cover all geoscientific disciplines. They range from large dynamic datasets deriving from data intensive global monitoring networks with real-time data acquisition to the full suite of highly variable datasets collected by individual researchers or small teams. These highly variable data (‘long-tail data’) are small in size, but represent an important part of the total scientific output. This web service allow to retrive data from the voldorad observation service. VOLDORAD is an observation system within France\'s National Service for Volcanology Observation (SNOV). The system use ground-based doppler radar to extract near-source eruptive parameters. The five mains extracted parameters are: Power-plus, Power-minus and Power that give an indication of the quantity of material that goes through the radar beacon (for eruption magnitude estimate), and Velocity-plus/Velocity-minus which are the radial speed of particles (for estimate the eruption intensity).";
+    schema:description "Since september 2017, OPGC assigns Digital Object Identifiers (DOI) to datasets. These datasets are archived by and published through OPGC Data Services and cover all geoscientific disciplines. They range from large dynamic datasets deriving from data intensive global monitoring networks with real-time data acquisition to the full suite of highly variable datasets collected by individual researchers or small teams. These highly variable data (‘long-tail data’) are small in size, but represent an important part of the total scientific output. This web service allow to retrive data from the voldorad observation service. VOLDORAD is an observation system within France's National Service for Volcanology Observation (SNOV). The system use ground-based doppler radar to extract near-source eruptive parameters. The five mains extracted parameters are: Power-plus, Power-minus and Power that give an indication of the quantity of material that goes through the radar beacon (for eruption magnitude estimate), and Velocity-plus/Velocity-minus which are the radial speed of particles (for estimate the eruption intensity).";
     schema:name "OPGC Virtual Observatory - VOLDORAD Entry Point - EPOS - WP11-DDSS-024";
     schema:datePublished "2016-05-26T08:00:00Z"^^xsd:dateTime;
     schema:dateModified "2018-02-27T16:00:00Z"^^xsd:dateTime;
     schema:provider <http://isni.org/isni/0000000109416043>;
     schema:keywords "Virtual Observatory", "Database", "Data Catalog", "ground-based", "remote-sensing", "doppler effect", "radar", "power", "velocity", "particles", "source parameters";
-    hydra:entrypoint "http://opgc.fr/vobs/so_interface.php?so=voldorad"^^xsd:anyURI;
+    hydra:entrypoint "http://opgc.fr/vobs/rest2/req.php/application/voldorad"^^xsd:anyURI;
     hydra:supportedOperation <opgc.fr/vobs/voldorad/WP11/DDSS-024/data-catalog>;
     hydra:supportedOperation <opgc.fr/vobs/voldorad/WP11/DDSS-024/data-download>;
-    dcat:theme <#Doppler-Radar>;
+    dcat:theme <epos:DopplerRadar>;
     schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
     dct:conformsTo <opgc.fr/vobs/APIDocumentation>;
     dcat:contactPoint <http://orcid.org/0000-0001-8293-1340/contactPoint>;
@@ -205,13 +208,14 @@
 .
     <opgc.fr/vobs/voldorad/WP11/DDSS-024/data-catalog> a hydra:Operation;
         hydra:method "GET"^^xsd:string;
-        hydra:returns "JSON, TURTLE-RDF-EPOS-DCAT-AP";
+        hydra:returns "text/turtle";
+        # hydra:returns "application/json";
         hydra:property [ a hydra:IriTemplate;
-            hydra:template "http://opgc.fr/vobs/rest2/req.php/voldorad(?timestart, timeend, radar, localization, eruption, output, onscreen)"^^xsd:string;
+            hydra:template "http://opgc.fr/vobs/rest2/req.php/voldorad{?timestart, timeend, radar, localization, eruption, output, onscreen}"^^xsd:string;
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "timestart"^^xsd:dateTime;
                     rdfs:label "Starting datetime of the time interval query (format YYYY-MM-DDThh:mm:ss:Z)";
-                    dct:type "datetime";
+                    rdfs:range "xsd:dateTime";
                     schema:minValue "0001-01-01T00:00:00Z"^^xsd:dateTime;
                     schema:maxValue "9999-12-31T23:59:59Z"^^xsd:dateTime;
                     hydra:required "false"^^xsd:boolean;
@@ -219,7 +223,7 @@
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "timeend"^^xsd:dateTime;
                     rdfs:label "Ending datetime of the time interval query (format YYYY-MM-DDThh:mm:ssZ)";
-                    dct:type "datetime";
+                    rdfs:range "xsd:dateTime";
                     schema:minValue "0001-01-01T00:00:00Z"^^xsd:dateTime;
                     schema:maxValue "9999-12-31T23:59:59Z"^^xsd:dateTime;
                     hydra:required "false"^^xsd:boolean;
@@ -227,7 +231,7 @@
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "radar"^^xsd:string;
                     rdfs:label "The type of doppler radar used to acquired data";
-                    dct:type "string";
+                    rdfs:range "xsd:string";
                     http:paramValue "VOLDORAD2B"^^xsd:string;
                     schema:defaultValue "VOLDORAD2B"^^xsd:string;
                     hydra:required "false"^^xsd:boolean;
@@ -235,7 +239,7 @@
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "localization"^^xsd:string;
                     rdfs:label "The volcanic target name";
-                    dct:type "string";
+                    rdfs:range "xsd:string";
                     http:paramValue "Etna"^^xsd:string;
                     schema:defaultValue "Etna"^^xsd:string;
                     hydra:required "false"^^xsd:boolean;
@@ -243,10 +247,10 @@
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "eruption"^^xsd:boolean;
                     rdfs:label "Limit the query to eruptive period";
-                    dct:type "boolean";
-                    http:paramValue "TRUE"^^xsd:boolean;
-                    http:paramValue "FLASE"^^xsd:boolean;
-                    schema:defaultValue "FALSE"^^xsd:boolean;
+                    rdfs:range "xsd:boolean";
+                    http:paramValue "true"^^xsd:boolean;
+                    http:paramValue "false"^^xsd:boolean;
+                    schema:defaultValue "false"^^xsd:boolean;
                     hydra:required "false"^^xsd:boolean;
                 ];
                 hydra:mapping [ a hydra:IriTemplateMapping;
@@ -255,7 +259,7 @@
                     http:paramValue "JSON";
                     http:paramValue "TURTLE-RDF-EPOS-DCAT-AP";
                     schema:defaultValue "TURTLE-RDF-EPOS-DCAT-AP";
-                    dct:type "string";
+                    rdfs:range "xsd:string";
                     hydra:required "false"^^xsd:boolean;
                 ];
                 hydra:mapping [ a hydra:IriTemplateMapping;
@@ -264,27 +268,28 @@
                     http:paramValue "true"^^xsd:boolean;
                     http:paramValue "false"^^xsd:boolean;
                     schema:defaultValue "true"^^xsd:boolean;
-                    dct:type "boolean";
+                    rdfs:range "xsd:boolean";
                     hydra:required "false"^^xsd:boolean;
                 ];
         ];
 .
     <opgc.fr/vobs/voldorad/WP11/DDSS-024/data-download> a hydra:Operation;
         hydra:method "GET"^^xsd:string;
-        hydra:returns "ZIP";
+        hydra:returns "application/zip";
+        # hydra:returns "application/json";
         hydra:property [ a hydra:IriTemplate;
             hydra:template "http://opgc.fr/vobs/rest2/req.php/voldorad/data/id/{uri}(/{format})"^^xsd:string;
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "uri"^^xsd:integer;
                     rdfs:label "The data id number";
-                    dct:type "integer";
+                    rdfs:range "xsd:integer";
                     schema:minValue "1"^^xsd:integer;
                     hydra:required "true"^^xsd:boolean;
                 ];
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "format"^^xsd:string;
                     rdfs:label "The output format";
-                    dct:type "string";
+                    rdfs:range "xsd:string";
                     http:paramValue "JSON"^^xsd:string;
                     http:paramValue "CSV"^^xsd:string;
                     schema:defaultValue "JSON"^^xsd:string;
@@ -293,11 +298,11 @@
         ];
 .
 
-    <#Volcano-Observations> a skos:ConceptSchema;
-        dct:title "Volcano-Observations";
+    <epos:VolcanoObservations> a skos:ConceptScheme;
+        dct:title "Volcano Observations";
         dct:description "It contains the concept of Volcanological observations";
 .
-    <#Doppler-Radar> a skos:Concept;
-            skos:inScheme <#Volcano-Observations>;
+    <epos:DopplerRadar> a skos:Concept;
+            skos:inScheme <epos:VolcanoObservations>;
             skos:prefLabel "Doppler Radar";
 .

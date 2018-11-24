@@ -1,0 +1,116 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http: <http://www.w3.org/2006/http#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+
+
+<epos:VolcanoObservations> a skos:ConceptScheme;
+	dct:title "Volcano Observations";
+	dct:description "Volcanic activity";
+.
+
+<epos:Geohazards> a skos:Concept;
+	skos:definition "Reports released during a volcanic crisis or an eruption";
+	skos:inScheme <epos:VolcanoObservations>;
+	skos:prefLabel "Geohazards" ;
+.
+
+
+<http://orcid.org/0000-0003-2658-1838> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "ORCID";
+		schema:value "http://orcid.org/0000-0003-2658-1838";
+	];
+	schema:familyName "Kristín S. Vogfjörd";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Bústadavegi 9";
+		schema:addressLocality "Reykjavík";
+		schema:postalCode "150";
+		schema:addressCountry "Iceland";
+	];
+	schema:email "vogfjord@vedur.is";
+	schema:telephone "+354 522 6169";
+	schema:url "http://en.vedur.is"^^xsd:anyURI;
+	schema:qualifications "Group leader of Geoscience research at IMO";
+	schema:contactPoint <http://orcid.org/0000-0003-2658-1838/contactPoint>;
+	schema:contactPoint <http://orcid.org/0000-0003-2658-1838/contactPoint>;
+.
+	<www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/064> a dcat:Dataset;
+		dct:title "Effects on health and recommendations for response to SO2 from volcanic eruptions";
+		dct:identifier "www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/064";
+		adms:identifier [ a adms:Identifier;
+			adms:schemaAgency "DDSS-ID";
+			skos:notation "WP11-DDSS-064";
+		];
+		dct:description "Document describing the effects on humans from SO2 in the atmosphere and recommendations for maximum exposure";
+		dct:created "2014-10-01"^^xsd:date;
+		dct:modified "2014-10-01"^^xsd:date;
+		dct:issued "2014-10-01"^^xsd:date;
+	dct:temporal [ a dct:PeriodOfTime;
+		schema:startDate "2014-10-01T00:00:00Z"^^xsd:dateTime;
+		schema:endDate "2025-01-01T00:00:00Z"^^xsd:dateTime;
+	];
+	dct:spatial [ a dct:Location;
+		locn:geometry "POLYGON(-25.0 63.0,-25.0 68.5,-10.0 68.5,-10.0 63.0,-25.0 63.0)"^^gsp:wktLiteral;
+	];
+		dcat:keyword "Volcanic gas";
+		dcat:contactPoint <http://orcid.org/0000-0003-2658-1838/contactPoint>;
+		dcat:distribution <volcanicexposure>;
+		owl:versionInfo "V1.0";
+		dct:publisher <PIC:997168343>;
+		dcat:theme <epos:Geohazards>;
+.
+
+<PIC:997168343> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "PIC";
+		schema:value "997168343";
+	];
+	
+	schema:legalName "Icelandic Meteorological Office IMO";
+	schema:leiCode "6309080350";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Bustadardvegur 7 - 9";
+		schema:addressLocality "Reykjavik";
+		schema:postalCode "150";
+		schema:addressCountry "Iceland";
+	];
+	schema:logo "http://www.vedur.is/media/vedurstofan/utgafa/merki/VI_bottom_gradient_office_web_pos_rgb.png"^^xsd:anyURI;
+	schema:url "http://en.vedur.is"^^xsd:anyURI;
+	schema:email "office@vedur.is";
+	schema:telephone "+3545226000";
+	schema:contactPoint <http://orcid.org/0000-0003-2658-1838/contactPoint>;
+.
+
+	<volcanicexposure> a dcat:Distribution;
+		dct:identifier "volcanicexposure";
+		dct:title "Effects on health and recommendations for response to SO2 from volcanic eruptions";
+		dct:description "Document";
+		dct:issued "2014-10-01"^^xsd:date;
+		dct:modified "2014-10-01"^^xsd:date;
+		dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
+		dcat:downloadURL "https://cdn.vedur.is/epos/v1/volcanicexposure.pdf"^^xsd:anyURI;
+		dcat:accessURL "https://cdn.vedur.is/epos/v1/volcanicexposure.pdf"^^xsd:anyURI;
+		dct:format "http://publications.europa.eu/resource/authority/file-type/PDF"^^xsd:anyURI;
+.
+	<http://orcid.org/0000-0003-2658-1838/contactPoint> a schema:ContactPoint;
+		schema:email "vogfjord@vedur.is";
+		schema:availableLanguage "en" ;
+.
+	<http://orcid.org/0000-0003-2658-1838/contactPoint> a schema:ContactPoint;
+		schema:email "vogfjord@vedur.is";
+		schema:availableLanguage "en" ;
+.

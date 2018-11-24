@@ -1,0 +1,426 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .  
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .  
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .  
+@prefix dc: <http://purl.org/dc/elements/1.1/> .  
+@prefix dct: <http://purl.org/dc/terms/> .  
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .  
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .  
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .  
+@prefix schema: <http://schema.org/> .  
+@prefix dcat: <http://www.w3.org/ns/dcat#> .  
+@prefix cnt: <http://www.w3.org/2011/content#> .  
+@prefix locn: <http://www.w3.org/ns/locn#> .  
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .  
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .  
+@prefix http: <http://www.w3.org/2006/http#> .  
+@prefix owl: <http://www.w3.org/2002/07/owl#> .  
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .  
+
+<http://orcid.org/0000-0001-7080-183X> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "orcid";
+		schema:value "http://orcid.org/0000-0001-7080-183X";
+	]; 
+	schema:familyName "Ergintav";
+	schema:givenName "Semih";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Kandilli Rasathanesi, Çengelköy";
+		schema:addressLocality "İstanbul";
+		schema:postalCode "34684";
+		schema:addressCountry "TURKEY";
+	]; 
+	schema:email "semih.ergintav@boun.edu.tr";
+	schema:telephone "+90535******";
+	schema:url "http://jeodezi.boun.edu.tr/?q=tr/semihergintav"^^xsd:anyURI;
+	schema:qualifications "Professor";
+	schema:affiliation <PIC:999882500>;
+	schema:contactPoint <http://orcid.org/0000-0001-7080-183X/scientificContact>;
+.
+<http://orcid.org/0000-0001-7080-183X/scientificContact> a schema:ContactPoint;
+	schema:email "semih.ergintav@boun.edu.tr";
+	schema:availableLanguage "en" ;
+	schema:contactType "scientificContact" ;
+.
+
+<PIC:999882500> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "pic";
+		schema:value "999882500";
+	]; 
+	schema:legalName "KOERI Kandilli Observatory and Earthquake Research Institue";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Çengelköy";
+		schema:addressLocality "Istanbul";
+		schema:postalCode "34684";
+		schema:addressCountry "TURKEY";
+	]; 
+	schema:logo "http://www.koeri.boun.edu.tr/new/sites/default/files/koeri-logo-tr.png"^^xsd:anyURI;
+	schema:url "http://koeri.boun.edu.tr/"^^xsd:anyURI;
+	schema:email "sislab@boun.edu.tr";
+	schema:contactPoint <http://orcid.org/0000-0001-7080-183X/scientificContact>;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/VEL_WAVEFORM_CONTINUOUS/Dataset/001> a dcat:Dataset;
+	dct:title "KOERI Velocity Waveform Continuous Dataset";
+	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/VEL_WAVEFORM_CONTINUOUS/Dataset/001";
+	dct:description "Velocity Waveform Continuous Dataset.";
+	adms:identifier [ a adms:Identifier; 
+		adms:schemaAgency "DDSS-ID";
+		skos:notation "WP09-DDSS-001"; 
+	];
+	## example of frequency using a controlled vocabulary
+	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+	dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
+	dct:created "2012-01-01T00:00:00Z"^^xsd:dateTime;
+	dct:issued "2012-01-01T00:00:00Z"^^xsd:dateTime;
+	dct:modified "2012-01-01T00:00:00Z"^^xsd:dateTime;
+	owl:versionInfo "1.0.0";
+	dct:spatial [ a dct:Location ;
+		locn:geometry "POLYGON(26.0 42.0, 31.0 42.0, 31.0 39.0, 26.0 39.0, 26.0 42.0)"^^gsp:wktLiteral ;
+	];
+	# This property refers to a temporal period that the Dataset covers.
+    dct:temporal [ a dct:PeriodOfTime ;
+        schema:startDate "2012-01-01T00:00:00"^^xsd:dateTime ;
+        schema:endDate "2017-01-01T00:00:00"^^xsd:dateTime ;
+    ];
+	dcat:theme  <epos:Seismicwaveforms> ;
+	dcat:keyword "seismology", "seismicity", "earthquakes", "Velocity", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "NFO", "Near Fault Observatory", "KOERI";
+	dcat:contactPoint <http://orcid.org/0000-0001-7080-183X/scientificContact>;
+	dct:publisher <PIC:999882500>;
+	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/VEL_WAVEFORM_CONTINUOUS/Distribution/001>;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/ACC_WAVEFORM_CONTINUOUS/Dataset/001> a dcat:Dataset;
+	dct:title "KOERI Acceleration Waveform Continuous Dataset";
+	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/ACC_WAVEFORM_CONTINUOUS/Dataset/001";
+	dct:description "Acceleration Waveform Continuous Dataset.";
+	adms:identifier [ a adms:Identifier; 
+		adms:schemaAgency "DDSS-ID";
+		skos:notation "WP09-DDSS-002"; 
+	];
+	## example of frequency using a controlled vocabulary
+	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+	dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
+	dct:created "2012-01-01T00:00:00Z"^^xsd:dateTime;
+	dct:issued "2012-01-01T00:00:00Z"^^xsd:dateTime;
+	dct:modified "2012-01-01T00:00:00Z"^^xsd:dateTime;
+	owl:versionInfo "1.0.0";
+	dct:spatial [ a dct:Location ;
+		locn:geometry "POLYGON(26.0 42.0, 31.0 42.0, 31.0 39.0, 26.0 39.0, 26.0 42.0)"^^gsp:wktLiteral ;
+	];
+	# This property refers to a temporal period that the Dataset covers.
+    dct:temporal [ a dct:PeriodOfTime ;
+        schema:startDate "2012-01-01T00:00:00"^^xsd:dateTime ;
+        schema:endDate "2017-01-01T00:00:00"^^xsd:dateTime ;
+    ];
+	dcat:theme  <epos:Seismicwaveforms> ;
+	dcat:keyword "seismology", "seismicity", "earthquakes", "Acceleration", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "NFO", "Near Fault Observatory", "KOERI";
+	dcat:contactPoint <http://orcid.org/0000-0001-7080-183X/scientificContact>;
+	dct:publisher <PIC:999882500>;
+	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/ACC_WAVEFORM_CONTINUOUS/Distribution/001>;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/SEISMIC_STATION/Dataset/001> a dcat:Dataset;
+	dct:title "KOERI Seismic Station Information Dataset";
+	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/SEISMIC_STATION/Dataset/001";
+	dct:description "Seismic Station Information Dataset.";
+	adms:identifier [ a adms:Identifier; 
+		adms:schemaAgency "DDSS-ID";
+		skos:notation "WP09-DDSS-001b"; 
+	];
+	## example of frequency using a controlled vocabulary
+	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+	dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
+	dct:created "2012-01-01T00:00:00Z"^^xsd:dateTime;
+	dct:issued "2012-01-01T00:00:00Z"^^xsd:dateTime;
+	dct:modified "2012-01-01T00:00:00Z"^^xsd:dateTime;
+	owl:versionInfo "1.0.0";
+	dct:spatial [ a dct:Location ;
+		locn:geometry "POLYGON(26.0 42.0, 31.0 42.0, 31.0 39.0, 26.0 39.0, 26.0 42.0)"^^gsp:wktLiteral ;
+	];
+	# This property refers to a temporal period that the Dataset covers.
+    dct:temporal [ a dct:PeriodOfTime ;
+        schema:startDate "2012-01-01T00:00:00"^^xsd:dateTime ;
+        schema:endDate "2017-01-01T00:00:00"^^xsd:dateTime ;
+    ];
+	dcat:theme  <epos:Seismicstations> ;
+	dcat:keyword "seismology", "seismicity", "earthquakes", "station", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "KOERI" ;
+	dcat:contactPoint <http://orcid.org/0000-0001-7080-183X/scientificContact>;
+	dct:publisher <PIC:999882500>;
+	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/SEISMIC_STATION/Distribution/001>;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/VEL_WAVEFORM_CONTINUOUS/Distribution/001> a dcat:Distribution;
+    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/VEL_WAVEFORM_CONTINUOUS/Distribution/001";
+    dct:title "KOERI Velocity Waveform Continuous Distribution";
+	dct:description "KOERI Velocity Waveform Continuous Distribution";
+	dct:created "2012-01-01"^^xsd:date;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/WAVEFORM_CONTINUOUS/WebService/001/Operation/001>;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/VEL_WAVEFORM_CONTINUOUS/WebService/001>;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/ACC_WAVEFORM_CONTINUOUS/Distribution/001> a dcat:Distribution;
+    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/ACC_WAVEFORM_CONTINUOUS/Distribution/001";
+	dct:title "KOERI Acceleration Waveform Continuous Distribution";
+	dct:description "KOERI Acceleration Waveform Continuous Distribution";
+	dct:created "2012-01-01"^^xsd:date;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/WAVEFORM_CONTINUOUS/WebService/001/Operation/001>;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/ACC_WAVEFORM_CONTINUOUS/WebService/001>;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI ;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/SEISMIC_STATION/Distribution/001> a dcat:Distribution;
+    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/SEISMIC_STATION/Distribution/001";
+    dct:title "KOERI Seismic Station Information Distribution";
+	dct:description "KOERI Seismic Station Information Distribution";
+	dct:created "2012-01-01"^^xsd:date;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/SEISMIC_STATION/WebService/001/Operation/001>;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/SEISMIC_STATION/WebService/001>;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/VEL_WAVEFORM_CONTINUOUS/WebService/001> a epos:WebService;
+	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/VEL_WAVEFORM_CONTINUOUS/WebService/001";
+	schema:description "KOERI - The dataselect Web service provides access to time series data in miniSEED format. The data may be filtered e.g. by time, station and network parameters. The request type is HTTP-GET and HTTP-POST. Please refer to http://www.fdsn.org/webservice for a complete service description.";
+	schema:name "KOERI - Velocity and Acceleration Seismic waveforms Continuous";
+	schema:datePublished "2016-01-01T00:00:00.000Z"^^xsd:dateTime;
+	schema:dateModified "2016-01-01T00:00:00.000Z"^^xsd:dateTime;
+	schema:provider <PIC:999882500>;
+	schema:keywords "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "KOERI", "Dataselect", "FDSN-WS", "Seismic Waveform", "EIDA";
+	#hydra:entrypoint "application.wadl"^^xsd:anyURI; 
+	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/WAVEFORM_CONTINUOUS/WebService/001/Operation/001>;
+	dcat:theme <epos:Seismicwaveforms>;
+	dcat:contactPoint <http://orcid.org/0000-0001-7080-183X/scientificContact>;
+. 
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/ACC_WAVEFORM_CONTINUOUS/WebService/001> a epos:WebService;
+	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/ACC_WAVEFORM_CONTINUOUS/WebService/001";
+	schema:description "KOERI - The dataselect Web service provides access to time series data in miniSEED format. The data may be filtered e.g. by time, station and network parameters. The request type is HTTP-GET and HTTP-POST. Please refer to http://www.fdsn.org/webservice for a complete service description.";
+	schema:name "KOERI - Velocity and Acceleration Seismic waveforms Continuous";
+	schema:datePublished "2016-01-01T00:00:00.000Z"^^xsd:dateTime;
+	schema:dateModified "2016-01-01T00:00:00.000Z"^^xsd:dateTime;
+	schema:provider <PIC:999882500>;
+	schema:keywords "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "KOERI", "Dataselect", "FDSN-WS", "Seismic Waveform", "EIDA";
+	#hydra:entrypoint "application.wadl"^^xsd:anyURI; 
+	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/WAVEFORM_CONTINUOUS/WebService/001/Operation/001>;
+	dcat:theme <epos:Seismicwaveforms>;
+	dcat:contactPoint <http://orcid.org/0000-0001-7080-183X/scientificContact>;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/SEISMIC_STATION/WebService/001> a epos:WebService;
+	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/SEISMIC_STATION/WebService/001";
+	schema:description "KOERI - The fdsnws-station web service returns station metadata in FDSN StationXML format (schema here) or as delimited text. The purpose of the FDSN StationXML schema is to define an XML representation of the most important and commonly used structures of SEED 2.4 metadata. Results are available at multiple levels of granularity: network, station, channel and response.";
+	schema:name "KOERI - Seismic Station Information";
+	schema:datePublished "2016-01-01T00:00:00.000Z"^^xsd:dateTime;
+	schema:dateModified "2016-01-01T00:00:00.000Z"^^xsd:dateTime;
+	schema:provider <PIC:999882500>;
+	schema:keywords "seismology", "seismicity", "earthquakes", "stations", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "KOERI";
+	#hydra:entrypoint "application.wadl"^^xsd:anyURI; 
+	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/SEISMIC_STATION/WebService/001/Operation/001>;
+	dcat:theme <epos:Seismicstations>;
+	dcat:contactPoint <http://orcid.org/0000-0001-7080-183X/scientificContact>;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/WAVEFORM_CONTINUOUS/WebService/001/Operation/001> a hydra:Operation;
+	hydra:method "GET"^^xsd:string;
+	hydra:returns "application/vnd.fdsn.mseed";
+	hydra:property[ a hydra:IriTemplate;
+		hydra:template "http://eida.koeri.boun.edu.tr/fdsnws/dataselect/1/query{?starttime, endtime, network, station, location, channel, quality, minimumlength, nodata}"^^xsd:string;
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "starttime"^^xsd:string;
+			rdfs:label "Start of the timespan";
+			rdfs:range "xsd:dateTime";
+			schema:defaultValue "2014-05-10T12:00:00.000Z";
+			hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "endtime"^^xsd:string;
+			rdfs:label "End of the timespan";
+			rdfs:range "xsd:dateTime";
+			schema:defaultValue "2014-05-10T12:00:02.000Z";
+			hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "network"^^xsd:string;
+			rdfs:label "Network code";
+			rdfs:range "xsd:string";
+			http:paramValue "KO";
+			http:paramValue "TL";
+			http:paramValue "IJ";
+			http:paramValue "6G";
+			schema:defaultValue "KO,TL,IJ,6G";
+			hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "station"^^xsd:string;
+			rdfs:label "Station code";
+			rdfs:range "xsd:string";
+			schema:defaultValue "ARMT,BGKT,CAVI,CRLT,CTKS,CTYL,EDC,ERIK,GELI,GEMT,GULT,HRTX,ISK,KAVV,KCTX,KLYT,KRBG,LAP,MDNY,MRMT,PHSR,RKY,SILT,SLVT,SPNC,YLV,ALTN,AVDN,CFTB,DLMC,ENGR,ESNK,FSTK,HYDR,ILYS,IPA2,KRSK,KYND,KYSD,SDSN,SFRN,SLMY,STBT,TRML,TSVK,UNCK,YGTL,YYLC,ZYBG,MAR2,MAR3,MAR4,MAR5,MAR6,MAR7,MAR8,MAR9,MAR1,AKHS,AKRS,ATIM,AYVA,BALY,BAYC,BEYO,BOZC,BOZM,BUHA,BUYM,BZGM,CAGI,CAME,CAMT,CMHM,DEMI,DURS,DUVT,ELBA,EREM,ESKM,GBZM,HAMK,HSYN,IGDM,KBKT,KKZM,KLCM,KMRM,KNLM,KOCA,KRCM,KUYC,KVKM,MADM,MARM,MSDM,NEVM,OMRT,SART,SGTM,SLVM,SNLM,STEP,TEPT,TRNM,YNKM,ZEDA";
+			hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "location"^^xsd:string;
+			rdfs:label "Location code";
+			rdfs:range "xsd:integer" ;
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "channel"^^xsd:string;
+			rdfs:label "Channel code";
+			rdfs:range "xsd:string" ;
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "quality"^^xsd:string;
+			rdfs:label "Quality";
+			rdfs:range "xsd:string";
+			http:paramValue "D";
+			http:paramValue "R";
+			http:paramValue "Q";
+			http:paramValue "M";
+			http:paramValue "B";
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "minimumlength"^^xsd:string;
+			rdfs:label "Minimum Length";
+			rdfs:range "xsd:integer" ;
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "nodata"^^xsd:string;
+			rdfs:label "HTTP error code if no data is found";
+			rdfs:range "xsd:string";
+			http:paramValue "204";
+			http:paramValue "404";
+			hydra:required "false"^^xsd:boolean;
+		];
+	];
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/SEISMIC_STATION/WebService/001/Operation/001> a hydra:Operation;
+	hydra:method "GET"^^xsd:string;
+	hydra:returns "application/xml";
+	hydra:property[ a hydra:IriTemplate;
+		hydra:template "http://eida.koeri.boun.edu.tr/fdsnws/station/1/query{?starttime, endtime, network, station, location, channel, minlatitude, maxlatitude, minlongitude, maxlongitude, level, format, nodata}"^^xsd:string;
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "starttime"^^xsd:string;
+			rdfs:label "Start of the timespan";
+			rdfs:range "xsd:dateTime";
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "endtime"^^xsd:string;
+			rdfs:label "End of the timespan";
+			rdfs:range "xsd:dateTime";
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "network"^^xsd:string;
+			rdfs:label "Network code";
+			rdfs:range "xsd:string";
+			schema:defaultValue "KO,TL,IJ,6G";
+			# schema:defaultValue "_NFOMARSTE";
+			hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "station"^^xsd:string;
+			rdfs:label "Station code";
+			rdfs:range "xsd:string";
+			schema:defaultValue "ARMT,BGKT,CAVI,CRLT,CTKS,CTYL,EDC,ERIK,GELI,GEMT,GULT,HRTX,ISK,KAVV,KCTX,KLYT,KRBG,LAP,MDNY,MRMT,PHSR,RKY,SILT,SLVT,SPNC,YLV,ALTN,AVDN,CFTB,DLMC,ENGR,ESNK,FSTK,HYDR,ILYS,IPA2,KRSK,KYND,KYSD,SDSN,SFRN,SLMY,STBT,TRML,TSVK,UNCK,YGTL,YYLC,ZYBG,MAR2,MAR3,MAR4,MAR5,MAR6,MAR7,MAR8,MAR9,MAR1,AKHS,AKRS,ATIM,AYVA,BALY,BAYC,BEYO,BOZC,BOZM,BUHA,BUYM,BZGM,CAGI,CAME,CAMT,CMHM,DEMI,DURS,DUVT,ELBA,EREM,ESKM,GBZM,HAMK,HSYN,IGDM,KBKT,KKZM,KLCM,KMRM,KNLM,KOCA,KRCM,KUYC,KVKM,MADM,MARM,MSDM,NEVM,OMRT,SART,SGTM,SLVM,SNLM,STEP,TEPT,TRNM,YNKM,ZEDA";
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "location"^^xsd:string;
+			rdfs:label "Location code";
+			rdfs:range "xsd:string";
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "channel"^^xsd:string;
+			rdfs:label "Channel code";
+			rdfs:range "xsd:string";
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "minlatitude"^^xsd:string;
+			rdfs:label "Minimum Latitude";
+			rdfs:range "xsd:float";
+			schema:minValue "-90.0";
+			schema:maxValue "90.0";
+			schema:defaultValue "39.0";
+			hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "maxlatitude"^^xsd:string;
+			rdfs:label "Maximum Latitude";
+			rdfs:range "xsd:float";
+			schema:minValue "-90.0";
+			schema:maxValue "90.0";
+			schema:defaultValue "42.0";
+			hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "minlongitude"^^xsd:string;
+			rdfs:label "Minimum Longitude";
+			rdfs:range "xsd:float";
+			schema:minValue "-180.0";
+			schema:maxValue "180.0";
+			schema:defaultValue "26.0";
+			hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "maxlongitude"^^xsd:string;
+			rdfs:label "Maximum Longitude";
+			rdfs:range "xsd:float";
+			schema:minValue "-180.0";
+			schema:maxValue "180.0";
+			schema:defaultValue "31.0";
+			hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "level"^^xsd:string;
+			rdfs:label "Level";
+			rdfs:range "xsd:string";
+			http:paramValue "network";
+			http:paramValue "station";
+			http:paramValue "channel";
+			http:paramValue "response";
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "format"^^xsd:string;
+			rdfs:label "Output Format";
+			rdfs:range "xsd:string";
+			http:paramValue "xml";
+			http:paramValue "text";
+			schema:defaultValue "xml";
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "nodata"^^xsd:string;
+			rdfs:label "HTTP error code if no data is found";
+			rdfs:range "xsd:string";
+			http:paramValue "204";
+			http:paramValue "404";
+			hydra:required "false"^^xsd:boolean;
+		];
+	] ;
+.
+
+<epos:NearFaultObservations> a skos:ConceptScheme;
+	dct:title "Near Fault Observations";
+	dct:description "It contains the concepts of Near Fault Observations";
+. 
+<epos:Seismicwaveforms> a skos:Concept;
+	skos:inScheme <epos:NearFaultObservations>;
+	skos:prefLabel "Seismic waveforms";
+. 
+<epos:Seismicstations> a skos:Concept;
+	skos:inScheme <epos:NearFaultObservations>;
+	skos:prefLabel "Seismic stations";
+.

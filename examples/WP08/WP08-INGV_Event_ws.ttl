@@ -1,0 +1,410 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http: <http://www.w3.org/2006/http#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+
+# Persons
+
+<http://orcid.org/0000-0002-8651-6387> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "orcid";
+		schema:value "http://orcid.org/0000-0002-8651-6387";
+	];
+	schema:familyName "Doglioni";
+	schema:givenName "Carlo";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Via di Vigna Murata 605";
+		schema:addressLocality "Rome";
+		schema:postalCode "00143";
+		schema:addressCountry "Italy";
+	];
+	schema:email "segreteria.presidenza@ingv.it";
+	schema:qualifications "Professor";
+	schema:affiliation <PIC:999472675>;
+	schema:contactPoint <http://orcid.org/0000-0002-8651-6387/legalContact>;
+.
+
+<http://orcid.org/0000-0002-1399-0379> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+	schema:propertyID "orcid";
+	schema:value "http://orcid.org/0000-0002-1399-0379";
+	];
+	schema:familyName "Fares";
+	schema:givenName "Massimo";
+	schema:address [ a schema:PostalAddress;
+	schema:streetAddress "Via di Vigna Murata, 605";
+	schema:addressLocality "Roma";
+	schema:postalCode "00143";
+	schema:addressCountry "ITALY";
+	];
+	schema:email "massimo.fares@ingv.it";
+	schema:telephone "+3906******";
+	schema:url "http://orcid.org/0000-0002-1399-0379"^^xsd:anyURI;
+	schema:qualifications "IT";
+	schema:affiliation <PIC:999472675> ;
+        schema:contactPoint <http://orcid.org/0000-0002-1399-0379/contactPoint> ;
+	schema:contactPoint <http://orcid.org/0000-0002-1399-0379/scientificContact> ;
+	schema:contactPoint <http://orcid.org/0000-0002-1399-0379/financialContact> ;
+.
+
+# Contacts
+<http://orcid.org/0000-0002-1399-0379/contactPoint> a schema:ContactPoint;
+	schema:email "massimo.fares@ingv.it";
+	schema:contactType "manager" ;
+	schema:availableLanguage "en" ;
+.
+
+<http://orcid.org/0000-0002-1399-0379/scientificContact> a schema:ContactPoint;
+	schema:email "massimo.fares@ingv.it";
+	schema:availableLanguage "en" ;
+	schema:contactType "scientificContact" ;
+.
+
+<http://orcid.org/0000-0002-8651-6387/legalContact> a schema:ContactPoint;
+	schema:email "segreteria.presidenza@ingv.it";
+	schema:availableLanguage "en" ;
+	schema:contactType "legalContact" ;
+.
+
+<http://orcid.org/0000-0002-1399-0379/financialContact> a schema:ContactPoint;
+	schema:email "massimo.fares@ingv.it";
+	schema:availableLanguage "en" ;
+	schema:contactType "financialContact" ;
+.
+
+# Organizzation
+<PIC:999472675> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+	schema:propertyID "PIC";
+	schema:value "999472675";
+	];
+	schema:legalName "INGV National Institute of Geophysics e Volcanology";
+	schema:leiCode "????";
+	schema:address [ a schema:PostalAddress;
+	schema:streetAddress "Via di Vigna Murata, 605";
+	schema:addressLocality "Rome";
+	schema:postalCode "00143";
+	schema:addressCountry "ITALY";
+	];
+	schema:logo "http://roma2.rm.ingv.it/userfiles/file/Logo/INGV_Logo-abbr_colore.jpg"^^xsd:anyURI;
+	schema:url "http://www.ingv.it"^^xsd:anyURI;
+	schema:contactPoint <http://orcid.org/0000-0002-1399-0379/scientificContact>;
+	schema:contactPoint <http://orcid.org/0000-0002-8651-6387/legalContact>;
+	schema:contactPoint <http://orcid.org/0000-0002-1399-0379/financialContact>;
+.
+
+# -----------------------------------------------------------------------------------
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/034/INGV> a dcat:Dataset;
+	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/034/INGV";
+	dct:description "Information about the earthquakes events occurred in Italy Area.";
+	dct:title "INGV FDSN Event Dataset";
+		adms:identifier [ a adms:Identifier;
+		adms:schemaAgency "DDSS-ID";
+		skos:notation "WP08-DDSS-034";
+	];
+	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+	dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+	dct:created "2010-04-01"^^xsd:date;
+	owl:versionInfo "1.0.0";
+	# This property refers to a geographic region that is covered by the Dataset.
+  	# The POLYGON format is: POLYGON(lon1 lat1, lon2 lat2,...)
+	dct:spatial [ a dct:Location ;
+		locn:geometry "POLYGON(6.7499552751 36.619987291, 18.4802470232 36.619987291, 6.7499552751 47.1153931748, 18.4802470232 47.1153931748)"^^gsp:wktLiteral ;
+	];
+	# This property refers to a temporal period that the Dataset covers.
+    dct:temporal [ a dct:PeriodOfTime ;
+        schema:startDate "2010-04-01T00:00:00"^^xsd:dateTime ;
+        #schema:endDate "YYYY-MM-DDThh:mm:ss"^^xsd:dateTime ;
+    ];
+	dcat:theme  <epos:EarthquakeParameters>;
+	dcat:keyword "earthquake", "event", "rocks", "seismic source", "seismic waves propagation", "seismology", "INGV";
+	dcat:contactPoint <http://orcid.org/0000-0002-1399-0379/contactPoint>;
+	dct:publisher <PIC:999472675>;
+	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/034/INGV/Distribution/001>;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/034/INGV/Distribution/001> a dcat:Distribution;
+    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/034/INGV/Distribution/001";
+	dct:title "INGV FDSN Event Distribution";
+	dct:description "INGV FDSN Event Distribution";
+	dct:created "2010-04-01"^^xsd:date;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Seismology/INGV/Event/WebService/001/Operation/001>;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/INGV/Event/WebService/001>;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/INGV/Event/WebService/001> a epos:WebService;
+	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/INGV/Event/WebService/001";
+	schema:description "Information about the earthquakes events occurred in  Italy Area.";
+	schema:name "INGV FDSN Event Web Service";
+	schema:datePublished "2017-06-08T12:00:00Z"^^xsd:dateTime;
+	schema:dateModified "2017-06-08T12:00:00Z"^^xsd:dateTime;
+	schema:provider <PIC:999472675>;
+	schema:keywords "earthquake", "event", "rocks", "seismic source", "seismic waves propagation", "seismology", "INGV";
+	# hydra:entrypoint "application.wadl"^^xsd:anyURI; 
+	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/INGV/Event/WebService/001/Operation/001>;
+	dcat:theme <epos:Crustalvelocityparameters>;
+	dcat:contactPoint <http://orcid.org/0000-0002-8608-4289/contactPoint>;
+	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/INGV/Event/WebService/001/Operation/001> a hydra:Operation;
+	hydra:method "GET"^^xsd:string;
+	hydra:returns "application/xml";
+	hydra:property[ a hydra:IriTemplate;
+		hydra:template "http://webservices.ingv.it/fdsnws/event/1/query{?starttime, endtime, minlatitude, maxlatitude, minlongitude, maxlongitude, mindepth, maxdepth, minmagnitude, maxmagnitude, includeallorigins, includeallmagnitudes, includearrivals, eventid, limit, offset, orderby, contributor, catalog, updatedafter, format, nodata, latitude, longitude, minradius, maxradius}"^^xsd:string;
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "starttime"^^xsd:string;
+			rdfs:range "xsd:dateTime";
+			rdfs:label "Start Time";
+			schema:minValue "2010-04-01T00:00:00";
+			schema:maxValue "2018-12-31T00:00:00";
+			schema:defaultValue "2016-08-01T00:00:00";
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "endtime"^^xsd:string;
+			rdfs:range "xsd:dateTime";
+			rdfs:label "End Time";
+			schema:minValue "2010-04-01T00:00:00";
+			schema:maxValue "2018-12-31T00:00:00";
+			schema:defaultValue "2016-08-30T00:00:00";
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "minlatitude"^^xsd:string;
+			rdfs:range "xsd:float";
+			rdfs:label "Minimum Latitude";
+			schema:minValue "-90";
+			schema:maxValue "90";
+			schema:defaultValue "37";
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "maxlatitude"^^xsd:string;
+			rdfs:range "xsd:float";
+			rdfs:label "Maximum Latitude";
+			schema:minValue "-90";
+			schema:maxValue "90";
+			schema:defaultValue "47";
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "minlongitude"^^xsd:string;
+			rdfs:range "xsd:float";
+			rdfs:label "Minimum Longitude";
+			schema:minValue "-180";
+			schema:maxValue "180";
+			schema:defaultValue "7";
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "maxlongitude"^^xsd:string;
+			rdfs:range "xsd:float";
+			rdfs:label "Maximum Longitude";
+			schema:minValue "-180";
+			schema:maxValue "180";
+			schema:defaultValue "18";
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "mindepth"^^xsd:string;
+			rdfs:range "xsd:integer";
+			rdfs:label "Minimum Depth";
+			schema:minValue "-9";
+			schema:maxValue "6378";
+			schema:defaultValue "0";
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "maxdepth"^^xsd:string;
+			rdfs:range "xsd:integer";
+			rdfs:label "Maximum Depth";
+			schema:minValue "-9";
+			schema:maxValue "6378";
+			schema:defaultValue "40";
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "minmagnitude"^^xsd:string;
+			rdfs:range "xsd:float";
+			rdfs:label "Minimum Magnitude";
+			#schema:minValue "-10";
+			#schema:maxValue "10";
+			schema:defaultValue "2";
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "maxmagnitude"^^xsd:string;
+			rdfs:range "xsd:float";
+			rdfs:label "Maximum Magnitude";
+			#schema:minValue "-10";
+			#schema:maxValue "10";
+			schema:defaultValue "8";
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "magnitudetype"^^xsd:string;
+			rdfs:range "xsd:string";
+			rdfs:label "Type of Magnitude";
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "includeallorigins"^^xsd:string;
+			rdfs:range "xsd:boolean";
+			rdfs:label "Include All Origins";
+			schema:defaultValue "false";
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "includeallmagnitudes"^^xsd:string;
+			rdfs:range "xsd:boolean";
+			rdfs:label "Include All Magnitudes";
+			schema:defaultValue "false";
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "includearrivals"^^xsd:string;
+			rdfs:range "xsd:boolean";
+			rdfs:label "Include All Arrivals";
+			schema:defaultValue "false";
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "eventid"^^xsd:string;
+			rdfs:range "xsd:string";
+			rdfs:label "Event ID";
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "limit"^^xsd:string;
+			rdfs:range "xsd:integer";
+			rdfs:label "Limit";
+			schema:minValue "1";
+			schema:defaultValue "300";
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "offset"^^xsd:string;
+			rdfs:range "xsd:integer";
+			rdfs:label "Offset";
+			schema:minValue "1";
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "orderby"^^xsd:string;
+			rdfs:range "xsd:string";
+			rdfs:label "Order By";
+			http:paramValue "id";
+			http:paramValue "id-asc";
+			http:paramValue "id-desc";
+			http:paramValue "modified";
+			http:paramValue "modified-asc";
+			http:paramValue "modified-desc";
+			http:paramValue "ot-asc";
+			http:paramValue "ot-desc";
+			http:paramValue "mag-asc";
+			http:paramValue "mag-desc";
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "contributor"^^xsd:string;
+			rdfs:range "xsd:string";
+			rdfs:label "Contributor";
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "catalog"^^xsd:string;
+			rdfs:range "xsd:string";
+			rdfs:label "Catalogue";
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "updatedafter"^^xsd:string;
+			rdfs:range "xsd:dateTime";
+			rdfs:label "Is Updated After";
+			#schema:minValue "2000-01-01T00:00:00";
+			#schema:maxValue "2099-01-01T00:00:00";
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "format"^^xsd:string;
+			rdfs:range "xsd:string";
+			rdfs:label "Output Format";
+			http:paramValue "xml";
+			http:paramValue "text";
+			schema:defaultValue "xml";
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "nodata"^^xsd:string;
+			rdfs:range "xsd:string";
+			rdfs:label "HTTP status code for 'no data', either '204' (default) or '404'";
+			http:paramValue "204";
+			http:paramValue "404";
+			schema:defaultValue "204";
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "latitude"^^xsd:string;
+			rdfs:range "xsd:float";
+			rdfs:label "Latitude (Radius Search)";
+			schema:minValue "-90";
+			schema:maxValue "90";
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "longitude"^^xsd:string;
+			rdfs:range "xsd:float";
+			rdfs:label "Longitude (Radius Search)";
+			schema:minValue "-180";
+			schema:maxValue "180";
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "minradius"^^xsd:string;
+			rdfs:range "xsd:float";
+			rdfs:label "Minimum Radius (Radius Search)";
+			schema:minValue "-180";
+			schema:maxValue "180";
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "maxradius"^^xsd:string;
+			rdfs:range "xsd:float";
+			rdfs:label "Maximum Radius (Radius Search)";
+			schema:minValue "-180";
+			schema:maxValue "180";
+			hydra:required "false"^^xsd:boolean;
+		];
+	];
+.
+
+<epos:SeismicEvent> a skos:ConceptScheme;
+	dct:title "Event Observations";
+	dct:description "It contains the concepts of Seismic Events";
+.
+
+<epos:EarthquakeParameters> a skos:Concept;
+	skos:inScheme <epos:SeismicEvent>;
+	skos:prefLabel "Earthquake Parameters";
+.
+<epos:Crustalvelocityparameters> a skos:Concept;
+	skos:inScheme <epos:SeismicEvent>;
+	skos:prefLabel "Crustal velocity parameters";
+.

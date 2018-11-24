@@ -62,7 +62,7 @@
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/station/WebService/001> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/station/WebService/001";
 	schema:description "IRPINIA - The fdsnws-station web service returns station metadata in FDSN StationXML format or as delimited text. The purpose of the FDSN StationXML schema is to define an XML representation of the most important and commonly used structures of SEED 2.4 metadata. Results are available at multiple levels of granularity: network, station, channel and response.";
-	dcat:theme <#Seismicstations>;
+	dcat:theme <epos:Seismicstations>;
 	schema:name "IRPINIA - FDSN Station Web Service";
 	# INGV entrypoint:
 	hydra:entrypoint "http://webservices.ingv.it/fdsnws/station/1/query?"^^xsd:anyURI;
@@ -106,7 +106,7 @@
 	hydra:returns "application/xml";
 	hydra:property[ a hydra:IriTemplate;
 		# INGV entrypoint:
-		hydra:template "http://webservices.ingv.it/fdsnws/station/1/query(?starttime, endtime, network, station, location, channel, minlatitude, maxlatitude, minlongitude, maxlongitude, level, format, nodata)"^^xsd:string;
+		hydra:template "http://webservices.ingv.it/fdsnws/station/1/query{?starttime, endtime, network, station, location, channel, minlatitude, maxlatitude, minlongitude, maxlongitude, level, format, nodata}"^^xsd:string;
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "starttime"^^xsd:string;
 				rdfs:range "xsd:dateTime";
@@ -212,13 +212,13 @@
 	];
 .
 
-<#NearFaultObservations> a skos:ConceptScheme;
+<epos:NearFaultObservations> a skos:ConceptScheme;
 	dct:title "Near Fault Observations";
 	dct:description "It contains the concepts of Near Fault Observations";
 .
 
-<#Seismicstations> a skos:Concept;
-	skos:inScheme <#NearFaultObservations>;
+<epos:Seismicstations> a skos:Concept;
+	skos:inScheme <epos:NearFaultObservations>;
 	skos:prefLabel "Seismic stations";
 .
 
@@ -243,7 +243,7 @@
 <https://orcid.org/0000-0002-4553-2380/technicalContact> a schema:ContactPoint;
 	schema:email "elia@fisica.unina.it";
 	schema:availableLanguage "en";
-	#schema:contactType "technicalContact";
+	schema:contactType "manager";
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/station/Dataset/001> a dcat:Dataset;
@@ -257,7 +257,7 @@
 	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
 	dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
 	dct:created "2003-01-01"^^xsd:date;
-	dcat:theme  <#Seismicstations>;
+	dcat:theme  <epos:Seismicstations>;
 	dcat:keyword "seismology","seismicity","earthquakes","stations","waveform","seismic hazard","earth structure","earthquake intensity","macroseismic","macroseismic information","waveform modeling","IRPINIA";
 	dcat:contactPoint <https://orcid.org/0000-0002-4553-2380/technicalContact>;
 	dct:publisher <PIC:999976590>;
@@ -266,6 +266,7 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/station/Distribution/001> a dcat:Distribution;
     dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/station/Distribution/001";
+	dct:title "IRPINIA Seismic Station Distribution";
 	dct:description "IRPINIA Seismic Station Distribution";
 	dct:created "2003-01-01"^^xsd:date;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;

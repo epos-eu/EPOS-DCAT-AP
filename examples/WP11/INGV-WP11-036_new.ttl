@@ -34,6 +34,7 @@
 	schema:url "http://orcid.org/0000-0002-0915-3711"^^xsd:anyURI;
 	schema:qualifications "Technologist";
 	schema:affiliation <PIC:999472675>;
+	schema:contactPoint <http://orcid.org/0000-0002-0915-3711/contactPoint>;
 .
 
 <http://orcid.org/0000-0001-6137-8806> a schema:Person;
@@ -54,6 +55,7 @@
 	schema:url "http://orcid.org/0000-0001-6137-8806"^^xsd:anyURI;
 	schema:qualifications "Volcanologist";
 	schema:affiliation <PIC:999472675>;
+	schema:contactPoint <http://orcid.org/0000-0001-6137-8806/scientificContact>;
 .
 
 <http://orcid.org/0000-0001-8887-2580> a schema:Person;
@@ -75,13 +77,30 @@
 	schema:qualifications "Geochemist";
 	schema:affiliation <PIC:999472675>;
 .
-
+<http://orcid.org/0000-0002-8651-6387> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "orcid";
+		schema:value "http://orcid.org/0000-0002-8651-6387";
+	];
+	schema:familyName "Doglioni";
+	schema:givenName "Carlo";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Via di Vigna Murata 605";
+		schema:addressLocality "Rome";
+		schema:postalCode "00143";
+		schema:addressCountry "Italy";
+	];
+	schema:email "segreteria.presidenza@ingv.it";
+	schema:telephone "+3906518601";
+	schema:url "http://orcid.org/0000-0002-8651-6387"^^xsd:anyURI;
+	schema:qualifications "Professor";
+	schema:affiliation <PIC:999472675>;
+	schema:contactPoint <http://orcid.org/0000-0002-8651-6387/financialContact>;
+	schema:contactPoint <http://orcid.org/0000-0002-8651-6387/legalContact>;
+.
+	
 <rest/bulk-rock> a epos:WebService;
 	schema:identifier "rest/bulk-rock";
-	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID  "DDSS-ID";
-		schema:value  "WP11-DDSS-036";
-	];
 	schema:description "Bulk chemical analysis (major and trace elements) in volcanic rocks erupted by Etna volcano from 1995 to 2015";
 	schema:name "Bulk Rock Analysis";
 	schema:datePublished "2017-08-20T12:00:00Z"^^xsd:dateTime;
@@ -90,12 +109,13 @@
 	schema:keywords "Petrology", "Volcanology", "Etna", "Magma composition", "Bulk Rock Analysis";
 	#hydra:entrypoint "application.wadl"^^xsd:anyURI;
 	hydra:supportedOperation <rest/bulk-rock/operation>;
-	dcat:theme <#Geochemical-Data>;
+	dcat:theme <epos:GeochemicalData>;
 	dcat:contactPoint <http://orcid.org/0000-0002-0915-3711/contactPoint>;
 .
-	<http://orcid.org/0000-0002-0915-3711/contactPoint> a schema:ContactPoint;
-		schema:email "danilo.reitano@ingv.it";
-		schema:availableLanguage "en" ;
+
+<http://orcid.org/0000-0002-0915-3711/contactPoint> a schema:ContactPoint;
+	schema:email "danilo.reitano@ingv.it";
+	schema:availableLanguage "en" ;
 .
 
 <PIC:999472675> a schema:Organization;
@@ -112,87 +132,103 @@
 	];
 	schema:logo "http://roma2.rm.ingv.it/userfiles/file/Logo/INGV_Logo-abbr_colore.jpg"^^xsd:anyURI;
 	schema:url "http://www.ingv.it/"^^xsd:anyURI;
-	schema:contactPoint <http://orcid.org/0000-0002-0915-3711/scientificContact>;
-	schema:contactPoint <http://orcid.org/0000-0002-0915-3711/legalContact>;
-	schema:contactPoint <http://orcid.org/0000-0002-0915-3711/financialContact>;
+	schema:contactPoint <http://orcid.org/0000-0001-6137-8806/scientificContact>;
+	schema:contactPoint <http://orcid.org/0000-0002-8651-6387/legalContact>;
+	schema:contactPoint <http://orcid.org/0000-0002-8651-6387/financialContact>;
 .
-	<http://orcid.org/0000-0002-0915-3711/scientificContact> a schema:ContactPoint;
-		schema:email "rosanna.corsaro@ingv.it";
-		schema:availableLanguage "en" ;
-		schema:contactType "scientificContact" ;
+<http://orcid.org/0000-0001-6137-8806/scientificContact> a schema:ContactPoint;
+	schema:email "rosanna.corsaro@ingv.it";
+	schema:availableLanguage "en" ;
+	schema:contactType "scientificContact" ;
 .
-	<http://orcid.org/0000-0002-0915-3711/legalContact> a schema:ContactPoint;
-		schema:email "danilo.reitano@ingv.it";
-		schema:availableLanguage "en" ;
-		schema:contactType "legalContact" ;
+<http://orcid.org/0000-0002-8651-6387/legalContact> a schema:ContactPoint;
+	schema:email "segreteria.presidenza@ingv.it";
+	schema:availableLanguage "en" ;
+	schema:contactType "legalContact" ;
 .
-	<http://orcid.org/0000-0002-0915-3711/financialContact> a schema:ContactPoint;
-		schema:email "danilo.reitano@ingv.it";
-		schema:availableLanguage "en" ;
-		schema:contactType "financialContact" ;
+<http://orcid.org/0000-0002-8651-6387/financialContact> a schema:ContactPoint;
+	schema:email "segreteria.presidenza@ingv.it";
+	schema:availableLanguage "en" ;
+	schema:contactType "financialContact" ;
 .
-	<rest/bulk-rock/operation> a hydra:Operation;
+<rest/bulk-rock/operation> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
-		hydra:returns "json";
+		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "http://193.206.223.51:8081/rest/bulk-rock(?type-sample, min_sio2, min_tio2, min_rb, min_cs)"^^xsd:string;
+			hydra:template "http://193.206.223.51:8081/rest/bulk-rock{?type-sample, min_sio2, min_tio2, min_rb, min_cs}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "type-sample"^^xsd:string;
 					rdfs:label "Lava flow (LF) produced by effusive activity or a pyroclast (PY) produced by effusive activity";
+					rdfs:range "xsd:string" ;
 					http:paramValue "LF";
 					http:paramValue "PY";
+					schema:defaultValue "LF" ;
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "min_sio2"^^xsd:string;
 					rdfs:label "Content of minimum value of SiO2 of the sample, expressed as weight percent (wt%)";
+					rdfs:range "xsd:float" ;
 					schema:minValue "45";
 					schema:maxValue "50";
+					schema:defaultValue "47.00" ;
 					hydra:required "false"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "min_tio2"^^xsd:string;
 					rdfs:label "Content of minimum value of TiO2 of the sample, expressed as weight percent (wt%)";
+					rdfs:range "xsd:float" ;
 					schema:minValue "1.2";
 					schema:maxValue "2.0";
+					schema:defaultValue "1.70" ;
 					hydra:required "false"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "min_rb"^^xsd:string;
 					rdfs:label "Content of minimum value Rb of the sample, expressed as part per million(ppm)";
+					rdfs:range "xsd:float" ;
 					schema:minValue "35.0";
 					schema:maxValue "60.0";
+					schema:defaultValue "48.20" ;
 					hydra:required "false"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "min_cs"^^xsd:string;
 					rdfs:label "Content of minimum value of Cs of the sample, expressed as part per million(ppm)";
+					rdfs:range "xsd:float" ;
 					schema:minValue "0.45";
 					schema:maxValue "1.55";
+					schema:defaultValue "0.80" ;
 					hydra:required "false"^^xsd:boolean;
 				];
 		] ;
 .
-	<#Volcano-Observations> a skos:ConceptScheme;
-		dct:title "Volcano-Observations";
+	<epos:VolcanoObservations> a skos:ConceptScheme;
+		dct:title "Volcano Observations";
 		dct:description "It contains the concepts of Volcano-Observations";
 .
-	<#Geochemical-Data> a skos:Concept;
-		skos:inScheme <#Volcano-Observations>;
-		skos:prefLabel "Geochemical-Data";
+	<epos:GeochemicalData> a skos:Concept;
+		skos:inScheme <epos:VolcanoObservations>;
+		skos:prefLabel "Geochemical Data";
+		skos:definition "Geochemical Data";
 
 
 .
 
 <WP11/Bulksample> a dcat:Dataset;
         dct:title "Bulk Rock Analysis";
+	adms:identifier [ a adms:Identifier ;
+            adms:schemaAgency "DDSS-ID" ;
+            skos:notation "WP11-DDSS-036" ;
+
+        ];
         dct:identifier "WP11/Bulksample";
         dct:description "Bulk Rock Analysis";
         ## example of frequency using a controlled vocabulary
 	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
         dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
         dct:created "2005-01-01"^^xsd:date;
-        dcat:theme  <#Geochemical-Data> ;
+        dcat:theme  <epos:GeochemicalData> ;
         dcat:keyword "Geochemical-Data","Bulk Rock Analysis" ,"" ;
         dcat:contactPoint <http://orcid.org/0000-0002-0915-3711/contactPoint>;
 	dct:publisher <PIC:999472675>;
