@@ -170,6 +170,10 @@
 		hydra:template "http://webservices.ingv.it/fdsnws/event/1/query{?starttime, endtime, minlatitude, maxlatitude, minlongitude, maxlongitude, mindepth, maxdepth, minmagnitude, maxmagnitude, includeallorigins, includeallmagnitudes, includearrivals, eventid, limit, offset, orderby, contributor, catalog, updatedafter, format, nodata, latitude, longitude, minradius, maxradius}"^^xsd:string;
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "starttime"^^xsd:string;
+			
+			hydra:property "schema:startDate";
+			schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
+
 			rdfs:range "xsd:dateTime";
 			rdfs:label "Start Time";
 			schema:minValue "2010-04-01T00:00:00";
@@ -179,6 +183,10 @@
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "endtime"^^xsd:string;
+			
+			hydra:property "schema:endDate";
+			schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
+			
 			rdfs:range "xsd:dateTime";
 			rdfs:label "End Time";
 			schema:minValue "2010-04-01T00:00:00";
