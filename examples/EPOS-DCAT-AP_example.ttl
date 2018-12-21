@@ -383,7 +383,13 @@
 .
 
 <softwareID> a schema:SoftwareApplication;
+  # This property contains one or more identifier for the software
   schema:identifier "softwareID" ;
+ 
+  schema:identifier [ a schema:PropertyValue ;
+  	schema:propertyID  "DDSS-ID" ;
+  	schema:value "WP8-DDSS-XXX" ;
+  ];
   schema:name "name of the software" ;
   schema:description "description of the software" ;
 
@@ -398,6 +404,12 @@
 
   # This property refers to the version of the software.
   schema:softwareVersion "1.1";
+
+  # This property refers to the web page URL which describes the software.
+  schema:mainEntityOfPage "web page URL which describes the software"^^xsd:anyURI ;
+
+  schema:keywords "keyword1", "keyword2", "keyword3" ;
+  dcat:theme <epos:SeismicWaveform> ;
 .
 
 <https://doi.org/10.21944/e970fd34-23b9-3411-b366-e4f72877d2c5> a epos:Facility ;
