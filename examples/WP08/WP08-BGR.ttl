@@ -1,0 +1,471 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .  
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .  
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .  
+@prefix dc: <http://purl.org/dc/elements/1.1/> .  
+@prefix dct: <http://purl.org/dc/terms/> .  
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .  
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .  
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .  
+@prefix schema: <http://schema.org/> .  
+@prefix dcat: <http://www.w3.org/ns/dcat#> .  
+@prefix cnt: <http://www.w3.org/2011/content#> .  
+@prefix locn: <http://www.w3.org/ns/locn#> .  
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .  
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .  
+@prefix http: <http://www.w3.org/2006/http#> .  
+@prefix owl: <http://www.w3.org/2002/07/owl#> .  
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .  
+
+# Organization
+<PIC:999429413> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "PIC";
+		schema:value "999429413";
+	]; 
+	schema:legalName "Federal Institute of Geosciences and Natural Resources";
+	schema:leiCode "????";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Stilleweg 2";
+		schema:addressLocality "Hanover";
+		schema:postalCode "30655";
+		schema:addressCountry "Germany";
+	]; 
+	schema:logo "https://www.bgr.bund.de/SiteGlobals/StyleBundles/Bilder/bgr/logo/logo.png?__blob=normal&v=11"^^xsd:anyURI;
+	schema:url "www.bgr.bund.de"^^xsd:anyURI;
+	schema:email "poststelle@bgr.de";
+	schema:telephone "+495116430";
+	schema:contactPoint <PIC:999429413/scientificContact>;
+	schema:contactPoint <PIC:999429413/scientificContact>;
+	schema:contactPoint <https://orcid.org/0000-0001-6501-6853/contactPoint>;
+. 
+
+# Person1 Klaus Stammler
+<mailto:klaus.stammler@bgr.de> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "mailto";
+		schema:value "mailto:klaus.stammler@bgr.de";
+	]; 
+	schema:familyName "Dr. Klaus Stammler";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Stilleweg 2";
+		schema:addressLocality "Hanover";
+		schema:postalCode "30655";
+		schema:addressCountry "Germany";
+	]; 
+	schema:email "klaus.stammler@bgr.de";
+	schema:telephone "+495116432045";
+	schema:qualifications "Senior Researcher / Unit Head";
+	schema:affiliation <PIC:999429413>;
+	schema:contactPoint <PIC:999429413/scientificContact>;
+. 
+
+# Person2 Mathias Hoffmann
+<mailto:mathias.hoffmann@bgr.de> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "mailto";
+		schema:value "mailto:mathias.hoffmann@bgr.de";
+	]; 
+	schema:familyName "Mathias Hoffmann";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Stilleweg 2";
+		schema:addressLocality "Hanover";
+		schema:postalCode "30655";
+		schema:addressCountry "Germany";
+	]; 
+	schema:email "mathias.hoffmann@bgr.de";
+	schema:telephone "+495116433179";
+	schema:qualifications "Researcher, IT Infrastructure, Data Management";
+	schema:affiliation <PIC:999429413>;
+	schema:contactPoint <PIC:999429413/scientificContact>;
+. 
+
+# Person3 Erich Odon Muhire
+<https://orcid.org/0000-0001-6501-6853> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "orcid";
+		schema:value " https://orcid.org/0000-0001-6501-6853 ";
+	]; 
+	schema:familyName "Erich Odon Muhire";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Stilleweg 2";
+		schema:addressLocality "Hanover";
+		schema:postalCode "30655";
+		schema:addressCountry "Germany";
+	]; 
+	schema:email "erichodon.muhire@bgr.de";
+	schema:telephone "+495116433237";
+	schema:url "https://orcid.org/0000-0001-6501-6853"^^xsd:anyURI;
+	schema:qualifications "IT Infrastructure, Data Management";
+	schema:affiliation <PIC:999429413>;
+	schema:contactPoint <https://orcid.org/0000-0001-6501-6853/contactPoint>;
+.
+    
+
+    # Contacts
+    <PIC:999429413/scientificContact> a schema:ContactPoint;
+		schema:email "klaus.stammler@bgr.de";
+		schema:availableLanguage "en" ;
+		schema:contactType "scientificContact" ;
+.
+	<PIC:999429413/scientificContact> a schema:ContactPoint;
+		schema:email "mathias.hoffmann@bgr.de";
+		schema:availableLanguage "en" ;
+		schema:contactType "scientificContact" ;
+. 
+	<https://orcid.org/0000-0001-6501-6853/contactPoint> a schema:ContactPoint;
+		schema:email "erichodon.muhire@bgr.de";
+		schema:availableLanguage "en" ;
+		schema:contactType "contactPoint" ;
+. 
+
+##################### FDSN Webservices Dataselect
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/BGR> a epos:WebService;
+	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/BGR";
+	schema:identifier [ a schema:PropertyValue; 
+		schema:propertyID  "DDSS-ID"; 
+		schema:value  "WP08-DDSS-001"; 
+	]; 
+	schema:description "FDSN Standard webservices";
+	schema:name "FDSN Webservice at BGR to download Waveform data";
+    schema:provider <PIC:999429413>;
+    schema:keywords "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "waveform modeling";
+	hydra:entrypoint "http://eida.bgr.de/fdsnws/dataselect/1/"^^xsd:anyURI; 
+	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001/BGR>;
+	dcat:theme <epos:SeismicWaveform>;
+	dcat:contactPoint <mailto:mathias.hoffmann@bgr.de/scientificContact>;
+	schema:datePublished "1976-01-01"^^xsd:date;
+	schema:dateModified "1976-01-01"^^xsd:date;
+	dct:spatial [ a dct:Location;
+		locn:geometry "POLYGON(180.0 -90.0,-180.0 -90.0,-180.0 90.0,180.0 90.0,180.0 -90.0)"^^gsp:wktLiteral;
+	];
+	dct:temporal [ a dct:PeriodOfTime; 
+		schema:startDate "1976-01-01T00:00:00Z"^^xsd:dateTime; 
+		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
+	]; 
+    .
+ 
+    # Documentation
+    <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/APIDocumentation> a hydra:APIDocumentation ;
+        hydra:title "documentation title" ;
+        hydra:description "some description of API Documentation" ;
+        hydra:entrypoint "API Documentation entrypoint" ;
+    .
+
+   <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001/BGR> a hydra:Operation;
+	hydra:method "GET";
+	hydra:returns "application/vnd.fdsn.mseed";
+	hydra:property[ a hydra:IriTemplate;
+	hydra:template "http://eida.bgr.de/fdsnws/dataselect/1/query{?starttime, endtime, network, station, location, channel, quality, format, nodata}"^^xsd:string;
+	hydra:mapping[ a hydra:IriTemplateMapping;
+	hydra:variable "starttime"^^xsd:string;
+	rdfs:label "Start of the timespan";
+	hydra:required "true"^^xsd:boolean;
+	rdfs:range "xsd:dateTime" ;
+	schema:defaultValue "2015-01-01T00:00:00" ;				
+	];
+	hydra:mapping[ a hydra:IriTemplateMapping;
+	hydra:variable "endtime"^^xsd:string;
+	rdfs:label "End of the timespan";
+	hydra:required "true"^^xsd:boolean;
+	rdfs:range "xsd:dateTime" ;
+	schema:defaultValue "2015-02-01T00:00:00" ;
+	];
+	hydra:mapping[ a hydra:IriTemplateMapping;
+	hydra:variable "network"^^xsd:string;
+	rdfs:label "Network code";
+	hydra:required "true"^^xsd:boolean;
+	rdfs:range "xsd:string" ;
+	schema:defaultValue "GR" ;
+	];
+	hydra:mapping[ a hydra:IriTemplateMapping;
+	hydra:variable "station"^^xsd:string;
+	rdfs:label "Station code";
+	hydra:required "true"^^xsd:boolean;
+	rdfs:range "xsd:string" ;
+	schema:defaultValue "GRA1" ;
+	];
+	hydra:mapping[ a hydra:IriTemplateMapping;
+	hydra:variable "location"^^xsd:string;
+	rdfs:label "Location code";
+	hydra:required "true"^^xsd:boolean;
+	rdfs:range "xsd:string" ;
+	schema:defaultValue "" ;
+	];
+	hydra:mapping[ a hydra:IriTemplateMapping;
+	hydra:variable "channel"^^xsd:string;
+	rdfs:label "Channel code";
+	hydra:required "true"^^xsd:boolean;
+	rdfs:range "xsd:string" ;
+	schema:defaultValue "HHZ" ;
+	];
+	hydra:mapping[ a hydra:IriTemplateMapping;
+	hydra:variable "quality"^^xsd:string;
+	rdfs:label "Quality";
+	http:paramValue "M";
+	http:paramValue "B";
+	hydra:required "true"^^xsd:boolean;
+	rdfs:range "xsd:string" ;
+	schema:defaultValue "B" ;
+	];	
+	hydra:mapping[ a hydra:IriTemplateMapping;
+	hydra:variable "format"^^xsd:string;
+	rdfs:label "Format";
+	hydra:required "true"^^xsd:boolean;
+	rdfs:range "xsd:string" ;
+	schema:defaultValue "miniseed" ;
+	];	
+	hydra:mapping[ a hydra:IriTemplateMapping;
+	hydra:variable "nodata"^^xsd:string;
+	rdfs:label "HTTP error code if no data is found";
+	http:paramValue "204";
+	http:paramValue "404";
+	hydra:required "true"^^xsd:boolean;
+	rdfs:range "xsd:string" ;
+	schema:defaultValue "204" ;
+	];
+	] ;
+.
+# Concept
+<epos:Seismology> a skos:ConceptScheme;
+	dct:title "Seismology";
+	dct:description "It contains the concepts of Seismology";
+.
+<epos:SeismicWaveform> a skos:Concept;
+	skos:inScheme <epos:Seismology>;
+	skos:prefLabel "Seismic waveforms";
+.
+
+# Dataset
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/BGR> a dcat:Dataset;
+        dct:title "Primary Seismic Waveform Data";
+        dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/BGR";
+        dct:description "Continuous seismic waveforms";
+        adms:identifier [ a adms:Identifier ;
+        adms:schemaAgency "DDSS-ID" ;
+        skos:notation "WP08-DDSS-001" ;
+        ];
+        dct:created "1976-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:issued "1976-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:modified "1976-01-01T00:00:00Z"^^xsd:dateTime ;
+        owl:versionInfo "1.0.0" ;
+        dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/BGR>;
+    	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+        dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
+        dcat:theme  <epos:SeismicWaveform> ;
+        dcat:keyword "seismology", "seismicity", "earthquakes", "seismic waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "INGV" , "Dataselect", "FDSN-WS", "Seismic Waveform", "EIDA" ;
+		dct:publisher <PIC:999429413>;
+        dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/BGR>;
+		dct:spatial [ a dct:Location;
+			locn:geometry "POLYGON(180.0 -90.0,-180.0 -90.0,-180.0 90.0,180.0 90.0,180.0 -90.0)"^^gsp:wktLiteral;
+		];
+        dct:temporal [ a dct:PeriodOfTime ;
+                schema:startDate "1988-01-01T00:00:00Z"^^xsd:dateTime ;
+                #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
+	] ;
+.
+
+# Distribution
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/BGR> a dcat:Distribution;
+    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/BGR";
+	dct:title "Seismic Waveform Distribution :: FDSN DATASELECT";
+	dct:description "Description of Seismic Waveform Distribution :: FDSN DATASELECT ";
+	dct:issued "1976-01-01"^^xsd:date ;
+	dct:modified "1976-01-01"^^xsd:date ;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001/BGR>;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/BGR>;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI;
+.
+
+############################### FDSN WebService Station
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/BGR> a epos:WebService;
+	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/BGR";
+        schema:identifier [ a schema:PropertyValue; 
+		schema:propertyID  "DDSS-ID"; 
+		schema:value  "WP08-DDSS-002"; 
+        ]; 
+	schema:description "The fdsnws-station web service returns station metadata in FDSN StationXML format (schema here) or as delimited text. The purpose of the FDSN StationXML schema is to define an XML representation of the most important and commonly used structures of SEED 2.4 metadata. Results are available at multiple levels of granularity: network, station, channel and response.";
+	schema:name "FDSN Station Web Service at BGR";
+	schema:datePublished "1976-01-01T00:00:00Z"^^xsd:dateTime;
+	schema:dateModified "1976-01-01T00:00:00Z"^^xsd:dateTime;
+	schema:provider <PIC:999429413>;
+	schema:keywords "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling";
+	hydra:entrypoint "http://eida.bgr.de/fdsnws/station/1/application.wadl"^^xsd:anyURI;
+	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/Operation/002/BGR>;
+	dcat:theme <epos:SeismicNetwork>;
+	dcat:contactPoint <mailto:mathias.hoffmann@bgr.de/scientificContact>;
+	dct:spatial [ a dct:Location;
+		locn:geometry "POLYGON(180.0 -90.0,-180.0 -90.0,-180.0 90.0,180.0 90.0,180.0 -90.0)"^^gsp:wktLiteral;
+	];
+    dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/APIDocumentation> ;
+  	dct:temporal [ a dct:PeriodOfTime ;
+          	schema:startDate "1976-01-01T00:00:00"^^xsd:dateTime ;
+          	#schema:endDate "YYYY-MM-DDThh:mm:ss"^^xsd:dateTime ;
+  	] ;
+.
+
+# Documentation
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/APIDocumentation> a hydra:APIDocumentation ;
+      	hydra:title "documentation title" ;
+      	hydra:description "some description of API Documentation" ;
+      	hydra:entrypoint "https://www.orfeus-eu.org/data/eida/webservices/station/" ;
+.
+
+# Params
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/Operation/002/BGR> a hydra:Operation;
+	hydra:method "GET";
+	hydra:returns "application/xml";
+	hydra:property
+	[ 
+	a hydra:IriTemplate;
+	hydra:template "http://eida.bgr.de/fdsnws/station/1/query{?starttime, endtime, network, station, location, channel,  minlatitude, maxlatitude, minlongitude, maxlongitude, level, nodata}"^^xsd:string;
+			
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "starttime"^^xsd:string;
+				rdfs:label "Start of the timespan";
+				hydra:required "true"^^xsd:boolean;
+				rdfs:range "xsd:dateTime" ;
+				schema:defaultValue "2015-01-01T00:00:00" ;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "endtime"^^xsd:string;
+				rdfs:label "End of the timespan";
+				hydra:required "true"^^xsd:boolean;
+				rdfs:range "xsd:dateTime" ;
+				schema:defaultValue "2015-02-01T00:00:00" ;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "network"^^xsd:string;
+				rdfs:label "Network code";
+				hydra:required "true"^^xsd:boolean;
+				rdfs:range "xsd:string" ;
+				schema:defaultValue "GR" ;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "station"^^xsd:string;
+				rdfs:label "Station code";
+				hydra:required "true"^^xsd:boolean;
+				rdfs:range "xsd:string" ;
+				schema:defaultValue "GRA1" ;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "location"^^xsd:string;
+				rdfs:label "Location code";
+				hydra:required "true"^^xsd:boolean;
+				rdfs:range "xsd:string" ;
+				schema:defaultValue "" ;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "channel"^^xsd:string;
+				rdfs:label "Channel code";
+				hydra:required "true"^^xsd:boolean;
+				rdfs:range "xsd:string" ;
+				schema:defaultValue "HHZ" ;
+			];		 
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "minlatitude"^^xsd:string;
+				rdfs:label "Minimum Latitude";
+				schema:minValue "-90.0";
+				schema:maxValue "90.0";
+				hydra:required "true"^^xsd:boolean;
+				schema:defaultValue "" ;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "maxlatitude"^^xsd:string;
+				rdfs:label "Maximum Latitude";
+				schema:minValue "-90.0";
+				schema:maxValue "90.0";
+				hydra:required "true"^^xsd:boolean;
+				schema:defaultValue "" ;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "minlongitude"^^xsd:string;
+				rdfs:label "Minimum Longitude";
+				schema:minValue "-180.0";
+				schema:maxValue "180.0";
+				hydra:required "true"^^xsd:boolean;
+				schema:defaultValue "" ;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "maxlongitude"^^xsd:string;
+				rdfs:label "Maximum Longitude";
+				schema:minValue "-180.0";
+				schema:maxValue "180.0";
+				hydra:required "true"^^xsd:boolean;
+				schema:defaultValue "" ;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "level"^^xsd:string;
+				rdfs:label "Level";
+				http:paramValue "network";
+				http:paramValue "station";
+				http:paramValue "channel";
+				http:paramValue "response";
+				hydra:required "true"^^xsd:boolean;
+				schema:defaultValue "station" ;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "nodata"^^xsd:string;
+				rdfs:label "HTTP error code if no data is found";
+				http:paramValue "204";
+				http:paramValue "404";
+				hydra:required "true"^^xsd:boolean;
+				rdfs:range "xsd:string" ;
+				schema:defaultValue "204" ;
+			];
+			];
+.
+
+# Concept
+<epos:Seismology> a skos:ConceptScheme;
+	dct:title "Seismology";
+	dct:description "It contains the concepts of Seismology";
+.
+
+<epos:SeismicNetwork> a skos:Concept ;
+    	skos:definition "Collection of seismic stations in a seismic network" ;
+    	skos:inScheme <epos:Seismology> ;
+	skos:prefLabel "Seismic Network" ;
+.
+# Dataset
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/BGR> a dcat:Dataset;
+        dct:title "Primary Seismic Waveform Data";
+        dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/BGR";
+        dct:description "Seismic Stations ";
+        adms:identifier [ a adms:Identifier ;
+            adms:schemaAgency "DDSS-ID" ;
+            skos:notation "WP08-DDSS-002" ;
+        ];
+        dct:created "1976-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:issued "1976-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:modified "1976-01-01T00:00:00Z"^^xsd:dateTime ;
+        owl:versionInfo "1.0.0" ;
+
+    	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+        dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+        dcat:theme  <epos:SeismicNetwork> ;
+        dcat:keyword "seismology", "seismicity", "earthquakes", "seismic station", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "station information", "waveform modeling", "INGV" , "Station", "FDSN-WS", "Seismic Station", "EIDA" ;
+		dct:publisher <PIC:999429413>;
+        dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/BGR>;
+		dct:spatial [ a dct:Location ;
+                      locn:geometry "POLYGON(-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0)"^^gsp:wktLiteral;
+		];
+        dct:temporal [ a dct:PeriodOfTime ;
+                schema:startDate "1976-01-01T00:00:00Z"^^xsd:dateTime ;
+                #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
+	];
+.
+
+# Distribution
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/BGR> a dcat:Distribution;
+    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/BGR";
+	dct:description "Description of Seismic Stations  :: FDSN STATION ";
+	dct:issued "1976-01-01"^^xsd:date ;
+	dct:modified "1976-01-01"^^xsd:date ;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/Operation/002/BGR>;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/BGR>;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
+.

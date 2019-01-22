@@ -1,0 +1,521 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .  
+@prefix adms: <http://www.w3.org/ns/adms#> .  
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .  
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .  
+@prefix dc: <http://purl.org/dc/elements/1.1/> .  
+@prefix dct: <http://purl.org/dc/terms/> .  
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .  
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .  
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .  
+@prefix schema: <http://schema.org/> .  
+@prefix dcat: <http://www.w3.org/ns/dcat#> .  
+@prefix cnt: <http://www.w3.org/2011/content#> .  
+@prefix locn: <http://www.w3.org/ns/locn#> .  
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .  
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .  
+@prefix http: <http://www.w3.org/2006/http#> .  
+@prefix owl: <http://www.w3.org/2002/07/owl#> .  
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .  
+
+<mailto:contact-brgm@brgm.fr> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "mailto";
+		schema:value "mailto:contact-brgm@brgm.fr";
+	]; 
+	schema:familyName "Support BRGM";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "3, avenue Claude Guillemin";
+		schema:addressLocality "ORLEANS";
+		schema:postalCode "45000";
+		schema:addressCountry "FRANCE";
+	]; 
+	schema:email "contact-brgm@brgm.fr";
+	schema:affiliation <PIC:999993662>;
+	schema:contactPoint <mailto:contact-brgm@brgm.fr/scientificContact>;
+	schema:contactPoint <mailto:contact-brgm@brgm.fr/legalContact>;
+	schema:contactPoint <mailto:contact-brgm@brgm.fr/financialContact>;
+. 
+
+<PIC:999993662> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "PIC";
+		schema:value "999993662";
+	]; 
+	schema:legalName "BRGM (French Geological Survey)";
+	schema:leiCode "Legal Entity Identifier Search: http://www.lei-lookup.com/#!search" ;
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "3, avenue Claude Guillemin";
+		schema:addressLocality "ORLEANS";
+		schema:postalCode "45000";
+		schema:addressCountry "FRANCE";
+	]; 
+	schema:url "http://www.brgm.eu"^^xsd:anyURI;
+	schema:email "contact-brgm@brgm.fr";
+	schema:contactPoint <mailto:contact-brgm@brgm.fr/scientificContact>;
+	schema:contactPoint <mailto:contact-brgm@brgm.fr/legalContact>;
+	schema:contactPoint <mailto:contact-brgm@brgm.fr/financialContact>;
+. 
+
+
+	<mailto:contact-brgm@brgm.fr> a schema:ContactPoint;
+		schema:email "contact-brgm@brgm.fr";
+		schema:availableLanguage "en" ;
+		schema:contactType "manager" ;
+. 
+
+	<mailto:contact-brgm@brgm.fr/scientificContact> a schema:ContactPoint;
+		schema:email "contact-brgm@brgm.fr";
+		schema:availableLanguage "en" ;
+		schema:contactType "scientificContact" ;
+. 
+	<mailto:contact-brgm@brgm.fr/legalContact> a schema:ContactPoint;
+		schema:email "contact-brgm@brgm.fr";
+		schema:availableLanguage "en" ;
+		schema:contactType "legalContact" ;
+. 
+	<mailto:contact-brgm@brgm.fr/financialContact> a schema:ContactPoint;
+		schema:email "contact-brgm@brgm.fr";
+		schema:availableLanguage "en" ;
+		schema:contactType "financialContact" ;
+.
+
+	<epos:Geology> a skos:ConceptScheme;
+		dct:title "Geology";
+		dct:description "It contains the concepts of Geology";
+. 
+	<epos:3D/4Dmodels> a skos:Concept;
+		skos:inScheme <epos:Geology>;
+		skos:prefLabel "3D/4D models";
+.
+
+	
+	<http://resource.europe-geology.eu/dataset/model> a dcat:Dataset;
+		dct:title "3D/4D Model index";
+		dct:identifier "http://resource.europe-geology.eu/dataset/model";
+		adms:identifier [ a adms:Identifier;
+			adms:schemaAgency "DDSS-ID";
+			skos:notation "WP15-DDSS-006b";
+		]; 
+		dct:description "This dataset is the harvesting of Model Index instances provided by the current data providers. It aims at supporting search and discovery of 3D/4D models in Europe, by collecting and organising metadata about 3D/4D models.";
+		dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+		dct:created "2017-10-27"^^xsd:date;
+		dct:modified "2018-09-07"^^xsd:date;
+		dct:issued "2017-10-27"^^xsd:date;
+	dct:spatial [ a dct:Location; 
+		locn:geometry "POLYGON(-180 90,180 90,180 -90,-180 90,-180 90)"^^gsp:wktLiteral; 
+	]; 
+		dcat:theme <epos:3D/4Dmodels>;
+		dcat:keyword "3D/4D Model","Model Index","Geology","INSPIRE:GE"," GeoSciML";
+		dcat:contactPoint <mailto:contact-brgm@brgm.fr>;
+		dcat:distribution <http://resource.europe-geology.eu/dataset/model/distributionWfs>;
+		dcat:distribution <http://resource.europe-geology.eu/dataset/model/distributionWms>;
+		dct:publisher <PIC:999993662>;
+. 
+
+	<http://resource.europe-geology.eu/dataset/model/distributionWfs> a dcat:Distribution;
+		dct:identifier "http://resource.europe-geology.eu/dataset/model/distributionWfs";
+		dct:title "3D/4D Model Index Discovery Service";
+		dct:description "This WFS allows to find a 3D/4D Model corresponding to various search criteria";
+		dct:issued "2016-10-27"^^xsd:date;
+		dct:modified "2018-01-19"^^xsd:date;
+		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+		dct:conformsTo <http://resource.europe-geology.eu/service/wfsModel>;
+		dcat:accessURL <http://resource.europe-geology.eu/service/wfsModel/operation>;
+		dct:license "TBD"^^xsd:anyURI ;
+		dct:format "http://publications.europa.eu/resource/authority/file-type/GML"^^xsd:anyURI;
+		#dct:format "https://www.iana.org/assignments/media-types/application/gml+xml"^^xsd:anyURI;
+. 
+
+	<http://resource.europe-geology.eu/dataset/model/distributionWms> a dcat:Distribution;
+		dct:identifier "http://resource.europe-geology.eu/dataset/model/distributionWms";
+		dct:title "3D/4D Model Index View Service";
+		dct:description "This WMS allows visualization of available 3D/4D Models in a given area in Europe.";
+		dct:issued "2016-10-27"^^xsd:date;
+		dct:modified "2018-01-19"^^xsd:date;
+		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+		dct:conformsTo <http://resource.europe-geology.eu/service/wmsModel>;
+		dcat:accessURL <http://resource.europe-geology.eu/service/wmsModel/operation>;
+		dct:license "TBD"^^xsd:anyURI ;
+		dct:format "http://publications.europa.eu/resource/authority/file-type/PNG"^^xsd:anyURI;
+		#dct:format "https://www.iana.org/assignments/media-types/image/png"^^xsd:anyURI;
+. 
+
+
+<http://resource.europe-geology.eu/service/wfsModel> a epos:WebService;
+	schema:identifier "http://resource.europe-geology.eu/service/wfsModel";
+	schema:identifier [ a schema:PropertyValue; 
+		schema:propertyID  "DDSS-ID"; 
+		schema:value  "WP15-DDSS-006a"; 
+	]; 
+	schema:description "This WFS allows to find a 3D/4D Model corresponding to various search criteria";
+	dcat:theme <epos:3D/4Dmodels>;
+	schema:name "3D/4D Model Index Discovery Service";
+	hydra:entrypoint "http://resource.europe-geology.eu/service/wfsModel"^^xsd:anyURI; 
+	schema:provider <PIC:999993662>;
+	schema:datePublished "2016-10-27Z"^^xsd:dateTime;
+	schema:dateModified "2018-01-19Z"^^xsd:dateTime;
+	dct:spatial [ a dct:Location; 
+		locn:geometry "POLYGON(-180 90,180 90,180 -90,-180 -90,-180 90)"^^gsp:wktLiteral; 
+	]; 
+	hydra:supportedOperation <http://resource.europe-geology.eu/service/wfsModel/operation>;
+	schema:keyword  "3D/4D Model","Model Index","Geology","INSPIRE:GE"," GeoSciML";	
+	dct:license "TBD"^^xsd:anyURI;
+	dct:temporal [ a dct:PeriodOfTime; 
+		schema:startDate "2016-10-27T00:00:00Z"^^xsd:dateTime; 
+		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
+	]; 
+	dcat:contactPoint <mailto:contact-brgm@brgm.fr>;
+. 
+
+
+	<http://resource.europe-geology.eu/service/wfsModel/operation> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/gml+xml";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "http://resource.europe-geology.eu/service/wfsModel{?service, request, typenames, version, count, BBOX, gml:identifier, gml:name, creationDate, releaseDate, updateDate, versionNumber, type, purpose, status, individualName, organisationName, projectName, projectURI, boundingBox, zMin, zMax, verticalSRS, positionalAccuracy, areaOfInterest, modelledGeologicFeature, modellingSoftwareToolName, modellingSoftwareToolVersion, outputGeometryReference, outputGeometry, distributionFormat, meshGridType, volumeUnitRepresentationType, exportVisualisationLink, previewLink, onlineResource, reportOnlineResource, useLimitation, pointOfContact}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "service"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "service";
+					schema:defaultValue "WFS";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "request"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Request type";
+					schema:defaultValue "GetFeature";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "typenames"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "FeatureType";
+					schema:defaultValue "gsmlp:GeologicUnitView";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "version"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "WFS version";
+					schema:defaultValue "2.0.2";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "count"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "WFS count parameter";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "BBOX"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "WFS BBOX filter parameter";
+					hydra:required "false"^^xsd:boolean;
+				];				
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "gml:identifier"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "index identifier";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "gml:name"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "name";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "creationDate"^^xsd:string;
+					rdfs:range "xsd:date";
+					rdfs:label "geologic unit type";
+					hydra:required "false"^^xsd:boolean;
+				];	
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "releaseDate"^^xsd:string;
+					rdfs:range "xsd:date";
+					rdfs:label "geologic unit type";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "updateDate"^^xsd:string;
+					rdfs:range "xsd:date";
+					rdfs:label "geologic unit type";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "versionNumber"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "geologic unit type";
+					hydra:required "false"^^xsd:boolean;
+				];	
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "type"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "geologic unit type";
+					hydra:required "false"^^xsd:boolean;
+				];		
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "purpose"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "geologic unit type";
+					hydra:required "false"^^xsd:boolean;
+				];	
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "status"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "geologic unit type";
+					hydra:required "false"^^xsd:boolean;
+				];	
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "individualName"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "geologic unit type";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "organisationName"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "geologic unit type";
+					hydra:required "false"^^xsd:boolean;
+				];	
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "projectName"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "geologic unit type";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "projectURI"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "geologic unit type";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "boundingBox"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "geologic unit type";
+					hydra:required "false"^^xsd:boolean;
+				];	
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "zMin"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "geologic unit type";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "zMax"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "geologic unit type";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "verticalSRS"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "geologic unit type";
+					hydra:required "false"^^xsd:boolean;
+				];	
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "positionalAccuracy"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "geologic unit type";
+					hydra:required "false"^^xsd:boolean;
+				];	
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "areaOfInterest"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "geologic unit type";
+					hydra:required "false"^^xsd:boolean;
+				];		
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "modelledGeologicFeature"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "geologic unit type";
+					hydra:required "false"^^xsd:boolean;
+				];	
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "modellingSoftwareToolName"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "geologic unit type";
+					hydra:required "false"^^xsd:boolean;
+				];		
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "modellingSoftwareToolVersion"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "geologic unit type";
+					hydra:required "false"^^xsd:boolean;
+				];	
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "outputGeometryReference"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "geologic unit type";
+					hydra:required "false"^^xsd:boolean;
+				];		
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "outputGeometry"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "geologic unit type";
+					hydra:required "false"^^xsd:boolean;
+				];	
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "distributionFormat"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "geologic unit type";
+					hydra:required "false"^^xsd:boolean;
+				];	
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "meshGridType"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "geologic unit type";
+					hydra:required "false"^^xsd:boolean;
+				];	
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "volumeUnitRepresentationType"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "geologic unit type";
+					hydra:required "false"^^xsd:boolean;
+				];	
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "exportVisualisationLink"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "geologic unit type";
+					hydra:required "false"^^xsd:boolean;
+				];		
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "previewLink"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "geologic unit type";
+					hydra:required "false"^^xsd:boolean;
+				];	
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "onlineResource"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "geologic unit type";
+					hydra:required "false"^^xsd:boolean;
+				];	
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "reportOnlineResource"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "geologic unit type";
+					hydra:required "false"^^xsd:boolean;
+				];	
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "useLimitation"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "geologic unit type";
+					hydra:required "false"^^xsd:boolean;
+				];		
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "pointOfContact"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "geologic unit type";
+					hydra:required "false"^^xsd:boolean;
+				];					
+		] ;
+. 
+
+
+
+
+<http://resource.europe-geology.eu/service/wmsModel> a epos:WebService;
+	schema:identifier "http://resource.europe-geology.eu/service/wmsModel";
+	schema:identifier [ a schema:PropertyValue; 
+		schema:propertyID  "DDSS-ID"; 
+		schema:value  "WP15-DDSS-006c"; 
+	]; 
+	schema:description "This WMS allows visualization of available 3D/4D Models in a given area in Europe";
+	dcat:theme <epos:3D/4Dmodels>;
+	schema:name "3D/4D Model Index Discovery Service";
+	hydra:entrypoint "http://resource.europe-geology.eu/service/wmsModel?"^^xsd:anyURI;
+	schema:provider <PIC:999993662>;
+	schema:datePublished "2016-10-27Z"^^xsd:dateTime;
+	schema:dateModified "2018-01-19Z"^^xsd:dateTime;
+	dct:spatial [ a dct:Location; 
+		locn:geometry "POLYGON(-180 90,180 90,180 -90,-180 -90,-180 90)"^^gsp:wktLiteral; 
+	]; 
+	hydra:supportedOperation <http://resource.europe-geology.eu/service/wmsModel/operation>;
+	schema:keyword  "3D/4D Model","Model Index","Geology","INSPIRE:GE"," GeoSciML";	
+	dct:license "TBD"^^xsd:anyURI;
+	dct:temporal [ a dct:PeriodOfTime; 
+		schema:startDate "2016-10-27T00:00:00Z"^^xsd:dateTime; 
+		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
+	]; 
+	dcat:contactPoint <mailto:contact-brgm@brgm.fr>;
+. 
+
+
+<http://resource.europe-geology.eu/service/wmsModel/operation> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "image/png";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "http://resource.europe-geology.eu/service/wmsModel{?service, version, request, layers, crs, format, width, height, BBOX}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "service"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "service";
+					schema:defaultValue "WMS";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "version"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "WMS version";
+					schema:defaultValue "1.3.0";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "request"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Request type";
+					schema:defaultValue "GetMap";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "layers"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Layers";
+					schema:defaultValue "ModelView";
+					hydra:required "true"^^xsd:boolean;
+				];		
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "BBOX"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "WMS BBOX filter parameter";
+					schema:defaultValue "-180,-90,180,90";
+					hydra:required "true"^^xsd:boolean;
+				];	
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "crs"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Spatial Reference System";
+					schema:defaultValue "EPSG:4326";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "format"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Output format";
+					http:paramValue "image/png";
+					http:paramValue "image/jpeg";
+					http:paramValue "image/geotiff";
+					schema:defaultValue "image/png";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "width"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Width of the output map";
+					schema:defaultValue "1536";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "height"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Height of the output map";
+					schema:defaultValue "660";
+					hydra:required "true"^^xsd:boolean;
+				];
+		] ;
+.
+
+
