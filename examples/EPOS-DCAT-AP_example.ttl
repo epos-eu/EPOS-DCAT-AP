@@ -286,6 +286,9 @@
         		hydra:mapping[ a hydra:IriTemplateMapping ;
                   # This property contains the name of the parameter as required by web service specifications
                   hydra:variable "starttime"^^xsd:string ;
+		  
+		  hydra:property "schema:startDate";
+                  schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 
                   # This property contains a short string used to describe the meaning of the parameter to the GUI user.
 				          rdf:label "Start of the timespan" ;
@@ -312,7 +315,11 @@
            	];
               		hydra:mapping[ a hydra:IriTemplateMapping ;
                			hydra:variable "endtime"^^xsd:string ;
-				            rdf:label "End of the timespan" ;
+				
+				hydra:property "schema:endDate";
+                                schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+				
+				rdf:label "End of the timespan" ;
                			hydra:required "true"^^xsd:boolean ;
                     rdfs:range "xsd:dateTime" ;
                     schema:defaultValue "2012-02-01T00:00:00T" ;
