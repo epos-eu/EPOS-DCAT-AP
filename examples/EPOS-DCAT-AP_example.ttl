@@ -261,8 +261,8 @@
 
   # This property refers to a temporal period that the Dataset covers.
   dct:temporal [ a dct:PeriodOfTime ;
-          schema:startDate "1988-01-01T00:00:00"^^xsd:dateTime ;
-          #schema:endDate "YYYY-MM-DDThh:mm:ss"^^xsd:dateTime ;
+          schema:startDate "1988-01-01T00:00:00Z"^^xsd:dateTime ;
+          #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
   ] ;
   # This property refers to the licence under which the Distribution is made available.
   dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
@@ -301,13 +301,13 @@
                   rdfs:range "xsd:dateTime" ;
 
                   # This property contains the default value of the parameter
-                  schema:defaultValue "2012-01-01T00:00:00T" ;
+                  schema:defaultValue "2012-01-01T00:00:00" ;
 
                   # The minimum value of the parameter
-                  # schema:minValue "2012-01-01T00:00:00T" ;
+                  # schema:minValue "2012-01-01T00:00:00" ;
 
                   # The maximum value of the parameter
-                  # schema:maxValue "2017-12-01T00:00:00T" ;
+                  # schema:maxValue "2017-12-01T00:00:00" ;
 
                   # This property contains one of the possible value which should be used in the web service query
                   # It could be repeated as many times as needed.
@@ -322,7 +322,7 @@
 				rdf:label "End of the timespan" ;
                			hydra:required "true"^^xsd:boolean ;
                     rdfs:range "xsd:dateTime" ;
-                    schema:defaultValue "2012-02-01T00:00:00T" ;
+                    schema:defaultValue "2012-02-01T00:00:00" ;
 
               		];
               		hydra:mapping[ a hydra:IriTemplateMapping ;
