@@ -624,7 +624,7 @@
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/gml+xml";
 	hydra:property[ a hydra:IriTemplate;
-		hydra:template "https://www.emidius.eu/services/europe/wfs{?service, version, request, outputFormat, typeName}"^^xsd:string;
+		hydra:template "https://www.emidius.eu/services/europe/wfs{?service, version, request, bbox, outputFormat, typeName}"^^xsd:string;
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "service"^^xsd:string;
 				rdfs:range "xsd:string";
@@ -653,6 +653,20 @@
 				schema:defaultValue "GetFeature";
 				hydra:required "true"^^xsd:boolean;
 			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "bbox"^^xsd:string;
+				rdfs:range "xsd:string";
+				rdfs:label "WFS BBOX filter parameter";
+				schema:defaultValue "34.8759994506836,-15.2344999313354,59.9240036010741974,32.1345024108887003,urn:x-ogc:def:crs:EPSG:4326";
+				http:paramValue "34.8759994506836,-15.2344999313354,59.9240036010741974,32.1345024108887003,urn:x-ogc:def:crs:EPSG:4326";
+				hydra:required "false"^^xsd:boolean;
+			];
+			# WFS 2.0.0 bbox format is y_min,x_min,y_max,x_max,urn:x-ogc:def:crs:EPSG:4326
+			# current bbox calculated by geoserver is
+			# lon min -15.2344999313354
+			# lat min 34.8759994506836
+			# lon max 32.1345024108887003
+			# lat max 59.9240036010741974
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "outputFormat"^^xsd:string;
 				rdfs:range "xsd:string";
