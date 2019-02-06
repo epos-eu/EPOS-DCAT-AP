@@ -232,7 +232,7 @@
 					rdfs:range "xsd:string";
 					rdfs:label "Bounding box";
 					schema:defaultValue "-12.3925075531006,30.303092956543,45.2800407409668,49.0013656616211";
-#					http:paramValue "-12.3925075531006,30.303092956543,45.2800407409668,49.0013656616211";
+					#http:paramValue "-12.3925075531006,30.303092956543,45.2800407409668,49.0013656616211";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
@@ -281,9 +281,9 @@
 		hydra:returns "application/gml+xml";
 		hydra:property[ a hydra:IriTemplate;
 			hydra:template "http://services.seismofaults.eu/geoserver/EDSF/ows{?service, version, request, typeNames, outputFormat}"^^xsd:string;
-#			Commented out waiting for decisions about implementation of DB parameters query through "CQL_FILTER" geoserver vendor parameter. N.B. "CQL_FILTER=" shall be repeated for every single DB column
-#			CQL_FILTER GeoServer vendor parameter supports several conditions (=, <, >, <=, <=, <>, etc.)
-#			hydra:template "http://services.seismofaults.eu/geoserver/EDSF/ows{?service, version, request, typeNames, outputFormat, count, bbox}&CQL_FILTER={mindepth, maxdepth, strikemin, strikemax, dipmin, dipmax, rakemin, rakemax, srmin, srmax, maxmag}"^^xsd:string;
+			#Commented out waiting for decisions about implementation of DB parameters query through "CQL_FILTER" geoserver vendor parameter. N.B. "CQL_FILTER=" shall be repeated for every single DB column
+			#CQL_FILTER GeoServer vendor parameter supports several conditions (=, <, >, <=, <=, <>, etc.)
+			#hydra:template "http://services.seismofaults.eu/geoserver/EDSF/ows{?service, version, request, typeNames, outputFormat, count, bbox}&CQL_FILTER={mindepth, maxdepth, strikemin, strikemax, dipmin, dipmax, rakemin, rakemax, srmin, srmax, maxmag}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "service"^^xsd:string;
 					rdfs:range "xsd:string";
@@ -417,7 +417,7 @@
 		hydra:returns "application/gml+xml";
 		hydra:property[ a hydra:IriTemplate;
 			hydra:template "http://services.seismofaults.eu/geoserver/EDSF/ows{?service, version, request, typeNames, outputFormat, count, bbox}"^^xsd:string;
-#			hydra:template "http://services.seismofaults.eu/geoserver/EDSF/ows{?service, version, request, typeNames, outputFormat, count, bbox}&CQL_FILTER={}"^^xsd:string;
+			#hydra:template "http://services.seismofaults.eu/geoserver/EDSF/ows{?service, version, request, typeNames, outputFormat, count, bbox}&CQL_FILTER={}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "service"^^xsd:string;
 					rdfs:range "xsd:string";
@@ -478,7 +478,7 @@
 					http:paramValue "SHAPE-ZIP";
 					hydra:required "true"^^xsd:boolean;
 				];
-# DB parameter for subductions are not yet implemented since attributes are different between subduction_countour and subdiction_zones layers
+				#DB parameter for subductions are not yet implemented since attributes are different between subduction_countour and subdiction_zones layers
 		] ;
 .
 
