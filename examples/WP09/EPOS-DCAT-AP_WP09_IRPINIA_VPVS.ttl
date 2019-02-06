@@ -59,28 +59,26 @@
 	schema:contactPoint <https://orcid.org/0000-0002-4553-2380/technicalContact>;
 .
 
-<seismnet.fisica.unina.it/eposws/vpvs/1/query> a epos:WebService;
-	schema:identifier "seismnet.fisica.unina.it/eposws/vpvs/1/query";
-	#schema:identifier [ a schema:PropertyValue;
-		#schema:propertyID  "DDSS-ID";
-		#schema:value  "WP09-DDSS-009";
-	#];
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/vpvs/WebService/001> a epos:WebService;
+	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/vpvs/WebService/001";
 	schema:description "The Irpinia Near-Fault Observatory is deployed in the Southern Apennines of Italy, along the active fault system responsible for the 1980, November 23, MS 6.9 Campania–Lucania earthquake. It comprises about 30 stations and covers an area of about 100 × 70 km2. Each site is equipped with strong motion accelerometer and a short-period velocimeter, while a few stations are equipped with broad-band velocimeters.		This service provides measurements of VP over VS at the seismic stations, recorded for all earthquakes detected in the area.";
-	dcat:theme <#Crustalvelocityparameters>;
+	dcat:theme <epos:Crustalvelocityparameters>;
 	schema:name "IRPINIA - VP/VS Web Service for Irpinia Near-Fault Observatory";
-	hydra:entrypoint "http://seismnet.fisica.unina.it/eposws/vpvs/1/query?"^^xsd:anyURI;
+	# NFO entrypoint:
+	#hydra:entrypoint "http://seismnet.fisica.unina.it/eposws/vpvs/1/query?"^^xsd:anyURI;
+	# FRIDGE entrypoint:
+	hydra:entrypoint "http://fridge-services.rm.ingv.it/vpvs/?"^^xsd:anyURI;
 	schema:provider <PIC:999976590>;
 	schema:datePublished "2017-06-08Z"^^xsd:dateTime;
 	schema:dateModified "2017-06-08Z"^^xsd:dateTime;
 	dct:spatial [ a dct:Location;
 		locn:geometry "POLYGON(14.0 39.0,16.0 39.0,16.0 42.0,14.0 42.0,14.0 39.0)"^^gsp:wktLiteral;
 	];
-	hydra:supportedOperation <seismnet.fisica.unina.it/eposws/vpvs/1/query/operation>;
+	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/vpvs/Operation/001>;
 	schema:keywords "NFO"," Earthquake"," Event"," rocks"," seismic waves propagation"," VpVs ratio"," seismology";
 	dct:license "Creative Commons for data, Open Source licences for software"^^xsd:anyURI;
 	dct:temporal [ a dct:PeriodOfTime;
 		schema:startDate "2007-12-07T00:00:00Z"^^xsd:dateTime;
-		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
 	];
 	schema:contactPoint <https://orcid.org/0000-0002-4553-2380/technicalContact>;
 .
@@ -105,27 +103,30 @@
 	schema:contactPoint <https://orcid.org/0000-0002-2588-8160/financialContact>;
 .
 
-<seismnet.fisica.unina.it/eposws/vpvs/1/query/operation> a hydra:Operation;
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/vpvs/Operation/001> a hydra:Operation;
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
-		hydra:template "http://seismnet.fisica.unina.it/eposws/vpvs/1/query(?mintime, maxtime, minlat, maxlat, minlon, maxlon, mineqdepth, maxeqdepth, minnp, minns, maxpw, maxsw, minps, maxgap, midi, maxherr, maxverr, vpvsmin, maxvpvserr, maxvpvspw, maxvpvssw)"^^xsd:string;
+		# NFO entrypoint:
+		#hydra:template "http://seismnet.fisica.unina.it/eposws/vpvs/1/query(?mintime, maxtime, minlat, maxlat, minlon, maxlon, mineqdep, maxeqdep, minnp, minns, maxpw, maxsw, minps, maxgap, midi, maxherr, maxverr, vpvsmin, maxvpvserr, maxvpvspw, maxvpvssw)"^^xsd:string;
+		# FRIDGE entrypoint:
+		hydra:template "http://fridge-services.rm.ingv.it/vpvs/{?mintime, maxtime, minlat, maxlat, minlon, maxlon, mineqdep, maxeqdep, minnp, minns, maxpw, maxsw, minps, maxgap, midi, maxherr, maxverr, vpvsmin, maxvpvserr, maxvpvspw, maxvpvssw}"^^xsd:string;
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "mintime"^^xsd:string;
 				rdfs:range "xsd:dateTime";
 				rdfs:label "Minimum Time";
-				schema:minValue "1970-01-01T00:00:00.000Z";
-				schema:maxValue "2099-01-01T00:00:00.000Z";
-				schema:defaultValue "1970-01-01T00:00:00.000Z";
+				#schema:minValue "1970-01-01T00:00:00.000Z";
+				#schema:maxValue "2099-01-01T00:00:00.000Z";
+				schema:defaultValue "2017-01-01T00:00:00.000Z";
 				hydra:required "true"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "maxtime"^^xsd:string;
 				rdfs:range "xsd:dateTime";
 				rdfs:label "Maximum Time";
-				schema:minValue "1970-01-01T00:00:00.000Z";
-				schema:maxValue "2099-01-01T00:00:00.000Z";
-				schema:defaultValue "2099-01-01T00:00:00.000Z";
+				#schema:minValue "1970-01-01T00:00:00.000Z";
+				#schema:maxValue "2099-01-01T00:00:00.000Z";
+				schema:defaultValue "2017-02-01T00:00:00.000Z";
 				hydra:required "true"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
@@ -134,7 +135,7 @@
 				rdfs:label "Minimum Latitude [deg]";
 				schema:minValue "-90";
 				schema:maxValue "90";
-				schema:defaultValue "-90";
+				schema:defaultValue "39";
 				hydra:required "true"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
@@ -143,7 +144,7 @@
 				rdfs:label "Maximum Latitude [deg]";
 				schema:minValue "-90";
 				schema:maxValue "90";
-				schema:defaultValue "90";
+				schema:defaultValue "42";
 				hydra:required "true"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
@@ -152,7 +153,7 @@
 				rdfs:label "Minimum Longitude [deg]";
 				schema:minValue "-180";
 				schema:maxValue "180";
-				schema:defaultValue "-180";
+				schema:defaultValue "14";
 				hydra:required "true"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
@@ -161,33 +162,33 @@
 				rdfs:label "Maximum Longitude [deg]";
 				schema:minValue "-180";
 				schema:maxValue "180";
-				schema:defaultValue "180";
+				schema:defaultValue "16";
 				hydra:required "true"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
-				hydra:variable "mineqdepth"^^xsd:string;
+				hydra:variable "mineqdep"^^xsd:string;
 				rdfs:range "xsd:integer";
 				rdfs:label "Minimum Earthquake Depth [km]";
 				schema:minValue "-9";
 				schema:maxValue "6378";
-				schema:defaultValue "-9";
-				hydra:required "false"^^xsd:boolean;
+				schema:defaultValue "0";
+				hydra:required "true"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
-				hydra:variable "maxeqdepth"^^xsd:string;
+				hydra:variable "maxeqdep"^^xsd:string;
 				rdfs:range "xsd:integer";
 				rdfs:label "Maximum Earthquake Depth [km]";
 				schema:minValue "-9";
 				schema:maxValue "6378";
-				schema:defaultValue "6378";
-				hydra:required "false"^^xsd:boolean;
+				schema:defaultValue "40";
+				hydra:required "true"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "minnp"^^xsd:string;
 				rdfs:range "xsd:integer";
 				rdfs:label "Minimum number of p-waves onset observations";
 				schema:minValue "0";
-				schema:maxValue "999999";
+				#schema:maxValue "999999";
 				schema:defaultValue "0";
 				hydra:required "false"^^xsd:boolean;
 			];
@@ -196,7 +197,7 @@
 				rdfs:range "xsd:integer";
 				rdfs:label "Minimum number of s-waves onset observations";
 				schema:minValue "0";
-				schema:maxValue "999999";
+				#schema:maxValue "999999";
 				schema:defaultValue "0";
 				hydra:required "false"^^xsd:boolean;
 			];
@@ -223,7 +224,7 @@
 				rdfs:range "xsd:integer";
 				rdfs:label "Number of P and S couples per earthquake";
 				schema:minValue "0";
-				schema:maxValue "999999";
+				#schema:maxValue "999999";
 				schema:defaultValue "1";
 				hydra:required "false"^^xsd:boolean;
 			];
@@ -268,7 +269,7 @@
 				rdfs:range "xsd:float";
 				rdfs:label "Minimum value of Vp/Vs ratio allowed to be extracted";
 				schema:minValue "0";
-				schema:maxValue "999999";
+				#schema:maxValue "999999";
 				schema:defaultValue "1.41";
 				hydra:required "false"^^xsd:boolean;
 			];
@@ -277,7 +278,7 @@
 				rdfs:range "xsd:float";
 				rdfs:label "Maximum allowed formal error attributed to the Vp/Vs value";
 				schema:minValue "0";
-				schema:maxValue "999999";
+				#schema:maxValue "999999";
 				schema:defaultValue "999999";
 				hydra:required "false"^^xsd:boolean;
 			];
@@ -302,13 +303,13 @@
 	];
 .
 
-<#NearFaultObservations> a skos:ConceptScheme;
+<epos:NearFaultObservations> a skos:ConceptScheme;
 	dct:title "Near Fault Observations";
 	dct:description "It contains the concepts of Near Fault Observations";
 .
 
-<#Crustalvelocityparameters> a skos:Concept;
-	skos:inScheme <#NearFaultObservations>;
+<epos:Crustalvelocityparameters> a skos:Concept;
+	skos:inScheme <epos:NearFaultObservations>;
 	skos:prefLabel "Crustal velocity parameters";
 .
 
@@ -333,34 +334,34 @@
 <https://orcid.org/0000-0002-4553-2380/technicalContact> a schema:ContactPoint;
 	schema:email "elia@fisica.unina.it";
 	schema:availableLanguage "en";
-	schema:contactType "technicalContact";
+	schema:contactType "manager";
 .
 
-<WP09/IRPINIA/VPVS> a dcat:Dataset;
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/vpvs/Dataset/001> a dcat:Dataset;
 	dct:title "IRPINIA VpVs Dataset";
-        adms:identifier [ a adms:Identifier ;
-            adms:schemaAgency "DDSS-ID" ;
-            skos:notation "WP09-DDSS-009" ;
-
-        ];
-	dct:identifier "WP09/IRPINIA/VPVS";
+		adms:identifier [ a adms:Identifier;
+		adms:schemaAgency "DDSS-ID";
+		skos:notation "WP09-DDSS-009";
+	];
+	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/vpvs/Dataset/001";
 	dct:description "The VpVs (P-wave velocities vs S-wave velocities ratio) dataset contains Vp/Vs time series based on P and S arrival times observations generated by quality selected earthquakes within a input defined volume recorded at stations included in the same volume.";
 	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
 	dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
 	dct:created "2007-12-07"^^xsd:date;
-	dcat:theme  <#Crustalvelocityparameters>;
+	dcat:theme  <epos:Crustalvelocityparameters>;
 	dcat:keyword "Earthquake", "Event", "rocks", "seismic waves propagation", "VpVs ratio", "seismology";
 	dcat:contactPoint <https://orcid.org/0000-0002-4553-2380/technicalContact>;
 	dct:publisher <PIC:999976590>;
-	dcat:distribution <WP09/IRPINIA/VPVS/Distribution>;
+	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/vpvs/Distribution/001>;
 .
 
-<WP09/IRPINIA/VPVS/Distribution> a dcat:Distribution;
-    dct:identifier "WP09/IRPINIA/VPVS/Distribution";
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/vpvs/Distribution/001> a dcat:Distribution;
+    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/vpvs/Distribution/001";
+	dct:title "IRPINIA Vp/Vs Distribution";	
 	dct:description "IRPINIA Vp/Vs Distribution";
 	dct:created "2007-12-07"^^xsd:date;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-	dcat:accessURL <seismnet.fisica.unina.it/eposws/vpvs/1/query/operation>;
-	dct:conformsTo <seismnet.fisica.unina.it/eposws/vpvs/1/query>;
+	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/vpvs/Operation/001>;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/vpvs/WebService/001>;
 	dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 .

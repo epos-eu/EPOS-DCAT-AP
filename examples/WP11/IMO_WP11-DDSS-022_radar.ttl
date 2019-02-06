@@ -1,0 +1,171 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .  
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .  
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .  
+@prefix dc: <http://purl.org/dc/elements/1.1/> .  
+@prefix dct: <http://purl.org/dc/terms/> .  
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .  
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .  
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .  
+@prefix schema: <http://schema.org/> .  
+@prefix dcat: <http://www.w3.org/ns/dcat#> .  
+@prefix cnt: <http://www.w3.org/2011/content#> .  
+@prefix locn: <http://www.w3.org/ns/locn#> .  
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .  
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .  
+@prefix http: <http://www.w3.org/2006/http#> .  
+@prefix owl: <http://www.w3.org/2002/07/owl#> .  
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .  
+
+<997168343> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "PIC ";
+		schema:value "997168343";
+	]; 
+	schema:legalName "Icelandic Meteorological Office";
+	schema:leiCode "6309080350";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Bustaðavegur 7-9";
+		schema:addressLocality "Reykjavík";
+		schema:postalCode "150";
+		schema:addressCountry "Iceland";
+	]; 
+	schema:url "http://en.vedur.is"^^xsd:anyURI;
+	schema:email "office@vedur.is";
+	schema:telephone "+3545226000";
+	schema:contactPoint <0000-0001-5750-0872/scientificContact>;
+. 
+
+<0000-0001-5750-0872> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "ORCID";
+		schema:value "0000-0001-5750-0872";
+	]; 
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "";
+		schema:value "";
+	]; 
+	schema:familyName "Sara Barsotti";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Bustaðavegur 7-9";
+		schema:addressLocality "Reykjavík";
+		schema:postalCode "108";
+		schema:addressCountry "Iceland";
+	]; 
+	schema:email "sara@vedur.is";
+	schema:telephone "+3545226162";
+	schema:url "https://en.vedur.is"^^xsd:anyURI;
+	schema:contactPoint <0000-0001-5750-0872/scientificContact>;
+	schema:contactPoint <0000-0001-5750-0872/contactPoint>;
+. 
+	<epos:VolcanoObservations> a skos:ConceptScheme;
+		dct:title "Volcano Observations";
+		dct:description "Ground-based visible and thermal / IR camera";
+. 
+	<www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/022/data> a dcat:Dataset;
+		dct:title "Ground-based radar data";
+		dct:identifier "www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/022/data";
+		adms:identifier [ a adms:Identifier;
+			adms:schemaAgency "DDSS-ID";
+			skos:notation "WP11-DDSS-022";
+		]; 
+		dct:description "Provide raw data from radar for selected eruptions";
+		dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
+		dct:created "2019-01-21"^^xsd:date;
+		dct:modified "2019-01-21"^^xsd:date;
+		dct:issued "2019-01-21"^^xsd:date;
+	dct:temporal [ a dct:PeriodOfTime; 
+		schema:startDate "2010-01-01T00:00:00Z"^^xsd:dateTime; 
+		schema:endDate "2011-05-25T00:00:00Z"^^xsd:dateTime; 
+	]; 
+	dct:spatial [ a dct:Location; 
+		locn:geometry "POLYGON(-25.0 63.0,-25.0 68.5,-10.0 68.5,-10.0 63.0,-25.0 63.0)"^^gsp:wktLiteral; 
+	]; 
+		dcat:theme <epos:Ground-basedremotesensingdata&products>;
+		dcat:keyword "Volcanic activity; volcanic plume; radar";
+	dcat:contactPoint <0000-0001-5750-0872/contactPoint>;
+		dcat:distribution <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/022>;
+		owl:versionInfo "V1.0";
+. 
+
+<www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/022> a epos:WebService;
+	schema:identifier "www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/022";
+	#schema:identifier [ a schema:PropertyValue; 
+		#schema:propertyID  "DDSS-ID"; 
+		#schema:value  ""; 
+	#]; 
+	schema:description "Access raw data from radar for selected eruptions";
+	schema:name "Ground-based radar data";
+	hydra:entrypoint "https://docs.vedur.is/api/epos/#!/Volcanoes/get_volcano_meta_radar_volcano_station"^^xsd:anyURI; 
+	schema:datePublished "2019-01-21"^^xsd:date;
+	schema:dateModified "2019-01-21"^^xsd:date;
+	dct:spatial [ a dct:Location; 
+		locn:geometry "POLYGON(-25.0 63.0,-25.0 68.5,-10.0 68.5,-10.0 63.0,-25.0 63.0)"^^gsp:wktLiteral; 
+	]; 
+	hydra:supportedOperation <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/022/Operation/022>;
+	schema:keywords "Volcanic activity; ivolcanic plume; radar";
+	dct:temporal [ a dct:PeriodOfTime; 
+		schema:startDate "2019-01-21T00:00:00Z"^^xsd:dateTime; 
+		schema:endDate "2025-01-01T00:00:00Z"^^xsd:dateTime; 
+	]; 
+. 
+	<www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/022> a dcat:Distribution;
+		dct:identifier "www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/022";
+		dct:title "Ground-based radar data";
+		dct:description "Access the raw data from radar for selected eruptions";
+		dct:issued "2019-01-21"^^xsd:date;
+		dct:modified "2019-01-21"^^xsd:date;
+		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
+		dcat:accessURL "http://www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/022"^^xsd:anyURI;
+. 
+	<www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/022/Operation/022> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://api.vedur.is/epos/v1/volcano/meta/radar/{?volcano, period_starts, period_ends, station}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "volcano"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Volcano name ";
+					schema:defaultValue "Eyjafjallajokull";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "period_starts"^^xsd:string;
+					rdfs:range "xsd:dateTime";
+					rdfs:label "Start time in format YYYY-MM-DDTHH:MM:SS";
+					schema:minValue "1900-01-01T00:00:00";
+					schema:defaultValue "1900-01-01T00:00:00";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "period_ends"^^xsd:string;
+					rdfs:range "xsd:dateTime";
+					rdfs:label "End time in format YYYY-MM-DDTHH:MM:SS";
+					schema:maxValue "2050-01-01T00:00:00";
+					schema:defaultValue "2050-01-01T00:00:00";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "station"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Station name for this service";
+					schema:defaultValue "KEF";
+					hydra:required "true"^^xsd:boolean;
+				];
+		] ;
+. 
+	<epos:Ground-basedremotesensingdata&products> a skos:Concept;
+		skos:definition "Access raw data from radar for selected eruptions";
+		skos:inScheme <epos:VolcanoObservations>;
+		skos:prefLabel "Ground-based remote sensing data&products";
+. 
+	<0000-0001-5750-0872/contactPoint> a schema:ContactPoint;
+		schema:email "sara@vedur.is";
+		schema:availableLanguage "en" ;
+. 
+	<0000-0001-5750-0872/scientificContact> a schema:ContactPoint;
+		schema:email "sara@vedur.is";
+		schema:availableLanguage "en" ;
+		schema:contactType "scientificContact" ;
+. 
