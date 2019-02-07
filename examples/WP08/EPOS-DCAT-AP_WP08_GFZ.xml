@@ -175,6 +175,239 @@
     <!-- <eposap:isPartOf>PIC:997012076</eposap:isPartOf> -->
   </eposap:Organisation>
 
+
+  <!-- GFZ WFCatalog WebService -->
+  <eposap:WebService>
+
+    <dct:title>WFCatalog - German Research Centre for Geosciences (GFZ)</dct:title>
+    <dct:description>Web service which returns waveform metadata and data quality metrics</dct:description>
+    <dct:issued>2017-09-01T00:00:00</dct:issued>
+    <dct:modified>2017-09-01T00:00:00</dct:modified>
+    <dct:license>Creative Commons for data, Open Source licences for software</dct:license>
+    <foaf:page>
+      <foaf:primaryTopic>http://geofon.gfz-potsdam.de/eidaws/wfcatalog/alpha/query?</foaf:primaryTopic>
+    </foaf:page>
+
+    <dct:format>
+      <dct:MediaTypeOrExtent>json</dct:MediaTypeOrExtent>
+    </dct:format>
+
+    <dct:rights>
+      <dct:RightsStatement>open data</dct:RightsStatement>
+    </dct:rights>
+
+    <dct:conformsTo>EPSG:4326</dct:conformsTo>
+    <dct:identifier>geofon.gfz-potsdam.de/eidaws/wfcatalog/alpha/query</dct:identifier>
+    <dct:created>2017-09-01T00:00:00</dct:created>
+    <eposap:domain>Seismology</eposap:domain>
+      <eposap:subDomain>waveform quality</eposap:subDomain>
+    <dcat:keyword>EIDA, GFZ, data quality, availability, metrics, waveform, metadata</dcat:keyword>
+    <eposap:operation>execute</eposap:operation>
+    <dct:hasVersion>1.0.0</dct:hasVersion>
+
+    <eposap:parameter>
+      <http:paramName>starttime</http:paramName>
+      <rdf:label>Starttime of documents</rdf:label>
+      <dct:type>time</dct:type>
+    </eposap:parameter>
+
+    <eposap:parameter>
+      <http:paramName>endtime</http:paramName>
+      <rdf:label>Endtime of documents</rdf:label>
+      <dct:type>time</dct:type>
+    </eposap:parameter>
+
+    <eposap:parameter>
+      <http:paramName>percent_availability_gt</http:paramName>
+      <rdf:label>Data availability percentage greater than</rdf:label>
+      <dct:type>float</dct:type>
+      <schema:minValue>0</schema:minValue>
+      <schema:maxValue>100</schema:maxValue>
+    </eposap:parameter>
+
+    <eposap:parameter>
+      <http:paramName>percent_availability_lt</http:paramName>
+      <rdf:label>Data availability percentage smaller than</rdf:label>
+      <dct:type>float</dct:type>
+      <schema:minValue>0</schema:minValue>
+      <schema:maxValue>100</schema:maxValue>
+    </eposap:parameter>
+
+    <eposap:parameter>
+      <http:paramName>num_gaps_gt</http:paramName>
+      <rdf:label>Number of data gaps greater than</rdf:label>
+      <dct:type>integer</dct:type>
+      <schema:minValue>0</schema:minValue>
+    </eposap:parameter>
+
+    <eposap:parameter>
+      <http:paramName>num_gaps_lt</http:paramName>
+      <rdf:label>Number of data gaps smaller than</rdf:label>
+      <dct:type>integer</dct:type>
+      <schema:minValue>0</schema:minValue>
+    </eposap:parameter>
+
+    <eposap:parameter>
+      <http:paramName>num_overlaps_gt</http:paramName>
+      <rdf:label>Number of data overlaps greater than</rdf:label>
+      <dct:type>integer</dct:type>
+      <schema:minValue>0</schema:minValue>
+    </eposap:parameter>
+
+    <eposap:parameter>
+      <http:paramName>num_overlaps_lt</http:paramName>
+      <rdf:label>Number of data overlaps smaller than</rdf:label>
+      <dct:type>integer</dct:type>
+      <schema:minValue>0</schema:minValue>
+    </eposap:parameter>
+
+    <eposap:parameter>
+      <http:paramName>sample_stdev_gt</http:paramName>
+      <rdf:label>Standard deviation of samples greater than</rdf:label>
+      <dct:type>float</dct:type>
+    </eposap:parameter>
+
+    <eposap:parameter>
+      <http:paramName>sample_stdev_lt</http:paramName>
+      <rdf:label>Standard deviation of samples smaller than</rdf:label>
+      <dct:type>float</dct:type>
+    </eposap:parameter>
+
+    <eposap:parameter>
+      <http:paramName>sample_rms_gt</http:paramName>
+      <rdf:label>Standard quadratic mean of samples greater than</rdf:label>
+      <dct:type>float</dct:type>
+    </eposap:parameter>
+
+    <eposap:parameter>
+      <http:paramName>sample_rms_lt</http:paramName>
+      <rdf:label>Standard quadratic mean of samples smaller than</rdf:label>
+      <dct:type>float</dct:type>
+    </eposap:parameter>
+
+    <eposap:parameter>
+      <http:paramName>max_gap_gt</http:paramName>
+      <rdf:label>Maximum data gap greater than</rdf:label>
+      <dct:type>float</dct:type>
+      <schema:minValue>0</schema:minValue>
+    </eposap:parameter>
+
+    <eposap:parameter>
+      <http:paramName>max_gap_lt</http:paramName>
+      <rdf:label>Maximum data gap smaller than</rdf:label>
+      <dct:type>float</dct:type>
+      <schema:minValue>0</schema:minValue>
+    </eposap:parameter>
+
+    <eposap:parameter>
+      <http:paramName>sample_min_gt</http:paramName>
+      <rdf:label>Minimum data sample value greater than</rdf:label>
+      <dct:type>float</dct:type>
+    </eposap:parameter>
+
+    <eposap:parameter>
+      <http:paramName>sample_min_lt</http:paramName>
+      <rdf:label>Minimum data sample value smaller than</rdf:label>
+      <dct:type>float</dct:type>
+    </eposap:parameter>
+
+    <eposap:parameter>
+      <http:paramName>sample_max_gt</http:paramName>
+      <rdf:label>Maximum data sample value greater than</rdf:label>
+      <dct:type>float</dct:type>
+    </eposap:parameter>
+
+    <eposap:parameter>
+      <http:paramName>sample_max_lt</http:paramName>
+      <rdf:label>Maximum data sample value smaller than</rdf:label>
+      <dct:type>float</dct:type>
+    </eposap:parameter>
+
+    <eposap:parameter>
+      <http:paramName>sample_mean_gt</http:paramName>
+      <rdf:label>Mean data sample value greater than</rdf:label>
+      <dct:type>float</dct:type>
+    </eposap:parameter>
+
+    <eposap:parameter>
+      <http:paramName>sample_mean_lt</http:paramName>
+      <rdf:label>Mean data sample value smaller than</rdf:label>
+      <dct:type>float</dct:type>
+    </eposap:parameter>
+
+    <eposap:parameter>
+      <http:paramName>network</http:paramName>
+      <rdf:label>Stream network code</rdf:label>
+      <dct:type>string</dct:type>
+    </eposap:parameter>
+
+    <eposap:parameter>
+      <http:paramName>station</http:paramName>
+      <rdf:label>Stream station code</rdf:label>
+      <dct:type>string</dct:type>
+    </eposap:parameter>
+
+    <eposap:parameter>
+      <http:paramName>location</http:paramName>
+      <rdf:label>Stream location code</rdf:label>
+      <dct:type>string</dct:type>
+    </eposap:parameter>
+
+    <eposap:parameter>
+      <http:paramName>channel</http:paramName>
+      <rdf:label>Stream channel code</rdf:label>
+      <dct:type>string</dct:type>
+    </eposap:parameter>
+
+    <eposap:parameter>
+      <http:paramName>csegments</http:paramName>
+      <rdf:label>Include continuous segments in result</rdf:label>
+      <dct:type>boolean</dct:type>
+    </eposap:parameter>
+
+    <eposap:parameter>
+      <http:paramName>longestonly</http:paramName>
+      <rdf:label>Include only the longest continuous segment</rdf:label>
+      <dct:type>boolean</dct:type>
+    </eposap:parameter>
+
+    <eposap:parameter>
+      <http:paramName>minlen</http:paramName>
+      <rdf:label>Limit continuous segments to this length</rdf:label>
+      <dct:type>float</dct:type>
+      <schema:minValue>0</schema:minValue>
+    </eposap:parameter>
+
+    <eposap:parameter>
+      <http:paramName>include</http:paramName>
+      <rdf:label>The included level of detail in response</rdf:label>
+      <dct:type>string</dct:type>
+      <http:paramValue>default</http:paramValue>
+      <http:paramValue>samples</http:paramValue>
+      <http:paramValue>header</http:paramValue>
+      <http:paramValue>all</http:paramValue>
+    </eposap:parameter>
+
+    <dcat:contactPoint>http://orcid.org/0000-0001-9993-4003</dcat:contactPoint>
+    <eposap:publisher>PIC:999994341</eposap:publisher>
+
+    <dct:spatial>
+      <dct:Location>
+        <locn:geometry>POLYGON(-180.0 -90.0, 180.0 -90.0, 180.0 90.0, -180.0 90.0, -180.0 -90.0)</locn:geometry>
+      </dct:Location>
+    </dct:spatial>
+    <adms:representationTechnique>point</adms:representationTechnique>
+    <dct:temporal>
+      <dct:PeriodOfTime>
+        <schema:startDate>1993-01-01T00:00:00</schema:startDate>
+      </dct:PeriodOfTime>
+    </dct:temporal>
+    <eposap:DDSS-ID>WP8-DDSS-0049</eposap:DDSS-ID>
+    <eposap:actions>download</eposap:actions>
+  </eposap:WebService>
+
+
+
   <eposap:WebService>
     <dct:title>FDSN Dataselect - German Research Centre for Geosciences (GFZ)</dct:title>
     <dct:description>FDSN Standard webservice at GFZ to download waveform data</dct:description>

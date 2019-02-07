@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- AHEAD services description v1.4 (v9 internal). This file was created by Mario Locati (INGV, mario.locati@ingv.it) the 9 of March 2018. -->
+<!-- AHEAD services description v1.6 (v11 internal). This file was created by Mario Locati (INGV, mario.locati@ingv.it) the 27th of April 2018. -->
 <eposap:Epos
 	xmlns:adms="http://www.w3.org/ns/adms#"
 	xmlns:cnt="http://www.w3.org/2008/content#"
@@ -124,10 +124,18 @@
 		<dct:type>public research institute</dct:type>
 		<eposap:legalContact>http://orcid.org/0000-0002-8651-6387</eposap:legalContact>
 		<eposap:financialContact>http://orcid.org/0000-0002-8651-6387</eposap:financialContact>
+		<!--<eposap:associatedProjects>cordis:730900</eposap:associatedProjects>
 		<eposap:associatedProjects>cordis:676564</eposap:associatedProjects>
 		<eposap:associatedProjects>cordis:226967</eposap:associatedProjects>
-		<eposap:associatedProjects>cordis:26130</eposap:associatedProjects>
+		<eposap:associatedProjects>cordis:26130</eposap:associatedProjects>-->
 	</eposap:Organisation>
+	
+	<!--
+	<eposap:Project>
+		<dct:identifier>cordis:730900</dct:identifier>
+		<dct:title xml:lang="en">Seismology and Earthquake Engineering Research Infrastructure Alliance for Europe (SERA)</dct:title>
+		<dct:description xml:lang="en">SERA is the "Seismology and Earthquake Engineering Research Infrastructure Alliance for Europe", responding to the priorities identified in the call INFRAIA-01-2016-2017 Research Infrastructure for Earthquake Hazard. The overall objective of SERA is to give a significant contribution to improve the access to data, services and research infrastructures, and deliver solutions based on innovative Research and Development in seismology and earthquake engineering, aiming at reducing the exposure of our society to the risk posed by natural and anthropogenic earthquakes. To this end, SERA will: Involve the communities involved in previous successful projects including NERA and SERIES; Offer transnational access to the largest collection of high-class experimental facilities in earthquake engineering; Offer virtual access to the main data and products in seismology and anthropogenic seismicity; Promote multi-disciplinary science across the domains of seismology, anthropogenic seismicity, near-fault observatories and deep underground laboratories, to achieve an improved understanding of earthquake occurrence; Revise the European Seismic Hazard reference model for consideration in the ongoing revision of the Eurocode 8; Develop the first comprehensive framework for seismic risk modeling at European scale; Develop the new standards for future experimental observations in earthquake engineering and for the design of future instruments and networks for observational seismology; Develop reliable methodologies for real-time assessment of shaking and damage; Expand access to seismological observations; Network infrastructures and communities in the fields of deep seismic sounding, experimental earthquake engineering and site characterization; Provide an important contribution to the construction and validation of EPOS; Provide effective communication and outreach to all stakeholders..</dct:description>
+	</eposap:Project>
 	
 	<eposap:Project>
 		<dct:identifier>cordis:676564</dct:identifier>
@@ -146,6 +154,7 @@
 		<dct:title xml:lang="en">Network of Research Infrastructures for European Seismology (NERIES)</dct:title>
 		<dct:description xml:lang="en">Monitoring and understanding the earthquake processes and mitigating their effects are global priorities, requiring a concerted, dedicated, and international approach. NERIES responds to the needs of the seismological research and surveillance communities as well as to concerns from society. Earthquakes are recorded in the larger European-Mediterranean region by over 100 seismic monitoring systems and observatories in 46 countries. NERIES will network these seismological infrastructures into a sustainable integrated pan-European cyber-infrastructure serving current and future needs of the scientific community and of society. NERIES will combine Networking, Transnational Access and Joint Research Activities to promote improved access to distributed databases, common protocols, standardized procedures and strategies for long-term archiving and distribution of seismological data; develop a new generation of hazard and risk assessment tools designed to improve monitoring and understanding of the earthquake process; Invest in capacity building and technology transfer to ensure the access to modern technologies for infrastructures and the larger scientific community in the Euro-Med region; implement key joint research projects aimed at improving the service provided by existing infrastructures and the use of seismological data for scientific research; boost the capability of the research community to investigate earthquake processes and Earth structure and dynamics, use e-Science technology to facilitate outreach to the public at large and educational institutions in particular; provide access to specialized, unique European seismological infrastructures; strengthen the role of European seismology in global seismic monitoring and hazard mitigation. NERIES will lead the seismological infrastructures in building a key land-based segment of the GMES strategy and of the GEO 10-years implementation plan.</dct:description>
 	</eposap:Project>
+	-->
 	
 	<eposap:WebService>
 		<dct:title>Archive of Historical Earthquake Data (AHEAD) event data (FDSN event web service)</dct:title>
@@ -349,8 +358,8 @@
 				<schema:endDate>1899-12-31T23:59:59</schema:endDate>
 			</dct:PeriodOfTime>
 		</dct:temporal>
-    <eposap:DDSS-ID>WP8-DDSS-024</eposap:DDSS-ID>
-    <eposap:actions>download, visualise</eposap:actions>
+		<eposap:DDSS-ID>WP8-DDSS-024</eposap:DDSS-ID>
+		<eposap:actions>download, visualise</eposap:actions>
 	</eposap:WebService>
 	
 	<eposap:WebService>
@@ -400,7 +409,7 @@
 			<http:paramName>typeName</http:paramName>
 			<rdf:label>SHEEC 1000-1899, the SHARE European Earthquake Catalogue 1000-1899</rdf:label>
 			<dct:type>string</dct:type>
-			<http:paramValue>sheec:SHEEC_1000_1899</http:paramValue>
+			<http:paramValue>europe:SHEEC_1000_1899</http:paramValue>
 		</eposap:parameter>
 		<schema:documentation>https://www.emidius.eu/AHEAD/services/event_ogc.php</schema:documentation>
 		<dcat:contactPoint>http://orcid.org/0000-0003-2185-3267</dcat:contactPoint>
@@ -417,16 +426,16 @@
 				<schema:endDate>1899-12-31T23:59:59</schema:endDate>
 			</dct:PeriodOfTime>
 		</dct:temporal>
-    <eposap:DDSS-ID>WP8-DDSS-025</eposap:DDSS-ID>
-    <eposap:actions>download</eposap:actions>
+		<eposap:DDSS-ID>WP8-DDSS-025</eposap:DDSS-ID>
+		<eposap:actions>download</eposap:actions>
 	</eposap:WebService>
-	
+
 	<eposap:WebService>
 		<dct:title>Archive of Historical Earthquake Data (AHEAD) event data (OGC Web Map Service)</dct:title>
 		<dct:description xml:lang="en">The OGC WMS web service providing a raster layer with epicentres for historical earthquakes from AHEAD, the European Archive of Historical Earthquake Data</dct:description>
 		<dct:issued>2018-03-09T12:00:00</dct:issued>
 		<dct:modified>2018-03-09T12:00:00</dct:modified>
-		<dct:license xml:lang="en">https://www.emidius.eu/AHEAD/introduction.php#copyright</dct:license><!-- temporary solution, valid until a proper CC license will be selected -->
+		<dct:license xml:lang="en">https://www.emidius.eu/AHEAD/introduction.php#copyright</dct:license>
 		<foaf:page>
 			<foaf:primaryTopic>https://www.emidius.eu/services/europe/wms?</foaf:primaryTopic>
 		</foaf:page>
@@ -518,10 +527,10 @@
 				<schema:endDate>1899-12-31T23:59:59</schema:endDate>
 			</dct:PeriodOfTime>
 		</dct:temporal>
-    <eposap:DDSS-ID>WP8-DDSS-025</eposap:DDSS-ID>
-    <eposap:actions>visualise</eposap:actions>
+		<eposap:DDSS-ID>WP8-DDSS-050</eposap:DDSS-ID>
+		<eposap:actions>visualise</eposap:actions>
 	</eposap:WebService>
-	
+
 	<eposap:WebService>
 		<dct:title>Archive of Historical Earthquake Data (AHEAD) macroseismic data</dct:title>
 		<dct:description xml:lang="en">Macroseismic web service providing intensity data for historical earthquakes from AHEAD, the European Archive of Historical Earthquake Data.</dct:description>
@@ -745,8 +754,8 @@
 				<schema:endDate>1899-12-31T23:59:59</schema:endDate>
 			</dct:PeriodOfTime>
 		</dct:temporal>
-    <eposap:DDSS-ID>WP8-DDSS-026</eposap:DDSS-ID>
-    <eposap:actions>download, visualise</eposap:actions>
+		<eposap:DDSS-ID>WP8-DDSS-051</eposap:DDSS-ID>
+		<eposap:actions>download, visualise</eposap:actions>
 	</eposap:WebService>
 	
 	<eposap:WebService>
@@ -912,9 +921,10 @@
 			</dct:Location>
 		</dct:spatial>
 		<adms:representationTechnique>point</adms:representationTechnique>
-    <eposap:DDSS-ID>WP8-DDSS-026</eposap:DDSS-ID>
-    <eposap:actions>download</eposap:actions>
+		<eposap:DDSS-ID>WP8-DDSS-026</eposap:DDSS-ID>
+		<eposap:actions>download</eposap:actions>
 	</eposap:WebService>
+
 	<!--
 	<eposap:Publication>
 		<dct:identifier>doi:10.1785/0220130113</dct:identifier>
