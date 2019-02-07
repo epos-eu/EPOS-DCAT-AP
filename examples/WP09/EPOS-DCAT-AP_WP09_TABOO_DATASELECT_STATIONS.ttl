@@ -225,7 +225,7 @@
 	];
 	# This property refers to a temporal period that the Dataset covers.
     dct:temporal [ a dct:PeriodOfTime ;
-        schema:startDate "2010-04-01T00:00:00"^^xsd:dateTime ;
+        schema:startDate "2010-04-01T00:00:00Z"^^xsd:dateTime ;
         #schema:endDate "YYYY-MM-DDThh:mm:ss"^^xsd:dateTime ;
     ];
 	dcat:theme  <epos:Seismicstations> ;
@@ -320,6 +320,8 @@
 			rdfs:label "Start of the timespan";
 			rdfs:range "xsd:dateTime";
 			schema:defaultValue "2014-05-10T12:00:00.000Z";
+			hydra:property "schema:startDate";
+      		schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -327,6 +329,8 @@
 			rdfs:label "End of the timespan";
 			rdfs:range "xsd:dateTime";
 			schema:defaultValue "2014-05-10T12:00:02.000Z";
+			hydra:property "schema:endDate";
+      		schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
