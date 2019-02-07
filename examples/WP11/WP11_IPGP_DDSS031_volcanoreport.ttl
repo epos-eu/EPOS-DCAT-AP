@@ -240,7 +240,7 @@
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
-		hydra:template "http://ws.ipgp.fr/volcano-reports/report?{?start_time, end_time, agency, volcano, type, language}"^^xsd:string;
+		hydra:template "http://ws.ipgp.fr/volcano-reports/report{?start_time, end_time, agency, volcano, type, language}"^^xsd:string;
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "start_time"^^xsd:dateTime;
 				hydra:property "schema:start_time";
@@ -256,7 +256,7 @@
 				schema:valuePattern "YYYY-MM-DD";
 				rdfs:range "xsd:dateTime";
 				rdfs:label "end of the timespan of requested data (format:YYYY-MM-DD)";
-				schema:defaultValue "2018-01-02T00:00:00";
+				schema:defaultValue "2018-01-02";
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
