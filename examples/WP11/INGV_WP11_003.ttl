@@ -124,10 +124,6 @@
 #WP11 GNSS/stations	
 	<ingvgsac/station> a epos:WebService;
 	schema:identifier "ingvgsac/station";
-	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID  "DDSS-ID";
-		schema:value  "WP11-DDSS-003";
-	];
 	schema:description "Metadata on GNSS Station objects";
 	schema:name "WP11 GNSS Stations";
 	schema:datePublished "2018-12-01T12:00:00Z"^^xsd:dateTime;
@@ -142,9 +138,9 @@
 	
 	<ingvgsac/station/operation> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
-		hydra:returns "json";
+		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "http://medsuv_portal.ct.ingv.it:8080/ingvgsac/gsacapi/site/search/sites.json(?output=site.json&site.code=ENIC)"^^xsd:string;
+			hydra:template "http://medsuv_portal.ct.ingv.it:8080/ingvgsac/gsacapi/site/search/sites.json/{?output=site.json&site.code=ENIC}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "output"^^xsd:string;
 					rdfs:label "Details about output ";
@@ -185,9 +181,9 @@
 	
 	<ingvgsac/files/operation> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
-		hydra:returns "json";
+		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "http://medsuv_portal.ct.ingv.it:8080/ingvgsac/gsacapi/file/search/sites.json(?output=file.json&site.code=ENIC)"^^xsd:string;
+			hydra:template "http://medsuv_portal.ct.ingv.it:8080/ingvgsac/gsacapi/file/search/sites.json/{?output=file.json&site.code=ENIC}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "output"^^xsd:string;
 					rdfs:label "Details about output ";
