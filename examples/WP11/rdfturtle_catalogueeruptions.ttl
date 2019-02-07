@@ -1,4 +1,4 @@
-﻿@prefix adms: <http://www.w3.org/ns/adms#> .  
+@prefix adms: <http://www.w3.org/ns/adms#> .  
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .  
 @prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .  
 @prefix dc: <http://purl.org/dc/elements/1.1/> .  
@@ -16,7 +16,11 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .  
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .  
 
-<997168343> a schema:Organization;
+#########
+# Organization
+#########
+
+<PIC:997168343> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "PIC ";
 		schema:value "997168343";
@@ -32,19 +36,20 @@
 	schema:url "http://en.vedur.is"^^xsd:anyURI;
 	schema:email "office@vedur.is";
 	schema:telephone "+3545226000";
-	schema:contactPoint <0000-0001-5750-0872/scientificContact>;
+        schema:contactPoint <http://orcid.org/0000-0001-5750-0872/scientificContact>;
 . 
 
-<0000-0001-5750-0872> a schema:Person;
+#########
+# PERSON 
+#########
+
+<http://orcid.org/0000-0001-5750-0872> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "ORCID";
 		schema:value "0000-0001-5750-0872";
 	]; 
-	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "";
-		schema:value "";
-	]; 
-	schema:familyName "Sara Barsotti";
+	schema:familyName "Barsotti";
+	schema:givenName "Sara";
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "Bustaðavegur 7-9";
 		schema:addressLocality "Reykjavík";
@@ -53,43 +58,82 @@
 	]; 
 	schema:email "sara@vedur.is";
 	schema:telephone "+3545226162";
-	schema:url "https://en.vedur.is"^^xsd:anyURI;
-	schema:contactPoint <0000-0001-5750-0872/scientificContact>;
-	schema:contactPoint <0000-0001-5750-0872/contactPoint>;
+	schema:url "http://orcid.org/0000-0001-5750-0872"^^xsd:anyURI;
+	schema:contactPoint <http://orcid.org/0000-0001-5750-0872/scientificContact>;
+	schema:contactPoint <http://orcid.org/0000-0001-5750-0872/contactPoint>;
 . 
-	<www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/033/data> a dcat:Dataset;
-		dct:title "Catalogue of eruptions";
-		dct:identifier "www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/033/data";
-		adms:identifier [ a adms:Identifier;
-			adms:schemaAgency "DDSS-ID";
-			skos:notation "WP11-DDSS-033";
-		]; 
-		dct:description "List of eruptions with parameters for some eruption in Iceland";
-		dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
-		dct:created "2016-01-01"^^xsd:date;
-		dct:modified "2016-01-01"^^xsd:date;
-		dct:issued "2016-01-01"^^xsd:date;
+
+#########
+# ContactPoint
+######### 
+<http://orcid.org/0000-0001-5750-0872/contactPoint> a schema:ContactPoint;
+		schema:email "sara@vedur.is";
+		schema:availableLanguage "en" ;
+                schema:contactType "contactPoint" ;
+. 
+
+<http://orcid.org/0000-0001-5750-0872/scientificContact> a schema:ContactPoint;
+		schema:email "sara@vedur.is";
+		schema:availableLanguage "en" ;
+		schema:contactType "scientificContact" ;
+. 
+
+#########
+# Dataset
+######### 
+
+<www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/033/data> a dcat:Dataset;
+	dct:title "Catalogue of eruptions";
+	dct:identifier "www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/033/data";
+	adms:identifier [ a adms:Identifier;
+		adms:schemaAgency "DDSS-ID";
+		skos:notation "WP11-DDSS-033";
+	]; 
+	dct:description "List of eruptions with parameters for some eruption in Iceland";
+	dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
+	dct:created "2016-01-01"^^xsd:date;
+	dct:modified "2016-01-01"^^xsd:date;
+	dct:issued "2016-01-01"^^xsd:date;
 	dct:spatial [ a dct:Location; 
 		locn:geometry "POLYGON(-25.0 63.0,-25.0 68.5,-10.0 68.5,-10.0 63.0,-25.0 63.0)"^^gsp:wktLiteral; 
 	]; 
-		dcat:theme <epos:Volcanological/petrological>;
-		dcat:keyword "Eruptions; eruption source parameter";
-	dcat:contactPoint <0000-0001-5750-0872/contactPoint>;
-		dcat:distribution <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/033>;
-		owl:versionInfo "V1.0";
+        dcat:keyword "eruptions; eruption source parameters; catalogue";
+	dcat:theme <epos:Volcanological/petrological>;
+	dcat:contactPoint <http://orcid.org/0000-0001-5750-0872/contactPoint>;
+	dct:publisher <PIC:997168343>;
+	dcat:distribution <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/033/WSDistribution>;
+	owl:versionInfo "V1.0";
 . 
+
+#########
+# Distribution
+#########  
+<www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/033/WSDistribution> a dcat:Distribution;
+	dct:identifier "www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/033/WSDistribution";
+	dct:title "Catalogue of eruptions";
+	dct:description "Access the list of past eruptions in Iceland and parameters";
+	dct:issued "2018-12-12"^^xsd:date;
+	dct:modified "2018-12-12"^^xsd:date;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
+        dcat:accessURL <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/033/Operation/033> ;
+        dct:conformsTo<www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/033> 
+.
+
+#########
+# WebService
+#########
 
 <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/033> a epos:WebService;
 	schema:identifier "www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/033";
-	#schema:identifier [ a schema:PropertyValue; 
-		#schema:propertyID  "DDSS-ID"; 
-		#schema:value  ""; 
-	#]; 
 	schema:description "Access the information about past eruptions in Iceland";
 	schema:name "Catalogue of eruptions";
 	hydra:entrypoint "https://docs.vedur.is/api/epos/#!/Volcanoes/get_volcano_eruption"^^xsd:anyURI; 
 	schema:datePublished "2018-12-12"^^xsd:date;
 	schema:dateModified "2018-12-12"^^xsd:date;
+        dcat:theme <epos:Volcanological/petrological>;
+        dcat:contactPoint <http://orcid.org/0000-0001-5750-0872/contactPoint>;
+        schema:provider <PIC:997168343> ;
 	dct:spatial [ a dct:Location; 
 		locn:geometry "POLYGON(-25.0 63.0,-25.0 68.5,-10.0 68.5,-10.0 63.0,-25.0 63.0)"^^gsp:wktLiteral; 
 	]; 
@@ -100,53 +144,44 @@
 		schema:endDate "2025-01-01T00:00:00Z"^^xsd:dateTime; 
 	]; 
 . 
-	<www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/033> a dcat:Distribution;
-		dct:identifier "www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/033";
-		dct:title "Catalogue of eruptions";
-		dct:description "Access the list of past eruptions in Iceland and parameters";
-		dct:issued "2018-12-12"^^xsd:date;
-		dct:modified "2018-12-12"^^xsd:date;
-		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
-                dcat:accessURL "http://www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/033"^^xsd:anyURI;
+ 
+#########
+# Operation
+######### 
+
+<www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/033/Operation/033> a hydra:Operation;
+	hydra:method "GET"^^xsd:string;
+	hydra:returns "application/json";
+	hydra:property[ a hydra:IriTemplate;
+		hydra:template "https://api.vedur.is/epos/v1/volcano/eruption{?volcano, , }"^^xsd:string;
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "volcano"^^xsd:string;
+				rdfs:range "xsd:string";
+				rdfs:label "Volcano name or smithsonian identifier";
+				schema:defaultValue "Katla";
+				hydra:required "true"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable ""^^xsd:string;
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable ""^^xsd:string;
+				hydra:required "false"^^xsd:boolean;
+			];
+	] ;
 . 
-	<www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/033/Operation/033> a hydra:Operation;
-		hydra:method "GET"^^xsd:string;
-		hydra:returns "application/json";
-		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://api.vedur.is/epos/v1/volcano/eruption{?volcano, , }"^^xsd:string;
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "volcano"^^xsd:string;
-					rdfs:range "xsd:string";
-					rdfs:label "Volcano name or smithsonian identifier";
-					schema:defaultValue "Katla";
-					hydra:required "true"^^xsd:boolean;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable ""^^xsd:string;
-					hydra:required "false"^^xsd:boolean;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable ""^^xsd:string;
-					hydra:required "false"^^xsd:boolean;
-				];
-		] ;
+
+#########
+# Concept
+#########  
+
+<epos:Volcanological/petrological> a skos:Concept;
+	skos:definition "Access the list of past eruptions in Iceland and the parameters";
+	skos:inScheme <epos:VolcanoObservations>;
+	skos:prefLabel "Volcanological /petrological ";
 . 
-	<epos:Volcanological/petrological> a skos:Concept;
-		skos:definition "Access the list of past eruptions in Iceland and the parameters";
-		skos:inScheme <epos:VolcanoObservations>;
-		skos:prefLabel "Volcanological /petrological ";
+<epos:VolcanoObservations> a skos:ConceptScheme;
+	dct:title "Volcano Observations";
+	dct:description "Catalogue of eruptions";
 . 
-	<epos:VolcanoObservations> a skos:ConceptScheme;
-		dct:title "Volcano Observations";
-		dct:description "Catalogue of eruptions";
-. 
-	<0000-0001-5750-0872/contactPoint> a schema:ContactPoint;
-		schema:email "sara@vedur.is";
-		schema:availableLanguage "en" ;
-. 
-	<0000-0001-5750-0872/scientificContact> a schema:ContactPoint;
-		schema:email "sara@vedur.is";
-		schema:availableLanguage "en" ;
-		schema:contactType "scientificContact" ;
-.
