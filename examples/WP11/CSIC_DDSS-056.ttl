@@ -16,6 +16,9 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
+#########
+# PERSON 
+#########
 
 <http://orcid.org/0000-0002-8803-6504> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
@@ -35,10 +38,13 @@
 	schema:url "http://orcid.org/0000-0002-8803-6504"^^xsd:anyURI;
 	schema:qualifications "Researcher";
 	schema:affiliation <http://isni.org/isni/0000000122036192>;
-    schema:contactPoint <http://orcid.org/0000-0002-8803-6504/contactPoint> ;
-		
+        schema:contactPoint <http://orcid.org/0000-0002-8803-6504/contactPoint> ;		
 .
- 
+
+#########
+# ContactPoint
+#########  
+
 <http://orcid.org/0000-0002-8803-6504/scientificContact> a schema:ContactPoint;
 		schema:email "ageyertraver@gmail.com";
 		schema:availableLanguage "en" ;
@@ -57,9 +63,12 @@
 <http://orcid.org/0000-0002-8803-6504/contactPoint> a schema:ContactPoint;
 		schema:email "ageyertraver@gmail.com";
 		schema:availableLanguage "en" ;
-		schema:contactType "ContactPoint" ;
+		schema:contactType "contactPoint" ;
 . 
 
+#########
+# Organization
+#########
 
 <http://isni.org/isni/0000000122036192> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
@@ -81,52 +90,10 @@
 	schema:contactPoint <http://orcid.org/0000-0002-8651-6387/financialContact>;
 .
 
-<SusceptibilityMap> a epos:WebService;
-	schema:identifier " SusceptibilityMap";
-	schema:identifier [ a schema:PropertyValue;
-	schema:propertyID  "DDSS-ID";
-	schema:value  "WP11-DDSS-056";
-	]; 
-	schema:description "Spatial probability analysis/maps – Susceptibility maps";
-	schema:name "Spatial probability analysis/maps – Susceptibility maps";
-	schema:datePublished "2018-09-01T00:00:00Z"^^xsd:dateTime;
-	schema:dateModified "2018-09-01T12:00:00Z"^^xsd:dateTime;
-	schema:provider <http://isni.org/isni/0000000122036192>;
-	schema:keywords "Spatial probability analysis", "Spatial probability maps", "volcanology", "hazard assessment", "volcanic hazard", "Susceptibility maps";
-	hydra:entrypoint "https://volcanbox.epsevg.upc.edu/"^^xsd:anyURI; 
-	hydra:supportedOperation <SusceptibilityMap/operation>;
-	dcat:theme <epos:SusceptibilityMap>;
-	dcat:contactPoint <http://orcid.org/0000-0002-8803-6504/contactPoint>;
-	
-.
 
-	
-	<SusceptibilityMap/operation> a hydra:Operation;
-		hydra:method "GET"^^xsd:string;
-		hydra:returns "json";
-		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://volcanbox.epsevg.upc.edu:5000/maptype?type=susceptibility_map(&volcan=deceptionisland)"^^xsd:string;
-				
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "volcan"^^xsd:string;
-					rdfs:label "Volcano name that exposes hazard map";
-					http:paramValue "deceptionisland";
-					http:paramValue "site.json"; 
-					schema:defaultValue "deceptionisland";
-					hydra:required "false"^^xsd:boolean;
-				];
-		];
-. 
-
-
-<epos:VolcanoObservations> a skos:ConceptScheme;
-		dct:title "VolcanoObservations";
-		dct:description "It contains the concepts of Volcano Observations";
-. 
-	<epos:SusceptibilityMap> a skos:Concept;
-		skos:inScheme <epos:VolcanoObservations>;
-		skos:prefLabel "Spatial probability analysis/maps - Susceptibility";
-.
+#########
+# Dataset
+######### 
 
 <WP11/SusceptibilityMap> a dcat:Dataset;
         dct:title "Spatial probability analysis/maps";
@@ -144,6 +111,10 @@
         
 .
 
+#########
+# Distribution
+######### 
+
 <WP11/SusceptibilityMap/WSDistribution> a dcat:Distribution;
         dct:identifier "WP11/SusceptibilityMap/WSDistribution";
 	dct:description "Susceptibility Maps WSDistribution";
@@ -153,3 +124,59 @@
 	dct:conformsTo <SusceptibilityMap>;
 	dct:format "http://publications.europa.eu/resource/authority/file-type/TXT"^^xsd:anyURI;
 .
+
+#########
+# WebService
+######### 
+
+<SusceptibilityMap> a epos:WebService;
+	schema:identifier " SusceptibilityMap";
+	schema:description "Spatial probability analysis/maps – Susceptibility maps";
+	schema:name "Spatial probability analysis/maps – Susceptibility maps";
+	schema:datePublished "2018-09-01T00:00:00Z"^^xsd:dateTime;
+	schema:dateModified "2018-09-01T12:00:00Z"^^xsd:dateTime;
+	schema:provider <http://isni.org/isni/0000000122036192>;
+	schema:keywords "Spatial probability analysis", "Spatial probability maps", "volcanology", "hazard assessment", "volcanic hazard", "Susceptibility maps";
+	hydra:entrypoint "https://volcanbox.epsevg.upc.edu/"^^xsd:anyURI; 
+	hydra:supportedOperation <SusceptibilityMap/operation>;
+	dcat:theme <epos:SusceptibilityMap>;
+	dcat:contactPoint <http://orcid.org/0000-0002-8803-6504/contactPoint>;
+	
+.
+
+#########
+# Operation
+######### 
+	
+<SusceptibilityMap/operation> a hydra:Operation;
+	hydra:method "GET"^^xsd:string;
+	hydra:returns "json";
+	hydra:property[ a hydra:IriTemplate;
+		hydra:template "https://volcanbox.epsevg.upc.edu:5000/maptype?type=susceptibility_map(&volcan=deceptionisland)"^^xsd:string;
+
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "volcan"^^xsd:string;
+				rdfs:label "Volcano name that exposes hazard map";
+				http:paramValue "deceptionisland";
+				http:paramValue "site.json"; 
+				schema:defaultValue "deceptionisland";
+				hydra:required "false"^^xsd:boolean;
+			];
+	];
+. 
+
+#########
+# Concept
+######### 
+
+<epos:SusceptibilityMap> a skos:Concept;
+		skos:inScheme <epos:VolcanoObservations>;
+		skos:prefLabel "Spatial probability analysis/maps - Susceptibility";
+.
+
+<epos:VolcanoObservations> a skos:ConceptScheme;
+		dct:title "VolcanoObservations";
+		dct:description "It contains the concepts of Volcano Observations";
+. 
+
+
