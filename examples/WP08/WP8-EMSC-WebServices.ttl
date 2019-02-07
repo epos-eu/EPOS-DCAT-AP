@@ -362,12 +362,12 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "starttime"^^xsd:string;
 			hydra:property "schema:startDate";
-			schema:valuePattern "YYYY-MM-DDTHH:MM:SSZ";
+			schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
 			rdfs:range "xsd:dateTime";
 			rdfs:label "Start Time";
 			schema:minValue "1998-01-01T00:00:00";
-			schema:maxValue "2018-12-31T00:00:00";
-			schema:defaultValue "2010-01-00T00:00:00";
+			schema:maxValue "3000-12-31T00:00:00";
+			schema:defaultValue "2010-01-01T00:00:00";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -378,8 +378,8 @@
 			rdfs:range "xsd:dateTime";
 			rdfs:label "End Time";
 			schema:minValue "1998-01-01T00:00:00";
-			schema:maxValue "2018-12-31T00:00:00";
-			schema:defaultValue "2010-01-00T00:00:00";
+			schema:maxValue "3000-12-31T00:00:00";
+			schema:defaultValue "2100-01-01T00:00:00";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -389,7 +389,7 @@
 			rdfs:label "Minimum Latitude";
 			schema:minValue "-90";
 			schema:maxValue "90";
-			schema:defaultValue "48";
+			schema:defaultValue "-90";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -399,7 +399,7 @@
 			rdfs:label "Maximum Latitude";
 			schema:minValue "-90";
 			schema:maxValue "90";
-			schema:defaultValue "48";
+			schema:defaultValue "90";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -409,7 +409,7 @@
 			rdfs:label "Minimum Longitude";
 			schema:minValue "-180";
 			schema:maxValue "180";
-			schema:defaultValue "2";
+			schema:defaultValue "-180";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -419,7 +419,7 @@
 			rdfs:label "Maximum Longitude";
 			schema:minValue "-180";
 			schema:maxValue "180";
-			schema:defaultValue "2";
+			schema:defaultValue "180";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -429,7 +429,6 @@
 			rdfs:label "Minimum Depth";
 			schema:minValue "0";
 			schema:maxValue "6371";
-			schema:defaultValue "10";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -439,7 +438,6 @@
 			rdfs:label "Maximum Depth";
 			schema:minValue "0";
 			schema:maxValue "6371";
-			schema:defaultValue "10";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -449,7 +447,7 @@
 			rdfs:label "Minimum Magnitude";
 			#schema:minValue "-10";
 			#schema:maxValue "10";
-			schema:defaultValue "5";
+			schema:defaultValue "7";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -459,7 +457,6 @@
 			rdfs:label "Maximum Magnitude";
 			#schema:minValue "-10";
 			#schema:maxValue "10";
-			schema:defaultValue "5";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -507,7 +504,7 @@
 			rdfs:range "xsd:integer";
 			rdfs:label "Limit";
 			schema:minValue "1";
-			schema:defaultValue "10";
+			schema:defaultValue "100";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -596,7 +593,7 @@
 			hydra:variable "minradius"^^xsd:string;
 			rdfs:range "xsd:float";
 			rdfs:label "Minimum Radius for the radius Search";
-			schema:minValue "-180";
+			schema:minValue "0";
 			schema:maxValue "180";
 			hydra:required "false"^^xsd:boolean;
 		];
@@ -605,7 +602,7 @@
 			hydra:variable "maxradius"^^xsd:string;
 			rdfs:range "xsd:float";
 			rdfs:label "Maximum Radius for the radius Search";
-			schema:minValue "-180";
+			schema:minValue "0";
 			schema:maxValue "180";
 			hydra:required "false"^^xsd:boolean;
 		];
@@ -628,6 +625,7 @@
 			rdfs:label "Latitude";
 			schema:minValue "-90";
 			schema:maxValue "90";
+			schema:defaultValue "45";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -637,6 +635,7 @@
 			rdfs:label "Longitude";
 			schema:minValue "-180";
 			schema:maxValue "180";
+			schema:defaultValue "2";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -692,7 +691,6 @@
             http:paramValue "UOA";
             http:paramValue "UPSL";
             http:paramValue "USGS";
-            schema:defaultValue "ALL";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -706,12 +704,12 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "starttime"^^xsd:string;
 			hydra:property "schema:startDate";
-			schema:valuePattern "YYYY-MM-DDTHH:MM:SSZ";
+			schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
 			rdfs:range "xsd:dateTime";
 			rdfs:label "Start Time";
 			schema:minValue "1998-01-01T00:00:00";
-			schema:maxValue "2018-12-31T00:00:00";
-			schema:defaultValue "2010-01-00T00:00:00";
+			schema:maxValue "3000-12-31T00:00:00";
+			schema:defaultValue "2010-01-01T00:00:00";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -722,8 +720,8 @@
 			rdfs:range "xsd:dateTime";
 			rdfs:label "End Time";
 			schema:minValue "1998-01-01T00:00:00";
-			schema:maxValue "2018-12-31T00:00:00";
-			schema:defaultValue "2010-01-00T00:00:00";
+			schema:maxValue "3000-12-31T00:00:00";
+			schema:defaultValue "2100-01-01T00:00:00";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -741,7 +739,6 @@
 			rdfs:label "Minimum Depth";
 			schema:minValue "0";
 			schema:maxValue "6371";
-			schema:defaultValue "10";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -751,7 +748,6 @@
 			rdfs:label "Maximum Depth";
 			schema:minValue "0";
 			schema:maxValue "6371";
-			schema:defaultValue "10";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -759,7 +755,6 @@
 			hydra:variable "minmag"^^xsd:string;
 			rdfs:range "xsd:float";
 			rdfs:label "Minimum Magnitude";
-			schema:defaultValue "5";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -767,7 +762,6 @@
 			hydra:variable "maxmag"^^xsd:string;
 			rdfs:range "xsd:float";
 			rdfs:label "Maximum Magnitude";
-			schema:defaultValue "5";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -793,7 +787,7 @@
 			hydra:variable "minradius"^^xsd:string;
 			rdfs:range "xsd:float";
 			rdfs:label "Minimum Radius for the radius Search";
-			schema:minValue "-180";
+			schema:minValue "0";
 			schema:maxValue "180";
 			hydra:required "false"^^xsd:boolean;
 		];
@@ -802,7 +796,7 @@
 			hydra:variable "maxradius"^^xsd:string;
 			rdfs:range "xsd:float";
 			rdfs:label "Maximum Radius for the radius Search";
-			schema:minValue "-180";
+			schema:minValue "0";
 			schema:maxValue "180";
 			hydra:required "false"^^xsd:boolean;
 		];
@@ -813,7 +807,7 @@
 			rdfs:label "Minimum Latitude (Rectangle Search)";
 			schema:minValue "-90";
 			schema:maxValue "90";
-			schema:defaultValue "48";
+			schema:defaultValue "-90";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -823,7 +817,7 @@
 			rdfs:label "Maximum Latitude (Rectangle Search)";
 			schema:minValue "-90";
 			schema:maxValue "90";
-			schema:defaultValue "48";
+			schema:defaultValue "90";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -833,7 +827,7 @@
 			rdfs:label "Minimum Longitude (Rectangle Search)";
 			schema:minValue "-180";
 			schema:maxValue "180";
-			schema:defaultValue "2";
+			schema:defaultValue "-180";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -843,7 +837,7 @@
 			rdfs:label "Maximum Longitude (Rectangle Search)";
 			schema:minValue "-180";
 			schema:maxValue "180";
-			schema:defaultValue "2";
+			schema:defaultValue "180";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -853,7 +847,6 @@
 			rdfs:label "Minimum plung of the T axis (TPLUNG)";
 			schema:minValue "0";
 			schema:maxValue "90";
-			#schema:defaultValue "45";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -863,7 +856,6 @@
 			rdfs:label "Maximum plung of the T axis (TPLUNG)";
 			schema:minValue "0";
 			schema:maxValue "90";
-			#schema:defaultValue "45";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -873,7 +865,6 @@
 			rdfs:label "Minimum plung of the N axis (NPLUNG)";
 			schema:minValue "0";
 			schema:maxValue "90";
-			#schema:defaultValue "45";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -883,7 +874,6 @@
 			rdfs:label "Maximum plung of the N axis (NPLUNG)";
 			schema:minValue "0";
 			schema:maxValue "90";
-			#schema:defaultValue "45";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -909,7 +899,7 @@
 			hydra:variable "preferredOnly"^^xsd:string;
 			rdfs:range "xsd:boolean";
 			rdfs:label "Filter and show only preferred MT";
-			schema:defaultValue "false";
+			schema:defaultValue "true";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -960,7 +950,6 @@
 			rdfs:range "xsd:integer";
 			rdfs:label "Limit";
 			schema:minValue "1";
-			schema:defaultValue "10";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -978,8 +967,9 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "source_id"^^xsd:string;
 			rdfs:range "xsd:string";
-			rdfs:label "Event Identifier (EVID) of the source catalog";
-			hydra:required "false"^^xsd:boolean;
+			rdfs:label "Event Identifier of the source catalog";
+			schema:defaultValue "20110311_0000010";
+			hydra:required "true"^^xsd:boolean;
 		];
 
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -1083,39 +1073,42 @@
 		#hydra:returns "json, text";
 		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "http://www.seismicportal.eu/srcmodws/api/search{?starttime, endtime, dayafter, mindepth, maxdepth, minmag, maxmag, lat, lon, minradius, maxradius, minlat, maxlat, minlon, maxlon, avtr_min, avtr_max, avvr_min, avvr_max, format, downloadAsFile, orderby, offset, limit}"^^xsd:string;
+		hydra:template "http://www.seismicportal.eu/srcmodws/api/search{?selectedArea, mindate, maxdate, mindepth, maxdepth, minmag, maxmag, minlat, maxlat, minlon, maxlon, avtr_min, avtr_max, avvr_min, avvr_max, limit}"^^xsd:string;
 
 		hydra:mapping[ a hydra:IriTemplateMapping;
-			hydra:variable "starttime"^^xsd:string;
+			hydra:variable "selectedArea"^^xsd:string;
+			rdfs:range "xsd:string";
+			rdfs:label "Spatial selection type";
+			http:paramValue "rectangle";
+			http:paramValue "none";
+            schema:defaultValue "rectangle";
+			hydra:required "false"^^xsd:boolean;
+		];	
+
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "mindate"^^xsd:string;
 			hydra:property "schema:startDate";
 			schema:valuePattern "YYYY-MM-DDTHH:MM:SSZ";
 			rdfs:range "xsd:dateTime";
 			rdfs:label "Start Time";
-			schema:minValue "1998-01-01T00:00:00";
-			schema:maxValue "2018-12-31T00:00:00";
-			schema:defaultValue "2010-01-00T00:00:00";
+			schema:minValue "1900-01-01T00:00:00";
+			schema:maxValue "3000-12-31T00:00:00";
+			schema:defaultValue "1900-01-01T00:00:00";
 			hydra:required "false"^^xsd:boolean;
 		];
 
 		hydra:mapping[ a hydra:IriTemplateMapping;
-			hydra:variable "endtime"^^xsd:string;
+			hydra:variable "maxdate"^^xsd:string;
 		    hydra:property "schema:endDate";
 			schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
 			rdfs:range "xsd:dateTime";
 			rdfs:label "End Time";
-			schema:minValue "1998-01-01T00:00:00";
-			schema:maxValue "2018-12-31T00:00:00";
-			schema:defaultValue "2010-01-00T00:00:00";
+			schema:minValue "1900-01-01T00:00:00";
+			schema:maxValue "3000-12-31T00:00:00";
+			schema:defaultValue "2100-01-01T00:00:00";
 			hydra:required "false"^^xsd:boolean;
 		];
 
-		hydra:mapping[ a hydra:IriTemplateMapping;
-			hydra:variable "dayafter"^^xsd:string;
-			rdfs:range "xsd:integer";
-			rdfs:label "Date after start time (unit is day)";
-			schema:minValue "1";
-			hydra:required "false"^^xsd:boolean;
-		];
 
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "mindepth"^^xsd:string;
@@ -1123,7 +1116,6 @@
 			rdfs:label "Minimum Depth";
 			schema:minValue "0";
 			schema:maxValue "6371";
-			schema:defaultValue "10";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -1133,7 +1125,6 @@
 			rdfs:label "Maximum Depth";
 			schema:minValue "0";
 			schema:maxValue "6371";
-			schema:defaultValue "10";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -1141,7 +1132,6 @@
 			hydra:variable "minmag"^^xsd:string;
 			rdfs:range "xsd:float";
 			rdfs:label "Minimum Magnitude (MW)";
-			schema:defaultValue "5";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -1149,43 +1139,6 @@
 			hydra:variable "maxmag"^^xsd:string;
 			rdfs:range "xsd:float";
 			rdfs:label "Maximum Magnitude (MW)";
-			schema:defaultValue "5";
-			hydra:required "false"^^xsd:boolean;
-		];
-
-		hydra:mapping[ a hydra:IriTemplateMapping;
-			hydra:variable "lat"^^xsd:string;
-			rdfs:range "xsd:float";
-			rdfs:label "Latitude (Radius Search)";
-			schema:minValue "-90";
-			schema:maxValue "90";
-			hydra:required "false"^^xsd:boolean;
-		];
-
-		hydra:mapping[ a hydra:IriTemplateMapping;
-			hydra:variable "lon"^^xsd:string;
-			rdfs:range "xsd:float";
-			rdfs:label "Longitude (Radius Search)";
-			schema:minValue "-180";
-			schema:maxValue "180";
-			hydra:required "false"^^xsd:boolean;
-		];
-
-		hydra:mapping[ a hydra:IriTemplateMapping;
-			hydra:variable "minradius"^^xsd:string;
-			rdfs:range "xsd:float";
-			rdfs:label "Minimum Radius for the radius Search";
-			schema:minValue "-180";
-			schema:maxValue "180";
-			hydra:required "false"^^xsd:boolean;
-		];
-
-		hydra:mapping[ a hydra:IriTemplateMapping;
-			hydra:variable "maxradius"^^xsd:string;
-			rdfs:range "xsd:float";
-			rdfs:label "Maximum Radius for the radius Search";
-			schema:minValue "-180";
-			schema:maxValue "180";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -1195,7 +1148,6 @@
 			rdfs:label "Minimum Latitude (Rectangle Search)";
 			schema:minValue "-90";
 			schema:maxValue "90";
-			schema:defaultValue "48";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -1205,7 +1157,6 @@
 			rdfs:label "Maximum Latitude (Rectangle Search)";
 			schema:minValue "-90";
 			schema:maxValue "90";
-			schema:defaultValue "48";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -1215,7 +1166,6 @@
 			rdfs:label "Minimum Longitude (Rectangle Search)";
 			schema:minValue "-180";
 			schema:maxValue "180";
-			schema:defaultValue "2";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -1225,7 +1175,6 @@
 			rdfs:label "Maximum Longitude (Rectangle Search)";
 			schema:minValue "-180";
 			schema:maxValue "180";
-			schema:defaultValue "2";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -1258,52 +1207,10 @@
 		];
 
 		hydra:mapping[ a hydra:IriTemplateMapping;
-			hydra:variable "format"^^xsd:string;
-			rdfs:range "xsd:string";
-			rdfs:label "Output Format";
-			http:paramValue "text";
-			http:paramValue "json";
-			schema:defaultValue "json";
-			hydra:required "false"^^xsd:boolean;
-		];
-
-		hydra:mapping[ a hydra:IriTemplateMapping;
-			hydra:variable "downloadAsFile"^^xsd:string;
-			rdfs:range "xsd:boolean";
-			rdfs:label "Download query as file?";
-			schema:defaultValue "false";
-			hydra:required "false"^^xsd:boolean;
-		];
-
-		hydra:mapping[ a hydra:IriTemplateMapping;
-			hydra:variable "orderby"^^xsd:string;
-			rdfs:range "xsd:string";
-			rdfs:label "Order By";
-			http:paramValue "time-desc";
-			http:paramValue "time-asc";
-			http:paramValue "region-desc";
-			http:paramValue "region-asc";
-			http:paramValue "depth-desc";
-			http:paramValue "depth-asc";
-			http:paramValue "magnitude-desc";
-			http:paramValue "magnitude-asc";
-			hydra:required "false"^^xsd:boolean;
-		];
-
-		hydra:mapping[ a hydra:IriTemplateMapping;
-			hydra:variable "offset"^^xsd:string;
-			rdfs:range "xsd:integer";
-			rdfs:label "Offset";
-			schema:minValue "1";
-			hydra:required "false"^^xsd:boolean;
-		];
-
-		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "limit"^^xsd:string;
 			rdfs:range "xsd:integer";
 			rdfs:label "Limit";
 			schema:minValue "1";
-			schema:defaultValue "10";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -1333,8 +1240,8 @@
 			rdfs:range "xsd:dateTime";
 			rdfs:label "Start Time";
 			schema:minValue "1998-01-01T00:00:00";
-			schema:maxValue "2018-12-31T00:00:00";
-			schema:defaultValue "2010-01-00T00:00:00";
+			schema:maxValue "3000-12-31T00:00:00";
+			schema:defaultValue "2010-01-01T00:00:00";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -1345,8 +1252,8 @@
 			rdfs:range "xsd:dateTime";
 			rdfs:label "End Time";
 			schema:minValue "1998-01-01T00:00:00";
-			schema:maxValue "2018-12-31T00:00:00";
-			schema:defaultValue "2010-01-00T00:00:00";
+			schema:maxValue "3000-12-31T00:00:00";
+			schema:defaultValue "2100-01-01T00:00:00";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -1364,7 +1271,6 @@
 			rdfs:label "Minimum Depth";
 			schema:minValue "0";
 			schema:maxValue "6371";
-			schema:defaultValue "10";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -1374,7 +1280,6 @@
 			rdfs:label "Maximum Depth";
 			schema:minValue "0";
 			schema:maxValue "6371";
-			schema:defaultValue "10";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -1390,7 +1295,6 @@
 			hydra:variable "maxmag"^^xsd:string;
 			rdfs:range "xsd:float";
 			rdfs:label "Maximum Magnitude (MW)";
-			schema:defaultValue "5";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -1416,7 +1320,7 @@
 			hydra:variable "minradius"^^xsd:string;
 			rdfs:range "xsd:float";
 			rdfs:label "Minimum Radius for the radius Search";
-			schema:minValue "-180";
+			schema:minValue "0";
 			schema:maxValue "180";
 			hydra:required "false"^^xsd:boolean;
 		];
@@ -1425,7 +1329,7 @@
 			hydra:variable "maxradius"^^xsd:string;
 			rdfs:range "xsd:float";
 			rdfs:label "Maximum Radius for the radius Search";
-			schema:minValue "-180";
+			schema:minValue "0";
 			schema:maxValue "180";
 			hydra:required "false"^^xsd:boolean;
 		];
@@ -1436,7 +1340,6 @@
 			rdfs:label "Minimum Latitude (Rectangle Search)";
 			schema:minValue "-90";
 			schema:maxValue "90";
-			schema:defaultValue "48";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -1446,7 +1349,6 @@
 			rdfs:label "Maximum Latitude (Rectangle Search)";
 			schema:minValue "-90";
 			schema:maxValue "90";
-			schema:defaultValue "48";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -1456,7 +1358,6 @@
 			rdfs:label "Minimum Longitude (Rectangle Search)";
 			schema:minValue "-180";
 			schema:maxValue "180";
-			schema:defaultValue "2";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -1466,7 +1367,6 @@
 			rdfs:label "Maximum Longitude (Rectangle Search)";
 			schema:minValue "-180";
 			schema:maxValue "180";
-			schema:defaultValue "2";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -1476,6 +1376,7 @@
 			rdfs:range "xsd:integer";
 			rdfs:label "Minimum number of Testimonies request";
 			schema:minValue "1";
+			schema:defaultValue "100";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -1537,7 +1438,6 @@
 			rdfs:range "xsd:integer";
 			rdfs:label "Limit";
 			schema:minValue "1";
-			schema:defaultValue "10";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -1790,16 +1690,17 @@
 		dct:description "Description of RuptureModels Distribution ";
 		dct:issued "2017-10-25"^^xsd:date;
 		dct:modified "2017-10-25"^^xsd:date;
-		dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
-		dcat:accessURL "http://equake-rc.info/media/srcmod/"^^xsd:anyURI;
+		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+		dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/005/EMSC/WebService>;
+		dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/005/EMSC/operation>;
 		dct:license " http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
-
+		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI ;
 		# If the type of Distribution is DOWNLOADABLE FILE, this property contains a URL that is a direct link to a downloadable file in a given format. Otherwise, this property is optional.
-		dcat:downloadURL "URL that is a direct link to a downloadable file in a given format"^^xsd:anyURI ;
+		#dcat:downloadURL "URL that is a direct link to a downloadable file in a given format"^^xsd:anyURI ;
 
 		# This property refers to the file format of the Distribution.
     # The possible types are here: http://publications.europa.eu/mdr/resource/authority/file-type/html/filetypes-eng.html
-    dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI ;
+    #dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI ;
 
 .
 

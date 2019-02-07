@@ -34,6 +34,7 @@
 	schema:contactPoint <mailto:contact-brgm@brgm.fr/scientificContact>;
 	schema:contactPoint <mailto:contact-brgm@brgm.fr/legalContact>;
 	schema:contactPoint <mailto:contact-brgm@brgm.fr/financialContact>;
+	schema:contactPoint <mailto:contact-brgm@brgm.fr/manager>;
 . 
 
 <PIC:999993662> a schema:Organization;
@@ -54,10 +55,11 @@
 	schema:contactPoint <mailto:contact-brgm@brgm.fr/scientificContact>;
 	schema:contactPoint <mailto:contact-brgm@brgm.fr/legalContact>;
 	schema:contactPoint <mailto:contact-brgm@brgm.fr/financialContact>;
+	
 . 
 
 
-	<mailto:contact-brgm@brgm.fr> a schema:ContactPoint;
+	<mailto:contact-brgm@brgm.fr/manager> a schema:ContactPoint;
 		schema:email "contact-brgm@brgm.fr";
 		schema:availableLanguage "en" ;
 		schema:contactType "manager" ;
@@ -106,7 +108,7 @@
 	]; 
 		dcat:theme <epos:3D/4Dmodels>;
 		dcat:keyword "3D/4D Model","Model Index","Geology","INSPIRE:GE"," GeoSciML";
-		dcat:contactPoint <mailto:contact-brgm@brgm.fr>;
+		dcat:contactPoint <mailto:contact-brgm@brgm.fr/manager>;
 		dcat:distribution <http://resource.europe-geology.eu/dataset/model/distributionWfs>;
 		dcat:distribution <http://resource.europe-geology.eu/dataset/model/distributionWms>;
 		dct:publisher <PIC:999993662>;
@@ -143,17 +145,17 @@
 
 <http://resource.europe-geology.eu/service/wfsModel> a epos:WebService;
 	schema:identifier "http://resource.europe-geology.eu/service/wfsModel";
-	schema:identifier [ a schema:PropertyValue; 
-		schema:propertyID  "DDSS-ID"; 
-		schema:value  "WP15-DDSS-006a"; 
-	]; 
+	#schema:identifier [ a schema:PropertyValue; 
+		#schema:propertyID  "DDSS-ID"; 
+		#schema:value  "WP15-DDSS-006a"; 
+	#]; 
 	schema:description "This WFS allows to find a 3D/4D Model corresponding to various search criteria";
 	dcat:theme <epos:3D/4Dmodels>;
 	schema:name "3D/4D Model Index Discovery Service";
 	hydra:entrypoint "http://resource.europe-geology.eu/service/wfsModel"^^xsd:anyURI; 
 	schema:provider <PIC:999993662>;
-	schema:datePublished "2016-10-27Z"^^xsd:dateTime;
-	schema:dateModified "2018-01-19Z"^^xsd:dateTime;
+	schema:datePublished "2016-10-27"^^xsd:date;
+	schema:dateModified "2018-01-19"^^xsd:date;
 	dct:spatial [ a dct:Location; 
 		locn:geometry "POLYGON(-180 90,180 90,180 -90,-180 -90,-180 90)"^^gsp:wktLiteral; 
 	]; 
@@ -164,7 +166,7 @@
 		schema:startDate "2016-10-27T00:00:00Z"^^xsd:dateTime; 
 		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
 	]; 
-	dcat:contactPoint <mailto:contact-brgm@brgm.fr>;
+	dcat:contactPoint <mailto:contact-brgm@brgm.fr/manager>;
 . 
 
 
@@ -419,17 +421,17 @@
 
 <http://resource.europe-geology.eu/service/wmsModel> a epos:WebService;
 	schema:identifier "http://resource.europe-geology.eu/service/wmsModel";
-	schema:identifier [ a schema:PropertyValue; 
-		schema:propertyID  "DDSS-ID"; 
-		schema:value  "WP15-DDSS-006c"; 
-	]; 
+	#schema:identifier [ a schema:PropertyValue; 
+		#schema:propertyID  "DDSS-ID"; 
+		#schema:value  "WP15-DDSS-006c"; 
+	#]; 
 	schema:description "This WMS allows visualization of available 3D/4D Models in a given area in Europe";
 	dcat:theme <epos:3D/4Dmodels>;
 	schema:name "3D/4D Model Index Discovery Service";
 	hydra:entrypoint "http://resource.europe-geology.eu/service/wmsModel?"^^xsd:anyURI;
 	schema:provider <PIC:999993662>;
-	schema:datePublished "2016-10-27Z"^^xsd:dateTime;
-	schema:dateModified "2018-01-19Z"^^xsd:dateTime;
+	schema:datePublished "2016-10-27"^^xsd:date;
+	schema:dateModified "2018-01-19"^^xsd:date;
 	dct:spatial [ a dct:Location; 
 		locn:geometry "POLYGON(-180 90,180 90,180 -90,-180 -90,-180 90)"^^gsp:wktLiteral; 
 	]; 
@@ -440,7 +442,7 @@
 		schema:startDate "2016-10-27T00:00:00Z"^^xsd:dateTime; 
 		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
 	]; 
-	dcat:contactPoint <mailto:contact-brgm@brgm.fr>;
+	dcat:contactPoint <mailto:contact-brgm@brgm.fr/manager>;
 . 
 
 

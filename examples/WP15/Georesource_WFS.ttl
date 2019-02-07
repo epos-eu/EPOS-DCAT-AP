@@ -33,6 +33,7 @@
 	schema:contactPoint <mailto:contact-brgm@brgm.fr/scientificContact>;
 	schema:contactPoint <mailto:contact-brgm@brgm.fr/legalContact>;
 	schema:contactPoint <mailto:contact-brgm@brgm.fr/financialContact>;
+	schema:contactPoint <mailto:contact-brgm@brgm.fr/manager>;
 . 
 
 <PIC:999993662> a schema:Organization;
@@ -57,7 +58,7 @@
 
 
 
-	<mailto:contact-brgm@brgm.fr> a schema:ContactPoint;
+	<mailto:contact-brgm@brgm.fr/manager> a schema:ContactPoint;
 		schema:email "contact-brgm@brgm.fr";
 		schema:availableLanguage "en" ;
 		schema:contactType "manager" ;
@@ -108,7 +109,7 @@
 	]; 
 		dcat:theme <epos:GeologicalData>;
 		dcat:keyword "Mine", "INSPIRE:MR", "EarthResourceML";
-		dcat:contactPoint <mailto:contact-brgm@brgm.fr>;
+		dcat:contactPoint <mailto:contact-brgm@brgm.fr/manager>;
 		dcat:distribution <http://resource.europe-geology.eu/dataset/mine/distributionWfs>;
 		dct:publisher <PIC:999993662>;
 . 
@@ -130,10 +131,10 @@
 	
 <http://resource.europe-geology.eu/service/wfsMine> a epos:WebService;
 	schema:identifier "http://resource.europe-geology.eu/service/wfsMine";
-	schema:identifier [ a schema:PropertyValue; 
-		schema:propertyID  "DDSS-ID"; 
-		schema:value  "WP15-DDSS-010a";
-	]; 
+	#schema:identifier [ a schema:PropertyValue; 
+		#schema:propertyID  "DDSS-ID"; 
+		#schema:value  "WP15-DDSS-010a";
+	#]; 
 	schema:description "Based on Minerals4EU dataset, this WFS allows to explore and discover available mineral resources  datasets in a given area.";
 	dcat:theme <epos:GeologicalData>;
 	schema:name "Georesources";
@@ -151,7 +152,7 @@
 		schema:startDate "2016-10-27T00:00:00Z"^^xsd:dateTime; 
 		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
 	]; 
-	dcat:contactPoint <mailto:contact-brgm@brgm.fr>;
+	dcat:contactPoint <mailto:contact-brgm@brgm.fr/manager>;
 . 
 
 
