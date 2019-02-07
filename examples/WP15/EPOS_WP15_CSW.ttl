@@ -33,6 +33,7 @@
 	schema:contactPoint <mailto:contact-brgm@brgm.fr/scientificContact>;
 	schema:contactPoint <mailto:contact-brgm@brgm.fr/legalContact>;
 	schema:contactPoint <mailto:contact-brgm@brgm.fr/financialContact>;
+	schema:contactPoint <mailto:contact-brgm@brgm.fr/manager>;
 . 
 
 <PIC:999993662> a schema:Organization;
@@ -57,7 +58,7 @@
 
 
 
-	<mailto:contact-brgm@brgm.fr> a schema:ContactPoint;
+	<mailto:contact-brgm@brgm.fr/manager> a schema:ContactPoint;
 		schema:email "contact-brgm@brgm.fr";
 		schema:availableLanguage "en" ;
 		schema:contactType "manager" ;
@@ -107,7 +108,7 @@
 	]; 
 		dcat:theme <epos:GeologicalData>;
 		dcat:keyword "Geology","EPOS","WP15","BoreholeView","scientific drilling","GeologicUnitView","MappedFeature", "ModelView", "EGDI";
-		dcat:contactPoint <mailto:contact-brgm@brgm.fr>;
+		dcat:contactPoint <mailto:contact-brgm@brgm.fr/manager>;
 		dcat:distribution <http://resource.europe-geology.eu/dataset/catalogue/distributionCsw>;
 		dct:publisher <PIC:999993662>;
 . 
@@ -130,10 +131,10 @@
 
 <http://resource.europe-geology.eu/service/cswEpos> a epos:WebService;
 	schema:identifier "http://resource.europe-geology.eu/service/cswEpos";
-	schema:identifier [ a schema:PropertyValue; 
-		schema:propertyID  "DDSS-ID"; 
-		schema:value  "WP15-DDSS-007"; 
-	]; 
+	#schema:identifier [ a schema:PropertyValue; 
+		#schema:propertyID  "DDSS-ID"; 
+		#schema:value  "WP15-DDSS-007"; 
+	#]; 
 	schema:description "This CSW service exposes a catalogue of all datasets and services provided by the TCS Geological Information and Modelling and provides a hook to EGDI catalogue. Only new datasets and services provided by EPOS WP15 are registered in this catalogue, and a dedicated metadata record describing EGDI catalogue (its CSW) is created to enable EGDI integration within EPOS. Indeed the interaction with the ICS-C requires extra information that are not required in an INSPIRE compliant catalogue. It is thus easier protyping it on a small controlled system as the ICS-C requirement mature than revisiting the entire EGDI catalogue (2109 entries as of today)";
 	dcat:theme <epos:GeologicalData>;
 	schema:name "WP15 Catalogue service";
@@ -151,7 +152,7 @@
 		schema:startDate "2016-10-27T00:00:00Z"^^xsd:dateTime; 
 		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
 	]; 
-	dcat:contactPoint <mailto:contact-brgm@brgm.fr>;
+	dcat:contactPoint <mailto:contact-brgm@brgm.fr/manager>;
 . 
 
 	<http://resource.europe-geology.eu/service/cswEpos/operation> a hydra:Operation;
