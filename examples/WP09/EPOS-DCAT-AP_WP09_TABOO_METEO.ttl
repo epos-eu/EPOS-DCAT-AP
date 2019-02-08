@@ -166,14 +166,14 @@
 	];
 	# This property refers to a temporal period that the Dataset covers.
         dct:temporal [ a dct:PeriodOfTime ;
-        schema:startDate "2015-06-01T00:00:00"^^xsd:dateTime ;
-        #schema:endDate "YYYY-MM-DDThh:mm:ss"^^xsd:dateTime ;
+        schema:startDate "2015-06-01T00:00:00Z"^^xsd:dateTime ;
+        #schema:endDate "2019-01-01T00:00:00Z"^^xsd:dateTime ;
     ];
-	dcat:theme  <#Meteorologicaldata>;
-	dcat:keyword "Geochemical", "geochemistry", "meteo", "meteorological parameters at CO2 site", "water level", "air temperature", "water temperature", "water conductivity", "rain", "humidity", "atmospheric pressure", "FRIDGE";
+	dcat:theme  <epos:Meteorologicaldata>;
+	dcat:keyword "Geochemical", "geochemistry", "meteo", "meteorological parameters at CO2 site", "water level", "air temperature", "water temperature", "water conductivity", "rain", "humidity", "atmospheric pressure", "NFO", "Near Fault Observatory", "TABOO", "FRIDGE";
 	dcat:contactPoint <http://orcid.org/0000-0002-8608-4289/contactPoint>;
 	dct:publisher <PIC:999472675>;
-        dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/METEO/Distribution/001>;
+    dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/METEO/Distribution/001>;
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/METEO/Distribution/001> a dcat:Distribution;
@@ -186,7 +186,7 @@
 	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/METEO/WebService/001>;
 	dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 	# This property refers to the licence under which the Distribution is made available.
-	# dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/METEO/WebService/001> a epos:WebService;
@@ -196,15 +196,15 @@
 	schema:datePublished "2017-06-08T12:00:00Z"^^xsd:dateTime;
 	schema:dateModified "2017-06-08T12:00:00Z"^^xsd:dateTime;
 	schema:provider <PIC:999472675>;
-	schema:keywords "Geochemical", "geochemistry", "meteo", "meteorological parameters at CO2 site", "water level", "air temperature", "water temperature", "water conductivity", "rain", "humidity", "atmospheric pressure", "FRIDGE";
+	schema:keywords "Geochemical", "geochemistry", "meteo", "meteorological parameters at CO2 site", "water level", "air temperature", "water temperature", "water conductivity", "rain", "humidity", "atmospheric pressure", "NFO", "Near Fault Observatory", "TABOO", "FRIDGE";
 	#hydra:entrypoint "application.wadl"^^xsd:anyURI;
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/METEO/WebService/001/Operation/001>;
-	dcat:theme <#Meteorologicaldata>;
+	dcat:theme <epos:Meteorologicaldata>;
 	dcat:contactPoint <http://orcid.org/0000-0002-8608-4289/contactPoint>;
 	# This property refers to the API documentation. (Optional)
 	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/METEO/WebService/001/APIDocumentation> ;
 	# This property refers to the licence under which the Distribution is made available.
-	# dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/METEO/WebService/001/APIDocumentation> a hydra:APIDocumentation ;
@@ -217,7 +217,7 @@
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
-		hydra:template "http://fridge-services.rm.ingv.it/meteo/(?param_name, mintime, maxtime, minlat, maxlat, minlon, maxlon, inst_type)"^^xsd:string;
+		hydra:template "http://fridge-services.rm.ingv.it/meteo/{?param_name, mintime, maxtime, minlat, maxlat, minlon, maxlon, inst_type}"^^xsd:string;
 		# type of parameter "xsd:string" "xsd:boolean" "xsd:date" "xsd:dateTime" "xsd:decimal" "xsd:double" "xsd:float" "xsd:int" "xsd:integer" "xsd:long"
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "param_name"^^xsd:string;
@@ -241,6 +241,8 @@
 			schema:minValue "2015-06-01T00:00:00.000Z";
 			schema:maxValue "2017-12-31T00:00:00.000Z";
 			schema:defaultValue "2016-12-01T00:00:00.000Z";
+			hydra:property "schema:startDate";
+      		schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -250,6 +252,8 @@
 			schema:minValue "2015-06-01T00:00:00.000Z";
 			schema:maxValue "2017-12-31T00:00:00.000Z";
 			schema:defaultValue "2016-12-31T23:59:00.000Z";
+			hydra:property "schema:endDate";
+      		schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -292,20 +296,18 @@
 			hydra:variable "inst_type"^^xsd:string;
 			rdfs:label "nickname of type of installation";
 			rdfs:range "xsd:string";
-			http:paramValue "indoor";
-			http:paramValue "shelter";
-			http:paramValue "borehole";
-			http:paramValue "soil";
-			schema:defaultValue "indoor";
+			http:paramValue "flux";
+			http:paramValue "water";
+			schema:defaultValue "flux";
 			hydra:required "true"^^xsd:boolean;
 		];
 	] ;
 .
-<#NearFaultObservations> a skos:ConceptScheme;
+<epos:NearFaultObservations> a skos:ConceptScheme;
 	dct:title "Near Fault Observations";
 	dct:description "It contains the concepts of Near Fault Observations";
 .
-<#Meteorologicaldata> a skos:Concept;
-	skos:inScheme <#NearFaultObservations>;
+<epos:Meteorologicaldata> a skos:Concept;
+	skos:inScheme <epos:NearFaultObservations>;
 	skos:prefLabel "Meteorological data";
 .

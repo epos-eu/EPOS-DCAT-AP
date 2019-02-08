@@ -20,15 +20,16 @@
 ### Domain and subdomain ###
 ###############################################################################
 
-<#Geoelectromagnetism> a skos:ConceptScheme;
+<epos:Geoelectromagnetism> a skos:ConceptScheme;
     dct:title "Geoelectromagnetism";
     dct:description "Relating to the electric or magnetic field of the Earth";
 .
 
-<#Magneticfield> a skos:Concept;
+<epos:Magneticfield> a skos:Concept;
     skos:definition "Geomagnetic data and models without restriction in scale or frequency";
-    skos:inScheme <#Geoelectromagnetism>;
-    skos:prefLabel "Geomagnetic data and models without restriction in scale or frequency";
+    skos:inScheme <epos:Geoelectromagnetism>;
+    #skos:prefLabel "Geomagnetic data and models without restriction in scale or frequency";
+    skos:prefLabel "Magneticfield";
 .
 
 ###############################################################################
@@ -127,7 +128,7 @@
         schema:streetAddress "The Lyell Centre, Research Avenue South";
         schema:addressLocality "Edinburgh";
         schema:postalCode "EH14 4AP";
-        schema:addressCountry "unknown";
+        schema:addressCountry "United Kingdom";
     ];
     schema:url "www.bgs.ac.uk"^^xsd:anyURI;
     schema:email "enquiries@bgs.ac.uk";
@@ -179,7 +180,7 @@
 
     dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
     dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI ;
-    dcat:theme  <#Magneticfield> ;
+    dcat:theme  <epos:Magneticfield> ;
     dcat:keyword "magnetism", "core", "world model" ;
     dcat:contactPoint <mailto:smf@bgs.ac.uk/contactPoint> ;
     dcat:contactPoint <http://orcid.org/0000-0002-7677-5158/contactPoint> ;
@@ -188,7 +189,7 @@
 
     dct:temporal [ a dct:PeriodOfTime;
         schema:startDate "2015-01-01T00:00:00Z"^^xsd:dateTime;
-        #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
+        schema:endDate "2024-12-31T00:00:00Z"^^xsd:dateTime;
     ];
     dct:spatial [ a dct:Location;
         locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral;
@@ -208,8 +209,8 @@
     dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
     dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-012/IGRF/Webservice>;
     dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-012/IGRF/Operation> ;
-    dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI ;
-    dct:format "text/csv; text/html; text/xml; application/json; text/plain"^^xsd:string ;
+    dct:license "http://creativecommons.org/publicdomain/zero/1.0/"^^xsd:anyURI ;
+    dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:string ;
 .
 
 ###############################################################################
@@ -226,7 +227,7 @@
     schema:dateModified "2018-08-31Z"^^xsd:dateTime;
     schema:provider <http://viaf.org/viaf/136554353/>;
     hydra:entrypoint "http://www.geomag.bgs.ac.uk/web_service/GMModels/"^^xsd:anyURI ;
-    dcat:theme  <#Magneticfield> ;
+    dcat:theme  <epos:Magneticfield> ;
     schema:keywords "magnetism", "core", "world model";
     hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-012/IGRF/Operation> ;
     dct:spatial [ a dct:Location;
@@ -236,7 +237,7 @@
         schema:startDate "2015-01-01T00:00:00Z"^^xsd:dateTime;
         #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
     ];
-    dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+    dct:license "http://creativecommons.org/publicdomain/zero/1.0/"^^xsd:anyURI;
 .
 
 ###############################################################################
@@ -278,6 +279,8 @@
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "date"^^xsd:string;
                 rdfs:label "Date (yyyy-mm-dd)";
+                hydra:property "schema:startDate";
+                schema:valuePattern "YYYY-MM-DD";
                 rdfs:range "xsd:date" ;
                 schema:defaultValue "2015-01-01";
                 schema:minValue "2015-01-01";

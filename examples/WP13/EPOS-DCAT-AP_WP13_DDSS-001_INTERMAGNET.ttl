@@ -20,15 +20,16 @@
 ### Domain and subdomain ###
 ###############################################################################
 
-<#Geoelectromagnetism> a skos:ConceptScheme;
+<epos:Geoelectromagnetism> a skos:ConceptScheme;
     dct:title "Geoelectromagnetism";
     dct:description "Relating to the electric or magnetic field of the Earth";
 .
 
-<#Magneticfield> a skos:Concept;
+<epos:Magneticfield> a skos:Concept;
     skos:definition "Geomagnetic data and models without restriction in scale or frequency";
-    skos:inScheme <#Geoelectromagnetism>;
-    skos:prefLabel "Geomagnetic data and models without restriction in scale or frequency";
+    skos:inScheme <epos:Geoelectromagnetism>;
+    skos:prefLabel "Magnetic field" ;
+    #skos:prefLabel "Geomagnetic data and models without restriction in scale or frequency";
 .
 
 ###############################################################################
@@ -127,7 +128,7 @@
         schema:streetAddress "The Lyell Centre, Research Avenue South";
         schema:addressLocality "Edinburgh";
         schema:postalCode "EH14 4AP";
-        schema:addressCountry "unknown";
+        schema:addressCountry "United Kingdom";
     ]; 
     schema:url "www.bgs.ac.uk"^^xsd:anyURI;
     schema:email "enquiries@bgs.ac.uk";
@@ -179,7 +180,7 @@
     
     dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
     dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI ;
-    dcat:theme  <#Magneticfield> ;
+    dcat:theme  <epos:Magneticfield> ;
     dcat:keyword "magnetism", "geomagnetism", "observatory", "provisional", "real time" ;
     dcat:contactPoint <mailto:smf@bgs.ac.uk/contactPoint> ;
     dcat:contactPoint <http://orcid.org/0000-0002-7677-5158/contactPoint>;
@@ -209,7 +210,8 @@
     dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/INTERMAGNET/Webservice>;
     dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/INTERMAGNET/Operation> ;
     dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI ;
-    dct:format "text/csv; text/html; text/xml; application/json; text/plain; image/png, image/jpeg, application/pdf"^^xsd:string ;
+    dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI ;
+    #dct:format "text/csv; text/html; text/xml; application/json; text/plain; image/png, image/jpeg, application/pdf"^^xsd:string ;
 . 
 
 ###############################################################################
@@ -226,7 +228,7 @@
     schema:dateModified "2018-08-31Z"^^xsd:dateTime;
     schema:provider <http://viaf.org/viaf/136554353/>;
     hydra:entrypoint "http://app.geomag.bgs.ac.uk/GIN/"^^xsd:anyURI ;
-    dcat:theme  <#Magneticfield> ;
+    dcat:theme  <epos:Magneticfield> ;
     schema:keywords "magnetism"," geomagnetism"," observatory"," provisional"," real time";
     hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/INTERMAGNET/Operation> ;
     dct:spatial [ a dct:Location; 
@@ -276,6 +278,8 @@
             ];
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "dataStartDate"^^xsd:string;
+                hydra:property "schema:startDate";
+                schema:valuePattern "YYYY-MM-DD";
                 rdfs:label "Date (yyyy-mm-dd)";
                 rdfs:range "xsd:date" ;
                 schema:defaultValue "2018-01-01";

@@ -168,8 +168,8 @@
         schema:startDate "2010-04-01T00:00:00"^^xsd:dateTime ;
         #schema:endDate "YYYY-MM-DDThh:mm:ss"^^xsd:dateTime ;
     ];
-	dcat:theme  <#Seismicwaveforms> ;
-	dcat:keyword "seismology", "seismicity", "earthquakes", "Velocity", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "TABOO" ;
+	dcat:theme  <epos:Seismicwaveforms> ;
+	dcat:keyword "seismology", "seismicity", "earthquakes", "Velocity", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "NFO", "Near Fault Observatory", "TABOO";
 	dcat:contactPoint <http://orcid.org/0000-0003-3489-7453/scientificContact>;
 	dct:publisher <PIC:999472675>;
 	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/VEL_WAVEFORM_CONTINUOUS/Distribution/001>;
@@ -198,8 +198,8 @@
         schema:startDate "2010-04-01T00:00:00"^^xsd:dateTime ;
         #schema:endDate "YYYY-MM-DDThh:mm:ss"^^xsd:dateTime ;
     ];
-	dcat:theme  <#Seismicwaveforms> ;
-	dcat:keyword "seismology", "seismicity", "earthquakes", "Acceleration", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "TABOO" ;
+	dcat:theme  <epos:Seismicwaveforms> ;
+	dcat:keyword "seismology", "seismicity", "earthquakes", "Acceleration", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "NFO", "Near Fault Observatory", "TABOO";
 	dcat:contactPoint <http://orcid.org/0000-0003-3489-7453/scientificContact>;
 	dct:publisher <PIC:999472675>;
 	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/ACC_WAVEFORM_CONTINUOUS/Distribution/001>;
@@ -225,10 +225,10 @@
 	];
 	# This property refers to a temporal period that the Dataset covers.
     dct:temporal [ a dct:PeriodOfTime ;
-        schema:startDate "2010-04-01T00:00:00"^^xsd:dateTime ;
+        schema:startDate "2010-04-01T00:00:00Z"^^xsd:dateTime ;
         #schema:endDate "YYYY-MM-DDThh:mm:ss"^^xsd:dateTime ;
     ];
-	dcat:theme  <#Seismicstations> ;
+	dcat:theme  <epos:Seismicstations> ;
 	dcat:keyword "seismology", "seismicity", "earthquakes", "station", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "TABOO" ;
 	dcat:contactPoint <http://orcid.org/0000-0003-3489-7453/scientificContact>;
 	dct:publisher <PIC:999472675>;
@@ -240,7 +240,7 @@
     dct:title "TABOO Velocity Waveform Continuous Distribution";
 	dct:description "TABOO Velocity Waveform Continuous Distribution";
 	dct:created "2010-04-01"^^xsd:date;
-	dct:type "http://publications.europa.eu/resource/authority/distributiontype/WEB_SERVICE"^^xsd:anyURI;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/WAVEFORM_CONTINUOUS/WebService/001/Operation/001>;
 	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/VEL_WAVEFORM_CONTINUOUS/WebService/001>;
 	dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI;
@@ -251,7 +251,7 @@
 	dct:title "TABOO Acceleration Waveform Continuous Distribution";
 	dct:description "TABOO Acceleration Waveform Continuous Distribution";
 	dct:created "2010-04-01"^^xsd:date;
-	dct:type "http://publications.europa.eu/resource/authority/distributiontype/WEB_SERVICE"^^xsd:anyURI;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/WAVEFORM_CONTINUOUS/WebService/001/Operation/001>;
 	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/ACC_WAVEFORM_CONTINUOUS/WebService/001>;
 	dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI ;
@@ -262,7 +262,7 @@
     dct:title "TABOO Seismic Station Information Distribution";
 	dct:description "TABOO Seismic Station Information Distribution";
 	dct:created "2010-04-01"^^xsd:date;
-	dct:type "http://publications.europa.eu/resource/authority/distributiontype/WEB_SERVICE"^^xsd:anyURI;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/SEISMIC_STATION/WebService/001/Operation/001>;
 	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/SEISMIC_STATION/WebService/001>;
 	dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
@@ -278,7 +278,7 @@
 	schema:keywords "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "TABOO", "Dataselect", "FDSN-WS", "Seismic Waveform", "EIDA";
 	#hydra:entrypoint "application.wadl"^^xsd:anyURI; 
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/WAVEFORM_CONTINUOUS/WebService/001/Operation/001>;
-	dcat:theme <#Seismicwaveforms>;
+	dcat:theme <epos:Seismicwaveforms>;
 	dcat:contactPoint <http://orcid.org/0000-0003-3489-7453/scientificContact>;
 . 
 
@@ -292,7 +292,7 @@
 	schema:keywords "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "TABOO", "Dataselect", "FDSN-WS", "Seismic Waveform", "EIDA";
 	#hydra:entrypoint "application.wadl"^^xsd:anyURI; 
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/WAVEFORM_CONTINUOUS/WebService/001/Operation/001>;
-	dcat:theme <#Seismicwaveforms>;
+	dcat:theme <epos:Seismicwaveforms>;
 	dcat:contactPoint <http://orcid.org/0000-0003-3489-7453/scientificContact>;
 .
 
@@ -306,33 +306,39 @@
 	schema:keywords "seismology", "seismicity", "earthquakes", "stations", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "TABOO";
 	#hydra:entrypoint "application.wadl"^^xsd:anyURI; 
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/SEISMIC_STATION/WebService/001/Operation/001>;
-	dcat:theme <#Seismicstations>;
+	dcat:theme <epos:Seismicstations>;
 	dcat:contactPoint <http://orcid.org/0000-0003-3489-7453/scientificContact>;
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/WAVEFORM_CONTINUOUS/WebService/001/Operation/001> a hydra:Operation;
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/vnd.fdsn.mseed";
-	hydra:IriTemplate[ a hydra:IriTemplate;
-		hydra:template "http://webservices.ingv.it/fdsnws/dataselect/1/query(?starttime, endtime, network, station, location, channel, quality, minimumlength, nodata)"^^xsd:string;
+	hydra:property[ a hydra:IriTemplate;
+		hydra:template "http://webservices.ingv.it/fdsnws/dataselect/1/query{?starttime, endtime, network, station, location, channel, quality, minimumlength, nodata}"^^xsd:string;
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "starttime"^^xsd:string;
 			rdfs:label "Start of the timespan";
 			rdfs:range "xsd:dateTime";
 			schema:defaultValue "2014-05-10T12:00:00.000Z";
+			hydra:property "schema:startDate";
+      		schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "endtime"^^xsd:string;
 			rdfs:label "End of the timespan";
 			rdfs:range "xsd:dateTime";
-			schema:defaultValue "2014-05-20T12:00:02.000Z";
+			schema:defaultValue "2014-05-10T12:00:02.000Z";
+			hydra:property "schema:endDate";
+      		schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "network"^^xsd:string;
 			rdfs:label "Network code";
-			rdfs:range "xsd:string" ;
+			rdfs:range "xsd:string";
+			http:paramValue "IV";
+			http:paramValue "TV";
 			schema:defaultValue "IV,TV";
 			hydra:required "true"^^xsd:boolean;
 		];
@@ -460,8 +466,8 @@
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/SEISMIC_STATION/WebService/001/Operation/001> a hydra:Operation;
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/xml";
-	hydra:IriTemplate[ a hydra:IriTemplate;
-		hydra:template "http://webservices.ingv.it/fdsnws/station/1/query(?starttime, endtime, network, station, location, channel, minlatitude, maxlatitude, minlongitude, maxlongitude, level, format, nodata)"^^xsd:string;
+	hydra:property[ a hydra:IriTemplate;
+		hydra:template "http://webservices.ingv.it/fdsnws/station/1/query{?starttime, endtime, network, station, location, channel, minlatitude, maxlatitude, minlongitude, maxlongitude, level, format, nodata}"^^xsd:string;
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "starttime"^^xsd:string;
 			rdfs:label "Start of the timespan";
@@ -640,15 +646,15 @@
 	] ;
 .
 
-<#NearFaultObservations> a skos:ConceptScheme;
+<epos:NearFaultObservations> a skos:ConceptScheme;
 	dct:title "Near Fault Observations";
 	dct:description "It contains the concepts of Near Fault Observations";
 . 
-<#Seismicwaveforms> a skos:Concept;
-	skos:inScheme <#NearFaultObservations>;
+<epos:Seismicwaveforms> a skos:Concept;
+	skos:inScheme <epos:NearFaultObservations>;
 	skos:prefLabel "Seismic waveforms";
 . 
-<#Seismicstations> a skos:Concept;
-	skos:inScheme <#NearFaultObservations>;
+<epos:Seismicstations> a skos:Concept;
+	skos:inScheme <epos:NearFaultObservations>;
 	skos:prefLabel "Seismic stations";
 .

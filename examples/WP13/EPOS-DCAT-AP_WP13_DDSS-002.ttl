@@ -20,15 +20,16 @@
 ### Domain and subdomain ###
 ###############################################################################
 
-<#Geoelectromagnetism> a skos:ConceptScheme;
+<epos:Geoelectromagnetism> a skos:ConceptScheme;
     dct:title "Geoelectromagnetism";
     dct:description "Relating to the electric or magnetic field of the Earth";
 .
 
-<#Magneticfield> a skos:Concept;
+<epos:Magneticfield> a skos:Concept;
     skos:definition "Geomagnetic data and models without restriction in scale or frequency";
-    skos:inScheme <#Geoelectromagnetism>;
-    skos:prefLabel "Geomagnetic data and models without restriction in scale or frequency";
+    skos:inScheme <epos:Geoelectromagnetism>;
+    #skos:prefLabel "Geomagnetic data and models without restriction in scale or frequency";
+    skos:prefLabel "Magneticfield data";
 .
 
 ###############################################################################
@@ -153,7 +154,7 @@
     
     dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
     dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI ;
-    dcat:theme  <#Magneticfield> ;
+    dcat:theme  <epos:Magneticfield> ;
     dcat:keyword "auroral electrojet", "geomagnetism", "magnetic field", "magnetism", "space weather", "substorm", "variometer" ;
     dcat:contactPoint <mailto:ari.viljanen@fmi.fi/contactPoint>;
     dcat:contactPoint <mailto:lasse.hakkinen@fmi.fi/contactPoint>;
@@ -183,7 +184,7 @@
     dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-002/IMAGE/Webservice>;
     dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-002/IMAGE/Operation> ;
     dct:license "http://space.fmi.fi/image/www/index.php?page=rules_of_road"^^xsd:anyURI ;
-    dct:format "text/plain"^^xsd:string ;
+    dct:format "http://publications.europa.eu/resource/authority/file-type/TXT"^^xsd:anyURI ;
 . 
 
 ###############################################################################
@@ -200,7 +201,7 @@
     schema:dateModified "2018-08-31Z"^^xsd:dateTime;
     schema:provider <PIC:999591306>;
     hydra:entrypoint "http://space.fmi.fi/image/www/index.php?page=request"^^xsd:anyURI ;
-    dcat:theme  <#Magneticfield> ;
+    dcat:theme  <epos:Magneticfield> ;
     schema:keywords "auroral electrojet", "geomagnetism", "magnetic field", "magnetism", "space weather", "substorm", "variometer" ;
     hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-002/IMAGE/Operation> ;
     dct:spatial [ a dct:Location; 
@@ -225,6 +226,8 @@
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "start"^^xsd:string;
                 rdfs:label "Date (yyyymmdd)";
+                hydra:property "schema:startDate";
+                schema:valuePattern "YYYYMMDD";
                 rdfs:range "xsd:integer" ;
                 schema:minValue "19821001";
                 schema:maxValue "21000101";

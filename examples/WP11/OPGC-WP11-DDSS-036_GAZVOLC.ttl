@@ -299,7 +299,7 @@
         hydra:returns "application/zip";
         # hydra:returns "application/json";
         hydra:property [ a hydra:IriTemplate;
-            hydra:template "http://opgc.fr/vobs/rest2/req.php/gazvolc/data/id/{uri}(/{format})"^^xsd:string;
+            hydra:template "http://opgc.fr/vobs/rest2/req.php/gazvolc/data/id/{uri}/{format}"^^xsd:string;
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "uri"^^xsd:integer;
                     rdfs:label "The data id number";
@@ -319,12 +319,12 @@
         ];
 .
 
-    <epos:Volcano-Observations> a skos:ConceptSchema;
-        dct:title "Volcano-Observations";
+    <epos:VolcanoObservations> a skos:ConceptSchema;
+        dct:title "Volcano Observations";
         dct:description "It contains the concept of Volcanological observations";
 .
     <epos:Geochemical-Data> a skos:Concept;
             skos:definition "Geochemical data" ;
-            skos:inScheme <epos:Volcano-Observations>;
+            skos:inScheme <epos:VolcanoObservations>;
             skos:prefLabel "Geochemical data";
 .

@@ -20,15 +20,16 @@
 ### Domain and subdomain ###
 ###############################################################################
 
-<#Geoelectromagnetism> a skos:ConceptScheme;
+<epos:Geoelectromagnetism> a skos:ConceptScheme;
     dct:title "Geoelectromagnetism";
     dct:description "Relating to the electric or magnetic field of the Earth";
 .
 
-<#Magneticfield> a skos:Concept;
+<epos:Magneticfield> a skos:Concept;
     skos:definition "Geomagnetic data and models without restriction in scale or frequency";
-    skos:inScheme <#Geoelectromagnetism>;
-    skos:prefLabel "Geomagnetic data and models without restriction in scale or frequency";
+    skos:inScheme <epos:Geoelectromagnetism>;
+    #skos:prefLabel "Geomagnetic data and models without restriction in scale or frequency";
+    skos:prefLabel "Magneticfield";
 .
 
 ###############################################################################
@@ -127,7 +128,7 @@
         schema:streetAddress "The Lyell Centre, Research Avenue South";
         schema:addressLocality "Edinburgh";
         schema:postalCode "EH14 4AP";
-        schema:addressCountry "unknown";
+        schema:addressCountry "United Kingdom";
     ];
     schema:url "www.bgs.ac.uk"^^xsd:anyURI;
     schema:email "enquiries@bgs.ac.uk";
@@ -179,7 +180,7 @@
 
     dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
     dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI ;
-    dcat:theme  <#Magneticfield> ;
+    dcat:theme  <epos:Magneticfield> ;
     dcat:keyword "Aurora", "Auroral electrojet", "Compass", "Compass direction", "Crustal", "Crustal magnetism", "Daily variation", "Declination", "Earth core", "core", "Earth electrical conductivity", "Electrical conductivity", "Electromagnetic data", "Equatorial electrojet", "Field aligned current", "Geo-effectivity", "Geomagnetic activity", "Geomagnetic index", "Geomagnetic observatory", "Geomagnetic storm", "Geomagnetism", "Global model", "Historical geomagnetic data", "Inclination", "Interplanetary magnetic field", "IMF", "Ionosphere", "Impedance", "Impedance tensor", "Lithosphere", "Lithospheric magnetism", "Magnetic field", "Magnetic model", "Magnetic pulsation", "Magnetic survey", "Magnetism", "Magnetosphere", "Magnetotelluric", "Magnetotelluric data", "Main field", "Model", "Navigation", "Northern lights", "Polar cusp", "Rapid magnetic variations", "Remarkable event", "Ring current", "Secular variation", "Solar cycle", "Solar flare", "Solar flare effects", "Solar quiet", "Solar storm", "Solar wind", "Space weather", "Spherical harmonic", "Sferic", "Storm", "Storm commencement", "Substorm", "Sudden commencements", "Time series", "Tipper vector", "Transfer function", "Variometer", "Whistler", "World model" ;
     dcat:contactPoint <mailto:smf@bgs.ac.uk/contactPoint> ;
     dcat:contactPoint <http://orcid.org/0000-0002-7677-5158/contactPoint> ;
@@ -188,7 +189,7 @@
 
     dct:temporal [ a dct:PeriodOfTime;
         schema:startDate "2015-01-01T00:00:00Z"^^xsd:dateTime;
-        #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
+        schema:endDate "2024-12-31T00:00:00Z"^^xsd:dateTime;
     ];
     dct:spatial [ a dct:Location;
         locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral;
@@ -208,8 +209,8 @@
     dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
     dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-012/WMM/Webservice>;
     dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-012/WMM/Operation> ;
-    dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI ;
-    dct:format "application/json"^^xsd:string ;
+    dct:license "http://creativecommons.org/publicdomain/zero/1.0/"^^xsd:anyURI ;
+    dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:string ;
 .
 
 ###############################################################################
@@ -226,7 +227,7 @@
     schema:dateModified "2018-08-31Z"^^xsd:dateTime;
     schema:provider <http://viaf.org/viaf/136554353/>;
     hydra:entrypoint "http://www.geomag.bgs.ac.uk/web_service/GMModels/"^^xsd:anyURI ;
-    dcat:theme  <#Magneticfield> ;
+    dcat:theme  <epos:Magneticfield> ;
     schema:keywords "Aurora", "Auroral electrojet", "Compass", "Compass direction", "Crustal", "Crustal magnetism", "Daily variation", "Declination", "Earth core", "core", "Earth electrical conductivity", "Electrical conductivity", "Electromagnetic data", "Equatorial electrojet", "Field aligned current", "Geo-effectivity", "Geomagnetic activity", "Geomagnetic index", "Geomagnetic observatory", "Geomagnetic storm", "Geomagnetism", "Global model", "Historical geomagnetic data", "Inclination", "Interplanetary magnetic field", "IMF", "Ionosphere", "Impedance", "Impedance tensor", "Lithosphere", "Lithospheric magnetism", "Magnetic field", "Magnetic model", "Magnetic pulsation", "Magnetic survey", "Magnetism", "Magnetosphere", "Magnetotelluric", "Magnetotelluric data", "Main field", "Model", "Navigation", "Northern lights", "Polar cusp", "Rapid magnetic variations", "Remarkable event", "Ring current", "Secular variation", "Solar cycle", "Solar flare", "Solar flare effects", "Solar quiet", "Solar storm", "Solar wind", "Space weather", "Spherical harmonic", "Sferic", "Storm", "Storm commencement", "Substorm", "Sudden commencements", "Time series", "Tipper vector", "Transfer function", "Variometer", "Whistler", "World model";
     hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-012/WMM/Operation> ;
     dct:spatial [ a dct:Location;
@@ -236,7 +237,7 @@
         schema:startDate "2015-01-01T00:00:00Z"^^xsd:dateTime;
         #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
     ];
-    dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+    dct:license "http://creativecommons.org/publicdomain/zero/1.0/"^^xsd:anyURI;
 .
 
 ###############################################################################
@@ -277,6 +278,8 @@
             ];
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "date"^^xsd:string;
+                hydra:property "schema:startDate";
+                schema:valuePattern "YYYY-MM-DD";
                 rdfs:label "Date (yyyy-mm-dd)";
                 rdfs:range "xsd:date" ;
                 schema:defaultValue "2015-01-01";

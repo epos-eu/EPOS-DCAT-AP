@@ -46,11 +46,23 @@
         dct:title "CASOAR distribution of OI2 product fournaise_S1_S6_AR_09491_10016_ext7.5m";
         dct:description "The way to download the OI2 product : fournaise_S1_S6_AR_09491_10016_ext7.5m";
         dct:issued "2017-06-21"^^xsd:dateTime;
-        dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
+        dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
         dcat:accessURL <wwwobs.univ-bpclermont.fr/casoar/data-download>;
-        dcat:downloadURL "https://wwwobs.univ-bpclermont.fr/casoar/export/download.php?type=SentInterf&uri=fournaise_S1_S6_AR_09491_10016_ext7.5m"^^xsd:anyURI;
+        #dcat:downloadURL "https://wwwobs.univ-bpclermont.fr/casoar/export/download.php?type=SentInterf&uri=fournaise_S1_S6_AR_09491_10016_ext7.5m"^^xsd:anyURI;
         dct:conformsTo <wwwobs.univ-bpclermont.fr/casoar>;
         dct:format "http://publications.europa.eu/resource/authority/file-type/ZIP"^^xsd:anyURI;
+        dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+.
+
+<fournaise_S1_S6_AR_09491_10016_ext7.5m/WS> a dcat:Distribution;
+        dct:identifier "fournaise_S1_S6_AR_09491_10016_ext7.5m/WS";
+        dct:title "CASOAR distribution web service of OI2 product fournaise_S1_S6_AR_09491_10016_ext7.5m";
+        dct:description "The way to download the OI2 product : fournaise_S1_S6_AR_09491_10016_ext7.5m";
+        dct:issued "2017-06-21"^^xsd:dateTime;
+        dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+        dcat:accessURL <wwwobs.univ-bpclermont.fr/casoar/data-visualization>;
+        dct:conformsTo <wwwobs.univ-bpclermont.fr/casoar>;
+        dct:format "http://publications.europa.eu/resource/authority/file-type/HTML"^^xsd:anyURI;
         dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 .
 
@@ -372,7 +384,7 @@
     # hydra:entrypoint "https://wwwobs.univ-bpclermont.fr/casoar/index_liste.php"^^xsd:anyURI;
     hydra:supportedOperation <wwwobs.univ-bpclermont.fr/casoar/data-visualization>;
     hydra:supportedOperation <wwwobs.univ-bpclermont.fr/casoar/data-download>;
-    dcat:theme <#RadarInterferometry>;
+    dcat:theme <epos:RadarInterferometry>;
     schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
     dct:conformsTo <wwwobs.univ-bpclermont.fr/casoar/APIDocumentation>;
     dcat:contactPoint <http://www.researcherid.com/rid/O-8042-2014/contactPoint>;
@@ -389,7 +401,7 @@
 .
     <wwwobs.univ-bpclermont.fr/casoar/data-visualization> a hydra:Operation;
         hydra:method "GET"^^xsd:string;
-        hydra:returns "application/html";
+        hydra:returns "text/html";
         hydra:property [ a hydra:IriTemplate;
             hydra:template "https://wwwobs.univ-bpclermont.fr/casoar/visu.php{?Type, Folder, Data}"^^xsd:string;
                 hydra:mapping [ a hydra:IriTemplateMapping;
@@ -440,11 +452,12 @@
         ];
 .
 
-    <epos:Volcano-Observations> a skos:ConceptScheme;
+    <epos:VolcanoObservations> a skos:ConceptScheme;
         dct:title "Volcano-Observations";
         dct:description "It contains the concept of Volcanological observations";
 .
     <epos:RadarInterferometry> a skos:Concept;
-        skos:inScheme <epos:Volcano-Observations>;
+        skos:inScheme <epos:VolcanoObservations>;
         skos:prefLabel "Radar Interferometry";
+	skos:definition "Radar Interferometry";
 .

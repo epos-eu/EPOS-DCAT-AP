@@ -34,9 +34,9 @@
 	schema:url "www.bgr.bund.de"^^xsd:anyURI;
 	schema:email "poststelle@bgr.de";
 	schema:telephone "+495116430";
-	schema:contactPoint <mailto:klaus.stammler@bgr.de/scientificContact>;
-	schema:contactPoint <mailto:mathias.hoffmann@bgr.de/scientificContact>;
-	schema:contactPoint < https://orcid.org/0000-0001-6501-6853/contactPoint>;
+	schema:contactPoint <PIC:999429413/scientificContact>;
+	schema:contactPoint <PIC:999429413/scientificContact>;
+	schema:contactPoint <https://orcid.org/0000-0001-6501-6853/contactPoint>;
 . 
 
 # Person1 Klaus Stammler
@@ -56,7 +56,7 @@
 	schema:telephone "+495116432045";
 	schema:qualifications "Senior Researcher / Unit Head";
 	schema:affiliation <PIC:999429413>;
-	schema:contactPoint <mailto:klaus.stammler@bgr.de/scientificContact>;
+	schema:contactPoint <PIC:999429413/scientificContact>;
 . 
 
 # Person2 Mathias Hoffmann
@@ -76,7 +76,7 @@
 	schema:telephone "+495116433179";
 	schema:qualifications "Researcher, IT Infrastructure, Data Management";
 	schema:affiliation <PIC:999429413>;
-	schema:contactPoint <mailto:mathias.hoffmann@bgr.de/scientificContact>;
+	schema:contactPoint <PIC:999429413/scientificContact>;
 . 
 
 # Person3 Erich Odon Muhire
@@ -97,22 +97,22 @@
 	schema:url "https://orcid.org/0000-0001-6501-6853"^^xsd:anyURI;
 	schema:qualifications "IT Infrastructure, Data Management";
 	schema:affiliation <PIC:999429413>;
-	schema:contactPoint < https://orcid.org/0000-0001-6501-6853/contactPoint>;
+	schema:contactPoint <https://orcid.org/0000-0001-6501-6853/contactPoint>;
 .
     
 
     # Contacts
-    <mailto:klaus.stammler@bgr.de/scientificContact> a schema:ContactPoint;
+    <PIC:999429413/scientificContact> a schema:ContactPoint;
 		schema:email "klaus.stammler@bgr.de";
 		schema:availableLanguage "en" ;
 		schema:contactType "scientificContact" ;
 .
-	<mailto:mathias.hoffmann@bgr.de/scientificContact> a schema:ContactPoint;
+	<PIC:999429413/scientificContact> a schema:ContactPoint;
 		schema:email "mathias.hoffmann@bgr.de";
 		schema:availableLanguage "en" ;
 		schema:contactType "scientificContact" ;
 . 
-	< https://orcid.org/0000-0001-6501-6853/contactPoint> a schema:ContactPoint;
+	<https://orcid.org/0000-0001-6501-6853/contactPoint> a schema:ContactPoint;
 		schema:email "erichodon.muhire@bgr.de";
 		schema:availableLanguage "en" ;
 		schema:contactType "contactPoint" ;
@@ -156,7 +156,7 @@
 	hydra:method "GET";
 	hydra:returns "application/vnd.fdsn.mseed";
 	hydra:property[ a hydra:IriTemplate;
-	hydra:template "http://eida.bgr.de/fdsnws/dataselect/1/query(?starttime, endtime, network, station, location, channel, nodata)"^^xsd:string;
+	hydra:template "http://eida.bgr.de/fdsnws/dataselect/1/query{?starttime, endtime, network, station, location, channel, quality, format, nodata}"^^xsd:string;
 	hydra:mapping[ a hydra:IriTemplateMapping;
 	hydra:variable "starttime"^^xsd:string;
 	rdfs:label "Start of the timespan";
@@ -200,13 +200,29 @@
 	schema:defaultValue "HHZ" ;
 	];
 	hydra:mapping[ a hydra:IriTemplateMapping;
+	hydra:variable "quality"^^xsd:string;
+	rdfs:label "Quality";
+	http:paramValue "M";
+	http:paramValue "B";
+	hydra:required "true"^^xsd:boolean;
+	rdfs:range "xsd:string" ;
+	schema:defaultValue "B" ;
+	];	
+	hydra:mapping[ a hydra:IriTemplateMapping;
+	hydra:variable "format"^^xsd:string;
+	rdfs:label "Format";
+	hydra:required "true"^^xsd:boolean;
+	rdfs:range "xsd:string" ;
+	schema:defaultValue "miniseed" ;
+	];	
+	hydra:mapping[ a hydra:IriTemplateMapping;
 	hydra:variable "nodata"^^xsd:string;
 	rdfs:label "HTTP error code if no data is found";
 	http:paramValue "204";
 	http:paramValue "404";
 	hydra:required "true"^^xsd:boolean;
 	rdfs:range "xsd:string" ;
-	schema:defaultValue "404" ;
+	schema:defaultValue "204" ;
 	];
 	] ;
 .
@@ -252,6 +268,7 @@
 # Distribution
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/BGR> a dcat:Distribution;
     dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/BGR";
+	dct:title "Seismic Waveform Distribution :: FDSN DATASELECT";
 	dct:description "Description of Seismic Waveform Distribution :: FDSN DATASELECT ";
 	dct:issued "1976-01-01"^^xsd:date ;
 	dct:modified "1976-01-01"^^xsd:date ;
@@ -265,7 +282,10 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/BGR> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/BGR";
-
+        schema:identifier [ a schema:PropertyValue; 
+		schema:propertyID  "DDSS-ID"; 
+		schema:value  "WP08-DDSS-002"; 
+        ]; 
 	schema:description "The fdsnws-station web service returns station metadata in FDSN StationXML format (schema here) or as delimited text. The purpose of the FDSN StationXML schema is to define an XML representation of the most important and commonly used structures of SEED 2.4 metadata. Results are available at multiple levels of granularity: network, station, channel and response.";
 	schema:name "FDSN Station Web Service at BGR";
 	schema:datePublished "1976-01-01T00:00:00Z"^^xsd:dateTime;
@@ -300,7 +320,7 @@
 	hydra:property
 	[ 
 	a hydra:IriTemplate;
-	hydra:template "http://eida.bgr.de/fdsnws/station/1/query(?starttime, endtime, network, station, location, channel,  minlatitude, maxlatitude, minlongitude, maxlongitude, level, nodata)"^^xsd:string;
+	hydra:template "http://eida.bgr.de/fdsnws/station/1/query{?starttime, endtime, network, station, location, channel,  minlatitude, maxlatitude, minlongitude, maxlongitude, level, nodata}"^^xsd:string;
 			
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "starttime"^^xsd:string;
@@ -393,7 +413,7 @@
 				http:paramValue "404";
 				hydra:required "true"^^xsd:boolean;
 				rdfs:range "xsd:string" ;
-				schema:defaultValue "404" ;
+				schema:defaultValue "204" ;
 			];
 			];
 .
@@ -441,6 +461,7 @@
 # Distribution
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/BGR> a dcat:Distribution;
     dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/BGR";
+	dct:title "Seismic Stations Distribution :: FDSN STATION ";
 	dct:description "Description of Seismic Stations  :: FDSN STATION ";
 	dct:issued "1976-01-01"^^xsd:date ;
 	dct:modified "1976-01-01"^^xsd:date ;

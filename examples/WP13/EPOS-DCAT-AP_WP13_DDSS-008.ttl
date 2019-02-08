@@ -20,15 +20,16 @@
 ### Domain and subdomain ###
 ###############################################################################
 
-<#Geoelectromagnetism> a skos:ConceptScheme;
+<epos:Geoelectromagnetism> a skos:ConceptScheme;
     dct:title "Geoelectromagnetism";
     dct:description "Relating to the electric or magnetic field of the Earth";
 .
 
-<#Magneticactivity> a skos:Concept;
+<epos:Magneticactivity> a skos:Concept;
     skos:definition "Geo-effectivity at the Earth's surface described by planetary geomagnetic indices or lists of remarkable events";
-    skos:inScheme <#Geoelectromagnetism>;
-    skos:prefLabel "Geo-effectivity at the Earth's surface described by planetary geomagnetic indices or lists of remarkable events";
+    skos:inScheme <epos:Geoelectromagnetism>;
+    #skos:prefLabel "Geo-effectivity at the Earth's surface described by planetary geomagnetic indices or lists of remarkable events";
+    skos:prefLabel "Magneticactivity";
 .
 
 ###############################################################################
@@ -153,7 +154,7 @@
     
     dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
     dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI ;
-    dcat:theme  <#Magneticactivity> ;
+    dcat:theme  <epos:Magneticactivity> ;
     dcat:keyword "auroral electrojet", "geomagnetism", "magnetic field", "magnetism", "space weather", "substorm", "variometer" ;
     dcat:contactPoint <mailto:ari.viljanen@fmi.fi/contactPoint>;
     dcat:contactPoint <mailto:lasse.hakkinen@fmi.fi/contactPoint>;
@@ -183,7 +184,7 @@
     dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-008/IMAGE_EJI/Webservice>;
     dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-008/IMAGE_EJI/Operation> ;
     dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI ;
-    dct:format "text/plain"^^xsd:string ;
+    dct:format "http://publications.europa.eu/resource/authority/file-type/TXT"^^xsd:string ;
 . 
 
 ###############################################################################
@@ -200,7 +201,7 @@
     schema:dateModified "2018-08-31Z"^^xsd:dateTime;
     schema:provider <PIC:999591306>;
     hydra:entrypoint "http://space.fmi.fi/image/www/index.php?page=request"^^xsd:anyURI ;
-    dcat:theme  <#Magneticactivity> ;
+    dcat:theme  <epos:Magneticactivity> ;
     schema:keywords "auroral electrojet", "geomagnetism", "magnetic field", "magnetism", "space weather", "substorm", "variometer" ;
     hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-008/IMAGE_EJI/Operation> ;
     dct:spatial [ a dct:Location; 
@@ -224,6 +225,8 @@
         hydra:template "http://space.fmi.fi/cgi-bin/imagecgi/image-epos-indicators.cgi{?start, yourname, institute, email, submit}"^^xsd:string;
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "start"^^xsd:string;
+                hydra:property "schema:startDate";
+                schema:valuePattern "YYYYMMDD";
                 rdfs:label "Date (yyyymmdd)";
                 rdfs:range "xsd:integer" ;
                 schema:minValue "19821001";

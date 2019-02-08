@@ -17,6 +17,26 @@
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
 # Persons
+
+<http://orcid.org/0000-0002-8651-6387> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "orcid";
+		schema:value "http://orcid.org/0000-0002-8651-6387";
+	];
+	schema:familyName "Doglioni";
+	schema:givenName "Carlo";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Via di Vigna Murata 605";
+		schema:addressLocality "Rome";
+		schema:postalCode "00143";
+		schema:addressCountry "Italy";
+	];
+	schema:email "segreteria.presidenza@ingv.it";
+	schema:qualifications "Professor";
+	schema:affiliation <PIC:999472675>;
+	schema:contactPoint <http://orcid.org/0000-0002-8651-6387/legalContact>;
+.
+
 <http://orcid.org/0000-0002-1399-0379> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
 	schema:propertyID "orcid";
@@ -37,7 +57,6 @@
 	schema:affiliation <PIC:999472675> ;
         schema:contactPoint <http://orcid.org/0000-0002-1399-0379/contactPoint> ;
 	schema:contactPoint <http://orcid.org/0000-0002-1399-0379/scientificContact> ;
-	schema:contactPoint <http://orcid.org/0000-0002-1399-0379/legalContact> ;
 	schema:contactPoint <http://orcid.org/0000-0002-1399-0379/financialContact> ;
 .
 
@@ -54,8 +73,8 @@
 	schema:contactType "scientificContact" ;
 .
 
-<http://orcid.org/0000-0002-1399-0379/legalContact> a schema:ContactPoint;
-	schema:email "massimo.fares@ingv.it";
+<http://orcid.org/0000-0002-8651-6387/legalContact> a schema:ContactPoint;
+	schema:email "segreteria.presidenza@ingv.it";
 	schema:availableLanguage "en" ;
 	schema:contactType "legalContact" ;
 .
@@ -83,7 +102,7 @@
 	schema:logo "http://roma2.rm.ingv.it/userfiles/file/Logo/INGV_Logo-abbr_colore.jpg"^^xsd:anyURI;
 	schema:url "http://www.ingv.it"^^xsd:anyURI;
 	schema:contactPoint <http://orcid.org/0000-0002-1399-0379/scientificContact>;
-	schema:contactPoint <http://orcid.org/0000-0002-1399-0379/legalContact>;
+	schema:contactPoint <http://orcid.org/0000-0002-8651-6387/legalContact>;
 	schema:contactPoint <http://orcid.org/0000-0002-1399-0379/financialContact>;
 .
 
@@ -91,17 +110,17 @@
 
 # ############################## WebService Dataselect
 
-<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001> a epos:WebService;
-	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001";
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/INGV> a epos:WebService;
+	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/INGV";
 
 	schema:description "The dataselect Web service provides access to time series data in miniSEED format. The data may be filtered e.g. by time, station and network parameters. The request type is HTTP-GET and HTTP-POST. Please refer to http://www.fdsn.org/webservice for a complete service description.";
 	schema:name "FDSN Dataselect Web Service at CNT-INGV";
 	schema:datePublished "2016-01-01T00:00:00Z"^^xsd:dateTime;
 	schema:dateModified "2016-01-01T00:00:00Z"^^xsd:dateTime;
 	schema:provider <PIC:999472675>;
-	schema:keywords "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "GFZ,Dataselect,FDSN-WS,Seismic Waveform,EIDA";
+	schema:keywords "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "INGV,Dataselect,FDSN-WS,Seismic Waveform,EIDA";
 	hydra:entrypoint "webservices.ingv.it/fdsnws/dataselect/1/application.wadl"^^xsd:anyURI;
-	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001>;
+	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001/INGV>;
 	dcat:theme <epos:SeismicWaveform>;
 	dcat:contactPoint <http://orcid.org/0000-0002-1399-0379/contactPoint>;
         dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/APIDocumentation> ;
@@ -123,13 +142,17 @@
 .
 
 # Params
-<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001> a hydra:Operation;
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001/INGV> a hydra:Operation;
 	hydra:method "GET";
 	hydra:returns "application/vnd.fdsn.mseed";
 	hydra:property[ a hydra:IriTemplate;
-	hydra:template "http://webservices.ingv.it/fdsnws/dataselect/1/query(?starttime, endtime, network, station, location, channel, quality, minimumlength, nodata)"^^xsd:string;
+	hydra:template "http://webservices.ingv.it/fdsnws/dataselect/1/query{?starttime, endtime, network, station, location, channel, quality, minimumlength, nodata}"^^xsd:string;
 	hydra:mapping[ a hydra:IriTemplateMapping;
 	hydra:variable "starttime"^^xsd:string;
+	
+	hydra:property "schema:startDate";
+	schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+	
 	rdfs:label "Start of the timespan";
 	hydra:required "true"^^xsd:boolean;
 	rdfs:range "xsd:dateTime" ;
@@ -137,6 +160,10 @@
 	];
 	hydra:mapping[ a hydra:IriTemplateMapping;
 	hydra:variable "endtime"^^xsd:string;
+	
+	hydra:property "schema:endDate";
+	schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+	
 	rdfs:label "End of the timespan";
 	hydra:required "true"^^xsd:boolean;
 	rdfs:range "xsd:dateTime" ;
@@ -180,14 +207,14 @@
 	http:paramValue "B";
 	hydra:required "true"^^xsd:boolean;
 	rdfs:range "xsd:string" ;
-	schema:defaultValue "D" ;
+	
 	];
 	hydra:mapping[ a hydra:IriTemplateMapping;
 	hydra:variable "minimumlength"^^xsd:string;
 	rdfs:label "Minimum Length";
 	hydra:required "true"^^xsd:boolean;
 	rdfs:range "xsd:string" ;
-	schema:defaultValue "x" ;
+	
 	];
 	hydra:mapping[ a hydra:IriTemplateMapping;
 	hydra:variable "nodata"^^xsd:string;
@@ -196,7 +223,7 @@
 	http:paramValue "404";
 	hydra:required "true"^^xsd:boolean;
 	rdfs:range "xsd:string" ;
-	schema:defaultValue "404" ;
+	
 	];
 	] ;
 .
@@ -212,9 +239,9 @@
 .
 
 # Dataset
-<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001> a dcat:Dataset;
-        dct:title "Primary Seismic Waveform Data";
-        dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001";
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/INGV> a dcat:Dataset;
+        dct:title "INGV Seismic Waveform Data";
+        dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/INGV";
         dct:description "Continuous seismic waveforms";
         adms:identifier [ a adms:Identifier ;
         adms:schemaAgency "DDSS-ID" ;
@@ -231,25 +258,26 @@
         dcat:keyword "seismology", "seismicity", "earthquakes", "seismic waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "INGV" , "Dataselect", "FDSN-WS", "Seismic Waveform", "EIDA" ;
         dcat:contactPoint <http://orcid.org/0000-0002-1399-0379/contactPoint>;
 	dct:publisher <PIC:999472675>;
-        dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001>;
+        dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/INGV>;
         dct:spatial [ a dct:Location ;
                       locn:geometry "POLYGON(6.7499552751 36.619987291, 18.4802470232 36.619987291, 6.7499552751 47.1153931748, 18.4802470232 47.1153931748)"^^gsp:wktLiteral ;
         ];
         dct:temporal [ a dct:PeriodOfTime ;
-                schema:startDate "1988-01-01T00:00:00Z"^^xsd:dateTime ;
+                schema:startDate "1990-01-01T00:00:00Z"^^xsd:dateTime ;
                 #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
 	] ;
 .
 
 # Distribution
-<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001> a dcat:Distribution;
-    	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001";
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/INGV> a dcat:Distribution;
+    	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/INGV";
+	dct:title "Seismic Waveform Distribution :: INGV ";
 	dct:description "Description of Seismic Waveform Distribution :: FDSN DATASELECT ";
 	dct:issued "2017-01-01"^^xsd:date ;
 	dct:modified "2017-01-01"^^xsd:date ;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001>;
-	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001>;
+	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001/INGV>;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/INGV>;
 	dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI;
  	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 
@@ -258,8 +286,8 @@
 
 # ############################## WebService Station
 
-<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002> a epos:WebService;
-	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002";
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/INGV> a epos:WebService;
+	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/INGV";
 
 	schema:description "The fdsnws-station web service returns station metadata in FDSN StationXML format (schema here) or as delimited text. The purpose of the FDSN StationXML schema is to define an XML representation of the most important and commonly used structures of SEED 2.4 metadata. Results are available at multiple levels of granularity: network, station, channel and response.";
 	schema:name "FDSN Station Web Service at CNT-INGV";
@@ -268,7 +296,7 @@
 	schema:provider <PIC:999472675>;
 	schema:keywords "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling";
 	hydra:entrypoint "webservices.ingv.it/fdsnws/station/1/application.wadl"^^xsd:anyURI;
-	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/Operation/002>;
+	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/Operation/002/INGV>;
 	dcat:theme <epos:SeismicNetwork>;
 	dcat:contactPoint <http://orcid.org/0000-0002-1399-0379/contactPoint>;
         dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/APIDocumentation> ;
@@ -276,7 +304,7 @@
     		locn:geometry "POLYGON(6.7499552751 36.619987291, 18.4802470232 36.619987291, 6.7499552751 47.1153931748, 18.4802470232 47.1153931748)"^^gsp:wktLiteral ;
   	];
   	dct:temporal [ a dct:PeriodOfTime ;
-          	schema:startDate "1988-01-01T00:00:00"^^xsd:dateTime ;
+          	schema:startDate "1990-01-01T00:00:00"^^xsd:dateTime ;
           	#schema:endDate "YYYY-MM-DDThh:mm:ss"^^xsd:dateTime ;
   	] ;
 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
@@ -290,16 +318,20 @@
 .
 
 # Params
-<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/Operation/002> a hydra:Operation;
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/Operation/002/INGV> a hydra:Operation;
 	hydra:method "GET";
 	hydra:returns "application/xml";
 	hydra:property
 	[ 
 	a hydra:IriTemplate;
-	hydra:template "http://webservices.ingv.it/fdsnws/station/1/query(?starttime, endtime, network, station, location, channel,  minlatitude, maxlatitude, minlongitude, maxlongitude, level, nodata)"^^xsd:string;
+	hydra:template "http://webservices.ingv.it/fdsnws/station/1/query{?starttime, endtime, network, station, location, channel,  minlatitude, maxlatitude, minlongitude, maxlongitude, level, nodata}"^^xsd:string;
 			
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "starttime"^^xsd:string;
+				
+				hydra:property "schema:startDate";
+				schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+				
 				rdfs:label "Start of the timespan";
 				hydra:required "true"^^xsd:boolean;
 				rdfs:range "xsd:dateTime" ;
@@ -307,10 +339,14 @@
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "endtime"^^xsd:string;
+				
+				hydra:property "schema:endDate";
+				schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+				
 				rdfs:label "End of the timespan";
 				hydra:required "true"^^xsd:boolean;
 				rdfs:range "xsd:dateTime" ;
-				schema:defaultValue "2012-02-01T00:00:00" ;
+				schema:defaultValue "2018-02-01T00:00:00" ;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "network"^^xsd:string;
@@ -324,21 +360,21 @@
 				rdfs:label "Station code";
 				hydra:required "true"^^xsd:boolean;
 				rdfs:range "xsd:string" ;
-				schema:defaultValue "ACER" ;
+				schema:defaultValue "*" ;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "location"^^xsd:string;
 				rdfs:label "Location code";
 				hydra:required "true"^^xsd:boolean;
 				rdfs:range "xsd:string" ;
-				schema:defaultValue "" ;
+				schema:defaultValue "*" ;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "channel"^^xsd:string;
 				rdfs:label "Channel code";
 				hydra:required "true"^^xsd:boolean;
 				rdfs:range "xsd:string" ;
-				schema:defaultValue "HHE" ;
+				schema:defaultValue "*" ;
 			];		 
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "minlatitude"^^xsd:string;
@@ -407,9 +443,9 @@
 .
 
 # Dataset
-<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002> a dcat:Dataset;
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/INGV> a dcat:Dataset;
         dct:title "Primary Seismic Waveform Data";
-        dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002";
+        dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/INGV";
         dct:description "Seismic Stations ";
         adms:identifier [ a adms:Identifier ;
             adms:schemaAgency "DDSS-ID" ;
@@ -426,7 +462,7 @@
         dcat:keyword "seismology", "seismicity", "earthquakes", "seismic station", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "station information", "waveform modeling", "INGV" , "Station", "FDSN-WS", "Seismic Station", "EIDA" ;
         dcat:contactPoint <http://orcid.org/0000-0002-1399-0379/contactPoint>;
 	dct:publisher <PIC:999472675>;
-        dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002>;
+        dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/INGV>;
         dct:spatial [ a dct:Location ;
                       locn:geometry "POLYGON(6.7499552751 36.619987291, 18.4802470232 36.619987291, 6.7499552751 47.1153931748, 18.4802470232 47.1153931748)"^^gsp:wktLiteral ;
         ];
@@ -437,14 +473,15 @@
 .
 
 # Distribution
-<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002> a dcat:Distribution;
-    	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002";
-	dct:description "Description of Seismic Stations  :: FDSN STATION ";
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/INGV> a dcat:Distribution;
+    	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/INGV";
+	dct:title "Seismic Stations Distribution :: INGV";
+	dct:description "Description of Seismic Stations  :: INGV";
 	dct:issued "2017-01-01"^^xsd:date ;
 	dct:modified "2017-01-01"^^xsd:date ;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/Operation/002>;
-	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002>;
+	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/Operation/002/INGV>;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/INGV>;
 	dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
  	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 .

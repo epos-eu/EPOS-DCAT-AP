@@ -20,15 +20,16 @@
 ### Domain and subdomain ###
 ###############################################################################
 
-<#Geoelectromagnetism> a skos:ConceptScheme;
+<epos:Geoelectromagnetism> a skos:ConceptScheme;
     dct:title "Geoelectromagnetism";
     dct:description "Relating to the electric or magnetic field of the Earth";
 .
 
-<#Magneticfield> a skos:Concept;
+<epos:Magneticfield> a skos:Concept;
     skos:definition "Geomagnetic data and models without restriction in scale or frequency";
-    skos:inScheme <#Geoelectromagnetism>;
-    skos:prefLabel "Geomagnetic data and models without restriction in scale or frequency";
+    skos:inScheme <epos:Geoelectromagnetism>;
+    #skos:prefLabel "Geomagnetic data and models without restriction in scale or frequency";
+    skos:prefLabel "Magneticfield data";
 .
 
 ###############################################################################
@@ -117,7 +118,7 @@
         schema:streetAddress "The Lyell Centre, Research Avenue South";
         schema:addressLocality "Edinburgh";
         schema:postalCode "EH14 4AP";
-        schema:addressCountry "unknown";
+        schema:addressCountry "United Kingdom";
     ]; 
     schema:url "www.bgs.ac.uk"^^xsd:anyURI;
     schema:email "enquiries@bgs.ac.uk";
@@ -169,7 +170,7 @@
     
     dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
     dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI ;
-    dcat:theme  <#Magneticfield> ;
+    dcat:theme  <epos:Magneticfield> ;
     dcat:keyword "magnetism", "geomagnetism", "global model", "magnetic model", "magnetic survey", "main field", "model", "secular variation", "world model" ;
     dcat:contactPoint <mailto:smf@bgs.ac.uk/contactPoint> ;
     dct:publisher <http://viaf.org/viaf/136554353/>;
@@ -198,7 +199,7 @@
     dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-003/SurveyData/Webservice>;
     dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-003/SurveyData/Operation> ;
     dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI ;
-    dct:format "text/csv; application/json; application/vnd.geo+json"^^xsd:string ;
+    dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI ;
 . 
 
 ###############################################################################
@@ -214,7 +215,7 @@
     schema:dateModified "2018-08-31Z"^^xsd:dateTime;
     schema:provider <http://viaf.org/viaf/136554353/>;
     hydra:entrypoint "http://geomag.bgs.ac.uk/gifs/wdc/global-survey/"^^xsd:anyURI ;
-    dcat:theme  <#Magneticfield> ;
+    dcat:theme  <epos:Magneticfield> ;
     schema:keywords "magnetism", "geomagnetism", "global model", "magnetic model", "magnetic survey", "main field", "model", "secular variation", "world model" ;
     hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-003/SurveyData/Operation> ;
     dct:spatial [ a dct:Location; 
@@ -239,6 +240,8 @@
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "start-year"^^xsd:string;
                 rdfs:label "Start year";
+                hydra:property "schema:startDate";
+                schema:valuePattern "YYYY.yyy";
                 rdfs:range "xsd:decimal" ;
                 schema:defaultValue "1980.0";
                 schema:minValue "1900.0";
@@ -248,6 +251,8 @@
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "end-year"^^xsd:string;
                 rdfs:label "End year";
+                hydra:property "schema:endDate";
+                schema:valuePattern "YYYY.yyy";
                 rdfs:range "xsd:decimal" ;
                 schema:defaultValue "1980.5";
                 schema:minValue "1900.0";
@@ -276,18 +281,18 @@
                 hydra:variable "west-longitude"^^xsd:string;
                 rdfs:label "West longitude";
                 rdfs:range "xsd:decimal";
-                schema:defaultValue "-180.0";
+                schema:defaultValue "0.0";
                 schema:minValue "-180.0";
-                schema:maxValue "180.0";
+                schema:maxValue "360.0";
                 hydra:required "false"^^xsd:boolean;
             ];
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "east-longitude"^^xsd:string;
                 rdfs:label "East longitude";
                 rdfs:range "xsd:decimal";
-                schema:defaultValue "180.0";
+                schema:defaultValue "360.0";
                 schema:minValue "-180.0";
-                schema:maxValue "180.0";
+                schema:maxValue "360.0";
                 hydra:required "false"^^xsd:boolean;
             ];
             hydra:mapping[ a hydra:IriTemplateMapping;
