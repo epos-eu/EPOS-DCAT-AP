@@ -155,10 +155,9 @@
 
 <HazardMap/operation> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
-		hydra:returns "json";
+		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://volcanbox.epsevg.upc.edu:5000/maptype?type=tephrafallout_hazard_map(&volcan=deceptionisland)"^^xsd:string;
-				
+			hydra:template "https://volcanbox.epsevg.upc.edu:5000/maptype{?type,volcan}"^^xsd:string;	
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "volcan"^^xsd:string;
 					rdfs:label "Volcano name that exposes hazard map";
