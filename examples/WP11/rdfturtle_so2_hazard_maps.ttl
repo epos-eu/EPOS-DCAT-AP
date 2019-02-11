@@ -159,7 +159,7 @@
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
-	hydra:template "https://api.vedur.is/epos/v1/hazard_maps_meta{?volcano, hazard_type, }"^^xsd:string;
+	hydra:template "https://api.vedur.is/epos/v1/hazard_maps_meta{?volcano, hazard_type}"^^xsd:string;
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "volcano"^^xsd:string;
 				rdfs:range "xsd:string";
@@ -172,10 +172,6 @@
 				rdfs:label "Type of hazard map, e.g. tephra fallout, volcanic SO2";
 				schema:defaultValue "volcanic SO2";
 				hydra:required "true"^^xsd:boolean;
-			];
-			hydra:mapping[ a hydra:IriTemplateMapping;
-				hydra:variable ""^^xsd:string;
-				hydra:required "false"^^xsd:boolean;
 			];
 	] ;
 . 
