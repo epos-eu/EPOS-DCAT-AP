@@ -16,6 +16,72 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .  
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .  
 
+#########
+# PERSON 
+#########
+
+<http://orcid.org/0000-0001-5750-0872> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "ORCID";
+		schema:value "http://orcid.org/0000-0001-5750-0872";
+	]; 
+        schema:familyName "Barsotti";
+	schema:givenName "Sara";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Bustaðavegur 7-9";
+		schema:addressLocality "Reykjavík";
+		schema:postalCode "108";
+		schema:addressCountry "Iceland";
+	]; 
+	schema:email "sara@vedur.is";
+	schema:telephone "+3545226162";
+	schema:url "http://orcid.org/0000-0001-5750-0872"^^xsd:anyURI;
+	schema:contactPoint <http://orcid.org/0000-0001-5750-0872/scientificContact>;
+	schema:contactPoint <http://orcid.org/0000-0001-5750-0872/contactPoint>;
+. 
+
+#########
+# ContactPoint
+######### 
+
+<http://orcid.org/0000-0001-5750-0872/contactPoint> a schema:ContactPoint;
+		schema:email "sara@vedur.is";
+		schema:availableLanguage "en" ; 
+                schema:contactType "contactPoint" ;
+. 
+<http://orcid.org/0000-0001-5750-0872/scientificContact> a schema:ContactPoint;
+		schema:email "sara@vedur.is";
+		schema:availableLanguage "en" ;
+		schema:contactType "scientificContact" ;
+. 
+
+#########
+# Organization
+######### 
+
+<PIC:997168343> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "PIC ";
+		schema:value "997168343";
+	]; 
+	schema:legalName "Icelandic Meteorological Office";
+	schema:leiCode "6309080350";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Bustaðavegur 7-9";
+		schema:addressLocality "Reykjavík";
+		schema:postalCode "150";
+		schema:addressCountry "Iceland";
+	]; 
+	schema:url "http://en.vedur.is"^^xsd:anyURI;
+	schema:email "office@vedur.is";
+	schema:telephone "+3545226000";
+	schema:contactPoint <http://orcid.org/0000-0001-5750-0872/scientificContact>;
+.
+
+#########
+# Dataset
+######### 
+
 <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/065/data> a dcat:Dataset;
 		dct:title "Daily ash/gas forecasting maps";
 		dct:identifier "www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/065/data";
@@ -44,6 +110,26 @@
 		]; 
 . 
 
+#########
+# Distribution
+######### 
+
+<www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/065/WSDistribution> a dcat:Distribution;
+	dct:identifier "www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/065/WSDistribution";
+	dct:title "Daily ash/gas forecasting maps";
+	dct:description "Forecasting maps";
+	dct:issued "2018-10-01"^^xsd:date;
+	dct:modified "2018-10-01"^^xsd:date;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
+	dcat:accessURL <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/065/Operation/065>;
+	dct:conformsTo <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/065>;
+. 
+
+#########
+# WebService
+######### 
+
 <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/065> a epos:WebService;
 	schema:identifier "www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/065";
 	schema:description "Access the forecasting maps for tephra fallout and gas dispersal";
@@ -65,98 +151,52 @@
 		schema:endDate "2025-01-01T00:00:00Z"^^xsd:dateTime; 
 	]; 
 . 
-	<www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/065/Operation/065> a hydra:Operation;
-		hydra:method "GET"^^xsd:string;
-		hydra:returns "application/json";
-		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://api.vedur.is/epos/v1/dispersion{?Hazard_type, start_time, end_time}"^^xsd:string;
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "Hazard_type"^^xsd:string;
-					rdfs:range "xsd:string";
-					rdfs:label "Type of hazard, e.g. gas, tephra fallout";
-					schema:defaultValue "tephra fallout";
-					hydra:required "true"^^xsd:boolean;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "start_time"^^xsd:string;
-					rdfs:range "xsd:dateTime";
-					rdfs:label "Start date (YYYY-MM-DDTHH:MM:SS)";
-					hydra:required "false"^^xsd:boolean;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "end_time"^^xsd:string;
-					rdfs:range "xsd:dateTime";
-					rdfs:label "End date (YYYY-MM-DDTHH:MM:SS)";
-					hydra:required "false"^^xsd:boolean;
-				];
-		] ;
-. 
-	<www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/065/WSDistribution> a dcat:Distribution;
-		dct:identifier "www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/065/WSDistribution";
-		dct:title "Daily ash/gas forecasting maps";
-		dct:description "Forecasting maps";
-		dct:issued "2018-10-01"^^xsd:date;
-		dct:modified "2018-10-01"^^xsd:date;
-		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
-                dcat:accessURL <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/065/Operation/065>;
-                dct:conformsTo <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/065>;
-. 
-	<epos:Geohazards> a skos:Concept;
-		skos:definition "Maps show the hourly forecast of tephra fallout and gas dispersal";
-		skos:inScheme <epos:VolcanoObservations>;
-		skos:prefLabel "Geohazards";
-. 
-	<epos:VolcanoObservations> a skos:ConceptScheme;
-		dct:title "Volcano Observations";
-		dct:description "Daily ash/gas forecasting maps";
+
+#########
+# Operation
+#########
+
+<www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/065/Operation/065> a hydra:Operation;
+	hydra:method "GET"^^xsd:string;
+	hydra:returns "application/json";
+	hydra:property[ a hydra:IriTemplate;
+		hydra:template "https://api.vedur.is/epos/v1/dispersion{?Hazard_type, start_time, end_time}"^^xsd:string;
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "Hazard_type"^^xsd:string;
+				rdfs:range "xsd:string";
+				rdfs:label "Type of hazard, e.g. gas, tephra fallout";
+				schema:defaultValue "tephra fallout";
+				hydra:required "true"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "start_time"^^xsd:string;
+				rdfs:range "xsd:dateTime";
+				rdfs:label "Start date (YYYY-MM-DDTHH:MM:SS)";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "end_time"^^xsd:string;
+				rdfs:range "xsd:dateTime";
+				rdfs:label "End date (YYYY-MM-DDTHH:MM:SS)";
+				hydra:required "false"^^xsd:boolean;
+			];
+	] ;
 . 
 
-<PIC:997168343> a schema:Organization;
-	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "PIC ";
-		schema:value "997168343";
-	]; 
-	schema:legalName "Icelandic Meteorological Office";
-	schema:leiCode "6309080350";
-	schema:address [ a schema:PostalAddress;
-		schema:streetAddress "Bustaðavegur 7-9";
-		schema:addressLocality "Reykjavík";
-		schema:postalCode "150";
-		schema:addressCountry "Iceland";
-	]; 
-	schema:url "http://en.vedur.is"^^xsd:anyURI;
-	schema:email "office@vedur.is";
-	schema:telephone "+3545226000";
-	schema:contactPoint <http://orcid.org/0000-0001-5750-0872/scientificContact>;
+#########
+# Concept
+######### 
+
+<epos:Geohazards> a skos:Concept;
+	skos:definition "Maps show the hourly forecast of tephra fallout and gas dispersal";
+	skos:inScheme <epos:VolcanoObservations>;
+	skos:prefLabel "Geohazards";
+. 
+<epos:VolcanoObservations> a skos:ConceptScheme;
+	dct:title "Volcano Observations";
+	dct:description "Daily ash/gas forecasting maps";
 . 
 
-<http://orcid.org/0000-0001-5750-0872> a schema:Person;
-	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "ORCID";
-		schema:value "http://orcid.org/0000-0001-5750-0872";
-	]; 
-        schema:familyName "Barsotti";
-	schema:givenName "Sara";
-	schema:address [ a schema:PostalAddress;
-		schema:streetAddress "Bustaðavegur 7-9";
-		schema:addressLocality "Reykjavík";
-		schema:postalCode "108";
-		schema:addressCountry "Iceland";
-	]; 
-	schema:email "sara@vedur.is";
-	schema:telephone "+3545226162";
-	schema:url "http://orcid.org/0000-0001-5750-0872"^^xsd:anyURI;
-	schema:contactPoint <http://orcid.org/0000-0001-5750-0872/scientificContact>;
-	schema:contactPoint <http://orcid.org/0000-0001-5750-0872/contactPoint>;
-. 
-	<http://orcid.org/0000-0001-5750-0872/contactPoint> a schema:ContactPoint;
-		schema:email "sara@vedur.is";
-		schema:availableLanguage "en" ; 
-                schema:contactType "contactPoint" ;
-. 
-	<http://orcid.org/0000-0001-5750-0872/scientificContact> a schema:ContactPoint;
-		schema:email "sara@vedur.is";
-		schema:availableLanguage "en" ;
-		schema:contactType "scientificContact" ;
-. 
+ 
+
+
