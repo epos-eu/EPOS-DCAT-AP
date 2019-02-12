@@ -240,6 +240,8 @@
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "start-year"^^xsd:string;
                 rdfs:label "Start year";
+                hydra:property "schema:startDate";
+                schema:valuePattern "YYYY.yyy";
                 rdfs:range "xsd:decimal" ;
                 schema:defaultValue "1980.0";
                 schema:minValue "1900.0";
@@ -249,6 +251,8 @@
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "end-year"^^xsd:string;
                 rdfs:label "End year";
+                hydra:property "schema:endDate";
+                schema:valuePattern "YYYY.yyy";
                 rdfs:range "xsd:decimal" ;
                 schema:defaultValue "1980.5";
                 schema:minValue "1900.0";

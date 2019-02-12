@@ -108,7 +108,7 @@
 	schema:contactPoint <http://orcid.org/0000-0001-7750-7254/scientificContact> ;
 	schema:contactPoint <http://orcid.org/0000-0001-7750-7254/financialContact> ;
   schema:memberOf <PIC:997012076> ;
-  schema:owns <https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/001> ;
+  schema:owns <https://doi.org/10.21944/e970fd34-23b9-3411-b366-e4f72877d2c5> ;
 .
 
 <PIC:997012076> a schema:Organization ;
@@ -261,8 +261,8 @@
 
   # This property refers to a temporal period that the Dataset covers.
   dct:temporal [ a dct:PeriodOfTime ;
-          schema:startDate "1988-01-01T00:00:00"^^xsd:dateTime ;
-          #schema:endDate "YYYY-MM-DDThh:mm:ss"^^xsd:dateTime ;
+          schema:startDate "1988-01-01T00:00:00Z"^^xsd:dateTime ;
+          #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
   ] ;
   # This property refers to the licence under which the Distribution is made available.
   dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
@@ -286,6 +286,9 @@
         		hydra:mapping[ a hydra:IriTemplateMapping ;
                   # This property contains the name of the parameter as required by web service specifications
                   hydra:variable "starttime"^^xsd:string ;
+		  
+		  hydra:property "schema:startDate";
+                  schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 
                   # This property contains a short string used to describe the meaning of the parameter to the GUI user.
 				          rdf:label "Start of the timespan" ;
@@ -298,13 +301,13 @@
                   rdfs:range "xsd:dateTime" ;
 
                   # This property contains the default value of the parameter
-                  schema:defaultValue "2012-01-01T00:00:00T" ;
+                  schema:defaultValue "2012-01-01T00:00:00" ;
 
                   # The minimum value of the parameter
-                  # schema:minValue "2012-01-01T00:00:00T" ;
+                  # schema:minValue "2012-01-01T00:00:00" ;
 
                   # The maximum value of the parameter
-                  # schema:maxValue "2017-12-01T00:00:00T" ;
+                  # schema:maxValue "2017-12-01T00:00:00" ;
 
                   # This property contains one of the possible value which should be used in the web service query
                   # It could be repeated as many times as needed.
@@ -312,10 +315,14 @@
            	];
               		hydra:mapping[ a hydra:IriTemplateMapping ;
                			hydra:variable "endtime"^^xsd:string ;
-				            rdf:label "End of the timespan" ;
+				
+				hydra:property "schema:endDate";
+                                schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+				
+				rdf:label "End of the timespan" ;
                			hydra:required "true"^^xsd:boolean ;
                     rdfs:range "xsd:dateTime" ;
-                    schema:defaultValue "2012-02-01T00:00:00T" ;
+                    schema:defaultValue "2012-02-01T00:00:00" ;
 
               		];
               		hydra:mapping[ a hydra:IriTemplateMapping ;
@@ -337,92 +344,6 @@
        	];
 .
 
-<https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/001> a epos:Facility ;
-    dct:description "Seismic Network: Netherlands Seismic and Acoustic Network" ;
-    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/001" ;
-    dct:title "Seismic Network" ;
-
-    # This property refers to the URI or category which describe the type of the Facility.
-    dct:type "https://orfeus-eu.org/ns/network"^^xsd:anyURI ;
-
-    # This property refers to a category of the Facility. A Facility may be associated with multiple themes.
-    dcat:theme <epos:SeismicNetwork> ;
-
-    # This property refers to a Facility in which the described Facility is included.
-    # dct:isPartOf </https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/other> ;
-
-    #This property contains the physical address of the Facility.
-    vcard:hasAddress [ a vcard:Address ;
-						vcard:country-name "countryName" ;
-						vcard:locality "locality" ;
-						vcard:postal-code "postal-code" ;
-						vcard:region "Region" ;
-						vcard:street-address "Street Address" ;
-		];
-
-    # This property contains contact information that can be used for sending comments about the Facility.
-    dcat:contactPoint <http://orcid.org/0000-0002-6250-2474/contactPoint> ;
-
-    # This property refers to a related resource (e.g., Dataset, WebService).
-    dct:relation <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001> ;
-
-.
-
-<https://www.epos-eu.org/epos-dcat-ap/Seismology/Equipment/001> a epos:Equipment;
-    schema:description "Specific channel recording ground motion" ;
-    schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Equipment/001" ;
-    schema:name "Seismic Instrument for NL.HGN..BHE" ;
-
-    # This property refers to the URI or category which describe the type of the Equipment.
-    dct:type "https://orfeus-eu.org/ns/channel"^^xsd:anyURI ;
-
-    # This property refers to an Organisation responsible for manufacturing the Equipment.
-    schema:manufacturer <PIC:999518944> ;
-
-    schema:serialNumber "NL.HGN..BHE" ;
-
-    # This property refers to an Equipment or a Facility in which the described Equipment is included.
-    dct:isPartOf <https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/001> ;
-
-    dcat:contactPoint <http://orcid.org/0000-0002-6250-2474/contactPoint> ;
-
-    # This property refers to a geographical location of the Equipment.
-    # The format is: POINT(lon lat elevation). Skip elevation when the value is 0.
-    dct:spatial [ a dct:Location ;
-            locn:geometry "POINT(50.764 5.9317 135.0)"^^gsp:wktLiteral ;
-            ] ;
-
-    # This property describes the filter that the instrument uses to produce data.
-    epos:filter "filter";
-
-    # This property contains the full-scale measuring ability (unit and value).
-    epos:dynamicRange [ a schema:QuantitativeValue ;
-        	schema:unitCode "unit code"; # http://wiki.goodrelations-vocabulary.org/Documentation/UN/CEFACT_Common_Codes
-        	schema:value "value" ;
-    ];
-
-    # This property contains the sample period (unit and value).
-    epos:samplePeriod [ a schema:QuantitativeValue ;
-        	schema:unitCode "unit code" ; # http://wiki.goodrelations-vocabulary.org/Documentation/UN/CEFACT_Common_Codes
-        	schema:value "value" ;
-    ];
-
-    # This property contains the resolution in nT.
-    epos:resolution "resolution" ;
-
-    # This property describes how the instrument is oriented.
-    epos:orientation "90.0/0.0"^^xsd:string ;
-
-    # This property refers to the temporal period of operation of the Equipment.
-    schema:endDate "2012-01-01T00:00:00Z"^^xsd:dateTime ;
-    schema:startDate "2012-01-01T00:00:00Z"^^xsd:dateTime ;
-
-    # This property refers to a related resource (e.g., Dataset, WebService).
-    dct:relation <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001> ;
-
-    # This property refers to a category of the Equipment. A Equipment may be associated with multiple themes.
-    dcat:theme <epos:SeismicNetwork> ;
-.
 
 <epos:Seismology> a skos:ConceptScheme ;
 	dct:title "Seismology" ;
@@ -439,5 +360,162 @@
     skos:definition "Collection of seismic stations in a seismic network" ;
     skos:inScheme <epos:Seismology> ;
     skos:prefLabel "Seismic Network" ;
+.
+
+<epos:SeismicStation> a skos:Concept ;
+    skos:definition "Station of a seismic network" ;
+    skos:inScheme <epos:Seismology> ;
+    skos:prefLabel "Seismic Station" ;
+.
+
+<https://github.com/Jollyfant/EPOS-TURTLE> a schema:SoftwareSourceCode;
+  schema:identifier "https://github.com/Jollyfant/EPOS-TURTLE" ;
+  schema:name "Python library for EPOS-RDF conversion" ;
+  schema:description "Python library for EPOS-RDF conversion" ;
+
+  # This property contains contact information that can be used for sending comments about the software.
+  schema:contactPoint <http://orcid.org/0000-0002-6250-2474/contactPoint> ;
+
+  # Link to the repository where the un-compiled, human readable code and related code is located (SVN, github, CodePlex).
+  schema:codeRepository "https://github.com/Jollyfant/EPOS-TURTLE"^^xsd:anyURI ;
+
+  # This property refers to the licence under which the software is made available.
+  schema:license "https://github.com/Jollyfant/EPOS-TURTLE/blob/master/LICENSE"^^xsd:anyURI ;
+
+  # This property refers to the version of the software.
+  schema:softwareVersion "1.0";
+
+  # The computer programming language.
+  schema:programmingLanguage "Python";
+
+  # This property refers to the web page URL which describes the software.
+  schema:mainEntityOfPage "web page URL which describes the software"^^xsd:anyURI ;
+
+  schema:keywords "keyword1", "keyword2", "keyword3" ;
+  dcat:theme <epos:SeismicWaveform> ;
+.
+
+<softwareID> a schema:SoftwareApplication;
+  # This property contains one or more identifier for the software
+  schema:identifier "softwareID" ;
+ 
+  schema:identifier [ a schema:PropertyValue ;
+  	schema:propertyID  "DDSS-ID" ;
+  	schema:value "WP8-DDSS-XXX" ;
+  ];
+  schema:name "name of the software" ;
+  schema:description "description of the software" ;
+
+  # This property contains contact information that can be used for sending comments about the software.
+  schema:contactPoint  <http://orcid.org/0000-0002-6250-2474/contactPoint> ;
+
+  # This property refers to the URL to download the software.
+  schema:downloadUrl "URL to download the software"^^xsd:anyURI ;
+
+  # This property refers to the licence under which the software is made available.
+  schema:license "https://www.gnu.org/licenses/gpl.html"^^xsd:anyURI ;
+
+  # This property refers to the version of the software.
+  schema:softwareVersion "1.1";
+
+  # This property refers to the web page URL which describes the software.
+  schema:mainEntityOfPage "web page URL which describes the software"^^xsd:anyURI ;
+
+  schema:keywords "keyword1", "keyword2", "keyword3" ;
+  dcat:theme <epos:SeismicWaveform> ;
+.
+
+<https://doi.org/10.21944/e970fd34-23b9-3411-b366-e4f72877d2c5> a epos:Facility ;
+
+    # This property contains the main identifier for the Facility.
+    dct:identifier "https://doi.org/10.21944/e970fd34-23b9-3411-b366-e4f72877d2c5" ;
+
+    # This property contains a name given to the Facility.
+    dct:title "Netherlands Seismic and Acoustic Network - NL" ;
+
+    # This property contains a free-text description of the Facility.
+    dct:description "Netherlands Seismic and Acoustic Network - NL" ;
+
+    # This property refers to the URI or category (skos:Concept) which describe the type of the Facility.
+    dct:type "https://orfeus-eu.org/ns/network"^^xsd:anyURI ;
+
+    # This property refers to a category (skos:Concept) of the Facility.
+    dcat:theme <epos:SeismicNetwork> ;
+
+    # This property refers to a Facility in which the described Facility is included.
+    # dct:isPartOf </https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/other> ;
+
+    # This property contains the physical address of the Facility.
+    vcard:hasAddress [ a vcard:Address ;
+	vcard:country-name "The Netherlands" ;
+	#vcard:locality "locality" ;
+	#vcard:postal-code "postal-code" ;
+	#vcard:street-address "Street Address" ;
+    ];
+
+    # This property contains contact information that can be used for sending comments about the Facility.
+    dcat:contactPoint <http://orcid.org/0000-0002-6250-2474/contactPoint> ;
+
+    # This property refers to a related resource (e.g., Dataset, WebService).
+    dct:relation <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001> ;
+.
+
+<https://www.fdsn.org/networks/NL/station/DBN> a epos:Equipment;
+
+    schema:identifier "https://www.fdsn.org/networks/NL/station/DBN" ;
+    schema:name "Netherlands Seismic and Acoustic Network - Station DBN" ;
+    schema:description "Netherlands Seismic and Acoustic Network - Station DBN" ;
+
+    # This property refers to the URI or category which describe the type of the Equipment.
+    dct:type "https://orfeus-eu.org/ns/station"^^xsd:anyURI ;
+
+    # This property refers to an Organisation responsible for manufacturing the Equipment.
+    schema:manufacturer <PIC:999518944> ;
+
+    schema:serialNumber "serialNumber" ;
+
+    # This property refers to an Equipment or a Facility in which the described Equipment is included.
+    dct:isPartOf <https://doi.org/10.21944/e970fd34-23b9-3411-b366-e4f72877d2c5> ;
+
+    dcat:contactPoint <http://orcid.org/0000-0002-6250-2474/contactPoint> ;
+
+    # This property refers to a geographical location of the Equipment.
+    # The format is: POINT(lon lat elevation). Skip elevation when the value is 0.
+    dct:spatial [ a dct:Location ;
+            locn:geometry "POINT(5.1767 52.1017 3)"^^gsp:wktLiteral ;
+    ] ;
+
+    # This property describes the filter that the instrument uses to produce data.
+    epos:filter "filter";
+
+    # This property contains the full-scale measuring ability (unit and value).
+    epos:dynamicRange [ a schema:QuantitativeValue ;
+        	schema:unitCode "unit code"; # http://wiki.goodrelations-vocabulary.org/Documentation/UN/CEFACT_Common_Codes
+        	schema:value "0.0"^^xsd:double ;
+    ];
+
+    # This property contains the sample period (unit and value).
+    epos:samplePeriod [ a schema:QuantitativeValue ;
+        	schema:unitCode "unit code" ; # http://wiki.goodrelations-vocabulary.org/Documentation/UN/CEFACT_Common_Codes
+        	schema:value "0"^^xsd:integer ;
+    ];
+
+    # This property contains the resolution in nT.
+    epos:resolution "resolution" ;
+
+    # This property describes how the instrument is oriented.
+    epos:orientation "90.0/0.0"^^xsd:string ;
+
+    # This property refers to the temporal period of operation of the Equipment.
+    dct:temporal [ a dct:PeriodOfTime ;
+                schema:startDate "1997-11-25T00:00:00Z"^^xsd:dateTime ;
+                #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
+    ] ;
+    
+    # This property refers to a related resource (e.g., Dataset, WebService).
+    dct:relation <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001> ;
+
+    # This property refers to a category of the Equipment. A Equipment may be associated with multiple themes.
+    dcat:theme <epos:SeismicStation> ;
 .
 

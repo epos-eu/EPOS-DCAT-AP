@@ -225,6 +225,8 @@
         hydra:template "http://space.fmi.fi/cgi-bin/imagecgi/image-epos-electrojet-events.cgi{?start, yourname, institute, email, submit}"^^xsd:string;
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "start"^^xsd:string;
+                hydra:property "schema:startDate";
+                schema:valuePattern "YYYYMMDD";
                 rdfs:label "Date (yyyymmdd)";
                 rdfs:range "xsd:integer" ;
                 schema:minValue "19821001";

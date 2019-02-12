@@ -167,7 +167,7 @@
 	];
 	# This property refers to a temporal period that the Dataset covers.
     dct:temporal [ a dct:PeriodOfTime ;
-        schema:startDate "2015-06-01T00:00:00"^^xsd:dateTime ;
+        schema:startDate "2015-06-01T00:00:00Z"^^xsd:dateTime ;
         #schema:endDate "YYYY-MM-DDThh:mm:ss"^^xsd:dateTime ;
     ];
 	dcat:theme  <epos:CO2concentration> ;
@@ -236,6 +236,8 @@
 			schema:minValue "2015-06-01T00:00:00.000Z";
 			schema:maxValue "2017-12-31T00:00:00.000Z";
 			schema:defaultValue "2016-12-01T00:00:00.000Z";
+			hydra:property "schema:startDate";
+      		schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -245,6 +247,8 @@
 			schema:minValue "2015-06-01T00:00:00.000Z";
 			schema:maxValue "2017-12-31T00:00:00.000Z";
 			schema:defaultValue "2016-12-31T23:59:00.000Z";
+			hydra:property "schema:endDate";
+      		schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;

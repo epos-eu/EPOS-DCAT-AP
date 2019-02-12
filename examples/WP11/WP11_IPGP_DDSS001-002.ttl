@@ -16,6 +16,8 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
+# PERSON 
+
 <https://orcid.org/0000-0003-2936-8047> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "orcid";
@@ -142,12 +144,15 @@
 
 .
 
+# Organization
+
 <PIC:999597417> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "pic";
 		schema:value "999597417";
 	];
 	schema:legalName "Institute of Earth Physics of Paris";
+        schema:leiCode "Legal Entity Identifier Search: http://www.lei-lookup.com/#!search" ;
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "1 rue jussieu";
 		schema:addressLocality "Paris";
@@ -188,13 +193,17 @@
 	schema:contactType "contactPoint" ;
 .
 
+#########
+# Organization
+#########
 
 <PIC:999997930> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "pic";
+		schema:propertyID "PIC";
 		schema:value "999997930";
 	];
 	schema:legalName "RESIF Data Center";
+        schema:leiCode "Legal Entity Identifier Search: http://www.lei-lookup.com/#!search" ;
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "Université Grenoble Alpes,ISTerre,CS 40700";
 		schema:addressLocality "Grenoble Cedex 9";
@@ -203,9 +212,9 @@
 	];
 	schema:url "http://seismology.resif.fr/"^^xsd:anyURI;
 	schema:email "datacenter@resif.fr";
-   schema:contactPoint <https://orcid.org/0000-0003-2936-8047/scientificContact>;
-   schema:contactPoint <https://orcid.org/0000-0003-1777-9172/legalContact>;
-   schema:contactPoint <https://orcid.org/0000-0002-9956-9971/contactPoint>;
+        schema:contactPoint <https://orcid.org/0000-0003-2936-8047/scientificContact>;
+        schema:contactPoint <https://orcid.org/0000-0003-1777-9172/legalContact>;
+        schema:contactPoint <https://orcid.org/0000-0002-9956-9971/contactPoint>;
 .
 
 # Contacts
@@ -228,25 +237,10 @@
 	schema:contactType "legalContact" ;
 .
 
-# Domain and subdomain
 
-	<epos:VolcanoObservations> a skos:ConceptScheme;
-		dct:title "Volcano Observations";
-		dct:description "It contains the concepts of Volcano-Observations";
-.
-	#<epos:Seismicwaveforms> a skos:Concept;
-	#	skos:inScheme <epos:VolcanoObservations>;
-	#	skos:prefLabel "Seismic waveform" ;
-	#	skos:definition "Seismic waveforms" ;
-#.
-	<epos:Seismicstations> a skos:Concept;
-		skos:inScheme <epos:VolcanoObservations>;
-		skos:prefLabel "Seismic station" ;
-		skos:definition "Seismic stations" ;
-.
 # Dataset 
 
-	<WP11/seismicdata/DDSS001> a dcat:Dataset;
+<WP11/seismicdata/DDSS001> a dcat:Dataset;
 		dct:title "Seismic Stations and Waveform";
 		dct:identifier "WP11/seismicdata/DDSS001";
 		adms:identifier [ a adms:Identifier;
@@ -255,37 +249,38 @@
 		];
 		dct:description "seismic and accelerometric station metadata in FDSN StationXML format and  waveforms in miniseed format.";
 		dct:created "2011-01-01"^^xsd:date;
-	dct:temporal [ a dct:PeriodOfTime;
-		schema:startDate "2000-01-01T00:00:00Z"^^xsd:dateTime;
-		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
-	];
-	dct:spatial [ a dct:Location;
-		locn:geometry "POLYGON(180 -90,-180 -90,-180 90,180 90,180 -90)"^^gsp:wktLiteral;
-	];
-		#dcat:theme <epos:Seismicwaveforms>;
-		dcat:theme <epos:Seismicstations>;
+		dct:temporal [ a dct:PeriodOfTime;
+			schema:startDate "2000-01-01T00:00:00Z"^^xsd:dateTime;
+			#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
+		];
+		dct:spatial [ a dct:Location;
+			locn:geometry "POLYGON(180 -90,-180 -90,-180 90,180 90,180 -90)"^^gsp:wktLiteral;
+		];
+		dcat:theme <epos:SeismicWaveform>;
+		dcat:theme <epos:SeismicStation>;
 		dcat:keyword "volcanology", "seismology","seismicity", "waveform", "macroseismic","IPGP", "RESIF", "Dataselect", "FDSN-WS", "EIDA" ,"StationXML","miniseed";
 		dct:publisher <PIC:999597417>;
-		dcat:distribution <http://ws.resif.fr/fdsnws/dataselect/1/query>;
+		dcat:distribution <WP11/seismicdata/DDSS001/distribution/dataselect>;
 		dcat:distribution <http://ws.resif.fr/fdsnws/station/1/query>;
 		owl:versionInfo "0";
 		dcat:contactPoint <https://orcid.org/0000-0002-9956-9971/contactPoint>;
 .
 
 # distribution
-	<http://ws.resif.fr/fdsnws/dataselect/1/query> a dcat:Distribution;
-		dct:identifier "http://ws.resif.fr/fdsnws/dataselect/1/query";
+<WP11/seismicdata/DDSS001/distribution/dataselect> a dcat:Distribution;
+		dct:identifier "WP11/seismicdata/DDSS001/distribution/dataselect";
 		dct:title "Seismic waveform";
 		dct:description "Seismic waveform";
 		dct:issued "2013-01-01"^^xsd:date;
 		dct:modified "2017-12-09"^^xsd:date;
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <ws.resif.fr/fdsnws/dataselect/ws>;
-		dcat:accessURL <ws.resif.fr/fdsnws/dataselect/>;
+		dcat:accessURL <ws.resif.fr/fdsnws/dataselect/operation>;
 		dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI;
 .
-	<http://ws.resif.fr/fdsnws/station/1/query> a dcat:Distribution;
+
+<http://ws.resif.fr/fdsnws/station/1/query> a dcat:Distribution;
 		dct:identifier "http://ws.resif.fr/fdsnws/station/1/query";
 		dct:title "seismic meta-data";
 		dct:description "StationXML meta-data";
@@ -297,16 +292,13 @@
 		dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
 .
+
 # Webservice Dataselect
 
 <ws.resif.fr/fdsnws/dataselect/ws> a epos:WebService;
 	schema:identifier "ws.resif.fr/fdsnws/dataselect/ws";
-	#schema:identifier [ a schema:PropertyValue;
-		#schema:propertyID  "DDSS-ID";
-		#schema:value  "";
-	#];
 	schema:description "FDSN Standard webservice at RESIF to download waveform data and stationXML metadata";
-	dcat:theme <epos:Seismicwaveforms>;
+	dcat:theme <epos:SeismicWaveform>;
 	schema:name "FDSN-WS - Resif data center (RESIF)";
 	hydra:entrypoint "http://ws.resif.fr/fdsnws/"^^xsd:anyURI;
 	schema:provider <PIC:999997930>;
@@ -315,8 +307,7 @@
 	dct:spatial [ a dct:Location;
 		locn:geometry "POLYGON(180.0 -90.0,-180.0 -90.0,-180.0 90.0,180.0 90.0,180.0 -90.0)"^^gsp:wktLiteral;
 	];
-	hydra:supportedOperation <ws.resif.fr/fdsnws/dataselect>;
-	
+	hydra:supportedOperation <ws.resif.fr/fdsnws/dataselect/operation>;
 	schema:keywords "Seismology"," IPGP","RESIF-SI","dataselect","FDSN-WS","seismic waveforms";
 	dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 	dct:temporal [ a dct:PeriodOfTime;
@@ -325,15 +316,12 @@
 	];
 	dcat:contactPoint <https://orcid.org/0000-0002-9956-9971/contactPoint>;
 .
+
 # Webservice Station
 <ws.resif.fr/fdsnws/station/ws> a epos:WebService;
 	schema:identifier "ws.resif.fr/fdsnws/station/ws";
-	#schema:identifier [ a schema:PropertyValue;
-		#schema:propertyID  "DDSS-ID";
-		#schema:value  "";
-	#];
 	schema:description "FDSN Standard webservice at RESIF to download waveform data and stationXML metadata";
-	dcat:theme <epos:Seismicstations>;
+	dcat:theme <epos:SeismicStation>;
 	schema:name "FDSN-WS - Resif data center (RESIF)";
 	hydra:entrypoint "http://ws.resif.fr/fdsnws/"^^xsd:anyURI;
 	schema:provider <PIC:999997930>;
@@ -353,20 +341,24 @@
 	dcat:contactPoint <https://orcid.org/0000-0002-9956-9971/contactPoint>;
 .
 
-	<ws.resif.fr/fdsnws/dataselect> a hydra:Operation;
+<ws.resif.fr/fdsnws/dataselect/operation> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/vnd.fdsn.mseed";
 		hydra:property[ a hydra:IriTemplate;
 			hydra:template "http://ws.resif.fr/fdsnws/dataselect/1/query{?starttime, endtime, network, station, location, channel, quality, minimumlength, longestonly}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "starttime"^^xsd:dateTime;
+					hydra:property "schema:startDate";
+					schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 					rdfs:range "xsd:dateTime";
 					rdfs:label "start of the timespan of requested data (format:YYYY-MM-DD or YYYY-MM-DDTHH:MM:SS)";
-          schema:defaultValue "2018-01-01T00:00:00";
+                                        schema:defaultValue "2018-01-01T00:00:00";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "endtime"^^xsd:dateTime;
+					hydra:property "schema:endDate";
+					schema:valuePattern "YYYY-MM-DDThh:mm:ss";					
 					rdfs:range "xsd:dateTime";
 					rdfs:label "end of the timespan of requested data (format:YYYY-MM-DD  or YYYY-MM-DDTHH:MM:SS)";
           schema:defaultValue "2018-01-02T00:00:00";
@@ -437,6 +429,8 @@
 			hydra:template "http://ws.resif.fr/fdsnws/station/1/query{?starttime, endtime, network, station, location, channel, minlatitude, maxlatitude, minlongitude, maxlongitude, level, nodata}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "starttime"^^xsd:dateTime;
+					hydra:property "schema:startDate";
+					schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 					rdfs:range "xsd:dateTime";
 					rdfs:label "start of the timespan of requested data (format:YYYY-MM-DD or YYYY-MM-DDTHH:MM:SS)";
 					schema:defaultValue "2008-01-01";
@@ -444,6 +438,8 @@
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "endtime"^^xsd:dateTime;
+					hydra:property "schema:endDate";
+					schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 					rdfs:range "xsd:dateTime";
 					rdfs:label "end of the timespan of requested data (format:YYYY-MM-DD  or YYYY-MM-DDTHH:MM:SS)";
 					schema:defaultValue "2008-01-02";
@@ -533,4 +529,22 @@
 				];
 		] ;
 .
+
+# Domain and subdomain
+
+<epos:VolcanoObservations> a skos:ConceptScheme;
+	dct:title "Volcano Observations";
+	dct:description "It contains the concepts of Volcano-Observations";
+.
+<epos:SeismicWaveform> a skos:Concept;
+	skos:inScheme <epos:VolcanoObservations>;
+	skos:prefLabel "Seismic waveforms";
+.
+
+<epos:SeismicStation> a skos:Concept;
+	skos:inScheme <epos:VolcanoObservations>;
+	skos:prefLabel "Seismic station";
+.
+
+		
 

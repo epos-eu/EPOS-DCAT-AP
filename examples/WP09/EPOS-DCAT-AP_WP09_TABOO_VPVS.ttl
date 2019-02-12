@@ -169,8 +169,8 @@
 	];
 	# This property refers to a temporal period that the Dataset covers.
     dct:temporal [ a dct:PeriodOfTime ;
-        schema:startDate "2010-04-01T00:00:00"^^xsd:dateTime ;
-        #schema:endDate "YYYY-MM-DDThh:mm:ss"^^xsd:dateTime ;
+        schema:startDate "2010-04-01T00:00:00Z"^^xsd:dateTime ;
+        schema:endDate "2018-01-01T00:00:00Z"^^xsd:dateTime ;
     ];
 	# This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
 	dcat:theme  <epos:Crustalvelocityparameters> ;
@@ -230,6 +230,8 @@
 			schema:minValue "2001-12-31T12:00:00.000Z";
 			schema:maxValue "2017-06-20T12:00:00.000Z";
 			schema:defaultValue "2014-05-10T12:00:00.000Z";
+			hydra:property "schema:startDate";
+      		schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -239,6 +241,8 @@
 			schema:minValue "2001-12-31T12:00:00.000Z";
 			schema:maxValue "2017-06-20T12:00:00.000Z";
 			schema:defaultValue "2014-06-10T12:00:00.000Z";
+			hydra:property "schema:endDate";
+      		schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
