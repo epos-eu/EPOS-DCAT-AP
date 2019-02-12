@@ -485,14 +485,18 @@
 	hydra:template "http://ws.resif.fr/fdsnws/dataselect/1/query{?starttime, endtime, network, station, location, channel, quality, minimumlength, nodata}"^^xsd:string;
 	
 				hydra:mapping[ a hydra:IriTemplateMapping;
-				hydra:variable "starttime"^^xsd:string;
-				rdfs:range "xsd:date";
-				rdfs:label "Start of the timespan";
-				hydra:required "true"^^xsd:boolean;
-				schema:defaultValue "2018-01-01T00:00:00"
+				        hydra:variable "starttime"^^xsd:string;
+                                        hydra:property "schema:startDate";
+                                        schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+				        rdfs:range "xsd:date";
+				        rdfs:label "Start of the timespan";
+				        hydra:required "true"^^xsd:boolean;
+				        schema:defaultValue "2018-01-01T00:00:00"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "endtime"^^xsd:string;
+                                        hydra:property "schema:endDate";
+                                        schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 					rdfs:range "xsd:date";
 					rdfs:label "End of the timespan";
 					hydra:required "true"^^xsd:boolean;
@@ -558,6 +562,8 @@
                         hydra:template "http://eida.gein.noa.gr/fdsnws/dataselect/1/query{?starttime, endtime, network, station, location, channel, quality, minimumlength, nodata}"^^xsd:string;
                                 hydra:mapping[ a hydra:IriTemplateMapping;
                                         hydra:variable "starttime"^^xsd:string;
+                                        hydra:property "schema:startDate";
+                                        schema:valuePattern "YYYY-MM-DDThh:mm:ss";
                                         rdfs:range "xsd:date";
                                         rdfs:label "Start of the timespan";
                                         hydra:required "true"^^xsd:boolean;
@@ -565,6 +571,8 @@
                                 ];
                                 hydra:mapping[ a hydra:IriTemplateMapping;
                                         hydra:variable "endtime"^^xsd:string;
+                                        hydra:property "schema:endDate";
+                                        schema:valuePattern "YYYY-MM-DDThh:mm:ss";
                                         rdfs:range "xsd:date";
                                         rdfs:label "End of the timespan";
                                         hydra:required "true"^^xsd:boolean;
@@ -632,6 +640,8 @@
 		hydra:template "http://ws.resif.fr/fdsnws/station/1/query{?starttime, endtime, network, station, location, channel, minlatitude, maxlatitude, minlongitude, maxlongitude, level, nodata, matchtimeseries}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "starttime"^^xsd:string;
+                                        hydra:property "schema:startDate";
+                                        schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 					rdfs:range "xsd:date";
 					rdfs:label "Start of the timespan";
 					hydra:required "true"^^xsd:boolean;
@@ -639,6 +649,8 @@
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "endtime"^^xsd:string;
+                                        hydra:property "schema:endDate";
+                                        schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 					rdfs:range "xsd:date";
 					rdfs:label "End of the timespan";
 					hydra:required "true"^^xsd:boolean;
@@ -737,6 +749,8 @@
                         hydra:template "http://eida.gein.noa.gr/fdsnws/station/1/query{?starttime, endtime, network, station, location, channel, minlatitude, maxlatitude, minlongitude, maxlongitude, level, nodata}"^^xsd:string;
                                 hydra:mapping[ a hydra:IriTemplateMapping;
                                         hydra:variable "starttime"^^xsd:string;
+                                        hydra:property "schema:startDate";
+                                        schema:valuePattern "YYYY-MM-DDThh:mm:ss";
                                         rdfs:range "xsd:dateTime";
                                         rdfs:label "Start of the timespan";
                                         hydra:required "true"^^xsd:boolean;
@@ -744,6 +758,8 @@
                                 ];
                                 hydra:mapping[ a hydra:IriTemplateMapping;
                                         hydra:variable "endtime"^^xsd:string;
+                                        hydra:property "schema:endDate";
+                                        schema:valuePattern "YYYY-MM-DDThh:mm:ss";
                                         rdfs:range "xsd:dateTime";
                                         rdfs:label "End of the timespan";
                                         hydra:required "true"^^xsd:boolean;
