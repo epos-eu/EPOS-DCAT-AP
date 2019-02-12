@@ -200,7 +200,7 @@
 			http:paramValue "calibration_model";
 			http:paramValue "sampling_period";
 			http:paramValue "format";
-      schema:defaultValue "network";
+    schema:defaultValue "network";
 		];
  	];
 .
@@ -214,7 +214,7 @@
 	schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
 	schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
 	schema:provider <PIC:996437254>;
-	dcat:theme  <epos:GNSSProductsPortal> ;
+	dcat:theme  <epos:GNSSDataGatewayPortal> ;
 	hydra:entrypoint "http://glass.unice.fr:8080/GlassFramework/swagger.json"^^xsd:anyURI;
 	schema:keywords "Geodesy", "GNSS" ;
  	dct:conformsTo <GlassFramework/APIDocumentation> ;
@@ -256,8 +256,8 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "object_instance"^^xsd:string;
 			rdfs:label " the value of the criteria";
-      rdfs:range "xsd:string";
-      schema:defaultValue "AGDE";
+      		rdfs:range "xsd:string";
+      		schema:defaultValue "AGDE";
 			hydra:required "true"^^xsd:boolean;
 		];
 	 	hydra:mapping[ a hydra:IriTemplateMapping;
@@ -265,7 +265,7 @@
 			rdfs:label " the output format";
 			rdfs:range "xsd:string";
 			hydra:required "true"^^xsd:boolean;
-      schema:defaultValue "json";
+      		schema:defaultValue "json";
 			http:value "csv";
 			http:value "json";
 			http:value "xml";
@@ -331,7 +331,7 @@
 			rdfs:label "epoch_start (date format YYYY-MM-DD)";
 			rdfs:range "xsd:dateTime";
 			hydra:required "false"^^xsd:boolean;
-      schema:defaultValue "2015-02-23";
+      		schema:defaultValue "2015-02-23";
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "epoch_end"^^xsd:string;
@@ -341,9 +341,9 @@
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "coordinates"^^xsd:string;
-      rdfs:label	"coordinates";
-      rdfs:range "xsd:string";
-      http:paramValue	"rectangle";
+      		rdfs:label	"coordinates";
+      		rdfs:range "xsd:string";
+      		http:paramValue	"rectangle";
 			http:paramValue	"circle";
 			http:paramValue	"polygon";
       hydra:required "false"^^xsd:boolean;
@@ -654,7 +654,7 @@
 	schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
 	schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
 	schema:provider <PIC:996437254>;
-	dcat:theme  <epos:GNSSProductsPortal> ;
+	dcat:theme  <epos:GNSSDataGatewayPortal> ;
 	hydra:entrypoint "http://glass.unice.fr:8080/GlassFramework/swagger.json"^^xsd:anyURI;
 	schema:keywords "Geodesy", "GNSS" ;
 	dct:conformsTo <GlassFramework/APIDocumentation> ;
@@ -696,7 +696,7 @@
  	schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
  	schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
  	schema:provider <PIC:996437254>;
- 	dcat:theme  <epos:GNSSProductsPortal> ;
+ 	dcat:theme  <epos:GNSSDataGatewayPortal> ;
  	hydra:entrypoint "http://glass.unice.fr:8080/GlassFramework/swagger.json"^^xsd:anyURI;
 	schema:keywords "Geodesy", "GNSS" ;
  	dct:conformsTo <GlassFramework/APIDocumentation> ;
