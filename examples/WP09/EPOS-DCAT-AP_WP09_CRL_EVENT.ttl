@@ -257,6 +257,8 @@
 		hydra:template "http://nfocrl.u-strasbg.fr/fdsnws/event/1/query{?starttime, endtime, minlatitude, maxlatitude, minlongitude, maxlongitude, mindepth, maxdepth, minmagnitude, maxmagnitude, magnitudetype, includeallorigins, includeallmagnitudes, includearrivals, eventid, limit, offset, orderby, contributor, catalog, updatedafter, format, nodata, latitude, longitude, minradius, maxradius}"^^xsd:string;
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "starttime"^^xsd:string;
+                                hydra:property "schema:startDate";
+                                schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 				rdfs:range "xsd:dateTime";
 				rdfs:label "Start Time";
 				schema:minValue "2000-05-20T00:00:00";
@@ -266,6 +268,8 @@
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "endtime"^^xsd:string;
+                                hydra:property "schema:endDate";
+                                schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 				rdfs:range "xsd:dateTime";
 				rdfs:label "End Time";
 				schema:minValue "2000-05-20T00:00:00";
