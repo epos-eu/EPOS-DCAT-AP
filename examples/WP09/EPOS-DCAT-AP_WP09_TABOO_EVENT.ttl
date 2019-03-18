@@ -191,6 +191,13 @@
 	schema:name "TABOO FDSN Event Web Service";
 	schema:datePublished "2017-06-08T12:00:00Z"^^xsd:dateTime;
 	schema:dateModified "2017-06-08T12:00:00Z"^^xsd:dateTime;
+	dct:temporal [ a dct:PeriodOfTime ;
+        schema:startDate "2010-04-01T00:00:00Z"^^xsd:dateTime ;
+        #schema:endDate "YYYY-MM-DDThh:mm:ss"^^xsd:dateTime ;
+    ];
+	dct:spatial [ a dct:Location ;
+		locn:geometry "POLYGON(11.78 43.95, 13.61 43.95, 13.61 42.8, 11.78 42.8, 11.78 43.95)"^^gsp:wktLiteral ;
+	];
 	schema:provider <PIC:999472675>;
 	schema:keywords "earthquake", "event", "rocks", "seismic source", "seismic waves propagation", "seismology", "NFO", "Near Fault Observatory", "TABOO", "FRIDGE";
 	# hydra:entrypoint "application.wadl"^^xsd:anyURI; 
@@ -234,6 +241,7 @@
 			schema:minValue "-90";
 			schema:maxValue "90";
 			schema:defaultValue "43";
+			hydra:property “epos:southernmostLatitude”;
 			hydra:required "false"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -243,6 +251,7 @@
 			schema:minValue "-90";
 			schema:maxValue "90";
 			schema:defaultValue "44";
+			hydra:property “epos:northernmostLatitude”;
 			hydra:required "false"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -252,6 +261,7 @@
 			schema:minValue "-180";
 			schema:maxValue "180";
 			schema:defaultValue "12";
+			hydra:property “epos:westernmostLongitude”;
 			hydra:required "false"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -261,6 +271,7 @@
 			schema:minValue "-180";
 			schema:maxValue "180";
 			schema:defaultValue "13";
+			hydra:property “epos:easternmostLongitude”;
 			hydra:required "false"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
