@@ -772,6 +772,63 @@
 	];
 .
 
+#WS /stations/v2/station/bbox
+<GlassFramework/webresources/stations/v2/station/bbox> a epos:WebService;
+	schema:identifier "GlassFramework/webresources/stations/v2/station/bbox";
+	schema:description "Returns all the stations that are inside the bounding box in multiple outputs";
+ 	schema:name "GET STATION BOUNDING BOX";
+ 	dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
+ 	schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
+ 	schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
+ 	schema:provider <PIC:996437254>;
+ 	dcat:theme  <epos:GNSSProductsPortal> ;
+ 	hydra:entrypoint "https://glass.epos.ubi.pt:8080/GlassFramework/swagger.json"^^xsd:anyURI;
+	schema:keywords "Geodesy", "GNSS" ;
+ 	dct:conformsTo <GlassFramework/APIDocumentation> ;
+ 	hydra:supportedOperation <GlassFramework/webresources/stations/v2/station/bbox/operation>;
+.
+
+#WS Operation stations/v2/station/bbox
+<GlassFramework/webresources/stations/v2/station/bbox/operation> a hydra:Operation;
+	hydra:method "GET"^^xsd:string;
+	hydra:returns "application/json, application/octet-stream;charset=utf-8"^^xsd:string;
+	hydra:property[ a hydra:IriTemplate;
+ 		hydra:template "https://glass.epos.ubi.pt:8080/GlassFramework/webresources/stations/v2/station/bbox/{minLon}/{minLat}/{maxLon}/{maxLat}"^^xsd:string;
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "minLon"^^xsd:string;
+      		rdfs:range "xsd:integer";
+      		rdfs:label "";
+			schema:minValue "0" ;
+      		schema:maxValue "180" ;
+		 	hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "minLat"^^xsd:string;
+      		rdfs:range "xsd:integer";
+      		rdfs:label "";
+			schema:minValue "0" ;
+      		schema:maxValue "90" ;
+		 	hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "maxLon"^^xsd:string;
+      		rdfs:range "xsd:integer";
+      		rdfs:label "";
+			schema:minValue "0" ;
+      		schema:maxValue "180" ;
+		 	hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "maxLat"^^xsd:string;
+      		rdfs:range "xsd:integer";
+      		rdfs:label "";
+			schema:minValue "0" ;
+      		schema:maxValue "90" ;
+		 	hydra:required "true"^^xsd:boolean;
+		];
+	];
+.
+
 #<------------>#
 <https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/attributes> a dcat:Dataset ;
 	dct:identifier "GlassFramework/webresources/products/attributes/" ;
