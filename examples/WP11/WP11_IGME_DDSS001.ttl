@@ -17,7 +17,10 @@
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .  
 
 
-## Persons
+#########
+# PERSON 
+#########
+
 <http://orcid.org/0000-0002-0503-7182> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "ORCID";
@@ -66,7 +69,7 @@
 	
 	
 	
-	<http://orcid.org/0000-0001-7348-3275> a schema:Person;
+<http://orcid.org/0000-0001-7348-3275> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "ORCID";
 		schema:value "http://orcid.org/0000-0001-7348-3275";
@@ -87,7 +90,10 @@
 	schema:contactPoint <http://orcid.org/0000-0001-7348-3275/contactPoint>;
 .
 	
-	## Contacts
+#########
+# ContactPoint
+######### 
+
 <http://orcid.org/0000-0002-0503-7182/legalContact>
   a schema:ContactPoint ;
   schema:email "gvoug@igme.gr" ;
@@ -121,7 +127,7 @@
   a schema:ContactPoint;
   schema:email "triantafyl@noa.gr";
   schema:availableLanguage "en" ;
-   schema:contactType "contactPoint";
+  schema:contactType "contactPoint";
 .
 
 <http://orcid.org/0000-0001-6283-8173/contactPoint> 
@@ -134,12 +140,14 @@
   a schema:ContactPoint;
   schema:email "aspasia@igme.gr";
   schema:availableLanguage "en" ;
-   schema:contactType "contactPoint";
+  schema:contactType "contactPoint";
 .
 
-
 	
-	## Organization
+#########
+# Organization
+#########
+
 <PIC:925968015> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "pic";
@@ -160,9 +168,192 @@
 	schema:contactPoint <http://orcid.org/0000-0002-0503-7182/legalContact>;
 	schema:contactPoint <http://orcid.org/0000-0002-0503-7182/financialContact>;
 .
+
+#########
+# Dataset
+######### 
+
+# FDSN dataselect
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/IGME> a dcat:Dataset;
+        dct:title "Primary Seismic Waveform Data";
+        dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/IGME";
+        dct:description "Continuous seismic waveforms";
+        adms:identifier [ a adms:Identifier ;
+        	adms:schemaAgency "DDSS-ID" ;
+        	skos:notation "WP11-DDSS-001" ;
+        ];
+        dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        owl:versionInfo "1.0.0" ;
+    	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+        dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
+        dcat:theme  <epos:SeismicWaveforms> ;
+        dcat:keyword "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "IGME", "Dataselect", "FDSN-WS", "Seismic Waveform", "EIDA";
+        dcat:contactPoint <http://orcid.org/0000-0002-0503-7182/contactPoint>;
+	dct:publisher <PIC:925968015>;
+        dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/IGME>;
+        dct:spatial [ a dct:Location ;
+                      locn:geometry "POLYGON(-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0)"^^gsp:wktLiteral;
+        ];
+        dct:temporal [ a dct:PeriodOfTime ;
+                schema:startDate "1997-10-14T00:00:00Z"^^xsd:dateTime ;
+                #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
+	] ;
+.
+
+# FDSN station
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/IGME> a dcat:Dataset;
+        dct:title "Primary Seismic Waveform Data";
+        dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/IGME";
+        dct:description "Seismic stations";
+        adms:identifier [ a adms:Identifier ;
+            adms:schemaAgency "DDSS-ID" ;
+            skos:notation "WP11-DDSS-002" ;
+        ];
+        dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        owl:versionInfo "1.0.0" ;
+
+    	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+        dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+        dcat:theme  <epos:SeismicStations> ;
+        dcat:keyword "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "IGME", "Station", "FDSN-WS", "Seismic Waveform", "EIDA";
+        dcat:contactPoint <http://orcid.org/0000-0002-0503-7182/contactPoint>;
+	dct:publisher <PIC:925968015>;
+        dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/IGME>;
+        dct:spatial [ a dct:Location ;
+		locn:geometry "POLYGON(-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0)"^^gsp:wktLiteral;
+        ];
+        dct:temporal [ a dct:PeriodOfTime ;
+                schema:startDate "1997-10-14T00:00:00Z"^^xsd:dateTime ;
+                #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
+	];
+.
+
+
+# WFCatalog
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/IGME> a dcat:Dataset;
+        dct:title "Primary Seismic Waveform Data";
+        dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/IGME";
+        dct:description "Seismic stations";
+        adms:identifier [ a adms:Identifier ;
+            adms:schemaAgency "DDSS-ID" ;
+            skos:notation "WP11-DDSS-003" ;
+        ];
+        dct:created "2017-09-01T00:00:00Z"^^xsd:dateTime ;
+        dct:issued "2017-09-01T00:00:00Z"^^xsd:dateTime ;
+        dct:modified "2017-09-01T00:00:00Z"^^xsd:dateTime ;
+        owl:versionInfo "1.0.0" ;
+    	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+        dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+        dcat:theme  <epos:SeismicStations> ;
+        dcat:keyword "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "IGME", "Station", "FDSN-WS", "Seismic Waveform", "data quality", "availability", "metadata", "EIDA";
+        dcat:contactPoint <http://orcid.org/0000-0002-0503-7182/contactPoint>;
+	dct:publisher <PIC:925968015>;
+        dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/Distribution/003/IGME>;
+        dct:spatial [ a dct:Location ;
+		locn:geometry "POLYGON(-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0)"^^gsp:wktLiteral;
+        ];
+        dct:temporal [ a dct:PeriodOfTime ;
+                schema:startDate "2010-01-01T00:00:00Z"^^xsd:dateTime ;
+                #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
+	];
+.
+
+# Routing
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/IGME> a dcat:Dataset;
+        dct:title "Primary Seismic Waveform Data";
+        dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/IGME";
+        dct:description "Seismic stations";
+        adms:identifier [ a adms:Identifier ;
+            adms:schemaAgency "DDSS-ID" ;
+            skos:notation "WP11-DDSS-004" ;
+        ];
+        dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        owl:versionInfo "1.0.0" ;
+    	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+        dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+        dcat:theme  <epos:SeismicStations> ;
+        dcat:keyword "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "IGME", "Station", "FDSN-WS", "Seismic Waveform", "data quality", "availability", "metadata", "EIDA";
+        dcat:contactPoint <http://orcid.org/0000-0002-0503-7182/contactPoint>;
+	dct:publisher <PIC:925968015>;                      
+        dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/Distribution/004/IGME>;
+        dct:spatial [ a dct:Location ;
+		locn:geometry "POLYGON(-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0)"^^gsp:wktLiteral;
+        ];
+        dct:temporal [ a dct:PeriodOfTime ;
+                schema:startDate "2010-01-01T00:00:00Z"^^xsd:dateTime ;
+                #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
+	];
+.
+
+#########
+# Distributions
+######### 
+
+# FDSN dataselect
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/IGME> a dcat:Distribution;
+    	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/IGME";
+	dct:title "Seismic Waveforms  :: FDSN DATASELECT ";
+	dct:description "Description of Waveforms  :: FDSN DATASELECT ";
+	dct:issued "2016-01-01"^^xsd:date ;
+	dct:modified "2016-01-01"^^xsd:date ;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001/IGME>;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/IGME>;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
+ 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+.
+
+# FDSN station
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/IGME> a dcat:Distribution;
+    	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/IGME";
+	dct:title "Seismic Stations  :: FDSN STATION";
+	dct:description "Description of Seismic Stations  :: FDSN STATION ";
+	dct:issued "2016-01-01"^^xsd:date ;
+	dct:modified "2016-01-01"^^xsd:date ;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/Operation/002/IGME>;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/IGME>;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
+ 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+.
+
+# WFCatalog
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/Distribution/003/IGME> a dcat:Distribution;
+    	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/Distribution/003/IGME";
+	dct:title "Waveforms metadata  :: WFCATALOG";
+	dct:description "Description of Waveforms metadata  :: WFCATALOG ";
+	dct:issued "2017-09-01"^^xsd:date ;
+	dct:modified "2017-09-01"^^xsd:date ;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003/Operation/003/IGME>;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003/IGME>;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
+ 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+.
+
+# Routing
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/Distribution/004/IGME> a dcat:Distribution;
+    	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/Distribution/004/IGME";
+	dct:title "routing of the Web Services  :: ROUTING";
+	dct:description "Description of routing of the Web Services  :: ROUTING ";
+	dct:issued "2016-01-01"^^xsd:date ;
+	dct:modified "2016-01-01"^^xsd:date ;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/004/Operation/004/IGME>;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/004/IGME>;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
+ 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+.
 	
-	
-	## Web Services
+#########
+# WebService
+######### 
 
 # FDSN - Dataselect
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/IGME> a epos:WebService;
@@ -170,7 +361,7 @@
 	schema:description "FDSN Standard Webservice at IGME to download waveform data";
 	dcat:theme <epos:SeismicWaveforms>;
 	dcat:contactPoint <http://orcid.org/0000-0002-0503-7182/contactPoint>;
-    dc:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/IGME/APIDocumentation> ;
+        dc:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/IGME/APIDocumentation> ;
 	schema:name "FDSNWS Dataselect - Institute of Geological and Mineral Exploration (IGME)";
 	hydra:entrypoint "http://eida.gein.noa.gr/fdsnws/dataselect/1/query?"^^xsd:anyURI;
 	schema:provider <PIC:925968015>;
@@ -188,14 +379,13 @@
 	];
 .
 	
-	
-	# FDSN - Station
+# FDSN - Station
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/IGME> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/IGME";
 	schema:description "FDSN Standard Webservice at IGME to download seismic metadata";
 	dcat:theme <epos:SeismicStations>;
 	dcat:contactPoint <http://orcid.org/0000-0002-0503-7182/contactPoint>;
- dc:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/IGME/APIDocumentation> ;
+        dc:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/IGME/APIDocumentation> ;
 	schema:name "FDSNWS Station - Institute of Geological and Mineral Exploration (IGME)";
 	hydra:entrypoint "http://eida.gein.noa.gr/fdsnws/station/1/query?"^^xsd:anyURI;
 	schema:provider <PIC:925968015>;
@@ -220,7 +410,7 @@
 	schema:description "Web service which returns waveform metadata and data quality metrics";
 	dcat:theme <epos:Seismicdataservices>;
 	dcat:contactPoint <http://orcid.org/0000-0002-0503-7182/contactPoint>;
- dc:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003/IGME/APIDocumentation> ;
+        dc:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003/IGME/APIDocumentation> ;
 	schema:name "WFCatalog - Institute of Geological and Mineral Exploration (IGME)";
 	hydra:entrypoint "http://eida.gein.noa.gr/eidaws/wfcatalog/1/query?"^^xsd:anyURI;
 	schema:provider <PIC:925968015>;
@@ -244,7 +434,7 @@
 	schema:description "Web service which has access to routing information for FDSN station-WS, FDSN dataselect-WS and WFCatalog web services";
 	dcat:theme <epos:SeismicHazardproducts>;
 	dcat:contactPoint <http://orcid.org/0000-0002-0503-7182/contactPoint>;
- dc:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/004/IGME/APIDocumentation> ;
+        dc:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/004/IGME/APIDocumentation> ;
 	schema:name "Routing - Institute of Geological and Mineral Exploration (IGME)";
 	hydra:entrypoint "http://eida.gein.noa.gr/eidaws/routing/1/query?"^^xsd:anyURI;
 	schema:provider <PIC:925968015>;
@@ -297,7 +487,9 @@
 .
 
 
-## Operations
+#########
+# Operations
+######### 
 
 # FDSN - Dataselect
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001/IGME> a hydra:Operation;
@@ -374,7 +566,7 @@
 
 
 
-	# FDSN - Station
+# FDSN - Station
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/Operation/002/IGME> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/xml";
@@ -480,8 +672,7 @@
 		] ;
 .
 
-	
-	# WFCatalog
+# WFCatalog
     <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003/Operation/003/IGME> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/json";
@@ -765,186 +956,9 @@
 		] ;
 .
 
-## Datasets
-
-# FDSN dataselect
-<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/IGME> a dcat:Dataset;
-        dct:title "Primary Seismic Waveform Data";
-        dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/IGME";
-        dct:description "Continuous seismic waveforms";
-        adms:identifier [ a adms:Identifier ;
-        adms:schemaAgency "DDSS-ID" ;
-        skos:notation "WP11-DDSS-001" ;
-        ];
-        dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
-        dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
-        dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
-        owl:versionInfo "1.0.0" ;
-
-    	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
-        dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
-        dcat:theme  <epos:SeismicWaveforms> ;
-        dcat:keyword "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "IGME", "Dataselect", "FDSN-WS", "Seismic Waveform", "EIDA";
-        dcat:contactPoint <http://orcid.org/0000-0002-0503-7182/contactPoint>;
-	dct:publisher <PIC:925968015>;
-        dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/IGME>;
-        dct:spatial [ a dct:Location ;
-                      locn:geometry "POLYGON(-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0)"^^gsp:wktLiteral;
-        ];
-        dct:temporal [ a dct:PeriodOfTime ;
-                schema:startDate "1997-10-14T00:00:00Z"^^xsd:dateTime ;
-                #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
-	] ;
-.
-
-# FDSN station
-<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/IGME> a dcat:Dataset;
-        dct:title "Primary Seismic Waveform Data";
-        dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/IGME";
-        dct:description "Seismic stations";
-        adms:identifier [ a adms:Identifier ;
-            adms:schemaAgency "DDSS-ID" ;
-            skos:notation "WP11-DDSS-002" ;
-        ];
-        dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
-        dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
-        dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
-        owl:versionInfo "1.0.0" ;
-
-    	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
-        dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
-        dcat:theme  <epos:SeismicStations> ;
-        dcat:keyword "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "IGME", "Station", "FDSN-WS", "Seismic Waveform", "EIDA";
-        dcat:contactPoint <http://orcid.org/0000-0002-0503-7182/contactPoint>;
-	dct:publisher <PIC:925968015>;
-        dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/IGME>;
-        dct:spatial [ a dct:Location ;
-											locn:geometry "POLYGON(-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0)"^^gsp:wktLiteral;
-        ];
-        dct:temporal [ a dct:PeriodOfTime ;
-                schema:startDate "1997-10-14T00:00:00Z"^^xsd:dateTime ;
-                #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
-	];
-.
-
-
-# WFCatalog
-<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/IGME> a dcat:Dataset;
-        dct:title "Primary Seismic Waveform Data";
-        dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/IGME";
-        dct:description "Seismic stations";
-        adms:identifier [ a adms:Identifier ;
-            adms:schemaAgency "DDSS-ID" ;
-            skos:notation "WP11-DDSS-003" ;
-        ];
-        dct:created "2017-09-01T00:00:00Z"^^xsd:dateTime ;
-        dct:issued "2017-09-01T00:00:00Z"^^xsd:dateTime ;
-        dct:modified "2017-09-01T00:00:00Z"^^xsd:dateTime ;
-        owl:versionInfo "1.0.0" ;
-
-    	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
-        dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
-        dcat:theme  <epos:SeismicStations> ;
-        dcat:keyword "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "IGME", "Station", "FDSN-WS", "Seismic Waveform", "data quality", "availability", "metadata", "EIDA";
-        dcat:contactPoint <http://orcid.org/0000-0002-0503-7182/contactPoint>;
-	dct:publisher <PIC:925968015>;
-        dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/Distribution/003/IGME>;
-        dct:spatial [ a dct:Location ;
-											locn:geometry "POLYGON(-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0)"^^gsp:wktLiteral;
-        ];
-        dct:temporal [ a dct:PeriodOfTime ;
-                schema:startDate "2010-01-01T00:00:00Z"^^xsd:dateTime ;
-                #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
-	];
-.
-
-# Routing
-<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/IGME> a dcat:Dataset;
-        dct:title "Primary Seismic Waveform Data";
-        dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/IGME";
-        dct:description "Seismic stations";
-        adms:identifier [ a adms:Identifier ;
-            adms:schemaAgency "DDSS-ID" ;
-            skos:notation "WP11-DDSS-004" ;
-        ];
-        dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
-        dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
-        dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
-        owl:versionInfo "1.0.0" ;
-
-    	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
-        dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
-        dcat:theme  <epos:SeismicStations> ;
-        dcat:keyword "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "IGME", "Station", "FDSN-WS", "Seismic Waveform", "data quality", "availability", "metadata", "EIDA";
-        dcat:contactPoint <http://orcid.org/0000-0002-0503-7182/contactPoint>;
-	dct:publisher <PIC:925968015>;                      
-        dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/Distribution/004/IGME>;
-        dct:spatial [ a dct:Location ;
-											locn:geometry "POLYGON(-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0)"^^gsp:wktLiteral;
-        ];
-        dct:temporal [ a dct:PeriodOfTime ;
-                schema:startDate "2010-01-01T00:00:00Z"^^xsd:dateTime ;
-                #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
-	];
-.
-
-## Distributions
-
-# FDSN dataselect
-<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/IGME> a dcat:Distribution;
-    	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/IGME";
-	dct:title "Seismic Waveforms  :: FDSN DATASELECT ";
-	dct:description "Description of Waveforms  :: FDSN DATASELECT ";
-	dct:issued "2016-01-01"^^xsd:date ;
-	dct:modified "2016-01-01"^^xsd:date ;
-	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001/IGME>;
-	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/IGME>;
-	dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
- 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
-.
-
-# FDSN station
-<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/IGME> a dcat:Distribution;
-    	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/IGME";
-	dct:title "Seismic Stations  :: FDSN STATION";
-	dct:description "Description of Seismic Stations  :: FDSN STATION ";
-	dct:issued "2016-01-01"^^xsd:date ;
-	dct:modified "2016-01-01"^^xsd:date ;
-	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/Operation/002/IGME>;
-	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/IGME>;
-	dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
- 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
-.
-
-# WFCatalog
-<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/Distribution/003/IGME> a dcat:Distribution;
-    	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/Distribution/003/IGME";
-	dct:title "Waveforms metadata  :: WFCATALOG";
-	dct:description "Description of Waveforms metadata  :: WFCATALOG ";
-	dct:issued "2017-09-01"^^xsd:date ;
-	dct:modified "2017-09-01"^^xsd:date ;
-	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003/Operation/003/IGME>;
-	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003/IGME>;
-	dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
- 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
-.
-
-# Routing
-<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/Distribution/004/IGME> a dcat:Distribution;
-    	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/Distribution/004/IGME";
-	dct:title "routing of the Web Services  :: ROUTING";
-	dct:description "Description of routing of the Web Services  :: ROUTING ";
-	dct:issued "2016-01-01"^^xsd:date ;
-	dct:modified "2016-01-01"^^xsd:date ;
-	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/004/Operation/004/IGME>;
-	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/004/IGME>;
-	dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
- 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
-.
+#########
+# Concept
+######### 
 
 ## Domains
 	<epos:Seismology> a skos:ConceptScheme;
