@@ -101,17 +101,12 @@
     schema:contactPoint <http://orcid.org/0000-0002-7635-1283/scientificContact>;
 .
 
-#########
-# Organization
-#########
-
 <http://isni.org/isni/0000000109416043> a schema:Organization;
     schema:identifier [ a schema:PropertyValue;
         schema:propertyID "ISNI";
         schema:value "http://isni.org/isni/0000000109416043";
     ];
     schema:legalName "Earth Physics Observatory of Clermont-Ferrand"^^xsd:string;
-    schema:leiCode "0000000109416043";
     # schema:alternateName "Observatoire de Physique du Globe de Clermont-Ferrand"^^xsd:string;
     # schema:alternateName "OPGC"^^xsd:string;
     schema:address [ a schema:PostalAddress;
@@ -151,7 +146,6 @@
         schema:value "999597417";
     ];
     schema:legalName "Earth Physics Institute of Paris"^^xsd:string;
-    schema:leiCode "999597417";
     # schema:alternateName "Institut de Physique du Globe de Paris"^^xsd:string;
     # schema:alternateName "IPGP"^^xsd:string;
     schema:address [ a schema:PostalAddress;
@@ -179,7 +173,6 @@
         schema:value "http://isni.org/isni/0000000121129282";
     ];
     schema:legalName "The National Center for Scientific Research"^^xsd:string;
-    schema:leiCode "0000000121129282";
     # schema:alternateName "CNRS: Le Centre National de la Recherche Scientifique"^^xsd:string;
     # schema:alternateName "CNRS"^^xsd:string;
     schema:address [ a schema:PostalAddress;
@@ -199,6 +192,12 @@
     schema:name "OPGC Virtual Observatory - DYNVOLC Entry Point - EPOS - WP11-DDSS-026";
     schema:datePublished "2016-05-26T08:00:00Z"^^xsd:dateTime;
     schema:dateModified "2019-01-27T12:00:00Z"^^xsd:dateTime;
+    dct:temporal [ a dct:PeriodOfTime;
+        schema:startDate "2014-06-20T21:35:00Z"^^xsd:dateTime;
+    ];
+    dct:spatial [ a dct:Location;
+        locn:geometry "POLYGON((55.5966 -21.3794,55.5966 -21.1683,55.8232 -21.1683,55.8232 -21.3794,55.5966 -21.3794))"^^gsp:wktLiteral;
+    ];
     schema:provider <http://isni.org/isni/0000000109416043>;
     schema:keywords "Virtual Observatory", "Database", "Data Catalog", "eruption", "rock", "bulk rock", "volcanic glass", "mineral", "texture", "thin section", "particle", "major element", "vesicle crystal";
     hydra:supportedOperation <opgc.fr/vobs/dynvolc/WP11/DDSS-026/rocks-collection>;
@@ -246,6 +245,7 @@
                 ];
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "lat-min"^^xsd:float;
+                    hydra:property "epos:southernmostLatitude";
                     rdfs:label "Limit the query to data above this minimum latitude (in decimal degrees)";
                     rdfs:range "xsd:float";
                     schema:minValue "-90.0"^^xsd:float;
@@ -254,6 +254,7 @@
                 ];
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "lat-max"^^xsd:float;
+                    hydra:property "epos:northernmostLatitude";
                     rdfs:label "Limit the query to data under this maximum latitude (in decimal degrees)";
                     rdfs:range "xsd:float";
                     schema:minValue "-90.0"^^xsd:float;
@@ -262,6 +263,7 @@
                 ];
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "lng-min"^^xsd:float;
+                    hydra:property "epos:westernmostLongitude";
                     rdfs:label "Limit the query to data above this minimum longitude (in decimal degrees)";
                     rdfs:range "xsd:float";
                     schema:minValue "-180.0"^^xsd:float;
@@ -270,6 +272,7 @@
                 ];
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "lng-max"^^xsd:float;
+                    hydra:property "epos:easternmostLongitude";
                     rdfs:label "Limit the query to data under this maximum longitude (in decimal degrees)";
                     rdfs:range "xsd:float";
                     schema:minValue "-180.0"^^xsd:float;
@@ -299,24 +302,23 @@
     dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
     dct:temporal [ a dct:PeriodOfTime;
         schema:startDate "2014-06-20T21:35:00Z"^^xsd:dateTime;
-        #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
     ];
     dct:spatial [ a dct:Location;
         locn:geometry "POLYGON(55.5966 -21.3794,55.5966 -21.1683,55.8232 -21.1683,55.8232 -21.3794,55.5966 -21.3794)"^^gsp:wktLiteral;
     ];
-    dcat:theme <epos:GeochemicalData>;
+    dcat:theme <#Geochemical-Data>;
     dcat:keyword "eruption", "rock", "samples", "mineral", "texture", "thin section", "particle", "vesicle crystal";
     dcat:contactPoint <http://orcid.org/0000-0002-5066-5153/contactPoint>;
     dct:publisher <http://isni.org/isni/0000000109416043>;
     schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
     dcat:distribution <opgc.fr/vobs/dynvolc/WP11/DDSS-026/dataset/distribution>;
 .
-    <opgc.fr/vobs/dynvolc/WP11/DDSS-026/dataset/distribution> a dcat:Distribution;
-        dct:identifier "opgc.fr/vobs/WP11/DDSS-051/dataset/distribution";
-        dct:description "The way to get access to the DYNVOLC magmatic rocks collection";
-        dct:issued "2019-01-12"^^xsd:dateTime;
-        dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-        dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
-        dcat:accessURL <opgc.fr/vobs/dynvolc/WP11/DDSS-026/rocks-collection>;
-        dct:conformsTo <opgc.fr/vobs/dynvolc/WP11/DDSS-026>;
+
+<opgc.fr/vobs/dynvolc/WP11/DDSS-026/dataset/distribution> a dcat:Distribution;
+    dct:identifier "opgc.fr/vobs/WP11/DDSS-051/dataset/distribution";
+    dct:description "The way to get access to the DYNVOLC magmatic rocks collection";
+    dct:issued "2019-01-12"^^xsd:dateTime;
+    dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+    dcat:accessURL <opgc.fr/vobs/dynvolc/WP11/DDSS-026/rocks-collection>;
+    dct:conformsTo <opgc.fr/vobs/dynvolc/WP11/DDSS-026>;
 .

@@ -16,10 +16,10 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
-<fournaise_S1_S6_AR_09491_10016_ext7.5m> a dcat:Dataset;
-    dct:title "InSar Observatory of Indian Ocean - Wrapped Differential Interferograms - fournaise_S1_S6_AR_09491_10016_ext7.5m"^^xsd:string;
-    dct:identifier "fournaise_S1_S6_AR_09491_10016_ext7.5m";
-    dct:description "A Wrapped Differential Interferogram made using data from SENTINEL Satellite - target: Piton de la Fournaise - Reunion island FRANCE";
+<wwwobs.univ-bpclermont.fr/casoar/WP11/DDSS-050/dataset/INTERFS-SENT> a dcat:Dataset;
+    dct:title "Wrapped Sentinel interferograms"^^xsd:string;
+    dct:identifier "wwwobs.univ-bpclermont.fr/casoar/WP11/DDSS-050/dataset/INTERFS-SENT";
+    dct:description "A Wrapped Differential Interferogram made using data from SENTINEL Satellites - target: Piton de la Fournaise - Reunion island FRANCE";
     adms:identifier [ a adms:Identifier;
         adms:schemaAgency "DDSS-ID";
         skos:notation "WP11-DDSS-050";
@@ -27,43 +27,80 @@
     dct:type "http://purl.org/dc/dcmitype/Image"^^xsd:anyURI;
     dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
     dct:temporal [ a dct:PeriodOfTime;
-        schema:startDate "2016-01-14T14:52:44Z"^^xsd:dateTime;
-        schema:endDate "2016-02-19T14:53:07Z"^^xsd:dateTime;
+        schema:startDate "2015-05-07T14:52:40Z"^^xsd:dateTime;
     ];
     dct:issued "2017-06-21"^^xsd:dateTime;
-    dct:modified "2017-06-21"^^xsd:dateTime;
+    dct:modified "2019-03-26"^^xsd:dateTime;
     dct:spatial [ a dct:Location;
         locn:geometry "POLYGON(55.622471 -21.182913, 55.82473 -21.184441, 55.823513 -21.338009, 55.62104 -21.33647)"^^gsp:wktLiteral;
     ];
     dcat:theme <epos:RadarInterferometry>;
-    dcat:keyword "radar", "interferometry", "Reunion", "Piton de la Fournaise", "deformation", "SENTINEL", "COSMOSKYMED", "ALOS-PALSAR";
+    dcat:keyword "radar", "interferometry", "Reunion", "Piton de la Fournaise", "deformation", "SENTINEL";
     dcat:contactPoint <http://www.researcherid.com/rid/O-8042-2014/contactPoint>;
     dct:publisher <http://isni.org/isni/0000000109416043>;
-    dcat:distribution <fournaise_S1_S6_AR_09491_10016_ext7.5m/DownloadFile>;
-.
-    <fournaise_S1_S6_AR_09491_10016_ext7.5m/DownloadFile> a dcat:Distribution;
-        dct:identifier "fournaise_S1_S6_AR_09491_10016_ext7.5m/DownloadFile";
-        dct:title "CASOAR distribution of OI2 product fournaise_S1_S6_AR_09491_10016_ext7.5m";
-        dct:description "The way to download the OI2 product : fournaise_S1_S6_AR_09491_10016_ext7.5m";
-        dct:issued "2017-06-21"^^xsd:dateTime;
-        dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-        dcat:accessURL <wwwobs.univ-bpclermont.fr/casoar/data-download>;
-        #dcat:downloadURL "https://wwwobs.univ-bpclermont.fr/casoar/export/download.php?type=SentInterf&uri=fournaise_S1_S6_AR_09491_10016_ext7.5m"^^xsd:anyURI;
-        dct:conformsTo <wwwobs.univ-bpclermont.fr/casoar>;
-        dct:format "http://publications.europa.eu/resource/authority/file-type/ZIP"^^xsd:anyURI;
-        dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+    dcat:distribution <wwwobs.univ-bpclermont.fr/casoar/WP11/DDSS-050/Distribution>;
 .
 
-<fournaise_S1_S6_AR_09491_10016_ext7.5m/WS> a dcat:Distribution;
-        dct:identifier "fournaise_S1_S6_AR_09491_10016_ext7.5m/WS";
-        dct:title "CASOAR distribution web service of OI2 product fournaise_S1_S6_AR_09491_10016_ext7.5m";
-        dct:description "The way to download the OI2 product : fournaise_S1_S6_AR_09491_10016_ext7.5m";
-        dct:issued "2017-06-21"^^xsd:dateTime;
-        dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-        dcat:accessURL <wwwobs.univ-bpclermont.fr/casoar/data-visualization>;
-        dct:conformsTo <wwwobs.univ-bpclermont.fr/casoar>;
-        dct:format "http://publications.europa.eu/resource/authority/file-type/HTML"^^xsd:anyURI;
-        dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+<wwwobs.univ-bpclermont.fr/casoar/WP11/DDSS-050/dataset/INTERFS-ALOS> a dcat:Dataset;
+    dct:title "Wrapped Alos-Palsar interferograms"^^xsd:string;
+    dct:identifier "wwwobs.univ-bpclermont.fr/casoar/WP11/DDSS-050/dataset/INTERFS-ALOS";
+    dct:description "A Wrapped Differential Interferogram made using data from Alos-Palsar Satellites - target: Piton de la Fournaise - Reunion island FRANCE";
+    adms:identifier [ a adms:Identifier;
+        adms:schemaAgency "DDSS-ID";
+        skos:notation "WP11-DDSS-050";
+    ];
+    dct:type "http://purl.org/dc/dcmitype/Image"^^xsd:anyURI;
+    dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+    dct:temporal [ a dct:PeriodOfTime;
+        schema:startDate "2006-10-05T19:21:16Z"^^xsd:dateTime;
+    ];
+    dct:issued "2017-06-21"^^xsd:dateTime;
+    dct:modified "2019-03-26"^^xsd:dateTime;
+    dct:spatial [ a dct:Location;
+        locn:geometry "POLYGON(55.622471 -21.182913, 55.82473 -21.184441, 55.823513 -21.338009, 55.62104 -21.33647)"^^gsp:wktLiteral;
+    ];
+    dcat:theme <epos:RadarInterferometry>;
+    dcat:keyword "radar", "interferometry", "Reunion", "Piton de la Fournaise", "deformation", "ALOS";
+    dcat:contactPoint <http://www.researcherid.com/rid/O-8042-2014/contactPoint>;
+    dct:publisher <http://isni.org/isni/0000000109416043>;
+    dcat:distribution <wwwobs.univ-bpclermont.fr/casoar/WP11/DDSS-050/Distribution>;
+.
+
+<wwwobs.univ-bpclermont.fr/casoar/WP11/DDSS-050/dataset/INTERFS-CSK> a dcat:Dataset;
+    dct:title "Wrapped Cosmo-Skymed interferograms"^^xsd:string;
+    dct:identifier "wwwobs.univ-bpclermont.fr/casoar/WP11/DDSS-050/dataset/INTERFS-CSK";
+    dct:description "A Wrapped Differential Interferogram made using data from Cosmo-Skymed Satellites - target: Piton de la Fournaise - Reunion island FRANCE";
+    adms:identifier [ a adms:Identifier;
+        adms:schemaAgency "DDSS-ID";
+        skos:notation "WP11-DDSS-050";
+    ];
+    dct:type "http://purl.org/dc/dcmitype/Image"^^xsd:anyURI;
+    dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+    dct:temporal [ a dct:PeriodOfTime;
+        schema:startDate "2011-02-15T03:52:10Z"^^xsd:dateTime;
+    ];
+    dct:issued "2017-06-21"^^xsd:dateTime;
+    dct:modified "2019-03-26"^^xsd:dateTime;
+    dct:spatial [ a dct:Location;
+        locn:geometry "POLYGON(55.622471 -21.182913, 55.82473 -21.184441, 55.823513 -21.338009, 55.62104 -21.33647)"^^gsp:wktLiteral;
+    ];
+    dcat:theme <epos:RadarInterferometry>;
+    dcat:keyword "radar", "interferometry", "Reunion", "Piton de la Fournaise", "deformation", "COSMOSKYMED";
+    dcat:contactPoint <http://www.researcherid.com/rid/O-8042-2014/contactPoint>;
+    dct:publisher <http://isni.org/isni/0000000109416043>;
+    dcat:distribution <wwwobs.univ-bpclermont.fr/casoar/WP11/DDSS-050/Distribution>;
+.
+
+<wwwobs.univ-bpclermont.fr/casoar/WP11/DDSS-050/Distribution> a dcat:Distribution;
+    dct:identifier "wwwobs.univ-bpclermont.fr/casoar/WP11/DDSS-050/Distribution";
+    dct:title "CASOAR distribution";
+    dct:description "CASOAR distribution of OI2 wrapped interferograms products";
+    dct:issued "2017-06-21"^^xsd:dateTime;
+    dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+    dcat:accessURL <wwwobs.univ-bpclermont.fr/casoar/data-download>;
+    dct:conformsTo <wwwobs.univ-bpclermont.fr/casoar>;
+    dct:format "http://publications.europa.eu/resource/authority/file-type/ZIP"^^xsd:anyURI;
+    dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 .
 
 <http://www.researcherid.com/rid/O-8042-2014> a schema:Person;
@@ -194,6 +231,12 @@
     schema:name "OPGC Virtual Observatory - OI2 Entry Point - EPOS - WP11/DDSS-050";
     schema:datePublished "2016-05-26T08:00:00Z"^^xsd:dateTime;
     schema:dateModified "2018-02-27T16:00:00Z"^^xsd:dateTime;
+    dct:temporal [ a dct:PeriodOfTime;
+        schema:startDate "2006-10-05T19:21:16Z"^^xsd:dateTime;
+    ];
+    dct:spatial [ a dct:Location;
+        locn:geometry "POLYGON(55.622471 -21.182913, 55.82473 -21.184441, 55.823513 -21.338009, 55.62104 -21.33647)"^^gsp:wktLiteral;
+    ];
     schema:provider <http://isni.org/isni/0000000109416043>;
     schema:keywords "Virtual Observatory", "Database", "Data Catalog", "Remote Sensing",  "Radar", "Interferometry", "Reunion", "Piton de la Fournaise", "Deformation", "SENTINEL", "COSMOSKYMED", "ALOS-PALSAR", "Volcanology";
     hydra:entrypoint "http://opgc.fr/vobs/rest2/req.php/application/oi2"^^xsd:anyURI;
@@ -232,6 +275,8 @@
                 ];
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "start_date"^^xsd:datetime;
+                    hydra:property "schema:startDate";
+                    hydra:valuePattern "YYYY-MM-DDThh:mm:ssZ";
                     rdfs:label "Starting datetime of the time interval query (format YYYY-MM-DDThh:mm:ss:Z)";
                     rdfs:range "xsd:dateTime";
                     schema:minValue "1990-01-01T00:00:00Z"^^xsd:dateTime;
@@ -240,6 +285,8 @@
                 ];
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "stop_date"^^xsd:datetime;
+                    hydra:property "schema:endDate";
+                    hydra:valuePattern "YYYY-MM-DDThh:mm:ss:Z";
                     rdfs:labe "Ending datetime of the time interval query (format YYYY-MM-DDThh:mm:ssZ)";
                     rdfs:range "xsd:dateTime";
                     schema:minValue "1990-01-01T00:00:00Z"^^xsd:dateTime;
@@ -379,6 +426,12 @@
     schema:name "CASOAR - OI2 - EPOS - WP11/DDSS-050";
     schema:datePublished "2007-01-01T00:00:00Z"^^xsd:dateTime;
     schema:dateModified "2018-02-07T16:30:00Z"^^xsd:dateTime;
+    dct:temporal [ a dct:PeriodOfTime;
+        schema:startDate "2006-10-05T19:21:16Z"^^xsd:dateTime;
+    ];
+    dct:spatial [ a dct:Location;
+        locn:geometry "POLYGON(55.622471 -21.182913, 55.82473 -21.184441, 55.823513 -21.338009, 55.62104 -21.33647)"^^gsp:wktLiteral;
+    ];
     schema:provider <http://isni.org/isni/0000000109416043>;
     schema:keywords "Database", "Data Catalog", "Remote Sensing",  "Radar", "Interferometry", "Reunion", "Piton de la Fournaise", "Deformation", "SENTINEL", "COSMOSKYMED", "ALOS-PALSAR", "Volcanology";
     # hydra:entrypoint "https://wwwobs.univ-bpclermont.fr/casoar/index_liste.php"^^xsd:anyURI;

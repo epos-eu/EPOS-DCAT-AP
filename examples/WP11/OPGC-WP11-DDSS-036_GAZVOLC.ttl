@@ -16,10 +16,10 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
-<gazvolc/data/id/41> a dcat:Dataset;
-    dct:title "June 2014";
-    dct:identifier "gazvolc/data/id/41";
-    dct:description "Melt inclusion and groundmass glass compositions - Piton de La Fournaise - explosive_effusive";
+<opgc.fr/vobs/WP11/DDSS-036/GAZVOLC/dataset/INCLUSION-GLASS> a dcat:Dataset;
+    dct:title "Melt inclusions and groundmass glass compostion";
+    dct:identifier "opgc.fr/vobs/WP11/DDSS-036/GAZVOLC/dataset/INCLUSION-GLASS";
+    dct:description "Chemical analysis of melt inclusion and glass in rock samples from Piton de la Fournaise volcano";
     adms:identifier [ a adms:Identifier;
         adms:schemaAgency "DDSS-ID";
         skos:notation "WP11-DDSS-036";
@@ -28,28 +28,27 @@
     dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
     dct:temporal [ a dct:PeriodOfTime;
         schema:startDate "2014-06-20T21:35:00Z"^^xsd:dateTime;
-        schema:endDate "2014-06-21T17:09:00Z"^^xsd:dateTime;
     ];
-    #dct:spatial [ a dct:Location;
-        #locn:geometry <geo:-21.249499,55.713684,u=2524,crs=wgs84>;
-    #];
+    dct:spatial [ a dct:Location;
+        locn:geometry "POLYGON((55.6307 -21.3423, 55.8247 -21.3423, 55.8247 -21.1828, 55.6307 -21.1828, 55.6307 -21.3423))"^^gsp:wktLiteral;
+    ];
     dcat:theme <epos:Geochemical-Data>;
     dcat:keyword "chemical data set", "melt inclusion", "volatile elements", "major elements", "trace elements", "groundmass", "host minerals";
     dcat:contactPoint <http://orcid.org/0000-0002-8485-0154/contactPoint>;
     dct:publisher <http://isni.org/isni/0000000109416043>;
-    dcat:distribution <gazvolc/data/id/41/DownloadFile>;
+    dcat:distribution <opgc.fr/vobs/WP11/DDSS-036/GAZVOLC/Distribution>;
 .
-    <gazvolc/data/id/41/DownloadFile> a dcat:Distribution;
-        dct:identifier "gazvolc/data/id/41/DownloadFile";
-        dct:title "OPGC-VO distribution of GAZVOLC dataset 41";
-        dct:description "The way to download the gazvolc product: June 2014";
-        dct:issued "2016-06-12"^^xsd:date;
-        dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
-        dcat:accessURL <opgc.fr/vobs/gazvolc/WP11/DDSS-036/data-download>;
-        dcat:downloadURL "http://opgc.fr/vobs/rest2/req.php/gazvolc/data/id/41"^^xsd:anyURI;
-        dct:conformsTo <opgc.fr/vobs/gazvolc/WP11/DDSS-036>;
-        dct:format "http://publications.europa.eu/resource/authority/file-type/ZIP"^^xsd:anyURI;
-        dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+
+<opgc.fr/vobs/WP11/DDSS-036/GAZVOLC/Distribution> a dcat:Distribution;
+    dct:identifier "opgc.fr/vobs/WP11/DDSS-036/GAZVOLC/Distribution";
+    dct:title "The way to download dataset from gazvolc";
+    dct:description "The way to download the gazvolc product: June 2014";
+    dct:issued "2016-06-12"^^xsd:date;
+    dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
+    dcat:accessURL <opgc.fr/vobs/gazvolc/WP11/DDSS-036/data-download>;
+    dct:conformsTo <opgc.fr/vobs/gazvolc/WP11/DDSS-036>;
+    dct:format "http://publications.europa.eu/resource/authority/file-type/ZIP"^^xsd:anyURI;
+    dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 .
 
 <http://orcid.org/0000-0002-8485-0154> a schema:Person;
@@ -232,6 +231,12 @@
     schema:name "OPGC Virtual Observatory - GAZVOLC Entry Point - EPOS - WP11-DDSS-036";
     schema:datePublished "2016-05-26T08:00:00Z"^^xsd:dateTime;
     schema:dateModified "2018-02-27T16:00:00Z"^^xsd:dateTime;
+    dct:temporal [ a dct:PeriodOfTime;
+        schema:startDate "2014-06-20T21:35:00Z"^^xsd:dateTime;
+    ];
+    dct:spatial [ a dct:Location;
+        locn:geometry "POLYGON((55.6307 -21.3423, 55.8247 -21.3423, 55.8247 -21.1828, 55.6307 -21.1828, 55.6307 -21.3423))"^^gsp:wktLiteral;
+    ];
     schema:provider <http://isni.org/isni/0000000109416043>;
     schema:keywords "Virtual Observatory", "Database", "Data Catalog", "chemical data set", "melt inclusion", "volatile elements", "major elements", "trace elements", "groundmass", "host minerals";
     hydra:entrypoint "http://opgc.fr/vobs/rest2/req.php/application/gazvolc"^^xsd:anyURI;
@@ -244,7 +249,7 @@
 .
     <http://orcid.org/0000-0002-8485-0154/contactPoint> a schema:ContactPoint;
         schema:email "s.moune@uca.fr";
-        schema:availableLanguage "en", "it", "fr";
+        schema:availableLanguage "en", "fr";
         schema:contactType "manager";
 .
     <opgc.fr/vobs/APIDocumentation> a hydra:APIDocumentation;
@@ -260,19 +265,25 @@
             hydra:template "http://opgc.fr/vobs/rest2/req.php/gazvolc{?timestart, timeend, output, onscreen}"^^xsd:string;
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "timestart"^^xsd:dateTime;
+                    hydra:property "schema:startDate";
+                    hydra:valuePattern "YYYY-MM-DDThh:mm:ssZ";
                     rdfs:label "Starting datetime of the time interval query (format YYYY-MM-DDThh:mm:ss:Z)";
                     rdfs:range "xsd:dateTime";
                     schema:minValue "0001-01-01T00:00:00Z"^^xsd:dateTime;
                     schema:maxValue "9999-12-31T23:59:59Z"^^xsd:dateTime;
-                    hydra:required "false"^^xsd:boolean;
+                    schema:defaultValue "2014-01-01T00:00:00Z"^^xsd:dateTime;
+                    hydra:required "true"^^xsd:boolean;
                 ];
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "timeend"^^xsd:dateTime;
+                    hydra:property "schema:endDate";
+                    hydra:valuePattern "YYYY-MM-DDThh:mm:ssZ";
                     rdfs:label "Ending datetime of the time interval query (format YYYY-MM-DDThh:mm:ssZ)";
                     rdfs:range "xsd:dateTime";
                     schema:minValue "0001-01-01T00:00:00Z"^^xsd:dateTime;
                     schema:maxValue "9999-12-31T23:59:59Z"^^xsd:dateTime;
-                    hydra:required "false"^^xsd:boolean;
+                    schema:defaultValue "2014-12-31T23:59:59Z"^^xsd:dateTime;
+                    hydra:required "true"^^xsd:boolean;
                 ];
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "output"^^xsd:string;
