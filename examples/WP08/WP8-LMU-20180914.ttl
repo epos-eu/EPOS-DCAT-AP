@@ -235,7 +235,7 @@
                   hydra:variable "starttime"^^xsd:string ;
 
                   # This property contains a short string used to describe the meaning of the parameter to the GUI user.
-				          rdf:label "Start of the timespan" ;
+				          rdfs:label "Start of the timespan" ;
 
                   # This property contains true if the property is required, false otherwise.
                		hydra:required "true"^^xsd:boolean ;
@@ -261,7 +261,7 @@
            	];
               		hydra:mapping[ a hydra:IriTemplateMapping ;
                			hydra:variable "endtime"^^xsd:string ;
-				            rdf:label "End of the timespan" ;
+				            rdfs:label "End of the timespan" ;
                			hydra:required "true"^^xsd:boolean ;
                     hydra:property "schema:endDate" ;
                     schema:valuePattern "YYYY-MM-DDThh:mm:ss" ;
@@ -492,7 +492,7 @@
                   hydra:variable "starttime"^^xsd:string ;
 
                   # This property contains a short string used to describe the meaning of the parameter to the GUI user.
-				          rdf:label "Start of the timespan" ;
+				          rdfs:label "Start of the timespan" ;
 
                   # This property contains true if the property is required, false otherwise.
                		hydra:required "false"^^xsd:boolean ;
@@ -519,7 +519,7 @@
            	];
               		hydra:mapping[ a hydra:IriTemplateMapping ;
                			hydra:variable "endtime"^^xsd:string ;
-				            rdf:label "End of the timespan" ;
+				            rdfs:label "End of the timespan" ;
                			hydra:required "false"^^xsd:boolean ;
                     hydra:property "schema:endDate" ;
                     schema:valuePattern "YYYY-MM-DDThh:mm:ss" ;
@@ -528,28 +528,28 @@
               		];
               		hydra:mapping[ a hydra:IriTemplateMapping ;
                			hydra:variable "startbefore"^^xsd:string ;
-				            rdf:label "Limit to metadata epochs starting before specified time. Applied to channel epochs." ;
+				            rdfs:label "Limit to metadata epochs starting before specified time. Applied to channel epochs." ;
                			hydra:required "false"^^xsd:boolean ;
                     rdfs:range "xsd:dateTime" ;
                    
               		];
               		hydra:mapping[ a hydra:IriTemplateMapping ;
                			hydra:variable "startafter"^^xsd:string ;
-				            rdf:label "Limit to metadata epochs starting after specified time. Applied to channel epochs." ;
+				            rdfs:label "Limit to metadata epochs starting after specified time. Applied to channel epochs." ;
                			hydra:required "false"^^xsd:boolean ;
                     rdfs:range "xsd:dateTime" ;
                     
               		];
               		hydra:mapping[ a hydra:IriTemplateMapping ;
                			hydra:variable "endbefore"^^xsd:string ;
-				            rdf:label "Limit to metadata epochs ending before specified time. Applied to channel epochs." ;
+				            rdfs:label "Limit to metadata epochs ending before specified time. Applied to channel epochs." ;
                			hydra:required "false"^^xsd:boolean ;
                     rdfs:range "xsd:dateTime" ;
                     
               		];
               		hydra:mapping[ a hydra:IriTemplateMapping ;
                			hydra:variable "endafter"^^xsd:string ;
-				            rdf:label "Limit to metadata epochs ending after specified time. Applied to channel epochs." ;
+				            rdfs:label "Limit to metadata epochs ending after specified time. Applied to channel epochs." ;
                			hydra:required "false"^^xsd:boolean ;
                     rdfs:range "xsd:dateTime" ;
                    
