@@ -16,6 +16,10 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
+#########
+# PERSON 
+#########
+
 <http://orcid.org/0000-0002-0915-3711> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "ORCID";
@@ -38,10 +42,10 @@
 	
 .
 
-<http://orcid.org/0000-0001-6137-8806> a schema:Person;
+<http://orcid.org/0000-0003-0435-7763> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "ORCID";
-		schema:value "http://orcid.org/0000-0001-6137-8806";
+		schema:value "http://orcid.org/0000-0003-0435-7763";
 	];
 	schema:familyName "Bonforte";
 	schema:givenName "Alessandro";
@@ -79,16 +83,23 @@
 	schema:affiliation <PIC:999472675>;
 .
 
+#########
+# ContactPoint
+######### 
 
-	<http://orcid.org/0000-0002-0915-3711/contactPoint> a schema:ContactPoint;
+<http://orcid.org/0000-0002-0915-3711/contactPoint> a schema:ContactPoint;
 		schema:email "danilo.reitano@ingv.it";
 		schema:availableLanguage "en" ;
 		schema:contactType "contactPoint" ;
 .
 
+#########
+# Organization
+#########
+
 <PIC:999472675> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "pic";
+		schema:propertyID "PIC";
 		schema:value "999472675";
 	];
 	schema:legalName "National Institute of Geophysics and Volcanology";
@@ -105,29 +116,71 @@
 	schema:contactPoint <http://orcid.org/0000-0002-8651-6387/legalContact>;
 	schema:contactPoint <http://orcid.org/0000-0002-8651-6387/financialContact>;
 .
-	<http://orcid.org/0000-0003-0435-7763/scientificContact> a schema:ContactPoint;
+
+#########
+# ContactPoint
+######### 
+
+<http://orcid.org/0000-0003-0435-7763/scientificContact> a schema:ContactPoint;
 		schema:email "alessandro.bonforte@ingv.it";
 		schema:availableLanguage "en" ;
 		schema:contactType "scientificContact" ;
 .
-	<http://orcid.org/0000-0002-8651-6387/legalContact> a schema:ContactPoint;
+<http://orcid.org/0000-0002-8651-6387/legalContact> a schema:ContactPoint;
 		schema:email "segreteria.presidenza@ingv.it";
 		schema:availableLanguage "en" ;
 		schema:contactType "legalContact" ;
 .
-	<http://orcid.org/0000-0002-8651-6387/financialContact> a schema:ContactPoint;
+<http://orcid.org/0000-0002-8651-6387/financialContact> a schema:ContactPoint;
 		schema:email "segreteria.presidenza@ingv.it";
 		schema:availableLanguage "en" ;
 		schema:contactType "financialContact" ;
 .
 
+#########
+# Dataset
+######### 
+
+<WP11/GNSS/station> a dcat:Dataset;
+        dct:title "GNSS-Dataset";
+        dct:identifier "WP11/GNSS/station";
+        adms:identifier [ a adms:Identifier;
+         	adms:schemaAgency "DDSS-ID";
+        	skos:notation "WP11-DDSS-003";
+        ];
+        dct:description "GNSS-Dataset";
+        ## example of frequency using a controlled vocabulary
+	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+        dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+        dct:created "2005-01-01"^^xsd:date;
+        dcat:theme  <epos:GNSSData> ;
+        dcat:keyword "GNSS","Geodesy" ,"" ;
+        dcat:contactPoint <http://orcid.org/0000-0002-0915-3711/contactPoint>;
+	dct:publisher <PIC:999472675>;
+        dcat:distribution <WP11/GNSS/station/WSDistribution>;
+.
+
+#########
+# Distribution
+#########
+
+<WP11/GNSS/station/WSDistribution> a dcat:Distribution;
+        dct:identifier "WP11/GNSS/station/WSDistribution";
+	dct:description "GNSS Dataset WSDistribution";
+	dct:created "2005-01-01"^^xsd:date;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+	dcat:accessURL <ingvgsac/station/operation>;
+	dct:conformsTo <ingvgsac/station>;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/TXT"^^xsd:anyURI;
+.
+
+#########
+# WebService
+######### 
+
 #WP11 GNSS/stations	
 	<ingvgsac/station> a epos:WebService;
 	schema:identifier "ingvgsac/station";
-	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID  "DDSS-ID";
-		schema:value  "WP11-DDSS-003";
-	];
 	schema:description "Metadata on GNSS Station objects";
 	schema:name "WP11 GNSS Stations";
 	schema:datePublished "2018-12-01T12:00:00Z"^^xsd:dateTime;
@@ -139,38 +192,81 @@
 	dcat:theme <epos:GNSSData>;
 	dcat:contactPoint <http://orcid.org/0000-0002-0915-3711/contactPoint>;
 .
+
+#########
+# Operation
+######### 
 	
-	<ingvgsac/station/operation> a hydra:Operation;
-		hydra:method "GET"^^xsd:string;
-		hydra:returns "json";
-		hydra:property[ a hydra:IriTemplate;
-			hydra:template "http://medsuv_portal.ct.ingv.it:8080/ingvgsac/gsacapi/site/search/sites.json(?output=site.json&site.code=ENIC)"^^xsd:string;
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "output"^^xsd:string;
-					rdfs:label "Details about output ";
-					http:paramValue "site.html";
-					http:paramValue "site.json";
-					http:paramValue "site.csv";
-					schema:defaultValue "site.json" ;
-					hydra:required "true"^^xsd:boolean;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "site.code"^^xsd:string;
-					rdfs:label "Reports the name of the GNSS station";
-					schema:defaultValue "ENIC" ;
-					hydra:required "false"^^xsd:boolean;
-				];
-				
-		] ;
+<ingvgsac/station/operation> a hydra:Operation;
+	hydra:method "GET"^^xsd:string;
+	hydra:returns "application/json";
+	hydra:property[ a hydra:IriTemplate;
+		hydra:template "http://medsuv_portal.ct.ingv.it:8080/ingvgsac/gsacapi/site/search/sites.json/{?output,site.code}"^^xsd:string;
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "output"^^xsd:string;
+				rdfs:label "Details about output ";
+				http:paramValue "site.html";
+				http:paramValue "site.json";
+				http:paramValue "site.csv";
+				schema:defaultValue "site.json" ;
+				hydra:required "true"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "site.code"^^xsd:string;
+				rdfs:label "Reports the name of the GNSS station";
+				schema:defaultValue "ENIC" ;
+				hydra:required "false"^^xsd:boolean;
+			];
+
+	] ;
 .
+
+
+#########
+# Dataset
+######### 
+
+<WP11/GNSS/files> a dcat:Dataset;
+        dct:title "GNSS-Dataset";
+        dct:identifier "WP11/GNSS/files";
+	adms:identifier [ a adms:Identifier;
+         	adms:schemaAgency "DDSS-ID";
+        	skos:notation "WP11-DDSS-003";
+        ];
+        dct:description "GNSS-Dataset";
+        ## example of frequency using a controlled vocabulary
+	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+        dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+        dct:created "2005-01-01"^^xsd:date;
+        dcat:theme  <epos:GNSSData> ;
+        dcat:keyword "GNSS","Geodesy" ,"" ;
+        dcat:contactPoint <http://orcid.org/0000-0002-0915-3711/contactPoint>;
+	dct:publisher <PIC:999472675>;
+        dcat:distribution <WP11/GNSS/files/WSDistribution>;
+.
+
+#########
+# Distribution
+#########
+
+<WP11/GNSS/files/WSDistribution> a dcat:Distribution;
+        dct:identifier "WP11/GNSS/files/WSDistribution";
+	dct:description "GNSS File Dataset WSDistribution";
+	dct:created "2005-01-01"^^xsd:date;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+	dcat:accessURL <ingvgsac/files/operation>;
+	dct:conformsTo <ingvgsac/files>;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/TXT"^^xsd:anyURI;
+
+.
+
+#########
+# WebService
+######### 
 
 #WP11 GNSS/files	
 	<ingvgsac/files> a epos:WebService;
 	schema:identifier "ingvgsac/files";
-	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID  "DDSS-ID";
-		schema:value  "WP11-DDSS-003a";
-	];
 	schema:description "Data for GNSS ";
 	schema:name "WP11 GNSS Files";
 	schema:datePublished "2018-12-01T12:00:00Z"^^xsd:dateTime;
@@ -183,11 +279,14 @@
 	dcat:contactPoint <http://orcid.org/0000-0002-0915-3711/contactPoint>;
 .
 	
+#########
+# Operation
+######### 
 	<ingvgsac/files/operation> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
-		hydra:returns "json";
+		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "http://medsuv_portal.ct.ingv.it:8080/ingvgsac/gsacapi/file/search/sites.json(?output=file.json&site.code=ENIC)"^^xsd:string;
+			hydra:template "http://medsuv_portal.ct.ingv.it:8080/ingvgsac/gsacapi/file/search/sites.json/{?output, site.code}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "output"^^xsd:string;
 					rdfs:label "Details about output ";
@@ -207,65 +306,17 @@
 		] ;
 .
 
+#########
+# Concept
+######### 
 
-
-	<epos:VolcanoObservations> a skos:ConceptScheme;
-		dct:title "Volcano Observations";
-		dct:description "It contains the concepts of Volcano-Observations";
+<epos:VolcanoObservations> a skos:ConceptScheme;
+	dct:title "Volcano Observations";
+	dct:description "It contains the concepts of Volcano-Observations";
 .
-	<epos:GNSSData> a skos:Concept;
-		skos:inScheme <epos:VolcanoObservations>;
-		skos:prefLabel "GNSSData";
-		skos:definition "GNSSData";
-.
-
-<WP11/GNSS/station> a dcat:Dataset;
-        dct:title "GNSS-Dataset";
-        dct:identifier "WP11/GNSS/station";
-        dct:description "GNSS-Dataset";
-        ## example of frequency using a controlled vocabulary
-	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
-        dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
-        dct:created "2005-01-01"^^xsd:date;
-        dcat:theme  <epos:GNSSData> ;
-        dcat:keyword "GNSS","Geodesy" ,"" ;
-        dcat:contactPoint <http://orcid.org/0000-0002-0915-3711/contactPoint>;
-	dct:publisher <PIC:999472675>;
-        dcat:distribution <WP11/GNSS/station/WSDistribution>;
+<epos:GNSSData> a skos:Concept;
+	skos:inScheme <epos:VolcanoObservations>;
+	skos:prefLabel "GNSSData";
+	skos:definition "GNSSData";
 .
 
-<WP11/GNSS/station/WSDistribution> a dcat:Distribution;
-        dct:identifier "WP11/GNSS/station/WSDistribution";
-	dct:description "GNSS Dataset WSDistribution";
-	dct:created "2005-01-01"^^xsd:date;
-	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-	dcat:accessURL <ingvgsac/station/operation>;
-	dct:conformsTo <ingvgsac/station>;
-	dct:format "http://publications.europa.eu/resource/authority/file-type/TXT"^^xsd:anyURI;
-.
-
-<WP11/GNSS/files> a dcat:Dataset;
-        dct:title "GNSS-Dataset";
-        dct:identifier "WP11/GNSS/files";
-        dct:description "GNSS-Dataset";
-        ## example of frequency using a controlled vocabulary
-	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
-        dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
-        dct:created "2005-01-01"^^xsd:date;
-        dcat:theme  <epos:GNSSData> ;
-        dcat:keyword "GNSS","Geodesy" ,"" ;
-        dcat:contactPoint <http://orcid.org/0000-0002-0915-3711/contactPoint>;
-	dct:publisher <PIC:999472675>;
-        dcat:distribution <WP11/GNSS/files/WSDistribution>;
-.
-
-<WP11/GNSS/files/WSDistribution> a dcat:Distribution;
-        dct:identifier "WP11/GNSS/files/WSDistribution";
-	dct:description "GNSS File Dataset WSDistribution";
-	dct:created "2005-01-01"^^xsd:date;
-	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-	dcat:accessURL <ingvgsac/files/operation>;
-	dct:conformsTo <ingvgsac/files>;
-	dct:format "http://publications.europa.eu/resource/authority/file-type/TXT"^^xsd:anyURI;
-
-.

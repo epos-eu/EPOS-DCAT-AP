@@ -16,9 +16,13 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .  
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .  
 
-<997168343> a schema:Organization;
+#########
+# Organization
+#########
+
+<PIC:997168343>  a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "PIC ";
+		schema:propertyID "PIC";
 		schema:value "997168343";
 	]; 
 	schema:legalName "Icelandic Meteorological Office";
@@ -32,19 +36,22 @@
 	schema:url "http://en.vedur.is"^^xsd:anyURI;
 	schema:email "office@vedur.is";
 	schema:telephone "+3545226000";
-	schema:contactPoint <0000-0001-5750-0872/scientificContact>;
+	schema:contactPoint <http://orcid.org/0000-0001-5750-0872/scientificContact>;
 . 
 
-<0000-0001-5750-0872> a schema:Person;
+
+#########
+# PERSON 
+#########
+
+<http://orcid.org/0000-0001-5750-0872> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "ORCID";
 		schema:value "0000-0001-5750-0872";
 	]; 
-	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "";
-		schema:value "";
-	]; 
-	schema:familyName "Sara Barsotti";
+
+	schema:familyName "Barsotti";
+	schema:givenName "Sara";
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "Bustaðavegur 7-9";
 		schema:addressLocality "Reykjavík";
@@ -53,22 +60,41 @@
 	]; 
 	schema:email "sara@vedur.is";
 	schema:telephone "+3545226162";
-	schema:url "https://en.vedur.is"^^xsd:anyURI;
-	schema:contactPoint <0000-0001-5750-0872/scientificContact>;
-	schema:contactPoint <0000-0001-5750-0872/contactPoint>;
+	schema:url "http://orcid.org/0000-0001-5750-0872"^^xsd:anyURI;
+	schema:contactPoint <http://orcid.org/0000-0001-5750-0872/scientificContact>;
+	schema:contactPoint <http://orcid.org/0000-0001-5750-0872/contactPoint>;
 . 
-	<www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/023/data> a dcat:Dataset;
-		dct:title "Ground-based visible and thermal / IR camera";
-		dct:identifier "www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/023/data";
-		adms:identifier [ a adms:Identifier;
-			adms:schemaAgency "DDSS-ID";
-			skos:notation "WP11-DDSS-023";
-		]; 
-		dct:description "Provide web camera images for selected eruptions";
-		dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
-		dct:created "2019-01-21"^^xsd:date;
-		dct:modified "2019-01-21"^^xsd:date;
-		dct:issued "2019-01-21"^^xsd:date;
+#########
+# ContactPoint
+######### 
+<http://orcid.org/0000-0001-5750-0872/contactPoint> a schema:ContactPoint;
+		schema:email "sara@vedur.is";
+		schema:availableLanguage "en" ;
+                schema:contactType "contactPoint" ;
+. 
+
+<http://orcid.org/0000-0001-5750-0872/scientificContact> a schema:ContactPoint;
+		schema:email "sara@vedur.is";
+		schema:availableLanguage "en" ;
+		schema:contactType "scientificContact" ;
+. 
+
+#########
+# Dataset
+######### 
+
+<www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/023/data> a dcat:Dataset;
+	dct:title "Ground-based visible and thermal / IR camera";
+	dct:identifier "www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/023/data";
+	adms:identifier [ a adms:Identifier;
+		adms:schemaAgency "DDSS-ID";
+		skos:notation "WP11-DDSS-023";
+	]; 
+	dct:description "Provide web camera images for selected eruptions";
+	dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
+	dct:created "2019-01-21"^^xsd:date;
+	dct:modified "2019-01-21"^^xsd:date;
+	dct:issued "2019-01-21"^^xsd:date;
 	dct:temporal [ a dct:PeriodOfTime; 
 		schema:startDate "2014-08-29T00:00:00Z"^^xsd:dateTime; 
 		schema:endDate "2015-02-28T00:00:00Z"^^xsd:dateTime; 
@@ -76,21 +102,41 @@
 	dct:spatial [ a dct:Location; 
 		locn:geometry "POLYGON(-25.0 63.0,-25.0 68.5,-10.0 68.5,-10.0 63.0,-25.0 63.0)"^^gsp:wktLiteral; 
 	]; 
-		dcat:theme <epos:Ground-basedremotesensingdata&products>;
-		dcat:keyword "Volcanic activity; images; web camera";
-	dcat:contactPoint <0000-0001-5750-0872/contactPoint>;
-		dcat:distribution <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/023>;
-		owl:versionInfo "V1.0";
+	dcat:theme <epos:Ground-basedremotesensingdata&products>;
+	dcat:keyword "Volcanic activity; images; web camera";
+	dcat:contactPoint <http://orcid.org/0000-0001-5750-0872/contactPoint>;
+	dct:publisher <PIC:997168343>;
+	dcat:distribution <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/023/WSDistribution>;
+	owl:versionInfo "V1.0";
 . 
+
+#########
+# Distribution
+######### 
+
+<www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/023/WSDistribution> a dcat:Distribution;
+	dct:identifier "www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/023/WSDistribution";
+	dct:title "Ground-based visible and thermal / IR camera";
+	dct:description "Access the images from web cameras for selected eruptions";
+	dct:issued "2019-01-21"^^xsd:date;
+	dct:modified "2019-01-21"^^xsd:date;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
+	dcat:accessURL <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/023/Operation/023>;
+	dct:conformsTo<www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/023>
+. 
+
+#########
+# WebService
+######### 
 
 <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/023> a epos:WebService;
 	schema:identifier "www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/023";
-	#schema:identifier [ a schema:PropertyValue; 
-		#schema:propertyID  "DDSS-ID"; 
-		#schema:value  ""; 
-	#]; 
 	schema:description "Access images from web cameras for selected eruptions";
 	schema:name "Ground-based visible and thermal / IR camera";
+        dcat:theme <epos:Ground-basedremotesensingdata&products>;
+        dcat:contactPoint <http://orcid.org/0000-0001-5750-0872/contactPoint>;
+        schema:provider <PIC:997168343> ;
 	hydra:entrypoint "https://docs.vedur.is/api/epos/#!/Volcanoes/get_volcano_meta_webcam_volcano_period_starts_period_ends"^^xsd:anyURI; 
 	schema:datePublished "2019-01-21"^^xsd:date;
 	schema:dateModified "2019-01-21"^^xsd:date;
@@ -103,62 +149,55 @@
 		schema:startDate "2019-01-21T00:00:00Z"^^xsd:dateTime; 
 		schema:endDate "2025-01-01T00:00:00Z"^^xsd:dateTime; 
 	]; 
-. 
-	<www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/023> a dcat:Distribution;
-		dct:identifier "www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/023";
-		dct:title "Ground-based visible and thermal / IR camera";
-		dct:description "Access the images from web cameras for selected eruptions";
-		dct:issued "2019-01-21"^^xsd:date;
-		dct:modified "2019-01-21"^^xsd:date;
-		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
-		dcat:accessURL "http://www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/023"^^xsd:anyURI;
-. 
-	<www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/023/Operation/023> a hydra:Operation;
-		hydra:method "GET"^^xsd:string;
-		hydra:returns "application/json";
-		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://api.vedur.is/epos/v1/volcano/meta/webcam/holuhraun/1900-01-01/2050-01-01/{?volcano, period_starts, period_ends}"^^xsd:string;
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "volcano"^^xsd:string;
-					rdfs:range "xsd:string";
-					rdfs:label "Volcano name ";
-					schema:defaultValue "Holuhraun";
-					hydra:required "true"^^xsd:boolean;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "period_starts"^^xsd:string;
-					rdfs:range "xsd:dateTime";
-					rdfs:label "Start time in format YYYY-MM-DD";
-					schema:minValue "1900-01-01";
-					schema:defaultValue "1900-01-01";
-					hydra:required "true"^^xsd:boolean;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "period_ends"^^xsd:string;
-					rdfs:range "xsd:dateTime";
-					rdfs:label "End time in format YYYY-MM-DD";
-					schema:maxValue "2050-01-01";
-					schema:defaultValue "2050-01-01";
-					hydra:required "true"^^xsd:boolean;
-				];
-		] ;
-. 
-	<epos:Ground-basedremotesensingdata&products> a skos:Concept;
-		skos:definition "Access images from web cameras for selected eruptions";
-		skos:inScheme <epos:VolcanoObservations>;
-		skos:prefLabel "Ground-based remote sensing data&products";
-. 
-	<epos:VolcanoObservations> a skos:ConceptScheme;
-		dct:title "Volcano Observations";
-		dct:description "Ground-based visible and thermal / IR camera";
-. 
-	<0000-0001-5750-0872/contactPoint> a schema:ContactPoint;
-		schema:email "sara@vedur.is";
-		schema:availableLanguage "en" ;
-. 
-	<0000-0001-5750-0872/scientificContact> a schema:ContactPoint;
-		schema:email "sara@vedur.is";
-		schema:availableLanguage "en" ;
-		schema:contactType "scientificContact" ;
 .
+
+#########
+# Operation
+######### 
+
+<www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/023/Operation/023> a hydra:Operation;
+	hydra:method "GET"^^xsd:string;
+	hydra:returns "application/json";
+	hydra:property[ a hydra:IriTemplate;
+		
+		hydra:template "https://api.vedur.is/epos/v1/volcano/meta/webcam/{volcano}/{?period_starts,period_ends}"^^xsd:string;
+		#hydra:template "https://api.vedur.is/epos/v1/volcano/meta/webcam/holuhraun/1900-01-01/2050-01-01/{?volcano, period_starts, period_ends}"^^xsd:string;
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "volcano"^^xsd:string;
+				rdfs:range "xsd:string";
+				rdfs:label "Volcano name ";
+				schema:defaultValue "Holuhraun";
+				hydra:required "true"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "period_starts"^^xsd:string;
+				rdfs:range "xsd:dateTime";
+				rdfs:label "Start time in format YYYY-MM-DD";
+				schema:minValue "1900-01-01";
+				schema:defaultValue "1900-01-01";
+				hydra:required "true"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "period_ends"^^xsd:string;
+				rdfs:range "xsd:dateTime";
+				rdfs:label "End time in format YYYY-MM-DD";
+				schema:maxValue "2050-01-01";
+				schema:defaultValue "2050-01-01";
+				hydra:required "true"^^xsd:boolean;
+			];
+	] ;
+. 
+
+#########
+# Concept
+######### 
+
+<epos:Ground-basedremotesensingdata&products> a skos:Concept;
+	skos:definition "Access images from web cameras for selected eruptions";
+	skos:inScheme <epos:VolcanoObservations>;
+	skos:prefLabel "Ground-based remote sensing data&products";
+. 
+<epos:VolcanoObservations> a skos:ConceptScheme;
+	dct:title "Volcano Observations";
+	dct:description "Ground-based visible and thermal / IR camera";
+. 

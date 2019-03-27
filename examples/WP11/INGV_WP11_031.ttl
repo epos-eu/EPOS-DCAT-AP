@@ -16,10 +16,15 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
-<http://orcid.org/0000-0002-0915-3711> a schema:Person;
+
+#########
+# PERSON 
+#########
+
+<https://orcid.org/0000-0002-0915-3711> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "ORCID";
-		schema:value "http://orcid.org/0000-0002-0915-3711";
+		schema:value "https://orcid.org/0000-0002-0915-3711";
 	];
 	schema:familyName "Reitano";
 	schema:givenName "Danilo";
@@ -31,17 +36,17 @@
 	];
 	schema:email "danilo.reitano@ingv.it";
 	schema:telephone "+00390957165800";
-	schema:url "http://orcid.org/0000-0002-0915-3711"^^xsd:anyURI;
+	schema:url "https://orcid.org/0000-0002-0915-3711"^^xsd:anyURI;
 	schema:qualifications "Technologist";
 	schema:affiliation <PIC:999472675>;
-	schema:contactPoint <http://orcid.org/0000-0002-0915-3711/contactPoint>;
+	schema:contactPoint <https://orcid.org/0000-0002-0915-3711/contactPoint>;
 .
 	
 
-<http://orcid.org/0000-0001-6137-8806> a schema:Person;
+<https://orcid.org/0000-0001-6137-8806> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "ORCID";
-		schema:value "http://orcid.org/0000-0001-6137-8806";
+		schema:value "https://orcid.org/0000-0001-6137-8806";
 	];
 	schema:familyName "Corsaro";
 	schema:givenName "Rosa Anna";
@@ -53,15 +58,15 @@
 	];
 	schema:email "rosanna.corsaro@ingv.it";
 	schema:telephone "+00390957165800";
-	schema:url "http://orcid.org/0000-0001-6137-8806"^^xsd:anyURI;
+	schema:url "https://orcid.org/0000-0001-6137-8806"^^xsd:anyURI;
 	schema:qualifications "Volcanologist";
 	schema:affiliation <PIC:999472675>;
 .
 
-<http://orcid.org/0000-0002-8651-6387> a schema:Person;
+<https://orcid.org/0000-0002-8651-6387> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "orcid";
-		schema:value "http://orcid.org/0000-0002-8651-6387";
+		schema:value "https://orcid.org/0000-0002-8651-6387";
 	];
 	schema:familyName "Doglioni";
 	schema:givenName "Carlo";
@@ -73,17 +78,42 @@
 	];
 	schema:email "segreteria.presidenza@ingv.it";
 	schema:telephone "+3906518601";
-	schema:url "http://orcid.org/0000-0002-8651-6387"^^xsd:anyURI;
+	schema:url "https://orcid.org/0000-0002-8651-6387"^^xsd:anyURI;
 	schema:qualifications "Professor";
 	schema:affiliation <PIC:999472675>;
 .
 
+#########
+# ContactPoint
+######### 
 
-	<http://orcid.org/0000-0002-0915-3711/contactPoint> a schema:ContactPoint;
+<https://orcid.org/0000-0002-0915-3711/contactPoint> a schema:ContactPoint;
 		schema:email "danilo.reitano@ingv.it";
 		schema:availableLanguage "en" ;
 		schema:contactType "contactPoint" ;
 .
+
+<https://orcid.org/0000-0003-0435-7763/scientificContact> a schema:ContactPoint;
+		schema:email "rosanna.corsaro@ingv.it";
+		schema:availableLanguage "en" ;
+		schema:contactType "scientificContact" ;
+.
+
+<https://orcid.org/0000-0002-8651-6387/legalContact> a schema:ContactPoint;
+		schema:email "segreteria.presidenza@ingv.it";
+		schema:availableLanguage "en" ;
+		schema:contactType "legalContact" ;
+.
+
+<https://orcid.org/0000-0002-8651-6387/financialContact> a schema:ContactPoint;
+		schema:email "segreteria.presidenza@ingv.it";
+		schema:availableLanguage "en" ;
+		schema:contactType "financialContact" ;
+.
+
+#########
+# Organization
+#########
 
 <PIC:999472675> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
@@ -100,32 +130,54 @@
 	];
 	schema:logo "http://roma2.rm.ingv.it/userfiles/file/Logo/INGV_Logo-abbr_colore.jpg"^^xsd:anyURI;
 	schema:url "http://www.ingv.it/"^^xsd:anyURI;
-	schema:contactPoint <http://orcid.org/0000-0003-0435-7763/scientificContact>;
-	schema:contactPoint <http://orcid.org/0000-0002-8651-6387/legalContact>;
-	schema:contactPoint <http://orcid.org/0000-0002-8651-6387/financialContact>;
+	schema:contactPoint <https://orcid.org/0000-0003-0435-7763/scientificContact>;
+	schema:contactPoint <https://orcid.org/0000-0002-8651-6387/legalContact>;
+	schema:contactPoint <https://orcid.org/0000-0002-8651-6387/financialContact>;
 .
-	<http://orcid.org/0000-0003-0435-7763/scientificContact> a schema:ContactPoint;
-		schema:email "rosanna.corsaro@ingv.it";
-		schema:availableLanguage "en" ;
-		schema:contactType "scientificContact" ;
+#########
+# Dataset
+#########
+
+<WP11/INGV/DDSS-031> a dcat:Dataset;
+        dct:title "Weekly Report";
+        dct:identifier "WP11/INGV/DDSS-031";
+        adms:identifier [ a adms:Identifier ;
+            adms:schemaAgency "DDSS-ID" ;
+            skos:notation "WP11-DDSS-031" ;
+        ];
+        dct:description "Weekly Volcanic Reports";
+        ## example of frequency using a controlled vocabulary
+	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+        dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+        dct:created "2005-01-01"^^xsd:date;
+        dcat:theme  <epos:Volcanic-Reports> ;
+        dcat:keyword "Volcanology", "Etna", "Weekly Report", "Stromboli", "Seismology" ;
+        dcat:contactPoint <https://orcid.org/0000-0002-0915-3711/contactPoint>;
+	dct:publisher <PIC:999472675>;
+        dcat:distribution <WP11/INGV/DDSS-031/WSDistribution>;
 .
-	<http://orcid.org/0000-0002-8651-6387/legalContact> a schema:ContactPoint;
-		schema:email "segreteria.presidenza@ingv.it";
-		schema:availableLanguage "en" ;
-		schema:contactType "legalContact" ;
+
+#########
+# Distribution
+######### 
+
+<WP11/INGV/DDSS-031/WSDistribution> a dcat:Distribution;
+        dct:identifier "WP11/INGV/DDSS-031/WSDistribution";
+        dct:title "Weekly Volcanic Report WSDistribution";
+	dct:description "Weekly Volcanic Report WSDistribution";
+	dct:created "2005-01-01"^^xsd:date;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+	dcat:accessURL <REPORTS/INGV/DDSS-031/operation>;
+	dct:conformsTo <REPORTS/INGV/DDSS-031>;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/TXT"^^xsd:anyURI;
 .
-	<http://orcid.org/0000-0002-8651-6387/financialContact> a schema:ContactPoint;
-		schema:email "segreteria.presidenza@ingv.it";
-		schema:availableLanguage "en" ;
-		schema:contactType "financialContact" ;
-.
-	
+
+#########
+# WebService
+######### 
+
 <REPORTS/INGV/DDSS-031> a epos:WebService;
 	schema:identifier "REST/INGV/DDSS-031";
-	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID  "DDSS-ID";
-		schema:value  "WP11-DDSS-031";
-	];
 	schema:description "Reports on volcanic activity";
 	schema:name "WeeklyReport";
 	schema:datePublished "2017-01-01T00:00:00Z"^^xsd:dateTime;
@@ -135,66 +187,50 @@
 	hydra:entrypoint "https://docs.vedur.is/api/epos/#!/Volcanoes/get_volcanoes_products_reports"^^xsd:anyURI;
 	hydra:supportedOperation <REPORTS/INGV/DDSS-031/operation>;
 	dcat:theme <epos:Volcanic-Reports>;
-	dcat:contactPoint <http://orcid.org/0000-0002-0915-3711/contactPoint>;
+	dcat:contactPoint <https://orcid.org/0000-0002-0915-3711/contactPoint>;
 .
 
-	<REPORTS/INGV/DDSS-031/operation> a hydra:Operation;
-		hydra:method "GET"^^xsd:string;
-		hydra:returns "json";
-		hydra:property[ a hydra:IriTemplate;
-			hydra:template "http://193.206.223.51:8000/reports/ (name, starttime, endtime)"^^xsd:string;
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "name"^^xsd:string;
-					rdfs:label "Volcano name ";
-					http:paramValue "Etna";
-					http:paramValue "Stromboli";
-					schema:defaultValue "Etna" ;
-					hydra:required "true"^^xsd:boolean;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "starttime"^^xsd:string;
-					rdfs:label "Insert start time in a standard format: (yyyy-mm-ddThh:mm:ssZ) ";
-					schema:defaultValue "2017-12-31T00:00:00Z" ;
-					hydra:required "false"^^xsd:boolean;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "endtime"^^xsd:string;
-					rdfs:label "Insert end time in a standard format: (yyyy-mm-ddThh:mm:ssZ) ";
-					schema:defaultValue "2018-01-01T10:00:00" ;
-					hydra:required "false"^^xsd:boolean;
-				];
-		] ;
+#########
+# Operation
+######### 
+
+<REPORTS/INGV/DDSS-031/operation> a hydra:Operation;
+	hydra:method "GET"^^xsd:string;
+	hydra:returns "application/json";
+	hydra:property[ a hydra:IriTemplate;
+	hydra:template "http://193.206.223.51:8000/reports/{?name, starttime, endtime}"^^xsd:string;
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "name"^^xsd:string;
+			rdfs:label "Volcano name ";
+			http:paramValue "Etna";
+			http:paramValue "Stromboli";
+			schema:defaultValue "Etna" ;
+			hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "starttime"^^xsd:string;
+			rdfs:label "Insert start time in a standard format: (yyyy-mm-ddThh:mm:ssZ) ";
+			schema:defaultValue "2017-12-31T00:00:00Z" ;
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "endtime"^^xsd:string;
+			rdfs:label "Insert end time in a standard format: (yyyy-mm-ddThh:mm:ssZ) ";
+			schema:defaultValue "2018-01-01T10:00:00" ;
+			hydra:required "false"^^xsd:boolean;
+		];
+	] ;
 .
-	<epos:VolcanoObservations> a skos:ConceptScheme;
-		dct:title "Volcano Observations";
-		dct:description "It contains the concepts of Volcano-Observations";
+#########
+# Concept
+######### 
+<epos:VolcanoObservations> a skos:ConceptScheme;
+	dct:title "Volcano Observations";
+	dct:description "It contains the concepts of Volcano-Observations";
 .
-	<epos:Volcanic-Reports> a skos:Concept;
-		skos:inScheme <epos:VolcanoObservations>;
-		skos:prefLabel "Volcanic Reports";
+<epos:Volcanic-Reports> a skos:Concept;
+	skos:inScheme <epos:VolcanoObservations>;
+	skos:prefLabel "Volcanic Reports";
 .
 
-<WP11/INGV/DDSS-031> a dcat:Dataset;
-        dct:title "Weekly Report";
-        dct:identifier "WP11/INGV/DDSS-031";
-        dct:description "Weekly Volcanic Reports";
-        ## example of frequency using a controlled vocabulary
-	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
-        dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
-        dct:created "2005-01-01"^^xsd:date;
-        dcat:theme  <epos:Volcanic-Reports> ;
-        dcat:keyword "Volcanology", "Etna", "Weekly Report", "Stromboli", "Seismology" ;
-        dcat:contactPoint <http://orcid.org/0000-0002-0915-3711/contactPoint>;
-	dct:publisher <PIC:999472675>;
-        dcat:distribution <WP11/INGV/DDSS-031/WSDistribution>;
-		.
 
-<WP11/INGV/DDSS-031/WSDistribution> a dcat:Distribution;
-        dct:identifier "WP11/INGV/DDSS-031/WSDistribution";
-	dct:description "Weekly Volcanic Report WSDistribution";
-	dct:created "2005-01-01"^^xsd:date;
-	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-	dcat:accessURL <REPORTS/INGV/DDSS-031/operation>;
-	dct:conformsTo <REPORTS/INGV/DDSS-031>;
-	dct:format "http://publications.europa.eu/resource/authority/file-type/TXT"^^xsd:anyURI;
-.

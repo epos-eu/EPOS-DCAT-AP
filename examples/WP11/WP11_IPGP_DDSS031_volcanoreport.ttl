@@ -16,6 +16,10 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
+#########
+# PERSON 
+#########
+
 <https://orcid.org/0000-0002-6874-786X> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "orcid";
@@ -99,12 +103,17 @@
 
 .
 
+#########
+# Organization
+#########
+
 <PIC:999597417> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "pic";
+		schema:propertyID "PIC";
 		schema:value "999597417";
 	];
 	schema:legalName "Institute of Earth Physics of Paris";
+        schema:leiCode "999597417";
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "1 rue jussieu";
 		schema:addressLocality "Paris";
@@ -118,8 +127,9 @@
 	schema:contactPoint <https://orcid.org/0000-0002-4234-3787/contactPoint>;
 .
 
+#######
 # Contacts
-
+#######
 
 <https://orcid.org/0000-0002-6874-786X/scientificContact> a schema:ContactPoint;
 	schema:email "jeanchristophe.komorowski@gmail.com";
@@ -151,17 +161,19 @@
 	schema:contactType "contactPoint" ;
 .
 
+#######
 # Dataset 
+#######
 
-	<WP11/volcanic-activity/DDSS031> a dcat:Dataset;
-		dct:title "Reports on volcanic activity";
-		dct:identifier "WP11/volcanic-activity/DDSS031";
-		adms:identifier [ a adms:Identifier;
-			adms:schemaAgency "DDSS-ID";
-			skos:notation "WP11-DDSS-031";
-		];
-		dct:description "Access to the periodic and exceptional reports produced by the French volcano Observatories and the Volcano Observatory Notice dor Aviation as well.";
-		dct:created "1999-01-01"^^xsd:date;
+<WP11/volcanic-activity/DDSS031> a dcat:Dataset;
+	dct:title "Reports on volcanic activity";
+	dct:identifier "WP11/volcanic-activity/DDSS031";
+	adms:identifier [ a adms:Identifier;
+		adms:schemaAgency "DDSS-ID";
+		skos:notation "WP11-DDSS-031";
+	];
+	dct:description "Access to the periodic and exceptional reports produced by the French volcano Observatories and the Volcano Observatory Notice dor Aviation as well.";
+	dct:created "1999-01-01"^^xsd:date;
 	dct:temporal [ a dct:PeriodOfTime;
 		schema:startDate "1999-01-01T00:00:00Z"^^xsd:dateTime;
 		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
@@ -169,39 +181,40 @@
 	dct:spatial [ a dct:Location;
 		locn:geometry "POLYGON(180 -90,-180 -90,-180 90,180 90,180 -90)"^^gsp:wktLiteral;
 	];
-		dcat:theme <epos:volcano activity reports>;
-		dcat:keyword "volcanology", "geohazards","periodic reports", "exceptional reports", "volcanic eruptions", "VONA", "civil aviation", "VAAC - Volcanic Ash Advisories Centers", "WMO - World Meteorolgical Organization";
-		dct:publisher <PIC:999597417>;
-		dcat:distribution <WP11/volcanic-activity/DDSS031/distribution/report>;
-		dcat:distribution <http://ws.ipgp.fr/volcano-reports/>;
-		owl:versionInfo "0";
-		dcat:contactPoint <https://orcid.org/0000-0002-4234-3787/contactPoint>;
+	dcat:theme <epos:volvanic-activity>;
+	dcat:keyword "volcanology", "geohazards","periodic reports", "exceptional reports", "volcanic eruptions", "VONA", "civil aviation", "VAAC - Volcanic Ash Advisories Centers", "WMO - World Meteorolgical Organization";
+	dct:publisher <PIC:999597417>;
+	dcat:distribution <WP11/volcanic-activity/DDSS031/distribution/report>;
+	#dcat:distribution <http://ws.ipgp.fr/volcano-reports/>;
+	owl:versionInfo "0";
+	dcat:contactPoint <https://orcid.org/0000-0002-4234-3787/contactPoint>;
 .
 
+#######
 # distribution
+#######
 
-	<WP11/volcanic-activity/DDSS031/distribution/report> a dcat:Distribution;
-		dct:identifier "WP11/volcanic-activity/DDSS031/distribution/report";
-		dct:title "Reports on volcanic activity";
-		dct:description "Access to the periodic and exceptional reports produced by the French volcano Observatories and the Volcano Observatory Notice dor Aviation as well";
-		dct:issued "2019-01-01"^^xsd:date;
-		dct:modified "2019-01-01"^^xsd:date;
-		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-		dct:conformsTo <http://ws.ipgp.fr/volcano-reports/ws>;
-		dcat:accessURL <http://ws.ipgp.fr/volcano-reports/operation>;
-		dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
-		dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI;
+<WP11/volcanic-activity/DDSS031/distribution/report> a dcat:Distribution;
+	dct:identifier "WP11/volcanic-activity/DDSS031/distribution/report";
+	dct:title "Reports on volcanic activity";
+	dct:description "Access to the periodic and exceptional reports produced by the French volcano Observatories and the Volcano Observatory Notice dor Aviation as well";
+	dct:issued "2019-01-01"^^xsd:date;
+	dct:modified "2019-01-01"^^xsd:date;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+	dct:conformsTo <http://ws.ipgp.fr/volcano-reports/report/ws>;
+	dcat:accessURL <http://ws.ipgp.fr/volcano-reports/report/operation>;
+	dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI;
 .
 
+#######
 # Webservice volcano reports
+#######
+
 <http://ws.ipgp.fr/volcano-reports/report/ws> a epos:WebService;
 	schema:identifier "http://ws.ipgp.fr/volcano-reports/report/ws";
-	#schema:identifier [ a schema:PropertyValue;
-		#schema:propertyID  "DDSS-ID";
-		#schema:value  "";
-	#];
 	schema:description "Web Service at IPGP data center to download meta-data of reports dessiminated by the French volcano Observatories";
-	dcat:theme <epos:volcanic-activity>;
+	dcat:theme <epos:volvanic-activity>;
 	schema:name "VolcanoReports Web Service - IPGP data centre";
 	hydra:entrypoint "http://ws.ipgp.fr/volcano-reports/"^^xsd:anyURI;
 	schema:provider <PIC:999597417>;
@@ -210,8 +223,7 @@
 	dct:spatial [ a dct:Location;
 		locn:geometry "POLYGON(180.0 -90.0,-180.0 -90.0,-180.0 90.0,180.0 90.0,180.0 -90.0)"^^gsp:wktLiteral;
 	];
-	hydra:supportedOperation <http://ws.ipgp.fr/volcano-reports/operation>;
-	
+	hydra:supportedOperation <http://ws.ipgp.fr/volcano-reports/report/operation>;
 	schema:keywords "Volcanic activity"," IPGP","periodic reports","exceptional reports","eruption" , "VONA" , "VAAC";
 	dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 	dct:temporal [ a dct:PeriodOfTime;
@@ -220,71 +232,74 @@
 	];
 	dcat:contactPoint <https://orcid.org/0000-0003-1601-8718/contactPoint>;
 .
+#########
+# Operation
+######### 
 
-	<http://ws.ipgp.fr/volcano-reports/report/operation> a hydra:Operation;
-		hydra:method "GET"^^xsd:string;
-		hydra:returns "application/json";
-		hydra:property[ a hydra:IriTemplate;
-			hydra:template "http://ws.ipgp.fr/volcano-reports/report?{?start_time, end_time, agency, volcano, type, language}"^^xsd:string;
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "start_time"^^xsd:dateTime;
-					hydra:property "schema:start_time";
-					schema:valuePattern "YYYY-MM-DD";
-					rdfs:range "xsd:dateTime";
-					rdfs:label "start of the timespan of requested data (format:YYYY-MM-DD)";
-          	schema:defaultValue "2018-01-01";
-					hydra:required "false"^^xsd:boolean;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "end_time"^^xsd:dateTime;
-					hydra:property "schema:end_time";
-					schema:valuePattern "YYYY-MM-DD";
-					rdfs:range "xsd:dateTime";
-					rdfs:label "end of the timespan of requested data (format:YYYY-MM-DD)";
-          	schema:defaultValue "2018-01-02T00:00:00";
-					hydra:required "false"^^xsd:boolean;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "agency"^^xsd:string;
-					rdfs:range "xsd:string";
-					rdfs:label "Observatory ; OVSG (Guadeloupe), OVSM (Martinique), or OVPF (Réunion)";
-         	schema:defaultValue "*";
-					hydra:required "false"^^xsd:boolean;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "volcano"^^xsd:string;
-					rdfs:range "xsd:string";
-          	schema:defaultValue "*";
-					rdfs:label "name of the volcano according to the catalog of the Smithsonian Institution";
-					hydra:required "false"^^xsd:boolean;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "type"^^xsd:string;
-					rdfs:range "xsd:string";
-          	schema:defaultValue "*";
-					rdfs:label "type of report: periodic, exceptional, VONA";
-					hydra:required "false"^^xsd:boolean;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "language"^^xsd:string;
-					rdfs:range "xsd:string";
-          	schema:defaultValue "fr";
-					rdfs:label "language of the reports requested : en or fr";
-					hydra:required "false"^^xsd:boolean;
-				];
-		] ;
+<http://ws.ipgp.fr/volcano-reports/report/operation> a hydra:Operation;
+	hydra:method "GET"^^xsd:string;
+	hydra:returns "application/json";
+	hydra:property[ a hydra:IriTemplate;
+		hydra:template "http://ws.ipgp.fr/volcano-reports/report{?start_time, end_time, agency, volcano, type, language}"^^xsd:string;
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "start_time"^^xsd:dateTime;
+				hydra:property "schema:startDate";
+				schema:valuePattern "YYYY-MM-DD";
+				rdfs:range "xsd:dateTime";
+				rdfs:label "start of the timespan of requested data (format:YYYY-MM-DD)";
+				schema:defaultValue "2018-01-01";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "end_time"^^xsd:dateTime;
+				hydra:property "schema:endDate";
+				schema:valuePattern "YYYY-MM-DD";
+				rdfs:range "xsd:dateTime";
+				rdfs:label "end of the timespan of requested data (format:YYYY-MM-DD)";
+				schema:defaultValue "2018-01-02";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "agency"^^xsd:string;
+				rdfs:range "xsd:string";
+				rdfs:label "Observatory ; OVSG (Guadeloupe), OVSM (Martinique), or OVPF (Réunion)";
+				schema:defaultValue "*";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "volcano"^^xsd:string;
+				rdfs:range "xsd:string";
+				schema:defaultValue "*";
+				rdfs:label "name of the volcano according to the catalog of the Smithsonian Institution";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "type"^^xsd:string;
+				rdfs:range "xsd:string";
+				schema:defaultValue "*";
+				rdfs:label "type of report: periodic, exceptional, VONA";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "language"^^xsd:string;
+				rdfs:range "xsd:string";
+				schema:defaultValue "fr";
+				rdfs:label "language of the reports requested : en or fr";
+				hydra:required "false"^^xsd:boolean;
+			];
+	] ;
 .
-	
+
 
 # Domain and subdomain
 
-	<epos:VolcanoObservations> a skos:ConceptScheme;
-		dct:title "Volcano Observations";
-		dct:description "It contains the concepts of Volcano-Observations";
+<epos:VolcanoObservations> a skos:ConceptScheme;
+	dct:title "Volcano Observations";
+	dct:description "It contains the concepts of Volcano-Observations";
 .
-	<epos:volvanic-activity> a skos:Concept;
-		skos:inScheme <epos:VolcanoObservations>;
-		skos:prefLabel "volcano reports meta-data";
+<epos:volvanic-activity> a skos:Concept;
+	skos:inScheme <epos:VolcanoObservations>;
+	skos:prefLabel "volcano reports meta-data";
 .
 
 		
