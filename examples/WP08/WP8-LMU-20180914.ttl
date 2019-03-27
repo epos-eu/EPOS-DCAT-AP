@@ -239,6 +239,8 @@
 
                   # This property contains true if the property is required, false otherwise.
                		hydra:required "true"^^xsd:boolean ;
+                  hydra:property "schema:startDate" ;
+                  schema:valuePattern "YYYY-MM-DDThh:mm:ss" ;
 
                   # This property contains the type of parameter. 
 		  # The possible values for this property are: "xsd:string" "xsd:boolean" "xsd:date" " xsd:dateTime" "xsd:decimal" "xsd:double" "xsd:float" "xsd:int" "xsd:integer" "xsd:long";
@@ -261,6 +263,8 @@
                			hydra:variable "endtime"^^xsd:string ;
 				            rdf:label "End of the timespan" ;
                			hydra:required "true"^^xsd:boolean ;
+                    hydra:property "schema:endDate" ;
+                    schema:valuePattern "YYYY-MM-DDThh:mm:ss" ;
                     rdfs:range "xsd:dateTime" ;
                     schema:defaultValue "2018-01-01T01:00:00" ;
 
@@ -493,6 +497,9 @@
                   # This property contains true if the property is required, false otherwise.
                		hydra:required "false"^^xsd:boolean ;
 
+                  hydra:property "schema:startDate" ;
+                  schema:valuePattern "YYYY-MM-DDThh:mm:ss" ;
+
                   # This property contains the type of parameter. 
 		  # The possible values for this property are: "xsd:string" "xsd:boolean" "xsd:date" " xsd:dateTime" "xsd:decimal" "xsd:double" "xsd:float" "xsd:int" "xsd:integer" "xsd:long";
                   rdfs:range "xsd:dateTime" ;
@@ -514,6 +521,8 @@
                			hydra:variable "endtime"^^xsd:string ;
 				            rdf:label "End of the timespan" ;
                			hydra:required "false"^^xsd:boolean ;
+                    hydra:property "schema:endDate" ;
+                    schema:valuePattern "YYYY-MM-DDThh:mm:ss" ;
                     rdfs:range "xsd:dateTime" ;
                     
               		];
