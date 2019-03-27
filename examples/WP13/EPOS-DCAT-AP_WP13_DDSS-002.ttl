@@ -163,7 +163,6 @@
 
     dct:temporal [ a dct:PeriodOfTime; 
         schema:startDate "1982-01-01T00:00:00Z"^^xsd:dateTime; 
-        #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
     ]; 
     dct:spatial [ a dct:Location; 
         locn:geometry "POLYGON(40.0 50.0, 0.0 50.0, 0.0 80.0, 40.0 80.0, 40.0 50.0)"^^gsp:wktLiteral; 
@@ -209,7 +208,6 @@
     ]; 
     dct:temporal [ a dct:PeriodOfTime; 
         schema:startDate "1982-01-01T00:00:00Z"^^xsd:dateTime; 
-        #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
     ]; 
     dct:license "http://space.fmi.fi/image/www/index.php?page=rules_of_road"^^xsd:anyURI;
 .
@@ -236,28 +234,28 @@
             ];
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "yourname"^^xsd:string;
-                rdfs:label "Name";
+                rdfs:label "Your name";
                 rdfs:range "xsd:string" ;
                 schema:defaultValue "EPOS Test User";
                 hydra:required "true"^^xsd:boolean;
             ];
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "institute"^^xsd:string;
-                rdfs:label "Institute";
+                rdfs:label "Your institute";
                 rdfs:range "xsd:string" ;
                 schema:defaultValue "EPOS Test Institute";
                 hydra:required "true"^^xsd:boolean;
             ];
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "email"^^xsd:string;
-                rdfs:label "Email";
+                rdfs:label "Your email";
                 rdfs:range "xsd:string" ;
                 schema:defaultValue "EPOSTestUser@example.org";
                 hydra:required "true"^^xsd:boolean;
             ];
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "submit"^^xsd:string;
-                rdfs:label "Submit";
+                rdfs:label "Always set to 'OK'";
                 rdfs:range "xsd:string" ;
                 http:paramValue "OK";
                 schema:defaultValue "OK";

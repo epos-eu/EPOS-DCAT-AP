@@ -179,7 +179,6 @@
 
     dct:temporal [ a dct:PeriodOfTime;
         schema:startDate "1868-01-01T00:00:00Z"^^xsd:dateTime;
-        #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
     ];
     dct:spatial [ a dct:Location;
         locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral;
@@ -224,7 +223,6 @@
     ];
     dct:temporal [ a dct:PeriodOfTime;
         schema:startDate "1868-01-01T00:00:00Z"^^xsd:dateTime;
-        #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
     ];
     dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 .
@@ -240,7 +238,7 @@
         hydra:template "http://geomag.bgs.ac.uk/EPOS/WP13/isgi/{?index, StartTime, EndTime}"^^xsd:string;
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "index"^^xsd:string;
-                rdfs:label "GeomagneticIndex";
+                rdfs:label "Type of geomagnetic index";
                 rdfs:range "xsd:string" ;
                 schema:defaultValue "aa";
                 http:paramValue "aa";
@@ -250,7 +248,7 @@
             ];
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "StartTime"^^xsd:string;
-                rdfs:label "StartTime";
+                rdfs:label "Start time";
                 hydra:property "schema:startDate";
                 schema:valuePattern "YYYY-MM-DD";
                 rdfs:range "xsd:date" ;
@@ -261,7 +259,7 @@
             ];
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "EndTime"^^xsd:string;
-                rdfs:label "EndTime";
+                rdfs:label "End time";
                 hydra:property "schema:endDate";
                 schema:valuePattern "YYYY-MM-DD";
                 rdfs:range "xsd:date" ;
