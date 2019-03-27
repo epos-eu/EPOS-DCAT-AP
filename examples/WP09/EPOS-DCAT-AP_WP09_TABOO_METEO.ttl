@@ -165,9 +165,9 @@
 		locn:geometry "POLYGON(11.78 43.95, 13.61 43.95, 13.61 42.8, 11.78 42.8, 11.78 43.95)"^^gsp:wktLiteral ;
 	];
 	# This property refers to a temporal period that the Dataset covers.
-        dct:temporal [ a dct:PeriodOfTime ;
+    dct:temporal [ a dct:PeriodOfTime ;
         schema:startDate "2015-06-01T00:00:00Z"^^xsd:dateTime ;
-        #schema:endDate "2019-01-01T00:00:00Z"^^xsd:dateTime ;
+        # schema:endDate "2019-01-01T00:00:00Z"^^xsd:dateTime ;
     ];
 	dcat:theme  <epos:Meteorologicaldata>;
 	dcat:keyword "Geochemical", "geochemistry", "meteo", "meteorological parameters at CO2 site", "water level", "air temperature", "water temperature", "water conductivity", "rain", "humidity", "atmospheric pressure", "NFO", "Near Fault Observatory", "TABOO", "FRIDGE";
@@ -195,6 +195,13 @@
 	schema:name "TABOO Meteorological parameters at CO2 site Web Service";
 	schema:datePublished "2017-06-08T12:00:00Z"^^xsd:dateTime;
 	schema:dateModified "2017-06-08T12:00:00Z"^^xsd:dateTime;
+	dct:temporal [ a dct:PeriodOfTime ;
+        schema:startDate "2015-06-01T00:00:00Z"^^xsd:dateTime ;
+        # schema:endDate "2019-01-01T00:00:00Z"^^xsd:dateTime ;
+    ];
+    dct:spatial [ a dct:Location ;
+		locn:geometry "POLYGON(11.78 43.95, 13.61 43.95, 13.61 42.8, 11.78 42.8, 11.78 43.95)"^^gsp:wktLiteral ;
+	];
 	schema:provider <PIC:999472675>;
 	schema:keywords "Geochemical", "geochemistry", "meteo", "meteorological parameters at CO2 site", "water level", "air temperature", "water temperature", "water conductivity", "rain", "humidity", "atmospheric pressure", "NFO", "Near Fault Observatory", "TABOO", "FRIDGE";
 	#hydra:entrypoint "application.wadl"^^xsd:anyURI;
@@ -263,6 +270,7 @@
 			schema:minValue "-90";
 			schema:maxValue "90";
 			schema:defaultValue "43.0";
+			hydra:property “epos:southernmostLatitude”;
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -272,6 +280,7 @@
 			schema:minValue "-90";
 			schema:maxValue "90";
 			schema:defaultValue "44.0";
+			hydra:property “epos:northernmostLatitude”;
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -281,6 +290,7 @@
 			schema:minValue "-90";
 			schema:maxValue "90";
 			schema:defaultValue "12.0";
+			hydra:property “epos:westernmostLongitude”;
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -290,6 +300,7 @@
 			schema:minValue "-90";
 			schema:maxValue "90";
 			schema:defaultValue "13.0";
+			hydra:property “epos:easternmostLongitude”;
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
