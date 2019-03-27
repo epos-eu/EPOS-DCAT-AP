@@ -58,7 +58,7 @@
 	];
 	schema:logo "https://www.emsc-csem.org/Css/img/logo.png"^^xsd:anyURI;
 	schema:url "http://www.emsc-csem.org"^^xsd:anyURI;
-	schema:email "info@emsc-csem.org";
+	schema:email "contact@emsc-csem.org";
 	schema:contactPoint <https://orcid.org/0000-0002-4460-6325/scientificContact>;
 	schema:contactPoint <https://orcid.org/0000-0002-4460-6325/legalContact>;
 	schema:contactPoint <https://orcid.org/0000-0002-4460-6325/financialContact>;
@@ -123,27 +123,22 @@
 # WEBSERVICE (#1) => FDSNWS-Event
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/EMSC/WebService> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/EMSC/WebService";
-	#schema:identifier [ a schema:PropertyValue;
-		#schema:propertyID  "DDSS-ID";
-		#schema:value  "";
-	#];
 	schema:description "The fdsnws-event web service returns event (earthquake) information from EMSC catalogs. Events may be selected based on location, time and internal identifiers. The results include origin and magnitude for each event. By default results are returned as XML in QuakeML format (schema), but may also be requested in text formats. This service is an implementation of the FDSN web service specification version 1. �	Name : SeismicPortal FDSN event web service 1.0.1";
 	dcat:theme <epos:SeismicParametrics>;
-	schema:name "SeismicPortal FDSN event web service 1.0.1";
+	schema:name "EMSC fdsn-event web service";
 	hydra:entrypoint "http://www.seismicportal.eu/fdsnws/event/1/query?"^^xsd:anyURI;
 	schema:provider <PIC:998779222>;
 	schema:datePublished "2017-10-25"^^xsd:date;
 	schema:dateModified "2017-10-25"^^xsd:date;
+	dct:temporal [ a dct:PeriodOfTime;
+		schema:startDate "1998-01-01T00:00:00Z"^^xsd:dateTime;
+	];
 	dct:spatial [ a dct:Location;
 		locn:geometry "POLYGON(-180.0 90.0,180.0 90.0,180.0 -90.0,-180.0 -90.0,-180.0 90.0)"^^gsp:wktLiteral;
 	];
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/EMSC/operation>;
-	schema:keywords "seismology"," seismicity"," earthquakes"," waveform"," seismic hazard"," earth structure"," earthquake intensity"," macroseismic"," macroseismic information"," waveform modeling"," Earthquake"," Event"," rocks"," seismic waves propagation";
+	schema:keywords "seismology","seismicity","earthquakes","Earthquake","Event";
 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
-	dct:temporal [ a dct:PeriodOfTime;
-		schema:startDate "2010-01-01T00:00:00Z"^^xsd:dateTime;
-		schema:endDate "2020-01-01T00:00:00Z"^^xsd:dateTime;
-	];
 	dcat:contactPoint <https://orcid.org/0000-0002-4460-6325/contactPoint>;
 	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/EMSC/APIDocumentation>;
 .
@@ -151,27 +146,19 @@
 # WEBSERVICE (#2) => FE-region lookup
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/EMSC/WebService> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/EMSC/WebService";
-	#schema:identifier [ a schema:PropertyValue;
-		#schema:propertyID  "DDSS-ID";
-		#schema:value  "";
-	#];
 	schema:description "The service identifies the Flinn-Engdahl region from a geolocalisation entry point";
 	dcat:theme <epos:SeismicParametrics>;
-	schema:name "Seismic Portal Flinn-Engdahl Lookup web service 1.0.1";
+	schema:name "EMSC Flinn-Engdahl Lookup web service";
 	hydra:entrypoint "http://www.seismicportal.eu/fe_regions_ws/query?"^^xsd:anyURI;
 	schema:provider <PIC:998779222>;
 	schema:datePublished "2017-10-25"^^xsd:date;
 	schema:dateModified "2017-10-25"^^xsd:date;
 	dct:spatial [ a dct:Location;
-		locn:geometry "POLYGON(-180.0 90.0,180.0 90.0,180.0 -90.0,-180.0 -90.0,-180.0 90.0)"^^gsp:wktLiteral;
+		locn:geometry "POLYGON(-180.0 90.0,180.0 90.0,180.0 -90.0,-180.0 90.0,-180.0 90.0)"^^gsp:wktLiteral;
 	];
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/EMSC/operation>;
-	schema:keywords "seismology"," seismicity"," earthquakes"," waveform"," seismic hazard"," earth structure"," earthquake intensity"," macroseismic"," macroseismic information"," waveform modeling"," Earthquake"," Event"," rocks"," seismic waves propagation";
+	schema:keywords "seismology","earthquakes","Earthquake","Event";
 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
-	dct:temporal [ a dct:PeriodOfTime;
-		schema:startDate "2010-01-01T00:00:00Z"^^xsd:dateTime;
-		schema:endDate "2010-01-01T00:00:00Z"^^xsd:dateTime;
-	];
 	dcat:contactPoint <https://orcid.org/0000-0002-4460-6325/contactPoint>;
 	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/EMSC/APIDocumentation>;
 .
@@ -179,27 +166,22 @@
 # WEBSERVICE (#3) => Moment Tensors
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/EMSC/WebService> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/EMSC/WebService";
-	#schema:identifier [ a schema:PropertyValue;
-		#schema:propertyID  "DDSS-ID";
-		#schema:value  "";
-	#];
 	schema:description "Retrieves all the moment tensors collected by EMSC";
 	dcat:theme <epos:SeismicParametrics>;
-	schema:name "SeismicPortal Moment Tensors web service 1.0.1";
+	schema:name "EMSC Moment Tensors web service";
 	hydra:entrypoint "http://www.seismicportal.eu/mtws/api/search?"^^xsd:anyURI;
 	schema:provider <PIC:998779222>;
 	schema:datePublished "2017-10-25"^^xsd:date;
 	schema:dateModified "2017-10-25"^^xsd:date;
+	dct:temporal [ a dct:PeriodOfTime;
+		schema:startDate "2010-01-01T00:00:00Z"^^xsd:dateTime;
+	];
 	dct:spatial [ a dct:Location;
 		locn:geometry "POLYGON(-180.0 90.0,180.0 90.0,180.0 -90.0,-180.0 -90.0,-180.0 90.0)"^^gsp:wktLiteral;
 	];
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/EMSC/operation>;
-	schema:keywords "seismology"," seismicity"," earthquakes"," waveform"," seismic hazard"," earth structure"," earthquake intensity"," macroseismic"," macroseismic information"," waveform modeling"," Earthquake"," Event"," rocks"," seismic waves propagation";
+	schema:keywords "seismology","seismicity","earthquakes","Earthquake","Event", "moment tensor", "beachball";
 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
-	dct:temporal [ a dct:PeriodOfTime;
-		schema:startDate "2010-10-01T00:00:00Z"^^xsd:dateTime;
-		schema:endDate "2020-01-01T00:00:00Z"^^xsd:dateTime;
-	];
 	dcat:contactPoint <https://orcid.org/0000-0002-4460-6325/contactPoint>;
     dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/EMSC/APIDocumentation>;
 .
@@ -207,13 +189,9 @@
 # WEBSERVICE (#4) => EventID
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/EMSC/WebService> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/EMSC/WebService";
-	#schema:identifier [ a schema:PropertyValue;
-		#schema:propertyID  "DDSS-ID";
-		#schema:value  "";
-	#];
 	schema:description "Retrieves origin parameters of the EMSC catalogue from a unified identifier and vice versa";
 	dcat:theme <epos:SeismicParametrics>;
-	schema:name "SeismicPortal EventID web service 1.0.1";
+	schema:name "EMSC EventID web service";
 	hydra:entrypoint "http://www.seismicportal.eu/eventid/api/convert?"^^xsd:anyURI;
 	schema:provider <PIC:998779222>;
 	schema:datePublished "2017-10-25"^^xsd:date;
@@ -222,12 +200,8 @@
 		locn:geometry "POLYGON(-180.0 90.0,180.0 90.0,180.0 -90.0,-180.0 -90.0,-180.0 90.0)"^^gsp:wktLiteral;
 	];
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/EMSC/operation>;
-	schema:keywords "seismology"," seismicity"," earthquakes"," waveform"," seismic hazard"," earth structure"," earthquake intensity"," macroseismic"," macroseismic information"," waveform modeling"," Earthquake"," Event"," rocks"," seismic waves propagation";
+	schema:keywords "seismology"," seismicity"," earthquakes","Earthquake","Event";
 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
-	dct:temporal [ a dct:PeriodOfTime;
-		schema:startDate "2010-01-01T00:00:00Z"^^xsd:dateTime;
-		schema:endDate "2020-01-01T00:00:00Z"^^xsd:dateTime;
-	];
 	dcat:contactPoint <https://orcid.org/0000-0002-4460-6325/contactPoint>;
 	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/EMSC/APIDocumentation>;
 .
@@ -235,27 +209,22 @@
 # WEBSERVICE (#5) => Rupture Models
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/005/EMSC/WebService> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/005/EMSC/WebService";
-	#schema:identifier [ a schema:PropertyValue;
-		#schema:propertyID  "DDSS-ID";
-		#schema:value  "";
-	#];
 	schema:description "Data source models from SRCMOD database of Martin Mai ";
 	dcat:theme <epos:SeismicParametrics>;
-	schema:name "SeismicPortal Rupture Models web service 1.0.1";
+	schema:name "EMSC Rupture Models web service";
 	hydra:entrypoint "http://www.seismicportal.eu/srcmodws/api/search?"^^xsd:anyURI;
 	schema:provider <PIC:998779222>;
 	schema:datePublished "2017-10-25"^^xsd:date;
 	schema:dateModified "2017-10-25"^^xsd:date;
+	dct:temporal [ a dct:PeriodOfTime;
+		schema:startDate "1900-01-01T00:00:00Z"^^xsd:dateTime;
+	];
 	dct:spatial [ a dct:Location;
 		locn:geometry "POLYGON(-180.0 90.0,180.0 90.0,180.0 -90.0,-180.0 -90.0,-180.0 90.0)"^^gsp:wktLiteral;
 	];
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/005/EMSC/operation>;
-	schema:keywords "seismology"," seismicity"," earthquakes"," waveform"," seismic hazard"," earth structure"," earthquake intensity"," macroseismic"," macroseismic information"," waveform modeling"," Earthquake"," Event"," rocks"," seismic waves propagation";
+	schema:keywords "seismology","seismicity","earthquakes","Earthquake","Event", "rupture model";
 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
-	dct:temporal [ a dct:PeriodOfTime;
-		schema:startDate "2010-01-01T00:00:00Z"^^xsd:dateTime;
-		schema:endDate "2020-01-01T00:00:00Z"^^xsd:dateTime;
-	];
 	dcat:contactPoint <https://orcid.org/0000-0002-4460-6325/contactPoint>;
 	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/005/EMSC/APIDocumentation>;
 .
@@ -263,27 +232,22 @@
 # WEBSERVICE (#6) => Testimonies
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/006/EMSC/WebService> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/006/EMSC/WebService";
-	#schema:identifier [ a schema:PropertyValue;
-		#schema:propertyID  "DDSS-ID";
-		#schema:value  "";
-	#];
 	schema:description "Felt reports collected through EMSC website, mobile app, Lastquake application";
 	dcat:theme <epos:SeismicParametrics>;
-	schema:name "Seismic Portal Testimonies web service 1.0.1";
+	schema:name "EMSC Testimonies web service";
 	hydra:entrypoint "http://www.seismicportal.eu/testimonies-ws/api/search?"^^xsd:anyURI;
 	schema:provider <PIC:998779222>;
 	schema:datePublished "2017-10-25"^^xsd:date;
 	schema:dateModified "2017-10-25"^^xsd:date;
+	dct:temporal [ a dct:PeriodOfTime;
+		schema:startDate "2010-01-01T00:00:00Z"^^xsd:dateTime;
+	];
 	dct:spatial [ a dct:Location;
 		locn:geometry "POLYGON(-180.0 90.0,180.0 90.0,180.0 -90.0,-180.0 -90.0,-180.0 90.0)"^^gsp:wktLiteral;
 	];
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/006/EMSC/operation>;
-	schema:keywords "seismology"," seismicity"," earthquakes"," waveform"," seismic hazard"," earth structure"," earthquake intensity"," macroseismic"," macroseismic information"," waveform modeling"," Earthquake"," Event"," rocks"," seismic waves propagation";
+	schema:keywords "seismology"," seismicity"," earthquakes","earthquake intensity","macroseismic","Earthquake","Event", "felt intensity";
 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
-	dct:temporal [ a dct:PeriodOfTime;
-		schema:startDate "2010-01-01T00:00:00Z"^^xsd:dateTime;
-		schema:endDate "2020-01-01T00:00:00Z"^^xsd:dateTime;
-	];
 	dcat:contactPoint <https://orcid.org/0000-0002-4460-6325/contactPoint>;
 	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/006/EMSC/APIDocumentation>;
 .
@@ -385,6 +349,7 @@
 
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "minlatitude"^^xsd:string;
+			hydra:property "epos:southernmostLatitude";
 			rdfs:range "xsd:float";
 			rdfs:label "Minimum Latitude";
 			schema:minValue "-90";
@@ -395,6 +360,7 @@
 
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "maxlatitude"^^xsd:string;
+			hydra:property "epos:northernmostLatitude";
 			rdfs:range "xsd:float";
 			rdfs:label "Maximum Latitude";
 			schema:minValue "-90";
@@ -405,6 +371,7 @@
 
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "minlongitude"^^xsd:string;
+			hydra:property "epos:westernmostLongitude";
 			rdfs:range "xsd:float";
 			rdfs:label "Minimum Longitude";
 			schema:minValue "-180";
@@ -415,6 +382,7 @@
 
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "maxlongitude"^^xsd:string;
+			hydra:property "epos:easternmostLongitude";
 			rdfs:range "xsd:float";
 			rdfs:label "Maximum Longitude";
 			schema:minValue "-180";
@@ -504,7 +472,6 @@
 			rdfs:range "xsd:integer";
 			rdfs:label "Limit";
 			schema:minValue "1";
-			schema:defaultValue "100";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -676,7 +643,6 @@
 			hydra:variable "source_catalog"^^xsd:string;
 			rdfs:range "xsd:string";
 			rdfs:label "Source Catalogue";
-			http:paramValue "ALL";
             http:paramValue "AUTH";
             http:paramValue "CPPT";
             http:paramValue "ERD";
@@ -803,6 +769,7 @@
 
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "minlat"^^xsd:string;
+			hydra:property "epos:southernmostLatitude";
 			rdfs:range "xsd:float";
 			rdfs:label "Minimum Latitude (Rectangle Search)";
 			schema:minValue "-90";
@@ -813,6 +780,7 @@
 
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "maxlat"^^xsd:string;
+			hydra:property "epos:northernmostLatitude";
 			rdfs:range "xsd:float";
 			rdfs:label "Maximum Latitude (Rectangle Search)";
 			schema:minValue "-90";
@@ -823,6 +791,7 @@
 
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "minlon"^^xsd:string;
+			hydra:property "epos:westernmostLongitude";
 			rdfs:range "xsd:float";
 			rdfs:label "Minimum Longitude (Rectangle Search)";
 			schema:minValue "-180";
@@ -833,6 +802,7 @@
 
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "maxlon"^^xsd:string;
+			hydra:property "epos:easternmostLongitude";
 			rdfs:range "xsd:float";
 			rdfs:label "Maximum Longitude (Rectangle Search)";
 			schema:minValue "-180";
@@ -1144,6 +1114,7 @@
 
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "minlat"^^xsd:string;
+			hydra:property "epos:southernmostLatitude";
 			rdfs:range "xsd:float";
 			rdfs:label "Minimum Latitude (Rectangle Search)";
 			schema:minValue "-90";
@@ -1153,6 +1124,7 @@
 
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "maxlat"^^xsd:string;
+			hydra:property "epos:northernmostLatitude";
 			rdfs:range "xsd:float";
 			rdfs:label "Maximum Latitude (Rectangle Search)";
 			schema:minValue "-90";
@@ -1162,6 +1134,7 @@
 
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "minlon"^^xsd:string;
+			hydra:property "epos:westernmostLongitude";
 			rdfs:range "xsd:float";
 			rdfs:label "Minimum Longitude (Rectangle Search)";
 			schema:minValue "-180";
@@ -1171,6 +1144,7 @@
 
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "maxlon"^^xsd:string;
+			hydra:property "epos:easternmostLongitude";
 			rdfs:range "xsd:float";
 			rdfs:label "Maximum Longitude (Rectangle Search)";
 			schema:minValue "-180";
@@ -1336,6 +1310,7 @@
 
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "minlat"^^xsd:string;
+			hydra:property "epos:southernmostLatitude";
 			rdfs:range "xsd:float";
 			rdfs:label "Minimum Latitude (Rectangle Search)";
 			schema:minValue "-90";
@@ -1345,6 +1320,7 @@
 
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "maxlat"^^xsd:string;
+			hydra:property "epos:northernmostLatitude";
 			rdfs:range "xsd:float";
 			rdfs:label "Maximum Latitude (Rectangle Search)";
 			schema:minValue "-90";
@@ -1354,6 +1330,7 @@
 
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "minlon"^^xsd:string;
+			hydra:property "epos:westernmostLongitude";
 			rdfs:range "xsd:float";
 			rdfs:label "Minimum Longitude (Rectangle Search)";
 			schema:minValue "-180";
@@ -1363,6 +1340,7 @@
 
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "maxlon"^^xsd:string;
+			hydra:property "epos:easternmostLongitude";
 			rdfs:range "xsd:float";
 			rdfs:label "Maximum Longitude (Rectangle Search)";
 			schema:minValue "-180";
@@ -1451,28 +1429,27 @@
 
 # DATASET (#1) => FDSNWS-Event
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/EMSC> a dcat:Dataset;
-		dct:title "EMSC Seismic Parametric Data (fdsnws-event)";
+		dct:title "EMSC fdsnws-event data";
 		dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/EMSC";
 		adms:identifier [ a adms:Identifier;
 			adms:schemaAgency "DDSS-ID";
 			skos:notation "WP08-DDSS-017";
 		];
-		dct:description "Description of fdsnws-event Parametrics";
+		dct:description "Event data collected in real-time at EMSC";
 		dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
 		dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
 		dct:created "2017-10-25"^^xsd:date;
 		dct:modified "2017-10-25"^^xsd:date;
 		dct:issued "2017-10-25"^^xsd:date;
-	dct:temporal [ a dct:PeriodOfTime;
-		schema:startDate "2010-01-01T00:00:00Z"^^xsd:dateTime;
-		schema:endDate "2020-01-01T00:00:00Z"^^xsd:dateTime;
-	];
-	dct:spatial [ a dct:Location;
-		locn:geometry "POLYGON(-180.0 90.0,180.0 90.0,180.0 -90.0,-180.0 -90.0,-180.0 90.0)"^^gsp:wktLiteral;
-	];
+		dct:temporal [ a dct:PeriodOfTime;
+			schema:startDate "1998-01-01T00:00:00Z"^^xsd:dateTime;
+		];
+		dct:spatial [ a dct:Location;
+			locn:geometry "POLYGON(-180.0 90.0,180.0 90.0,180.0 -90.0,-180.0 -90.0,-180.0 90.0)"^^gsp:wktLiteral;
+		];
 		dcat:theme <epos:SeismicParametrics>;
 		dcat:keyword "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "Earthquake", "Event", "rocks", "seismic waves propagation";
-	dcat:contactPoint <https://orcid.org/0000-0002-4460-6325/contactPoint>;
+		dcat:contactPoint <https://orcid.org/0000-0002-4460-6325/contactPoint>;
 		dct:publisher <PIC:998779222>;
 		dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/EMSC/Distribution>;
 		owl:versionInfo "ADP - 18/12/2018";
@@ -1480,28 +1457,27 @@
 
 # DATASET (#2) => FE-region lookup
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/EMSC> a dcat:Dataset;
-		dct:title "EMSC Seismic Parametric Data (FE-region lookup)";
+		dct:title "EMSC Flinn-Engdahl region lookup";
 		dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/EMSC";
 		adms:identifier [ a adms:Identifier;
 			adms:schemaAgency "DDSS-ID";
 			skos:notation "WP08-DDSS-018";
 		];
-		dct:description "Continuous parametric seismic data";
+		dct:description "find Flinn-Engdahl region name";
 		dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
 		dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
 		dct:created "2017-10-25"^^xsd:date;
 		dct:modified "2017-10-25"^^xsd:date;
 		dct:issued "2017-10-25"^^xsd:date;
-	dct:temporal [ a dct:PeriodOfTime;
-		schema:startDate "2010-01-01T00:00:00Z"^^xsd:dateTime;
-		schema:endDate "2020-01-01T00:00:00Z"^^xsd:dateTime;
-	];
-	dct:spatial [ a dct:Location;
-		locn:geometry "POLYGON(-180.0 90.0,180.0 90.0,180.0 -90.0,-180.0 90.0,-180.0 90.0)"^^gsp:wktLiteral;
-	];
+		dct:temporal [ a dct:PeriodOfTime;
+			schema:startDate "2010-01-01T00:00:00Z"^^xsd:dateTime;
+		];
+		dct:spatial [ a dct:Location;
+			locn:geometry "POLYGON(-180.0 90.0,180.0 90.0,180.0 -90.0,-180.0 90.0,-180.0 90.0)"^^gsp:wktLiteral;
+		];
 		dcat:theme <epos:SeismicParametrics>;
 		dcat:keyword "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "Earthquake", "Event", "rocks", "seismic waves propagation";
-	dcat:contactPoint <https://orcid.org/0000-0002-4460-6325/contactPoint>;
+		dcat:contactPoint <https://orcid.org/0000-0002-4460-6325/contactPoint>;
 		dct:publisher <PIC:998779222>;
 		dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/EMSC/Distribution>;
 		owl:versionInfo "ADP - 18/12/2018";
@@ -1509,28 +1485,27 @@
 
 # DATASET (#3) => Moment Tensors
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/EMSC> a dcat:Dataset;
-		dct:title "EMSC Seismic Parametric Data (MomentTensors)";
+		dct:title "EMSC Moment Tensors data";
 		dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/EMSC";
 		adms:identifier [ a adms:Identifier;
 			adms:schemaAgency "DDSS-ID";
 			skos:notation "WP08-DDSS-019";
 		];
-		dct:description "Description of Moment Tensors Parametrics";
+		dct:description "Moment Tensor data collected in real-time at EMSC";
 		dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
 		dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
 		dct:created "2017-10-25"^^xsd:date;
 		dct:modified "2017-10-25"^^xsd:date;
 		dct:issued "2017-10-25"^^xsd:date;
-	dct:temporal [ a dct:PeriodOfTime;
-		schema:startDate "2010-01-01T00:00:00Z"^^xsd:dateTime;
-		schema:endDate "2020-01-01T00:00:00Z"^^xsd:dateTime;
-	];
-	dct:spatial [ a dct:Location;
-		locn:geometry "POLYGON(-180.0 90.0,180.0 90.0,180.0 -90.0,-180.0 -90.0,-180.0 90.0)"^^gsp:wktLiteral;
-	];
+		dct:temporal [ a dct:PeriodOfTime;
+			schema:startDate "2010-01-01T00:00:00Z"^^xsd:dateTime;
+		];
+		dct:spatial [ a dct:Location;
+			locn:geometry "POLYGON(-180.0 90.0,180.0 90.0,180.0 -90.0,-180.0 -90.0,-180.0 90.0)"^^gsp:wktLiteral;
+		];
 		dcat:theme <epos:SeismicParametrics>;
 		dcat:keyword "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "Earthquake", "Event", "rocks", "seismic waves propagation";
-	dcat:contactPoint <https://orcid.org/0000-0002-4460-6325/contactPoint>;
+		dcat:contactPoint <https://orcid.org/0000-0002-4460-6325/contactPoint>;
 		dct:publisher <PIC:998779222>;
 		dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/EMSC/Distribution>;
 		owl:versionInfo "ADP - 18/12/2018";
@@ -1538,25 +1513,24 @@
 
 # DATASET (#4) => EventID
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/EMSC> a dcat:Dataset;
-		dct:title "EMSC Seismic Parametric Data (EvenID)";
+		dct:title "EMSC EvenID";
 		dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/EMSC";
 		adms:identifier [ a adms:Identifier;
 			adms:schemaAgency "DDSS-ID";
 			skos:notation "WP08-DDSS-020";
 		];
-		dct:description "Description of EventID Parametrics";
+		dct:description "Earthquake identifier mapping between EMSC/USGS/INGV and ISC";
 		dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
 		dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
 		dct:created "2017-10-25"^^xsd:date;
 		dct:modified "2017-10-25"^^xsd:date;
 		dct:issued "2017-10-25"^^xsd:date;
-	dct:temporal [ a dct:PeriodOfTime;
-		schema:startDate "2010-01-01T00:00:00Z"^^xsd:dateTime;
-		schema:endDate "2020-01-01T00:00:00Z"^^xsd:dateTime;
-	];
-	dct:spatial [ a dct:Location;
-		locn:geometry "POLYGON(-180.0 90.0,180.0 90.0,180.0 -90.0,-180.0 -90.0,-180.0 90.0)"^^gsp:wktLiteral;
-	];
+		dct:temporal [ a dct:PeriodOfTime;
+			schema:startDate "2010-01-01T00:00:00Z"^^xsd:dateTime;
+		];
+		dct:spatial [ a dct:Location;
+			locn:geometry "POLYGON(-180.0 90.0,180.0 90.0,180.0 -90.0,-180.0 -90.0,-180.0 90.0)"^^gsp:wktLiteral;
+		];
 		dcat:theme <epos:SeismicParametrics>;
 		dcat:keyword "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "Earthquake", "Event", "rocks", "seismic waves propagation";
 	dcat:contactPoint <https://orcid.org/0000-0002-4460-6325/contactPoint>;
@@ -1567,28 +1541,27 @@
 
 # DATASET (#5) => Rupture Models
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/005/EMSC> a dcat:Dataset;
-		dct:title "EMSC Seismic Parametric Data (RuptureModels)";
+		dct:title "EMSC Rupture model data";
 		dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/005/EMSC";
 		adms:identifier [ a adms:Identifier;
 			adms:schemaAgency "DDSS-ID";
 			skos:notation "WP08-DDSS-021";
 		];
-		dct:description "Description of RuptureModels Parametrics";
+		dct:description "Rupture models from SRCMOD database distributed by EMSC";
 		dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
 		dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
 		dct:created "2017-10-25"^^xsd:date;
 		dct:modified "2017-10-25"^^xsd:date;
 		dct:issued "2017-10-25"^^xsd:date;
-	dct:temporal [ a dct:PeriodOfTime;
-		schema:startDate "2010-01-01T00:00:00Z"^^xsd:dateTime;
-		schema:endDate "2020-01-01T00:00:00Z"^^xsd:dateTime;
-	];
-	dct:spatial [ a dct:Location;
-		locn:geometry "POLYGON(-180.0 90.0,180.0 90.0,180.0 -90.0,-180.0 -90.0,-180.0 90.0)"^^gsp:wktLiteral;
-	];
+		dct:temporal [ a dct:PeriodOfTime;
+			schema:startDate "1900-01-01T00:00:00Z"^^xsd:dateTime;
+		];
+		dct:spatial [ a dct:Location;
+			locn:geometry "POLYGON(-180.0 90.0,180.0 90.0,180.0 -90.0,-180.0 -90.0,-180.0 90.0)"^^gsp:wktLiteral;
+		];
 		dcat:theme <epos:SeismicParametrics>;
 		dcat:keyword "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "Earthquake", "Event", "rocks", "seismic waves propagation";
-	dcat:contactPoint <https://orcid.org/0000-0002-4460-6325/contactPoint>;
+		dcat:contactPoint <https://orcid.org/0000-0002-4460-6325/contactPoint>;
 		dct:publisher <PIC:998779222>;
 		dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/005/EMSC/Distribution>;
 		owl:versionInfo "ADP - 18/12/2018";
@@ -1596,28 +1569,27 @@
 
 # DATASET (#6) => Testimonies
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/006/EMSC> a dcat:Dataset;
-		dct:title "EMSC Seismic Parametric Data (Macroseismic intensity point)";
+		dct:title "EMSC felt report data";
 		dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/006/EMSC";
 		adms:identifier [ a adms:Identifier;
 			adms:schemaAgency "DDSS-ID";
 			skos:notation "WP08-DDSS-022";
 		];
-		dct:description "Description of Macroseismic intensity point Parametrics";
+		dct:description "Eyewitness felt report data collected in real-time by EMSC";
 		dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
 		dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
 		dct:created "2017-10-25"^^xsd:date;
 		dct:modified "2017-10-25"^^xsd:date;
 		dct:issued "2017-10-25"^^xsd:date;
-	dct:temporal [ a dct:PeriodOfTime;
-		schema:startDate "2010-01-01T00:00:00Z"^^xsd:dateTime;
-		schema:endDate "2020-01-01T00:00:00Z"^^xsd:dateTime;
-	];
-	dct:spatial [ a dct:Location;
-		locn:geometry "POLYGON(-180.0 90.0,180.0 90.0,180.0 -90.0,-180.0 -90.0,-180.0 90.0)"^^gsp:wktLiteral;
-	];
+		dct:temporal [ a dct:PeriodOfTime;
+			schema:startDate "2010-01-01T00:00:00Z"^^xsd:dateTime;
+		];
+		dct:spatial [ a dct:Location;
+			locn:geometry "POLYGON(-180.0 90.0,180.0 90.0,180.0 -90.0,-180.0 -90.0,-180.0 90.0)"^^gsp:wktLiteral;
+		];
 		dcat:theme <epos:SeismicParametrics>;
 		dcat:keyword "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "Earthquake", "Event", "rocks", "seismic waves propagation";
-	dcat:contactPoint <https://orcid.org/0000-0002-4460-6325/contactPoint>;
+		dcat:contactPoint <https://orcid.org/0000-0002-4460-6325/contactPoint>;
 		dct:publisher <PIC:998779222>;
 		dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/006/EMSC/Distribution>;
 		owl:versionInfo ": ADP - 18/12/2018";
