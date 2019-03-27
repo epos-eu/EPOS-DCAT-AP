@@ -254,7 +254,9 @@
 			#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
 		];
 		dct:spatial [ a dct:Location;
-			locn:geometry "POLYGON(180 -90,-180 -90,-180 90,180 90,180 -90)"^^gsp:wktLiteral;
+			#locn:geometry "POLYGON(180 -90,-180 -90,-180 90,180 90,180 -90)"^^gsp:wktLiteral;
+			locn:geometry "POLYGON(-64 11,-58 11,-58 18,-64 18,-64 11)"^^gsp:wktLiteral;
+			locn:geometry "POLYGON(54.5 -21.5 , 56.5 -21.5 , 56.5 -20.5 , 54.5 -20.5 , 54.5 -21.5)"^^gsp:wktLiteral;
 		];
 		dcat:theme <epos:SeismicWaveform>;
 		dcat:theme <epos:SeismicStation>;
@@ -305,7 +307,9 @@
 	schema:datePublished "2013-01-01"^^xsd:date;
 	schema:dateModified "2017-09-12"^^xsd:date;
 	dct:spatial [ a dct:Location;
-		locn:geometry "POLYGON(180.0 -90.0,-180.0 -90.0,-180.0 90.0,180.0 90.0,180.0 -90.0)"^^gsp:wktLiteral;
+		#locn:geometry "POLYGON(180.0 -90.0,-180.0 -90.0,-180.0 90.0,180.0 90.0,180.0 -90.0)"^^gsp:wktLiteral;
+		locn:geometry "POLYGON(-64 11,-58 11,-58 18,-64 18,-64 11)"^^gsp:wktLiteral;
+		locn:geometry "POLYGON(54.5 -21.5 , 56.5 -21.5 , 56.5 -20.5 , 54.5 -20.5 , 54.5 -21.5)"^^gsp:wktLiteral;
 	];
 	hydra:supportedOperation <ws.resif.fr/fdsnws/dataselect/operation>;
 	schema:keywords "Seismology"," IPGP","RESIF-SI","dataselect","FDSN-WS","seismic waveforms";
@@ -328,7 +332,9 @@
 	schema:datePublished "2013-01-01"^^xsd:date;
 	schema:dateModified "2017-09-12"^^xsd:date;
 	dct:spatial [ a dct:Location;
-		locn:geometry "POLYGON(180.0 -90.0,-180.0 -90.0,-180.0 90.0,180.0 90.0,180.0 -90.0)"^^gsp:wktLiteral;
+		#locn:geometry "POLYGON(180.0 -90.0,-180.0 -90.0,-180.0 90.0,180.0 90.0,180.0 -90.0)"^^gsp:wktLiteral;
+		locn:geometry "POLYGON(-64 11,-58 11,-58 18,-64 18,-64 11)"^^gsp:wktLiteral;
+		locn:geometry "POLYGON(54.5 -21.5 , 56.5 -21.5 , 56.5 -20.5 , 54.5 -20.5 , 54.5 -21.5)"^^gsp:wktLiteral;
 	];
 	
 	hydra:supportedOperation <ws.resif.fr/fdsnws/station>;
@@ -475,6 +481,7 @@
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "minlatitude"^^xsd:string;
+					hydra:property “epos:southernmostLatitude”;
 					rdfs:range "xsd:decimal";
 					rdfs:label "Minimum Latitude";
 					schema:minValue "-90";
@@ -484,6 +491,7 @@
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "maxlatitude"^^xsd:string;
+					hydra:property “epos:northernmostLatitude”;
 					rdfs:range "xsd:decimal";
 					rdfs:label "Maximum Latitude";
 					schema:minValue "-90";
@@ -493,6 +501,7 @@
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "minlongitude"^^xsd:string;
+					hydra:property “epos:westernmostLongitude”;
 					rdfs:range "xsd:decimal";
 					rdfs:label "Minimum Longitude";
 					schema:minValue "-180";
@@ -502,6 +511,7 @@
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "maxlongitude"^^xsd:string;
+					hydra:property “epos:easternmostLongitude”;
 					rdfs:range "xsd:decimal";
 					rdfs:label "Maximum Longitude";
 					schema:defaultValue "180";
