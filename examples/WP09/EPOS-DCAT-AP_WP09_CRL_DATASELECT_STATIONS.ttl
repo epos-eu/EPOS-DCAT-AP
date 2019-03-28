@@ -686,6 +686,8 @@
 					rdfs:label "Minimum Latitude";
 					schema:minValue "-90.0";
 					schema:maxValue "90.0";
+                                        schema:defaultValue "38.0";
+                                        hydra:property "epos:southernmostLatitude";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
@@ -694,6 +696,8 @@
 					rdfs:label "Maximum Latitude";
 					schema:minValue "-90.0";
 					schema:maxValue "90.0";
+                                        schema:defaultValue "38.65";
+                                        hydra:property "epos:northernmostLatitude";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
@@ -702,6 +706,8 @@
 					rdfs:label "Minimum Longitude";
 					schema:minValue "-180.0";
 					schema:maxValue "180.0";
+                                        schema:defaultValue "21.35";
+                                        hydra:property "epos:westernmostLongitude";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
@@ -710,6 +716,8 @@
 					rdfs:label "Maximum Longitude";
 					schema:minValue "-180.0";
 					schema:maxValue "180.0";
+                                        schema:defaultValue "22.5";
+                                        hydra:property "epos:easternmostLongitude";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
@@ -799,8 +807,9 @@
                                         rdfs:label "Minimum Latitude";
                                         schema:minValue "-90.0";
                                         schema:maxValue "90.0";
+                                        schema:defaultValue "38.0";
+                                        hydra:property "epos:southernmostLatitude";
                                         hydra:required "true"^^xsd:boolean;
-                                        schema:defaultValue "-90.0"
                                 ];
                                hydra:mapping[ a hydra:IriTemplateMapping;
                                         hydra:variable "maxlatitude"^^xsd:string;
@@ -808,8 +817,9 @@
                                         rdfs:label "Maximum Latitude";
                                         schema:minValue "-90.0";
                                         schema:maxValue "90.0";
+                                        schema:defaultValue "38.65";
+                                        hydra:property "epos:northernmostLatitude";
                                         hydra:required "true"^^xsd:boolean;
-                                        schema:defaultValue "90.0"
                                 ];
                                 hydra:mapping[ a hydra:IriTemplateMapping;
                                         hydra:variable "minlongitude"^^xsd:string;
@@ -817,8 +827,9 @@
                                         rdfs:label "Minimum Longitude";
                                         schema:minValue "-180.0";
                                         schema:maxValue "180.0";
+                                        schema:defaultValue "21.35";
+                                        hydra:property "epos:westernmostLongitude";
                                         hydra:required "true"^^xsd:boolean;
-                                        schema:defaultValue "-180.0"
                                 ];
                                 hydra:mapping[ a hydra:IriTemplateMapping;
                                         hydra:variable "maxlongitude"^^xsd:string;
@@ -826,8 +837,9 @@
                                         rdfs:label "Maximum Longitude";
                                         schema:minValue "-180.0";
                                         schema:maxValue "180.0";
+                                        schema:defaultValue "22.5";
+                                        hydra:property "epos:easternmostLongitude";
                                         hydra:required "true"^^xsd:boolean;
-                                        schema:defaultValue "180.0"
                                 ];
                                 hydra:mapping[ a hydra:IriTemplateMapping;
                                         hydra:variable "level"^^xsd:string;
