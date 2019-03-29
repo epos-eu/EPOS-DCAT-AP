@@ -1,0 +1,240 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .  
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .  
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .  
+@prefix dc: <http://purl.org/dc/elements/1.1/> .  
+@prefix dct: <http://purl.org/dc/terms/> .  
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .  
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .  
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .  
+@prefix schema: <http://schema.org/> .  
+@prefix dcat: <http://www.w3.org/ns/dcat#> .  
+@prefix cnt: <http://www.w3.org/2011/content#> .  
+@prefix locn: <http://www.w3.org/ns/locn#> .  
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .  
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .  
+@prefix http: <http://www.w3.org/2006/http#> .  
+@prefix owl: <http://www.w3.org/2002/07/owl#> .  
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .  
+
+<http://orcid.org/0000-0001-7080-183X> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "orcid";
+		schema:value "http://orcid.org/0000-0001-7080-183X";
+	]; 
+	schema:familyName "Ergintav";
+	schema:givenName "Semih";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Kandilli Rasathanesi, Çengelköy";
+		schema:addressLocality "İstanbul";
+		schema:postalCode "34684";
+		schema:addressCountry "TURKEY";
+	]; 
+	schema:email "semih.ergintav@boun.edu.tr";
+	schema:telephone "+90535******";
+	schema:url "http://jeodezi.boun.edu.tr/?q=tr/semihergintav"^^xsd:anyURI;
+	schema:qualifications "Professor";
+	schema:affiliation <PIC:999882500>;
+	schema:contactPoint <http://orcid.org/0000-0001-7080-183X/scientificContact>;
+.
+<http://orcid.org/0000-0001-7080-183X/scientificContact> a schema:ContactPoint;
+	schema:email "semih.ergintav@boun.edu.tr";
+	schema:availableLanguage "en" ;
+	schema:contactType "scientificContact" ;
+.
+
+<PIC:999882500> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "pic";
+		schema:value "999882500";
+	]; 
+	schema:legalName "KOERI Kandilli Observatory and Earthquake Research Institue";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Çengelköy";
+		schema:addressLocality "Istanbul";
+		schema:postalCode "34684";
+		schema:addressCountry "TURKEY";
+	]; 
+	schema:logo "http://www.koeri.boun.edu.tr/new/sites/default/files/koeri-logo-tr.png"^^xsd:anyURI;
+	schema:url "http://koeri.boun.edu.tr/"^^xsd:anyURI;
+	schema:email "sislab@boun.edu.tr";
+	schema:contactPoint <http://orcid.org/0000-0001-7080-183X/scientificContact>;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/RADON/Dataset/001> a dcat:Dataset;
+	dct:title "KOERI Radon decay counts and local temperature Dataset";
+	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/RADON/Dataset/001";
+	dct:description "Radon decay counts and local temperature dataset contains Radon Gas concentration time series based on periodic counting of Rn gas at site";
+	adms:identifier [ a adms:Identifier; 
+		adms:schemaAgency "DDSS-ID";
+		skos:notation "WP09-DDSS-024"; 
+	];
+	## example of frequency using a controlled vocabulary
+	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+	dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
+	dct:created "2012-01-01T00:00:00Z"^^xsd:dateTime;
+	dct:issued "2012-01-01T00:00:00Z"^^xsd:dateTime;
+	dct:modified "2012-01-01T00:00:00Z"^^xsd:dateTime;
+	owl:versionInfo "1.0.0";
+	# This property refers to a geographic region that is covered by the Dataset.
+  	# The POLYGON format is: POLYGON(lon1 lat1, lon2 lat2,...)
+	dct:spatial [ a dct:Location ;
+		locn:geometry "POLYGON(26.0 42.0, 31.0 42.0, 31.0 39.0, 26.0 39.0, 26.0 42.0)"^^gsp:wktLiteral ;
+	];
+	# This property refers to a temporal period that the Dataset covers.
+    dct:temporal [ a dct:PeriodOfTime ;
+        schema:startDate "2012-01-01T00:00:00"^^xsd:dateTime ;
+        schema:endDate "2017-01-01T00:00:00"^^xsd:dateTime ;
+    ];
+	dcat:theme  <epos:Radonconcentration> ;
+	dcat:keyword "Geochemical", "Radon concentration", "Radon decay counts", "geochemistry", "geohazards", "long term continuos timeseries", "local temperature", "NFO", "Near Fault Observatory", "KOERI", "FRIDGE";
+	dcat:contactPoint <http://orcid.org/0000-0001-7080-183X/scientificContact>;
+	dct:publisher <PIC:999882500>;
+	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/RADON/Distribution/001>;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/RADON/Distribution/001> a dcat:Distribution;
+    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/RADON/Distribution/001";
+	dct:title "KOERI Radon decay counts and local temperature Distribution";
+	dct:description "KOERI Radon decay counts and local temperature Distribution";
+	dct:created "2012-01-01"^^xsd:date;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/RADON/WebService/001/Operation/001>;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/RADON/WebService/001>;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
+	# This property refers to the licence under which the Distribution is made available.
+	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/RADON/WebService/001> a epos:WebService;
+	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/RADON/WebService/001";
+	schema:description "Radon counts and local temperature Web Service allow to retrieve Radon Gas concentration time series based on periodic counting of Rn gas at site";
+	schema:name "KOERI Radon counts and local temperature Web Service";
+	schema:datePublished "2017-06-08T12:00:00Z"^^xsd:dateTime;
+	schema:dateModified "2017-06-08T12:00:00Z"^^xsd:dateTime;
+	schema:provider <PIC:999882500>;
+	schema:keywords "Geochemical", "Radon concentration", "Radon decay counts", "geochemistry", "geohazards", "long term continuos timeseries", "local temperature", "NFO", "Near Fault Observatory", "KOERI", "FRIDGE";
+	#hydra:entrypoint "application.wadl"^^xsd:anyURI;
+	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/RADON/WebService/001/Operation/001>;
+	dcat:theme <epos:Radonconcentration>;
+	dcat:contactPoint <http://orcid.org/0000-0001-7080-183X/scientificContact>;
+	# This property refers to the API documentation. (Optional)
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/RADON/WebService/001/APIDocumentation> ;
+	# This property refers to the licence under which the Distribution is made available.
+	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/RADON/WebService/001/APIDocumentation> a hydra:APIDocumentation ;
+    hydra:title "NFO web service Radon decay counts" ;
+    hydra:description "NFO web service Radon decay counts" ;
+    hydra:entrypoint "https://docs.google.com/document/d/1bsU8ZIKsZjvKcmWi8VxET6mGZppyoikiZRP5vlVwMhs" ;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/RADON/WebService/001/Operation/001> a hydra:Operation;
+	hydra:method "GET"^^xsd:string;
+	hydra:returns "application/json";
+	hydra:property[ a hydra:IriTemplate;
+		hydra:template "http://fridge-services.rm.ingv.it/radon/{?mintime, maxtime, minlat, maxlat, minlon, maxlon, minperiod, maxperiod, type_site, max_radon_err, max_int_delta}"^^xsd:string;
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "mintime"^^xsd:string;
+			rdfs:label "Minimum Time";
+			rdfs:range "xsd:dateTime";
+			schema:minValue "2012-01-01T00:00:00.000Z";
+			schema:maxValue "2017-01-01T00:00:00.000Z";
+			schema:defaultValue "2012-11-01T12:00:00.000Z";
+			hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "maxtime"^^xsd:string;
+			rdfs:label "Maximum Time";
+			rdfs:range "xsd:dateTime";
+			schema:minValue "2012-01-01T00:00:00.000Z";
+			schema:maxValue "2017-01-01T00:00:00.000Z";
+			schema:defaultValue "2012-11-02T12:00:00.000Z";
+			hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "minlat"^^xsd:string;
+			rdfs:label "Minimum Latitude";
+			rdfs:range "xsd:float";
+			schema:minValue "-90";
+			schema:maxValue "90";
+			schema:defaultValue "39.0";
+			hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "maxlat"^^xsd:string;
+			rdfs:label "Maximum Latitude";
+			rdfs:range "xsd:float";
+			schema:minValue "-90";
+			schema:maxValue "90";
+			schema:defaultValue "42.0";
+			hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "minlon"^^xsd:string;
+			rdfs:label "Minimum Longitude";
+			rdfs:range "xsd:float";
+			schema:minValue "-90";
+			schema:maxValue "90";
+			schema:defaultValue "26.0";
+			hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "maxlon"^^xsd:string;
+			rdfs:label "Maximum Longitude";
+			rdfs:range "xsd:float";
+			schema:minValue "-90";
+			schema:maxValue "90";
+			schema:defaultValue "31.0";
+			hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "minperiod"^^xsd:string;
+			rdfs:label "Minimum 'sampling period' allowed to extract data [minutes]";
+			rdfs:range "xsd:integer";
+			schema:minValue "1";
+			schema:defaultValue "60";
+			hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "maxperiod"^^xsd:string;
+			rdfs:label "Maximum 'sampling period' allowed to extract data [minutes]";
+			rdfs:range "xsd:integer";
+			schema:defaultValue "180";
+			hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "type_site"^^xsd:string;
+			rdfs:label "Nickname of type of installation";
+			rdfs:range "xsd:string";
+			http:paramValue "indoor";
+			http:paramValue "shelter";
+			http:paramValue "borehole";
+			http:paramValue "soil";
+			schema:defaultValue "indoor";
+			hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "max_radon_err"^^xsd:string;
+			rdfs:label "Maximum % uncertainty of the measure accepted for extraction";
+			rdfs:range "xsd:integer";
+			schema:maxValue "100";
+			hydra:required "false"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "max_int_delta"^^xsd:string;
+			rdfs:label "Maximum distance in time between internal temperature";
+			rdfs:range "xsd:integer";
+			schema:minValue "0";
+			hydra:required "false"^^xsd:boolean;
+		];
+	] ;
+.
+<epos:NearFaultObservations> a skos:ConceptScheme;
+	dct:title "Near Fault Observations";
+	dct:description "It contains the concepts of Near Fault Observations";
+.
+<epos:Radonconcentration> a skos:Concept;
+	skos:inScheme <epos:NearFaultObservations>;
+	skos:prefLabel "Radon concentration";
+.

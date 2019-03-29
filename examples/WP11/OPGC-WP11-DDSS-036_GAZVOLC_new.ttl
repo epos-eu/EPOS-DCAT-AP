@@ -1,0 +1,288 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http: <http://www.w3.org/2006/http#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+
+<gazvolc/dataset/036> a dcat:Dataset ;
+        dct:identifier "gazvolc/dataset/036" ;
+        dct:title "Melt inclusion and groundmass glass compositions - explosive_effusive" ;
+        dct:description "Melt inclusion and groundmass glass compositions - explosive_effusive" ;
+        adms:identifier [ a adms:Identifier;
+            adms:schemaAgency "DDSS-ID";
+            skos:notation "WP11-DDSS-036";
+        ];
+    dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
+    dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+    dct:temporal [ a dct:PeriodOfTime;
+        schema:startDate "0001-01-01T00:00:00Z"^^xsd:dateTime;
+        #schema:endDate "9999-12-31T23:59:59Z"^^xsd:dateTime;
+    ];
+    dcat:theme <epos:GeochemicalData>;
+    dcat:keyword "chemical data set", "melt inclusion", "volatile elements", "major elements", "trace elements", "groundmass", "host minerals";
+    dcat:contactPoint <http://orcid.org/0000-0002-8485-0154/contactPoint>;
+    dct:publisher <http://isni.org/isni/0000000109416043>;
+    dcat:distribution <gazvolc/dataset/036/distribution/ws>;
+.
+
+<http://orcid.org/0000-0002-8485-0154> a schema:Person;
+    schema:identifier [ a schema:PropertyValue;
+        schema:propertyID "ORCID";
+        schema:value "http://orcid.org/0000-0002-8485-0154";
+    ];
+    schema:familyName "Moune";
+    schema:givenName "Séverine";
+    schema:address [ a schema:PostalAddress;
+        schema:streetAddress "Laboratoire Magmas et Volcans, 6 Avenue Blaise Pascal"^^xsd:string;
+        schema:addressLocality "AUBIERE CEDEX";
+	schema:postalCode "63178";
+        #schema:postalCode "TSA 60026 - CS 60026, 63178";
+        schema:addressCountry "FRANCE";
+    ];
+    schema:email "s.moune@uca.fr";
+    schema:telephone "";
+    schema:url "http://lmv.uca.fr/moune-severine/"^^xsd:anyURI;
+    schema:qualifications "Lead Scientist of the GAZVOLC observation service";
+    schema:affiliation <http://isni.org/isni/0000000109416043>;
+    schema:contactPoint <http://orcid.org/0000-0002-8485-0154/contactPoint>;
+.
+
+<http://orcid.org/0000-0002-4518-3328> a schema:Person;
+    schema:identifier [ a schema:PropertyValue;
+        schema:propertyID "ORCID";
+        schema:value "http://orcid.org/0000-0002-4518-3328";
+    ];
+    schema:familyName "Labazuy";
+    schema:givenName "Philippe";
+    schema:address [ a schema:PostalAddress;
+        schema:streetAddress "Laboratoire Magmas et Volcans, 6 Avenue Blaise Pascal"^^xsd:string;
+        schema:addressLocality "AUBIERE CEDEX";
+	schema:postalCode "63178";
+        #schema:postalCode "TSA 60026 - CS 60026, 63178";
+        schema:addressCountry "FRANCE";
+    ];
+    schema:email "p.labazuy@opgc.fr";
+    schema:telephone "+33473346729";
+    schema:url "http://orcid.org/0000-0002-4518-3328"^^xsd:anyURI;
+    schema:qualifications "Deputy Director of OPGC";
+    schema:affiliation <http://isni.org/isni/0000000109416043>;
+    schema:contactPoint <http://orcid.org/0000-0002-4518-3328/scientificContact>; 
+.
+
+<http://orcid.org/0000-0002-0108-5486> a schema:Person;
+    schema:identifier [ a schema:PropertyValue;
+        schema:propertyID "ORCID";
+        schema:value "http://orcid.org/0000-0002-0108-5486";
+    ];
+    schema:familyName "Huret";
+    schema:givenName "Nathalie";
+    schema:address [ a schema:PostalAddress;
+        schema:streetAddress "OPGC, 4 Avenue Blaise Pascal"^^xsd:string;
+        schema:addressLocality "AUBIERE CEDEX";
+        schema:postalCode "63178";
+	#schema:postalCode "TSA 60026 - CS 60026, 63178";
+        schema:addressCountry "FRANCE";
+    ];
+    schema:email "n.huret@opgc.fr";
+    schema:telephone "+33473407381";
+    schema:url "http://orcid.org/0000-0002-0108-5486"^^xsd:anyURI;
+    schema:qualifications "Director of OPGC";
+    schema:affiliation <http://isni.org/isni/0000000109416043>;
+    schema:contactPoint <http://orcid.org/0000-0002-0108-5486/legalContact>;
+    schema:contactPoint <http://orcid.org/0000-0002-0108-5486/financialContact>; 
+.
+
+<http://orcid.org/0000-0002-7635-1283> a schema:Person;
+    schema:identifier [ a schema:PropertyValue;
+        schema:propertyID "ORCID";
+        schema:value "http://orcid.org/0000-0002-7635-1283";
+    ];
+    schema:familyName "Di Muro";
+    schema:givenName "Andrea";
+    schema:address [ a schema:PostalAddress;
+        schema:streetAddress "IPGP - 14RN3 - Km 27"^^xsd:string;
+        schema:addressLocality "La Plaine des Cafres";
+        schema:postalCode "97418";
+        schema:addressCountry "FRANCE";
+    ];
+    schema:email "dimuro@ipgp.fr";
+    schema:telephone "+33262275012";
+    schema:url "http://www.ipgp.fr/fr/di-muro-andrea"^^xsd:anyURI;
+    schema:qualifications "CNAP - Physicist";
+    schema:affiliation <PIC:999597417>;
+    schema:contactPoint <http://orcid.org/0000-0002-7635-1283/scientificContact>;
+.
+
+<http://isni.org/isni/0000000109416043> a schema:Organization;
+    schema:identifier [ a schema:PropertyValue;
+        schema:propertyID "ISNI";
+        schema:value "http://isni.org/isni/0000000109416043";
+    ];
+    schema:legalName "Earth Physics Observatory of Clermont-Ferrand"^^xsd:string;
+    # schema:alternateName "Observatoire de Physique du Globe de Clermont-Ferrand"^^xsd:string;
+    # schema:alternateName "OPGC"^^xsd:string;
+    schema:address [ a schema:PostalAddress;
+        schema:streetAddress "OPGC, 4 Avenue Blaise Pascal";
+        schema:addressLocality "AUBIERE CEDEX";
+	schema:postalCode "63178";
+        #schema:postalCode "TSA 60026 - CS 60026, 63178";
+        schema:addressCountry "FRANCE";
+    ];
+    schema:logo "http://wwwobs.univ-bpclermont.fr/opgc/images/LogoOPGCTransparent.png"^^xsd:anyURI;
+    schema:url "http://opgc.fr"^^xsd:anyURI;
+    schema:email "g.delcampo@opgc.fr";
+    schema:telephone "+33473407380";
+    schema:contactPoint <http://orcid.org/0000-0002-4518-3328/scientificContact>;
+    schema:contactPoint <http://orcid.org/0000-0002-0108-5486/legalContact>;
+    schema:contactPoint <http://orcid.org/0000-0002-0108-5486/financialContact>;
+    schema:memberOf <http://isni.org/isni/0000000121129282>;
+.
+    <http://orcid.org/0000-0002-4518-3328/scientificContact> a schema:ContactPoint;
+        schema:email "p.labazuy@opgc.fr";
+        schema:availableLanguage "en", "fr" ;
+	schema:contactType "scientificContact" ;
+. 
+    <http://orcid.org/0000-0002-0108-5486/legalContact> a schema:ContactPoint;
+        schema:email "n.huret@opgc.fr";
+        schema:availableLanguage "en", "fr" ;
+        schema:contactType "legalContact" ;
+.
+    <http://orcid.org/0000-0002-0108-5486/financialContact> a schema:ContactPoint;
+        schema:email "n.huret@opgc.fr";
+        schema:availableLanguage "en", "fr" ;
+        schema:contactType "financialContact" ;
+.
+
+<PIC:999597417> a schema:Organization;
+    schema:identifier [ a schema:PropertyValue;
+        schema:PropertyID "PIC";
+        schema:value "999597417";
+    ];
+    schema:legalName "Earth Physics Institute of Paris"^^xsd:string;
+    # schema:alternateName "Institut de Physique du Globe de Paris"^^xsd:string;
+    # schema:alternateName "IPGP"^^xsd:string;
+    schema:address [ a schema:PostalAddress;
+        schema:streetAddress "IPGP, 1 rue Jussieu"^^xsd:string;
+        schema:addressLocality "PARIS CEDEX";
+        schema:postalCode "75238";
+        schema:addressCountry "FRANCE";
+    ];
+    schema:logo "http://www.ipgp.fr/sites/all/themes/danland/logo.png"^^xsd:anyURI;
+    schema:url "http://www.ipgp.fr"^^xsd:anyURI;
+    schema:email "accueil@ipgp.fr";
+    schema:telephone "+33183957400";
+    schema:contactPoint <http://orcid.org/0000-0002-7635-1283/scientificContact>;
+    schema:memberOf <http://isni.org/isni/0000000121129282>;
+.
+    <http://orcid.org/0000-0002-7635-1283/scientificContact> a schema:ContactPoint;
+        schema:email "dimuro@ipgp.fr";
+        schema:availableLanguage "en", "it", "fr";
+        schema:contactType "scientificContact";
+.
+
+<http://isni.org/isni/0000000121129282> a schema:Organization;
+    schema:identifier [ a schema:PropertyValue;
+        schema:propertyID "ISNI";
+        schema:value "http://isni.org/isni/0000000121129282";
+    ];
+    schema:legalName "The National Center for Scientific Research"^^xsd:string;
+    # schema:alternateName "CNRS: Le Centre National de la Recherche Scientifique"^^xsd:string;
+    # schema:alternateName "CNRS"^^xsd:string;
+    schema:address [ a schema:PostalAddress;
+        schema:streetAddress "CNRS, 3 rue Michel-Ange";
+        schema:addressLocality "PARIS CEDEX 16";
+        schema:postalCode "75794";
+        schema:addressCountry "FRANCE";
+    ];
+    schema:logo "http://www.cnrs.fr/fr/z-tools/newune/themes/CNRSTheme/images/logocnrs.png"^^xsd:anyURI;
+    schema:url "http://cnrs.fr"^^xsd:anyURI;
+    schema:telephone "+33144964000";
+.
+
+ <http://orcid.org/0000-0002-8485-0154/contactPoint> a schema:ContactPoint;
+        schema:email "s.moune@uca.fr";
+        schema:availableLanguage "en", "it", "fr";
+        schema:contactType "manager";
+.
+
+<gazvolc/dataset/036/distribution/ws> a dcat:Distribution;
+        dct:identifier "gazvolc/dataset/036/distribution/ws";
+        dct:title "OPGC-VO distribution of GAZVOLC dataset";
+        dct:description "The way to download the gazvolc product";
+        dct:issued "2016-06-12"^^xsd:date;
+        dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+        dcat:accessURL <opgc.fr/vobs/gazvolc/WP11/DDSS-036/data-download>;
+        dct:conformsTo <opgc.fr/vobs/gazvolc/WP11/DDSS-036>;
+        dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
+        dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+.
+
+
+<opgc.fr/vobs/gazvolc/WP11/DDSS-036> a epos:WebService;
+    schema:identifier "opgc.fr/vobs/gazvolc/WP11/DDSS-036";
+    schema:description "Since september 2017, OPGC assigns Digital Object Identifiers (DOI) to datasets. These datasets are archived by and published through OPGC Data Services and cover all geoscientific disciplines. They range from large dynamic datasets deriving from data intensive global monitoring networks with real-time data acquisition to the full suite of highly variable datasets collected by individual researchers or small teams. These highly variable data (‘long-tail data’) are small in size, but represent an important part of the total scientific output. This web service allow to retrive data from the gazvolc observation service. GAZVOLC is an observation system within France's National Service for Volcanological Observation (SNOV).The system contributes databases for volcanic gas emission. The study of magmatic degassing and of hydrothermal systems is of the utmost importance in furthering our understanding of the hazards these systems pose, and of paramount importance to optimise their monitoring. As the speed of gas ascent towards the surface is much greater than that of the magma, any change in composition or flux of magmatic gases and/or volcanic fluids at the surface will thus bring us information on what is occurring at depth (i.e. the physio-chemical interactions between volcanic gases, surrounding rocks and rain water, and the arrival at depth of new magma and gas inputs). Magmatic gases and/or volcanic fluids are thus a privileged interface between deep magma and the surface, and they are therefore an important tool for monitoring both quiescent and active volcanoes. Time series of gas fluxes and composition can be correlated with geophysical dataset to provide robust assessment of volcanic activity and for the interpretation of its time and space evolution.";
+    schema:name "OPGC Virtual Observatory - GAZVOLC Entry Point - EPOS - WP11-DDSS-036";
+    schema:datePublished "2016-05-26T08:00:00Z"^^xsd:dateTime;
+    schema:dateModified "2018-02-27T16:00:00Z"^^xsd:dateTime;
+    schema:provider <http://isni.org/isni/0000000109416043>;
+    schema:keywords "Virtual Observatory", "Database", "Data Catalog", "chemical data set", "melt inclusion", "volatile elements", "major elements", "trace elements", "groundmass", "host minerals";
+    hydra:entrypoint "http://opgc.fr/vobs/rest2/req.php/application/gazvolc"^^xsd:anyURI;
+    hydra:supportedOperation <opgc.fr/vobs/gazvolc/WP11/DDSS-036/data-download>;
+    dcat:theme <epos:GeochemicalData>;
+    schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+    dct:conformsTo <opgc.fr/vobs/APIDocumentation>;
+    dcat:contactPoint <http://orcid.org/0000-0002-8485-0154/contactPoint>;
+.
+   
+ <opgc.fr/vobs/gazvolc/WP11/DDSS-036/data-download> a hydra:Operation;
+        hydra:method "GET"^^xsd:string;
+        hydra:returns "application/zip";
+        # hydra:returns "application/json";
+        hydra:property [ a hydra:IriTemplate;
+            hydra:template "http://opgc.fr/vobs/rest2/req.php/gazvolc/data/id/{uri}/{format}"^^xsd:string;
+                hydra:mapping [ a hydra:IriTemplateMapping;
+                    hydra:variable "uri"^^xsd:integer;
+                    rdfs:label "The data id number";
+                    rdfs:range "xsd:integer";
+                    schema:minValue "1"^^xsd:integer;
+                    hydra:required "true"^^xsd:boolean;
+                    schema:defaultValue "41" ;
+                ];
+                hydra:mapping [ a hydra:IriTemplateMapping;
+                    hydra:variable "format"^^xsd:string;
+                    rdfs:label "The output format";
+                    rdfs:range "xsd:string";
+                    http:paramValue "JSON"^^xsd:string;
+                    http:paramValue "CSV"^^xsd:string;
+                    schema:defaultValue "JSON"^^xsd:string;
+                    hydra:required "false"^^xsd:boolean;
+                ];
+        ];
+.
+
+ <opgc.fr/vobs/APIDocumentation> a hydra:APIDocumentation;
+        hydra:title "OPGC Virtual Observatory - API Documentation";
+        hydra:description "A documentation describing how to use OPGC Virtual Observatory API to find and download data";
+        hydra:entrypoint "http://opgc.fr/vobs/api.php"^^xsd:anyURI;
+.
+    <epos:VolcanoObservations> a skos:ConceptScheme;
+        dct:title "Volcano Observations";
+        dct:description "It contains the concept of Volcanological observations";
+.
+    <epos:GeochemicalData> a skos:Concept;
+            skos:definition "Geochemical data" ;
+            skos:inScheme <epos:VolcanoObservations>;
+            skos:prefLabel "Geochemical data";
+.

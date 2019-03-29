@@ -39,7 +39,7 @@
 <http://orcid.org/0000-0002-8608-4289/contactPoint> a schema:ContactPoint;
 	schema:email "ivano.carluccio@ingv.it";
 	schema:availableLanguage "en" ;
-	#schema:contactType "ContactPoint";
+	#schema:contactType "technicalContact";
 .
 
 <http://orcid.org/0000-0002-4130-5498> a schema:Person;
@@ -167,11 +167,11 @@
 	];
 	# This property refers to a temporal period that the Dataset covers.
     dct:temporal [ a dct:PeriodOfTime ;
-        schema:startDate "2015-06-01T00:00:00"^^xsd:dateTime ;
+        schema:startDate "2015-06-01T00:00:00Z"^^xsd:dateTime ;
         #schema:endDate "YYYY-MM-DDThh:mm:ss"^^xsd:dateTime ;
     ];
-	dcat:theme  <#CO2concentration> ;
-    dcat:keyword "Geochemical", "CO2 concentration", "CO2 soil flux", "geochemistry", "FRIDGE";
+	dcat:theme  <epos:CO2concentration> ;
+    dcat:keyword "Geochemical", "CO2 concentration", "CO2 soil flux", "geochemistry", "NFO", "Near Fault Observatory", "TABOO", "FRIDGE";
 	dcat:contactPoint <http://orcid.org/0000-0002-4130-5498/scientificContact>;
 	dct:publisher <PIC:999472675>;
 	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/CO2/Distribution/001>;
@@ -187,7 +187,7 @@
 	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/CO2/WebService/001>;
 	dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 	# This property refers to the licence under which the Distribution is made available.
-	# dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/CO2/WebService/001> a epos:WebService;
@@ -196,16 +196,23 @@
 	schema:name "TABOO CO2 Gas soil flux measurements Web Service";
 	schema:datePublished "2017-06-08T12:00:00Z"^^xsd:dateTime;
 	schema:dateModified "2017-06-08T12:00:00Z"^^xsd:dateTime;
+	dct:temporal [ a dct:PeriodOfTime ;
+        schema:startDate "2015-06-01T00:00:00Z"^^xsd:dateTime ;
+        #schema:endDate "YYYY-MM-DDThh:mm:ss"^^xsd:dateTime ;
+    ];
+    dct:spatial [ a dct:Location ;
+		locn:geometry "POLYGON(11.78 43.95, 13.61 43.95, 13.61 42.8, 11.78 42.8, 11.78 43.95)"^^gsp:wktLiteral ;
+	];
 	schema:provider <PIC:999472675>;
-	schema:keywords "Geochemical", "CO2 concentration", "CO2 soil flux", "geochemistry", "FRIDGE";
+	schema:keywords "Geochemical", "CO2 concentration", "CO2 soil flux", "geochemistry", "NFO", "Near Fault Observatory", "TABOO", "FRIDGE";
 	#hydra:entrypoint "application.wadl"^^xsd:anyURI;
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/CO2/WebService/001/Operation/001>;
-	dcat:theme <#CO2concentration>;
+	dcat:theme <epos:CO2concentration>;
 	dcat:contactPoint <http://orcid.org/0000-0002-8608-4289/contactPoint>;
 	# This property refers to the API documentation. (Optional)
 	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/CO2/WebService/001/APIDocumentation> ;
 	# This property refers to the licence under which the Distribution is made available.
-	# dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/CO2/WebService/001/APIDocumentation> a hydra:APIDocumentation ;
@@ -218,7 +225,7 @@
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
-		hydra:template "http://fridge-services.rm.ingv.it/co2/(?param_name, mintime, maxtime, minlat, maxlat, minlon, maxlon, minperiod, inst_type, max_int_delta)"^^xsd:string;
+		hydra:template "http://fridge-services.rm.ingv.it/co2/{?param_name, mintime, maxtime, minlat, maxlat, minlon, maxlon, minperiod, inst_type, max_int_delta}"^^xsd:string;
 		# type of parameter "xsd:string" "xsd:boolean" "xsd:date" "xsd:dateTime" "xsd:decimal" "xsd:double" "xsd:float" "xsd:int" "xsd:integer" "xsd:long"
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "param_name"^^xsd:string;
@@ -236,6 +243,8 @@
 			schema:minValue "2015-06-01T00:00:00.000Z";
 			schema:maxValue "2017-12-31T00:00:00.000Z";
 			schema:defaultValue "2016-12-01T00:00:00.000Z";
+			hydra:property "schema:startDate";
+      		schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -245,6 +254,8 @@
 			schema:minValue "2015-06-01T00:00:00.000Z";
 			schema:maxValue "2017-12-31T00:00:00.000Z";
 			schema:defaultValue "2016-12-31T23:59:00.000Z";
+			hydra:property "schema:endDate";
+      		schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -254,6 +265,7 @@
 			schema:minValue "-90";
 			schema:maxValue "90";
 			schema:defaultValue "43.0";
+			hydra:property "epos:southernmostLatitude";
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -263,6 +275,7 @@
 			schema:minValue "-90";
 			schema:maxValue "90";
 			schema:defaultValue "44.0";
+			hydra:property "epos:northernmostLatitude";
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -272,6 +285,7 @@
 			schema:minValue "-90";
 			schema:maxValue "90";
 			schema:defaultValue "12.0";
+			hydra:property "epos:westernmostLongitude";
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -281,6 +295,7 @@
 			schema:minValue "-90";
 			schema:maxValue "90";
 			schema:defaultValue "13.0";
+			hydra:property "epos:easternmostLongitude";
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -302,11 +317,8 @@
 			hydra:variable "inst_type"^^xsd:string;
 			rdfs:label "nickname of type of installation";
 			rdfs:range "xsd:string";
-			http:paramValue "indoor";
-			http:paramValue "shelter";
-			http:paramValue "borehole";
-			http:paramValue "soil";
-			schema:defaultValue "indoor";
+			http:paramValue "flux";
+			schema:defaultValue "flux";
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -319,11 +331,11 @@
 		];
 	];
 .
-<#NearFaultObservations> a skos:ConceptScheme;
+<epos:NearFaultObservations> a skos:ConceptScheme;
 	dct:title "Near Fault Observations";
 	dct:description "It contains the concepts of Near Fault Observations";
 .
-<#CO2concentration> a skos:Concept;
-	skos:inScheme <#NearFaultObservations>;
+<epos:CO2concentration> a skos:Concept;
+	skos:inScheme <epos:NearFaultObservations>;
 	skos:prefLabel "CO2 concentration";
 .
