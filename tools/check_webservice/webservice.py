@@ -1,7 +1,7 @@
 from pathlib import Path
-from rdflib import Namespace, URIRef, Graph
+from rdflib import Namespace, Graph
 from rdflib.namespace import RDFS
-from rdflib.term import BNode
+from rdflib.term import BNode, URIRef
 from requests.exceptions import RequestException
 
 import logging
@@ -172,6 +172,10 @@ def test_operation(filename):
 
     ographs = []
     for o in operations:
+        # The root of an operation must be:
+        #     (URIRef, HYDRA.property, BNode)
+        if type(o[0]) != URIRef or type(o[2]) != BNode:
+            continue
         # Generate a subgraph (tree) for each operation
         g = Graph()
         g.add(o)
