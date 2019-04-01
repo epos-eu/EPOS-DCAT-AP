@@ -16,6 +16,10 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
+#########
+# Dataset
+#########
+
 <opgc.fr/vobs/WP11/DDSS-036/GAZVOLC/dataset/INCLUSION-GLASS> a dcat:Dataset;
     dct:title "Melt inclusions and groundmass glass compostion";
     dct:identifier "opgc.fr/vobs/WP11/DDSS-036/GAZVOLC/dataset/INCLUSION-GLASS";
@@ -39,6 +43,10 @@
     dcat:distribution <opgc.fr/vobs/WP11/DDSS-036/GAZVOLC/Distribution>;
 .
 
+#########
+# Distributions
+######### 
+
 <opgc.fr/vobs/WP11/DDSS-036/GAZVOLC/Distribution> a dcat:Distribution;
     dct:identifier "opgc.fr/vobs/WP11/DDSS-036/GAZVOLC/Distribution";
     dct:title "The way to download dataset from gazvolc";
@@ -50,6 +58,10 @@
     dct:format "http://publications.europa.eu/resource/authority/file-type/ZIP"^^xsd:anyURI;
     dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 .
+
+#########
+# PERSON 
+#########
 
 <http://orcid.org/0000-0002-8485-0154> a schema:Person;
     schema:identifier [ a schema:PropertyValue;
@@ -139,6 +151,10 @@
     schema:contactPoint <http://orcid.org/0000-0002-7635-1283/scientificContact>;
 .
 
+#########
+# Organization
+#########
+
 <http://isni.org/isni/0000000109416043> a schema:Organization;
     schema:identifier [ a schema:PropertyValue;
         schema:propertyID "ISNI";
@@ -163,21 +179,25 @@
     schema:contactPoint <http://orcid.org/0000-0002-0108-5486/financialContact>;
     schema:memberOf <http://isni.org/isni/0000000121129282>;
 .
-    <http://orcid.org/0000-0002-4518-3328/scientificContact> a schema:ContactPoint;
+<http://orcid.org/0000-0002-4518-3328/scientificContact> a schema:ContactPoint;
         schema:email "p.labazuy@opgc.fr";
         schema:availableLanguage "en", "fr" ;
 	schema:contactType "scientificContact" ;
 . 
-    <http://orcid.org/0000-0002-0108-5486/legalContact> a schema:ContactPoint;
+<http://orcid.org/0000-0002-0108-5486/legalContact> a schema:ContactPoint;
         schema:email "n.huret@opgc.fr";
         schema:availableLanguage "en", "fr" ;
         schema:contactType "legalContact" ;
 .
-    <http://orcid.org/0000-0002-0108-5486/financialContact> a schema:ContactPoint;
+<http://orcid.org/0000-0002-0108-5486/financialContact> a schema:ContactPoint;
         schema:email "n.huret@opgc.fr";
         schema:availableLanguage "en", "fr" ;
         schema:contactType "financialContact" ;
 .
+
+#########
+# Organization
+#########
 
 <PIC:999597417> a schema:Organization;
     schema:identifier [ a schema:PropertyValue;
@@ -200,10 +220,10 @@
     schema:contactPoint <http://orcid.org/0000-0002-7635-1283/scientificContact>;
     schema:memberOf <http://isni.org/isni/0000000121129282>;
 .
-    <http://orcid.org/0000-0002-7635-1283/scientificContact> a schema:ContactPoint;
-        schema:email "dimuro@ipgp.fr";
-        schema:availableLanguage "en", "it", "fr";
-        schema:contactType "scientificContact";
+<http://orcid.org/0000-0002-7635-1283/scientificContact> a schema:ContactPoint;
+	schema:email "dimuro@ipgp.fr";
+	schema:availableLanguage "en", "it", "fr";
+	schema:contactType "scientificContact";
 .
 
 <http://isni.org/isni/0000000121129282> a schema:Organization;
@@ -224,6 +244,10 @@
     schema:url "http://cnrs.fr"^^xsd:anyURI;
     schema:telephone "+33144964000";
 .
+
+#########
+# WebService
+######### 
 
 <opgc.fr/vobs/gazvolc/WP11/DDSS-036> a epos:WebService;
     schema:identifier "opgc.fr/vobs/gazvolc/WP11/DDSS-036";
@@ -257,7 +281,12 @@
         hydra:description "A documentation describing how to use OPGC Virtual Observatory API to find and download data";
         hydra:entrypoint "http://opgc.fr/vobs/api.php"^^xsd:anyURI;
 .
-    <opgc.fr/vobs/gazvolc/WP11/DDSS-036/data-catalog> a hydra:Operation;
+
+#########
+# Operations
+######### 
+
+<opgc.fr/vobs/gazvolc/WP11/DDSS-036/data-catalog> a hydra:Operation;
         hydra:method "GET"^^xsd:string;
         hydra:returns "text/turtle";
         #hydra:returns "application/json";
@@ -305,7 +334,7 @@
                 ];
         ];
 .
-    <opgc.fr/vobs/gazvolc/WP11/DDSS-036/data-download> a hydra:Operation;
+<opgc.fr/vobs/gazvolc/WP11/DDSS-036/data-download> a hydra:Operation;
         hydra:method "GET"^^xsd:string;
         hydra:returns "application/zip";
         # hydra:returns "application/json";
@@ -329,13 +358,15 @@
                 ];
         ];
 .
-
-    <epos:VolcanoObservations> a skos:ConceptSchema;
-        dct:title "Volcano Observations";
-        dct:description "It contains the concept of Volcanological observations";
+#########
+# Concept
+######### 
+<epos:VolcanoObservations> a skos:ConceptSchema;
+	dct:title "Volcano Observations";
+	dct:description "It contains the concept of Volcanological observations";
 .
-    <epos:Geochemical-Data> a skos:Concept;
-            skos:definition "Geochemical data" ;
-            skos:inScheme <epos:VolcanoObservations>;
-            skos:prefLabel "Geochemical data";
+<epos:Geochemical-Data> a skos:Concept;
+	skos:definition "Geochemical data" ;
+	skos:inScheme <epos:VolcanoObservations>;
+	skos:prefLabel "Geochemical data";
 .
