@@ -16,40 +16,9 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
-<opgc.fr/vobs/WP11/DDSS-024/dataset/ERUPTIVE_PARAM> a dcat:Dataset;
-    dct:title "Doppler radar, near-source eruptive parameters";
-    dct:identifier "opgc.fr/vobs/WP11/DDSS-024/dataset/ERUPTIVE_PARAM";
-    dct:description "Ground-based Doppler radar, near-source eruptive parameters - Mount Etna - Montagnola - Sicily - VOLDORAD2B";
-    adms:identifier [ a adms:Identifier;
-        adms:schemaAgency "DDSS-ID";
-        skos:notation "WP11-DDSS-024";
-    ];
-    dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
-    dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
-    dct:temporal [ a dct:PeriodOfTime;
-        schema:startDate "2010-03-11T11:02:05Z"^^xsd:dateTime;
-    ];
-    dct:spatial [ a dct:Location;
-        locn:geometry "POINT(15.003611, 37.718889)"^^gsp:wktLiteral;
-    ];
-    dcat:theme <epos:DopplerRadar>;
-    dcat:keyword "ground-based", "remote-sensing", "doppler effect", "radar", "power", "velocity", "particles", "source parameters";
-    dcat:contactPoint <http://orcid.org/0000-0001-8293-1340/contactPoint>;
-    dct:publisher <http://isni.org/isni/0000000109416043>;
-    dcat:distribution <opgc.fr/vobs/WP11/DDSS-024/Distribution>;
-.
-
-<opgc.fr/vobs/WP11/DDSS-024/Distribution> a dcat:Distribution;
-    dct:identifier "voldorad/data/id/3/DownloadFile";
-    dct:title "OPGC-VO distribution of VOLDORAD dataset 3";
-    dct:description "The way to download the voldorad product: MONT_20151203";
-    dct:issued "2015-12-03"^^xsd:date;
-    dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
-    dcat:accessURL <opgc.fr/vobs/voldorad/WP11/DDSS-024/data-download>;
-    dct:conformsTo <opgc.fr/vobs/voldorad/WP11/DDSS-024>;
-    dct:format "http://publications.europa.eu/resource/authority/file-type/ZIP"^^xsd:anyURI;
-    dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
-.
+#########
+# PERSON 
+#########
 
 <http://orcid.org/0000-0001-8293-1340> a schema:Person;
     schema:identifier [ a schema:PropertyValue;
@@ -93,6 +62,10 @@
     schema:contactPoint <http://orcid.org/0000-0002-4518-3328/scientificContact>; 
 .
 
+#########
+# Organization
+######### 
+
 <http://orcid.org/0000-0002-0108-5486> a schema:Person;
     schema:identifier [ a schema:PropertyValue;
         schema:propertyID "ORCID";
@@ -114,6 +87,7 @@
     schema:contactPoint <http://orcid.org/0000-0002-0108-5486/legalContact>;
     schema:contactPoint <http://orcid.org/0000-0002-0108-5486/financialContact>; 
 .
+
 
 <http://isni.org/isni/0000000109416043> a schema:Organization;
     schema:identifier [ a schema:PropertyValue;
@@ -141,21 +115,30 @@
     schema:contactPoint <http://orcid.org/0000-0002-0108-5486/financialContact>;
     schema:memberOf <http://isni.org/isni/0000000121129282>;
 .
-    <http://orcid.org/0000-0002-4518-3328/scientificContact> a schema:ContactPoint;
+
+#########
+# ContactPoint
+######### 
+
+<http://orcid.org/0000-0002-4518-3328/scientificContact> a schema:ContactPoint;
         schema:email "p.labazuy@opgc.fr";
         schema:availableLanguage "en", "fr" ;
 	schema:contactType "scientificContact" ;
 . 
-    <http://orcid.org/0000-0002-0108-5486/legalContact> a schema:ContactPoint;
+<http://orcid.org/0000-0002-0108-5486/legalContact> a schema:ContactPoint;
         schema:email "n.huret@opgc.fr";
         schema:availableLanguage "en", "fr" ;
         schema:contactType "legalContact" ;
 .
-    <http://orcid.org/0000-0002-0108-5486/financialContact> a schema:ContactPoint;
+<http://orcid.org/0000-0002-0108-5486/financialContact> a schema:ContactPoint;
         schema:email "n.huret@opgc.fr";
         schema:availableLanguage "en", "fr" ;
         schema:contactType "financialContact" ;
 .
+
+#########
+# Organization
+######### 
 
 <http://isni.org/isni/0000000121129282> a schema:Organization;
     schema:identifier [ a schema:PropertyValue;
@@ -178,6 +161,54 @@
     schema:url "http://cnrs.fr"^^xsd:anyURI;
     schema:telephone "+33144964000";
 .
+
+
+#########
+# Dataset
+######### 
+
+<opgc.fr/vobs/WP11/DDSS-024/dataset/ERUPTIVE_PARAM> a dcat:Dataset;
+    dct:title "Doppler radar, near-source eruptive parameters";
+    dct:identifier "opgc.fr/vobs/WP11/DDSS-024/dataset/ERUPTIVE_PARAM";
+    dct:description "Ground-based Doppler radar, near-source eruptive parameters - Mount Etna - Montagnola - Sicily - VOLDORAD2B";
+    adms:identifier [ a adms:Identifier;
+        adms:schemaAgency "DDSS-ID";
+        skos:notation "WP11-DDSS-024";
+    ];
+    dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
+    dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+    dct:temporal [ a dct:PeriodOfTime;
+        schema:startDate "2010-03-11T11:02:05Z"^^xsd:dateTime;
+    ];
+    dct:spatial [ a dct:Location;
+        locn:geometry "POINT(15.003611, 37.718889)"^^gsp:wktLiteral;
+    ];
+    dcat:theme <epos:DopplerRadar>;
+    dcat:keyword "ground-based", "remote-sensing", "doppler effect", "radar", "power", "velocity", "particles", "source parameters";
+    dcat:contactPoint <http://orcid.org/0000-0001-8293-1340/contactPoint>;
+    dct:publisher <http://isni.org/isni/0000000109416043>;
+    dcat:distribution <opgc.fr/vobs/WP11/DDSS-024/Distribution>;
+.
+
+#########
+# Distributions
+######### 
+
+<opgc.fr/vobs/WP11/DDSS-024/Distribution> a dcat:Distribution;
+    dct:identifier "voldorad/data/id/3/DownloadFile";
+    dct:title "OPGC-VO distribution of VOLDORAD dataset 3";
+    dct:description "The way to download the voldorad product: MONT_20151203";
+    dct:issued "2015-12-03"^^xsd:date;
+    dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
+    dcat:accessURL <opgc.fr/vobs/voldorad/WP11/DDSS-024/data-download>;
+    dct:conformsTo <opgc.fr/vobs/voldorad/WP11/DDSS-024>;
+    dct:format "http://publications.europa.eu/resource/authority/file-type/ZIP"^^xsd:anyURI;
+    dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+.
+
+#########
+# WebService
+######### 
 
 <opgc.fr/vobs/voldorad/WP11/DDSS-024> a epos:WebService;
     schema:identifier "opgc.fr/vobs/voldorad/WP11/DDSS-024";
@@ -211,7 +242,12 @@
         hydra:description "A documentation describing how to use OPGC Virtual Observatory API to find and download data";
         hydra:entrypoint "http://opgc.fr/vobs/api.php"^^xsd:anyURI;
 .
-    <opgc.fr/vobs/voldorad/WP11/DDSS-024/data-catalog> a hydra:Operation;
+
+#########
+# Operations
+######### 
+
+<opgc.fr/vobs/voldorad/WP11/DDSS-024/data-catalog> a hydra:Operation;
         hydra:method "GET"^^xsd:string;
         hydra:returns "text/turtle";
         # hydra:returns "application/json";
@@ -309,11 +345,13 @@
         ];
 .
 
-    <epos:VolcanoObservations> a skos:ConceptScheme;
-        dct:title "Volcano Observations";
-        dct:description "It contains the concept of Volcanological observations";
+
+
+<epos:VolcanoObservations> a skos:ConceptScheme;
+	dct:title "Volcano Observations";
+	dct:description "It contains the concept of Volcanological observations";
 .
-    <epos:DopplerRadar> a skos:Concept;
-            skos:inScheme <epos:VolcanoObservations>;
-            skos:prefLabel "Doppler Radar";
+<epos:DopplerRadar> a skos:Concept;
+        skos:inScheme <epos:VolcanoObservations>;
+        skos:prefLabel "Doppler Radar";
 .
