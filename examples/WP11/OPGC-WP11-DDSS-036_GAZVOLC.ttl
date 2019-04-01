@@ -160,6 +160,7 @@
         schema:propertyID "ISNI";
         schema:value "http://isni.org/isni/0000000109416043";
     ];
+    schema:leiCode "Legal Entity Identifier" ;
     schema:legalName "Earth Physics Observatory of Clermont-Ferrand"^^xsd:string;
     # schema:alternateName "Observatoire de Physique du Globe de Clermont-Ferrand"^^xsd:string;
     # schema:alternateName "OPGC"^^xsd:string;
@@ -205,6 +206,7 @@
         schema:value "999597417";
     ];
     schema:legalName "Earth Physics Institute of Paris"^^xsd:string;
+    schema:leiCode "Legal Entity Identifier" ;
     # schema:alternateName "Institut de Physique du Globe de Paris"^^xsd:string;
     # schema:alternateName "IPGP"^^xsd:string;
     schema:address [ a schema:PostalAddress;
@@ -231,6 +233,7 @@
         schema:propertyID "ISNI";
         schema:value "http://isni.org/isni/0000000121129282";
     ];
+    schema:leiCode "Legal Entity Identifier" ;
     schema:legalName "The National Center for Scientific Research"^^xsd:string;
     # schema:alternateName "CNRS: Le Centre National de la Recherche Scientifique"^^xsd:string;
     # schema:alternateName "CNRS"^^xsd:string;
@@ -336,8 +339,8 @@
 .
 <opgc.fr/vobs/gazvolc/WP11/DDSS-036/data-download> a hydra:Operation;
         hydra:method "GET"^^xsd:string;
-        hydra:returns "application/zip";
-        # hydra:returns "application/json";
+        #hydra:returns "application/zip";
+        hydra:returns "application/json";
         hydra:property [ a hydra:IriTemplate;
             hydra:template "http://opgc.fr/vobs/rest2/req.php/gazvolc/data/id/{uri}/{format}"^^xsd:string;
                 hydra:mapping [ a hydra:IriTemplateMapping;
