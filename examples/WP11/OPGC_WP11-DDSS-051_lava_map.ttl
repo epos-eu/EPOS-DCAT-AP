@@ -243,8 +243,9 @@
         hydra:method "GET"^^xsd:string;
         hydra:returns "application/xml";
         hydra:property [ a hydra:IriTemplate;
-            hydra:template "http://opgc.fr/vobs/rest2/req.php/oi2/lavamap{?sat, start_date, stop_date, eruption}"^^xsd:string; 
-                hydra:mapping [ a hydra:IriTemplateMapping;
+            #hydra:template "http://opgc.fr/vobs/rest2/req.php/oi2/lavamap{?sat, start_date, stop_date, eruption}"^^xsd:string; 
+             hydra:template "http://opgc.fr/vobs/rest2/req.php/oi2/lavamap{?sat, start_date, end_date, eruption}"^^xsd:string;     
+	        hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "sat"^^xsd:string;
                     rdfs:label "Satellite ID to limit the query to interferogram produce from a specific satellite data";
                     http:paramValue "SENTINEL";
@@ -264,7 +265,7 @@
                     hydra:required "false"^^xsd:boolean;
                 ];
                 hydra:mapping [ a hydra:IriTemplateMapping;
-                    hydra:variable "stop_date"^^xsd:datetime;
+                    hydra:variable "end_date"^^xsd:datetime;
                     hydra:property "schema:endDate";
                     rdfs:labe "Ending datetime of the time interval query (format YYYY-MM-DDThh:mm:ssZ)";
                     rdfs:range "xsd:dateTime";
