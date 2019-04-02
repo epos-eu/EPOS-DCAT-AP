@@ -243,12 +243,17 @@
     dct:description "CASOAR distribution of OI2 wrapped interferograms products";
     dct:issued "2017-06-21"^^xsd:dateTime;
     dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-    dcat:accessURL <wwwobs.univ-bpclermont.fr/casoar/data-download>;
-    dct:conformsTo <wwwobs.univ-bpclermont.fr/casoar>;
+    #dcat:accessURL <wwwobs.univ-bpclermont.fr/casoar/data-download>;   
+    #dct:conformsTo <wwwobs.univ-bpclermont.fr/casoar>;
+    dct:conformsTo <opgc.fr/vobs/oi2/WP11/DDSS-050>;
+    dcat:accessURL <opgc.fr/vobs/oi2/WP11/DDSS-050/data-catalog>;
     dct:format "http://publications.europa.eu/resource/authority/file-type/ZIP"^^xsd:anyURI;
     dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 .
 
+#########
+# WebService
+######### 
 
 <opgc.fr/vobs/oi2/WP11/DDSS-050> a epos:WebService;
     schema:identifier "opgc.fr/vobs/WP11/DDSS-050";
@@ -281,6 +286,10 @@
         hydra:description "A documentation describing how to use OPGC Virtual Observatory API to find and download data";
         hydra:entrypoint "http://opgc.fr/vobs/api.php"^^xsd:anyURI;
 .
+
+#########
+# Operation
+######### 
 
 <opgc.fr/vobs/oi2/WP11/DDSS-050/data-catalog> a hydra:Operation;
         hydra:method "GET"^^xsd:string;
@@ -445,6 +454,10 @@
         ];
 .
 
+#########
+# WebService
+######### 
+
 <wwwobs.univ-bpclermont.fr/casoar> a epos:WebService;
     schema:identifier "wwwobs.univ-bpclermont.fr/casoar";
     schema:description "CASOAR is a tool dedicated to sorting, selecting, visualizing and sharing large-radar-images-databases. It includes a set of processing components and a WEB interface. Firstly the new data is extracted, formated, processed and recorded of new data onto the database. This part of CASOAR is mainly written in Python and also uses external software and libraries such as SNAP (ESA), DIAPASON (Altamira©), ImageJ, ImageMagik, Manip_Raster , etc... At this step, particular attention was given to achieve maximum automation of the procedures so that the updating and maintenance of the database requires minimal operator intervention. The second component of CASOAR consists of a WEB interface developed in PHP, MySQL and Google API. This interface allows partial or total access to the database by means of a login/password connection with different levels of permissions.";
@@ -455,7 +468,7 @@
         schema:startDate "2006-10-05T19:21:16Z"^^xsd:dateTime;
     ];
     dct:spatial [ a dct:Location;
-        locn:geometry "POLYGON(55.622471 -21.182913, 55.82473 -21.184441, 55.823513 -21.338009, 55.62104 -21.33647)"^^gsp:wktLiteral;
+        locn:geometry "POLYGON(55.622471 -21.182913, 55.82473 -21.184441, 55.823513 -21.338009, 55.62104 -21.33647, 55.622471 -21.182913)"^^gsp:wktLiteral;
     ];
     schema:provider <http://isni.org/isni/0000000109416043>;
     schema:keywords "Database", "Data Catalog", "Remote Sensing",  "Radar", "Interferometry", "Reunion", "Piton de la Fournaise", "Deformation", "SENTINEL", "COSMOSKYMED", "ALOS-PALSAR", "Volcanology";
@@ -477,7 +490,12 @@
         hydra:description "A documentation describing how to use the CASOAR Web Interface to find, visualize and download data from OI2 databases";
         hydra:entrypoint "https://wwwobs.univ-bpclermont.fr/casoar/casoar_ug.php"^^xsd:anyURI;
 .
-    <wwwobs.univ-bpclermont.fr/casoar/data-visualization> a hydra:Operation;
+
+#########
+# Operations
+######### 
+
+ <wwwobs.univ-bpclermont.fr/casoar/data-visualization> a hydra:Operation;
         hydra:method "GET"^^xsd:string;
         hydra:returns "text/html";
         hydra:property [ a hydra:IriTemplate;
@@ -507,7 +525,8 @@
                 ];
         ];
 .
-    <wwwobs.univ-bpclermont.fr/casoar/data-download> a hydra:Operation;
+
+<wwwobs.univ-bpclermont.fr/casoar/data-download> a hydra:Operation;
         hydra:method "GET"^^xsd:string;
         hydra:returns "application/zip";
         hydra:property [ a hydra:IriTemplate;
@@ -529,6 +548,10 @@
                 ];
         ];
 .
+
+#########
+# Concept
+#########
 
     <epos:VolcanoObservations> a skos:ConceptScheme;
         dct:title "Volcano-Observations";
