@@ -231,6 +231,8 @@
             ];
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "StartTime"^^xsd:string;
+                hydra:property "schema:startDate";
+                schema:valuePattern "YYYY-MM-DD";
                 rdfs:label "StartTime";
                 rdfs:range "xsd:date" ;
                 schema:defaultValue "2000-01-01";
@@ -240,6 +242,8 @@
             ];
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "EndTime"^^xsd:string;
+                hydra:property "schema:endDate";
+                schema:valuePattern "YYYY-MM-DD";
                 rdfs:label "EndTime";
                 rdfs:range "xsd:date" ;
                 schema:defaultValue "2001-01-01";

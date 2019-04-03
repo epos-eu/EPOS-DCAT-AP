@@ -189,7 +189,7 @@
 
     dct:temporal [ a dct:PeriodOfTime;
         schema:startDate "2015-01-01T00:00:00Z"^^xsd:dateTime;
-        #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
+        schema:endDate "2024-12-31T00:00:00Z"^^xsd:dateTime;
     ];
     dct:spatial [ a dct:Location;
         locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral;
@@ -279,6 +279,8 @@
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "date"^^xsd:string;
                 rdfs:label "Date (yyyy-mm-dd)";
+                hydra:property "schema:startDate";
+                schema:valuePattern "YYYY-MM-DD";
                 rdfs:range "xsd:date" ;
                 schema:defaultValue "2015-01-01";
                 schema:minValue "2015-01-01";

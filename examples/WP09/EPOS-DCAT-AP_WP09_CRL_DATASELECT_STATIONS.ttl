@@ -485,14 +485,18 @@
 	hydra:template "http://ws.resif.fr/fdsnws/dataselect/1/query{?starttime, endtime, network, station, location, channel, quality, minimumlength, nodata}"^^xsd:string;
 	
 				hydra:mapping[ a hydra:IriTemplateMapping;
-				hydra:variable "starttime"^^xsd:string;
-				rdfs:range "xsd:date";
-				rdfs:label "Start of the timespan";
-				hydra:required "true"^^xsd:boolean;
-				schema:defaultValue "2018-01-01T00:00:00"
+				        hydra:variable "starttime"^^xsd:string;
+                                        hydra:property "schema:startDate";
+                                        schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+				        rdfs:range "xsd:date";
+				        rdfs:label "Start of the timespan";
+				        hydra:required "true"^^xsd:boolean;
+				        schema:defaultValue "2018-01-01T00:00:00"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "endtime"^^xsd:string;
+                                        hydra:property "schema:endDate";
+                                        schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 					rdfs:range "xsd:date";
 					rdfs:label "End of the timespan";
 					hydra:required "true"^^xsd:boolean;
@@ -558,31 +562,35 @@
                         hydra:template "http://eida.gein.noa.gr/fdsnws/dataselect/1/query{?starttime, endtime, network, station, location, channel, quality, minimumlength, nodata}"^^xsd:string;
                                 hydra:mapping[ a hydra:IriTemplateMapping;
                                         hydra:variable "starttime"^^xsd:string;
+                                        hydra:property "schema:startDate";
+                                        schema:valuePattern "YYYY-MM-DDThh:mm:ss";
                                         rdfs:range "xsd:date";
                                         rdfs:label "Start of the timespan";
                                         hydra:required "true"^^xsd:boolean;
-                                        schema:defaultValue "2018-01-01T00:00:00"
+                                        schema:defaultValue "2019-01-01T00:00:00"
                                 ];
                                 hydra:mapping[ a hydra:IriTemplateMapping;
                                         hydra:variable "endtime"^^xsd:string;
+                                        hydra:property "schema:endDate";
+                                        schema:valuePattern "YYYY-MM-DDThh:mm:ss";
                                         rdfs:range "xsd:date";
                                         rdfs:label "End of the timespan";
                                         hydra:required "true"^^xsd:boolean;
-                                        schema:defaultValue "2018-01-01T01:00:00"
+                                        schema:defaultValue "2019-01-01T01:00:00"
                                 ];
                                 hydra:mapping[ a hydra:IriTemplateMapping;
                                         hydra:variable "network"^^xsd:string;
                                         rdfs:range "xsd:string";
                                         rdfs:label "Network code";
                                         hydra:required "true"^^xsd:boolean;
-                                        schema:defaultValue "HL"
+                                        schema:defaultValue "*"
                                 ];
                                 hydra:mapping[ a hydra:IriTemplateMapping;
                                         hydra:variable "station"^^xsd:string;
                                         rdfs:range "xsd:string";
                                         rdfs:label "Station code";
                                         hydra:required "true"^^xsd:boolean;
-                                        schema:defaultValue "JAN"
+                                        schema:defaultValue "*"
                                 ];
                                 hydra:mapping[ a hydra:IriTemplateMapping;
                                         hydra:variable "location"^^xsd:string;
@@ -632,6 +640,8 @@
 		hydra:template "http://ws.resif.fr/fdsnws/station/1/query{?starttime, endtime, network, station, location, channel, minlatitude, maxlatitude, minlongitude, maxlongitude, level, nodata, matchtimeseries}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "starttime"^^xsd:string;
+                                        hydra:property "schema:startDate";
+                                        schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 					rdfs:range "xsd:date";
 					rdfs:label "Start of the timespan";
 					hydra:required "true"^^xsd:boolean;
@@ -639,6 +649,8 @@
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "endtime"^^xsd:string;
+                                        hydra:property "schema:endDate";
+                                        schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 					rdfs:range "xsd:date";
 					rdfs:label "End of the timespan";
 					hydra:required "true"^^xsd:boolean;
@@ -674,6 +686,8 @@
 					rdfs:label "Minimum Latitude";
 					schema:minValue "-90.0";
 					schema:maxValue "90.0";
+                                        schema:defaultValue "38.0";
+                                        hydra:property "epos:southernmostLatitude";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
@@ -682,6 +696,8 @@
 					rdfs:label "Maximum Latitude";
 					schema:minValue "-90.0";
 					schema:maxValue "90.0";
+                                        schema:defaultValue "38.65";
+                                        hydra:property "epos:northernmostLatitude";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
@@ -690,6 +706,8 @@
 					rdfs:label "Minimum Longitude";
 					schema:minValue "-180.0";
 					schema:maxValue "180.0";
+                                        schema:defaultValue "21.35";
+                                        hydra:property "epos:westernmostLongitude";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
@@ -698,6 +716,8 @@
 					rdfs:label "Maximum Longitude";
 					schema:minValue "-180.0";
 					schema:maxValue "180.0";
+                                        schema:defaultValue "22.5";
+                                        hydra:property "epos:easternmostLongitude";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
@@ -737,13 +757,17 @@
                         hydra:template "http://eida.gein.noa.gr/fdsnws/station/1/query{?starttime, endtime, network, station, location, channel, minlatitude, maxlatitude, minlongitude, maxlongitude, level, nodata}"^^xsd:string;
                                 hydra:mapping[ a hydra:IriTemplateMapping;
                                         hydra:variable "starttime"^^xsd:string;
+                                        hydra:property "schema:startDate";
+                                        schema:valuePattern "YYYY-MM-DDThh:mm:ss";
                                         rdfs:range "xsd:dateTime";
                                         rdfs:label "Start of the timespan";
                                         hydra:required "true"^^xsd:boolean;
-                                        schema:defaultValue "1997-10-14T00:00:00"
+                                        schema:defaultValue "2019-01-01T00:00:00"
                                 ];
                                 hydra:mapping[ a hydra:IriTemplateMapping;
                                         hydra:variable "endtime"^^xsd:string;
+                                        hydra:property "schema:endDate";
+                                        schema:valuePattern "YYYY-MM-DDThh:mm:ss";
                                         rdfs:range "xsd:dateTime";
                                         rdfs:label "End of the timespan";
                                         hydra:required "true"^^xsd:boolean;
@@ -783,8 +807,9 @@
                                         rdfs:label "Minimum Latitude";
                                         schema:minValue "-90.0";
                                         schema:maxValue "90.0";
+                                        schema:defaultValue "38.0";
+                                        hydra:property "epos:southernmostLatitude";
                                         hydra:required "true"^^xsd:boolean;
-                                        schema:defaultValue "-90.0"
                                 ];
                                hydra:mapping[ a hydra:IriTemplateMapping;
                                         hydra:variable "maxlatitude"^^xsd:string;
@@ -792,8 +817,9 @@
                                         rdfs:label "Maximum Latitude";
                                         schema:minValue "-90.0";
                                         schema:maxValue "90.0";
+                                        schema:defaultValue "38.65";
+                                        hydra:property "epos:northernmostLatitude";
                                         hydra:required "true"^^xsd:boolean;
-                                        schema:defaultValue "90.0"
                                 ];
                                 hydra:mapping[ a hydra:IriTemplateMapping;
                                         hydra:variable "minlongitude"^^xsd:string;
@@ -801,8 +827,9 @@
                                         rdfs:label "Minimum Longitude";
                                         schema:minValue "-180.0";
                                         schema:maxValue "180.0";
+                                        schema:defaultValue "21.35";
+                                        hydra:property "epos:westernmostLongitude";
                                         hydra:required "true"^^xsd:boolean;
-                                        schema:defaultValue "-180.0"
                                 ];
                                 hydra:mapping[ a hydra:IriTemplateMapping;
                                         hydra:variable "maxlongitude"^^xsd:string;
@@ -810,8 +837,9 @@
                                         rdfs:label "Maximum Longitude";
                                         schema:minValue "-180.0";
                                         schema:maxValue "180.0";
+                                        schema:defaultValue "22.5";
+                                        hydra:property "epos:easternmostLongitude";
                                         hydra:required "true"^^xsd:boolean;
-                                        schema:defaultValue "180.0"
                                 ];
                                 hydra:mapping[ a hydra:IriTemplateMapping;
                                         hydra:variable "level"^^xsd:string;
@@ -1034,4 +1062,3 @@
         dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
         dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 .
-

@@ -149,6 +149,10 @@
 	hydra:template "http://webservices.ingv.it/fdsnws/dataselect/1/query{?starttime, endtime, network, station, location, channel, quality, minimumlength, nodata}"^^xsd:string;
 	hydra:mapping[ a hydra:IriTemplateMapping;
 	hydra:variable "starttime"^^xsd:string;
+	
+	hydra:property "schema:startDate";
+	schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+	
 	rdfs:label "Start of the timespan";
 	hydra:required "true"^^xsd:boolean;
 	rdfs:range "xsd:dateTime" ;
@@ -156,6 +160,10 @@
 	];
 	hydra:mapping[ a hydra:IriTemplateMapping;
 	hydra:variable "endtime"^^xsd:string;
+	
+	hydra:property "schema:endDate";
+	schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+	
 	rdfs:label "End of the timespan";
 	hydra:required "true"^^xsd:boolean;
 	rdfs:range "xsd:dateTime" ;
@@ -255,7 +263,7 @@
                       locn:geometry "POLYGON(6.7499552751 36.619987291, 18.4802470232 36.619987291, 6.7499552751 47.1153931748, 18.4802470232 47.1153931748)"^^gsp:wktLiteral ;
         ];
         dct:temporal [ a dct:PeriodOfTime ;
-                schema:startDate "1988-01-01T00:00:00Z"^^xsd:dateTime ;
+                schema:startDate "1990-01-01T00:00:00Z"^^xsd:dateTime ;
                 #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
 	] ;
 .
@@ -296,7 +304,7 @@
     		locn:geometry "POLYGON(6.7499552751 36.619987291, 18.4802470232 36.619987291, 6.7499552751 47.1153931748, 18.4802470232 47.1153931748)"^^gsp:wktLiteral ;
   	];
   	dct:temporal [ a dct:PeriodOfTime ;
-          	schema:startDate "1988-01-01T00:00:00"^^xsd:dateTime ;
+          	schema:startDate "1990-01-01T00:00:00"^^xsd:dateTime ;
           	#schema:endDate "YYYY-MM-DDThh:mm:ss"^^xsd:dateTime ;
   	] ;
 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
@@ -320,6 +328,10 @@
 			
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "starttime"^^xsd:string;
+				
+				hydra:property "schema:startDate";
+				schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+				
 				rdfs:label "Start of the timespan";
 				hydra:required "true"^^xsd:boolean;
 				rdfs:range "xsd:dateTime" ;
@@ -327,6 +339,10 @@
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "endtime"^^xsd:string;
+				
+				hydra:property "schema:endDate";
+				schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+				
 				rdfs:label "End of the timespan";
 				hydra:required "true"^^xsd:boolean;
 				rdfs:range "xsd:dateTime" ;
@@ -362,6 +378,7 @@
 			];		 
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "minlatitude"^^xsd:string;
+				hydra:property "epos:southernmostLatitude" ;
 				rdfs:label "Minimum Latitude";
 				schema:minValue "-90.0";
 				schema:maxValue "90.0";
@@ -370,6 +387,7 @@
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "maxlatitude"^^xsd:string;
+				hydra:property "epos:northernmostLatitude" ;
 				rdfs:label "Maximum Latitude";
 				schema:minValue "-90.0";
 				schema:maxValue "90.0";
@@ -378,6 +396,7 @@
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "minlongitude"^^xsd:string;
+				hydra:property "epos:westernmostLongitude" ;
 				rdfs:label "Minimum Longitude";
 				schema:minValue "-180.0";
 				schema:maxValue "180.0";
@@ -386,6 +405,7 @@
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "maxlongitude"^^xsd:string;
+				hydra:property "epos:easternmostLongitude" ;
 				rdfs:label "Maximum Longitude";
 				schema:minValue "-180.0";
 				schema:maxValue "180.0";
@@ -459,6 +479,7 @@
 # Distribution
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/INGV> a dcat:Distribution;
     	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/INGV";
+	dct:title "Seismic Stations Distribution :: INGV";
 	dct:description "Description of Seismic Stations  :: INGV";
 	dct:issued "2017-01-01"^^xsd:date ;
 	dct:modified "2017-01-01"^^xsd:date ;

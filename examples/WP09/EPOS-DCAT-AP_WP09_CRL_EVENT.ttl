@@ -257,6 +257,8 @@
 		hydra:template "http://nfocrl.u-strasbg.fr/fdsnws/event/1/query{?starttime, endtime, minlatitude, maxlatitude, minlongitude, maxlongitude, mindepth, maxdepth, minmagnitude, maxmagnitude, magnitudetype, includeallorigins, includeallmagnitudes, includearrivals, eventid, limit, offset, orderby, contributor, catalog, updatedafter, format, nodata, latitude, longitude, minradius, maxradius}"^^xsd:string;
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "starttime"^^xsd:string;
+                                hydra:property "schema:startDate";
+                                schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 				rdfs:range "xsd:dateTime";
 				rdfs:label "Start Time";
 				schema:minValue "2000-05-20T00:00:00";
@@ -266,6 +268,8 @@
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "endtime"^^xsd:string;
+                                hydra:property "schema:endDate";
+                                schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 				rdfs:range "xsd:dateTime";
 				rdfs:label "End Time";
 				schema:minValue "2000-05-20T00:00:00";
@@ -280,6 +284,7 @@
 				schema:minValue "-90";
 				schema:maxValue "90";
 				schema:defaultValue "38.0";
+                                hydra:property "epos:southernmostLatitude";
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
@@ -289,6 +294,7 @@
 				schema:minValue "-90";
 				schema:maxValue "90";
 				schema:defaultValue "38.65";
+                                hydra:property "epos:northernmostLatitude";
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
@@ -298,6 +304,7 @@
 				schema:minValue "-180";
 				schema:maxValue "180";
 				schema:defaultValue "21.35";
+                                hydra:property "epos:westernmostLongitude";
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
@@ -307,6 +314,7 @@
 				schema:minValue "-180";
 				schema:maxValue "180";
 				schema:defaultValue "22.5";
+                                hydra:property "epos:easternmostLongitude";
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
