@@ -155,14 +155,11 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
-
-			hydra:template "https://api.vedur.is/epos/v1/volcano/meta/radar/{station}/{?period_starts,period_ends}&bbox={[minlatitude, minlongitude, maxlatitude, maxlongitude]}"^^xsd:string;
+			hydra:template "https://api.vedur.is/epos/v1/volcano/meta/radar/{station}/{?period_starts,period_ends}&bbox={minlatitude, minlongitude, maxlatitude, maxlongitude}"^^xsd:string;
 			#hydra:template "https://api.vedur.is/epos/v1/volcano/meta/radar/{?volcano, period_starts, period_ends, station}"^^xsd:string;
-			#hydra:template "https://api.vedur.is/epos/v1/volcano/meta/radar/{?volcano, period_starts, period_ends, station}"^^xsd:string;
-
+				
 				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "minlatitude"^^xsd:string; 
-          hydra:property "epos:southernmostLatitude";
+					hydra:variable "minlatitude"^^xsd:string; hydra:property “epos:southernmostLatitude”;
 					rdfs:label "Minimum Latitude";
 					schema:minValue "-90.0";
 					schema:maxValue "90.0";
@@ -170,8 +167,7 @@
 					schema:defaultValue "63.0" ;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "minlongitude"^^xsd:string; 
-          hydra:property "epos:westernmostLongitude";
+					hydra:variable "minlongitude"^^xsd:string; hydra:property “epos:westernmostLongitude”;
 					rdfs:label "Minimum Longitude";
 					schema:minValue "-180.0";
 					schema:maxValue "180.0";
@@ -179,8 +175,7 @@
 					schema:defaultValue "-25.0" ;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "maxlatitude"^^xsd:string; 
-          hydra:property "epos:northernmostLatitude";
+					hydra:variable "maxlatitude"^^xsd:string; hydra:property “epos:northernmostLatitude”;
 					rdfs:label "Maximum Latitude";
 					schema:minValue "-90.0";
 					schema:maxValue "90.0";
@@ -188,8 +183,7 @@
 					schema:defaultValue "68.5" ;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "maxlongitude"^^xsd:string; 
-          hydra:property "epos:easternmostLongitude";
+					hydra:variable "maxlongitude"^^xsd:string; hydra:property “epos:easternmostLongitude”;
 					rdfs:label "Maximum Longitude";
 					schema:minValue "-180.0";
 					schema:maxValue "180.0";
@@ -198,6 +192,8 @@
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "period_starts"^^xsd:string;
+					hydra:property "schema:startDate";
+				schema:valuePattern "YYYY-MM-DD";
 					rdfs:range "xsd:dateTime";
 					rdfs:label "Start time in format YYYY-MM-DDTHH:MM:SS";
 					schema:minValue "1900-01-01T00:00:00";
@@ -206,6 +202,8 @@
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "period_ends"^^xsd:string;
+					hydra:property "schema:endDate";
+				schema:valuePattern "YYYY-MM-DD";
 					rdfs:range "xsd:dateTime";
 					rdfs:label "End time in format YYYY-MM-DDTHH:MM:SS";
 					schema:maxValue "2050-01-01T00:00:00";

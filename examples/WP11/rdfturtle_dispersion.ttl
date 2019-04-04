@@ -160,7 +160,7 @@
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
-		hydra:template "https://api.vedur.is/epos/v1/dispersion{?Hazard_type, start_time, end_time}&bbox={[minlatitude, minlongitude, maxlatitude, maxlongitude]}"^^xsd:string;
+		hydra:template "https://api.vedur.is/epos/v1/dispersion{?Hazard_type, start_time, end_time}&bbox={minlatitude, minlongitude, maxlatitude, maxlongitude}"^^xsd:string;
 			
 			hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "minlatitude"^^xsd:string; hydra:property “epos:southernmostLatitude”;
@@ -203,12 +203,16 @@
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "start_time"^^xsd:string;
+				hydra:property "schema:startDate";
+				schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 				rdfs:range "xsd:dateTime";
 				rdfs:label "Start date (YYYY-MM-DDTHH:MM:SS)";
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "end_time"^^xsd:string;
+				hydra:property "schema:endDate";
+				schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 				rdfs:range "xsd:dateTime";
 				rdfs:label "End date (YYYY-MM-DDTHH:MM:SS)";
 				hydra:required "false"^^xsd:boolean;
@@ -220,7 +224,6 @@
 # Concept
 ######### 
 
-
 <epos:Geohazards> a skos:Concept;
 	skos:definition "Maps show the hourly forecast of tephra fallout and gas dispersal";
 	skos:inScheme <epos:VolcanoObservations>;
@@ -231,4 +234,4 @@
 	dct:description "Daily ash/gas forecasting maps";
 . 
 
-
+ 
