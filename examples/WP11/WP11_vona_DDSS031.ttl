@@ -71,6 +71,7 @@
 <0000-0001-5750-0872/contactPoint> a schema:ContactPoint;
 	schema:email "sara@vedur.is";
 	schema:availableLanguage "en" ;
+        schema:contactType "contactPoint" ;
 .
 <0000-0001-5750-0872/scientificContact> a schema:ContactPoint;
 	schema:email "sara@vedur.is";
@@ -157,7 +158,7 @@
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
-	hydra:template "https://api.vedur.is/epos/v1/volcanoes/products/vona{?start_time, end_time}&bbox={[minlatitude, minlongitude, maxlatitude, maxlongitude]}"^^xsd:string;
+		hydra:template "https://api.vedur.is/epos/v1/volcanoes/products/vona{?start_time, end_time}&bbox={minlatitude, minlongitude, maxlatitude, maxlongitude}"^^xsd:string;
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "minlatitude"^^xsd:string; 
 				hydra:property "epos:southernmostLatitude";
@@ -196,15 +197,18 @@
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "start_time"^^xsd:string;
+				hydra:property "schema:startDate";
+			        schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 				rdfs:range "xsd:dateTime";
-				rdfs:label "Starting time for the search in format YYYY-MM-DDTHH:MM:SS";
-				
+				rdfs:label "Starting time for the search";
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "end_time"^^xsd:string;
+				hydra:property "schema:endDate";
+			        schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 				rdfs:range "xsd:dateTime";
-				rdfs:label "Ending time for search in format YYYY-MM-DDTHH:MM:SS";
+				rdfs:label "Ending time for search";
 				hydra:required "false"^^xsd:boolean;
 			];
 	] ;
