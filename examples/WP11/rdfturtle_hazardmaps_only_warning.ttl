@@ -130,10 +130,10 @@
 	schema:identifier "www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/058";
 	schema:description "Access static probabilistic hazard maps for tephra fallout";
 	schema:name "Tephra fallout hazard maps for explosive volcanoes";
-  dcat:contactPoint <http://orcid.org/0000-0001-5750-0872/contactPoint>;
-  schema:provider <PIC:997168343> ;
+  	dcat:contactPoint <http://orcid.org/0000-0001-5750-0872/contactPoint>;
+        schema:provider <PIC:997168343> ;
 	hydra:entrypoint "https://docs.vedur.is/api/epos/#!/Volcanoes/get_hazard_maps_meta"^^xsd:anyURI; 
-  dcat:theme <epos:Geohazards>;
+        dcat:theme <epos:Geohazards>;
 	schema:datePublished "2018-11-30"^^xsd:date;
 	schema:dateModified "2018-11-30"^^xsd:date;
 	dct:spatial [ a dct:Location; 
@@ -154,7 +154,7 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://api.vedur.is/epos/v1/hazard_maps_meta{?hazard_type}&bbox={[minlatitude, minlongitude, maxlatitude, maxlongitude]}"^^xsd:string;
+			hydra:template "https://api.vedur.is/epos/v1/hazard_maps_meta{?hazard_type}&bbox={minlatitude, minlongitude, maxlatitude, maxlongitude}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "minlatitude"^^xsd:string; 
           				hydra:property "epos:southernmostLatitude";
