@@ -132,6 +132,44 @@
 	schema:contactPoint <http://orcid.org/0000-0002-8651-6387/financialContact>;
 .
 
+#########
+# Dataset
+#########
+
+<WP11/Software> a dcat:Dataset;
+        dct:title "Software";
+        dct:identifier "WP11/Software";
+        dct:description "Software-catalog for Computational Volcanology";
+        ## example of frequency using a controlled vocabulary
+	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+        dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+        dct:created "2019-01-01"^^xsd:date;
+	dct:spatial [ a dct:Location;
+		locn:geometry "POLYGON(10.399 43.721)"^^gsp:wktLiteral;
+		locn:geometry "POLYGON(10.399 43.721)"^^gsp:wktLiteral;
+		];
+        dcat:theme <epos:Software-catalog>;
+        dcat:keyword "Software-catalog","Computational Volcanology";
+        dcat:contactPoint <https://orcid.org/0000-0002-0915-3711/contactPoint>;
+	dct:publisher <PIC:999472675>;
+        dcat:distribution <WP11/Software/WSDistribution>;
+.
+
+#########
+# Distribution
+######### 
+
+<WP11/Software/WSDistribution> a dcat:Distribution;
+        dct:identifier "WP11/Software/WSDistribution";
+	dct:description "Software catalog WSDistribution";
+        dct:title "Software catalog WSDistribution"; 
+	dct:created "2019-01-01"^^xsd:date;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+	dcat:accessURL <Software/operation>;
+	dct:conformsTo <Software>;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
+.
+
 
 #########
 # WebService
@@ -140,8 +178,8 @@
 <Software> a epos:WebService;
 	schema:identifier "Software";
 	schema:identifier [ a schema:PropertyValue;
-	schema:propertyID  "DDSS-ID";
-	schema:value  "WP11-DDSS-070";
+		schema:propertyID  "DDSS-ID";
+		schema:value  "WP11-DDSS-070";
 	]; 
 	schema:description "Numerical Models for Computational Volcanology";
 	schema:name "Computational Infrastructure for Volcanology";
@@ -156,72 +194,44 @@
 	
 .
 
+#########
+# Operation
+######### 
 	
-	<Software/operation> a hydra:Operation;
-		hydra:method "GET"^^xsd:string;
-		hydra:returns "json";
-		hydra:property[ a hydra:IriTemplate;
-			hydra:template "http://civ.pi.ingv.it/wp-json/vmsg/v1/projects/(?project_setting=Conduit&project_discipline=Thermodynamics)"^^xsd:string;
-				
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "project_setting"^^xsd:string;
-					rdfs:label "Name that Conduit, Magmatic Fluid";
-					http:paramValue "Conduit";
-					http:paramValue "Magmatic Fluid"; 
-					schema:defaultValue "Conduit";
-					hydra:required "false"^^xsd:boolean;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "project_"^^xsd:string;
-					rdfs:label "Name that Conduit, Magmatic Fluid";
-					http:paramValue "Conduit";
-					http:paramValue "Magmatic Fluid"; 
-					schema:defaultValue "Conduit";
-					hydra:required "false"^^xsd:boolean;
-				];
-		];
+<Software/operation> a hydra:Operation;
+	hydra:method "GET"^^xsd:string;
+	hydra:returns "json";
+	hydra:property[ a hydra:IriTemplate;
+		hydra:template "http://civ.pi.ingv.it/wp-json/vmsg/v1/projects/{?project_setting,project_discipline}"^^xsd:string;
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "project_setting"^^xsd:string;
+				rdfs:label "Name that Conduit, Magmatic Fluid";
+				http:paramValue "Conduit";
+				http:paramValue "Magmatic Fluid"; 
+				schema:defaultValue "Conduit";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "project_"^^xsd:string;
+				rdfs:label "Name that Conduit, Magmatic Fluid";
+				http:paramValue "Conduit";
+				http:paramValue "Magmatic Fluid"; 
+				schema:defaultValue "Conduit";
+				hydra:required "false"^^xsd:boolean;
+			];
+	];
 . 
-
-
-<WP11/Software> a dcat:Dataset;
-        dct:title "Software";
-        dct:identifier "WP11/Software";
-        dct:description "Software-catalog for Computational Volcanology";
-        ## example of frequency using a controlled vocabulary
-	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
-        dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
-        dct:created "2019-01-01"^^xsd:date;
-		dct:spatial [ a dct:Location;
-		locn:geometry "POLYGON(10.399 43.721)"^^gsp:wktLiteral;
-		locn:geometry "POLYGON(10.399 43.721)"^^gsp:wktLiteral;
-		];
-        dcat:theme <epos:Software-catalog>;
-        dcat:keyword "Software-catalog","Computational Volcanology";
-        dcat:contactPoint <https://orcid.org/0000-0002-0915-3711/contactPoint>;
-	dct:publisher <PIC:999472675>;
-        dcat:distribution <WP11/Software/WSDistribution>;
-.
-
-<WP11/Software/WSDistribution> a dcat:Distribution;
-        dct:identifier "WP11/Software/WSDistribution";
-	dct:description "Software catalog WSDistribution";
-	dct:created "2019-01-01"^^xsd:date;
-	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-	dcat:accessURL <Software/operation>;
-	dct:conformsTo <Software>;
-	dct:format "http://publications.europa.eu/resource/authority/file-type/TXT"^^xsd:anyURI;
-.
 
 #########
 # Concept
 ######### 
 
-	<epos:Volcano-Observations> a skos:ConceptScheme;
-		dct:title "Volcano-Observations";
-		dct:description "It contains the concepts of Volcano-Observations";
+<epos:Volcano-Observations> a skos:ConceptScheme;
+	dct:title "Volcano-Observations";
+	dct:description "It contains the concepts of Volcano-Observations";
 .
-	<epos:Software-catalog> a skos:Concept;
-		skos:inScheme <Volcano-Observations>;
-		skos:prefLabel "Software-catalog";
+<epos:Software-catalog> a skos:Concept;
+	skos:inScheme <Volcano-Observations>;
+	skos:prefLabel "Software-catalog";
 
 .
