@@ -151,12 +151,11 @@
 	]; 
 . 
 
-	<www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/054/Operation/054> a hydra:Operation;
+<www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/054/Operation/054> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://api.vedur.is/epos/v1/hazard_maps_meta{?hazard_type}&bbox={[minlatitude, minlongitude, maxlatitude, maxlongitude]}"^^xsd:string;
-				
+			hydra:template "https://api.vedur.is/epos/v1/hazard_maps_meta{?hazard_type}&bbox={minlatitude, minlongitude, maxlatitude, maxlongitude}"^^xsd:string;	
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "minlatitude"^^xsd:string; 
           				hydra:property "epos:southernmostLatitude";
