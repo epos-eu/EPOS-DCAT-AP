@@ -85,6 +85,26 @@
 .
 
 #########
+# ContactPoint
+#########  
+
+<http://orcid.org/0000-0002-4518-3328/scientificContact> a schema:ContactPoint;
+        schema:email "p.labazuy@opgc.fr";
+        schema:availableLanguage "en", "fr" ;
+	schema:contactType "scientificContact" ;
+. 
+<http://orcid.org/0000-0002-0108-5486/legalContact> a schema:ContactPoint;
+        schema:email "n.huret@opgc.fr";
+        schema:availableLanguage "en", "fr" ;
+        schema:contactType "legalContact" ;
+.
+<http://orcid.org/0000-0002-0108-5486/financialContact> a schema:ContactPoint;
+        schema:email "n.huret@opgc.fr";
+        schema:availableLanguage "en", "fr" ;
+        schema:contactType "financialContact" ;
+.
+
+#########
 # Organization
 #########
 
@@ -93,8 +113,8 @@
         schema:propertyID "ISNI";
         schema:value "http://isni.org/isni/0000000109416043";
     ];
+    schema:leiCode "Legal Entity Identifier" ;
     schema:legalName "Earth Physics Observatory of Clermont-Ferrand"^^xsd:string;
-    schema:leiCode "Legal Entity Identifier Search: http://www.lei-lookup.com/#!search" ;
     # schema:alternateName "Observatoire de Physique du Globe de Clermont-Ferrand"^^xsd:string;
     # schema:alternateName "OPGC"^^xsd:string;
     schema:address [ a schema:PostalAddress;
@@ -116,37 +136,13 @@
     schema:memberOf <http://isni.org/isni/0000000121129282>;
 .
 
-#########
-# ContactPoint
-#########
-
-    <http://orcid.org/0000-0002-4518-3328/scientificContact> a schema:ContactPoint;
-        schema:email "p.labazuy@opgc.fr";
-        schema:availableLanguage "en", "fr" ;
-	schema:contactType "scientificContact" ;
-. 
-    <http://orcid.org/0000-0002-0108-5486/legalContact> a schema:ContactPoint;
-        schema:email "n.huret@opgc.fr";
-        schema:availableLanguage "en", "fr" ;
-        schema:contactType "legalContact" ;
-.
-    <http://orcid.org/0000-0002-0108-5486/financialContact> a schema:ContactPoint;
-        schema:email "n.huret@opgc.fr";
-        schema:availableLanguage "en", "fr" ;
-        schema:contactType "financialContact" ;
-.
-
-#########
-# Organization
-#########
-
 <http://isni.org/isni/0000000121129282> a schema:Organization;
     schema:identifier [ a schema:PropertyValue;
         schema:propertyID "ISNI";
         schema:value "http://isni.org/isni/0000000121129282";
     ];
+    schema:leiCode "Legal Entity Identifier" ;
     schema:legalName "The National Center for Scientific Research"^^xsd:string;
-    schema:leiCode "Legal Entity Identifier Search: http://www.lei-lookup.com/#!search" ;
     # schema:alternateName "CNRS: Le Centre National de la Recherche Scientifique"^^xsd:string;
     # schema:alternateName "CNRS"^^xsd:string;
     schema:address [ a schema:PostalAddress;
@@ -165,7 +161,7 @@
 
 #########
 # Dataset
-######### 
+#########
 
 <opgc.fr/vobs/voldorad/WP11/DDSS-053/dataset> a dcat:Dataset;
     dct:title "List of available VOLDORAD-2B Doppler Radar raw spectra"^^xsd:string;
@@ -195,17 +191,16 @@
 
 #########
 # Distribution
-#########
+######### 
 
 <opgc.fr/vobs/voldorad/WP11/DDSS-053/dataset/distribution> a dcat:Distribution;
         dct:identifier "opgc.fr/vobs/voldorad/WP11/DDSS-053/dataset/distribution";
         dct:description "The way to get the catalog of available doppler spectra";
-        dct:title "The way to get the catalog of available doppler spectra";
         dct:issued "2019-01-22"^^xsd:dateTime;
         dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-	dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
         dcat:accessURL <opgc.fr/vobs/voldorad/WP11/DDSS-053/spectra>;
         dct:conformsTo <opgc.fr/vobs/voldorad/WP11/DDSS-053>;
+        dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 .
 
 #########
@@ -226,18 +221,17 @@
     dct:conformsTo <opgc.fr/vobs/APIDocumentation>;
     dcat:contactPoint <http://orcid.org/0000-0001-8293-1340/contactPoint>;
 .
-
-<http://orcid.org/0000-0001-8293-1340/contactPoint> a schema:ContactPoint;
-	schema:email "f.donnadieu@opgc.fr";
-	schema:availableLanguage "en", "fr";
-	schema:contactType "contactPoint";
+    <http://orcid.org/0000-0001-8293-1340/contactPoint> a schema:ContactPoint;
+        schema:email "f.donnadieu@opgc.fr";
+        schema:availableLanguage "en", "fr";
+        schema:contactType "manager";
 .
-<opgc.fr/vobs/APIDocumentation> a hydra:APIDocumentation;
+    <opgc.fr/vobs/APIDocumentation> a hydra:APIDocumentation;
         hydra:title "OPGC Virtual Observatory - API Documentation";
         hydra:description "A documentation describing how to use OPGC Virtual Observatory API to find and download data";
         hydra:entrypoint "http://opgc.fr/vobs/api.php"^^xsd:anyURI;
 .
-
+    
 #########
 # Operation
 ######### 
@@ -270,12 +264,15 @@
         ];
 .
 
-    <epos:VolcanoObservations> a skos:ConceptScheme;
+#########
+# Concept
+#########
+
+<epos:VolcanoObservations> a skos:ConceptScheme;
         dct:title "Volcano Observations";
         dct:description "It contains the concept of Volcanological observations";
 .
-    <epos:DopplerRadar> a skos:Concept;
+<epos:DopplerRadar> a skos:Concept;
             skos:inScheme <epos:VolcanoObservations>;
             skos:prefLabel "Doppler Radar";
 .
-

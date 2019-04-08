@@ -16,107 +16,11 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
-<www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/032/data> a dcat:Dataset;
-		dct:title "Aviation Color code";
-		dct:identifier "www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/032/data";
-		adms:identifier [ a adms:Identifier;
-			adms:schemaAgency "DDSS-ID";
-			skos:notation "WP11-DDSS-032";
-		];
-		dct:description "It report the current and previous aviation color code for each volcano in Iceland";
-		dct:created "2014-10-01"^^xsd:date;
-		dct:modified "2014-10-01"^^xsd:date;
-		dct:issued "2014-10-01"^^xsd:date;
-		dct:temporal [ a dct:PeriodOfTime;
-		schema:startDate "2014-10-01T00:00:00Z"^^xsd:dateTime;
-		schema:endDate "2025-01-01T00:00:00Z"^^xsd:dateTime;
-	];
-	dct:spatial [ a dct:Location;
-		locn:geometry "POLYGON(-25.0 63.0,-25.0 68.5,-10.0 68.5,-10.0 63.0,-25.0 63.0)"^^gsp:wktLiteral;
-	];
-		dcat:keyword "Aviation Colour Code";
-		dcat:contactPoint <0000-0001-5750-0872/contactPoint>;
-		dcat:distribution <Aviation-color-codes>;
-		owl:versionInfo "V1.0";
-		dct:publisher <PIC:997168343>;
-		dcat:theme <epos:VolcanologicalData>;
-.
-	<epos:VolcanoObservations> a skos:ConceptScheme;
-		dct:title "Volcano Observations";
-		dct:description "Aviation color code for volcanoes in Iceland";
-.
+#########
+# PERSON 
+#########
 
-<epos:VolcanologicalData> a skos:Concept;
-	skos:definition "Aviation colour codes for volcanoes";
-	skos:inScheme <epos:VolcanoObservations>;
-	skos:prefLabel "Volcanological Data" ;
-.
-
-<www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/032> a epos:WebService;
-	schema:identifier "www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/032";
-	#schema:identifier [ a schema:PropertyValue;
-		#schema:propertyID  "DDSS-ID";
-		#schema:value  "";
-	#];
-	schema:description "Access to the weekly report produced for the Icelandic volcanoes, describing their status";
-	schema:name "Aviation color codes for volcanoes";
-	hydra:entrypoint "https://docs.vedur.is/api/epos/#!/Volcanoes/get_volcanoes_products_aviation_color_codes"^^xsd:anyURI;
-	schema:datePublished "2018-05-30"^^xsd:date;
-	schema:dateModified "2018-05-30"^^xsd:date;
-	dct:spatial [ a dct:Location;
-		locn:geometry "POLYGON(-25.0 63.0,-25.0 68.5,-10.0 68.5,-10.0 63.0,-25.0 63.0)"^^gsp:wktLiteral;
-	];
-	hydra:supportedOperation <www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/032/Operation/032>;
-	schema:keywords "Aviation color codes";
-	dct:temporal [ a dct:PeriodOfTime;
-		schema:startDate "2014-10-01T00:00:00Z"^^xsd:dateTime;
-		schema:endDate "2025-01-01T00:00:00Z"^^xsd:dateTime;
-	];
-	dcat:theme <epos:VolcanologicalData>;
-	dcat:contactPoint <0000-0001-5750-0872/contactPoint>;
-	schema:provider <PIC:997168343>;
-.
-
-<www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/032/Operation/032> a hydra:Operation;
-		hydra:method "GET"^^xsd:string;
-		hydra:returns "application/json";
-		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://api.vedur.is/epos/v1/volcanoes/products/aviation_color_codes{?Volcano, start_time, end_time}"^^xsd:string;
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "Volcano"^^xsd:string;
-					rdfs:range "xsd:string";
-					schema:defaultValue "Katla";
-					rdfs:label "Volcano name or volcano ID";
-					hydra:required "false"^^xsd:boolean;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "start_time"^^xsd:string;
-					rdfs:range "xsd:dateTime";
-					rdfs:label "Starting time for the search";
-					hydra:required "false"^^xsd:boolean;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "end_time"^^xsd:string;
-					rdfs:range "xsd:dateTime";
-					rdfs:label "Ending time for search";
-					hydra:required "false"^^xsd:boolean;
-				];
-			] ;
-.
-
-<Aviation-color-codes> a dcat:Distribution;
-		dct:identifier "Aviation-color-codes";
-		dct:title "Aviation color codes for volcanoes";
-		dct:description "It reports the aviation color codes for each volcano in Iceland";
-		dct:issued "2014-10-01"^^xsd:date;
-		dct:modified "2014-10-01"^^xsd:date;
-		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-		dct:conformsTo <www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/032>;
-    dcat:accessURL <www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/032/Operation/032>;
-		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
-.
-
-<0000-0001-5750-0872> a schema:Person;
+<http://orcid.org/0000-0001-5750-0872> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "ORCID";
 		schema:value " 0000-0001-5750-0872";
@@ -131,9 +35,13 @@
 	schema:email "sara@vedur.is";
 	schema:telephone "+3545226162";
 	schema:url "http://en.vedur.is"^^xsd:anyURI;
-	schema:contactPoint <0000-0001-5750-0872/scientificContact>;
-	schema:contactPoint <0000-0001-5750-0872/contactPoint>;
+	schema:contactPoint <http://orcid.org/0000-0001-5750-0872/scientificContact>;
+	schema:contactPoint <http://orcid.org/0000-0001-5750-0872/contactPoint>;
 .
+
+#########
+# Organization
+#########
 
 <PIC:997168343> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
@@ -151,14 +59,173 @@
 	schema:url "http://en.vedur.is"^^xsd:anyURI;
 	schema:email "sara@vedur.is";
 	schema:telephone "+3545226200";
-	schema:contactPoint <0000-0001-5750-0872/scientificContact>;
+	schema:contactPoint <http://orcid.org/0000-0001-5750-0872/scientificContact>;
 .
-	<0000-0001-5750-0872/contactPoint> a schema:ContactPoint;
+
+#########
+# ContactPoint
+######### 
+
+<http://orcid.org/0000-0001-5750-0872/contactPoint> a schema:ContactPoint;
 		schema:email "sara@vedur.is";
 		schema:availableLanguage "en" ;
+                schema:contactType "contactPoint" 
 .
-	<0000-0001-5750-0872/scientificContact> a schema:ContactPoint;
+<http://orcid.org/0000-0001-5750-0872/scientificContact> a schema:ContactPoint;
 		schema:email "sara@vedur.is";
 		schema:availableLanguage "en" ;
 		schema:contactType "scientificContact" ;
 .
+
+#########
+# Dataset
+######### 
+
+<www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/032/data> a dcat:Dataset;
+		dct:title "Aviation Color code";
+		dct:identifier "www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/032/data";
+		adms:identifier [ a adms:Identifier;
+			adms:schemaAgency "DDSS-ID";
+			skos:notation "WP11-DDSS-032";
+		];
+		dct:description "It report the current and previous aviation color code for each volcano in Iceland";
+		dct:created "2014-10-01"^^xsd:date;
+		dct:modified "2014-10-01"^^xsd:date;
+		dct:issued "2014-10-01"^^xsd:date;
+		dct:temporal [ a dct:PeriodOfTime;
+			schema:startDate "2014-10-01T00:00:00Z"^^xsd:dateTime;
+			schema:endDate "2025-01-01T00:00:00Z"^^xsd:dateTime;
+		];
+		dct:spatial [ a dct:Location;
+			locn:geometry "POLYGON(-25.0 63.0,-25.0 68.5,-10.0 68.5,-10.0 63.0,-25.0 63.0)"^^gsp:wktLiteral;
+		];
+		dcat:keyword "Aviation Colour Code";
+		dcat:contactPoint <http://orcid.org/0000-0001-5750-0872/contactPoint>;
+		dcat:distribution <Aviation-color-codes>;
+		owl:versionInfo "V1.0";
+		dct:publisher <PIC:997168343>;
+		dcat:theme <epos:VolcanologicalData>;
+.
+
+#########
+# Distribution
+######### 
+
+<Aviation-color-codes> a dcat:Distribution;
+		dct:identifier "Aviation-color-codes";
+		dct:title "Aviation color codes for volcanoes";
+		dct:description "It reports the aviation color codes for each volcano in Iceland";
+		dct:issued "2014-10-01"^^xsd:date;
+		dct:modified "2014-10-01"^^xsd:date;
+		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+		dct:conformsTo <www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/032>;
+                dcat:accessURL <www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/032/Operation/032>;
+		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
+.
+
+#########
+# WebService
+######### 
+
+<www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/032> a epos:WebService;
+	schema:identifier "www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/032";
+	schema:description "Access to the weekly report produced for the Icelandic volcanoes, describing their status";
+	schema:name "Aviation color codes for volcanoes";
+	hydra:entrypoint "https://docs.vedur.is/api/epos/#!/Volcanoes/get_volcanoes_products_aviation_color_codes"^^xsd:anyURI;
+	schema:datePublished "2018-05-30"^^xsd:date;
+	schema:dateModified "2018-05-30"^^xsd:date;
+	dct:spatial [ a dct:Location;
+		locn:geometry "POLYGON(-25.0 63.0,-25.0 68.5,-10.0 68.5,-10.0 63.0,-25.0 63.0)"^^gsp:wktLiteral;
+	];
+	hydra:supportedOperation <www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/032/Operation/032>;
+	schema:keywords "Aviation color codes";
+	dct:temporal [ a dct:PeriodOfTime;
+		schema:startDate "2014-10-01T00:00:00Z"^^xsd:dateTime;
+		schema:endDate "2025-01-01T00:00:00Z"^^xsd:dateTime;
+	];
+	dcat:theme <epos:VolcanologicalData>;
+	dcat:contactPoint <http://orcid.org/0000-0001-5750-0872/contactPoint>;
+	schema:provider <PIC:997168343>;
+.
+
+#########
+# Operation
+######### 
+
+<www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/032/Operation/032> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://api.vedur.is/epos/v1/volcanoes/products/aviation_color_codes{?start_time, end_time}&bbox={[minlatitude, minlongitude, maxlatitude, maxlongitude]}"^^xsd:string;
+				
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "minlatitude"^^xsd:string; 
+					hydra:property "epos:southernmostLatitude";
+					rdfs:label "Minimum Latitude";
+					schema:minValue "-90.0";
+					schema:maxValue "90.0";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "63.0" ;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "minlongitude"^^xsd:string; 
+					hydra:property "epos:westernmostLongitude";
+					rdfs:label "Minimum Longitude";
+					schema:minValue "-180.0";
+					schema:maxValue "180.0";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "-25.0" ;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "maxlatitude"^^xsd:string; 
+					hydra:property "epos:northernmostLatitude";
+					rdfs:label "Maximum Latitude";
+					schema:minValue "-90.0";
+					schema:maxValue "90.0";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "68.5" ;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "maxlongitude"^^xsd:string; 
+					hydra:property "epos:easternmostLongitude";
+					rdfs:label "Maximum Longitude";
+					schema:minValue "-180.0";
+					schema:maxValue "180.0";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "-10.0" ;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "start_time"^^xsd:string;
+					rdfs:range "xsd:dateTime";
+					hydra:property "schema:startDate";
+                                        schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+					rdfs:label "Starting time for the search";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "end_time"^^xsd:string;
+					rdfs:range "xsd:dateTime";
+					hydra:property "schema:endDate";
+                                        schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+					rdfs:label "Ending time for search";
+					hydra:required "false"^^xsd:boolean;
+				];
+			] ;
+.
+
+#########
+# Concept
+######### 
+
+<epos:VolcanoObservations> a skos:ConceptScheme;
+	dct:title "Volcano Observations";
+	dct:description "Aviation color code for volcanoes in Iceland";
+.
+
+<epos:VolcanologicalData> a skos:Concept;
+	skos:definition "Aviation colour codes for volcanoes";
+	skos:inScheme <epos:VolcanoObservations>;
+	skos:prefLabel "Volcanological Data" ;
+.
+
+
