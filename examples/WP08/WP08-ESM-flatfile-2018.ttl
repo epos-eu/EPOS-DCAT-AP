@@ -1,0 +1,243 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http: <http://www.w3.org/2006/http#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+
+<http://orcid.org/0000-0003-4312-580X> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "orcid";
+		schema:value "http://orcid.org/0000-0003-4312-580X";
+	];
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "ScopusAuthorID";
+		schema:value "26435411600";
+	];
+	schema:familyName "Luzi";
+	schema:givenName "Lucia";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "via Alfonso Corti, 12";
+		schema:addressLocality "Milano";
+		schema:postalCode "20133";
+		schema:addressCountry "Italy";
+	];
+	schema:email "lucia.luzi@ingv.it";
+	schema:telephone "+390223699285";
+	schema:url "http://orcid.org/0000-0003-4312-580X"^^xsd:anyURI;
+	schema:qualifications "Data Manager, Researcher";
+	schema:affiliation <PIC:999472675>;
+	schema:contactPoint <http://orcid.org/0000-0003-4312-580X/scientificContact>;
+.
+
+<http://orcid.org/0000-0003-4312-580X/scientificContact> a schema:ContactPoint;
+		schema:email "lucia.luzi@ingv.it";
+		schema:availableLanguage "en" ;
+		schema:contactType "scientificContact" ;
+.
+
+<http://orcid.org/0000-0001-7947-4281> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "orcid";
+		schema:value "http://orcid.org/0000-0001-7947-4281";
+	];
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "ScopusAuthorID";
+		schema:value "55324938000";
+	];
+	schema:familyName "Lanzano";
+	schema:givenName "Giovanni";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "via Alfonso Corti, 12";
+		schema:addressLocality "Milano";
+		schema:postalCode "20133";
+		schema:addressCountry "Italy";
+	];
+	schema:email "giovanni.lanzano@ingv.it";
+	schema:telephone "+390223699259";
+	schema:url "http://orcid.org/0000-0001-7947-4281"^^xsd:anyURI;
+	schema:qualifications "Data Manager, Researcher";
+	schema:affiliation <PIC:999472675>;
+	schema:contactPoint <http://orcid.org/0000-0001-7947-4281/scientificContact>;
+.
+
+<http://orcid.org/0000-0001-7947-4281/scientificContact> a schema:ContactPoint;
+		schema:email "giovanni.lanzano@ingv.it";
+		schema:availableLanguage "en" ;
+		schema:contactType "scientificContact" ;
+.
+
+<PIC:999472675> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "pic";
+		schema:value "999472675";
+	];
+	schema:legalName "ISTITUTO NAZIONALE DI GEOFISICA E VULCANOLOGIA";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "via di Vigna Murata, 605";
+		schema:addressLocality "Rome";
+		schema:postalCode "00143";
+		schema:addressCountry "Italy";
+	];
+	schema:logo "http://roma2.rm.ingv.it/userfiles/file/Logo/INGV_Logo-abbr_colore.jpg"^^xsd:anyURI;
+	schema:url "http://www.ingv.it"^^xsd:anyURI;
+	schema:email "info@ingv.it";
+	schema:contactPoint <http://orcid.org/0000-0003-4312-580X/scientificContact>;
+.
+
+<http://www.epos-eu.org/epos-dcat-ap/Seismology/SeismologicalProducts/ESMFlatFile/Dataset/001> a dcat:Dataset ;
+        dct:identifier "http://www.epos-eu.org/epos-dcat-ap/Seismology/SeismologicalProducts/ESMFlatFile/Dataset/001" ;
+        dct:title "ESM strong-motion flat-file 2018" ;
+        dct:description "The ESM strong-motion flat-file (http://esm.mi.ingv.it/flatfile-2018/) is a parametric table which contains metadata and intensity measures of manually processed waveforms recorded by accelerometers" ;
+        adms:identifier [ a adms:Identifier ;
+            adms:schemaAgency "DDSS-ID" ;
+            skos:notation "WP08-DDSS-053" ;
+        ];
+	adms:identifier [ a adms:Identifier ;
+    	    adms:schemaAgency "DDSS-ID" ;
+    	    skos:notation "WP08-DDSS-010" ;
+ 	 ];
+        dct:created "2018-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:issued "2018-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:modified "2018-01-01T00:00:00Z"^^xsd:dateTime ;
+        owl:versionInfo "1.0.0" ;
+
+        # This property refers to the type of the Dataset.
+        # Example of frequency using a controlled vocabulary http://dublincore.org/2012/06/14/dctype
+        dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI ;
+
+        # This property refers to the frequency at which the Dataset is updated.
+        # The possible types are here: http://purl.org/cld/freq/
+        dct:accrualPeriodicity "http://purl.org/cld/freq/annual"^^xsd:anyURI ;
+
+        # This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
+        dcat:theme <epos:EarthquakeHazardAndRiskServices>;
+        dcat:theme <epos:SeismologicalProducts> ;
+
+        dcat:keyword "ESM strong-motion flat-file","strong-motion parameters","station metadata","event metadata","site metadata" ;
+        dcat:contactPoint <http://orcid.org/0000-0001-7947-4281/scientificContact> ;
+
+        # This property refers to an Organisation responsible for making the Dataset available.
+        dct:publisher <PIC:999472675> ;
+
+        # This property links the Dataset to an available Distribution.
+        dcat:distribution <http://www.epos-eu.org/epos-dcat-ap/Seismology/SeismologicalProducts/ESMFlatFile/Dataset/001/Distribution/001> ;
+
+        # This property refers to a geographic region that is covered by the Dataset.
+        dct:spatial [ a dct:Location ;
+          locn:geometry "POLYGON(-26.0 72.0, 68.5 72.0, 68.5 23.5, -26.0 23.5, -26.0 72.0)"^^gsp:wktLiteral ;
+        ];
+
+        # This property refers to a temporal period that the Dataset covers.
+        dct:temporal [ a dct:PeriodOfTime ;
+                schema:startDate "1960-01-01T00:00:00Z"^^xsd:dateTime ;
+                schema:endDate "2016-12-31T23:59:59Z"^^xsd:dateTime ;
+        ] ;
+
+        # This property refers to a related Dataset that is part of the described Dataset.
+        # dct:hasPart <http://www.epos-eu.org/epos-dcat-ap/Seismology/EngineeringStrongMotionDatabase/Dataset/001> ;
+
+.
+
+#<http://www.epos-eu.org/epos-dcat-ap/Seismology/EngineeringStrongMotionDatabase/Dataset/001> a dcat:Dataset ;
+#        dct:identifier "http://www.epos-eu.org/epos-dcat-ap/Seismology/EngineeringStrongMotionDatabase/Dataset/001" ;
+#        dct:title "ESM - Engineering Strong-Motion portal" ;
+#        dct:description "ESM (http://esm.mi.ingv.it) allows users to query earthquake and station information and download earthquake waveforms and response spectra for events with magnitude ≥ 4.0 mainly recorded in the European-Mediterranean and the middle-East regions" ;
+#        adms:identifier [ a adms:Identifier ;
+#            adms:schemaAgency "DDSS-ID" ;
+#            skos:notation "WP08-DDSS-010" ;
+#        ];
+#        dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+#        dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+#        dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+#        owl:versionInfo "1.0.0" ;
+
+        # This property refers to the type of the Dataset. 
+        # Example of frequency using a controlled vocabulary http://dublincore.org/2012/06/14/dctype
+#        dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI ;
+
+        # This property refers to the frequency at which the Dataset is updated.
+        # The possible types are here: http://purl.org/cld/freq/
+#        dct:accrualPeriodicity "http://purl.org/cld/freq/daily"^^xsd:anyURI ;
+
+        # This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
+#        dcat:theme <epos:SeismologicalProducts> ;
+
+#        dcat:keyword "strong-motion waveforms","strong-motion parameters","event parameters","station characterization" ;
+#        dcat:contactPoint <http://orcid.org/0000-0003-4312-580X/scientificContact> ;
+
+        # This property refers to an Organisation responsible for making the Dataset available.
+ #       dct:publisher <PIC:999472675> ;
+
+        # This property refers to a geographic region that is covered by the Dataset.
+#        dct:spatial [ a dct:Location ;
+#          locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral ;
+#        ];
+
+        # This property refers to a temporal period that the Dataset covers.
+#        dct:temporal [ a dct:PeriodOfTime ;
+#                schema:startDate "1960-01-01T00:00:00Z"^^xsd:dateTime ;
+                #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
+#        ] ;
+
+#.
+
+<http://www.epos-eu.org/epos-dcat-ap/Seismology/SeismologicalProducts/ESMFlatFile/Dataset/001/Distribution/001> a dcat:Distribution ;
+        dct:identifier "http://www.epos-eu.org/epos-dcat-ap/Seismology/SeismologicalProducts/ESMFlatFile/Dataset/001/Distribution/001" ;
+        dct:title "ESM strong-motion flat-file 2018" ;
+        dct:description "The ESM strong-motion flat-file (http://esm.mi.ingv.it/flatfile-2018/) is a parametric table which contains metadata and intensity measures of manually processed waveforms recorded by accelerometers" ;
+        dct:issued "2018-01-01"^^xsd:date ;
+        dct:modified "2018-01-01"^^xsd:date ;
+
+        # This property refers to the type of the Distribution. The possible types are
+        # (http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE
+        # OR
+        # http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE)
+        dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI ;
+
+        # If the type of Distribution is WEB SERVICE, this property refers to the Web Service that gives access to a Distribution of the Dataset. Otherwise, this property is optional.
+        # dct:conformsTo "http://esm.mi.ingv.it/flatfile-2018/"^^xsd:anyURI ;
+
+        # This property contains a URL that gives access to a Distribution of the Dataset. The resource at the access URL may contain # information about how to get the Dataset.
+        # If the type of Distribution is WEB SERVICE, this property refers to the Operation of the Web Service to which the Distribution conforms.
+        dcat:accessURL "http://esm.mi.ingv.it/flatfile-2018/"^^xsd:anyURI ;
+
+        # This property refers to the file format of the Distribution.
+        # The possible types are here: http://publications.europa.eu/mdr/resource/authority/file-type/html/filetypes-eng.html
+        dct:format "http://publications.europa.eu/resource/authority/file-type/ZIP"^^xsd:anyURI ;
+
+        # This property contains the size of a Distribution in bytes.
+        dcat:byteSize "72981156"^^xsd:decimal ;
+
+        # This property refers to the licence under which the Distribution is made available.
+        dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI ;
+
+        # If the type of Distribution is DOWNLOADABLE FILE, this property contains a URL that is a direct link to a downloadable file in a given format. Otherwise, this property is optional.
+        dcat:downloadURL "http://esm.mi.ingv.it/static_stage/doc/ESM_flatfile_2018.zip"^^xsd:anyURI ;
+.
+
+<epos:Seismology> a skos:ConceptScheme;
+		dct:title "Seismology";
+		dct:description "It contains the concepts of Seismology";
+.
+
+<epos:EarthquakeHazardAndRiskServices> a skos:Concept;
+		skos:inScheme <epos:Seismology>;
+		skos:prefLabel "Earthquake hazard and risk services";
+.
+
+<epos:SeismologicalProducts> a skos:Concept;
+		skos:inScheme <epos:Seismology>;
+		skos:prefLabel "Seismological Products";
+.

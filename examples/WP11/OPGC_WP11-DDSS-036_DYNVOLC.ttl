@@ -16,41 +16,9 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
-<dynvolc/data/id/41> a dcat:Dataset;
-    dct:title "June 2014";
-    dct:identifier "dynvolc/data/id/41";
-    dct:description "Chemical analysis and physical properties of gas, water and rocks - Piton de La Fournaise - explosive_effusive";
-    adms:identifier [ a adms:Identifier;
-        adms:schemaAgency "DDSS-ID";
-        skos:notation "WP11-DDSS-036";
-    ];
-    dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
-    dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
-    dct:temporal [ a dct:PeriodOfTime;
-        schema:startDate "2014-06-20T21:35:00Z"^^xsd:dateTime;
-        schema:endDate "2014-06-21T17:09:00Z"^^xsd:dateTime;
-    ];
-    #dct:spatial [ a dct:Location;
-        #locn:geometry <geo:-21.249499,55.713684,u=2524,crs=wgs84>;
-    #];
-    dcat:theme <epos:Geochemical-Data>;
-    dcat:keyword "eruption", "rock", "bulk rock", "volcanic glass", "mineral", "texture", "thin section", "particle", "major element", "vesicle crystal";
-    dcat:contactPoint <http://orcid.org/0000-0002-5066-5153/contactPoint>;
-    dct:publisher <http://isni.org/isni/0000000109416043>;
-    dcat:distribution <dynvolc/data/id/41/DownloadFile>;
-.
-    <dynvolc/data/id/41/DownloadFile> a dcat:Distribution;
-        dct:identifier "dynvolc/data/id/41/DownloadFile";
-        dct:title "OPGC-VO distribution of DYNVOLC dataset 41";
-        dct:description "The way to download the dynvolc product: June 2014";
-        dct:issued "2016-06-12"^^xsd:date;
-        dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
-        dcat:accessURL <opgc.fr/vobs/dynvolc/WP11/DDSS-036/data-download>;
-        dcat:downloadURL "http://opgc.fr/vobs/rest2/req.php/dynvolc/data/id/41"^^xsd:anyURI;
-        dct:conformsTo <opgc.fr/vobs/dynvolc/WP11/DDSS-036>;
-        dct:format "http://publications.europa.eu/resource/authority/file-type/ZIP"^^xsd:anyURI;
-        dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
-.
+#########
+# PERSON 
+#########
 
 <http://orcid.org/0000-0002-5066-5153> a schema:Person;
     schema:identifier [ a schema:PropertyValue;
@@ -137,11 +105,16 @@
     schema:contactPoint <http://orcid.org/0000-0002-7635-1283/scientificContact>;
 .
 
+#########
+# Organization
+######### 
+
 <http://isni.org/isni/0000000109416043> a schema:Organization;
     schema:identifier [ a schema:PropertyValue;
         schema:propertyID "ISNI";
         schema:value "http://isni.org/isni/0000000109416043";
     ];
+    schema:leiCode "Legal Entity Identifier" ;
     schema:legalName "Earth Physics Observatory of Clermont-Ferrand"^^xsd:string;
     # schema:alternateName "Observatoire de Physique du Globe de Clermont-Ferrand"^^xsd:string;
     # schema:alternateName "OPGC"^^xsd:string;
@@ -160,20 +133,24 @@
     schema:contactPoint <http://orcid.org/0000-0002-0108-5486/financialContact>;
     schema:memberOf <http://isni.org/isni/0000000121129282>;
 .
-    <http://orcid.org/0000-0002-4518-3328/scientificContact> a schema:ContactPoint;
-        schema:email "p.labazuy@opgc.fr";
-        schema:availableLanguage "en", "fr" ;
+
+#########
+# ContactPoint
+######### 
+<http://orcid.org/0000-0002-4518-3328/scientificContact> a schema:ContactPoint;
+	schema:email "p.labazuy@opgc.fr";
+	schema:availableLanguage "en", "fr" ;
 	schema:contactType "scientificContact" ;
 . 
-    <http://orcid.org/0000-0002-0108-5486/legalContact> a schema:ContactPoint;
-        schema:email "n.huret@opgc.fr";
-        schema:availableLanguage "en", "fr" ;
-        schema:contactType "legalContact" ;
+<http://orcid.org/0000-0002-0108-5486/legalContact> a schema:ContactPoint;
+	schema:email "n.huret@opgc.fr";
+	schema:availableLanguage "en", "fr" ;
+	schema:contactType "legalContact" ;
 .
-    <http://orcid.org/0000-0002-0108-5486/financialContact> a schema:ContactPoint;
-        schema:email "n.huret@opgc.fr";
-        schema:availableLanguage "en", "fr" ;
-        schema:contactType "financialContact" ;
+<http://orcid.org/0000-0002-0108-5486/financialContact> a schema:ContactPoint;
+	schema:email "n.huret@opgc.fr";
+	schema:availableLanguage "en", "fr" ;
+	schema:contactType "financialContact" ;
 .
 
 <PIC:999597417> a schema:Organization;
@@ -181,6 +158,7 @@
         schema:PropertyID "PIC";
         schema:value "999597417";
     ];
+    schema:leiCode "Legal Entity Identifier" ;
     schema:legalName "Earth Physics Institute of Paris"^^xsd:string;
     # schema:alternateName "Institut de Physique du Globe de Paris"^^xsd:string;
     # schema:alternateName "IPGP"^^xsd:string;
@@ -196,8 +174,13 @@
     schema:telephone "+33183957400";
     schema:contactPoint <http://orcid.org/0000-0002-7635-1283/scientificContact>;
     schema:memberOf <http://isni.org/isni/0000000121129282>;
-.
-    <http://orcid.org/0000-0002-7635-1283/scientificContact> a schema:ContactPoint;
+. 
+
+#########
+# ContactPoint
+######### 
+
+<http://orcid.org/0000-0002-7635-1283/scientificContact> a schema:ContactPoint;
         schema:email "dimuro@ipgp.fr";
         schema:availableLanguage "en", "it", "fr";
         schema:contactType "scientificContact";
@@ -208,6 +191,7 @@
         schema:propertyID "ISNI";
         schema:value "http://isni.org/isni/0000000121129282";
     ];
+    schema:leiCode "Legal Entity Identifier" ;
     schema:legalName "The National Center for Scientific Research"^^xsd:string;
     # schema:alternateName "CNRS: Le Centre National de la Recherche Scientifique"^^xsd:string;
     # schema:alternateName "CNRS"^^xsd:string;
@@ -222,18 +206,73 @@
     schema:telephone "+33144964000";
 .
 
+#########
+# Dataset
+######### 
+
+<opgc.fr/vobs/WP11/DDSS-036/DYNVOLC/dataset/GEOCHEMICAL> a dcat:Dataset;
+    dct:title "Geochemical analysis of rocks sample";
+    dct:identifier "opgc.fr/vobs/WP11/DDSS-036/DYNVOLC/dataset/GEOCHEMICAL";
+    dct:description "Geochemical analysis and physical properties of gas, water and rocks of eruptive periods - Piton de La Fournaise - explosive_effusive";
+    adms:identifier [ a adms:Identifier;
+        adms:schemaAgency "DDSS-ID";
+        skos:notation "WP11-DDSS-036";
+    ];
+    dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
+    dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+    dct:temporal [ a dct:PeriodOfTime;
+        schema:startDate "2014-06-20T21:35:00Z"^^xsd:dateTime;
+    ];
+    dct:spatial [ a dct:Location;
+        locn:geometry "POLYGON((55.6307 -21.3423, 55.8247 -21.3423, 55.8247 -21.1828, 55.6307 -21.1828, 55.6307 -21.3423))"^^gsp:wktLiteral;
+    ];
+    dcat:theme <epos:GeochemicalData>;
+    dcat:keyword "eruption", "rock", "bulk rock", "volcanic glass", "mineral", "texture", "thin section", "particle", "major element", "vesicle crystal";
+    dcat:contactPoint <http://orcid.org/0000-0002-5066-5153/contactPoint>;
+    dct:publisher <http://isni.org/isni/0000000109416043>;
+    dcat:distribution <opgc.fr/vobs/WP11/DDSS-036/DYNVOLC/Distribution>;
+.
+
+#########
+# Distributions
+######### 
+
+<opgc.fr/vobs/WP11/DDSS-036/DYNVOLC/Distribution> a dcat:Distribution;
+    dct:identifier "dynvolc/data/id/41/DownloadFile";
+    dct:title "OPGC-VO distribution of DYNVOLC dataset 41";
+    dct:description "The way to download the dynvolc product: June 2014";
+    dct:issued "2016-06-12"^^xsd:date;
+    #dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
+    dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+    #dcat:accessURL <opgc.fr/vobs/dynvolc/WP11/DDSS-036/data-download>;
+    dcat:accessURL <opgc.fr/vobs/dynvolc/WP11/DDSS-036/data-catalog>;
+    dct:conformsTo <opgc.fr/vobs/dynvolc/WP11/DDSS-036>;
+    dct:format "http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE"^^xsd:anyURI;
+    dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+.
+
+#########
+# WebService
+######### 
+
 <opgc.fr/vobs/dynvolc/WP11/DDSS-036> a epos:WebService;
     schema:identifier "opgc.fr/vobs/dynvolc/WP11/DDSS-036";
     schema:description "Since september 2017, OPGC assigns Digital Object Identifiers (DOI) to datasets. These datasets are archived by and published through OPGC Data Services and cover all geoscientific disciplines. They range from large dynamic datasets deriving from data intensive global monitoring networks with real-time data acquisition to the full suite of highly variable datasets collected by individual researchers or small teams. These highly variable data (‘long-tail data’) are small in size, but represent an important part of the total scientific output. This web service allow to retrive data from the dynvolc observation service. DYNVOLC is an observation system within France's National Service for Volcanological Observation (SNOV). The system contributes complete, integrated, data sets for eruptive products from : field studies (i.e., field mapping, outcrop, grain size, componentry and sample descriptions), particle parameters (morphology, density, porosity, connectivity and permeability), textural analysis (i.e., particle size and size distribution, and vesicle and crystal size, distribution, shape and orientation),and chemical data (i.e., bulk and glass chemistry).";
     schema:name "OPGC Virtual Observatory - DYNVOLC Entry Point - EPOS - WP11-DDSS-036";
     schema:datePublished "2016-05-26T08:00:00Z"^^xsd:dateTime;
     schema:dateModified "2018-02-27T16:00:00Z"^^xsd:dateTime;
+    dct:temporal [ a dct:PeriodOfTime;
+        schema:startDate "2014-06-20T21:35:00Z"^^xsd:dateTime;
+    ];
+    dct:spatial [ a dct:Location;
+        locn:geometry "POLYGON((55.6307 -21.3423, 55.8247 -21.3423, 55.8247 -21.1828, 55.6307 -21.1828, 55.6307 -21.3423))"^^gsp:wktLiteral;
+    ];
     schema:provider <http://isni.org/isni/0000000109416043>;
     schema:keywords "Virtual Observatory", "Database", "Data Catalog", "eruption", "rock", "bulk rock", "volcanic glass", "mineral", "texture", "thin section", "particle", "major element", "vesicle crystal";
     hydra:entrypoint "http://opgc.fr/vobs/rest2/req.php/application/dynvolc"^^xsd:anyURI;
     hydra:supportedOperation <opgc.fr/vobs/dynvolc/WP11/DDSS-036/data-catalog>;
     hydra:supportedOperation <opgc.fr/vobs/dynvolc/WP11/DDSS-036/data-download>;
-    dcat:theme <epos:Geochemical-Data>;
+    dcat:theme <epos:GeochemicalData>;
     schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
     dct:conformsTo <opgc.fr/vobs/APIDocumentation>;
     dcat:contactPoint <http://orcid.org/0000-0002-5066-5153/contactPoint>;
@@ -248,7 +287,12 @@
         hydra:description "A documentation describing how to use OPGC Virtual Observatory API to find and download data";
         hydra:entrypoint "http://opgc.fr/vobs/api.php"^^xsd:anyURI;
 .
-    <opgc.fr/vobs/dynvolc/WP11/DDSS-036/data-catalog> a hydra:Operation;
+
+#########
+# Operations
+######### 
+
+<opgc.fr/vobs/dynvolc/WP11/DDSS-036/data-catalog> a hydra:Operation;
         hydra:method "GET"^^xsd:string;
         hydra:returns "text/turtle";
         # hydra:returns "application/json";
@@ -256,18 +300,22 @@
             hydra:template "http://opgc.fr/vobs/rest2/req.php/dynvolc{?timestart, timeend, eruptive_style, elevation_min, elevation_max, output, onscreen}"^^xsd:string;
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "timestart"^^xsd:dateTime;
+                    hydra:property "schema:startDate";
+                    schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
                     rdfs:label "Starting datetime of the time interval query (format YYYY-MM-DDThh:mm:ss:Z)";
                     rdfs:range "xsd:dateTime";
                     schema:minValue "0001-01-01T00:00:00Z"^^xsd:dateTime;
-                    schema:maxValue "9999-12-31T23:59:59Z"^^xsd:dateTime;
+                    schema:defaultValue "2014-01-01T00:00:00Z"^^xsd:dateTime;
                     hydra:required "false"^^xsd:boolean;
                 ];
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "timeend"^^xsd:dateTime;
+                    hydra:property "schema:endDate";
+                    schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
                     rdfs:label "Ending datetime of the time interval query (format YYYY-MM-DDThh:mm:ssZ)";
                     rdfs:range "xsd:dateTime";
                     schema:minValue "0001-01-01T00:00:00Z"^^xsd:dateTime;
-                    schema:maxValue "9999-12-31T23:59:59Z"^^xsd:dateTime;
+                    schema:defaultValue "2014-12-31T23:59:59Z"^^xsd:dateTime;
                     hydra:required "false"^^xsd:boolean;
                 ];
                 hydra:mapping [ a hydra:IriTemplateMapping;
@@ -316,7 +364,7 @@
                 ];
         ];
 .
-    <opgc.fr/vobs/dynvolc/WP11/DDSS-036/data-download> a hydra:Operation;
+<opgc.fr/vobs/dynvolc/WP11/DDSS-036/data-download> a hydra:Operation;
         hydra:method "GET"^^xsd:string;
         hydra:returns "application/zip";
         # hydra:returns "application/json";
@@ -341,11 +389,15 @@
         ];
 .
 
-    <epos:Volcano-Observations> a skos:ConceptSchema;
-        dct:title "Volcano-Observations";
-        dct:description "It contains the concept of Volcanological observations";
+#########
+# Concept
+######### 
+
+<epos:VolcanoObservations> a skos:ConceptScheme;
+	dct:title "Volcano-Observations";
+	dct:description "It contains the concept of Volcanological observations";
 .
-    <epos:Geochemical-Data> a skos:Concept;
-            skos:inScheme <epos:Volcano-Observations>;
-            skos:prefLabel "Geochemical data";
+<epos:GeochemicalData> a skos:Concept;
+	skos:inScheme <epos:VolcanoObservations>;
+	skos:prefLabel "Geochemical data";
 .

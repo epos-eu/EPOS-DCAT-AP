@@ -62,7 +62,7 @@
 		schema:postalCode "14473";
 		schema:addressCountry "Germany";
 	]; 
-	schema:logo "https://www.gfz-potsdam.de/fileadmin/_processed_/0/2/csm_LOGO-GFZ-de-mitFreistellungsraum_RGB_24bit_300dpi_546x390-jpg_06_f50928a495.jpg"^^xsd:anyURI;
+	#schema:logo "https://www.gfz-potsdam.de/fileadmin/_processed_/0/2/csm_LOGO-GFZ-de-mitFreistellungsraum_RGB_24bit_300dpi_546x390-jpg_06_f50928a495.jpg"^^xsd:anyURI;
 	schema:url "http://www.gfz-potsdam.de/"^^xsd:anyURI;
 	schema:email "info@gfz-potsdam.de";
 	schema:contactPoint <http://orcid.org/0000-0003-1076-615X/contactPoint>;
@@ -70,7 +70,7 @@
 . 
 <https://www.igp-vast.vn/> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "";
+		schema:propertyID "URL";
 		schema:value "https://www.igp-vast.vn/";
 	]; 
 	schema:legalName "Institute of Geophysics Vietnam Academy of Science and Technology";
@@ -102,7 +102,7 @@
 . 
 <http://www.ineris.fr> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "";
+		schema:propertyID "URL";
 		schema:value "http://www.ineris.fr";
 	]; 
 	schema:legalName "INERIS, Institut National de l'Environnement Industriel et des Risques";
@@ -169,7 +169,7 @@
 . 
 <https://isterre.fr> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "";
+		schema:propertyID "URL";
 		schema:value "https://isterre.fr";
 	]; 
 	schema:legalName "CNRS, ISTerre, Université Grenoble Alpes";
@@ -211,7 +211,7 @@
 		schema:streetAddress "Utrechtseweg 297";
 		schema:addressLocality "De Bilt";
 		schema:postalCode "3731 GA";
-		schema:addressCountry "Netherlands";
+		schema:addressCountry "The Netherlands";
 	]; 
 	schema:logo "http://cdn.knmi.nl/assets/logo_large-1f49334b8856e16f352187f1b52d0edf258976c6329407b0b75f5f109ea012fb.png"^^xsd:anyURI;
 	schema:url "http://www.knmi.nl"^^xsd:anyURI;
@@ -234,7 +234,7 @@
 .
 <https://www.sgsw.ch> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "";
+		schema:propertyID "URL";
 		schema:value "https://www.sgsw.ch";
 	]; 
 	schema:legalName "St.Galler Stadtwerke";
@@ -249,7 +249,7 @@
 .
 <https://eost.unistra.fr> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "";
+		schema:propertyID "URL";
 		schema:value "https://eost.unistra.fr";
 	]; 
 	schema:legalName "Ecole et Observatoire des Sciences de la Terre";
@@ -261,7 +261,7 @@
 	]; 
 	schema:url "https://eost.unistra.fr"^^xsd:anyURI;
 	schema:email "contact@eost.unistra.fr";
-	schema:contactPoint <https://orcid.org/0000-0003-4017-4673/contactPoint>;
+	schema:contactPoint <http://orcid.org/0000-0003-4017-4673/contactPoint>;
 .
 
 
@@ -301,6 +301,24 @@
 	schema:telephone "+48126323355";
 	schema:affiliation <PIC:999844573>;
 	schema:contactPoint <mailto:m.sterzel@cyfronet.pl/contactPoint>;
+. 
+<https://orcid.org/0000-0002-9824-7962> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "orcid";
+		schema:value "0000-0002-9824-7962";
+	]; 
+	schema:familyName "Kocot";
+	schema:givenName "Joanna";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Nawojki 11";
+		schema:addressLocality "Krakow";
+		schema:postalCode "30-950";
+		schema:addressCountry "Poland";
+	]; 
+	schema:email "j.kocot@cyfronet.pl";
+	schema:telephone "+48126323355";
+	schema:affiliation <PIC:999844573>;
+	schema:contactPoint <https://orcid.org/0000-0002-9824-7962/contactPoint>;
 . 
 <mailto:a_blanke@gfz-potsdam.de> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
@@ -514,13 +532,13 @@
 		schema:streetAddress "Utrechtseweg 297";
 		schema:addressLocality "De Bilt";
 		schema:postalCode "3731 GA";
-		schema:addressCountry "Netherlands";
+		schema:addressCountry "The Netherlands";
 	]; 
 	schema:email "E.N.Ruigrok@uu.nl";
 	schema:affiliation <PIC:999518944>;
 	schema:contactPoint <http://orcid.org/0000-0001-7153-5115/contactPoint>;
 . 
-<https://orcid.org/0000-0003-2989-1663/contactPoint> a schema:Person;
+<https://orcid.org/0000-0003-2989-1663> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "orcid";
 		schema:value "0000-0003-2989-1663";
@@ -572,40 +590,86 @@
 	schema:contactPoint <http://orcid.org/0000-0003-4017-4673/contactPoint>;
 . 
 
-	<#Anthropogenichazards> a skos:ConceptScheme;
+	<epos:Anthropogenichazards> a skos:ConceptScheme;
 		dct:title "Anthropogenic hazards";
 		dct:description "It contains the concepts of anthropogenic hazards";
 . 
-	<#Reservoirimpoundment> a skos:Concept;
-		skos:inScheme <#anthropogenichazards>;
+	<epos:Reservoirimpoundment> a skos:Concept;
+		skos:inScheme <epos:Anthropogenichazards>;
 		skos:prefLabel "reservoir impoundment";
 . 
-	<#Geothermalenergyproduction> a skos:Concept;
-		skos:inScheme <#Anthropogenichazards>;
+	<epos:Geothermalenergyproduction> a skos:Concept;
+		skos:inScheme <epos:Anthropogenichazards>;
 		skos:prefLabel "geothermal energy production";
 . 
-	<#Hardrockmining> a skos:Concept;
-		skos:inScheme <#Anthropogenichazards>;
+	<epos:Hardrockmining> a skos:Concept;
+		skos:inScheme <epos:Anthropogenichazards>;
 		skos:prefLabel "hard rock mining";
 . 
-	<#Coalmining> a skos:Concept;
-		skos:inScheme <#Anthropogenichazards>;
+	<epos:Coalmining> a skos:Concept;
+		skos:inScheme <epos:Anthropogenichazards>;
 		skos:prefLabel "coal mining";
 . 
-	<#Saltsolutionsmining> a skos:Concept;
-		skos:inScheme <#Anthropogenichazards>;
+	<epos:Saltsolutionsmining> a skos:Concept;
+		skos:inScheme <epos:Anthropogenichazards>;
 		skos:prefLabel "salt solutions mining";
 . 
-	<#Unconventionalhydrocarbonextraction> a skos:Concept;
-		skos:inScheme <#Anthropogenichazards>;
+	<epos:Unconventionalhydrocarbonextraction> a skos:Concept;
+		skos:inScheme <epos:Anthropogenichazards>;
 		skos:prefLabel "unconventional hydrocarbon extraction";
 . 
-	<#Conventionalhydrocarbonextraction> a skos:Concept;
-		skos:inScheme <#Anthropogenichazards>;
+	<epos:Conventionalhydrocarbonextraction> a skos:Concept;
+		skos:inScheme <epos:Anthropogenichazards>;
 		skos:prefLabel "conventional hydrocarbon extraction";
+. 
+	<epos:Datahandlingapplications> a skos:Concept;
+		skos:inScheme <epos:Anthropogenichazards>;
+		skos:prefLabel "data handling applications";
+. 
+	<epos:Dataprocessingapplications> a skos:Concept;
+		skos:inScheme <epos:Anthropogenichazards>;
+		skos:prefLabel "data processing applications";
+. 
+	<epos:Resourcemanagementapplications> a skos:Concept;
+		skos:inScheme <epos:Anthropogenichazards>;
+		skos:prefLabel "resource management applications";
+. 
+	<epos:Visualizationapplications> a skos:Concept;
+		skos:inScheme <epos:Anthropogenichazards>;
+		skos:prefLabel "visualization applications";
 . 
 
 
+	<anthropogenic_hazards/dataset/virtual_access> a dcat:Dataset;
+		dct:title "Virtual access to IS-EPOS Platform";
+		dct:identifier "anthropogenic_hazards/dataset/virtual_access";
+		adms:identifier [ a adms:Identifier;
+			adms:schemaAgency "DDSS-ID";
+			skos:notation "WP14-DDSS-001";
+		]; 
+		dct:description "Virtual access to IS-EPOS Platform";
+		dct:created "2015-10-20"^^xsd:date;
+		dct:modified "2018-07-30"^^xsd:date;
+		dct:temporal [ a dct:PeriodOfTime; 
+      schema:startDate "1956-06-01T00:00:00Z"^^xsd:dateTime;
+    ];
+		dcat:theme <epos:Reservoirimpoundment>;
+		dcat:theme <epos:Geothermalenergyproduction>;
+		dcat:theme <epos:Hardrockmining>;
+		dcat:theme <epos:Coalmining>;
+		dcat:theme <epos:Saltsolutionsmining>;
+		dcat:theme <epos:Conventionalhydrocarbonextraction>;
+		dcat:theme <epos:Unconventionalhydrocarbonextraction>;
+		dcat:theme <epos:Datahandlingapplications>;
+		dcat:theme <epos:Dataprocessingapplications>;
+		dcat:theme <epos:Resourcemanagementapplications>;
+		dcat:theme <epos:Visualizationapplications>;
+		dcat:keyword "anthropogenic hazards","tcs ah","is-epos platform","web platform","multiservice","research environment","workspace","applications","episodes","document repository";
+		dct:publisher <PIC:996625337>;
+		dcat:contactPoint <mailto:m.sterzel@cyfronet.pl/contactPoint>;
+		dcat:distribution <anthropogenic_hazards/distribution/episodes>;
+		dcat:distribution <anthropogenic_hazards/distribution/apps>;
+. 
 	<anthropogenic_hazards/dataset/episode/CZORSZTYN> a dcat:Dataset;
 		dct:title "CZORSZTYN: shallow water reservoir";
 		dct:identifier "anthropogenic_hazards/dataset/episode/CZORSZTYN";
@@ -624,13 +688,12 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(20.323325 49.419624)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Reservoirimpoundment>;
-		dcat:keyword " hydropower plants", "reservoir triggered seismicity", "anthropogenic seismicity";
+		dcat:theme <epos:Reservoirimpoundment>;
+		dcat:keyword "hydropower plants", "reservoir triggered seismicity", "anthropogenic seismicity";
 		dct:publisher <PIC:996625337>;
 		dcat:contactPoint <http://orcid.org/0000-0002-4801-4888/contactPoint>;
 		dcat:distribution <anthropogenic_hazards/distribution/episodes/CZORSZTYN>;
 		dcat:distribution <anthropogenic_hazards/distribution/episode-elements/CZORSZTYN>;
-		dcat:distribution <anthropogenic_hazards/distribution/files/CZORSZTYN>;
 . 
 	<anthropogenic_hazards/dataset/episode/GS> a dcat:Dataset;
 		dct:title "GROSS SCHOENEBECK: geothermal energy production experiment";
@@ -650,14 +713,13 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(13.653131 52.915086)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Geothermalenergyproduction>;
+		dcat:theme <epos:Geothermalenergyproduction>;
 		dcat:keyword "injection induced seismicity", "anthropogenic seismicity";
 		dct:publisher <PIC:999994341>;
 		dcat:contactPoint <http://orcid.org/0000-0003-1076-615X/contactPoint>;
 		dcat:contactPoint <mailto:a_blanke@gfz-potsdam.de/contactPoint>;
 		dcat:distribution <anthropogenic_hazards/distribution/episodes/GS>;
 		dcat:distribution <anthropogenic_hazards/distribution/episode-elements/GS>;
-		dcat:distribution <anthropogenic_hazards/distribution/files/GS>;
 . 
 	<anthropogenic_hazards/dataset/episode/LGCD> a dcat:Dataset;
 		dct:title "LGCD: regional seismicity and ground motion associating underground hard rock mining";
@@ -677,13 +739,12 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(16.106551 51.501023)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Hardrockmining>;
+		dcat:theme <epos:Hardrockmining>;
 		dcat:keyword "underground mining", "anthropogenic seismicity", "mining induced seismicity";
 		dct:publisher <PIC:996625337>;
 		dcat:contactPoint <http://orcid.org/0000-0002-4801-4888/contactPoint>;
 		dcat:distribution <anthropogenic_hazards/distribution/episodes/LGCD>;
 		dcat:distribution <anthropogenic_hazards/distribution/episode-elements/LGCD>;
-		dcat:distribution <anthropogenic_hazards/distribution/files/LGCD>;
 . 
 	<anthropogenic_hazards/dataset/episode/SONG_TRANH> a dcat:Dataset;
 		dct:title "SONG TRANH: deep water reservoir";
@@ -703,14 +764,13 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(108.1482 15.3311)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Reservoirimpoundment>;
+		dcat:theme <epos:Reservoirimpoundment>;
 		dcat:keyword "hydropower plans", "reservoir triggered seismicity", "anthropogenic seismicity";
 		dct:publisher <PIC:996625337>;
 		dcat:contactPoint <http://orcid.org/0000-0002-4801-4888/contactPoint>;
 		dcat:contactPoint <mailto:giangnv@igp-vast.vn/contactPoint>;
 		dcat:distribution <anthropogenic_hazards/distribution/episodes/SONG_TRANH>;
 		dcat:distribution <anthropogenic_hazards/distribution/episode-elements/SONG_TRANH>;
-		dcat:distribution <anthropogenic_hazards/distribution/files/SONG_TRANH>;
 . 
 	<anthropogenic_hazards/dataset/episode/USCB> a dcat:Dataset;
 		dct:title "USCB: regional seismicity and ground motion associating underground coal mining";
@@ -730,13 +790,12 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(19.080085 50.244433)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Coalmining>;
+		dcat:theme <epos:Coalmining>;
 		dcat:keyword "underground mining", "anthropogenic seismicity", "mining induced seismicity";
 		dct:publisher <PIC:999516616>;
 		dcat:contactPoint <http://orcid.org/0000-0001-8181-0758/contactPoint>;
 		dcat:distribution <anthropogenic_hazards/distribution/episodes/USCB>;
 		dcat:distribution <anthropogenic_hazards/distribution/episode-elements/USCB>;
-		dcat:distribution <anthropogenic_hazards/distribution/files/USCB>;
 . 
 	<anthropogenic_hazards/dataset/episode/BOBREK> a dcat:Dataset;
 		dct:title "BOBREK MINE: local seismicity linked to longwall mining";
@@ -756,13 +815,12 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(18.867014 50.351483)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Coalmining>;
+		dcat:theme <epos:Coalmining>;
 		dcat:keyword "underground mining", "anthropogenic seismicity", "mining induced seismicity";
 		dct:publisher <PIC:999516616>;
 		dcat:contactPoint <http://orcid.org/0000-0001-8181-0758/contactPoint>;
 		dcat:distribution <anthropogenic_hazards/distribution/episodes/BOBREK>;
 		dcat:distribution <anthropogenic_hazards/distribution/episode-elements/BOBREK>;
-		dcat:distribution <anthropogenic_hazards/distribution/files/BOBREK>;
 . 
 	<anthropogenic_hazards/dataset/episode/PYHASALMI_MINE> a dcat:Dataset;
 		dct:title "PYHASALMI MINE: in situ underground laboratory";
@@ -782,13 +840,12 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(26.042500 63.658889)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Hardrockmining>;
+		dcat:theme <epos:Hardrockmining>;
 		dcat:keyword "underground mining", "anthropogenic seismicity", "mining induced seismicity";
 		dct:publisher <mailto:university.of.oulu@oulu.fi>;
 		dcat:contactPoint <mailto:jouni.nevalainen@oulu.fi/contactPoint>;
 		dcat:distribution <anthropogenic_hazards/distribution/episodes/PYHASALMI_MINE>;
 		dcat:distribution <anthropogenic_hazards/distribution/episode-elements/PYHASALMI_MINE>;
-		dcat:distribution <anthropogenic_hazards/distribution/files/PYHASALMI_MINE>;
 . 
 	<anthropogenic_hazards/dataset/episode/LGF> a dcat:Dataset;
 		dct:title "LACQ GAS FIELD: conventional hydrocarbon extraction";
@@ -805,14 +862,13 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(-0.6 43.55)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Conventionalhydrocarbonextraction>;
+		dcat:theme <epos:Conventionalhydrocarbonextraction>;
 		dcat:keyword "anthropogenic seismicity";
 		dct:publisher <https://isterre.fr>;
 		dcat:contactPoint <http://orcid.org/0000-0002-9580-7864/contactPoint>;
 		dcat:contactPoint <mailto:abror.karimov@univ-grenoble-alpes.fr/contactPoint>;
 		dcat:distribution <anthropogenic_hazards/distribution/episodes/LGF>;
 		dcat:distribution <anthropogenic_hazards/distribution/episode-elements/LGF>;
-		dcat:distribution <anthropogenic_hazards/distribution/files/LGF>;
 . 
 	<anthropogenic_hazards/dataset/episode/MONTEYNARD> a dcat:Dataset;
 		dct:title "MONTEYNARD: water reservoir";
@@ -832,14 +888,13 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(0.540 44.560)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Reservoirimpoundment>;
+		dcat:theme <epos:Reservoirimpoundment>;
 		dcat:keyword "reservoir triggered seismicity", "anthropogenic seismicity";
 		dct:publisher <https://isterre.fr>;
 		dcat:contactPoint <http://orcid.org/0000-0002-9580-7864/contactPoint>;
 		dcat:contactPoint <mailto:abror.karimov@univ-grenoble-alpes.fr/contactPoint>;
 		dcat:distribution <anthropogenic_hazards/distribution/episodes/MONTEYNARD>;
 		dcat:distribution <anthropogenic_hazards/distribution/episode-elements/MONTEYNARD>;
-		dcat:distribution <anthropogenic_hazards/distribution/files/MONTEYNARD>;
 . 
 	<anthropogenic_hazards/dataset/episode/SSFS1993> a dcat:Dataset;
 		dct:title "1993 Soultz-sous-Forêts Stimulation";
@@ -859,13 +914,12 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POLYGON(7.86 48.93, 7.87 48.94)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Geothermalenergyproduction>;
+		dcat:theme <epos:Geothermalenergyproduction>;
 		dcat:keyword "injection induced seismicity", "anthropogenic seismicity";
 		dct:publisher <https://eost.unistra.fr>;
-		dcat:contactPoint <https://orcid.org/0000-0003-4017-4673/contactPoint>;
+		dcat:contactPoint <http://orcid.org/0000-0003-4017-4673/contactPoint>;
 		dcat:distribution <anthropogenic_hazards/distribution/episodes/SSFS1993>;
 		dcat:distribution <anthropogenic_hazards/distribution/episode-elements/SSFS1993>;
-		dcat:distribution <anthropogenic_hazards/distribution/files/SSFS1993>;
 . 
 	<anthropogenic_hazards/dataset/episode/GISOS-CERVILLE> a dcat:Dataset;
 		dct:title "GISOS-CERVILLE: underground solution mining";
@@ -885,13 +939,12 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(6.321185 48.676043)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Saltsolutionsmining>;
+		dcat:theme <epos:Saltsolutionsmining>;
 		dcat:keyword "underground mining", "anthropogenic seismicity", "mining induced seismicity";
 		dct:publisher <http://www.ineris.fr>;
 		dcat:contactPoint <mailto:jannes-l.kinscher@ineris.fr/contactPoint>;
 		dcat:distribution <anthropogenic_hazards/distribution/episodes/GISOS-CERVILLE>;
 		dcat:distribution <anthropogenic_hazards/distribution/episode-elements/GISOS-CERVILLE>;
-		dcat:distribution <anthropogenic_hazards/distribution/files/GISOS-CERVILLE>;
 . 
 	<anthropogenic_hazards/dataset/episode/STARFISH> a dcat:Dataset;
 		dct:title "STARFISH: underground gas storage";
@@ -911,13 +964,12 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(6.308847 48.638295)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Unconventionalhydrocarbonextraction>;
+		dcat:theme <epos:Unconventionalhydrocarbonextraction>;
 		dcat:keyword "anthropogenic seismicity";
 		dct:publisher <http://www.ineris.fr>;
 		dcat:contactPoint <mailto:jannes-l.kinscher@ineris.fr/contactPoint>;
 		dcat:distribution <anthropogenic_hazards/distribution/episodes/STARFISH>;
 		dcat:distribution <anthropogenic_hazards/distribution/episode-elements/STARFISH>;
-		dcat:distribution <anthropogenic_hazards/distribution/files/STARFISH>;
 . 
 	<anthropogenic_hazards/dataset/episode/THE_GEYSERS_Prati_9_and_Prati_29_cluster> a dcat:Dataset;
 		dct:title "THE GEYSERS Prati 9 and Prati 29 cluster: Treated wastewater injection for geothermal power production";
@@ -937,14 +989,13 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(-122.82784 38.84046)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Geothermalenergyproduction>;
+		dcat:theme <epos:Geothermalenergyproduction>;
 		dcat:keyword "injection induced seismicity", "anthropogenic seismicity";
 		dct:publisher <PIC:999994341>;
 		dcat:contactPoint <http://orcid.org/0000-0003-1076-615X/contactPoint>;
 		dcat:contactPoint <mailto:a_blanke@gfz-potsdam.de/contactPoint>;
 		dcat:distribution <anthropogenic_hazards/distribution/episodes/THE_GEYSERS_Prati_9_and_Prati_29_cluster>;
 		dcat:distribution <anthropogenic_hazards/distribution/episode-elements/THE_GEYSERS_Prati_9_and_Prati_29_cluster>;
-		dcat:distribution <anthropogenic_hazards/distribution/files/THE_GEYSERS_Prati_9_and_Prati_29_cluster>;
 . 
 	<anthropogenic_hazards/dataset/episode/THE_GEYSERS> a dcat:Dataset;
 		dct:title "THE GEYSERS: geothermal energy production";
@@ -964,13 +1015,12 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(-122.83269 38.798440)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Geothermalenergyproduction>;
+		dcat:theme <epos:Geothermalenergyproduction>;
 		dcat:keyword "injection induced seismicity", "anthropogenic seismicity";
 		dct:publisher <PIC:999527286>;
 		dcat:contactPoint <https://orcid.org/0000-0001-8078-9416/contactPoint>;
 		dcat:distribution <anthropogenic_hazards/distribution/episodes/THE_GEYSERS>;
 		dcat:distribution <anthropogenic_hazards/distribution/episode-elements/THE_GEYSERS>;
-		dcat:distribution <anthropogenic_hazards/distribution/files/THE_GEYSERS>;
 . 
 	<anthropogenic_hazards/dataset/episode/VDF> a dcat:Dataset;
 		dct:title "VAL D'AGRI FIELD: conventional hydrocarbon extraction";
@@ -990,14 +1040,13 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(15.9893 40.3247)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Conventionalhydrocarbonextraction>;
+		dcat:theme <epos:Conventionalhydrocarbonextraction>;
 		dcat:keyword "anthropogenic seismicity";
 		dct:publisher <PIC:999472675>;
 		dcat:contactPoint <http://orcid.org/0000-0003-2915-1446/contactPoint>;
 		dcat:contactPoint <http://orcid.org/0000-0003-3844-5059/contactPoint>;
 		dcat:distribution <anthropogenic_hazards/distribution/episodes/VDF>;
 		dcat:distribution <anthropogenic_hazards/distribution/episode-elements/VDF>;
-		dcat:distribution <anthropogenic_hazards/distribution/files/VDF>;
 . 
 	<anthropogenic_hazards/dataset/episode/VD> a dcat:Dataset;
 		dct:title "VAL D'AGRI: water reservoir";
@@ -1017,14 +1066,13 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(15.9180 40.2270)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Reservoirimpoundment>;
+		dcat:theme <epos:Reservoirimpoundment>;
 		dcat:keyword "reservoir triggered seismicity", "anthropogenic seismicity";
 		dct:publisher <PIC:999472675>;
 		dcat:contactPoint <http://orcid.org/0000-0003-2915-1446/contactPoint>;
 		dcat:contactPoint <http://orcid.org/0000-0003-3844-5059/contactPoint>;
 		dcat:distribution <anthropogenic_hazards/distribution/episodes/VD>;
 		dcat:distribution <anthropogenic_hazards/distribution/episode-elements/VD>;
-		dcat:distribution <anthropogenic_hazards/distribution/files/VD>;
 . 
 	<anthropogenic_hazards/dataset/episode/PREESE_HALL> a dcat:Dataset;
 		dct:title "PREESE HALL: Shale Gas";
@@ -1044,13 +1092,12 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(-2.9442207 53.8219037)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Unconventionalhydrocarbonextraction>;
+		dcat:theme <epos:Unconventionalhydrocarbonextraction>;
 		dcat:keyword "hydrofracturing", "injection seismicity", "anthropogenic seismicity";
 		dct:publisher <PIC:999862324>;
-		dcat:contactPoint <http://orcid.org/0000-0003-0961-6066/contactPoint>;
+		dcat:contactPoint <http://orcid.org/0000-0002-0769-5277/contactPoint>;
 		dcat:distribution <anthropogenic_hazards/distribution/episodes/PREESE_HALL>;
 		dcat:distribution <anthropogenic_hazards/distribution/episode-elements/PREESE_HALL>;
-		dcat:distribution <anthropogenic_hazards/distribution/files/PREESE_HALL>;
 . 
 	<anthropogenic_hazards/dataset/episode/OK> a dcat:Dataset;
 		dct:title "OKLAHOMA: conventional and unconventional hydrocarbon extraction and wastewater injection";
@@ -1070,14 +1117,13 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(-97.341 36.036)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Unconventionalhydrocarbonextraction>;
-		dcat:theme <#Conventionalhydrocarbonextraction>;
+		dcat:theme <epos:Unconventionalhydrocarbonextraction>;
+		dcat:theme <epos:Conventionalhydrocarbonextraction>;
 		dcat:keyword "hydrofracturing", "injection seismicity", "anthropogenic seismicity";
 		dct:publisher <PIC:999862324>;
-		dcat:contactPoint <http://orcid.org/0000-0003-0961-6066/contactPoint>;
+		dcat:contactPoint <http://orcid.org/0000-0002-0769-5277/contactPoint>;
 		dcat:distribution <anthropogenic_hazards/distribution/episodes/OK>;
 		dcat:distribution <anthropogenic_hazards/distribution/episode-elements/OK>;
-		dcat:distribution <anthropogenic_hazards/distribution/files/OK>;
 . 
 	<anthropogenic_hazards/dataset/episode/GRONINGEN_FIELD> a dcat:Dataset;
 		dct:title "GRONINGEN FIELD: conventional hydrocarbon production";
@@ -1097,13 +1143,12 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(6.707173 53.284546)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Conventionalhydrocarbonextraction>;
+		dcat:theme <epos:Conventionalhydrocarbonextraction>;
 		dcat:keyword "anthropogenic seismicity";
 		dct:publisher <PIC:999518944>;
 		dcat:contactPoint <http://orcid.org/0000-0001-7153-5115/contactPoint>;
 		dcat:distribution <anthropogenic_hazards/distribution/episodes/GRONINGEN_FIELD>;
 		dcat:distribution <anthropogenic_hazards/distribution/episode-elements/GRONINGEN_FIELD>;
-		dcat:distribution <anthropogenic_hazards/distribution/files/GRONINGEN_FIELD>;
 . 
 	<anthropogenic_hazards/dataset/episode/LUBOCINO> a dcat:Dataset;
 		dct:title "LUBOCINO: Shale Gas";
@@ -1123,13 +1168,12 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(18.148734 54.72094)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Unconventionalhydrocarbonextraction>;
+		dcat:theme <epos:Unconventionalhydrocarbonextraction>;
 		dcat:keyword "hydrofracturing", "injection seismicity", "anthropogenic seismicity";
 		dct:publisher <PIC:996625337>;
 		dcat:contactPoint <http://orcid.org/0000-0002-4801-4888/contactPoint>;
 		dcat:distribution <anthropogenic_hazards/distribution/episodes/LUBOCINO>;
 		dcat:distribution <anthropogenic_hazards/distribution/episode-elements/LUBOCINO>;
-		dcat:distribution <anthropogenic_hazards/distribution/files/LUBOCINO>;
 . 
 	<anthropogenic_hazards/dataset/episode/WYSIN> a dcat:Dataset;
 		dct:title "WYSIN: Shale Gas";
@@ -1149,13 +1193,12 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(18.3039 54.09417)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Unconventionalhydrocarbonextraction>;
+		dcat:theme <epos:Unconventionalhydrocarbonextraction>;
 		dcat:keyword "hydrofracturing", "injection seismicity", "anthropogenic seismicity";
 		dct:publisher <PIC:996625337>;
 		dcat:contactPoint <http://orcid.org/0000-0002-4801-4888/contactPoint>;
 		dcat:distribution <anthropogenic_hazards/distribution/episodes/WYSIN>;
 		dcat:distribution <anthropogenic_hazards/distribution/episode-elements/WYSIN>;
-		dcat:distribution <anthropogenic_hazards/distribution/files/WYSIN>;
 . 
 	<anthropogenic_hazards/dataset/episode/CARBFIX> a dcat:Dataset;
 		dct:title "CARBFIX: geothermal energy producion and CCS";
@@ -1175,13 +1218,12 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(-21.314849 64.058189)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Geothermalenergyproduction>;
+		dcat:theme <epos:Geothermalenergyproduction>;
 		dcat:keyword "injection induced seismicity", "anthropogenic seismicity";
 		dct:publisher <PIC:974007459>;
 		dcat:contactPoint <https://orcid.org/0000-0003-2989-1663/contactPoint>;
 		dcat:distribution <anthropogenic_hazards/distribution/episodes/CARBFIX>;
 		dcat:distribution <anthropogenic_hazards/distribution/episode-elements/CARBFIX>;
-		dcat:distribution <anthropogenic_hazards/distribution/files/CARBFIX>;
 . 
 	<anthropogenic_hazards/dataset/episode/SG> a dcat:Dataset;
 		dct:title "ST. GALLEN: geothermal project";
@@ -1201,13 +1243,12 @@
 		dct:spatial [ a dct:Location;
 	        locn:geometry "POINT(9.321 47.422)"^^gsp:wktLiteral;
 	    ];
-		dcat:theme <#Geothermalenergyproduction>;
+		dcat:theme <epos:Geothermalenergyproduction>;
 		dcat:keyword "injection induced seismicity", "anthropogenic seismicity";
 		dct:publisher <https://www.sgsw.ch>;
 		dcat:contactPoint <mailto:thomas.bloch@sgsw.ch/contactPoint>;
 		dcat:distribution <anthropogenic_hazards/distribution/episodes/SG>;
 		dcat:distribution <anthropogenic_hazards/distribution/episode-elements/SG>;
-		dcat:distribution <anthropogenic_hazards/distribution/files/SG>;
 . 
 
 
@@ -1221,16 +1262,64 @@
 	schema:dateModified "2018-07-30Z"^^xsd:dateTime;
 	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episodes>;
 	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/apps>;
-	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episode-elements>;
-	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/files>;
-	dcat:theme <#Reservoirimpoundment>;
-	dcat:theme <#Geothermalenergyproduction>;
-	dcat:theme <#Hardrockmining>;
-	dcat:theme <#Coalmining>;
-	dcat:theme <#Saltsolutionsmining>;
-	dcat:theme <#Conventionalhydrocarbonextraction>;
-	dcat:theme <#Unconventionalhydrocarbonextraction>;
-	schema:keywords "anthropogenic hazards"," tcs ah"," is-epos platform"," web platform"," multiservice"," research environment"," workspace"," applications"," episodes"," document repository";
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episodes/CZORSZTYN>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/CZORSZTYN>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episodes/GS>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/GS>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episodes/LGCD>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/LGCD>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episodes/SONG_TRANH>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/SONG_TRANH>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episodes/USCB>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/USCB>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episodes/BOBREK>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/BOBREK>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episodes/PYHASALMI_MINE>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/PYHASALMI_MINE>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episodes/LGF>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/LGF>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episodes/MONTEYNARD>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/MONTEYNARD>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episodes/SSFS1993>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/SSFS1993>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episodes/GISOS-CERVILLE>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/GISOS-CERVILLE>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episodes/STARFISH>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/STARFISH>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episodes/THE_GEYSERS_Prati_9_and_Prati_29_cluster>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/THE_GEYSERS_Prati_9_and_Prati_29_cluster>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episodes/THE_GEYSERS>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/THE_GEYSERS>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episodes/VDF>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/VDF>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episodes/VD>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/VD>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episodes/OK>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/OK>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episodes/PREESE_HALL>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/PREESE_HALL>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episodes/GRONINGEN_FIELD>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/GRONINGEN_FIELD>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episodes/LUBOCINO>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/LUBOCINO>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episodes/WYSIN>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/WYSIN>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episodes/CARBFIX>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/CARBFIX>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episodes/SG>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/SG>;
+	dcat:theme <epos:Reservoirimpoundment>;
+	dcat:theme <epos:Geothermalenergyproduction>;
+	dcat:theme <epos:Hardrockmining>;
+	dcat:theme <epos:Coalmining>;
+	dcat:theme <epos:Saltsolutionsmining>;
+	dcat:theme <epos:Conventionalhydrocarbonextraction>;
+	dcat:theme <epos:Unconventionalhydrocarbonextraction>;
+	dcat:theme <epos:Datahandlingapplications>;
+  dcat:theme <epos:Dataprocessingapplications>;
+  dcat:theme <epos:Resourcemanagementapplications>;
+  dcat:theme <epos:Visualizationapplications>;
+  schema:keywords "anthropogenic hazards","tcs ah","is-epos platform","web platform","multiservice","research environment","workspace","applications","episodes","document repository";
 	dcat:contactPoint <http://orcid.org/0000-0002-4801-4888/contactPoint>;
 	dcat:contactPoint <mailto:m.sterzel@cyfronet.pl/contactPoint>;
 . 
@@ -1293,102 +1382,1081 @@
 					hydra:required "false"^^xsd:boolean;
 				];
 		] ;
-. 
-	<anthropogenic_hazards/webservice/is-epos_platform/episode-elements> a hydra:Operation;
+.  
+	<anthropogenic_hazards/webservice/is-epos_platform/episodes/CZORSZTYN> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode, dataType, before, after, impactingFactor, country}"^^xsd:string;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episodes/CZORSZTYN"^^xsd:string;
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episode-elements/CZORSZTYN> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "episode"^^xsd:string;
 					rdfs:range "xsd:string";
 					rdfs:label "ID of the episode";
-					schema:defaultValue "BOBREK";
-					http:paramValue "CZORSZTYN";
-					http:paramValue "GS";
-					http:paramValue "LGCD";
-					http:paramValue "SONG_TRANH";
-					http:paramValue "USCB";
-					http:paramValue "BOBREK";
-					http:paramValue "PYHASALMI_MINE";
-					http:paramValue "LGF";
-					http:paramValue "MONTEYNARD";
-					http:paramValue "GISOS-CERVILLE";
-					http:paramValue "STARFISH";
-					http:paramValue "THE_GEYSERS_Prati_9_and_Prati_29_cluster";
-					http:paramValue "THE_GEYSERS";
-					http:paramValue "VDF";
-					http:paramValue "VD";
-					http:paramValue "OK";
-					http:paramValue "PREESE_HALL";
-					http:paramValue "GRONINGEN_FIELD";
-					http:paramValue "LUBOCINO";
-					http:paramValue "WYSIN";
-					http:paramValue "CARBFIX";
-					http:paramValue "SG";
+					schema:defaultValue "CZORSZTYN";
+					http:paramValue "CZORSZTYN" ;
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "dataType"^^xsd:string;
 					rdfs:range "xsd:string";
-					rdfs:label "Type of the data item. Sample values: 'Air Quality', 'Blast Information', 'Bottomhole Pressure', 'Catalog', 'Drillhole Lithology, 'Ground Motion Network', 'Injection Rate', 'Mining Front Advance', 'Water Level', 'Seed Signal', 'Seismic Network', 'Accelerogram Seed Signal'";
+					rdfs:label "Type of the data item. Sample values: 'Catalog', 'Water Level', 'Seed Signal', 'Seismic Network'";
 					schema:defaultValue "Catalog";
 					hydra:required "false"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "before"^^xsd:string;
-					rdfs:range "xsd:dateTime";
+					hydra:property "schema:endDate";
+          schema:valuePattern "YYYY-MM-DD";
+          rdfs:range "xsd:dateTime";
 					rdfs:label "Items before this date";
 					schema:defaultValue "2018-09-14";
 					hydra:required "false"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "after"^^xsd:string;
+					hydra:property "schema:startDate";
+          schema:valuePattern "YYYY-MM-DD";
 					rdfs:range "xsd:dateTime";
+					rdfs:label "Items after this date";
+					schema:defaultValue "1970-01-01";
+					hydra:required "false"^^xsd:boolean;
+				];
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episodes/GS> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episodes/GS"^^xsd:string;
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episode-elements/GS> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "ID of the episode";
+					schema:defaultValue "GS";
+					http:paramValue "GS" ;
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "dataType"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Type of the data item. Sample values: 'Catalog', 'Injection Rate', 'Seed Signal', 'Seismic Network', 'Well Path'";
+					schema:defaultValue "Catalog";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "before"^^xsd:string;
+					hydra:property "schema:endDate";
+          schema:valuePattern "YYYY-MM-DD";
+          rdfs:range "xsd:dateTime";
+					rdfs:label "Items before this date";
+					schema:defaultValue "2018-09-14";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "after"^^xsd:string;
+					hydra:property "schema:startDate";
+          schema:valuePattern "YYYY-MM-DD";
+          rdfs:range "xsd:dateTime";
+					rdfs:label "Items after this date";
+					schema:defaultValue "1970-01-01";
+					hydra:required "false"^^xsd:boolean;
+				];
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episodes/LGCD> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episodes/LGCD"^^xsd:string;
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episode-elements/LGCD> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "ID of the episode";
+					schema:defaultValue "LGCD";
+					http:paramValue "LGCD" ;
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "dataType"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Type of the data item. Sample values: 'Accelerogram Seed Signal', 'Catalog', 'Ground Motion Network', 'Mine Area', 'Seed Signal', 'Seismic Network'";
+					schema:defaultValue "Catalog";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "before"^^xsd:string;
+					hydra:property "schema:endDate";
+          schema:valuePattern "YYYY-MM-DD";
+          rdfs:range "xsd:dateTime";
+					rdfs:label "Items before this date";
+					schema:defaultValue "2018-09-14";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "after"^^xsd:string;
+					hydra:property "schema:startDate";
+          schema:valuePattern "YYYY-MM-DD";
+          rdfs:range "xsd:dateTime";
+					rdfs:label "Items after this date";
+					schema:defaultValue "1970-01-01";
+					hydra:required "false"^^xsd:boolean;
+				];
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episodes/SONG_TRANH> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episodes/SONG_TRANH"^^xsd:string;
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episode-elements/SONG_TRANH> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "ID of the episode";
+					schema:defaultValue "SONG_TRANH";
+					http:paramValue "SONG_TRANH" ;
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "dataType"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Type of the data item. Sample values: 'Catalog', 'Seismic Network', 'Seed Signal', 'Velocity Model', 'Water Level'";
+					schema:defaultValue "Catalog";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "before"^^xsd:string;
+					hydra:property "schema:endDate";
+          schema:valuePattern "YYYY-MM-DD";
+          rdfs:range "xsd:dateTime";
+					rdfs:label "Items before this date";
+					schema:defaultValue "2018-09-14";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "after"^^xsd:string;
+					hydra:property "schema:startDate";
+          schema:valuePattern "YYYY-MM-DD";
+          rdfs:range "xsd:dateTime";
+					rdfs:label "Items after this date";
+					schema:defaultValue "1970-01-01";
+					hydra:required "false"^^xsd:boolean;
+				];
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episodes/USCB> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episodes/USCB"^^xsd:string;
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episode-elements/USCB> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "ID of the episode";
+					schema:defaultValue "USCB";
+					http:paramValue "USCB" ;
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "dataType"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Type of the data item. Sample values: 'Accelerogram Seed Signal', 'Catalog', 'Ground Motion Network', 'Mine Area', 'Seismic Network', 'Seed Signal'";
+					schema:defaultValue "Catalog";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "before"^^xsd:string;
+					hydra:property "schema:endDate";
+          schema:valuePattern "YYYY-MM-DD";
+          rdfs:range "xsd:dateTime";
+					rdfs:label "Items before this date";
+					schema:defaultValue "2018-09-14";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "after"^^xsd:string;
+					hydra:property "schema:startDate";
+          schema:valuePattern "YYYY-MM-DD";
+          rdfs:range "xsd:dateTime";
+					rdfs:label "Items after this date";
+					schema:defaultValue "1970-01-01";
+					hydra:required "false"^^xsd:boolean;
+				];
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episodes/BOBREK> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episodes/BOBREK"^^xsd:string;
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episode-elements/BOBREK> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "ID of the episode";
+					schema:defaultValue "BOBREK";
+					http:paramValue "BOBREK" ;
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "dataType"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Type of the data item. Sample values: 'Catalog', 'Mining Front Advance', 'Seismic Network', 'Seed Signal'";
+					schema:defaultValue "Catalog";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "before"^^xsd:string;
+					hydra:property "schema:endDate";
+          schema:valuePattern "YYYY-MM-DD";
+          rdfs:range "xsd:dateTime";
+					rdfs:label "Items before this date";
+					schema:defaultValue "2018-09-14";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "after"^^xsd:string;
+					hydra:property "schema:startDate";
+          schema:valuePattern "YYYY-MM-DD";
+          rdfs:range "xsd:dateTime";
+					rdfs:label "Items after this date";
+					schema:defaultValue "1970-01-01";
+					hydra:required "false"^^xsd:boolean;
+				];
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episodes/PYHASALMI_MINE> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episodes/PYHASALMI_MINE"^^xsd:string;
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episode-elements/PYHASALMI_MINE> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "ID of the episode";
+					schema:defaultValue "PYHASALMI_MINE";
+					http:paramValue "PYHASALMI_MINE" ;
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "dataType"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Type of the data item. Sample values: 'Blast Information', 'Catalog', 'Drillhole Lithology', 'Seismic Network'";
+					schema:defaultValue "Catalog";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "before"^^xsd:string;
+					hydra:property "schema:endDate";
+          schema:valuePattern "YYYY-MM-DD";
+          rdfs:range "xsd:dateTime";
+					rdfs:label "Items before this date";
+					schema:defaultValue "2018-09-14";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "after"^^xsd:string;
+					hydra:property "schema:startDate";
+          schema:valuePattern "YYYY-MM-DD";
+          rdfs:range "xsd:dateTime";
+					rdfs:label "Items after this date";
+					schema:defaultValue "1970-01-01";
+					hydra:required "false"^^xsd:boolean;
+				];
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episodes/LGF> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episodes/LGF"^^xsd:string;
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episode-elements/LGF> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "ID of the episode";
+					schema:defaultValue "LGF";
+					http:paramValue "LGF" ;
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "dataType"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Type of the data item. Sample values: 'Bottomhole Pressure', 'Catalog', 'Seismic Stations'";
+					schema:defaultValue "Catalog";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "before"^^xsd:string;
+					hydra:property "schema:endDate";
+          schema:valuePattern "YYYY-MM-DD";
+          rdfs:range "xsd:dateTime";
+					rdfs:label "Items before this date";
+					schema:defaultValue "2018-09-14";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "after"^^xsd:string;
+					hydra:property "schema:startDate";
+          schema:valuePattern "YYYY-MM-DD";
+          rdfs:range "xsd:dateTime";
+					rdfs:label "Items after this date";
+					schema:defaultValue "1970-01-01";
+					hydra:required "false"^^xsd:boolean;
+				];
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episodes/MONTEYNARD> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episodes/MONTEYNARD"^^xsd:string;
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episode-elements/MONTEYNARD> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "ID of the episode";
+					schema:defaultValue "MONTEYNARD";
+					http:paramValue "MONTEYNARD" ;
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "dataType"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Type of the data item. Sample values: 'Catalog', 'Shoreline', 'Water Level'";
+					schema:defaultValue "Catalog";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "before"^^xsd:string;
+					hydra:property "schema:endDate";
+          schema:valuePattern "YYYY-MM-DD";
+          rdfs:range "xsd:dateTime";
+					rdfs:label "Items before this date";
+					schema:defaultValue "2018-09-14";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "after"^^xsd:string;
+					hydra:property "schema:startDate";
+          schema:valuePattern "YYYY-MM-DD";
+          rdfs:range "xsd:dateTime";
+					rdfs:label "Items after this date";
+					schema:defaultValue "1970-01-01";
+					hydra:required "false"^^xsd:boolean;
+				];
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episodes/SSFS1993> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episodes/SSFS1993"^^xsd:string;
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episode-elements/SSFS1993> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "ID of the episode";
+					schema:defaultValue "SSFS1993";
+					http:paramValue "SSFS1993" ;
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "dataType"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Type of the data item. Sample values: 'Catalog', 'Miniseed Signal', 'Seismic Network'";
+					schema:defaultValue "Catalog";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "before"^^xsd:string;
+					hydra:property "schema:endDate";
+          schema:valuePattern "YYYY-MM-DD";
+          rdfs:range "xsd:dateTime";
+					rdfs:label "Items before this date";
+					schema:defaultValue "2018-09-14";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "after"^^xsd:string;
+					hydra:property "schema:startDate";
+          schema:valuePattern "YYYY-MM-DD";
+          rdfs:range "xsd:dateTime";
+					rdfs:label "Items after this date";
+					schema:defaultValue "1970-01-01";
+					hydra:required "false"^^xsd:boolean;
+				];
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episodes/GISOS-CERVILLE> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episodes/GISOS-CERVILLE"^^xsd:string;
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episode-elements/GISOS-CERVILLE> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "ID of the episode";
+					schema:defaultValue "GISOS-CERVILLE";
+					http:paramValue "GISOS-CERVILLE" ;
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "dataType"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Type of the data item. Sample values: 'Catalog', 'Ground Water Level', 'Seismic Network', 'Seed Signal'";
+					schema:defaultValue "Catalog";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "before"^^xsd:string;
+					hydra:property "schema:endDate";
+          schema:valuePattern "YYYY-MM-DD";
+          rdfs:range "xsd:dateTime";
+					rdfs:label "Items before this date";
+					schema:defaultValue "2018-09-14";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "after"^^xsd:string;
+					hydra:property "schema:startDate";
+          schema:valuePattern "YYYY-MM-DD";
+          rdfs:range "xsd:dateTime";
+					rdfs:label "Items after this date";
+					schema:defaultValue "1970-01-01";
+					hydra:required "false"^^xsd:boolean;
+				];
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episodes/STARFISH> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episodes/STARFISH"^^xsd:string;
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episode-elements/STARFISH> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "ID of the episode";
+					schema:defaultValue "STARFISH";
+					http:paramValue "STARFISH" ;
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "dataType"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Type of the data item. Sample values: 'Catalog', 'Seismic Stations', 'Strain Gauge Measurement'";
+					schema:defaultValue "Catalog";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "before"^^xsd:string;
+					hydra:property "schema:endDate";
+          schema:valuePattern "YYYY-MM-DD";
+          rdfs:range "xsd:dateTime";
+					rdfs:label "Items before this date";
+					schema:defaultValue "2018-09-14";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "after"^^xsd:string;
+					hydra:property "schema:startDate";
+          schema:valuePattern "YYYY-MM-DD";
+          rdfs:range "xsd:dateTime";
+					rdfs:label "Items after this date";
+					schema:defaultValue "1970-01-01";
+					hydra:required "false"^^xsd:boolean;
+				];
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episodes/THE_GEYSERS_Prati_9_and_Prati_29_cluster> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episodes/THE_GEYSERS_Prati_9_and_Prati_29_cluster"^^xsd:string;
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episode-elements/THE_GEYSERS_Prati_9_and_Prati_29_cluster> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "ID of the episode";
+					schema:defaultValue "THE_GEYSERS_Prati_9_and_Prati_29_cluster";
+					http:paramValue "THE_GEYSERS_Prati_9_and_Prati_29_cluster" ;
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "dataType"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Type of the data item. Sample values: 'Catalog', 'Injection Rate', 'Well Path'";
+					schema:defaultValue "Catalog";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "before"^^xsd:string;
+					hydra:property "schema:endDate";
+          schema:valuePattern "YYYY-MM-DD";
+          rdfs:range "xsd:dateTime";
+					rdfs:label "Items before this date";
+					schema:defaultValue "2018-09-14";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "after"^^xsd:string;
+					hydra:property "schema:startDate";
+          schema:valuePattern "YYYY-MM-DD";
+          rdfs:range "xsd:dateTime";
+					rdfs:label "Items after this date";
+					schema:defaultValue "1970-01-01";
+					hydra:required "false"^^xsd:boolean;
+				];
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episodes/THE_GEYSERS> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episodes/THE_GEYSERS"^^xsd:string;
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episode-elements/THE_GEYSERS> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "ID of the episode";
+					schema:defaultValue "THE_GEYSERS";
+					http:paramValue "THE_GEYSERS" ;
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "dataType"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Type of the data item. Sample values: 'Accelerogram Seed Signal', 'Catalog', 'Ground Motion Network', 'Powerplant Position', 'Seismic Network', 'Seed Signal', 'Steam Production'";
+					schema:defaultValue "Catalog";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "before"^^xsd:string;
+					hydra:property "schema:endDate";
+          schema:valuePattern "YYYY-MM-DD";
+          rdfs:range "xsd:dateTime";
+					rdfs:label "Items before this date";
+					schema:defaultValue "2018-09-14";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "after"^^xsd:string;
+					hydra:property "schema:startDate";
+          schema:valuePattern "YYYY-MM-DD";
+          rdfs:range "xsd:dateTime";
+					rdfs:label "Items after this date";
+					schema:defaultValue "1970-01-01";
+					hydra:required "false"^^xsd:boolean;
+				];
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episodes/VDF> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episodes/VDF"^^xsd:string;
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episode-elements/VDF> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "ID of the episode";
+					schema:defaultValue "VDF";
+					http:paramValue "VDF" ;
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "dataType"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Type of the data item. Sample values: 'Catalog', 'Injection Volume', 'Seismic Stations', 'Velocity Model'";
+					schema:defaultValue "Catalog";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "before"^^xsd:string;
+					hydra:property "schema:endDate";
+          schema:valuePattern "YYYY-MM-DD";
+          rdfs:range "xsd:dateTime";
+					rdfs:label "Items before this date";
+					schema:defaultValue "2018-09-14";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "after"^^xsd:string;
+					hydra:property "schema:startDate";
+          schema:valuePattern "YYYY-MM-DD";
+          rdfs:range "xsd:dateTime";
+					rdfs:label "Items after this date";
+					schema:defaultValue "1970-01-01";
+					hydra:required "false"^^xsd:boolean;
+				];
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episodes/VD> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episodes/VD"^^xsd:string;
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episode-elements/VD> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "ID of the episode";
+					schema:defaultValue "VD";
+					http:paramValue "VD" ;
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "dataType"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Type of the data item. Sample values: 'Catalog', 'Seismic Stations', 'Velocity Model', 'Water Level'";
+					schema:defaultValue "Catalog";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "before"^^xsd:string;
+					hydra:property "schema:endDate";
+          schema:valuePattern "YYYY-MM-DD";
+          rdfs:range "xsd:dateTime";
+					rdfs:label "Items before this date";
+					schema:defaultValue "2018-09-14";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "after"^^xsd:string;
+					hydra:property "schema:startDate";
+          schema:valuePattern "YYYY-MM-DD";
+          rdfs:range "xsd:dateTime";
+					rdfs:label "Items after this date";
+					schema:defaultValue "1970-01-01";
+					hydra:required "false"^^xsd:boolean;
+				];
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episodes/PREESE_HALL> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episodes/PREESE_HALL"^^xsd:string;
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episode-elements/PREESE_HALL> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "ID of the episode";
+					schema:defaultValue "PREESE_HALL";
+					http:paramValue "PREESE_HALL" ;
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "dataType"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Type of the data item. Sample values: 'Bottomhole Pressure', 'Catalog', 'Injection Rate', 'Proppant Concentration', 'Seismic Network'";
+					schema:defaultValue "Catalog";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "before"^^xsd:string;
+					hydra:property "schema:endDate";
+          schema:valuePattern "YYYY-MM-DD";
+          rdfs:range "xsd:dateTime";
+					rdfs:label "Items before this date";
+					schema:defaultValue "2018-09-14";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "after"^^xsd:string;
+					hydra:property "schema:startDate";
+          schema:valuePattern "YYYY-MM-DD";
+          rdfs:range "xsd:dateTime";
+					rdfs:label "Items after this date";
+					schema:defaultValue "1970-01-01";
+					hydra:required "false"^^xsd:boolean;
+				];
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episodes/OK> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episodes/OK"^^xsd:string;
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episode-elements/OK> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "ID of the episode";
+					schema:defaultValue "OK";
+					http:paramValue "OK" ;
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "dataType"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Type of the data item. Sample values: 'Catalog', 'Faults', 'Miniseed Signal', 'Seismic Network'";
+					schema:defaultValue "Catalog";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "before"^^xsd:string;
+					hydra:property "schema:endDate";
+          schema:valuePattern "YYYY-MM-DD";
+          rdfs:range "xsd:dateTime";
+					rdfs:label "Items before this date";
+					schema:defaultValue "2018-09-14";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "after"^^xsd:string;
+					hydra:property "schema:startDate";
+          schema:valuePattern "YYYY-MM-DD";
+          rdfs:range "xsd:dateTime";
+					rdfs:label "Items after this date";
+					schema:defaultValue "1970-01-01";
+					hydra:required "false"^^xsd:boolean;
+				];
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episodes/GRONINGEN_FIELD> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episodes/GRONINGEN_FIELD"^^xsd:string;
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episode-elements/GRONINGEN_FIELD> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "ID of the episode";
+					schema:defaultValue "GRONINGEN_FIELD";
+					http:paramValue "GRONINGEN_FIELD" ;
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "dataType"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Type of the data item. Sample values: 'Catalog', 'Ground Motion Catalog', 'Natural Gas Production', 'Production Cluster Position', 'Seismic Network'";
+					schema:defaultValue "Catalog";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "before"^^xsd:string;
+					hydra:property "schema:endDate";
+          schema:valuePattern "YYYY-MM-DD";
+          rdfs:range "xsd:dateTime";
+					rdfs:label "Items before this date";
+					schema:defaultValue "2018-09-14";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "after"^^xsd:string;
+					hydra:property "schema:startDate";
+          schema:valuePattern "YYYY-MM-DD";
+          rdfs:range "xsd:dateTime";
+					rdfs:label "Items after this date";
+					schema:defaultValue "1970-01-01";
+					hydra:required "false"^^xsd:boolean;
+				];
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episodes/LUBOCINO> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episodes/LUBOCINO"^^xsd:string;
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episode-elements/LUBOCINO> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "ID of the episode";
+					schema:defaultValue "LUBOCINO";
+					http:paramValue "LUBOCINO" ;
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "dataType"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Type of the data item. Sample values: 'Water Lab Analyses', 'Water Stations', 'Well Position'";
+					schema:defaultValue "Water Stations";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "before"^^xsd:string;
+					hydra:property "schema:endDate";
+          schema:valuePattern "YYYY-MM-DD";
+          rdfs:range "xsd:dateTime";
+					rdfs:label "Items before this date";
+					schema:defaultValue "2018-09-14";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "after"^^xsd:string;
+					hydra:property "schema:startDate";
+          schema:valuePattern "YYYY-MM-DD";
+          rdfs:range "xsd:dateTime";
 					rdfs:label "Items after this date";
 					schema:defaultValue "2000-10-31";
 					hydra:required "false"^^xsd:boolean;
 				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "impactingFactor"^^xsd:string;
-					rdfs:range "xsd:string";
-					rdfs:label "Impacting factor";
-					schema:defaultValue "underground mining";
-					http:paramValue "CO2 sequestration";
-					http:paramValue "conventional hydrocarbon extraction";
-					http:paramValue "geothermal energy production";
-					http:paramValue "reservoir impoundment";
-					http:paramValue "unconventional hydrocarbon extraction";
-					http:paramValue "underground gas storage";
-					http:paramValue "underground mining";
-					http:paramValue "wastewater injection";
-					hydra:required "false"^^xsd:boolean;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "country"^^xsd:string;
-					rdfs:range "xsd:string";
-					rdfs:label "Country to which the data are related. Sample values: 'Finland', 'France', 'Germany', 'Italy', 'Netherlands', 'Poland', 'United Kingdom', 'United States of America', 'Vietnam'";
-					schema:defaultValue "Poland";
-					hydra:required "false"^^xsd:boolean;
-				];
 		] ;
 . 
-	<anthropogenic_hazards/webservice/is-epos_platform/files> a hydra:Operation;
+	<anthropogenic_hazards/webservice/is-epos_platform/episodes/WYSIN> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
-		hydra:returns "application/octet-stream";
+		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://tcs.ah-epos.eu/api/epos/files(?)"^^xsd:string;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episodes/WYSIN"^^xsd:string;
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episode-elements/WYSIN> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "ID of the episode";
+					schema:defaultValue "WYSIN";
+					http:paramValue "WYSIN" ;
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "dataType"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Type of the data item. Sample values: 'Air Quality', 'Drillhole Lithology', 'Seismic Network', 'Water Lab Analyses', 'Water Stations'";
+					schema:defaultValue "Water Stations";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "before"^^xsd:string;
+					hydra:property "schema:endDate";
+          schema:valuePattern "YYYY-MM-DD";
+          rdfs:range "xsd:dateTime";
+					rdfs:label "Items before this date";
+					schema:defaultValue "2018-09-14";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "after"^^xsd:string;
+					hydra:property "schema:startDate";
+          schema:valuePattern "YYYY-MM-DD";
+          rdfs:range "xsd:dateTime";
+					rdfs:label "Items after this date";
+					schema:defaultValue "2000-10-31";
+					hydra:required "false"^^xsd:boolean;
+				];
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episodes/CARBFIX> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episodes/CARBFIX"^^xsd:string;
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episode-elements/CARBFIX> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "ID of the episode";
+					schema:defaultValue "CARBFIX";
+					http:paramValue "CARBFIX" ;
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "dataType"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Type of the data item. Sample values: 'Episode XML'";
+					schema:defaultValue "Episode XML";
+					hydra:required "false"^^xsd:boolean;
+				];
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episodes/SG> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episodes/SG"^^xsd:string;
+		] ;
+. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episode-elements/SG> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "ID of the episode";
+					schema:defaultValue "SG";
+					http:paramValue "SG" ;
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "dataType"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Type of the data item. Sample values: 'Episode XML'";
+					schema:defaultValue "Episode XML";
+					hydra:required "false"^^xsd:boolean;
+				];
 		] ;
 . 
 
 
+	<anthropogenic_hazards/distribution/episodes> a dcat:Distribution;
+		dct:identifier "anthropogenic_hazards/distribution/episodes";
+		dct:title "List of episodes";
+		dct:description "Lists metadata about available episodes" ; 
+		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes>;
+		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
+		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
+.
+	<anthropogenic_hazards/distribution/apps> a dcat:Distribution;
+		dct:identifier "anthropogenic_hazards/distribution/apps";
+		dct:title "List of applications";
+		dct:description "Lists metadata about available applications"; 
+		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/apps>;
+		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
+		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
+. 
 	<anthropogenic_hazards/distribution/episodes/CZORSZTYN> a dcat:Distribution;
 		dct:identifier "anthropogenic_hazards/distribution/episodes/CZORSZTYN";
 		dct:title "CZORSZTYN episode information";
 		dct:description "Enables to view/download information about the episode" ; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes/CZORSZTYN>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 .
@@ -1398,16 +2466,9 @@
 		dct:description "Enables to list data items contained in the episode and information about them, features filtering"; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/CZORSZTYN>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
-. 
-	<anthropogenic_hazards/distribution/files/CZORSZTYN> a dcat:Distribution;
-		dct:identifier "anthropogenic_hazards/distribution/files/CZORSZTYN";
-		dct:title "Download CZORSZTYN episode file";
-		dct:description "Enables to download a file from the episode. Search for a file using the anthropogenic_hazards/webservice/is-epos_platform/episode-elements operation with parameter episode set to 'CZORSZTYN' and other parameters defining your search, use the 'id' property from one of the returned entities as '{fileId}' in the url to download the file.";
-		dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
-		dcat:downloadURL "https://tcs.ah-epos.eu/api/epos/files/{fileId}"^^xsd:anyURI;
 . 
 	<anthropogenic_hazards/distribution/episodes/GS> a dcat:Distribution;
 		dct:identifier "anthropogenic_hazards/distribution/episodes/GS";
@@ -1415,7 +2476,7 @@
 		dct:description "Enables to view/download information about the episode" ; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes/GS>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 . 
@@ -1425,16 +2486,9 @@
 		dct:description "Enables to list data items contained in the episode and information about them, features filtering"; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/GS>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
-. 
-	<anthropogenic_hazards/distribution/files/GS> a dcat:Distribution;
-		dct:identifier "anthropogenic_hazards/distribution/files/GS";
-		dct:title "Download GROSS SCHOENEBECK episode file";
-		dct:description "Enables to download a file from the episode. Search for a file using the anthropogenic_hazards/webservice/is-epos_platform/episode-elements operation with parameter episode set to 'GS' and other parameters defining your search, use the 'id' property from one of the returned entities as '{fileId}' in the url to download the file.";
-		dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
-		dcat:downloadURL "https://tcs.ah-epos.eu/api/epos/files/{fileId}"^^xsd:anyURI;
 . 
 	<anthropogenic_hazards/distribution/episodes/LGCD> a dcat:Distribution;
 		dct:identifier "anthropogenic_hazards/distribution/episodes/LGCD";
@@ -1442,7 +2496,7 @@
 		dct:description "Enables to view/download information about the episode" ; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes/LGCD>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 .
@@ -1452,16 +2506,9 @@
 		dct:description "Enables to list data items contained in the episode and information about them, features filtering"; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/LGCD>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
-. 
-	<anthropogenic_hazards/distribution/files/LGCD> a dcat:Distribution;
-		dct:identifier "anthropogenic_hazards/distribution/files/LGCD";
-		dct:title "Download LGCD episode file";
-		dct:description "Enables to download a file from the episode. Search for a file using the anthropogenic_hazards/webservice/is-epos_platform/episode-elements operation with parameter episode set to 'LGCD' and other parameters defining your search, use the 'id' property from one of the returned entities as '{fileId}' in the url to download the file.";
-		dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
-		dcat:downloadURL "https://tcs.ah-epos.eu/api/epos/files/{fileId}"^^xsd:anyURI;
 . 
 	<anthropogenic_hazards/distribution/episodes/SONG_TRANH> a dcat:Distribution;
 		dct:identifier "anthropogenic_hazards/distribution/episodes/SONG_TRANH";
@@ -1469,7 +2516,7 @@
 		dct:description "Enables to view/download information about the episode" ; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes/SONG_TRANH>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 .
@@ -1479,16 +2526,9 @@
 		dct:description "Enables to list data items contained in the episode and information about them, features filtering"; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/SONG_TRANH>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
-. 
-	<anthropogenic_hazards/distribution/files/SONG_TRANH> a dcat:Distribution;
-		dct:identifier "anthropogenic_hazards/distribution/files/SONG_TRANH";
-		dct:title "Download SONG TRANH episode file";
-		dct:description "Enables to download a file from the episode. Search for a file using the anthropogenic_hazards/webservice/is-epos_platform/episode-elements operation with parameter episode set to 'SONG_TRANH' and other parameters defining your search, use the 'id' property from one of the returned entities as '{fileId}' in the url to download the file.";
-		dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
-		dcat:downloadURL "https://tcs.ah-epos.eu/api/epos/files/{fileId}"^^xsd:anyURI;
 . 
 	<anthropogenic_hazards/distribution/episodes/USCB> a dcat:Distribution;
 		dct:identifier "anthropogenic_hazards/distribution/episodes/USCB";
@@ -1496,7 +2536,7 @@
 		dct:description "Enables to view/download information about the episode" ; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes/USCB>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 .
@@ -1506,16 +2546,9 @@
 		dct:description "Enables to list data items contained in the episode and information about them, features filtering"; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/USCB>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
-. 
-	<anthropogenic_hazards/distribution/files/USCB> a dcat:Distribution;
-		dct:identifier "anthropogenic_hazards/distribution/files/USCB";
-		dct:title "Download USCB episode file";
-		dct:description "Enables to download a file from the episode. Search for a file using the anthropogenic_hazards/webservice/is-epos_platform/episode-elements operation with parameter episode set to 'USCB' and other parameters defining your search, use the 'id' property from one of the returned entities as '{fileId}' in the url to download the file.";
-		dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
-		dcat:downloadURL "https://tcs.ah-epos.eu/api/epos/files/{fileId}"^^xsd:anyURI;
 . 
 	<anthropogenic_hazards/distribution/episodes/BOBREK> a dcat:Distribution;
 		dct:identifier "anthropogenic_hazards/distribution/episodes/BOBREK";
@@ -1523,7 +2556,7 @@
 		dct:description "Enables to view/download information about the episode" ; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes/BOBREK>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 .
@@ -1533,16 +2566,9 @@
 		dct:description "Enables to list data items contained in the episode and information about them, features filtering"; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/BOBREK>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
-. 
-	<anthropogenic_hazards/distribution/files/BOBREK> a dcat:Distribution;
-		dct:identifier "anthropogenic_hazards/distribution/files/BOBREK";
-		dct:title "Download BOBREK MINE episode file";
-		dct:description "Enables to download a file from the episode. Search for a file using the anthropogenic_hazards/webservice/is-epos_platform/episode-elements operation with parameter episode set to 'BOBREK' and other parameters defining your search, use the 'id' property from one of the returned entities as '{fileId}' in the url to download the file.";
-		dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
-		dcat:downloadURL "https://tcs.ah-epos.eu/api/epos/files/{fileId}"^^xsd:anyURI;
 . 
 	<anthropogenic_hazards/distribution/episodes/PYHASALMI_MINE> a dcat:Distribution;
 		dct:identifier "anthropogenic_hazards/distribution/episodes/PYHASALMI_MINE";
@@ -1550,7 +2576,7 @@
 		dct:description "Enables to view/download information about the episode" ; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes/PYHASALMI_MINE>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 .
@@ -1560,16 +2586,9 @@
 		dct:description "Enables to list data items contained in the episode and information about them, features filtering"; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/PYHASALMI_MINE>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
-. 
-	<anthropogenic_hazards/distribution/files/PYHASALMI_MINE> a dcat:Distribution;
-		dct:identifier "anthropogenic_hazards/distribution/files/PYHASALMI_MINE";
-		dct:title "Download PYHASALMI MINE episode file";
-		dct:description "Enables to download a file from the episode. Search for a file using the anthropogenic_hazards/webservice/is-epos_platform/episode-elements operation with parameter episode set to 'PYHASALMI_MINE' and other parameters defining your search, use the 'id' property from one of the returned entities as '{fileId}' in the url to download the file.";
-		dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
-		dcat:downloadURL "https://tcs.ah-epos.eu/api/epos/files/{fileId}"^^xsd:anyURI;
 . 
 	<anthropogenic_hazards/distribution/episodes/LGF> a dcat:Distribution;
 		dct:identifier "anthropogenic_hazards/distribution/episodes/LGF";
@@ -1577,7 +2596,7 @@
 		dct:description "Enables to view/download information about the episode" ; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes/LGF>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 .
@@ -1587,16 +2606,9 @@
 		dct:description "Enables to list data items contained in the episode and information about them, features filtering"; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/LGF>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
-. 
-	<anthropogenic_hazards/distribution/files/LGF> a dcat:Distribution;
-		dct:identifier "anthropogenic_hazards/distribution/files/LGF";
-		dct:title "Download LACQ GAS FIELD episode file";
-		dct:description "Enables to download a file from the episode. Search for a file using the anthropogenic_hazards/webservice/is-epos_platform/episode-elements operation with parameter episode set to 'LGF' and other parameters defining your search, use the 'id' property from one of the returned entities as '{fileId}' in the url to download the file.";
-		dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
-		dcat:downloadURL "https://tcs.ah-epos.eu/api/epos/files/{fileId}"^^xsd:anyURI;
 . 
 	<anthropogenic_hazards/distribution/episodes/MONTEYNARD> a dcat:Distribution;
 		dct:identifier "anthropogenic_hazards/distribution/episodes/MONTEYNARD";
@@ -1604,7 +2616,7 @@
 		dct:description "Enables to view/download information about the episode" ; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes/MONTEYNARD>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 .
@@ -1614,16 +2626,9 @@
 		dct:description "Enables to list data items contained in the episode and information about them, features filtering"; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/MONTEYNARD>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
-. 
-	<anthropogenic_hazards/distribution/files/MONTEYNARD> a dcat:Distribution;
-		dct:identifier "anthropogenic_hazards/distribution/files/MONTEYNARD";
-		dct:title "Download MONTEYNARD episode file";
-		dct:description "Enables to download a file from the episode. Search for a file using the anthropogenic_hazards/webservice/is-epos_platform/episode-elements operation with parameter episode set to 'MONTEYNARD' and other parameters defining your search, use the 'id' property from one of the returned entities as '{fileId}' in the url to download the file.";
-		dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
-		dcat:downloadURL "https://tcs.ah-epos.eu/api/epos/files/{fileId}"^^xsd:anyURI;
 . 
 	<anthropogenic_hazards/distribution/episodes/SSFS1993> a dcat:Distribution;
 		dct:identifier "anthropogenic_hazards/distribution/episodes/SSFS1993";
@@ -1631,7 +2636,7 @@
 		dct:description "Enables to view/download information about the episode" ; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes/SSFS1993>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 .
@@ -1641,16 +2646,9 @@
 		dct:description "Enables to list data items contained in the episode and information about them, features filtering"; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/SSFS1993>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
-. 
-	<anthropogenic_hazards/distribution/files/SSFS1993> a dcat:Distribution;
-		dct:identifier "anthropogenic_hazards/distribution/files/SSFS1993";
-		dct:title "Download Soultz-sous-Forêts Stimulation episode file";
-		dct:description "Enables to download a file from the episode. Search for a file using the anthropogenic_hazards/webservice/is-epos_platform/episode-elements operation with parameter episode set to 'SSFS1993' and other parameters defining your search, use the 'id' property from one of the returned entities as '{fileId}' in the url to download the file.";
-		dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
-		dcat:downloadURL "https://tcs.ah-epos.eu/api/epos/files/{fileId}"^^xsd:anyURI;
 . 
 	<anthropogenic_hazards/distribution/episodes/GISOS-CERVILLE> a dcat:Distribution;
 		dct:identifier "anthropogenic_hazards/distribution/episodes/GISOS-CERVILLE";
@@ -1658,7 +2656,7 @@
 		dct:description "Enables to view/download information about the episode" ; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes/GISOS-CERVILLE>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 .
@@ -1668,16 +2666,9 @@
 		dct:description "Enables to list data items contained in the episode and information about them, features filtering"; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/GISOS-CERVILLE>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
-. 
-	<anthropogenic_hazards/distribution/files/GISOS-CERVILLE> a dcat:Distribution;
-		dct:identifier "anthropogenic_hazards/distribution/files/GISOS-CERVILLE";
-		dct:title "Download GISOS-CERVILLE episode file";
-		dct:description "Enables to download a file from the episode. Search for a file using the anthropogenic_hazards/webservice/is-epos_platform/episode-elements operation with parameter episode set to 'GISOS-CERVILLE' and other parameters defining your search, use the 'id' property from one of the returned entities as '{fileId}' in the url to download the file.";
-		dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
-		dcat:downloadURL "https://tcs.ah-epos.eu/api/epos/files/{fileId}"^^xsd:anyURI;
 . 
 	<anthropogenic_hazards/distribution/episodes/STARFISH> a dcat:Distribution;
 		dct:identifier "anthropogenic_hazards/distribution/episodes/STARFISH";
@@ -1685,7 +2676,7 @@
 		dct:description "Enables to view/download information about the episode" ; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes/STARFISH>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 .
@@ -1695,16 +2686,9 @@
 		dct:description "Enables to list data items contained in the episode and information about them, features filtering"; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/STARFISH>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
-. 
-	<anthropogenic_hazards/distribution/files/STARFISH> a dcat:Distribution;
-		dct:identifier "anthropogenic_hazards/distribution/files/STARFISH";
-		dct:title "Download STARFISH episode file";
-		dct:description "Enables to download a file from the episode. Search for a file using the anthropogenic_hazards/webservice/is-epos_platform/episode-elements operation with parameter episode set to 'STARFISH' and other parameters defining your search, use the 'id' property from one of the returned entities as '{fileId}' in the url to download the file.";
-		dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
-		dcat:downloadURL "https://tcs.ah-epos.eu/api/epos/files/{fileId}"^^xsd:anyURI;
 . 
 	<anthropogenic_hazards/distribution/episodes/THE_GEYSERS_Prati_9_and_Prati_29_cluster> a dcat:Distribution;
 		dct:identifier "anthropogenic_hazards/distribution/episodes/THE_GEYSERS_Prati_9_and_Prati_29_cluster";
@@ -1712,7 +2696,7 @@
 		dct:description "Enables to view/download information about the episode" ; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes/THE_GEYSERS_Prati_9_and_Prati_29_cluster>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 .
@@ -1722,16 +2706,9 @@
 		dct:description "Enables to list data items contained in the episode and information about them, features filtering"; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/THE_GEYSERS_Prati_9_and_Prati_29_cluster>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
-. 
-	<anthropogenic_hazards/distribution/files/THE_GEYSERS_Prati_9_and_Prati_29_cluster> a dcat:Distribution;
-		dct:identifier "anthropogenic_hazards/distribution/files/THE_GEYSERS_Prati_9_and_Prati_29_cluster";
-		dct:title "Download THE GEYSERS Prati 9 and Prati 29 cluster episode file";
-		dct:description "Enables to download a file from the episode. Search for a file using the anthropogenic_hazards/webservice/is-epos_platform/episode-elements operation with parameter episode set to 'THE_GEYSERS_Prati_9_and_Prati_29_cluster' and other parameters defining your search, use the 'id' property from one of the returned entities as '{fileId}' in the url to download the file.";
-		dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
-		dcat:downloadURL "https://tcs.ah-epos.eu/api/epos/files/{fileId}"^^xsd:anyURI;
 . 
 	<anthropogenic_hazards/distribution/episodes/THE_GEYSERS> a dcat:Distribution;
 		dct:identifier "anthropogenic_hazards/distribution/episodes/THE_GEYSERS";
@@ -1739,7 +2716,7 @@
 		dct:description "Enables to view/download information about the episode" ; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes/THE_GEYSERS>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 .
@@ -1749,16 +2726,9 @@
 		dct:description "Enables to list data items contained in the episode and information about them, features filtering"; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/THE_GEYSERS>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
-. 
-	<anthropogenic_hazards/distribution/files/THE_GEYSERS> a dcat:Distribution;
-		dct:identifier "anthropogenic_hazards/distribution/files/THE_GEYSERS";
-		dct:title "Download THE GEYSERS episode file";
-		dct:description "Enables to download a file from the episode. Search for a file using the anthropogenic_hazards/webservice/is-epos_platform/episode-elements operation with parameter episode set to 'THE_GEYSERS' and other parameters defining your search, use the 'id' property from one of the returned entities as '{fileId}' in the url to download the file.";
-		dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
-		dcat:downloadURL "https://tcs.ah-epos.eu/api/epos/files/{fileId}"^^xsd:anyURI;
 . 
 	<anthropogenic_hazards/distribution/episodes/VDF> a dcat:Distribution;
 		dct:identifier "anthropogenic_hazards/distribution/episodes/VDF";
@@ -1766,7 +2736,7 @@
 		dct:description "Enables to view/download information about the episode" ; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes/VDF>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 .
@@ -1776,16 +2746,9 @@
 		dct:description "Enables to list data items contained in the episode and information about them, features filtering"; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/VDF>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
-. 
-	<anthropogenic_hazards/distribution/files/VDF> a dcat:Distribution;
-		dct:identifier "anthropogenic_hazards/distribution/files/VDF";
-		dct:title "Download VAL D'AGRI FIELD episode file";
-		dct:description "Enables to download a file from the episode. Search for a file using the anthropogenic_hazards/webservice/is-epos_platform/episode-elements operation with parameter episode set to 'VDF' and other parameters defining your search, use the 'id' property from one of the returned entities as '{fileId}' in the url to download the file.";
-		dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
-		dcat:downloadURL "https://tcs.ah-epos.eu/api/epos/files/{fileId}"^^xsd:anyURI;
 . 
 	<anthropogenic_hazards/distribution/episodes/VD> a dcat:Distribution;
 		dct:identifier "anthropogenic_hazards/distribution/episodes/VD";
@@ -1793,7 +2756,7 @@
 		dct:description "Enables to view/download information about the episode" ; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes/VD>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 .
@@ -1803,16 +2766,9 @@
 		dct:description "Enables to list data items contained in the episode and information about them, features filtering"; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/VD>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
-. 
-	<anthropogenic_hazards/distribution/files/VD> a dcat:Distribution;
-		dct:identifier "anthropogenic_hazards/distribution/files/VD";
-		dct:title "Download VAL D'AGRI episode file";
-		dct:description "Enables to download a file from the episode. Search for a file using the anthropogenic_hazards/webservice/is-epos_platform/episode-elements operation with parameter episode set to 'VD' and other parameters defining your search, use the 'id' property from one of the returned entities as '{fileId}' in the url to download the file.";
-		dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
-		dcat:downloadURL "https://tcs.ah-epos.eu/api/epos/files/{fileId}"^^xsd:anyURI;
 . 
 	<anthropogenic_hazards/distribution/episodes/PREESE_HALL> a dcat:Distribution;
 		dct:identifier "anthropogenic_hazards/distribution/episodes/PREESE_HALL";
@@ -1820,7 +2776,7 @@
 		dct:description "Enables to view/download information about the episode" ; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes/PREESE_HALL>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 .
@@ -1830,24 +2786,17 @@
 		dct:description "Enables to list data items contained in the episode and information about them, features filtering"; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/PREESE_HALL>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 . 
-	<anthropogenic_hazards/distribution/files/PREESE_HALL> a dcat:Distribution;
-		dct:identifier "anthropogenic_hazards/distribution/files/PREESE_HALL";
-		dct:title "Download PREESE HALL episode file";
-		dct:description "Enables to download a file from the episode. Search for a file using the anthropogenic_hazards/webservice/is-epos_platform/episode-elements operation with parameter episode set to 'PREESE_HALL' and other parameters defining your search, use the 'id' property from one of the returned entities as '{fileId}' in the url to download the file.";
-		dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
-		dcat:downloadURL "https://tcs.ah-epos.eu/api/epos/files/{fileId}"^^xsd:anyURI;
-. 	
 	<anthropogenic_hazards/distribution/episodes/OK> a dcat:Distribution;
 		dct:identifier "anthropogenic_hazards/distribution/episodes/OK";
 		dct:title "OKLAHOMA episode information";
 		dct:description "Enables to view/download information about the episode" ; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes/OK>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 .
@@ -1857,24 +2806,17 @@
 		dct:description "Enables to list data items contained in the episode and information about them, features filtering"; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/OK>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 . 
-	<anthropogenic_hazards/distribution/files/OK> a dcat:Distribution;
-		dct:identifier "anthropogenic_hazards/distribution/files/OK";
-		dct:title "Download OKLAHOMA episode file";
-		dct:description "Enables to download a file from the episode. Search for a file using the anthropogenic_hazards/webservice/is-epos_platform/episode-elements operation with parameter episode set to 'OK' and other parameters defining your search, use the 'id' property from one of the returned entities as '{fileId}' in the url to download the file.";
-		dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
-		dcat:downloadURL "https://tcs.ah-epos.eu/api/epos/files/{fileId}"^^xsd:anyURI;
-. 	
 	<anthropogenic_hazards/distribution/episodes/GRONINGEN_FIELD> a dcat:Distribution;
 		dct:identifier "anthropogenic_hazards/distribution/episodes/GRONINGEN_FIELD";
 		dct:title "GRONINGEN FIELD episode information";
 		dct:description "Enables to view/download information about the episode" ; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes/GRONINGEN_FIELD>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 .
@@ -1884,24 +2826,17 @@
 		dct:description "Enables to list data items contained in the episode and information about them, features filtering"; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/GRONINGEN_FIELD>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 . 
-	<anthropogenic_hazards/distribution/files/GRONINGEN_FIELD> a dcat:Distribution;
-		dct:identifier "anthropogenic_hazards/distribution/files/GRONINGEN_FIELD";
-		dct:title "Download GRONINGEN FIELD episode file";
-		dct:description "Enables to download a file from the episode. Search for a file using the anthropogenic_hazards/webservice/is-epos_platform/episode-elements operation with parameter episode set to 'GRONINGEN_FIELD' and other parameters defining your search, use the 'id' property from one of the returned entities as '{fileId}' in the url to download the file.";
-		dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
-		dcat:downloadURL "https://tcs.ah-epos.eu/api/epos/files/{fileId}"^^xsd:anyURI;
-. 	
 	<anthropogenic_hazards/distribution/episodes/LUBOCINO> a dcat:Distribution;
 		dct:identifier "anthropogenic_hazards/distribution/episodes/LUBOCINO";
 		dct:title "LUBOCINO episode information";
 		dct:description "Enables to view/download information about the episode" ; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes/LUBOCINO>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 .
@@ -1911,24 +2846,17 @@
 		dct:description "Enables to list data items contained in the episode and information about them, features filtering"; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/LUBOCINO>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 . 
-	<anthropogenic_hazards/distribution/files/LUBOCINO> a dcat:Distribution;
-		dct:identifier "anthropogenic_hazards/distribution/files/LUBOCINO";
-		dct:title "Download LUBOCINO episode file";
-		dct:description "Enables to download a file from the episode. Search for a file using the anthropogenic_hazards/webservice/is-epos_platform/episode-elements operation with parameter episode set to 'LUBOCINO' and other parameters defining your search, use the 'id' property from one of the returned entities as '{fileId}' in the url to download the file.";
-		dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
-		dcat:downloadURL "https://tcs.ah-epos.eu/api/epos/files/{fileId}"^^xsd:anyURI;
-.
 	<anthropogenic_hazards/distribution/episodes/WYSIN> a dcat:Distribution;
 		dct:identifier "anthropogenic_hazards/distribution/episodes/WYSIN";
 		dct:title "WYSIN episode information";
 		dct:description "Enables to view/download information about the episode" ; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes/WYSIN>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 .
@@ -1938,24 +2866,17 @@
 		dct:description "Enables to list data items contained in the episode and information about them, features filtering"; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/WYSIN>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 . 
-	<anthropogenic_hazards/distribution/files/WYSIN> a dcat:Distribution;
-		dct:identifier "anthropogenic_hazards/distribution/files/WYSIN";
-		dct:title "Download WYSIN episode file";
-		dct:description "Enables to download a file from the episode. Search for a file using the anthropogenic_hazards/webservice/is-epos_platform/episode-elements operation with parameter episode set to 'WYSIN' and other parameters defining your search, use the 'id' property from one of the returned entities as '{fileId}' in the url to download the file.";
-		dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
-		dcat:downloadURL "https://tcs.ah-epos.eu/api/epos/files/{fileId}"^^xsd:anyURI;
-.
 	<anthropogenic_hazards/distribution/episodes/CARBFIX> a dcat:Distribution;
 		dct:identifier "anthropogenic_hazards/distribution/episodes/CARBFIX";
 		dct:title "CARBFIX episode information";
 		dct:description "Enables to view/download information about the episode" ; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes/CARBFIX>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 .
@@ -1965,24 +2886,17 @@
 		dct:description "Enables to list data items contained in the episode and information about them, features filtering"; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/CARBFIX>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 . 
-	<anthropogenic_hazards/distribution/files/CARBFIX> a dcat:Distribution;
-		dct:identifier "anthropogenic_hazards/distribution/files/CARBFIX";
-		dct:title "Download CARBFIX episode file";
-		dct:description "Enables to download a file from the episode. Search for a file using the anthropogenic_hazards/webservice/is-epos_platform/episode-elements operation with parameter episode set to 'CARBFIX' and other parameters defining your search, use the 'id' property from one of the returned entities as '{fileId}' in the url to download the file.";
-		dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
-		dcat:downloadURL "https://tcs.ah-epos.eu/api/epos/files/{fileId}"^^xsd:anyURI;
-.
 	<anthropogenic_hazards/distribution/episodes/SG> a dcat:Distribution;
 		dct:identifier "anthropogenic_hazards/distribution/episodes/SG";
 		dct:title "ST. GALLEN episode information";
 		dct:description "Enables to view/download information about the episode" ; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episodes/SG>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 .
@@ -1992,18 +2906,555 @@
 		dct:description "Enables to list data items contained in the episode and information about them, features filtering"; 
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements>;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/SG>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 . 
-	<anthropogenic_hazards/distribution/files/SG> a dcat:Distribution;
-		dct:identifier "anthropogenic_hazards/distribution/files/SG";
-		dct:title "Download ST. GALLEN episode file";
-		dct:description "Enables to download a file from the episode. Search for a file using the anthropogenic_hazards/webservice/is-epos_platform/episode-elements operation with parameter episode set to 'SG' and other parameters defining your search, use the 'id' property from one of the returned entities as '{fileId}' in the url to download the file.";
-		dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
-		dcat:downloadURL "https://tcs.ah-epos.eu/api/epos/files/{fileId}"^^xsd:anyURI;
+
+
+	<anthropogenic_hazards/software/CatalogToXls> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/CatalogToXls" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A01" ;
+		];
+		schema:name "Catalog Export" ;
+		schema:description "Exports a Catalog MATLAB file as a spreadsheet file (in XLSX format)" ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+  		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:CatalogToXls"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "format conversion", "data download", "data export" ;
+  		dcat:theme <epos:Resourcemanagementapplications>;
 .
-	
+
+	<anthropogenic_hazards/software/GDFToXls> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/GDFToXls" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A02" ;
+		];
+		schema:name "GDF Export" ;
+		schema:description "Exports a GDF MATLAB file as a spreadsheet file (in XLSX format)" ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:GDFToXls"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "format conversion", "data download", "data export" ;
+		dcat:theme <epos:Resourcemanagementapplications>;
+.
+
+	<anthropogenic_hazards/software/FrontHistogramsVis> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/FrontHistogramsVis" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A03" ;
+		];
+		schema:name "Front Advance Histograms" ;
+		schema:description "Application for drawing histograms and cumulative histograms of events count and seismic energy for selected bins, the width of which corresponds to a constant value of the mining front advance. Calculations are performed from the beginning of the excavation along the axis of the excavation" ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:FrontHistogramsVis"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "episode-oriented graphics", "production data visualization";
+		dcat:theme <epos:Visualizationapplications>;
+.
+
+	<anthropogenic_hazards/software/FrontAdvanceVis> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/FrontAdvanceVis" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A04" ;
+		];
+		schema:name "Seismicity with Front Advance" ;
+		schema:description "Application allowing for visualization of the activity changes in time relatively to the front location" ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:FrontAdvanceVis"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "episode-oriented graphics", "production data visualization", "production - seismicity interaction";
+		dcat:theme <epos:Visualizationapplications>;
+.
+
+	<anthropogenic_hazards/software/EPISODE_BASIC_GMAPS_Visualization> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/EPISODE_BASIC_GMAPS_Visualization" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A05" ;
+		];
+		schema:name "Integrated data visualization" ;
+		schema:description "Application allowing visualization of miscellaneous data related to episode" ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:EPISODE_BASIC_GMAPS_Visualization"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "episode-oriented graphics", "episode visualization", "GIS data visualization", "production - seismicity interaction";
+		dcat:theme <epos:Visualizationapplications>;
+.
+
+	<anthropogenic_hazards/software/CatalogFilter> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/CatalogFilter" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A06" ;
+		];
+		schema:name "Catalog Filter" ;
+		schema:description "This application performs selection of catalog data by filtering fields specified by the user. This can be by selecting a particular range/list of values from diverse catalog attributes, or interactively by the mapped events epicenters" ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:CatalogFilter"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "data selection", "data filtering";
+		dcat:theme <epos:Datahandlingapplications>;
+.
+
+	<anthropogenic_hazards/software/CatalogTimeWithParamExtractor> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/CatalogTimeWithParamExtractor" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A07" ;
+		];
+		schema:name "Catalog Time and Correlated parameter extractor" ;
+		schema:description "Extracts time column and a chosen parameter from a catalog and returns them as vectors" ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:CatalogTimeWithParamExtractor"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "data selection", "data extraction";
+		dcat:theme <epos:Datahandlingapplications>;
+.
+
+	<anthropogenic_hazards/software/GDFTimeWithParamExtractor> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/GDFTimeWithParamExtractor" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A08" ;
+		];
+		schema:name "GDF Time and Correlated parameter extractor" ;
+		schema:description "Extracts time column and a chosen parameter from a GDF file and returns them as vectors" ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:GDFTimeWithParamExtractor"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "data selection", "data extraction";
+		dcat:theme <epos:Datahandlingapplications>;
+.
+
+	<anthropogenic_hazards/software/CatalogMergeTool> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/CatalogMergeTool" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A09" ;
+		];
+		schema:name "Ground Motion Parameters Tool" ;
+		schema:description "Joins a Seismic Catalog and a GM Catalog into a joined catalog" ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:CatalogMergeTool"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "data selection", "data merging";
+		dcat:theme <epos:Datahandlingapplications>;
+.
+
+	<anthropogenic_hazards/software/SeedConverter> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/SeedConverter" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A10" ;
+		];
+		schema:name "Seed Converter" ;
+		schema:description "Converts SEED volume (either fullSEED or miniSEED) to either SAC or ASCII" ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:SeedConverter"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "format conversion", "data merging", "data filtering", "data export";
+		dcat:theme <epos:Datahandlingapplications>;
+.
+
+	<anthropogenic_hazards/software/SeismogramPicks> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/SeismogramPicks" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A11" ;
+		];
+		schema:name "Seismogram Picking Tool" ;
+		schema:description "Performs selection of phases and picks on seismograms" ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:SeismogramPicks"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "waveform viewing", "picking on waveform", "format conversion";
+		dcat:theme <epos:Datahandlingapplications>;
+.
+
+	<anthropogenic_hazards/software/SignalDownload> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/SignalDownload" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A12" ;
+		];
+		schema:name "Signal Download Tool" ;
+		schema:description "Application that downloads signals for a selected events" ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:SignalDownload"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "data selection", "data export", "waveform viewing";
+		dcat:theme <epos:Datahandlingapplications>;
+.
+
+	<anthropogenic_hazards/software/TimeSeriesBuilder> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/TimeSeriesBuilder" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A14" ;
+		];
+		schema:name "Time Series Builder" ;
+		schema:description "Allows to choose stationary time series based on given time vector" ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:TimeSeriesBuilder"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "data selection", "data filtering", "data reshaping", "data conversion";
+		dcat:theme <epos:Datahandlingapplications>;
+.
+
+	<anthropogenic_hazards/software/SeiscompOrder> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/SeiscompOrder" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A15" ;
+		];
+		schema:name "Waveform Download Tool" ;
+		schema:description "Application that allows for requesting parts of continuous waveforms for specific dates and stations. The preparation of the waveform is executed by Arclink-fetch." ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:SeiscompOrder"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "data selection", "data filtering", "data export", "waveform viewing";
+		dcat:theme <epos:Datahandlingapplications>;
+.
+
+	<anthropogenic_hazards/software/MagnitudeConversionApp> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/MagnitudeConversionApp" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A16" ;
+		];
+		schema:name "Magnitude Conversion" ;
+		schema:description "Establishes empirical scaling relationships between different magnitude scales" ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:MagnitudeConversionApp"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "data conversion";
+		dcat:theme <epos:Datahandlingapplications>;
+.
+
+	<anthropogenic_hazards/software/StationarityTestingApp> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/StationarityTestingApp" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A17" ;
+		];
+		schema:name "Anderson-Darling test for exponentiality of inter-event time" ;
+		schema:description "Performs the Anderson-Darling test to study the null hypothesis that the inter-event times of a given series of events are drawn from an exponential distribution, alternatively that they are drawn from a Weibull distribution." ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:StationarityTestingApp"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "statistical analysis", "statistical properties of seismicity", "parameter probabilistic distribution";
+		dcat:theme <epos:Dataprocessingapplications>;
+.
+
+	<anthropogenic_hazards/software/CompletenessLevelApp> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/CompletenessLevelApp" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A18" ;
+		];
+		schema:name "Completeness Magnitude Estimation" ;
+		schema:description "To evaluate the magnitude of completeness Mc, defined as the lowest magnitude at which all seismic events in a selected space-time volume are recorded by a network. Mc is an essential prerequisite for most seismicity analyses." ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:CompletenessLevelApp"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "statistical analysis", "statistical properties of seismicity", "parameter probabilistic distribution";
+		dcat:theme <epos:Dataprocessingapplications>;
+.
+
+	<anthropogenic_hazards/software/GDFTDSH> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/GDFTDSH" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A19" ;
+		];
+		schema:name "Estimation of Source Parameters in Time-varying Production Parameters Geometry" ;
+		schema:description "To estimate time-dependent values of seismic hazard parameters: the activity rate, the Gutenberg-Richter b-value, the return period and the exceedance probability for a prescribed area. The parameter values for the time moment t are estimated optionally either from events that occurred in dt time units preceding t, where dt is kept constant, or from n last events before t, where n is kept constant. Four magnitude distribution estimation methods are supported: maximum likelihood using the unbounded Gutenberg-Richter relation based model, maximum likelihood using the upper-bounded Gutenberg-Richter relation based model, unbounded non-parametric kernel estimation, upper-bounded non-parametric kernel estimation. The upper limit of magnitude distribution is evaluated using the Kijko-Sellevol generic formula." ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:GDFTDSH"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "statistical analysis", "probabilistic seismic hazard analysis", "time-dependent hazard", "production-dependent hazard", "production - seismicity interaction";
+		dcat:theme <epos:Dataprocessingapplications>;
+.
+
+	<anthropogenic_hazards/software/TimeVaryingFullTDSH> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/TimeVaryingFullTDSH" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A20" ;
+		];
+		schema:name "Time Dependent Hazard in Mining Front Surroundings" ;
+		schema:description "To estimate time-dependent values of seismic hazard parameters: the activity rate, the Gutenberg-Richter b-value, the return period and the exceedance probability for a space window surrounding an advancing mining front. The parameter values for the time moment t are estimated optionally either from events that occurred in dt time units preceding t, where dt is kept constant, or from n last events before t, where n is kept constant, or from a time period during which the front advanced by a constant length dx. Four magnitude distribution estimation methods are supported: maximum likelihood using the unbounded Gutenberg-Richter relation based model, maximum likelihood using the upper- bounded Gutenberg-Richter relation based model, unbounded non-parametric kernel estimation, upper-bounded non-parametric kernel estimation. The upper limit of magnitude distribution is evaluated using the Kijko-Sellevol generic formula." ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:TimeVaryingFullTDSH"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "statistical analysis", "probabilistic seismic hazard analysis", "time-dependent hazard", "production-dependent hazard", "production - seismicity interaction";
+		dcat:theme <epos:Dataprocessingapplications>;
+.
+
+	<anthropogenic_hazards/software/StationaryTDSHFull> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/StationaryTDSHFull" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A21" ;
+		];
+		schema:name "Time Dependent Hazard in Selected Area" ;
+		schema:description "To estimate time-dependent values of seismic hazard parameters: the activity rate, the Gutenberg-Richter b-value, the return period and the exceedance probability for a prescribed area. The parameter values for the time moment t are estimated optionally either from events that occurred in dt time units preceding t, where dt is kept constant, or from n last events before t, where n is kept constant. Four magnitude distribution estimation methods are supported: maximum likelihood using the unbounded Gutenberg-Richter relation based model, maximum likelihood using the upper-bounded Gutenberg-Richter relation based model, unbounded non-parametric kernel estimation, upper-bounded non-parametric kernel estimation. The upper limit of magnitude distribution is evaluated using the Kijko-Sellevol generic formula." ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:StationaryTDSHFull"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "statistical analysis", "probabilistic seismic hazard analysis", "time-dependent hazard", "production-dependent hazard", "production - seismicity interaction";
+		dcat:theme <epos:Dataprocessingapplications>;
+.
+
+	<anthropogenic_hazards/software/ExcProbMag> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/ExcProbMag" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A22" ;
+		];
+		schema:name "Stationary Hazard: Exceedance Probability" ;
+		schema:description "This application uses the magnitude distribution and activity rate calculated from a seismic catalog to estimate the Exceedance Probability (EP). The EP of magnitude M in the time period of length T is the probability of an earthquake of magnitude M or greater to occur in T. The EP values are calculated optionally either for a fixed time period T and a series of magnitude values or for a fixed magnitude M and a series of period length values. Note: “Source size distribution functions/Stationary Hazard” application must be run before." ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:ExcProbMag"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "statistical analysis", "probabilistic seismic hazard analysis", "stationary hazard";
+		dcat:theme <epos:Dataprocessingapplications>;
+.
+
+	<anthropogenic_hazards/software/MaxCredMag> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/MaxCredMag" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A23" ;
+		];
+		schema:name "Stationary Hazard: Maximum Credible Magnitude" ;
+		schema:description "This application uses the magnitude distribution and activity rate from calculated a seismic catalog to estimate the Maximum Credible Magnitude (MCM). The MCM for the time period of length T is the magnitude value whose mean return period is T. The MCM values are calculated for a series of periods of length values. Note: “Source size distribution functions/Stationary Hazard” application must be run before." ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:MaxCredMag"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "statistical analysis", "probabilistic seismic hazard analysis", "stationary hazard";
+		dcat:theme <epos:Dataprocessingapplications>;
+.
+
+	<anthropogenic_hazards/software/MeanRetPeriod> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/MeanRetPeriod" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A24" ;
+		];
+		schema:name "Stationary Hazard: Mean Return Period" ;
+		schema:description "This application uses the magnitude distribution and activity rate calculated from a seismic catalog to estimate the Mean Return Period (MRP). The MRP of magnitude M is the average elapsed time between the consecutive earthquakes of magnitude M. The MRPs are calculated for a series of magnitude values. Note: “Source size distribution functions/Stationary Hazard” application must be run before." ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:MeanRetPeriod"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "statistical analysis", "probabilistic seismic hazard analysis", "stationary hazard";
+		dcat:theme <epos:Dataprocessingapplications>;
+.
+
+	<anthropogenic_hazards/software/BasicSSHApplication> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/BasicSSHApplication" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A25" ;
+		];
+		schema:name "Source Size Distribution Functions / Stationary Hazard" ;
+		schema:description "Estimates PDF and CDF of magnitudes assuming different models" ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:BasicSSHApplication"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "statistical analysis", "statistical properties of seismicity", "parameter probabilistic distribution", "stationary hazard";
+		dcat:theme <epos:Dataprocessingapplications>;
+.
+
+	<anthropogenic_hazards/software/SpectralAnalysis> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/SpectralAnalysis" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A26" ;
+		];
+		schema:name "Spectral Analysis" ;
+		schema:description "P and S waves spectral levels and corner frequencies using Snoke alghorithm." ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:SpectralAnalysis"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "source parameters", "earthquake spectra";
+		dcat:theme <epos:Dataprocessingapplications>;
+.
+
+	<anthropogenic_hazards/software/FOCI_APP> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/FOCI_APP" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A27" ;
+		];
+		schema:name "FOCI application" ;
+		schema:description "This application makes use the P-wave first arrivals from the waveforms recorded by the seismic stations and resolves seismic moment tensors using various decomposition schemes. Three moment tensors are calculated: unconstrained (full) moment tensor solution, deviatoric moment tensor solution (no volumetric change in the source), and double-couple moment tensor solution (no volumetric change in the source, no linear dipole). In addition to the moment tensor components various source parameters are calculated as well (fault plane solutions, P/T/B axes orientation, scalar seismic moment etc)." ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:FOCI_APP"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "source parameters", "source mechanism", "moment tensor";
+		dcat:theme <epos:Dataprocessingapplications>;
+.
+
+	<anthropogenic_hazards/software/Trmloc> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/Trmloc" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A28" ;
+		];
+		schema:name "Localization" ;
+		schema:description "Performs localization/re-localization of seismic events hypocenters" ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:Trmloc"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "source parameters", "source location";
+		dcat:theme <epos:Dataprocessingapplications>;
+.
+
+	<anthropogenic_hazards/software/StressMaps> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/StressMaps" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A29" ;
+		];
+		schema:name "Fracture Network Models – Mechanical Stresses" ;
+		schema:description "Interactively plot stress patterns associated with the hydraulic fracturing of a shale gas well." ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:StressMaps"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by-sa/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "stress modelling", "geo-resource production impact", "production - seismicity interaction";
+		dcat:theme <epos:Dataprocessingapplications>;
+.
+
+	<anthropogenic_hazards/software/MsatsiPlot> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/MsatsiPlot" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A30" ;
+		];
+		schema:name "Stress Inversion" ;
+		schema:description "Evaluates stress axis orientation and relative stress magnitude by inverting focal mechanisms" ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:MsatsiPlot"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "source mechanism", "moment tensor", "stress inversion";
+		dcat:theme <epos:Dataprocessingapplications>;
+.
+
+	<anthropogenic_hazards/software/Autocorrelation> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/Autocorrelation" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A31" ;
+		];
+		schema:name "Autocorrelation" ;
+		schema:description "Autocorrelation of a time series" ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:Autocorrelation"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "statistical analysis", "statistical properties of seismicity";
+		dcat:theme <epos:Dataprocessingapplications>;
+.
+
+	<anthropogenic_hazards/software/MatsumuraTest> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/MatsumuraTest" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A32" ;
+		];
+		schema:name "Coefficient of Randomness" ;
+		schema:description "A statistical test to express changes in seismicity patterns by means of an objective criterion. The Matsumura Test provides the parameter of Matsumura, value of the parameter in 5% and 95% percentile and the patterns classification as regular, completely random, and clustered." ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:MatsumuraTest"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "statistical analysis", "statistical properties of seismicity";
+		dcat:theme <epos:Dataprocessingapplications>;
+.
+
+	<anthropogenic_hazards/software/Crosscorrelation> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/Crosscorrelation" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A33" ;
+		];
+		schema:name "Cross Correlation" ;
+		schema:description "Cross-correlation of two time series" ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:Crosscorrelation"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "statistical analysis", "statistical properties of seismicity", "geo-resource production impact", "production – seismicity interaction";
+		dcat:theme <epos:Dataprocessingapplications>;
+.
+
+	<anthropogenic_hazards/software/PSRTest> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/PSRTest" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A34" ;
+		];
+		schema:name "Priestley-Subba Rao (PRS) Test" ;
+		schema:description "Test for a time series stationarity testing" ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:PSRTest"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "statistical analysis", "statistical properties of seismicity";
+		dcat:theme <epos:Dataprocessingapplications>;
+.
+
+	<anthropogenic_hazards/software/EffDropApp> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/EffDropApp" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A36" ;
+		];
+		schema:name "Effective Stress Drop Estimate" ;
+		schema:description "Estimate of the scaling between total seismic moment and areal extent of earthquake cluster, which depends on the average stress drop released during the seismic sequence." ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:EffDropApp"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "source parameters", "statistical properties of seismicity";
+		dcat:theme <epos:Dataprocessingapplications>;
+.
 
 	<http://orcid.org/0000-0002-4801-4888/contactPoint> a schema:ContactPoint;
 		schema:email "lizurek@igf.edu.pl";
@@ -2012,6 +3463,11 @@
 . 
 	<mailto:m.sterzel@cyfronet.pl/contactPoint> a schema:ContactPoint;
 		schema:email "m.sterzel@cyfronet.pl";
+		schema:availableLanguage "en" ;
+		schema:contactType "contactPoint" ;
+. 
+	<https://orcid.org/0000-0002-9824-7962/contactPoint> a schema:ContactPoint;
+		schema:email "j.kocot@cyfronet.pl";
 		schema:availableLanguage "en" ;
 		schema:contactType "contactPoint" ;
 . 
