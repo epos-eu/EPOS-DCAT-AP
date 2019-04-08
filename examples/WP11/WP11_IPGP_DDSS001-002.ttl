@@ -16,7 +16,9 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
+#########
 # PERSON 
+#########
 
 <https://orcid.org/0000-0003-2936-8047> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
@@ -143,8 +145,9 @@
 	schema:contactPoint <https://orcid.org/0000-0002-4234-3787/contactPoint>;
 
 .
-
+#########
 # Organization
+#########
 
 <PIC:999597417> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
@@ -165,9 +168,9 @@
 	schema:contactPoint <researcherID:E-7067-2017/legalContact>;
 	schema:contactPoint <https://orcid.org/0000-0002-4234-3787/contactPoint>;
 .
-
+#########
 # Contacts
-
+#########
 
 <https://orcid.org/0000-0002-6874-786X/scientificContact> a schema:ContactPoint;
 	schema:email "jeanchristophe.komorowski@gmail.com";
@@ -237,8 +240,9 @@
 	schema:contactType "legalContact" ;
 .
 
-
+#########
 # Dataset 
+#########
 
 <WP11/seismicdata/DDSS001> a dcat:Dataset;
 		dct:title "Seismic Stations and Waveform";
@@ -268,7 +272,10 @@
 		dcat:contactPoint <https://orcid.org/0000-0002-9956-9971/contactPoint>;
 .
 
+#########
 # distribution
+#########
+
 <WP11/seismicdata/DDSS001/distribution/dataselect> a dcat:Distribution;
 		dct:identifier "WP11/seismicdata/DDSS001/distribution/dataselect";
 		dct:title "Seismic waveform";
@@ -294,8 +301,9 @@
 		dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
 .
-
+#########
 # Webservice Dataselect
+#########
 
 <ws.resif.fr/fdsnws/dataselect/ws> a epos:WebService;
 	schema:identifier "ws.resif.fr/fdsnws/dataselect/ws";
@@ -321,7 +329,10 @@
 	dcat:contactPoint <https://orcid.org/0000-0002-9956-9971/contactPoint>;
 .
 
+#########
 # Webservice Station
+#########
+
 <ws.resif.fr/fdsnws/station/ws> a epos:WebService;
 	schema:identifier "ws.resif.fr/fdsnws/station/ws";
 	schema:description "FDSN Standard webservice at RESIF to download waveform data and stationXML metadata";
@@ -347,6 +358,10 @@
 	dcat:contactPoint <https://orcid.org/0000-0002-9956-9971/contactPoint>;
 .
 
+#########
+# Operation
+#########
+
 <ws.resif.fr/fdsnws/dataselect/operation> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/vnd.fdsn.mseed";
@@ -367,34 +382,34 @@
 					schema:valuePattern "YYYY-MM-DDThh:mm:ss";					
 					rdfs:range "xsd:dateTime";
 					rdfs:label "end of the timespan of requested data (format:YYYY-MM-DD  or YYYY-MM-DDTHH:MM:SS)";
-          schema:defaultValue "2018-01-02T00:00:00";
+          				schema:defaultValue "2018-01-02T00:00:00";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "network"^^xsd:string;
 					rdfs:range "xsd:string";
 					rdfs:label "network code or comma seperated network codes, wildcards (? or *) are authorized";
-          schema:defaultValue "RD";
+          				schema:defaultValue "RD";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "station"^^xsd:string;
 					rdfs:range "xsd:string";
-          schema:defaultValue "LOR";
+          				schema:defaultValue "LOR";
 					rdfs:label "station code or comma seperated stations codes, wildcards (? or *) are authorized";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "location"^^xsd:string;
 					rdfs:range "xsd:string";
-          schema:defaultValue "*";
+          				schema:defaultValue "*";
 					rdfs:label "location code or comma seperated location codes, wildcards (? or *) are authorized";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "channel"^^xsd:string;
 					rdfs:range "xsd:string";
-          schema:defaultValue "*";
+          				schema:defaultValue "*";
 					rdfs:label "channel code or comma seperated channels, wildcards (? or *) are authorized";
 					hydra:required "true"^^xsd:boolean;
 				];
@@ -407,14 +422,14 @@
 					http:paramValue "Q";
 					http:paramValue "M";
 					http:paramValue "B";
-          #schema:defaultValue "Q";
+          				#schema:defaultValue "Q";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "minimumlength"^^xsd:string;
 					rdfs:range "xsd:integer";
 					rdfs:label "minimum length of the continous record of data";
-          #schema:defaultValue "4096";
+          				#schema:defaultValue "4096";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
@@ -423,7 +438,7 @@
 					rdfs:label "limit the result to the longest continuous segment per channel";
 					http:paramValue "true";
 					http:paramValue "false";
-          #schema:defaultValue "false";
+         				#schema:defaultValue "false";
 					hydra:required "true"^^xsd:boolean;
 				];
 		] ;
