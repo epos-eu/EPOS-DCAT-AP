@@ -87,20 +87,21 @@
 #########
 # ContactPoint
 ######### 
-    <http://orcid.org/0000-0002-4518-3328/scientificContact> a schema:ContactPoint;
-        schema:email "p.labazuy@opgc.fr";
-        schema:availableLanguage "en" ;
+
+<http://orcid.org/0000-0002-4518-3328/scientificContact> a schema:ContactPoint;
+	schema:email "p.labazuy@opgc.fr";
+	schema:availableLanguage "en" ;
 	schema:contactType "scientificContact" ;
 . 
-    <http://orcid.org/0000-0002-0108-5486/legalContact> a schema:ContactPoint;
-        schema:email "n.huret@opgc.fr";
-        schema:availableLanguage "en" ;
-        schema:contactType "legalContact" ;
+<http://orcid.org/0000-0002-0108-5486/legalContact> a schema:ContactPoint;
+	schema:email "n.huret@opgc.fr";
+	schema:availableLanguage "en" ;
+	schema:contactType "legalContact" ;
 .
-    <http://orcid.org/0000-0002-0108-5486/financialContact> a schema:ContactPoint;
-        schema:email "n.huret@opgc.fr";
-        schema:availableLanguage "en" ;
-        schema:contactType "financialContact" ;
+<http://orcid.org/0000-0002-0108-5486/financialContact> a schema:ContactPoint;
+	schema:email "n.huret@opgc.fr";
+	schema:availableLanguage "en" ;
+	schema:contactType "financialContact" ;
 .
 
 #########
@@ -152,7 +153,6 @@
     schema:telephone "+33144964000";
 .
 
-
 #########
 # Dataset
 ######### 
@@ -161,12 +161,10 @@
     dct:title "Ash detection geotiff"^^xsd:string;
     dct:identifier "hotvolc.opgc.fr/WP11/DDSS-047/dataset/IMASH";    
     dct:description "Geotiff of pixels considered as ash contaminated using a 3-Bands ash detection method.";
-
-adms:identifier [ a adms:Identifier;
+    adms:identifier [ a adms:Identifier;
             adms:schemaAgency "DDSS-ID";
             skos:notation "WP11-DDSS-047";
         ];
-
     dct:type "http://purl.org/dc/dcmitype/Image"^^xsd:anyURI;
     dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
     dct:temporal [ a dct:PeriodOfTime;
