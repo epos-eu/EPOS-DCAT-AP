@@ -168,7 +168,7 @@
 <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/INTERMAGNET/Dataset> a dcat:Dataset;
     dct:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/INTERMAGNET/Dataset";
     dct:title "INTERMAGNET Geomagnetic Observatory Data";
-    dct:description "The INTERMAGNET programme exists to establish a global network of cooperating digital magnetic observatories, adopting modern standard specifications for measuring and recording equipment, in order to facilitate data exchanges and the production of geomagnetic products in close to real time.";
+    dct:description "The INTERMAGNET programme exists to establish a global network of cooperating digital magnetic observatories, adopting modern standard specifications for measuring and recording equipment, in order to facilitate data exchanges and the production of geomagnetic products in close to real time. To be admitted to INTERMAGNET, observatories must meet certain standards. INTERMAGNET's data sets contain continuous, provisional and definitive recordings of the Earth's magnetic field at second, minute, hour and day sample periods.";
     adms:identifier [ a adms:Identifier;
         adms:schemaAgency "DDSS-ID";
         skos:notation "WP13-DDSS-001";
@@ -189,7 +189,6 @@
 
     dct:temporal [ a dct:PeriodOfTime; 
         schema:startDate "1991-01-01T00:00:00Z"^^xsd:dateTime; 
-        #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
     ]; 
     dct:spatial [ a dct:Location; 
         locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral; 
@@ -220,7 +219,7 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/INTERMAGNET/Webservice> a epos:WebService;
     schema:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/INTERMAGNET/Webservice";
-    schema:description "The INTERMAGNET web service makes available preliminary data from INTERMAGNET observatories.";
+    schema:description "The INTERMAGNET web service makes available preliminary data from INTERMAGNET observatories. To be admitted to INTERMAGNET, observatories must meet certain standards. INTERMAGNET's data sets contain continuous, provisional and definitive recordings of the Earth's magnetic field at second, minute, hour and day sample periods.";
     schema:name "INTERMAGNET web service";
     dcat:contactPoint <mailto:smf@bgs.ac.uk/contactPoint>;
     dcat:contactPoint <http://orcid.org/0000-0002-7677-5158/contactPoint>;
@@ -236,7 +235,6 @@
     ]; 
     dct:temporal [ a dct:PeriodOfTime; 
         schema:startDate "1991-01-01T00:00:00Z"^^xsd:dateTime; 
-        #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
     ]; 
     dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 .
@@ -247,12 +245,20 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/INTERMAGNET/Operation> a hydra:Operation;
     hydra:method "GET"^^xsd:string;
+    hydra:returns "text/csv";
+    hydra:returns "text/html";
     hydra:returns "text/xml";
+    hydra:returns "application/json";
+    hydra:returns "application/covJson";
+    hydra:returns "text/plain";
+    hydra:returns "image/png";
+    hydra:returns "video/jpeg";
+    hydra:returns "application/pdf";
     hydra:property[ a hydra:IriTemplate;
-        hydra:template "http://geomag.bgs.ac.uk/EPOS/WP13/intermagnet/{?Request, observatoryIagaCode, SamplesPerDay, dataStartDate, dataDuration, publicationState, recordTermination, traceList, colourTraces, pictureSize, pdfSize, dataScale}"^^xsd:string;
+        hydra:template "http://geomag.bgs.ac.uk/EPOS/WP13/intermagnet/{?Request, observatoryIagaCode, SamplesPerDay, dataStartDate, dataDuration, publicationState, recordTermination, traceList, colourTraces, pictureSize, pdfSize, dataScale, Format}"^^xsd:string;
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "Request"^^xsd:string;
-                rdfs:label "No Label";
+                rdfs:label "Always set to 'GetData'";
                 rdfs:range "xsd:string" ;
                 schema:defaultValue "GetData";
                 http:paramValue "GetData";
@@ -267,7 +273,7 @@
             ];
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "SamplesPerDay"^^xsd:string;
-                rdfs:label "Samples per day";
+                rdfs:label "Data cadence or samples per day";
                 schema:defaultValue "Minute";
                 rdfs:range "xsd:string" ;
                 http:paramValue "1440";
@@ -328,7 +334,7 @@
             ];
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "colourTraces"^^xsd:string;
-                rdfs:label "Colour plot";
+                rdfs:label "Colour plot  (plots only, not data files)";
                 rdfs:range "xsd:boolean" ;
                 schema:defaultValue "True";
                 http:paramValue "True";
@@ -337,23 +343,42 @@
             ];
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "pictureSize"^^xsd:string;
-                rdfs:label "Size of jpg or png plot (pixels: 'xxx,yyy')";
+                rdfs:label "Size of jpg or png plot (pixels: 'xxx,yyy', plots only, not data files)";
                 rdfs:range "xsd:string" ;
                 schema:defaultValue "640,480";
                 hydra:required "false"^^xsd:boolean;
             ];
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "pdfSize"^^xsd:string;
-                rdfs:label "Size of pdf plot (pixels: 'xxx,yyy')";
+                rdfs:label "Size of pdf plot (pixels: 'xxx,yyy', plots only, not data files)";
                 rdfs:range "xsd:string" ;
                 schema:defaultValue "640,480";
                 hydra:required "false"^^xsd:boolean;
             ];
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "dataScale"^^xsd:string;
-                rdfs:label "Scale for plot ('XX nT / YY minutes')";
+                rdfs:label "Scale for plot ('XX nT / YY minutes', plots only, not data files)";
                 rdfs:range "xsd:string" ;
                 schema:defaultValue "100 nT / 10 minutes";
+                hydra:required "false"^^xsd:boolean;
+            ];
+            hydra:mapping[ a hydra:IriTemplateMapping;
+                hydra:variable "Format"^^xsd:string;
+                rdfs:label "Format";
+                rdfs:range "xsd:string";
+                schema:defaultValue "xml";
+                http:paramValue "excel";
+                http:paramValue "html";
+                http:paramValue "xml";
+                http:paramValue "json";
+                http:paramValue "covJson";
+                http:paramValue "iaga2002";
+                http:paramValue "imagcdf";
+                http:paramValue "imfv122";
+                http:paramValue "wdc";
+                http:paramValue "png";
+                http:paramValue "jpg";
+                http:paramValue "pdf";
                 hydra:required "false"^^xsd:boolean;
             ];
     ] ;
