@@ -16,7 +16,6 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
-
 #########
 # PERSON 
 #########
@@ -110,6 +109,36 @@
 .
 
 #########
+# ContactPoint
+#########
+
+<http://orcid.org/0000-0002-4518-3328/scientificContact> a schema:ContactPoint;
+        schema:email "p.labazuy@opgc.fr";
+        schema:availableLanguage "en", "fr" ;
+	schema:contactType "scientificContact" ;
+. 
+<http://orcid.org/0000-0002-0108-5486/legalContact> a schema:ContactPoint;
+        schema:email "n.huret@opgc.fr";
+        schema:availableLanguage "en", "fr" ;
+        schema:contactType "legalContact" ;
+.
+<http://orcid.org/0000-0002-0108-5486/financialContact> a schema:ContactPoint;
+        schema:email "n.huret@opgc.fr";
+        schema:availableLanguage "en", "fr" ;
+        schema:contactType "financialContact" ;
+.
+<http://orcid.org/0000-0002-7635-1283/scientificContact> a schema:ContactPoint;
+	schema:email "dimuro@ipgp.fr";
+	schema:availableLanguage "en", "it", "fr";
+	schema:contactType "scientificContact";
+.
+<http://orcid.org/0000-0002-8485-0154/contactPoint> a schema:ContactPoint;
+        schema:email "s.moune@uca.fr";
+        schema:availableLanguage "en", "fr";
+        schema:contactType "manager";
+.
+
+#########
 # Organization
 #########
 
@@ -138,25 +167,6 @@
     schema:contactPoint <http://orcid.org/0000-0002-0108-5486/financialContact>;
     schema:memberOf <http://isni.org/isni/0000000121129282>;
 .
-<http://orcid.org/0000-0002-4518-3328/scientificContact> a schema:ContactPoint;
-        schema:email "p.labazuy@opgc.fr";
-        schema:availableLanguage "en", "fr" ;
-	schema:contactType "scientificContact" ;
-. 
-<http://orcid.org/0000-0002-0108-5486/legalContact> a schema:ContactPoint;
-        schema:email "n.huret@opgc.fr";
-        schema:availableLanguage "en", "fr" ;
-        schema:contactType "legalContact" ;
-.
-<http://orcid.org/0000-0002-0108-5486/financialContact> a schema:ContactPoint;
-        schema:email "n.huret@opgc.fr";
-        schema:availableLanguage "en", "fr" ;
-        schema:contactType "financialContact" ;
-.
-
-#########
-# Organization
-#########
 
 <PIC:999597417> a schema:Organization;
     schema:identifier [ a schema:PropertyValue;
@@ -179,11 +189,6 @@
     schema:telephone "+33183957400";
     schema:contactPoint <http://orcid.org/0000-0002-7635-1283/scientificContact>;
     schema:memberOf <http://isni.org/isni/0000000121129282>;
-.
-<http://orcid.org/0000-0002-7635-1283/scientificContact> a schema:ContactPoint;
-	schema:email "dimuro@ipgp.fr";
-	schema:availableLanguage "en", "it", "fr";
-	schema:contactType "scientificContact";
 .
 
 <http://isni.org/isni/0000000121129282> a schema:Organization;
@@ -214,19 +219,17 @@
     dct:title "Melt inclusions and groundmass glass compostion";
     dct:identifier "opgc.fr/vobs/WP11/DDSS-036/GAZVOLC/dataset/INCLUSION-GLASS";
     dct:description "Chemical analysis of melt inclusion and glass in rock samples from Piton de la Fournaise volcano";
-
-adms:identifier [ a adms:Identifier;
+    adms:identifier [ a adms:Identifier;
             adms:schemaAgency "DDSS-ID";
             skos:notation "WP11-DDSS-036";
         ];
-
     dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
     dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
     dct:temporal [ a dct:PeriodOfTime;
         schema:startDate "2014-06-20T21:35:00Z"^^xsd:dateTime;
     ];
     dct:spatial [ a dct:Location;
-        locn:geometry "POLYGON((55.6307 -21.3423, 55.8247 -21.3423, 55.8247 -21.1828, 55.6307 -21.1828, 55.6307 -21.3423))"^^gsp:wktLiteral;
+        locn:geometry "POLYGON(55.6307 -21.3423, 55.8247 -21.3423, 55.8247 -21.1828, 55.6307 -21.1828, 55.6307 -21.3423)"^^gsp:wktLiteral;
     ];
     dcat:theme <epos:Geochemical-Data>;
     dcat:keyword "chemical data set", "melt inclusion", "volatile elements", "major elements", "trace elements", "groundmass", "host minerals";
@@ -277,11 +280,7 @@ adms:identifier [ a adms:Identifier;
     dct:conformsTo <opgc.fr/vobs/APIDocumentation>;
     dcat:contactPoint <http://orcid.org/0000-0002-8485-0154/contactPoint>;
 .
-    <http://orcid.org/0000-0002-8485-0154/contactPoint> a schema:ContactPoint;
-        schema:email "s.moune@uca.fr";
-        schema:availableLanguage "en", "fr";
-        schema:contactType "manager";
-.
+
     <opgc.fr/vobs/APIDocumentation> a hydra:APIDocumentation;
         hydra:title "OPGC Virtual Observatory - API Documentation";
         hydra:description "A documentation describing how to use OPGC Virtual Observatory API to find and download data";
