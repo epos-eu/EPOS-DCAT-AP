@@ -1,4 +1,3 @@
-
 @prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
@@ -155,11 +154,11 @@
 .
 
 #########
-# Dataset
+# Dataset 1
 ######### 
 
 <hotvolc.opgc.fr/WP11/DDSS-049/dataset/IMHOT> a dcat:Dataset ;
-    dct:title "Flagged thermal anomalies geotiff" ;
+    dct:title "Flagged thermal anomalies geotiff"^^xsd:string;
     dct:identifier "hotvolc.opgc.fr/WP11/DDSS-049/dataset/IMHOT" ;
     dct:description "Geotiff of pixels flagged as thermal anomalies using the NTI* algorithm";
     adms:identifier [ a adms:Identifier;
@@ -200,18 +199,18 @@
         locn:geometry "POLYGON((-5 42, 8.25 42, 8.25 51.5, -5 51.5, -5 42))"^^gsp:wktLiteral;
     ];
     dcat:theme <epos:Thermalmonitoring>;
-        dcat:keyword "spectral radiance", "lava monitoring", "nti*", "geotiff", "hot spots", "thermal anomalies";
-        dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
-        dct:publisher <http://isni.org/isni/0000000109416043>;
-        dcat:distribution <hotvolc.opgc.fr/WP11/DDSS-049/Distribution>;
+    dcat:keyword "spectral radiance", "lava monitoring", "nti*", "geotiff", "hot spots", "thermal anomalies";
+    dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
+    dct:publisher <http://isni.org/isni/0000000109416043>;
+    dcat:distribution <hotvolc.opgc.fr/WP11/DDSS-049/Distribution>;
 .
 
 #########
-# Dataset
+# Dataset 2
 ######### 
 
 <hotvolc.opgc.fr/WP11/DDSS-049/dataset/IMRAD> a dcat:Dataset ;
-    dct:title "Thermal map geotiff" ;
+    dct:title "Thermal map geotiff"^^xsd:string;
     dct:identifier "hotvolc.opgc.fr/WP11/DDSS-049/dataset/IMRAD" ;
     dct:description "Geotiff of thermal state at 3.9 microns";
     adms:identifier [ a adms:Identifier;
@@ -252,20 +251,20 @@
         locn:geometry "POLYGON((-5 42, 8.25 42, 8.25 51.5, -5 51.5, -5 42))"^^gsp:wktLiteral;
     ];
     dcat:theme <epos:Thermalmonitoring>;
-        dcat:keyword "spectral radiance", "lava monitoring", "geotiff", "thermal state";
-        dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
-        dct:publisher <http://isni.org/isni/0000000109416043>;
-        dcat:distribution <hotvolc.opgc.fr/WP11/DDSS-049/Distribution>;
+    dcat:keyword "spectral radiance", "lava monitoring", "geotiff", "thermal state";
+    dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
+    dct:publisher <http://isni.org/isni/0000000109416043>;
+    dcat:distribution <hotvolc.opgc.fr/WP11/DDSS-049/Distribution>;
 .
 
 #########
-# Dataset
+# Dataset 3
 ######### 
 
-<hotvolc.opgc.fr/WP11/DDSS-049/dataset/TSVFR> a dcat:Dataset ;
-    dct:title "Volume Flow rate timeseries" ;
-    dct:identifier "hotvolc.opgc.fr/WP11/DDSS-049/dataset/TSVFR" ;
-    dct:description "Timeseries of the volume flow rate of magma emmited by a volcano";
+<hotvolc.opgc.fr/WP11/DDSS-049/dataset/TSTSR> a dcat:Dataset ;
+    dct:title "Total spectral radiance timeseries"^^xsd:string; 
+    dct:identifier "hotvolc.opgc.fr/WP11/DDSS-049/dataset/TSTSR" ;
+    dct:description "Timeseries of the total spectral radiance emmited by thermal anomalies around a specfic volcano";
     adms:identifier [ a adms:Identifier;
         adms:schemaAgency "DDSS-ID";
         skos:notation "WP11-DDSS-049";
@@ -304,20 +303,20 @@
         locn:geometry "POLYGON((-5 42, 8.25 42, 8.25 51.5, -5 51.5, -5 42))"^^gsp:wktLiteral;
     ];
     dcat:theme <epos:Thermalmonitoring>;
-    dcat:keyword "spectral radiance", "lava monitoring", "geotiff", "thermal state";
+    dcat:keyword "spectral radiance", "lava monitoring", "nti*", "timeseries", "hot spots", "thermal anomalies";
     dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
     dct:publisher <http://isni.org/isni/0000000109416043>;
     dcat:distribution <hotvolc.opgc.fr/WP11/DDSS-049/Distribution>;
 .
 
 #########
-# Dataset
+# Dataset 4
 ######### 
 
-<hotvolc.opgc.fr/WP11/DDSS-049/dataset/TSTSR> a dcat:Dataset ;
-    dct:title "Total spectral radiance timeseries" ;
-    dct:identifier "hotvolc.opgc.fr/WP11/DDSS-049/dataset/TSTSR" ;
-    dct:description "Timeseries of the total spectral radiance emmited by thermal anomalies around a specfic volcano";
+<hotvolc.opgc.fr/WP11/DDSS-049/dataset/TSVFR> a dcat:Dataset ;
+    dct:title "Volume Flow rate timeseries"^^xsd:string;
+    dct:identifier "hotvolc.opgc.fr/WP11/DDSS-049/dataset/TSVFR" ;
+    dct:description "Timeseries of the volume flow rate of magma emmited by a volcano";
     adms:identifier [ a adms:Identifier;
         adms:schemaAgency "DDSS-ID";
         skos:notation "WP11-DDSS-049";
@@ -343,11 +342,11 @@
 .
 
 #########
-# Dataset
+# Dataset 5
 ######### 
 
 <hotvolc.opgc.fr/WP11/DDSS-049/dataset/TSHOT> a dcat:Dataset ;
-    dct:title "Number of hot spots timeseries" ;
+    dct:title "Number of hot spots timeseries"^^xsd:string;
     dct:identifier "hotvolc.opgc.fr/WP11/DDSS-049/dataset/TSHOT" ;
     dct:description "Timeseries of the total number of thermal anomalies detected around a specfic volcano using the NTI* algorithm";
     adms:identifier [ a adms:Identifier;
@@ -395,11 +394,11 @@
 .
 
 #########
-# Dataset
+# Dataset 6
 ######### 
 
 <hotvolc.opgc.fr/WP11/DDSS-049/dataset/TSRAD> a dcat:Dataset ;
-    dct:title "Thermal state timeseries" ;
+    dct:title "Thermal state timeseries"^^xsd:string; 
     dct:identifier "hotvolc.opgc.fr/WP11/DDSS-049/dataset/TSRAD" ;
     dct:description "Timeseries of the thermal state around a specfic volcano";
     adms:identifier [ a adms:Identifier;
@@ -727,3 +726,4 @@
 	skos:prefLabel "Weather forecast";
 	skos:definition "Weather forecast" ;
 .
+
