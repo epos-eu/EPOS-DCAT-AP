@@ -1,0 +1,347 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http: <http://www.w3.org/2006/http#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+
+#########
+# PERSON 
+#########
+
+<http://www.researcherid.com/rid/O-8042-2014> a schema:Person;
+    schema:identifier [ a schema:PropertyValue;
+        schema:protertyID "RESEARCHID";
+        schema:value "http://www.researcherid.com/rid/O-8042-2014";
+    ];
+    schema:familyName "Froger";
+    schema:givenName "Jean-Luc";
+    schema:address [ a schema:PostalAddress;
+        schema:streetAddress "Laboratoire Magmas et Volcans, 6 Avenue Blaise Pascal"^^xsd:string;
+        schema:addressLocality "AUBIERE CEDEX";
+        schema:postalCode "63178";
+        schema:addressCountry "FRANCE";
+    ];
+    schema:email "j.l.froger@opgc.fr";
+    schema:telephone "+33473346769";
+    schema:url "http://lmv.uca.fr/froger-jean-luc/"^^xsd:anyURI;
+    schema:qualifications "Lead Scientist of the InSar Observatory of Indian Ocean (OI2) observation service";
+    schema:affiliation <http://isni.org/isni/0000000109416043>;
+    schema:contactPoint <http://www.researcherid.com/rid/O-8042-2014/contactPoint>;
+.
+
+<http://orcid.org/0000-0002-4518-3328> a schema:Person;
+    schema:identifier [ a schema:PropertyValue;
+        schema:propertyID "ORCID";
+        schema:value "http://orcid.org/0000-0002-4518-3328";
+    ];
+    schema:familyName "Labazuy";
+    schema:givenName "Philippe";
+    schema:address [ a schema:PostalAddress;
+        schema:streetAddress "Laboratoire Magmas et Volcans, 6 Avenue Blaise Pascal"^^xsd:string;
+        schema:addressLocality "AUBIERE CEDEX";
+        schema:postalCode "63178";
+        schema:addressCountry "FRANCE";
+    ];
+    schema:email "p.labazuy@opgc.fr";
+    schema:telephone "+33473346729";
+    schema:url "http://orcid.org/0000-0002-4518-3328"^^xsd:anyURI;
+    schema:qualifications "Deputy Director of OPGC";
+    schema:affiliation <http://isni.org/isni/0000000109416043>;
+    schema:contactPoint <http://orcid.org/0000-0002-4518-3328/scientificContact>; 
+.
+
+<http://orcid.org/0000-0002-0108-5486> a schema:Person;
+    schema:identifier [ a schema:PropertyValue;
+        schema:propertyID "ORCID";
+        schema:value "http://orcid.org/0000-0002-0108-5486";
+    ];
+    schema:familyName "Huret";
+    schema:givenName "Nathalie";
+    schema:address [ a schema:PostalAddress;
+        schema:streetAddress "OPGC, 4 Avenue Blaise Pascal"^^xsd:string;
+        schema:addressLocality "AUBIERE CEDEX";
+        schema:postalCode "63178";
+        schema:addressCountry "FRANCE";
+    ];
+    schema:email "n.huret@opgc.fr";
+    schema:telephone "+33473407381";
+    schema:url "http://orcid.org/0000-0002-0108-5486"^^xsd:anyURI;
+    schema:qualifications "Director of OPGC";
+    schema:affiliation <http://isni.org/isni/0000000109416043>;
+    schema:contactPoint <http://orcid.org/0000-0002-0108-5486/legalContact>;
+    schema:contactPoint <http://orcid.org/0000-0002-0108-5486/financialContact>; 
+.
+
+#########
+# ContactPoint
+######### 
+
+<http://orcid.org/0000-0002-4518-3328/scientificContact> a schema:ContactPoint;
+      schema:email "p.labazuy@opgc.fr";
+      schema:availableLanguage "en", "fr" ;
+      schema:contactType "scientificContact" ;
+. 
+<http://orcid.org/0000-0002-0108-5486/legalContact> a schema:ContactPoint;
+      schema:email "n.huret@opgc.fr";
+      schema:availableLanguage "en", "fr" ;
+      schema:contactType "legalContact" ;
+.
+<http://orcid.org/0000-0002-0108-5486/financialContact> a schema:ContactPoint;
+      schema:email "n.huret@opgc.fr";
+      schema:availableLanguage "en", "fr" ;
+      schema:contactType "financialContact" ;
+.
+
+#########
+# Organization
+######### 
+
+<http://isni.org/isni/0000000109416043> a schema:Organization;
+    schema:identifier [ a schema:PropertyValue;
+        schema:propertyID "ISNI";
+        schema:value "http://isni.org/isni/0000000109416043";
+    ];
+    schema:leiCode "Legal Entity Identifier" ;
+    schema:legalName "Earth Physics Observatory of Clermont-Ferrand"^^xsd:string;
+    # schema:alternateName "Observatoire de Physique du Globe de Clermont-Ferrand"^^xsd:string;
+    # schema:alternateName "OPGC"^^xsd:string;
+    schema:address [ a schema:PostalAddress;
+        schema:streetAddress "OPGC, 4 Avenue Blaise Pascal";
+        schema:addressLocality "AUBIERE CEDEX";
+        schema:postalCode "63178";
+        schema:addressCountry "FRANCE";
+    ];
+    schema:logo "http://wwwobs.univ-bpclermont.fr/opgc/images/LogoOPGCTransparent.png"^^xsd:anyURI;
+    schema:url "http://opgc.fr"^^xsd:anyURI;
+    schema:email "g.delcampo@opgc.fr";
+    schema:telephone "+33473407380";
+    schema:contactPoint <http://orcid.org/0000-0002-4518-3328/scientificContact>;
+    schema:contactPoint <http://orcid.org/0000-0002-0108-5486/legalContact>;
+    schema:contactPoint <http://orcid.org/0000-0002-0108-5486/financialContact>;
+    schema:memberOf <http://isni.org/isni/0000000121129282>;
+.
+
+<http://isni.org/isni/0000000121129282> a schema:Organization;
+    schema:identifier [ a schema:PropertyValue;
+        schema:propertyID "ISNI";
+        schema:value "http://isni.org/isni/0000000121129282";
+    ];
+    schema:leiCode "Legal Entity Identifier" ;
+    schema:legalName "The National Center for Scientific Research"^^xsd:string;
+    schema:alternateName "CNRS: Le Centre National de la Recherche Scientifique"^^xsd:string;
+    schema:alternateName "CNRS"^^xsd:string;
+    schema:address [ a schema:PostalAddress;
+        schema:streetAddress "CNRS, 3 rue Michel-Ange";
+        schema:addressLocality "PARIS CEDEX 16";
+        schema:postalCode "75794";
+        schema:addressCountry "FRANCE";
+    ];
+    schema:logo "http://www.cnrs.fr/fr/z-tools/newune/themes/CNRSTheme/images/logocnrs.png"^^xsd:anyURI;
+    schema:url "http://cnrs.fr"^^xsd:anyURI;
+    schema:telephone "+33144964000";
+.
+
+#########
+# Dataset
+#########
+
+<opgc.fr/vobs/WP11/DDSS-051/dataset> a dcat:Dataset ;
+    dct:title "InSar Observatory of Indian Ocean - Catalog of Lava maps calculated from InSAR interferograms"^^xsd:string;
+    dct:identifier "opgc.fr/vobs/WP11/DDSS-051/datasetT";
+    dct:description "Catalog of Lava maps calculated from Wrapped Differential Interferogram made using data from SENTINEL, COSMOSKYMED and TERRASAR-X Satellites - target: Piton de la Fournaise - Reunion island FRANCE";
+    adms:identifier [ a adms:Identifier;
+            adms:schemaAgency "DDSS-ID";
+            skos:notation "WP11-DDSS-051";
+    ];
+    dct:type "http://purl.org/dc/dcmitype/Image"^^xsd:anyURI;
+    dct:format "http://publications.europa.eu/resource/authority/file-type/KML"^^xsd:anyURI;
+    dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+    dct:temporal [ a dct:PeriodOfTime;
+        schema:startDate "1998-01-01T00:00:00"^^xsd:dateTime;
+    ];
+    dct:issued "2017-06-21"^^xsd:dateTime;
+    dct:modified "2017-06-21"^^xsd:dateTime;
+    dct:spatial [ a dct:Location;
+        locn:geometry "POLYGON(55.622471 -21.182913, 55.82473 -21.184441, 55.823513 -21.338009, 55.62104 -21.33647,55.622471 -21.182913)"^^gsp:wktLiteral;
+    ];
+    dcat:theme <epos:RadarInterferometry>;
+    dcat:keyword "radar", "interferometry", "Reunion", "Piton de la Fournaise", "deformation", "SENTINEL", "COSMOSKYMED", "TERRASAR-X";
+    dcat:contactPoint <http://www.researcherid.com/rid/O-8042-2014/contactPoint>;
+    dct:publisher <http://isni.org/isni/0000000109416043>;
+    schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+    dcat:distribution <wwwobs.univ-bpclermont.fr/casoar/WP11/DDSS-050/Distribution>;
+.
+
+#########
+# Distribution
+######### 
+
+<opgc.fr/vobs/WP11/DDSS-051/dataset/distribution> a dcat:Distribution;
+        dct:identifier "opgc.fr/vobs/WP11/DDSS-051/dataset/distribution";
+        dct:title "The way to download the OI2 Lava maps product";
+        dct:description "The way to download the OI2 Lava maps product";
+        dct:issued "2018-12-19"^^xsd:dateTime;
+        dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+        dct:conformsTo <opgc.fr/vobs/WP11/DDSS-051>;
+        dcat:accessURL <opgc.fr/vobs/oi2/WP11/DDSS-051/lava-map>;
+        dct:format "http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE"^^xsd:anyURI;;
+        dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+.
+
+#########
+# WebService
+######### 
+
+<opgc.fr/vobs/WP11/DDSS-051> a epos:WebService;
+    schema:identifier "opgc.fr/vobs/WP11/DDSS-051";
+    schema:description "Since september 2017, OPGC assigns Digital Object Identifiers (DOI) to datasets. These datasets are archived by and published through OPGC Data Services and cover all geoscientific disciplines. They range from large dynamic datasets deriving from data intensive global monitoring networks with real-time data acquisition to the full suite of highly variable datasets collected by individual researchers or small teams. These highly variable data (‘long-tail data’) are small in size, but represent an important part of the total scientific output. This web service allow to retrieve Lava Flow Map data from the InSar Observatory of Indian Ocean (OI2) observation service. The Observation Service, OI2, is a recognised component of the National Service for Volcanological Observations. The mission of OI2 is the regular monitoring of ground movements brought about by the volcanic activity of Piton de la Fournaise volcano, Reunion Island, using InSAR data.";
+    schema:name "OPGC Virtual Observatory - OI2 Entry Point - EPOS - WP11/DDSS-051";
+    schema:datePublished "2016-05-26T08:00:00Z"^^xsd:dateTime;
+    schema:dateModified "2019-01-20T18:00:00Z"^^xsd:dateTime;
+    dct:temporal [ a dct:PeriodOfTime;
+        schema:startDate "1998-01-01T00:00:00"^^xsd:dateTime;
+    ];
+    dct:spatial [ a dct:Location;
+        locn:geometry "POLYGON((55.622471 -21.182913,55.82473 -21.338009, 55.82351 -21.33647, 55.62104))"^^xsd:string;
+    ];
+    schema:provider <http://isni.org/isni/0000000109416043>;
+    schema:keywords "Virtual Observatory", "Database", "Data Catalog", "Remote Sensing",  "Radar", "Interferometry", "Reunion", "Piton de la Fournaise", "Deformation", "SENTINEL", "COSMOSKYMED", "ALOS-PALSAR", "Volcanology", "Lava", "Map", "Lava Flow";
+    hydra:entrypoint "http://opgc.fr/vobs/rest2/req.php/application/oi2/lavamap"^^xsd:anyURI;
+    hydra:supportedOperation <opgc.fr/vobs/oi2/WP11/DDSS-051/lava-map>;
+    dcat:theme <epos:RadarInterferometry>;
+    schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+    dct:conformsTo <opgc.fr/vobs/APIDocumentation>;
+    dcat:contactPoint <http://www.researcherid.com/rid/O-8042-2014/contactPoint>;
+.
+
+    <http://www.researcherid.com/rid/O-8042-2014/contactPoint> a schema:ContactPoint;
+        schema:email "j.l.froger@opgc.fr";
+        schema:availableLanguage "en", "fr";
+        schema:contactType "manager";
+.
+    <opgc.fr/vobs/APIDocumentation> a hydra:APIDocumentation;
+        hydra:title "OPGC Virtual Observatory - API Documentation";
+        hydra:description "A documentation describing how to use OPGC Virtual Observatory API to find and download data";
+        hydra:entrypoint "http://opgc.fr/vobs/api.php#api-OI2 Observation Service-lavaMapOI2"^^xsd:anyURI;
+.
+
+#########
+# Operation
+######### 
+
+<opgc.fr/vobs/oi2/WP11/DDSS-051/lava-map> a hydra:Operation;
+        hydra:method "GET"^^xsd:string;
+        hydra:returns "application/xml";
+        hydra:property [ a hydra:IriTemplate;
+            #hydra:template "http://opgc.fr/vobs/rest2/req.php/oi2/lavamap{?sat, start_date, stop_date, eruption}"^^xsd:string; 
+             hydra:template "http://opgc.fr/vobs/rest2/req.php/oi2/lavamap{?sat, start_date, end_date, eruption}"^^xsd:string;     
+	        hydra:mapping [ a hydra:IriTemplateMapping;
+                    hydra:variable "sat"^^xsd:string;
+                    rdfs:label "Satellite ID to limit the query to interferogram produce from a specific satellite data";
+                    http:paramValue "SENTINEL";
+                    http:paramValue "TSX";
+                    http:paramValue "CSK";
+                    rdfs:range "xsd:string";
+                    hydra:required "false"^^xsd:boolean;
+                ];
+                hydra:mapping [ a hydra:IriTemplateMapping;
+                    hydra:variable "start_date"^^xsd:datetime;
+                    hydra:property "schema:startDate";
+                    rdfs:label "Starting datetime of the time interval query (format YYYY-MM-DDThh:mm:ss:Z)";
+                    rdfs:range "xsd:dateTime";
+                    schema:valuePattern "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
+                    schema:minValue "1990-01-01T00:00:00Z"^^xsd:dateTime;
+                    schema:maxValue "9999-12-31T23:59:59Z"^^xsd:dateTime;
+                    hydra:required "false"^^xsd:boolean;
+                ];
+                hydra:mapping [ a hydra:IriTemplateMapping;
+                    hydra:variable "end_date"^^xsd:datetime;
+                    hydra:property "schema:endDate";
+                    rdfs:labe "Ending datetime of the time interval query (format YYYY-MM-DDThh:mm:ssZ)";
+                    rdfs:range "xsd:dateTime";
+                    schema:valuePattern "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
+                    schema:minValue "1990-01-01T00:00:00Z"^^xsd:dateTime;
+                    schema:maxValue "9999-12-31T23:59:59Z"^^xsd:dateTime;
+                    hydra:required "false"^^xsd:boolean;
+                ];
+                hydra:mapping [ a hydra:IriTemplateMapping;
+                    hydra:variable "eruption"^^xsd:string;
+                    rdfs:label "The ID-name of an eruption";
+                    http:paramValue "Mid_1998";
+                    http:paramValue "Jul_1999";
+                    http:paramValue "Sep_1999";
+                    http:paramValue "Feb_2000";
+                    http:paramValue "Jun_2000";
+                    http:paramValue "Oct_2000";
+                    http:paramValue "Mar_2001";
+                    http:paramValue "Jul_2001";
+                    http:paramValue "Jan_2002";
+                    http:paramValue "Nov_2002";
+                    http:paramValue "May_2003";
+                    http:paramValue "Aug_2003";
+                    http:paramValue "Sep_2003";
+                    http:paramValue "Dec_2003";
+                    http:paramValue "Jan_2004";
+                    http:paramValue "May_2004";
+                    http:paramValue "Aug_2004";
+                    http:paramValue "Feb_2005";
+                    http:paramValue "Oct_2005";
+                    http:paramValue "Nov_2005";
+                    http:paramValue "Dec_2006";
+                    http:paramValue "Jul_2006";
+                    http:paramValue "Aug_2006";
+                    http:paramValue "Feb_2007";
+                    http:paramValue "Apr_2007";
+                    http:paramValue "Oct_2008";
+                    http:paramValue "Dec_2008";
+                    http:paramValue "Jan_2009";
+                    http:paramValue "Nov_2009";
+                    http:paramValue "Dec_2009";
+                    http:paramValue "Jan_2010";
+                    http:paramValue "Oct_2010";
+                    http:paramValue "Dec_2010";
+                    http:paramValue "Jun_2014";
+                    http:paramValue "Feb_2015";
+                    http:paramValue "May_2015";
+                    http:paramValue "Jul_2015";
+                    http:paramValue "Aug-Oct_2015";
+                    http:paramValue "May_2016";
+                    http:paramValue "Sep_2016";
+                    http:paramValue "Feb_2017";
+                    http:paramValue "May_2017";
+                    http:paramValue "Jul-Aug_2017";
+                    http:paramValue "Apr_2018";
+                    http:paramValue "Apr-Jun_2018";
+                    http:paramValue "Jul_2018";
+                    http:paramValue "Sept-Oct_2018";
+                    rdfs:range "xsd:string";
+                    hydra:required "false"^^xsd:boolean;
+                ];
+        ];
+.
+
+#########
+# Concept
+#########
+
+    <epos:VolcanoObservations> a skos:ConceptScheme;
+        dct:title "Volcano-Observations";
+        dct:description "It contains the concept of Volcanological observations";
+.
+    <epos:RadarInterferometry> a skos:Concept;
+        skos:inScheme <epos:VolcanoObservations>;
+        skos:prefLabel "Radar Interferometry";
+	skos:definition "Radar Interferometry";
+.
