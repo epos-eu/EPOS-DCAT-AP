@@ -122,7 +122,7 @@
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 	dcat:accessURL <SusceptibilityMap/operation>;
 	dct:conformsTo <SusceptibilityMap>;
-	dct:format "http://publications.europa.eu/resource/authority/file-type/TXT"^^xsd:anyURI;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 .
 
 #########
@@ -154,7 +154,7 @@
 
 <SusceptibilityMap/operation> a hydra:Operation;
 	hydra:method "GET"^^xsd:string;
-	hydra:returns "json";
+	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
 		hydra:template "https://volcanboxws.obsea.es:5000/maptype?type=susceptibility_map(&volcan=deceptionisland)"^^xsd:string;
 
