@@ -62,10 +62,6 @@
     schema:contactPoint <http://orcid.org/0000-0002-4518-3328/scientificContact>; 
 .
 
-#########
-# Organization
-######### 
-
 <http://orcid.org/0000-0002-0108-5486> a schema:Person;
     schema:identifier [ a schema:PropertyValue;
         schema:propertyID "ORCID";
@@ -88,6 +84,9 @@
     schema:contactPoint <http://orcid.org/0000-0002-0108-5486/financialContact>; 
 .
 
+#########
+# Organization
+######### 
 
 <http://isni.org/isni/0000000109416043> a schema:Organization;
     schema:identifier [ a schema:PropertyValue;
@@ -162,7 +161,6 @@
     schema:telephone "+33144964000";
 .
 
-
 #########
 # Dataset
 ######### 
@@ -195,7 +193,7 @@
 ######### 
 
 <opgc.fr/vobs/WP11/DDSS-024/Distribution> a dcat:Distribution;
-    dct:identifier "voldorad/data/id/3/DownloadFile";
+    dct:identifier "opgc.fr/vobs/WP11/DDSS-024/Distribution";
     dct:title "OPGC-VO distribution of VOLDORAD dataset 3";
     dct:description "The way to download the voldorad product: MONT_20151203";
     dct:issued "2015-12-03"^^xsd:date;
@@ -321,32 +319,34 @@
                 ];
         ];
 .
-    <opgc.fr/vobs/voldorad/WP11/DDSS-024/data-download> a hydra:Operation;
-        hydra:method "GET"^^xsd:string;
-        hydra:returns "application/zip";
-        # hydra:returns "application/json";
-        hydra:property [ a hydra:IriTemplate;
-            hydra:template "http://opgc.fr/vobs/rest2/req.php/voldorad/data/id/{uri}(/{format})"^^xsd:string;
-                hydra:mapping [ a hydra:IriTemplateMapping;
-                    hydra:variable "uri"^^xsd:integer;
-                    rdfs:label "The data id number";
-                    rdfs:range "xsd:integer";
-                    schema:minValue "1"^^xsd:integer;
-                    hydra:required "true"^^xsd:boolean;
-                ];
-                hydra:mapping [ a hydra:IriTemplateMapping;
-                    hydra:variable "format"^^xsd:string;
-                    rdfs:label "The output format";
-                    rdfs:range "xsd:string";
-                    http:paramValue "JSON"^^xsd:string;
-                    http:paramValue "CSV"^^xsd:string;
-                    schema:defaultValue "JSON"^^xsd:string;
-                    hydra:required "false"^^xsd:boolean;
-                ];
-        ];
+<opgc.fr/vobs/voldorad/WP11/DDSS-024/data-download> a hydra:Operation;
+	hydra:method "GET"^^xsd:string;
+	hydra:returns "application/zip";
+	# hydra:returns "application/json";
+	hydra:property [ a hydra:IriTemplate;
+	    hydra:template "http://opgc.fr/vobs/rest2/req.php/voldorad/data/id/{uri}(/{format})"^^xsd:string;
+		hydra:mapping [ a hydra:IriTemplateMapping;
+		    hydra:variable "uri"^^xsd:integer;
+		    rdfs:label "The data id number";
+		    rdfs:range "xsd:integer";
+		    schema:minValue "1"^^xsd:integer;
+		    hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping [ a hydra:IriTemplateMapping;
+		    hydra:variable "format"^^xsd:string;
+		    rdfs:label "The output format";
+		    rdfs:range "xsd:string";
+		    http:paramValue "JSON"^^xsd:string;
+		    http:paramValue "CSV"^^xsd:string;
+		    schema:defaultValue "JSON"^^xsd:string;
+		    hydra:required "false"^^xsd:boolean;
+		];
+];
 .
 
-
+#########
+# Concept
+#########
 
 <epos:VolcanoObservations> a skos:ConceptScheme;
 	dct:title "Volcano Observations";
