@@ -430,6 +430,7 @@
 					schema:minValue "-90.0";
 					schema:maxValue "90.0";
 					hydra:required "true"^^xsd:boolean;
+                    hydra:property "epos:southernmostLatitude";
 					schema:defaultValue "-90.0"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
@@ -439,6 +440,7 @@
 					schema:minValue "-90.0";
 					schema:maxValue "90.0";
 					hydra:required "true"^^xsd:boolean;
+                    hydra:property "epos:northernmostLatitude";
 					schema:defaultValue "90.0"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
@@ -448,6 +450,7 @@
 					schema:minValue "-180.0";
 					schema:maxValue "180.0";
 					hydra:required "true"^^xsd:boolean;
+                    hydra:property "epos:westernmostLongitude";
 					schema:defaultValue "-180.0"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
@@ -457,6 +460,7 @@
 					schema:minValue "-180.0";
 					schema:maxValue "180.0";
 					hydra:required "true"^^xsd:boolean;
+                    hydra:property "epos:easternmostLongitude";
 					schema:defaultValue "180.0"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
@@ -724,6 +728,8 @@
 					rdfs:label "Minimum Latitude";
 					schema:minValue "-90.0";
 					schema:maxValue "90.0";
+                    schema:defaultValue "-90";
+                    hydra:property "epos:southernmostLatitude";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
@@ -732,6 +738,8 @@
 					rdfs:label "Maximum Latitude";
 					schema:minValue "-90.0";
 					schema:maxValue "90.0";
+                    schema:defaultValue "-90";
+                    hydra:property "epos:northernmostLatitude" ;
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
@@ -740,6 +748,8 @@
 					rdfs:label "Minimum Longitude";
 					schema:minValue "-180.0";
 					schema:maxValue "180.0";
+                    schema:defaultValue "-180";
+                    hydra:property "epos:westernmostLongitude" ;
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
@@ -748,6 +758,8 @@
 					rdfs:label "Maximum Longitude";
 					schema:minValue "-180.0";
 					schema:maxValue "180.0";
+                    schema:defaultValue "180";
+                    hydra:property "epos:easternmostLongitude" ;
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
