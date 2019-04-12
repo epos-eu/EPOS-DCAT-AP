@@ -1,15 +1,15 @@
-@prefix adms: <http://www.w3.org/nd/adms#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .  
-@prefix dc: <http://purl.org/dc/elements/1.1/> .  
-@prefix dct: <http://purl.org/dc/terms/> .  
-@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .  
-@prefix hydra: <http://www.w3.org/ns/hydra/core#> .  
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .    
-@prefix schema: <http://schema.org/> .  
-@prefix dcat: <http://www.w3.org/ns/dcat#> .  
-@prefix cnt: <http://www.w3.org/2011/content#> .   
-@prefix locn: <http://www.w3.org/ns/locn#> . 
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix http: <http://www.w3.org/2006/http#> .
@@ -86,33 +86,34 @@
 
 #########
 # ContactPoint
-######### 
+#########
 
 <http://orcid.org/0000-0002-4518-3328/scientificContact> a schema:ContactPoint;
-	schema:email "p.labazuy@opgc.fr";
-	schema:availableLanguage "en" ;
-	schema:contactType "scientificContact" ;
+      schema:email "p.labazuy@opgc.fr";
+      schema:availableLanguage "en" ;
+      schema:contactType "scientificContact" ;
 . 
 <http://orcid.org/0000-0002-0108-5486/legalContact> a schema:ContactPoint;
-	schema:email "n.huret@opgc.fr";
-	schema:availableLanguage "en" ;
-	schema:contactType "legalContact" ;
+      schema:email "n.huret@opgc.fr";
+      schema:availableLanguage "en" ;
+      schema:contactType "legalContact" ;
 .
 <http://orcid.org/0000-0002-0108-5486/financialContact> a schema:ContactPoint;
-	schema:email "n.huret@opgc.fr";
-	schema:availableLanguage "en" ;
-	schema:contactType "financialContact" ;
+      schema:email "n.huret@opgc.fr";
+      schema:availableLanguage "en" ;
+      schema:contactType "financialContact" ;
 .
 
 #########
 # Organization
-######### 
+#########
 
 <http://isni.org/isni/0000000109416043> a schema:Organization;
     schema:identifier [ a schema:PropertyValue;
         schema:propertyID "ISNI";
         schema:value "http://isni.org/isni/0000000109416043";
     ];
+    schema:leiCode "Legal Entity Identifier" ;
     schema:legalName "Earth Physics Observatory of Clermont-Ferrand"^^xsd:string;
     # schema:alternateName "Observatoire de Physique du Globe de Clermont-Ferrand"^^xsd:string;
     # schema:alternateName "OPGC"^^xsd:string;
@@ -122,7 +123,6 @@
         schema:postalCode "63178";
         schema:addressCountry "FRANCE";
     ];
-    schema:leiCode "Legal Entity Identifier" ;
     schema:logo "http://wwwobs.univ-bpclermont.fr/opgc/images/LogoOPGCTransparent.png"^^xsd:anyURI;
     schema:url "http://opgc.fr"^^xsd:anyURI;
     schema:email "g.delcampo@opgc.fr";
@@ -157,229 +157,229 @@
 # Dataset
 ######### 
 
-<hotvolc.opgc.fr/WP11/DDSS-047/dataset/IMASH> a dcat:Dataset;
-    dct:title "Ash detection geotiff"^^xsd:string;
-    dct:identifier "hotvolc.opgc.fr/WP11/DDSS-047/dataset/IMASH";    
-    dct:description "Geotiff of pixels considered as ash contaminated using a 3-Bands ash detection method.";
+<hotvolc.opgc.fr/WP11/DDSS-047/dataset/IMASH> a dcat:Dataset ;
+    dct:title "Ash detection geotiff"^^xsd:string; 
+    dct:identifier "hotvolc.opgc.fr/WP11/DDSS-047/dataset/IMASH" ;
+    dct:description "Geotiff of pixels considered as ash contaminated using a 3-Bands ash detection method." ;
     adms:identifier [ a adms:Identifier;
-            adms:schemaAgency "DDSS-ID";
-            skos:notation "WP11-DDSS-047";
-        ];
+	    adms:schemaAgency "DDSS-ID";
+	    skos:notation "WP11-DDSS-047";
+    ];
     dct:type "http://purl.org/dc/dcmitype/Image"^^xsd:anyURI;
     dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
     dct:temporal [ a dct:PeriodOfTime;
-        schema:startDate "2010-05-06T00:00:00Z"^^xsd:dateTime;
+	schema:startDate "2010-05-06T00:00:00Z"^^xsd:dateTime; 	
     ];
-    dct:issued "2018-09-05T00:00:00Z"^^xsd:dateTime;
+    dct:issued "2018-09-05T00:00:00Z"^^xsd:dateTime ;
     dct:modified "2019-03-26T10:40:00Z"^^xsd:dateTime;
     dct:spatial [ a dct:Location;
-        # geometry of zone: Iceland
-        locn:geometry "POLYGON((-28 57, -1.5 57, -1.5 68.5, -28 68.5, -28 57))"^^gsp:wktLiteral;
-        # geometry of zone: Azores
-        locn:geometry "POLYGON((-34.5 34, -23.5 34, -23.5 43, -34.5 43, -34.5 34))"^^gsp:wktLiteral;
-        # geometry of zone: Italy
-        locn:geometry "POLYGON((10.5 33.150002, 27 33.150002, 27 41.200001, 10.5 41.200001, 10.5 33.150002))"^^gsp:wktLiteral;
-        # geometry of zone: Canary
-        locn:geometry "POLYGON((-22.48 23, -11 23, -11 33, -22.48 33, -22.48 23))"^^gsp:wktLiteral;
-        # geometry of zone: West Indies
-        locn:geometry "POLYGON((-67.199997 7.1999998, -56 7.1999998, -56 21.5, -67.199997 21.5, -67.199997 7.1999998))"^^gsp:wktLiteral;
-        # geometry of zone: Cape Verde
-        locn:geometry "POLYGON((-29.34 9.8500004, -19.34 9.8500004, -19.34 19.85, -29.34 19.85, -29.34 9.8500004))"^^gsp:wktLiteral;
-        # geometry of zone: Rift
-        locn:geometry "POLYGON((38 10.5, 45.5 10.5, 45.5 17.5, 38 17.5, 38 10.5))"^^gsp:wktLiteral;
-        # geometry of zone: Cameroon
-        locn:geometry "POLYGON((3.76 -2.51, 14.16 -2.51, 14.16 9.1400003, 3.76 9.1400003, 3.76 -2.51))"^^gsp:wktLiteral;
-        # geometry of zone: East Africa
-        locn:geometry "POLYGON((24.190001 -8.3100004, 41.75 -8.3100004, 41.75 7.5300002, 24.190001 7.5300002, 24.190001 -8.3100004))"^^gsp:wktLiteral;
-        # geometry of zone: Karthala
-        locn:geometry "POLYGON((38.369999 -16.91, 48.369999 -16.91, 48.369999 -6.9099998, 38.369999 -6.9099998, 38.369999 -16.91))"^^gsp:wktLiteral;
-        # geometry of zone: Reunion
-        locn:geometry "POLYGON((50.709999 -26.309999, 60.709999 -26.309999, 60.709999 -16.309999, 50.709999 -16.309999, 50.709999 -26.309999))"^^gsp:wktLiteral;
-        # geometry of zone: France
-        locn:geometry "POLYGON((-5 42, 8.25 42, 8.25 51.5, -5 51.5, -5 42))"^^gsp:wktLiteral;
+	# geometry of zone: Iceland
+	locn:geometry "POLYGON((-28 57, -1.5 57, -1.5 68.5, -28 68.5, -28 57))"^^gsp:wktLiteral;
+	# geometry of zone: Azores
+	locn:geometry "POLYGON((-34.5 34, -23.5 34, -23.5 43, -34.5 43, -34.5 34))"^^gsp:wktLiteral;
+	# geometry of zone: Italy
+	locn:geometry "POLYGON((10.5 33.150002, 27 33.150002, 27 41.200001, 10.5 41.200001, 10.5 33.150002))"^^gsp:wktLiteral;
+	# geometry of zone: Canary
+	locn:geometry "POLYGON((-22.48 23, -11 23, -11 33, -22.48 33, -22.48 23))"^^gsp:wktLiteral;
+	# geometry of zone: West Indies
+	locn:geometry "POLYGON((-67.199997 7.1999998, -56 7.1999998, -56 21.5, -67.199997 21.5, -67.199997 7.1999998))"^^gsp:wktLiteral;
+	# geometry of zone: Cape Verde
+	locn:geometry "POLYGON((-29.34 9.8500004, -19.34 9.8500004, -19.34 19.85, -29.34 19.85, -29.34 9.8500004))"^^gsp:wktLiteral;
+	# geometry of zone: Rift
+	locn:geometry "POLYGON((38 10.5, 45.5 10.5, 45.5 17.5, 38 17.5, 38 10.5))"^^gsp:wktLiteral;
+	# geometry of zone: Cameroon
+	locn:geometry "POLYGON((3.76 -2.51, 14.16 -2.51, 14.16 9.1400003, 3.76 9.1400003, 3.76 -2.51))"^^gsp:wktLiteral;
+	# geometry of zone: East Africa
+	locn:geometry "POLYGON((24.190001 -8.3100004, 41.75 -8.3100004, 41.75 7.5300002, 24.190001 7.5300002, 24.190001 -8.3100004))"^^gsp:wktLiteral;
+	# geometry of zone: Karthala
+	locn:geometry "POLYGON((38.369999 -16.91, 48.369999 -16.91, 48.369999 -6.9099998, 38.369999 -6.9099998, 38.369999 -16.91))"^^gsp:wktLiteral;
+	# geometry of zone: Reunion
+	locn:geometry "POLYGON((50.709999 -26.309999, 60.709999 -26.309999, 60.709999 -16.309999, 50.709999 -16.309999, 50.709999 -26.309999))"^^gsp:wktLiteral;
+	# geometry of zone: France
+	locn:geometry "POLYGON((-5 42, 8.25 42, 8.25 51.5, -5 51.5, -5 42))"^^gsp:wktLiteral;
     ];
     dcat:theme <epos:Atmosphericmonitoring>;
     dcat:keyword "volcanic ash", "brightness temperature difference", "geotiff", "atmospheric monitoring";
     dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
     dct:publisher <http://isni.org/isni/0000000109416043>;
-    schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
-    dcat:distribution <hotvolc.opgc.fr/WP11/DDSS-047/Distribution>;
+    dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;  
+    dcat:distribution <hotvolc.opgc.fr/WP11/DDSS-047/Distribution>
 .
 
 #########
 # Dataset
 ######### 
 
-<hotvolc.opgc.fr/WP11/DDSS-047/dataset/IMSO2> a dcat:Dataset;
-    dct:title "SO2 detection geotiff"^^xsd:string;
-    dct:identifier "hotvolc.opgc.fr/WP11/DDSS-047/dataset/IMSO2";    
-    dct:description "Geotiff of pixels considered as SO2 contaminated using a 2-Bands so2 detection method.";
+<hotvolc.opgc.fr/WP11/DDSS-047/dataset/IMSO2> a dcat:Dataset ;
+    dct:title "SO2 detection geotiff"^^xsd:string; 
+    dct:identifier "hotvolc.opgc.fr/WP11/DDSS-047/dataset/IMSO2" ;
+    dct:description "Geotiff of pixels considered as SO2 contaminated using a 2-Bands so2 detection method." ;
     adms:identifier [ a adms:Identifier;
-            adms:schemaAgency "DDSS-ID";
-            skos:notation "WP11-DDSS-047";
-        ];
+	    adms:schemaAgency "DDSS-ID";
+	    skos:notation "WP11-DDSS-047";
+    ];
     dct:type "http://purl.org/dc/dcmitype/Image"^^xsd:anyURI;
     dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
     dct:temporal [ a dct:PeriodOfTime;
-        schema:startDate "2010-05-06T00:00:00Z"^^xsd:dateTime;
+	schema:startDate "2010-05-06T00:00:00Z"^^xsd:dateTime; 	
     ];
-    dct:issued "2018-09-05T00:00:00Z"^^xsd:dateTime;
-    dct:modified "2019-03-26T10:39:17Z"^^xsd:dateTime;
+    dct:issued "2018-09-05T00:00:00Z"^^xsd:dateTime ;
+    dct:modified "2019-03-26T10:40:00Z"^^xsd:dateTime;
     dct:spatial [ a dct:Location;
-        # geometry of zone: Iceland
-        locn:geometry "POLYGON((-28 57, -1.5 57, -1.5 68.5, -28 68.5, -28 57))"^^gsp:wktLiteral;
-        # geometry of zone: Azores
-        locn:geometry "POLYGON((-34.5 34, -23.5 34, -23.5 43, -34.5 43, -34.5 34))"^^gsp:wktLiteral;
-        # geometry of zone: Italy
-        locn:geometry "POLYGON((10.5 33.150002, 27 33.150002, 27 41.200001, 10.5 41.200001, 10.5 33.150002))"^^gsp:wktLiteral;
-        # geometry of zone: Canary
-        locn:geometry "POLYGON((-22.48 23, -11 23, -11 33, -22.48 33, -22.48 23))"^^gsp:wktLiteral;
-        # geometry of zone: West Indies
-        locn:geometry "POLYGON((-67.199997 7.1999998, -56 7.1999998, -56 21.5, -67.199997 21.5, -67.199997 7.1999998))"^^gsp:wktLiteral;
-        # geometry of zone: Cape Verde
-        locn:geometry "POLYGON((-29.34 9.8500004, -19.34 9.8500004, -19.34 19.85, -29.34 19.85, -29.34 9.8500004))"^^gsp:wktLiteral;
-        # geometry of zone: Rift
-        locn:geometry "POLYGON((38 10.5, 45.5 10.5, 45.5 17.5, 38 17.5, 38 10.5))"^^gsp:wktLiteral;
-        # geometry of zone: Cameroon
-        locn:geometry "POLYGON((3.76 -2.51, 14.16 -2.51, 14.16 9.1400003, 3.76 9.1400003, 3.76 -2.51))"^^gsp:wktLiteral;
-        # geometry of zone: East Africa
-        locn:geometry "POLYGON((24.190001 -8.3100004, 41.75 -8.3100004, 41.75 7.5300002, 24.190001 7.5300002, 24.190001 -8.3100004))"^^gsp:wktLiteral;
-        # geometry of zone: Karthala
-        locn:geometry "POLYGON((38.369999 -16.91, 48.369999 -16.91, 48.369999 -6.9099998, 38.369999 -6.9099998, 38.369999 -16.91))"^^gsp:wktLiteral;
-        # geometry of zone: Reunion
-        locn:geometry "POLYGON((50.709999 -26.309999, 60.709999 -26.309999, 60.709999 -16.309999, 50.709999 -16.309999, 50.709999 -26.309999))"^^gsp:wktLiteral;
-        # geometry of zone: France
-        locn:geometry "POLYGON((-5 42, 8.25 42, 8.25 51.5, -5 51.5, -5 42))"^^gsp:wktLiteral;
+	# geometry of zone: Iceland
+	locn:geometry "POLYGON((-28 57, -1.5 57, -1.5 68.5, -28 68.5, -28 57))"^^gsp:wktLiteral;
+	# geometry of zone: Azores
+	locn:geometry "POLYGON((-34.5 34, -23.5 34, -23.5 43, -34.5 43, -34.5 34))"^^gsp:wktLiteral;
+	# geometry of zone: Italy
+	locn:geometry "POLYGON((10.5 33.150002, 27 33.150002, 27 41.200001, 10.5 41.200001, 10.5 33.150002))"^^gsp:wktLiteral;
+	# geometry of zone: Canary
+	locn:geometry "POLYGON((-22.48 23, -11 23, -11 33, -22.48 33, -22.48 23))"^^gsp:wktLiteral;
+	# geometry of zone: West Indies
+	locn:geometry "POLYGON((-67.199997 7.1999998, -56 7.1999998, -56 21.5, -67.199997 21.5, -67.199997 7.1999998))"^^gsp:wktLiteral;
+	# geometry of zone: Cape Verde
+	locn:geometry "POLYGON((-29.34 9.8500004, -19.34 9.8500004, -19.34 19.85, -29.34 19.85, -29.34 9.8500004))"^^gsp:wktLiteral;
+	# geometry of zone: Rift
+	locn:geometry "POLYGON((38 10.5, 45.5 10.5, 45.5 17.5, 38 17.5, 38 10.5))"^^gsp:wktLiteral;
+	# geometry of zone: Cameroon
+	locn:geometry "POLYGON((3.76 -2.51, 14.16 -2.51, 14.16 9.1400003, 3.76 9.1400003, 3.76 -2.51))"^^gsp:wktLiteral;
+	# geometry of zone: East Africa
+	locn:geometry "POLYGON((24.190001 -8.3100004, 41.75 -8.3100004, 41.75 7.5300002, 24.190001 7.5300002, 24.190001 -8.3100004))"^^gsp:wktLiteral;
+	# geometry of zone: Karthala
+	locn:geometry "POLYGON((38.369999 -16.91, 48.369999 -16.91, 48.369999 -6.9099998, 38.369999 -6.9099998, 38.369999 -16.91))"^^gsp:wktLiteral;
+	# geometry of zone: Reunion
+	locn:geometry "POLYGON((50.709999 -26.309999, 60.709999 -26.309999, 60.709999 -16.309999, 50.709999 -16.309999, 50.709999 -26.309999))"^^gsp:wktLiteral;
+	# geometry of zone: France
+	locn:geometry "POLYGON((-5 42, 8.25 42, 8.25 51.5, -5 51.5, -5 42))"^^gsp:wktLiteral;
     ];
     dcat:theme <epos:Atmosphericmonitoring>;
     dcat:keyword "sulfur dioxyde", "spectral radiance difference difference", "geotiff", "atmospheric monitoring";
     dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
     dct:publisher <http://isni.org/isni/0000000109416043>;
-    schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
-    dcat:distribution <hotvolc.opgc.fr/WP11/DDSS-047/Distribution>;
+    dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;  
+    dcat:distribution <hotvolc.opgc.fr/WP11/DDSS-047/Distribution>
 .
 
 #########
 # Dataset
-######### 
- 
-<hotvolc.opgc.fr/WP11/DDSS-047/dataset/TSASH> a dcat:Dataset;
-    dct:title "Volcanic ash timeseries"^^xsd:string;
-    dct:identifier "hotvolc.opgc.fr/WP11/DDSS-047/dataset/TSASH";    
-    dct:description "Timeseries of the volcanic ash cloud area and the minimum brightness temperature observed";
+#########
+
+<hotvolc.opgc.fr/WP11/DDSS-047/dataset/TSASH> a dcat:Dataset ;
+    dct:title "Volcanic ash timeseries"^^xsd:string; 
+    dct:identifier "hotvolc.opgc.fr/WP11/DDSS-047/dataset/TSASH" ;
+    dct:description "Timeseries of the volcanic ash cloud area and the minimum brightness temperature observed" ;
     adms:identifier [ a adms:Identifier;
-            adms:schemaAgency "DDSS-ID";
-            skos:notation "WP11-DDSS-047";
-        ];
+	    adms:schemaAgency "DDSS-ID";
+	    skos:notation "WP11-DDSS-047";
+    ];
     dct:type "http://purl.org/dc/dcmitype/Image"^^xsd:anyURI;
     dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
     dct:temporal [ a dct:PeriodOfTime;
-        schema:startDate "2010-05-06T00:00:00Z"^^xsd:dateTime;
+	schema:startDate "2010-05-06T00:00:00Z"^^xsd:dateTime; 	
     ];
-    dct:issued "2018-09-05T00:00:00Z"^^xsd:dateTime;
-    dct:modified "2019-03-26T10:39:17Z"^^xsd:dateTime;
+    dct:issued "2018-09-05T00:00:00Z"^^xsd:dateTime ;
+    dct:modified "2019-03-26T10:40:00Z"^^xsd:dateTime;
     dct:spatial [ a dct:Location;
-        # geometry of zone: Iceland
-        locn:geometry "POLYGON((-28 57, -1.5 57, -1.5 68.5, -28 68.5, -28 57))"^^gsp:wktLiteral;
-        # geometry of zone: Azores
-        locn:geometry "POLYGON((-34.5 34, -23.5 34, -23.5 43, -34.5 43, -34.5 34))"^^gsp:wktLiteral;
-        # geometry of zone: Italy
-        locn:geometry "POLYGON((10.5 33.150002, 27 33.150002, 27 41.200001, 10.5 41.200001, 10.5 33.150002))"^^gsp:wktLiteral;
-        # geometry of zone: Canary
-        locn:geometry "POLYGON((-22.48 23, -11 23, -11 33, -22.48 33, -22.48 23))"^^gsp:wktLiteral;
-        # geometry of zone: West Indies
-        locn:geometry "POLYGON((-67.199997 7.1999998, -56 7.1999998, -56 21.5, -67.199997 21.5, -67.199997 7.1999998))"^^gsp:wktLiteral;
-        # geometry of zone: Cape Verde
-        locn:geometry "POLYGON((-29.34 9.8500004, -19.34 9.8500004, -19.34 19.85, -29.34 19.85, -29.34 9.8500004))"^^gsp:wktLiteral;
-        # geometry of zone: Rift
-        locn:geometry "POLYGON((38 10.5, 45.5 10.5, 45.5 17.5, 38 17.5, 38 10.5))"^^gsp:wktLiteral;
-        # geometry of zone: Cameroon
-        locn:geometry "POLYGON((3.76 -2.51, 14.16 -2.51, 14.16 9.1400003, 3.76 9.1400003, 3.76 -2.51))"^^gsp:wktLiteral;
-        # geometry of zone: East Africa
-        locn:geometry "POLYGON((24.190001 -8.3100004, 41.75 -8.3100004, 41.75 7.5300002, 24.190001 7.5300002, 24.190001 -8.3100004))"^^gsp:wktLiteral;
-        # geometry of zone: Karthala
-        locn:geometry "POLYGON((38.369999 -16.91, 48.369999 -16.91, 48.369999 -6.9099998, 38.369999 -6.9099998, 38.369999 -16.91))"^^gsp:wktLiteral;
-        # geometry of zone: Reunion
-        locn:geometry "POLYGON((50.709999 -26.309999, 60.709999 -26.309999, 60.709999 -16.309999, 50.709999 -16.309999, 50.709999 -26.309999))"^^gsp:wktLiteral;
-        # geometry of zone: France
-        locn:geometry "POLYGON((-5 42, 8.25 42, 8.25 51.5, -5 51.5, -5 42))"^^gsp:wktLiteral;
+	# geometry of zone: Iceland
+	locn:geometry "POLYGON((-28 57, -1.5 57, -1.5 68.5, -28 68.5, -28 57))"^^gsp:wktLiteral;
+	# geometry of zone: Azores
+	locn:geometry "POLYGON((-34.5 34, -23.5 34, -23.5 43, -34.5 43, -34.5 34))"^^gsp:wktLiteral;
+	# geometry of zone: Italy
+	locn:geometry "POLYGON((10.5 33.150002, 27 33.150002, 27 41.200001, 10.5 41.200001, 10.5 33.150002))"^^gsp:wktLiteral;
+	# geometry of zone: Canary
+	locn:geometry "POLYGON((-22.48 23, -11 23, -11 33, -22.48 33, -22.48 23))"^^gsp:wktLiteral;
+	# geometry of zone: West Indies
+	locn:geometry "POLYGON((-67.199997 7.1999998, -56 7.1999998, -56 21.5, -67.199997 21.5, -67.199997 7.1999998))"^^gsp:wktLiteral;
+	# geometry of zone: Cape Verde
+	locn:geometry "POLYGON((-29.34 9.8500004, -19.34 9.8500004, -19.34 19.85, -29.34 19.85, -29.34 9.8500004))"^^gsp:wktLiteral;
+	# geometry of zone: Rift
+	locn:geometry "POLYGON((38 10.5, 45.5 10.5, 45.5 17.5, 38 17.5, 38 10.5))"^^gsp:wktLiteral;
+	# geometry of zone: Cameroon
+	locn:geometry "POLYGON((3.76 -2.51, 14.16 -2.51, 14.16 9.1400003, 3.76 9.1400003, 3.76 -2.51))"^^gsp:wktLiteral;
+	# geometry of zone: East Africa
+	locn:geometry "POLYGON((24.190001 -8.3100004, 41.75 -8.3100004, 41.75 7.5300002, 24.190001 7.5300002, 24.190001 -8.3100004))"^^gsp:wktLiteral;
+	# geometry of zone: Karthala
+	locn:geometry "POLYGON((38.369999 -16.91, 48.369999 -16.91, 48.369999 -6.9099998, 38.369999 -6.9099998, 38.369999 -16.91))"^^gsp:wktLiteral;
+	# geometry of zone: Reunion
+	locn:geometry "POLYGON((50.709999 -26.309999, 60.709999 -26.309999, 60.709999 -16.309999, 50.709999 -16.309999, 50.709999 -26.309999))"^^gsp:wktLiteral;
+	# geometry of zone: France
+	locn:geometry "POLYGON((-5 42, 8.25 42, 8.25 51.5, -5 51.5, -5 42))"^^gsp:wktLiteral;
     ];
     dcat:theme <epos:Atmosphericmonitoring>;
     dcat:keyword "volcanic ash", "brightness temperature difference difference", "area", "timeserie", "atmospheric monitoring";
     dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
     dct:publisher <http://isni.org/isni/0000000109416043>;
-    schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
-    dcat:distribution <hotvolc.opgc.fr/WP11/DDSS-047/Distribution>;
+    dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;  
+    dcat:distribution <hotvolc.opgc.fr/WP11/DDSS-047/Distribution>
 .
 
 #########
 # Dataset
-######### 
+#########
 
-<hotvolc.opgc.fr/WP11/DDSS-047/dataset/TSSO2> a dcat:Dataset;
-    dct:title "SO2 timeseries"^^xsd:string;
-    dct:identifier "hotvolc.opgc.fr/WP11/DDSS-047/dataset/TSSO2";    
-    dct:description "Timeseries of SO2 cloud area and the minimum spectral radiance difference observed";
+<hotvolc.opgc.fr/WP11/DDSS-047/dataset/TSSO2> a dcat:Dataset ;
+    dct:title "SO2 timeseries"^^xsd:string; 
+    dct:identifier "hotvolc.opgc.fr/WP11/DDSS-047/dataset/TSSO2" ;
+    dct:description "Timeseries of SO2 cloud area and the minimum spectral radiance difference observed" ;
     adms:identifier [ a adms:Identifier;
-            adms:schemaAgency "DDSS-ID";
-            skos:notation "WP11-DDSS-047";
-        ];
+	    adms:schemaAgency "DDSS-ID";
+	    skos:notation "WP11-DDSS-047";
+    ];
     dct:type "http://purl.org/dc/dcmitype/Image"^^xsd:anyURI;
     dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
     dct:temporal [ a dct:PeriodOfTime;
-        schema:startDate "2010-05-06T00:00:00Z"^^xsd:dateTime;
+	schema:startDate "2010-05-06T00:00:00Z"^^xsd:dateTime; 	
     ];
-    dct:issued "2018-09-05T00:00:00Z"^^xsd:dateTime;
+    dct:issued "2018-09-05T00:00:00Z"^^xsd:dateTime ;
     dct:modified "2019-03-26T10:39:17Z"^^xsd:dateTime;
     dct:spatial [ a dct:Location;
-        # geometry of zone: Iceland
-        locn:geometry "POLYGON((-28 57, -1.5 57, -1.5 68.5, -28 68.5, -28 57))"^^gsp:wktLiteral;
-        # geometry of zone: Azores
-        locn:geometry "POLYGON((-34.5 34, -23.5 34, -23.5 43, -34.5 43, -34.5 34))"^^gsp:wktLiteral;
-        # geometry of zone: Italy
-        locn:geometry "POLYGON((10.5 33.150002, 27 33.150002, 27 41.200001, 10.5 41.200001, 10.5 33.150002))"^^gsp:wktLiteral;
-        # geometry of zone: Canary
-        locn:geometry "POLYGON((-22.48 23, -11 23, -11 33, -22.48 33, -22.48 23))"^^gsp:wktLiteral;
-        # geometry of zone: West Indies
-        locn:geometry "POLYGON((-67.199997 7.1999998, -56 7.1999998, -56 21.5, -67.199997 21.5, -67.199997 7.1999998))"^^gsp:wktLiteral;
-        # geometry of zone: Cape Verde
-        locn:geometry "POLYGON((-29.34 9.8500004, -19.34 9.8500004, -19.34 19.85, -29.34 19.85, -29.34 9.8500004))"^^gsp:wktLiteral;
-        # geometry of zone: Rift
-        locn:geometry "POLYGON((38 10.5, 45.5 10.5, 45.5 17.5, 38 17.5, 38 10.5))"^^gsp:wktLiteral;
-        # geometry of zone: Cameroon
-        locn:geometry "POLYGON((3.76 -2.51, 14.16 -2.51, 14.16 9.1400003, 3.76 9.1400003, 3.76 -2.51))"^^gsp:wktLiteral;
-        # geometry of zone: East Africa
-        locn:geometry "POLYGON((24.190001 -8.3100004, 41.75 -8.3100004, 41.75 7.5300002, 24.190001 7.5300002, 24.190001 -8.3100004))"^^gsp:wktLiteral;
-        # geometry of zone: Karthala
-        locn:geometry "POLYGON((38.369999 -16.91, 48.369999 -16.91, 48.369999 -6.9099998, 38.369999 -6.9099998, 38.369999 -16.91))"^^gsp:wktLiteral;
-        # geometry of zone: Reunion
-        locn:geometry "POLYGON((50.709999 -26.309999, 60.709999 -26.309999, 60.709999 -16.309999, 50.709999 -16.309999, 50.709999 -26.309999))"^^gsp:wktLiteral;
-        # geometry of zone: France
-        locn:geometry "POLYGON((-5 42, 8.25 42, 8.25 51.5, -5 51.5, -5 42))"^^gsp:wktLiteral;
+	# geometry of zone: Iceland
+	locn:geometry "POLYGON((-28 57, -1.5 57, -1.5 68.5, -28 68.5, -28 57))"^^gsp:wktLiteral;
+	# geometry of zone: Azores
+	locn:geometry "POLYGON((-34.5 34, -23.5 34, -23.5 43, -34.5 43, -34.5 34))"^^gsp:wktLiteral;
+	# geometry of zone: Italy
+	locn:geometry "POLYGON((10.5 33.150002, 27 33.150002, 27 41.200001, 10.5 41.200001, 10.5 33.150002))"^^gsp:wktLiteral;
+	# geometry of zone: Canary
+	locn:geometry "POLYGON((-22.48 23, -11 23, -11 33, -22.48 33, -22.48 23))"^^gsp:wktLiteral;
+	# geometry of zone: West Indies
+	locn:geometry "POLYGON((-67.199997 7.1999998, -56 7.1999998, -56 21.5, -67.199997 21.5, -67.199997 7.1999998))"^^gsp:wktLiteral;
+	# geometry of zone: Cape Verde
+	locn:geometry "POLYGON((-29.34 9.8500004, -19.34 9.8500004, -19.34 19.85, -29.34 19.85, -29.34 9.8500004))"^^gsp:wktLiteral;
+	# geometry of zone: Rift
+	locn:geometry "POLYGON((38 10.5, 45.5 10.5, 45.5 17.5, 38 17.5, 38 10.5))"^^gsp:wktLiteral;
+	# geometry of zone: Cameroon
+	locn:geometry "POLYGON((3.76 -2.51, 14.16 -2.51, 14.16 9.1400003, 3.76 9.1400003, 3.76 -2.51))"^^gsp:wktLiteral;
+	# geometry of zone: East Africa
+	locn:geometry "POLYGON((24.190001 -8.3100004, 41.75 -8.3100004, 41.75 7.5300002, 24.190001 7.5300002, 24.190001 -8.3100004))"^^gsp:wktLiteral;
+	# geometry of zone: Karthala
+	locn:geometry "POLYGON((38.369999 -16.91, 48.369999 -16.91, 48.369999 -6.9099998, 38.369999 -6.9099998, 38.369999 -16.91))"^^gsp:wktLiteral;
+	# geometry of zone: Reunion
+	locn:geometry "POLYGON((50.709999 -26.309999, 60.709999 -26.309999, 60.709999 -16.309999, 50.709999 -16.309999, 50.709999 -26.309999))"^^gsp:wktLiteral;
+	# geometry of zone: France
+	locn:geometry "POLYGON((-5 42, 8.25 42, 8.25 51.5, -5 51.5, -5 42))"^^gsp:wktLiteral;
     ];
     dcat:theme <epos:Atmosphericmonitoring>;
     dcat:keyword "sulfur dioxyde", "spectral radiance difference difference", "area", "timeserie", "atmospheric monitoring";
     dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
     dct:publisher <http://isni.org/isni/0000000109416043>;
-    schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
-    dcat:distribution <hotvolc.opgc.fr/WP11/DDSS-047/Distribution>;
+    dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;  
+    dcat:distribution <hotvolc.opgc.fr/WP11/DDSS-047/Distribution>
 .
 
 #########
-# Distributions
+# Distribution
 ######### 
 
 <hotvolc.opgc.fr/WP11/DDSS-047/Distribution> a dcat:Distribution;
     dct:identifier "hotvolc.opgc.fr/WP11/DDSS-047/Distribution";
     dct:description "The way to download the HOTVOLC products";
     dct:title "The way to download the HOTVOLC products";
-    dct:issued "2018-09-05T00:00:00Z"^^xsd:dateTime;
+    dct:issued "2018-09-05T00:00:00Z"^^xsd:dateTime; 
     dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
     #dcat:accessURL <hotvolc.opgc.fr/data-download>;
     dcat:accessURL <hotvolc.opgc.fr/data-search/WP11/DDSS-047>;
     dct:conformsTo <hotvolc.opgc.fr/WP11/DDSS-047>;        
     dct:format "http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE"^^xsd:anyURI;
-    schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+    dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 .
 
 #########
@@ -453,7 +453,7 @@
         hydra:returns "text/turtle";
         # hydra:returns "application/json";
         # hydra:returns "application/xml";
-        hydra:property[ a hydra:IriTemplate;
+       hydra:property[ a hydra:IriTemplate;
             hydra:template "http://hotvolc.opgc.fr/www/php/data_catalog.php{?date_begin, date_end, volcano, zone, type, ddss, output, onscreen}&bbox=({lonmin, latmin, lonmax, latmax})"^^xsd:string;
                 hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "date_begin"^^xsd:datetime;
@@ -611,6 +611,7 @@
                 ];
         ];
 .
+
 <hotvolc.opgc.fr/data-download> a hydra:Operation;
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/zip";
@@ -623,7 +624,7 @@
 		    hydra:required "true"^^xsd:boolean;
 		];
 ];
-.    
+. 
 
 #########
 # Concept
