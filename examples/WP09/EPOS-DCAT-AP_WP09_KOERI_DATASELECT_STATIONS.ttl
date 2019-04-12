@@ -235,6 +235,8 @@
 			rdfs:label "Start of the timespan";
 			rdfs:range "xsd:dateTime";
 			schema:defaultValue "2014-05-10T12:00:00.000Z";
+			hydra:property "schema:startDate";
+      		schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -242,6 +244,8 @@
 			rdfs:label "End of the timespan";
 			rdfs:range "xsd:dateTime";
 			schema:defaultValue "2014-05-10T12:00:02.000Z";
+			hydra:property "schema:endDate";
+      		schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -311,12 +315,16 @@
 			hydra:variable "starttime"^^xsd:string;
 			rdfs:label "Start of the timespan";
 			rdfs:range "xsd:dateTime";
+			hydra:property "schema:startDate";
+			schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
 			hydra:required "false"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "endtime"^^xsd:string;
 			rdfs:label "End of the timespan";
 			rdfs:range "xsd:dateTime";
+			hydra:property "schema:endDate";
+			schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
 			hydra:required "false"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -354,6 +362,7 @@
 			schema:maxValue "90.0";
 			schema:defaultValue "39.0";
 			hydra:required "true"^^xsd:boolean;
+			hydra:property "epos:southernmostLatitude";
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "maxlatitude"^^xsd:string;
@@ -363,6 +372,7 @@
 			schema:maxValue "90.0";
 			schema:defaultValue "42.0";
 			hydra:required "true"^^xsd:boolean;
+			hydra:property "epos:northernmostLatitude";
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "minlongitude"^^xsd:string;
@@ -372,6 +382,7 @@
 			schema:maxValue "180.0";
 			schema:defaultValue "26.0";
 			hydra:required "true"^^xsd:boolean;
+			hydra:property "epos:westernmostLongitude";
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "maxlongitude"^^xsd:string;
@@ -381,6 +392,7 @@
 			schema:maxValue "180.0";
 			schema:defaultValue "31.0";
 			hydra:required "true"^^xsd:boolean;
+			hydra:property "epos:easternmostLongitude";
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "level"^^xsd:string;

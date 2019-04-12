@@ -18,7 +18,7 @@
 
 #########
 # PERSON 
-#########
+######### 
 
 <http://orcid.org/0000-0002-8803-6504> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
@@ -38,25 +38,25 @@
 	schema:url "http://orcid.org/0000-0002-8803-6504"^^xsd:anyURI;
 	schema:qualifications "Researcher";
 	schema:affiliation <http://isni.org/isni/0000000122036192>;
-        schema:contactPoint <http://orcid.org/0000-0002-8803-6504/contactPoint> ;
+    schema:contactPoint <http://orcid.org/0000-0002-8803-6504/contactPoint> ;
 		
 .
 
 #########
 # ContactPoint
-######### 
- 
+#########   
+
 <http://orcid.org/0000-0002-8803-6504/scientificContact> a schema:ContactPoint;
 		schema:email "ageyertraver@gmail.com";
 		schema:availableLanguage "en" ;
 		schema:contactType "scientificContact" ;
 . 
-<http://orcid.org/0000-0002-8651-6387/legalContact> a schema:ContactPoint;
+<http://orcid.org/0000-0002-8803-6504/legalContact> a schema:ContactPoint;
 		schema:email "ageyertraver@gmail.com";
 		schema:availableLanguage "en" ;
 		schema:contactType "legalContact" ;
 . 
-<http://orcid.org/0000-0002-8651-6387/financialContact> a schema:ContactPoint;
+<http://orcid.org/0000-0002-8803-6504/financialContact> a schema:ContactPoint;
 		schema:email "ageyertraver@gmail.com";
 		schema:availableLanguage "en" ;
 		schema:contactType "financialContact" ;
@@ -64,7 +64,7 @@
 <http://orcid.org/0000-0002-8803-6504/contactPoint> a schema:ContactPoint;
 		schema:email "ageyertraver@gmail.com";
 		schema:availableLanguage "en" ;
-		schema:contactType "ContactPoint" ;
+		schema:contactType "contactPoint" ;
 . 
 
 #########
@@ -93,25 +93,21 @@
 
 #########
 # Dataset
-#########
+######### 
 
-<WP11/HazardMap/TephraFallout> a dcat:Dataset;
-        dct:title "Tephra fallout hazard maps for explosive volcanoes";
-        dct:identifier "WP11/HazardMap/TephraFallout";
-         adms:identifier [ a adms:Identifier;
-		adms:schemaAgency "DDSS-ID";
-		skos:notation "WP11-DDSS-058";
-	]; 
-        dct:description "Tephra fallout hazard maps for explosive volcanoes";
+<WP11/SusceptibilityMap> a dcat:Dataset;
+        dct:title "Spatial probability analysis/maps";
+        dct:identifier "WP11/Susceptibility map";
+        dct:description "Spatial probability analysis/maps";
         ## example of frequency using a controlled vocabulary
 	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
         dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
         dct:created "2018-09-01"^^xsd:date;
-        dcat:theme  <epos:Hazardmap> ;
-        dcat:keyword "tephra fallout", "hazard map", "explosive eruption", "hazard assessment", "volcanic hazard", "volcanology";
+        dcat:theme <epos:SusceptibilityMap>;
+        dcat:keyword "Spatial probability analysis", "Spatial probability maps", "volcanology", "hazard assessment", "volcanic hazard";
         dcat:contactPoint <http://orcid.org/0000-0002-8803-6504/contactPoint>;
 	dct:publisher <http://isni.org/isni/0000000122036192>;
-        dcat:distribution <WP11/HazardMap/TephraFallout/WSDistribution>;
+        dcat:distribution <WP11/SusceptibilityMap/WSDistribution>;
         
 .
 
@@ -119,60 +115,59 @@
 # Distribution
 ######### 
 
-<WP11/HazardMap/TephraFallout/WSDistribution> a dcat:Distribution;
-        dct:identifier "WP11/HazardMaps/TephraFallout/WSDistribution";
-        dct:title "Hazard Maps WSDistribution";
-	dct:description "Hazard Maps WSDistribution";
+<WP11/SusceptibilityMap/WSDistribution> a dcat:Distribution;
+        dct:identifier "WP11/SusceptibilityMap/WSDistribution";
+	dct:description "Susceptibility Maps WSDistribution";
+        dct:title "Susceptibility Maps WSDistribution";
 	dct:created "2018-09-01"^^xsd:date;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-	dcat:accessURL <HazardMap/operation>;
-	dct:conformsTo <HazardMap>;
-	dct:format "http://publications.europa.eu/resource/authority/file-type/TXT"^^xsd:anyURI;
+	dcat:accessURL <SusceptibilityMap/operation>;
+	dct:conformsTo <SusceptibilityMap>;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 .
 
 #########
 # WebService
 ######### 
 
-<HazardMap> a epos:WebService;
-	schema:identifier "HazardMap";
-	schema:description "Tephra fallout hazard maps for explosive volcanoes";
-	schema:name "Tephra fallout hazard maps for explosive volcanoes";
+<SusceptibilityMap> a epos:WebService;
+	schema:identifier " SusceptibilityMap";
+	schema:identifier [ a schema:PropertyValue;
+	schema:propertyID  "DDSS-ID";
+	schema:value  "WP11-DDSS-056";
+	]; 
+	schema:description "Spatial probability analysis/maps – Susceptibility maps";
+	schema:name "Spatial probability analysis/maps – Susceptibility maps";
 	schema:datePublished "2018-09-01T00:00:00Z"^^xsd:dateTime;
 	schema:dateModified "2018-09-01T12:00:00Z"^^xsd:dateTime;
 	schema:provider <http://isni.org/isni/0000000122036192>;
-	schema:keywords "tephra fallout", "hazard map", "explosive eruption", "hazard assessment", "volcanic hazard", "volcanology";
-	hydra:entrypoint "https://volcanbox.epsevg.upc.edu/"^^xsd:anyURI; 
-	hydra:supportedOperation <HazardMap/operation>;
-	dcat:theme <epos:Hazardmap>;
+	schema:keywords "Spatial probability analysis", "Spatial probability maps", "volcanology", "hazard assessment", "volcanic hazard", "Susceptibility maps";
+	hydra:entrypoint " https://volcanboxws.obsea.es/"^^xsd:anyURI; 
+	hydra:supportedOperation <SusceptibilityMap/operation>;
+	dcat:theme <epos:SusceptibilityMap>;
 	dcat:contactPoint <http://orcid.org/0000-0002-8803-6504/contactPoint>;
 	
 .
 
 #########
 # Operation
-######### 
+#########
 
-<HazardMap/operation> a hydra:Operation;
-		hydra:method "GET"^^xsd:string;
-		hydra:returns "application/json";
-		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://volcanbox.epsevg.upc.edu:5000/maptype{?type,volcan}"^^xsd:string;
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "type"^^xsd:string;
-					rdfs:label "type";
-					schema:defaultValue "tephrafallout_hazard_map";
-					hydra:required "true"^^xsd:boolean;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "volcan"^^xsd:string;
-					rdfs:label "Volcano name that exposes hazard map";
-					http:paramValue "deceptionisland";
-					http:paramValue "site.json"; 
-					schema:defaultValue "deceptionisland";
-					hydra:required "false"^^xsd:boolean;
-				];
-		];
+<SusceptibilityMap/operation> a hydra:Operation;
+	hydra:method "GET"^^xsd:string;
+	hydra:returns "application/json";
+	hydra:property[ a hydra:IriTemplate;
+		hydra:template "https://volcanboxws.obsea.es:5000/maptype?type=susceptibility_map(&volcan=deceptionisland)"^^xsd:string;
+
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "volcan"^^xsd:string;
+				rdfs:label "Volcano name that exposes hazard map";
+				http:paramValue "deceptionisland";
+				http:paramValue "site.json"; 
+				schema:defaultValue "deceptionisland";
+				hydra:required "false"^^xsd:boolean;
+			];
+	];
 . 
 
 #########
@@ -180,11 +175,11 @@
 ######### 
 
 <epos:VolcanoObservations> a skos:ConceptScheme;
-		dct:title "VolcanoObservations";
-		dct:description "It contains the concepts of Volcano Observations";
+	dct:title "VolcanoObservations";
+	dct:description "It contains the concepts of Volcano Observations";
 . 
-	<epos:Hazardmap> a skos:Concept;
-		skos:inScheme <epos:VolcanoObservations>;
-		skos:prefLabel "Hazard maps";
+<epos:SusceptibilityMap> a skos:Concept;
+	skos:inScheme <epos:VolcanoObservations>;
+	skos:prefLabel "Spatial probability analysis/maps - Susceptibility";
 .
 

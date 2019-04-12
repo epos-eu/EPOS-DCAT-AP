@@ -18,7 +18,7 @@
 
 #########
 # PERSON 
-#########
+######### 
 
 <http://orcid.org/0000-0002-8803-6504> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
@@ -41,10 +41,10 @@
         schema:contactPoint <http://orcid.org/0000-0002-8803-6504/contactPoint> ;
 		
 .
- 
+
 #########
 # ContactPoint
-#########  
+######### 
 
 <http://orcid.org/0000-0002-8803-6504/scientificContact> a schema:ContactPoint;
 		schema:email "ageyertraver@gmail.com";
@@ -98,10 +98,6 @@
 <WP11/HazardMap/PDCs> a dcat:Dataset;
         dct:title "PDCs Hazard maps";
         dct:identifier "WP11/HazardMap/PDCs";
-        adms:identifier [ a adms:Identifier;
-		adms:schemaAgency "DDSS-ID";
-		skos:notation "WP11-DDSS-059";
-	]; 
         dct:description "PDCs Hazard maps";
         ## example of frequency using a controlled vocabulary
 	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
@@ -122,7 +118,6 @@
 <WP11/HazardMap/PDCs/WSDistribution> a dcat:Distribution;
         dct:identifier "WP11/HazardMaps/PDCs/WSDistribution";
 	dct:description "Hazard Maps WSDistribution";
-        dct:title "Hazard Maps WSDistribution";
 	dct:created "2018-09-01"^^xsd:date;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 	dcat:accessURL <HazardMap/operation>;
@@ -132,7 +127,7 @@
 
 #########
 # WebService
-#########
+######### 
 
 <HazardMap> a epos:WebService;
 	schema:identifier "HazardMap";
@@ -146,7 +141,7 @@
 	schema:dateModified "2018-09-01T12:00:00Z"^^xsd:dateTime;
 	schema:provider <http://isni.org/isni/0000000122036192>;
 	schema:keywords "Volcanoes", "pyroclastic density currents", "PDCs", "hazard map", "volcanic hazard", "volcanology", "hazard assessment";
-	hydra:entrypoint "https://volcanbox.epsevg.upc.edu/"^^xsd:anyURI; 
+	hydra:entrypoint "https://volcanboxws.obsea.es/"^^xsd:anyURI; 
 	hydra:supportedOperation <HazardMap/operation>;
 	dcat:theme <epos:Hazardmap>;
 	dcat:contactPoint <http://orcid.org/0000-0002-8803-6504/contactPoint>;
@@ -156,18 +151,13 @@
 #########
 # Operation
 ######### 
-	
+
 <HazardMap/operation> a hydra:Operation;
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "json";
 	hydra:property[ a hydra:IriTemplate;
-	hydra:template "https://volcanbox.epsevg.upc.edu:5000/maptype{?type,volcan}"^^xsd:string;
-                        hydra:mapping[ a hydra:IriTemplateMapping;
-				hydra:variable "type"^^xsd:string;
-				rdfs:label "type";
-				schema:defaultValue "PDC_hazard_map";
-				hydra:required "true"^^xsd:boolean;
-			];
+		hydra:template "https://volcanboxws.obsea.es:5000/maptype?type=PDC_hazard_map(&volcan=deceptionisland)"^^xsd:string;
+
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "volcan"^^xsd:string;
 				rdfs:label "Volcano name that exposes hazard map";
@@ -182,11 +172,11 @@
 ######### 
 
 <epos:VolcanoObservations> a skos:ConceptScheme;
-		dct:title "VolcanoObservations";
-		dct:description "It contains the concepts of Volcano Observations";
+	dct:title "VolcanoObservations";
+	dct:description "It contains the concepts of Volcano Observations";
 . 
-	<epos:Hazardmap> a skos:Concept;
-		skos:inScheme <epos:VolcanoObservations>;
-		skos:prefLabel "Hazard maps";
+<epos:Hazardmap> a skos:Concept;
+	skos:inScheme <epos:VolcanoObservations>;
+	skos:prefLabel "Hazard maps";
 .
 

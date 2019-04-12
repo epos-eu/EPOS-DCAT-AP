@@ -16,6 +16,10 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
+#########
+# PERSON 
+#########
+
 <http://orcid.org/0000-0002-0915-3711> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "ORCID";
@@ -77,6 +81,7 @@
 	schema:qualifications "Geochemist";
 	schema:affiliation <PIC:999472675>;
 .
+
 <http://orcid.org/0000-0002-8651-6387> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "orcid";
@@ -98,25 +103,10 @@
 	schema:contactPoint <http://orcid.org/0000-0002-8651-6387/financialContact>;
 	schema:contactPoint <http://orcid.org/0000-0002-8651-6387/legalContact>;
 .
-	
-<rest/bulk-rock> a epos:WebService;
-	schema:identifier "rest/bulk-rock";
-	schema:description "Bulk chemical analysis (major and trace elements) in volcanic rocks erupted by Etna volcano from 1995 to 2015";
-	schema:name "Bulk Rock Analysis";
-	schema:datePublished "2017-08-20T12:00:00Z"^^xsd:dateTime;
-	schema:dateModified "2017-09-15T12:00:00Z"^^xsd:dateTime;
-	schema:provider <PIC:999472675>;
-	schema:keywords "Petrology", "Volcanology", "Etna", "Magma composition", "Bulk Rock Analysis";
-	#hydra:entrypoint "application.wadl"^^xsd:anyURI;
-	hydra:supportedOperation <rest/bulk-rock/operation>;
-	dcat:theme <epos:GeochemicalData>;
-	dcat:contactPoint <http://orcid.org/0000-0002-0915-3711/contactPoint>;
-.
 
-<http://orcid.org/0000-0002-0915-3711/contactPoint> a schema:ContactPoint;
-	schema:email "danilo.reitano@ingv.it";
-	schema:availableLanguage "en" ;
-.
+#########
+# Organization
+#########
 
 <PIC:999472675> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
@@ -136,6 +126,11 @@
 	schema:contactPoint <http://orcid.org/0000-0002-8651-6387/legalContact>;
 	schema:contactPoint <http://orcid.org/0000-0002-8651-6387/financialContact>;
 .
+
+#########
+# ContactPoint
+#########
+
 <http://orcid.org/0000-0001-6137-8806/scientificContact> a schema:ContactPoint;
 	schema:email "rosanna.corsaro@ingv.it";
 	schema:availableLanguage "en" ;
@@ -151,6 +146,82 @@
 	schema:availableLanguage "en" ;
 	schema:contactType "financialContact" ;
 .
+<http://orcid.org/0000-0002-0915-3711/contactPoint> a schema:ContactPoint;
+	schema:email "danilo.reitano@ingv.it";
+	schema:availableLanguage "en" ;
+        schema:contactType "contactPoint" ;
+.
+
+#########
+# Dataset
+######### 
+
+<WP11/Bulksample> a dcat:Dataset;
+        dct:title "Bulk Rock Analysis";
+	adms:identifier [ a adms:Identifier ;
+            adms:schemaAgency "DDSS-ID" ;
+            skos:notation "WP11-DDSS-036" ;
+        ];
+        dct:identifier "WP11/Bulksample";
+        dct:description "Bulk Rock Analysis";
+        ## example of frequency using a controlled vocabulary
+	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+        dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+        dct:created "2005-01-01"^^xsd:date;
+        dcat:theme  <epos:GeochemicalData> ;
+        dcat:keyword "Geochemical-Data","Bulk Rock Analysis" ,"" ;
+        dcat:contactPoint <http://orcid.org/0000-0002-0915-3711/contactPoint>;
+	dct:publisher <PIC:999472675>;
+        dcat:distribution <WP11/Bulksample/WSDistribution>;
+        dcat:distribution <WP11/Bulksample/FileDistribution>;
+.	
+
+########
+# Distribution
+#########
+
+<WP11/Bulksample/WSDistribution> a dcat:Distribution;
+        dct:identifier "WP11/Bulksample/WSDistribution";
+	dct:description "Bulk Rock Analysis WSDistribution";
+	dct:created "2005-01-01"^^xsd:date;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+	dcat:accessURL <rest/bulk-rock/operation>;
+	dct:conformsTo <rest/bulk-rock>;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
+.
+
+<WP11/Bulksample/FileDistribution> a dcat:Distribution;
+        dct:identifier "WP11/Bulksample/FileDistribution";
+	dct:description "Bulk Rock Analysis FileDistribution";
+	dct:created "2005-01-01"^^xsd:date;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
+	dcat:accessURL "http://tsd.ct.ingv.it/tsdws/VolcanicCatalogs/1995-2015/"^^xsd:anyURI;
+	dcat:downloadURL "http://tsd.ct.ingv.it/tsdws/catalogs/1/fulldata"^^xsd:anyURI;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/TXT"^^xsd:anyURI;
+.
+
+#########
+# WebService
+######### 
+
+<rest/bulk-rock> a epos:WebService;
+	schema:identifier "rest/bulk-rock";
+	schema:description "Bulk chemical analysis (major and trace elements) in volcanic rocks erupted by Etna volcano from 1995 to 2015";
+	schema:name "Bulk Rock Analysis";
+	schema:datePublished "2017-08-20T12:00:00Z"^^xsd:dateTime;
+	schema:dateModified "2017-09-15T12:00:00Z"^^xsd:dateTime;
+	schema:provider <PIC:999472675>;
+	schema:keywords "Petrology", "Volcanology", "Etna", "Magma composition", "Bulk Rock Analysis";
+	#hydra:entrypoint "application.wadl"^^xsd:anyURI;
+	hydra:supportedOperation <rest/bulk-rock/operation>;
+	dcat:theme <epos:GeochemicalData>;
+	dcat:contactPoint <http://orcid.org/0000-0002-0915-3711/contactPoint>;
+.
+
+#########
+# Operation
+######### 
+
 <rest/bulk-rock/operation> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/json";
@@ -203,55 +274,18 @@
 				];
 		] ;
 .
-	<epos:VolcanoObservations> a skos:ConceptScheme;
-		dct:title "Volcano Observations";
-		dct:description "It contains the concepts of Volcano-Observations";
+<epos:VolcanoObservations> a skos:ConceptScheme;
+	dct:title "Volcano Observations";
+	dct:description "It contains the concepts of Volcano-Observations";
 .
-	<epos:GeochemicalData> a skos:Concept;
-		skos:inScheme <epos:VolcanoObservations>;
-		skos:prefLabel "Geochemical Data";
-		skos:definition "Geochemical Data";
+<epos:GeochemicalData> a skos:Concept;
+	skos:inScheme <epos:VolcanoObservations>;
+	skos:prefLabel "Geochemical Data";
+	skos:definition "Geochemical Data";
 
 
-.
-
-<WP11/Bulksample> a dcat:Dataset;
-        dct:title "Bulk Rock Analysis";
-	adms:identifier [ a adms:Identifier ;
-            adms:schemaAgency "DDSS-ID" ;
-            skos:notation "WP11-DDSS-036" ;
-
-        ];
-        dct:identifier "WP11/Bulksample";
-        dct:description "Bulk Rock Analysis";
-        ## example of frequency using a controlled vocabulary
-	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
-        dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
-        dct:created "2005-01-01"^^xsd:date;
-        dcat:theme  <epos:GeochemicalData> ;
-        dcat:keyword "Geochemical-Data","Bulk Rock Analysis" ,"" ;
-        dcat:contactPoint <http://orcid.org/0000-0002-0915-3711/contactPoint>;
-	dct:publisher <PIC:999472675>;
-        dcat:distribution <WP11/Bulksample/WSDistribution>;
-        dcat:distribution <WP11/Bulksample/FileDistribution>;
-		.
-
-<WP11/Bulksample/WSDistribution> a dcat:Distribution;
-        dct:identifier "WP11/Bulksample/WSDistribution";
-	dct:description "Bulk Rock Analysis WSDistribution";
-	dct:created "2005-01-01"^^xsd:date;
-	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-	dcat:accessURL <rest/bulk-rock/operation>;
-	dct:conformsTo <rest/bulk-rock>;
-	dct:format "http://publications.europa.eu/resource/authority/file-type/TXT"^^xsd:anyURI;
 .
 
-<WP11/Bulksample/FileDistribution> a dcat:Distribution;
-        dct:identifier "WP11/Bulksample/FileDistribution";
-	dct:description "Bulk Rock Analysis FileDistribution";
-	dct:created "2005-01-01"^^xsd:date;
-	dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
-	dcat:accessURL "http://tsd.ct.ingv.it/tsdws/VolcanicCatalogs/1995-2015/"^^xsd:anyURI;
-	dcat:downloadURL "http://tsd.ct.ingv.it/tsdws/catalogs/1/fulldata"^^xsd:anyURI;
-	dct:format "http://publications.europa.eu/resource/authority/file-type/TXT"^^xsd:anyURI;
-.
+
+
+

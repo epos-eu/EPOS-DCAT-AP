@@ -474,10 +474,10 @@
   hydra:returns "application/xml" ;
   hydra:property [
     a hydra:IriTemplate ;
-    hydra:template "https://www.orfeus-eu.org/odcws/rrsm/1/shakemap{?id,type}"^^xsd:string ;    
+    hydra:template "https://www.orfeus-eu.org/odcws/rrsm/1/shakemap{?eventid,type}"^^xsd:string ;    
     hydra:mapping [
       a hydra:IriTemplateMapping ;
-      hydra:variable "id"^^xsd:string ;
+      hydra:variable "eventid"^^xsd:string ;
       rdfs:label "EMSC Identifier of the event" ;
       hydra:required true ;
       schema:defaultValue "20180910_0000114" ;

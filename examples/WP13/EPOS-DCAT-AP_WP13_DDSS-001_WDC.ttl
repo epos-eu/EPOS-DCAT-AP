@@ -194,10 +194,10 @@
 <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/WDC/Dataset> a dcat:Dataset;
     dct:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/WDC/Dataset";
     dct:title "World Data Centre (WDC) Geomagnetic Observatory Data";
-    dct:description "The World Data Centre for Geomagnetism (Edinburgh) is a node of the World Data System (WDS) established by the International Council for Science (ICSU). The Geomagnetic Data Master Catalogue contains continuous digital recordings of the Earth's magnetic field at minute and hourly and daily sample periods.";
+    dct:description "The World Data Centre for Geomagnetism (Edinburgh) is a node of the World Data System (WDS) established by the International Council for Science (ICSU). The Geomagnetic Data Master Catalogue contains continuous digital recordings of the Earth's magnetic field at minute, hourly and daily sample periods.";
     adms:identifier [ a adms:Identifier;
-    adms:schemaAgency "DDSS-ID";
-    skos:notation "WP13-DDSS-001";
+        adms:schemaAgency "DDSS-ID";
+        skos:notation "WP13-DDSS-001";
     ]; 
     dct:created "2018-08-31"^^xsd:date;
     dct:modified "2018-08-31"^^xsd:date;
@@ -215,11 +215,10 @@
     dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/WDC/Distribution>;
 
     dct:temporal [ a dct:PeriodOfTime; 
-    schema:startDate "1883-01-01T00:00:00Z"^^xsd:dateTime; 
-        #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
+        schema:startDate "1883-01-01T00:00:00Z"^^xsd:dateTime; 
     ]; 
     dct:spatial [ a dct:Location; 
-    locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral; 
+        locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral; 
     ]; 
 .
 
@@ -247,7 +246,7 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/WDC/Webservice> a epos:WebService;
     schema:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/WDC/Webservice";
-    schema:description "The World Data Centre (WDC) web service makes available definitive data from global observatories.";
+    schema:description "The World Data Centre (WDC) web service makes available definitive data from global observatories. The Geomagnetic Data Master Catalogue contains continuous digital recordings of the Earth's magnetic field at minute, hourly and daily sample periods.";
     schema:name "WDC web service";
     dcat:contactPoint <mailto:smf@bgs.ac.uk/contactPoint>;
     dcat:contactPoint <mailto:petes@bgs.ac.uk/contactPoint>;
@@ -260,11 +259,10 @@
     schema:keywords "magnetism"," geomagnetism"," observatory"," provisional"," real time";
     hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/WDC/Operation> ;
     dct:spatial [ a dct:Location; 
-    locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral ;
+        locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral ;
     ]; 
     dct:temporal [ a dct:PeriodOfTime; 
-    schema:startDate "1991-01-01T00:00:00Z"^^xsd:dateTime; 
-        #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
+        schema:startDate "1991-01-01T00:00:00Z"^^xsd:dateTime; 
     ]; 
     dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 .
@@ -276,11 +274,13 @@
 <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/WDC/Operation> a hydra:Operation;
     hydra:method "GET"^^xsd:string;
     hydra:returns "text/xml";
+    hydra:returns "application/json";
+    hydra:returns "text/csv";
     hydra:property[ a hydra:IriTemplate;
         hydra:template "http://app.geomag.bgs.ac.uk/wdc/datasets/{cadence}/{obsyIagaCode}{date}{?media}"^^xsd:string;
         hydra:mapping[ a hydra:IriTemplateMapping;
             hydra:variable "cadence"^^xsd:string;
-            rdfs:label "Cadence";
+            rdfs:label "Data cadence";
             rdfs:range "xsd:string" ;
             schema:defaultValue "hour";
             http:paramValue "minute";

@@ -206,7 +206,7 @@
 					rdfs:range "xsd:dateTime";
 					rdfs:label "Endtime of documents";
 					hydra:required "true"^^xsd:boolean;
-					schema:defaultValue "2019-01-01T00:00:00"
+					schema:defaultValue "2099-01-01T00:00:00"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "percent_availability_gt"^^xsd:string;
@@ -460,7 +460,7 @@
 					rdfs:range "xsd:dateTime";
 					rdfs:label "End of the timespan";
 					hydra:required "true"^^xsd:boolean;
-					schema:defaultValue "2018-01-01T01:00:00"
+					schema:defaultValue "*"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "network"^^xsd:string;
@@ -492,6 +492,7 @@
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "minlatitude"^^xsd:string;
+					hydra:property "epos:southernmostLatitude",
 					rdfs:range "xsd:float";
 					rdfs:label "Minimum Latitude";
 					schema:minValue "-90.0";
@@ -501,6 +502,7 @@
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "maxlatitude"^^xsd:string;
+					hydra:property "epos:northernmostLatitude",
 					rdfs:range "xsd:float";
 					rdfs:label "Maximum Latitude";
 					schema:minValue "-90.0";
@@ -510,6 +512,7 @@
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "minlongitude"^^xsd:string;
+					hydra:property "epos:westernmostLongitude",
 					rdfs:range "xsd:float";
 					rdfs:label "Minimum Longitude";
 					schema:minValue "-180.0";
@@ -519,6 +522,7 @@
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "maxlongitude"^^xsd:string;
+					hydra:property "epos:easternmostLongitude",
 					rdfs:range "xsd:float";
 					rdfs:label "Maximum Longitude";
 					schema:minValue "-180.0";

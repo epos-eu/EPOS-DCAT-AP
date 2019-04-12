@@ -61,7 +61,7 @@
 
 <PIC:997168343> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "PIC ";
+		schema:propertyID "PIC";
 		schema:value "997168343";
 	]; 
 	schema:legalName "Icelandic Meteorological Office";
@@ -102,7 +102,7 @@
                 dct:publisher <PIC:997168343>;
 		dcat:distribution <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/065/WSDistribution>;		
                 dct:temporal [ a dct:PeriodOfTime; 
-		schema:startDate "2018-10-01T00:00:00Z"^^xsd:dateTime; 
+			schema:startDate "2018-10-01T00:00:00Z"^^xsd:dateTime; 
 			schema:endDate "2025-01-01T00:00:00Z"^^xsd:dateTime; 
 		]; 
 		dct:spatial [ a dct:Location; 
@@ -140,7 +140,6 @@
         dcat:theme <epos:Geohazards>;
 	schema:datePublished "2018-11-30"^^xsd:date;
 	schema:dateModified "2018-11-30"^^xsd:date;
-        
 	dct:spatial [ a dct:Location; 
 		locn:geometry "POLYGON(-25.0 63.0,-25.0 68.5,-10.0 68.5,-10.0 63.0,-25.0 63.0)"^^gsp:wktLiteral; 
 	]; 
@@ -159,26 +158,66 @@
 <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/065/Operation/065> a hydra:Operation;
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/json";
-	hydra:property[ a hydra:IriTemplate;
-		hydra:template "https://api.vedur.is/epos/v1/dispersion{?Hazard_type, start_time, end_time}"^^xsd:string;
+	hydra:property[  a hydra:IriTemplate;
+		hydra:template "https://api.vedur.is/epos/v1/dispersion{?Hazard_type, start_time, end_time}&bbox={minlatitude, minlongitude, maxlatitude, maxlongitude}"^^xsd:string;	
 			hydra:mapping[ a hydra:IriTemplateMapping;
-				hydra:variable "Hazard_type"^^xsd:string;
-				rdfs:range "xsd:string";
-				rdfs:label "Type of hazard, e.g. gas, tephra fallout";
-				schema:defaultValue "tephra fallout";
-				hydra:required "true"^^xsd:boolean;
+					hydra:variable "minlatitude"^^xsd:string; 
+					hydra:property "epos:southernmostLatitude";
+					rdfs:label "Minimum Latitude";
+					schema:minValue "-90.0";
+					schema:maxValue "90.0";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "63.0" ;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
-				hydra:variable "start_time"^^xsd:string;
-				rdfs:range "xsd:dateTime";
-				rdfs:label "Start date (YYYY-MM-DDTHH:MM:SS)";
-				hydra:required "false"^^xsd:boolean;
+					hydra:variable "minlongitude"^^xsd:string; 
+					hydra:property "epos:westernmostLongitude";
+					rdfs:label "Minimum Longitude";
+					schema:minValue "-180.0";
+					schema:maxValue "180.0";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "-25.0" ;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
-				hydra:variable "end_time"^^xsd:string;
-				rdfs:range "xsd:dateTime";
-				rdfs:label "End date (YYYY-MM-DDTHH:MM:SS)";
-				hydra:required "false"^^xsd:boolean;
+					hydra:variable "maxlatitude"^^xsd:string; 
+					hydra:property "epos:northernmostLatitude";
+					rdfs:label "Maximum Latitude";
+					schema:minValue "-90.0";
+					schema:maxValue "90.0";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "68.5" ;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "maxlongitude"^^xsd:string; 
+					hydra:property "epos:easternmostLongitude";
+					rdfs:label "Maximum Longitude";
+					schema:minValue "-180.0";
+					schema:maxValue "180.0";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "-10.0" ;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Hazard_type"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Type of hazard, e.g. gas, tephra fallout";
+					schema:defaultValue "tephra fallout";
+					hydra:required "true"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "start_time"^^xsd:string;
+					rdfs:range "xsd:dateTime";
+					hydra:property "schema:startDate";
+					schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+					rdfs:label "Start date (YYYY-MM-DDTHH:MM:SS)";
+					hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "end_time"^^xsd:string;
+					rdfs:range "xsd:dateTime";
+					hydra:property "schema:endDate";
+					schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+					rdfs:label "End date (YYYY-MM-DDTHH:MM:SS)";
+					hydra:required "false"^^xsd:boolean;
 			];
 	] ;
 . 
@@ -186,6 +225,7 @@
 #########
 # Concept
 ######### 
+
 
 <epos:Geohazards> a skos:Concept;
 	skos:definition "Maps show the hourly forecast of tephra fallout and gas dispersal";
@@ -196,7 +236,5 @@
 	dct:title "Volcano Observations";
 	dct:description "Daily ash/gas forecasting maps";
 . 
-
- 
 
 

@@ -166,12 +166,13 @@
 
 <WP11/GNSS/station/WSDistribution> a dcat:Distribution;
         dct:identifier "WP11/GNSS/station/WSDistribution";
+        dct:title "GNSS-Dataset";
 	dct:description "GNSS Dataset WSDistribution";
 	dct:created "2005-01-01"^^xsd:date;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 	dcat:accessURL <ingvgsac/station/operation>;
 	dct:conformsTo <ingvgsac/station>;
-	dct:format "http://publications.europa.eu/resource/authority/file-type/TXT"^^xsd:anyURI;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 .
 
 #########
@@ -179,7 +180,7 @@
 ######### 
 
 #WP11 GNSS/stations	
-	<ingvgsac/station> a epos:WebService;
+<ingvgsac/station> a epos:WebService;
 	schema:identifier "ingvgsac/station";
 	schema:description "Metadata on GNSS Station objects";
 	schema:name "WP11 GNSS Stations";
@@ -221,7 +222,6 @@
 	] ;
 .
 
-
 #########
 # Dataset
 ######### 
@@ -252,12 +252,12 @@
 <WP11/GNSS/files/WSDistribution> a dcat:Distribution;
         dct:identifier "WP11/GNSS/files/WSDistribution";
 	dct:description "GNSS File Dataset WSDistribution";
+        dct:title "GNSS File Dataset";
 	dct:created "2005-01-01"^^xsd:date;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 	dcat:accessURL <ingvgsac/files/operation>;
 	dct:conformsTo <ingvgsac/files>;
-	dct:format "http://publications.europa.eu/resource/authority/file-type/TXT"^^xsd:anyURI;
-
+	dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 .
 
 #########
@@ -282,28 +282,28 @@
 #########
 # Operation
 ######### 
-	<ingvgsac/files/operation> a hydra:Operation;
-		hydra:method "GET"^^xsd:string;
-		hydra:returns "application/json";
-		hydra:property[ a hydra:IriTemplate;
-			hydra:template "http://medsuv_portal.ct.ingv.it:8080/ingvgsac/gsacapi/file/search/sites.json/{?output, site.code}"^^xsd:string;
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "output"^^xsd:string;
-					rdfs:label "Details about output ";
-					http:paramValue "file.html";
-					http:paramValue "file.json";
-					http:paramValue "file.csv";
-					schema:defaultValue "file.json" ;
-					hydra:required "true"^^xsd:boolean;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "site.code"^^xsd:string;
-					rdfs:label "Content of minimum value of SiO2 of the sample, expressed as weight percent (wt%)";
-					schema:defaultValue "ENIC" ;
-					hydra:required "false"^^xsd:boolean;
-				];
-				
-		] ;
+<ingvgsac/files/operation> a hydra:Operation;
+	hydra:method "GET"^^xsd:string;
+	hydra:returns "application/json";
+	hydra:property[ a hydra:IriTemplate;
+		hydra:template "http://medsuv_portal.ct.ingv.it:8080/ingvgsac/gsacapi/file/search/sites.json/{?output, site.code}"^^xsd:string;
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "output"^^xsd:string;
+				rdfs:label "Details about output ";
+				http:paramValue "file.html";
+				http:paramValue "file.json";
+				http:paramValue "file.csv";
+				schema:defaultValue "file.json" ;
+				hydra:required "true"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "site.code"^^xsd:string;
+				rdfs:label "Content of minimum value of SiO2 of the sample, expressed as weight percent (wt%)";
+				schema:defaultValue "ENIC" ;
+				hydra:required "false"^^xsd:boolean;
+			];
+
+	] ;
 .
 
 #########

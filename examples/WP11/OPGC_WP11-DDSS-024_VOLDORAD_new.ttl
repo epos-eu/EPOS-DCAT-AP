@@ -1,15 +1,15 @@
-@prefix adms: <http://www.w3.org/nd/adms#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .  
-@prefix dc: <http://purl.org/dc/elements/1.1/> .  
-@prefix dct: <http://purl.org/dc/terms/> .  
-@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .  
-@prefix hydra: <http://www.w3.org/ns/hydra/core#> .  
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .    
-@prefix schema: <http://schema.org/> .  
-@prefix dcat: <http://www.w3.org/ns/dcat#> .  
-@prefix cnt: <http://www.w3.org/2011/content#> .   
-@prefix locn: <http://www.w3.org/ns/locn#> . 
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix http: <http://www.w3.org/2006/http#> .
@@ -120,19 +120,19 @@
 ######### 
 
 <http://orcid.org/0000-0002-4518-3328/scientificContact> a schema:ContactPoint;
-        schema:email "p.labazuy@opgc.fr";
-        schema:availableLanguage "en", "fr" ;
-	schema:contactType "scientificContact" ;
+      schema:email "p.labazuy@opgc.fr";
+      schema:availableLanguage "en", "fr" ;
+      schema:contactType "scientificContact" ;
 . 
 <http://orcid.org/0000-0002-0108-5486/legalContact> a schema:ContactPoint;
-        schema:email "n.huret@opgc.fr";
-        schema:availableLanguage "en", "fr" ;
-        schema:contactType "legalContact" ;
+      schema:email "n.huret@opgc.fr";
+      schema:availableLanguage "en", "fr" ;
+      schema:contactType "legalContact" ;
 .
 <http://orcid.org/0000-0002-0108-5486/financialContact> a schema:ContactPoint;
-        schema:email "n.huret@opgc.fr";
-        schema:availableLanguage "en", "fr" ;
-        schema:contactType "financialContact" ;
+      schema:email "n.huret@opgc.fr";
+      schema:availableLanguage "en", "fr" ;
+      schema:contactType "financialContact" ;
 .
 
 #########
@@ -165,44 +165,44 @@
 # Dataset
 ######### 
 
-<opgc.fr/vobs/WP11/DDSS-024/dataset/ERUPTIVE_PARAM> a dcat:Dataset;
-    dct:title "Doppler radar, near-source eruptive parameters";
-    dct:identifier "opgc.fr/vobs/WP11/DDSS-024/dataset/ERUPTIVE_PARAM";
-    dct:description "Ground-based Doppler radar, near-source eruptive parameters - Mount Etna - Montagnola - Sicily - VOLDORAD2B";
-    adms:identifier [ a adms:Identifier;
-        adms:schemaAgency "DDSS-ID";
-        skos:notation "WP11-DDSS-024";
-    ];
-    dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
-    dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
-    dct:temporal [ a dct:PeriodOfTime;
-        schema:startDate "2010-03-11T11:02:05Z"^^xsd:dateTime;
-    ];
-    dct:spatial [ a dct:Location;
-        locn:geometry "POINT(15.003611, 37.718889)"^^gsp:wktLiteral;
-    ];
-    dcat:theme <epos:DopplerRadar>;
-    dcat:keyword "ground-based", "remote-sensing", "doppler effect", "radar", "power", "velocity", "particles", "source parameters";
-    dcat:contactPoint <http://orcid.org/0000-0001-8293-1340/contactPoint>;
-    dct:publisher <http://isni.org/isni/0000000109416043>;
-    dcat:distribution <opgc.fr/vobs/WP11/DDSS-024/Distribution>;
+<opgc.fr/vobs/WP11/DDSS-024/dataset/ERUPTIVE_PARAM> a dcat:Dataset ;
+        dct:title "Doppler radar, near-source eruptive parameters" ;
+        dct:identifier "opgc.fr/vobs/WP11/DDSS-024/dataset/ERUPTIVE_PARAM" ;
+        dct:description "Ground-based Doppler radar, near-source eruptive parameters - Mount Etna - Montagnola - Sicily - VOLDORAD2B";
+        adms:identifier [ a adms:Identifier;
+            adms:schemaAgency "DDSS-ID";
+            skos:notation "WP11-DDSS-024";
+        ];
+        dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
+        dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+        dct:temporal [ a dct:PeriodOfTime;
+            schema:startDate "2010-03-11T11:02:05Z"^^xsd:dateTime;
+        ];
+        dct:spatial [ a dct:Location;
+            locn:geometry "POINT(15.003611, 37.718889)"^^gsp:wktLiteral;
+        ];       
+        dcat:theme <epos:DopplerRadar>;
+        dcat:keyword "ground-based", "remote-sensing", "doppler effect", "radar", "power", "velocity", "particles", "source parameters";
+        dcat:contactPoint <http://orcid.org/0000-0001-8293-1340/contactPoint>;
+        dct:publisher <http://isni.org/isni/0000000109416043>;
+        dcat:distribution <opgc.fr/vobs/WP11/DDSS-024/Distribution>;
 .
 
 #########
-# Distributions
+# Distribution
 ######### 
 
 <opgc.fr/vobs/WP11/DDSS-024/Distribution> a dcat:Distribution;
-    dct:identifier "opgc.fr/vobs/WP11/DDSS-024/Distribution";
-    dct:title "OPGC-VO distribution of VOLDORAD dataset 3";
-    dct:description "The way to download the voldorad product: MONT_20151203";
-    dct:issued "2015-12-03"^^xsd:date;
-    dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
-    dcat:accessURL <opgc.fr/vobs/voldorad/WP11/DDSS-024/data-catalog>;
-    #dcat:accessURL <opgc.fr/vobs/voldorad/WP11/DDSS-024/data-download>;
-    dct:conformsTo <opgc.fr/vobs/voldorad/WP11/DDSS-024>;
-    dct:format "http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE"^^xsd:anyURI;
-    dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+        dct:identifier "opgc.fr/vobs/WP11/DDSS-024/Distribution";
+        dct:title "OPGC-VO distribution of VOLDORAD dataset 3";
+        dct:description "The way to download the voldorad product: MONT_20151203";
+        dct:issued "2015-12-03"^^xsd:date;
+        dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+        dcat:accessURL <opgc.fr/vobs/voldorad/WP11/DDSS-024/data-catalog>;
+        #dcat:accessURL <opgc.fr/vobs/voldorad/WP11/DDSS-024/data-download>;
+        dct:conformsTo <opgc.fr/vobs/voldorad/WP11/DDSS-024>;
+        dct:format "http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE"^^xsd:anyURI;
+        dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 .
 
 #########
@@ -243,7 +243,7 @@
 .
 
 #########
-# Operations
+# Operation
 ######### 
 
 <opgc.fr/vobs/voldorad/WP11/DDSS-024/data-catalog> a hydra:Operation;
@@ -320,28 +320,28 @@
         ];
 .
 <opgc.fr/vobs/voldorad/WP11/DDSS-024/data-download> a hydra:Operation;
-	hydra:method "GET"^^xsd:string;
-	hydra:returns "application/zip";
-	# hydra:returns "application/json";
-	hydra:property [ a hydra:IriTemplate;
-	    hydra:template "http://opgc.fr/vobs/rest2/req.php/voldorad/data/id/{uri}(/{format})"^^xsd:string;
-		hydra:mapping [ a hydra:IriTemplateMapping;
-		    hydra:variable "uri"^^xsd:integer;
-		    rdfs:label "The data id number";
-		    rdfs:range "xsd:integer";
-		    schema:minValue "1"^^xsd:integer;
-		    hydra:required "true"^^xsd:boolean;
-		];
-		hydra:mapping [ a hydra:IriTemplateMapping;
-		    hydra:variable "format"^^xsd:string;
-		    rdfs:label "The output format";
-		    rdfs:range "xsd:string";
-		    http:paramValue "JSON"^^xsd:string;
-		    http:paramValue "CSV"^^xsd:string;
-		    schema:defaultValue "JSON"^^xsd:string;
-		    hydra:required "false"^^xsd:boolean;
-		];
-];
+    hydra:method "GET"^^xsd:string;
+    hydra:returns "application/zip";
+    # hydra:returns "application/json";
+    hydra:property [ a hydra:IriTemplate;
+        hydra:template "http://opgc.fr/vobs/rest2/req.php/voldorad/data/id/{uri}(/{format})"^^xsd:string;
+            hydra:mapping [ a hydra:IriTemplateMapping;
+                hydra:variable "uri"^^xsd:integer;
+                rdfs:label "The data id number";
+                rdfs:range "xsd:integer";
+                schema:minValue "1"^^xsd:integer;
+                hydra:required "true"^^xsd:boolean;
+            ];
+            hydra:mapping [ a hydra:IriTemplateMapping;
+                hydra:variable "format"^^xsd:string;
+                rdfs:label "The output format";
+                rdfs:range "xsd:string";
+                http:paramValue "JSON"^^xsd:string;
+                http:paramValue "CSV"^^xsd:string;
+                schema:defaultValue "JSON"^^xsd:string;
+                hydra:required "false"^^xsd:boolean;
+            ];
+    ];
 .
 
 #########
@@ -349,8 +349,8 @@
 #########
 
 <epos:VolcanoObservations> a skos:ConceptScheme;
-	dct:title "Volcano Observations";
-	dct:description "It contains the concept of Volcanological observations";
+	      dct:title "Volcano Observations";
+	      dct:description "It contains the concept of Volcanological observations";
 .
 <epos:DopplerRadar> a skos:Concept;
         skos:inScheme <epos:VolcanoObservations>;

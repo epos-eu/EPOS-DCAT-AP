@@ -1,15 +1,15 @@
-@prefix adms: <http://www.w3.org/nd/adms#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .  
-@prefix dc: <http://purl.org/dc/elements/1.1/> .  
-@prefix dct: <http://purl.org/dc/terms/> .  
-@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .  
-@prefix hydra: <http://www.w3.org/ns/hydra/core#> .  
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .    
-@prefix schema: <http://schema.org/> .  
-@prefix dcat: <http://www.w3.org/ns/dcat#> .  
-@prefix cnt: <http://www.w3.org/2011/content#> .   
-@prefix locn: <http://www.w3.org/ns/locn#> . 
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix http: <http://www.w3.org/2006/http#> .
@@ -81,7 +81,7 @@
     schema:qualifications "Director of OPGC";
     schema:affiliation <http://isni.org/isni/0000000109416043>;
     schema:contactPoint <http://orcid.org/0000-0002-0108-5486/legalContact>;
-    schema:contactPoint <http://orcid.org/0000-0002-0108-5486/financialContact>;
+    schema:contactPoint <http://orcid.org/0000-0002-0108-5486/financialContact>; 
 .
 
 <http://orcid.org/0000-0002-7635-1283> a schema:Person;
@@ -93,7 +93,7 @@
     schema:givenName "Andrea";
     schema:address [ a schema:PostalAddress;
         schema:streetAddress "IPGP - 14RN3 - Km 27"^^xsd:string;
-        schema:addressLocality "La Plaine des Cafres"^^xsd:string;
+        schema:addressLocality "La Plaine des Cafres";
         schema:postalCode "97418";
         schema:addressCountry "FRANCE";
     ];
@@ -107,7 +107,7 @@
 
 #########
 # Organization
-######### 
+#########
 
 <http://isni.org/isni/0000000109416043> a schema:Organization;
     schema:identifier [ a schema:PropertyValue;
@@ -121,7 +121,7 @@
     schema:address [ a schema:PostalAddress;
         schema:streetAddress "OPGC, 4 Avenue Blaise Pascal";
         schema:addressLocality "AUBIERE CEDEX"^^xsd:string;
-        schema:postalCode "63178";
+	      schema:postalCode "63178";
         schema:addressCountry "FRANCE";
     ];
     schema:logo "http://wwwobs.univ-bpclermont.fr/opgc/images/LogoOPGCTransparent.png"^^xsd:anyURI;
@@ -136,7 +136,7 @@
 
 #########
 # ContactPoint
-######### 
+#########
 
 <http://orcid.org/0000-0002-4518-3328/scientificContact> a schema:ContactPoint;
 	schema:email "p.labazuy@opgc.fr";
@@ -158,14 +158,14 @@
     schema:identifier [ a schema:PropertyValue;
         schema:PropertyID "PIC";
         schema:value "999597417";
-    ];  
+    ];
     schema:leiCode "Legal Entity Identifier" ;
     schema:legalName "Earth Physics Institute of Paris"^^xsd:string;
     # schema:alternateName "Institut de Physique du Globe de Paris"^^xsd:string;
     # schema:alternateName "IPGP"^^xsd:string;
     schema:address [ a schema:PostalAddress;
         schema:streetAddress "IPGP, 1 rue Jussieu"^^xsd:string;
-        schema:addressLocality "PARIS CEDEX"^^xsd:string;
+        schema:addressLocality "PARIS CEDEX^^xsd:string;
         schema:postalCode "75238";
         schema:addressCountry "FRANCE";
     ];
@@ -187,7 +187,7 @@
     schema:identifier [ a schema:PropertyValue;
         schema:propertyID "ISNI";
         schema:value "http://isni.org/isni/0000000121129282";
-    ];  
+    ];
     schema:leiCode "Legal Entity Identifier" ;
     schema:legalName "The National Center for Scientific Research"^^xsd:string;
     # schema:alternateName "CNRS: Le Centre National de la Recherche Scientifique"^^xsd:string;
@@ -207,22 +207,22 @@
 # Dataset
 ######### 
 
-<opgc.fr/vobs/dynvolc/WP11/DDSS-026/dataset> a dcat:Dataset;
-    dct:title "Magmatic rocks samples and thin sections collection";
-    dct:identifier "opgc.fr/vobs/dynvolc/WP11/DDSS-026/dataset";
+<opgc.fr/vobs/dynvolc/WP11/DDSS-026/dataset> a dcat:Dataset ;
+    dct:title "Magmatic rocks samples and thin sections collection" ;
+    dct:identifier "opgc.fr/vobs/dynvolc/WP11/DDSS-026/dataset" ; 
     adms:identifier [ a adms:Identifier;
-        adms:schemaAgency "DDSS-ID";
-        skos:notation "WP11-DDSS-026";
+    	adms:schemaAgency "DDSS-ID";
+    	skos:notation "WP11-DDSS-036";
     ];
     dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
-    dct:description "List of available magmatic rocks samples and thin sections";
+    dct:description "List of available magmatic rocks samples and thin sections" ;
     dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
     dct:temporal [ a dct:PeriodOfTime;
         schema:startDate "2014-06-20T21:35:00Z"^^xsd:dateTime;
     ];
-    dct:spatial [ a dct:Location;
-        locn:geometry "POLYGON(55.5966 -21.3794,55.5966 -21.1683,55.8232 -21.1683,55.8232 -21.3794,55.5966 -21.3794)"^^gsp:wktLiteral;
-    ];
+    dct:spatial [ a dct:Location; 
+		    locn:geometry "POLYGON(55.6307 -21.3423, 55.8247 -21.3423, 55.8247 -21.1828, 55.6307 -21.1828, 55.6307 -21.3423)"^^gsp:wktLiteral; 
+    ]; 		
     dcat:theme <epos:GeochemicalData>;
     dcat:keyword "eruption", "rock", "samples", "mineral", "texture", "thin section", "particle", "vesicle crystal";
     dcat:contactPoint <http://orcid.org/0000-0002-5066-5153/contactPoint>;
@@ -231,24 +231,24 @@
     dcat:distribution <opgc.fr/vobs/dynvolc/WP11/DDSS-026/dataset/distribution>;
 .
 
-########
+#########
 # Distribution
 #########
 
 <opgc.fr/vobs/dynvolc/WP11/DDSS-026/dataset/distribution> a dcat:Distribution;
-    dct:identifier "opgc.fr/vobs/WP11/DDSS-051/dataset/distribution";
-    dct:description "The way to get access to the DYNVOLC magmatic rocks collection";
-    dct:title "The way to get access to the DYNVOLC magmatic rocks collection";
-    dct:issued "2019-01-12"^^xsd:dateTime;
-    dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-    dcat:accessURL <opgc.fr/vobs/dynvolc/WP11/DDSS-026/rocks-collection>;
-    dct:conformsTo <opgc.fr/vobs/dynvolc/WP11/DDSS-026>;
-    dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
+        dct:identifier "opgc.fr/vobs/dynvolc/WP11/DDSS-026/dataset/distribution";
+        dct:title "The way to get access to the DYNVOLC magmatic rocks collection";
+        dct:description "The way to get access to the DYNVOLC magmatic rocks collection";
+        dct:issued "2019-01-12"^^xsd:date;
+        dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+        dcat:accessURL <opgc.fr/vobs/dynvolc/WP11/DDSS-026/rocks-collection>;
+        dct:conformsTo <opgc.fr/vobs/dynvolc/WP11/DDSS-026>;
+        dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 .
 
 #########
 # WebService
-######### 
+#########
 
 <opgc.fr/vobs/dynvolc/WP11/DDSS-026> a epos:WebService;
     schema:identifier "opgc.fr/vobs/dynvolc/WP11/DDSS-026";
@@ -259,9 +259,9 @@
     dct:temporal [ a dct:PeriodOfTime;
         schema:startDate "2014-06-20T21:35:00Z"^^xsd:dateTime;
     ];
-    dct:spatial [ a dct:Location;
-        locn:geometry "POLYGON((55.5966 -21.3794,55.5966 -21.1683,55.8232 -21.1683,55.8232 -21.3794,55.5966 -21.3794))"^^gsp:wktLiteral;
-    ];
+    dct:spatial [ a dct:Location; 
+		locn:geometry "POLYGON(55.6307 -21.3423, 55.8247 -21.3423, 55.8247 -21.1828, 55.6307 -21.1828, 55.6307 -21.3423)"^^gsp:wktLiteral; 
+    ]; 
     schema:provider <http://isni.org/isni/0000000109416043>;
     schema:keywords "Virtual Observatory", "Database", "Data Catalog", "eruption", "rock", "bulk rock", "volcanic glass", "mineral", "texture", "thin section", "particle", "major element", "vesicle crystal";
     hydra:supportedOperation <opgc.fr/vobs/dynvolc/WP11/DDSS-026/rocks-collection>;
@@ -364,4 +364,3 @@
             skos:inScheme <epos:VolcanoObservations>;
             skos:prefLabel "Geochemical data";
 .
-

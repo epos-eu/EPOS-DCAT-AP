@@ -1,15 +1,15 @@
-@prefix adms: <http://www.w3.org/nd/adms#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .  
-@prefix dc: <http://purl.org/dc/elements/1.1/> .  
-@prefix dct: <http://purl.org/dc/terms/> .  
-@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .  
-@prefix hydra: <http://www.w3.org/ns/hydra/core#> .  
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .    
-@prefix schema: <http://schema.org/> .  
-@prefix dcat: <http://www.w3.org/ns/dcat#> .  
-@prefix cnt: <http://www.w3.org/2011/content#> .   
-@prefix locn: <http://www.w3.org/ns/locn#> . 
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix http: <http://www.w3.org/2006/http#> .
@@ -58,7 +58,7 @@
     schema:telephone "+33473346729";
     schema:url "http://orcid.org/0000-0002-4518-3328"^^xsd:anyURI;
     schema:qualifications "Deputy Director of OPGC";
-    schema:affiliation <http://isni.org/isni/0000000109416043>; 
+    schema:affiliation <http://isni.org/isni/0000000109416043>;
     schema:contactPoint <http://orcid.org/0000-0002-4518-3328/scientificContact>; 
 .
 
@@ -81,27 +81,27 @@
     schema:qualifications "Director of OPGC";
     schema:affiliation <http://isni.org/isni/0000000109416043>;
     schema:contactPoint <http://orcid.org/0000-0002-0108-5486/legalContact>;
-    schema:contactPoint <http://orcid.org/0000-0002-0108-5486/financialContact>;
+    schema:contactPoint <http://orcid.org/0000-0002-0108-5486/financialContact>; 
 .
 
-########
+#########
 # ContactPoint
 ######### 
 
 <http://orcid.org/0000-0002-4518-3328/scientificContact> a schema:ContactPoint;
-        schema:email "p.labazuy@opgc.fr";
-        schema:availableLanguage "en", "fr" ;
-	schema:contactType "scientificContact" ;
+      schema:email "p.labazuy@opgc.fr";
+      schema:availableLanguage "en", "fr" ;
+      schema:contactType "scientificContact" ;
 . 
 <http://orcid.org/0000-0002-0108-5486/legalContact> a schema:ContactPoint;
-        schema:email "n.huret@opgc.fr";
-        schema:availableLanguage "en", "fr" ;
-        schema:contactType "legalContact" ;
+      schema:email "n.huret@opgc.fr";
+      schema:availableLanguage "en", "fr" ;
+      schema:contactType "legalContact" ;
 .
 <http://orcid.org/0000-0002-0108-5486/financialContact> a schema:ContactPoint;
-        schema:email "n.huret@opgc.fr";
-        schema:availableLanguage "en", "fr" ;
-        schema:contactType "financialContact" ;
+      schema:email "n.huret@opgc.fr";
+      schema:availableLanguage "en", "fr" ;
+      schema:contactType "financialContact" ;
 .
 
 #########
@@ -157,13 +157,13 @@
 # Dataset
 #########
 
-<opgc.fr/vobs/WP11/DDSS-051/dataset> a dcat:Dataset;
+<opgc.fr/vobs/WP11/DDSS-051/dataset> a dcat:Dataset ;
     dct:title "InSar Observatory of Indian Ocean - Catalog of Lava maps calculated from InSAR interferograms"^^xsd:string;
-    dct:identifier "opgc.fr/vobs/WP11/DDSS-051/dataset";
+    dct:identifier "opgc.fr/vobs/WP11/DDSS-051/datasetT";
     dct:description "Catalog of Lava maps calculated from Wrapped Differential Interferogram made using data from SENTINEL, COSMOSKYMED and TERRASAR-X Satellites - target: Piton de la Fournaise - Reunion island FRANCE";
     adms:identifier [ a adms:Identifier;
-        adms:schemaAgency "DDSS-ID";
-        skos:notation "WP11-DDSS-051";
+            adms:schemaAgency "DDSS-ID";
+            skos:notation "WP11-DDSS-051";
     ];
     dct:type "http://purl.org/dc/dcmitype/Image"^^xsd:anyURI;
     dct:format "http://publications.europa.eu/resource/authority/file-type/KML"^^xsd:anyURI;
@@ -174,14 +174,14 @@
     dct:issued "2017-06-21"^^xsd:dateTime;
     dct:modified "2017-06-21"^^xsd:dateTime;
     dct:spatial [ a dct:Location;
-        locn:geometry "POLYGON((55.622471 -21.182913, 55.82473 -21.338009, 55.823513 -21.33647, 55.62104 ))"^^xsd:string;
+        locn:geometry "POLYGON(55.622471 -21.182913, 55.82473 -21.184441, 55.823513 -21.338009, 55.62104 -21.33647,55.622471 -21.182913)"^^gsp:wktLiteral;
     ];
-    dcat:theme  <epos:RadarInterferometry>;
+    dcat:theme <epos:RadarInterferometry>;
     dcat:keyword "radar", "interferometry", "Reunion", "Piton de la Fournaise", "deformation", "SENTINEL", "COSMOSKYMED", "TERRASAR-X";
     dcat:contactPoint <http://www.researcherid.com/rid/O-8042-2014/contactPoint>;
     dct:publisher <http://isni.org/isni/0000000109416043>;
     schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
-    dcat:distribution <opgc.fr/vobs/WP11/DDSS-051/dataset/distribution>;
+    dcat:distribution <wwwobs.univ-bpclermont.fr/casoar/WP11/DDSS-050/Distribution>;
 .
 
 #########
@@ -189,13 +189,15 @@
 ######### 
 
 <opgc.fr/vobs/WP11/DDSS-051/dataset/distribution> a dcat:Distribution;
-    dct:identifier "opgc.fr/vobs/WP11/DDSS-051/dataset/distribution";
-    dct:description "The way to download the OI2 Lava maps product";
-    dct:issued "2018-12-19"^^xsd:dateTime;
-    dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-    dcat:accessURL <opgc.fr/vobs/oi2/WP11/DDSS-051/lava-map>;
-    dct:conformsTo <opgc.fr/vobs/WP11/DDSS-051>;
-    dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
+        dct:identifier "opgc.fr/vobs/WP11/DDSS-051/dataset/distribution";
+        dct:title "The way to download the OI2 Lava maps product";
+        dct:description "The way to download the OI2 Lava maps product";
+        dct:issued "2018-12-19"^^xsd:dateTime;
+        dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+        dct:conformsTo <opgc.fr/vobs/WP11/DDSS-051>;
+        dcat:accessURL <opgc.fr/vobs/oi2/WP11/DDSS-051/lava-map>;
+        dct:format "http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE"^^xsd:anyURI;;
+        dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 .
 
 #########
@@ -343,4 +345,3 @@
         skos:prefLabel "Radar Interferometry";
 	skos:definition "Radar Interferometry";
 .
-

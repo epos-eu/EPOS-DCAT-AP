@@ -18,7 +18,7 @@
 
 #########
 # PERSON 
-#########
+######### 
 
 <http://orcid.org/0000-0002-8803-6504> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
@@ -38,10 +38,9 @@
 	schema:url "http://orcid.org/0000-0002-8803-6504"^^xsd:anyURI;
 	schema:qualifications "Researcher";
 	schema:affiliation <http://isni.org/isni/0000000122036192>;
-        schema:contactPoint <http://orcid.org/0000-0002-8803-6504/contactPoint> ;
+    schema:contactPoint <http://orcid.org/0000-0002-8803-6504/contactPoint> ;
 		
 .
- 
 #########
 # ContactPoint
 ######### 
@@ -95,32 +94,28 @@
 # Dataset
 ######### 
 
-<WP11/HazardMap/PDCs> a dcat:Dataset;
-        dct:title "PDCs Hazard maps";
-        dct:identifier "WP11/HazardMap/Hazard map";
-         adms:identifier [ a adms:Identifier;
-		adms:schemaAgency "DDSS-ID";
-		skos:notation "WP11-DDSS-060";
-	]; 
-        dct:description "Probabilistic Hazard maps";
+<WP11/HazardMap/Lavaflow> a dcat:Dataset;
+        dct:title "Lava flow invasion hazard maps";
+        dct:identifier "WP11/HazardMap/Lavaflow";
+        dct:description "Lava flow invasion hazard maps";
         ## example of frequency using a controlled vocabulary
 	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
         dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
         dct:created "2018-09-01"^^xsd:date;
         dcat:theme  <epos:Hazardmap> ;
-        dcat:keyword "pyroclastic density currents", "PDCs", "Hazard Map", "volcanic hazard", "volcanology", "hazard assessment" ;
+        dcat:keyword "Volcanoes", "lava flow", "hazard map", "volcanic hazard", "volcanology", "hazard assessment";
         dcat:contactPoint <http://orcid.org/0000-0002-8803-6504/contactPoint>;
 	dct:publisher <http://isni.org/isni/0000000122036192>;
-        dcat:distribution <WP11/HazardMap/PDCs/WSDistribution>;
+        dcat:distribution <WP11/HazardMap/Lavaflow/WSDistribution>;
         
 .
 
 #########
 # Distribution
-######### 
+#########  
 
-<WP11/HazardMap/PDCs/WSDistribution> a dcat:Distribution;
-        dct:identifier "WP11/HazardMaps/PDCs/WSDistribution";
+<WP11/HazardMap/Lavaflow/WSDistribution> a dcat:Distribution;
+        dct:identifier "WP11/HazardMap/Lavaflow/WSDistribution";
 	dct:description "Hazard Maps WSDistribution";
         dct:title "Hazard Maps WSDistribution";
 	dct:created "2018-09-01"^^xsd:date;
@@ -136,13 +131,17 @@
 
 <HazardMap> a epos:WebService;
 	schema:identifier "HazardMap";
-	schema:description "Probabilistic volcanic hazard assessment (maps)";   
-	schema:name "Probabilistic volcanic hazard assessment (maps)";
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "DDSS-ID";
+		schema:value  "WP11-DDSS-057";
+	]; 
+	schema:description "Lava flow invasion hazard maps";
+	schema:name "Lava flow invasion hazard maps";
 	schema:datePublished "2018-09-01T00:00:00Z"^^xsd:dateTime;
 	schema:dateModified "2018-09-01T12:00:00Z"^^xsd:dateTime;
 	schema:provider <http://isni.org/isni/0000000122036192>;
-	schema:keywords "Volcanoes", "Hazard maps", "Volcanic hazard", "Hazard assessment", "probabilistic map";
-	hydra:entrypoint "https://volcanbox.epsevg.upc.edu/"^^xsd:anyURI; 
+	schema:keywords "Volcanoes", "lava flow", "hazard map", "volcanic hazard", "volcanology", "hazard assessment";
+	hydra:entrypoint "https://volcanboxws.obsea.es/"^^xsd:anyURI; 
 	hydra:supportedOperation <HazardMap/operation>;
 	dcat:theme <epos:Hazardmap>;
 	dcat:contactPoint <http://orcid.org/0000-0002-8803-6504/contactPoint>;
@@ -151,19 +150,14 @@
 
 #########
 # Operation
-#########
+######### 
 
 <HazardMap/operation> a hydra:Operation;
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "json";
 	hydra:property[ a hydra:IriTemplate;
-		hydra:template "https://volcanbox.epsevg.upc.edu:5000/maptype{?type, volcan}"^^xsd:string;
- 			hydra:mapping[ a hydra:IriTemplateMapping;
-				hydra:variable "type"^^xsd:string;
-				rdfs:label "type";
-				schema:defaultValue "hazard_map";
-				hydra:required "true"^^xsd:boolean;
-			];
+		hydra:template "https://volcanboxws.obsea.es:5000/maptype?type=lavaflow_hazard_map(&volcan=deceptionisland)"^^xsd:string;
+
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "volcan"^^xsd:string;
 				rdfs:label "Volcano name that exposes hazard map";
@@ -179,13 +173,13 @@
 # Concept
 ######### 
 
+<epos:VolcanoObservations> a skos:ConceptScheme;
+		dct:title "VolcanoObservations";
+		dct:description "It contains the concepts of Volcano Observations";
+. 
 <epos:Hazardmap> a skos:Concept;
 	skos:inScheme <epos:VolcanoObservations>;
 	skos:prefLabel "Hazard maps";
 .
 
-<epos:VolcanoObservations> a skos:ConceptScheme;
-	dct:title "VolcanoObservations";
-	dct:description "It contains the concepts of Volcano Observations";
-. 
 
