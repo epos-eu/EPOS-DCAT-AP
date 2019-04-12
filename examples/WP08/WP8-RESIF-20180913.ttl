@@ -139,7 +139,7 @@
     dct:license "Etalab licence for data"^^xsd:anyURI;
     dct:temporal [ a dct:PeriodOfTime;
         schema:startDate "1982-01-01T00:00:00Z"^^xsd:dateTime;
-#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
+        #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
         ];
     .
 # Webservice Dataselect
@@ -162,7 +162,7 @@
     dct:license "To be defined!"^^xsd:anyURI;
     dct:temporal [ a dct:PeriodOfTime;
         schema:startDate "1982-01-01T00:00:00Z"^^xsd:dateTime;
-#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
+        #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
         ];
     .
 
@@ -185,16 +185,21 @@
     dct:license "To be defined!"^^xsd:anyURI;
     dct:temporal [ a dct:PeriodOfTime;
         schema:startDate "1992-01-01T00:00:00Z"^^xsd:dateTime;
-#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
+        #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
         ];
     .
-# Operation
-# WfCatalog
+
+# Operation WfCatalog
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003/Operation/003/RESIF> a hydra:Operation;
     hydra:method "GET"^^xsd:string;
     hydra:returns "application/json";
     hydra:property[ a hydra:IriTemplate;
         hydra:template "http://ws.resif.fr/eidaws/wfcatalog/1/query{?starttime, endtime, percent_availability_gt, percent_availability_lt, num_gaps_gt, num_gaps_lt, num_overlaps_gt, num_overlaps_lt, sample_stdev_gt, sample_stdev_lt, sample_rms_gt, sample_rms_lt, max_gap_gt, max_gap_lt, sample_min_gt, sample_min_lt, sample_max_gt, sample_max_lt, sample_mean_gt, sample_mean_lt, network, station, location, channel, csegments, longestonly, minlen, include}"^^xsd:string;
+        hydra:mapping[ a hydra:IriTemplateMapping;
+            hydra:variable "epoch_start";
+            hydra:property "schema:startDate";
+            schema:valuePattern "YYYY-MM-DD";
+            ];
         hydra:mapping[ a hydra:IriTemplateMapping;
             hydra:variable "starttime"^^xsd:string;
             rdfs:range "xsd:dateTime";
@@ -379,7 +384,11 @@
     hydra:returns "application/vnd.fdsn.mseed";
     hydra:property[ a hydra:IriTemplate;
         hydra:template "http://ws.resif.fr/fdsnws/dataselect/1/query{?starttime, endtime, network, station, location, channel, quality, minimumlength, nodata}"^^xsd:string;
-
+        hydra:mapping[ a hydra:IriTemplateMapping;
+            hydra:variable "epoch_start";
+            hydra:property "schema:startDate";
+            schema:valuePattern "YYYY-MM-DD";
+            ];
         hydra:mapping[ a hydra:IriTemplateMapping;
             hydra:variable "starttime"^^xsd:string;
             rdfs:range "xsd:dateTime";
@@ -460,6 +469,11 @@
     hydra:property[ a hydra:IriTemplate;
         hydra:template "http://ws.resif.fr/fdsnws/station/1/query{?starttime, endtime, network, station, location, channel, minlatitude, maxlatitude, minlongitude, maxlongitude, level, nodata, matchtimeseries}"^^xsd:string;
         hydra:mapping[ a hydra:IriTemplateMapping;
+            hydra:variable "epoch_start";
+            hydra:property "schema:startDate";
+            schema:valuePattern "YYYY-MM-DD";
+            ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
             hydra:variable "starttime"^^xsd:string;
             rdfs:range "xsd:dateTime";
             rdfs:label "Start of the timespan";
@@ -503,6 +517,7 @@
             ];
         hydra:mapping[ a hydra:IriTemplateMapping;
             hydra:variable "minlatitude"^^xsd:string;
+            hydra:property "epos:southernmostLatitude";
             rdfs:range "xsd:float";
             rdfs:label "Minimum Latitude";
             schema:minValue "-90.0";
@@ -512,6 +527,7 @@
             ];
         hydra:mapping[ a hydra:IriTemplateMapping;
             hydra:variable "maxlatitude"^^xsd:string;
+            hydra:property "epos:northernmostLatitude";
             rdfs:range "xsd:float";
             rdfs:label "Maximum Latitude";
             schema:minValue "-90.0";
@@ -521,6 +537,7 @@
             ];
         hydra:mapping[ a hydra:IriTemplateMapping;
             hydra:variable "minlongitude"^^xsd:string;
+            hydra:property "epos:westernmostLongitude";
             rdfs:range "xsd:float";
             rdfs:label "Minimum Longitude";
             schema:minValue "-180.0";
@@ -530,6 +547,7 @@
             ];
         hydra:mapping[ a hydra:IriTemplateMapping;
             hydra:variable "maxlongitude"^^xsd:string;
+            hydra:property "epos:easternmostLongitude";
             rdfs:range "xsd:float";
             rdfs:label "Maximum Longitude";
             schema:minValue "-180.0";
