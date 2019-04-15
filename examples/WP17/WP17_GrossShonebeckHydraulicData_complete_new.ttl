@@ -16,6 +16,10 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
+#########
+# PERSON 
+######### 
+
 <http://orcid.org/0000-0002-5803-9819> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "orcid";
@@ -99,7 +103,39 @@
 	schema:affiliation <PIC:999994341>;
 	schema:contactPoint <http://orcid.org/0000-0001-6877-8327/scientificContact>;
 .
+#########
+# ContactPoint
+#########   
 
+<http://orcid.org/0000-0002-5803-9819/contactPoint> a schema:ContactPoint;
+	schema:email "thomas.reinsch@gfz-potsdam.de";
+	schema:availableLanguage "en" ;
+        schema:contactType "contactPoint" ;
+.
+<http://orcid.org/0000-0001-6877-8327/scientificContact> a schema:ContactPoint;
+	schema:email "fabian.moeller@gfz-potsdam.de";
+	schema:availableLanguage "en" ;
+	schema:contactType "scientificContact" ;
+.
+<mailto:marko.blau@gfz-potsdam.de/legalContact> a schema:ContactPoint;
+	schema:email "rechtsabteilung@gfz-potsdam.de";
+	schema:availableLanguage "en" ;
+	schema:contactType "legalContact" ;
+.
+<mailto:stephan.ott@gfz-potsdam.de/financialContact> a schema:ContactPoint;
+	schema:email "stephan.ott@gfz-potsdam.de";
+	schema:availableLanguage "en" ;
+	schema:contactType "financialContact" ;
+.
+<http://orcid.org/0000-0002-5803-9819/contactPoint> a schema:ContactPoint;
+	schema:email "thomas.reinsch@gfz-potsdam.de";
+	schema:availableLanguage "en" ;
+	schema:contactType "contactPoint" ;
+.
+
+#########
+# Organization
+#########
 <PIC:999994341> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "pic";
@@ -120,18 +156,23 @@
 	schema:contactPoint <mailto:stephan.ott@gfz-potsdam.de/financialContact>;
 	schema:contactPoint <http://orcid.org/0000-0002-5803-9819/contactPoint>;
 .
-	<GFZ.b103-15021.1> a dcat:Dataset;
-		dct:title "WP17-DDSS-001 Gross Schonebeck Hydraulic Data";
-		dct:identifier "GFZ.b103-15021.1";
-		adms:identifier [ a adms:Identifier;
-			adms:schemaAgency "DDSS-ID";
-			skos:notation "WP17-DDSS-001";
-		];
-		dct:description "Data From The Gross Schonebeck Research Platform 2011-06-01 - 2013-12-31";
-		dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
-		dct:created "2017-10-12"^^xsd:date;
-		dct:modified "2017-10-12"^^xsd:date;
-		dct:issued "2017-10-12"^^xsd:date;
+
+#########
+# Dataset
+#########
+
+<GFZ.b103-15021.1> a dcat:Dataset;
+	dct:title "WP17-DDSS-001 Gross Schonebeck Hydraulic Data";
+	dct:identifier "GFZ.b103-15021.1";
+	adms:identifier [ a adms:Identifier;
+		adms:schemaAgency "DDSS-ID";
+		skos:notation "WP17-DDSS-001";
+	];
+	dct:description "Data From The Gross Schonebeck Research Platform 2011-06-01 - 2013-12-31";
+	dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
+	dct:created "2017-10-12"^^xsd:date;
+	dct:modified "2017-10-12"^^xsd:date;
+	dct:issued "2017-10-12"^^xsd:date;
 	dct:temporal [ a dct:PeriodOfTime;
 		schema:startDate "2011-06-01T00:00:00Z"^^xsd:dateTime;
 		schema:endDate "2013-12-31T00:00:00Z"^^xsd:dateTime;
@@ -139,15 +180,40 @@
 	dct:spatial [ a dct:Location;
 		locn:geometry "POLYGON((13.60109567642212 52.90432724048678,13.602479696273804 52.90432724048678,13.602479696273804 52.90313654663532,13.60109567642212 52.90313654663532,13.60109567642212 52.90432724048678))"^^gsp:wktLiteral;
 	];
-		dcat:theme <epos:Geothermal>;
-		dcat:keyword "geothermal energy", "field experiment", "hydraulic testing", "thermal water loop", "EPOS", "geo-energy test beds";
-		dcat:contactPoint <http://orcid.org/0000-0002-5803-9819/contactPoint>;
-		dct:publisher <PIC:999994341>;
-		dcat:distribution <WP17-001-Download>;
+	dcat:theme <epos:Geothermal>;
+	dcat:keyword "geothermal energy", "field experiment", "hydraulic testing", "thermal water loop", "EPOS", "geo-energy test beds";
+	dcat:contactPoint <http://orcid.org/0000-0002-5803-9819/contactPoint>;
+	dct:publisher <PIC:999994341>;
+	dcat:distribution <WP17-001-Download>;
 .
-	<epos:GeoEnergyTestbeds> a skos:ConceptScheme;
-		dct:title "Geo Energy Testbeds";
-		dct:description "It contains the concepts of Geo Energy Testbeds";
+
+#########
+# Distribution
+######### 
+
+<WP17-001-Download> a dcat:Distribution;
+	dct:identifier "WP17-001-Download";
+	dct:title "Gross Schonebeck Research Platform datasets";
+	dct:description "From 2011-06-01 until 2013-12-31, the measurement and control system at the Gross Schonebeck research platform acquired data from several circulation experiments";
+	dct:issued "2017-10-12"^^xsd:date;
+	dct:modified "2017-10-12"^^xsd:date;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
+	dcat:downloadURL "http://escidoc.gfz-potsdam.de/ir/item/escidoc:1271654/components/component/escidoc:1273949/content"^^xsd:anyURI;
+	dcat:downloadURL "http://escidoc.gfz-potsdam.de/ir/item/escidoc:1271654/components/component/escidoc:1273948/content"^^xsd:anyURI;
+	dcat:downloadURL "http://escidoc.gfz-potsdam.de/ir/item/escidoc:1271654/components/component/escidoc:1273947/content"^^xsd:anyURI;
+	dcat:downloadURL "http://escidoc.gfz-potsdam.de/ir/item/escidoc:1271654/components/component/escidoc:1273946/content"^^xsd:anyURI;
+	dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/ZIP"^^xsd:anyURI;
+	dcat:accessURL "http://dataservices.gfz-potsdam.de/panmetaworks/showshort.php?id=escidoc:1271654"^^xsd:anyURI;
+.
+
+#########
+# Concept
+######### 
+
+<epos:GeoEnergyTestbeds> a skos:ConceptScheme;
+	dct:title "Geo Energy Testbeds";
+	dct:description "It contains the concepts of Geo Energy Testbeds";
 .
 
 <epos:Geothermal> a skos:Concept ;
@@ -156,43 +222,3 @@
    skos:prefLabel "Geothermal Energy" ;
 .
 
-
-	<WP17-001-Download> a dcat:Distribution;
-		dct:identifier "WP17-001-Download";
-		dct:title "Gross Schonebeck Research Platform datasets";
-		dct:description "From 2011-06-01 until 2013-12-31, the measurement and control system at the Gross Schonebeck research platform acquired data from several circulation experiments";
-		dct:issued "2017-10-12"^^xsd:date;
-		dct:modified "2017-10-12"^^xsd:date;
-		dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
-		dcat:downloadURL "http://escidoc.gfz-potsdam.de/ir/item/escidoc:1271654/components/component/escidoc:1273949/content"^^xsd:anyURI;
-		dcat:downloadURL "http://escidoc.gfz-potsdam.de/ir/item/escidoc:1271654/components/component/escidoc:1273948/content"^^xsd:anyURI;
-		dcat:downloadURL "http://escidoc.gfz-potsdam.de/ir/item/escidoc:1271654/components/component/escidoc:1273947/content"^^xsd:anyURI;
-		dcat:downloadURL "http://escidoc.gfz-potsdam.de/ir/item/escidoc:1271654/components/component/escidoc:1273946/content"^^xsd:anyURI;
-		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
-		dct:format "http://publications.europa.eu/resource/authority/file-type/ZIP"^^xsd:anyURI;
-		dcat:accessURL "http://dataservices.gfz-potsdam.de/panmetaworks/showshort.php?id=escidoc:1271654"^^xsd:anyURI;
-.
-	<http://orcid.org/0000-0002-5803-9819/contactPoint> a schema:ContactPoint;
-		schema:email "thomas.reinsch@gfz-potsdam.de";
-		schema:availableLanguage "en" ;
-.
-	<http://orcid.org/0000-0001-6877-8327/scientificContact> a schema:ContactPoint;
-		schema:email "fabian.moeller@gfz-potsdam.de";
-		schema:availableLanguage "en" ;
-		schema:contactType "scientificContact" ;
-.
-	<mailto:marko.blau@gfz-potsdam.de/legalContact> a schema:ContactPoint;
-		schema:email "rechtsabteilung@gfz-potsdam.de";
-		schema:availableLanguage "en" ;
-		schema:contactType "legalContact" ;
-.
-	<mailto:stephan.ott@gfz-potsdam.de/financialContact> a schema:ContactPoint;
-		schema:email "stephan.ott@gfz-potsdam.de";
-		schema:availableLanguage "en" ;
-		schema:contactType "financialContact" ;
-.
-	<http://orcid.org/0000-0002-5803-9819/contactPoint> a schema:ContactPoint;
-		schema:email "thomas.reinsch@gfz-potsdam.de";
-		schema:availableLanguage "en" ;
-		schema:contactType "contactPoint" ;
-.
