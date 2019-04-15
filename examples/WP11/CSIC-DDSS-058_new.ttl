@@ -51,12 +51,12 @@
 		schema:availableLanguage "en" ;
 		schema:contactType "scientificContact" ;
 . 
-<http://orcid.org/0000-0002-8651-6387/legalContact> a schema:ContactPoint;
+<http://orcid.org/0000-0002-8803-6504/legalContact> a schema:ContactPoint;
 		schema:email "ageyertraver@gmail.com";
 		schema:availableLanguage "en" ;
 		schema:contactType "legalContact" ;
 . 
-<http://orcid.org/0000-0002-8651-6387/financialContact> a schema:ContactPoint;
+<http://orcid.org/0000-0002-8803-6504/financialContact> a schema:ContactPoint;
 		schema:email "ageyertraver@gmail.com";
 		schema:availableLanguage "en" ;
 		schema:contactType "financialContact" ;
@@ -64,7 +64,7 @@
 <http://orcid.org/0000-0002-8803-6504/contactPoint> a schema:ContactPoint;
 		schema:email "ageyertraver@gmail.com";
 		schema:availableLanguage "en" ;
-		schema:contactType "ContactPoint" ;
+		schema:contactType "contactPoint" ;
 . 
 
 #########
@@ -87,8 +87,8 @@
 	schema:logo "http://www.csic.es/imagen-corporativa"^^xsd:anyURI;
 	schema:url "http://www.csic.es/"^^xsd:anyURI;
 	schema:contactPoint <http://orcid.org/0000-0002-8803-6504/scientificContact>;
-	schema:contactPoint <http://orcid.org/0000-0002-8651-6387/legalContact>;
-	schema:contactPoint <http://orcid.org/0000-0002-8651-6387/financialContact>;
+	schema:contactPoint <http://orcid.org/0000-0002-8803-6504/legalContact>;
+	schema:contactPoint <http://orcid.org/0000-0002-8803-6504/financialContact>;
 .
 
 #########
@@ -154,7 +154,7 @@
 	
 <HazardMap/operation> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
-		hydra:returns "json";
+		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
 			hydra:template "https://volcanboxws.obsea.es:5000/maptype?type=tephrafallout_hazard_map(&volcan=deceptionisland)"^^xsd:string;			
 				hydra:mapping[ a hydra:IriTemplateMapping;
