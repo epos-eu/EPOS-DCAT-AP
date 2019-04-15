@@ -1,0 +1,164 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http: <http://www.w3.org/2006/http#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+
+<http://viaf.org/viaf/136554353/> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "url";
+		schema:value "http://viaf.org/viaf/136554353/";
+	];
+	schema:legalName "British Geological Survey";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Nicker Hill";
+		schema:addressLocality "Keyworth, Nottingham";
+		schema:postalCode "NG12 5GG";
+		schema:addressCountry "United Kingdom";
+	];
+	schema:url "www.bgs.ac.uk"^^xsd:anyURI;
+	schema:email "enquiries@bgs.ac.uk";
+	schema:contactPoint <bbap@bgs.ac.uk/scientificContact>;
+.
+	<BGS_VoP_GW> a dcat:Dataset;
+		dct:title "Environmental baseline monitoring in the Vale of Pickering (UK) - groundwater quality data (in real time)";
+		dct:identifier "BGS_VoP_GW";
+		adms:identifier [ a adms:Identifier;
+			adms:schemaAgency "DDSS-ID";
+			skos:notation "WP17-DDSS-004";
+		];
+		dct:description "Real time groundwater quality data forming part of environmental monitoring undertaken in the Vale of Pickering (UK), from November 2016 to September 2018, and on-going";
+		dct:created "2016-11-01"^^xsd:date;
+		dct:modified "2016-11-01"^^xsd:date;
+		dct:issued "2016-11-01"^^xsd:date;
+	dct:temporal [ a dct:PeriodOfTime;
+		schema:startDate "2016-11-01T00:00:00Z"^^xsd:dateTime;
+	];
+	dct:spatial [ a dct:Location;
+		locn:geometry "POLYGON((-1.233142 54.303168,-0.311432 54.303168,-0.311432 54.123437,-1.233142 54.123437,-1.233142 54.303168))"^^gsp:wktLiteral;
+	];
+		dcat:theme <epos:shale>;
+		dcat:keyword "environmental monitoring", "baseline", "real time", "ground water", "Vale of Pickering";
+		dcat:contactPoint <rswa@bgs.ac.uk/contactPoint>;
+		dct:publisher <http://viaf.org/viaf/136554353/>;
+		dcat:distribution <WP17-004-Download>;
+.
+
+<WP17-004-Download> a dcat:Distribution;
+		dct:identifier "WP17-004-Download";
+		dct:title "Vale of Pickering real time groundwater data";
+		dct:description "Vale of Pickering real time groundwater data";
+		dct:issued "2016-11-01"^^xsd:date;
+		dct:modified "2016-11-01"^^xsd:date;
+		dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
+	
+
+		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
+		dct:format "http://publications.europa.eu/resource/authority/file-type/ZIP"^^xsd:anyURI;
+		dcat:accessURL "http://www.bgs.ac.uk/research/groundwater/shaleGas/monitoring/vopDataSummary.html"^^xsd:anyURI;
+.
+
+<epos:GeoEnergyTestbeds> a skos:ConceptScheme;
+	dct:title "Geoenergy test beds";
+	dct:description "It contains the concepts of Geoenergy test beds";
+.
+
+<epos:shale> a skos:Concept ;
+   skos:definition "Shale Gas � investigation and exploration" ;
+   skos:inScheme <epos:GeoEnergyTestbeds> ;
+   skos:prefLabel "Shale Gas" ;
+.
+
+	<rswa@bgs.ac.uk/contactPoint> a schema:ContactPoint;
+		schema:email "rswa@bgs.ac.uk";
+		schema:availableLanguage "en" ;
+.
+	<bbap@bgs.ac.uk/scientificContact> a schema:ContactPoint;
+		schema:email "rswa@bgs.ac.uk";
+		schema:availableLanguage "en" ;
+		schema:contactType "scientificContact" ;
+.
+
+<rswa@bgs.ac.uk> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "mailto";
+		schema:value "rswa@bgs.ac.uk";
+	];
+	schema:familyName "Robert Ward";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "BGS Environmental Science Centre, Nicker Hill";
+		schema:addressLocality "Keyworth, Nottingham";
+		schema:postalCode "NG12 5GG";
+		schema:addressCountry "United Kingdom";
+	];
+	schema:email "rswa@bgs.ac.uk";
+	schema:telephone "+44(0)1159363510";
+	schema:url "https://www.bgs.ac.uk/staff/profiles/2000.html"^^xsd:anyURI;
+	schema:affiliation <http://viaf.org/viaf/136554353/>;
+	schema:contactPoint <rswa@bgs.ac.uk/contactPoint>;
+.
+
+<pls@bgs.ac.uk> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "mailto";
+		schema:value "pls@bgs.ac.uk";
+	];
+	schema:familyName "Pauline Smedley";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "BGS Environmental Science Centre, NIcker Hill";
+		schema:addressLocality "Keyworth, Nottingham";
+		schema:postalCode "NG12 5GG";
+		schema:addressCountry "United Kingdom";
+	];
+	schema:email "pls@bgs.ac.uk";
+	schema:telephone "+44(0)1159363493";
+	schema:url "https://www.bgs.ac.uk/staff/profiles/1644.html"^^xsd:anyURI;
+	schema:affiliation <http://viaf.org/viaf/136554353/>;
+.
+
+<https://orcid.org/0000-0002-0624-6496> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "ORCID";
+		schema:value "https://orcid.org/0000-0002-0624-6496";
+	];
+	schema:familyName "Colm Jordan";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "BGS Environmental Science Centre, Nicker Hill";
+		schema:addressLocality "Keyworth, Nottingham";
+		schema:postalCode "NG12 5GG";
+		schema:addressCountry "United KIngdom";
+	];
+	schema:email "cjj@bgs.ac.uk";
+	schema:telephone "+44(0)1159363227";
+	schema:url "https://www.bgs.ac.uk/staff/profiles/3234.html"^^xsd:anyURI;
+	schema:affiliation <http://viaf.org/viaf/136554353/>;
+.
+
+<bbap@bgs.ac.uk> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "mailto";
+		schema:value "bbap@bgs.ac.uk";
+	];
+	schema:familyName "Brian Baptie";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "The Lyell  Centre, Research Avenue South";
+		schema:addressLocality "Edinburgh";
+		schema:postalCode "EH14 4AP";
+		schema:addressCountry "United Kingdom";
+	];
+	schema:email "bbap@bgs.ac.uk";
+	schema:affiliation <http://viaf.org/viaf/136554353/>;
+	schema:contactPoint <bbap@bgs.ac.uk/scientificContact>;
+.
