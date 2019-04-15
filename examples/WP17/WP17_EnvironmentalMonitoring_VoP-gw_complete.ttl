@@ -16,91 +16,9 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
-<http://viaf.org/viaf/136554353/> a schema:Organization;
-	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "url";
-		schema:value "http://viaf.org/viaf/136554353/";
-	];
-	schema:legalName "British Geological Survey";
-	schema:address [ a schema:PostalAddress;
-		schema:streetAddress "Nicker Hill";
-		schema:addressLocality "Keyworth, Nottingham";
-		schema:postalCode "NG12 5GG";
-		schema:addressCountry "United Kingdom";
-	];
-	schema:url "www.bgs.ac.uk"^^xsd:anyURI;
-	schema:email "enquiries@bgs.ac.uk";
-	schema:contactPoint <bbap@bgs.ac.uk/scientificContact>;
-.
-	<BGS_VoP_GW> a dcat:Dataset;
-		dct:title "Environmental baseline monitoring in the Vale of Pickering (UK) - groundwater quality data (in real time)";
-		dct:identifier "BGS_VoP_GW";
-		adms:identifier [ a adms:Identifier;
-			adms:schemaAgency "DDSS-ID";
-			skos:notation "WP17-DDSS-004";
-		];
-		dct:description "Real time groundwater quality data forming part of environmental monitoring undertaken in the Vale of Pickering (UK), from November 2016 to September 2018, and on-going";
-		dct:created "2016-11-01"^^xsd:date;
-		dct:modified "2016-11-01"^^xsd:date;
-		dct:issued "2016-11-01"^^xsd:date;
-	dct:temporal [ a dct:PeriodOfTime;
-		schema:startDate "2016-11-01T00:00:00Z"^^xsd:dateTime;
-		schema:endDate "2018-09-01T00:00:00Z"^^xsd:dateTime;
-	];
-	dct:spatial [ a dct:Location;
-		locn:geometry "POLYGON(-1.233142 54.303168,-0.311432 54.303168,-0.311432 54.123437,-1.233142 54.123437,-1.233142 54.303168)"^^gsp:wktLiteral;
-	];
-		dcat:theme <epos:shale>;
-		dcat:keyword "environmental monitoring", "baseline", "real time", "ground water", "Vale of Pickering";
-		dcat:contactPoint <rswa@bgs.ac.uk/contactPoint>;
-		dct:publisher <http://viaf.org/viaf/136554353/>;
-		dcat:distribution <WP17-004-Download>;
-.
-
-<WP17-004-Download> a dcat:Distribution;
-		dct:identifier "WP17-004-Download";
-		dct:title "Vale of Pickering real time groundwater data";
-		dct:description "Vale of Pickering real time groundwater data";
-		dct:issued "2016-11-01"^^xsd:date;
-		dct:modified "2016-11-01"^^xsd:date;
-		dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
-		dcat:downloadURL "https://resources.bgs.ac.uk/sensorData/Cache/downloads/847.2016.zip"^^xsd:anyURI;
-		dcat:downloadURL "https://resources.bgs.ac.uk/sensorData/Cache/downloads/847.2017.zip"^^xsd:anyURI;
-		dcat:downloadURL "https://resources.bgs.ac.uk/sensorData/Cache/downloads/847.2018.zip"^^xsd:anyURI;
-		dcat:downloadURL "https://resources.bgs.ac.uk/sensorData/Cache/downloads/867.2016.zip"^^xsd:anyURI;
-		dcat:downloadURL "https://resources.bgs.ac.uk/sensorData/Cache/downloads/867.2017.zip"^^xsd:anyURI;
-		dcat:downloadURL "https://resources.bgs.ac.uk/sensorData/Cache/downloads/867.2018.zip"^^xsd:anyURI;
-		dcat:downloadURL "https://resources.bgs.ac.uk/sensorData/Cache/downloads/887.2016.zip"^^xsd:anyURI;
-		dcat:downloadURL "https://resources.bgs.ac.uk/sensorData/Cache/downloads/887.2017.zip"^^xsd:anyURI;
-		dcat:downloadURL "https://resources.bgs.ac.uk/sensorData/Cache/downloads/887.2018.zip"^^xsd:anyURI;
-		dcat:downloadURL "https://resources.bgs.ac.uk/sensorData/Cache/downloads/907.2016.zip"^^xsd:anyURI;
-		dcat:downloadURL "https://resources.bgs.ac.uk/sensorData/Cache/downloads/907.2017.zip"^^xsd:anyURI;
-
-		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
-		dct:format "http://publications.europa.eu/resource/authority/file-type/ZIP"^^xsd:anyURI;
-		dcat:accessURL "http://www.bgs.ac.uk"^^xsd:anyURI;
-.
-
-<epos:GeoEnergyTestbeds> a skos:ConceptScheme;
-	dct:title "Geoenergy test beds";
-	dct:description "It contains the concepts of Geoenergy test beds";
-.
-
-<epos:shale> a skos:Concept ;
-   skos:definition "Shale Gas – investigation and exploration" ;
-   skos:inScheme <epos:GeoEnergyTestbeds> ;
-   skos:prefLabel "Shale Gas" ;
-.
-
-	<rswa@bgs.ac.uk/contactPoint> a schema:ContactPoint;
-		schema:email "rswa@bgs.ac.uk";
-		schema:availableLanguage "en" ;
-.
-	<bbap@bgs.ac.uk/scientificContact> a schema:ContactPoint;
-		schema:email "rswa@bgs.ac.uk";
-		schema:availableLanguage "en" ;
-		schema:contactType "scientificContact" ;
-.
+#########
+# PERSON 
+######### 
 
 <rswa@bgs.ac.uk> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
@@ -173,3 +91,107 @@
 	schema:affiliation <http://viaf.org/viaf/136554353/>;
 	schema:contactPoint <bbap@bgs.ac.uk/scientificContact>;
 .
+
+#########
+# ContactPoint
+######### 
+
+<rswa@bgs.ac.uk/contactPoint> a schema:ContactPoint;
+	schema:email "rswa@bgs.ac.uk";
+	schema:availableLanguage "en" ;
+	schema:contactType "contactPoint" ;
+.
+<bbap@bgs.ac.uk/scientificContact> a schema:ContactPoint;
+	schema:email "rswa@bgs.ac.uk";
+	schema:availableLanguage "en" ;
+	schema:contactType "scientificContact" ;
+.
+
+#########
+# Organization
+#########
+
+<http://viaf.org/viaf/136554353/> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "url";
+		schema:value "http://viaf.org/viaf/136554353/";
+	];
+	schema:legalName "British Geological Survey";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Nicker Hill";
+		schema:addressLocality "Keyworth, Nottingham";
+		schema:postalCode "NG12 5GG";
+		schema:addressCountry "United Kingdom";
+	];
+	schema:url "www.bgs.ac.uk"^^xsd:anyURI;
+	schema:email "enquiries@bgs.ac.uk";
+	schema:contactPoint <bbap@bgs.ac.uk/scientificContact>;
+.
+
+#########
+# Dataset
+#########
+
+<BGS_VoP_GW> a dcat:Dataset;
+	dct:title "Environmental baseline monitoring in the Vale of Pickering (UK) - groundwater quality data (in real time)";
+	dct:identifier "BGS_VoP_GW";
+	adms:identifier [ a adms:Identifier;
+		adms:schemaAgency "DDSS-ID";
+		skos:notation "WP17-DDSS-004";
+	];
+	dct:description "Real time groundwater quality data forming part of environmental monitoring undertaken in the Vale of Pickering (UK), from November 2016 to September 2018, and on-going";
+	dct:created "2016-11-01"^^xsd:date;
+	dct:modified "2016-11-01"^^xsd:date;
+	dct:issued "2016-11-01"^^xsd:date;
+dct:temporal [ a dct:PeriodOfTime;
+	schema:startDate "2016-11-01T00:00:00Z"^^xsd:dateTime;
+	schema:endDate "2018-09-01T00:00:00Z"^^xsd:dateTime;
+];
+dct:spatial [ a dct:Location;
+	locn:geometry "POLYGON(-1.233142 54.303168,-0.311432 54.303168,-0.311432 54.123437,-1.233142 54.123437,-1.233142 54.303168)"^^gsp:wktLiteral;
+];
+	dcat:theme <epos:shale>;
+	dcat:keyword "environmental monitoring", "baseline", "real time", "ground water", "Vale of Pickering";
+	dcat:contactPoint <rswa@bgs.ac.uk/contactPoint>;
+	dct:publisher <http://viaf.org/viaf/136554353/>;
+	dcat:distribution <WP17-004-Download>;
+.
+
+#########
+# Distribution
+######### 
+
+<WP17-004-Download> a dcat:Distribution;
+		dct:identifier "WP17-004-Download";
+		dct:title "Vale of Pickering real time groundwater data";
+		dct:description "Vale of Pickering real time groundwater data";
+		dct:issued "2016-11-01"^^xsd:date;
+		dct:modified "2016-11-01"^^xsd:date;
+		dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
+		dcat:downloadURL "https://resources.bgs.ac.uk/sensorData/Cache/downloads/847.2016.zip"^^xsd:anyURI;
+		dcat:downloadURL "https://resources.bgs.ac.uk/sensorData/Cache/downloads/847.2017.zip"^^xsd:anyURI;
+		dcat:downloadURL "https://resources.bgs.ac.uk/sensorData/Cache/downloads/847.2018.zip"^^xsd:anyURI;
+		dcat:downloadURL "https://resources.bgs.ac.uk/sensorData/Cache/downloads/867.2016.zip"^^xsd:anyURI;
+		dcat:downloadURL "https://resources.bgs.ac.uk/sensorData/Cache/downloads/867.2017.zip"^^xsd:anyURI;
+		dcat:downloadURL "https://resources.bgs.ac.uk/sensorData/Cache/downloads/867.2018.zip"^^xsd:anyURI;
+		dcat:downloadURL "https://resources.bgs.ac.uk/sensorData/Cache/downloads/887.2016.zip"^^xsd:anyURI;
+		dcat:downloadURL "https://resources.bgs.ac.uk/sensorData/Cache/downloads/887.2017.zip"^^xsd:anyURI;
+		dcat:downloadURL "https://resources.bgs.ac.uk/sensorData/Cache/downloads/887.2018.zip"^^xsd:anyURI;
+		dcat:downloadURL "https://resources.bgs.ac.uk/sensorData/Cache/downloads/907.2016.zip"^^xsd:anyURI;
+		dcat:downloadURL "https://resources.bgs.ac.uk/sensorData/Cache/downloads/907.2017.zip"^^xsd:anyURI;
+		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
+		dct:format "http://publications.europa.eu/resource/authority/file-type/ZIP"^^xsd:anyURI;
+		dcat:accessURL "http://www.bgs.ac.uk"^^xsd:anyURI;
+.
+
+<epos:GeoEnergyTestbeds> a skos:ConceptScheme;
+	dct:title "Geoenergy test beds";
+	dct:description "It contains the concepts of Geoenergy test beds";
+.
+
+<epos:shale> a skos:Concept ;
+   skos:definition "Shale Gas – investigation and exploration" ;
+   skos:inScheme <epos:GeoEnergyTestbeds> ;
+   skos:prefLabel "Shale Gas" ;
+.
+
