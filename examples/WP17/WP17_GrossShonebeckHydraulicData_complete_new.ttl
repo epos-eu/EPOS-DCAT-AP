@@ -1,0 +1,198 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http: <http://www.w3.org/2006/http#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+
+<http://orcid.org/0000-0002-5803-9819> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "orcid";
+		schema:value "http://orcid.org/0000-0002-5803-9819";
+	];
+	schema:familyName "Reinsch";
+	schema:givenName "Thomas";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Telegrafenberg";
+		schema:addressLocality "Potsdam";
+		schema:postalCode "14473";
+		schema:addressCountry "Germany";
+	];
+	schema:email "thomas.reinsch@gfz-potsdam.de";
+	schema:telephone "+493312881834";
+	schema:url "https://www.gfz-potsdam.de/en/staff/thomas-reinsch/"^^xsd:anyURI;
+	schema:qualifications "Group Leader";
+	schema:affiliation <PIC:999994341>;
+	schema:contactPoint <http://orcid.org/0000-0002-5803-9819/contactPoint>;
+	schema:contactPoint <http://orcid.org/0000-0002-5803-9819/contactPoint>;
+.
+
+<mailto:marko.blau@gfz-potsdam.de> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "mailto";
+		schema:value "mailto:marko.blau@gfz-potsdam.de";
+	];
+	schema:familyName "Blau";
+	schema:givenName "Marko";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Telegrafenberg";
+		schema:addressLocality "Potsdam";
+		schema:postalCode "14473";
+		schema:addressCountry "Germany";
+	];
+	schema:email "rechtsabteilung@gfz-potsdam.de";
+	schema:telephone "+493312881052";
+	schema:url "http://www.gfz-potsdam.de/en/staff/marko-blau/"^^xsd:anyURI;
+	schema:qualifications "Lawyer";
+	schema:affiliation <PIC:999994341>;
+	schema:contactPoint <mailto:marko.blau@gfz-potsdam.de/legalContact>;
+.
+
+<mailto:stephan.ott@gfz-potsdam.de> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "mailto";
+		schema:value "mailto:stephan.ott@gfz-potsdam.de";
+	];
+	schema:familyName "Ott";
+	schema:givenName "Stephan";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Telegrafenberg";
+		schema:addressLocality "Potsdam";
+		schema:postalCode "14473";
+		schema:addressCountry "Germany";
+	];
+	schema:email "stephan.ott@gfz-potsdam.de";
+	schema:telephone "+4933128827515";
+	schema:qualifications "Financial Advisor";
+	schema:affiliation <PIC:999994341>;
+	schema:contactPoint <mailto:stephan.ott@gfz-potsdam.de/financialContact>;
+.
+
+<http://orcid.org/0000-0001-6877-8327> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "orcid";
+		schema:value "http://orcid.org/0000-0001-6877-8327";
+	];
+	schema:familyName "Moeller";
+	schema:givenName "Fabian";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Telegrafenberg";
+		schema:addressLocality "Potsdam";
+		schema:postalCode "14473";
+		schema:addressCountry "Germany";
+	];
+	schema:email "fabian.moeller@gfz-potsdam.de";
+	schema:telephone "+493312881529";
+	schema:url "https://www.gfz-potsdam.de/staff/fabian-moeller/sec63/"^^xsd:anyURI;
+	schema:qualifications "Scientist - Geological Storage";
+	schema:affiliation <PIC:999994341>;
+	schema:contactPoint <http://orcid.org/0000-0001-6877-8327/scientificContact>;
+.
+
+<PIC:999994341> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "pic";
+		schema:value "999994341";
+	];
+	schema:legalName "GFZ German Research Centre for Geosciences";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Telegrafenberg";
+		schema:addressLocality "Potsdam";
+		schema:postalCode "14473";
+		schema:addressCountry "Germany";
+	];
+	#schema:logo "https://media.gfz-potsdam.de/gfz/wv/05_Medien_Kommunikation/Bildarchiv/GFZ Logo/temp_xs/LOGO-GFZ-en-mitFreistellungsraum_RGB_24bit_300dpi_546x390-jpg.jpg"^^xsd:anyURI;
+	schema:url "http://www.gfz-potsdam.de/"^^xsd:anyURI;
+	schema:email "info@gfz-potsdam.de";
+	schema:contactPoint <http://orcid.org/0000-0001-6877-8327/scientificContact>;
+	schema:contactPoint <mailto:marko.blau@gfz-potsdam.de/legalContact>;
+	schema:contactPoint <mailto:stephan.ott@gfz-potsdam.de/financialContact>;
+	schema:contactPoint <http://orcid.org/0000-0002-5803-9819/contactPoint>;
+.
+	<GFZ.b103-15021.1> a dcat:Dataset;
+		dct:title "WP17-DDSS-001 Gross Schonebeck Hydraulic Data";
+		dct:identifier "GFZ.b103-15021.1";
+		adms:identifier [ a adms:Identifier;
+			adms:schemaAgency "DDSS-ID";
+			skos:notation "WP17-DDSS-001";
+		];
+		dct:description "Data From The Gross Schonebeck Research Platform 2011-06-01 - 2013-12-31";
+		dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
+		dct:created "2017-10-12"^^xsd:date;
+		dct:modified "2017-10-12"^^xsd:date;
+		dct:issued "2017-10-12"^^xsd:date;
+	dct:temporal [ a dct:PeriodOfTime;
+		schema:startDate "2011-06-01T00:00:00Z"^^xsd:dateTime;
+		schema:endDate "2013-12-31T00:00:00Z"^^xsd:dateTime;
+	];
+	dct:spatial [ a dct:Location;
+		locn:geometry "POLYGON((13.60109567642212 52.90432724048678,13.602479696273804 52.90432724048678,13.602479696273804 52.90313654663532,13.60109567642212 52.90313654663532,13.60109567642212 52.90432724048678))"^^gsp:wktLiteral;
+	];
+		dcat:theme <epos:Geothermal>;
+		dcat:keyword "geothermal energy", "field experiment", "hydraulic testing", "thermal water loop", "EPOS", "geo-energy test beds";
+		dcat:contactPoint <http://orcid.org/0000-0002-5803-9819/contactPoint>;
+		dct:publisher <PIC:999994341>;
+		dcat:distribution <WP17-001-Download>;
+.
+	<epos:GeoEnergyTestbeds> a skos:ConceptScheme;
+		dct:title "Geo Energy Testbeds";
+		dct:description "It contains the concepts of Geo Energy Testbeds";
+.
+
+<epos:Geothermal> a skos:Concept ;
+   skos:definition "Geothermal energy" ;
+   skos:inScheme <epos:GeoEnergyTestbeds> ;
+   skos:prefLabel "Geothermal Energy" ;
+.
+
+
+	<WP17-001-Download> a dcat:Distribution;
+		dct:identifier "WP17-001-Download";
+		dct:title "Gross Schonebeck Research Platform datasets";
+		dct:description "From 2011-06-01 until 2013-12-31, the measurement and control system at the Gross Schonebeck research platform acquired data from several circulation experiments";
+		dct:issued "2017-10-12"^^xsd:date;
+		dct:modified "2017-10-12"^^xsd:date;
+		dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
+		dcat:downloadURL "http://escidoc.gfz-potsdam.de/ir/item/escidoc:1271654/components/component/escidoc:1273949/content"^^xsd:anyURI;
+		dcat:downloadURL "http://escidoc.gfz-potsdam.de/ir/item/escidoc:1271654/components/component/escidoc:1273948/content"^^xsd:anyURI;
+		dcat:downloadURL "http://escidoc.gfz-potsdam.de/ir/item/escidoc:1271654/components/component/escidoc:1273947/content"^^xsd:anyURI;
+		dcat:downloadURL "http://escidoc.gfz-potsdam.de/ir/item/escidoc:1271654/components/component/escidoc:1273946/content"^^xsd:anyURI;
+		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
+		dct:format "http://publications.europa.eu/resource/authority/file-type/ZIP"^^xsd:anyURI;
+		dcat:accessURL "http://dataservices.gfz-potsdam.de/panmetaworks/showshort.php?id=escidoc:1271654"^^xsd:anyURI;
+.
+	<http://orcid.org/0000-0002-5803-9819/contactPoint> a schema:ContactPoint;
+		schema:email "thomas.reinsch@gfz-potsdam.de";
+		schema:availableLanguage "en" ;
+.
+	<http://orcid.org/0000-0001-6877-8327/scientificContact> a schema:ContactPoint;
+		schema:email "fabian.moeller@gfz-potsdam.de";
+		schema:availableLanguage "en" ;
+		schema:contactType "scientificContact" ;
+.
+	<mailto:marko.blau@gfz-potsdam.de/legalContact> a schema:ContactPoint;
+		schema:email "rechtsabteilung@gfz-potsdam.de";
+		schema:availableLanguage "en" ;
+		schema:contactType "legalContact" ;
+.
+	<mailto:stephan.ott@gfz-potsdam.de/financialContact> a schema:ContactPoint;
+		schema:email "stephan.ott@gfz-potsdam.de";
+		schema:availableLanguage "en" ;
+		schema:contactType "financialContact" ;
+.
+	<http://orcid.org/0000-0002-5803-9819/contactPoint> a schema:ContactPoint;
+		schema:email "thomas.reinsch@gfz-potsdam.de";
+		schema:availableLanguage "en" ;
+		schema:contactType "contactPoint" ;
+.
