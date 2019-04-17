@@ -847,7 +847,8 @@
       			rdfs:range "xsd:integer";
       			rdfs:label "minLon";
 			schema:minValue "0" ;
-      			schema:maxValue "180" ;
+      			schema:maxValue "-180" ;
+			schema:defaultValue "-180";
 		 	hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -856,7 +857,8 @@
       			rdfs:range "xsd:integer";
       			rdfs:label "minLat";
 			schema:minValue "0" ;
-      			schema:maxValue "90" ;
+      			schema:maxValue "-90" ;
+			schema:defaultValue "-90";
 		 	hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -866,6 +868,7 @@
       			rdfs:label "maxLon";
 			schema:minValue "0" ;
       			schema:maxValue "180" ;
+			schema:defaultValue "180";
 		 	hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -875,6 +878,7 @@
       			rdfs:label "maxLat";
 			schema:minValue "0" ;
       			schema:maxValue "90" ;
+			schema:defaultValue "90";
 		 	hydra:required "true"^^xsd:boolean;
 		];
 	];
@@ -1305,8 +1309,9 @@
 
 <GlassFramework/webresources/stations/v2/station/geojson/Distribution/001> a dcat:Distribution ;
 	dct:identifier "GlassFramework/webresources/stations/v2/station/geojson/Distribution/001" ;
-	dct:title "GET STATION GEOJSON" ;
-	dct:description "Returns all the stations that are inside the geometry of geoJSON input." ;
+	dct:title "GET STATION" ;
+	#dct:description "Returns all the stations that are inside the geometry of geoJSON input." ;
+        dct:description "Returns all the stations that are inside a bounding box." ;
 	dct:issued "2017-01-01"^^xsd:date ;
     	dct:modified "2017-01-01"^^xsd:date ;
 
