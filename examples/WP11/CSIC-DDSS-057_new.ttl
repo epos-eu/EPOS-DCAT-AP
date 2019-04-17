@@ -124,8 +124,8 @@
         dct:title "Lava flow invasion hazard maps";
 	dct:created "2018-09-01"^^xsd:date;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-	dcat:accessURL <HazardMap/operation>;
-	dct:conformsTo <HazardMap>;
+	dcat:accessURL <HazardMap/Lavaflow/operation>;
+	dct:conformsTo <HazardMap/Lavaflow>;
 	dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 .
 
@@ -133,7 +133,7 @@
 # WebService
 ######### 
 
-<HazardMap> a epos:WebService;
+<HazardMap/Lavaflow> a epos:WebService;
 	schema:identifier "HazardMap";
 	schema:description "Lava flow invasion hazard maps";
 	schema:name "Lava flow invasion hazard maps";
@@ -152,7 +152,7 @@
 # Operation
 ######### 
 
-<HazardMap/operation> a hydra:Operation;
+<HazardMap/Lavaflow/operation> a hydra:Operation;
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
