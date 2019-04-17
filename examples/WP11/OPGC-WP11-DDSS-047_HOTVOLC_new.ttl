@@ -462,6 +462,7 @@
                     rdfs:label "Specific datetime query or starting datetime of the time interval query (format YYYY-MM-DDThh:mm:ssZ)";
                     rdfs:range "xsd:dateTime";
                     schema:minValue "2010-05-06T00:00:00Z"^^xsd:datetime;
+		    schema:defaultValue "2010-05-06T00:00:00Z";
                     hydra:required "false"^^xsd:boolean;
                 ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
@@ -470,7 +471,8 @@
                     schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
                     rdfs:label "Ending datetime the time interval query (format YYYY-MM-DDThh:mm:ssZ)";
                     rdfs:range "xsd:dateTime";
-                    schema:minValue "2010-01-01T00:00:00Z"^^xsd:datetime;
+                   # schema:minValue "2010-01-01T00:00:00Z"^^xsd:datetime;
+		    schema:defaultValue "2010-06-06T00:00:00Z";
                     schema:maxValue "9999-12-31T23:59:59Z"^^xsd:datetime;
                     hydra:required "false"^^xsd:boolean;
                 ];
