@@ -157,12 +157,13 @@
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
-		hydra:template "https://volcanboxws.obsea.es:5000/maptype?type=PDC_hazard_map(&volcan=deceptionisland)"^^xsd:string;
+		hydra:template "https://volcanboxws.obsea.es:5000/maptype?type=PDC{&volcan=DeceptionIsland}"^^xsd:string;
 
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "volcan"^^xsd:string;
 				rdfs:label "Volcano name that exposes hazard map";
-				schema:defaultValue "deceptionisland";
+				http:paramValue "Deceptionisland";
+				schema:defaultValue "DeceptionIsland";
 				hydra:required "false"^^xsd:boolean;
 			];
 	];
