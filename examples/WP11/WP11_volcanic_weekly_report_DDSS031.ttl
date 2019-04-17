@@ -201,6 +201,7 @@
 				hydra:property "schema:startDate";
 				schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 				rdfs:label "Starting time for the search";
+				schema:defaultValue "2014-10-01T00:00:00"^^xsd:dateTime;
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
@@ -208,6 +209,7 @@
 				rdfs:range "xsd:dateTime";
 				hydra:property "schema:endDate";
 				schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+				schema:defaultValue "2015-10-01T00:00:00"^^xsd:dateTime;
 				rdfs:label "Ending time for search";
 				hydra:required "false"^^xsd:boolean;
 			];
