@@ -1,7 +1,7 @@
 ---------------DATA
 
 
-STATION DISCOVERY
+GNSS STATION DISCOVERY
 
 #WS /stations/v2/station/bbox FR
 #WS Operation stations/v2/station/bbox FR
@@ -15,7 +15,7 @@ schema:name "List GNSS stations by specific criteria";
 #WS Operation stations/v2/list/station
 schema:name "List all GNSS station names and markers";
 
-RINEX FILES
+RINEX DATA FILES
 
 #WS data/files
 #WS Operation data/files
@@ -24,12 +24,14 @@ schema:name "GNSS RINEX File Metadata";
 
 ------------PRODUCTS
 
+ATTRIBUITES AND SERVCE PARAMETERS
+
 #WS products/attributes
 #WS Operation products/attributes
 schema:name "GNSS product attributes that can be used in other product service requests";
 
 
-STATION DISCOVERY
+GNSS STATION DISCOVERY
 
 #WS /stations/v2/station/bbox                    *********PRIORITY USE CASE
 #WS Operation stations/v2/station/bbox
@@ -43,7 +45,7 @@ schema:name "List GNSS Station from GEOJSON polygon";
 #WS Operation products/stations
 schema:name "GNSS Stations with products";
 
--------------derived gnss products
+-------------CALCULATED GNSS PRODUCTS FROM EPOS ANALYSIS CENTERS
 
 #WS products/timeseries                         *********PRIORITY USE CASE
 #WS Operation products/timeseries
