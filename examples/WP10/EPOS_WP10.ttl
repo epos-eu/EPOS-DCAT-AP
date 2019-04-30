@@ -846,6 +846,65 @@
 	];
 .
 
+#WS /stations/v2/station/bbox FR
+<http://glass.unice.fr:8080/GlassFramework/webresources/stations/v2/station/bbox> a epos:WebService;
+	schema:identifier "GlassFramework/webresources/stations/v2/station/bbox";
+	schema:description "Returns all the stations that are inside the bounding box in multiple outputs";
+ 	schema:name "GET STATIONS WITH PRODUCTS";
+ 	dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
+ 	schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
+ 	schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
+ 	schema:provider <PIC:996437254>;
+ 	dcat:theme  <epos:GNSSProductsPortal> ;
+ 	hydra:entrypoint "http://glass.unice.fr:8080//GlassFramework/swagger.json"^^xsd:anyURI;
+	schema:keywords "Geodesy", "GNSS" ;
+ 	dct:conformsTo <GlassFramework/APIDocumentation> ;
+ 	hydra:supportedOperation <http://glass.unice.fr:8080/GlassFramework/webresources/stations/v2/station/bbox/operation>;
+.
+
+#WS Operation stations/v2/station/bbox FR
+<GlassFramework/webresources/stations/v2/station/bbox/operation/002> a hydra:Operation;
+	hydra:method "GET"^^xsd:string;
+	hydra:returns "application/geo+json"^^xsd:string;
+	hydra:property[ a hydra:IriTemplate;
+ 		hydra:template "http://glass.unice.fr:8080//GlassFramework/webresources/stations/v2/station/bbox/{minLon}/{minLat}/{maxLon}/{maxLat}"^^xsd:string;
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "minLon"^^xsd:string;
+      		rdfs:range "xsd:integer";
+      		rdfs:label "";
+			schema:minValue "0" ;
+      		schema:maxValue "180" ;
+		 	hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "minLat"^^xsd:string;
+      		rdfs:range "xsd:integer";
+      		rdfs:label "";
+			schema:minValue "0" ;
+      		schema:maxValue "90" ;
+		 	hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "maxLon"^^xsd:string;
+      		rdfs:range "xsd:integer";
+      		rdfs:label "";
+			schema:minValue "0" ;
+      		schema:maxValue "180" ;
+		 	hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "maxLat"^^xsd:string;
+      		rdfs:range "xsd:integer";
+      		rdfs:label "";
+			schema:minValue "0" ;
+      		schema:maxValue "90" ;
+		 	hydra:required "true"^^xsd:boolean;
+		];
+	];
+.
+
+#-------------------DATASETS AND DISTRIBUTIONS----------------------------------#
+
 #<------------>#
 <https://glass.epos.ubi.pt:8080/GlassFramework/webresources/products/attributes> a dcat:Dataset ;
 	dct:identifier "GlassFramework/webresources/products/attributes/" ;
@@ -956,9 +1015,9 @@
 	dcat:distribution <GlassFramework/webresources/products/attributes/Distribution/001> ;
 
 	# This property refers to a geographic region that is covered by the Dataset.
-	#dct:spatial [ a dct:Location ;
-		# locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral ;
-	#];
+	dct:spatial [ a dct:Location ;
+		locn:geometry "POLYGON(40.429 81.201, -72.773 79.687, -75.234 76.100, -40.429 43.068, -18.632 18.979, -2.109 35.817, 22.016 35.496, 34.101 27.761, 52.822 38.616, 43.066 66.930, 40.429 81.201)"^^gsp:wktLiteral ;
+	];
 
 	# This property refers to a temporal period that the Dataset covers.
 	dct:temporal [ a dct:PeriodOfTime ;
@@ -1022,8 +1081,48 @@
         dct:title "Get Stations with products" ;
         adms:identifier [ a adms:Identifier ;
             adms:schemaAgency "DDSS-ID" ;
-            skos:notation "WP10-DDSS-002" ;
+            skos:notation "WP10-DDSS-006" ;
         ];
+		adms:identifier [ a adms:Identifier ;
+            adms:schemaAgency "DDSS-ID" ;
+            skos:notation "WP10-DDSS-007" ;
+        ];
+		adms:identifier [ a adms:Identifier ;
+            adms:schemaAgency "DDSS-ID" ;
+            skos:notation "WP10-DDSS-008" ;
+        ];adms:identifier [ a adms:Identifier ;
+            adms:schemaAgency "DDSS-ID" ;
+            skos:notation "WP10-DDSS-009" ;
+        ];adms:identifier [ a adms:Identifier ;
+            adms:schemaAgency "DDSS-ID" ;
+            skos:notation "WP10-DDSS-010" ;
+        ];adms:identifier [ a adms:Identifier ;
+            adms:schemaAgency "DDSS-ID" ;
+            skos:notation "WP10-DDSS-011" ;
+        ];adms:identifier [ a adms:Identifier ;
+            adms:schemaAgency "DDSS-ID" ;
+            skos:notation "WP10-DDSS-012" ;
+        ];adms:identifier [ a adms:Identifier ;
+            adms:schemaAgency "DDSS-ID" ;
+            skos:notation "WP10-DDSS-013" ;
+        ];adms:identifier [ a adms:Identifier ;
+            adms:schemaAgency "DDSS-ID" ;
+            skos:notation "WP10-DDSS-014" ;
+        ];adms:identifier [ a adms:Identifier ;
+            adms:schemaAgency "DDSS-ID" ;
+            skos:notation "WP10-DDSS-015" ;
+        ];adms:identifier [ a adms:Identifier ;
+            adms:schemaAgency "DDSS-ID" ;
+            skos:notation "WP10-DDSS-016" ;
+        ];adms:identifier [ a adms:Identifier ;
+            adms:schemaAgency "DDSS-ID" ;
+            skos:notation "WP10-DDSS-017" ;
+        ];
+		adms:identifier [ a adms:Identifier ;
+            adms:schemaAgency "DDSS-ID" ;
+            skos:notation "WP10-DDSS-018" ;
+        ];
+		
         dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
@@ -1053,9 +1152,9 @@
         dcat:distribution <GlassFramework/webresources/stations/v2/station/bbox/Distribution/001> ;
 
         # This property refers to a geographic region that is covered by the Dataset.
-        #dct:spatial [ a dct:Location ;
-         # locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral ;
-        #];
+        dct:spatial [ a dct:Location ;
+			locn:geometry "POLYGON(40.429 81.201, -72.773 79.687, -75.234 76.100, -40.429 43.068, -18.632 18.979, -2.109 35.817, 22.016 35.496, 34.101 27.761, 52.822 38.616, 43.066 66.930, 40.429 81.201)"^^gsp:wktLiteral ;
+		];
 
         # This property refers to a temporal period that the Dataset covers.
         dct:temporal [ a dct:PeriodOfTime ;
@@ -1095,7 +1194,105 @@
 
     # This property contains a URL that gives access to a Distribution of the Dataset. The resource at the access URL may contain # information about how to get the Dataset.
     # If the type of Distribution is WEB SERVICE, this property refers to the Operation of the Web Service to which the Distribution conforms.
-    dcat:accessURL <GlassFramework/webresources/products/stations/operation> ;
+    dcat:accessURL <GlassFramework/webresources/stations/v2/station/bbox/operation> ;
+
+    # This property refers to the file format of the Distribution.
+    # The possible types are here: http://publications.europa.eu/mdr/resource/authority/file-type/html/filetypes-eng.html
+	# we can have many types txt, json  xml...ummm
+    dct:format "http://publications.europa.eu/resource/authority/file-type/TXT"^^xsd:anyURI ;
+
+    # This property contains the size of a Distribution in bytes.
+    # dcat:byteSize "1024"^^xsd:decimal ;
+
+    # This property refers to the licence under which the Distribution is made available.
+    dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+
+    # If the type of Distribution is DOWNLOADABLE FILE, this property contains a URL that is a direct link to a downloadable file in a given format. Otherwise, this property is optional.
+    #dcat:downloadURL "URL that is a direct link to a downloadable file in a given format"^^xsd:anyURI ;
+.
+
+#<------------>#
+<http://glass.unice.fr:8080/GlassFramework/webresources/stations/v2/station/bbox> a dcat:Dataset ;
+	dct:identifier "http://glass.unice.fr:8080/GlassFramework/webresources/stations/v2/station/bbox" ;
+	dct:description "Returns GNSS Station objects containing GNSS RINEX data that match the given bbox parameters.";
+        dct:title "Get Stations with products" ;
+        adms:identifier [ a adms:Identifier ;
+            adms:schemaAgency "DDSS-ID" ;
+            skos:notation "WP10-DDSS-004" ;
+        ];		
+        dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        owl:versionInfo "1.0.0" ;
+
+        # This property refers to the type of the Dataset.
+        # Example of frequency using a controlled vocabulary http://dublincore.org/2012/06/14/dctype
+		    dct:type "http://purl.org/dc/dcmitype/Service"^^xsd:anyURI ;
+
+        # This property refers to the frequency at which the Dataset is updated.
+        # The possible types are here: http://purl.org/cld/freq/
+        dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI ;
+
+        # This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
+        dcat:theme  <epos:GNSSProductsPortal> ;
+
+        dcat:keyword "GNSS RINEX";
+
+		    # Rui
+        dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
+
+        # This property refers to an Organisation responsible for making the Dataset available.
+    		# Data portal France
+    		dct:publisher <PIC:991782030> ;
+
+        # This property links the Dataset to an available Distribution.
+        dcat:distribution <GlassFramework/webresources/stations/v2/station/bbox/Distribution/002> ;
+
+        # This property refers to a geographic region that is covered by the Dataset.
+        dct:spatial [ a dct:Location ;
+			locn:geometry "POLYGON(40.429 81.201, -72.773 79.687, -75.234 76.100, -40.429 43.068, -18.632 18.979, -2.109 35.817, 22.016 35.496, 34.101 27.761, 52.822 38.616, 43.066 66.930, 40.429 81.201)"^^gsp:wktLiteral ;
+		];
+
+
+        # This property refers to a temporal period that the Dataset covers.
+        dct:temporal [ a dct:PeriodOfTime ;
+                schema:startDate "1988-01-01T00:00:00Z"^^xsd:dateTime ;
+                #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
+        ] ;
+
+        # This property refers to a related Dataset of which the described Dataset is a version, edition, or adaptation.
+        # dct:hasVersion <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
+
+        # This property refers to a related Dataset of which the described Dataset is a version, edition, or adaptation.
+        # dct:isVersionOf <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
+
+        # This property refers to a related Dataset in which the described Dataset is physically or logically included.
+        # dct:isPartOf <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
+
+        # This property refers to a related Dataset that is part of the described Dataset.
+        # dct:hasPart <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
+
+.
+
+<GlassFramework/webresources/stations/v2/station/bbox/Distribution/002> a dcat:Distribution ;
+	dct:identifier "GlassFramework/webresources/stations/v2/station/bbox/Distribution/002" ;
+	dct:title "Stations with RINEX data" ;
+	dct:description "Returns GNSS Station objects containing GNSS RINEX data that match the given bbox parameters" ;
+	dct:issued "2017-01-01"^^xsd:date ;
+    dct:modified "2017-01-01"^^xsd:date ;
+
+    # This property refers to the type of the Distribution. The possible types are
+    # (http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE
+    # OR
+    # http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE)
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI ;
+
+    # If the type of Distribution is WEB SERVICE, this property refers to the Web Service that gives access to a Distribution of the Dataset. Otherwise, this property is optional.
+	  dct:conformsTo <GlassFramework/webresources/products/stations/> ;
+
+    # This property contains a URL that gives access to a Distribution of the Dataset. The resource at the access URL may contain # information about how to get the Dataset.
+    # If the type of Distribution is WEB SERVICE, this property refers to the Operation of the Web Service to which the Distribution conforms.
+    dcat:accessURL <GlassFramework/webresources/stations/v2/station/bbox/operation/002> ;
 
     # This property refers to the file format of the Distribution.
     # The possible types are here: http://publications.europa.eu/mdr/resource/authority/file-type/html/filetypes-eng.html
@@ -1149,9 +1346,9 @@
         dcat:distribution <GlassFramework/webresources/files/Distribution/001> ;
 
         # This property refers to a geographic region that is covered by the Dataset.
-        #dct:spatial [ a dct:Location ;
-         # locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral ;
-        #];
+        dct:spatial [ a dct:Location ;
+			locn:geometry "POLYGON(40.429 81.201, -72.773 79.687, -75.234 76.100, -40.429 43.068, -18.632 18.979, -2.109 35.817, 22.016 35.496, 34.101 27.761, 52.822 38.616, 43.066 66.930, 40.429 81.201)"^^gsp:wktLiteral ;
+		];
 
         # This property refers to a temporal period that the Dataset covers.
         dct:temporal [ a dct:PeriodOfTime ;
@@ -1245,9 +1442,10 @@
         dcat:distribution <GlassFramework/webresources/stations/v2/station/geojson/Distribution/001> ;
 
         # This property refers to a geographic region that is covered by the Dataset.
-        #dct:spatial [ a dct:Location ;
-         # locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral ;
-        #];
+        dct:spatial [ a dct:Location ;
+			locn:geometry "POLYGON(40.429 81.201, -72.773 79.687, -75.234 76.100, -40.429 43.068, -18.632 18.979, -2.109 35.817, 22.016 35.496, 34.101 27.761, 52.822 38.616, 43.066 66.930, 40.429 81.201)"^^gsp:wktLiteral ;
+		];
+
 
         # This property refers to a temporal period that the Dataset covers.
         dct:temporal [ a dct:PeriodOfTime ;
@@ -1341,9 +1539,10 @@
         dcat:distribution <GlassFramework/webresources/products/coordinates/PPP/Distribution/001> ;
 
         # This property refers to a geographic region that is covered by the Dataset.
-        #dct:spatial [ a dct:Location ;
-         # locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral ;
-        #];
+        dct:spatial [ a dct:Location ;
+			locn:geometry "POLYGON(40.429 81.201, -72.773 79.687, -75.234 76.100, -40.429 43.068, -18.632 18.979, -2.109 35.817, 22.016 35.496, 34.101 27.761, 52.822 38.616, 43.066 66.930, 40.429 81.201)"^^gsp:wktLiteral ;
+		];
+
 
         # This property refers to a temporal period that the Dataset covers.
         dct:temporal [ a dct:PeriodOfTime ;
@@ -1438,9 +1637,10 @@
         dcat:distribution <GlassFramework/webresources/products/coordinates/DD/Distribution/001> ;
 
         # This property refers to a geographic region that is covered by the Dataset.
-        #dct:spatial [ a dct:Location ;
-         # locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral ;
-        #];
+        dct:spatial [ a dct:Location ;
+			locn:geometry "POLYGON(40.429 81.201, -72.773 79.687, -75.234 76.100, -40.429 43.068, -18.632 18.979, -2.109 35.817, 22.016 35.496, 34.101 27.761, 52.822 38.616, 43.066 66.930, 40.429 81.201)"^^gsp:wktLiteral ;
+		];
+
 
         # This property refers to a temporal period that the Dataset covers.
         dct:temporal [ a dct:PeriodOfTime ;
@@ -1536,9 +1736,10 @@
         dcat:distribution <GlassFramework/webresources/products/timeseries/PPP/Distribution/001> ;
 
         # This property refers to a geographic region that is covered by the Dataset.
-        #dct:spatial [ a dct:Location ;
-         # locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral ;
-        #];
+        dct:spatial [ a dct:Location ;
+			locn:geometry "POLYGON(40.429 81.201, -72.773 79.687, -75.234 76.100, -40.429 43.068, -18.632 18.979, -2.109 35.817, 22.016 35.496, 34.101 27.761, 52.822 38.616, 43.066 66.930, 40.429 81.201)"^^gsp:wktLiteral ;
+		];
+
 
         # This property refers to a temporal period that the Dataset covers.
         dct:temporal [ a dct:PeriodOfTime ;
@@ -1634,9 +1835,10 @@
         dcat:distribution <GlassFramework/webresources/products/timeseries/DD/Distribution/001> ;
 
         # This property refers to a geographic region that is covered by the Dataset.
-        #dct:spatial [ a dct:Location ;
-         # locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral ;
-        #];
+        dct:spatial [ a dct:Location ;
+			locn:geometry "POLYGON(40.429 81.201, -72.773 79.687, -75.234 76.100, -40.429 43.068, -18.632 18.979, -2.109 35.817, 22.016 35.496, 34.101 27.761, 52.822 38.616, 43.066 66.930, 40.429 81.201)"^^gsp:wktLiteral ;
+		];
+
 
         # This property refers to a temporal period that the Dataset covers.
         dct:temporal [ a dct:PeriodOfTime ;
@@ -1732,9 +1934,10 @@
         dcat:distribution <GlassFramework/webresources/products/timeseries/combined/Distribution/001> ;
 
         # This property refers to a geographic region that is covered by the Dataset.
-        #dct:spatial [ a dct:Location ;
-         # locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral ;
-        #];
+        dct:spatial [ a dct:Location ;
+			locn:geometry "POLYGON(40.429 81.201, -72.773 79.687, -75.234 76.100, -40.429 43.068, -18.632 18.979, -2.109 35.817, 22.016 35.496, 34.101 27.761, 52.822 38.616, 43.066 66.930, 40.429 81.201)"^^gsp:wktLiteral ;
+		];
+
 
         # This property refers to a temporal period that the Dataset covers.
         dct:temporal [ a dct:PeriodOfTime ;
@@ -1830,9 +2033,10 @@
         dcat:distribution <GlassFramework/webresources/products/velocities/PPP/Distribution/001> ;
 
         # This property refers to a geographic region that is covered by the Dataset.
-        #dct:spatial [ a dct:Location ;
-         # locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral ;
-        #];
+        dct:spatial [ a dct:Location ;
+			locn:geometry "POLYGON(40.429 81.201, -72.773 79.687, -75.234 76.100, -40.429 43.068, -18.632 18.979, -2.109 35.817, 22.016 35.496, 34.101 27.761, 52.822 38.616, 43.066 66.930, 40.429 81.201)"^^gsp:wktLiteral ;
+		];
+
 
         # This property refers to a temporal period that the Dataset covers.
         dct:temporal [ a dct:PeriodOfTime ;
@@ -1928,9 +2132,10 @@
         dcat:distribution <GlassFramework/webresources/products/velocities/DD/Distribution/001> ;
 
         # This property refers to a geographic region that is covered by the Dataset.
-        #dct:spatial [ a dct:Location ;
-         # locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral ;
-        #];
+        dct:spatial [ a dct:Location ;
+			locn:geometry "POLYGON(40.429 81.201, -72.773 79.687, -75.234 76.100, -40.429 43.068, -18.632 18.979, -2.109 35.817, 22.016 35.496, 34.101 27.761, 52.822 38.616, 43.066 66.930, 40.429 81.201)"^^gsp:wktLiteral ;
+		];
+
 
         # This property refers to a temporal period that the Dataset covers.
         dct:temporal [ a dct:PeriodOfTime ;
@@ -2026,9 +2231,10 @@
         dcat:distribution <GlassFramework/webresources/products/velocities/combined/Distribution/001> ;
 
         # This property refers to a geographic region that is covered by the Dataset.
-        #dct:spatial [ a dct:Location ;
-         # locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral ;
-        #];
+        dct:spatial [ a dct:Location ;
+			locn:geometry "POLYGON(40.429 81.201, -72.773 79.687, -75.234 76.100, -40.429 43.068, -18.632 18.979, -2.109 35.817, 22.016 35.496, 34.101 27.761, 52.822 38.616, 43.066 66.930, 40.429 81.201)"^^gsp:wktLiteral ;
+		];
+
 
         # This property refers to a temporal period that the Dataset covers.
         dct:temporal [ a dct:PeriodOfTime ;
