@@ -176,7 +176,7 @@
 <GlassFramework/webresources/products/attributes/> a epos:WebService;
 	schema:identifier "GlassFramework/webresources/products/attributes";
 	schema:description "Returns the GNSS product attributes that can be used in other product requests";
-	schema:name "Gets attributes for application in other requests";
+	schema:name "GNSS product attributes that can be used in other product service requests";
  	dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
  	schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
  	schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
@@ -214,8 +214,8 @@
 #WS data/files
 <GlassFramework/webresources/files> a epos:WebService;
 	schema:identifier "GlassFramework/webresources/files";
-	schema:description "Returns the GNSS RINEX File MetaData that match the given criteria.";
-	schema:name "GET Files V2";
+	schema:description "Returns the GNSS RINEX File Metadata that match the given criteria.";
+	schema:name "GNSS RINEX File Metadata";
 	dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
 	schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
 	schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
@@ -283,7 +283,7 @@
 <GlassFramework/webresources/products/stations/> a epos:WebService;
 	schema:identifier "GlassFramework/webresources/products/stations";
 	schema:description "Returns GNSS Station objects containing GNSS Products metadata that match the given parameters.";
-	schema:name "GET STATIONS WITH PRODUCTS";
+	schema:name "GNSS Stations with products";
 	dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
 	schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
 	schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
@@ -376,7 +376,7 @@
 <GlassFramework/webresources/products/timeseries> a epos:WebService;
  	schema:identifier "GlassFramework/webresources/products/timeseries";
 	schema:description "Returns the GNSS Time Series Product, for GNSS stations and Products that match the given metadata parameters";
- 	schema:name "GNSS STATION Time Series (XYZ)";
+ 	schema:name "GNSS Time Series";
  	dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
  	schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
  	schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
@@ -494,11 +494,11 @@
 	];
 .
 
-#WS  products/velocities
+#WS products/velocities
 <GlassFramework/webresources/products/velocities/> a epos:WebService;
 	schema:identifier "GlassFramework/webresources/products/velocities";
 	schema:description "Returns the GNSS Velocity Product, for GNSS stations and Products that match the given metadata parameters.";
-	schema:name "GET VELOCITIES";
+	schema:name "GNSS Velocities";
 	dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
 	schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
 	schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
@@ -553,7 +553,7 @@
 <GlassFramework/webresources/products/coordinates/> a epos:WebService;
  schema:identifier "GlassFramework/webresources/products/coordinates";
  schema:description "Returns the GNSS Coordinates Product, for GNSS stations that match the given metadata parameters.";
- schema:name "GET Coordinates";
+ schema:name "GNSS Coordinates";
  dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
  schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
  schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
@@ -675,7 +675,7 @@
 <GlassFramework/webresources/stations/v2/list/> a epos:WebService;
 	schema:identifier "GlassFramework/webresources/stations/v2/list/";
 	schema:description "Returns a list containing existing data of the chosen type such as the available cities.";
-	schema:name "GET LIST V2";
+	schema:name "List GNSS stations by specific criteria";
 	dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
 	schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
 	schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
@@ -717,7 +717,7 @@
 <GlassFramework/webresources/stations/v2/list/station> a epos:WebService;
 	schema:identifier "GlassFramework/webresources/stations/v2/list/station";
 	schema:description "Returns a list with the name a list with the name and marker of all the GNSS stations that disseminate GNSS data or the a list containing stations that match the given name and marker parameters.";
- 	schema:name "GET STATION LIST V2";
+ 	schema:name "List all GNSS station names and markers";
  	dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
  	schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
  	schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
@@ -754,19 +754,19 @@
 <GlassFramework/webresources/stations/v2/station/geojson> a epos:WebService;
 	schema:identifier "GlassFramework/webresources/stations/v2/station/geojson";
 	schema:description "Returns all the stations that are inside the geometry of geoJSON input";
- 	schema:name "GET STATION GEOJSON";
+ 	schema:name "List GNSS Station from GEOJSON polygon";
  	dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
  	schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
  	schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
  	schema:provider <PIC:996437254>;
  	dcat:theme  <epos:GNSSDataGatewayPortal> ;
- 	hydra:entrypoint "http://glass.unice.fr:8080/GlassFramework/swagger.json"^^xsd:anyURI;
+ 	hydra:entrypoint "https://glass.epos.ubi.pt:8080/GlassFramework/swagger.json"^^xsd:anyURI;
 	schema:keywords "Geodesy", "GNSS" ;
  	dct:conformsTo <GlassFramework/APIDocumentation> ;
  	hydra:supportedOperation <GlassFramework/webresources/stations/v2/station/geojson/operation>;
 .
 
-#WS Operation /stations/v2/station/geojson
+#WS Operation PRODUCTS PORTAL /stations/v2/station/geojson
 <GlassFramework/webresources/stations/v2/station/geojson/operation> a hydra:Operation;
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/json";
@@ -793,7 +793,7 @@
 <GlassFramework/webresources/stations/v2/station/bbox> a epos:WebService;
 	schema:identifier "GlassFramework/webresources/stations/v2/station/bbox";
 	schema:description "Returns all the stations that are inside the bounding box in multiple outputs";
- 	schema:name "GET STATIONS WITH PRODUCTS";
+ 	schema:name "GNSS Stations With Products";
  	dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
  	schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
  	schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
@@ -850,7 +850,7 @@
 <http://glass.unice.fr:8080/GlassFramework/webresources/stations/v2/station/bbox> a epos:WebService;
 	schema:identifier "GlassFramework/webresources/stations/v2/station/bbox";
 	schema:description "Returns all the stations that are inside the bounding box in multiple outputs";
- 	schema:name "GET STATIONS WITH PRODUCTS";
+ 	schema:name "GNSS EPOS Stations With data";
  	dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
  	schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
  	schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
