@@ -104,8 +104,8 @@ class Operation:
         self.variables = set([])
         for var in g.triples((None, HYDRA.variable, None)):
             self.variables.add(str(var[2]))
-            required = list(g.triples((var[0], HYDRA.required, None)))[0][2]
             try:
+                required = list(g.triples((var[0], HYDRA.required, None)))[0][2]
                 default = list(g.triples((var[0], SCHEMA.defaultValue, None)))[0][2]
                 self.defaults[str(var[2])] = str(default)
             except IndexError:
