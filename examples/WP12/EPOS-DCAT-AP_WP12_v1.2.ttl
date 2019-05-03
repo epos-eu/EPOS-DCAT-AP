@@ -691,10 +691,6 @@
 
 <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/WRAPPED_INTERFEROGRAM> a epos:WebService;
   schema:identifier "https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/WRAPPED_INTERFEROGRAM";
-  #schema:identifier [ a schema:PropertyValue;
-    #schema:propertyID  "DDSS-ID";
-    #schema:value  "";
-  #];
   schema:description "Map of the flattened phase difference (restricted in the -pi,pi domain) computed between two SAR images acquired over the same scene with the same geometry. The Differential Interferogram is linerly related to the Line of Sight projection of the actual surface deformation.";
   dcat:theme <epos:InSAR>;
   schema:name "Wrapped Differential Interferogram (Phase and Amplitude)";
@@ -723,10 +719,6 @@
 
 <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/UNWRAPPED_INTERFEROGRAM> a epos:WebService;
   schema:identifier "https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/UNWRAPPED_INTERFEROGRAM";
-  #schema:identifier [ a schema:PropertyValue;
-    #schema:propertyID  "DDSS-ID";
-    #schema:value  "";
-  #];
   schema:description "Map of the flattened phase difference (full evolution) computed between two SAR images acquired over the same scene with the same geometry. The Differential Interferogram is linerly related to the Line of Sight projection of the actual surface deformation.";
   dcat:theme <epos:InSAR>;
   schema:name "Unwrapped Differential Interferogram (Phase and Amplitude)";
@@ -755,10 +747,6 @@
 
 <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/LOS_DISPLACEMENT_TIMESERIES> a epos:WebService;
   schema:identifier "https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/LOS_DISPLACEMENT_TIMESERIES>";
-  #schema:identifier [ a schema:PropertyValue;
-    #schema:propertyID  "DDSS-ID";
-    #schema:value  "";
-  #];
   schema:description "Temporal evoluton of the surface displacement projected along the satellite Line of Sight (LOS).";
   dcat:theme <epos:InSAR>;
   schema:name "LOS Displacement Time Series";
@@ -787,10 +775,6 @@
 
 <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/SPATIAL_COHERENCE> a epos:WebService;
   schema:identifier "https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/SPATIAL_COHERENCE";
-  #schema:identifier [ a schema:PropertyValue;
-    #schema:propertyID  "DDSS-ID";
-    #schema:value  "";
-  #];
   schema:description "Map of the spatial coherence computed between two SAR images acquired over the same scene with the same geometry";
   dcat:theme <epos:InSAR>;
   schema:name "Spatial Coherence";
@@ -819,10 +803,6 @@
 
 <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/MAP_OF_LOS_VECTOR> a epos:WebService;
   schema:identifier "https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/MAP_OF_LOS_VECTOR";
-  #schema:identifier [ a schema:PropertyValue;
-    #schema:propertyID  "DDSS-ID";
-    #schema:value  "";
-  #];
   schema:description "Map of the unit vectors of the satellite Line of Sight";
   dcat:theme <epos:InSAR>;
   schema:name "Map of LOS vector (NEU coefficient)";
@@ -852,10 +832,6 @@
 
 <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/INTERFEROGRAM_APS_GLOBAL_MODEL> a epos:WebService;
   schema:identifier "https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/INTERFEROGRAM_APS_GLOBAL_MODEL>";
-  #schema:identifier [ a schema:PropertyValue;
-    #schema:propertyID  "DDSS-ID";
-    #schema:value  "";
-  #];
   schema:description "Atmospheric Phase Screen computed from Global Atmospheric Model for singel interferograms";
   dcat:theme <epos:InSAR>;
   schema:name "Interferogram Atmospheric Phase Screen from Global Atmospheric Model";
@@ -885,10 +861,6 @@
 
 <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/DEM_RADAR_GEOMETRY> a epos:WebService;
   schema:identifier "https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/DEM_RADAR_GEOMETRY>";
-  #schema:identifier [ a schema:PropertyValue;
-    #schema:propertyID  "DDSS-ID";
-    #schema:value  "";
-  #];
   schema:description "DEM in radar geometry";
   dcat:theme <epos:InSAR>;
   schema:name "DEM in radar geometry";
@@ -917,10 +889,6 @@
 
 <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/LOOKUP_TABLE_RADAR2GROUD_COORDINATES> a epos:WebService;
   schema:identifier "https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/LOOKUP_TABLE_RADAR2GROUD_COORDINATES>";
-  #schema:identifier [ a schema:PropertyValue;
-    #schema:propertyID  "DDSS-ID";
-    #schema:value  "";
-  #];
   schema:description "Lookup table to convert from radar coordinates to ground coordinates";
   dcat:theme <epos:InSAR>;
   schema:name "Lookup table from radar coordinates to ground  coordinates";
@@ -964,7 +932,7 @@
 
   <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/WRAPPED_INTERFEROGRAM/Operation/Search> a hydra:Operation;
     hydra:method "GET"^^xsd:string;
-    hydra:returns "application/atom+xml";
+    hydra:returns "application/json";
     hydra:property[ a hydra:IriTemplate;
       hydra:template "https://catalog.terradue.com/gep-epos/search{?format, pt, start, stop, geom, track}&bbox={minLongitude, minLatitude, maxLongitude, maxLatitude}"^^xsd:string;
         hydra:mapping[ a hydra:IriTemplateMapping;
@@ -972,8 +940,8 @@
           rdfs:range "xsd:string";
           rdfs:label "Format";
           hydra:required "true"^^xsd:boolean;
-          schema:defaultValue "atomeop" ;
-          http:paramValue "atomeop" ;
+          schema:defaultValue "json" ;
+          http:paramValue "json" ;
         ];
         hydra:mapping[ a hydra:IriTemplateMapping;
           hydra:variable "pt"^^xsd:string;
@@ -1059,7 +1027,7 @@
 
   <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/UNWRAPPED_INTERFEROGRAM/Operation/Search> a hydra:Operation;
     hydra:method "GET"^^xsd:string;
-    hydra:returns "application/atom+xml";
+    hydra:returns "application/json";
     hydra:property[ a hydra:IriTemplate;
       hydra:template "https://catalog.terradue.com/gep-epos/search{?format, pt, start, stop, geom, track}&bbox={minLongitude, minLatitude, maxLongitude, maxLatitude}"^^xsd:string;
         hydra:mapping[ a hydra:IriTemplateMapping;
@@ -1067,8 +1035,8 @@
           rdfs:range "xsd:string";
           rdfs:label "Format";
           hydra:required "true"^^xsd:boolean;
-          schema:defaultValue "atomeop" ;
-          http:paramValue "atomeop" ;
+          schema:defaultValue "json" ;
+          http:paramValue "json" ;
         ];
         hydra:mapping[ a hydra:IriTemplateMapping;
           hydra:variable "pt"^^xsd:string;
@@ -1154,7 +1122,7 @@
 
   <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/LOS_DISPLACEMENT_TIMESERIES/Operation/Search> a hydra:Operation;
     hydra:method "GET"^^xsd:string;
-    hydra:returns "application/atom+xml";
+    hydra:returns "application/json";
     hydra:property[ a hydra:IriTemplate;
       hydra:template "https://catalog.terradue.com/gep-epos/search{?format, pt, start, stop, geom, track}&bbox={minLongitude, minLatitude, maxLongitude, maxLatitude}"^^xsd:string;
         hydra:mapping[ a hydra:IriTemplateMapping;
@@ -1162,8 +1130,8 @@
           rdfs:range "xsd:string";
           rdfs:label "Format";
           hydra:required "true"^^xsd:boolean;
-          schema:defaultValue "atomeop" ;
-          http:paramValue "atomeop" ;
+          schema:defaultValue "json" ;
+          http:paramValue "json" ;
         ];
         hydra:mapping[ a hydra:IriTemplateMapping;
           hydra:variable "pt"^^xsd:string;
@@ -1249,7 +1217,7 @@
 
   <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/SPATIAL_COHERENCE/Operation/Search> a hydra:Operation;
     hydra:method "GET"^^xsd:string;
-    hydra:returns "application/atom+xml";
+    hydra:returns "application/json";
     hydra:property[ a hydra:IriTemplate;
       hydra:template "https://catalog.terradue.com/gep-epos/search{?format, pt, start, stop, geom, track}&bbox={minLongitude, minLatitude, maxLongitude, maxLatitude}"^^xsd:string;
         hydra:mapping[ a hydra:IriTemplateMapping;
@@ -1257,8 +1225,8 @@
           rdfs:range "xsd:string";
           rdfs:label "Format";
           hydra:required "true"^^xsd:boolean;
-          schema:defaultValue "atomeop" ;
-          http:paramValue "atomeop" ;
+          schema:defaultValue "json" ;
+          http:paramValue "json" ;
         ];
         hydra:mapping[ a hydra:IriTemplateMapping;
           hydra:variable "pt"^^xsd:string;
@@ -1344,7 +1312,7 @@
 
   <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/MAP_OF_LOS_VECTOR/Operation/Search> a hydra:Operation;
     hydra:method "GET"^^xsd:string;
-    hydra:returns "application/atom+xml";
+    hydra:returns "application/json";
     hydra:property[ a hydra:IriTemplate;
       hydra:template "https://catalog.terradue.com/gep-epos/search{?format, pt, start, stop, geom, track}&bbox={minLongitude, minLatitude, maxLongitude, maxLatitude}"^^xsd:string;
         hydra:mapping[ a hydra:IriTemplateMapping;
@@ -1352,8 +1320,8 @@
           rdfs:range "xsd:string";
           rdfs:label "Format";
           hydra:required "true"^^xsd:boolean;
-          schema:defaultValue "atomeop" ;
-           http:paramValue "atomeop" ;
+          schema:defaultValue "json" ;
+           http:paramValue "json" ;
         ];
         hydra:mapping[ a hydra:IriTemplateMapping;
           hydra:variable "pt"^^xsd:string;
@@ -1439,7 +1407,7 @@
 
   <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/INTERFEROGRAM_APS_GLOBAL_MODEL/Operation/Search> a hydra:Operation;
     hydra:method "GET"^^xsd:string;
-    hydra:returns "application/atom+xml";
+    hydra:returns "application/json";
     hydra:property[ a hydra:IriTemplate;
       hydra:template "https://catalog.terradue.com/gep-epos/search{?format, pt, start, stop, geom, track}&bbox={minLongitude, minLatitude, maxLongitude, maxLatitude}"^^xsd:string;
         hydra:mapping[ a hydra:IriTemplateMapping;
@@ -1447,8 +1415,8 @@
           rdfs:range "xsd:string";
           rdfs:label "Format";
           hydra:required "true"^^xsd:boolean;
-          schema:defaultValue "atomeop" ;
-          http:paramValue "atomeop" ;
+          schema:defaultValue "json" ;
+          http:paramValue "json" ;
         ];
         hydra:mapping[ a hydra:IriTemplateMapping;
           hydra:variable "pt"^^xsd:string;
@@ -1534,7 +1502,7 @@
 
   <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/DEM_RADAR_GEOMETRY/Operation/Search> a hydra:Operation;
     hydra:method "GET"^^xsd:string;
-    hydra:returns "application/atom+xml";
+    hydra:returns "application/json";
     hydra:property[ a hydra:IriTemplate;
       hydra:template "https://catalog.terradue.com/gep-epos/search{?format, pt, start, stop, geom, track}&bbox={minLongitude, minLatitude, maxLongitude, maxLatitude}"^^xsd:string;
         hydra:mapping[ a hydra:IriTemplateMapping;
@@ -1542,8 +1510,8 @@
           rdfs:range "xsd:string";
           rdfs:label "Format";
           hydra:required "true"^^xsd:boolean;
-          schema:defaultValue "atomeop" ;
-          http:paramValue "atomeop" ;
+          schema:defaultValue "json" ;
+          http:paramValue "json" ;
         ];
         hydra:mapping[ a hydra:IriTemplateMapping;
           hydra:variable "pt"^^xsd:string;
@@ -1629,7 +1597,7 @@
 
   <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/LOOKUP_TABLE_RADAR2GROUD_COORDINATES/Operation/Search> a hydra:Operation;
     hydra:method "GET"^^xsd:string;
-    hydra:returns "application/atom+xml";
+    hydra:returns "application/json";
     hydra:property[ a hydra:IriTemplate;
       hydra:template "https://catalog.terradue.com/gep-epos/search{?format, pt, start, stop, geom, track}&bbox={minLongitude, minLatitude, maxLongitude, maxLatitude}"^^xsd:string;
         hydra:mapping[ a hydra:IriTemplateMapping;
@@ -1637,8 +1605,8 @@
           rdfs:range "xsd:string";
           rdfs:label "Format";
           hydra:required "true"^^xsd:boolean;
-          schema:defaultValue "atomeop" ;
-          http:paramValue "atomeop" ;
+          schema:defaultValue "json" ;
+          http:paramValue "json" ;
         ];
         hydra:mapping[ a hydra:IriTemplateMapping;
           hydra:variable "pt"^^xsd:string;
@@ -2083,7 +2051,7 @@
   dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
   dcat:accessURL <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/LOS_DISPLACEMENT_TIMESERIES/Operation/Search>;
   dct:conformsTo <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/LOS_DISPLACEMENT_TIMESERIES>;
-  dct:format "http://publications.europa.eu/resource/authority/file-type/ATOM"^^xsd:anyURI;
+  dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
   dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 .
 
@@ -2100,7 +2068,7 @@
   dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
   dcat:accessURL <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/WRAPPED_INTERFEROGRAM/Operation/Search>;
   dct:conformsTo <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/WRAPPED_INTERFEROGRAM>;
-  dct:format "http://publications.europa.eu/resource/authority/file-type/ATOM"^^xsd:anyURI;
+  dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
   dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 .
 
@@ -2117,7 +2085,7 @@
   dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
   dcat:accessURL <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/UNWRAPPED_INTERFEROGRAM/Operation/Search>;
   dct:conformsTo <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/UNWRAPPED_INTERFEROGRAM>;
-  dct:format "http://publications.europa.eu/resource/authority/file-type/ATOM"^^xsd:anyURI;
+  dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
   dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 .
 
@@ -2134,7 +2102,7 @@
   dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
   dcat:accessURL <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/SPATIAL_COHERENCE/Operation/Search>;
   dct:conformsTo <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/SPATIAL_COHERENCE>;
-  dct:format "http://publications.europa.eu/resource/authority/file-type/ATOM"^^xsd:anyURI;
+  dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
   dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 .
 
@@ -2151,7 +2119,7 @@
   dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
   dcat:accessURL <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/MAP_OF_LOS_VECTOR/Operation/Search>;
   dct:conformsTo <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/MAP_OF_LOS_VECTOR>;
-  dct:format "http://publications.europa.eu/resource/authority/file-type/ATOM"^^xsd:anyURI;
+  dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
   dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 .
 
@@ -2168,7 +2136,7 @@
   dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
   dcat:accessURL <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/INTERFEROGRAM_APS_GLOBAL_MODEL/Operation/Search>;
   dct:conformsTo <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/INTERFEROGRAM_APS_GLOBAL_MODEL>;
-  dct:format "http://publications.europa.eu/resource/authority/file-type/ATOM"^^xsd:anyURI;
+  dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
   dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 .
 
@@ -2185,7 +2153,7 @@
   dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
   dcat:accessURL <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/DEM_RADAR_GEOMETRY/Operation/Search>;
   dct:conformsTo <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/DEM_RADAR_GEOMETRY>;
-  dct:format "http://publications.europa.eu/resource/authority/file-type/ATOM"^^xsd:anyURI;
+  dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
   dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 .
 
@@ -2202,7 +2170,7 @@
   dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
   dcat:accessURL <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/LOOKUP_TABLE_RADAR2GROUD_COORDINATES/Operation/Search>;
   dct:conformsTo <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/LOOKUP_TABLE_RADAR2GROUD_COORDINATES>;
-  dct:format "http://publications.europa.eu/resource/authority/file-type/ATOM"^^xsd:anyURI;
+  dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
   dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 .
 
