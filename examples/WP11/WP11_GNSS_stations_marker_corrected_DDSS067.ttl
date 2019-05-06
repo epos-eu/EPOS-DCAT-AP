@@ -163,6 +163,7 @@
 		hydra:template "https://api.vedur.is/epos/v1/gps/sitelog/{Station_marker}/"^^xsd:string;
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "Station_marker"^^xsd:string;
+				rdfs:range "xsd:string";
 				schema:defaultValue "RHOF";
 				rdfs:label "Station name, four digits";
 				hydra:required "true"^^xsd:boolean;
