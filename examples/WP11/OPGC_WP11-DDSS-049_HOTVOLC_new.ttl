@@ -531,7 +531,7 @@
         # hydra:returns "application/json";
         # hydra:returns "application/xml";
         hydra:property[ a hydra:IriTemplate;
-            hydra:template "http://hotvolc.opgc.fr/www/php/data_catalog.php{?date_begin, date_end, volcano, zone, type, ddss, output, onscreen}&bbox={lonmin, latmin, lonmax, latmax}"^^xsd:string;
+            hydra:template "http://hotvolc.opgc.fr/www/php/data_catalog.php{?date_begin, date_end, volcano, zone, type, ddss, output, onscreen}&bbox=({lonmin, latmin, lonmax, latmax})"^^xsd:string;
                 hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "date_begin"^^xsd:dateTime;
                     hydra:property "schema:startDate";
