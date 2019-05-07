@@ -159,6 +159,7 @@
 	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
 		hydra:template "https://api.vedur.is/epos/v1/volcanoes/products/vona{?start_time, end_time}&bbox={minlatitude, minlongitude, maxlatitude, maxlongitude}"^^xsd:string;
+			
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "minlatitude"^^xsd:string; 
 				hydra:property "epos:southernmostLatitude";
@@ -166,7 +167,7 @@
 				schema:minValue "-90.0";
 				schema:maxValue "90.0";
 				hydra:required "true"^^xsd:boolean;
-				schema:defaultValue "63.0" ;
+				schema:defaultValue "40" ;
 				rdfs:range "xsd:float";
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
@@ -176,7 +177,7 @@
 				schema:minValue "-180.0";
 				schema:maxValue "180.0";
 				hydra:required "true"^^xsd:boolean;
-				schema:defaultValue "-25.0" ;
+				schema:defaultValue "-20" ;
 				rdfs:range "xsd:float";
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
@@ -186,7 +187,7 @@
 				schema:minValue "-90.0";
 				schema:maxValue "90.0";
 				hydra:required "true"^^xsd:boolean;
-				schema:defaultValue "68.5" ;
+				schema:defaultValue "50" ;
 				rdfs:range "xsd:float";
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
@@ -196,7 +197,7 @@
 				schema:minValue "-180.0";
 				schema:maxValue "180.0";
 				hydra:required "true"^^xsd:boolean;
-				schema:defaultValue "-10.0" ;
+				schema:defaultValue "180" ;
 				rdfs:range "xsd:float";
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
