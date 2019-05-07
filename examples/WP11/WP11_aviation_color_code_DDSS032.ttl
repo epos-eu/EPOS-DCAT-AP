@@ -156,7 +156,7 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://api.vedur.is/epos/v1/volcanoes/products/aviation_color_codes{?start_time, end_time}&bbox=[{minlatitude, minlongitude, maxlatitude, maxlongitude}]"^^xsd:string;
+			hydra:template "https://api.vedur.is/epos/v1/volcanoes/products/aviation_color_codes{?start_time, end_time}&bbox={minlatitude, minlongitude, maxlatitude, maxlongitude}"^^xsd:string;
 				
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "minlatitude"^^xsd:string; 
