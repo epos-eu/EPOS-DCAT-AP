@@ -205,6 +205,7 @@
 		hydra:template "http://medsuv_portal.ct.ingv.it:8080/ingvgsac/gsacapi/site/search/sites.json/{?output,site.code}"^^xsd:string;
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "output"^^xsd:string;
+				rdfs:range "xsd:string" ;
 				rdfs:label "Details about output ";
 				http:paramValue "site.html";
 				http:paramValue "site.json";
@@ -214,6 +215,7 @@
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "site.code"^^xsd:string;
+				rdfs:range "xsd:string" ;
 				rdfs:label "Reports the name of the GNSS station";
 				schema:defaultValue "ENIC" ;
 				hydra:required "false"^^xsd:boolean;
