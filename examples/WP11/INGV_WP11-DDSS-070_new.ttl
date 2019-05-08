@@ -137,6 +137,10 @@
 #########
 
 <WP11/Software> a dcat:Dataset;
+	adms:identifier [ a adms:Identifier ;
+            adms:schemaAgency "DDSS-ID" ;
+            skos:notation "WP11-DDSS-070" ;
+        ];
         dct:title "Software";
         dct:identifier "WP11/Software";
         dct:description "Software-catalog for Computational Volcanology";
@@ -176,10 +180,6 @@
 
 <Software> a epos:WebService;
 	schema:identifier "Software";
-	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID  "DDSS-ID";
-		schema:value  "WP11-DDSS-070";
-	]; 
 	schema:description "Numerical Models for Computational Volcanology";
 	schema:name "Computational Infrastructure for Volcanology";
 	schema:datePublished "2018-09-01T00:00:00Z"^^xsd:dateTime;
