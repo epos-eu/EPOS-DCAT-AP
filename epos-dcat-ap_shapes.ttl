@@ -32,7 +32,7 @@
   dct:contributor [foaf:name "Andy Riddick" ;  ] ;
   dct:contributor [foaf:name "Xiaoliang Wang" ; ] ;
   dct:created "2018-02-09"^^xsd:date ;
-  dct:modified "2019-22-27"^^xsd:date ;
+  dct:modified "2019-05-21"^^xsd:date ;
   dct:relation <https://joinup.ec.europa.eu/node/69559> ;
   dct:title "EPOS DCAT Application Profile"@en  ;
   rdfs:comment "This document specifies the set of classes, properties and shapes graphs used in the EPOS DCAT Application Profile."@en  ;
@@ -46,7 +46,7 @@
   owl:imports <http://www.w3.org/ns/oa#> ;
   owl:imports <http://www.w3.org/ns/org#> ;
   owl:imports <http://xmlns.com/foaf/0.1/> ;
-  owl:versionInfo "0.14" ;
+  owl:versionInfo "0.15" ;
   foaf:homepage <http://www.epos-eu.org/epos-dcat-ap> ; .
 ####
 # Classes
@@ -111,17 +111,13 @@ dcat:keyword owl:equivalentProperty schema:keywords .
 ##Extending range and domain of dcat:contactPoint##
 dcat:contactPoint
   rdf:type owl:ObjectProperty ;
-  rdfs:domain dcat:Dataset ;
-  rdfs:domain schema:Organization ;
-  rdfs:domain schema:Person ;
-  rdfs:domain epos:Equipment ;
-  rdfs:domain schema:SoftwareApplication ;
-  rdfs:domain schema:SoftwareSourceCode;
-  rdfs:domain epos:WebService ;
-  rdfs:domain foaf:Project ;
-  rdfs:domain epos:Facility ;
-  rdfs:range vcard:Kind;
-  rdfs:range schema:ContactPoint ;
+  rdfs:domain [rdf:type owl:Class ;
+  owl:unionOf(dcat:Dataset schema:Organization 
+  schema:Person epos:Equipment
+  schema:SoftwareApplication schema:SoftwareSourceCode
+  epos:WebService foaf:Project epos:Facility)];
+  rdfs:range [rdf:type owl:Class ;
+  owl:unionOf(vcard:Kind schema:ContactPoint)];
 .
 epos:associatedProject
   rdf:type owl:ObjectProperty;
@@ -130,17 +126,16 @@ epos:associatedProject
 .
 epos:annotation
   rdf:type owl:ObjectProperty ;
-  rdfs:domain rdfs:Resource ;
-  rdfs:domain foaf:Agent ;
-  rdfs:domain dcat:Distribution ;
+  rdfs:domain [rdf:type owl:Class ;
+  owl:unionOf(rdfs:Resource foaf:Agent dcat:Distribution)] ;
   rdfs:range oa:Annotation ;
 .
 ##Extending the domain of dcat:theme##
 dcat:theme
   rdf:type owl:ObjectProperty ;
   rdfs:comment "The main category/domain of the referred resource."@en  ;
-  rdfs:domain rdfs:Resource ;
-  rdfs:domain dcat:Dataset ;
+  rdfs:domain [rdf:type owl:Class ;
+  owl:unionOf(rdfs:Resource dcat:Dataset)] ;
   rdfs:range skos:Concept ;
 .
 epos:dynamicRange
@@ -191,11 +186,10 @@ epos:easternmostLongitude
 ##Extending the range of schema:owns##
 schema:owns
  rdf:type owl:ObjectProperty ;
-  rdfs:domain schema:Person ;
-  rdfs:domain schema:Organization;
-  rdfs:range schema:OwnershipInfo ;
-  rdfs:range schema:Product ;
-  rdfs:range epos:Facility;
+  rdfs:domain [rdf:type owl:Class ;
+  owl:unionOf(schema:Person schema:Organization)];
+  rdfs:range [rdf:type owl:Class ;
+  owl:unionOf(schema:OwnershipInfo schema:Product epos:Facility)];
 .
 epos:resolution
   rdf:type owl:ObjectProperty ;
