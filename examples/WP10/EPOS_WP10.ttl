@@ -221,7 +221,7 @@
 	schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
 	schema:provider <PIC:996437254>;
 	dcat:theme  <epos:GNSSDataGatewayPortal> ;
-	hydra:entrypoint "http://glass.unice.fr:8080/GlassFramework/swagger.json"^^xsd:anyURI;
+	hydra:entrypoint "http://gnssdata-epos.oca.eu:8080/GlassFramework/swagger.json"^^xsd:anyURI;
 	schema:keywords "Geodesy", "GNSS" ;
  	dct:conformsTo <GlassFramework/APIDocumentation> ;
  	hydra:supportedOperation <GlassFramework/webresources/files/operation>;
@@ -232,7 +232,7 @@
 	hydra:method "GET"^^xsd:string;
  	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
- 	hydra:template "http://glass.unice.fr:8080/GlassFramework/webresources/files/{object_type}/{object_instance}/{output_format}"^^xsd:string;
+ 	hydra:template "http://gnssdata-epos.oca.eu:8080/GlassFramework/webresources/files/{object_type}/{object_instance}/{output_format}"^^xsd:string;
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "object_type"^^xsd:string;
 			rdfs:label "the type of the criteria";
@@ -728,7 +728,7 @@
 	schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
 	schema:provider <PIC:996437254>;
 	dcat:theme  <epos:GNSSDataGatewayPortal> ;
-	hydra:entrypoint "http://glass.unice.fr:8080/GlassFramework/swagger.json"^^xsd:anyURI;
+	hydra:entrypoint "http://gnssdata-epos.oca.eu:8080/GlassFramework/swagger.json"^^xsd:anyURI;
 	schema:keywords "Geodesy", "GNSS" ;
 	dct:conformsTo <GlassFramework/APIDocumentation> ;
 	hydra:supportedOperation <GlassFramework/webresources/stations/v2/list/operation>;
@@ -739,7 +739,7 @@
 	hydra:method "GET"^^xsd:string;
  	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
-		hydra:template "http://glass.unice.fr:8080/GlassFramework/webresources/stations/v2/list/{data}"^^xsd:string;
+		hydra:template "http://gnssdata-epos.oca.eu:8080/GlassFramework/webresources/stations/v2/list/{data}"^^xsd:string;
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "data"^^xsd:string;
       		rdfs:range "xsd:string";
@@ -770,7 +770,7 @@
  	schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
  	schema:provider <PIC:996437254>;
  	dcat:theme  <epos:GNSSDataGatewayPortal> ;
- 	hydra:entrypoint "http://glass.unice.fr:8080/GlassFramework/swagger.json"^^xsd:anyURI;
+ 	hydra:entrypoint "http://gnssdata-epos.oca.eu:8080/GlassFramework/swagger.json"^^xsd:anyURI;
 	schema:keywords "Geodesy", "GNSS" ;
  	dct:conformsTo <GlassFramework/APIDocumentation> ;
  	hydra:supportedOperation <GlassFramework/webresources/stations/v2/list/station/operation>;
@@ -781,7 +781,7 @@
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
- 		hydra:template "http://glass.unice.fr:8080/GlassFramework/webresources/stations/v2/list/station{?name,marker}"^^xsd:string;
+ 		hydra:template "http://gnssdata-epos.oca.eu:8080/GlassFramework/webresources/stations/v2/list/station{?name,marker}"^^xsd:string;
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "name"^^xsd:string;
       		rdfs:range "xsd:string";
@@ -898,7 +898,7 @@
 .
 
 #WS /stations/v2/station/bbox FR
-<http://glass.unice.fr:8080/GlassFramework/webresources/stations/v2/station/bbox> a epos:WebService;
+<http://gnssdata-epos.oca.eu:8080/GlassFramework/webresources/stations/v2/station/bbox> a epos:WebService;
 	schema:identifier "GlassFramework/webresources/stations/v2/station/bbox";
 	schema:description "Returns all the stations that are inside the bounding box in multiple outputs";
  	schema:name "GNSS EPOS Stations With data";
@@ -907,7 +907,7 @@
  	schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
  	schema:provider <PIC:996437254>;
  	dcat:theme  <epos:GNSSProductsPortal> ;
- 	hydra:entrypoint "http://glass.unice.fr:8080//GlassFramework/swagger.json"^^xsd:anyURI;
+ 	hydra:entrypoint "http://gnssdata-epos.oca.eu:8080/GlassFramework/swagger.json"^^xsd:anyURI;
 	schema:keywords "Geodesy", "GNSS" ;
  	dct:conformsTo <GlassFramework/APIDocumentation> ;
  	hydra:supportedOperation <GlassFramework/webresources/stations/v2/station/bbox/operation/002>;
@@ -918,7 +918,7 @@
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/geo+json"^^xsd:string;
 	hydra:property[ a hydra:IriTemplate;
- 		hydra:template "http://glass.unice.fr:8080/GlassFramework/webresources/stations/v2/station/bbox/{minLon}/{minLat}/{maxLon}/{maxLat}"^^xsd:string;
+ 		hydra:template "http://gnssdata-epos.oca.eu:8080/GlassFramework/webresources/stations/v2/station/bbox/{minLon}/{minLat}/{maxLon}/{maxLat}"^^xsd:string;
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "minLon"^^xsd:string;
       			hydra:property "epos:westernmostLongitude" ;
@@ -1263,8 +1263,8 @@
 .
 
 #<------------>#
-<http://glass.unice.fr:8080/GlassFramework/webresources/stations/v2/station/bbox/dataset> a dcat:Dataset ;
-	dct:identifier "http://glass.unice.fr:8080/GlassFramework/webresources/stations/v2/station/bbox/dataset" ;
+<http://gnssdata-epos.oca.eu:8080/GlassFramework/webresources/stations/v2/station/bbox/dataset> a dcat:Dataset ;
+	dct:identifier "http://gnssdata-epos.oca.eu:8080/GlassFramework/webresources/stations/v2/station/bbox/dataset" ;
 	dct:description "Returns GNSS Station objects containing GNSS RINEX data that match the given bbox parameters.";
         dct:title "Get Stations with products" ;
         adms:identifier [ a adms:Identifier ;
@@ -1339,7 +1339,7 @@
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI ;
 
     # If the type of Distribution is WEB SERVICE, this property refers to the Web Service that gives access to a Distribution of the Dataset. Otherwise, this property is optional.
-	dct:conformsTo <http://glass.unice.fr:8080/GlassFramework/webresources/stations/v2/station/bbox> ;
+	dct:conformsTo <http://gnssdata-epos.oca.eu:8080/GlassFramework/webresources/stations/v2/station/bbox> ;
 	
 	# This property contains a URL that gives access to a Distribution of the Dataset. The resource at the access URL may contain # information about how to get the Dataset.
     # If the type of Distribution is WEB SERVICE, this property refers to the Operation of the Web Service to which the Distribution conforms.
@@ -1361,8 +1361,8 @@
 .
 
 #<------------>#
-<http://glass.unice.fr:8080/GlassFramework/webresources/files> a dcat:Dataset ;
-	dct:identifier "http://glass.unice.fr:8080/GlassFramework/webresources/files" ;
+<http://gnssdata-epos.oca.eu:8080/GlassFramework/webresources/files> a dcat:Dataset ;
+	dct:identifier "http://gnssdata-epos.oca.eu:8080/GlassFramework/webresources/files" ;
 	dct:title "GET Files V2" ;
 	dct:description "Returns the files(s) that match the criteria.";
         adms:identifier [ a adms:Identifier ;
@@ -1457,8 +1457,8 @@
 .
 
 #<------------>#
-<http://glass.unice.fr:8080/GlassFramework/webresources/stations/v2/station/geojson> a dcat:Dataset ;
-	dct:identifier "http://glass.unice.fr:8080/GlassFramework/webresources/stations/v2/station/geojson" ;
+<http://gnssdata-epos.oca.eu:8080/GlassFramework/webresources/stations/v2/station/geojson> a dcat:Dataset ;
+	dct:identifier "http://gnssdata-epos.oca.eu:8080/GlassFramework/webresources/stations/v2/station/geojson" ;
 	dct:title "GET STATION GEOJSON" ;
 	dct:description "Returns all the stations that are inside the geometry of geoJSON input.";
         adms:identifier [ a adms:Identifier ;
