@@ -239,7 +239,7 @@
 
 <wwwobs.univ-bpclermont.fr/casoar/WP11/DDSS-050/Distribution> a dcat:Distribution;
         dct:identifier "wwwobs.univ-bpclermont.fr/casoar/WP11/DDSS-050/Distribution";
-        dct:title "CASOAR distribution of OI2 wrapped interferograms products";
+        dct:title "OPGC InSAR Wrapped Interferogram";
         dct:description "CASOAR distribution of OI2 wrapped interferograms products";
         dct:issued "2017-06-21"^^xsd:dateTime;
         dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
@@ -293,17 +293,16 @@
 
 <opgc.fr/vobs/oi2/WP11/DDSS-050/data-catalog> a hydra:Operation;
         hydra:method "GET"^^xsd:string;
-        hydra:returns "text/turtle";
-        # hydra:returns "application/xml";
-        # hydra:returns "application/json";
+        hydra:returns "application/json";
         hydra:property [ a hydra:IriTemplate;
-            hydra:template "http://opgc.fr/vobs/rest2/req.php/oi2{?sat, start_date, stop_date, mas_orb_min, mas_orb_max, sla_orb_min, sla_orb_max, mas_pol, sla_pol, mode, ah_min, ah_max, swath, track, beam, output, onscreen}"^^xsd:string; 
+            hydra:template "http://opgc.fr/vobs/rest2/req.php/oi2{?sat, start_date, stop_date, mas_orb_min, mas_orb_max, sla_orb_min, sla_orb_max, mas_pol, sla_pol, mode, ah_min, ah_max, swath, track, beam}"^^xsd:string; 
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "sat"^^xsd:string;
                     rdfs:label "Satellite ID to limit the query to interferogram produce from a specific satellite data";
                     http:paramValue "SENTINEL";
                     http:paramValue "ALOS";
                     http:paramValue "CSK";
+                    schema:defaultValue "SENTINEL";
                     rdfs:range "xsd:string";
                     hydra:required "false"^^xsd:boolean;
                 ];
@@ -314,7 +313,7 @@
                     rdfs:label "Starting datetime of the time interval query (format YYYY-MM-DDThh:mm:ss:Z)";
                     rdfs:range "xsd:dateTime";
                     schema:minValue "1990-01-01T00:00:00Z"^^xsd:dateTime;
-		    schema:defaultValue "1990-01-01T00:00:00Z";
+		                schema:defaultValue "2015-01-01T00:00:00Z";
                     schema:maxValue "9999-12-31T23:59:59Z"^^xsd:dateTime;
                     hydra:required "false"^^xsd:boolean;
                 ];
@@ -324,7 +323,7 @@
                     schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
                     rdfs:label "Ending datetime of the time interval query (format YYYY-MM-DDThh:mm:ssZ)";
                     rdfs:range "xsd:dateTime";
-		    schema:defaultValue "2015-01-01T00:00:00Z";
+		                schema:defaultValue "2015-12-31T23:59:59Z";
                     schema:minValue "1990-01-01T00:00:00Z"^^xsd:dateTime;
                     schema:maxValue "9999-12-31T23:59:59Z"^^xsd:dateTime;
                     hydra:required "false"^^xsd:boolean;
@@ -432,25 +431,6 @@
                     http:paramValue "H4-15";
                     http:paramValue "H4-18";
                     rdfs:range "xsd:string";
-                    hydra:required "false"^^xsd:boolean;
-                ];
-                hydra:mapping[ a hydra:IriTemplateMapping;
-                        hydra:variable "output"^^xsd:string;
-                        rdfs:label "The format of the query output";
-                        http:paramValue "JSON";
-                        http:paramValue "XML";
-                        http:paramValue "TURTLE-RDF-EPOS-DCAT-AP";
-                        schema:defaultValue "TURTLE-RDF-EPOS-DCAT-AP";
-                        rdfs:range "xsd:string";
-                        hydra:required "false"^^xsd:boolean;
-                    ];
-                hydra:mapping[ a hydra:IriTemplateMapping;
-                    hydra:variable "onscreen"^^xsd:boolean;
-                    rdfs:label "Display output on screen or as downloadable file ?";
-                    http:paramValue "true"^^xsd:boolean;
-                    http:paramValue "false"^^xsd:boolean;
-                    schema:defaultValue "true"^^xsd:boolean;
-                    rdfs:range "xsd:boolean";
                     hydra:required "false"^^xsd:boolean;
                 ];
         ];

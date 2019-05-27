@@ -370,9 +370,9 @@
 ######### 
 
 <hotvolc.opgc.fr/WP11/DDSS-047/Distribution> a dcat:Distribution;
-    dct:identifier "hotvolc.opgc.fr/WP11/DDSS-047/Distribution";
-    dct:description "The way to download the HOTVOLC products";
-    dct:title "The way to download the HOTVOLC products";
+    dct:identifier "hotvolc.opgc.fr/WP11/DDSS-047/Distribution";    
+    dct:title "OPGC Satellite Volcanic Ash and SO2 plumes";
+    dct:description "The way to download the HOTVOLC Ash and SO2 products";
     dct:issued "2018-09-05T00:00:00Z"^^xsd:dateTime; 
     dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
     #dcat:accessURL <hotvolc.opgc.fr/data-download>;
@@ -450,11 +450,9 @@
 
 <hotvolc.opgc.fr/data-search/WP11/DDSS-047> a hydra:Operation;
         hydra:method "GET"^^xsd:string;
-        hydra:returns "text/turtle";
-        # hydra:returns "application/json";
-        # hydra:returns "application/xml";
-       hydra:property[ a hydra:IriTemplate;
-            hydra:template "http://hotvolc.opgc.fr/www/php/data_catalog.php{?date_begin, date_end, volcano, zone, type, ddss, output, onscreen}&bbox=({lonmin, latmin, lonmax, latmax})"^^xsd:string;
+        hydra:returns "application/xml";
+        hydra:property[ a hydra:IriTemplate;
+            hydra:template "http://hotvolc.opgc.fr/www/php/data_catalog.php{?date_begin, date_end, volcano, zone, type, ddss}&bbox=({lonmin, latmin, lonmax, latmax})"^^xsd:string;
                 hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "date_begin"^^xsd:datetime;
                     hydra:property "schema:startDate";
@@ -462,7 +460,7 @@
                     rdfs:label "Specific datetime query or starting datetime of the time interval query (format YYYY-MM-DDThh:mm:ssZ)";
                     rdfs:range "xsd:dateTime";
                     schema:minValue "2010-05-06T00:00:00Z"^^xsd:datetime;
-		    schema:defaultValue "2010-05-06T00:00:00Z";
+		                schema:defaultValue "2010-05-06T00:00:00Z";
                     hydra:required "false"^^xsd:boolean;
                 ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
@@ -471,8 +469,8 @@
                     schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
                     rdfs:label "Ending datetime the time interval query (format YYYY-MM-DDThh:mm:ssZ)";
                     rdfs:range "xsd:dateTime";
-                   # schema:minValue "2010-01-01T00:00:00Z"^^xsd:datetime;
-		    schema:defaultValue "2010-06-06T00:00:00Z";
+                    schema:minValue "2010-01-01T00:00:00Z"^^xsd:datetime;
+		                schema:defaultValue "2010-06-06T00:00:00Z";
                     schema:maxValue "9999-12-31T23:59:59Z"^^xsd:datetime;
                     hydra:required "false"^^xsd:boolean;
                 ];
@@ -552,29 +550,11 @@
                 ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "ddss"^^xsd:string;
-		    rdfs:range "xsd:string";
+		                rdfs:range "xsd:string";
                     rdfs:label "Limite the query to products type related to a specific ddss";
                     http:paramValue "hotvolc.opgc.fr/WP11-DDSS-047";
                     schema:defaultValue "hotvolc.opgc.fr/WP11-DDSS-047"^^xsd:string;
                     hydra:required "true"^^xsd:boolean;
-                ];
-                hydra:mapping[ a hydra:IriTemplateMapping;
-                    hydra:variable "output"^^xsd:string;
-                    rdfs:label "The format of the query output";
-                    http:paramValue "XML-EPOS-DCAT-AP";
-                    http:paramValue "TURTLE-RDF-EPOS-DCAT-AP";
-                    schema:defaultValue "TURTLE-RDF-EPOS-DCAT-AP";
-                    rdfs:range "xsd:string";
-                    hydra:required "false"^^xsd:boolean;
-                ];
-                hydra:mapping[ a hydra:IriTemplateMapping;
-                    hydra:variable "onscreen"^^xsd:boolean;
-                    rdfs:label "Display output on screen or as downloadable file ?";
-                    http:paramValue "true"^^xsd:boolean;
-                    http:paramValue "false"^^xsd:boolean;
-                    schema:defaultValue "true"^^xsd:boolean;
-                    rdfs:range "xsd:boolean";
-                    hydra:required "false"^^xsd:boolean;
                 ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "lonmin"^^xsd:string;
@@ -584,7 +564,7 @@
                     schema:maxValue "180.0";
                     hydra:required "true"^^xsd:boolean;
                     schema:defaultValue "-28";
-		    rdfs:range "xsd:float";
+		                rdfs:range "xsd:float";
                 ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "latmin"^^xsd:string;
@@ -594,7 +574,7 @@
                     schema:maxValue "90.0";
                     hydra:required "true"^^xsd:boolean;
                     schema:defaultValue "57";
-		    rdfs:range "xsd:float";
+		                rdfs:range "xsd:float";
                 ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "lonmax"^^xsd:string;
@@ -604,7 +584,7 @@
                     schema:maxValue "180.0";
                     hydra:required "true"^^xsd:boolean;
                     schema:defaultValue "-1.5";
-		    rdfs:range "xsd:float";
+		                rdfs:range "xsd:float";
                 ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "latmax"^^xsd:string;
@@ -614,7 +594,7 @@
                     schema:maxValue "90.0";
                     hydra:required "true"^^xsd:boolean;
                     schema:defaultValue "68.5";
-		    rdfs:range "xsd:float";
+		                rdfs:range "xsd:float";
                 ];
         ];
 .
