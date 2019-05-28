@@ -159,7 +159,7 @@
 
 <opgc.fr/vobs/WP11/DDSS-051/dataset> a dcat:Dataset ;
     dct:title "InSar Observatory of Indian Ocean - Catalog of Lava maps calculated from InSAR interferograms"^^xsd:string;
-    dct:identifier "opgc.fr/vobs/WP11/DDSS-051/datasetT";
+    dct:identifier "opgc.fr/vobs/WP11/DDSS-051/dataset";
     dct:description "Catalog of Lava maps calculated from Wrapped Differential Interferogram made using data from SENTINEL, COSMOSKYMED and TERRASAR-X Satellites - target: Piton de la Fournaise - Reunion island FRANCE";
     adms:identifier [ a adms:Identifier;
             adms:schemaAgency "DDSS-ID";
@@ -190,7 +190,7 @@
 
 <opgc.fr/vobs/WP11/DDSS-051/dataset/distribution> a dcat:Distribution;
         dct:identifier "opgc.fr/vobs/WP11/DDSS-051/dataset/distribution";
-        dct:title "The way to download the OI2 Lava maps product";
+        dct:title "OPGC InSAR Lava maps";
         dct:description "The way to download the OI2 Lava maps product";
         dct:issued "2018-12-19"^^xsd:dateTime;
         dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
@@ -254,6 +254,7 @@
                     http:paramValue "TSX";
                     http:paramValue "CSK";
                     rdfs:range "xsd:string";
+                    schema:defaultValue "SENTINEL";
                     hydra:required "false"^^xsd:boolean;
                 ];
                 hydra:mapping [ a hydra:IriTemplateMapping;
@@ -264,7 +265,7 @@
                     schema:valuePattern "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
                     schema:minValue "1990-01-01T00:00:00Z"^^xsd:dateTime;
                     schema:maxValue "9999-12-31T23:59:59Z"^^xsd:dateTime;
-		    schema:defaultValue "2010-05-06T00:00:00Z";
+		                schema:defaultValue "2018-09-01T00:00:00Z";
                     hydra:required "false"^^xsd:boolean;
                 ];
                 hydra:mapping [ a hydra:IriTemplateMapping;
@@ -275,7 +276,7 @@
                     schema:valuePattern "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
                     schema:minValue "1990-01-01T00:00:00Z"^^xsd:dateTime;
                     schema:maxValue "9999-12-31T23:59:59Z"^^xsd:dateTime;
-		    schema:defaultValue "2010-06-06T00:00:00Z";
+		                schema:defaultValue "2018-10-31T23:59:59Z";
                     hydra:required "false"^^xsd:boolean;
                 ];
                 hydra:mapping [ a hydra:IriTemplateMapping;
@@ -329,6 +330,7 @@
                     http:paramValue "Jul_2018";
                     http:paramValue "Sept-Oct_2018";
                     rdfs:range "xsd:string";
+                    schema:defaultValue "Sept-Oct_2018";
                     hydra:required "false"^^xsd:boolean;
                 ];
         ];

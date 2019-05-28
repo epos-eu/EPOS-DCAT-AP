@@ -244,8 +244,8 @@
 
 <opgc.fr/vobs/WP11/DDSS-036/GAZVOLC/Distribution> a dcat:Distribution;
         dct:identifier "opgc.fr/vobs/WP11/DDSS-036/GAZVOLC/Distribution";
-        dct:title "OPGC-VO distribution of GAZVOLC dataset";
-        dct:description "The way to download the gazvolc product: June 2014";
+        dct:title "OPGC Geochemical analysis of magmatic gas";
+        dct:description "The way to download the GAZVOLC geochemical analysis of magmatic gas";
         dct:issued "2016-06-12"^^xsd:date;
         dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
         dcat:accessURL <opgc.fr/vobs/gazvolc/WP11/DDSS-036/data-catalog>;
@@ -293,10 +293,9 @@
 
 <opgc.fr/vobs/gazvolc/WP11/DDSS-036/data-catalog> a hydra:Operation;
         hydra:method "GET"^^xsd:string;
-        hydra:returns "text/turtle";
-        #hydra:returns "application/json";
+        hydra:returns "application/json";
         hydra:property [ a hydra:IriTemplate;
-            hydra:template "http://opgc.fr/vobs/rest2/req.php/gazvolc{?timestart, timeend, output, onscreen}"^^xsd:string;
+            hydra:template "http://opgc.fr/vobs/rest2/req.php/gazvolc{?timestart, timeend}"^^xsd:string;
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "timestart"^^xsd:dateTime;
                     hydra:property "schema:startDate";
@@ -318,24 +317,6 @@
                     schema:maxValue "9999-12-31T23:59:59Z"^^xsd:dateTime;
                     schema:defaultValue "2014-12-31T23:59:59Z"^^xsd:dateTime;
                     hydra:required "true"^^xsd:boolean;
-                ];
-                hydra:mapping [ a hydra:IriTemplateMapping;
-                    hydra:variable "output"^^xsd:string;
-                    rdfs:label "The format of the query output";
-                    http:paramValue "JSON";
-                    http:paramValue "TURTLE-RDF-EPOS-DCAT-AP";
-                    schema:defaultValue "TURTLE-RDF-EPOS-DCAT-AP";
-                    rdfs:range "xsd:string";
-                    hydra:required "false"^^xsd:boolean;
-                ];
-                hydra:mapping [ a hydra:IriTemplateMapping;
-                    hydra:variable "onscreen"^^xsd:boolean;
-                    rdfs:label "Display output on screen or as a downloadable file ?";
-                    http:paramValue "true"^^xsd:boolean;
-                    http:paramValue "false"^^xsd:boolean;
-                    schema:defaultValue "true"^^xsd:boolean;
-                    rdfs:range "xsd:boolean";
-                    hydra:required "false"^^xsd:boolean;
                 ];
         ];
 .   

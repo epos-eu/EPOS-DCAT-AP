@@ -451,8 +451,8 @@
 
 <hotvolc.opgc.fr/WP11/DDSS-049/Distribution> a dcat:Distribution;
         dct:identifier "hotvolc.opgc.fr/WP11/DDSS-049/Distribution";
-        dct:title "The way to download the HOTVOLC product DDSS-049";
-        dct:description "The way to download the HOTVOLC product DDSS-049";
+        dct:title "OPGC Satellite Volcanic Thermal Anomalies";
+        dct:description "The way to download the HOTVOLC thermal anomalies products";
         dct:issued "2018-09-05T00:00:00Z"^^xsd:date;
         dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
         dcat:accessURL <hotvolc.opgc.fr/data-search/WP11/DDSS-049>;
@@ -527,11 +527,9 @@
 
 <hotvolc.opgc.fr/data-search/WP11/DDSS-049> a hydra:Operation;
         hydra:method "GET"^^xsd:string;
-        hydra:returns "text/turtle";
-        # hydra:returns "application/json";
-        # hydra:returns "application/xml";
+        hydra:returns "application/json";
         hydra:property[ a hydra:IriTemplate;
-            hydra:template "http://hotvolc.opgc.fr/www/php/data_catalog.php{?date_begin, date_end, volcano, zone, type, ddss, output, onscreen}&bbox=({lonmin, latmin, lonmax, latmax})"^^xsd:string;
+            hydra:template "http://hotvolc.opgc.fr/www/php/data_catalog.php{?date_begin, date_end, volcano, zone, type, ddss}&bbox=({lonmin, latmin, lonmax, latmax})"^^xsd:string;
                 hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "date_begin"^^xsd:dateTime;
                     hydra:property "schema:startDate";
@@ -635,24 +633,6 @@
                     schema:defaultValue "hotvolc.opgc.fr/WP11-DDSS-049"^^xsd:string;
                     hydra:required "true"^^xsd:boolean;
 		    rdfs:range "xsd:string";
-                ];
-                hydra:mapping[ a hydra:IriTemplateMapping;
-                    hydra:variable "output"^^xsd:string;
-                    rdfs:label "The format of the query output";
-                    http:paramValue "XML-EPOS-DCAT-AP";
-                    http:paramValue "TURTLE-RDF-EPOS-DCAT-AP";
-                    schema:defaultValue "TURTLE-RDF-EPOS-DCAT-AP";
-                    rdfs:range "xsd:string";
-                    hydra:required "false"^^xsd:boolean;
-                ];
-                hydra:mapping[ a hydra:IriTemplateMapping;
-                    hydra:variable "onscreen"^^xsd:boolean;
-                    rdfs:label "Display output on screen or as downloadable file ?";
-                    http:paramValue "true"^^xsd:boolean;
-                    http:paramValue "false"^^xsd:boolean;
-                    schema:defaultValue "true"^^xsd:boolean;
-                    rdfs:range "xsd:boolean";
-                    hydra:required "false"^^xsd:boolean;
                 ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "lonmin"^^xsd:string;
