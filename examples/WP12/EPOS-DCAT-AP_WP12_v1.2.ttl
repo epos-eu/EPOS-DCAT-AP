@@ -1068,7 +1068,7 @@
           rdfs:label "To";
           hydra:required "false"^^xsd:boolean;
         ];
-          hydra:mapping[ a hydra:IriTemplateMapping;
+        hydra:mapping[ a hydra:IriTemplateMapping;
           hydra:variable "minLongitude"^^xsd:string;
           hydra:property "epos:westernmostLongitude";
           rdfs:label "Minimum Longitude";
@@ -1076,6 +1076,7 @@
           schema:maxValue "180.0";
           hydra:required "true"^^xsd:boolean;
           schema:defaultValue "-180.0" ;
+	  rdfs:range "xsd:float";
         ];
         hydra:mapping[ a hydra:IriTemplateMapping;
           hydra:variable "minLatitude"^^xsd:string;
