@@ -250,7 +250,7 @@
         dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
         dcat:accessURL <opgc.fr/vobs/gazvolc/WP11/DDSS-036/data-catalog>;
         dct:conformsTo <opgc.fr/vobs/gazvolc/WP11/DDSS-036>;
-        dct:format "http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE"^^xsd:anyURI;
+        dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
         dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 .
 
@@ -295,7 +295,7 @@
         hydra:method "GET"^^xsd:string;
         hydra:returns "application/json";
         hydra:property [ a hydra:IriTemplate;
-            hydra:template "http://opgc.fr/vobs/rest2/req.php/gazvolc{?timestart, timeend}"^^xsd:string;
+            hydra:template "http://opgc.fr/vobs/rest2/req.php/gazvolc{?timestart, timeend, output}"^^xsd:string;
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "timestart"^^xsd:dateTime;
                     hydra:property "schema:startDate";
@@ -318,6 +318,15 @@
                     schema:defaultValue "2014-12-31T23:59:59Z"^^xsd:dateTime;
                     hydra:required "true"^^xsd:boolean;
                 ];
+	        hydra:mapping [ a hydra:IriTemplateMapping;	
+                    hydra:variable "output"^^xsd:string;	
+                    rdfs:label "The format of the query output";	
+                    http:paramValue "JSON";	
+                    http:paramValue "TURTLE-RDF-EPOS-DCAT-AP";	
+                    schema:defaultValue "JSON";	
+                    rdfs:range "xsd:string";	
+                    hydra:required "false"^^xsd:boolean;	
+                ]
         ];
 .   
  <opgc.fr/vobs/gazvolc/WP11/DDSS-036/data-download> a hydra:Operation;
