@@ -60,7 +60,7 @@
         hydra:method "GET"^^xsd:string;
         hydra:returns "application/vnd.fdsn.mseed";
         hydra:property[ a hydra:IriTemplate;
-            hydra:template "http://eida-sc3.infp.ro/fdsnws/dataselect/1/query(?starttime, endtime, network, station, location, channel, quality, minimumlength, nodata)"^^xsd:string;
+            hydra:template "http://eida-sc3.infp.ro/fdsnws/dataselect/1/query{?starttime, endtime, network, station, location, channel, quality, minimumlength, nodata}"^^xsd:string;
                 hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "starttime"^^xsd:string;
                     rdfs:label "Start of the timespan";
