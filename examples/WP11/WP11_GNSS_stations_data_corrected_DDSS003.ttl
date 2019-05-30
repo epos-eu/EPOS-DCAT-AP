@@ -157,7 +157,7 @@
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
-		hydra:template "https://api.vedur.is/epos/v1/gps/data/rinex{?station_marker,start_time,end_time,status,bbox}"^^xsd:string;
+		hydra:template "https://api.vedur.is/epos/v1/gps/data/rinex{?station_marker,start_time,end_time,status}&bbox={minlatitude,minlongitude,maxlatitude,maxlatitude}"^^xsd:string;
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "station_marker"^^xsd:string;
 				rdfs:label "Four uppercase character designation for the station, or integer index number of station in database.";
