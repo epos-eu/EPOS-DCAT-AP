@@ -201,7 +201,7 @@
         dcat:accessURL <opgc.fr/vobs/voldorad/WP11/DDSS-024/data-catalog>;
         #dcat:accessURL <opgc.fr/vobs/voldorad/WP11/DDSS-024/data-download>;
         dct:conformsTo <opgc.fr/vobs/voldorad/WP11/DDSS-024>;
-        dct:format "http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE"^^xsd:anyURI;
+        dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
         dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 .
 
@@ -250,7 +250,7 @@
         hydra:method "GET"^^xsd:string;
         hydra:returns "application/json";
         hydra:property [ a hydra:IriTemplate;
-            hydra:template "http://opgc.fr/vobs/rest2/req.php/voldorad{?timestart, timeend, radar, localization, eruption}"^^xsd:string;
+            hydra:template "http://opgc.fr/vobs/rest2/req.php/voldorad{?timestart, timeend, radar, localization, eruption, output}"^^xsd:string;
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "timestart"^^xsd:dateTime;
                     hydra:property "schema:startDate";
@@ -297,6 +297,15 @@
                     http:paramValue "false"^^xsd:boolean;
                     schema:defaultValue "false"^^xsd:boolean;
                     hydra:required "false"^^xsd:boolean;
+                ];
+	        hydra:mapping [ a hydra:IriTemplateMapping;	
+                    hydra:variable "output"^^xsd:string;	
+                    rdfs:label "The format of the query output";	
+                    http:paramValue "JSON";	
+                    http:paramValue "TURTLE-RDF-EPOS-DCAT-AP";	
+                    schema:defaultValue "JSON";	
+                    rdfs:range "xsd:string";	
+                    hydra:required "false"^^xsd:boolean;	
                 ];
         ];
 .
