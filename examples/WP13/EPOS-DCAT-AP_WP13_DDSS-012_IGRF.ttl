@@ -1,0 +1,311 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http: <http://www.w3.org/2006/http#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+
+###############################################################################
+### Domain and subdomain ###
+###############################################################################
+
+<epos:Geoelectromagnetism> a skos:ConceptScheme;
+    dct:title "Geoelectromagnetism";
+    dct:description "Relating to the electric or magnetic field of the Earth";
+.
+
+<epos:Magneticfield> a skos:Concept;
+    skos:definition "Geomagnetic data and models without restriction in scale or frequency";
+    skos:inScheme <epos:Geoelectromagnetism>;
+    #skos:prefLabel "Geomagnetic data and models without restriction in scale or frequency";
+    skos:prefLabel "Magneticfield";
+.
+
+###############################################################################
+### People ###
+###############################################################################
+
+<mailto:smf@bgs.ac.uk> a schema:Person;
+    schema:identifier [ a schema:PropertyValue;
+        schema:propertyID "mailto";
+        schema:value "smf@bgs.ac.uk";
+    ];
+    schema:familyName "Flower";
+    schema:givenName "Simon";
+    schema:address [ a schema:PostalAddress;
+        schema:streetAddress "The Lyell Centre, Research Avenue South";
+        schema:addressLocality "Edinburgh";
+        schema:postalCode "EH14 4AP";
+        schema:addressCountry "United Kingdom";
+    ];
+    schema:email "smf@bgs.ac.uk";
+    schema:telephone "+44 131 650 0238";
+    schema:url "http://www.bgs.ac.uk/staff/profiles/0447.html"^^xsd:anyURI;
+    schema:affiliation <http://viaf.org/viaf/136554353/>;
+    schema:contactPoint <mailto:smf@bgs.ac.uk/contactPoint>;
+.
+
+<http://orcid.org/0000-0002-7677-5158> a schema:Person;
+    schema:identifier [ a schema:PropertyValue;
+        schema:propertyID "orcid";
+        schema:value "0000-0002-7677-5158";
+    ];
+    schema:familyName "Thomson";
+    schema:givenName "Alan";
+    schema:address [ a schema:PostalAddress;
+        schema:streetAddress "The Lyell Centre, Research Avenue South";
+        schema:addressLocality "Edinburgh";
+        schema:postalCode "EH14 4AP";
+        schema:addressCountry "United Kingdom";
+    ];
+    schema:email "awpt@bgs.ac.uk";
+    schema:telephone "+44 131 650 0257";
+    schema:url "http://www.bgs.ac.uk/staff/profiles/1939.html"^^xsd:anyURI;
+    schema:affiliation <http://viaf.org/viaf/136554353/>;
+    schema:contactPoint <http://orcid.org/0000-0002-7677-5158/contactPoint>;
+    schema:contactPoint <http://orcid.org/0000-0002-7677-5158/scientificContact>;
+    schema:contactPoint <http://orcid.org/0000-0002-7677-5158/legalContact>;
+    schema:contactPoint <http://orcid.org/0000-0002-7677-5158/financialContact>;
+.
+
+###############################################################################
+### ContactPoint links ###
+###############################################################################
+
+<mailto:smf@bgs.ac.uk/contactPoint> a schema:ContactPoint;
+    schema:email "smf@bgs.ac.uk";
+    schema:availableLanguage "en" ;
+    schema:contactType "contactPoint" ;
+.
+
+<http://orcid.org/0000-0002-7677-5158/contactPoint> a schema:ContactPoint;
+    schema:email "awpt@bgs.ac.uk";
+    schema:availableLanguage "en" ;
+    schema:contactType "contactPoint" ;
+.
+
+<http://orcid.org/0000-0002-7677-5158/scientificContact> a schema:ContactPoint;
+    schema:email "awpt@bgs.ac.uk";
+    schema:availableLanguage "en" ;
+    schema:contactType "scientificContact" ;
+.
+
+<http://orcid.org/0000-0002-7677-5158/legalContact> a schema:ContactPoint;
+    schema:email "awpt@bgs.ac.uk";
+    schema:availableLanguage "en" ;
+    schema:contactType "legalContact" ;
+. 
+
+<http://orcid.org/0000-0002-7677-5158/financialContact> a schema:ContactPoint;
+    schema:email "awpt@bgs.ac.uk";
+    schema:availableLanguage "en" ;
+    schema:contactType "financialContact" ;
+.
+
+###############################################################################
+### Organisations ###
+###############################################################################
+
+<http://viaf.org/viaf/136554353/> a schema:Organization;
+    schema:identifier [ a schema:PropertyValue;
+        schema:propertyID "viaf";
+        schema:value "http://viaf.org/viaf/136554353/";
+    ];
+    schema:legalName "British Geological Survey";
+    schema:leiCode "Legal Entity Identifier Search: http://www.lei-lookup.com/#!search" ;
+    schema:address [ a schema:PostalAddress;
+        schema:streetAddress "The Lyell Centre, Research Avenue South";
+        schema:addressLocality "Edinburgh";
+        schema:postalCode "EH14 4AP";
+        schema:addressCountry "United Kingdom";
+    ];
+    schema:url "www.bgs.ac.uk"^^xsd:anyURI;
+    schema:email "enquiries@bgs.ac.uk";
+    schema:telephone "+44 131 667 1000";
+    schema:memberOf <http://viaf.org/viaf/148537429/>;
+    schema:contactPoint <http://orcid.org/0000-0002-7677-5158/scientificContact>;
+    schema:contactPoint <http://orcid.org/0000-0002-7677-5158/legalContact>;
+    schema:contactPoint <http://orcid.org/0000-0002-7677-5158/financialContact>;
+    schema:contactPoint <mailto:smf@bgs.ac.uk/contactPoint>;
+.
+
+<http://viaf.org/viaf/148537429/> a schema:Organization;
+    schema:identifier [ a schema:PropertyValue;
+        schema:propertyID "viaf";
+        schema:value "http://viaf.org/viaf/148537429/";
+    ];
+    schema:legalName "Natural Environment Research Council";
+    schema:leiCode "Legal Entity Identifier Search: http://www.lei-lookup.com/#!search" ;
+    schema:address [ a schema:PostalAddress;
+        schema:streetAddress "Polaris House, North Star Avenue";
+        schema:addressLocality "Swindon";
+        schema:postalCode "SN2 1EU";
+        schema:addressCountry "United Kingdom";
+    ];
+    schema:url "www.nerc.ac.uk"^^xsd:anyURI;
+    schema:email "pressoffice@nerc.ac.uk";
+    schema:contactPoint <http://orcid.org/0000-0002-7677-5158/scientificContact>;
+    schema:contactPoint <http://orcid.org/0000-0002-7677-5158/legalContact>;
+    schema:contactPoint <http://orcid.org/0000-0002-7677-5158/financialContact>;
+    schema:contactPoint <mailto:smf@bgs.ac.uk/contactPoint>;
+.
+
+###############################################################################
+### Data set ###
+###############################################################################
+
+<https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-012/IGRF/Dataset> a dcat:Dataset;
+    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-012/IGRF/Dataset";
+    dct:title "International Geomagnetic Reference Field (IGRF)";
+    dct:description "The International Geomagnetic Reference Field (IGRF) is released by the International Association of Geomagnetism and Aeronomy (IAGA). It consists of a standard mathematical description of the Earth's main magnetic field that is used widely in studies of the Earth's deep interior, its crust and its ionosphere and magnetosphere. The current revision of the model is number 12, revisions are made approximately every 12 years. The coefficients for this degree and order 13 main field model were finalized by a task force of IAGA in December 2014. The IGRF is the product of a collaborative effort between magnetic field modellers and the institutes involved in collecting and disseminating magnetic field data from satellites and from observatories and surveys around the world.";
+    adms:identifier [ a adms:Identifier;
+        adms:schemaAgency "DDSS-ID";
+        skos:notation "WP13-DDSS-012";
+    ];
+    dct:created "2018-08-31"^^xsd:date;
+    dct:modified "2018-08-31"^^xsd:date;
+    dct:issued "2018-08-31"^^xsd:date;
+    owl:versionInfo "1.0.0" ;
+
+    dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
+    dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI ;
+    dcat:theme  <epos:Magneticfield> ;
+    dcat:keyword "magnetism", "core", "world model" ;
+    dcat:contactPoint <mailto:smf@bgs.ac.uk/contactPoint> ;
+    dcat:contactPoint <http://orcid.org/0000-0002-7677-5158/contactPoint> ;
+    dct:publisher <http://viaf.org/viaf/136554353/>;
+    dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-012/IGRF/Distribution>;
+
+    dct:temporal [ a dct:PeriodOfTime;
+        schema:startDate "2015-01-01T00:00:00Z"^^xsd:dateTime;
+        schema:endDate "2024-12-31T00:00:00Z"^^xsd:dateTime;
+    ];
+    dct:spatial [ a dct:Location;
+        locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral;
+    ];
+.
+
+###############################################################################
+### Distributions ###
+###############################################################################
+
+<https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-012/IGRF/Distribution> a dcat:Distribution;
+    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-012/IGRF/Distribution";
+    dct:title "Distribution of IGRF model";
+    dct:description "The IGRF model is distributed via web service and as software";
+    dct:issued "2018-08-31"^^xsd:date;
+    dct:modified "2018-08-31"^^xsd:date;
+    dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+    dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-012/IGRF/Webservice>;
+    dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-012/IGRF/Operation> ;
+    dct:license "http://creativecommons.org/publicdomain/zero/1.0/"^^xsd:anyURI ;
+    dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:string ;
+.
+
+###############################################################################
+### Web services ###
+###############################################################################
+
+<https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-012/IGRF/Webservice> a epos:WebService;
+    schema:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-012/IGRF/Webservice";
+    schema:description "The International Geomagnetic Reference Field (IGRF) is released by the International Association of Geomagnetism and Aeronomy (IAGA). It consists of a standard mathematical description of the Earth's main magnetic field that is used widely in studies of the Earth's deep interior, its crust and its ionosphere and magnetosphere. The current revision of the model is number 12, revisions are made approximately every 12 years. The coefficients for this degree and order 13 main field model were finalized by a task force of IAGA in December 2014. The IGRF is the product of a collaborative effort between magnetic field modellers and the institutes involved in collecting and disseminating magnetic field data from satellites and from observatories and surveys around the world.";
+    schema:name "IGRF web service";
+    dcat:contactPoint <mailto:smf@bgs.ac.uk/contactPoint>;
+    dcat:contactPoint <http://orcid.org/0000-0002-7677-5158/contactPoint>;
+    schema:datePublished "2018-08-31Z"^^xsd:dateTime;
+    schema:dateModified "2018-08-31Z"^^xsd:dateTime;
+    schema:provider <http://viaf.org/viaf/136554353/>;
+    hydra:entrypoint "http://www.geomag.bgs.ac.uk/web_service/GMModels/"^^xsd:anyURI ;
+    dcat:theme  <epos:Magneticfield> ;
+    schema:keywords "Compass", "Compass direction", "Declination", "Earth core", "core", "Geomagnetism", "Global model", "Inclination", "Magnetic field", "Magnetic model", "Magnetism", "Main field", "Model", "Navigation", "Secular variation", "Spherical harmonic", "Sferic", "World model";
+    hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-012/IGRF/Operation> ;
+    dct:spatial [ a dct:Location;
+        locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral ;
+    ];
+    dct:temporal [ a dct:PeriodOfTime;
+        schema:startDate "2015-01-01T00:00:00Z"^^xsd:dateTime;
+        schema:endDate "2024-12-31T00:00:00Z"^^xsd:dateTime;
+    ];
+    dct:license "http://creativecommons.org/publicdomain/zero/1.0/"^^xsd:anyURI;
+.
+
+###############################################################################
+### Web service operations ###
+###############################################################################
+
+<https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-012/IGRF/Operation> a hydra:Operation;
+    hydra:method "GET"^^xsd:string;
+    hydra:returns "text/xml";
+    hydra:returns "application/json";
+    hydra:returns "text/csv";
+    hydra:returns "text/plain";
+    hydra:returns "text/html";
+    hydra:property[ a hydra:IriTemplate;
+        hydra:template "http://www.geomag.bgs.ac.uk/web_service/GMModels/igrf/12{?latitude, longitude, altitude, date, format}"^^xsd:string;
+            hydra:mapping[ a hydra:IriTemplateMapping;
+                hydra:variable "latitude"^^xsd:float;
+                #hydra:property "epos:southernmostLatitude";
+                hydra:property "epos:northernmostLatitude";
+                rdfs:label "Latitude";
+                rdfs:range "xsd:float" ;
+                schema:defaultValue "0";
+                schema:minValue "-90";
+                schema:maxValue "90";
+                hydra:required "false"^^xsd:boolean;
+            ];
+            hydra:mapping[ a hydra:IriTemplateMapping;
+                hydra:variable "longitude"^^xsd:float;
+                #hydra:property "epos:westernmostLongitude";
+                hydra:property "epos:easternmostLongitude";
+                rdfs:label "Longitude";
+                rdfs:range "xsd:float" ;
+                schema:defaultValue "0";
+                schema:minValue "-180";
+                schema:maxValue "180";
+                hydra:required "false"^^xsd:boolean;
+            ];
+            hydra:mapping[ a hydra:IriTemplateMapping;
+                hydra:variable "altitude"^^xsd:float;
+                rdfs:label "Altitude (km)";
+                rdfs:range "xsd:string" ;
+                schema:defaultValue "0";
+                schema:minValue "-2900";
+                schema:maxValue "10000";
+                hydra:required "false"^^xsd:boolean;
+            ];
+            hydra:mapping[ a hydra:IriTemplateMapping;
+                hydra:variable "date"^^xsd:string;
+                rdfs:label "Date (yyyy-mm-dd)";
+                hydra:property "schema:startDate";
+                schema:valuePattern "YYYY-MM-DD";
+                rdfs:range "xsd:date" ;
+                schema:defaultValue "2015-01-01";
+                schema:minValue "2015-01-01";
+                schema:maxValue "2025-01-01";
+                hydra:required "false"^^xsd:boolean;
+            ];
+            hydra:mapping[ a hydra:IriTemplateMapping;
+                hydra:variable "format"^^xsd:string;
+                rdfs:label "Type of output (XML, JSON, CSV, TXT or HTML)";
+                rdfs:range "xsd:string" ;
+                schema:defaultValue "xml";
+                http:paramValue "xml";
+                http:paramValue "json";
+                http:paramValue "csv";
+                http:paramValue "txt";
+                http:paramValue "html";
+                hydra:required "false"^^xsd:boolean;
+            ];
+    ] ;
+.

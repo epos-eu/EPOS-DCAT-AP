@@ -1,0 +1,702 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http: <http://www.w3.org/2006/http#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+
+
+################### Persons, Organization etc.
+
+<http://orcid.org/0000-0002-4088-1792> a schema:Person ;
+    schema:identifier [ a schema:PropertyValue ;
+      schema:propertyID  "orcid" ;
+      schema:value   "0000-0002-4088-1792" ;
+    ];
+	  schema:familyName "Wassermann" ;
+	  schema:givenName "Joachim" ;
+    schema:address [ a schema:PostalAddress ;
+	 	    schema:streetAddress "Ludwigshöhe 8" ;
+		    schema:addressLocality "München" ;
+		    schema:postalCode "82256" ;
+		    schema:addressCountry "Germany" ;
+	  ];
+    schema:email "j.wassermann@lmu.de" ;
+    schema:telephone "+4989218073962" ;
+    schema:url  "http://orcid.org/0000-0002-4088-1792"^^xsd:anyURI ;
+	  schema:qualifications "Researcher" ;
+	  schema:affiliation <PIC:999978433> ;
+	  schema:contactPoint <http://orcid.org/0000-0002-4088-1792/legalContact> ;
+	  schema:contactPoint <http://orcid.org/0000-0002-4088-1792/scientificContact> ;
+	  schema:contactPoint <http://orcid.org/0000-0002-4088-1792/financialContact> ;
+.
+
+<http://orcid.org/0000-0002-4088-1792/legalContact> a schema:ContactPoint ;
+	schema:email "j.wassermann@lmu.de";
+	schema:availableLanguage "en" ;
+	schema:contactType "legalContact";
+.
+
+<http://orcid.org/0000-0002-4088-1792/financialContact> a schema:ContactPoint ;
+	schema:email "j.wassermann@lmu.de";
+	schema:availableLanguage "en" ;
+	schema:contactType "financialContact" ;
+.
+
+<http://orcid.org/0000-0002-4088-1792/scientificContact> a schema:ContactPoint ;
+	schema:email "j.wassermann@lmu.de" ;
+	schema:availableLanguage "en" ;
+	schema:contactType "scientificContact" ;
+.
+
+<PIC:999978433> a schema:Organization ;
+	schema:identifier [ a schema:PropertyValue ;
+        	schema:propertyID "PIC" ;
+        	schema:value "999978433" ;
+      	];
+	schema:legalName "Ludwig-Maximilians-Universität München" ;
+  schema:leiCode "391200UVKWOIQ00ZLX66" ;
+	schema:address [ a schema:PostalAddress ;
+        	schema:streetAddress "Geschwister-Scholl-Platz 1" ;
+        	schema:addressLocality "München" ;
+        	schema:postalCode "80539" ;
+        	schema:addressCountry "Germany" ;
+	];
+  schema:logo "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/LMU_Muenchen_Logo.svg/760px-LMU_Muenchen_Logo.svg.png"^^xsd:anyURI ;
+  schema:url "https://www.uni-muenchen.de"^^xsd:anyURI  ;
+  schema:email "geophys@geophysik.uni-muenchen.de" ;
+  schema:telephone "+498921804226" ;
+	schema:contactPoint <http://orcid.org/0000-0002-4088-1792/legalContact> ;
+	schema:contactPoint <http://orcid.org/0000-0002-4088-1792/scientificContact> ;
+	schema:contactPoint <http://orcid.org/0000-0002-4088-1792/financialContact> ;
+.
+
+################### FDSNWS dataselect
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/LMU> a dcat:Dataset ;
+        dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/LMU" ;
+        dct:title "Primary Seismic Waveform Data" ;
+        dct:description "Continuous seismic waveforms" ;
+        adms:identifier [ a adms:Identifier ;
+            adms:schemaAgency "DDSS-ID" ;
+            skos:notation "WP08-DDSS-001" ;
+
+        ];
+        dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        owl:versionInfo "1.0.0" ;
+
+        # This property refers to the type of the Dataset. 
+        # Example of frequency using a controlled vocabulary http://dublincore.org/2012/06/14/dctype
+	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
+
+        # This property refers to the frequency at which the Dataset is updated.
+        # The possible types are here: http://purl.org/cld/freq/
+        dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI ;
+
+        # This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
+        dcat:theme  <epos:SeismicWaveform> ;
+
+        dcat:keyword "seismic waveform","continuous waveform" ,"mseed" ;
+        dcat:contactPoint <http://orcid.org/0000-0002-4088-1792/scientificContact> ;
+
+        # This property refers to an Organisation responsible for making the Dataset available.
+	dct:publisher <PIC:999978433> ;
+
+        # This property links the Dataset to an available Distribution.
+        dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/LMU> ;
+
+        # This property refers to a geographic region that is covered by the Dataset.
+        dct:spatial [ a dct:Location ;
+          locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral ;
+        ];
+
+        # This property refers to a temporal period that the Dataset covers.
+        dct:temporal [ a dct:PeriodOfTime ;
+                schema:startDate "1988-01-01T00:00:00Z"^^xsd:dateTime ;
+                #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
+        ] ;
+
+        # This property refers to a related Dataset of which the described Dataset is a version, edition, or adaptation.
+        # dct:hasVersion <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
+
+        # This property refers to a related Dataset of which the described Dataset is a version, edition, or adaptation.
+        # dct:isVersionOf <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
+
+        # This property refers to a related Dataset in which the described Dataset is physically or logically included.
+        # dct:isPartOf <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
+
+        # This property refers to a related Dataset that is part of the described Dataset.
+        # dct:hasPart <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
+
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/LMU> a dcat:Distribution ;
+        dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/LMU" ;
+        # dct:title "Title of Seismic Waveform Distribution" ;
+	dct:title "Seismic Waveforms from LMU Munich :: FDSN DATASELECT ";
+	dct:description "Distribution of Seismic Waveforms from LMU Munich :: FDSN DATASELECT" ;
+	dct:issued "2017-01-01"^^xsd:date ;
+        dct:modified "2017-01-01"^^xsd:date ;
+
+        # This property refers to the type of the Distribution. The possible types are
+        # (http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE
+        # OR
+        # http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE)
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI ;
+
+        # If the type of Distribution is WEB SERVICE, this property refers to the Web Service that gives access to a Distribution of the Dataset. Otherwise, this property is optional.
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/LMU> ;
+
+        # This property contains a URL that gives access to a Distribution of the Dataset. The resource at the access URL may contain # information about how to get the Dataset.
+        # If the type of Distribution is WEB SERVICE, this property refers to the Operation of the Web Service to which the Distribution conforms.
+        dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001/LMU> ;
+
+        # This property refers to the file format of the Distribution. 
+        # The possible types are here: http://publications.europa.eu/mdr/resource/authority/file-type/html/filetypes-eng.html
+        dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI ;
+
+        # This property contains the size of a Distribution in bytes.
+        # dcat:byteSize "1024"^^xsd:decimal ;
+
+        # This property refers to the licence under which the Distribution is made available.
+        dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+
+        # If the type of Distribution is DOWNLOADABLE FILE, this property contains a URL that is a direct link to a downloadable file in a given format. Otherwise, this property is optional.
+        # dcat:downloadURL "URL that is a direct link to a downloadable file in a given format"^^xsd:anyURI ;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/LMU> a epos:WebService ;
+  schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/LMU" ;
+  schema:description "FDSN Standard webservice at LMU to download waveform data" ;
+	schema:name "FDSN Dataselect - LMU München (LMU)" ;
+
+  # This property contains contact information that can be used for sending comments about the Web Service.
+  dcat:contactPoint <http://orcid.org/0000-0002-4088-1792/scientificContact> ;
+
+  schema:datePublished "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+	schema:dateModified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+
+  # This property refers to an Organisation responsible for making the Web Service available.
+	schema:provider <PIC:999978433> ;
+
+  # This property refers to the API definitions (e.g., WSDL, WADL)
+	hydra:entrypoint "https://erde.geophysik.uni-muenchen.de/fdsnws/dataselect/1/application.wadl"^^xsd:anyURI ;
+
+  #This property refers to a category of the Web Service. A Web Service may be associated with multiple themes.
+  dcat:theme  <epos:SeismicWaveform> ;
+
+  schema:keywords "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "ODC", "Dataselect", "FDSN-WS", "Seismic Waveform", "EIDA" ;
+
+  # This property refers to a web service operation supported by the Web Service.
+  hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001/LMU> ;
+
+  # This property refers to the API documentation. (Optional)
+  # dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/APIDocumentation> ;
+
+  # This property refers to a geographic region that is covered by the Dataset.
+  # The POLYGON format is: POLYGON(lon1 lat1, lon2 lat2,...)
+  dct:spatial [ a dct:Location ;
+    locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral ;
+  ];
+
+  # This property refers to a temporal period that the Dataset covers.
+  dct:temporal [ a dct:PeriodOfTime ;
+          schema:startDate "1988-01-01T00:00:00"^^xsd:dateTime ;
+          #schema:endDate "YYYY-MM-DDThh:mm:ss"^^xsd:dateTime ;
+  ] ;
+  # This property refers to the licence under which the Distribution is made available.
+  dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001/LMU> a hydra:Operation;
+ 	hydra:method "GET";
+
+  # This property is used to specify the output format of the Operation.
+  # The possible values are listed here:  https://www.iana.org/assignments/media-types/media-types.xhtml
+  hydra:returns "application/vnd.fdsn.mseed" ;
+
+  hydra:property[ a hydra:IriTemplate ;
+        	hydra:template "http://erde.geophysik.uni-muenchen.de/fdsnws/dataselect/1/query/{?starttime,endtime,network,quality,station,location,channel,minimumlength,longestonly,nodata,format}"^^xsd:string ;
+        		hydra:mapping[ a hydra:IriTemplateMapping ;
+                  # This property contains the name of the parameter as required by web service specifications
+                  hydra:variable "starttime"^^xsd:string ;
+
+                  # This property contains a short string used to describe the meaning of the parameter to the GUI user.
+				          rdfs:label "Start of the timespan" ;
+
+                  # This property contains true if the property is required, false otherwise.
+               		hydra:required "true"^^xsd:boolean ;
+                  hydra:property "schema:startDate" ;
+                  schema:valuePattern "YYYY-MM-DDThh:mm:ss" ;
+
+                  # This property contains the type of parameter. 
+		  # The possible values for this property are: "xsd:string" "xsd:boolean" "xsd:date" " xsd:dateTime" "xsd:decimal" "xsd:double" "xsd:float" "xsd:int" "xsd:integer" "xsd:long";
+                  rdfs:range "xsd:dateTime" ;
+
+                  # This property contains the default value of the parameter
+                  schema:defaultValue "2018-01-01T00:00:00" ;
+
+                  # The minimum value of the parameter
+                  # schema:minValue "2012-01-01T00:00:00T" ;
+
+                  # The maximum value of the parameter
+                  # schema:maxValue "2017-12-01T00:00:00T" ;
+
+                  # This property contains one of the possible value which should be used in the web service query
+                  # It could be repeated as many times as needed.
+                  # http:paramValue "possible value" ;
+           	];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "endtime"^^xsd:string ;
+				            rdfs:label "End of the timespan" ;
+               			hydra:required "true"^^xsd:boolean ;
+                    hydra:property "schema:endDate" ;
+                    schema:valuePattern "YYYY-MM-DDThh:mm:ss" ;
+                    rdfs:range "xsd:dateTime" ;
+                    schema:defaultValue "2018-01-01T01:00:00" ;
+
+              		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "network"^^xsd:string ;
+				            rdfs:label "Network code" ;
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:string" ;
+                    schema:defaultValue "BW" ;
+               		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "station"^^xsd:string ;
+				            rdfs:label "Station code" ;
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:string" ;
+                    schema:defaultValue "NORI" ;
+               		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "location"^^xsd:string ;
+				            rdfs:label "Location code" ;
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:string" ;
+                    
+               		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "channel"^^xsd:string ;
+				            rdfs:label "Channel code" ;
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:string" ;
+                    
+               		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "minimumlength"^^xsd:string ;
+				            rdfs:label "Limit results to continuous data segments of a minimum length specified in seconds" ;
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:float" ;
+                    
+               		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "longestonly"^^xsd:string ;
+				            rdfs:label "Limit results to the longest continuous segment per channel." ;
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:boolean" ;
+				http:paramValue "true";
+			http:paramValue "false";
+				
+                   
+               		];
+                    hydra:mapping[ a hydra:IriTemplateMapping;
+                        hydra:variable "nodata"^^xsd:string;
+                        rdfs:label "HTTP error code if no data is found";
+                        http:paramValue "204";
+                        http:paramValue "404";
+                        hydra:required "false"^^xsd:boolean;
+                        rdfs:range "xsd:string" ;
+                        
+                    ];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "format"^^xsd:string ;
+				            rdfs:label "Specify the format of the data returned." ;
+                        http:paramValue "mseed";
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:string" ;
+                    
+               		];
+               		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "quality"^^xsd:string ;
+				            rdfs:label "Quality" ;
+               			hydra:required "false"^^xsd:boolean ;
+				            http:paramValue "B" ;
+				            http:paramValue "M" ;
+                    rdfs:range "xsd:string" ;
+                    schema:defaultValue "B" ;
+              		];
+       	];
+.
+
+################### FDSNWS station
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/LMU> a dcat:Dataset ;
+        dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/LMU" ;
+        dct:title "Seismic Station Data" ;
+        dct:description "Seismic Stations" ;
+        adms:identifier [ a adms:Identifier ;
+            adms:schemaAgency "DDSS-ID" ;
+            skos:notation "WP08-DDSS-002" ;
+
+        ];
+        dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        owl:versionInfo "1.0.0" ;
+
+        # This property refers to the type of the Dataset. 
+        # Example of frequency using a controlled vocabulary http://dublincore.org/2012/06/14/dctype
+	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
+
+        # This property refers to the frequency at which the Dataset is updated.
+        # The possible types are here: http://purl.org/cld/freq/
+        dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI ;
+
+        # This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
+        dcat:theme  <epos:SeismicNetwork> ;
+
+        dcat:keyword "seismic station", "stationxml" ;
+        dcat:contactPoint <http://orcid.org/0000-0002-4088-1792/scientificContact> ;
+
+        # This property refers to an Organisation responsible for making the Dataset available.
+	dct:publisher <PIC:999978433> ;
+
+        # This property links the Dataset to an available Distribution.
+        dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/LMU> ;
+
+        # This property refers to a geographic region that is covered by the Dataset.
+        dct:spatial [ a dct:Location ;
+          locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral ;
+        ];
+
+        # This property refers to a temporal period that the Dataset covers.
+        dct:temporal [ a dct:PeriodOfTime ;
+                schema:startDate "1988-01-01T00:00:00Z"^^xsd:dateTime ;
+                #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
+        ] ;
+
+        # This property refers to a related Dataset of which the described Dataset is a version, edition, or adaptation.
+        # dct:hasVersion <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
+
+        # This property refers to a related Dataset of which the described Dataset is a version, edition, or adaptation.
+        # dct:isVersionOf <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
+
+        # This property refers to a related Dataset in which the described Dataset is physically or logically included.
+        # dct:isPartOf <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
+
+        # This property refers to a related Dataset that is part of the described Dataset.
+        # dct:hasPart <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
+
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/LMU> a dcat:Distribution ;
+        dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/LMU" ;
+        dct:title "Seismic Stations from LMU Munich :: FDSN STATION" ;
+	dct:description "Distribution of Seismic Stations from LMU Munich :: FDSN STATION" ;
+	dct:issued "2017-01-01"^^xsd:date ;
+        dct:modified "2017-01-01"^^xsd:date ;
+
+        # This property refers to the type of the Distribution. The possible types are
+        # (http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE
+        # OR
+        # http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE)
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI ;
+
+        # If the type of Distribution is WEB SERVICE, this property refers to the Web Service that gives access to a Distribution of the Dataset. Otherwise, this property is optional.
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/LMU> ;
+
+        # This property contains a URL that gives access to a Distribution of the Dataset. The resource at the access URL may contain # information about how to get the Dataset.
+        # If the type of Distribution is WEB SERVICE, this property refers to the Operation of the Web Service to which the Distribution conforms.
+        dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/Operation/002/LMU> ;
+
+        # This property refers to the file format of the Distribution. 
+        # The possible types are here: http://publications.europa.eu/mdr/resource/authority/file-type/html/filetypes-eng.html
+        dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI ;
+
+        # This property contains the size of a Distribution in bytes.
+        # dcat:byteSize "1024"^^xsd:decimal ;
+
+        # This property refers to the licence under which the Distribution is made available.
+        dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+
+        # If the type of Distribution is DOWNLOADABLE FILE, this property contains a URL that is a direct link to a downloadable file in a given format. Otherwise, this property is optional.
+        # dcat:downloadURL "URL that is a direct link to a downloadable file in a given format"^^xsd:anyURI ;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/LMU> a epos:WebService ;
+  schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/LMU" ;
+  schema:description "FDSN Standard webservice at LMU to download station data" ;
+	schema:name "FDSN Station - LMU München (LMU)" ;
+
+  # This property contains contact information that can be used for sending comments about the Web Service.
+  dcat:contactPoint <http://orcid.org/0000-0002-4088-1792/scientificContact> ;
+
+  schema:datePublished "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+	schema:dateModified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+
+  # This property refers to an Organisation responsible for making the Web Service available.
+	schema:provider <PIC:999978433> ;
+
+  # This property refers to the API definitions (e.g., WSDL, WADL)
+	hydra:entrypoint "https://erde.geophysik.uni-muenchen.de/fdsnws/station/1/application.wadl"^^xsd:anyURI ;
+
+  #This property refers to a category of the Web Service. A Web Service may be associated with multiple themes.
+  dcat:theme  <epos:SeismicNetwork> ;
+
+  schema:keywords "seismology", "seismicity", "earthquakes", "network", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "LMU", "Dataselect", "FDSN-WS", "Seismic Station", "EIDA" ;
+
+  # This property refers to a web service operation supported by the Web Service.
+  hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/Operation/002/LMU> ;
+
+  # This property refers to the API documentation. (Optional)
+  # dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/APIDocumentation> ;
+
+  # This property refers to a geographic region that is covered by the Dataset.
+  # The POLYGON format is: POLYGON(lon1 lat1, lon2 lat2,...)
+  dct:spatial [ a dct:Location ;
+    locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral ;
+  ];
+
+  # This property refers to a temporal period that the Dataset covers.
+  dct:temporal [ a dct:PeriodOfTime ;
+          schema:startDate "1988-01-01T00:00:00"^^xsd:dateTime ;
+          #schema:endDate "YYYY-MM-DDThh:mm:ss"^^xsd:dateTime ;
+  ] ;
+  # This property refers to the licence under which the Distribution is made available.
+  dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/Operation/002/LMU> a hydra:Operation;
+ 	hydra:method "GET";
+
+  # This property is used to specify the output format of the Operation.
+  # The possible values are listed here:  https://www.iana.org/assignments/media-types/media-types.xhtml
+  hydra:returns "application/xml" ;
+
+  hydra:property[ a hydra:IriTemplate ;
+        	hydra:template "http://erde.geophysik.uni-muenchen.de/fdsnws/station/1/query/{?starttime,endtime,network,startbefore,startafter,endbefore,endafter,station,location,channel,minlatitude,maxlatitude,minlongitude,maxlongitude,latitude,longitude,maxradius,minradius,level,format,nodata}"^^xsd:string ;
+        		hydra:mapping[ a hydra:IriTemplateMapping ;
+                  # This property contains the name of the parameter as required by web service specifications
+                  hydra:variable "starttime"^^xsd:string ;
+
+                  # This property contains a short string used to describe the meaning of the parameter to the GUI user.
+				          rdfs:label "Start of the timespan" ;
+
+                  # This property contains true if the property is required, false otherwise.
+               		hydra:required "false"^^xsd:boolean ;
+
+                  hydra:property "schema:startDate" ;
+                  schema:valuePattern "YYYY-MM-DDThh:mm:ss" ;
+		  schema:defaultValue "2010-01-01T01:00:00" ;
+
+                  # This property contains the type of parameter. 
+		  # The possible values for this property are: "xsd:string" "xsd:boolean" "xsd:date" " xsd:dateTime" "xsd:decimal" "xsd:double" "xsd:float" "xsd:int" "xsd:integer" "xsd:long";
+                  rdfs:range "xsd:dateTime" ;
+
+                  # This property contains the default value of the parameter
+                  
+
+                  # The minimum value of the parameter
+                  # schema:minValue "2012-01-01T00:00:00T" ;
+
+                  # The maximum value of the parameter
+                  # schema:maxValue "2017-12-01T00:00:00T" ;
+
+                  # This property contains one of the possible value which should be used in the web service query
+                  # It could be repeated as many times as needed.
+                  # http:paramValue "possible value" ;
+           	];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "endtime"^^xsd:string ;
+				            rdfs:label "End of the timespan" ;
+               			hydra:required "false"^^xsd:boolean ;
+                    hydra:property "schema:endDate" ;
+                    schema:valuePattern "YYYY-MM-DDThh:mm:ss" ;
+                    rdfs:range "xsd:dateTime" ;
+				schema:defaultValue "2019-03-31T01:00:00" ;
+                    
+              		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "startbefore"^^xsd:string ;
+				            rdfs:label "Limit to metadata epochs starting before specified time. Applied to channel epochs." ;
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:dateTime" ;
+                   
+              		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "startafter"^^xsd:string ;
+				            rdfs:label "Limit to metadata epochs starting after specified time. Applied to channel epochs." ;
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:dateTime" ;
+                    
+              		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "endbefore"^^xsd:string ;
+				            rdfs:label "Limit to metadata epochs ending before specified time. Applied to channel epochs." ;
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:dateTime" ;
+                    
+              		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "endafter"^^xsd:string ;
+				            rdfs:label "Limit to metadata epochs ending after specified time. Applied to channel epochs." ;
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:dateTime" ;
+                   
+              		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "network"^^xsd:string ;
+				            rdfs:label "Network code" ;
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:string" ;
+                    #schema:defaultValue "BW" ;
+				schema:defaultValue "*" ;
+               		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "station"^^xsd:string ;
+				            rdfs:label "Station code" ;
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:string" ;
+                    #schema:defaultValue "NORI" ;
+				schema:defaultValue "*" ;
+               		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "location"^^xsd:string ;
+				            rdfs:label "Location code" ;
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:string" ;
+                    
+               		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "channel"^^xsd:string ;
+				            rdfs:label "Channel code" ;
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:string" ;
+                    
+               		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "latitude"^^xsd:string ;
+				            rdfs:label "Specify the central latitude point." ;
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:float" ;
+                    
+               		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "longitude"^^xsd:string ;
+				            rdfs:label "Specify the central longitude point." ;
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:float" ;
+                    
+               		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "minlatitude"^^xsd:string ;
+                    hydra:property "epos:southernmostLatitude" ;
+				            rdfs:label "Southern boundary." ;
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:float" ;
+                    
+               		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "minlongitude"^^xsd:string ;
+                    hydra:property "epos:westernmostLongitude" ;
+				            rdfs:label "Western boundary." ;
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:float" ;
+                    
+               		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "maxlatitude"^^xsd:string ;
+                    hydra:property "epos:northernmostLatitude" ;
+				            rdfs:label "Northern boundary." ;
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:float" ;
+                    
+               		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "maxlongitude"^^xsd:string ;
+                    hydra:property "epos:easternmostLongitude" ;
+				            rdfs:label "Eastern boundary." ;
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:float" ;
+                    
+               		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "maxradius"^^xsd:string ;
+				            rdfs:label "Specify maximum distance from the geographic point defined by latitude and longitude." ;
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:float" ;
+                    
+               		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "minradius"^^xsd:string ;
+				            rdfs:label "Specify minimum distance from the geographic point defined by latitude and longitude." ;
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:float" ;
+                    
+               		];
+                    hydra:mapping[ a hydra:IriTemplateMapping;
+                        hydra:variable "nodata"^^xsd:string;
+                        rdfs:label "HTTP error code if no data is found";
+                        http:paramValue "204";
+                        http:paramValue "404";
+                        hydra:required "false"^^xsd:boolean;
+                        rdfs:range "xsd:string" ;
+                        
+                    ];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "format"^^xsd:string ;
+				            rdfs:label "Specify the format of the data returned." ;
+                        http:paramValue "xml";
+                        http:paramValue "text";
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:string" ;
+                    
+               		];
+              		hydra:mapping[ a hydra:IriTemplateMapping ;
+               			hydra:variable "level"^^xsd:string ;
+				            rdfs:label "Specify level of detail using network, station, channel or response." ;
+                        http:paramValue "network";
+                        http:paramValue "station";
+                        http:paramValue "channel";
+                        http:paramValue "response";
+               			hydra:required "false"^^xsd:boolean ;
+                    rdfs:range "xsd:string" ;
+                    
+               		];
+       	];
+.
+
+################### Misc
+
+<epos:Seismology> a skos:ConceptScheme ;
+	dct:title "Seismology" ;
+	dct:description "It contains the concepts of the Seismology domain" ;
+.
+
+<epos:SeismicWaveform> a skos:Concept ;
+	skos:definition "Measurement of the dynamic displacement of the Earth" ;
+	skos:inScheme <epos:Seismology> ;
+	skos:prefLabel "Seismic waveform" ;
+.
+
+<epos:SeismicNetwork> a skos:Concept ;
+    skos:definition "Collection of seismic stations in a seismic network" ;
+    skos:inScheme <epos:Seismology> ;
+    skos:prefLabel "Seismic Network" ;
+.
+

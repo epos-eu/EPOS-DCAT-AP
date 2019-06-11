@@ -1,0 +1,265 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .  
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .  
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .  
+@prefix dc: <http://purl.org/dc/elements/1.1/> .  
+@prefix dct: <http://purl.org/dc/terms/> .  
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .  
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .  
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .  
+@prefix schema: <http://schema.org/> .  
+@prefix dcat: <http://www.w3.org/ns/dcat#> .  
+@prefix cnt: <http://www.w3.org/2011/content#> .  
+@prefix locn: <http://www.w3.org/ns/locn#> .  
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .  
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .  
+@prefix http: <http://www.w3.org/2006/http#> .  
+@prefix owl: <http://www.w3.org/2002/07/owl#> .  
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .  
+
+###############################################################################
+### Domain and subdomain ###
+###############################################################################
+
+<epos:Geoelectromagnetism> a skos:ConceptScheme;
+    dct:title "Geoelectromagnetism";
+    dct:description "Relating to the electric or magnetic field of the Earth";
+.
+
+<epos:Magneticactivity> a skos:Concept;
+    skos:definition "Geo-effectivity at the Earth's surface described by planetary geomagnetic indices or lists of remarkable events";
+    skos:inScheme <epos:Geoelectromagnetism>;
+    #skos:prefLabel "Geo-effectivity at the Earth's surface described by planetary geomagnetic indices or lists of remarkable events";
+    skos:prefLabel "Magneticactivity";
+.
+
+###############################################################################
+### People ###
+###############################################################################
+
+<mailto:ari.viljanen@fmi.fi> a schema:Person;
+    schema:identifier [ a schema:PropertyValue;
+        schema:propertyID "mailto";
+        schema:value "mailto:ari.viljanen@fmi.fi";
+    ];
+    schema:familyName "Viljanen";
+    schema:givenName "Ari";
+    schema:address [ a schema:PostalAddress;
+        schema:streetAddress "Erik Palmenin aukio 1";
+        schema:addressLocality "Helsinki";
+        schema:postalCode "FI-00560";
+        schema:addressCountry "Finland";
+    ];
+    schema:email "ari.viljanen@fmi.fi";
+    schema:telephone "0295394668";
+    schema:affiliation <PIC:999591306>;
+    schema:contactPoint <mailto:ari.viljanen@fmi.fi/contactPoint>;
+    schema:contactPoint <mailto:ari.viljanen@fmi.fi/scientificContact>;
+    schema:contactPoint <mailto:ari.viljanen@fmi.fi/legalContact>;
+    schema:contactPoint <mailto:ari.viljanen@fmi.fi/financialContact>;
+.
+
+<mailto:lasse.hakkinen@fmi.fi> a schema:Person;
+    schema:identifier [ a schema:PropertyValue;
+        schema:propertyID "mailto";
+        schema:value "mailto:lasse.hakkinen@fmi.fi";
+    ];
+    schema:familyName "Häkkinen";
+    schema:givenName "Lasse";
+    schema:address [ a schema:PostalAddress;
+        schema:streetAddress "Erik Palmenin aukio 1";
+        schema:addressLocality "Helsinki";
+        schema:postalCode "FI-00560";
+        schema:addressCountry "Finland";
+    ];
+    schema:email "lasse.hakkinen@fmi.fi";
+    schema:telephone "0295394634";
+    schema:affiliation <PIC:999591306>;
+    schema:contactPoint <mailto:lasse.hakkinen@fmi.fi/contactPoint>;
+.
+
+
+###############################################################################
+### ContactPoint links ###
+###############################################################################
+
+<mailto:ari.viljanen@fmi.fi/contactPoint> a schema:ContactPoint;
+    schema:email "ari.viljanen@fmi.fi";
+    schema:availableLanguage "en" ;
+    schema:contactType "contactPoint" ;
+.
+<mailto:lasse.hakkinen@fmi.fi/contactPoint> a schema:ContactPoint;
+    schema:email "lasse.hakkinen@fmi.fi";
+    schema:availableLanguage "en" ;
+    schema:contactType "contactPoint" ;
+.
+<mailto:ari.viljanen@fmi.fi/scientificContact> a schema:ContactPoint;
+    schema:email "ari.viljanen@fmi.fi";
+    schema:availableLanguage "en" ;
+    schema:contactType "scientificContact" ;
+.
+<mailto:ari.viljanen@fmi.fi/legalContact> a schema:ContactPoint;
+    schema:email "ari.viljanen@fmi.fi";
+    schema:availableLanguage "en" ;
+    schema:contactType "legalContact" ;
+.
+<mailto:ari.viljanen@fmi.fi/financialContact> a schema:ContactPoint;
+    schema:email "ari.viljanen@fmi.fi";
+    schema:availableLanguage "en" ;
+    schema:contactType "financialContact" ;
+.
+
+
+###############################################################################
+### Organisations ###
+###############################################################################
+
+<PIC:999591306> a schema:Organization;
+    schema:identifier [ a schema:PropertyValue;
+        schema:propertyID "PIC";
+        schema:value "PIC:999591306";
+    ];
+    schema:legalName "Finnish Meteorological Institute";
+    schema:leiCode "Legal Entity Identifier Search: http://www.lei-lookup.com/#!search" ;
+    schema:address [ a schema:PostalAddress;
+        schema:streetAddress "Erik Palmenin aukio 1";
+        schema:addressLocality "Helsinki";
+        schema:postalCode "FI-00560";
+        schema:addressCountry "Finland";
+    ];
+    schema:url "https://en.ilmatieteenlaitos.fi/"^^xsd:anyURI;
+    schema:email "registry@fmi.fi";
+    schema:telephone "+358 29 539 1000";
+    schema:contactPoint <mailto:ari.viljanen@fmi.fi/scientificContact>;
+    schema:contactPoint <mailto:ari.viljanen@fmi.fi/legalContact>;
+    schema:contactPoint <mailto:ari.viljanen@fmi.fi/financialContact>;
+.
+
+
+###############################################################################
+### Data set ###
+###############################################################################
+
+<https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-009/IMAGE_Substorm/Dataset> a dcat:Dataset;
+    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-009/IMAGE_Substorm/Dataset";
+    dct:title "IMAGE electrojet events";
+    dct:description "IMAGE electrojet events refer to periods when a clearly detectable eastward and/or westward current crosses the magnetometer network.";
+    adms:identifier [ a adms:Identifier;
+        adms:schemaAgency "DDSS-ID";
+        skos:notation "WP13-DDSS-009";
+    ]; 
+    dct:created "2018-08-31"^^xsd:date;
+    dct:modified "2018-08-31"^^xsd:date;
+    dct:issued "2018-08-31"^^xsd:date;
+    owl:versionInfo "1.0.0" ;
+    
+    dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
+    dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI ;
+    dcat:theme  <epos:Magneticactivity> ;
+    dcat:keyword "auroral electrojet", "geomagnetism", "magnetic field", "magnetism", "space weather", "substorm", "variometer" ;
+    dcat:contactPoint <mailto:ari.viljanen@fmi.fi/contactPoint>;
+    dcat:contactPoint <mailto:lasse.hakkinen@fmi.fi/contactPoint>;
+    dct:publisher <PIC:999591306>;
+    dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-009/IMAGE_Substorm/Distribution>;
+
+    dct:temporal [ a dct:PeriodOfTime; 
+        schema:startDate "1982-10-01T00:00:00Z"^^xsd:dateTime; 
+    ]; 
+    dct:spatial [ a dct:Location; 
+        locn:geometry "POLYGON(40.0 50.0, 0.0 50.0, 0.0 80.0, 40.0 80.0, 40.0 50.0)"^^gsp:wktLiteral; 
+    ]; 
+.
+
+###############################################################################
+### Distributions ###
+###############################################################################
+
+<https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-009/IMAGE_Substorm/Distribution> a dcat:Distribution;
+    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-009/IMAGE_Substorm/Distribution";
+    dct:title "Distribution of IMAGE electrojet event data";
+    dct:description "IMAGE electrojet event data is distributed via web service";
+    dct:issued "2018-08-31"^^xsd:date;
+    dct:modified "2018-08-31"^^xsd:date;
+    dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+    dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-009/IMAGE_Substorm/Webservice>;
+    dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-009/IMAGE_Substorm/Operation> ;
+    dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI ;
+    dct:format "http://publications.europa.eu/resource/authority/file-type/TXT"^^xsd:string ;
+. 
+
+###############################################################################
+### Web services ###
+###############################################################################
+
+<https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-009/IMAGE_Substorm/Webservice> a epos:WebService;
+    schema:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-009/IMAGE_Substorm/Webservice";
+    schema:description "The IMAGE web service makes available data from the IMAGE electrojet event list.";
+    schema:name "IMAGE web service";
+    dcat:contactPoint <mailto:ari.viljanen@fmi.fi/contactPoint>;
+    dcat:contactPoint <mailto:lasse.hakkinen@fmi.fi/contactPoint>;
+    schema:datePublished "2018-08-31Z"^^xsd:dateTime;
+    schema:dateModified "2018-08-31Z"^^xsd:dateTime;
+    schema:provider <PIC:999591306>;
+    hydra:entrypoint "http://space.fmi.fi/image/www/index.php?page=request"^^xsd:anyURI ;
+    dcat:theme  <epos:Magneticactivity> ;
+    schema:keywords "auroral electrojet", "geomagnetism", "magnetic field", "magnetism", "space weather", "substorm", "variometer" ;
+    hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-009/IMAGE_Substorm/Operation> ;
+    dct:spatial [ a dct:Location; 
+        locn:geometry "POLYGON(40.0 50.0, 0.0 50.0, 0.0 80.0, 40.0 80.0, 40.0 50.0)"^^gsp:wktLiteral; 
+    ]; 
+    dct:temporal [ a dct:PeriodOfTime; 
+        schema:startDate "1982-10-01T00:00:00Z"^^xsd:dateTime; 
+    ]; 
+    dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+.
+
+###############################################################################
+### Web service operations ###
+###############################################################################
+
+<https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-009/IMAGE_Substorm/Operation> a hydra:Operation;
+    hydra:method "GET"^^xsd:string;
+    hydra:returns "text/plain";
+    hydra:property[ a hydra:IriTemplate;
+        hydra:template "http://space.fmi.fi/cgi-bin/imagecgi/image-epos-electrojet-events.cgi{?start, yourname, institute, email, submit}"^^xsd:string;
+            hydra:mapping[ a hydra:IriTemplateMapping;
+                hydra:variable "start"^^xsd:string;
+                hydra:property "schema:startDate";
+                schema:valuePattern "YYYYMMDD";
+                rdfs:label "Date (yyyymmdd)";
+                rdfs:range "xsd:integer" ;
+                schema:minValue "19821001";
+                schema:maxValue "21000101";
+                schema:defaultValue "19821001";
+                hydra:required "true"^^xsd:boolean;
+            ];
+            hydra:mapping[ a hydra:IriTemplateMapping;
+                hydra:variable "yourname"^^xsd:string;
+                rdfs:label "Your name";
+                rdfs:range "xsd:string" ;
+                schema:defaultValue "EPOS Test User";
+                hydra:required "true"^^xsd:boolean;
+            ];
+            hydra:mapping[ a hydra:IriTemplateMapping;
+                hydra:variable "institute"^^xsd:string;
+                rdfs:label "Your institute";
+                rdfs:range "xsd:string" ;
+                schema:defaultValue "EPOS Test Institute";
+                hydra:required "true"^^xsd:boolean;
+            ];
+            hydra:mapping[ a hydra:IriTemplateMapping;
+                hydra:variable "email"^^xsd:string;
+                rdfs:label "Your email";
+                rdfs:range "xsd:string" ;
+                schema:defaultValue "EPOSTestUser@example.org";
+                hydra:required "true"^^xsd:boolean;
+            ];
+            hydra:mapping[ a hydra:IriTemplateMapping;
+                hydra:variable "submit"^^xsd:string;
+                rdfs:label "Always set to 'OK'";
+                rdfs:range "xsd:string" ;
+                http:paramValue "OK";
+                schema:defaultValue "OK";
+                hydra:required "true"^^xsd:boolean;
+            ];
+        ] ;
+.

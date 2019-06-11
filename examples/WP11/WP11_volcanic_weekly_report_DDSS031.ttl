@@ -1,0 +1,239 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http: <http://www.w3.org/2006/http#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+
+#########
+# PERSON 
+#########
+
+<http://orcid.org/0000-0001-5750-0872> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "ORCID";
+		schema:value " 0000-0001-5750-0872";
+	];
+	schema:familyName "Sara Barsotti";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Bústaðavegur 7-9";
+		schema:addressLocality "Reykjavík";
+		schema:postalCode "150";
+		schema:addressCountry "Iceland";
+	];
+	schema:email "sara@vedur.is";
+	schema:telephone "+3545226162";
+	schema:url "http://en.vedur.is"^^xsd:anyURI;
+	schema:contactPoint <http://orcid.org/0000-0001-5750-0872/scientificContact>;
+	schema:contactPoint <http://orcid.org/0000-0001-5750-0872/contactPoint>;
+.
+
+#########
+# Organization
+#########
+
+<PIC:997168343> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "PIC";
+		schema:value "997168343";
+	];
+	schema:legalName "Icelandic Meteorological Office";
+	schema:leiCode "630908 0350";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Bústaðavegur 7-9";
+		schema:addressLocality "Reykjavík";
+		schema:postalCode "150";
+		schema:addressCountry "Iceland";
+	];
+	schema:url "http://en.vedur.is"^^xsd:anyURI;
+	schema:email "sara@vedur.is";
+	schema:telephone "+3545226200";
+	schema:contactPoint <http://orcid.org/0000-0001-5750-0872/scientificContact>;
+        schema:contactPoint <http://orcid.org/0000-0001-5750-0872/contactPoint>;
+.
+
+
+#########
+# ContactPoint
+######### 
+
+<http://orcid.org/0000-0001-5750-0872/contactPoint> a schema:ContactPoint;
+		schema:email "sara@vedur.is";
+		schema:availableLanguage "en" ;
+                schema:contactType "contactPoint"; 
+.
+<http://orcid.org/0000-0001-5750-0872/scientificContact> a schema:ContactPoint;
+		schema:email "sara@vedur.is";
+		schema:availableLanguage "en" ;
+		schema:contactType "scientificContact" ;
+.
+
+#########
+# Dataset
+#########
+
+<www.epos-eu.org/epos-dcat-ap/Volcano-Observations/Dataset/031/Volcanic-activity/data> a dcat:Dataset;
+		dct:title "Reports on volcanic activity";
+		dct:identifier "www.epos-eu.org/epos-dcat-ap/Volcano-Observations/Dataset/031/Volcanic-activity/data";
+		adms:identifier [ a adms:Identifier;
+			adms:schemaAgency "DDSS-ID";
+			skos:notation "WP11-DDSS-031";
+		];
+		dct:description "Reports containing the description of the status of the volcanoes on a weekly basis";
+		dct:created "2014-10-01"^^xsd:date;
+		dct:modified "2014-10-01"^^xsd:date;
+		dct:issued "2014-10-01"^^xsd:date;
+		dct:temporal [ a dct:PeriodOfTime;
+			schema:startDate "2014-10-01T00:00:00Z"^^xsd:dateTime;
+			schema:endDate "2025-01-01T00:00:00Z"^^xsd:dateTime;
+		];
+		dct:spatial [ a dct:Location;
+			locn:geometry "POLYGON(-25.0 63.0,-25.0 68.5,-10.0 68.5,-10.0 63.0,-25.0 63.0)"^^gsp:wktLiteral;
+		];
+		dcat:theme <epos:Volcanological-Data>;
+		dcat:keyword "Volcanic activity";
+		dcat:contactPoint <http://orcid.org/0000-0001-5750-0872/contactPoint>;
+		dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Volcano-Observations/Dataset/031/Volcanic-activity/distribution>;
+		owl:versionInfo "V1.0";
+		dct:publisher <PIC:997168343>;
+.
+
+#########
+# Distribution
+######### 
+
+<https://www.epos-eu.org/epos-dcat-ap/Volcano-Observations/Dataset/031/Volcanic-activity/distribution> a dcat:Distribution;
+		dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Volcano-Observations/Dataset/031/Volcanic-activity/distribution";
+		dct:title "Volcanic activity";
+		dct:description "Reports containing the description of the status of the volcanoes on a weekly basis";
+		dct:issued "2014-10-01"^^xsd:date;
+		dct:modified "2014-10-01"^^xsd:date;
+		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
+                dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Volcano-Observations/Dataset/031/Volcanic-activity/operation>;
+		dct:conformsTo <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/031/Volcanic-activity>;
+.
+
+#########
+# WebService
+######### 
+
+<www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/031/Volcanic-activity> a epos:WebService;
+	schema:identifier "www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/031/Volcanic-activity";
+	schema:description "Access to the weekly report produced for the Icelandic volcanoes, describing their status";
+	schema:name "Reports on volcanic activity";
+	hydra:entrypoint "https://docs.vedur.is/api/epos/#!/Volcanoes/get_volcanoes_products_reports"^^xsd:anyURI;
+	schema:datePublished "2018-05-30"^^xsd:date;
+	schema:dateModified "2018-05-30"^^xsd:date;
+	dct:spatial [ a dct:Location;
+		locn:geometry "POLYGON(-25.0 63.0,-25.0 68.5,-10.0 68.5,-10.0 63.0,-25.0 63.0)"^^gsp:wktLiteral;
+	];
+	schema:keywords "Volcanic activity";
+	dct:temporal [ a dct:PeriodOfTime;
+		schema:startDate "2014-10-01T00:00:00Z"^^xsd:dateTime;
+		schema:endDate "2025-01-01T00:00:00Z"^^xsd:dateTime;
+	];
+	dcat:theme <epos:Volcanological-Data>;
+	schema:provider <PIC:997168343>;
+	dcat:contactPoint <http://orcid.org/0000-0001-5750-0872/contactPoint>;
+	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Volcano-Observations/Dataset/031/Volcanic-activity/operation>;
+.
+
+#########
+# Operation
+######### 
+
+<https://www.epos-eu.org/epos-dcat-ap/Volcano-Observations/Dataset/031/Volcanic-activity/operation> a hydra:Operation;
+	hydra:method "GET"^^xsd:string;
+	hydra:returns "application/json";
+	hydra:property[ a hydra:IriTemplate;
+                hydra:template "https://api.vedur.is/epos/v1/volcanoes/products/reports{?start_time, end_time}&box={minlatitude, minlongitude, maxlatitude, maxlongitude}"^^xsd:string;
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "minlatitude"^^xsd:string; 
+				hydra:property "epos:southernmostLatitude";
+				rdfs:label "Minimum Latitude";
+				schema:minValue "-90.0";
+				schema:maxValue "90.0";
+				hydra:required "true"^^xsd:boolean;
+				schema:defaultValue "63.0" ;
+				rdfs:range "xsd:float";
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "minlongitude"^^xsd:string; 
+				hydra:property "epos:westernmostLongitude";
+				rdfs:label "Minimum Longitude";
+				schema:minValue "-180.0";
+				schema:maxValue "180.0";
+				hydra:required "true"^^xsd:boolean;
+				schema:defaultValue "-25.0" ;
+				rdfs:range "xsd:float";
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "maxlatitude"^^xsd:string; 
+				hydra:property "epos:northernmostLatitude";
+				rdfs:label "Maximum Latitude";
+				schema:minValue "-90.0";
+				schema:maxValue "90.0";
+				hydra:required "true"^^xsd:boolean;
+				schema:defaultValue "68.5" ;
+				rdfs:range "xsd:float";
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "maxlongitude"^^xsd:string; 
+				hydra:property "epos:easternmostLongitude";
+				rdfs:label "Maximum Longitude";
+				schema:minValue "-180.0";
+				schema:maxValue "180.0";
+				hydra:required "true"^^xsd:boolean;
+				schema:defaultValue "-10.0" ;
+				rdfs:range "xsd:float";
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "start_time"^^xsd:string;
+				rdfs:range "xsd:dateTime";
+				hydra:property "schema:startDate";
+				schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
+				rdfs:label "Starting time for the search";
+				schema:defaultValue "2014-10-01T00:00:00Z"^^xsd:dateTime;
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "end_time"^^xsd:string;
+				rdfs:range "xsd:dateTime";
+				hydra:property "schema:endDate";
+				schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
+				schema:defaultValue "2015-10-01T00:00:00Z"^^xsd:dateTime;
+				rdfs:label "Ending time for search";
+				hydra:required "false"^^xsd:boolean;
+			];
+	] ;
+.
+
+
+
+
+
+#########
+# Concept
+######### 
+
+<epos:Volcanological-Data> a skos:Concept;
+	skos:definition "Reports on volcanic activity";
+	skos:inScheme <epos:VolcanoObservations>;
+	skos:prefLabel "Volcanological Data" ;
+.
+<epos:VolcanoObservations> a skos:ConceptScheme;
+	dct:title "Volcano Observations";
+	dct:description "Volcanic activity";
+.
