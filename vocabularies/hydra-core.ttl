@@ -1,0 +1,726 @@
+@prefix : <http://www.w3.org/ns/hydra/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.w3.org/ns/hydra/core> .
+
+<http://www.w3.org/ns/hydra/core> rdf:type owl:Ontology ;
+                                   rdfs:comment "A lightweight vocabulary for hypermedia-driven Web APIs" ;
+                                   <http://purl.org/vocab/vann/preferredNamespacePrefix> "hydra" ;
+                                   <http://purl.org/dc/terms/publisher> "Hydra W3C Community Group" ;
+                                   <http://purl.org/dc/terms/rights> "Copyright © 2012-2014 the Contributors to the Hydra Core Vocabulary Specification" ;
+                                   <http://creativecommons.org/ns#license> <http://creativecommons.org/licenses/by/4.0/> ;
+                                   <http://creativecommons.org/ns#attributionName> "Hydra W3C Community Group" ;
+                                   <http://purl.org/dc/terms/description> "The Hydra Core Vocabulary is a lightweight vocabulary to create hypermedia-driven Web APIs. By specifying a number of concepts commonly used in Web APIs it enables the creation of generic API clients." ;
+                                   rdfs:label "The Hydra Core Vocabulary" ;
+                                   <http://creativecommons.org/ns#attributionURL> <http://www.hydra-cg.com/> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/2003/06/sw-vocab-status/ns#term_status
+<http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/hydra/core#description
+:description rdfs:comment "A description." ;
+             rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> ;
+             rdfs:label "description" ;
+             <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" ;
+             rdf:type owl:AnnotationProperty ;
+             rdfs:subPropertyOf rdfs:comment ;
+             rdfs:range xsd:string .
+
+
+###  http://www.w3.org/ns/hydra/core#title
+:title rdfs:comment "A title, often used along with a description." ;
+       rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> ;
+       rdfs:label "title" ;
+       <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" ;
+       rdf:type owl:AnnotationProperty ;
+       rdfs:subPropertyOf rdfs:label ;
+       rdfs:range xsd:string .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/ns/hydra/core#Rfc6570Template
+:Rfc6570Template rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.w3.org/ns/hydra/core#apiDocumentation
+:apiDocumentation rdf:type owl:ObjectProperty ;
+                  rdfs:range :ApiDocumentation .
+
+
+###  http://www.w3.org/ns/hydra/core#entrypoint
+:entrypoint rdf:type owl:ObjectProperty ;
+            rdfs:domain :ApiDocumentation ;
+            rdfs:range :Resource .
+
+
+###  http://www.w3.org/ns/hydra/core#expects
+:expects rdf:type owl:ObjectProperty ;
+         rdfs:domain :Operation ;
+         rdfs:range :Class .
+
+
+###  http://www.w3.org/ns/hydra/core#first
+:first rdf:type owl:ObjectProperty ;
+       rdfs:domain :Resource ;
+       rdfs:range :Resource .
+
+
+###  http://www.w3.org/ns/hydra/core#last
+:last rdf:type owl:ObjectProperty ;
+      rdfs:domain :Resource ;
+      rdfs:range :Resource .
+
+
+###  http://www.w3.org/ns/hydra/core#mapping
+:mapping rdf:type owl:ObjectProperty ;
+         rdfs:domain :IriTemplate ;
+         rdfs:range :IriTemplateMapping ;
+         rdfs:comment "A variable-to-property mapping of the IRI template." ;
+         rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> ;
+         rdfs:label "mapping" ;
+         <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
+
+
+###  http://www.w3.org/ns/hydra/core#member
+:member rdf:type owl:ObjectProperty ;
+        rdfs:domain :Collection ;
+        rdfs:range :Resource .
+
+
+###  http://www.w3.org/ns/hydra/core#next
+:next rdf:type owl:ObjectProperty ;
+      rdfs:domain :Resource ;
+      rdfs:range :Resource .
+
+
+###  http://www.w3.org/ns/hydra/core#operation
+:operation rdf:type owl:ObjectProperty ;
+           rdfs:domain :Resource ;
+           rdfs:range :Operation .
+
+
+###  http://www.w3.org/ns/hydra/core#possibleStatus
+:possibleStatus rdf:type owl:ObjectProperty ;
+                rdfs:range :Status .
+
+
+###  http://www.w3.org/ns/hydra/core#previous
+:previous rdf:type owl:ObjectProperty ;
+          rdfs:domain :Resource ;
+          rdfs:range :Resource .
+
+
+###  http://www.w3.org/ns/hydra/core#property
+:property rdf:type owl:ObjectProperty ;
+          rdfs:range rdf:Property ;
+          rdfs:comment "A property" ;
+          rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> ;
+          rdfs:label "property" ;
+          <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
+
+
+###  http://www.w3.org/ns/hydra/core#returns
+:returns rdf:type owl:ObjectProperty ;
+         rdfs:domain :Operation ;
+         rdfs:range :Class .
+
+
+###  http://www.w3.org/ns/hydra/core#search
+:search rdf:type owl:ObjectProperty ;
+        rdfs:range :IriTemplate .
+
+
+###  http://www.w3.org/ns/hydra/core#supportedClass
+:supportedClass rdf:type owl:ObjectProperty ;
+                rdfs:domain :ApiDocumentation ;
+                rdfs:range :Class .
+
+
+###  http://www.w3.org/ns/hydra/core#supportedOperation
+:supportedOperation rdf:type owl:ObjectProperty ;
+                    rdfs:range :Operation .
+
+
+###  http://www.w3.org/ns/hydra/core#supportedProperty
+:supportedProperty rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Class ;
+                   rdfs:range :SupportedProperty .
+
+
+###  http://www.w3.org/ns/hydra/core#variableRepresentation
+:variableRepresentation rdf:type owl:ObjectProperty ;
+                        rdfs:range :VariableRepresentation ;
+                        rdfs:comment "The representation format to use when expanding the IRI template." ;
+                        rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> ;
+                        rdfs:label "variable representation" ;
+                        <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
+
+
+###  http://www.w3.org/ns/hydra/core#view
+:view rdf:type owl:ObjectProperty ;
+      rdfs:domain :Resource ;
+      rdfs:range :Resource .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.w3.org/ns/hydra/core#Rfc6570Template
+:Rfc6570Template rdf:type owl:DatatypeProperty ;
+                 rdfs:range xsd:string .
+
+
+###  http://www.w3.org/ns/hydra/core#freetextQuery
+:freetextQuery rdf:type owl:DatatypeProperty ;
+               rdfs:range xsd:string ;
+               rdfs:comment "A property representing a freetext query." ;
+               rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> ;
+               rdfs:label "freetext query" ;
+               <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
+
+
+###  http://www.w3.org/ns/hydra/core#method
+:method rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Operation ;
+        rdfs:range xsd:string ;
+        rdfs:comment "The HTTP method." ;
+        rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> ;
+        rdfs:label "method" ;
+        <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
+
+
+###  http://www.w3.org/ns/hydra/core#readable
+:readable rdf:type owl:DatatypeProperty ;
+          rdfs:domain :SupportedProperty ;
+          rdfs:range xsd:boolean ;
+          rdfs:comment "True if the client can retrieve the property's value, false otherwise." ;
+          rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> ;
+          rdfs:label "readable" ;
+          <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
+
+
+###  http://www.w3.org/ns/hydra/core#required
+:required rdf:type owl:DatatypeProperty ;
+          rdfs:range xsd:boolean ;
+          rdfs:comment "True if the property is required, false otherwise." ;
+          rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> ;
+          rdfs:label "required" ;
+          <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
+
+
+###  http://www.w3.org/ns/hydra/core#statusCode
+:statusCode rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Status ;
+            rdfs:range xsd:integer ;
+            rdfs:comment "The HTTP status code" ;
+            rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> ;
+            rdfs:label "status code" ;
+            <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
+
+
+###  http://www.w3.org/ns/hydra/core#totalItems
+:totalItems rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Collection ;
+            rdfs:range xsd:integer ;
+            rdfs:comment "The total number of items referenced by a collection." ;
+            rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> ;
+            rdfs:label "total items" ;
+            <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
+
+
+###  http://www.w3.org/ns/hydra/core#variable
+:variable rdf:type owl:DatatypeProperty ;
+          rdfs:domain :IriTemplateMapping ;
+          rdfs:range xsd:string ;
+          rdfs:comment "An IRI template variable" ;
+          rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> ;
+          rdfs:label "variable" ;
+          <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
+
+
+###  http://www.w3.org/ns/hydra/core#writeable
+:writeable rdf:type owl:DatatypeProperty ;
+           rdfs:domain :SupportedProperty ;
+           rdfs:range xsd:boolean ;
+           rdfs:comment "True if the client can change the property's value, false otherwise." ;
+           rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> ;
+           rdfs:label "writeable" ;
+           <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#Property
+rdf:Property rdf:type owl:Class .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#Class
+rdfs:Class rdf:type owl:Class .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#Resource
+rdfs:Resource rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/hydra/core#ApiDocumentation
+:ApiDocumentation rdf:type owl:Class ;
+                  rdfs:subClassOf :Resource .
+
+
+###  http://www.w3.org/ns/hydra/core#Class
+:Class rdf:type owl:Class ;
+       rdfs:subClassOf rdfs:Class ,
+                       :Resource .
+
+
+###  http://www.w3.org/ns/hydra/core#Collection
+:Collection rdf:type owl:Class ;
+            rdfs:subClassOf :Resource .
+
+
+###  http://www.w3.org/ns/hydra/core#Error
+:Error rdf:type owl:Class ;
+       rdfs:subClassOf :Status .
+
+
+###  http://www.w3.org/ns/hydra/core#IriTemplate
+:IriTemplate rdf:type owl:Class ;
+             rdfs:subClassOf :Resource .
+
+
+###  http://www.w3.org/ns/hydra/core#IriTemplateMapping
+:IriTemplateMapping rdf:type owl:Class ;
+                    rdfs:subClassOf :Resource .
+
+
+###  http://www.w3.org/ns/hydra/core#Link
+:Link rdf:type owl:Class ;
+      rdfs:subClassOf rdf:Property ,
+                      :Resource .
+
+
+###  http://www.w3.org/ns/hydra/core#Operation
+:Operation rdf:type owl:Class ;
+           rdfs:subClassOf :Resource .
+
+
+###  http://www.w3.org/ns/hydra/core#PartialCollectionView
+:PartialCollectionView rdf:type owl:Class ;
+                       rdfs:subClassOf :Resource .
+
+
+###  http://www.w3.org/ns/hydra/core#Resource
+:Resource rdf:type owl:Class ;
+          rdfs:subClassOf rdfs:Resource .
+
+
+###  http://www.w3.org/ns/hydra/core#Status
+:Status rdf:type owl:Class ;
+        rdfs:subClassOf :Resource .
+
+
+###  http://www.w3.org/ns/hydra/core#SupportedProperty
+:SupportedProperty rdf:type owl:Class ;
+                   rdfs:subClassOf :Resource .
+
+
+###  http://www.w3.org/ns/hydra/core#TemplatedLink
+:TemplatedLink rdf:type owl:Class ;
+               rdfs:subClassOf rdf:Property ,
+                               :Resource .
+
+
+###  http://www.w3.org/ns/hydra/core#VariableRepresentation
+:VariableRepresentation rdf:type owl:Class ;
+                        rdfs:subClassOf :Resource .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.w3.org/ns/hydra/core#ApiDocumentation
+:ApiDocumentation rdf:type owl:NamedIndividual ,
+                           :Class .
+
+
+###  http://www.w3.org/ns/hydra/core#BasicRepresentation
+:BasicRepresentation rdf:type owl:NamedIndividual ,
+                              :VariableRepresentation ;
+                     rdfs:comment "A representation that serializes just the lexical form of a variable value, but omits language and type information." ;
+                     rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> ;
+                     rdfs:label "BasicRepresentation" ;
+                     <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
+
+
+###  http://www.w3.org/ns/hydra/core#Class
+:Class rdf:type owl:NamedIndividual ,
+                :Resource .
+
+
+###  http://www.w3.org/ns/hydra/core#Collection
+:Collection rdf:type owl:NamedIndividual ,
+                     :Class .
+
+
+###  http://www.w3.org/ns/hydra/core#Error
+:Error rdf:type owl:NamedIndividual ,
+                :Class .
+
+
+###  http://www.w3.org/ns/hydra/core#ExplicitRepresentation
+:ExplicitRepresentation rdf:type owl:NamedIndividual ,
+                                 :VariableRepresentation ;
+                        rdfs:comment "A representation that serializes a variable value including its language and type information and thus differentiating between IRIs and literals." ;
+                        rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> ;
+                        rdfs:label "ExplicitRepresentation" ;
+                        <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
+
+
+###  http://www.w3.org/ns/hydra/core#IriTemplate
+:IriTemplate rdf:type owl:NamedIndividual ,
+                      :Class .
+
+
+###  http://www.w3.org/ns/hydra/core#IriTemplateMapping
+:IriTemplateMapping rdf:type owl:NamedIndividual ,
+                             :Class .
+
+
+###  http://www.w3.org/ns/hydra/core#Link
+:Link rdf:type owl:NamedIndividual ,
+               :Class .
+
+
+###  http://www.w3.org/ns/hydra/core#Operation
+:Operation rdf:type owl:NamedIndividual ,
+                    :Class .
+
+
+###  http://www.w3.org/ns/hydra/core#PartialCollectionView
+:PartialCollectionView rdf:type owl:NamedIndividual ,
+                                :Class .
+
+
+###  http://www.w3.org/ns/hydra/core#Resource
+:Resource rdf:type owl:NamedIndividual ,
+                   :Class .
+
+
+###  http://www.w3.org/ns/hydra/core#Status
+:Status rdf:type owl:NamedIndividual ,
+                 :Class .
+
+
+###  http://www.w3.org/ns/hydra/core#SupportedProperty
+:SupportedProperty rdf:type owl:NamedIndividual ,
+                            :Class .
+
+
+###  http://www.w3.org/ns/hydra/core#TemplatedLink
+:TemplatedLink rdf:type owl:NamedIndividual ,
+                        :Class .
+
+
+###  http://www.w3.org/ns/hydra/core#VariableRepresentation
+:VariableRepresentation rdf:type owl:NamedIndividual ,
+                                 :Class .
+
+
+###  http://www.w3.org/ns/hydra/core#apiDocumentation
+:apiDocumentation rdf:type owl:NamedIndividual ,
+                           :Link .
+
+
+###  http://www.w3.org/ns/hydra/core#entrypoint
+:entrypoint rdf:type owl:NamedIndividual ,
+                     :Link .
+
+
+###  http://www.w3.org/ns/hydra/core#expects
+:expects rdf:type owl:NamedIndividual ,
+                  :Link .
+
+
+###  http://www.w3.org/ns/hydra/core#first
+:first rdf:type owl:NamedIndividual ,
+                :Link .
+
+
+###  http://www.w3.org/ns/hydra/core#last
+:last rdf:type owl:NamedIndividual ,
+               :Link .
+
+
+###  http://www.w3.org/ns/hydra/core#member
+:member rdf:type owl:NamedIndividual ,
+                 :Link .
+
+
+###  http://www.w3.org/ns/hydra/core#next
+:next rdf:type owl:NamedIndividual ,
+               :Link .
+
+
+###  http://www.w3.org/ns/hydra/core#operation
+:operation rdf:type owl:NamedIndividual ,
+                    :Link .
+
+
+###  http://www.w3.org/ns/hydra/core#possibleStatus
+:possibleStatus rdf:type owl:NamedIndividual ,
+                         :Link .
+
+
+###  http://www.w3.org/ns/hydra/core#previous
+:previous rdf:type owl:NamedIndividual ,
+                   :Link .
+
+
+###  http://www.w3.org/ns/hydra/core#returns
+:returns rdf:type owl:NamedIndividual ,
+                  :Link .
+
+
+###  http://www.w3.org/ns/hydra/core#search
+:search rdf:type owl:NamedIndividual ,
+                 :TemplatedLink .
+
+
+###  http://www.w3.org/ns/hydra/core#supportedClass
+:supportedClass rdf:type owl:NamedIndividual ,
+                         :Link .
+
+
+###  http://www.w3.org/ns/hydra/core#supportedOperation
+:supportedOperation rdf:type owl:NamedIndividual ,
+                             :Link .
+
+
+###  http://www.w3.org/ns/hydra/core#supportedProperty
+:supportedProperty rdf:type owl:NamedIndividual ,
+                            :Link .
+
+
+###  http://www.w3.org/ns/hydra/core#view
+:view rdf:type owl:NamedIndividual ,
+               :Link .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+:ApiDocumentation rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> ;
+                  <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" ;
+                  rdfs:comment "The Hydra API documentation class" ;
+                  rdfs:label "ApiDocumentation" .
+
+
+:Class rdfs:label "Hydra Class" ;
+       <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" ;
+       rdfs:comment "The class of Hydra classes. Hydra classes and their instances are dereferenceable resources." ;
+       rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> .
+
+
+:Collection rdfs:label "Collection" ;
+            rdfs:comment "A collection holding references to a number of related resources." ;
+            rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> ;
+            <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
+
+
+:Error rdfs:comment "A runtime error, used to report information beyond the returned status code." ;
+       rdfs:label "Error" ;
+       <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" ;
+       rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> .
+
+
+:IriTemplate rdfs:label "IRI Template" ;
+             rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> ;
+             rdfs:comment "The class of IRI templates." ;
+             <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
+
+
+:IriTemplateMapping rdfs:comment "A mapping from an IRI template variable to a property." ;
+                    <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" ;
+                    rdfs:label "IriTemplateMapping" ;
+                    rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> .
+
+
+:Link rdfs:comment "The class of properties representing links." ;
+      rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> ;
+      rdfs:label "Link" ;
+      <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
+
+
+:Operation <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" ;
+           rdfs:comment "An operation." ;
+           rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> ;
+           rdfs:label "Operation" .
+
+
+:PartialCollectionView rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> ;
+                       <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" ;
+                       rdfs:comment "A PartialCollectionView describes a partial view of a Collection. Multiple PartialCollectionViews can be connected with the the next/previous properties to allow a client to retrieve all members of the collection." ;
+                       rdfs:label "PartialCollectionView" .
+
+
+:Resource rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> ;
+          <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" ;
+          rdfs:label "Hydra Resource" ;
+          rdfs:comment "The class of dereferenceable resources." .
+
+
+:Rfc6570Template rdfs:label "RFC6570 IRI template" ;
+                 rdfs:seeAlso <http://tools.ietf.org/html/rfc6570> ;
+                 rdfs:comment "An IRI template as defined by RFC6570." ;
+                 rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> ;
+                 <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
+
+
+:Status rdfs:comment "Additional information about a status code that might be returned." ;
+        rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> ;
+        <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" ;
+        rdfs:label "Status code description" .
+
+
+:SupportedProperty rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> ;
+                   rdfs:comment "A property known to be supported by a Hydra class." ;
+                   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" ;
+                   rdfs:label "Supported Property" .
+
+
+:TemplatedLink rdfs:label "Templated Link" ;
+               <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" ;
+               rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> ;
+               rdfs:comment "A templated link." .
+
+
+:VariableRepresentation rdfs:label "VariableRepresentation" ;
+                        rdfs:comment "A representation specifies how to serialize variable values into strings." ;
+                        rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> ;
+                        <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
+
+
+:apiDocumentation rdfs:comment "A link to the API documentation" ;
+                  <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" ;
+                  rdfs:label "apiDocumentation" ;
+                  rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> .
+
+
+:entrypoint rdfs:label "entrypoint" ;
+            rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> ;
+            rdfs:comment "A link to main entry point of the Web API" ;
+            <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
+
+
+:expects <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" ;
+         rdfs:comment "The information expected by the Web API." ;
+         rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> ;
+         rdfs:label "expects" .
+
+
+:first rdfs:comment "The first resource of an interlinked set of resources." ;
+       <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" ;
+       rdfs:label "first" ;
+       rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> .
+
+
+:last rdfs:comment "The last resource of an interlinked set of resources." ;
+      rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> ;
+      rdfs:label "last" ;
+      <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
+
+
+:member <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" ;
+        rdfs:comment "A member of the collection" ;
+        rdfs:label "member" ;
+        rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> .
+
+
+:next <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" ;
+      rdfs:label "next" ;
+      rdfs:comment "The resource following the current instance in an interlinked set of resources." ;
+      rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> .
+
+
+:operation rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> ;
+           rdfs:comment "An operation supported by the Hydra resource" ;
+           rdfs:label "operation" ;
+           <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
+
+
+:possibleStatus rdfs:comment "A status that might be returned by the Web API (other statuses should be expected and properly handled as well)" ;
+                rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> ;
+                rdfs:label "possible status" ;
+                <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
+
+
+:previous rdfs:label "previous" ;
+          <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" ;
+          rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> ;
+          rdfs:comment "The resource preceding the current instance in an interlinked set of resources." .
+
+
+:returns rdfs:comment "The information returned by the Web API on success" ;
+         rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> ;
+         <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" ;
+         rdfs:label "returns" .
+
+
+:search rdfs:label "search" ;
+        rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> ;
+        <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" ;
+        rdfs:comment "A IRI template that can be used to query a collection." .
+
+
+:supportedClass rdfs:label "supported classes" ;
+                <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" ;
+                rdfs:comment "A class known to be supported by the Web API" ;
+                rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> .
+
+
+:supportedOperation rdfs:label "supported operation" ;
+                    rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> ;
+                    rdfs:comment "An operation supported by instances of the specific Hydra class or the target of the Hydra link" ;
+                    <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
+
+
+:supportedProperty rdfs:comment "The properties known to be supported by a Hydra class" ;
+                   rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> ;
+                   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" ;
+                   rdfs:label "supported properties" .
+
+
+:template rdfs:label "template" ;
+          rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> ;
+          rdfs:comment "A templated string with placeholders. The literal's datatype indicates the template syntax; if not specified, hydra:Rfc6570Template is assumed." ;
+          <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" ;
+          rdfs:seeAlso :Rfc6570Template .
+
+
+:view rdfs:isDefinedBy <http://www.w3.org/ns/hydra/core> ;
+      rdfs:label "view" ;
+      rdfs:comment "A specific view of a resource." ;
+      <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
+
+
+###  Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi

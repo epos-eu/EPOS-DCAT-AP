@@ -1,0 +1,238 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http: <http://www.w3.org/2006/http#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+
+#########
+# PERSON 
+#########
+
+<https://orcid.org/0000-0002-0915-3711> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "ORCID";
+		schema:value "https://orcid.org/0000-0002-0915-3711";
+	];
+	schema:familyName "Reitano";
+	schema:givenName "Danilo";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Piazza Roma, 2";
+		schema:addressLocality "Catania";
+		schema:postalCode "95125";
+		schema:addressCountry "Italy";
+	];
+	schema:email "danilo.reitano@ingv.it";
+	schema:telephone "+00390957165800";
+	schema:url "https://orcid.org/0000-0002-0915-3711"^^xsd:anyURI;
+	schema:qualifications "Technologist";
+	schema:affiliation <PIC:999472675>;
+	schema:contactPoint <https://orcid.org/0000-0002-0915-3711/contactPoint>;
+
+.
+
+<http://orcid.org/0000-0002-6663-5311> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "ORCID";
+		schema:value "http://orcid.org/0000-0002-6663-5311";
+	];
+	schema:familyName "Esposti Ongaro";
+	schema:givenName "Tomaso";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Via della Fagiola";
+		schema:addressLocality "Pisa";
+		schema:postalCode "56126";
+		schema:addressCountry "Italy";
+	];
+	schema:email "tomaso.espostiongaro@ingv@ingv.it";
+	schema:telephone "+00390508311937";
+	schema:url "http://orcid.org/0000-0002-6663-5311"^^xsd:anyURI;
+	schema:qualifications "Researcher";
+	schema:affiliation <PIC:999472675>;
+.
+
+<http://orcid.org/0000-0002-8651-6387> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "orcid";
+		schema:value "http://orcid.org/0000-0002-8651-6387";
+	];
+	schema:familyName "Doglioni";
+	schema:givenName "Carlo";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Via di Vigna Murata 605";
+		schema:addressLocality "Rome";
+		schema:postalCode "00143";
+		schema:addressCountry "Italy";
+	];
+	schema:email "segreteria.presidenza@ingv.it";
+	schema:telephone "+3906518601";
+	schema:url "http://orcid.org/0000-0002-8651-6387"^^xsd:anyURI;
+	schema:qualifications "Professor";
+	schema:affiliation <PIC:999472675>;
+.
+
+#########
+# ContactPoint
+######### 
+
+<https://orcid.org/0000-0002-0915-3711/contactPoint> a schema:ContactPoint;
+		schema:email "danilo.reitano@ingv.it";
+		schema:availableLanguage "en" ;
+		schema:contactType "contactPoint" ;
+.
+
+	<http://orcid.org/0000-0002-6663-5311/scientificContact> a schema:ContactPoint;
+		schema:email "tomaso.espostiongaro@ingv.it";
+		schema:availableLanguage "en" ;
+		schema:contactType "scientificContact" ;
+.
+	<http://orcid.org/0000-0002-8651-6387/legalContact> a schema:ContactPoint;
+		schema:email "segreteria.presidenza@ingv.it";
+		schema:availableLanguage "en" ;
+		schema:contactType "legalContact" ;
+.
+	<http://orcid.org/0000-0002-8651-6387/financialContact> a schema:ContactPoint;
+		schema:email "segreteria.presidenza@ingv.it";
+		schema:availableLanguage "en" ;
+		schema:contactType "financialContact" ;
+.
+
+#########
+# Organization
+#########
+
+<PIC:999472675> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "PIC";
+		schema:value "999472675";
+	];
+	schema:legalName "National Institute of Geophysics and Volcanology";
+	schema:leiCode "Legal Entity Identifier Search: http://www.lei-lookup.com/#!search" ;
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Via di Vigna Murata, 605";
+		schema:addressLocality "Rome";
+		schema:postalCode "00143";
+		schema:addressCountry "Italy";
+	];
+	schema:logo "http://roma2.rm.ingv.it/userfiles/file/Logo/INGV_Logo-abbr_colore.jpg"^^xsd:anyURI;
+	schema:url "http://www.ingv.it/"^^xsd:anyURI;
+	schema:contactPoint <http://orcid.org/0000-0002-6663-5311/scientificContact>;
+	schema:contactPoint <http://orcid.org/0000-0002-8651-6387/legalContact>;
+	schema:contactPoint <http://orcid.org/0000-0002-8651-6387/financialContact>;
+.
+
+#########
+# Dataset
+#########
+
+<WP11/Software> a dcat:Dataset;
+	adms:identifier [ a adms:Identifier ;
+            adms:schemaAgency "DDSS-ID" ;
+            skos:notation "WP11-DDSS-070" ;
+        ];
+        dct:title "Software";
+        dct:identifier "WP11/Software";
+        dct:description "Software-catalog for Computational Volcanology";
+        ## example of frequency using a controlled vocabulary
+	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+        dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+        dct:created "2019-01-01"^^xsd:date;
+	dct:spatial [ a dct:Location;
+		locn:geometry "POINT(10.399 43.721)"^^gsp:wktLiteral;
+	];
+        dcat:theme <epos:Software-catalog>;
+        dcat:keyword "Software-catalog","Computational Volcanology";
+        dcat:contactPoint <https://orcid.org/0000-0002-0915-3711/contactPoint>;
+	dct:publisher <PIC:999472675>;
+        dcat:distribution <WP11/Software/WSDistribution>;
+.
+
+#########
+# Distribution
+######### 
+
+<WP11/Software/WSDistribution> a dcat:Distribution;
+        dct:identifier "WP11/Software/WSDistribution";
+	dct:description "Software catalog WSDistribution";
+        dct:title "Software catalog WSDistribution"; 
+	dct:created "2019-01-01"^^xsd:date;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+	dcat:accessURL <Software/operation>;
+	dct:conformsTo <Software>;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
+.
+
+
+#########
+# WebService
+#########
+
+<Software> a epos:WebService;
+	schema:identifier "Software";
+	schema:description "Numerical Models for Computational Volcanology";
+	schema:name "Computational Infrastructure for Volcanology";
+	schema:datePublished "2018-09-01T00:00:00Z"^^xsd:dateTime;
+	schema:dateModified "2018-09-01T12:00:00Z"^^xsd:dateTime;
+	schema:provider <PIC:999472675>;
+	schema:keywords "Software", "Volcanology";
+	hydra:entrypoint "http://civ.pi.ingv.it/"^^xsd:anyURI; 
+	hydra:supportedOperation <Software/operation>;
+	dcat:theme <epos:Software-catalog>;
+	dcat:contactPoint <https://orcid.org/0000-0002-0915-3711/contactPoint>;
+	
+.
+
+#########
+# Operation
+######### 
+	
+<Software/operation> a hydra:Operation;
+	hydra:method "GET"^^xsd:string;
+	hydra:returns "application/json";
+	hydra:property[ a hydra:IriTemplate;
+		hydra:template "http://civ.pi.ingv.it/wp-json/vmsg/v1/projects/{?project_setting,project_discipline}"^^xsd:string;
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "project_setting"^^xsd:string;
+				rdfs:range "xsd:string";
+				rdfs:label "Name that Conduit, Magmatic Fluid";
+				http:paramValue "Conduit";
+				http:paramValue "Magmatic Fluid"; 
+				schema:defaultValue "Conduit";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "project_"^^xsd:string;
+				rdfs:range "xsd:string";
+				rdfs:label "Name that Conduit, Magmatic Fluid";
+				http:paramValue "Conduit";
+				http:paramValue "Magmatic Fluid"; 
+				schema:defaultValue "Conduit";
+				hydra:required "false"^^xsd:boolean;
+			];
+	];
+. 
+
+#########
+# Concept
+######### 
+
+<epos:Volcano-Observations> a skos:ConceptScheme;
+	dct:title "Volcano-Observations";
+	dct:description "It contains the concepts of Volcano-Observations";
+.
+<epos:Software-catalog> a skos:Concept;
+	skos:inScheme <epos:Volcano-Observations>;
+	skos:prefLabel "Software-catalog";
+
+.
