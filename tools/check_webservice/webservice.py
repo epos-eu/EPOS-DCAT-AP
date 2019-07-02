@@ -91,7 +91,7 @@ class Operation:
         # Are there any parameters embedded in the URL?
         # If so extract them and add them to the other parameters
         if '{' in self.base_url:
-            self.path_params = re.findall(r'\{.*?\}', self.base_url)
+            self.path_params = set(re.findall(r'\{.*?\}', self.base_url))
             logging.debug("Path parameters: " + str(self.path_params))
             for p in self.path_params:
                 self.parameters.add(p.lstrip('{').rstrip('}').strip())
