@@ -38,7 +38,7 @@ class DefaultValueException(Exception):
 
 
 # A subclass of rdflib's Graph that allows basic subgraphing.
-class Subgraphable_Graph(Graph):
+class SubgraphableGraph(Graph):
 
     # Create a subgraph from a triple by recursing
     # through the subgraph using the BNodes.
@@ -166,7 +166,7 @@ class Operation:
 def test_operation(filename):
     logging.info(f"\nProcessing: {filename}")
     logging.info("-"*50)
-    graph = Subgraphable_Graph()
+    graph = SubgraphableGraph()
     graph.parse(location=filename, format='n3')
     operations =  graph.triples((None, HYDRA.property, None))
 
