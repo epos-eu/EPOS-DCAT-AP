@@ -203,7 +203,7 @@
     hydra:method "GET"^^xsd:string;
     hydra:returns "application/json";
     hydra:property[ a hydra:IriTemplate;
-        hydra:template "http://mt.bgs.ac.uk/{project}/{survey}/TF/{project}{survey}_{site}.mod.json"^^xsd:string;
+        hydra:template "http://mt.bgs.ac.uk/{project}/{survey}/MOD/{project}{survey}_{model}.mod.json"^^xsd:string;
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "project"^^xsd:string;
                 rdfs:label "Project name";
@@ -220,9 +220,9 @@
             ];
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "site"^^xsd:string;
-                rdfs:label "Site name";
+                rdfs:label "Model abbreviation";
                 rdfs:range "xsd:string" ;
-                schema:defaultValue "A01";
+                schema:defaultValue "3D";
                 hydra:required "true"^^xsd:boolean;
             ];
     ] ;
