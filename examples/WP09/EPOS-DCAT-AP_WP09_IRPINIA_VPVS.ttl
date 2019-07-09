@@ -74,12 +74,12 @@
 	dct:spatial [ a dct:Location;
 		locn:geometry "POLYGON(14.0 39.0,16.0 39.0,16.0 42.0,14.0 42.0,14.0 39.0)"^^gsp:wktLiteral;
 	];
-	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/vpvs/Operation/001>;
-	schema:keywords "NFO"," Earthquake"," Event"," rocks"," seismic waves propagation"," VpVs ratio"," seismology";
-	dct:license "Creative Commons for data, Open Source licences for software"^^xsd:anyURI;
 	dct:temporal [ a dct:PeriodOfTime;
 		schema:startDate "2007-12-07T00:00:00Z"^^xsd:dateTime;
 	];
+	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/vpvs/Operation/001>;
+	schema:keywords "NFO"," Earthquake"," Event"," rocks"," seismic waves propagation"," VpVs ratio"," seismology";
+	dct:license "Creative Commons for data, Open Source licences for software"^^xsd:anyURI;
 	schema:contactPoint <https://orcid.org/0000-0002-4553-2380/technicalContact>;
 .
 
@@ -118,6 +118,8 @@
 				#schema:minValue "1970-01-01T00:00:00.000Z";
 				#schema:maxValue "2099-01-01T00:00:00.000Z";
 				schema:defaultValue "2017-01-01T00:00:00.000Z";
+				hydra:property "schema:startDate";
+				schema:valuePattern "YYYY-MM-DDThh:mm:ss.SSSZ";
 				hydra:required "true"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
@@ -127,6 +129,8 @@
 				#schema:minValue "1970-01-01T00:00:00.000Z";
 				#schema:maxValue "2099-01-01T00:00:00.000Z";
 				schema:defaultValue "2017-02-01T00:00:00.000Z";
+				hydra:property "schema:endDate";
+				schema:valuePattern "YYYY-MM-DDThh:mm:ss.SSSZ";
 				hydra:required "true"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
@@ -136,6 +140,7 @@
 				schema:minValue "-90";
 				schema:maxValue "90";
 				schema:defaultValue "39";
+				hydra:property "epos:southernmostLatitude";
 				hydra:required "true"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
@@ -145,6 +150,7 @@
 				schema:minValue "-90";
 				schema:maxValue "90";
 				schema:defaultValue "42";
+				hydra:property "epos:northernmostLatitude";
 				hydra:required "true"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
@@ -154,6 +160,7 @@
 				schema:minValue "-180";
 				schema:maxValue "180";
 				schema:defaultValue "14";
+				hydra:property "epos:westernmostLongitude";
 				hydra:required "true"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
@@ -163,6 +170,7 @@
 				schema:minValue "-180";
 				schema:maxValue "180";
 				schema:defaultValue "16";
+				hydra:property "epos:easternmostLongitude";
 				hydra:required "true"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
@@ -348,6 +356,12 @@
 	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
 	dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
 	dct:created "2007-12-07"^^xsd:date;
+	dct:spatial [ a dct:Location;
+		locn:geometry "POLYGON(14.0 39.0,16.0 39.0,16.0 42.0,14.0 42.0,14.0 39.0)"^^gsp:wktLiteral;
+	];
+	dct:temporal [ a dct:PeriodOfTime;
+		schema:startDate "2007-12-07T00:00:00Z"^^xsd:dateTime;
+	];
 	dcat:theme  <epos:Crustalvelocityparameters>;
 	dcat:keyword "Earthquake", "Event", "rocks", "seismic waves propagation", "VpVs ratio", "seismology";
 	dcat:contactPoint <https://orcid.org/0000-0002-4553-2380/technicalContact>;

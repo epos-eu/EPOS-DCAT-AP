@@ -57,20 +57,24 @@
         hydra:method "GET"^^xsd:string;
         hydra:returns "application/vnd.fdsn.mseed";
         hydra:property[ a hydra:IriTemplate;
-            hydra:template "http://eida-sc3.infp.ro/fdsnws/dataselect/1/query(?starttime, endtime, network, station, location, channel, quality, minimumlength, nodata)"^^xsd:string;
+            hydra:template "http://eida-sc3.infp.ro/fdsnws/dataselect/1/query{?starttime, endtime, network, station, location, channel, quality, minimumlength, nodata}"^^xsd:string;
                 hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "starttime"^^xsd:string;
-                    rdfs:range "xsd:date";
                     rdfs:label "Start of the timespan";
+                    rdfs:range "xsd:dateTime";
+                    schema:defaultValue "1980-01-01T00:00:00.000Z";
+                    hydra:property "schema:startDate";
+                    schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
                     hydra:required "true"^^xsd:boolean;
-                    schema:defaultValue "1980-01-01T00:00:00"
                 ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "endtime"^^xsd:string;
-                    rdfs:range "xsd:date";
                     rdfs:label "End of the timespan";
+                    rdfs:range "xsd:dateTime";
+                    schema:defaultValue "2019-01-01T00:00:00.000Z";
+                    hydra:property "schema:endDate";
+                    schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
                     hydra:required "true"^^xsd:boolean;
-                    schema:defaultValue "2019-01-01T00:00:00"
                 ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "network"^^xsd:string;
@@ -131,17 +135,21 @@
             hydra:template "http://eida-sc3.infp.ro/fdsnws/station/1/query{?starttime, endtime, network, station, location, channel, minlatitude, maxlatitude, minlongitude, maxlongitude, level, nodata}"^^xsd:string;
                 hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "starttime"^^xsd:string;
-                    rdfs:range "xsd:date";
                     rdfs:label "Start of the timespan";
+                    rdfs:range "xsd:dateTime";
+                    schema:defaultValue "1980-01-01T00:00:00.000Z";
+                    hydra:property "schema:startDate";
+                    schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
                     hydra:required "true"^^xsd:boolean;
-                    schema:defaultValue "1980-01-01T00:00:00"
                 ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "endtime"^^xsd:string;
-                    rdfs:range "xsd:date";
                     rdfs:label "End of the timespan";
+                    rdfs:range "xsd:dateTime";
+                    schema:defaultValue "2019-01-01T00:00:00.000Z";
+                    hydra:property "schema:endDate";
+                    schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
                     hydra:required "true"^^xsd:boolean;
-                    schema:defaultValue "2019-01-01T00:00:00"
                 ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "network"^^xsd:string;
@@ -178,7 +186,7 @@
                     schema:minValue "-90.0";
                     schema:maxValue "90.0";
                     hydra:required "true"^^xsd:boolean;
-                    schema:defaultValue "-90.0"
+                    schema:defaultValue "-90.0";
                     hydra:property "epos:southernmostLatitude";
                 ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
@@ -188,7 +196,7 @@
                     schema:minValue "-90.0";
                     schema:maxValue "90.0";
                     hydra:required "true"^^xsd:boolean;
-                    schema:defaultValue "90.0"
+                    schema:defaultValue "90.0";
                     hydra:property "epos:northernmostLatitude";
                 ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
@@ -198,7 +206,7 @@
                     schema:minValue "-180.0";
                     schema:maxValue "180.0";
                     hydra:required "true"^^xsd:boolean;
-                    schema:defaultValue "-180.0"
+                    schema:defaultValue "-180.0";
                     hydra:property "epos:westernmostLongitude";
                 ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
@@ -208,7 +216,7 @@
                     schema:minValue "-180.0";
                     schema:maxValue "180.0";
                     hydra:required "true"^^xsd:boolean;
-                    schema:defaultValue "180.0"
+                    schema:defaultValue "180.0";
                     hydra:property "epos:easternmostLongitude";
                 ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
@@ -239,17 +247,21 @@
             hydra:template "http://eida-sc3.infp.ro/eidaws/wfcatalog/alpha/query{?starttime, endtime, percent_availability_gt, percent_availability_lt, num_gaps_gt, num_gaps_lt, num_overlaps_gt, num_overlaps_lt, sample_stdev_gt, sample_stdev_lt, sample_rms_gt, sample_rms_lt, max_gap_gt, max_gap_lt, sample_min_gt, sample_min_lt, sample_max_gt, sample_max_lt, sample_mean_gt, sample_mean_lt, network, station, location, channel, csegments, longestonly, minlen, include}"^^xsd:string;
                 hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "starttime"^^xsd:string;
-                    rdfs:range "xsd:time";
-                    rdfs:label "Starttime of documents";
+                    rdfs:label "Start of the timespan";
+                    rdfs:range "xsd:dateTime";
+                    schema:defaultValue "1980-01-01T00:00:00.000Z";
+                    hydra:property "schema:startDate";
+                    schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
                     hydra:required "true"^^xsd:boolean;
-                    schema:defaultValue "1980-01-01T00:00:00"
                 ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "endtime"^^xsd:string;
-                    rdfs:range "xsd:time";
-                    rdfs:label "Endtime of documents";
+                    rdfs:label "End of the timespan";
+                    rdfs:range "xsd:dateTime";
+                    schema:defaultValue "2019-01-01T00:00:00.000Z";
+                    hydra:property "schema:endDate";
+                    schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
                     hydra:required "true"^^xsd:boolean;
-                    schema:defaultValue "2019-01-01T00:00:00"
                 ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "percent_availability_gt"^^xsd:string;
@@ -532,8 +544,8 @@
 # Distribution
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/VEL_WAVEFORM_CONTINUOUS/Distribution/001/NIEP> a dcat:Distribution;
     dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/VEL_WAVEFORM_CONTINUOUS/Distribution/001/NIEP";
-    dct:title  "Seismic Waveform Distribution :: FDSN DATASELECT ";
-    dct:description "Description of Seismic Waveform Distribution :: FDSN DATASELECT ";
+    dct:title  "Seismic Waveform Distribution :: FDSN DATASELECT :: NIEP";
+    dct:description "Description of Seismic Waveform Distribution :: FDSN DATASELECT :: NIEP";
     dct:issued "2017-01-01"^^xsd:date ;
     dct:modified "2017-01-01"^^xsd:date ;
     dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
@@ -642,8 +654,8 @@
 # Distribution
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/SEISMIC_STATION/Distribution/001/NIEP> a dcat:Distribution;
     dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/SEISMIC_STATION/Distribution/001/NIEP";
-    dct:title  "Seismic Stations  :: FDSN STATION";
-    dct:description "Description of Seismic Stations  :: FDSN STATION";
+    dct:title  "Seismic Stations  :: FDSN STATION :: NIEP";
+    dct:description "Description of Seismic Stations  :: FDSN STATION :: NIEP";
     dct:issued "2017-01-01"^^xsd:date ;
     dct:modified "2017-01-01"^^xsd:date ;
     dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
@@ -697,7 +709,8 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/Event/Distribution/001> a dcat:Distribution;
     dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/Event/Distribution/001";
-	dct:description "NIEP FDSN Event Distribution";
+    dct:title "NIEP FDSN Event Distribution";
+    dct:description "NIEP FDSN Event Distribution";
     dct:issued "2017-01-01"^^xsd:date ;
     dct:modified "2017-01-01"^^xsd:date ;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
@@ -729,6 +742,8 @@
 		hydra:template "http://eida-sc3.infp.ro/fdsnws/event/1/query{?starttime,endtime,minlatitude,maxlatitude,minlongitude,maxlongitude,mindepth,maxdepth,minmagnitude,maxmagnitude,magnitudetype,includeallorigins,includeallmagnitudes,includearrivals,eventid,limit,offset,orderby,contributor,catalog,updatedafter,format,nodata,latitude,longitude,minradius,maxradius}"^^xsd:string;
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "starttime"^^xsd:string;
+			hydra:property "schema:startDate";
+            schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
 			rdfs:range "xsd:dateTime";
 			rdfs:label "Start Time";
 			schema:minValue "2010-04-01T00:00:00";
@@ -738,6 +753,8 @@
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "endtime"^^xsd:string;
+			hydra:property "schema:endDate";
+            schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
 			rdfs:range "xsd:dateTime";
 			rdfs:label "End Time";
 			schema:minValue "2010-04-01T00:00:00";

@@ -141,6 +141,8 @@
 			schema:minValue "2012-01-01T00:00:00.000Z";
 			schema:maxValue "2017-01-01T00:00:00.000Z";
 			schema:defaultValue "2012-11-01T12:00:00.000Z";
+			hydra:property "schema:startDate";
+      		schema:valuePattern "YYYY-MM-DDThh:mm:ss.SSSZ";
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -150,6 +152,8 @@
 			schema:minValue "2012-01-01T00:00:00.000Z";
 			schema:maxValue "2017-01-01T00:00:00.000Z";
 			schema:defaultValue "2012-11-02T12:00:00.000Z";
+			hydra:property "schema:endDate";
+      		schema:valuePattern "YYYY-MM-DDThh:mm:ss.SSSZ";
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -160,6 +164,7 @@
 			schema:maxValue "90";
 			schema:defaultValue "39.0";
 			hydra:required "true"^^xsd:boolean;
+			hydra:property "epos:southernmostLatitude";
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "maxlat"^^xsd:string;
@@ -169,6 +174,7 @@
 			schema:maxValue "90";
 			schema:defaultValue "42.0";
 			hydra:required "true"^^xsd:boolean;
+			hydra:property "epos:northernmostLatitude";
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "minlon"^^xsd:string;
@@ -178,6 +184,7 @@
 			schema:maxValue "90";
 			schema:defaultValue "26.0";
 			hydra:required "true"^^xsd:boolean;
+			hydra:property "epos:westernmostLongitude";
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "maxlon"^^xsd:string;
@@ -187,6 +194,7 @@
 			schema:maxValue "90";
 			schema:defaultValue "31.0";
 			hydra:required "true"^^xsd:boolean;
+			hydra:property "epos:easternmostLongitude";
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "minperiod"^^xsd:string;
