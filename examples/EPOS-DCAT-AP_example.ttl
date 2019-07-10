@@ -254,7 +254,7 @@
   dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/APIDocumentation> ;
 
   # This property refers to a geographic region that is covered by the Dataset.
-  # The POLYGON format is: POLYGON(lon1 lat1, lon2 lat2,...)
+  # The POLYGON format is: POLYGON((lon1 lat1, lon2 lat2,...))
   dct:spatial [ a dct:Location ;
     locn:geometry "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral ;
   ];
@@ -482,7 +482,7 @@
     # This property refers to a geographical location of the Equipment.
     # The format is: POINT(lon lat elevation). Skip elevation when the value is 0.
     dct:spatial [ a dct:Location ;
-            locn:geometry "POINT((5.1767 52.1017 3))"^^gsp:wktLiteral ;
+            locn:geometry "POINT(5.1767 52.1017 3)"^^gsp:wktLiteral ;
     ] ;
 
     # This property describes the filter that the instrument uses to produce data.
@@ -541,7 +541,7 @@
   dct:publisher <PIC:999518944> ;
   dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/ODC> ;
   dct:spatial [ a dct:Location ;
-    locn:geometry "POLYGON((-180, -90, 180, -90, 180, 90, -180, 90, -180, -90))"^^gsp:wktLiteral
+    locn:geometry "POLYGON((-180 -90, 180 -90, 180 90, -180 90, -180 -90))"^^gsp:wktLiteral
   ] ;
   dct:temporal [ a dct:PeriodOfTime ;
     schema:startDate "1988-01-01T00:00:00Z"^^xsd:dateTime
@@ -576,7 +576,7 @@
   dcat:contactPoint <http://orcid.org/0000-0002-6250-2474/contactPoint> ;
   dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/APIDocumentation> ;
   dct:spatial [ a dct:Location ;
-    locn:geometry "POLYGON((-180, -90, 180, -90, 180, 90, -180, 90, -180, -90))"^^gsp:wktLiteral
+    locn:geometry "POLYGON((-180 -90, 180 -90, 180 90, -180 90, -180 -90))"^^gsp:wktLiteral
   ] ;
   dct:temporal [ a dct:PeriodOfTime ;
     schema:startDate "1988-01-01T00:00:00"^^xsd:dateTime
