@@ -159,7 +159,7 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-013/MOD/Distribution> a dcat:Distribution;
     dct:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-013/MOD/Distribution";
-    dct:title "Distribution of Electrical conductivity models";
+    dct:title "Electrical conductivity models";
     dct:description "Magnetotelluric transfer functions are distributed via web service";
     dct:issued "2019-01-01"^^xsd:date;
     dct:modified "2019-01-01"^^xsd:date;
@@ -227,3 +227,54 @@
             ];
     ] ;
 .
+
+
+
+<BEAR> a dcat:Project;
+	dct:identifier "BEAR";
+	dct:title "BEAR Project";
+	dct:description "Baltic Electromagnetic Array Research (BEAR) project is an international experiment for deep electromagnetic sounding using a shield-wide magnetotelluric and magnetometer array of simultaneous long period recordings. ";	
+        dcat:contactPoint <https://orcid.org/0000-0002-5600-5375/contactPoint> ;
+.
+
+
+
+###############################################################################
+### Dataset (Survey)###
+###############################################################################
+
+<https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-013/MOD/BEAR/1998> a dcat:Dataset;
+    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WWP13-DDSS-013/MOD/BEAR/1998";
+    dct:title "BEAR magnetotelluric array conductivity model (MOD)";
+    dct:description "Magnetotellurics (MT) is an electromagnetic geophysical method for inferring the earth's subsurface electrical conductivity from measurements of natural geoelectromagnetic field variations at the Earth's surface.  In Fennoscandia, the Baltic Electromagnetic ArrayResearch (BEAR) project, a part of EUROPROBE’sSVEKALAPKO project, realises an international experiment for deep electromagnetic sounding using a shield-wide magnetotelluric and magnetometer array of simultaneous long period recordings.";
+    adms:identifier [ a adms:Identifier;
+        adms:schemaAgency "DDSS-ID";
+        skos:notation "WP13-DDSS-010";
+    ];
+    dct:created "1998-06-01"^^xsd:date;
+    dct:modified "1998-08-31"^^xsd:date;
+    dct:issued "2019-01-01"^^xsd:date;
+    owl:versionInfo "1.0.0" ;
+
+    dct:isPartOf <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-013/MOD/Dataset> ;
+    dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
+    dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI ;
+    dcat:theme  <epos:Magnetotellurics> ;
+    dcat:keyword  "Crustal",  "Earth electrical conductivity", "Electrical conductivity", "Electromagnetic data",  "Geo-effectivity", "Geomagnetic activity",  "Geomagnetism",  "Impedance", "Impedance tensor", "Lithosphere",  "Magnetotellurics", "Magnetotelluric data",  "Space weather",  "Tipper vector", "Transfer function";
+    dcat:contactPoint <https://orcid.org/0000-0002-5600-5375/contactPoint> ;
+    dct:publisher <https://www.ltu.se/org/sbn>;
+    dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-013/MOD/Distribution>;
+
+    dct:temporal [ a dct:PeriodOfTime;
+        schema:startDate "1998-06-01T00:00:00Z"^^xsd:dateTime;
+        schema:endDate "1998-08-31T00:00:00Z"^^xsd:dateTime;
+    ];
+    dct:spatial [ a dct:Location;
+        locn:geometry "POLYGON(35.1 58.6, 13.5 58.6, 13.5 67.9, 13.5 67.9)"^^gsp:wktLiteral;
+    ];
+.
+
+
+
+
+
