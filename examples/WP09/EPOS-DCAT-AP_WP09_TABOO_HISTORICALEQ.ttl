@@ -221,7 +221,7 @@
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/xml";
 	hydra:property [ a hydra:IriTemplate;
-		hydra:template "https://www.emidius.eu/fdsnws/event/1/query(?starttime, endtime, eventid, updatedafter, minlatitude, maxlatitude, minlongitude, maxlongitude, latitude, longitude, minradius, maxradius, minradiuskm, maxradiuskm, minmagnitude, maxmagnitude, contributor, contributorid, format, orderby, includeallorigins, includeallmagnitudes, limit, nodata)"^^xsd:string;
+		hydra:template "https://www.emidius.eu/fdsnws/event/1/query{?starttime, endtime, eventid, updatedafter, minlatitude, maxlatitude, minlongitude, maxlongitude, latitude, longitude, minradius, maxradius, minradiuskm, maxradiuskm, minmagnitude, maxmagnitude, contributor, contributorid, format, orderby, includeallorigins, includeallmagnitudes, limit, nodata}"^^xsd:string;
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "starttime"^^xsd:string;
 				rdfs:label "timespan start time";
