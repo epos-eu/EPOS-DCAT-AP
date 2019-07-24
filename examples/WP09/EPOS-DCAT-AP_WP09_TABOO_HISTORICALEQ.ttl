@@ -66,6 +66,12 @@
 	schema:contactType "scientificContact";
 .
 
+<http://orcid.org/0000-0003-2185-3267/contactPoint> a schema:ContactPoint;
+	schema:email "mario.locati@ingv.it";
+	schema:availableLanguage "en";
+	schema:contactType "manager" ;
+.
+
 <http://orcid.org/0000-0002-9697-6504> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "orcid";
@@ -146,7 +152,7 @@
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/HistEQ/Dataset/001> a dcat:Dataset;
 	dct:title "NFO TABOO Historical Earthquake Catalog";
 	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/HistEQ/Dataset/001";
-    dct:description "FDSN-event web service providing NFO TABOO event parameters for historical earthquakes from AHEAD, the European Archive of Historical Earthquake Data";
+        dct:description "FDSN-event web service providing NFO TABOO event parameters for historical earthquakes from AHEAD, the European Archive of Historical Earthquake Data";
 	adms:identifier [ a adms:Identifier; 
 		adms:schemaAgency "DDSS-ID";
 		skos:notation "WP09-DDSS-029";
@@ -165,7 +171,7 @@
         schema:endDate "1899-12-31T23:59:59Z"^^xsd:dateTime ;
     ];
     dct:spatial [ a dct:Location ;
-		locn:geometry "POLYGON(11.78 43.95, 13.61 43.95, 13.61 42.8, 11.78 42.8, 11.78 43.95)"^^gsp:wktLiteral ;
+		locn:geometry "POLYGON((11.78 43.95, 13.61 43.95, 13.61 42.8, 11.78 42.8, 11.78 43.95))"^^gsp:wktLiteral ;
 	];
 	dcat:theme  <epos:Historicalearthquakes> ;
     dcat:keyword "seismology", "seismicity", "earthquakes", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "bibliography", "earthquakes", "parameters", "historical", "macroseismic", "intensity";
@@ -201,20 +207,20 @@
         schema:endDate "1899-12-31T23:59:59Z"^^xsd:dateTime ;
     ];
     dct:spatial [ a dct:Location ;
-		locn:geometry "POLYGON(11.78 43.95, 13.61 43.95, 13.61 42.8, 11.78 42.8, 11.78 43.95)"^^gsp:wktLiteral ;
+		locn:geometry "POLYGON((11.78 43.95, 13.61 43.95, 13.61 42.8, 11.78 42.8, 11.78 43.95))"^^gsp:wktLiteral ;
 	];
 	schema:provider <PIC:999472675>;
 	schema:keywords "seismology", "seismicity", "earthquakes", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "bibliography", "earthquakes", "parameters", "historical", "macroseismic", "intensity";
 	#hydra:entrypoint "application.wadl"^^xsd:anyURI; 
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/HistEQ/WebService/001/Operation/001>;
-	dcat:theme <#Historicalearthquakes>;
+	dcat:theme <epos:Historicalearthquakes>;
 	dcat:contactPoint <http://orcid.org/0000-0003-2185-3267/contactPoint>;
 . 
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/HistEQ/WebService/001/Operation/001> a hydra:Operation;
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/xml";
-	hydra:IriTemplate[ a hydra:IriTemplate;
+	hydra:property [ a hydra:IriTemplate;
 		hydra:template "https://www.emidius.eu/fdsnws/event/1/query(?starttime, endtime, eventid, updatedafter, minlatitude, maxlatitude, minlongitude, maxlongitude, latitude, longitude, minradius, maxradius, minradiuskm, maxradiuskm, minmagnitude, maxmagnitude, contributor, contributorid, format, orderby, includeallorigins, includeallmagnitudes, limit, nodata)"^^xsd:string;
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "starttime"^^xsd:string;
