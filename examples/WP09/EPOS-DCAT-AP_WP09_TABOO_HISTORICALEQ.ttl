@@ -229,7 +229,8 @@
 				schema:minValue "1000-01-01T00:00:00Z";
 				schema:maxValue "1899-12-31T23:59:59Z";
 				hydra:property "schema:startDate";
-				schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
+				schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+				schema:defaultValue "1000-01-01T00:00:00";
 				hydra:required "true"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
@@ -239,7 +240,8 @@
 				schema:minValue "1000-01-01T00:00:00Z";
 				schema:maxValue "1899-12-31T23:59:59Z";
 				hydra:property "schema:endDate";
-				schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
+				schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+				schema:defaultValue "1899-12-31T23:59:59";
 				hydra:required "true"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
@@ -253,7 +255,7 @@
 				rdfs:label "update after";
 				rdfs:range "xsd:dateTime";
 				schema:minValue "2010-01-01T00:00:00";
-				hydra:required "true"^^xsd:boolean;
+				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "minlatitude"^^xsd:string;
