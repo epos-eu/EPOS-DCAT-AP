@@ -263,21 +263,21 @@
 	schema:email "contact@eost.unistra.fr";
 	schema:contactPoint <http://orcid.org/0000-0003-4017-4673/contactPoint>;
 .
-<PIC:999740201> a schema:Organization;
-	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "pic";
-		schema:value "999740201";
-	]; 
-	schema:legalName "NORSAR";
-	schema:address [ a schema:PostalAddress;
-		schema:streetAddress "Gunnar Randers Vei 15";
-		schema:addressLocality "Kjeller";
-		schema:postalCode "N-2007";
-		schema:addressCountry "Norway";
-	]; 
-	schema:url "https://www.norsar.no"^^xsd:anyURI;
-	schema:email "info@norsar.no";
-	schema:contactPoint <https://orcid.org/0000-0002-5036-0958/contactPoint>;
+<http://en.isor.is/> a schema:Organization;
+    schema:identifier [ a schema:PropertyValue;
+        schema:propertyID "URL";
+        schema:value "http://en.isor.is/";
+    ]; 
+    schema:legalName "Iceland Geosurvey";
+    schema:address [ a schema:PostalAddress;
+        schema:streetAddress "Grensásvegi 9";
+        schema:addressLocality "Reykjavík";
+        schema:postalCode "108";
+        schema:addressCountry "Iceland";
+    ]; 
+    schema:logo "http://en.isor.is/sites/en.isor.is/files/logo.png"^^xsd:anyURI;
+    schema:url "http://en.isor.is/"^^xsd:anyURI;
+    schema:contactPoint <mailto:Egill.Arni.Gudnason@isor.is/contactPoint>;
 .
 
 
@@ -622,23 +622,23 @@
 	schema:affiliation <https://eost.unistra.fr>;
 	schema:contactPoint <http://orcid.org/0000-0003-4017-4673/contactPoint>;
 . 
-<https://orcid.org/0000-0002-5036-0958> a schema:Person;
-	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "orcid";
-		schema:value "0000-0002-5036-0958";
-	]; 
-	schema:familyName "Wüstefeld";
-	schema:givenName "Andreas";
-	schema:address [ a schema:PostalAddress;
-		schema:streetAddress "Gunnar Randers Vei 15";
-		schema:addressLocality "Kjeller";
-		schema:postalCode "N-2007";
-		schema:addressCountry "Norway";
-	]; 
-	schema:email "andreas.wuestefeld@norsar.no";
-	schema:affiliation <PIC:999740201>;
-	schema:contactPoint <https://orcid.org/0000-0002-5036-0958/contactPoint>;
-. 
+<mailto:Egill.Arni.Gudnason@isor.is> a schema:Person;
+    schema:identifier [ a schema:PropertyValue;
+        schema:propertyID "mailto";
+        schema:value "Egill.Arni.Gudnason@isor.is";
+    ]; 
+    schema:familyName "Gudnason";
+    schema:givenName "Egil Arni";
+    schema:address [ a schema:PostalAddress;
+        schema:streetAddress "Grensásvegi 9";
+        schema:addressLocality "Reykjavík";
+        schema:postalCode "108";
+        schema:addressCountry "Iceland";
+    ];
+    schema:email "Egill.Arni.Gudnason@isor.is";
+    schema:affiliation <http://en.isor.is/>;
+    schema:contactPoint <mailto:Egill.Arni.Gudnason@isor.is/contactPoint>;
+.
 
 	<epos:Anthropogenichazards> a skos:ConceptScheme;
 		dct:title "Anthropogenic hazards";
@@ -1172,30 +1172,30 @@
 		dcat:distribution <anthropogenic_hazards/distribution/episodes/VD>;
 		dcat:distribution <anthropogenic_hazards/distribution/episode-elements/VD>;
 . 
-	<anthropogenic_hazards/dataset/episode/EMILIA_ROMAGNA> a dcat:Dataset;
-		dct:title "EMILIA ROMAGNA: cavone oil field";
-		dct:identifier "anthropogenic_hazards/dataset/episode/EMILIA_ROMAGNA";
-		adms:identifier [ a adms:Identifier;
-			adms:schemaAgency "DDSS-ID";
-			skos:notation "WP14-DDSS-021";
-		]; 
-		dct:description "Episode consists of the various data describing the seismicity caused by conventional hydrocarbon extraction and fluid injection in Emilia Romagna, Italy.	Episode integrated in the framework of: EPOS IP project, European Plate Observing System Implementation Phase. This project has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 676564.";
-		dct:created "2019-03-08"^^xsd:date;
-		dct:modified "2019-03-08"^^xsd:date;
-		dct:issued "2019-03-08"^^xsd:date;
-		dct:temporal [ a dct:PeriodOfTime; 
-			schema:startDate "2005-05-01T12:00:00Z"^^xsd:dateTime; 
-			schema:endDate "2006-12-01T12:00:00Z"^^xsd:dateTime; 
-		];
-		dct:spatial [ a dct:Location;
-	        locn:geometry "POINT(11.48375 44.875)"^^gsp:wktLiteral;
-	    ];
-		dcat:theme <epos:Conventionalhydrocarbonextraction>;
-		dcat:keyword "anthropogenic seismicity";
-		dct:publisher <PIC:999472675>;
-		dcat:contactPoint <http://orcid.org/0000-0001-9196-8452/contactPoint>;
-		dcat:distribution <anthropogenic_hazards/distribution/episode-elements/EMILIA_ROMAGNA>;
-. 
+#	<anthropogenic_hazards/dataset/episode/EMILIA_ROMAGNA> a dcat:Dataset;
+#		dct:title "EMILIA ROMAGNA: cavone oil field";
+#		dct:identifier "anthropogenic_hazards/dataset/episode/EMILIA_ROMAGNA";
+#		adms:identifier [ a adms:Identifier;
+#			adms:schemaAgency "DDSS-ID";
+#			skos:notation "WP14-DDSS-021";
+#		]; 
+#		dct:description "Episode consists of the various data describing the seismicity caused by conventional hydrocarbon extraction and fluid injection in Emilia Romagna, Italy.	Episode integrated in the framework of: EPOS IP project, European Plate Observing System Implementation Phase. This project has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 676564.";
+#		dct:created "2019-03-08"^^xsd:date;
+#		dct:modified "2019-03-08"^^xsd:date;
+#		dct:issued "2019-03-08"^^xsd:date;
+#		dct:temporal [ a dct:PeriodOfTime; 
+#			schema:startDate "2005-05-01T12:00:00Z"^^xsd:dateTime; 
+#			schema:endDate "2006-12-01T12:00:00Z"^^xsd:dateTime; 
+#		];
+#		dct:spatial [ a dct:Location;
+#	        locn:geometry "POINT(11.48375 44.875)"^^gsp:wktLiteral;
+#	    ];
+#		dcat:theme <epos:Conventionalhydrocarbonextraction>;
+#		dcat:keyword "anthropogenic seismicity";
+#		dct:publisher <PIC:999472675>;
+#		dcat:contactPoint <http://orcid.org/0000-0001-9196-8452/contactPoint>;
+#		dcat:distribution <anthropogenic_hazards/distribution/episode-elements/EMILIA_ROMAGNA>;
+#. 
 	<anthropogenic_hazards/dataset/episode/PREESE_HALL> a dcat:Dataset;
 		dct:title "PREESE HALL: Shale Gas";
 		dct:identifier "anthropogenic_hazards/dataset/episode/PREESE_HALL";
@@ -1488,33 +1488,34 @@
 		dcat:keyword "injection induced seismicity", "anthropogenic seismicity";
 		dct:publisher <https://www.sgsw.ch>;
 		dcat:contactPoint <mailto:thomas.bloch@sgsw.ch/contactPoint>;
+		dcat:contactPoint <mailto:Egill.Arni.Gudnason@isor.is/contactPoint>;
 		dcat:distribution <anthropogenic_hazards/distribution/episodes/SG>;
 		dcat:distribution <anthropogenic_hazards/distribution/episode-elements/SG>;
 . 
-	<anthropogenic_hazards/dataset/episode/COTTON_VALLEY> a dcat:Dataset;
-		dct:title "COTTON VALLEY: hydraulic fracturing";
-		dct:identifier "anthropogenic_hazards/dataset/episode/COTTON_VALLEY";
-		adms:identifier [ a adms:Identifier;
-			adms:schemaAgency "DDSS-ID";
-			skos:notation "WP14-DDSS-042";
-		]; 
-		dct:description "Fracture imaging study in the Carthage Gas Unit, Panola County, Texas, USA is shown that microseismic events induced by hydraulic fracturing at a depth of 9,500 ft were detected at distances exceeding 1,300 ft from the origin. An industry consortium of major operators, service companies, government agencies and national laboratories was formed to perform a more detailed study using 96, 3-component geophone sondes distributed among two monitor wells. A unique microseismic recording system specifically designed and manufactured for these operating depths is presented. Applications of the technology include optimization of hydraulic fracture designs and accurate mapping of fracture geometry. How to cite: IS EPOS (2019), Episode: COTTON VALLEY, https://tcs.ah-epos.eu/#episode:COTTON_VALLEY";
-		dct:created "2019-04-30"^^xsd:date;
-		dct:modified "2019-04-30"^^xsd:date;
-		dct:issued "2019-04-30"^^xsd:date;
-		dct:temporal [ a dct:PeriodOfTime; 
-			schema:startDate "1997-05-12T08:30:36Z"^^xsd:dateTime;
-			schema:endDate "1997-05-16T12:36:00Z"^^xsd:dateTime;
-		];
-		dct:spatial [ a dct:Location;
-	        locn:geometry "POINT(-94.42 32.17)"^^gsp:wktLiteral;
-	    ];
-		dcat:theme <epos:Unconventionalhydrocarbonextraction>;
-		dcat:keyword "hydrofracturing", "injection seismicity", "anthropogenic seismicity";
-		dct:publisher <PIC:999740201>;
-		dcat:contactPoint <https://orcid.org/0000-0002-5036-0958/contactPoint>;
-		dcat:distribution <anthropogenic_hazards/distribution/episode-elements/COTTON_VALLEY>;
-. 
+#	<anthropogenic_hazards/dataset/episode/COTTON_VALLEY> a dcat:Dataset;
+#		dct:title "COTTON VALLEY: hydraulic fracturing";
+#		dct:identifier "anthropogenic_hazards/dataset/episode/COTTON_VALLEY";
+#		adms:identifier [ a adms:Identifier;
+#			adms:schemaAgency "DDSS-ID";
+#			skos:notation "WP14-DDSS-042";
+#		]; 
+#		dct:description "Fracture imaging study in the Carthage Gas Unit, Panola County, Texas, USA is shown that microseismic events induced by hydraulic fracturing at a depth of 9,500 ft were detected at distances exceeding 1,300 ft from the origin. An industry consortium of major operators, service companies, government agencies and national laboratories was formed to perform a more detailed study using 96, 3-component geophone sondes distributed among two monitor wells. A unique microseismic recording system specifically designed and manufactured for these operating depths is presented. Applications of the technology include optimization of hydraulic fracture designs and accurate mapping of fracture geometry. How to cite: IS EPOS (2019), Episode: COTTON VALLEY, https://tcs.ah-epos.eu/#episode:COTTON_VALLEY";
+#		dct:created "2019-04-30"^^xsd:date;
+#		dct:modified "2019-04-30"^^xsd:date;
+#		dct:issued "2019-04-30"^^xsd:date;
+#		dct:temporal [ a dct:PeriodOfTime; 
+#			schema:startDate "1997-05-12T08:30:36Z"^^xsd:dateTime;
+#			schema:endDate "1997-05-16T12:36:00Z"^^xsd:dateTime;
+#		];
+#		dct:spatial [ a dct:Location;
+#	        locn:geometry "POINT(-94.42 32.17)"^^gsp:wktLiteral;
+#	    ];
+#		dcat:theme <epos:Unconventionalhydrocarbonextraction>;
+#		dcat:keyword "hydrofracturing", "injection seismicity", "anthropogenic seismicity";
+#		dct:publisher <TODO>;
+#		dcat:contactPoint <TODO>;
+#		dcat:distribution <anthropogenic_hazards/distribution/episode-elements/COTTON_VALLEY>;
+#. 
 	<anthropogenic_hazards/dataset/episode/VOUGLANS> a dcat:Dataset;
 		dct:title "VOUGLANS: water reservoir";
 		dct:identifier "anthropogenic_hazards/dataset/episode/VOUGLANS";
@@ -2426,46 +2427,46 @@
 				];
 		] ;
 . 
-	<anthropogenic_hazards/webservice/is-epos_platform/episode-elements/EMILIA_ROMAGNA> a hydra:Operation;
-		hydra:method "GET"^^xsd:string;
-		hydra:returns "application/json";
-		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "episode"^^xsd:string;
-					rdfs:range "xsd:string";
-					rdfs:label "ID of the episode";
-					schema:defaultValue "EMILIA ROMAGNA";
-					http:paramValue "EMILIA ROMAGNA" ;
-					hydra:required "true"^^xsd:boolean;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "dataType"^^xsd:string;
-					rdfs:range "xsd:string";
-					rdfs:label "Type of the data item. Sample values: 'Catalog', 'Oil Production', 'Water Production'";
-					schema:defaultValue "Catalog";
-					hydra:required "false"^^xsd:boolean;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "before"^^xsd:string;
-					hydra:property "schema:endDate";
-          schema:valuePattern "YYYY-MM-DD";
-          rdfs:range "xsd:dateTime";
-					rdfs:label "Items before this date";
-					schema:defaultValue "2018-09-14";
-					hydra:required "false"^^xsd:boolean;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "after"^^xsd:string;
-					hydra:property "schema:startDate";
-          schema:valuePattern "YYYY-MM-DD";
-          rdfs:range "xsd:dateTime";
-					rdfs:label "Items after this date";
-					schema:defaultValue "1970-01-01";
-					hydra:required "false"^^xsd:boolean;
-				];
-		] ;
-. 
+#	<anthropogenic_hazards/webservice/is-epos_platform/episode-elements/EMILIA_ROMAGNA> a hydra:Operation;
+#		hydra:method "GET"^^xsd:string;
+#		hydra:returns "application/json";
+#		hydra:property[ a hydra:IriTemplate;
+#			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType, before, after}"^^xsd:string;
+#				hydra:mapping[ a hydra:IriTemplateMapping;
+#					hydra:variable "episode"^^xsd:string;
+#					rdfs:range "xsd:string";
+#					rdfs:label "ID of the episode";
+#					schema:defaultValue "EMILIA ROMAGNA";
+#					http:paramValue "EMILIA ROMAGNA" ;
+#					hydra:required "true"^^xsd:boolean;
+#				];
+#				hydra:mapping[ a hydra:IriTemplateMapping;
+#					hydra:variable "dataType"^^xsd:string;
+#					rdfs:range "xsd:string";
+#					rdfs:label "Type of the data item. Sample values: 'Catalog', 'Oil Production', 'Water Production'";
+#					schema:defaultValue "Catalog";
+#					hydra:required "false"^^xsd:boolean;
+#				];
+#				hydra:mapping[ a hydra:IriTemplateMapping;
+#					hydra:variable "before"^^xsd:string;
+#					hydra:property "schema:endDate";
+#          schema:valuePattern "YYYY-MM-DD";
+#          rdfs:range "xsd:dateTime";
+#					rdfs:label "Items before this date";
+#					schema:defaultValue "2018-09-14";
+#					hydra:required "false"^^xsd:boolean;
+#				];
+#				hydra:mapping[ a hydra:IriTemplateMapping;
+#					hydra:variable "after"^^xsd:string;
+#					hydra:property "schema:startDate";
+#          schema:valuePattern "YYYY-MM-DD";
+#          rdfs:range "xsd:dateTime";
+#					rdfs:label "Items after this date";
+#					schema:defaultValue "1970-01-01";
+#					hydra:required "false"^^xsd:boolean;
+#				];
+#		] ;
+#. 
 	<anthropogenic_hazards/webservice/is-epos_platform/episode-elements/PREESE_HALL> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/json";
@@ -2892,28 +2893,28 @@
 				];
 		] ;
 . 
-	<anthropogenic_hazards/webservice/is-epos_platform/episode-elements/COTTON_VALLEY> a hydra:Operation;
-		hydra:method "GET"^^xsd:string;
-		hydra:returns "application/json";
-		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType}"^^xsd:string;
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "episode"^^xsd:string;
-					rdfs:range "xsd:string";
-					rdfs:label "ID of the episode";
-					schema:defaultValue "COTTON_VALLEY";
-					http:paramValue "COTTON_VALLEY" ;
-					hydra:required "true"^^xsd:boolean;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "dataType"^^xsd:string;
-					rdfs:range "xsd:string";
-					rdfs:label "Type of the data item. Sample values: 'Episode XML'";
-					schema:defaultValue "Episode XML";
-					hydra:required "false"^^xsd:boolean;
-				];
-		] ;
-. 
+#	<anthropogenic_hazards/webservice/is-epos_platform/episode-elements/COTTON_VALLEY> a hydra:Operation;
+#		hydra:method "GET"^^xsd:string;
+#		hydra:returns "application/json";
+#		hydra:property[ a hydra:IriTemplate;
+#			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType}"^^xsd:string;
+#				hydra:mapping[ a hydra:IriTemplateMapping;
+#					hydra:variable "episode"^^xsd:string;
+#					rdfs:range "xsd:string";
+#					rdfs:label "ID of the episode";
+#					schema:defaultValue "COTTON_VALLEY";
+#					http:paramValue "COTTON_VALLEY" ;
+#					hydra:required "true"^^xsd:boolean;
+#				];
+#				hydra:mapping[ a hydra:IriTemplateMapping;
+#					hydra:variable "dataType"^^xsd:string;
+#					rdfs:range "xsd:string";
+#					rdfs:label "Type of the data item. Sample values: 'Episode XML'";
+#					schema:defaultValue "Episode XML";
+#					hydra:required "false"^^xsd:boolean;
+#				];
+#		] ;
+#. 
 	<anthropogenic_hazards/webservice/is-epos_platform/episode-elements/VOUGLANS> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/json";
@@ -3217,7 +3218,7 @@
 		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/VD>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
-#. 
+. 
 # will be available July/August 2019
 #	<anthropogenic_hazards/distribution/episode-elements/EMILIA_ROMAGNA> a dcat:Distribution;
 #		dct:identifier "anthropogenic_hazards/distribution/episode-elements/EMILIA_ROMAGNA";
@@ -3228,7 +3229,7 @@
 #		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/EMILIA_ROMAGNA>;
 #		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 #		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
-.
+#.
 	<anthropogenic_hazards/distribution/episode-elements/PREESE_HALL> a dcat:Distribution;
 		dct:identifier "anthropogenic_hazards/distribution/episode-elements/PREESE_HALL";
 		dct:title "Data contained in episode PREESE HALL";
@@ -3348,7 +3349,7 @@
 		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/SG>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
-#. 
+. 
 # will be available July/August 2019
 #	<anthropogenic_hazards/distribution/episode-elements/COTTON_VALLEY> a dcat:Distribution;
 #		dct:identifier "anthropogenic_hazards/distribution/episode-elements/COTTON_VALLEY";
@@ -3359,7 +3360,7 @@
 #		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/COTTON_VALLEY>;
 #		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 #		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
-. 
+#. 
 	<anthropogenic_hazards/distribution/episode-elements/VOUGLANS> a dcat:Distribution;
 		dct:identifier "anthropogenic_hazards/distribution/episode-elements/VOUGLANS";
 		dct:title "Data contained in episode VOUGLANS";
@@ -4036,8 +4037,8 @@
 		schema:availableLanguage "en" ;
 		schema:contactType "contactPoint" ;
 .
-	<https://orcid.org/0000-0002-5036-0958/contactPoint> a schema:ContactPoint;
-		schema:email "andreas.wuestefeld@norsar.no";
-		schema:availableLanguage "en" ;
-		schema:contactType "contactPoint" ;
+	<mailto:Egill.Arni.Gudnason@isor.is/contactPoint> a schema:ContactPoint;
+        schema:email "Egill.Arni.Gudnason@isor.is";
+        schema:availableLanguage "en" ;
+        schema:contactType "contactPoint" ;
 .
