@@ -60,12 +60,12 @@
         hydra:method "GET"^^xsd:string;
         hydra:returns "application/vnd.fdsn.mseed";
         hydra:property[ a hydra:IriTemplate;
-            hydra:template "http://eida-sc3.infp.ro/fdsnws/dataselect/1/query(?starttime, endtime, network, station, location, channel, quality, minimumlength, nodata)"^^xsd:string;
+            hydra:template "http://eida-sc3.infp.ro/fdsnws/dataselect/1/query{?starttime, endtime, network, station, location, channel, quality, minimumlength, nodata}"^^xsd:string;
                 hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "starttime"^^xsd:string;
                     rdfs:label "Start of the timespan";
                     rdfs:range "xsd:dateTime";
-                    schema:defaultValue "1980-01-01T00:00:00.000Z";
+                    schema:defaultValue "2019-01-01T00:00:00.000Z";
                     hydra:property "schema:startDate";
                     schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
                     hydra:required "true"^^xsd:boolean;
@@ -74,7 +74,7 @@
                     hydra:variable "endtime"^^xsd:string;
                     rdfs:label "End of the timespan";
                     rdfs:range "xsd:dateTime";
-                    schema:defaultValue "2019-01-01T00:00:00.000Z";
+                    schema:defaultValue "2019-01-01T01:00:00.000Z";
                     hydra:property "schema:endDate";
                     schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
                     hydra:required "true"^^xsd:boolean;

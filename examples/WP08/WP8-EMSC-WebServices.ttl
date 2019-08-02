@@ -326,7 +326,7 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "starttime"^^xsd:string;
 			hydra:property "schema:startDate";
-			schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
+			schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 			rdfs:range "xsd:dateTime";
 			rdfs:label "Start Time";
 			schema:minValue "1998-01-01T00:00:00";
@@ -338,7 +338,7 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "endtime"^^xsd:string;
 		    hydra:property "schema:endDate";
-			schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
+			schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 			rdfs:range "xsd:dateTime";
 			rdfs:label "End Time";
 			schema:minValue "1998-01-01T00:00:00";
@@ -440,6 +440,8 @@
 			rdfs:range "xsd:boolean";
 			rdfs:label "Include All Origins";
 			schema:defaultValue "false";
+			http:paramValue "true";
+			http:paramValue "false";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -458,6 +460,8 @@
 			rdfs:label "Include All Arrivals";
 			schema:defaultValue "false";
 			hydra:required "false"^^xsd:boolean;
+			http:paramValue "true";
+			http:paramValue "false";
 		];
 
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -870,6 +874,8 @@
 			rdfs:range "xsd:boolean";
 			rdfs:label "Filter and show only preferred MT";
 			schema:defaultValue "true";
+			http:paramValue "true";
+			http:paramValue "false";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -889,6 +895,8 @@
 			rdfs:range "xsd:boolean";
 			rdfs:label "Download query as file?";
 			schema:defaultValue "false";
+			http:paramValue "true";
+			http:paramValue "false";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -1383,6 +1391,8 @@
 			rdfs:range "xsd:boolean";
 			rdfs:label "Download query as file?";
 			schema:defaultValue "false";
+			http:paramValue "yes";
+			http:paramValue "true";
 			hydra:required "false"^^xsd:boolean;
 		];
 

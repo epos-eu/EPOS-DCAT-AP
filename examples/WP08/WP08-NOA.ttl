@@ -647,12 +647,16 @@
 					hydra:variable "csegments"^^xsd:string;
 					rdfs:range "xsd:boolean";
 					rdfs:label "Include continuous segments in result";
+					http:paramValue "true";
+					http:paramValue "false";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "longestonly"^^xsd:string;
 					rdfs:range "xsd:boolean";
 					rdfs:label "Include only the longest continuous segment";
+					http:paramValue "true";
+					http:paramValue "false";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
@@ -878,34 +882,34 @@
 .
 
 # Routing
-<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/NOA> a dcat:Dataset;
-        dct:title "Primary Seismic Waveform Data";
-        dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/NOA";
-        dct:description "Seismic stations";
-        adms:identifier [ a adms:Identifier ;
-            adms:schemaAgency "DDSS-ID" ;
-            skos:notation "WP08-DDSS-004" ;
-        ];
-        dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
-        dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
-        dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
-        owl:versionInfo "1.0.0" ;
+#<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/NOA> a dcat:Dataset;
+        #dct:title "Primary Seismic Waveform Data";
+        #dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/NOA";
+        #dct:description "Seismic stations";
+        #adms:identifier [ a adms:Identifier ;
+            #adms:schemaAgency "DDSS-ID" ;
+           # skos:notation "WP08-DDSS-004" ;
+       # ];
+        #dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        #dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        #dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        #owl:versionInfo "1.0.0" ;
 
-    	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
-        dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
-        dcat:theme  <epos:SeismicStations> ;
-        dcat:keyword "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "NOA", "Station", "FDSN-WS", "Seismic Waveform", "data quality", "availability", "metadata", "EIDA";
-        dcat:contactPoint <http://orcid.org/0000-0002-4011-0971/contactPoint>;
-	dct:publisher <PIC:999653677>;                      
-        dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/Distribution/004/NOA>;
-        dct:spatial [ a dct:Location ;
-											locn:geometry "POLYGON(-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0)"^^gsp:wktLiteral;
-        ];
-        dct:temporal [ a dct:PeriodOfTime ;
-                schema:startDate "2010-01-01T00:00:00Z"^^xsd:dateTime ;
+    	#dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+        #dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+        #dcat:theme  <epos:SeismicStations> ;
+        #dcat:keyword "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "NOA", "Station", "FDSN-WS", "Seismic Waveform", "data quality", "availability", "metadata", "EIDA";
+        #dcat:contactPoint <http://orcid.org/0000-0002-4011-0971/contactPoint>;
+	#dct:publisher <PIC:999653677>;                      
+        #dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/Distribution/004/NOA>;
+        #dct:spatial [ a dct:Location ;
+		#locn:geometry "POLYGON(-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0)"^^gsp:wktLiteral;
+        #];
+        #dct:temporal [ a dct:PeriodOfTime ;
+                #schema:startDate "2010-01-01T00:00:00Z"^^xsd:dateTime ;
                 #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
-	];
-.
+	#];
+#.
 
 ## Distributions
 
@@ -952,18 +956,18 @@
 .
 
 # Routing
-<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/Distribution/004/NOA> a dcat:Distribution;
-    	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/Distribution/004/NOA";
-	dct:title "routing of the Web Services  :: ROUTING :: NOA";
-	dct:description "Description of routing of the Web Services  :: ROUTING ";
-	dct:issued "2016-01-01"^^xsd:date ;
-	dct:modified "2016-01-01"^^xsd:date ;
-	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/004/Operation/004/NOA>;
-	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/004/NOA>;
-	dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
- 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
-.
+#<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/Distribution/004/NOA> a dcat:Distribution;
+    	#dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/Distribution/004/NOA";
+	#dct:title "routing of the Web Services  :: ROUTING :: NOA";
+	#dct:description "Description of routing of the Web Services  :: ROUTING ";
+	#dct:issued "2016-01-01"^^xsd:date ;
+	#dct:modified "2016-01-01"^^xsd:date ;
+	#dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+	#dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/004/Operation/004/NOA>;
+	#dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/004/NOA>;
+	#dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
+ 	#dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+#.
 
 ## Domains
 	<epos:Seismology> a skos:ConceptScheme;

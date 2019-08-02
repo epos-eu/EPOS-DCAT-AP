@@ -418,7 +418,7 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "starttime"^^xsd:string;
 				hydra:property "schema:startDate";
-				schema:valuePattern "YYYY-MM-DDThh:mm";
+				schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 				rdfs:range "xsd:dateTime";
 				rdfs:label "Start time"@en;
 				schema:minValue "1000-01-01T00:00:00";
@@ -429,7 +429,7 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "endtime"^^xsd:string;
 				hydra:property "schema:endDate";
-				schema:valuePattern "YYYY-MM-DDThh:mm";
+				schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 				rdfs:range "xsd:dateTime";
 				rdfs:label "End time"@en;
 				schema:minValue "1000-01-01T00:00:00";
@@ -586,6 +586,8 @@
 				rdfs:range "xsd:boolean";
 				rdfs:label "include all origins"@en;
 				schema:defaultValue "false";
+				http:paramValue "true";
+                                http:paramValue "false";
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
@@ -593,6 +595,8 @@
 				rdfs:range "xsd:boolean";
 				rdfs:label "include all magnitudes"@en;
 				schema:defaultValue "false";
+				http:paramValue "true";
+                                http:paramValue "false";
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
@@ -941,7 +945,7 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "starttime"^^xsd:string;
 				hydra:property "schema:startDate";
-				schema:valuePattern "YYYY-MM-DDThh:mm";
+				schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 				rdfs:range "xsd:dateTime";
 				rdfs:label "Start time"@en;
 				schema:minValue "1000-01-01T00:00:00";
@@ -952,7 +956,7 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "endtime"^^xsd:string;
 				hydra:property "schema:endDate";
-				schema:valuePattern "YYYY-MM-DDThh:mm";
+				schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 				rdfs:range "xsd:dateTime";
 				rdfs:label "End time"@en;
 				schema:minValue "1000-01-01T00:00:00";
@@ -1117,6 +1121,8 @@
 				rdfs:range "xsd:boolean";
 				rdfs:label "include all origins"@en;
 				schema:defaultValue "false";
+				http:paramValue "true";
+                                http:paramValue "false";
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
@@ -1124,6 +1130,8 @@
 				rdfs:range "xsd:boolean";
 				rdfs:label "include all magnitudes"@en;
 				schema:defaultValue "false";
+				http:paramValue "true";
+                                http:paramValue "false";
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
@@ -1131,6 +1139,8 @@
 				rdfs:range "xsd:boolean";
 				rdfs:label "include all MDP sets"@en;
 				schema:defaultValue "false";
+				http:paramValue "true";
+                                http:paramValue "false";
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
@@ -1138,6 +1148,8 @@
 				rdfs:range "xsd:boolean";
 				rdfs:label "include MDPs"@en;
 				schema:defaultValue "true";
+				http:paramValue "true";
+                                http:paramValue "false";
 				hydra:required "true"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
