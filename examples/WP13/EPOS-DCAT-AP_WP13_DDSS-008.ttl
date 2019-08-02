@@ -54,6 +54,8 @@
     schema:affiliation <PIC:999591306>;
     schema:contactPoint <mailto:ari.viljanen@fmi.fi/contactPoint>;
     schema:contactPoint <mailto:ari.viljanen@fmi.fi/scientificContact>;
+    schema:contactPoint <mailto:ari.viljanen@fmi.fi/legalContact>;
+    schema:contactPoint <mailto:ari.viljanen@fmi.fi/financialContact>;
 .
 
 <mailto:lasse.hakkinen@fmi.fi> a schema:Person;
@@ -73,8 +75,6 @@
     schema:telephone "0295394634";
     schema:affiliation <PIC:999591306>;
     schema:contactPoint <mailto:lasse.hakkinen@fmi.fi/contactPoint>;
-    schema:contactPoint <mailto:lasse.hakkinen@fmi.fi/legalContact>;
-    schema:contactPoint <mailto:lasse.hakkinen@fmi.fi/financialContact>;
 .
 
 
@@ -97,13 +97,13 @@
     schema:availableLanguage "en" ;
     schema:contactType "scientificContact" ;
 .
-<mailto:lasse.hakkinen@fmi.fi/legalContact> a schema:ContactPoint;
-    schema:email "lasse.hakkinen@fmi.fi";
+<mailto:ari.viljanen@fmi.fi/legalContact> a schema:ContactPoint;
+    schema:email "ari.viljanen@fmi.fi";
     schema:availableLanguage "en" ;
     schema:contactType "legalContact" ;
 .
-<mailto:lasse.hakkinen@fmi.fi/financialContact> a schema:ContactPoint;
-    schema:email "lasse.hakkinen@fmi.fi";
+<mailto:ari.viljanen@fmi.fi/financialContact> a schema:ContactPoint;
+    schema:email "ari.viljanen@fmi.fi";
     schema:availableLanguage "en" ;
     schema:contactType "financialContact" ;
 .
@@ -130,8 +130,8 @@
     schema:email "registry@fmi.fi";
     schema:telephone "+358 29 539 1000";
     schema:contactPoint <mailto:ari.viljanen@fmi.fi/scientificContact>;
-    schema:contactPoint <mailto:lasse.hakkinen@fmi.fi/legalContact>;
-    schema:contactPoint <mailto:lasse.hakkinen@fmi.fi/financialContact>;
+    schema:contactPoint <mailto:ari.viljanen@fmi.fi/legalContact>;
+    schema:contactPoint <mailto:ari.viljanen@fmi.fi/financialContact>;
 .
 
 
@@ -162,8 +162,7 @@
     dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-008/IMAGE_EJI/Distribution>;
 
     dct:temporal [ a dct:PeriodOfTime; 
-        schema:startDate "1982-01-01T00:00:00Z"^^xsd:dateTime; 
-        #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
+        schema:startDate "1982-10-01T00:00:00Z"^^xsd:dateTime; 
     ]; 
     dct:spatial [ a dct:Location; 
         locn:geometry "POLYGON(40.0 50.0, 0.0 50.0, 0.0 80.0, 40.0 80.0, 40.0 50.0)"^^gsp:wktLiteral; 
@@ -208,8 +207,7 @@
         locn:geometry "POLYGON(40.0 50.0, 0.0 50.0, 0.0 80.0, 40.0 80.0, 40.0 50.0)"^^gsp:wktLiteral; 
     ]; 
     dct:temporal [ a dct:PeriodOfTime; 
-        schema:startDate "1982-01-01T00:00:00Z"^^xsd:dateTime; 
-        #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
+        schema:startDate "1982-10-01T00:00:00Z"^^xsd:dateTime; 
     ]; 
     dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 .
@@ -225,6 +223,8 @@
         hydra:template "http://space.fmi.fi/cgi-bin/imagecgi/image-epos-indicators.cgi{?start, yourname, institute, email, submit}"^^xsd:string;
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "start"^^xsd:string;
+                hydra:property "schema:startDate";
+                schema:valuePattern "YYYYMMdd";
                 rdfs:label "Date (yyyymmdd)";
                 rdfs:range "xsd:integer" ;
                 schema:minValue "19821001";
@@ -234,28 +234,28 @@
             ];
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "yourname"^^xsd:string;
-                rdfs:label "Name";
+                rdfs:label "Your name";
                 rdfs:range "xsd:string" ;
                 schema:defaultValue "EPOS Test User";
                 hydra:required "true"^^xsd:boolean;
             ];
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "institute"^^xsd:string;
-                rdfs:label "Institute";
+                rdfs:label "Your institute";
                 rdfs:range "xsd:string" ;
                 schema:defaultValue "EPOS Test Institute";
                 hydra:required "true"^^xsd:boolean;
             ];
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "email"^^xsd:string;
-                rdfs:label "Email";
+                rdfs:label "Your email";
                 rdfs:range "xsd:string" ;
                 schema:defaultValue "EPOSTestUser@example.org";
                 hydra:required "true"^^xsd:boolean;
             ];
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "submit"^^xsd:string;
-                rdfs:label "Submit";
+                rdfs:label "Always set to 'OK'";
                 rdfs:range "xsd:string" ;
                 http:paramValue "OK";
                 schema:defaultValue "OK";

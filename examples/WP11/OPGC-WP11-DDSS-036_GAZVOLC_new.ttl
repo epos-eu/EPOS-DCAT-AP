@@ -16,26 +16,9 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
-<gazvolc/dataset/036> a dcat:Dataset ;
-        dct:identifier "gazvolc/dataset/036" ;
-        dct:title "Melt inclusion and groundmass glass compositions - explosive_effusive" ;
-        dct:description "Melt inclusion and groundmass glass compositions - explosive_effusive" ;
-        adms:identifier [ a adms:Identifier;
-            adms:schemaAgency "DDSS-ID";
-            skos:notation "WP11-DDSS-036";
-        ];
-    dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
-    dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
-    dct:temporal [ a dct:PeriodOfTime;
-        schema:startDate "0001-01-01T00:00:00Z"^^xsd:dateTime;
-        schema:endDate "9999-12-31T23:59:59Z"^^xsd:dateTime;
-    ];
-    dcat:theme <epos:GeochemicalData>;
-    dcat:keyword "chemical data set", "melt inclusion", "volatile elements", "major elements", "trace elements", "groundmass", "host minerals";
-    dcat:contactPoint <http://orcid.org/0000-0002-8485-0154/contactPoint>;
-    dct:publisher <http://isni.org/isni/0000000109416043>;
-    dcat:distribution <gazvolc/dataset/036/distribution/ws>;
-.
+#########
+# PERSON 
+#########
 
 <http://orcid.org/0000-0002-8485-0154> a schema:Person;
     schema:identifier [ a schema:PropertyValue;
@@ -125,11 +108,46 @@
     schema:contactPoint <http://orcid.org/0000-0002-7635-1283/scientificContact>;
 .
 
+#########
+# ContactPoint
+#########
+
+<http://orcid.org/0000-0002-4518-3328/scientificContact> a schema:ContactPoint;
+	schema:email "p.labazuy@opgc.fr";
+	schema:availableLanguage "en", "fr" ;
+	schema:contactType "scientificContact" ;
+. 
+<http://orcid.org/0000-0002-0108-5486/legalContact> a schema:ContactPoint;
+	schema:email "n.huret@opgc.fr";
+	schema:availableLanguage "en", "fr" ;
+	schema:contactType "legalContact" ;
+.
+<http://orcid.org/0000-0002-0108-5486/financialContact> a schema:ContactPoint;
+	schema:email "n.huret@opgc.fr";
+	schema:availableLanguage "en", "fr" ;
+	schema:contactType "financialContact" ;
+.
+<http://orcid.org/0000-0002-8485-0154/contactPoint> a schema:ContactPoint;
+	schema:email "s.moune@uca.fr";
+	schema:availableLanguage "en", "it", "fr";
+	schema:contactType "manager";
+.
+<http://orcid.org/0000-0002-7635-1283/scientificContact> a schema:ContactPoint;
+	schema:email "dimuro@ipgp.fr";
+	schema:availableLanguage "en", "it", "fr";
+	schema:contactType "scientificContact";
+.
+
+#########
+# Organization
+#########
+
 <http://isni.org/isni/0000000109416043> a schema:Organization;
     schema:identifier [ a schema:PropertyValue;
         schema:propertyID "ISNI";
         schema:value "http://isni.org/isni/0000000109416043";
     ];
+    schema:leiCode "Legal Entity Identifier" ;
     schema:legalName "Earth Physics Observatory of Clermont-Ferrand"^^xsd:string;
     # schema:alternateName "Observatoire de Physique du Globe de Clermont-Ferrand"^^xsd:string;
     # schema:alternateName "OPGC"^^xsd:string;
@@ -149,27 +167,13 @@
     schema:contactPoint <http://orcid.org/0000-0002-0108-5486/financialContact>;
     schema:memberOf <http://isni.org/isni/0000000121129282>;
 .
-    <http://orcid.org/0000-0002-4518-3328/scientificContact> a schema:ContactPoint;
-        schema:email "p.labazuy@opgc.fr";
-        schema:availableLanguage "en", "fr" ;
-	schema:contactType "scientificContact" ;
-. 
-    <http://orcid.org/0000-0002-0108-5486/legalContact> a schema:ContactPoint;
-        schema:email "n.huret@opgc.fr";
-        schema:availableLanguage "en", "fr" ;
-        schema:contactType "legalContact" ;
-.
-    <http://orcid.org/0000-0002-0108-5486/financialContact> a schema:ContactPoint;
-        schema:email "n.huret@opgc.fr";
-        schema:availableLanguage "en", "fr" ;
-        schema:contactType "financialContact" ;
-.
 
 <PIC:999597417> a schema:Organization;
     schema:identifier [ a schema:PropertyValue;
         schema:PropertyID "PIC";
         schema:value "999597417";
     ];
+    schema:leiCode "Legal Entity Identifier" ;
     schema:legalName "Earth Physics Institute of Paris"^^xsd:string;
     # schema:alternateName "Institut de Physique du Globe de Paris"^^xsd:string;
     # schema:alternateName "IPGP"^^xsd:string;
@@ -186,17 +190,13 @@
     schema:contactPoint <http://orcid.org/0000-0002-7635-1283/scientificContact>;
     schema:memberOf <http://isni.org/isni/0000000121129282>;
 .
-    <http://orcid.org/0000-0002-7635-1283/scientificContact> a schema:ContactPoint;
-        schema:email "dimuro@ipgp.fr";
-        schema:availableLanguage "en", "it", "fr";
-        schema:contactType "scientificContact";
-.
 
 <http://isni.org/isni/0000000121129282> a schema:Organization;
     schema:identifier [ a schema:PropertyValue;
         schema:propertyID "ISNI";
         schema:value "http://isni.org/isni/0000000121129282";
     ];
+    schema:leiCode "Legal Entity Identifier" ;
     schema:legalName "The National Center for Scientific Research"^^xsd:string;
     # schema:alternateName "CNRS: Le Centre National de la Recherche Scientifique"^^xsd:string;
     # schema:alternateName "CNRS"^^xsd:string;
@@ -211,24 +211,52 @@
     schema:telephone "+33144964000";
 .
 
- <http://orcid.org/0000-0002-8485-0154/contactPoint> a schema:ContactPoint;
-        schema:email "s.moune@uca.fr";
-        schema:availableLanguage "en", "it", "fr";
-        schema:contactType "manager";
+#########
+# Dataset
+#########
+
+<opgc.fr/vobs/WP11/DDSS-036/GAZVOLC/dataset/INCLUSION-GLASS> a dcat:Dataset ;
+    dct:title "Melt inclusion and groundmass glass composition" ;
+    dct:identifier "opgc.fr/vobs/WP11/DDSS-036/GAZVOLC/dataset/INCLUSION-GLASS" ; 
+    dct:description "Melt inclusion and groundmass glass compositione" ;
+    adms:identifier [ a adms:Identifier;
+    	adms:schemaAgency "DDSS-ID";
+    	skos:notation "WP11-DDSS-036";
+    ];
+    dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
+    dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+    dct:temporal [ a dct:PeriodOfTime;
+        schema:startDate "2014-06-01T20:00:00Z"^^xsd:dateTime;
+    ];
+    dct:spatial [ a dct:Location; 
+		locn:geometry "POLYGON(55.6307 -21.3423, 55.8247 -21.3423, 55.8247 -21.1828, 55.6307 -21.1828, 55.6307 -21.3423)"^^gsp:wktLiteral; 
+    ]; 		
+    dcat:theme <epos:Geochemical-Data>;
+    dcat:keyword "chemical data set", "melt inclusion", "volatile elements", "major elements", "trace elements", "groundmass", "host minerals";
+    dcat:contactPoint <http://orcid.org/0000-0002-8485-0154/contactPoint>;
+    dct:publisher <http://isni.org/isni/0000000109416043>;
+    dcat:distribution <opgc.fr/vobs/WP11/DDSS-036/GAZVOLC/Distribution>;
 .
 
-<gazvolc/dataset/036/distribution/ws> a dcat:Distribution;
-        dct:identifier "gazvolc/dataset/036/distribution/ws";
-        dct:title "OPGC-VO distribution of GAZVOLC dataset";
-        dct:description "The way to download the gazvolc product";
+#########
+# Distributions
+#########
+
+<opgc.fr/vobs/WP11/DDSS-036/GAZVOLC/Distribution> a dcat:Distribution;
+        dct:identifier "opgc.fr/vobs/WP11/DDSS-036/GAZVOLC/Distribution";
+        dct:title "OPGC Geochemical analysis of magmatic gas";
+        dct:description "The way to download the GAZVOLC geochemical analysis of magmatic gas";
         dct:issued "2016-06-12"^^xsd:date;
         dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-        dcat:accessURL <opgc.fr/vobs/gazvolc/WP11/DDSS-036/data-download>;
+        dcat:accessURL <opgc.fr/vobs/gazvolc/WP11/DDSS-036/data-catalog>;
         dct:conformsTo <opgc.fr/vobs/gazvolc/WP11/DDSS-036>;
         dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
         dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 .
 
+#########
+# WebService
+#########
 
 <opgc.fr/vobs/gazvolc/WP11/DDSS-036> a epos:WebService;
     schema:identifier "opgc.fr/vobs/gazvolc/WP11/DDSS-036";
@@ -236,16 +264,71 @@
     schema:name "OPGC Virtual Observatory - GAZVOLC Entry Point - EPOS - WP11-DDSS-036";
     schema:datePublished "2016-05-26T08:00:00Z"^^xsd:dateTime;
     schema:dateModified "2018-02-27T16:00:00Z"^^xsd:dateTime;
+    dct:temporal [ a dct:PeriodOfTime;
+        schema:startDate "2014-06-01T20:00:00Z"^^xsd:dateTime;
+    ];
+    dct:spatial [ a dct:Location; 
+		locn:geometry "POLYGON(55.6307 -21.3423, 55.8247 -21.3423, 55.8247 -21.1828, 55.6307 -21.1828, 55.6307 -21.3423)"^^gsp:wktLiteral; 
+    ]; 
     schema:provider <http://isni.org/isni/0000000109416043>;
     schema:keywords "Virtual Observatory", "Database", "Data Catalog", "chemical data set", "melt inclusion", "volatile elements", "major elements", "trace elements", "groundmass", "host minerals";
     hydra:entrypoint "http://opgc.fr/vobs/rest2/req.php/application/gazvolc"^^xsd:anyURI;
-    hydra:supportedOperation <opgc.fr/vobs/gazvolc/WP11/DDSS-036/data-download>;
-    dcat:theme <epos:GeochemicalData>;
+    hydra:supportedOperation <opgc.fr/vobs/gazvolc/WP11/DDSS-036/data-catalog>;
+    hydra:supportedOperation <opgc.fr/vobs/gazvolc/WP11/DDSS-036/data-dowload>;
+    dcat:theme <epos:Geochemical-Data>;
     schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
     dct:conformsTo <opgc.fr/vobs/APIDocumentation>;
     dcat:contactPoint <http://orcid.org/0000-0002-8485-0154/contactPoint>;
 .
-   
+
+ <opgc.fr/vobs/APIDocumentation> a hydra:APIDocumentation;
+        hydra:title "OPGC Virtual Observatory - API Documentation";
+        hydra:description "A documentation describing how to use OPGC Virtual Observatory API to find and download data";
+        hydra:entrypoint "http://opgc.fr/vobs/api.php"^^xsd:anyURI;
+.
+
+#########
+# Operations
+######### 
+
+<opgc.fr/vobs/gazvolc/WP11/DDSS-036/data-catalog> a hydra:Operation;
+        hydra:method "GET"^^xsd:string;
+        hydra:returns "application/json";
+        hydra:property [ a hydra:IriTemplate;
+            hydra:template "http://opgc.fr/vobs/rest2/req.php/gazvolc{?timestart, timeend, output}"^^xsd:string;
+                hydra:mapping [ a hydra:IriTemplateMapping;
+                    hydra:variable "timestart"^^xsd:dateTime;
+                    hydra:property "schema:startDate";
+                    schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
+                    rdfs:label "Starting datetime of the time interval query (format YYYY-MM-DDThh:mm:ss:Z)";
+                    rdfs:range "xsd:dateTime";
+                    schema:minValue "0001-01-01T00:00:00Z"^^xsd:dateTime;
+                    schema:maxValue "9999-12-31T23:59:59Z"^^xsd:dateTime;
+                    schema:defaultValue "2014-01-01T00:00:00Z"^^xsd:dateTime;
+                    hydra:required "true"^^xsd:boolean;
+                ];
+                hydra:mapping [ a hydra:IriTemplateMapping;
+                    hydra:variable "timeend"^^xsd:dateTime;
+                    hydra:property "schema:endDate";
+                    schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
+                    rdfs:label "Ending datetime of the time interval query (format YYYY-MM-DDThh:mm:ssZ)";
+                    rdfs:range "xsd:dateTime";
+                    schema:minValue "0001-01-01T00:00:00Z"^^xsd:dateTime;
+                    schema:maxValue "9999-12-31T23:59:59Z"^^xsd:dateTime;
+                    schema:defaultValue "2014-12-31T23:59:59Z"^^xsd:dateTime;
+                    hydra:required "true"^^xsd:boolean;
+                ];
+	        hydra:mapping [ a hydra:IriTemplateMapping;	
+                    hydra:variable "output"^^xsd:string;	
+                    rdfs:label "The format of the query output";	
+                    http:paramValue "JSON";	
+                    http:paramValue "TURTLE-RDF-EPOS-DCAT-AP";	
+                    schema:defaultValue "JSON";	
+                    rdfs:range "xsd:string";	
+                    hydra:required "false"^^xsd:boolean;	
+                ]
+        ];
+.   
  <opgc.fr/vobs/gazvolc/WP11/DDSS-036/data-download> a hydra:Operation;
         hydra:method "GET"^^xsd:string;
         hydra:returns "application/zip";
@@ -258,7 +341,6 @@
                     rdfs:range "xsd:integer";
                     schema:minValue "1"^^xsd:integer;
                     hydra:required "true"^^xsd:boolean;
-                    schema:defaultValue "41" ;
                 ];
                 hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "format"^^xsd:string;
@@ -272,17 +354,16 @@
         ];
 .
 
- <opgc.fr/vobs/APIDocumentation> a hydra:APIDocumentation;
-        hydra:title "OPGC Virtual Observatory - API Documentation";
-        hydra:description "A documentation describing how to use OPGC Virtual Observatory API to find and download data";
-        hydra:entrypoint "http://opgc.fr/vobs/api.php"^^xsd:anyURI;
+#########
+# Concept
+#########
+
+<epos:VolcanoObservations> a skos:ConceptScheme;
+	dct:title "Volcano Observations";
+	dct:description "It contains the concept of Volcanological observations";
 .
-    <epos:VolcanoObservations> a skos:ConceptScheme;
-        dct:title "Volcano Observations";
-        dct:description "It contains the concept of Volcanological observations";
-.
-    <epos:GeochemicalData> a skos:Concept;
-            skos:definition "Geochemical data" ;
-            skos:inScheme <epos:VolcanoObservations>;
-            skos:prefLabel "Geochemical data";
+<epos:Geochemical-Data> a skos:Concept;
+    skos:definition "Geochemical data" ;
+    skos:inScheme <epos:VolcanoObservations>;
+    skos:prefLabel "Geochemical data";
 .

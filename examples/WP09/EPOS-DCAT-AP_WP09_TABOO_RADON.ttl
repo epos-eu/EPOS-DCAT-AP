@@ -166,8 +166,8 @@
 	];
 	# This property refers to a temporal period that the Dataset covers.
     dct:temporal [ a dct:PeriodOfTime ;
-        schema:startDate "2010-04-01T00:00:00"^^xsd:dateTime ;
-        #schema:endDate "YYYY-MM-DDThh:mm:ss"^^xsd:dateTime ;
+        schema:startDate "2010-04-01T00:00:00Z"^^xsd:dateTime ;
+        schema:endDate "2018-11-30T00:00:00Z"^^xsd:dateTime ;
     ];
 	dcat:theme  <epos:Radonconcentration> ;
 	dcat:keyword "Geochemical", "Radon concentration", "Radon decay counts", "geochemistry", "geohazards", "long term continuos timeseries", "local temperature", "NFO", "Near Fault Observatory", "TABOO", "FRIDGE";
@@ -178,8 +178,8 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/RADON/Distribution/001> a dcat:Distribution;
     dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/RADON/Distribution/001";
-	dct:title "TABOO Radon decay counts and local temperature Distribution";
-	dct:description "TABOO Radon decay counts and local temperature Distribution";
+	dct:title "TABOO Radon decay counts and local temperature";
+	dct:description "TABOO Radon decay counts and local temperature";
 	dct:created "2010-04-01"^^xsd:date;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/RADON/WebService/001/Operation/001>;
@@ -195,6 +195,13 @@
 	schema:name "TABOO Radon counts and local temperature Web Service";
 	schema:datePublished "2017-06-08T12:00:00Z"^^xsd:dateTime;
 	schema:dateModified "2017-06-08T12:00:00Z"^^xsd:dateTime;
+	dct:temporal [ a dct:PeriodOfTime ;
+        schema:startDate "2010-04-01T00:00:00Z"^^xsd:dateTime ;
+        schema:endDate "2018-11-30T00:00:00Z"^^xsd:dateTime ;
+    ];
+    dct:spatial [ a dct:Location ;
+		locn:geometry "POLYGON(11.78 43.95, 13.61 43.95, 13.61 42.8, 11.78 42.8, 11.78 43.95)"^^gsp:wktLiteral ;
+	];
 	schema:provider <PIC:999472675>;
 	schema:keywords "Geochemical", "Radon concentration", "Radon decay counts", "geochemistry", "geohazards", "long term continuos timeseries", "local temperature", "NFO", "Near Fault Observatory", "TABOO", "FRIDGE";
 	#hydra:entrypoint "application.wadl"^^xsd:anyURI;
@@ -226,6 +233,8 @@
 			schema:minValue "2010-04-01T00:00:00.000Z";
 			schema:maxValue "2017-12-31T00:00:00.000Z";
 			schema:defaultValue "2010-05-01T12:00:00.000Z";
+			hydra:property "schema:startDate";
+      		schema:valuePattern "YYYY-MM-DDThh:mm:ss.SSSZ";
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -235,6 +244,8 @@
 			schema:minValue "2010-04-01T00:00:00.000Z";
 			schema:maxValue "2017-12-31T00:00:00.000Z";
 			schema:defaultValue "2010-06-01T12:00:00.000Z";
+			hydra:property "schema:endDate";
+      		schema:valuePattern "YYYY-MM-DDThh:mm:ss.SSSZ";
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -244,6 +255,7 @@
 			schema:minValue "-90";
 			schema:maxValue "90";
 			schema:defaultValue "43.0";
+			hydra:property "epos:southernmostLatitude";
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -253,6 +265,7 @@
 			schema:minValue "-90";
 			schema:maxValue "90";
 			schema:defaultValue "44.0";
+			hydra:property "epos:northernmostLatitude";
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -262,6 +275,7 @@
 			schema:minValue "-90";
 			schema:maxValue "90";
 			schema:defaultValue "12.0";
+			hydra:property "epos:westernmostLongitude";
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -271,6 +285,7 @@
 			schema:minValue "-90";
 			schema:maxValue "90";
 			schema:defaultValue "13.0";
+			hydra:property "epos:easternmostLongitude";
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;

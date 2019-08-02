@@ -34,6 +34,7 @@
 	schema:contactPoint <mailto:contact-brgm@brgm.fr/scientificContact>;
 	schema:contactPoint <mailto:contact-brgm@brgm.fr/legalContact>;
 	schema:contactPoint <mailto:contact-brgm@brgm.fr/financialContact>;
+	schema:contactPoint <mailto:contact-brgm@brgm.fr/manager>;
 . 
 
 <PIC:999993662> a schema:Organization;
@@ -57,7 +58,7 @@
 . 
 
 
-	<mailto:contact-brgm@brgm.fr> a schema:ContactPoint;
+	<mailto:contact-brgm@brgm.fr/manager> a schema:ContactPoint;
 		schema:email "contact-brgm@brgm.fr";
 		schema:availableLanguage "en" ;
 		schema:contactType "manager" ;
@@ -111,7 +112,7 @@
 	]; 
 		dcat:theme <epos:GeologicalData>;
 		dcat:keyword "GeologicUnit", "MappedFeature", "Geology", "INSPIRE:GE", "GeoSciML";
-		dcat:contactPoint <mailto:contact-brgm@brgm.fr>;
+		dcat:contactPoint <mailto:contact-brgm@brgm.fr/manager>;
 		dcat:distribution <http://resource.europe-geology.eu/dataset/geologicunit/distributionWfs>;
 		dcat:distribution <http://resource.europe-geology.eu/dataset/geologicunit/distributionWms>;
 		dct:publisher <PIC:999993662>;
@@ -120,7 +121,7 @@
 
 	<http://resource.europe-geology.eu/dataset/geologicunit/distributionWfs> a dcat:Distribution;
 		dct:identifier "http://resource.europe-geology.eu/dataset/geologicunit/distributionWfs";
-		dct:title "Geological Feature Index Discovery Service";
+		dct:title "Geological Feature Index Discovery Service (WFS)";
 		dct:description "This WFS allows to find geological features appearing on the  EGDI 1:1,000,000 geological map.";
 		dct:issued "2016-10-27"^^xsd:date;
 		dct:modified "2018-01-19"^^xsd:date;
@@ -166,7 +167,7 @@
 		schema:startDate "2016-10-27T00:00:00Z"^^xsd:dateTime; 
 		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
 	]; 
-	dcat:contactPoint <mailto:contact-brgm@brgm.fr>;
+	dcat:contactPoint <mailto:contact-brgm@brgm.fr/manager>;
 . 
 
 
@@ -174,7 +175,7 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/gml+xml";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "http://resource.europe-geology.eu/service/wfsGeologicUnit{?service, request, typenames, version, count, BBOX, gml:identifier, gml:name, geologicUnitType, rank, lithology, geologicHistory, observationMethod, positionalAccuracy, geologicUnitType_uri, representativeLithology_uri, representativeOlderAge_uri, representativeYoungerAge_uri, specification_uri}"^^xsd:string;
+			hydra:template "http://resource.europe-geology.eu/service/wfsGeologicUnit{?service, request, typenames, version, count, gml:identifier, gml:name, geologicUnitType, rank, lithology, geologicHistory, observationMethod, positionalAccuracy, geologicUnitType_uri, representativeLithology_uri, representativeOlderAge_uri, representativeYoungerAge_uri, specification_uri, BBOX}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "service"^^xsd:string;
 					rdfs:range "xsd:string";
@@ -214,7 +215,8 @@
 					rdfs:range "xsd:string";
 					rdfs:label "WFS BBOX filter parameter";
 					hydra:required "false"^^xsd:boolean;
-				];				
+				];
+				
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "gml:identifier"^^xsd:string;
 					rdfs:range "xsd:string";
@@ -318,14 +320,14 @@
 		schema:startDate "2016-10-27T00:00:00Z"^^xsd:dateTime; 
 		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
 	]; 
-	dcat:contactPoint <mailto:contact-brgm@brgm.fr>;
+	dcat:contactPoint <mailto:contact-brgm@brgm.fr/manager>;
 . 
 
 <http://resource.europe-geology.eu/service/wmsGeologicUnit/operation> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "image/png";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "http://resource.europe-geology.eu/service/wmsGeologicUnit{?service, version, request, layers, crs, format, width, height,BBOX}"^^xsd:string;
+			hydra:template "http://resource.europe-geology.eu/service/wmsGeologicUnit{?service, version, request, layers, crs, format, width, height}&bbox={minlatitude, minlongitude, maxlatitude, maxlongitude}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "service"^^xsd:string;
 					rdfs:range "xsd:string";
@@ -362,13 +364,53 @@
 					http:paramValue "EGDI_GE_GeologicUnit_EN_1M_Surface_Age";
 					hydra:required "true"^^xsd:boolean;
 				];
+				#hydra:mapping[ a hydra:IriTemplateMapping;
+					#hydra:variable "BBOX"^^xsd:string;
+					#rdfs:range "xsd:string";
+					#rdfs:label "WMS BBOX filter parameter";
+					#schema:defaultValue "-180,-90,180,90";
+					#hydra:required "true"^^xsd:boolean;
+				#];	
 				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "BBOX"^^xsd:string;
-					rdfs:range "xsd:string";
-					rdfs:label "WMS BBOX filter parameter";
-					schema:defaultValue "-180,-90,180,90";
+					hydra:variable "minlatitude"^^xsd:string;
+					hydra:property "epos:southernmostLatitude";
+					rdfs:range "xsd:float";
+					rdfs:label "Minimum Latitude";
+					schema:minValue "-90.0";
+					schema:maxValue "90.0";
 					hydra:required "true"^^xsd:boolean;
-				];	
+					schema:defaultValue "-90";
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "maxlatitude"^^xsd:string;
+					hydra:property "epos:northernmostLatitude";
+					rdfs:range "xsd:float";
+					rdfs:label "Maximum Latitude";
+					schema:minValue "-90.0";
+					schema:maxValue "90.0";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "90";
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "minlongitude"^^xsd:string;
+					hydra:property "epos:westernmostLongitude";
+					rdfs:range "xsd:float";
+					rdfs:label "Minimum Longitude";
+					schema:minValue "-180.0";
+					schema:maxValue "180.0";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "-180";
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "maxlongitude"^^xsd:string;
+					hydra:property "epos:easternmostLongitude";
+					rdfs:range "xsd:float";
+					rdfs:label "Maximum Longitude";
+					schema:minValue "-180.0";
+					schema:maxValue "180.0";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "180";
+				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "crs"^^xsd:string;
 					rdfs:range "xsd:string";
