@@ -1,0 +1,192 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix epos: <http://www.epos-eu.org/epos/dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+	<epos:AnthropogenicHazards> a skos:ConceptScheme;
+		dct:title "Anthropogenic hazards"@en;
+		dct:description "All hazards related to industrial human activities"@en;
+		skos:hasTopConcept <epos:AnthropogenicSeismicity>;
+		skos:hasTopConcept <epos:Episode>;
+. 
+	<epos:AnthropogenicSeismicity> a skos:Concept;
+		skos:inScheme <epos:AnthropogenicHazards>;
+		skos:topConceptOf <epos:AnthropogenicHazards>;
+		skos:prefLabel "Anthropogenic seismicity"@en;
+		skos:altLabel "Induced seismicity"@en;
+		skos:altLabel "Triggered seismicity"@en;
+		skos:definition "Seismicity caused by any human activities"@en;
+. 
+	<epos:Episode> a skos:Concept;
+		skos:inScheme <epos:AnthropogenicHazards>;
+		skos:topConceptOf <epos:AnthropogenicHazards>;
+		skos:prefLabel "Episode"@en;
+		skos:altLabel "Dataset"@en;
+		skos:definition "Comprehensive data set describing a geophysical process, induced or triggered by human technological activity in the field of exploration and exploitation of geo-resources, which under certain circumstances can become hazardous for people, infrastructure and the environment"@en;
+. 
+	<epos:ConventionalHydrocarbonExtraction> a skos:Concept;
+		skos:inScheme <epos:AnthropogenicSeismicity>;
+		skos:prefLabel "Conventional hydrocarbon extraction"@en;
+		skos:definition "Extraction of hydrocarbon with use of existing hydrocarbon reservoir pressure or using methods to increase the pressure suficiently for pumping hydrocarbons to the surface"@en;
+. 
+	<epos:GeothermalEnergyProduction> a skos:Concept;
+		skos:inScheme <epos:AnthropogenicSeismicity>;
+		skos:prefLabel "Geothermal energy production"@en;
+		skos:altLabel "Injection induced seismicity"@en;
+		skos:definition "Technology using thermal energy generated and stored in the Earth for heat and/or electricity production"@en;
+. 
+	<epos:ReservoirImpoundment> a skos:Concept;
+		skos:inScheme <epos:AnthropogenicSeismicity>;
+		skos:prefLabel "Reservoir impoundment"@en;
+		skos:altLabel "Reservoir triggered seismicity"@en;
+		skos:definition "Process of filling the water reservoir"@en;
+. 
+	<epos:UnconventionalHydrocarbonExtraction> a skos:Concept;
+		skos:inScheme <epos:AnthropogenicSeismicity>;
+		skos:prefLabel "Unconventional hydrocarbon extraction"@en;
+		skos:altLabel "Fracking"@en;
+		skos:altLabel "Hydrofracturing"@en;
+		skos:altLabel "Injection induced seismicity"@en;
+		skos:definition "Extraction of hydrocarbons using well stimulation techniques"@en;
+. 
+	<epos:UndergroundGasStorage> a skos:Concept;
+		skos:inScheme <epos:AnthropogenicSeismicity>;
+		skos:prefLabel "Underground gas storage"@en;
+		skos:definition "Technology of gas storage in rock formations"@en;
+. 
+	<epos:CO2Sequestration> a skos:Concept;
+		skos:inScheme <epos:UndergroundGasStorage>;
+		skos:prefLabel "CO2 sequestration"@en;
+		skos:definition "The process involved in carbon capture and the long-term storage of atmospheric carbon dioxide or other forms of carbon to mitigate or defer global warming."@en;
+. 
+	<epos:UndergroundMining> a skos:Concept;
+		skos:inScheme <epos:AnthropogenicSeismicity>;
+		skos:prefLabel "Underground mining"@en;
+		skos:altLabel "Mining induced seismicity"@en;
+		skos:altLabel "Hard rock mining"@en;
+		skos:definition "Extracting method using undergound instalations such as tunnels, long wall mining, room and pillar mining etc."@en;
+. 
+	<epos:WastewaterInjection> a skos:Concept;
+		skos:inScheme <epos:AnthropogenicSeismicity>;
+		skos:prefLabel "Wastewater injection"@en;
+		skos:altLabel "Injection induced seismicity"@en;
+		skos:definition "Injection of post-exploitation fluids into rockmass"@en;
+. 
+
+	<epos:AirQualityData> a skos:Concept;
+		skos:inScheme <epos:Episode>;
+		skos:prefLabel "Air quality data"@en;
+		skos:definition "Air quality parameters measured at air pollution monitoring stations"@en;
+. 
+	<epos:WaterQualityData> a skos:Concept;
+		skos:inScheme <epos:Episode>;
+		skos:prefLabel "Water quality data"@en;
+		skos:definition "Water quality parameters measured in situ or in laboratory"@en;
+.
+	<epos:GravityData> a skos:Concept;
+		skos:inScheme <epos:Episode>;
+		skos:prefLabel "Gravity data"@en;
+		skos:definition "Data from gravimetric stations"@en;
+.
+	<epos:ShearWaveVelocity> a skos:Concept;
+		skos:inScheme <epos:Episode>;
+		skos:prefLabel "Shear wave velocity"@en;
+		skos:altLabel "Vs30"@en;
+		skos:definition "S wave velocity at 30m depth"@en;
+.
+	<epos:VelocityModel> a skos:Concept;
+		skos:inScheme <epos:Episode>;
+		skos:prefLabel "Velocity model"@en;
+		skos:definition "Values of seismic waves velocity in the Earths interior"@en;
+.
+	<epos:GeothermalIndustrialData> a skos:Concept;
+		skos:inScheme <epos:Episode>;
+		skos:prefLabel "Geothermal industrial data"@en;
+		skos:definition "Any data related with geothermal energy production process such as water temperature, steam production volume etc."@en;
+.
+	<epos:HydrocarbonProductionData> a skos:Concept;
+		skos:inScheme <epos:Episode>;
+		skos:prefLabel "Hydrocarbon production data"@en;
+		skos:definition "Any data related with hydrocarbon production process such as monthly volume of oil and gas, well head pressure, flowback rate and volume etc."@en;
+.
+	<epos:InjectionIndustrialData> a skos:Concept;
+		skos:inScheme <epos:Episode>;
+		skos:prefLabel "Injection industrial data"@en;
+		skos:definition "Any data related with injection of fluid into rockmass such as wellhead pressure, bottomhole pressure, injection rate and volume etc."@en;
+.
+	<epos:MineIndustrialData> a skos:Concept;
+		skos:inScheme <epos:Episode>;
+		skos:prefLabel "Mine industrial data"@en;
+		skos:definition "Any data related with mining operations such as mining panel positions, mine areas, mining front advance etc."@en;
+.
+	<epos:ReservoirIndustrialData> a skos:Concept;
+		skos:inScheme <epos:Episode>;
+		skos:prefLabel "Reservoir industrial data"@en;
+		skos:definition "Any data related with water reservoir exploitation such as depth of the lake, water level, shape of the lake, bathymetry etc."@en;
+.
+	<epos:Catalogue> a skos:Concept;
+		skos:inScheme <epos:Episode>;
+		skos:prefLabel "Catalogue"@en;
+		skos:altLabel "Catalog"@en;
+		skos:altLabel "Seismic Catalog"@en;
+		skos:definition "A chronological listing of earthquakes. Early catalogs were purely descriptive, i.e., they gave the location and date of each earthquake and some description of its effects. Modern catalogs are usually quantitative, i.e., earthquakes are listed as a set of numerical parameters describing origin time, hypocenter location, magnitude, moment tensor, etc. In TCS AH seismic catalog consists of list of seismic events (earthquakes) and parameters describing it: origin time, location (latitude, longtitude, depth), magnitude, at least"@en;
+.
+	<epos:Deformation> a skos:Concept;
+		skos:inScheme <epos:Episode>;
+		skos:prefLabel "Deformation"@en;
+		skos:definition "Any changes in the shape or size of an object due to applied force or temperature"@en;
+.
+	<epos:Fault> a skos:Concept;
+		skos:inScheme <epos:Episode>;
+		skos:prefLabel "Fault"@en;
+		skos:definition "Planar rock fractures showing evidence of relative movement"@en;
+.
+	<epos:Geology> a skos:Concept;
+		skos:inScheme <epos:Episode>;
+		skos:prefLabel "Geology"@en;
+.
+	<epos:GroundMotionParameters> a skos:Concept;
+		skos:inScheme <epos:Episode>;
+		skos:prefLabel "Ground motion parameters"@en;
+		skos:definition "Quantitative estimates characterizing the seismic ground-motion"@en;
+.
+	<epos:GroundWater> a skos:Concept;
+		skos:inScheme <epos:Episode>;
+		skos:prefLabel "Ground water"@en;
+.
+	<epos:Radon concentration> a skos:Concept;
+		skos:inScheme <epos:Episode>;
+		skos:prefLabel "Radon concentration"@en;
+		skos:atLabel "Radon 222 concentration"@en;
+		skos:definition "Radon concentration (usually 222Rn) in the chosen medium i.e. air"@en;
+.
+	<epos:SeismicWaveform> a skos:Concept;
+		skos:inScheme <epos:Episode>;
+		skos:prefLabel "Seismic waveform"@en;
+		skos:definition "Continous ground motion velocity or acceleration recorded on seismic/accelerometric station"@en;
+.
+	<epos:StationInformation> a skos:Concept;
+		skos:inScheme <epos:Episode>;
+		skos:prefLabel "Station information"@en;
+		skos:atLabel "Seismic network"@en;
+		skos:atLabel "Station network"@en;
+		skos:definition "Seismic station locations and all informations needed for proper interpretation of the waveform data"@en;
+.
+	<epos:Strainmeter> a skos:Concept;
+		skos:inScheme <epos:Episode>;
+		skos:prefLabel "Strainmeter"@en;
+		skos:definition "An instrument used to measure the deformation of the Earth"@en;
+.
+	<epos:Temperature> a skos:Concept;
+		skos:inScheme <epos:Episode>;
+		skos:prefLabel "Temperature"@en;
+		skos:definition "Temperature measured in defined points in space and time"@en;
+.
+	<epos:WaterLevel> a skos:Concept;
+		skos:inScheme <epos:Episode>;
+		skos:prefLabel "Water level"@en;
+		skos:definition "Water level in the surface or underground reservoir"@en;
+.
+
