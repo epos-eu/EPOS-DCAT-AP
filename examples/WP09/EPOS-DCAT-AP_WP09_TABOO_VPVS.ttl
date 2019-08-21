@@ -412,3 +412,45 @@
 	skos:inScheme <epos:NearFaultObservations>;
 	skos:prefLabel "Crustal velocity parameters";
 .
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/VPVS/SoftwareSourceCode/Plugin/JSON2COVJSON> a schema:SoftwareSourceCode;
+  schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/VPVS/SoftwareSourceCode/Plugin/JSON2COVJSON" ;
+  schema:name "Vp/Vs conversion plugin from JSON to COVJSON payload" ;
+  schema:description "Vp/Vs conversion plugin from JSON to COVJSON payload" ;
+  schema:softwareVersion "0.0.1";
+  # This property contains contact information that can be used for sending comments about the software.
+  schema:contactPoint <http://orcid.org/0000-0002-8608-4289/contactPoint> ;
+  # Link to the repository where the code is located (gitlab, github).
+  schema:codeRepository "https://github.com/icarluccio/converter_plugin_vpvs.git"^^xsd:anyURI ;
+  # This property refers to the license under which the software is made available.
+  schema:license "https://github.com/icarluccio/converter_plugin_vpvs/blob/master/LICENSE"^^xsd:anyURI ;
+  # This property refers to the web page URL which describes the software.
+  schema:mainEntityOfPage "https://github.com/icarluccio/converter_plugin_vpvs/blob/master/README.md"^^xsd:anyURI ;
+  schema:programmingLanguage "Python" ;
+
+  ## INVOKER-TYPE;LANGUAGE VERSION;CLASSPATH;JARNAME;CLASS
+  schema:runtimePlatform "python-3.6" ;
+
+  #CONVERSION 1
+  schema:targetProduct <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/VPVS/SoftwareSourceCode/Plugin/JSON2COVJSON_PAYLOAD> ;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/VPVS/SoftwareSourceCode/Plugin/JSON2COVJSON_PAYLOAD> a schema:SoftwareApplication;
+  schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/VPVS/SoftwareSourceCode/Plugin/JSON2COVJSON_PAYLOAD" ;
+  schema:softwareRequirements "converter_plugin_vpvs;converter.py" ;
+
+  schema:potentialAction [ a schema:ControlAction ;
+      #Description of INPUT
+      schema:object [ a schema:CreativeWork ;
+        schema:encodingFormat "application/json" ;
+        dct:conformsTo "http://fridge.rm.ingv.it/schemas/vpvs/vpvs_taboo.json" ;
+      ] ;
+      #Description of OUTPUT
+      schema:result [ a schema:CreativeWork ;
+        schema:encodingFormat "application/json" ;
+        dct:conformsTo "http://fridge.rm.ingv.it/schemas/covjson.json" ;
+      ]
+    ];
+
+    dct:relation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/VPVS/WebService/001/Operation/001>
+.
