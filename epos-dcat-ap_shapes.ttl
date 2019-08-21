@@ -20,6 +20,7 @@
 @prefix hydra: <http://www.w3.org/ns/hydra/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix http: <http://www.w3.org/2006/http#> .
 
 <http://www.epos-eu.org/epos-dcat-ap>
   rdf:type owl:Ontology ;
@@ -38,14 +39,14 @@
   rdfs:comment "This document specifies the set of classes, properties and shapes graphs used in the EPOS DCAT Application Profile."@en  ;
   rdfs:label "EPOS-DCAT-Application Profile"@en  ;
   owl:imports <http://datashapes.org/dash> ;
-  owl:imports <http://www.schema.org> ;
-  owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  owl:imports <http://www.w3.org/2006/vcard/ns> ;
-  owl:imports <http://www.w3.org/2008/05/skos-xl> ;
-  owl:imports <http://www.w3.org/ns/dcat> ;
-  owl:imports <http://www.w3.org/ns/oa#> ;
-  owl:imports <http://www.w3.org/ns/org#> ;
-  owl:imports <http://xmlns.com/foaf/0.1/> ;
+ # owl:imports <http://www.schema.org> ;
+ # owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  #owl:imports <http://www.w3.org/2006/vcard/ns> ;
+  #owl:imports <http://www.w3.org/2008/05/skos-xl> ;
+  #owl:imports <http://www.w3.org/ns/dcat> ;
+ # owl:imports <http://www.w3.org/ns/oa#> ;
+  #owl:imports <http://www.w3.org/ns/org#> ;
+  #owl:imports <http://xmlns.com/foaf/0.1/> ;
   owl:versionInfo "0.15" ;
   foaf:homepage <http://www.epos-eu.org/epos-dcat-ap> ; .
 ####
@@ -81,17 +82,17 @@ epos:WebService
   rdfs:label "WebService"@en  ;
   rdfs:isDefinedBy <http://www.epos-eu.org/epos-dcat-ap> ;
 .
-##Alignement schema:Organization and foal:Organization##
+##Alignment schema:Organization and foaf:Organization##
 schema:Organization a owl:Class;
   owl:equivalentClass foaf:Organization;
   rdfs:label "Organization"@en;
 .
-##Alignement schema:Person and foal:Person##
+##Alignment schema:Person and foaf:Person##
 schema:Person a owl:Class;
   owl:equivalentClass foaf:Person;
   rdfs:label "Person"@en;
 .
-##Alignement schema:ContactPoint and vcard:Kind##
+##Alignment schema:ContactPoint and vcard:Kind##
 schema:ContactPoint a owl:Class;
     owl:equivalentClass vcard:Kind;
     rdfs:label "ContactPoint"@en;
@@ -789,6 +790,77 @@ sh:targetClass hydra:Operation;
     sh:class hydra:Class ;
  ] ;
 .
+
+
+epos:IriTemplateShape
+  a sh:NodeShape ;
+  sh:targetClass hydra:IriTemplate ;
+####
+# IriTemplate properties
+####
+  sh:property [
+      sh:path hydra:template ;
+      sh:datatype xsd:string ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ;
+  ] ;
+  sh:property [
+      sh:path hydra:mapping ;
+      sh:class hydra:IriTemplateMapping ;      
+  ] ;
+.
+
+epos:IriTemplateMappingShape
+  a sh:NodeShape ;
+  sh:targetClass hydra:IriTemplateMapping ;
+####
+# IriTemplateMapping properties
+####
+  sh:property [
+      sh:path hydra:variable ;
+      sh:datatype xsd:string ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ;
+  ] ;
+  sh:property [
+      sh:path rdfs:label ;
+      sh:datatype xsd:string ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ;   
+  ] ;
+  sh:property [
+      sh:path hydra:required ;
+      sh:datatype xsd:boolean ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ;   
+  ] ;
+  sh:property [
+      sh:path rdfs:range ;
+      sh:datatype xsd:string ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ;   
+  ] ;
+  sh:property [
+      sh:path schema:defaultValue ;
+      sh:datatype xsd:string ;
+      sh:maxCount 1 ;   
+  ] ;
+  sh:property [
+      sh:path schema:minValue ;
+      sh:datatype xsd:string ;
+      sh:maxCount 1 ;   
+  ] ;
+  sh:property [
+      sh:path schema:maxValue ;
+      sh:datatype xsd:string;
+      sh:maxCount 1 ;   
+  ] ;
+  sh:property [
+      sh:path http:paramValue ;
+      sh:datatype xsd:string ;  
+  ] ;
+.
+
 epos:ServiceShape
   a sh:NodeShape ;
   sh:targetClass schema:Service;
@@ -1542,6 +1614,7 @@ epos:PublicationShape
       sh:datatype xsd:string;
     ] ;
 .
+
 epos:SoftwareApplicationShape
   a sh:NodeShape ;
   sh:targetClass schema:SoftwareApplication;
@@ -1595,7 +1668,60 @@ epos:SoftwareApplicationShape
       sh:path schema:softwareVersion;
       sh:datatype xsd:string ;
     ] ;
+    sh:property [
+      sh:path schema:softwareRequirements ;
+      sh:or ( [ sh:datatype xsd:string ; ]
+        [ sh:datatype xsd:anyURI ; ] );
+    ] ;
+    sh:property [
+      sh:path schema:potentialAction ;
+      sh:class schema:ControlAction ;
+    ] ;
+    sh:property [
+      sh:path dct:relation ;
+      sh:class hydra:Operation ;
+    ] ; 
+   sh:property [
+      sh:path schema:installUrl ;
+      sh:datatype xsd:anyURI;
+    ] ;
 .
+
+epos:ControlActionShape
+  a sh:NodeShape ;
+  sh:targetClass schema:ControlAction ;
+  ####
+  # properties
+  ####
+   sh:property [
+      sh:path schema:object ;
+      sh:class schema:CreativeWork ;
+    ] ;
+   sh:property [
+      sh:path schema:result ;
+      sh:class schema:CreativeWork ;
+    ] ; 
+.
+
+epos:CreativeWorkShape
+  a sh:NodeShape ;
+  sh:targetClass schema:CreativeWork ;
+  ####
+  # properties
+  ####
+   sh:property [
+      sh:path schema:encodingFormat ;
+      sh:or ( [ sh:datatype xsd:string ; ]
+        [ sh:datatype xsd:anyURI ; ] );
+    ] ;
+   sh:property [
+      sh:path dct:conformsTo ;
+      sh:or ( [ sh:datatype xsd:string ; ]
+        [ sh:datatype xsd:anyURI ; ] );
+    ] ; 
+.
+
+
 epos:SoftwareSourceCodeShape
   a sh:NodeShape ;
   sh:targetClass schema:SoftwareSourceCode;
@@ -1652,5 +1778,13 @@ epos:SoftwareSourceCodeShape
     sh:property [
       sh:path schema:programmingLanguage;
       sh:datatype xsd:string ;
+    ] ;
+    sh:property [
+      sh:path schema:runtimePlatform ;
+      sh:datatype xsd:string ;
+    ] ;
+    sh:property [
+      sh:path schema:targetProduct ;
+      sh:class schema:SoftwareApplication ;
     ] ;
 .
