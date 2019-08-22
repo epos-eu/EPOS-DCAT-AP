@@ -131,7 +131,7 @@
 		schema:propertyID "PIC";
 		schema:value "999472675";
 	];
-	schema:legalName "INGV National Institute of Geophysics e Volcanology";
+	schema:legalName "Istituto Nazionale di Geofisica e Vulcanologia"@it;
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "Via di Vigna Murata, 605";
 		schema:addressLocality "Rome";
@@ -146,9 +146,9 @@
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/CO2/Dataset/001> a dcat:Dataset;
-	dct:title "TABOO CO2 Gas soil flux measurements Dataset";
+	dct:title "TABOO CO2 Gas soil flux measurements";
 	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/CO2/Dataset/001";
-        dct:description "CO2 Gas soil flux measurements Web Service retrieve CO2 Gas soil flux and concentration time series based on periodic counting of CO2 gas at site";
+    dct:description "CO2 Gas soil flux measurements Web Service retrieve CO2 Gas soil flux and concentration time series based on periodic counting of CO2 gas at site";
 	adms:identifier [ a adms:Identifier; 
 		adms:schemaAgency "DDSS-ID";
 		skos:notation "WP09-DDSS-028";
@@ -163,7 +163,7 @@
 	# This property refers to a geographic region that is covered by the Dataset.
   	# The POLYGON format is: POLYGON(lon1 lat1, lon2 lat2,...)
 	dct:spatial [ a dct:Location ;
-		locn:geometry "POLYGON(11.78 43.95, 13.61 43.95, 13.61 42.8, 11.78 42.8, 11.78 43.95)"^^gsp:wktLiteral ;
+		locn:geometry "POLYGON((11.78 43.95, 13.61 43.95, 13.61 42.8, 11.78 42.8, 11.78 43.95))"^^gsp:wktLiteral ;
 	];
 	# This property refers to a temporal period that the Dataset covers.
     dct:temporal [ a dct:PeriodOfTime ;
@@ -171,7 +171,7 @@
         #schema:endDate "YYYY-MM-DDThh:mm:ss"^^xsd:dateTime ;
     ];
 	dcat:theme  <epos:CO2concentration> ;
-    dcat:keyword "Geochemical", "CO2 concentration", "CO2 soil flux", "Carbon Dioxide", "geochemistry", "NFO", "Near Fault Observatory", "TABOO", "FRIDGE";
+    dcat:keyword "Geochemistry", "CO2 concentration", "CO2 soil flux", "Carbon Dioxide", "NFO", "TABOO", "FRIDGE";
 	dcat:contactPoint <http://orcid.org/0000-0002-4130-5498/scientificContact>;
 	dct:publisher <PIC:999472675>;
 	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/CO2/Distribution/001>;
@@ -179,8 +179,8 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/CO2/Distribution/001> a dcat:Distribution;
     dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/CO2/Distribution/001";
-    dct:title "TABOO CO2 Gas soil flux measurements";
-	dct:description "TABOO Carbon Dioxide (CO2) Gas soil flux measurements";
+    dct:title "TABOO CO2 soil flux";
+	dct:description "This distribution provides access to carbon dioxide gas concentrations (CO2) measurements and derived time series, performed at different sampling sites. The datasets are encoded in JSON format. Data cover the time period 2010-today and is limited to the Alta Val Tiberina (Central Italy) Near Fault Observatory.";
 	dct:created "2017-03-01"^^xsd:date;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/CO2/WebService/001/Operation/001>;
@@ -192,8 +192,8 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/CO2/WebService/001> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/CO2/WebService/001";
-	schema:description "CO2 Gas soil flux measurements Web Service retrieve CO2 Gas soil flux and concentration time series based on periodic counting of CO2 gas at site";
-	schema:name "TABOO CO2 Gas soil flux measurements Web Service";
+	schema:description "This web service provides access to carbon dioxide gas concentrations (CO2) measurements and derived time series, performed at different sampling sites. The datasets are encoded in JSON format. Data cover the time period 2010-today and is limited to the Alta Val Tiberina (Central Italy) Near Fault Observatory.";
+	schema:name "TABOO CO2 soil flux";
 	schema:datePublished "2017-06-08T12:00:00Z"^^xsd:dateTime;
 	schema:dateModified "2017-06-08T12:00:00Z"^^xsd:dateTime;
 	dct:temporal [ a dct:PeriodOfTime ;
@@ -201,10 +201,10 @@
         #schema:endDate "YYYY-MM-DDThh:mm:ss"^^xsd:dateTime ;
     ];
     dct:spatial [ a dct:Location ;
-		locn:geometry "POLYGON(11.78 43.95, 13.61 43.95, 13.61 42.8, 11.78 42.8, 11.78 43.95)"^^gsp:wktLiteral ;
+		locn:geometry "POLYGON((11.78 43.95, 13.61 43.95, 13.61 42.8, 11.78 42.8, 11.78 43.95))"^^gsp:wktLiteral ;
 	];
 	schema:provider <PIC:999472675>;
-	schema:keywords "Geochemical", "CO2 concentration", "CO2 soil flux", "geochemistry", "NFO", "Near Fault Observatory", "TABOO", "FRIDGE";
+	schema:keywords "Geochemistry", "CO2 concentration", "CO2 soil flux", "Carbon Dioxide", "NFO", "TABOO", "FRIDGE";
 	#hydra:entrypoint "application.wadl"^^xsd:anyURI;
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/CO2/WebService/001/Operation/001>;
 	dcat:theme <epos:CO2concentration>;
@@ -218,7 +218,7 @@
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/CO2/WebService/001/APIDocumentation> a hydra:APIDocumentation ;
     hydra:title "NFO web service CO2 soil flux measurements" ;
     hydra:description "NFO web service CO2 soil flux measurements" ;
-    hydra:entrypoint "https://docs.google.com/document/d/1hY7tnYUrw1WwXJJpBGct7k7Pw9nAaVtPhNUaEdkt-6I";
+    hydra:entrypoint "https://fridge.rm.ingv.it/docs/API_prototype_documentation_NFO_CO2.pdf";
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/CO2/WebService/001/Operation/001> a hydra:Operation;
