@@ -114,15 +114,17 @@
         schema:value "http://isni.org/isni/0000000109416043";
     ];
     schema:leiCode "Legal Entity Identifier" ;
-    schema:legalName "Earth Physics Observatory of Clermont-Ferrand"^^xsd:string;
-    # schema:alternateName "Observatoire de Physique du Globe de Clermont-Ferrand"^^xsd:string;
-    # schema:alternateName "OPGC"^^xsd:string;
+#    schema:legalName "Observatoire de Physique du Globe de Clermont-Ferrand"@fr;
+    schema:legalName "Earth Physics Observatory of Clermont-Ferrand"@en;
     schema:address [ a schema:PostalAddress;
         schema:streetAddress "OPGC, 4 Avenue Blaise Pascal";
         schema:addressLocality "AUBIERE CEDEX";
         schema:postalCode "63178";
         schema:addressCountry "FRANCE";
-    ];
+    ];       
+#    dct:spatial [ a dct:location ;
+#        locn:geometry "POINT(3.110 45.761)"^^gsp:wktLiteral;
+#    ];
     schema:logo "http://wwwobs.univ-bpclermont.fr/opgc/images/LogoOPGCTransparent.png"^^xsd:anyURI;
     schema:url "http://opgc.fr"^^xsd:anyURI;
     schema:email "g.delcampo@opgc.fr";
@@ -139,15 +141,17 @@
         schema:value "http://isni.org/isni/0000000121129282";
     ];
     schema:leiCode "Legal Entity Identifier" ;
-    schema:legalName "The National Center for Scientific Research"^^xsd:string;
-    schema:alternateName "CNRS: Le Centre National de la Recherche Scientifique"^^xsd:string;
-    schema:alternateName "CNRS"^^xsd:string;
+#    schema:legalName "Le Centre National de la Recherche Scientifique"@fr;
+    schema:legalName "The National Center for Scientific Research"@en;
     schema:address [ a schema:PostalAddress;
         schema:streetAddress "CNRS, 3 rue Michel-Ange";
         schema:addressLocality "PARIS CEDEX 16";
         schema:postalCode "75794";
         schema:addressCountry "FRANCE";
-    ];
+    ];         
+#    dct:spatial [ a dct:location ;
+#        locn:geometry "POINT(2.262 48.847)"^^gsp:wktLiteral;
+#    ];
     schema:logo "http://www.cnrs.fr/fr/z-tools/newune/themes/CNRSTheme/images/logocnrs.png"^^xsd:anyURI;
     schema:url "http://cnrs.fr"^^xsd:anyURI;
     schema:telephone "+33144964000";
@@ -158,7 +162,7 @@
 #########
 
 <opgc.fr/vobs/WP11/DDSS-051/dataset> a dcat:Dataset ;
-    dct:title "InSar Observatory of Indian Ocean - Catalog of Lava maps calculated from InSAR interferograms"^^xsd:string;
+    dct:title "Catalog of Lava maps calculated from InSAR interferograms"^^xsd:string;
     dct:identifier "opgc.fr/vobs/WP11/DDSS-051/dataset";
     dct:description "Catalog of Lava maps calculated from Wrapped Differential Interferogram made using data from SENTINEL, COSMOSKYMED and TERRASAR-X Satellites - target: Piton de la Fournaise - Reunion island FRANCE";
     adms:identifier [ a adms:Identifier;
@@ -174,10 +178,10 @@
     dct:issued "2017-06-21"^^xsd:dateTime;
     dct:modified "2017-06-21"^^xsd:dateTime;
     dct:spatial [ a dct:Location;
-        locn:geometry "POLYGON(55.622471 -21.182913, 55.82473 -21.184441, 55.823513 -21.338009, 55.62104 -21.33647,55.622471 -21.182913)"^^gsp:wktLiteral;
+        locn:geometry "POLYGON((55.622471 -21.182913, 55.82473 -21.184441, 55.823513 -21.338009, 55.62104 -21.33647,55.622471 -21.182913))"^^gsp:wktLiteral;
     ];
     dcat:theme <epos:RadarInterferometry>;
-    dcat:keyword "radar", "interferometry", "Reunion", "Piton de la Fournaise", "deformation", "SENTINEL", "COSMOSKYMED", "TERRASAR-X";
+    dcat:keyword "volcanology", "remote-sensing", "InSAR", "radar", "interferometry", "Reunion", "Piton de la Fournaise", "deformation", "SENTINEL", "COSMOSKYMED", "TERRASAR-X";
     dcat:contactPoint <http://www.researcherid.com/rid/O-8042-2014/contactPoint>;
     dct:publisher <http://isni.org/isni/0000000109416043>;
     schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
@@ -190,13 +194,13 @@
 
 <opgc.fr/vobs/WP11/DDSS-051/dataset/distribution> a dcat:Distribution;
         dct:identifier "opgc.fr/vobs/WP11/DDSS-051/dataset/distribution";
-        dct:title "OPGC InSAR Lava maps";
+        dct:title "Lava flow contour derived from InSAR data";
         dct:description "The way to download the OI2 Lava maps product";
         dct:issued "2018-12-19"^^xsd:dateTime;
         dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
         dct:conformsTo <opgc.fr/vobs/WP11/DDSS-051>;
         dcat:accessURL <opgc.fr/vobs/oi2/WP11/DDSS-051/lava-map>;
-        dct:format "http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE"^^xsd:anyURI;
+        dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
         dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 .
 
@@ -206,8 +210,8 @@
 
 <opgc.fr/vobs/WP11/DDSS-051> a epos:WebService;
     schema:identifier "opgc.fr/vobs/WP11/DDSS-051";
-    schema:description "Since september 2017, OPGC assigns Digital Object Identifiers (DOI) to datasets. These datasets are archived by and published through OPGC Data Services and cover all geoscientific disciplines. They range from large dynamic datasets deriving from data intensive global monitoring networks with real-time data acquisition to the full suite of highly variable datasets collected by individual researchers or small teams. These highly variable data (‘long-tail data’) are small in size, but represent an important part of the total scientific output. This web service allow to retrieve Lava Flow Map data from the InSar Observatory of Indian Ocean (OI2) observation service. The Observation Service, OI2, is a recognised component of the National Service for Volcanological Observations. The mission of OI2 is the regular monitoring of ground movements brought about by the volcanic activity of Piton de la Fournaise volcano, Reunion Island, using InSAR data.";
-    schema:name "OPGC Virtual Observatory - OI2 Entry Point - EPOS - WP11/DDSS-051";
+    schema:description "This web service provides access to lava flow contour (in KML format) derived from InSAR data processed by the OI2 observation service from the French National Volcanological Observation Service.";
+    schema:name "Catalog of lava flow contour derived from InSAR data";
     schema:datePublished "2016-05-26T08:00:00Z"^^xsd:dateTime;
     schema:dateModified "2019-01-20T18:00:00Z"^^xsd:dateTime;
     dct:temporal [ a dct:PeriodOfTime;
@@ -243,10 +247,9 @@
 
 <opgc.fr/vobs/oi2/WP11/DDSS-051/lava-map> a hydra:Operation;
         hydra:method "GET"^^xsd:string;
-        hydra:returns "application/xml";
+        hydra:returns "application/json";
         hydra:property [ a hydra:IriTemplate;
-            #hydra:template "http://opgc.fr/vobs/rest2/req.php/oi2/lavamap{?sat, start_date, stop_date, eruption}"^^xsd:string; 
-             hydra:template "http://opgc.fr/vobs/rest2/req.php/oi2/lavamap{?sat, start_date, end_date, eruption}"^^xsd:string;     
+          hydra:template "http://opgc.fr/vobs/rest2/req.php/oi2/lavamap{?sat, start_date, stop_date, eruption}"^^xsd:string;    
 	        hydra:mapping [ a hydra:IriTemplateMapping;
                     hydra:variable "sat"^^xsd:string;
                     rdfs:label "Satellite ID to limit the query to interferogram produce from a specific satellite data";
@@ -258,24 +261,24 @@
                     hydra:required "false"^^xsd:boolean;
                 ];
                 hydra:mapping [ a hydra:IriTemplateMapping;
-                    hydra:variable "start_date"^^xsd:datetime;
+                    hydra:variable "start_date"^^xsd:string;
                     hydra:property "schema:startDate";
                     rdfs:label "Starting datetime of the time interval query (format YYYY-MM-DDThh:mm:ss:Z)";
                     rdfs:range "xsd:dateTime";
-                    schema:valuePattern "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
-                    schema:minValue "1990-01-01T00:00:00Z"^^xsd:dateTime;
-                    schema:maxValue "9999-12-31T23:59:59Z"^^xsd:dateTime;
+                    schema:valuePattern "YYYY-MM-DDThh:mm:ssZ"^^xsd:string;
+                    schema:minValue "1990-01-01T00:00:00Z"^^xsd:string;
+                    schema:maxValue "9999-12-31T23:59:59Z"^^xsd:string;
 		                schema:defaultValue "2018-09-01T00:00:00Z";
                     hydra:required "false"^^xsd:boolean;
                 ];
                 hydra:mapping [ a hydra:IriTemplateMapping;
-                    hydra:variable "end_date"^^xsd:datetime;
+                    hydra:variable "stop_date"^^xsd:string;
                     hydra:property "schema:endDate";
                     rdfs:label "Ending datetime of the time interval query (format YYYY-MM-DDThh:mm:ssZ)";
                     rdfs:range "xsd:dateTime";
-                    schema:valuePattern "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
-                    schema:minValue "1990-01-01T00:00:00Z"^^xsd:dateTime;
-                    schema:maxValue "9999-12-31T23:59:59Z"^^xsd:dateTime;
+                    schema:valuePattern "YYYY-MM-DDThh:mm:ssZ"^^xsd:string;
+                    schema:minValue "1990-01-01T00:00:00Z"^^xsd:string;
+                    schema:maxValue "9999-12-31T23:59:59Z"^^xsd:string;
 		                schema:defaultValue "2018-10-31T23:59:59Z";
                     hydra:required "false"^^xsd:boolean;
                 ];
@@ -347,5 +350,5 @@
     <epos:RadarInterferometry> a skos:Concept;
         skos:inScheme <epos:VolcanoObservations>;
         skos:prefLabel "Radar Interferometry";
-	skos:definition "Radar Interferometry";
+	      skos:definition "Radar Interferometry";
 .
