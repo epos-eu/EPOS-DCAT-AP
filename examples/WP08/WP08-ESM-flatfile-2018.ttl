@@ -83,7 +83,8 @@
 		schema:propertyID "pic";
 		schema:value "999472675";
 	];
-	schema:legalName "ISTITUTO NAZIONALE DI GEOFISICA E VULCANOLOGIA";
+	schema:legalName "National Institute of Geophysics and Volcanology"@en;
+	schema:legalName "Istituto Nazionale di Geofisica e Vulcanologia"@en;	
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "via di Vigna Murata, 605";
 		schema:addressLocality "Rome";
@@ -98,8 +99,8 @@
 
 <http://www.epos-eu.org/epos-dcat-ap/Seismology/SeismologicalProducts/ESMFlatFile/Dataset/001> a dcat:Dataset ;
         dct:identifier "http://www.epos-eu.org/epos-dcat-ap/Seismology/SeismologicalProducts/ESMFlatFile/Dataset/001" ;
-        dct:title "ESM strong-motion flat-file 2018" ;
-        dct:description "The ESM strong-motion flat-file (http://esm.mi.ingv.it/flatfile-2018/) is a parametric table which contains metadata and intensity measures of manually processed waveforms recorded by accelerometers" ;
+        dct:title "Strong-motion flat-file 2018" ;
+        dct:description "This distribution (http://esm.mi.ingv.it/flatfile-2018/) is a parametric table which contains metadata and intensity measures of manually processed waveforms recorded by accelerometers for magnitude (moment Mw, local ML or surface waves Ms) higher or equal than 4.0. It is encoded in a zip file containing 3 parametric tables in csv format. It covers the time interval 1960-2016 and is limited to the Pan-European region" ;
         adms:identifier [ a adms:Identifier ;
             adms:schemaAgency "DDSS-ID" ;
             skos:notation "WP08-DDSS-053" ;
@@ -125,7 +126,7 @@
         dcat:theme <epos:EarthquakeHazardAndRiskServices>;
         dcat:theme <epos:SeismologicalProducts> ;
 
-        dcat:keyword "ESM strong-motion flat-file","strong-motion parameters","station metadata","event metadata","site metadata" ;
+        dcat:keyword "earthquake","event","seismic waveform","seismicity","station","waveform","PGA","PGV","PGD","Epicentral Distance","Hypocentral distance","Joyner-Boore distance","Response spectrum","Rupture distance" ;
         dcat:contactPoint <http://orcid.org/0000-0001-7947-4281/scientificContact> ;
 
         # This property refers to an Organisation responsible for making the Dataset available.
@@ -136,7 +137,7 @@
 
         # This property refers to a geographic region that is covered by the Dataset.
         dct:spatial [ a dct:Location ;
-          locn:geometry "POLYGON(-26.0 72.0, 68.5 72.0, 68.5 23.5, -26.0 23.5, -26.0 72.0)"^^gsp:wktLiteral ;
+          locn:geometry "POLYGON((-26.0 72.0, 68.5 72.0, 68.5 23.5, -26.0 23.5, -26.0 72.0))"^^gsp:wktLiteral ;
         ];
 
         # This property refers to a temporal period that the Dataset covers.
@@ -152,8 +153,8 @@
 
 #<http://www.epos-eu.org/epos-dcat-ap/Seismology/EngineeringStrongMotionDatabase/Dataset/001> a dcat:Dataset ;
 #        dct:identifier "http://www.epos-eu.org/epos-dcat-ap/Seismology/EngineeringStrongMotionDatabase/Dataset/001" ;
-#        dct:title "ESM - Engineering Strong-Motion portal" ;
-#        dct:description "ESM (http://esm.mi.ingv.it) allows users to query earthquake and station information and download earthquake waveforms and response spectra for events with magnitude ≥ 4.0 mainly recorded in the European-Mediterranean and the middle-East regions" ;
+#        dct:title "Engineering Strong-Motion portal" ;
+#        dct:description "This distribution (http://esm.mi.ingv.it) allows users to query earthquake and station information and download earthquake waveforms and response spectra for events with magnitude ≥ 4.0 mainly recorded in the European-Mediterranean and the middle-East regions" ;
 #        adms:identifier [ a adms:Identifier ;
 #            adms:schemaAgency "DDSS-ID" ;
 #            skos:notation "WP08-DDSS-010" ;
@@ -174,7 +175,7 @@
         # This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
 #        dcat:theme <epos:SeismologicalProducts> ;
 
-#        dcat:keyword "strong-motion waveforms","strong-motion parameters","event parameters","station characterization" ;
+#        dcat:keyword "earthquake","event","seismic waveform","seismicity","station","waveform","PGA","PGV","PGD","Epicentral Distance","Hypocentral distance","Joyner-Boore distance","Response spectrum","Rupture distance" ;
 #        dcat:contactPoint <http://orcid.org/0000-0003-4312-580X/scientificContact> ;
 
         # This property refers to an Organisation responsible for making the Dataset available.
@@ -182,7 +183,7 @@
 
         # This property refers to a geographic region that is covered by the Dataset.
 #        dct:spatial [ a dct:Location ;
-#          locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral ;
+#          locn:geometry "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral ;
 #        ];
 
         # This property refers to a temporal period that the Dataset covers.
@@ -195,8 +196,8 @@
 
 <http://www.epos-eu.org/epos-dcat-ap/Seismology/SeismologicalProducts/ESMFlatFile/Dataset/001/Distribution/001> a dcat:Distribution ;
         dct:identifier "http://www.epos-eu.org/epos-dcat-ap/Seismology/SeismologicalProducts/ESMFlatFile/Dataset/001/Distribution/001" ;
-        dct:title "ESM strong-motion flat-file 2018" ;
-        dct:description "The ESM strong-motion flat-file (http://esm.mi.ingv.it/flatfile-2018/) is a parametric table which contains metadata and intensity measures of manually processed waveforms recorded by accelerometers" ;
+        dct:title "Strong-motion flat-file 2018" ;
+        dct:description "This distribution (http://esm.mi.ingv.it/flatfile-2018/) is a parametric table which contains metadata and intensity measures of manually processed waveforms recorded by accelerometers for magnitude (moment Mw, local ML or surface waves Ms) higher or equal than 4.0. It is encoded in a zip file contains 3 parametric tables in csv format separated by ";". It covers the time interval 1960-2016 and is limited to the Pan-European region" ;
         dct:issued "2018-01-01"^^xsd:date ;
         dct:modified "2018-01-01"^^xsd:date ;
 
