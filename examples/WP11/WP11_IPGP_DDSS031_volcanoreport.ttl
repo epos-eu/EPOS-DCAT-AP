@@ -112,7 +112,7 @@
 		schema:propertyID "PIC";
 		schema:value "999597417";
 	];
-	schema:legalName "Institute of Earth Physics of Paris";
+	schema:legalName "Institut de Physique du Globe de Paris"@fr;
         schema:leiCode "999597417";
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "1 rue jussieu";
@@ -199,7 +199,7 @@
 <WP11/volcanic-activity/DDSS031/distribution/report> a dcat:Distribution;
 	dct:identifier "WP11/volcanic-activity/DDSS031/distribution/report";
 	dct:title "Reports on volcanic activity";
-	dct:description "Access to the periodic and exceptional reports produced by the French volcano Observatories and the Volcano Observatory Notice dor Aviation as well";
+        dct:description "The service provides access to periodic and exceptional reports produced by the French volcano Observatories.  It also give access to the Volcano Observatory Notice for Aviation";
 	dct:issued "2019-01-01"^^xsd:date;
 	dct:modified "2019-01-01"^^xsd:date;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
@@ -215,9 +215,9 @@
 
 <http://ws.ipgp.fr/volcano-reports/report/ws> a epos:WebService;
 	schema:identifier "http://ws.ipgp.fr/volcano-reports/report/ws";
-	schema:description "Web Service at IPGP data center to download meta-data of reports dessiminated by the French volcano Observatories";
+        schema:description "This web service provides access to reports dessiminated by the French volcanoes Observatories. It also provides the activity and the aviation color code according to standards of the Volcanic Ash Advisory Centers of the World Meteorological Organisation and to emergency plans (plan ORSEC) of authorities";
 	dcat:theme <epos:volvanic-activity>;
-	schema:name "VolcanoReports Web Service - IPGP data centre";
+        schema:name "Volcano reports and activity color code of the French volcanoes";
 	hydra:entrypoint "http://ws.ipgp.fr/volcano-reports/"^^xsd:anyURI;
 	schema:provider <PIC:999597417>;
 	schema:datePublished "2019-01-01"^^xsd:date;
@@ -299,9 +299,9 @@
 
 <epos:VolcanoObservations> a skos:ConceptScheme;
 	dct:title "Volcano Observations";
-	dct:description "It contains the concepts of Volcano-Observations";
+        dct:description "Aviation color code and the activity color code for volcanoes in French Overseas";
 .
-<epos:volvanic-activity> a skos:Concept;
+<epos:volcanic-activity> a skos:Concept;
 	skos:inScheme <epos:VolcanoObservations>;
 	skos:prefLabel "volcano reports meta-data";
 .
