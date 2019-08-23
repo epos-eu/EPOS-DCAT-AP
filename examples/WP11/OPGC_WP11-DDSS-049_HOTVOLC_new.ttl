@@ -16,36 +16,9 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
-<WP11/Dataset/HOTVOLC/DDSS-049> a dcat:Dataset ;
-        dct:identifier "WP11/Dataset/HOTVOLC/DDSS-049" ;
-        dct:title "HOTVOLC product: thermal anomalies" ;
-        dct:description "HOTVOLC product: thermal anomalies" ;
-        adms:identifier [ a adms:Identifier;
-            adms:schemaAgency "DDSS-ID";
-            skos:notation "WP11-DDSS-049";
-        ];
-        dct:created "2010-01-01T00:00:00Z"^^xsd:dateTime ;
-        dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
-        dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime;
-        owl:versionInfo "1.0.0";
-        dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
-        dct:temporal [ a dct:PeriodOfTime;
-                     schema:startDate "2010-01-01T00:00:00Z"^^xsd:dateTime;
-                     ];
-        dct:spatial [ a dct:Location;
-                    locn:geometry "POLYGON(-5 51.5, 8.25 51.5, 8.25 42, -5 42, -5 51.5)"^^gsp:wktLiteral;
-		    ];
-        dcat:theme <epos:Thermalmonitoring>;
-        dcat:keyword "spectral radiance", "lava monitoring", "nti*", "geotiff", "hot spots", "thermal anomalies";
-        dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
-        dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
-
-        dct:publisher <http://isni.org/isni/0000000109416043>;
-        dcat:distribution <WP11/Dataset/HOTVOLC/DDSS-049/Distribution/DataDownload>;
-        dcat:distribution <WP11/Dataset/HOTVOLC/DDSS-049/Distribution/DataCatalog>;
-.
-
-
+#########
+# PERSON 
+#########
 
 <http://orcid.org/0000-0001-8720-7300> a schema:Person;
     schema:identifier [ a schema:PropertyValue;
@@ -111,11 +84,16 @@
     schema:contactPoint <http://orcid.org/0000-0002-0108-5486/financialContact>; 
 .
 
+#########
+# Organization
+######### 
+
 <http://isni.org/isni/0000000109416043> a schema:Organization;
     schema:identifier [ a schema:PropertyValue;
         schema:propertyID "ISNI";
         schema:value "http://isni.org/isni/0000000109416043";
     ];
+    schema:leiCode "Legal Entity Identifier" ;
     schema:legalName "Earth Physics Observatory of Clermont-Ferrand"^^xsd:string;
     # schema:alternateName "Observatoire de Physique du Globe de Clermont-Ferrand"^^xsd:string;
     # schema:alternateName "OPGC"^^xsd:string;
@@ -134,20 +112,25 @@
     schema:contactPoint <http://orcid.org/0000-0002-0108-5486/financialContact>;
     schema:memberOf <http://isni.org/isni/0000000121129282>;
 .
-    <http://orcid.org/0000-0002-4518-3328/scientificContact> a schema:ContactPoint;
-        schema:email "p.labazuy@opgc.fr";
-        schema:availableLanguage "en", "fr" ;
-	schema:contactType "scientificContact" ;
+
+#########
+# ContactPoint
+######### 
+
+<http://orcid.org/0000-0002-4518-3328/scientificContact> a schema:ContactPoint;
+      schema:email "p.labazuy@opgc.fr";
+      schema:availableLanguage "en", "fr" ;
+      schema:contactType "scientificContact" ;
 . 
-    <http://orcid.org/0000-0002-0108-5486/legalContact> a schema:ContactPoint;
-        schema:email "n.huret@opgc.fr";
-        schema:availableLanguage "en", "fr" ;
-        schema:contactType "legalContact" ;
+<http://orcid.org/0000-0002-0108-5486/legalContact> a schema:ContactPoint;
+      schema:email "n.huret@opgc.fr";
+      schema:availableLanguage "en", "fr" ;
+      schema:contactType "legalContact" ;
 .
-    <http://orcid.org/0000-0002-0108-5486/financialContact> a schema:ContactPoint;
-        schema:email "n.huret@opgc.fr";
-        schema:availableLanguage "en", "fr" ;
-        schema:contactType "financialContact" ;
+<http://orcid.org/0000-0002-0108-5486/financialContact> a schema:ContactPoint;
+      schema:email "n.huret@opgc.fr";
+      schema:availableLanguage "en", "fr" ;
+      schema:contactType "financialContact" ;
 .
 
 <http://isni.org/isni/0000000121129282> a schema:Organization;
@@ -155,6 +138,7 @@
         schema:propertyID "ISNI";
         schema:value "http://isni.org/isni/0000000121129282";
     ];
+    schema:leiCode "Legal Entity Identifier" ;
     schema:legalName "The National Center for Scientific Research"^^xsd:string;
     # schema:alternateName "CNRS: Le Centre National de la Recherche Scientifique"^^xsd:string;
     # schema:alternateName "CNRS"^^xsd:string;
@@ -169,7 +153,364 @@
     schema:telephone "+33144964000";
 .
 
-<http://orcid.org/0000-0001-8720-7300/contactPoint> a schema:ContactPoint;
+#########
+# Dataset 1
+######### 
+
+<hotvolc.opgc.fr/WP11/DDSS-049/dataset/IMHOT> a dcat:Dataset ;
+    dct:title "Flagged thermal anomalies geotiff"^^xsd:string;
+    dct:identifier "hotvolc.opgc.fr/WP11/DDSS-049/dataset/IMHOT" ;
+    dct:description "Geotiff of pixels flagged as thermal anomalies using the NTI* algorithm";
+    adms:identifier [ a adms:Identifier;
+        adms:schemaAgency "DDSS-ID";
+        skos:notation "WP11-DDSS-049";
+    ];
+    dct:type "http://purl.org/dc/dcmitype/Image"^^xsd:anyURI;
+    dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+    dct:temporal [ a dct:PeriodOfTime;
+        schema:startDate "2010-05-06T00:00:00Z"^^xsd:dateTime;
+    ];
+    dct:issued "2018-09-05T00:00:00Z"^^xsd:dateTime;
+    dct:modified "2019-03-26T12:00:00Z"^^xsd:dateTime;
+    dct:spatial [ a dct:Location;
+        # geometry of zone: Iceland
+        locn:geometry "POLYGON((-28 57, -1.5 57, -1.5 68.5, -28 68.5, -28 57))"^^gsp:wktLiteral;
+        # geometry of zone: Azores
+        locn:geometry "POLYGON((-34.5 34, -23.5 34, -23.5 43, -34.5 43, -34.5 34))"^^gsp:wktLiteral;
+        # geometry of zone: Italy
+        locn:geometry "POLYGON((10.5 33.150002, 27 33.150002, 27 41.200001, 10.5 41.200001, 10.5 33.150002))"^^gsp:wktLiteral;
+        # geometry of zone: Canary
+        locn:geometry "POLYGON((-22.48 23, -11 23, -11 33, -22.48 33, -22.48 23))"^^gsp:wktLiteral;
+        # geometry of zone: West Indies
+        locn:geometry "POLYGON((-67.199997 7.1999998, -56 7.1999998, -56 21.5, -67.199997 21.5, -67.199997 7.1999998))"^^gsp:wktLiteral;
+        # geometry of zone: Cape Verde
+        locn:geometry "POLYGON((-29.34 9.8500004, -19.34 9.8500004, -19.34 19.85, -29.34 19.85, -29.34 9.8500004))"^^gsp:wktLiteral;
+        # geometry of zone: Rift
+        locn:geometry "POLYGON((38 10.5, 45.5 10.5, 45.5 17.5, 38 17.5, 38 10.5))"^^gsp:wktLiteral;
+        # geometry of zone: Cameroon
+        locn:geometry "POLYGON((3.76 -2.51, 14.16 -2.51, 14.16 9.1400003, 3.76 9.1400003, 3.76 -2.51))"^^gsp:wktLiteral;
+        # geometry of zone: East Africa
+        locn:geometry "POLYGON((24.190001 -8.3100004, 41.75 -8.3100004, 41.75 7.5300002, 24.190001 7.5300002, 24.190001 -8.3100004))"^^gsp:wktLiteral;
+        # geometry of zone: Karthala
+        locn:geometry "POLYGON((38.369999 -16.91, 48.369999 -16.91, 48.369999 -6.9099998, 38.369999 -6.9099998, 38.369999 -16.91))"^^gsp:wktLiteral;
+        # geometry of zone: Reunion
+        locn:geometry "POLYGON((50.709999 -26.309999, 60.709999 -26.309999, 60.709999 -16.309999, 50.709999 -16.309999, 50.709999 -26.309999))"^^gsp:wktLiteral;
+        # geometry of zone: France
+        locn:geometry "POLYGON((-5 42, 8.25 42, 8.25 51.5, -5 51.5, -5 42))"^^gsp:wktLiteral;
+    ];
+    dcat:theme <epos:Thermalmonitoring>;
+    dcat:keyword "spectral radiance", "lava monitoring", "nti*", "geotiff", "hot spots", "thermal anomalies";
+    dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
+    dct:publisher <http://isni.org/isni/0000000109416043>;
+    dcat:distribution <hotvolc.opgc.fr/WP11/DDSS-049/Distribution>;
+.
+
+#########
+# Dataset 2
+######### 
+
+<hotvolc.opgc.fr/WP11/DDSS-049/dataset/IMRAD> a dcat:Dataset ;
+    dct:title "Thermal map geotiff"^^xsd:string;
+    dct:identifier "hotvolc.opgc.fr/WP11/DDSS-049/dataset/IMRAD" ;
+    dct:description "Geotiff of thermal state at 3.9 microns";
+    adms:identifier [ a adms:Identifier;
+        adms:schemaAgency "DDSS-ID";
+        skos:notation "WP11-DDSS-049";
+    ];
+    dct:type "http://purl.org/dc/dcmitype/Image"^^xsd:anyURI;
+    dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+    dct:temporal [ a dct:PeriodOfTime;
+        schema:startDate "2010-05-06T00:00:00Z"^^xsd:dateTime;
+    ];
+    dct:issued "2018-09-05T00:00:00Z"^^xsd:dateTime;
+    dct:modified "2019-03-26T12:00:00Z"^^xsd:dateTime;
+    dct:spatial [ a dct:Location;
+       # geometry of zone: Iceland
+        locn:geometry "POLYGON((-28 57, -1.5 57, -1.5 68.5, -28 68.5, -28 57))"^^gsp:wktLiteral;
+        # geometry of zone: Azores
+        locn:geometry "POLYGON((-34.5 34, -23.5 34, -23.5 43, -34.5 43, -34.5 34))"^^gsp:wktLiteral;
+        # geometry of zone: Italy
+        locn:geometry "POLYGON((10.5 33.150002, 27 33.150002, 27 41.200001, 10.5 41.200001, 10.5 33.150002))"^^gsp:wktLiteral;
+        # geometry of zone: Canary
+        locn:geometry "POLYGON((-22.48 23, -11 23, -11 33, -22.48 33, -22.48 23))"^^gsp:wktLiteral;
+        # geometry of zone: West Indies
+        locn:geometry "POLYGON((-67.199997 7.1999998, -56 7.1999998, -56 21.5, -67.199997 21.5, -67.199997 7.1999998))"^^gsp:wktLiteral;
+        # geometry of zone: Cape Verde
+        locn:geometry "POLYGON((-29.34 9.8500004, -19.34 9.8500004, -19.34 19.85, -29.34 19.85, -29.34 9.8500004))"^^gsp:wktLiteral;
+        # geometry of zone: Rift
+        locn:geometry "POLYGON((38 10.5, 45.5 10.5, 45.5 17.5, 38 17.5, 38 10.5))"^^gsp:wktLiteral;
+        # geometry of zone: Cameroon
+        locn:geometry "POLYGON((3.76 -2.51, 14.16 -2.51, 14.16 9.1400003, 3.76 9.1400003, 3.76 -2.51))"^^gsp:wktLiteral;
+        # geometry of zone: East Africa
+        locn:geometry "POLYGON((24.190001 -8.3100004, 41.75 -8.3100004, 41.75 7.5300002, 24.190001 7.5300002, 24.190001 -8.3100004))"^^gsp:wktLiteral;
+        # geometry of zone: Karthala
+        locn:geometry "POLYGON((38.369999 -16.91, 48.369999 -16.91, 48.369999 -6.9099998, 38.369999 -6.9099998, 38.369999 -16.91))"^^gsp:wktLiteral;
+        # geometry of zone: Reunion
+        locn:geometry "POLYGON((50.709999 -26.309999, 60.709999 -26.309999, 60.709999 -16.309999, 50.709999 -16.309999, 50.709999 -26.309999))"^^gsp:wktLiteral;
+        # geometry of zone: France
+        locn:geometry "POLYGON((-5 42, 8.25 42, 8.25 51.5, -5 51.5, -5 42))"^^gsp:wktLiteral;
+    ];
+    dcat:theme <epos:Thermalmonitoring>;
+    dcat:keyword "spectral radiance", "lava monitoring", "geotiff", "thermal state";
+    dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
+    dct:publisher <http://isni.org/isni/0000000109416043>;
+    dcat:distribution <hotvolc.opgc.fr/WP11/DDSS-049/Distribution>;
+.
+
+#########
+# Dataset 3
+######### 
+
+<hotvolc.opgc.fr/WP11/DDSS-049/dataset/TSTSR> a dcat:Dataset ;
+    dct:title "Total spectral radiance timeseries"^^xsd:string; 
+    dct:identifier "hotvolc.opgc.fr/WP11/DDSS-049/dataset/TSTSR" ;
+    dct:description "Timeseries of the total spectral radiance emmited by thermal anomalies around a specfic volcano";
+    adms:identifier [ a adms:Identifier;
+        adms:schemaAgency "DDSS-ID";
+        skos:notation "WP11-DDSS-049";
+    ];
+    dct:type "http://purl.org/dc/dcmitype/Image"^^xsd:anyURI;
+    dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+    dct:temporal [ a dct:PeriodOfTime;
+        schema:startDate "2010-05-06T00:00:00Z"^^xsd:dateTime;
+    ];
+    dct:issued "2018-09-05T00:00:00Z"^^xsd:dateTime;
+    dct:modified "2019-03-26T12:00:00Z"^^xsd:dateTime;
+    dct:spatial [ a dct:Location;
+        # geometry of zone: Iceland
+        locn:geometry"POLYGON((-28 57, -1.5 57, -1.5 68.5, -28 68.5, -28 57))"^^gsp:wktLiteral;
+        # geometry of zone: Azores
+        locn:geometry "POLYGON((-34.5 34, -23.5 34, -23.5 43, -34.5 43, -34.5 34))"^^gsp:wktLiteral;
+        # geometry of zone: Italy
+        locn:geometry "POLYGON((10.5 33.150002, 27 33.150002, 27 41.200001, 10.5 41.200001, 10.5 33.150002))"^^gsp:wktLiteral;
+        # geometry of zone: Canary
+        locn:geometry "POLYGON((-22.48 23, -11 23, -11 33, -22.48 33, -22.48 23))"^^gsp:wktLiteral;
+        # geometry of zone: West Indies
+        locn:geometry "POLYGON((-67.199997 7.1999998, -56 7.1999998, -56 21.5, -67.199997 21.5, -67.199997 7.1999998))"^^gsp:wktLiteral;
+        # geometry of zone: Cape Verde
+        locn:geometry "POLYGON((-29.34 9.8500004, -19.34 9.8500004, -19.34 19.85, -29.34 19.85, -29.34 9.8500004))"^^gsp:wktLiteral;
+        # geometry of zone: Rift
+        locn:geometry "POLYGON((38 10.5, 45.5 10.5, 45.5 17.5, 38 17.5, 38 10.5))"^^gsp:wktLiteral;
+        # geometry of zone: Cameroon
+        locn:geometry "POLYGON((3.76 -2.51, 14.16 -2.51, 14.16 9.1400003, 3.76 9.1400003, 3.76 -2.51))"^^gsp:wktLiteral;
+        # geometry of zone: East Africa
+        locn:geometry "POLYGON((24.190001 -8.3100004, 41.75 -8.3100004, 41.75 7.5300002, 24.190001 7.5300002, 24.190001 -8.3100004))"^^gsp:wktLiteral;
+        # geometry of zone: Karthala
+        locn:geometry "POLYGON((38.369999 -16.91, 48.369999 -16.91, 48.369999 -6.9099998, 38.369999 -6.9099998, 38.369999 -16.91))"^^gsp:wktLiteral;
+        # geometry of zone: Reunion
+        locn:geometry "POLYGON((50.709999 -26.309999, 60.709999 -26.309999, 60.709999 -16.309999, 50.709999 -16.309999, 50.709999 -26.309999))"^^gsp:wktLiteral;
+        # geometry of zone: France
+        locn:geometry "POLYGON((-5 42, 8.25 42, 8.25 51.5, -5 51.5, -5 42))"^^gsp:wktLiteral;
+    ];
+    dcat:theme <epos:Thermalmonitoring>;
+    dcat:keyword "spectral radiance", "lava monitoring", "nti*", "timeseries", "hot spots", "thermal anomalies";
+    dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
+    dct:publisher <http://isni.org/isni/0000000109416043>;
+    dcat:distribution <hotvolc.opgc.fr/WP11/DDSS-049/Distribution>;
+.
+
+#########
+# Dataset 4
+######### 
+
+<hotvolc.opgc.fr/WP11/DDSS-049/dataset/TSVFR> a dcat:Dataset ;
+    dct:title "Volume Flow rate timeseries"^^xsd:string;
+    dct:identifier "hotvolc.opgc.fr/WP11/DDSS-049/dataset/TSVFR" ;
+    dct:description "Timeseries of the volume flow rate of magma emmited by a volcano";
+    adms:identifier [ a adms:Identifier;
+        adms:schemaAgency "DDSS-ID";
+        skos:notation "WP11-DDSS-049";
+    ];
+    dct:type "http://purl.org/dc/dcmitype/Image"^^xsd:anyURI;
+    dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+    dct:temporal [ a dct:PeriodOfTime;
+        schema:startDate "2010-05-06T00:00:00Z"^^xsd:dateTime;
+    ];
+    dct:issued "2018-09-05T00:00:00Z"^^xsd:dateTime;
+    dct:modified "2019-03-26T12:00:00Z"^^xsd:dateTime;
+    dct:spatial [ a dct:Location;
+        # geometry of zone: Italy
+        locn:geometry "POLYGON((10.5 33.150002, 27 33.150002, 27 41.200001, 10.5 41.200001, 10.5 33.150002))"^^gsp:wktLiteral;
+        # geometry of zone: Reunion
+        locn:geometry "POLYGON((50.709999 -26.309999, 60.709999 -26.309999, 60.709999 -16.309999, 50.709999 -16.309999, 50.709999 -26.309999))"^^gsp:wktLiteral;
+    ];
+    dcat:theme <epos:Thermalmonitoring>;
+    dcat:keyword "spectral radiance", "lava monitoring", "nti*", "timeseries", "hot spots", "thermal anomalies", "volume", "flow rate";
+    dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
+    dct:publisher <http://isni.org/isni/0000000109416043>;
+    dcat:distribution <hotvolc.opgc.fr/WP11/DDSS-049/Distribution>;
+.
+
+#########
+# Dataset 5
+######### 
+
+<hotvolc.opgc.fr/WP11/DDSS-049/dataset/TSHOT> a dcat:Dataset ;
+    dct:title "Number of hot spots timeseries"^^xsd:string;
+    dct:identifier "hotvolc.opgc.fr/WP11/DDSS-049/dataset/TSHOT" ;
+    dct:description "Timeseries of the total number of thermal anomalies detected around a specfic volcano using the NTI* algorithm";
+    adms:identifier [ a adms:Identifier;
+        adms:schemaAgency "DDSS-ID";
+        skos:notation "WP11-DDSS-049";
+    ];
+    dct:type "http://purl.org/dc/dcmitype/Image"^^xsd:anyURI;
+    dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+    dct:temporal [ a dct:PeriodOfTime;
+        schema:startDate "2010-05-06T00:00:00Z"^^xsd:dateTime;
+    ];
+    dct:issued "2018-09-05T00:00:00Z"^^xsd:dateTime;
+    dct:modified "2019-03-26T12:00:00Z"^^xsd:dateTime;
+    dct:spatial [ a dct:Location;
+        # geometry of zone: Iceland
+        locn:geometry"POLYGON((-28 57, -1.5 57, -1.5 68.5, -28 68.5, -28 57))"^^gsp:wktLiteral;
+        # geometry of zone: Azores
+        locn:geometry "POLYGON((-34.5 34, -23.5 34, -23.5 43, -34.5 43, -34.5 34))"^^gsp:wktLiteral;
+        # geometry of zone: Italy
+        locn:geometry "POLYGON((10.5 33.150002, 27 33.150002, 27 41.200001, 10.5 41.200001, 10.5 33.150002))"^^gsp:wktLiteral;
+        # geometry of zone: Canary
+        locn:geometry "POLYGON((-22.48 23, -11 23, -11 33, -22.48 33, -22.48 23))"^^gsp:wktLiteral;
+        # geometry of zone: West Indies
+        locn:geometry "POLYGON((-67.199997 7.1999998, -56 7.1999998, -56 21.5, -67.199997 21.5, -67.199997 7.1999998))"^^gsp:wktLiteral;
+        # geometry of zone: Cape Verde
+        locn:geometry "POLYGON((-29.34 9.8500004, -19.34 9.8500004, -19.34 19.85, -29.34 19.85, -29.34 9.8500004))"^^gsp:wktLiteral;
+        # geometry of zone: Rift
+        locn:geometry "POLYGON((38 10.5, 45.5 10.5, 45.5 17.5, 38 17.5, 38 10.5))"^^gsp:wktLiteral;
+        # geometry of zone: Cameroon
+        locn:geometry "POLYGON((3.76 -2.51, 14.16 -2.51, 14.16 9.1400003, 3.76 9.1400003, 3.76 -2.51))"^^gsp:wktLiteral;
+        # geometry of zone: East Africa
+        locn:geometry "POLYGON((24.190001 -8.3100004, 41.75 -8.3100004, 41.75 7.5300002, 24.190001 7.5300002, 24.190001 -8.3100004))"^^gsp:wktLiteral;
+        # geometry of zone: Karthala
+        locn:geometry "POLYGON((38.369999 -16.91, 48.369999 -16.91, 48.369999 -6.9099998, 38.369999 -6.9099998, 38.369999 -16.91))"^^gsp:wktLiteral;
+        # geometry of zone: Reunion
+        locn:geometry "POLYGON((50.709999 -26.309999, 60.709999 -26.309999, 60.709999 -16.309999, 50.709999 -16.309999, 50.709999 -26.309999))"^^gsp:wktLiteral;
+        # geometry of zone: France
+        locn:geometry "POLYGON((-5 42, 8.25 42, 8.25 51.5, -5 51.5, -5 42))"^^gsp:wktLiteral;
+    ];
+    dcat:theme <epos:Thermalmonitoring>;
+    dcat:keyword "spectral radiance", "lava monitoring", "nti*", "timeseries", "hot spots", "thermal anomalies";
+    dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
+    dct:publisher <http://isni.org/isni/0000000109416043>;      
+    dcat:distribution <hotvolc.opgc.fr/WP11/DDSS-049/Distribution>;
+.
+
+#########
+# Dataset 6
+######### 
+
+<hotvolc.opgc.fr/WP11/DDSS-049/dataset/TSRAD> a dcat:Dataset ;
+    dct:title "Thermal state timeseries"^^xsd:string; 
+    dct:identifier "hotvolc.opgc.fr/WP11/DDSS-049/dataset/TSRAD" ;
+    dct:description "Timeseries of the thermal state around a specfic volcano";
+    adms:identifier [ a adms:Identifier;
+        adms:schemaAgency "DDSS-ID";
+        skos:notation "WP11-DDSS-049";
+    ];
+    dct:type "http://purl.org/dc/dcmitype/Image"^^xsd:anyURI;
+    dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+    dct:temporal [ a dct:PeriodOfTime;
+        schema:startDate "2010-05-06T00:00:00Z"^^xsd:dateTime;
+    ];
+    dct:issued "2018-09-05T00:00:00Z"^^xsd:dateTime;
+    dct:modified "2019-03-26T12:00:00Z"^^xsd:dateTime;
+    dct:spatial [ a dct:Location;
+        # geometry of zone: Iceland
+        locn:geometry"POLYGON((-28 57, -1.5 57, -1.5 68.5, -28 68.5, -28 57))"^^gsp:wktLiteral;
+        # geometry of zone: Azores
+        locn:geometry "POLYGON((-34.5 34, -23.5 34, -23.5 43, -34.5 43, -34.5 34))"^^gsp:wktLiteral;
+        # geometry of zone: Italy
+        locn:geometry "POLYGON((10.5 33.150002, 27 33.150002, 27 41.200001, 10.5 41.200001, 10.5 33.150002))"^^gsp:wktLiteral;
+        # geometry of zone: Canary
+        locn:geometry "POLYGON((-22.48 23, -11 23, -11 33, -22.48 33, -22.48 23))"^^gsp:wktLiteral;
+        # geometry of zone: West Indies
+        locn:geometry "POLYGON((-67.199997 7.1999998, -56 7.1999998, -56 21.5, -67.199997 21.5, -67.199997 7.1999998))"^^gsp:wktLiteral;
+        # geometry of zone: Cape Verde
+        locn:geometry "POLYGON((-29.34 9.8500004, -19.34 9.8500004, -19.34 19.85, -29.34 19.85, -29.34 9.8500004))"^^gsp:wktLiteral;
+        # geometry of zone: Rift
+        locn:geometry "POLYGON((38 10.5, 45.5 10.5, 45.5 17.5, 38 17.5, 38 10.5))"^^gsp:wktLiteral;
+        # geometry of zone: Cameroon
+        locn:geometry "POLYGON((3.76 -2.51, 14.16 -2.51, 14.16 9.1400003, 3.76 9.1400003, 3.76 -2.51))"^^gsp:wktLiteral;
+        # geometry of zone: East Africa
+        locn:geometry "POLYGON((24.190001 -8.3100004, 41.75 -8.3100004, 41.75 7.5300002, 24.190001 7.5300002, 24.190001 -8.3100004))"^^gsp:wktLiteral;
+        # geometry of zone: Karthala
+        locn:geometry "POLYGON((38.369999 -16.91, 48.369999 -16.91, 48.369999 -6.9099998, 38.369999 -6.9099998, 38.369999 -16.91))"^^gsp:wktLiteral;
+        # geometry of zone: Reunion
+        locn:geometry "POLYGON((50.709999 -26.309999, 60.709999 -26.309999, 60.709999 -16.309999, 50.709999 -16.309999, 50.709999 -26.309999))"^^gsp:wktLiteral;
+        # geometry of zone: France
+        locn:geometry "POLYGON((-5 42, 8.25 42, 8.25 51.5, -5 51.5, -5 42))"^^gsp:wktLiteral;
+    ];
+    dcat:theme <epos:Thermalmonitoring>;
+    dcat:keyword "spectral radiance", "lava monitoring", "nti*", "geotiff", "hot spots", "thermal anomalies";
+    dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
+    dct:publisher <http://isni.org/isni/0000000109416043>;     
+    dcat:distribution <hotvolc.opgc.fr/WP11/DDSS-049/Distribution>;
+.
+
+#########
+# Distribution
+######### 
+
+<hotvolc.opgc.fr/WP11/DDSS-049/Distribution> a dcat:Distribution;
+        dct:identifier "hotvolc.opgc.fr/WP11/DDSS-049/Distribution";
+        dct:title "OPGC Satellite Volcanic Thermal Anomalies";
+        dct:description "The way to download the HOTVOLC thermal anomalies products";
+        dct:issued "2018-09-05T00:00:00Z"^^xsd:date;
+        dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+        dcat:accessURL <hotvolc.opgc.fr/data-search/WP11/DDSS-049>;
+        dct:conformsTo <hotvolc.opgc.fr/WP11/DDSS-049>;
+        dct:format "http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE"^^xsd:anyURI;
+        dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+.
+
+#########
+# WebService
+######### 
+                
+<hotvolc.opgc.fr/WP11/DDSS-049> a epos:WebService;
+    schema:identifier "hotvolc.opgc.fr/WP11/DDSS-049";
+    schema:description "HOTVOLC is a web-based satellite-data-driven reporting system dedicated to the real-time observation of volcanic products. This application is developed and managed by the Observatoire de Physique du Globe de Clermont-Ferrand (OPGC). It uses on-site automated ingestion of MSG-SEVIRI geostationary satellite data from EUMETSAT primary dissemination protocol using the Digital Video Broadcasting - Satellite 2 (DVB-S2) service. This allows acquisition of High Rate Information Transmission (HRIT) level 1.5 format, corresponding to image data that have been corrected for unwanted radiometric and geometric effects. Images are geolocated, calibrated and radiance linearized. HRIT digital numbers are converted into spectral radiance (in Wm-2.sr-1.μm-1) and then processed through validated algorithm for direct dissemination of ready-to-use products on a full web-GIS interface.This application allows you to interactively browse satellite imagery and associated products for both real-time (RT) and past events.";
+    schema:name "HOTVOLC Observing System - EPOS - WP11/DDSS-049";
+    schema:datePublished "2015-08-24T12:00:00Z"^^xsd:dateTime;
+    schema:dateModified "2018-07-12T16:00:00Z"^^xsd:dateTime;
+    dct:temporal [ a dct:PeriodOfTime;
+        schema:startDate "2010-05-06T00:00:00Z";
+    ];
+    dct:spatial [ a dct:Location;
+        # geometry of zone: Iceland
+        locn:geometry "POLYGON((-28 57, -1.5 57, -1.5 68.5, -28 68.5, -28 57))"^^gsp:wktLiteral;
+        # geometry of zone: Azores
+        locn:geometry "POLYGON((-34.5 34, -23.5 34, -23.5 43, -34.5 43, -34.5 34))"^^gsp:wktLiteral;
+        # geometry of zone: Italy
+        locn:geometry "POLYGON((10.5 33.150002, 27 33.150002, 27 41.200001, 10.5 41.200001, 10.5 33.150002))"^^gsp:wktLiteral;
+        # geometry of zone: Canary
+        locn:geometry "POLYGON((-22.48 23, -11 23, -11 33, -22.48 33, -22.48 23))"^^gsp:wktLiteral;
+        # geometry of zone: West Indies
+        locn:geometry "POLYGON((-67.199997 7.1999998, -56 7.1999998, -56 21.5, -67.199997 21.5, -67.199997 7.1999998))"^^gsp:wktLiteral;
+        # geometry of zone: Cape Verde
+        locn:geometry "POLYGON((-29.34 9.8500004, -19.34 9.8500004, -19.34 19.85, -29.34 19.85, -29.34 9.8500004))"^^gsp:wktLiteral;
+        # geometry of zone: Rift
+        locn:geometry "POLYGON((38 10.5, 45.5 10.5, 45.5 17.5, 38 17.5, 38 10.5))"^^gsp:wktLiteral;
+        # geometry of zone: Cameroon
+        locn:geometry "POLYGON((3.76 -2.51, 14.16 -2.51, 14.16 9.1400003, 3.76 9.1400003, 3.76 -2.51))"^^gsp:wktLiteral;
+        # geometry of zone: East Africa
+        locn:geometry "POLYGON((24.190001 -8.3100004, 41.75 -8.3100004, 41.75 7.5300002, 24.190001 7.5300002, 24.190001 -8.3100004))"^^gsp:wktLiteral;
+        # geometry of zone: Karthala
+        locn:geometry "POLYGON((38.369999 -16.91, 48.369999 -16.91, 48.369999 -6.9099998, 38.369999 -6.9099998, 38.369999 -16.91))"^^gsp:wktLiteral;
+        # geometry of zone: Reunion
+        locn:geometry "POLYGON((50.709999 -26.309999, 60.709999 -26.309999, 60.709999 -16.309999, 50.709999 -16.309999, 50.709999 -26.309999))"^^gsp:wktLiteral;
+        # geometry of zone: France
+        locn:geometry "POLYGON((-5 42, 8.25 42, 8.25 51.5, -5 51.5, -5 42))"^^gsp:wktLiteral;
+    ];
+    schema:provider <http://isni.org/isni/0000000109416043>;
+    schema:keywords "WebGIS", "Real Time", "Remote Sensing", "Satellite", "Infrared", "Volcanology", "Hotspot", "Lava", "Thermal Monitoring";
+    # hydra:entrypoint "http://hotvolc.opgc.fr/www/php/application.php"^^xsd:anyURI;
+    hydra:supportedOperation <hotvolc.opgc.fr/data-search/WP11/DDSS-049>;
+    hydra:supportedOperation <hotvolc.opgc.fr/data-download>;
+    dcat:theme <epos:Thermalmonitoring>;
+    schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+    dct:conformsTo <hotvolc.opgc.fr/WP11/DDSS-049/APIDocumentation>;
+    dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
+.
+    <http://orcid.org/0000-0001-8720-7300/contactPoint> a schema:ContactPoint;
         schema:email "m.gouhier@opgc.fr";
         schema:availableLanguage "en", "fr";
         schema:contactType "manager" ;
@@ -180,89 +521,33 @@
         hydra:entrypoint "http://hotvolc.opgc.fr/www/php/hotvolc_api.php"^^xsd:anyURI;
 .
 
-<WP11/Dataset/HOTVOLC/DDSS-049/Distribution/DataDownload> a dcat:Distribution;
-        dct:identifier "WP11/Dataset/HOTVOLC/DDSS-049/Distribution/DataDownload";
-        dct:title "HOTVOLC distribution of the product WP11 DDSS-049 - Data Download";
-        dct:description "The way to download the HOTVOLC product";
-        dct:issued "2018-09-05T00:00:00Z"^^xsd:dateTime;
-        dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-        dcat:accessURL <hotvolc.opgc.fr/WP11/WebService/DDSS-049/operation/data-download>;
-        dct:conformsTo <hotvolc.opgc.fr/WP11/WebService/DDSS-049>;        
-        dct:format "http://publications.europa.eu/resource/authority/file-type/ZIP"^^xsd:anyURI;
-        dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
-.
+#########
+# Operations
+######### 
 
-<WP11/Dataset/HOTVOLC/DDSS-049/Distribution/DataCatalog> a dcat:Distribution;
-        dct:identifier "WP11/Dataset/HOTVOLC/DDSS-049/Distribution/DataCatalog";
-        dct:title "HOTVOLC distribution of the product WP11 DDSS-049 - Data Catalog";
-        dct:description "The way to query the HOTVOLC Data Catalog";
-        dct:issued "2018-09-05T00:00:00Z"^^xsd:dateTime;
-        dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-        dcat:accessURL <hotvolc.opgc.fr/WP11/WebService/DDSS-049/operation/data-search>;
-        dct:conformsTo <hotvolc.opgc.fr/WP11/WebService/DDSS-049>;        
-        dct:format "http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE"^^xsd:anyURI;
-        dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
-.
-                
-<hotvolc.opgc.fr/WP11/WebService/DDSS-049> a epos:WebService;
-    schema:identifier "hotvolc.opgc.fr/WP11/DDSS-049";
-    schema:description "HOTVOLC is a web-based satellite-data-driven reporting system dedicated to the real-time observation of volcanic products. This application is developed and managed by the Observatoire de Physique du Globe de Clermont-Ferrand (OPGC). It uses on-site automated ingestion of MSG-SEVIRI geostationary satellite data from EUMETSAT primary dissemination protocol using the Digital Video Broadcasting - Satellite 2 (DVB-S2) service. This allows acquisition of High Rate Information Transmission (HRIT) level 1.5 format, corresponding to image data that have been corrected for unwanted radiometric and geometric effects. Images are geolocated, calibrated and radiance linearized. HRIT digital numbers are converted into spectral radiance (in Wm-2.sr-1.μm-1) and then processed through validated algorithm for direct dissemination of ready-to-use products on a full web-GIS interface.This application allows you to interactively browse satellite imagery and associated products for both real-time (RT) and past events.";
-    schema:name "HOTVOLC Observing System - EPOS - WP11/DDSS-049";
-    schema:datePublished "2015-08-24T12:00:00Z"^^xsd:dateTime;
-    schema:dateModified "2018-07-12T16:00:00Z"^^xsd:dateTime;
-    schema:provider <http://isni.org/isni/0000000109416043>;
-    schema:keywords "WebGIS", "Real Time", "Remote Sensing", "Satellite", "Infrared", "Volcanology", "Hotspot", "Lava", "Thermal Monitoring";
-    hydra:supportedOperation <hotvolc.opgc.fr/WP11/WebService/DDSS-049/operation/data-search>;
-    hydra:supportedOperation <hotvolc.opgc.fr/WP11/WebService/DDSS-049/operation/data-download>;
-    dcat:theme <epos:Thermalmonitoring>;
-    dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
-    dct:conformsTo <hotvolc.opgc.fr/WP11/DDSS-049/APIDocumentation>;
-    dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
-.
-   <http://orcid.org/0000-0001-8720-7300/contactPoint> a schema:ContactPoint;
-        schema:email "m.gouhier@opgc.fr";
-        schema:availableLanguage "en" ;
-        schema:contactType "manager" ;
-.
-    <hotvolc.opgc.fr/WP11/DDSS-047/APIDocumentation> a hydra:APIDocumentation;
-        hydra:title "HOTVOLC Observing System - API Documentation";
-        hydra:description "A documentation describing how to use HOTVOLC API, to find and download data";
-        hydra:entrypoint "http://hotvolc.opgc.fr/www/php/hotvolc_api.php"^^xsd:anyURI;
-.  
-
-#...............................................................................................
-
-    <hotvolc.opgc.fr/WP11/WebService/DDSS-049/operation/data-search> a hydra:Operation;
+<hotvolc.opgc.fr/data-search/WP11/DDSS-049> a hydra:Operation;
         hydra:method "GET"^^xsd:string;
-        hydra:returns "text/turtle";
-        #hydra:returns "application/json";
-        # hydra:returns "application/xml";
+        hydra:returns "application/json";
         hydra:property[ a hydra:IriTemplate;
-            hydra:template "http://hotvolc.opgc.fr/www/php/data_catalog.php{?date_begin, date_end, bbox, volcano, zone, type, ddss, output, onscreen}"^^xsd:string;
+            hydra:template "http://hotvolc.opgc.fr/www/php/data_catalog.php{?date_begin, date_end, volcano, zone, type, ddss}&bbox=({lonmin, latmin, lonmax, latmax})"^^xsd:string;
                 hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "date_begin"^^xsd:dateTime;
+                    hydra:property "schema:startDate";
+                    schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
                     rdfs:label "Specific datetime query or starting datetime of the time interval query (format YYYY-MM-DDThh:mm:ssZ)";
                     rdfs:range "xsd:dateTime";
-                    schema:minValue "2010-01-01T00:00:00Z"^^xsd:dateTime;
-                    schema:maxValue "9999-12-31T23:59:59Z"^^xsd:dateTime;
+                    schema:minValue "2010-05-06T00:00:00Z"^^xsd:dateTime;
+		    schema:defaultValue "2010-05-06T00:00:00Z";
                     hydra:required "false"^^xsd:boolean;
-		    schema:defaultValue "2010-01-01T00:00:00Z";
                 ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "date_end"^^xsd:dateTime;
+                    hydra:property "schema:endDate";
+                    schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
                     rdfs:label "Ending datetime the time interval query (format YYYY-MM-DDThh:mm:ssZ)";
                     rdfs:range "xsd:dateTime";
-                    schema:minValue "2010-01-01T00:00:00Z"^^xsd:dateTime;
-                    schema:maxValue "9999-12-31T23:59:59Z"^^xsd:dateTime;
-                    hydra:required "false"^^xsd:boolean;
-		    schema:defaultValue "2018-10-01T00:00:00Z";
-                ];
-                hydra:mapping[ a hydra:IriTemplateMapping;
-                    hydra:variable "bbox"^^xsd:string;
-                    rdfs:label "Bounding box in one of this two format: (lon, lat) for a POINT or (lon_min, lat_min, lon_max, lat_max) for a POLYGON";
-                    schema:minValue "(-180.0, -90.0) or (-180.0, -90.0, -180.0, -90.0)";
-                    schema:maxValue "(180.0, 90.0) or (180.0, 90.0, 180.0, 90.0)";
-                    rdfs:range "xsd:string";
+                    schema:minValue "2010-05-06T00:00:00Z"^^xsd:dateTime;
+		    schema:defaultValue "2010-06-06T00:00:00Z";
                     hydra:required "false"^^xsd:boolean;
                 ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
@@ -330,26 +615,68 @@
                     hydra:required "false"^^xsd:boolean;
                 ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
-                    hydra:variable "output"^^xsd:string;
-                    rdfs:label "The format of the query output";
-                    http:paramValue "XML-EPOS-DCAT-AP";
-                    http:paramValue "TURTLE-RDF-EPOS-DCAT-AP";
-                    schema:defaultValue "TURTLE-RDF-EPOS-DCAT-AP";
+                    hydra:variable "type"^^xsd:string;
+                    rdfs:label "Limit the query to a specific product type";
+                    http:paramValue "IMHOT";
+                    http:paramValue "IMRAD";
+                    http:paramValue "TSTSR";
+                    http:paramValue "TSVFR";
+                    http:paramValue "TSHOT";
+                    http:paramValue "TSRAD";
                     rdfs:range "xsd:string";
                     hydra:required "false"^^xsd:boolean;
                 ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
-                    hydra:variable "onscreen"^^xsd:boolean;
-                    rdfs:label "Display output on screen or as downloadable file ?";
-                    http:paramValue "true"^^xsd:boolean;
-                    http:paramValue "false"^^xsd:boolean;
-                    schema:defaultValue "true"^^xsd:boolean;
-                    rdfs:range "xsd:boolean";
-                    hydra:required "false"^^xsd:boolean;
+                    hydra:variable "ddss"^^xsd:string;
+                    rdfs:label "Limite the query to products type related to a specific ddss";
+                    http:paramValue "hotvolc.opgc.fr/WP11-DDSS-049";
+                    schema:defaultValue "hotvolc.opgc.fr/WP11-DDSS-049"^^xsd:string;
+                    hydra:required "true"^^xsd:boolean;
+		    rdfs:range "xsd:string";
+                ];
+                hydra:mapping[ a hydra:IriTemplateMapping;
+                    hydra:variable "lonmin"^^xsd:string;
+                    hydra:property "epos:westernmostLongitude";
+                    rdfs:label "Minimum Longitude";
+                    schema:minValue "-180.0";
+                    schema:maxValue "180.0";
+                    hydra:required "true"^^xsd:boolean;
+                    schema:defaultValue "-28";
+		    rdfs:range "xsd:float";
+                ];
+                hydra:mapping[ a hydra:IriTemplateMapping;
+                    hydra:variable "latmin"^^xsd:string;
+                    hydra:property "epos:southernmostLatitude";
+                    rdfs:label "Minimum Latitude";
+                    schema:minValue "-90.0";
+                    schema:maxValue "90.0";
+                    hydra:required "true"^^xsd:boolean;
+                    schema:defaultValue "57";
+		    rdfs:range "xsd:float";
+                ];
+                hydra:mapping[ a hydra:IriTemplateMapping;
+                    hydra:variable "lonmax"^^xsd:string;
+                    hydra:property "epos:easternmostLongitude";
+                    rdfs:label "Maximum Longitude";
+                    schema:minValue "-180.0";
+                    schema:maxValue "180.0";
+                    hydra:required "true"^^xsd:boolean;
+                    schema:defaultValue "-1.5";
+		    rdfs:range "xsd:float";
+                ];
+                hydra:mapping[ a hydra:IriTemplateMapping;
+                    hydra:variable "latmax"^^xsd:string;
+                    hydra:property "epos:northernmostLatitude";
+                    rdfs:label "Maximum Latitude";
+                    schema:minValue "-90.0";
+                    schema:maxValue "90.0";
+                    hydra:required "true"^^xsd:boolean;
+                    schema:defaultValue "68.5";
+		    rdfs:range "xsd:float";
                 ];
         ];
 .
- <hotvolc.opgc.fr/WP11/WebService/DDSS-049/operation/data-download> a hydra:Operation;
+<hotvolc.opgc.fr/data-download> a hydra:Operation;
         hydra:method "GET"^^xsd:string;
         hydra:returns "application/zip";
          hydra:property[ a hydra:IriTemplate;
@@ -359,98 +686,31 @@
                     rdfs:label "The unique identifier of an HOTVOLC product, use data_catalog.php to find data uri";
                     rdfs:range "xsd:string";
                     hydra:required "true"^^xsd:boolean;
-		    schema:defaultValue "IMHOT_201809050000_12_00";
                 ];
         ];
 .    
-    <epos:VolcanoObservations> a skos:ConceptScheme;
-        dct:title "Volcano Observations";
-        dct:description "It contains the concepts of Volcanological Observations";
+
+#########
+# Concept
+######### 
+
+<epos:VolcanoObservations> a skos:ConceptScheme;
+	dct:title "Volcano Observations";
+	dct:description "It contains the concepts of Volcanological Observations";
 .
-    <epos:Thermalmonitoring> a skos:Concept;
-        skos:inScheme <epos:VolcanoObservations>;
-        skos:prefLabel "Thermal monitoring";
+<epos:Thermalmonitoring> a skos:Concept;
+	skos:inScheme <epos:VolcanoObservations>;
+	skos:prefLabel "Thermal monitoring";
 	skos:definition "Thermal monitoring" ;
 .
-    <epos:Meteorology> a skos:ConceptScheme;
-        dct:title "Meteorology";
-        dct:description "It contains the concepts of Meteorology";
+<epos:Meteorology> a skos:ConceptScheme;
+	dct:title "Meteorology";
+	dct:description "It contains the concepts of Meteorology";
 .
-    
-    <epos:Weatherforecast> a skos:Concept;
-        skos:inScheme <epos:Meteorology>;
-        skos:prefLabel "Weather forecast";
+
+<epos:Weatherforecast> a skos:Concept;
+	skos:inScheme <epos:Meteorology>;
+	skos:prefLabel "Weather forecast";
 	skos:definition "Weather forecast" ;
 .
 
-# <hotvolc.opgc.fr/Equipment/SEVIRI> a epos:Equipment;
-#    schema:identifier "hotvolc.opgc.fr/Equipment/SEVIRI"^^xsd:anyURI;
-#    schema:name "Spinning Enhanced Visible and InfraRed Imager"^^xsd:string;
-#    schema:description "SEVIRI is a line by lin scanning radiometer. It provides image data in four Visible and Near InfraRed channels and eight InfraRed channels"^^xsd:string;      
-#    dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
-#    dct:spatial [ a dct:Location;
-#        locn:geometry "POINT(0 0 35786000)"^^gsp:wktLiteral;
-#    ];
-#    dct:type "https://www.eumetsat.int/website/wcm/idc/groups/ops/documents/document/mday/mde1/~edisp/pdf_ten_msg_seviri_instrument.pdf"^^xsd:anyURI;
-#    dct:temporal [ a dct:PeriodOfTime;
-#        schema:startDate "2012-07-05"^^xsd:date;
-#        schema:endDate "2020-01-01"^^xsd:date;
-#    ];
-#    schema:serialNumber "SEVIRI_FM3"^^xsd:string;
-#    schema:numberOfItems "1"^^xsd:integer;
-#    epos:samplePeriod [ a schema:QuantitativeValue;
-#        schema:value "900.0"^^xsd:float;
-#        schema:unitCode "SEC";
-#        schema:unitText "second"^^xsd:string;
-#    ];
-#    epos:resolution "3 km @ nadir";
-#    epos:dynamicRange [ a schema:QuantitativeValue;
-#        schema:value "355.0"^^xsd:float;
-#        schema:unitCode "KEL";
-#        schema:unitText "Kelvin"^^xsd:string;
-#    ];
-#    dcat:theme <#Weatherforecast>;
-#    epos:owner <http://isni.org/isni/0000000406217921>;   
-#    dct:isPartOf <hotvolc.opgc.fr/Equipment/MSG>;
-#.
-
-#<hotvolc.opgc.fr/Equipment/MSG> a epos:Equipment;
-#    schema:identifier "hotvolc.opgc.fr/Equipment/MSG"^^xsd:anyURI;
-#    schema:name "METEOSAT Second Generation (MSG)"^^xsd:string;
-#    schema:description "METEOSAT 10 is a geostationary satellite allowing 15 minutes full-disc acquisition rate and is currently centered at 0° longitude"^^xsd:string;
-#    dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
-#    dct:spatial [ a dct:Location;
-#        locn:geometry "POINT(0 0 35786000)"^^gsp:wktLiteral;
-#    ];
-#    dct:type "https://www.eumetsat.int/website/home/Satellites/CurrentSatellites/Meteosat/MeteosatDesign/index.html"^^xsd:anyURI;
-#    dct:temporal [ a dct:PeriodOfTime;
-#        schema:startDate "2012-07-05"^^xsd:date;
-#        schema:endDate "2020-01-01"^^xsd:date;
-#    ];
-#   schema:serialNumber "METEOSAT 10 - MSG 3"^^xsd:string;
-#    schema:numberOfItems "1"^^xsd:integer; 
-#    dcat:theme <#Weatherforecast>;
-#    epos:owner <http://isni.org/isni/0000000406217921>;   
-#    dct:isPartOf <http://isni.org/isni/0000000406217921>;  
-#.
-
-#<http://isni.org/isni/0000000406217921> a epos:Facility;
-#    schema:identifier [ a schema:PropertyValue;
-#        schema:propertyID "ISNI";
-#        schema:value "http://isni.org/isni/0000000406217921"^^xsd:anyURI;
-#    ];
-#    dct:identifier "http://isni.org/isni/0000000406217921"^^xsd:anyURI;
-#    dct:title "EUMETSAT - The European Organisation for the Exploitation of Meteorological Satellites";
-#    dct:description "EUMETSAT is an intergovernmental organisation and was founded in 1986. Our purpose is to supply weather and climate-related satellite data, images and products – 24 hours a day, 365 days a year – to the National Meteorological Services of our Member and Cooperating States in Europe, and other users worldwide";
-#   dct:type "https://www.eumetsat.int/website/home/AboutUs/WhoWeAre/index.html"^^xsd:anyURI;
-#    dcat:theme <#Weatherforecast>;
-#    schema:address [ a schema:PostalAddress;
-#        schema:streetAddress "EUMETSAT - Eumetsat Allee 1";
-#        schema:addressLocality "Darmstadt";
-#        schema:postalCode "D-64295";
-#        schema:addressCountry "GERMANY";
-#    ];
-#    schema:logo "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/EUMETSAT_logo.svg/1200px-EUMETSAT_logo.svg.png"^^xsd:anyURI;
-#    schema:url "https://www.eumetsat.int/"^^xsd:anyURI;
-#    dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
-#.

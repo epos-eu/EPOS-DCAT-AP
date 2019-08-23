@@ -148,7 +148,7 @@
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/Event/Dataset/001> a dcat:Dataset;
 	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/Event/Dataset/001";
 	dct:description "Information about the earthquakes (events) occurred in the Alta Val Tiberina (Central Italy) Near Fault Observatory Area.";
-	dct:title "TABOO FDSN Event Dataset";
+	dct:title "TABOO Instrumental Earthquakes (FDSN-Event)";
 		adms:identifier [ a adms:Identifier;
 		adms:schemaAgency "DDSS-ID";
 		skos:notation "WP09-DDSS-006";
@@ -176,8 +176,8 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/Event/Distribution/001> a dcat:Distribution;
     dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/Event/Distribution/001";
-	dct:title "TABOO FDSN Event Distribution";
-	dct:description "TABOO FDSN Event Distribution";
+	dct:title "TABOO Instrumental Earthquakes (FDSN-Event)";
+	dct:description "TABOO Instrumental Earthquakes (FDSN-Event)";
 	dct:created "2010-04-01"^^xsd:date;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/Event/WebService/001/Operation/001>;
@@ -188,9 +188,16 @@
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/Event/WebService/001> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/Event/WebService/001";
 	schema:description "Information about the earthquakes (events) occurred in the Alta Val Tiberina (Central Italy) Near Fault Observatory Area.";
-	schema:name "TABOO FDSN Event Web Service";
+	schema:name "TABOO Instrumental Earthquakes (FDSN-Event) Web Service";
 	schema:datePublished "2017-06-08T12:00:00Z"^^xsd:dateTime;
 	schema:dateModified "2017-06-08T12:00:00Z"^^xsd:dateTime;
+	dct:temporal [ a dct:PeriodOfTime ;
+        schema:startDate "2010-04-01T00:00:00Z"^^xsd:dateTime ;
+        #schema:endDate "YYYY-MM-DDThh:mm:ss"^^xsd:dateTime ;
+    ];
+	dct:spatial [ a dct:Location ;
+		locn:geometry "POLYGON(11.78 43.95, 13.61 43.95, 13.61 42.8, 11.78 42.8, 11.78 43.95)"^^gsp:wktLiteral ;
+	];
 	schema:provider <PIC:999472675>;
 	schema:keywords "earthquake", "event", "rocks", "seismic source", "seismic waves propagation", "seismology", "NFO", "Near Fault Observatory", "TABOO", "FRIDGE";
 	# hydra:entrypoint "application.wadl"^^xsd:anyURI; 
@@ -234,6 +241,7 @@
 			schema:minValue "-90";
 			schema:maxValue "90";
 			schema:defaultValue "43";
+			hydra:property "epos:southernmostLatitude";
 			hydra:required "false"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -243,6 +251,7 @@
 			schema:minValue "-90";
 			schema:maxValue "90";
 			schema:defaultValue "44";
+			hydra:property "epos:northernmostLatitude";
 			hydra:required "false"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -252,6 +261,7 @@
 			schema:minValue "-180";
 			schema:maxValue "180";
 			schema:defaultValue "12";
+			hydra:property "epos:westernmostLongitude";
 			hydra:required "false"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -261,6 +271,7 @@
 			schema:minValue "-180";
 			schema:maxValue "180";
 			schema:defaultValue "13";
+			hydra:property "epos:easternmostLongitude";
 			hydra:required "false"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -308,6 +319,8 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "includeallorigins"^^xsd:string;
 			rdfs:range "xsd:boolean";
+			http:paramValue "true";
+			http:paramValue "false";
 			rdfs:label "Include All Origins";
 			schema:defaultValue "false";
 			hydra:required "false"^^xsd:boolean;
@@ -315,6 +328,8 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "includeallmagnitudes"^^xsd:string;
 			rdfs:range "xsd:boolean";
+			http:paramValue "true";
+			http:paramValue "false";
 			rdfs:label "Include All Magnitudes";
 			schema:defaultValue "false";
 			hydra:required "false"^^xsd:boolean;
@@ -322,6 +337,8 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "includearrivals"^^xsd:string;
 			rdfs:range "xsd:boolean";
+			http:paramValue "true";
+			http:paramValue "false";
 			rdfs:label "Include All Arrivals";
 			schema:defaultValue "false";
 			hydra:required "false"^^xsd:boolean;

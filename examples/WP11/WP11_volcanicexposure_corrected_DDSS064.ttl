@@ -48,31 +48,17 @@
 	schema:contactPoint <http://orcid.org/0000-0003-2658-1838/contactPoint>;
 	schema:contactPoint <http://orcid.org/0000-0003-2658-1838/contactPoint>;
 .
-	<www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/064> a dcat:Dataset;
-		dct:title "Effects on health and recommendations for response to SO2 from volcanic eruptions";
-		dct:identifier "www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/064";
-		adms:identifier [ a adms:Identifier;
-			adms:schemaAgency "DDSS-ID";
-			skos:notation "WP11-DDSS-064";
-		];
-		dct:description "Document describing the effects on humans from SO2 in the atmosphere and recommendations for maximum exposure";
-		dct:created "2014-10-01"^^xsd:date;
-		dct:modified "2014-10-01"^^xsd:date;
-		dct:issued "2014-10-01"^^xsd:date;
-	dct:temporal [ a dct:PeriodOfTime;
-		schema:startDate "2014-10-01T00:00:00Z"^^xsd:dateTime;
-		schema:endDate "2025-01-01T00:00:00Z"^^xsd:dateTime;
-	];
-	dct:spatial [ a dct:Location;
-		locn:geometry "POLYGON(-25.0 63.0,-25.0 68.5,-10.0 68.5,-10.0 63.0,-25.0 63.0)"^^gsp:wktLiteral;
-	];
-		dcat:keyword "Volcanic gas";
-		dcat:contactPoint <http://orcid.org/0000-0003-2658-1838/contactPoint>;
-		dcat:distribution <volcanicexposure>;
-		owl:versionInfo "V1.0";
-		dct:publisher <PIC:997168343>;
-		dcat:theme <epos:Geohazards>;
+
+<http://orcid.org/0000-0003-2658-1838/contactPoint> a schema:ContactPoint;
+	schema:email "vogfjord@vedur.is";
+	schema:availableLanguage "en" ;
+        schema:contactType "contactPoint" ;
 .
+
+
+#########
+# Organization
+#########
 
 <PIC:997168343> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
@@ -95,22 +81,47 @@
 	schema:contactPoint <http://orcid.org/0000-0003-2658-1838/contactPoint>;
 .
 
-	<volcanicexposure> a dcat:Distribution;
-		dct:identifier "volcanicexposure";
-		dct:title "Effects on health and recommendations for response to SO2 from volcanic eruptions";
-		dct:description "Document";
-		dct:issued "2014-10-01"^^xsd:date;
-		dct:modified "2014-10-01"^^xsd:date;
-		dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
-		dcat:downloadURL "https://cdn.vedur.is/epos/v1/volcanicexposure.pdf"^^xsd:anyURI;
-		dcat:accessURL "https://cdn.vedur.is/epos/v1/volcanicexposure.pdf"^^xsd:anyURI;
-		dct:format "http://publications.europa.eu/resource/authority/file-type/PDF"^^xsd:anyURI;
+#######
+# Dataset 
+#######
+
+<www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/064> a dcat:Dataset;
+	dct:title "Effects on health and recommendations for response to SO2 from volcanic eruptions";
+	dct:identifier "www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/064";
+	adms:identifier [ a adms:Identifier;
+		adms:schemaAgency "DDSS-ID";
+		skos:notation "WP11-DDSS-064";
+	];
+	dct:description "Document describing the effects on humans from SO2 in the atmosphere and recommendations for maximum exposure";
+	dct:created "2014-10-01"^^xsd:date;
+	dct:modified "2014-10-01"^^xsd:date;
+	dct:issued "2014-10-01"^^xsd:date;
+	dct:temporal [ a dct:PeriodOfTime;
+		schema:startDate "2014-10-01T00:00:00Z"^^xsd:dateTime;
+		schema:endDate "2025-01-01T00:00:00Z"^^xsd:dateTime;
+	];
+	dct:spatial [ a dct:Location;
+		locn:geometry "POLYGON(-25.0 63.0,-25.0 68.5,-10.0 68.5,-10.0 63.0,-25.0 63.0)"^^gsp:wktLiteral;
+	];
+	dcat:keyword "Volcanic gas";
+	dcat:contactPoint <http://orcid.org/0000-0003-2658-1838/contactPoint>;
+	dcat:distribution <volcanicexposure>;
+	owl:versionInfo "V1.0";
+	dct:publisher <PIC:997168343>;
+	dcat:theme <epos:Geohazards>;
 .
-	<http://orcid.org/0000-0003-2658-1838/contactPoint> a schema:ContactPoint;
-		schema:email "vogfjord@vedur.is";
-		schema:availableLanguage "en" ;
+
+
+
+<volcanicexposure> a dcat:Distribution;
+	dct:identifier "volcanicexposure";
+	dct:title "Effects on health and recommendations for response to SO2 from volcanic eruptions";
+	dct:description "Document";
+	dct:issued "2014-10-01"^^xsd:date;
+	dct:modified "2014-10-01"^^xsd:date;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"^^xsd:anyURI;
+	dcat:downloadURL "https://cdn.vedur.is/epos/v1/volcanicexposure.pdf"^^xsd:anyURI;
+	dcat:accessURL "https://cdn.vedur.is/epos/v1/volcanicexposure.pdf"^^xsd:anyURI;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/PDF"^^xsd:anyURI;
 .
-	<http://orcid.org/0000-0003-2658-1838/contactPoint> a schema:ContactPoint;
-		schema:email "vogfjord@vedur.is";
-		schema:availableLanguage "en" ;
-.
+

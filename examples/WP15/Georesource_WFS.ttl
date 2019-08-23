@@ -116,7 +116,7 @@
 
 	<http://resource.europe-geology.eu/dataset/mine/distributionWfs> a dcat:Distribution;
 		dct:identifier "http://resource.europe-geology.eu/dataset/mine/distributionWfs";
-		dct:title "Geological Feature Index Discovery Service";
+		dct:title "Geological Feature Index Discovery Service based on Minerals4EU dataset";
 		dct:description "Based on Minerals4EU dataset, this WFS allows to explore and discover available mineral resources  datasets in a given area.";
 		dct:issued "2016-10-27"^^xsd:date;
 		dct:modified "2018-01-19"^^xsd:date;
@@ -160,7 +160,7 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/gml+xml";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "http://resource.europe-geology.eu/service/wfsMine(?service, request, typenames, version, count, BBOX, gml:identifier, gml:name)"^^xsd:string;
+			hydra:template "http://resource.europe-geology.eu/service/wfsMine{?service, request, typenames, version, count, gml:identifier, gml:name, BBOX}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "service"^^xsd:string;
 					rdfs:range "xsd:string";
@@ -203,6 +203,7 @@
 					rdfs:label "WFS BBOX filter parameter";
 					hydra:required "false"^^xsd:boolean;
 				];
+				
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "gml:identifier"^^xsd:string;
 					rdfs:range "xsd:string";

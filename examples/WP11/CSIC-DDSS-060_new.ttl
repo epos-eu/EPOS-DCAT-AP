@@ -18,7 +18,7 @@
 
 #########
 # PERSON 
-#########
+######### 
 
 <http://orcid.org/0000-0002-8803-6504> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
@@ -38,7 +38,7 @@
 	schema:url "http://orcid.org/0000-0002-8803-6504"^^xsd:anyURI;
 	schema:qualifications "Researcher";
 	schema:affiliation <http://isni.org/isni/0000000122036192>;
-        schema:contactPoint <http://orcid.org/0000-0002-8803-6504/contactPoint> ;
+       schema:contactPoint <http://orcid.org/0000-0002-8803-6504/contactPoint> ;
 		
 .
  
@@ -51,12 +51,12 @@
 		schema:availableLanguage "en" ;
 		schema:contactType "scientificContact" ;
 . 
-<http://orcid.org/0000-0002-8651-6387/legalContact> a schema:ContactPoint;
+<http://orcid.org/0000-0002-8803-6504/legalContact> a schema:ContactPoint;
 		schema:email "ageyertraver@gmail.com";
 		schema:availableLanguage "en" ;
 		schema:contactType "legalContact" ;
 . 
-<http://orcid.org/0000-0002-8651-6387/financialContact> a schema:ContactPoint;
+<http://orcid.org/0000-0002-8803-6504/financialContact> a schema:ContactPoint;
 		schema:email "ageyertraver@gmail.com";
 		schema:availableLanguage "en" ;
 		schema:contactType "financialContact" ;
@@ -64,7 +64,7 @@
 <http://orcid.org/0000-0002-8803-6504/contactPoint> a schema:ContactPoint;
 		schema:email "ageyertraver@gmail.com";
 		schema:availableLanguage "en" ;
-		schema:contactType "ContactPoint" ;
+		schema:contactType "contactPoint" ;
 . 
 
 #########
@@ -87,21 +87,21 @@
 	schema:logo "http://www.csic.es/imagen-corporativa"^^xsd:anyURI;
 	schema:url "http://www.csic.es/"^^xsd:anyURI;
 	schema:contactPoint <http://orcid.org/0000-0002-8803-6504/scientificContact>;
-	schema:contactPoint <http://orcid.org/0000-0002-8651-6387/legalContact>;
-	schema:contactPoint <http://orcid.org/0000-0002-8651-6387/financialContact>;
+	schema:contactPoint <http://orcid.org/0000-0002-8803-6504/legalContact>;
+	schema:contactPoint <http://orcid.org/0000-0002-8803-6504/financialContact>;
 .
 
 #########
 # Dataset
 ######### 
 
-<WP11/HazardMap/PDCs> a dcat:Dataset;
+<WP11/HazardMap/Probabilistic> a dcat:Dataset;
         dct:title "PDCs Hazard maps";
-        dct:identifier "WP11/HazardMap/Hazard map";
-         adms:identifier [ a adms:Identifier;
-		adms:schemaAgency "DDSS-ID";
-		skos:notation "WP11-DDSS-060";
-	]; 
+        dct:identifier "WP11/HazardMap/Probabilistic";
+        adms:identifier [ a adms:Identifier;
+         	adms:schemaAgency "DDSS-ID";
+        	skos:notation "WP11-DDSS-060";
+        ];
         dct:description "Probabilistic Hazard maps";
         ## example of frequency using a controlled vocabulary
 	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
@@ -111,39 +111,39 @@
         dcat:keyword "pyroclastic density currents", "PDCs", "Hazard Map", "volcanic hazard", "volcanology", "hazard assessment" ;
         dcat:contactPoint <http://orcid.org/0000-0002-8803-6504/contactPoint>;
 	dct:publisher <http://isni.org/isni/0000000122036192>;
-        dcat:distribution <WP11/HazardMap/PDCs/WSDistribution>;
+        dcat:distribution <WP11/HazardMap/Probabilistic/WSDistribution>;
         
 .
 
 #########
 # Distribution
-######### 
+#########  
 
-<WP11/HazardMap/PDCs/WSDistribution> a dcat:Distribution;
-        dct:identifier "WP11/HazardMaps/PDCs/WSDistribution";
-	dct:description "Hazard Maps WSDistribution";
-        dct:title "Hazard Maps WSDistribution";
+<WP11/HazardMap/Probabilistic/WSDistribution> a dcat:Distribution;
+        dct:identifier "WP11/HazardMap/Probabilistic/WSDistribution";
+	dct:description "Probabilistic Hazard Maps WSDistribution";
+        dct:title "Probabilistic Hazard maps";
 	dct:created "2018-09-01"^^xsd:date;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-	dcat:accessURL <HazardMap/operation>;
-	dct:conformsTo <HazardMap>;
-	dct:format "http://publications.europa.eu/resource/authority/file-type/TXT"^^xsd:anyURI;
+	dcat:accessURL <HazardMap/Probabilistic/operation>;
+	dct:conformsTo <HazardMap/Probabilistic>;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 .
 
 #########
 # WebService
 ######### 
 
-<HazardMap> a epos:WebService;
-	schema:identifier "HazardMap";
-	schema:description "Probabilistic volcanic hazard assessment (maps)";   
+<HazardMap/Probabilistic> a epos:WebService;
+	schema:identifier "HazardMap/Probabilistic";
+	schema:description "Probabilistic volcanic hazard assessment (maps)";
 	schema:name "Probabilistic volcanic hazard assessment (maps)";
 	schema:datePublished "2018-09-01T00:00:00Z"^^xsd:dateTime;
 	schema:dateModified "2018-09-01T12:00:00Z"^^xsd:dateTime;
 	schema:provider <http://isni.org/isni/0000000122036192>;
 	schema:keywords "Volcanoes", "Hazard maps", "Volcanic hazard", "Hazard assessment", "probabilistic map";
-	hydra:entrypoint "https://volcanbox.epsevg.upc.edu/"^^xsd:anyURI; 
-	hydra:supportedOperation <HazardMap/operation>;
+	hydra:entrypoint " https://volcanboxws.obsea.es/"^^xsd:anyURI; 
+	hydra:supportedOperation <HazardMap/Probabilistic/operation>;
 	dcat:theme <epos:Hazardmap>;
 	dcat:contactPoint <http://orcid.org/0000-0002-8803-6504/contactPoint>;
 	
@@ -151,25 +151,30 @@
 
 #########
 # Operation
-#########
+######### 
 
-<HazardMap/operation> a hydra:Operation;
+<HazardMap/Probabilistic/operation> a hydra:Operation;
 	hydra:method "GET"^^xsd:string;
-	hydra:returns "json";
+	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
-		hydra:template "https://volcanbox.epsevg.upc.edu:5000/maptype{?type, volcan}"^^xsd:string;
- 			hydra:mapping[ a hydra:IriTemplateMapping;
+		#hydra:template "https://volcanboxws.obsea.es:5000/maptype?type=hazard{&volcan}"^^xsd:string;
+		hydra:template "https://volcanboxws.obsea.es:5000/maptype{?type,volcan}"^^xsd:string;
+			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "type"^^xsd:string;
-				rdfs:label "type";
-				schema:defaultValue "hazard_map";
+				rdfs:range "xsd:string";
+				rdfs:label "Type";
 				hydra:required "true"^^xsd:boolean;
+				http:paramValue "hazard" ;
+				schema:defaultValue "hazard" ;				
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "volcan"^^xsd:string;
+				rdfs:range "xsd:string";
 				rdfs:label "Volcano name that exposes hazard map";
-				http:paramValue "deceptionisland";
-				http:paramValue "site.json"; 
-				schema:defaultValue "deceptionisland";
+				http:paramValue "DeceptionIsland";
+				http:paramValue "ElHierro"; 
+				http:paramValue "LaGarrotxa"; 
+				schema:defaultValue "DeceptionIsland";
 				hydra:required "false"^^xsd:boolean;
 			];
 	];
@@ -179,13 +184,12 @@
 # Concept
 ######### 
 
-<epos:Hazardmap> a skos:Concept;
-	skos:inScheme <epos:VolcanoObservations>;
-	skos:prefLabel "Hazard maps";
-.
-
 <epos:VolcanoObservations> a skos:ConceptScheme;
 	dct:title "VolcanoObservations";
 	dct:description "It contains the concepts of Volcano Observations";
 . 
+<epos:Hazardmap> a skos:Concept;
+	skos:inScheme <epos:VolcanoObservations>;
+	skos:prefLabel "Hazard maps";
+.
 
