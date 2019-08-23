@@ -128,7 +128,8 @@
     schema:name "FDSN Availability-WS - Resif data center (RESIF)";
     hydra:entrypoint "http://ws.resif.fr/fdsnws/availability/1/query?"^^xsd:anyURI;
     schema:provider <PIC:999997930>;
-    schema:datePublished "2019-06-01Z"^^xsd:dateTime;
+    schema:datePublished "2019-06-01Z"^^xsd:date;
+    schema:dateModified "2019-06-01Z"^^xsd:date;
     hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001/RESIF>;
     schema:keywords "seismology"," seismicity"," earthquakes"," waveform"," seismic hazard"," earth structure","earthquake intensity"," macroseismic"," macroseismic information"," waveformmodeling"," RESIF"," Dataselect"," FDSN-WS","Seismic Waveform"," EIDA";
     dct:license "To be defined!"^^xsd:anyURI;
@@ -149,10 +150,10 @@
     schema:name "EIDAWS - WFCatalog - Réseau Sismologique et géodésique Français (RESIF)";
     hydra:entrypoint "http://ws.resif.fr/eidaws/wfcatalog/1/query?"^^xsd:anyURI;
     schema:provider <PIC:999997930>;
-    schema:datePublished "2017-09-01Z"^^xsd:dateTime;
-    schema:dateModified "2017-09-01Z"^^xsd:dateTime;
+    schema:datePublished "2017-09-01Z"^^xsd:date;
+    schema:dateModified "2017-09-01Z"^^xsd:date;
     dct:spatial [ a dct:Location;
-        locn:geometry "POLYGON(-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0)"^^gsp:wktLiteral;
+        locn:geometry "POLYGON((-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0))"^^gsp:wktLiteral;
         ];
     hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003/Operation/003/RESIF>;
     schema:keywords "EIDA"," RESIF"," data quality"," availability"," metrics"," waveform"," metadata";
@@ -172,10 +173,10 @@
     schema:name "FDSN Dataselect-WS - Resif data center (RESIF)";
     hydra:entrypoint "http://ws.resif.fr/fdsnws/dataselect/1/query?"^^xsd:anyURI;
     schema:provider <PIC:999997930>;
-    schema:datePublished "2013-01-01Z"^^xsd:dateTime;
-    schema:dateModified "2017-09-12Z"^^xsd:dateTime;
+    schema:datePublished "2013-01-01Z"^^xsd:date;
+    schema:dateModified "2017-09-12Z"^^xsd:date;
     dct:spatial [ a dct:Location;
-        locn:geometry "POLYGON(180.0 -90.0,-180.0 -90.0,-180.0 90.0,180.0 90.0,180.0 -90.0)"^^gsp:wktLiteral;
+        locn:geometry "POLYGON((180.0 -90.0,-180.0 -90.0,-180.0 90.0,180.0 90.0,180.0 -90.0))"^^gsp:wktLiteral;
         ];
     hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001/RESIF>;
     schema:keywords "seismology"," seismicity"," earthquakes"," waveform"," seismic hazard"," earth structure","earthquake intensity"," macroseismic"," macroseismic information"," waveformmodeling"," RESIF"," Dataselect"," FDSN-WS","Seismic Waveform"," EIDA";
@@ -195,10 +196,10 @@
     schema:name "FDSN Station-WS - Resif data center (RESIF)";
     hydra:entrypoint "http://ws.resif.fr/fdsnws/station/1/query?"^^xsd:anyURI;
     schema:provider <PIC:999997930>;
-    schema:datePublished "2013-01-01Z"^^xsd:dateTime;
-    schema:dateModified "2017-09-12Z"^^xsd:dateTime;
+    schema:datePublished "2013-01-01Z"^^xsd:date;
+    schema:dateModified "2017-09-12Z"^^xsd:date;
     dct:spatial [ a dct:Location;
-        locn:geometry "POLYGON(180.0 -90.0,-180.0 -90.0,-180.0 90.0,180.0 90.0,180.0 -90.0)"^^gsp:wktLiteral;
+        locn:geometry "POLYGON((180.0 -90.0,-180.0 -90.0,-180.0 90.0,180.0 90.0,180.0 -90.0))"^^gsp:wktLiteral;
         ];
     hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/Operation/002/RESIF>;
     schema:keywords "seismology"," seismicity"," earthquakes"," metadata"," seismic hazard"," earth structure"," earthquake intensity"," macroseismic"," macroseismic information"," RESIF"," stationXML modeling";
@@ -278,28 +279,28 @@
         hydra:mapping[ a hydra:IriTemplateMapping;
             hydra:variable "includerestricted"^^xsd:boolean;
             rdfs:range "xsd:string";
-            rdfs:label "Ouputs restricted data"
+            rdfs:label "Ouputs restricted data";
             hydra:required "false"^^xsd:boolean;
             schema:defaultValue "false"
             ];
         hydra:mapping[ a hydra:IriTemplateMapping;
             hydra:variable "limit"^^xsd:integer;
             rdfs:range "xsd:string";
-            rdfs:label "limit number of lines in output"
+            rdfs:label "limit number of lines in output";
             hydra:required "false"^^xsd:boolean;
             schema:defaultValue "false"
             ];
         hydra:mapping[ a hydra:IriTemplateMapping;
             hydra:variable "mergegaps"^^xsd:integer;
             rdfs:range "xsd:string";
-            rdfs:label "Time period to consider as gaps"
+            rdfs:label "Time period to consider as gaps";
             hydra:required "false"^^xsd:boolean;
             schema:defaultValue "false"
             ];
         hydra:mapping[ a hydra:IriTemplateMapping;
             hydra:variable "show"^^xsd:string;
             rdfs:range "xsd:string";
-            rdfs:label "Ouputs the last updated value"
+            rdfs:label "Ouputs the last updated value";
             hydra:required "false"^^xsd:boolean;
             schema:defaultValue "false"
             ];
@@ -369,27 +370,17 @@
         hydra:mapping[ a hydra:IriTemplateMapping;
             hydra:variable "includerestricted"^^xsd:boolean;
             rdfs:range "xsd:string";
-            rdfs:label "Ouputs restricted data"
+            rdfs:label "Ouputs restricted data";
             hydra:required "false"^^xsd:boolean;
             schema:defaultValue "false"
             ];
         hydra:mapping[ a hydra:IriTemplateMapping;
             hydra:variable "limit"^^xsd:integer;
             rdfs:range "xsd:string";
-            rdfs:label "limit number of lines in output"
+            rdfs:label "limit number of lines in output";
             hydra:required "false"^^xsd:boolean;
             schema:defaultValue "false"
             ];
-
-        hydra:mapping[ a hydra:IriTemplateMapping ;
-            hydra:variable "starttime"^^xsd:string;
-            hydra:property "schema:startDate";
-            schema:valuePattern "YYYY-MM-DDThh:mm:ss";
-            rdfs:range "xsd:dateTime";
-            rdfs:label "Starttime of documents";
-            hydra:required "true"^^xsd:boolean;
-            schema:defaultValue "2016-01-01"
-            ] ;
         ] ;
     .
 
@@ -830,7 +821,7 @@
     dct:publisher <PIC:999997930>;
     dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/RESIF>;
     dct:spatial [ a dct:Location ;
-        locn:geometry "POLYGON(-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0)"^^gsp:wktLiteral;
+        locn:geometry "POLYGON((-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0))"^^gsp:wktLiteral;
         ];
     dct:temporal [ a dct:PeriodOfTime ;
         schema:startDate "1982-01-01T00:00:00Z"^^xsd:dateTime ;
@@ -874,7 +865,7 @@
     dct:publisher <PIC:999997930>;
     dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/RESIF>;
     dct:spatial [ a dct:Location ;
-        locn:geometry "POLYGON(-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0)"^^gsp:wktLiteral;
+        locn:geometry "POLYGON((-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0))"^^gsp:wktLiteral;
         ];
     dct:temporal [ a dct:PeriodOfTime ;
         schema:startDate "1882-01-01T00:00:00Z"^^xsd:dateTime ;
@@ -920,7 +911,7 @@
     dct:publisher <PIC:999997930>;
     dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/Distribution/003/RESIF>;
     dct:spatial [ a dct:Location ;
-        locn:geometry "POLYGON(-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0)"^^gsp:wktLiteral;
+        locn:geometry "POLYGON((-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0))"^^gsp:wktLiteral;
         ];
     dct:temporal [ a dct:PeriodOfTime ;
         schema:startDate "1982-01-01T00:00:00Z"^^xsd:dateTime ;

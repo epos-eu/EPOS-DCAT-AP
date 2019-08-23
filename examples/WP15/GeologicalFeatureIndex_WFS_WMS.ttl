@@ -16,6 +16,7 @@
 @prefix http: <http://www.w3.org/2006/http#> .  
 @prefix owl: <http://www.w3.org/2002/07/owl#> .  
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .  
+@prefix time:  <http://www.w3.org/2006/time#> .
 
 <mailto:contact-brgm@brgm.fr> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
@@ -42,7 +43,8 @@
 		schema:propertyID "PIC";
 		schema:value "999993662";
 	]; 
-	schema:legalName "BRGM (French Geological Survey)";
+	schema:legalName "Bureau de Recherches Géologiques et Minières"@en;
+	#schema:legalName "BRGM (French Geological Survey)"@en;
 	schema:leiCode "Legal Entity Identifier Search: http://www.lei-lookup.com/#!search" ;
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "3, avenue Claude Guillemin";
@@ -91,9 +93,9 @@
 . 
 
 	
-	<http://resource.europe-geology.eu/dataset/geologicunit> a dcat:Dataset;
+	<https://data.geoscience.earth/id/dataset/geologicunit> a dcat:Dataset;
 		dct:title "Geological Feature index";
-		dct:identifier "http://resource.europe-geology.eu/dataset/geologicunit";
+		dct:identifier "https://data.geoscience.earth/id/dataset/geologicunit";
 		adms:identifier [ a adms:Identifier;
 			adms:schemaAgency "DDSS-ID";
 			skos:notation "WP15-DDSS-002a";
@@ -105,77 +107,87 @@
 		dct:description "This dataset is created from the harvesting of map geological features initially collected for EGDI (original national datasets from OneGeology-Europe). It aims at supporting search and discovery of geological features (bedrock or surface information).";
 		dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
 		dct:created "2017-10-27"^^xsd:date;
-		dct:modified "2018-09-07"^^xsd:date;
-		dct:issued "2017-10-27"^^xsd:date;
+		dct:temporal
+		[ a dct:PeriodOfTime;
+				time:hasBeginning  <http://resource.geosciml.org/classifier/ics/ischart/BaseArchean> ;
+				time:hasEnd        <http://resource.geosciml.org/classifier/ics/ischart/Present> ;
+		];
+	
+		#20190822 SG note : at CSIRO resolver <http://resource.geosciml.org/classifier/ics/ischart/BaseArchean> do not resolve because the redirects points to http://vocabs.ands.org.au/repository/api/lda/csiro/international-chronostratigraphic-chart/2018-revised/
+		# using http://vocabs.ands.org.au/repository/api/lda/csiro/international-chronostratigraphic-chart/2017/resource.html?uri=http://resource.geosciml.org/classifier/ics/ischart/BaseArchean its ok
+		
 	dct:spatial [ a dct:Location; 
-		locn:geometry "POLYGON(-180 90,180 90,180 -90,-180 90,-180 90)"^^gsp:wktLiteral; 
+		locn:geometry "POLYGON((-180 90,180 90,180 -90,-180 90,-180 90))"^^gsp:wktLiteral; 
 	]; 
 		dcat:theme <epos:GeologicalData>;
-		dcat:keyword "GeologicUnit", "MappedFeature", "Geology", "INSPIRE:GE", "GeoSciML";
+		dcat:keyword "geologicunit", "mappedfeature", "geology";
 		dcat:contactPoint <mailto:contact-brgm@brgm.fr/manager>;
-		dcat:distribution <http://resource.europe-geology.eu/dataset/geologicunit/distributionWfs>;
-		dcat:distribution <http://resource.europe-geology.eu/dataset/geologicunit/distributionWms>;
+		dcat:distribution <https://data.geoscience.earth/id/dataset/geologicunit/distributionWfs>;
+		dcat:distribution <https://data.geoscience.earth/id/dataset/geologicunit/distributionWms>;
 		dct:publisher <PIC:999993662>;
 . 
 
+		<http://resource.geosciml.org/classifier/ics/ischart/BaseArchean> a <http://resource.geosciml.org/ontology/timescale/thors#EraBoundary>.
+		<http://resource.geosciml.org/classifier/ics/ischart/Present> a <http://resource.geosciml.org/ontology/timescale/thors#EraBoundary>.
 
-	<http://resource.europe-geology.eu/dataset/geologicunit/distributionWfs> a dcat:Distribution;
-		dct:identifier "http://resource.europe-geology.eu/dataset/geologicunit/distributionWfs";
-		dct:title "Geological Feature Index Discovery Service (WFS)";
-		dct:description "This WFS allows to find geological features appearing on the  EGDI 1:1,000,000 geological map.";
+	<https://data.geoscience.earth/id/dataset/geologicunit/distributionWfs> a dcat:Distribution;
+		dct:identifier "https://data.geoscience.earth/id/dataset/geologicunit/distributionWfs";
+		dct:title "Geological Feature Discovery Service";
+		dct:description "This service allows to find geological features appearing on the EGDI 1:1,000,000 geological map.";
 		dct:issued "2016-10-27"^^xsd:date;
 		dct:modified "2018-01-19"^^xsd:date;
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-		dct:conformsTo <http://resource.europe-geology.eu/service/wfsGeologicUnit>;
-		dcat:accessURL <http://resource.europe-geology.eu/service/wfsGeologicUnit/operation>;
-		dct:license "TBD"^^xsd:anyURI ;
+		dct:conformsTo <https://data.geoscience.earth/api/wfsGeologicUnit>;
+		dcat:accessURL <https://data.geoscience.earth/api/wfsGeologicUnit/operation>;
+		dct:license "royalty free licence"^^xsd:anyURI ;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/GML"^^xsd:anyURI;
 		#dct:format "https://www.iana.org/assignments/media-types/application/gml+xml"^^xsd:anyURI;
 . 
 
-	<http://resource.europe-geology.eu/dataset/geologicunit/distributionWms> a dcat:Distribution;
-		dct:identifier "http://resource.europe-geology.eu/dataset/geologicunit/distributionWms";
+	<https://data.geoscience.earth/id/dataset/geologicunit/distributionWms> a dcat:Distribution;
+		dct:identifier "https://data.geoscience.earth/id/dataset/geologicunit/distributionWms";
 		dct:title "Geological Map 1:1,000,000 (OneGeology-Europe layer)";
-		dct:description "The WMS provides an interface for requesting map visualization of geological map of Europe.";
+		dct:description "This services provides an interface for map visualization of geological map of Europe.";
 		dct:issued "2016-10-27"^^xsd:date;
 		dct:modified "2018-01-19"^^xsd:date;
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-		dct:conformsTo <http://resource.europe-geology.eu/service/wmsGeologicUnit>;
-		dcat:accessURL <http://resource.europe-geology.eu/service/wmsGeologicUnit/operation>;
-		dct:license "TBD"^^xsd:anyURI ;
+		dct:conformsTo <https://data.geoscience.earth/api/wmsGeologicUnit>;
+		dcat:accessURL <https://data.geoscience.earth/api/wmsGeologicUnit/operation>;
+		dct:license "royalty free licence"^^xsd:anyURI ;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/PNG"^^xsd:anyURI;
 		#dct:format "https://www.iana.org/assignments/media-types/application/gml+xml"^^xsd:anyURI;
 . 
 
 
-<http://resource.europe-geology.eu/service/wfsGeologicUnit> a epos:WebService;
-	schema:identifier "http://resource.europe-geology.eu/service/wfsGeologicUnit";
-	schema:description "This WFS allows to find geological features appearing on the  EGDI 1:1,000,000 geological map.";
+<https://data.geoscience.earth/api/wfsGeologicUnit> a epos:WebService;
+	schema:identifier "https://data.geoscience.earth/api/wfsGeologicUnit";
+	schema:description "This service allows to find geological features appearing on the EGDI 1:1,000,000 geological map.";
 	dcat:theme <epos:GeologicalData>;
-	schema:name "Geological Feature Index Discovery Service";
-	hydra:entrypoint "http://resource.europe-geology.eu/service/wfsGeologicUnit"^^xsd:anyURI; 
+	schema:name "Geological Feature Discovery Service";
+	hydra:entrypoint "https://data.geoscience.earth/api/wfsGeologicUnit"^^xsd:anyURI; 
 	schema:provider <PIC:999993662>;
 	schema:datePublished "2016-10-27Z"^^xsd:dateTime;
 	schema:dateModified "2018-01-19Z"^^xsd:dateTime;
 	dct:spatial [ a dct:Location; 
-		locn:geometry "POLYGON(-180 90,180 90,180 -90,-180 -90,-180 90)"^^gsp:wktLiteral; 
+		locn:geometry "POLYGON((-180 90,180 90,180 -90,-180 -90,-180 90))"^^gsp:wktLiteral; 
 	]; 
-	hydra:supportedOperation <http://resource.europe-geology.eu/service/wfsGeologicUnit/operation>;
-	schema:keyword "GeologicUnit", "MappedFeature", "Geology", "INSPIRE:GE", "GeoSciML";
+	hydra:supportedOperation <https://data.geoscience.earth/api/wfsGeologicUnit/operation>;
+	schema:keyword "geologicunit", "mappedfeature", "geology";
 	dct:license "TBD"^^xsd:anyURI;
-	dct:temporal [ a dct:PeriodOfTime; 
-		schema:startDate "2016-10-27T00:00:00Z"^^xsd:dateTime; 
-		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
-	]; 
+	dct:temporal
+	[ a dct:PeriodOfTime;
+			time:hasBeginning  <http://resource.geosciml.org/classifier/ics/ischart/BaseArchean> ;
+			time:hasEnd        <http://resource.geosciml.org/classifier/ics/ischart/Present> ;
+	];
 	dcat:contactPoint <mailto:contact-brgm@brgm.fr/manager>;
 . 
 
 
-	<http://resource.europe-geology.eu/service/wfsGeologicUnit/operation> a hydra:Operation;
+	<https://data.geoscience.earth/api/wfsGeologicUnit/operation> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/gml+xml";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "http://resource.europe-geology.eu/service/wfsGeologicUnit{?service, request, typenames, version, count, gml:identifier, gml:name, geologicUnitType, rank, lithology, geologicHistory, observationMethod, positionalAccuracy, geologicUnitType_uri, representativeLithology_uri, representativeOlderAge_uri, representativeYoungerAge_uri, specification_uri, BBOX}"^^xsd:string;
+			hydra:template "https://data.geoscience.earth/api/wfsGeologicUnit{?service, request, typenames, version, count, gml:identifier, gml:name, geologicUnitType, rank, lithology, geologicHistory, observationMethod, positionalAccuracy, geologicUnitType_uri, representativeLithology_uri, representativeOlderAge_uri, representativeYoungerAge_uri, specification_uri, BBOX}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "service"^^xsd:string;
 					rdfs:range "xsd:string";
@@ -301,33 +313,34 @@
 
 
 
-<http://resource.europe-geology.eu/service/wmsGeologicUnit> a epos:WebService;
-	schema:identifier "http://resource.europe-geology.eu/service/wmsGeologicUnit";
-	schema:description "The WMS provides an interface for requesting map visualization of geological map of Europe.";
+<https://data.geoscience.earth/api/wmsGeologicUnit> a epos:WebService;
+	schema:identifier "https://data.geoscience.earth/api/wmsGeologicUnit";
+	schema:description "This services provides an interface for map visualization of geological map of Europe.";
 	dcat:theme <epos:GeologicalData>;
 	schema:name "Geological Map 1:1,000,000 (OneGeology-Europe layer)";
-	hydra:entrypoint "http://resource.europe-geology.eu/service/wmsGeologicUnit?"^^xsd:anyURI; 
+	hydra:entrypoint "https://data.geoscience.earth/api/wmsGeologicUnit?"^^xsd:anyURI; 
 	schema:provider <PIC:999993662>;
 	schema:datePublished "2016-10-27Z"^^xsd:dateTime;
 	schema:dateModified "2018-01-19Z"^^xsd:dateTime;
 	dct:spatial [ a dct:Location; 
-		locn:geometry "POLYGON(-180 90,180 90,180 -90,-180 -90,-180 90)"^^gsp:wktLiteral; 
+		locn:geometry "POLYGON((-180 90,180 90,180 -90,-180 -90,-180 90))"^^gsp:wktLiteral; 
 	]; 
-	hydra:supportedOperation <http://resource.europe-geology.eu/service/wmsGeologicUnit/operation>;
-	schema:keywords "GeologicUnit", "MappedFeature", "Geology", "INSPIRE:GE", "GeoSciML";
+	hydra:supportedOperation <https://data.geoscience.earth/api/wmsGeologicUnit/operation>;
+	schema:keyword "geologicunit", "mappedfeature", "geology";
 	dct:license "TBD"^^xsd:anyURI;
-	dct:temporal [ a dct:PeriodOfTime; 
-		schema:startDate "2016-10-27T00:00:00Z"^^xsd:dateTime; 
-		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
-	]; 
+	dct:temporal
+	[ a dct:PeriodOfTime;
+		time:hasBeginning  <http://resource.geosciml.org/classifier/ics/ischart/BaseArchean> ;
+		time:hasEnd        <http://resource.geosciml.org/classifier/ics/ischart/Present> ;
+	];
 	dcat:contactPoint <mailto:contact-brgm@brgm.fr/manager>;
 . 
 
-<http://resource.europe-geology.eu/service/wmsGeologicUnit/operation> a hydra:Operation;
+<https://data.geoscience.earth/api/wmsGeologicUnit/operation> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "image/png";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "http://resource.europe-geology.eu/service/wmsGeologicUnit{?service, version, request, layers, crs, format, width, height}&bbox={minlatitude, minlongitude, maxlatitude, maxlongitude}"^^xsd:string;
+			hydra:template "https://data.geoscience.earth/api/wmsGeologicUnit{?service, version, request, layers, crs, format, width, height}&bbox={minlatitude, minlongitude, maxlatitude, maxlongitude}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "service"^^xsd:string;
 					rdfs:range "xsd:string";
@@ -422,6 +435,7 @@
 					hydra:variable "format"^^xsd:string;
 					rdfs:range "xsd:string";
 					rdfs:label "Output format";
+					hydra:property "schema:encodingFormat";		
 					http:paramValue "image/png";
 					http:paramValue "image/jpeg";
 					http:paramValue "image/geotiff";
