@@ -16,7 +16,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
-# Personnes
+# People
 
 <https://orcid.org/0000-0003-2936-8047> a schema:Person;
     schema:identifier [ a schema:PropertyValue;
@@ -119,6 +119,26 @@
     schema:contactType "legalContact" ;
     .
 
+# Webservice Availability
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/004/RESIF> a epos:WebService ;
+    schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/004/RESIF";
+    schema:description "FDSN Standard webservice at RESIF to get data availability";
+    dcat:theme <epos:Seismicwaveforms>;
+    dcat:contactPoint <https://orcid.org/0000-0002-9956-9971/contactPoint>;
+    schema:name "FDSN Availability-WS - Resif data center (RESIF)";
+    hydra:entrypoint "http://ws.resif.fr/fdsnws/availability/1/query?"^^xsd:anyURI;
+    schema:provider <PIC:999997930>;
+    schema:datePublished "2019-06-01Z"^^xsd:dateTime;
+    hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001/RESIF>;
+    schema:keywords "seismology"," seismicity"," earthquakes"," waveform"," seismic hazard"," earth structure","earthquake intensity"," macroseismic"," macroseismic information"," waveformmodeling"," RESIF"," Dataselect"," FDSN-WS","Seismic Waveform"," EIDA";
+    dct:license "To be defined!"^^xsd:anyURI;
+    dct:temporal [ a dct:PeriodOfTime;
+        schema:startDate "1982-01-01T00:00:00Z"^^xsd:dateTime;
+        #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
+        ];
+    .
+
+
 # Webservice WFcatalog
 
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003/RESIF> a epos:WebService;
@@ -188,6 +208,191 @@
         #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
         ];
     .
+
+# Operation Availability
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003/Operation/003/RESIF> a hydra:Operation;
+    hydra:method "GET"^^xsd:string;
+    hydra:returns "application/json";
+    hydra:property[ a hydra:IriTemplate;
+        hydra:template "https://ws.resif.fr/fdsnws/availability/1/query{?network, station, location, channel, starttime, endtime, merge, orderby, format, includerestricted, limit, mergegaps, show}"^^xsd:string;
+        hydra:mapping[ a hydra:IriTemplateMapping;
+            hydra:variable "starttime"^^xsd:string;
+            hydra:property "schema:startDate";
+            schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+            rdfs:range "xsd:dateTime";
+            rdfs:label "Starttime of documents";
+            hydra:required "true"^^xsd:boolean;
+            schema:defaultValue "2016-01-01"
+            ] ;
+        hydra:mapping[ a hydra:IriTemplateMapping;
+            hydra:variable "endtime"^^xsd:string;
+            hydra:property "schema:endDate";
+            schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+            rdfs:range "xsd:dateTime";
+            rdfs:label "Endtime of documents";
+            hydra:required "true"^^xsd:boolean;
+            schema:defaultValue "2016-01-02"
+            ] ;
+        hydra:mapping[ a hydra:IriTemplateMapping;
+            hydra:variable "network"^^xsd:string;
+            rdfs:range "xsd:string";
+            rdfs:label "Network code";
+            hydra:required "true"^^xsd:boolean;
+            schema:defaultValue "FR"
+            ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+            hydra:variable "station"^^xsd:string;
+            rdfs:range "xsd:string";
+            rdfs:label "Station code";
+            hydra:required "true"^^xsd:boolean;
+            schema:defaultValue "*"
+            ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+            hydra:variable "location"^^xsd:string;
+            rdfs:range "xsd:string";
+            rdfs:label "Location code";
+            hydra:required "true"^^xsd:boolean;
+            schema:defaultValue "*"
+            ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+            hydra:variable "channel"^^xsd:string;
+            rdfs:range "xsd:string";
+            rdfs:label "Channel code";
+            hydra:required "true"^^xsd:boolean;
+            schema:defaultValue "*"
+            ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+            hydra:variable "merge"^^xsd:string;
+            rdfs:range "xsd:string";
+            rdfs:label "Merging method, one of: quality, samplerate";
+            hydra:required "false"^^xsd:boolean;
+            schema:defaultValue "quality"
+            ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+            hydra:variable "orderby"^^xsd:string;
+            rdfs:range "xsd:string";
+            rdfs:label "Sorting method, one of: nslc_time_quality_samplerate, latestupdate, latestupdate_desc";
+            hydra:required "false"^^xsd:boolean;
+            schema:defaultValue "latestupdate"
+            ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+            hydra:variable "includerestricted"^^xsd:boolean;
+            rdfs:range "xsd:string";
+            rdfs:label "Ouputs restricted data"
+            hydra:required "false"^^xsd:boolean;
+            schema:defaultValue "false"
+            ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+            hydra:variable "limit"^^xsd:integer;
+            rdfs:range "xsd:string";
+            rdfs:label "limit number of lines in output"
+            hydra:required "false"^^xsd:boolean;
+            schema:defaultValue "false"
+            ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+            hydra:variable "mergegaps"^^xsd:integer;
+            rdfs:range "xsd:string";
+            rdfs:label "Time period to consider as gaps"
+            hydra:required "false"^^xsd:boolean;
+            schema:defaultValue "false"
+            ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+            hydra:variable "show"^^xsd:string;
+            rdfs:range "xsd:string";
+            rdfs:label "Ouputs the last updated value"
+            hydra:required "false"^^xsd:boolean;
+            schema:defaultValue "false"
+            ];
+
+
+        hydra:template "https://ws.resif.fr/fdsnws/availability/1/extent{?network, station, location, channel, starttime, endtime, merge, orderby, format, includerestricted, limit}"^^xsd:string;
+        hydra:mapping[ a hydra:IriTemplateMapping;
+            hydra:variable "starttime"^^xsd:string;
+            hydra:property "schema:startDate";
+            schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+            rdfs:range "xsd:dateTime";
+            rdfs:label "Starttime of documents";
+            hydra:required "true"^^xsd:boolean;
+            schema:defaultValue "2016-01-01"
+            ] ;
+        hydra:mapping[ a hydra:IriTemplateMapping;
+            hydra:variable "endtime"^^xsd:string;
+            hydra:property "schema:endDate";
+            schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+            rdfs:range "xsd:dateTime";
+            rdfs:label "Endtime of documents";
+            hydra:required "true"^^xsd:boolean;
+            schema:defaultValue "2016-01-02"
+            ] ;
+        hydra:mapping[ a hydra:IriTemplateMapping;
+            hydra:variable "network"^^xsd:string;
+            rdfs:range "xsd:string";
+            rdfs:label "Network code";
+            hydra:required "true"^^xsd:boolean;
+            schema:defaultValue "FR"
+            ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+            hydra:variable "station"^^xsd:string;
+            rdfs:range "xsd:string";
+            rdfs:label "Station code";
+            hydra:required "true"^^xsd:boolean;
+            schema:defaultValue "*"
+            ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+            hydra:variable "location"^^xsd:string;
+            rdfs:range "xsd:string";
+            rdfs:label "Location code";
+            hydra:required "true"^^xsd:boolean;
+            schema:defaultValue "*"
+            ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+            hydra:variable "channel"^^xsd:string;
+            rdfs:range "xsd:string";
+            rdfs:label "Channel code";
+            hydra:required "true"^^xsd:boolean;
+            schema:defaultValue "*"
+            ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+            hydra:variable "merge"^^xsd:string;
+            rdfs:range "xsd:string";
+            rdfs:label "Merging method, one of: quality, samplerate";
+            hydra:required "false"^^xsd:boolean;
+            schema:defaultValue "quality"
+            ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+            hydra:variable "orderby"^^xsd:string;
+            rdfs:range "xsd:string";
+            rdfs:label "Sorting method, one of: nslc_time_quality_samplerate, latestupdate, latestupdate_desc";
+            hydra:required "false"^^xsd:boolean;
+            schema:defaultValue "latestupdate"
+            ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+            hydra:variable "includerestricted"^^xsd:boolean;
+            rdfs:range "xsd:string";
+            rdfs:label "Ouputs restricted data"
+            hydra:required "false"^^xsd:boolean;
+            schema:defaultValue "false"
+            ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+            hydra:variable "limit"^^xsd:integer;
+            rdfs:range "xsd:string";
+            rdfs:label "limit number of lines in output"
+            hydra:required "false"^^xsd:boolean;
+            schema:defaultValue "false"
+            ];
+
+        hydra:mapping[ a hydra:IriTemplateMapping ;
+            hydra:variable "starttime"^^xsd:string;
+            hydra:property "schema:startDate";
+            schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+            rdfs:range "xsd:dateTime";
+            rdfs:label "Starttime of documents";
+            hydra:required "true"^^xsd:boolean;
+            schema:defaultValue "2016-01-01"
+            ] ;
+        ] ;
+    .
+
 
 # Operation WfCatalog
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003/Operation/003/RESIF> a hydra:Operation;
