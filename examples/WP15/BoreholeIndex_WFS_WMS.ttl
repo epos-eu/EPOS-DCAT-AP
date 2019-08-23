@@ -41,7 +41,8 @@
 		schema:propertyID "PIC";
 		schema:value "999993662";
 	]; 
-	schema:legalName "BRGM (French Geological Survey)";
+	schema:legalName "Bureau de Recherches Géologiques et Minières"@en;
+	#schema:legalName "BRGM (French Geological Survey)"@en;
 	schema:leiCode "Legal Entity Identifier Search: http://www.lei-lookup.com/#!search" ;
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "3, avenue Claude Guillemin";
@@ -91,90 +92,94 @@
 		skos:prefLabel "Borehole data";
 . 
 
-	<http://resource.europe-geology.eu/dataset/borehole> a dcat:Dataset;
+	<https://data.geoscience.earth/id/dataset/borehole> a dcat:Dataset;
 		dct:title "Borehole data index";
-		dct:identifier "http://resource.europe-geology.eu/dataset/borehole";
+		dct:identifier "https://data.geoscience.earth/id/dataset/borehole";
 		adms:identifier [ a adms:Identifier;
 			adms:schemaAgency "DDSS-ID";
 			skos:notation "WP15-DDSS-001a";
 		]; 
 		dct:description "This dataset is the harvesting of Borehole Index content provided by the current data providers. It provides â€œmetadataâ€ information for each borehole (ID, purpose, location, type of observations / measurementsâ€¦).  It aims at supporting search and discovery of borehole datasets.  The detailed information along the boreholes are not provided, and are not planned to be consolidated in a central database, but rather be accessed through another set of services (see road map below), to be delivered by the data providers (ie national geological surveys or research organisation).";
 		dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
-		dct:created "2017-10-27"^^xsd:date;
-		dct:modified "2018-09-07"^^xsd:date;
-		dct:issued "2017-10-27"^^xsd:date;
+		dct:created "2016-10-27"^^xsd:date;
+		dct:temporal 
+			[ a dct:PeriodOfTime;
+				schema:startDate "1886-05-16T00:00:00Z"^^xsd:dateTime; 
+				#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
+			]; 
 	dct:spatial [ a dct:Location; 
-		locn:geometry "POLYGON(-180 90,180 90,180 -90,-180 90,-180 90)"^^gsp:wktLiteral; 
+		locn:geometry "POLYGON((-180 90,180 90,180 -90,-180 90,-180 90))"^^gsp:wktLiteral; 
 	]; 
 		dcat:theme <epos:Boreholedata>;
-		dcat:keyword "Borehole", "Borehole Index", "Geology", "INSPIRE:GE", "GeoSciML";
+		dcat:keyword "borehole","geology";
 		dcat:contactPoint <mailto:contact-brgm@brgm.fr/manager>;
-		dcat:distribution <http://resource.europe-geology.eu/dataset/borehole/distributionWfs>; 
-		dcat:distribution <http://resource.europe-geology.eu/dataset/borehole/distributionWms>; 
+		dcat:distribution <https://data.geoscience.earth/id/dataset/borehole/distributionWfs>; 
+		dcat:distribution <https://data.geoscience.earth/id/dataset/borehole/distributionWms>; 
 		dct:publisher <PIC:999993662>;
 . 
-	<http://resource.europe-geology.eu/dataset/borehole/distributionWfs> a dcat:Distribution;
-		dct:identifier "http://resource.europe-geology.eu/dataset/borehole/distributionWfs";
-		dct:title "Borehole Data Index Discovery Service";
-		dct:description "This WFS enables to discover boreholes entities through spatial and attribute based queries.";
+	<https://data.geoscience.earth/id/dataset/borehole/distributionWfs> a dcat:Distribution;
+		dct:identifier "https://data.geoscience.earth/id/dataset/borehole/distributionWfs";
+		dct:title "Borehole Discovery Service";
+		dct:description "This service enables to discover existing Boreholes through spatial and attribute based queries (names, drilling method, ...).";
 		dct:issued "2016-10-27"^^xsd:date;
 		dct:modified "2018-01-19"^^xsd:date;
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-		dct:conformsTo <http://resource.europe-geology.eu/service/wfsBorehole>;
-		dcat:accessURL <http://resource.europe-geology.eu/service/wfsBorehole/operation>;
-		dct:license "TBD"^^xsd:anyURI ;
+		dct:conformsTo <https://data.geoscience.earth/api/wfsBorehole>;
+		dcat:accessURL <https://data.geoscience.earth/api/wfsBorehole/operation>;
+		dct:license "royalty free licence"^^xsd:anyURI ;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/GML"^^xsd:anyURI;
 		#dct:format "https://www.iana.org/assignments/media-types/application/gml+xml"^^xsd:anyURI;
 . 
 
-	<http://resource.europe-geology.eu/dataset/borehole/distributionWms> a dcat:Distribution;
-		dct:identifier "http://resource.europe-geology.eu/dataset/borehole/distributionWms";
-		dct:title "Borehole Data Index View Service";
-		dct:description "This WMS allows visualization of available Boreholes in a given area in Europe.";
+	<https://data.geoscience.earth/id/dataset/borehole/distributionWms> a dcat:Distribution;
+		dct:identifier "https://data.geoscience.earth/id/dataset/borehole/distributionWms";
+		dct:title "Borehole View Service";
+		dct:description "This service allows visualization of available Boreholes in a given area of Europe.";
 		dct:issued "2016-10-27"^^xsd:date;
 		dct:modified "2018-01-19"^^xsd:date;
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-		dct:conformsTo <http://resource.europe-geology.eu/service/wmsBorehole>;
-		dcat:accessURL <http://resource.europe-geology.eu/service/wmsBorehole/operation>;
-		dct:license "TBD"^^xsd:anyURI ;
+		dct:conformsTo <https://data.geoscience.earth/api/wmsBorehole>; 
+		dcat:accessURL <https://data.geoscience.earth/api/wmsBorehole/operation>;
+		dct:license "royalty free licence"^^xsd:anyURI ;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/PNG"^^xsd:anyURI;
 		#dct:format "https://www.iana.org/assignments/media-types/image/png"^^xsd:anyURI;
 . 
 
 
 
-<http://resource.europe-geology.eu/service/wfsBorehole> a epos:WebService;
-	schema:identifier "http://resource.europe-geology.eu/service/wfsBorehole";
+<https://data.geoscience.earth/api/wfsBorehole> a epos:WebService;
+	schema:identifier "https://data.geoscience.earth/api/wfsBorehole";
 	#schema:identifier [ a schema:PropertyValue; 
 		#schema:propertyID  "DDSS-ID"; 
 		#schema:value  "WP15-DDSS-001i"; 
 	#]; 
-	schema:description "This WFS enables to discover boreholes entities through spatial and attribute based queries.";
+	schema:description "This service enables to discover existing Boreholes through spatial and attribute based queries (names, drilling method, ...).";
 	dcat:theme <epos:Boreholedata>;
-	schema:name "Borehole Data Index Discovery Service";
-	hydra:entrypoint "http://resource.europe-geology.eu/service/wfsBorehole"^^xsd:anyURI; 
+	schema:name "Borehole Discovery Service";
+	hydra:entrypoint "https://data.geoscience.earth/api/wfsBorehole"^^xsd:anyURI; 
 	schema:provider <PIC:999993662>;
 	schema:datePublished "2016-10-27Z"^^xsd:dateTime;
 	schema:dateModified "2018-01-19Z"^^xsd:dateTime;
 	dct:spatial [ a dct:Location; 
-		locn:geometry "POLYGON(-180 90,180 90,180 -90,-180 -90,-180 90)"^^gsp:wktLiteral; 
+		locn:geometry "POLYGON((-180 90,180 90,180 -90,-180 -90,-180 90))"^^gsp:wktLiteral; 
 	]; 
-	hydra:supportedOperation <http://resource.europe-geology.eu/service/wfsBorehole/operation>;
-	schema:keywords "Borehole"," Borehole Index"," Geology"," INSPIRE:GE"," GeoSciML";
+	hydra:supportedOperation <https://data.geoscience.earth/api/wfsBorehole/operation>;
+	schema:keywords "borehole","geology";
 	dct:license "TBD"^^xsd:anyURI;
-	dct:temporal [ a dct:PeriodOfTime; 
-		schema:startDate "2016-10-27T00:00:00Z"^^xsd:dateTime; 
+	dct:temporal 
+	[ a dct:PeriodOfTime;
+		schema:startDate "1886-05-16T00:00:00Z"^^xsd:dateTime; 
 		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
 	]; 
 	dcat:contactPoint <mailto:contact-brgm@brgm.fr/manager>;
 . 
 
 
-	<http://resource.europe-geology.eu/service/wfsBorehole/operation> a hydra:Operation;
+	<https://data.geoscience.earth/api/wfsBorehole/operation> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/gml+xml";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "http://resource.europe-geology.eu/service/wfsBorehole{?service, request, typenames, version, count, gml:identifier, gml:name, purpose, status, drillingMethod, operator, driller, drillStartDate, drillEndDate, startPoint, inclinationType, boreholeMaterialCustodian, boreholeLength_m, elevation_m, elevation_srs, positionalAccuracy, source, parentBorehole_uri, metadata_uri, cored, accessToPhysicalDrillCore, boreholeUse, BBOX}"^^xsd:string;
+			hydra:template "https://data.geoscience.earth/api/wfsBorehole{?service, request, typenames, version, count, gml:identifier, gml:name, purpose, status, drillingMethod, operator, driller, drillStartDate, drillEndDate, startPoint, inclinationType, boreholeMaterialCustodian, boreholeLength_m, elevation_m, elevation_srs, positionalAccuracy, source, parentBorehole_uri, metadata_uri, cored, accessToPhysicalDrillCore, boreholeUse, BBOX}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "service"^^xsd:string;
 					rdfs:range "xsd:string";
@@ -274,12 +279,12 @@
 					hydra:variable "startPoint"^^xsd:string;
 					rdfs:range "xsd:string";
 					rdfs:label "startPoint";
-					http:paramValue "http://resource.europe-geology.eu/vocabs/StartPoint/artificialLandSurface";
-					http:paramValue "http://resource.europe-geology.eu/vocabs/StartPoint/naturalLandSurface";
-					http:paramValue "http://resource.europe-geology.eu/vocabs/StartPoint/openPitFloor";
-					http:paramValue "http://resource.europe-geology.eu/vocabs/StartPoint/openPitWall";
-					http:paramValue "http://resource.europe-geology.eu/vocabs/StartPoint/seaFloor";
-					http:paramValue "http://resource.europe-geology.eu/vocabs/StartPoint/underground";
+					http:paramValue "https://data.geoscience.earth/ncl/StartPoint/artificialLandSurface";
+					http:paramValue "https://data.geoscience.earth/ncl/StartPoint/naturalLandSurface";
+					http:paramValue "https://data.geoscience.earth/ncl/StartPoint/openPitFloor";
+					http:paramValue "https://data.geoscience.earth/ncl/StartPoint/openPitWall";
+					http:paramValue "https://data.geoscience.earth/ncl/StartPoint/seaFloor";
+					http:paramValue "https://data.geoscience.earth/ncl/StartPoint/underground";
 					hydra:required "false"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
@@ -364,38 +369,38 @@
 
 
 
-<http://resource.europe-geology.eu/service/wmsBorehole> a epos:WebService;
-	schema:identifier "http://resource.europe-geology.eu/service/wmsBorehole";
+<https://data.geoscience.earth/api/wmsBorehole> a epos:WebService;
+	schema:identifier "https://data.geoscience.earth/api/wmsBorehole";
 	#schema:identifier [ a schema:PropertyValue; 
 		#schema:propertyID  "DDSS-ID"; 
 		#schema:value  "WP15-DDSS-001j"; 
 	#]; 
-	schema:description "This WMS allows visualization of available Boreholes in a given area in Europe.";
+	schema:description "This service allows visualization of available Boreholes in a given area of Europe.";
 	dcat:theme <epos:Boreholedata>;
-	schema:name "Borehole Data Index View Service";
-	hydra:entrypoint "http://resource.europe-geology.eu/service/wmsBorehole?"^^xsd:anyURI; 
+	schema:name "Borehole View Service";
+	hydra:entrypoint "https://data.geoscience.earth/api/wmsBorehole?"^^xsd:anyURI; 
 	schema:provider <PIC:999993662>;
 	schema:datePublished "2016-10-27Z"^^xsd:dateTime;
 	schema:dateModified "2018-01-19Z"^^xsd:dateTime;
 	dct:spatial [ a dct:Location; 
-		locn:geometry "POLYGON(-180 90,180 90,180 -90,-180 -90,-180 90)"^^gsp:wktLiteral; 
+		locn:geometry "POLYGON((-180 90,180 90,180 -90,-180 -90,-180 90))"^^gsp:wktLiteral; 
 	]; 
-	hydra:supportedOperation <http://resource.europe-geology.eu/service/wmsBorehole/operation>;
-	schema:keywords "Borehole"," Borehole Index"," Geology"," INSPIRE geology"," GeoSciML";
+	hydra:supportedOperation <https://data.geoscience.earth/api/wmsBorehole/operation>;
+	schema:keywords "borehole","geology";
 	dct:license "TBD"^^xsd:anyURI;
 	dct:temporal [ a dct:PeriodOfTime; 
-		schema:startDate "2016-10-27T00:00:00Z"^^xsd:dateTime; 
+		schema:startDate "1886-05-16T00:00:00Z"^^xsd:dateTime; 
 		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
 	]; 
 	dcat:contactPoint <mailto:contact-brgm@brgm.fr/manager>;
 . 
 
 
-<http://resource.europe-geology.eu/service/wmsBorehole/operation> a hydra:Operation;
+<https://data.geoscience.earth/api/wmsBorehole/operation> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "image/png";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "http://resource.europe-geology.eu/service/wmsBorehole{?service, version, request, layers, crs, format, width, height}&bbox={minlatitude, minlongitude, maxlatitude, maxlongitude}"^^xsd:string;
+			hydra:template "https://data.geoscience.earth/api/wmsBorehole{?service, version, request, layers, crs, format, width, height}&bbox={minlatitude, minlongitude, maxlatitude, maxlongitude}"^^xsd:string;
 				
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "service"^^xsd:string;
@@ -484,6 +489,7 @@
 					hydra:variable "format"^^xsd:string;
 					rdfs:range "xsd:string";
 					rdfs:label "Output format";
+					hydra:property "schema:encodingFormat";			
 					http:paramValue "image/png";
 					http:paramValue "image/jpeg";
 					http:paramValue "image/geotiff";
