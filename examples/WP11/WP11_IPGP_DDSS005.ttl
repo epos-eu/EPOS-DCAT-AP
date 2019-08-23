@@ -129,7 +129,7 @@
 		schema:propertyID "pic";
 		schema:value "999597417";
 	];
-	schema:legalName "Institute of Earth Physics of Paris"@en;
+	#schema:legalName "Institute of Earth Physics of Paris"@en;
 	schema:legalName "Institut de Physique du Globe de Paris"@fr;
         schema:leiCode "Legal Entity Identifier Search: http://www.lei-lookup.com/#!search" ;
 	schema:address [ a schema:PostalAddress;
@@ -146,12 +146,21 @@
 .
 
  # Contacts
-
+<https://orcid.org/0000-0003-1601-8718/contactPoint> a schema:ContactPoint;
+	schema:email "pardo@ipgp.fr";
+	schema:availableLanguage "en" ;
+	schema:contactType "contactPoint" ;
+.
 
  <https://orcid.org/0000-0002-6874-786X/scientificContact> a schema:ContactPoint;
 	schema:email "jeanchristophe.komorowski@gmail.com";
 	schema:availableLanguage "en" ;
 	schema:contactType "scientificContact" ;
+.
+<https://orcid.org/0000-0002-3039-2530/legalContact> a schema:ContactPoint;
+	schema:email "satriano@ipgp.fr";
+	schema:availableLanguage "en" ;
+	schema:contactType "legalContact" ;
 .
 
  <researcherID:E-7067-2017/legalContact> a schema:ContactPoint;
@@ -270,7 +279,7 @@
 <ws.ipgp.fr/fdsnws/station/ws> a epos:WebService;
 	schema:identifier "ws.ipgp.fr/fdsnws/station/ws";
 	schema:description "This web service provides access to tiltmeter station, instrumentation, and response data. Service implements the station web service according to the standard 1.0 set by the Federation of Digital Seismograph Networks (FDSN).";
-	dcat:theme <epos:Station>;
+	dcat:theme <epos:TiltmeterStation>;
 	schema:name "Meta-data of the tiltmeter stations of the French Volcanoes Observatories";
 	hydra:entrypoint "http://ws.ipgp.fr/fdsnws/"^^xsd:anyURI;
 	schema:provider <PIC:999597417>;
@@ -493,12 +502,12 @@
 	dct:title "Volcano Observations";
 	dct:description "It contains the concepts of Volcano-Observations";
 .
-<epos:Geodeticdata> a skos:Concept;
+<epos:TiltmeterWaveform> a skos:Concept;
 	skos:inScheme <epos:VolcanoObservations>;
 	skos:prefLabel "Tiltmeter  Waveforms";
 .
 
- <epos:Geodeticdata> a skos:Concept;
+ <epos:TiltmeterStation> a skos:Concept;
 	skos:inScheme <epos:VolcanoObservations>;
 	skos:prefLabel "Tiltmeter Stations";
 .
