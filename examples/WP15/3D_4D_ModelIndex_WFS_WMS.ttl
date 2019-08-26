@@ -42,7 +42,7 @@
 		schema:propertyID "PIC";
 		schema:value "999993662";
 	]; 
-	schema:legalName "BRGM (French Geological Survey)";
+	schema:legalName "Bureau de Recherches Géologiques et Minières"@en;
 	schema:leiCode "Legal Entity Identifier Search: http://www.lei-lookup.com/#!search" ;
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "3, avenue Claude Guillemin";
@@ -91,9 +91,9 @@
 .
 
 	
-	<http://resource.europe-geology.eu/dataset/model> a dcat:Dataset;
+	<https://data.geoscience.earth/id/dataset/model> a dcat:Dataset;
 		dct:title "3D/4D Model index";
-		dct:identifier "http://resource.europe-geology.eu/dataset/model";
+		dct:identifier "https://data.geoscience.earth/id/dataset/model";
 		adms:identifier [ a adms:Identifier;
 			adms:schemaAgency "DDSS-ID";
 			skos:notation "WP15-DDSS-006b";
@@ -103,64 +103,70 @@
 		dct:created "2017-10-27"^^xsd:date;
 		dct:modified "2018-09-07"^^xsd:date;
 		dct:issued "2017-10-27"^^xsd:date;
+		dct:temporal
+			[ a dct:PeriodOfTime;
+			schema:startDate "2017-10-27T00:00:00Z"^^xsd:dateTime;
+			#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
+			];
 	dct:spatial [ a dct:Location; 
-		locn:geometry "POLYGON(-180 90,180 90,180 -90,-180 90,-180 90)"^^gsp:wktLiteral; 
+		locn:geometry "POLYGON((-180 90,180 90,180 -90,-180 90,-180 90))"^^gsp:wktLiteral; 
 	]; 
 		dcat:theme <epos:3D/4Dmodels>;
 		dcat:keyword "3D/4D Model","Model Index","Geology","INSPIRE:GE"," GeoSciML";
+		dcat:keyword "3D / 4D Model","geology";
 		dcat:contactPoint <mailto:contact-brgm@brgm.fr/manager>;
-		dcat:distribution <http://resource.europe-geology.eu/dataset/model/distributionWfs>;
-		dcat:distribution <http://resource.europe-geology.eu/dataset/model/distributionWms>;
+		dcat:distribution <https://data.geoscience.earth/id/dataset/model/distributionWfs>;
+		dcat:distribution <https://data.geoscience.earth/id/dataset/model/distributionWms>;
 		dct:publisher <PIC:999993662>;
 . 
 
-	<http://resource.europe-geology.eu/dataset/model/distributionWfs> a dcat:Distribution;
-		dct:identifier "http://resource.europe-geology.eu/dataset/model/distributionWfs";
-		dct:title "3D/4D Model Index Discovery Service";
-		dct:description "This WFS allows to find a 3D/4D Model corresponding to various search criteria";
+	<https://data.geoscience.earth/id/dataset/model/distributionWfs> a dcat:Distribution;
+		dct:identifier "https://data.geoscience.earth/id/dataset/model/distributionWfs";
+		dct:title "3D/4D Model Discovery Service";
+		dct:description "This services allows to find a 3D/4D Model corresponding to various search criteria (area of interest, modeled feature, ...)";
 		dct:issued "2016-10-27"^^xsd:date;
 		dct:modified "2018-01-19"^^xsd:date;
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-		dct:conformsTo <http://resource.europe-geology.eu/service/wfsModel>;
-		dcat:accessURL <http://resource.europe-geology.eu/service/wfsModel/operation>;
-		dct:license "TBD"^^xsd:anyURI ;
+		dct:conformsTo <https://data.geoscience.earth/api/wfsModel>;
+		dcat:accessURL <https://data.geoscience.earth/api/wfsModel/operation>;
+		dct:license "royalty free licence"^^xsd:anyURI ;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/GML"^^xsd:anyURI;
 		#dct:format "https://www.iana.org/assignments/media-types/application/gml+xml"^^xsd:anyURI;
 . 
 
-	<http://resource.europe-geology.eu/dataset/model/distributionWms> a dcat:Distribution;
-		dct:identifier "http://resource.europe-geology.eu/dataset/model/distributionWms";
-		dct:title "3D/4D Model Index View Service";
-		dct:description "This WMS allows visualization of available 3D/4D Models in a given area in Europe.";
+	<https://data.geoscience.earth/id/dataset/model/distributionWms> a dcat:Distribution;
+		dct:identifier "https://data.geoscience.earth/id/dataset/model/distributionWms";
+		dct:title "3D/4D Model View Service";
+		dct:description "This service allows visualization of available 3D/4D Models in a given area in Europe.";
 		dct:issued "2016-10-27"^^xsd:date;
 		dct:modified "2018-01-19"^^xsd:date;
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-		dct:conformsTo <http://resource.europe-geology.eu/service/wmsModel>;
-		dcat:accessURL <http://resource.europe-geology.eu/service/wmsModel/operation>;
+		dct:conformsTo <https://data.geoscience.earth/api/wmsModel>;
+		dcat:accessURL <https://data.geoscience.earth/api/wmsModel/operation>;
 		dct:license "TBD"^^xsd:anyURI ;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/PNG"^^xsd:anyURI;
 		#dct:format "https://www.iana.org/assignments/media-types/image/png"^^xsd:anyURI;
 . 
 
 
-<http://resource.europe-geology.eu/service/wfsModel> a epos:WebService;
-	schema:identifier "http://resource.europe-geology.eu/service/wfsModel";
+<https://data.geoscience.earth/api/wfsModel> a epos:WebService;
+	schema:identifier "https://data.geoscience.earth/api/wfsModel";
 	#schema:identifier [ a schema:PropertyValue; 
 		#schema:propertyID  "DDSS-ID"; 
 		#schema:value  "WP15-DDSS-006a"; 
 	#]; 
-	schema:description "This WFS allows to find a 3D/4D Model corresponding to various search criteria";
+	schema:description "This services allows to find a 3D/4D Model corresponding to various search criteria (area of interest, modeled feature, ...)";
 	dcat:theme <epos:3D/4Dmodels>;
-	schema:name "3D/4D Model Index Discovery Service";
-	hydra:entrypoint "http://resource.europe-geology.eu/service/wfsModel"^^xsd:anyURI; 
+	schema:name "3D/4D Model Discovery Service";
+	hydra:entrypoint "https://data.geoscience.earth/api/wfsModel"^^xsd:anyURI; 
 	schema:provider <PIC:999993662>;
 	schema:datePublished "2016-10-27"^^xsd:date;
 	schema:dateModified "2018-01-19"^^xsd:date;
 	dct:spatial [ a dct:Location; 
-		locn:geometry "POLYGON(-180 90,180 90,180 -90,-180 -90,-180 90)"^^gsp:wktLiteral; 
+		locn:geometry "POLYGON((-180 90,180 90,180 -90,-180 -90,-180 90))"^^gsp:wktLiteral; 
 	]; 
-	hydra:supportedOperation <http://resource.europe-geology.eu/service/wfsModel/operation>;
-	schema:keyword  "3D/4D Model","Model Index","Geology","INSPIRE:GE"," GeoSciML";	
+	hydra:supportedOperation <https://data.geoscience.earth/api/wfsModel/operation>;
+	schema:keyword  "3D / 4D Model","geology";
 	dct:license "TBD"^^xsd:anyURI;
 	dct:temporal [ a dct:PeriodOfTime; 
 		schema:startDate "2016-10-27T00:00:00Z"^^xsd:dateTime; 
@@ -170,11 +176,11 @@
 . 
 
 
-	<http://resource.europe-geology.eu/service/wfsModel/operation> a hydra:Operation;
+	<https://data.geoscience.earth/api/wfsModel/operation> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/gml+xml";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "http://resource.europe-geology.eu/service/wfsModel{?service, request, typenames, version, count, gml:identifier, gml:name, creationDate, releaseDate, updateDate, versionNumber, type, purpose, status, individualName, organisationName, projectName, projectURI, boundingBox, zMin, zMax, verticalSRS, positionalAccuracy, areaOfInterest, modelledGeologicFeature, modellingSoftwareToolName, modellingSoftwareToolVersion, outputGeometryReference, outputGeometry, distributionFormat, meshGridType, volumeUnitRepresentationType, exportVisualisationLink, previewLink, onlineResource, reportOnlineResource, useLimitation, pointOfContact,BBOX}"^^xsd:string;
+			hydra:template "https://data.geoscience.earth/api/wfsModel{?service, request, typenames, version, count, gml:identifier, gml:name, creationDate, releaseDate, updateDate, versionNumber, type, purpose, status, individualName, organisationName, projectName, projectURI, boundingBox, zMin, zMax, verticalSRS, positionalAccuracy, areaOfInterest, modelledGeologicFeature, modellingSoftwareToolName, modellingSoftwareToolVersion, outputGeometryReference, outputGeometry, distributionFormat, meshGridType, volumeUnitRepresentationType, exportVisualisationLink, previewLink, onlineResource, reportOnlineResource, useLimitation, pointOfContact,BBOX}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "service"^^xsd:string;
 					rdfs:range "xsd:string";
@@ -418,26 +424,24 @@
 . 
 
 
-
-
-<http://resource.europe-geology.eu/service/wmsModel> a epos:WebService;
-	schema:identifier "http://resource.europe-geology.eu/service/wmsModel";
+<https://data.geoscience.earth/api/wmsModel> a epos:WebService;
+	schema:identifier "https://data.geoscience.earth/api/wmsModel";
 	#schema:identifier [ a schema:PropertyValue; 
 		#schema:propertyID  "DDSS-ID"; 
 		#schema:value  "WP15-DDSS-006c"; 
 	#]; 
-	schema:description "This WMS allows visualization of available 3D/4D Models in a given area in Europe";
+	schema:description  "This service allows visualization of available 3D/4D Models in a given area in Europe.";
 	dcat:theme <epos:3D/4Dmodels>;
-	schema:name "3D/4D Model Index Discovery Service";
-	hydra:entrypoint "http://resource.europe-geology.eu/service/wmsModel?"^^xsd:anyURI;
+	schema:name  "3D/4D Model View Service";
+	hydra:entrypoint "https://data.geoscience.earth/api/wmsModel?"^^xsd:anyURI;
 	schema:provider <PIC:999993662>;
 	schema:datePublished "2016-10-27"^^xsd:date;
 	schema:dateModified "2018-01-19"^^xsd:date;
 	dct:spatial [ a dct:Location; 
-		locn:geometry "POLYGON(-180 90,180 90,180 -90,-180 -90,-180 90)"^^gsp:wktLiteral; 
+		locn:geometry "POLYGON((-180 90,180 90,180 -90,-180 -90,-180 90))"^^gsp:wktLiteral; 
 	]; 
-	hydra:supportedOperation <http://resource.europe-geology.eu/service/wmsModel/operation>;
-	schema:keyword  "3D/4D Model","Model Index","Geology","INSPIRE:GE"," GeoSciML";	
+	hydra:supportedOperation <https://data.geoscience.earth/api/wmsModel/operation>;
+	schema:keyword  "3D / 4D Model","geology";
 	dct:license "TBD"^^xsd:anyURI;
 	dct:temporal [ a dct:PeriodOfTime; 
 		schema:startDate "2016-10-27T00:00:00Z"^^xsd:dateTime; 
@@ -447,11 +451,11 @@
 . 
 
 
-<http://resource.europe-geology.eu/service/wmsModel/operation> a hydra:Operation;
+<https://data.geoscience.earth/api/wmsModel/operation> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "image/png";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "http://resource.europe-geology.eu/service/wmsModel{?service, version, request, layers, crs, format, width, height}&bbox={minlatitude, minlongitude, maxlatitude, maxlongitude}"^^xsd:string;
+			hydra:template "https://data.geoscience.earth/api/wmsModel{?service, version, request, layers, crs, format, width, height}&bbox={minlatitude, minlongitude, maxlatitude, maxlongitude}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "service"^^xsd:string;
 					rdfs:range "xsd:string";
@@ -538,6 +542,7 @@
 					hydra:variable "format"^^xsd:string;
 					rdfs:range "xsd:string";
 					rdfs:label "Output format";
+					hydra:property "schema:encodingFormat";	
 					http:paramValue "image/png";
 					http:paramValue "image/jpeg";
 					http:paramValue "image/geotiff";
