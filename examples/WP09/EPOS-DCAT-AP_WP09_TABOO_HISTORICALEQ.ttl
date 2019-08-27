@@ -227,8 +227,8 @@
 				hydra:variable "starttime"^^xsd:string;
 				rdfs:label "timespan start time";
 				rdfs:range "xsd:dateTime";
-				schema:minValue "1000-01-01T00:00:00Z";
-				schema:maxValue "2014-12-31T23:59:59Z";
+				schema:minValue "1000-01-01T00:00:00";
+				schema:maxValue "1899-12-31T23:59:59";
 				hydra:property "schema:startDate";
 				schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 				schema:defaultValue "1000-01-01T00:00:00";
@@ -238,11 +238,11 @@
 				hydra:variable "endtime"^^xsd:string;
 				rdfs:label "timespan end time";
 				rdfs:range "xsd:dateTime";
-				schema:minValue "1000-01-01T00:00:00Z";
-				schema:maxValue "2014-12-31T23:59:59Z";
+				schema:minValue "1000-01-01T00:00:00";
+				schema:maxValue "1899-12-31T23:59:59";
 				hydra:property "schema:endDate";
 				schema:valuePattern "YYYY-MM-DDThh:mm:ss";
-				schema:defaultValue "2014-12-31T23:59:59";
+				schema:defaultValue "1899-12-31T23:59:59";
 				hydra:required "true"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;

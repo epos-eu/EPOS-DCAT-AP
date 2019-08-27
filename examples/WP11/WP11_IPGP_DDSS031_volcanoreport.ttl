@@ -61,7 +61,7 @@
 	schema:contactPoint <researcherID:E-7067-2017/legalContact>;
 .
 
-<https://orcid.org/0000-0002-4234-3787> a schema:Person;
+<https://rcid.org/0000-0002-4234-3787> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "orcid";
 		schema:value "https://orcid.org/0000-0002-4234-3787";
@@ -112,7 +112,8 @@
 		schema:propertyID "PIC";
 		schema:value "999597417";
 	];
-	schema:legalName "Institute of Earth Physics of Paris";
+	#schema:legalName "Institut de Physique du Globe de Paris"@fr;
+        schema:legalName "Institute of Earth Physics of Paris"@en;
         schema:leiCode "999597417";
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "1 rue jussieu";
@@ -180,10 +181,10 @@
 	];
 	dct:spatial [ a dct:Location;
 		#locn:geometry "POLYGON(180 -90,-180 -90,-180 90,180 90,180 -90)"^^gsp:wktLiteral;
-		locn:geometry "POLYGON(-64 11,-58 11,-58 18,-64 18,-64 11)"^^gsp:wktLiteral;
-		locn:geometry "POLYGON(54.5 -21.5 , 56.5 -21.5 , 56.5 -20.5 , 54.5 -20.5 , 54.5 -21.5)"^^gsp:wktLiteral;
+		locn:geometry "POLYGON((-64 11,-58 11,-58 18,-64 18,-64 11))"^^gsp:wktLiteral;
+		locn:geometry "POLYGON((54.5 -21.5 , 56.5 -21.5 , 56.5 -20.5 , 54.5 -20.5 , 54.5 -21.5))"^^gsp:wktLiteral;
 	];
-	dcat:theme <epos:volvanic-activity>;
+	dcat:theme <epos:volcanic-activity>;
 	dcat:keyword "volcanology", "geohazards","periodic reports", "exceptional reports", "volcanic eruptions", "VONA", "civil aviation", "VAAC - Volcanic Ash Advisories Centers", "WMO - World Meteorolgical Organization";
 	dct:publisher <PIC:999597417>;
 	dcat:distribution <WP11/volcanic-activity/DDSS031/distribution/report>;
@@ -199,7 +200,7 @@
 <WP11/volcanic-activity/DDSS031/distribution/report> a dcat:Distribution;
 	dct:identifier "WP11/volcanic-activity/DDSS031/distribution/report";
 	dct:title "Reports on volcanic activity";
-	dct:description "Access to the periodic and exceptional reports produced by the French volcano Observatories and the Volcano Observatory Notice dor Aviation as well";
+        dct:description "The service provides access to periodic and exceptional reports produced by the French volcano Observatories.  It also give access to the Volcano Observatory Notice for Aviation";
 	dct:issued "2019-01-01"^^xsd:date;
 	dct:modified "2019-01-01"^^xsd:date;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
@@ -215,17 +216,17 @@
 
 <http://ws.ipgp.fr/volcano-reports/report/ws> a epos:WebService;
 	schema:identifier "http://ws.ipgp.fr/volcano-reports/report/ws";
-	schema:description "Web Service at IPGP data center to download meta-data of reports dessiminated by the French volcano Observatories";
-	dcat:theme <epos:volvanic-activity>;
-	schema:name "VolcanoReports Web Service - IPGP data centre";
+        schema:description "This web service provides access to reports dessiminated by the French volcanoes Observatories. It also provides the activity and the aviation color code according to standards of the Volcanic Ash Advisory Centers of the World Meteorological Organisation and to emergency plans (plan ORSEC) of authorities";
+	dcat:theme <epos:volcanic-activity>;
+        schema:name "Volcano reports and activity color code of the French volcanoes";
 	hydra:entrypoint "http://ws.ipgp.fr/volcano-reports/"^^xsd:anyURI;
 	schema:provider <PIC:999597417>;
 	schema:datePublished "2019-01-01"^^xsd:date;
 	schema:dateModified "2019-01-11"^^xsd:date;
 	dct:spatial [ a dct:Location;
 		#locn:geometry "POLYGON(180.0 -90.0,-180.0 -90.0,-180.0 90.0,180.0 90.0,180.0 -90.0)"^^gsp:wktLiteral;
-		locn:geometry "POLYGON(-64 11,-58 11,-58 18,-64 18,-64 11)"^^gsp:wktLiteral;
-		locn:geometry "POLYGON(54.5 -21.5 , 56.5 -21.5 , 56.5 -20.5 , 54.5 -20.5 , 54.5 -21.5)"^^gsp:wktLiteral;
+		locn:geometry "POLYGON((-64 11,-58 11,-58 18,-64 18,-64 11))"^^gsp:wktLiteral;
+		locn:geometry "POLYGON((54.5 -21.5 , 56.5 -21.5 , 56.5 -20.5 , 54.5 -20.5 , 54.5 -21.5))"^^gsp:wktLiteral;
 	];
 	hydra:supportedOperation <http://ws.ipgp.fr/volcano-reports/report/operation>;
 	schema:keywords "Volcanic activity"," IPGP","periodic reports","exceptional reports","eruption" , "VONA" , "VAAC";
@@ -246,7 +247,7 @@
 	hydra:property[ a hydra:IriTemplate;
 		hydra:template "http://ws.ipgp.fr/volcano-reports/report{?start_time,end_time,agency,volcano,type,language}"^^xsd:string;
 			hydra:mapping[ a hydra:IriTemplateMapping;
-				hydra:variable "start_time"^^xsd:dateTime;
+				hydra:variable "start_time";
 				hydra:property "schema:startDate";
 				schema:valuePattern "YYYY-MM-DD";
 				rdfs:range "xsd:dateTime";
@@ -255,7 +256,7 @@
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
-				hydra:variable "end_time"^^xsd:dateTime;
+				hydra:variable "end_time";
 				hydra:property "schema:endDate";
 				schema:valuePattern "YYYY-MM-DD";
 				rdfs:range "xsd:dateTime";
@@ -299,9 +300,9 @@
 
 <epos:VolcanoObservations> a skos:ConceptScheme;
 	dct:title "Volcano Observations";
-	dct:description "It contains the concepts of Volcano-Observations";
+        dct:description "Aviation color code and the activity color code for volcanoes in French Overseas";
 .
-<epos:volvanic-activity> a skos:Concept;
+<epos:volcanic-activity> a skos:Concept;
 	skos:inScheme <epos:VolcanoObservations>;
 	skos:prefLabel "volcano reports meta-data";
 .

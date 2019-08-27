@@ -41,7 +41,7 @@
 		schema:propertyID "PIC";
 		schema:value "999993662";
 	]; 
-	schema:legalName "BRGM (French Geological Survey)";
+	schema:legalName "Bureau de Recherches Géologiques et Minières"@en;
 	schema:leiCode "Legal Entity Identifier Search: http://www.lei-lookup.com/#!search" ;
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "3, avenue Claude Guillemin";
@@ -92,9 +92,9 @@
 . 
 
 
-	<http://resource.europe-geology.eu/dataset/mine> a dcat:Dataset;
+	<https://data.geoscience.earth/id/dataset/mine> a dcat:Dataset;
 		dct:title "Georesource occurence data";
-		dct:identifier "http://resource.europe-geology.eu/dataset/mine"; 
+		dct:identifier "https://data.geoscience.earth/id/dataset/mine"; 
 		adms:identifier [ a adms:Identifier;
 			adms:schemaAgency "DDSS-ID";
 			skos:notation "WP15-DDSS-010a";
@@ -105,48 +105,48 @@
 		dct:modified "2018-09-07"^^xsd:date;
 		dct:issued "2017-10-27"^^xsd:date;
 	dct:spatial [ a dct:Location; 
-		locn:geometry "POLYGON(-180 90,180 90,180 -90,-180 90,-180 90)"^^gsp:wktLiteral; 
+		locn:geometry "POLYGON((-180 90,180 90,180 -90,-180 90,-180 90))"^^gsp:wktLiteral; 
 	]; 
 		dcat:theme <epos:GeologicalData>;
-		dcat:keyword "Mine", "INSPIRE:MR", "EarthResourceML";
+		dcat:keyword "mine","geology";
 		dcat:contactPoint <mailto:contact-brgm@brgm.fr/manager>;
-		dcat:distribution <http://resource.europe-geology.eu/dataset/mine/distributionWfs>;
+		dcat:distribution <https://data.geoscience.earth/id/dataset/mine/distributionWfs>;
 		dct:publisher <PIC:999993662>;
 . 
 
-	<http://resource.europe-geology.eu/dataset/mine/distributionWfs> a dcat:Distribution;
-		dct:identifier "http://resource.europe-geology.eu/dataset/mine/distributionWfs";
-		dct:title "Geological Feature Index Discovery Service based on Minerals4EU dataset";
-		dct:description "Based on Minerals4EU dataset, this WFS allows to explore and discover available mineral resources  datasets in a given area.";
+	<https://data.geoscience.earth/id/dataset/mine/distributionWfs> a dcat:Distribution;
+		dct:identifier "https://data.geoscience.earth/id/dataset/mine/distributionWfs";
+		dct:title "Mine Discovery Service based on Minerals4EU dataset";
+		dct:description "Based on Minerals4EU dataset, this service allows to explore and discover available mine in a given area.";
 		dct:issued "2016-10-27"^^xsd:date;
 		dct:modified "2018-01-19"^^xsd:date;
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-		dct:conformsTo <http://resource.europe-geology.eu/service/wfsMine>;
-		dcat:accessURL <http://resource.europe-geology.eu/service/wfsMine/operation>;
-		dct:license "TBD"^^xsd:anyURI ;
+		dct:conformsTo <https://data.geoscience.earth/api/wfsMine>;
+		dcat:accessURL <https://data.geoscience.earth/api/wfsMine/operation>;
+		dct:license "royalty free licence"^^xsd:anyURI ;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/GML"^^xsd:anyURI;
 		#dct:format "https://www.iana.org/assignments/media-types/application/gml+xml"^^xsd:anyURI;
 . 
 
 	
-<http://resource.europe-geology.eu/service/wfsMine> a epos:WebService;
-	schema:identifier "http://resource.europe-geology.eu/service/wfsMine";
+<https://data.geoscience.earth/api/wfsMine> a epos:WebService;
+	schema:identifier "https://data.geoscience.earth/api/wfsMine";
 	#schema:identifier [ a schema:PropertyValue; 
 		#schema:propertyID  "DDSS-ID"; 
 		#schema:value  "WP15-DDSS-010a";
 	#]; 
-	schema:description "Based on Minerals4EU dataset, this WFS allows to explore and discover available mineral resources  datasets in a given area.";
+	schema:description "Based on Minerals4EU dataset, this service allows to explore and discover available mine in a given area.";
 	dcat:theme <epos:GeologicalData>;
-	schema:name "Georesources";
-	hydra:entrypoint "http://resource.europe-geology.eu/service/wfsMine"^^xsd:anyURI;
+	schema:name "Mine discovery service";
+	hydra:entrypoint "https://data.geoscience.earth/api/wfsMine"^^xsd:anyURI;
 	schema:provider <PIC:999993662>;
-	schema:datePublished "2016-10-27Z"^^xsd:dateTime;
-	schema:dateModified "2018-01-19Z"^^xsd:dateTime;
+	schema:datePublished "2016-10-27Z"^^xsd:date;
+	schema:dateModified "2018-01-19Z"^^xsd:date;
 	dct:spatial [ a dct:Location; 
-		locn:geometry "POLYGON(-180 90,180 90,180 -90,-180 -90,-180 90)"^^gsp:wktLiteral; 
+		locn:geometry "POLYGON((-180 90,180 90,180 -90,-180 -90,-180 90))"^^gsp:wktLiteral; 
 	]; 
-	hydra:supportedOperation <http://resource.europe-geology.eu/service/wfsMine/operation>;
-	schema:keywords "Mine", "INSPIRE:MR", "EarthResourceML";
+	hydra:supportedOperation <https://data.geoscience.earth/api/wfsMine/operation>;
+	schema:keywords "mine", "geology";
 	dct:license "TBD"^^xsd:anyURI;
 	dct:temporal [ a dct:PeriodOfTime; 
 		schema:startDate "2016-10-27T00:00:00Z"^^xsd:dateTime; 
@@ -156,11 +156,11 @@
 . 
 
 
-	<http://resource.europe-geology.eu/service/wfsMine/operation> a hydra:Operation;
+	<https://data.geoscience.earth/api/wfsMine/operation> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/gml+xml";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "http://resource.europe-geology.eu/service/wfsMine{?service, request, typenames, version, count, gml:identifier, gml:name, BBOX}"^^xsd:string;
+			hydra:template "https://data.geoscience.earth/api/wfsMine{?service, request, typenames, version, count, gml:identifier, gml:name, BBOX}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "service"^^xsd:string;
 					rdfs:range "xsd:string";

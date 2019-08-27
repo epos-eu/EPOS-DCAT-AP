@@ -93,16 +93,18 @@
         schema:propertyID "ISNI";
         schema:value "http://isni.org/isni/0000000109416043";
     ];
-    schema:leiCode "Legal Entity Identifier" ;
-    schema:legalName "Earth Physics Observatory of Clermont-Ferrand"^^xsd:string;
-    # schema:alternateName "Observatoire de Physique du Globe de Clermont-Ferrand"^^xsd:string;
-    # schema:alternateName "OPGC"^^xsd:string;
+    schema:leiCode "Legal Entity Identifier";
+#    schema:legalName "Observatoire de Physique du Globe de Clermont-Ferrand"@fr;
+    schema:legalName "Earth Physics Observatory of Clermont-Ferrand"@en;
     schema:address [ a schema:PostalAddress;
         schema:streetAddress "OPGC, 4 Avenue Blaise Pascal";
         schema:addressLocality "AUBIERE CEDEX";
         schema:postalCode "63178";
         schema:addressCountry "FRANCE";
-    ];
+    ];  
+#    dct:spatial [ a dct:location ;
+#        locn:geometry "POINT(3.110 45.761)"^^gsp:wktLiteral;
+#    ];
     schema:logo "http://wwwobs.univ-bpclermont.fr/opgc/images/LogoOPGCTransparent.png"^^xsd:anyURI;
     schema:url "http://opgc.fr"^^xsd:anyURI;
     schema:email "g.delcampo@opgc.fr";
@@ -139,15 +141,17 @@
         schema:value "http://isni.org/isni/0000000121129282";
     ];
     schema:leiCode "Legal Entity Identifier" ;
-    schema:legalName "The National Center for Scientific Research"^^xsd:string;
-    # schema:alternateName "CNRS: Le Centre National de la Recherche Scientifique"^^xsd:string;
-    # schema:alternateName "CNRS"^^xsd:string;
+#    schema:legalName "Le Centre National de la Recherche Scientifique"@fr;
+    schema:legalName "The National Center for Scientific Research"@en;
     schema:address [ a schema:PostalAddress;
         schema:streetAddress "CNRS, 3 rue Michel-Ange";
         schema:addressLocality "PARIS CEDEX 16";
         schema:postalCode "75794";
         schema:addressCountry "FRANCE";
-    ];
+    ];   
+#    dct:spatial [ a dct:location ;
+#        locn:geometry "POINT(2.262 48.847)"^^gsp:wktLiteral;
+#    ];
     schema:logo "http://www.cnrs.fr/fr/z-tools/newune/themes/CNRSTheme/images/logocnrs.png"^^xsd:anyURI;
     schema:url "http://cnrs.fr"^^xsd:anyURI;
     schema:telephone "+33144964000";
@@ -199,7 +203,7 @@
         locn:geometry "POLYGON((-5 42, 8.25 42, 8.25 51.5, -5 51.5, -5 42))"^^gsp:wktLiteral;
     ];
     dcat:theme <epos:Thermalmonitoring>;
-    dcat:keyword "spectral radiance", "lava monitoring", "nti*", "geotiff", "hot spots", "thermal anomalies";
+    dcat:keyword "volcanology", "remote-sensing", "satellite", "spectral radiance", "lava monitoring", "nti*", "geotiff", "hot spots", "thermal anomalies";
     dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
     dct:publisher <http://isni.org/isni/0000000109416043>;
     dcat:distribution <hotvolc.opgc.fr/WP11/DDSS-049/Distribution>;
@@ -251,7 +255,7 @@
         locn:geometry "POLYGON((-5 42, 8.25 42, 8.25 51.5, -5 51.5, -5 42))"^^gsp:wktLiteral;
     ];
     dcat:theme <epos:Thermalmonitoring>;
-    dcat:keyword "spectral radiance", "lava monitoring", "geotiff", "thermal state";
+    dcat:keyword "volcanology", "remote-sensing", "satellite", "spectral radiance", "lava monitoring", "geotiff", "thermal state";
     dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
     dct:publisher <http://isni.org/isni/0000000109416043>;
     dcat:distribution <hotvolc.opgc.fr/WP11/DDSS-049/Distribution>;
@@ -303,7 +307,7 @@
         locn:geometry "POLYGON((-5 42, 8.25 42, 8.25 51.5, -5 51.5, -5 42))"^^gsp:wktLiteral;
     ];
     dcat:theme <epos:Thermalmonitoring>;
-    dcat:keyword "spectral radiance", "lava monitoring", "nti*", "timeseries", "hot spots", "thermal anomalies";
+    dcat:keyword "volcanology", "remote-sensing", "satellite", "spectral radiance", "lava monitoring", "nti*", "timeseries", "hot spots", "thermal anomalies";
     dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
     dct:publisher <http://isni.org/isni/0000000109416043>;
     dcat:distribution <hotvolc.opgc.fr/WP11/DDSS-049/Distribution>;
@@ -335,7 +339,7 @@
         locn:geometry "POLYGON((50.709999 -26.309999, 60.709999 -26.309999, 60.709999 -16.309999, 50.709999 -16.309999, 50.709999 -26.309999))"^^gsp:wktLiteral;
     ];
     dcat:theme <epos:Thermalmonitoring>;
-    dcat:keyword "spectral radiance", "lava monitoring", "nti*", "timeseries", "hot spots", "thermal anomalies", "volume", "flow rate";
+    dcat:keyword "volcanology", "remote-sensing", "satellite", "spectral radiance", "lava monitoring", "nti*", "timeseries", "hot spots", "thermal anomalies", "volume", "flow rate";
     dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
     dct:publisher <http://isni.org/isni/0000000109416043>;
     dcat:distribution <hotvolc.opgc.fr/WP11/DDSS-049/Distribution>;
@@ -387,7 +391,7 @@
         locn:geometry "POLYGON((-5 42, 8.25 42, 8.25 51.5, -5 51.5, -5 42))"^^gsp:wktLiteral;
     ];
     dcat:theme <epos:Thermalmonitoring>;
-    dcat:keyword "spectral radiance", "lava monitoring", "nti*", "timeseries", "hot spots", "thermal anomalies";
+    dcat:keyword "volcanology", "remote-sensing", "satellite", "spectral radiance", "lava monitoring", "nti*", "timeseries", "hot spots", "thermal anomalies";
     dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
     dct:publisher <http://isni.org/isni/0000000109416043>;      
     dcat:distribution <hotvolc.opgc.fr/WP11/DDSS-049/Distribution>;
@@ -439,7 +443,7 @@
         locn:geometry "POLYGON((-5 42, 8.25 42, 8.25 51.5, -5 51.5, -5 42))"^^gsp:wktLiteral;
     ];
     dcat:theme <epos:Thermalmonitoring>;
-    dcat:keyword "spectral radiance", "lava monitoring", "nti*", "geotiff", "hot spots", "thermal anomalies";
+    dcat:keyword "volcanology", "remote-sensing", "satellite", "spectral radiance", "lava monitoring", "nti*", "geotiff", "hot spots", "thermal anomalies";
     dcat:contactPoint <http://orcid.org/0000-0001-8720-7300/contactPoint>;
     dct:publisher <http://isni.org/isni/0000000109416043>;     
     dcat:distribution <hotvolc.opgc.fr/WP11/DDSS-049/Distribution>;
@@ -451,13 +455,13 @@
 
 <hotvolc.opgc.fr/WP11/DDSS-049/Distribution> a dcat:Distribution;
         dct:identifier "hotvolc.opgc.fr/WP11/DDSS-049/Distribution";
-        dct:title "OPGC Satellite Volcanic Thermal Anomalies";
+        dct:title "Geostationary satellite derived Volcanic Thermal Anomalies products";
         dct:description "The way to download the HOTVOLC thermal anomalies products";
         dct:issued "2018-09-05T00:00:00Z"^^xsd:date;
         dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
         dcat:accessURL <hotvolc.opgc.fr/data-search/WP11/DDSS-049>;
         dct:conformsTo <hotvolc.opgc.fr/WP11/DDSS-049>;
-        dct:format "http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE"^^xsd:anyURI;
+        dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
         dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 .
 
@@ -468,7 +472,7 @@
 <hotvolc.opgc.fr/WP11/DDSS-049> a epos:WebService;
     schema:identifier "hotvolc.opgc.fr/WP11/DDSS-049";
     schema:description "HOTVOLC is a web-based satellite-data-driven reporting system dedicated to the real-time observation of volcanic products. This application is developed and managed by the Observatoire de Physique du Globe de Clermont-Ferrand (OPGC). It uses on-site automated ingestion of MSG-SEVIRI geostationary satellite data from EUMETSAT primary dissemination protocol using the Digital Video Broadcasting - Satellite 2 (DVB-S2) service. This allows acquisition of High Rate Information Transmission (HRIT) level 1.5 format, corresponding to image data that have been corrected for unwanted radiometric and geometric effects. Images are geolocated, calibrated and radiance linearized. HRIT digital numbers are converted into spectral radiance (in Wm-2.sr-1.μm-1) and then processed through validated algorithm for direct dissemination of ready-to-use products on a full web-GIS interface.This application allows you to interactively browse satellite imagery and associated products for both real-time (RT) and past events.";
-    schema:name "HOTVOLC Observing System - EPOS - WP11/DDSS-049";
+    schema:name "Archive of geostationary satellite derived volcanic thermal anomalies products";
     schema:datePublished "2015-08-24T12:00:00Z"^^xsd:dateTime;
     schema:dateModified "2018-07-12T16:00:00Z"^^xsd:dateTime;
     dct:temporal [ a dct:PeriodOfTime;
@@ -501,10 +505,9 @@
         locn:geometry "POLYGON((-5 42, 8.25 42, 8.25 51.5, -5 51.5, -5 42))"^^gsp:wktLiteral;
     ];
     schema:provider <http://isni.org/isni/0000000109416043>;
-    schema:keywords "WebGIS", "Real Time", "Remote Sensing", "Satellite", "Infrared", "Volcanology", "Hotspot", "Lava", "Thermal Monitoring";
+    schema:keywords "webgis", "real time", "remote-sensing", "satellite", "infrared", "volcanology", "hot spots", "lava", "thermal monitoring", "thermal anomalies", "spectral radiance";
     # hydra:entrypoint "http://hotvolc.opgc.fr/www/php/application.php"^^xsd:anyURI;
     hydra:supportedOperation <hotvolc.opgc.fr/data-search/WP11/DDSS-049>;
-    hydra:supportedOperation <hotvolc.opgc.fr/data-download>;
     dcat:theme <epos:Thermalmonitoring>;
     schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
     dct:conformsTo <hotvolc.opgc.fr/WP11/DDSS-049/APIDocumentation>;
@@ -529,25 +532,25 @@
         hydra:method "GET"^^xsd:string;
         hydra:returns "application/json";
         hydra:property[ a hydra:IriTemplate;
-            hydra:template "http://hotvolc.opgc.fr/www/php/data_catalog.php{?date_begin, date_end, volcano, zone, type, ddss}&bbox=({lonmin, latmin, lonmax, latmax})"^^xsd:string;
+            hydra:template "http://hotvolc.opgc.fr/www/php/data_catalog.php{?date_begin, date_end, volcano, zone, type, ddss, count, start_page, start_index}&bbox=({lonmin, latmin, lonmax, latmax})"^^xsd:string;
                 hydra:mapping[ a hydra:IriTemplateMapping;
-                    hydra:variable "date_begin"^^xsd:dateTime;
+                    hydra:variable "date_begin"^^xsd:string;
                     hydra:property "schema:startDate";
                     schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
                     rdfs:label "Specific datetime query or starting datetime of the time interval query (format YYYY-MM-DDThh:mm:ssZ)";
                     rdfs:range "xsd:dateTime";
-                    schema:minValue "2010-05-06T00:00:00Z"^^xsd:dateTime;
-		    schema:defaultValue "2010-05-06T00:00:00Z";
+                    schema:minValue "2010-05-06T00:00:00Z"^^xsd:string;
+		                schema:defaultValue "2019-07-19T04:00:00Z";
                     hydra:required "false"^^xsd:boolean;
                 ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
-                    hydra:variable "date_end"^^xsd:dateTime;
+                    hydra:variable "date_end"^^xsd:string;
                     hydra:property "schema:endDate";
                     schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
                     rdfs:label "Ending datetime the time interval query (format YYYY-MM-DDThh:mm:ssZ)";
                     rdfs:range "xsd:dateTime";
-                    schema:minValue "2010-05-06T00:00:00Z"^^xsd:dateTime;
-		    schema:defaultValue "2010-06-06T00:00:00Z";
+                    schema:minValue "2010-05-06T00:00:00Z"^^xsd:string;
+		                schema:defaultValue "2019-07-19T08:00:00Z";
                     hydra:required "false"^^xsd:boolean;
                 ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
@@ -594,6 +597,7 @@
                     http:paramValue "Chaine_des_Puys";
                     http:paramValue "Etna";
                     rdfs:range "xsd:string";
+                    schema:defaultValue "Etna";
                     hydra:required "false"^^xsd:boolean;
                 ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
@@ -628,11 +632,33 @@
                 ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "ddss"^^xsd:string;
-                    rdfs:label "Limite the query to products type related to a specific ddss";
+                    rdfs:label "Limit the query to products type related to a specific ddss";
                     http:paramValue "hotvolc.opgc.fr/WP11-DDSS-049";
                     schema:defaultValue "hotvolc.opgc.fr/WP11-DDSS-049"^^xsd:string;
                     hydra:required "true"^^xsd:boolean;
 		    rdfs:range "xsd:string";
+                ];
+                hydra:mapping[ a hydra:IriTemplateMapping;
+                    hydra:variable "count"^^xsd:string;
+                    rdfs:label "Number of results returned by page (default 50)";
+                    schema:minValue "1";
+                    schema:defaultValue "50";   
+                    rdfs:range "xsd:integer";
+                    hydra:required "false"^^xsd:boolean;
+                ];
+                hydra:mapping[ a hydra:IriTemplateMapping;
+                    hydra:variable "start_page"^^xsd:string;
+                    rdfs:label "Page number of the set of search result desired";
+                    schema:minValue "1";
+                    rdfs:range "xsd:integer";
+                    hydra:required "false"^^xsd:boolean;
+                ];
+                hydra:mapping[ a hydra:IriTemplateMapping;
+                    hydra:variable "start_index"^^xsd:string;
+                    rdfs:label "Index of the first search result desired";
+                    schema:minValue "0";
+                    rdfs:range "xsd:integer";
+                    hydra:required "false"^^xsd:boolean;
                 ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "lonmin"^^xsd:string;
@@ -641,8 +667,7 @@
                     schema:minValue "-180.0";
                     schema:maxValue "180.0";
                     hydra:required "true"^^xsd:boolean;
-                    schema:defaultValue "-28";
-		    rdfs:range "xsd:float";
+		                rdfs:range "xsd:float";
                 ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "latmin"^^xsd:string;
@@ -651,8 +676,7 @@
                     schema:minValue "-90.0";
                     schema:maxValue "90.0";
                     hydra:required "true"^^xsd:boolean;
-                    schema:defaultValue "57";
-		    rdfs:range "xsd:float";
+		                rdfs:range "xsd:float";
                 ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "lonmax"^^xsd:string;
@@ -661,8 +685,7 @@
                     schema:minValue "-180.0";
                     schema:maxValue "180.0";
                     hydra:required "true"^^xsd:boolean;
-                    schema:defaultValue "-1.5";
-		    rdfs:range "xsd:float";
+		                rdfs:range "xsd:float";
                 ];
                 hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "latmax"^^xsd:string;
@@ -671,24 +694,10 @@
                     schema:minValue "-90.0";
                     schema:maxValue "90.0";
                     hydra:required "true"^^xsd:boolean;
-                    schema:defaultValue "68.5";
-		    rdfs:range "xsd:float";
+		                rdfs:range "xsd:float";
                 ];
         ];
 .
-<hotvolc.opgc.fr/data-download> a hydra:Operation;
-        hydra:method "GET"^^xsd:string;
-        hydra:returns "application/zip";
-         hydra:property[ a hydra:IriTemplate;
-            hydra:template "http://hotvolc.opgc.fr/www/php/data_download.php{?uri}"^^xsd:string;
-                hydra:mapping[ a hydra:IriTemplateMapping;
-                    hydra:variable "uri"^^xsd:string;
-                    rdfs:label "The unique identifier of an HOTVOLC product, use data_catalog.php to find data uri";
-                    rdfs:range "xsd:string";
-                    hydra:required "true"^^xsd:boolean;
-                ];
-        ];
-.    
 
 #########
 # Concept
