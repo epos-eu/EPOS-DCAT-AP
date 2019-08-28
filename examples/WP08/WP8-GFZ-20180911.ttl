@@ -115,10 +115,10 @@
 	schema:datePublished "2017-09-01Z"^^xsd:dateTime;
 	schema:dateModified "2017-09-01Z"^^xsd:dateTime;
 	dct:spatial [ a dct:Location;
-		locn:geometry "POLYGON(-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0)"^^gsp:wktLiteral;
+		locn:geometry "POLYGON((-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0))"^^gsp:wktLiteral;
 	];
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003/Operation/003/GFZ>;
-	schema:keywords "EIDA"," GFZ"," data quality"," availability"," metrics"," waveform"," metadata";
+	schema:keywords "EIDA"," GFZ","data quality","availability","metrics","waveform","metadata";
 	dct:license "Creative Commons for data, Open Source licences for software"^^xsd:anyURI;
 	dct:temporal [ a dct:PeriodOfTime;
 		schema:startDate "1993-01-01T00:00:00Z"^^xsd:dateTime;
@@ -137,7 +137,7 @@
 	schema:datePublished "2016-01-01Z"^^xsd:dateTime;
 	schema:dateModified "2016-01-01Z"^^xsd:dateTime;
 	dct:spatial [ a dct:Location;
-		locn:geometry "POLYGON(180.0 -90.0,-180.0 -90.0,-180.0 90.0,180.0 90.0,180.0 -90.0)"^^gsp:wktLiteral;
+		locn:geometry "POLYGON((180.0 -90.0,-180.0 -90.0,-180.0 90.0,180.0 90.0,180.0 -90.0))"^^gsp:wktLiteral;
 	];
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001/GFZ>;
 	schema:keywords "seismology"," seismicity"," earthquakes"," waveform"," seismic hazard"," earth structure"," earthquake intensity"," macroseismic"," macroseismic information"," waveform modeling"," GFZ","Dataselect","FDSN-WS","Seismic Waveform","EIDA";
@@ -159,7 +159,7 @@
 	schema:datePublished "2016-01-01Z"^^xsd:dateTime;
 	schema:dateModified "2016-01-01Z"^^xsd:dateTime;
 	dct:spatial [ a dct:Location;
-		locn:geometry "POLYGON(180.0 -90.0,-180.0 -90.0,-180.0 90.0,180.0 90.0,180.0 -90.0)"^^gsp:wktLiteral;
+		locn:geometry "POLYGON((180.0 -90.0,-180.0 -90.0,-180.0 90.0,180.0 90.0,180.0 -90.0))"^^gsp:wktLiteral;
 	];
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/Operation/002/GFZ>;
 	schema:keywords "seismology"," seismicity"," earthquakes"," waveform"," seismic hazard"," earth structure"," earthquake intensity"," macroseismic"," macroseismic information"," waveform modeling";
@@ -175,7 +175,7 @@
 		schema:propertyID "pic";
 		schema:value "999994341";
 	];
-	schema:legalName "GFZ German Research Centre for Geosciences";
+	schema:legalName "GFZ German Research Centre for Geosciences"@en;
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "Telegrafenberg";
 		schema:addressLocality "Potsdam";
@@ -196,6 +196,7 @@
 			hydra:template "http://geofon.gfz-potsdam.de/eidaws/wfcatalog/1/query{?starttime, endtime, percent_availability_gt, percent_availability_lt, num_gaps_gt, num_gaps_lt, num_overlaps_gt, num_overlaps_lt, sample_stdev_gt, sample_stdev_lt, sample_rms_gt, sample_rms_lt, max_gap_gt, max_gap_lt, sample_min_gt, sample_min_lt, sample_max_gt, sample_max_lt, sample_mean_gt, sample_mean_lt, network, station, location, channel, csegments, longestonly, minlen, include}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "starttime"^^xsd:string;
+            		hydra:property "schema:startDate";
 					rdfs:range "xsd:dateTime";
 					rdfs:label "Starttime of documents";
 					hydra:required "true"^^xsd:boolean;
@@ -203,6 +204,7 @@
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "endtime"^^xsd:string;
+					hydra:property "schema:endDate";
 					rdfs:range "xsd:dateTime";
 					rdfs:label "Endtime of documents";
 					hydra:required "true"^^xsd:boolean;
@@ -379,6 +381,7 @@
 			hydra:template "http://geofon.gfz-potsdam.de/fdsnws/dataselect/1/query{?starttime, endtime, network, station, location, channel, quality, minimumlength, nodata}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "starttime"^^xsd:string;
+					hydra:property "schema:startDate";
 					rdfs:range "xsd:dateTime";
 					rdfs:label "Start of the timespan";
 					hydra:required "true"^^xsd:boolean;
@@ -386,6 +389,7 @@
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "endtime"^^xsd:string;
+					hydra:property "schema:endDate";
 					rdfs:range "xsd:dateTime";
 					rdfs:label "End of the timespan";
 					hydra:required "true"^^xsd:boolean;
@@ -450,6 +454,7 @@
 			hydra:template "http://geofon.gfz-potsdam.de/fdsnws/station/1/query{?starttime, endtime, network, station, location, channel, minlatitude, maxlatitude, minlongitude, maxlongitude, level, nodata}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "starttime"^^xsd:string;
+					hydra:property "schema:startDate";
 					rdfs:range "xsd:dateTime";
 					rdfs:label "Start of the timespan";
 					hydra:required "true"^^xsd:boolean;
@@ -457,6 +462,7 @@
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "endtime"^^xsd:string;
+					hydra:property "schema:endDate";
 					rdfs:range "xsd:dateTime";
 					rdfs:label "End of the timespan";
 					hydra:required "true"^^xsd:boolean;
@@ -588,12 +594,12 @@
     	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
         dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
         dcat:theme  <epos:SeismicWaveforms> ;
-        dcat:keyword "seismology", "seismicity", "earthquakes", "seismic waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "INGV" , "Dataselect", "FDSN-WS", "Seismic Waveform", "EIDA" ;
+        dcat:keyword "seismology", "seismicity", "earthquakes", "seismic waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "GFZ" , "Dataselect", "FDSN-WS", "Seismic Waveform", "EIDA" ;
         dcat:contactPoint <http://orcid.org/0000-0001-9993-4003/contactPoint>;
 	dct:publisher <PIC:999994341>;
         dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/GFZ>;
         dct:spatial [ a dct:Location ;
-                      locn:geometry "POLYGON(-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0)"^^gsp:wktLiteral;
+                      locn:geometry "POLYGON((-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0))"^^gsp:wktLiteral;
         ];
         dct:temporal [ a dct:PeriodOfTime ;
                 schema:startDate "1980-01-01T00:00:00Z"^^xsd:dateTime ;
@@ -619,7 +625,7 @@
 
 # Dataset
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/GFZ> a dcat:Dataset;
-        dct:title "Primary Seismic Waveform Data";
+        dct:title "Primary Seismic Metadata for stations";
         dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/GFZ";
         dct:description "Seismic Stations ";
         adms:identifier [ a adms:Identifier ;
@@ -639,7 +645,7 @@
 	dct:publisher <PIC:999994341>;
         dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/GFZ>;
         dct:spatial [ a dct:Location ;
-	locn:geometry "POLYGON(-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0)"^^gsp:wktLiteral;
+	locn:geometry "POLYGON((-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0))"^^gsp:wktLiteral;
         ];
         dct:temporal [ a dct:PeriodOfTime ;
                 schema:startDate "1980-01-01T00:00:00Z"^^xsd:dateTime ;
@@ -651,7 +657,7 @@
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/GFZ> a dcat:Distribution;
     	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/GFZ";
 	dct:title "Seismic Stations  :: FDSN STATION :: GFZ";
-	dct:description "Description of Seismic Stations  :: FDSN STATION :: GFZ";
+	dct:description "Description of Seismic Stations :: FDSN STATION :: GFZ";
 	dct:issued "2017-01-01"^^xsd:date ;
 	dct:modified "2017-01-01"^^xsd:date ;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
@@ -662,6 +668,51 @@
 .
 
 
+# Dataset
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/GFZ> a dcat:Dataset;
+    dct:title "Waveform metadata and data quality metrics";
+    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/GFZ";
+    dct:description "Waveform metadata and data quality metrics";
+    adms:identifier [ a adms:Identifier ;
+        adms:schemaAgency "DDSS-ID" ;
+        skos:notation "WP08-DDSS-003" ;
+        ];
+    dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+    dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+    dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+    owl:versionInfo "1.0.0" ;
+
+    dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+    dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
+    dcat:theme  <epos:Seismicwaveforms> ;
+    dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/Distribution/003/GFZ>;
+    dcat:keyword "seismology", "seismicity", "seismic waveform", "dataquality", "metric", "GFZ" , "WfCatalog", "EIDA-WS", "EIDA" ;
+    dcat:contactPoint <https://orcid.org/0000-0001-9993-4003/scientificContact>;
+    dct:publisher <PIC:999994341>;
+    dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/Distribution/003/GFZ>;
+    dct:spatial [ a dct:Location ;
+        locn:geometry "POLYGON(-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0)"^^gsp:wktLiteral;
+        ];
+    dct:temporal [ a dct:PeriodOfTime ;
+        schema:startDate "1980-01-01T00:00:00Z"^^xsd:dateTime ;
+#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
+        ];
+    .
+
+# Distribution
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/Distribution/003/GFZ> a dcat:Distribution;
+    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/Distribution/003/GFZ";
+    dct:title "Waveform metadata and data quality metrics :: EIDAWS WGCATALOG :: GFZ";
+    dct:description "Waveform metadata and data quality metrics :: EIDAWS WGCATALOG :: GFZ";
+    dct:issued "2017-01-01"^^xsd:date ;
+    dct:modified "2017-01-01"^^xsd:date ;
+    dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+    dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003/Operation/003/GFZ>;
+    dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003/GFZ>;
+    dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI;
+    dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+    .
 
 	<http://orcid.org/0000-0002-3580-651X/scientificContact> a schema:ContactPoint;
 		schema:email "lau@gfz-potsdam.de";
