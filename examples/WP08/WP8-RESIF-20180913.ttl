@@ -613,7 +613,7 @@
         hydra:mapping[ a hydra:IriTemplateMapping;
             hydra:variable "starttime"^^xsd:string;
             hydra:property "schema:startDate";
-            schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+            schema:valuePattern "YYYY-MM-DD";
             rdfs:range "xsd:dateTime";
             rdfs:label "Starttime of documents";
             hydra:required "true"^^xsd:boolean;
@@ -622,7 +622,7 @@
         hydra:mapping[ a hydra:IriTemplateMapping;
             hydra:variable "endtime"^^xsd:string;
             hydra:property "schema:endDate";
-            schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+            schema:valuePattern "YYYY-MM-DD";
             rdfs:range "xsd:dateTime";
             rdfs:label "Endtime of documents";
             hydra:required "true"^^xsd:boolean;
@@ -682,21 +682,21 @@
             rdfs:range "xsd:string";
             rdfs:label "limit number of lines in output";
             hydra:required "false"^^xsd:boolean;
-            schema:defaultValue "false"
+            #schema:defaultValue "false"
             ];
         hydra:mapping[ a hydra:IriTemplateMapping;
             hydra:variable "mergegaps"^^xsd:integer;
             rdfs:range "xsd:string";
             rdfs:label "Time period to consider as gaps";
             hydra:required "false"^^xsd:boolean;
-            schema:defaultValue "false"
+            #schema:defaultValue "false"
             ];
         hydra:mapping[ a hydra:IriTemplateMapping;
             hydra:variable "show"^^xsd:string;
             rdfs:range "xsd:string";
             rdfs:label "Ouputs the last updated value";
             hydra:required "false"^^xsd:boolean;
-            schema:defaultValue "false"
+            #schema:defaultValue "false"
             ];
 
 # Operation Availability/extent
@@ -708,7 +708,7 @@
         hydra:mapping[ a hydra:IriTemplateMapping;
             hydra:variable "starttime"^^xsd:string;
             hydra:property "schema:startDate";
-            schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+            schema:valuePattern "YYYY-MM-DD";
             rdfs:range "xsd:dateTime";
             rdfs:label "Starttime of documents";
             hydra:required "true"^^xsd:boolean;
@@ -717,7 +717,7 @@
         hydra:mapping[ a hydra:IriTemplateMapping;
             hydra:variable "endtime"^^xsd:string;
             hydra:property "schema:endDate";
-            schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+            schema:valuePattern "YYYY-MM-DD";
             rdfs:range "xsd:dateTime";
             rdfs:label "Endtime of documents";
             hydra:required "true"^^xsd:boolean;
