@@ -671,21 +671,21 @@
             schema:defaultValue "latestupdate"
             ];
         hydra:mapping[ a hydra:IriTemplateMapping;
-            hydra:variable "includerestricted"^^xsd:boolean;
+            hydra:variable "includerestricted"^^xsd:string;
             rdfs:range "xsd:string";
             rdfs:label "Ouputs restricted data";
             hydra:required "false"^^xsd:boolean;
             schema:defaultValue "false"
             ];
         hydra:mapping[ a hydra:IriTemplateMapping;
-            hydra:variable "limit"^^xsd:integer;
+            hydra:variable "limit"^^xsd:string;
             rdfs:range "xsd:string";
             rdfs:label "limit number of lines in output";
             hydra:required "false"^^xsd:boolean;
             #schema:defaultValue "false"
             ];
         hydra:mapping[ a hydra:IriTemplateMapping;
-            hydra:variable "mergegaps"^^xsd:integer;
+            hydra:variable "mergegaps"^^xsd:string;
             rdfs:range "xsd:string";
             rdfs:label "Time period to consider as gaps";
             hydra:required "false"^^xsd:boolean;
@@ -698,6 +698,8 @@
             hydra:required "false"^^xsd:boolean;
             #schema:defaultValue "false"
             ];
+         ] ;
+        .
 
 # Operation Availability/extent
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/005/Operation/005/RESIF> a hydra:Operation;
@@ -766,14 +768,14 @@
             schema:defaultValue "latestupdate"
             ];
         hydra:mapping[ a hydra:IriTemplateMapping;
-            hydra:variable "includerestricted"^^xsd:boolean;
+            hydra:variable "includerestricted"^^xsd:string;
             rdfs:range "xsd:string";
             rdfs:label "Ouputs restricted data";
             hydra:required "false"^^xsd:boolean;
             schema:defaultValue "false"
             ];
         hydra:mapping[ a hydra:IriTemplateMapping;
-            hydra:variable "limit"^^xsd:integer;
+            hydra:variable "limit"^^xsd:string;
             rdfs:range "xsd:string";
             rdfs:label "limit number of lines in output";
             hydra:required "false"^^xsd:boolean;
