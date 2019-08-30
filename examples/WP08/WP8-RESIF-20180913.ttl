@@ -210,8 +210,8 @@
         ];
     .
 
-# Operation Availability
-<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003/Operation/003/RESIF> a hydra:Operation;
+# Operation Availability/query
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/004/Operation/004/RESIF> a hydra:Operation;
     hydra:method "GET"^^xsd:string;
     hydra:returns "application/json";
     hydra:property[ a hydra:IriTemplate;
@@ -305,7 +305,11 @@
             schema:defaultValue "false"
             ];
 
-
+# Operation Availability/extent
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/005/Operation/005/RESIF> a hydra:Operation;
+    hydra:method "GET"^^xsd:string;
+    hydra:returns "application/json";
+    hydra:property[ a hydra:IriTemplate;
         hydra:template "https://ws.resif.fr/fdsnws/availability/1/extent{?network, station, location, channel, starttime, endtime, merge, orderby, format, includerestricted, limit}"^^xsd:string;
         hydra:mapping[ a hydra:IriTemplateMapping;
             hydra:variable "starttime"^^xsd:string;
