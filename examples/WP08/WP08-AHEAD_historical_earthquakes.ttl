@@ -294,6 +294,12 @@
 	dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
 	dct:created "2010-06-01"^^xsd:date;
 	dct:modified "2018-09-10"^^xsd:date;
+	dct:temporal [ a dct:PeriodOfTime;
+		schema:startDate "1970-01-01T00:00:00Z"^^xsd:dateTime;
+	];
+	dct:spatial [ a dct:Location;
+		locn:geometry "POLYGON((-34 74,45 74,45 33,-34 33,-34 74))"^^gsp:wktLiteral;
+	];
 	dcat:theme <epos:Studiesonearthquakes>;
 	dcat:keyword "bibliography", "metadata", "historical earthquake studies";
 	dcat:contactPoint <https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/AHEAD/scientificContact>;
@@ -707,7 +713,7 @@
 				schema:defaultValue "GML3";
 				hydra:required "true"^^xsd:boolean;
 			];
-			hydra:mapping[ a hydra:IriTemplateMappinf;
+			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "srsName";
 				rdfs:range "xsd:string";
 				rdfs:label "SRS coordinate system";
