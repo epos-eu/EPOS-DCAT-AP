@@ -1,0 +1,452 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http: <http://www.w3.org/2006/http#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+
+<epos:Seismology> a skos:ConceptScheme;
+	dct:title "Seismology";
+	dct:description "It contains the concepts of Seismology";
+.
+
+<epos:EarthquakeHazardAndRiskServices> a skos:Concept;
+		skos:inScheme <epos:Seismology>;
+		skos:prefLabel "Earthquake hazard and risk services";
+        skos:narrower <epos:ExposureModel>;
+.
+
+<epos:ExposureModel> a skos:Concept;
+	skos:prefLabel "Exposure Data";
+	skos:definition "A model of the spatial distribution and characteristics of buildings, people and infrastructure exposed to earthquakes (and/or other natural and manmade hazards)";
+	#skos:inScheme <epos:Seismologicalproducts>; 
+	skos:broader <epos:EarthquakeHazardAndRiskServices>;
+	skos:inScheme <epos:Seismology>;
+.
+
+<PIC:999844476> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "PIC";
+		schema:value "999844476";
+	];
+	schema:legalName "Fondazione EUCENTRE"@it;
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Via Ferrata, 1";
+		schema:addressLocality "Pavia";
+		schema:postalCode "27100";
+		schema:addressCountry "Italy";
+	];
+	schema:logo "https://www.eucentre.it/wp-content/uploads/2018/03/logo_eucentre_100px.png"^^xsd:anyURI;
+	schema:url "http://www.eucentre.it/"^^xsd:anyURI;
+	schema:email "info@eucentre.it";
+	schema:telephone "+3903825169811";
+	schema:contactPoint <PIC:999844476/legalContact>;
+	schema:contactPoint <PIC:999844476/financialContact>;
+	schema:contactPoint <https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/EFEHR/scientificContact>;
+	schema:contactPoint <https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/EFEHR/contactPoint>;
+.
+
+<http://orcid.org/0000-0001-7726-4619> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "orcid";
+		schema:value "http://orcid.org/0000-0001-7726-4619";
+	];
+	schema:familyName "Pietrabissa";
+	schema:givenName "Riccardo";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Via Ferrata, 1";
+		schema:addressLocality "Pavia";
+		schema:postalCode "27100";
+		schema:addressCountry "Italy";
+	];
+	schema:email "info@eucentre.it";
+	schema:telephone "+3903825169811";
+	schema:url "http://orcid.org/0000-0001-7726-4619"^^xsd:anyURI;
+	schema:qualifications "Professor";
+	schema:affiliation <PIC:999844476>;
+	schema:contactPoint <PIC:999844476/legalContact>;
+	schema:contactPoint <PIC:999844476/financialContact>;
+.
+
+<http://orcid.org/0000-0002-1216-1245> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "orcid";
+		schema:value "http://orcid.org/0000-0002-1216-1245";
+	];
+	schema:familyName "Helen";
+	schema:givenName "Crowley";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Via Ferrata, 1";
+		schema:addressLocality "Pavia";
+		schema:postalCode "27100";
+		schema:addressCountry "Italy";
+	];
+	schema:email "helen.crowley@eucentre.it";
+	schema:telephone "+3903825169811";
+	schema:qualifications "Researcher";
+	schema:affiliation <PIC:999844476>;
+	schema:contactPoint <https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/EFEHR/scientificContact>;
+.
+
+<PIC:999844476/legalContact> a schema:ContactPoint;
+	schema:email "info@eucentre.it";
+	schema:availableLanguage "en";
+	schema:contactType "legalContact";
+.
+
+<PIC:999844476/financialContact> a schema:ContactPoint;
+	schema:email "info@eucentre.it";
+	schema:availableLanguage "en";
+	schema:contactType "financialContact";
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/EFEHR/scientificContact> a schema:ContactPoint;
+	schema:email "helen.crowley@eucentre.it";
+	schema:availableLanguage "en";
+	schema:contactType "scientificContact";
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/EFEHR/contactPoint> a schema:ContactPoint;
+	schema:email "helen.crowley@eucentre.it";
+	schema:availableLanguage "en";
+	schema:contactType "manager";
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/EFEHR/EU_Exposure> a dcat:Dataset;
+	dct:title "European Exposure Model";
+	dct:description "The geographical distribution of population, replacement cost of buildings, and total number of buildings (residential, commercial, industrial), and their distribution between lateral load resisting system construction material, within the European Exposure Model (v0.1).";
+	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/EFEHR/EU_Exposure";
+	adms:identifier [ a adms:Identifier;
+		adms:schemaAgency "DDSS-ID";
+		skos:notation "WP08-DDSS-042";
+	];
+	dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
+	dct:created "2018-12-05"^^xsd:date;
+	dct:modified "2018-12-05"^^xsd:date;
+    dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI ;
+	dct:spatial [ a dct:Location;
+		locn:geometry "POLYGON((-32.5 73.5,45.0 73.5,45.0 32.5,-32.5 32.5,-32.5 73.5))"^^gsp:wktLiteral;
+	];
+	dcat:theme <epos:ExposureModel>;
+	schema:keywords "exposure", "seismic risk", "buildings", "population", "map", "earthquake";
+	dcat:contactPoint <https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/EFEHR/scientificContact>;
+	dcat:contactPoint <https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/EFEHR/contactPoint>;
+	dct:publisher <PIC:999844476>;
+	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/EFEHR/OGC/WMS/EU_Exposure_L0>;
+	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/EFEHR/OGC/WMS/EU_Exposure_L1>;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/EFEHR/OGC/WMS/EU_Exposure_L0> a epos:WebService;
+	schema:identifier "EFEHR/services/OGC/WMS/EU_Exposure_L0";
+	schema:description "The OGC WMS web service providing a raster layer presenting the geographical distribution of population, replacement cost of buildings, and total number of buildings (residential, commercial, industrial) within the European Exposure Model (v0.1)";
+	dcat:theme <epos:ExposureModel>;
+	schema:name "European Exposure Model Level 0 (OGC WMS)";
+	hydra:entrypoint "https://maps.eu-risk.eucentre.it/mapproxy/EU_Exposure_L0/ows?"^^xsd:anyURI;
+	schema:provider <PIC:999844476>;
+	schema:datePublished "2018-12-05"^^xsd:date;
+	schema:dateModifies "2018-12-05"^^xsd:date;
+	dct:spatial [ a dct:Location;
+		locn:geometry "POLYGON((-32.5 73.5,45.0 73.5,45.0 32.5,-32.5 32.5,-32.5 73.5))"^^gsp:wktLiteral;
+	];
+	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/EFEHR/OGC/WMS/events/Operation>;
+	schema:keywords "exposure", "seismic risk", "buildings", "population", "map", "earthquake";
+	dct:license "https://creativecommons.org/licenses/by-nc-sa/4.0/"^^xsd:anyURI;
+	dcat:contactPoint <https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/EFEHR/contactPoint>;
+	dcat:contactPoint <https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/EFEHR/scientificContact>;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/EFEHR/OGC/WMS/EU_Exposure_L1> a epos:WebService;
+	schema:identifier "EFEHR/services/OGC/WMS/EU_Exposure_L1";
+	schema:description "The OGC WMS web service providing a raster layer presenting the geographical distribution of population, replacement cost of buildings, and total number of buildings (residential, commercial, industrial) within the European Exposure Model (v0.1)";
+	dcat:theme <epos:ExposureModel>;
+	schema:name "European Exposure Model Level 1 (OGC WMS)";
+	hydra:entrypoint "https://maps.eu-risk.eucentre.it/mapproxy/EU_Exposure_L1/ows?"^^xsd:anyURI;
+	schema:provider <PIC:999844476>;
+	schema:datePublished "2018-12-05"^^xsd:date;
+	schema:dateModifies "2018-12-05"^^xsd:date;
+	dct:spatial [ a dct:Location;
+		locn:geometry "POLYGON((-32.5 73.5,45.0 73.5,45.0 32.5,-32.5 32.5,-32.5 73.5))"^^gsp:wktLiteral;
+	];
+	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/EFEHR/OGC/WMS/events/Operation>;
+	schema:keywords "exposure", "seismic risk", "buildings", "population", "map", "earthquake";
+	dct:license "https://creativecommons.org/licenses/by-nc-sa/4.0/"^^xsd:anyURI;
+	dcat:contactPoint <https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/EFEHR/contactPoint>;
+	dcat:contactPoint <https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/EFEHR/scientificContact>;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/EFEHR/OGC/WMS/EU_Exposure_L0/Operation> a hydra:Operation;
+	hydra:method "GET"^^xsd:string;
+	hydra:returns "image/png";
+	hydra:property[ a hydra:IriTemplate;
+		hydra:template "https://maps.eu-risk.eucentre.it/mapproxy/EU_Exposure_L0/ows{?service, version, request, layers, crs, format, width, height}&bbox={minlatitude,minlongitude,maxlatitude,maxlongitude}"^^xsd:string;
+
+			# WMS 1.3.0 bbox format is "minlatitude,minlongitude,maxlatitude,maxlongitude"
+			# bbox calculated by geoserver for this layer is
+			# minlatitude 32.39747
+			# minlongitude -31.26575
+			# maxlatitude 71.18811
+			# maxlongitude 44.83499
+
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "service"^^xsd:string;
+				rdfs:range "xsd:string";
+				rdfs:label "Service"@en;
+				http:paramValue "WMS";
+				schema:defaultValue "WMS";
+				hydra:required "true"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "version"^^xsd:string;
+				rdfs:range "xsd:string";
+				rdfs:label "WMS version"@en;
+				http:paramValue "1.1.1";
+				http:paramValue "1.3.0";
+				schema:defaultValue "1.3.0";
+				hydra:required "true"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "request"^^xsd:string;
+				rdfs:range "xsd:string";
+				rdfs:label "Request type"@en;
+				http:paramValue "GetCapabilities";
+				http:paramValue "GetFeatureInfo";
+				http:paramValue "GetLegendGraphic";
+				http:paramValue "GetMap";
+				schema:defaultValue "GetMap";
+				hydra:required "true"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "layers"^^xsd:string;
+				rdfs:range "xsd:string";
+				rdfs:label "Layers"@en;
+				http:paramValue "european-exposure-country-data";
+				http:paramValue "number-of-buildings";
+				http:paramValue "population";
+				http:paramValue "total-replacement-cost-b-eur";
+				schema:defaultValue "european-exposure-country-data";
+				hydra:required "true"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "crs"^^xsd:string;
+				rdfs:range "xsd:string";
+				rdfs:label "Spatial Reference System"@en;
+				http:paramValue "CRS:84";
+				http:paramValue "EPSG:4326";
+				http:paramValue "EPSG:5837";
+				schema:defaultValue "EPSG:4326";
+				hydra:required "true"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "format"^^xsd:string;
+				rdfs:range "xsd:string";
+				rdfs:label "Output format"@en;
+				http:paramValue "text/plain";
+				http:paramValue "text/xml";
+				http:paramValue "text/html";
+				http:paramValue "image/jpeg";
+				http:paramValue "image/png";
+				schema:defaultValue "image/png";
+				hydra:required "true"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "width"^^xsd:string;
+				rdfs:range "xsd:string";
+				rdfs:label "Width of the output map"@en;
+				http:paramValue "1536";
+				schema:defaultValue "1536";
+				hydra:required "true"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "height"^^xsd:string;
+				rdfs:range "xsd:string";
+				rdfs:label "Height of the output map"@en;
+				http:paramValue "811";
+				schema:defaultValue "811";
+				hydra:required "true"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "minlatitude"^^xsd:string;
+				hydra:property "epos:southernmostLatitude";
+				rdfs:range "xsd:float";
+				rdfs:label "Minimum latitude"@en;
+				schema:minValue "32.5000";
+				schema:maxValue "73.5000";
+				schema:defaultValue "32.5000";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "maxlatitude"^^xsd:string;
+				hydra:property "epos:northernmostLatitude";
+				rdfs:range "xsd:float";
+				rdfs:label "Maximum latitude"@en;
+				schema:minValue "32.5000";
+				schema:maxValue "73.5000";
+				schema:defaultValue "73.5000";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "minlongitude"^^xsd:string;
+				hydra:property "epos:westernmostLongitude";
+				rdfs:range "xsd:float";
+				rdfs:label "Minimum longitude"@en;
+				schema:minValue "-32.5000";
+				schema:maxValue "32.5000";
+				schema:defaultValue "-32.5000";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "maxlongitude"^^xsd:string;
+				hydra:property "epos:easternmostLongitude";
+				rdfs:range "xsd:float";
+				rdfs:label "Maximum longitude"@en;
+				schema:minValue "-32.5000";
+				schema:maxValue "32.5000";
+				schema:defaultValue "32.5000";
+				hydra:required "false"^^xsd:boolean;
+			];
+	];
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/EFEHR/OGC/WMS/EU_Exposure_L1/Operation> a hydra:Operation;
+	hydra:method "GET"^^xsd:string;
+	hydra:returns "image/png";
+	hydra:property[ a hydra:IriTemplate;
+		hydra:template "https://maps.eu-risk.eucentre.it/mapproxy/EU_Exposure_L1/ows{?service, version, request, layers, crs, format, width, height}&bbox={minlatitude,minlongitude,maxlatitude,maxlongitude}"^^xsd:string;
+
+			# WMS 1.3.0 bbox format is "minlatitude,minlongitude,maxlatitude,maxlongitude"
+			# bbox calculated by geoserver for this layer is
+			# minlatitude 32.39747
+			# minlongitude -31.26575
+			# maxlatitude 71.18811
+			# maxlongitude 44.83499
+		
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "service"^^xsd:string;
+				rdfs:range "xsd:string";
+				rdfs:label "Service"@en;
+				http:paramValue "WMS";
+				schema:defaultValue "WMS";
+				hydra:required "true"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "version"^^xsd:string;
+				rdfs:range "xsd:string";
+				rdfs:label "WMS version"@en;
+				http:paramValue "1.1.1";
+				http:paramValue "1.3.0";
+				schema:defaultValue "1.3.0";
+				hydra:required "true"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "request"^^xsd:string;
+				rdfs:range "xsd:string";
+				rdfs:label "Request type"@en;
+				http:paramValue "GetCapabilities";
+				http:paramValue "GetFeatureInfo";
+				http:paramValue "GetLegendGraphic";
+				http:paramValue "GetMap";
+				schema:defaultValue "GetMap";
+				hydra:required "true"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "layers"^^xsd:string;
+				rdfs:range "xsd:string";
+				rdfs:label "Layers"@en;
+				http:paramValue "european-exposure-level-1";
+				http:paramValue "number-of-buildings";
+				http:paramValue "population";
+				http:paramValue "total-replacement-cost-m-eur";
+				schema:defaultValue "european-exposure-level-1";
+				hydra:required "true"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "crs"^^xsd:string;
+				rdfs:range "xsd:string";
+				rdfs:label "Spatial Reference System"@en;
+				http:paramValue "CRS:84";
+				http:paramValue "EPSG:4326";
+				http:paramValue "EPSG:5837";
+				schema:defaultValue "EPSG:4326";
+				hydra:required "true"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "format"^^xsd:string;
+				rdfs:range "xsd:string";
+				rdfs:label "Output format"@en;
+				http:paramValue "text/plain";
+				http:paramValue "text/xml";
+				http:paramValue "text/html";
+				http:paramValue "image/jpeg";
+				http:paramValue "image/png";
+				schema:defaultValue "image/png";
+				hydra:required "true"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "width"^^xsd:string;
+				rdfs:range "xsd:string";
+				rdfs:label "Width of the output map"@en;
+				http:paramValue "1536";
+				schema:defaultValue "1536";
+				hydra:required "true"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "height"^^xsd:string;
+				rdfs:range "xsd:string";
+				rdfs:label "Height of the output map"@en;
+				http:paramValue "811";
+				schema:defaultValue "811";
+				hydra:required "true"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "minlatitude"^^xsd:string;
+				hydra:property "epos:southernmostLatitude";
+				rdfs:range "xsd:float";
+				rdfs:label "Minimum latitude"@en;
+				schema:minValue "32.5000";
+				schema:maxValue "73.5000";
+				schema:defaultValue "32.5000";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "maxlatitude"^^xsd:string;
+				hydra:property "epos:northernmostLatitude";
+				rdfs:range "xsd:float";
+				rdfs:label "Maximum latitude"@en;
+				schema:minValue "32.5000";
+				schema:maxValue "73.5000";
+				schema:defaultValue "73.5000";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "minlongitude"^^xsd:string;
+				hydra:property "epos:westernmostLongitude";
+				rdfs:range "xsd:float";
+				rdfs:label "Minimum longitude"@en;
+				schema:minValue "-32.5000";
+				schema:maxValue "32.5000";
+				schema:defaultValue "-32.5000";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "maxlongitude"^^xsd:string;
+				hydra:property "epos:easternmostLongitude";
+				rdfs:range "xsd:float";
+				rdfs:label "Maximum longitude"@en;
+				schema:minValue "-32.5000";
+				schema:maxValue "32.5000";
+				schema:defaultValue "32.5000";
+				hydra:required "false"^^xsd:boolean;
+			];
+	];
+.
