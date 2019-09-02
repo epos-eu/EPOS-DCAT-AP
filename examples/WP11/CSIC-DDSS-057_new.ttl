@@ -101,13 +101,15 @@
          	adms:schemaAgency "DDSS-ID";
         	skos:notation "WP11-DDSS-057";
         ];
-        dct:description "Lava flow invasion hazard maps";
+        dct:description "Hazard maps illustrating the probability of a certain area to be invaded by a lava flow in the future. These maps are static and based on the geological record including information about past eruptions, field work, etc.";
         ## example of frequency using a controlled vocabulary
 	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
         dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
         dct:created "2018-09-01"^^xsd:date;
+	dct:spatial [ a dct:Location ;
+			locn:geometry "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral ;
         dcat:theme  <epos:Hazardmap> ;
-        dcat:keyword "Volcanoes", "lava flow", "hazard map", "volcanic hazard", "volcanology", "hazard assessment";
+	dcat:keyword "Volcanoes", "lava flow", "hazard map", "volcanic hazard", "volcanology", "hazard assessment", "Garrotxa Volcanic Field", "Lanzarote", "El Hierro", "geohazards", "Deception Island";
         dcat:contactPoint <http://orcid.org/0000-0002-8803-6504/contactPoint>;
 	dct:publisher <http://isni.org/isni/0000000122036192>;
         dcat:distribution <WP11/HazardMap/Lavaflow/WSDistribution>;
