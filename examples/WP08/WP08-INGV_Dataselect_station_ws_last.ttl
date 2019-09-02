@@ -91,7 +91,7 @@
 	schema:propertyID "PIC";
 	schema:value "999472675";
 	];
-	schema:legalName "INGV National Institute of Geophysics e Volcanology";
+	schema:legalName "INGV Italian National Institute of Geophysics and Volcanology";
 	schema:leiCode "????";
 	schema:address [ a schema:PostalAddress;
 	schema:streetAddress "Via di Vigna Murata, 605";
@@ -114,7 +114,7 @@
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/INGV";
 
 	schema:description "The dataselect Web service provides access to time series data in miniSEED format. The data may be filtered e.g. by time, station and network parameters. The request type is HTTP-GET and HTTP-POST. Please refer to http://www.fdsn.org/webservice for a complete service description.";
-	schema:name "FDSN Dataselect Web Service at CNT-INGV";
+	schema:name "Dataselect web service of the Italian National Institute of Geophysics and Volcanology";
 	schema:datePublished "2016-01-01T00:00:00Z"^^xsd:dateTime;
 	schema:dateModified "2016-01-01T00:00:00Z"^^xsd:dateTime;
 	schema:provider <PIC:999472675>;
@@ -136,8 +136,8 @@
 
 # Documentation
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/APIDocumentation> a hydra:APIDocumentation ;
-      	hydra:title "documentation title" ;
-      	hydra:description "some description of API Documentation" ;
+      	hydra:title "API Documentation" ;
+      	hydra:description "Waveform data can be downloaded using GET request by contacting the webservice address with specific request options inside the URL query" ;
       	hydra:entrypoint "https://www.orfeus-eu.org/data/eida/webservices/dataselect/" ;
 .
 
@@ -240,7 +240,7 @@
 
 # Dataset
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/INGV> a dcat:Dataset;
-        dct:title "INGV Seismic Waveform Data";
+        dct:title "Seismic Waveform Data of the Italian National Institute of Geophysics and Volcanology";
         dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/INGV";
         dct:description "Continuous seismic waveforms";
         adms:identifier [ a adms:Identifier ;
@@ -271,8 +271,8 @@
 # Distribution
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/INGV> a dcat:Distribution;
     	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/INGV";
-	dct:title "Seismic Waveform Distribution :: INGV ";
-	dct:description "Description of Seismic Waveform Distribution :: FDSN DATASELECT ";
+	dct:title "Seismic Waveform from the Italian National Institute of Geophysics and Volcanology";
+	dct:description "This web service provides access to seismic waveforms from permanent and temporary networks. It is implemented according to the standard 1.1 version of the Dataselect web service set by the Federation of Digital Seismograph Networks (FDSN).";
 	dct:issued "2017-01-01"^^xsd:date ;
 	dct:modified "2017-01-01"^^xsd:date ;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
@@ -289,8 +289,8 @@
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/INGV> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/INGV";
 
-	schema:description "The fdsnws-station web service returns station metadata in FDSN StationXML format (schema here) or as delimited text. The purpose of the FDSN StationXML schema is to define an XML representation of the most important and commonly used structures of SEED 2.4 metadata. Results are available at multiple levels of granularity: network, station, channel and response.";
-	schema:name "FDSN Station Web Service at CNT-INGV";
+	schema:description "This web service provides access to seismic waveforms from permanent and temporary networks. It is implemented according to the standard 1.1 version of the Dataselect web service set by the Federation of Digital Seismograph Networks (FDSN).";
+	schema:name "Station web service of the Italian National Institute of Geophysics and Volcanology";
 	schema:datePublished "2016-01-01T00:00:00Z"^^xsd:dateTime;
 	schema:dateModified "2016-01-01T00:00:00Z"^^xsd:dateTime;
 	schema:provider <PIC:999472675>;
@@ -312,8 +312,8 @@
 
 # Documentation
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/APIDocumentation> a hydra:APIDocumentation ;
-      	hydra:title "documentation title" ;
-      	hydra:description "some description of API Documentation" ;
+      	hydra:title "API documentation" ;
+      	hydra:description "The FSDNWS-Station provides access to station metadata and instrument specifics in FDSN StationXML format. Metadata can be selected on SEED network, station, location or channel identifiers in addition to spatiotemporal constraints. Metadata can be extracted at multiple levels of detail. " ;
       	hydra:entrypoint "https://www.orfeus-eu.org/data/eida/webservices/station/" ;
 .
 
@@ -453,9 +453,9 @@
 
 # Dataset
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/INGV> a dcat:Dataset;
-        dct:title "Primary Seismic Waveform Data";
+        dct:title "Primary Seismic Metadata for Italian stations";
         dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/INGV";
-        dct:description "Seismic Stations ";
+        dct:description "Italian Seismic Stations Metadata";
         adms:identifier [ a adms:Identifier ;
             adms:schemaAgency "DDSS-ID" ;
             skos:notation "WP08-DDSS-002" ;
@@ -484,8 +484,8 @@
 # Distribution
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/INGV> a dcat:Distribution;
     	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/INGV";
-	dct:title "Seismic Stations Distribution :: INGV";
-	dct:description "Description of Seismic Stations  :: INGV";
+	dct:title "Seismic Stations Distribution of the Italian National Institute of Geophysics and Volcanology";
+	dct:description "This distribution provides access to seismic station metadata from permanent and temporary networks. It is implemented according to the standard 1.1 version of the seismic station web service set by the Federation of Digital Seismograph Networks (FDSN).";
 	dct:issued "2017-01-01"^^xsd:date ;
 	dct:modified "2017-01-01"^^xsd:date ;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
