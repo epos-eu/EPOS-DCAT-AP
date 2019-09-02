@@ -320,7 +320,7 @@
 					rdfs:range "xsd:string";
 					rdfs:label "network code or comma seperated network codes, wildcards (? or *) are authorized";
           				schema:defaultValue "RD";
-					hydra:required "true"^^xsd:boolean;
+					hydra:required "false"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "station"^^xsd:string;
@@ -334,7 +334,7 @@
 					rdfs:range "xsd:string";
           				schema:defaultValue "*";
 					rdfs:label "location code or comma seperated location codes, wildcards (? or *) are authorized";
-					hydra:required "true"^^xsd:boolean;
+					hydra:required "false"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "channel"^^xsd:string;
@@ -342,7 +342,7 @@
           				schema:defaultValue "*T*";
 					rdfs:label "channel code or comma seperated channels, wildcards (? or *) are authorized";
 					http:paramValue "*T*";
-					hydra:required "true"^^xsd:boolean;
+					hydra:required "false"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "quality"^^xsd:string;
