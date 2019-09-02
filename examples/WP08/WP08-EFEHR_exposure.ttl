@@ -143,27 +143,20 @@
 	dcat:contactPoint <https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/EFEHR/scientificContact>;
 	dcat:contactPoint <https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/EFEHR/contactPoint>;
 	dct:publisher <PIC:999844476>;
-	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/EFEHR/OGC/WMS/EU_Exposure_L0>;
-	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/EFEHR/OGC/WMS/EU_Exposure_L1>;
+	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Distribution/EFEHR/OGC/WMS/EU_Exposure_L0>;
 .
 
-<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/EFEHR/OGC/WMS/EU_Exposure_L0> a epos:WebService;
-	schema:identifier "EFEHR/services/OGC/WMS/EU_Exposure_L0";
-	schema:description "The OGC WMS web service providing a raster layer presenting the geographical distribution of population, replacement cost of buildings, and total number of buildings (residential, commercial, industrial) within the European Exposure Model (v0.1)";
-	dcat:theme <epos:ExposureModel>;
-	schema:name "European Exposure Model Level 0 (OGC WMS)";
-	hydra:entrypoint "https://maps.eu-risk.eucentre.it/mapproxy/EU_Exposure_L0/ows?"^^xsd:anyURI;
-	schema:provider <PIC:999844476>;
-	schema:datePublished "2018-12-05"^^xsd:date;
-	schema:dateModifies "2018-12-05"^^xsd:date;
-	dct:spatial [ a dct:Location;
-		locn:geometry "POLYGON((-32.5 73.5,45.0 73.5,45.0 32.5,-32.5 32.5,-32.5 73.5))"^^gsp:wktLiteral;
-	];
-	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/EFEHR/OGC/WMS/events/Operation>;
-	schema:keywords "exposure", "seismic risk", "buildings", "population", "map", "earthquake";
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Distribution/EFEHR/OGC/WMS/EU_Exposure_L0> a dcat:Distribution;
+	dct:identifier "EFEHR/services/OGC/WMS/EU_Exposure_L0";
+	dct:description "The OGC WMS web service providing a raster layer presenting the geographical distribution of population, replacement cost of buildings, and total number of buildings (residential, commercial, industrial) within the European Exposure Model (v0.1)";
+	dct:title "European Exposure Model Level 0 (OGC WMS)";
+	dct:issued "2018-12-05"^^xsd:date;
+	dct:modified "2018-12-05"^^xsd:date;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/EFEHR/OGC/WMS/EU_Exposure_L1>;
+	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/EFEHR/OGC/WMS/EU_Exposure_L0/Operation>;
 	dct:license "https://creativecommons.org/licenses/by-nc-sa/4.0/"^^xsd:anyURI;
-	dcat:contactPoint <https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/EFEHR/contactPoint>;
-	dcat:contactPoint <https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/EFEHR/scientificContact>;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/PNG"^^xsd:anyURI;
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/EFEHR/OGC/WMS/EU_Exposure_L1> a epos:WebService;
