@@ -1,0 +1,62 @@
+---------------DATA
+
+
+GNSS STATION DISCOVERY
+
+#WS /stations/v2/station/bbox FR
+#WS Operation stations/v2/station/bbox FR
+schema:name "GNSS EPOS Stations With data";
+
+#WS stations/v2/list
+#WS Operation stations/v2/list/
+schema:name "List GNSS stations by specific criteria";
+
+#WS stations/v2/list
+#WS Operation stations/v2/list/station
+schema:name "List all GNSS station names and markers";
+
+RINEX DATA FILES
+
+#WS data/files
+#WS Operation data/files
+schema:name "GNSS RINEX File Metadata";
+
+
+------------PRODUCTS
+
+ATTRIBUITES AND SERVCE PARAMETERS
+
+#WS products/attributes
+#WS Operation products/attributes
+schema:name "GNSS product attributes that can be used in other product service requests";
+
+
+GNSS STATION DISCOVERY
+
+#WS /stations/v2/station/bbox                    *********PRIORITY USE CASE
+#WS Operation stations/v2/station/bbox
+schema:name "GNSS Stations With Products";
+
+#WS /stations/v2/station/geojson
+#WS Operation PRODUCTS PORTAL /stations/v2/station/geojson
+schema:name "List GNSS Station from GEOJSON polygon";
+
+#WS products/stations
+#WS Operation products/stations
+schema:name "GNSS Stations with products";
+
+-------------CALCULATED GNSS PRODUCTS FROM EPOS ANALYSIS CENTERS
+
+#WS products/timeseries                         *********PRIORITY USE CASE
+#WS Operation products/timeseries
+schema:name "GNSS Time Series";
+
+#WS products/velocities
+#WS Operation products/velocities
+schema:name "GNSS Velocities";
+
+#WS products/coordinates
+#WS Operation products/coordinates
+schema:name "GNSS Coordinates";
+
+

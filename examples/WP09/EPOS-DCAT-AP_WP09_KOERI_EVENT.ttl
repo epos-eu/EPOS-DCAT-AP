@@ -75,7 +75,7 @@
 	# This property refers to a geographic region that is covered by the Dataset.
   	# The POLYGON format is: POLYGON(lon1 lat1, lon2 lat2,...)
 	dct:spatial [ a dct:Location ;
-		locn:geometry "POLYGON(26.0 42.0, 31.0 42.0, 31.0 39.0, 26.0 39.0, 26.0 42.0)"^^gsp:wktLiteral ;
+		locn:geometry "POLYGON((26.0 42.0, 31.0 42.0, 31.0 39.0, 26.0 39.0, 26.0 42.0))"^^gsp:wktLiteral ;
 	];
 	# This property refers to a temporal period that the Dataset covers.
     dct:temporal [ a dct:PeriodOfTime ;
@@ -91,6 +91,7 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/Event/Distribution/001> a dcat:Distribution;
     dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/Event/Distribution/001";
+	dct:title "KOERI FDSN Event Distribution";
 	dct:description "KOERI FDSN Event Distribution";
 	dct:created "2012-01-01"^^xsd:date;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
@@ -126,6 +127,8 @@
 			schema:minValue "2012-01-01T00:00:00";
 			schema:maxValue "2016-12-31T00:00:00";
 			schema:defaultValue "2015-03-01T00:00:00";
+			hydra:property "schema:startDate";
+      		schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
 			hydra:required "false"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -135,6 +138,8 @@
 			schema:minValue "2012-01-01T00:00:00";
 			schema:maxValue "2016-12-31T00:00:00";
 			schema:defaultValue "2015-03-05T00:00:00";
+			hydra:property "schema:endDate";
+      		schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
 			hydra:required "false"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -144,6 +149,7 @@
 			schema:minValue "-90";
 			schema:maxValue "90";
 			schema:defaultValue "39";
+			hydra:property "epos:southernmostLatitude";
 			hydra:required "false"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -153,6 +159,7 @@
 			schema:minValue "-90";
 			schema:maxValue "90";
 			schema:defaultValue "42";
+			hydra:property "epos:northernmostLatitude";
 			hydra:required "false"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -162,6 +169,7 @@
 			schema:minValue "-180";
 			schema:maxValue "180";
 			schema:defaultValue "26";
+			hydra:property "epos:westernmostLongitude";
 			hydra:required "false"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -171,6 +179,7 @@
 			schema:minValue "-180";
 			schema:maxValue "180";
 			schema:defaultValue "31";
+			hydra:property "epos:easternmostLongitude";
 			hydra:required "false"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -179,7 +188,6 @@
 			rdfs:label "Minimum Depth";
 			schema:minValue "-9";
 			schema:maxValue "6378";
-			schema:defaultValue "0";
 			hydra:required "false"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -188,7 +196,6 @@
 			rdfs:label "Maximum Depth";
 			schema:minValue "-9";
 			schema:maxValue "6378";
-			schema:defaultValue "40";
 			hydra:required "false"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -197,7 +204,6 @@
 			rdfs:label "Minimum Magnitude";
 			#schema:minValue "-10";
 			#schema:maxValue "10";
-			schema:defaultValue "3";
 			hydra:required "false"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -206,7 +212,6 @@
 			rdfs:label "Maximum Magnitude";
 			#schema:minValue "-10";
 			#schema:maxValue "10";
-			schema:defaultValue "8";
 			hydra:required "false"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -218,22 +223,25 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "includeallorigins"^^xsd:string;
 			rdfs:range "xsd:boolean";
+			http:paramValue "true";
+			http:paramValue "false";
 			rdfs:label "Include All Origins";
-			schema:defaultValue "false";
 			hydra:required "false"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "includeallmagnitudes"^^xsd:string;
 			rdfs:range "xsd:boolean";
+			http:paramValue "true";
+			http:paramValue "false";
 			rdfs:label "Include All Magnitudes";
-			schema:defaultValue "false";
 			hydra:required "false"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "includearrivals"^^xsd:string;
 			rdfs:range "xsd:boolean";
+			http:paramValue "true";
+			http:paramValue "false";
 			rdfs:label "Include All Arrivals";
-			schema:defaultValue "false";
 			hydra:required "false"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -265,7 +273,6 @@
 			http:paramValue "time-asc";
 			http:paramValue "magnitude";
 			http:paramValue "magnitude-asc";
-			schema:defaultValue "id";
 			hydra:required "false"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;

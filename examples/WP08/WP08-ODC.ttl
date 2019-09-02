@@ -129,6 +129,8 @@
       hydra:variable "starttime"^^xsd:string ;
       rdfs:label "Start of the timespan" ;
       hydra:required true ;
+      hydra:property "schema:startDate" ;
+      schema:valuePattern "YYYY-MM-DDThh:mm:ss" ;
       rdfs:range "xsd:dateTime" ;
       schema:defaultValue "2012-01-01T00:00:00"
     ], [
@@ -136,6 +138,8 @@
       hydra:variable "endtime"^^xsd:string ;
       rdfs:label "End of the timespan" ;
       hydra:required true ;
+      hydra:property "schema:endDate" ;
+      schema:valuePattern "YYYY-MM-DDThh:mm:ss" ;
       rdfs:range "xsd:dateTime" ;
       schema:defaultValue "2012-02-01T00:00:00"
     ], [
@@ -242,8 +246,8 @@
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/ODC>
   a dcat:Distribution ;
   dc:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/ODC" ;
-  dc:title "Seismic Waveform Distribution :: FDSN DATASELECT" ;
-  dc:description "Description of Seismic Waveform Distribution :: FDSN DATASELECT " ;
+  dc:title "Seismic Waveform Distribution :: FDSN DATASELECT :: ODC" ;
+  dc:description "Description of Seismic Waveform Distribution :: FDSN DATASELECT :: ODC" ;
   dc:issued "2017-01-01"^^xsd:date ;
   dc:modified "2017-01-01"^^xsd:date ;
   dc:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI ;
@@ -292,12 +296,18 @@
       a hydra:IriTemplateMapping ;
       hydra:variable "starttime"^^xsd:string ;
       rdfs:label "Start of the timespan" ;
+      hydra:property "schema:startDate" ;
+      schema:valuePattern "YYYY-MM-DDThh:mm:ss" ;
+      schema:defaultValue "2010-01-01T00:00:00";
       hydra:required true ;
       rdfs:range "xsd:dateTime"
     ], [
       a hydra:IriTemplateMapping ;
       hydra:variable "endtime"^^xsd:string ;
       rdfs:label "End of the timespan" ;
+      hydra:property "schema:endDate" ;
+      schema:valuePattern "YYYY-MM-DDThh:mm:ss" ;
+      schema:defaultValue "2019-03-01T00:00:00";
       hydra:required true ;
       rdfs:range "xsd:dateTime"
     ], [
@@ -329,6 +339,8 @@
     ], [
       a hydra:IriTemplateMapping ;
       hydra:variable "minlatitude"^^xsd:string ;
+      hydra:property "epos:southernmostLatitude" ;
+      rdfs:range "xsd:float";
       rdfs:label "Minimum Latitude" ;
       schema:minValue "-90.0" ;
       schema:maxValue "90.0" ;
@@ -336,6 +348,8 @@
     ], [
       a hydra:IriTemplateMapping ;
       hydra:variable "maxlatitude"^^xsd:string ;
+      hydra:property "epos:northernmostLatitude" ;
+      rdfs:range "xsd:float";
       rdfs:label "Maximum Latitude" ;
       schema:minValue "-90.0" ;
       schema:maxValue "90.0" ;
@@ -343,6 +357,8 @@
     ], [
       a hydra:IriTemplateMapping ;
       hydra:variable "minlongitude"^^xsd:string ;
+      hydra:property "epos:westernmostLongitude" ;
+      rdfs:range "xsd:float";
       rdfs:label "Minimum Longitude" ;
       schema:minValue "-180.0" ;
       schema:maxValue "180.0" ;
@@ -350,6 +366,8 @@
     ], [
       a hydra:IriTemplateMapping ;
       hydra:variable "maxlongitude"^^xsd:string ;
+      hydra:property "epos:easternmostLongitude" ;
+      rdfs:range "xsd:float";
       rdfs:label "Maximum Longitude" ;
       schema:minValue "-180.0" ;
       schema:maxValue "180.0" ;
@@ -403,8 +421,8 @@
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/ODC>
   a dcat:Distribution ;
   dc:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/ODC" ;
-  dc:title "Seismic Stations  :: FDSN STATION" ;
-  dc:description "Description of Seismic Stations  :: FDSN STATION " ;
+  dc:title "Seismic Stations from ORFEUS Data Center :: FDSN STATION" ;
+  dc:description "Distribution of Seismic Stations from ORFEUS Data Center :: FDSN STATION" ;
   dc:issued "2017-01-01"^^xsd:date ;
   dc:modified "2017-01-01"^^xsd:date ;
   dc:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI ;
@@ -462,7 +480,7 @@
   hydra:returns "application/xml" ;
   hydra:property [
     a hydra:IriTemplate ;
-    hydra:template "https://www.orfeus-eu.org/fdsnws/station/1/query(?eventid,type)"^^xsd:string ;
+    hydra:template "https://www.orfeus-eu.org/odcws/rrsm/1/shakemap{?eventid,type}"^^xsd:string ;    
     hydra:mapping [
       a hydra:IriTemplateMapping ;
       hydra:variable "eventid"^^xsd:string ;
@@ -476,6 +494,7 @@
       rdfs:label "Type of the output file" ;
       hydra:required false ;
       http:paramValue "event", "shakie" ;
+      schema:defaultValue "event" ;
       rdfs:range "xsd:string"
     ]
   ] .
@@ -489,8 +508,8 @@
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/048>
   a <https://www.epos-eu.org/epos-dcat-ap#WebService> ;
   schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/048" ;
-  schema:description "Webservice for getting USGS shakemap input files" ;
-  schema:name "RRSM Shakemaps at ORFEUS Data Center" ;
+  schema:description "Webservice for getting USGS shakemap input files from RRSM" ;
+  schema:name "RRSM Shakemaps from ORFEUS Data Center" ;
   schema:datePublished "2016-01-01T00:00:00Z"^^xsd:dateTime ;
   schema:dateModified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
   schema:provider <PIC:999518944> ;

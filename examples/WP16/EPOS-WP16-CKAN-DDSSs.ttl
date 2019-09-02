@@ -1,0 +1,1064 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .  
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .  
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .  
+@prefix dc: <http://purl.org/dc/elements/1.1/> .  
+@prefix dct: <http://purl.org/dc/terms/> .  
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .  
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .  
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .  
+@prefix schema: <http://schema.org/> .  
+@prefix dcat: <http://www.w3.org/ns/dcat#> .  
+@prefix cnt: <http://www.w3.org/2011/content#> .  
+@prefix locn: <http://www.w3.org/ns/locn#> .  
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .  
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .  
+@prefix http: <http://www.w3.org/2006/http#> .  
+@prefix owl: <http://www.w3.org/2002/07/owl#> .  
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .  
+
+<ORCID:0000-0003-3560-988X> a schema:Person;
+    schema:identifier [ a schema:PropertyValue ;
+      schema:propertyID  "orcid" ;
+      schema:value   "0000-0003-3560-988X" ;
+    ];
+	  schema:familyName "Lange" ;
+	  schema:givenName "Otto" ;
+      schema:address [ a schema:PostalAddress ;
+	 	    schema:streetAddress "Heidelberglaan, 3" ;
+		    schema:addressLocality "Utrecht" ;
+		    schema:postalCode "3584CS" ;
+		    schema:addressCountry "The Netherlands" ;
+	  ];
+    schema:email "o.a.lange@uu.nl" ;
+    schema:telephone "+310651317777" ;
+    schema:url  "http://orcid.org/0000-0003-3560-988X"^^xsd:anyURI ;
+	  schema:qualifications "Senior Advisor, Data Librarian" ;
+	  schema:affiliation <PIC:99985805> ;
+	  schema:contactPoint <http://orcid.org/0000-0003-3560-988X/legalContact> ;
+	  schema:contactPoint <http://orcid.org/0000-0003-3560-988X/scientificContact> ;
+	  schema:contactPoint <http://orcid.org/0000-0003-3560-988X/financialContact> ;
+	schema:affiliation <PIC:99985805>;
+. 
+
+<http://orcid.org/0000-0003-3560-988X/legalContact> a schema:ContactPoint ;
+	schema:email "o.a.lange@uu.nl";
+	schema:availableLanguage "en" ;
+	schema:contactType "legalContact";
+.
+
+<http://orcid.org/0000-0003-3560-988X/financialContact> a schema:ContactPoint ;
+	schema:email "o.a.lange@uu.nl";
+	schema:availableLanguage "en" ;
+	schema:contactType "financialContact" ;
+.
+
+<http://orcid.org/0000-0003-3560-988X/scientificContact> a schema:ContactPoint ;
+	schema:email "o.a.lange@uu.nl" ;
+	schema:availableLanguage "en" ;
+	schema:contactType "scientificContact" ;
+.
+
+<PIC:99985805> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "PIC";
+		schema:value "PIC:99985805";
+	]; 
+	schema:legalName "Universiteit Utrecht";
+  	schema:leiCode "Legal Entity Identifier Search: http://www.lei-lookup.com/#!search" ;
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Domplein 29";
+		schema:addressLocality "Utrecht";
+		schema:postalCode "3512JE";
+		schema:addressCountry "The Netherlands";
+	]; 
+.
+
+<PIC:999994341> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "pic";
+		schema:value "999994341";
+	];
+	schema:legalName "GFZ German Research Centre for Geosciences";
+	schema:leiCode "Legal Entity Identifier Search: http://www.lei-lookup.com/#!search" ;
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Telegrafenberg";
+		schema:addressLocality "Potsdam";
+		schema:postalCode "14473";
+		schema:addressCountry "Germany";
+	];
+	#schema:logo "https://media.gfz-potsdam.de/gfz/wv/05_Medien_Kommunikation/Bildarchiv/GFZ Logo/temp_xs/LOGO-GFZ-en-mitFreistellungsraum_RGB_24bit_300dpi_546x390-jpg.jpg"^^xsd:anyURI;
+	#schema:url "http://www.gfz-potsdam.de/"^^xsd:anyURI;
+	#schema:email "info@gfz-potsdam.de";
+	#schema:contactPoint <http://orcid.org/0000-0002-3580-651X/scientificContact>;
+	#schema:contactPoint <mailto:marko.blau@gfz-potsdam.de/legalContact>;
+	#schema:contactPoint <mailto:stephan.ott@gfz-potsdam.de/financialContact>;
+.
+
+	<epos:Multi-scale-laboratories> a skos:ConceptScheme;
+		dct:title "Multi-scale laboratories";
+		dct:description "The Multi-scale laboratories TCS includes a wide range of world-class experimental laboratory infrastructures: from high pressure-temperature rock and fault mechanics and rock physics facilities, to electron microscopy, micro-beam analysis, analogue modelling and paleomagnetic laboratories.";
+. 
+	<epos:PaleomagneticAndMagneticData> a skos:Concept;
+		skos:inScheme <epos:Multi-scale-laboratories>;
+		skos:prefLabel "Paleomagnetic and magnetic data";
+. 
+	<epos:GeochemicalData> a skos:Concept;
+		skos:inScheme <epos:Multi-scale-laboratories>;
+		skos:prefLabel "Geochemical data (elemental and isotope geochemistry)";
+. 
+	<epos:RockAndMeltPhysicalProperties> a skos:Concept;
+		skos:inScheme <epos:Multi-scale-laboratories>;
+		skos:prefLabel "Rock and melt physical properties";
+. 
+	<epos:AnalogueModelsOfGeologicProcesses> a skos:Concept;
+		skos:inScheme <epos:Multi-scale-laboratories>;
+		skos:prefLabel "Analogue models of geologic processes";
+.
+
+# DATASETS , DDSSs, DISTRIBUTIONS
+
+
+
+# WP16-DDSS-002 Rock and melt physical properties
+
+<https://www.epos-eu.org/multi-scale-laboratories/rock_and_melt_physical_properties/Dataset/002> a dcat:Dataset ;
+        dct:identifier "https://www.epos-eu.org/multi-scale-laboratories/rock_and_melt_physical_properties/Dataset/002" ;
+        dct:title "Rock and melt physical properties" ;
+        dct:description "Rock and melt physical properties" ;
+        adms:identifier [ a adms:Identifier ;
+            adms:schemaAgency "DDSS-ID" ;
+            skos:notation "WP16-DDSS-002" ;
+
+        ];
+        
+
+        # This property refers to the type of the Dataset. 
+        # Example of frequency using a controlled vocabulary http://dublincore.org/2012/06/14/dctype
+
+		dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
+		
+		# This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
+        dcat:theme <epos:RockAndMeltPhysicalProperties> ;
+        
+        dcat:keyword "Rock and melt physical properties" ;
+        dcat:contactPoint <http://orcid.org/0000-0003-3560-988X/contactPoint> ;
+
+        # This property refers to an Organisation responsible for making the Dataset available.
+		dct:publisher <PIC:999994341> ;
+		
+		# This property links the Dataset to an available Distribution.
+        dcat:distribution <https://www.epos-eu.org/multi-scale-laboratories/rock_and_melt_physical_properties/Dataset/002/Distribution/002> ;
+.
+
+
+<https://www.epos-eu.org/multi-scale-laboratories/rock_and_melt_physical_properties/Dataset/002/Distribution/002> a dcat:Distribution ;
+        dct:identifier "https://www.epos-eu.org/multi-scale-laboratories/rock_and_melt_physical_properties/Dataset/002/Distribution/002" ;
+        dct:title "Data publications: rock and melt physical properties" ;
+		dct:description "Catalogue collection of data publications about rock and melt physical properties" ;
+
+        # This property refers to the type of the Distribution. The possible types are
+        # (http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE
+        # OR
+        # http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE)
+		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI ;
+
+        # If the type of Distribution is WEB SERVICE, this property refers to the Web Service that gives access to a Distribution of the Dataset. Otherwise, this property is optional.
+	dct:conformsTo <https://epos-msl.uu.nl/002> ;
+
+        # This property contains a URL that gives access to a Distribution of the Dataset. The resource at the access URL may contain # information about how to get the Dataset.
+        # If the type of Distribution is WEB SERVICE, this property refers to the Operation of the Web Service to which the Distribution conforms.
+        dcat:accessURL <https://epos-msl.uu.nl/002/api.php> ;
+
+
+        # This property refers to the file format of the Distribution. 
+        # The possible types are here: http://publications.europa.eu/mdr/resource/authority/file-type/html/filetypes-eng.html
+        dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI ;
+
+        # This property refers to the licence under which the Distribution is made available.
+        dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+.
+
+<https://epos-msl.uu.nl/002> a epos:WebService;
+	schema:identifier "https://epos-msl.uu.nl/002";
+	#schema:identifier [ a schema:PropertyValue; 
+		#schema:propertyID  "DDSS-ID"; 
+		#schema:value  "WP16-DDSS-012-002"; 
+	#]; 
+	schema:description "The MSL Catalogue service assists in the discovery of data publications, which contain analytical and experimental data on rock properties, analogue models on tectonic processes, geochemistry data, and paleomagnetic and magnetic data. Metadata is available in standard ISO19115 format, extended with domain specific keywords.";
+	dcat:theme <epos:RockAndMeltPhysicalProperties>;
+	schema:name "Multiscale Laboratories Data Catalogue Service";
+	hydra:entrypoint "https://epos-msl.uu.nl/ics/api.php?"^^xsd:anyURI; 
+	schema:provider <PIC:99985805>;
+	schema:datePublished "2017-09-21Z"^^xsd:dateTime;
+	schema:dateModified "2018-09-11Z"^^xsd:dateTime;
+	hydra:supportedOperation <https://epos-msl.uu.nl/002/api.php>;
+	schema:keywords "Laboratories","Rock and melt physical properties","Experimental data";
+	dct:license "http://www.fsf.org/licensing/licenses/agpl-3.0.html"^^xsd:anyURI;
+	dcat:contactPoint <http://orcid.org/0000-0003-3560-988X/contactPoint>;
+. 
+
+	<https://epos-msl.uu.nl/002/api.php> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://epos-msl.uu.nl/ics/api.php{?Author, supplementTo, Publisher, publicationYear, Keywords, Title, Description, DOI, Lab, Institution, freeTextAllFields}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Author"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Author";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "supplementTo"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Dataset is supplement to";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Publisher"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Publisher";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "publicationYear"^^xsd:string;
+					rdfs:range "xsd:integer";
+					rdfs:label "Year of (data) publication";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Keywords"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Keyword(s)";
+					schema:defaultValue "rock and melt physical properties";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Title"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Title of data publication";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Description"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Description of data publication";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "DOI"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "DOI assigned to data publication or related articles";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Lab"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Lab(s) where data was collected";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Institution"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Institution(s) where data was collected";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "freeTextAllFields"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Search in all fields";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+		] ;
+. 
+
+
+# end of WP16-DDSS-002
+
+
+# WP16-DDSS-003 Property data of analogue modelling materials
+
+<https://www.epos-eu.org/multi-scale-laboratories/property_data_of_analogue_materials/Dataset/003> a dcat:Dataset ;
+        dct:identifier "https://www.epos-eu.org/multi-scale-laboratories/property_data_of_analogue_materials/Dataset/003" ;
+        dct:title "Property data of analogue modelling materials" ;
+        dct:description "Property data of analogue modelling materials" ;
+        adms:identifier [ a adms:Identifier ;
+            adms:schemaAgency "DDSS-ID" ;
+            skos:notation "WP16-DDSS-003" ;
+
+        ];
+        
+
+        # This property refers to the type of the Dataset. 
+        # Example of frequency using a controlled vocabulary http://dublincore.org/2012/06/14/dctype
+
+		dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
+		
+		# This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
+        dcat:theme <epos:AnalogueModelsOfGeologicProcesses> ;
+        
+        dcat:keyword "Rock and melt physical properties" ;
+        dcat:contactPoint <http://orcid.org/0000-0003-3560-988X/contactPoint> ;
+
+        # This property refers to an Organisation responsible for making the Dataset available.
+		dct:publisher <PIC:999994341> ;
+		
+		# This property links the Dataset to an available Distribution.
+        dcat:distribution <https://www.epos-eu.org/multi-scale-laboratories/property_data_of_analogue_materials/Dataset/003/Distribution/003> ;
+.
+
+
+<https://www.epos-eu.org/multi-scale-laboratories/property_data_of_analogue_materials/Dataset/003/Distribution/003> a dcat:Distribution ;
+        dct:identifier "https://www.epos-eu.org/multi-scale-laboratories/property_data_of_analogue_materials/Dataset/003/Distribution/003" ;
+        dct:title "Data publications: Property data of analogue modelling materials" ;
+		dct:description "Catalogue collection of data publications about properties of analogue modelling materials" ;
+
+        # This property refers to the type of the Distribution. The possible types are
+        # (http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE
+        # OR
+        # http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE)
+		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI ;
+
+        # If the type of Distribution is WEB SERVICE, this property refers to the Web Service that gives access to a Distribution of the Dataset. Otherwise, this property is optional.
+		dct:conformsTo <https://epos-msl.uu.nl/003> ;
+
+        # This property contains a URL that gives access to a Distribution of the Dataset. The resource at the access URL may contain # information about how to get the Dataset.
+        # If the type of Distribution is WEB SERVICE, this property refers to the Operation of the Web Service to which the Distribution conforms.
+        dcat:accessURL <https://epos-msl.uu.nl/003/api.php> ;
+
+        # This property refers to the file format of the Distribution. 
+        # The possible types are here: http://publications.europa.eu/mdr/resource/authority/file-type/html/filetypes-eng.html
+        dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI ;
+
+        # This property refers to the licence under which the Distribution is made available.
+        dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+.
+
+<https://epos-msl.uu.nl/003> a epos:WebService;
+	schema:identifier "https://epos-msl.uu.nl/003";
+	#schema:identifier [ a schema:PropertyValue; 
+		#schema:propertyID  "DDSS-ID"; 
+		#schema:value  "WP16-DDSS-012-003"; 
+	#]; 
+	schema:description "The MSL Catalogue service assists in the discovery of data publications, which contain analytical and experimental data on rock properties, analogue models on tectonic processes, geochemistry data, and paleomagnetic and magnetic data. Metadata is available in standard ISO19115 format, extended with domain specific keywords.";
+	dcat:theme <epos:AnalogueModelsOfGeologicProcesses>;
+	schema:name "Multiscale Laboratories Data Catalogue Service";
+	hydra:entrypoint "https://epos-msl.uu.nl/ics/api.php?"^^xsd:anyURI; 
+	schema:provider <PIC:99985805>;
+	schema:datePublished "2017-09-21Z"^^xsd:dateTime;
+	schema:dateModified "2018-09-11Z"^^xsd:dateTime;
+	hydra:supportedOperation <https://epos-msl.uu.nl/003/api.php>;
+	schema:keywords "Laboratories","analogue modelling materials"," experimental data","analogue models";
+	dct:license "http://www.fsf.org/licensing/licenses/agpl-3.0.html"^^xsd:anyURI;
+	dcat:contactPoint <http://orcid.org/0000-0003-3560-988X/contactPoint>;
+. 
+
+	<https://epos-msl.uu.nl/003/api.php> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://epos-msl.uu.nl/ics/api.php{?Author, supplementTo, Publisher, publicationYear, Keywords, Title, Description, DOI, Lab, Institution, freeTextAllFields}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Author"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Author";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "supplementTo"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Dataset is supplement to";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Publisher"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Publisher";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "publicationYear"^^xsd:string;
+					rdfs:range "xsd:integer";
+					rdfs:label "Year of (data) publication";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Keywords"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Keyword(s)";
+					schema:defaultValue "property data of analogue modelling materials";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Title"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Title of data publication";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Description"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Description of data publication";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "DOI"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "DOI assigned to data publication or related articles";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Lab"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Lab(s) where data was collected";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Institution"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Institution(s) where data was collected";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "freeTextAllFields"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Search in all fields";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+		] ;
+. 
+
+
+# end of WP16-DDSS-003
+
+# WP16-DDSS-004 Analogue modelling results
+
+<https://www.epos-eu.org/multi-scale-laboratories/analogue_modelling_results/Dataset/004> a dcat:Dataset ;
+        dct:identifier "https://www.epos-eu.org/multi-scale-laboratories/analogue_modelling_results/Dataset/004" ;
+        dct:title "Analogue modelling results" ;
+        dct:description "Analogue modelling results" ;
+        adms:identifier [ a adms:Identifier ;
+            adms:schemaAgency "DDSS-ID" ;
+            skos:notation "WP16-DDSS-004" ;
+
+        ];
+        
+
+        # This property refers to the type of the Dataset. 
+        # Example of frequency using a controlled vocabulary http://dublincore.org/2012/06/14/dctype
+
+		dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
+		
+		# This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
+        dcat:theme <epos:AnalogueModelsOfGeologicProcesses> ;
+        
+        dcat:keyword "Rock and melt physical properties" ;
+        dcat:contactPoint <http://orcid.org/0000-0003-3560-988X/contactPoint> ;
+
+        # This property refers to an Organisation responsible for making the Dataset available.
+		dct:publisher <PIC:999994341> ;
+		
+		# This property links the Dataset to an available Distribution.
+        dcat:distribution <https://www.epos-eu.org/multi-scale-laboratories/analogue_modelling_results/Dataset/004/Distribution/004> ;
+.
+
+
+<https://www.epos-eu.org/multi-scale-laboratories/analogue_modelling_results/Dataset/004/Distribution/004> a dcat:Distribution ;
+        dct:identifier "https://www.epos-eu.org/multi-scale-laboratories/analogue_modelling_results/Dataset/004/Distribution/004" ;
+        dct:title "Data publications: analogue modelling results" ;
+		dct:description "Catalogue collection of data publications about analogue modelling results" ;
+
+        # This property refers to the type of the Distribution. The possible types are
+        # (http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE
+        # OR
+        # http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE)
+		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI ;
+
+        # If the type of Distribution is WEB SERVICE, this property refers to the Web Service that gives access to a Distribution of the Dataset. Otherwise, this property is optional.
+		dct:conformsTo <https://epos-msl.uu.nl/004> ;
+
+        # This property contains a URL that gives access to a Distribution of the Dataset. The resource at the access URL may contain # information about how to get the Dataset.
+        # If the type of Distribution is WEB SERVICE, this property refers to the Operation of the Web Service to which the Distribution conforms.
+        dcat:accessURL <https://epos-msl.uu.nl/004/api.php> ;
+
+        # This property refers to the file format of the Distribution. 
+        # The possible types are here: http://publications.europa.eu/mdr/resource/authority/file-type/html/filetypes-eng.html
+        dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI ;
+
+        # This property refers to the licence under which the Distribution is made available.
+        dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+.
+
+<https://epos-msl.uu.nl/004> a epos:WebService;
+	schema:identifier "https://epos-msl.uu.nl/004";
+	#schema:identifier [ a schema:PropertyValue; 
+		#schema:propertyID  "DDSS-ID"; 
+		#schema:value  "WP16-DDSS-012-004"; 
+	#]; 
+	schema:description "The MSL Catalogue service assists in the discovery of data publications, which contain analytical and experimental data on rock properties, analogue models on tectonic processes, geochemistry data, and paleomagnetic and magnetic data. Metadata is available in standard ISO19115 format, extended with domain specific keywords.";
+	dcat:theme <epos:AnalogueModelsOfGeologicProcesses>;
+	schema:name "Multiscale Laboratories Data Catalogue Service";
+	hydra:entrypoint "https://epos-msl.uu.nl/ics/api.php?"^^xsd:anyURI; 
+	schema:provider <PIC:99985805>;
+	schema:datePublished "2017-09-21Z"^^xsd:dateTime;
+	schema:dateModified "2018-09-11Z"^^xsd:dateTime;
+	hydra:supportedOperation <https://epos-msl.uu.nl/004/api.php>;
+	schema:keywords "Laboratories","analogue modelling results"," experimental data","analogue models", "geologic processes";
+	dct:license "http://www.fsf.org/licensing/licenses/agpl-3.0.html"^^xsd:anyURI;
+	dcat:contactPoint <http://orcid.org/0000-0003-3560-988X/contactPoint>;
+. 
+
+	<https://epos-msl.uu.nl/004/api.php> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://epos-msl.uu.nl/ics/api.php{?Author, supplementTo, Publisher, publicationYear, Keywords, Title, Description, DOI, Lab, Institution, freeTextAllFields}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Author"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Author";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "supplementTo"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Dataset is supplement to";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Publisher"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Publisher";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "publicationYear"^^xsd:string;
+					rdfs:range "xsd:integer";
+					rdfs:label "Year of (data) publication";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Keywords"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Keyword(s)";
+					schema:defaultValue "analogue modelling results";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Title"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Title of data publication";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Description"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Description of data publication";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "DOI"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "DOI assigned to data publication or related articles";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Lab"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Lab(s) where data was collected";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Institution"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Institution(s) where data was collected";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "freeTextAllFields"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Search in all fields";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+		] ;
+. 
+
+
+# end of WP16-DDSS-004
+
+# WP16-DDSS-006 Paleomagnetic data
+
+<https://www.epos-eu.org/multi-scale-laboratories/paleomagnetic_data/Dataset/006> a dcat:Dataset ;
+        dct:identifier "https://www.epos-eu.org/multi-scale-laboratories/paleomagnetic_data/Dataset/006" ;
+        dct:title "Paleomagnetic data" ;
+        dct:description "Data publications: paleomagnetic data" ;
+        adms:identifier [ a adms:Identifier ;
+            adms:schemaAgency "DDSS-ID" ;
+            skos:notation "WP16-DDSS-006" ;
+
+        ];
+        
+
+        # This property refers to the type of the Dataset. 
+        # Example of frequency using a controlled vocabulary http://dublincore.org/2012/06/14/dctype
+
+		dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
+		
+		# This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
+        dcat:theme <epos:PaleomagneticAndMagneticData> ;
+        
+        dcat:keyword "Rock and melt physical properties" ;
+        dcat:contactPoint <http://orcid.org/0000-0003-3560-988X/contactPoint> ;
+
+        # This property refers to an Organisation responsible for making the Dataset available.
+		dct:publisher <PIC:999994341> ;
+		
+		# This property links the Dataset to an available Distribution.
+        dcat:distribution <https://www.epos-eu.org/multi-scale-laboratories/paleomagnetic_data/Dataset/006/Distribution/006> ;
+.
+
+
+<https://www.epos-eu.org/multi-scale-laboratories/paleomagnetic_data/Dataset/006/Distribution/006> a dcat:Distribution ;
+        dct:identifier "https://www.epos-eu.org/multi-scale-laboratories/paleomagnetic_data/Dataset/006/Distribution/006" ;
+        dct:title "Data publications: paleomagnetic data" ;
+		dct:description "Catalogue collection of data publications about paleomagnetic datasets" ;
+
+        # This property refers to the type of the Distribution. The possible types are
+        # (http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE
+        # OR
+        # http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE)
+		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI ;
+
+        # If the type of Distribution is WEB SERVICE, this property refers to the Web Service that gives access to a Distribution of the Dataset. Otherwise, this property is optional.
+		dct:conformsTo <https://epos-msl.uu.nl/006> ;
+
+        # This property contains a URL that gives access to a Distribution of the Dataset. The resource at the access URL may contain # information about how to get the Dataset.
+        # If the type of Distribution is WEB SERVICE, this property refers to the Operation of the Web Service to which the Distribution conforms.
+        dcat:accessURL <https://epos-msl.uu.nl/006/api.php> ;
+
+        # This property refers to the file format of the Distribution. 
+        # The possible types are here: http://publications.europa.eu/mdr/resource/authority/file-type/html/filetypes-eng.html
+        dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI ;
+
+        # This property refers to the licence under which the Distribution is made available.
+        dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+.
+
+<https://epos-msl.uu.nl/006> a epos:WebService;
+	schema:identifier "https://epos-msl.uu.nl/006";
+	#schema:identifier [ a schema:PropertyValue; 
+		#schema:propertyID  "DDSS-ID"; 
+		#schema:value  "WP16-DDSS-012-006"; 
+	#]; 
+	schema:description "The MSL Catalogue service assists in the discovery of data publications, which contain analytical and experimental data on rock properties, analogue models on tectonic processes, geochemistry data, and paleomagnetic and magnetic data. Metadata is available in standard ISO19115 format, extended with domain specific keywords.";
+	dcat:theme <epos:PaleomagneticAndMagneticData>;
+	schema:name "Multiscale Laboratories Data Catalogue Service";
+	hydra:entrypoint "https://epos-msl.uu.nl/ics/api.php?"^^xsd:anyURI; 
+	schema:provider <PIC:99985805>;
+	schema:datePublished "2017-09-21Z"^^xsd:dateTime;
+	schema:dateModified "2018-09-11Z"^^xsd:dateTime;
+	hydra:supportedOperation <https://epos-msl.uu.nl/006/api.php>;
+	schema:keywords "Laboratories","paleomagnetic data"," experimental data";
+	dct:license "http://www.fsf.org/licensing/licenses/agpl-3.0.html"^^xsd:anyURI;
+	dcat:contactPoint <http://orcid.org/0000-0003-3560-988X/contactPoint>;
+. 
+
+	<https://epos-msl.uu.nl/006/api.php> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://epos-msl.uu.nl/ics/api.php{?Author, supplementTo, Publisher, publicationYear, Keywords, Title, Description, DOI, Lab, Institution, freeTextAllFields}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Author"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Author";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "supplementTo"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Dataset is supplement to";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Publisher"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Publisher";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "publicationYear"^^xsd:string;
+					rdfs:range "xsd:integer";
+					rdfs:label "Year of (data) publication";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Keywords"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Keyword(s)";
+					schema:defaultValue "paleomagnetic data";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Title"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Title of data publication";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Description"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Description of data publication";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "DOI"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "DOI assigned to data publication or related articles";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Lab"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Lab(s) where data was collected";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Institution"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Institution(s) where data was collected";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "freeTextAllFields"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Search in all fields";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+		] ;
+. 
+
+
+# end of WP16-DDSS-006
+
+# WP16-DDSS-007 Paleomagnetic data
+
+<https://www.epos-eu.org/multi-scale-laboratories/magnetic_susceptibility_data/Dataset/007> a dcat:Dataset ;
+        dct:identifier "https://www.epos-eu.org/multi-scale-laboratories/magnetic_susceptibility_data/Dataset/007" ;
+        dct:title "Magnetic susceptibility data" ;
+        dct:description "Data publications: magnetic susceptibility data" ;
+        adms:identifier [ a adms:Identifier ;
+            adms:schemaAgency "DDSS-ID" ;
+            skos:notation "WP16-DDSS-007" ;
+
+        ];
+        
+
+        # This property refers to the type of the Dataset. 
+        # Example of frequency using a controlled vocabulary http://dublincore.org/2012/06/14/dctype
+
+		dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
+		
+		# This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
+        dcat:theme <epos:PaleomagneticAndMagneticData> ;
+        
+        dcat:keyword "Rock and melt physical properties" ;
+        dcat:contactPoint <http://orcid.org/0000-0003-3560-988X/contactPoint> ;
+
+        # This property refers to an Organisation responsible for making the Dataset available.
+		dct:publisher <PIC:999994341> ;
+		
+		# This property links the Dataset to an available Distribution.
+        dcat:distribution <https://www.epos-eu.org/multi-scale-laboratories/magnetic_susceptibility_data/Dataset/007/Distribution/007> ;
+.
+
+
+<https://www.epos-eu.org/multi-scale-laboratories/magnetic_susceptibility_data/Dataset/007/Distribution/007> a dcat:Distribution ;
+        dct:identifier "https://www.epos-eu.org/multi-scale-laboratories/paleomagnetic_data/Dataset/007/Distribution/007" ;
+        dct:title "Data publications: magnetic susceptibility data" ;
+		dct:description "Catalogue collection of data publications about magnetic susceptibility data" ;
+
+        # This property refers to the type of the Distribution. The possible types are
+        # (http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE
+        # OR
+        # http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE)
+		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI ;
+
+        # If the type of Distribution is WEB SERVICE, this property refers to the Web Service that gives access to a Distribution of the Dataset. Otherwise, this property is optional.
+		dct:conformsTo <https://epos-msl.uu.nl/007> ;
+
+        # This property contains a URL that gives access to a Distribution of the Dataset. The resource at the access URL may contain # information about how to get the Dataset.
+        # If the type of Distribution is WEB SERVICE, this property refers to the Operation of the Web Service to which the Distribution conforms.
+        dcat:accessURL <https://epos-msl.uu.nl/007/api.php> ;
+
+        # This property refers to the file format of the Distribution. 
+        # The possible types are here: http://publications.europa.eu/mdr/resource/authority/file-type/html/filetypes-eng.html
+        dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI ;
+
+        # This property refers to the licence under which the Distribution is made available.
+        dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+.
+
+<https://epos-msl.uu.nl/007> a epos:WebService;
+	schema:identifier "https://epos-msl.uu.nl/007";
+	#schema:identifier [ a schema:PropertyValue; 
+		#schema:propertyID  "DDSS-ID"; 
+		#schema:value  "WP16-DDSS-012-007"; 
+	#]; 
+	schema:description "The MSL Catalogue service assists in the discovery of data publications, which contain analytical and experimental data on rock properties, analogue models on tectonic processes, geochemistry data, and paleomagnetic and magnetic data. Metadata is available in standard ISO19115 format, extended with domain specific keywords.";
+	dcat:theme <epos:PaleomagneticAndMagneticData>;
+	schema:name "Multiscale Laboratories Data Catalogue Service";
+	hydra:entrypoint "https://epos-msl.uu.nl/ics/api.php?"^^xsd:anyURI; 
+	schema:provider <PIC:99985805>;
+	schema:datePublished "2017-09-21Z"^^xsd:dateTime;
+	schema:dateModified "2018-09-11Z"^^xsd:dateTime;
+	hydra:supportedOperation <https://epos-msl.uu.nl/007/api.php>;
+	schema:keywords "Laboratories","Magnetic susceptibility data"," experimental data";
+	dct:license "http://www.fsf.org/licensing/licenses/agpl-3.0.html"^^xsd:anyURI;
+	dcat:contactPoint <http://orcid.org/0000-0003-3560-988X/contactPoint>;
+. 
+
+	<https://epos-msl.uu.nl/007/api.php> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://epos-msl.uu.nl/ics/api.php{?Author, supplementTo, Publisher, publicationYear, Keywords, Title, Description, DOI, Lab, Institution, freeTextAllFields}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Author"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Author";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "supplementTo"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Dataset is supplement to";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Publisher"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Publisher";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "publicationYear"^^xsd:string;
+					rdfs:range "xsd:integer";
+					rdfs:label "Year of (data) publication";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Keywords"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Keyword(s)";
+					schema:defaultValue "magnetic susceptibility data";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Title"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Title of data publication";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Description"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Description of data publication";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "DOI"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "DOI assigned to data publication or related articles";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Lab"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Lab(s) where data was collected";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Institution"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Institution(s) where data was collected";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "freeTextAllFields"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Search in all fields";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+		] ;
+. 
+
+
+# end of WP16-DDSS-007
+
+# Generic web service WP16-DDSS-012
+
+<https://epos-msl.uu.nl/ics> a epos:WebService;
+	schema:identifier "https://epos-msl.uu.nl/ics";
+	#schema:identifier [ a schema:PropertyValue; 
+		#schema:propertyID  "DDSS-ID"; 
+		#schema:value  "WP16-DDSS-012"; 
+	#]; 
+	schema:description "The MSL Catalogue service assists in the discovery of data publications, which contain analytical and experimental data on rock properties, analogue models on tectonic processes, geochemistry data, and paleomagnetic and magnetic data. Metadata is available in standard ISO19115 format, extended with domain specific keywords.";
+	dcat:theme <epos:AnalogueModelsOfGeologicProcesses>;
+	dcat:theme <epos:RockAndMeltPhysicalProperties>;
+	dcat:theme <epos:PaleomagneticAndMagneticData>;
+	dcat:theme <epos:GeochemicalData>;
+	schema:name "Multiscale Laboratories Data Catalogue Service";
+	hydra:entrypoint "https://epos-msl.uu.nl/ics/api.php?"^^xsd:anyURI; 
+	schema:provider <PIC:99985805>;
+	schema:datePublished "2017-09-21Z"^^xsd:dateTime;
+	schema:dateModified "2018-09-11Z"^^xsd:dateTime;
+	hydra:supportedOperation <https://epos-msl.uu.nl/ics/api.php>;
+	schema:keywords "Laboratories"," analytical data"," experimental data"," rock properties"," analogue models"," tectonic processes"," paleomagnetic data"," magnetic data";
+	dct:license "http://www.fsf.org/licensing/licenses/agpl-3.0.html"^^xsd:anyURI;
+	dcat:contactPoint <http://orcid.org/0000-0003-3560-988X/contactPoint>;
+. 
+ 
+	<https://epos-msl.uu.nl/ics/api.php> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://epos-msl.uu.nl/ics/api.php{?Author, supplementTo, Publisher, publicationYear, Keywords, Title, Description, DOI, Lab, Institution, freeTextAllFields}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Author"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Author";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "supplementTo"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Dataset is supplement to";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Publisher"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Publisher";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "publicationYear"^^xsd:string;
+					rdfs:range "xsd:integer";
+					rdfs:label "Year of (data) publication";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Keywords"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Keyword(s)";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Title"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Title of data publication";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Description"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Description of data publication";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "DOI"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "DOI assigned to data publication or related articles";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Lab"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Lab(s) where data was collected";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "Institution"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Institution(s) where data was collected";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "freeTextAllFields"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Search in all fields";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+		] ;
+. 
+
+# end of WP16-DDSS-012
+
+<http://orcid.org/0000-0003-3560-988X/contactPoint> a schema:ContactPoint;
+	schema:email "o.a.lange@uu.nl";
+	schema:availableLanguage "en" ;
+	schema:contactType "manager";
+.

@@ -1,0 +1,311 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http: <http://www.w3.org/2006/http#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+
+#########
+# PERSON 
+#########
+
+<https://orcid.org/0000-0002-6874-786X> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "orcid";
+		schema:value "https://orcid.org/0000-0002-6874-786X";
+	];
+	schema:familyName "Komorowski";
+	schema:givenName "Jean-Christophe";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Institut de Physique du Globe de Paris, 1 rue jussieu";
+		schema:addressLocality "Paris";
+		schema:postalCode "75238";
+		schema:addressCountry "France";
+	];
+	schema:email "jeanchristophe.komorowski@gmail.com";
+	schema:telephone "+33183957635";
+	schema:qualifications "Scientist";
+	schema:affiliation <PIC:999597417>;
+	schema:contactPoint <https://orcid.org/0000-0002-6874-786X/scientificContact>;
+.
+
+<researcherID:E-7067-2017> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "ResearcherID";
+		schema:value "researcherID:E-7067-2017";
+	];
+	schema:familyName "Chaussidon";
+	schema:givenName "Marc";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Institut de Physique du Globe de Paris, 1 rue jussieu";
+		schema:addressLocality "Paris";
+		schema:postalCode "75238";
+		schema:addressCountry "France";
+	];
+	schema:email "chaussidon@ipgp.fr";
+	schema:telephone "+33183957502";
+	schema:qualifications "director";
+	schema:affiliation <PIC:999597417>;
+	schema:contactPoint <researcherID:E-7067-2017/scientificContact>;
+	schema:contactPoint <researcherID:E-7067-2017/legalContact>;
+.
+
+<https://rcid.org/0000-0002-4234-3787> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "orcid";
+		schema:value "https://orcid.org/0000-0002-4234-3787";
+	];
+	schema:familyName "Lemarchand";
+	schema:givenName "Arnaud";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Institut de Physique du Globe de Paris, 1 rue jussieu";
+		schema:addressLocality "Paris";
+		schema:postalCode "75238";
+		schema:addressCountry "France";
+	];
+	schema:email "arnaudl@ipgp.fr";
+	schema:telephone "+33183957698";
+	schema:qualifications "Engineer";
+	schema:affiliation <PIC:999597417>;
+	schema:contactPoint <https://orcid.org/0000-0002-4234-3787/contactPoint>;
+
+.
+
+<https://orcid.org/0000-0003-1601-8718> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "orcid";
+		schema:value "https://orcid.org/0000-0003-1601-8718";
+	];
+	schema:familyName "Pardo Torres";
+	schema:givenName "Constanza";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Institut de Physique du Globe de Paris, 1 rue jussieu";
+		schema:addressLocality "Paris";
+		schema:postalCode "75238";
+		schema:addressCountry "France";
+	];
+	schema:email "pardo@ipgp.fr";
+	schema:telephone "+33183957566";
+	schema:qualifications "Engineer";
+	schema:affiliation <PIC:999597417>;
+	schema:contactPoint <https://orcid.org/0000-0003-1601-8718/contactPoint> ;
+
+.
+
+#########
+# Organization
+#########
+
+<PIC:999597417> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "PIC";
+		schema:value "999597417";
+	];
+	#schema:legalName "Institut de Physique du Globe de Paris"@fr;
+        schema:legalName "Institute of Earth Physics of Paris"@en;
+        schema:leiCode "999597417";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "1 rue jussieu";
+		schema:addressLocality "Paris";
+		schema:postalCode "75238";
+		schema:addressCountry "France";
+	];
+	schema:url "http://www.ipgp.fr"^^xsd:anyURI;
+	schema:email "accueil@ipgp.fr";
+	schema:contactPoint <https://orcid.org/0000-0002-6874-786X/scientificContact>;
+	schema:contactPoint <researcherID:E-7067-2017/legalContact>;
+	schema:contactPoint <https://orcid.org/0000-0002-4234-3787/contactPoint>;
+.
+
+#######
+# Contacts
+#######
+
+<https://orcid.org/0000-0002-6874-786X/scientificContact> a schema:ContactPoint;
+	schema:email "jeanchristophe.komorowski@gmail.com";
+	schema:availableLanguage "en" ;
+	schema:contactType "scientificContact" ;
+.
+
+<researcherID:E-7067-2017/legalContact> a schema:ContactPoint;
+	schema:email "chaussidon@ipgp.fr";
+	schema:availableLanguage "en" ;
+	schema:contactType "legalContact" ;
+.
+
+<researcherID:E-7067-2017/scientificContact> a schema:ContactPoint;
+	schema:email "chaussidon@ipgp.fr";
+	schema:availableLanguage "en" ;
+	schema:contactType "scientificContact" ;
+.
+
+<https://orcid.org/0000-0002-4234-3787/contactPoint> a schema:ContactPoint;
+	schema:email "arnaudl@ipgp.fr";
+	schema:availableLanguage "en" ;
+	schema:contactType "contactPoint" ;
+.
+
+<https://orcid.org/0000-0003-1601-8718/contactPoint> a schema:ContactPoint;
+	schema:email "pardo@ipgp.fr";
+	schema:availableLanguage "en" ;
+	schema:contactType "contactPoint" ;
+.
+
+#######
+# Dataset 
+#######
+
+<WP11/volcanic-activity/DDSS031> a dcat:Dataset;
+	dct:title "Reports on volcanic activity";
+	dct:identifier "WP11/volcanic-activity/DDSS031";
+	adms:identifier [ a adms:Identifier;
+		adms:schemaAgency "DDSS-ID";
+		skos:notation "WP11-DDSS-031";
+	];
+	dct:description "Access to the periodic and exceptional reports produced by the French volcano Observatories and the Volcano Observatory Notice dor Aviation as well.";
+	dct:created "1999-01-01"^^xsd:date;
+	dct:temporal [ a dct:PeriodOfTime;
+		schema:startDate "1999-01-01T00:00:00Z"^^xsd:dateTime;
+		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
+	];
+	dct:spatial [ a dct:Location;
+		#locn:geometry "POLYGON(180 -90,-180 -90,-180 90,180 90,180 -90)"^^gsp:wktLiteral;
+		locn:geometry "POLYGON((-64 11,-58 11,-58 18,-64 18,-64 11))"^^gsp:wktLiteral;
+		locn:geometry "POLYGON((54.5 -21.5 , 56.5 -21.5 , 56.5 -20.5 , 54.5 -20.5 , 54.5 -21.5))"^^gsp:wktLiteral;
+	];
+	dcat:theme <epos:volcanic-activity>;
+	dcat:keyword "volcanology", "geohazards","periodic reports", "exceptional reports", "volcanic eruptions", "VONA", "civil aviation", "VAAC - Volcanic Ash Advisories Centers", "WMO - World Meteorolgical Organization";
+	dct:publisher <PIC:999597417>;
+	dcat:distribution <WP11/volcanic-activity/DDSS031/distribution/report>;
+	#dcat:distribution <http://ws.ipgp.fr/volcano-reports/>;
+	owl:versionInfo "0";
+	dcat:contactPoint <https://orcid.org/0000-0002-4234-3787/contactPoint>;
+.
+
+#######
+# distribution
+#######
+
+<WP11/volcanic-activity/DDSS031/distribution/report> a dcat:Distribution;
+	dct:identifier "WP11/volcanic-activity/DDSS031/distribution/report";
+	dct:title "Reports on volcanic activity";
+        dct:description "The service provides access to periodic and exceptional reports produced by the French volcano Observatories.  It also give access to the Volcano Observatory Notice for Aviation";
+	dct:issued "2019-01-01"^^xsd:date;
+	dct:modified "2019-01-01"^^xsd:date;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+	dct:conformsTo <http://ws.ipgp.fr/volcano-reports/report/ws>;
+	dcat:accessURL <http://ws.ipgp.fr/volcano-reports/report/operation>;
+	dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI;
+.
+
+#######
+# Webservice volcano reports
+#######
+
+<http://ws.ipgp.fr/volcano-reports/report/ws> a epos:WebService;
+	schema:identifier "http://ws.ipgp.fr/volcano-reports/report/ws";
+        schema:description "This web service provides access to reports dessiminated by the French volcanoes Observatories. It also provides the activity and the aviation color code according to standards of the Volcanic Ash Advisory Centers of the World Meteorological Organisation and to emergency plans (plan ORSEC) of authorities";
+	dcat:theme <epos:volcanic-activity>;
+        schema:name "Volcano reports and activity color code of the French volcanoes";
+	hydra:entrypoint "http://ws.ipgp.fr/volcano-reports/"^^xsd:anyURI;
+	schema:provider <PIC:999597417>;
+	schema:datePublished "2019-01-01"^^xsd:date;
+	schema:dateModified "2019-01-11"^^xsd:date;
+	dct:spatial [ a dct:Location;
+		#locn:geometry "POLYGON(180.0 -90.0,-180.0 -90.0,-180.0 90.0,180.0 90.0,180.0 -90.0)"^^gsp:wktLiteral;
+		locn:geometry "POLYGON((-64 11,-58 11,-58 18,-64 18,-64 11))"^^gsp:wktLiteral;
+		locn:geometry "POLYGON((54.5 -21.5 , 56.5 -21.5 , 56.5 -20.5 , 54.5 -20.5 , 54.5 -21.5))"^^gsp:wktLiteral;
+	];
+	hydra:supportedOperation <http://ws.ipgp.fr/volcano-reports/report/operation>;
+	schema:keywords "Volcanic activity"," IPGP","periodic reports","exceptional reports","eruption" , "VONA" , "VAAC";
+	dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+	dct:temporal [ a dct:PeriodOfTime;
+		schema:startDate "1999-01-01T00:00:00Z"^^xsd:dateTime;
+		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
+	];
+	dcat:contactPoint <https://orcid.org/0000-0003-1601-8718/contactPoint>;
+.
+#########
+# Operation
+######### 
+
+<http://ws.ipgp.fr/volcano-reports/report/operation> a hydra:Operation;
+	hydra:method "GET"^^xsd:string;
+	hydra:returns "application/json";
+	hydra:property[ a hydra:IriTemplate;
+		hydra:template "http://ws.ipgp.fr/volcano-reports/report{?start_time,end_time,agency,volcano,type,language}"^^xsd:string;
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "start_time";
+				hydra:property "schema:startDate";
+				schema:valuePattern "YYYY-MM-DD";
+				rdfs:range "xsd:dateTime";
+				rdfs:label "start of the timespan of requested data (format:YYYY-MM-DD)";
+				schema:defaultValue "2018-01-01";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "end_time";
+				hydra:property "schema:endDate";
+				schema:valuePattern "YYYY-MM-DD";
+				rdfs:range "xsd:dateTime";
+				rdfs:label "end of the timespan of requested data (format:YYYY-MM-DD)";
+				schema:defaultValue "2018-02-28";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "agency"^^xsd:string;
+				rdfs:range "xsd:string";
+				rdfs:label "Observatory ; OVSG (Guadeloupe), OVSM (Martinique), or OVPF (Réunion)";
+				#schema:defaultValue "*";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "volcano"^^xsd:string;
+				rdfs:range "xsd:string";
+				#schema:defaultValue "*";
+				rdfs:label "name of the volcano according to the catalog of the Smithsonian Institution";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "type"^^xsd:string;
+				rdfs:range "xsd:string";
+				#schema:defaultValue "*";
+				rdfs:label "type of report: periodic, exceptional, VONA";
+				hydra:required "false"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "language"^^xsd:string;
+				rdfs:range "xsd:string";
+				schema:defaultValue "fr";
+				rdfs:label "language of the reports requested : en or fr";
+				hydra:required "false"^^xsd:boolean;
+			];
+	] ;
+.
+
+
+# Domain and subdomain
+
+<epos:VolcanoObservations> a skos:ConceptScheme;
+	dct:title "Volcano Observations";
+        dct:description "Aviation color code and the activity color code for volcanoes in French Overseas";
+.
+<epos:volcanic-activity> a skos:Concept;
+	skos:inScheme <epos:VolcanoObservations>;
+	skos:prefLabel "volcano reports meta-data";
+.
+
+		
+
