@@ -184,9 +184,9 @@
 
  # Dataset 
 
- <WP11/Tiltmeterdata/DDSS005> a dcat:Dataset;
+ <https://www.epos-eu.org/epos-dcat-ap/volcano-observations/Dataset/DDSS005/IPGP> a dcat:Dataset;
 		dct:title "Tiltmeter Stations and Waveform";
-		dct:identifier "WP11/Tiltmeterdata/DDSS005";
+		dct:identifier "https://www.epos-eu.org/epos-dcat-ap/volcano-observations/Dataset/DDSS005/IPGP";
 		adms:identifier [ a adms:Identifier;
 			adms:schemaAgency "DDSS-ID";
 			skos:notation "WP11-DDSS-005";
@@ -214,16 +214,16 @@
 		dcat:theme <epos:TiltmeterStation>;
 		dcat:keyword "volcanology", "deformation", "geodetic", "tilt", "waveform", "IPGP", "Dataselect", "FDSN-WS", "StationXML","miniseed";
 		dct:publisher <PIC:999597417>;
-		dcat:distribution <WP11/Tiltmeterdata/DDSS005/distribution/dataselect>;
-		dcat:distribution <http://ws.ipgp.fr/fdsnws/station/1/query>;
+		dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/volcano-observations/Dataset/DDSS005/Distribution/waveform/IPGP>;
+		dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/volcano-observations/Dataset/DDSS005/Distribution/station/IPGP>;
 		owl:versionInfo "0";
 		dcat:contactPoint <https://orcid.org/0000-0002-4234-3787/contactPoint>;
 .
 
 
  # distribution
-<WP11/Tiltmeterdata/DDSS005/distribution/dataselect> a dcat:Distribution;
-		dct:identifier "WP11/Tiltmeterdata/DDSS005/distribution/dataselect";
+<https://www.epos-eu.org/epos-dcat-ap/volcano-observations/Dataset/DDSS005/Distribution/waveform/IPGP> a dcat:Distribution;
+		dct:identifier "https://www.epos-eu.org/epos-dcat-ap/volcano-observations/Dataset/DDSS005/Distribution/waveform/IPGP";
 		dct:title "Tiltmeter waveform";
 		dct:description "This distribution provides access to tiltmeter waveforms encoded in the miniSEED format. Its related dataset covers the time period since 1990 and is limited to French Volcanoes Observatories";
 		dct:issued "2013-01-01"^^xsd:date;
@@ -235,8 +235,8 @@
 		dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI;
 .
 
- <http://ws.ipgp.fr/fdsnws/station/1/query> a dcat:Distribution;
-		dct:identifier "http://ws.ipgp.fr/fdsnws/station/1/query";
+ <https://www.epos-eu.org/epos-dcat-ap/volcano-observations/Dataset/DDSS005/Distribution/station/IPGP> a dcat:Distribution;
+		dct:identifier "https://www.epos-eu.org/epos-dcat-ap/volcano-observations/Dataset/DDSS005/Distribution/station/IPGP";
 		dct:description "This distribution provides access to meta-data of tiltmeter stations encoded in the stationXML. Its related dataset covers the time period since 1990 and is limited to French Volcanoes Observatories";
 		#dct:title "StationXML meta-data";
                 dct:title "Tiltmeter station";
@@ -252,8 +252,8 @@
 
  # Webservice Dataselect
 
- <ws.ipgp.fr/fdsnws/dataselect/ws> a epos:WebService;
-	schema:identifier "ws.ipgp.fr/fdsnws/dataselect/ws";
+ <https://www.epos-eu.org/epos-dcat-ap/volcano-observations/WebService/DDSS005/waveform/IPGP> a epos:WebService;
+	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/volcano-observations/WebService/DDSS005/waveform/IPGP";
 	schema:description "This web service provides access to tiltmeter waveforms. Service implements the dataselect web service according to the standard 1.0 set by the Federation of Digital Seismograph Networks (FDSN).";
 	dcat:theme <epos:TiltmeterWaveform>;
 	schema:name "Tiltmeter waveforms of the French Volcanoes Observatories";
@@ -267,7 +267,7 @@
 		locn:geometry "POLYGON(54.5 -21.5 , 56.5 -21.5 , 56.5 -20.5 , 54.5 -20.5 , 54.5 -21.5)"^^gsp:wktLiteral;
 	];
 	hydra:supportedOperation <ws.ipgp.fr/fdsnws/dataselect/operation>;
-	schema:keywords "Geodesy", "Tilt" ,  "IPGP" , "dataselect" , "FDSN-WS", "Tiltmeter Waveforms";
+	schema:keywords "Geodesy", "tiltmeter" ,  "IPGP" , "dataselect" , "FDSN-WS", "waveform";
 	dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 	dct:temporal [ a dct:PeriodOfTime;
 		schema:startDate "1980-01-01T00:00:00Z"^^xsd:dateTime;
@@ -277,8 +277,8 @@
 .
 
  # Webservice Station
-<ws.ipgp.fr/fdsnws/station/ws> a epos:WebService;
-	schema:identifier "ws.ipgp.fr/fdsnws/station/ws";
+<https://www.epos-eu.org/epos-dcat-ap/volcano-observations/WebService/DDSS005/station/IPGP> a epos:WebService;
+	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/volcano-observations/WebService/DDSS005/station/IPGP";
 	schema:description "This web service provides access to tiltmeter station, instrumentation, and response data. Service implements the station web service according to the standard 1.0 set by the Federation of Digital Seismograph Networks (FDSN).";
 	dcat:theme <epos:TiltmeterStation>;
 	schema:name "Meta-data of the tiltmeter stations of the French Volcanoes Observatories";
@@ -293,7 +293,7 @@
 	];
 
  	hydra:supportedOperation <ws.ipgp.fr/fdsnws/station>;
-	schema:keywords "Geodesy", "Tilt" ,  "IPGP" , "dataselect" , "FDSN-WS", "Tiltmeter Waveforms";
+	schema:keywords "Geodesy", "tiltmeter" , "IPGP"  , "FDSN-WS", "stationxml";
 	dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 	dct:temporal [ a dct:PeriodOfTime;
 		schema:startDate "1980-01-01T00:00:00Z"^^xsd:dateTime;
@@ -302,7 +302,7 @@
 	dcat:contactPoint <https://orcid.org/0000-0003-1601-8718/contactPoint>;
 .
 
- <ws.ipgp.fr/fdsnws/dataselect/operation> a hydra:Operation;
+ <https://www.epos-eu.org/epos-dcat-ap/volcano-observations/WebService/DDSS005/Operation/waveform/IPGP> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/vnd.fdsn.mseed";
 		hydra:property[ a hydra:IriTemplate;
@@ -384,7 +384,7 @@
 				];
 		] ;
 .
-	<ws.ipgp.fr/fdsnws/station> a hydra:Operation;
+	<https://www.epos-eu.org/epos-dcat-ap/volcano-observations/WebService/DDSS005/Operation/station/IPGP> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/xml";
 		hydra:property[ a hydra:IriTemplate;
