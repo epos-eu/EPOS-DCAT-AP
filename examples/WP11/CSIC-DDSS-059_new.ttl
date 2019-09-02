@@ -102,13 +102,16 @@
          	adms:schemaAgency "DDSS-ID";
         	skos:notation "WP11-DDSS-059";
         ];
-        dct:description "PDCs Hazard maps";
+        dct:description "Hazard maps illustrating the probability of a certain area to be invaded by pyroclastic density current (PDC) in the future. These maps are static and based on the geological record including information about past eruptions, field work, etc.";
         ## example of frequency using a controlled vocabulary
 	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
         dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
         dct:created "2018-09-01"^^xsd:date;
+	dct:spatial [ a dct:Location ;
+		locn:geometry "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral ;
+	];
         dcat:theme  <epos:Hazardmap> ;
-        dcat:keyword 	"Volcanoes", "pyroclastic density currents", "PDCs", "hazard map", "volcanic hazard", "volcanology", "hazard assessment";
+        dcat:keyword 	"Volcanoes", "pyroclastic density currents", "PDCs", "hazard map", "volcanic hazard", "volcanology", "hazard assessment", "geohazards", "Deception Island", "Garrotxa volcanic field";
         dcat:contactPoint <http://orcid.org/0000-0002-8803-6504/contactPoint>;
 	dct:publisher <http://isni.org/isni/0000000122036192>;
         dcat:distribution <WP11/HazardMap/PDCs/WSDistribution>;
