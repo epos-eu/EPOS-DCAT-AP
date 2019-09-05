@@ -192,7 +192,7 @@
         schema:endDate "2024-12-31T00:00:00Z"^^xsd:dateTime;
     ];
     dct:spatial [ a dct:Location;
-        locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral;
+        locn:geometry "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral;
     ];
 .
 
@@ -228,14 +228,14 @@
     schema:provider <http://viaf.org/viaf/136554353/>;
     hydra:entrypoint "http://www.geomag.bgs.ac.uk/web_service/GMModels/"^^xsd:anyURI ;
     dcat:theme  <epos:Magneticfield> ;
-    schema:keywords "magnetism", "core", "world model";
+    schema:keywords "Compass", "Compass direction", "Declination", "Earth core", "core", "Geomagnetism", "Global model", "Inclination", "Magnetic field", "Magnetic model", "Magnetism", "Main field", "Model", "Navigation", "Secular variation", "Spherical harmonic", "Sferic", "World model";
     hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-012/IGRF/Operation> ;
     dct:spatial [ a dct:Location;
-        locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral ;
+        locn:geometry "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral ;
     ];
     dct:temporal [ a dct:PeriodOfTime;
         schema:startDate "2015-01-01T00:00:00Z"^^xsd:dateTime;
-        #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
+        schema:endDate "2024-12-31T00:00:00Z"^^xsd:dateTime;
     ];
     dct:license "http://creativecommons.org/publicdomain/zero/1.0/"^^xsd:anyURI;
 .
@@ -247,12 +247,18 @@
 <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-012/IGRF/Operation> a hydra:Operation;
     hydra:method "GET"^^xsd:string;
     hydra:returns "text/xml";
+    hydra:returns "application/json";
+    hydra:returns "text/csv";
+    hydra:returns "text/plain";
+    hydra:returns "text/html";
     hydra:property[ a hydra:IriTemplate;
         hydra:template "http://www.geomag.bgs.ac.uk/web_service/GMModels/igrf/12{?latitude, longitude, altitude, date, format}"^^xsd:string;
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "latitude"^^xsd:float;
+                #hydra:property "epos:southernmostLatitude";
+                hydra:property "epos:northernmostLatitude";
                 rdfs:label "Latitude";
-                rdfs:range "xsd:string" ;
+                rdfs:range "xsd:float" ;
                 schema:defaultValue "0";
                 schema:minValue "-90";
                 schema:maxValue "90";
@@ -260,8 +266,10 @@
             ];
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "longitude"^^xsd:float;
+                #hydra:property "epos:westernmostLongitude";
+                hydra:property "epos:easternmostLongitude";
                 rdfs:label "Longitude";
-                rdfs:range "xsd:string" ;
+                rdfs:range "xsd:float" ;
                 schema:defaultValue "0";
                 schema:minValue "-180";
                 schema:maxValue "180";

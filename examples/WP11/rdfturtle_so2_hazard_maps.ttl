@@ -100,10 +100,10 @@
 		schema:endDate "1990-01-01T00:00:00Z"^^xsd:dateTime; 
 	]; 
 	dct:spatial [ a dct:Location; 
-		locn:geometry "POLYGON(-25.0 63.0,-25.0 68.5,-10.0 68.5,-10.0 63.0,-25.0 63.0)"^^gsp:wktLiteral; 
+		locn:geometry "POLYGON((-25.0 63.0,-25.0 68.5,-10.0 68.5,-10.0 63.0,-25.0 63.0))"^^gsp:wktLiteral; 
 	]; 
 	dcat:theme <epos:Geohazards>;
-	dcat:keyword "Tephra fallout; volcanic gas; forecast";
+	dcat:keyword "volcanic gas","probabilistic map","volcanic hazard","IMO","hazard assessment","hazard map","geohazards","volcanic eruptions","sulphur dioxide";
 	dcat:contactPoint <http://orcid.org/0000-0001-5750-0872/contactPoint>;
 	dct:publisher <PIC:997168343>;
 	dcat:distribution <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/054/WSDistribution>;
@@ -141,40 +141,72 @@
         schema:provider <PIC:997168343> ;
         dcat:theme <epos:Geohazards>;
 	dct:spatial [ a dct:Location; 
-		locn:geometry "POLYGON(-25.0 63.0,-25.0 68.5,-10.0 68.5,-10.0 63.0,-25.0 63.0)"^^gsp:wktLiteral; 
+		locn:geometry "POLYGON((-25.0 63.0,-25.0 68.5,-10.0 68.5,-10.0 63.0,-25.0 63.0))"^^gsp:wktLiteral; 
 	]; 
 	hydra:supportedOperation <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/054/Operation/054>;
-	schema:keywords "so2; hazard; map";
+	schema:keywords "volcanic gas","probabilistic map","volcanic hazard","IMO","hazard assessment","hazard map","geohazards","volcanic eruptions","sulphur dioxide";
 	dct:temporal [ a dct:PeriodOfTime; 
 		schema:startDate "2018-10-01T00:00:00Z"^^xsd:dateTime; 
 		schema:endDate "2025-01-01T00:00:00Z"^^xsd:dateTime; 
 	]; 
 . 
 
-#########
-# Operation
-######### 
-
 <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/054/Operation/054> a hydra:Operation;
-	hydra:method "GET"^^xsd:string;
-	hydra:returns "application/json";
-	hydra:property[ a hydra:IriTemplate;
-	hydra:template "https://api.vedur.is/epos/v1/hazard_maps_meta{?volcano, hazard_type}"^^xsd:string;
-			hydra:mapping[ a hydra:IriTemplateMapping;
-				hydra:variable "volcano"^^xsd:string;
-				rdfs:range "xsd:string";
-				rdfs:label "Volcano name in icelandic or volcano ICAO code";
-				hydra:required "false"^^xsd:boolean;
-			];
-			hydra:mapping[ a hydra:IriTemplateMapping;
-				hydra:variable "hazard_type"^^xsd:string;
-				rdfs:range "xsd:string";
-				rdfs:label "Type of hazard map, e.g. tephra fallout, volcanic SO2";
-				schema:defaultValue "volcanic SO2";
-				hydra:required "true"^^xsd:boolean;
-			];
-	] ;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://api.vedur.is/epos/v1/hazard_maps_meta{?hazard_type}&bbox={minlatitude, minlongitude, maxlatitude, maxlongitude}"^^xsd:string;	
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "minlatitude"^^xsd:string; 
+          				hydra:property "epos:southernmostLatitude";
+					rdfs:label "Minimum Latitude";
+					schema:minValue "-90.0";
+					schema:maxValue "90.0";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "63.0" ;
+					rdfs:range "xsd:float";
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "minlongitude"^^xsd:string; 
+          				hydra:property "epos:westernmostLongitude";
+					rdfs:label "Minimum Longitude";
+					schema:minValue "-180.0";
+					schema:maxValue "180.0";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "-25.0" ;
+					rdfs:range "xsd:float";
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "maxlatitude"^^xsd:string; 
+          				hydra:property "epos:northernmostLatitude";
+					rdfs:label "Maximum Latitude";
+					schema:minValue "-90.0";
+					schema:maxValue "90.0";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "68.5" ;
+					rdfs:range "xsd:float";
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "maxlongitude"^^xsd:string; 
+          				hydra:property "epos:easternmostLongitude";
+					rdfs:label "Maximum Longitude";
+					schema:minValue "-180.0";
+					schema:maxValue "180.0";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "-10.0" ;
+					rdfs:range "xsd:float";
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "hazard_type"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Type of hazard map, e.g. tephra fallout, volcanic SO2";
+					schema:defaultValue "volcanic SO2";
+					hydra:required "true"^^xsd:boolean;
+				];
+				
+		] ;
 . 
+
 
 #########
 # Concept

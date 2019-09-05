@@ -1,0 +1,2217 @@
+###########################################
+# EPOS DCAT AP File - WP12                #
+# Version 1.2                             #
+# Release Date 29/03/2019                 #
+#                                         #
+# Version 1.1                             #
+# Release Date 08/02/2019                 #
+#                                         #
+# Previous releases:                      #      
+# Version 1.0                             #    
+# Release Date: 21/09/2018                #
+###########################################
+
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http: <http://www.w3.org/2006/http#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+
+###########
+# Persons #
+###########
+
+# Casu
+
+<http://orcid.org/0000-0001-8555-6494> a schema:Person;
+  schema:identifier [ a schema:PropertyValue;
+    schema:propertyID "orcid";
+    schema:value "http://orcid.org/0000-0001-8555-6494";
+  ];
+  schema:familyName "Casu";
+  schema:givenName "Francesco";
+  schema:address [ a schema:PostalAddress;
+    schema:streetAddress "via Diocleziano 328";
+    schema:addressLocality "Naples";
+    schema:postalCode "80124";
+    schema:addressCountry "Italy";
+  ];
+  schema:email "casu.f@irea.cnr.it";
+  schema:telephone "+390817620623";
+  schema:url "http://www.irea.cnr.it/en/images/comprofiler/plug_cbfilefield/115/Curriculum_Casu_Eng3_50782367202d4.pdf"^^xsd:anyURI;
+  schema:qualifications "Researcher";
+  schema:affiliation <ISNI:http://isni.org/isni/0000000085180610>;
+  schema:contactPoint <http://orcid.org/0000-0001-8555-6494/scientificContact>;
+.
+
+<http://orcid.org/0000-0001-8555-6494/scientificContact> a schema:ContactPoint ;
+  schema:email "casu.f@irea.cnr.it" ;
+  schema:availableLanguage "en" ;
+  schema:contactType "scientificContact" ;
+.
+
+# Manunta
+
+<http://orcid.org/0000-0002-7245-1551> a schema:Person;
+  schema:identifier [ a schema:PropertyValue;
+    schema:propertyID "orcid";
+    schema:value "http://orcid.org/0000-0002-7245-1551";
+  ];
+  schema:familyName "Manunta";
+  schema:givenName "Michele";
+  schema:address [ a schema:PostalAddress;
+    schema:streetAddress "via Diocleziano 328";
+    schema:addressLocality "Naples";
+    schema:postalCode "80124";
+    schema:addressCountry "Italy";
+  ];
+  schema:email "manunta.m@irea.cnr.it";
+  schema:telephone "+390817620621";
+  schema:url "http://www.irea.cnr.it/index.php?option=com_comprofiler&task=userprofile&user=168&Itemid=100"^^xsd:anyURI;
+  schema:qualifications "Researcher";
+  schema:affiliation <ISNI:http://isni.org/isni/0000000085180610>;
+  schema:contactPoint <http://orcid.org/0000-0002-7245-1551/legalContact>;
+  schema:contactPoint <http://orcid.org/0000-0002-7245-1551/financialContact>;
+.
+
+<http://orcid.org/0000-0002-7245-1551/legalContact> a schema:ContactPoint ;
+  schema:email "manunta.m@irea.cnr.it" ;
+  schema:availableLanguage "en" ;
+  schema:contactType "legalContact" ;
+.
+
+<http://orcid.org/0000-0002-7245-1551/financialContact> a schema:ContactPoint ;
+  schema:email "manunta.m@irea.cnr.it" ;
+  schema:availableLanguage "en" ;
+  schema:contactType "financialContact" ;
+.
+
+#Â Ostanciaux
+
+<http://orcid.org/0000-0003-1090-900X> a schema:Person;
+  schema:identifier [ a schema:PropertyValue;
+    schema:propertyID "orcid";
+    schema:value "http://orcid.org/0000-0003-1090-900X";
+  ];
+  schema:familyName "Ostanciaux";
+  schema:givenName "Emilie";
+  schema:address [ a schema:PostalAddress;
+    schema:streetAddress "35, rue HÃ©lÃ¨ne Brion";
+    schema:addressLocality "Paris";
+    schema:postalCode "75013";
+    schema:addressCountry "France";
+  ];
+  schema:email "ostanciaux@ipgp.fr";
+  schema:telephone "+33157275336";
+  schema:url "https://www.researchgate.net/profile/Emilie_Ostanciaux"^^xsd:anyURI;
+  schema:qualifications "Phd";
+  schema:affiliation <ISNI:http://isni.org/isni/0000000121129282>;
+  schema:contactPoint <http://orcid.org/0000-0003-1090-900X/scientificContact>;
+.
+
+<http://orcid.org/0000-0003-1090-900X/scientificContact> a schema:ContactPoint ;
+  schema:email "ostanciaux@ipgp.fr" ;
+  schema:availableLanguage "en" ;
+  schema:contactType "scientificContact" ;
+.
+
+# Diament
+
+<http://orcid.org/0000-0002-2099-2241> a schema:Person;
+  schema:identifier [ a schema:PropertyValue;
+    schema:propertyID "orcid";
+    schema:value "http://orcid.org/0000-0002-2099-2241";
+  ];
+  schema:familyName "Diament";
+  schema:givenName "Michel";
+  schema:address [ a schema:PostalAddress;
+    schema:streetAddress "35, rue HÃ©lÃ¨ne Brion";
+    schema:addressLocality "Paris";
+    schema:postalCode "75013";
+    schema:addressCountry "France";
+  ];
+  schema:email "diament@ipgp.fr";
+  schema:telephone "+33157278480";
+  schema:url "https://www.researchgate.net/profile/Michel_Diament"^^xsd:anyURI;
+  schema:qualifications "Professor";
+  schema:affiliation <ISNI:http://isni.org/isni/0000000106758101>;
+  schema:contactPoint <http://orcid.org/0000-0002-2099-2241/scientificContact>;
+  schema:contactPoint <http://orcid.org/0000-0002-2099-2241/legalContact>;
+  schema:contactPoint <http://orcid.org/0000-0002-2099-2241/financialContact>;
+.
+
+<http://orcid.org/0000-0002-2099-2241/scientificContact> a schema:ContactPoint ;
+  schema:email "diament@ipgp.fr" ;
+  schema:availableLanguage "en" ;
+  schema:contactType "scientificContact" ;
+.
+
+<http://orcid.org/0000-0002-2099-2241/legalContact> a schema:ContactPoint ;
+  schema:email "diament@ipgp.fr" ;
+  schema:availableLanguage "en" ;
+  schema:contactType "legalContact" ;
+.
+
+<http://orcid.org/0000-0002-2099-2241/financialContact> a schema:ContactPoint ;
+  schema:email "diament@ipgp.fr" ;
+  schema:availableLanguage "en" ;
+  schema:contactType "financialContact" ;
+.
+
+# Fernandez
+
+<http://orcid.org/0000-0001-5745-3527> a schema:Person;
+  schema:identifier [ a schema:PropertyValue;
+    schema:propertyID "orcid";
+    schema:value "http://orcid.org/0000-0001-5745-3527";
+  ];
+  schema:familyName "Fernandez";
+  schema:givenName "Jose";
+  schema:address [ a schema:PostalAddress;
+    schema:streetAddress "Ciudad Universitaria, Plaza de Ciencias, 3";
+    schema:addressLocality "Madrid";
+    schema:postalCode "28040";
+    schema:addressCountry "Spain";
+  ];
+  schema:email "jft@mat.ucm.es";
+  schema:telephone "+34913944632";
+  schema:url "http://www.mat.ucm.es/jft/"^^xsd:anyURI;
+  schema:qualifications "Dr";
+  schema:affiliation <ISNI:http://isni.org/isni/0000000122036192>;
+  schema:contactPoint <http://orcid.org/0000-0001-5745-3527/scientificContact>;
+.
+
+<http://orcid.org/0000-0001-5745-3527/scientificContact> a schema:ContactPoint ;
+  schema:email "jft@mat.ucm.es" ;
+  schema:availableLanguage "en" ;
+  schema:contactType "scientificContact" ;
+.
+
+# Camacho
+
+<http://orcid.org/0000-0002-9237-5218> a schema:Person;
+  schema:identifier [ a schema:PropertyValue;
+    schema:propertyID "orcid";
+    schema:value "http://orcid.org/0000-0002-9237-5218";
+  ];
+  schema:familyName "Camacho Gonzales";
+  schema:givenName "Antonio Jesus";
+  schema:address [ a schema:PostalAddress;
+    schema:streetAddress "Ciudad Universitaria, Plaza de Ciencias, 3";
+    schema:addressLocality "Madrid";
+    schema:postalCode "28040";
+    schema:addressCountry "Spain";
+  ];
+  schema:email "antonio_camacho@mat.ucm.es";
+  schema:telephone "+34913944478";
+  schema:url "http://www.igeo.ucm-csic.es/igeo/directorio-personal/38-antonio-jesus-gonzalez-camacho"^^xsd:anyURI;
+  schema:qualifications "Dr";
+  schema:affiliation <ISNI:http://isni.org/isni/0000000122036192>;
+  schema:contactPoint <http://orcid.org/0000-0002-9237-5218/scientificContact>;
+.
+
+<http://orcid.org/0000-0002-9237-5218/scientificContact> a schema:ContactPoint ;
+  schema:email "antonio_camacho@mat.ucm.es" ;
+  schema:availableLanguage "en" ;
+  schema:contactType "scientificContact" ;
+.
+
+# de la Puente
+
+<http://orcid.org/0000-0002-2407-0076> a schema:Person;
+  schema:identifier [ a schema:PropertyValue;
+    schema:propertyID "orcid";
+    schema:value "http://orcid.org/0000-0002-2407-0076";
+  ];
+  schema:familyName "de la Puente Gonzales";
+  schema:givenName "Cristina";
+  schema:address [ a schema:PostalAddress;
+    schema:streetAddress "Calle Serrano 117";
+    schema:addressLocality "Madrid";
+    schema:postalCode "28006";
+    schema:addressCountry "Spain";
+  ];
+  schema:email "vicyt@csic.es";
+  schema:telephone "+34915681437";
+  schema:url "http://cchs.csic.es/es/personal/cristina.delapuente"^^xsd:anyURI;
+  schema:qualifications "Dr";
+  schema:affiliation <ISNI:http://isni.org/isni/0000000122036192>;
+  schema:contactPoint <http://orcid.org/0000-0002-2407-0076/legalContact>;
+  schema:contactPoint <http://orcid.org/0000-0002-2407-0076/financialContact>;
+.
+
+<http://orcid.org/0000-0002-2407-0076/legalContact> a schema:ContactPoint ;
+  schema:email "vicyt@mat.ucm.es" ;
+  schema:availableLanguage "en" ;
+  schema:contactType "legalContact" ;
+.
+
+<http://orcid.org/0000-0002-2407-0076/financialContact> a schema:ContactPoint ;
+  schema:email "vicyt@mat.ucm.es" ;
+  schema:availableLanguage "en" ;
+  schema:contactType "financialContact" ;
+.
+
+# Walter
+
+<http://orcid.org/0000-0002-9925-4486> a schema:Person;
+  schema:identifier [ a schema:PropertyValue;
+    schema:propertyID "orcid";
+    schema:value "http://orcid.org/0000-0002-9925-4486";
+  ];
+  schema:familyName "Walter";
+  schema:givenName "Thomas";
+  schema:address [ a schema:PostalAddress;
+    schema:streetAddress "Telegrafenberg";
+    schema:addressLocality "Potsdam";
+    schema:postalCode "14478";
+    schema:addressCountry "Germany";
+  ];
+  schema:email "twalter@gfz-potsdam.de";
+  schema:telephone "+493312881253";
+  schema:url "http://www.gfz-potsdam.de/en/section/physics-of-earthquakes-and-volcanoes/staff/profil/thomas-walter/"^^xsd:anyURI;
+  schema:qualifications "Professor";
+  schema:affiliation <ISNI:http://isni.org/isni/0000000091952461>;
+  schema:contactPoint <http://orcid.org/0000-0002-9925-4486/scientificContact>;
+.
+
+<http://orcid.org/0000-0002-9925-4486/scientificContact> a schema:ContactPoint ;
+  schema:email "twalter@gfz-potsdam.de" ;
+  schema:availableLanguage "en" ;
+  schema:contactType "scientificContact" ;
+.
+
+# Lauterjung
+
+<http://orcid.org/0000-0002-3580-651X> a schema:Person;
+  schema:identifier [ a schema:PropertyValue;
+    schema:propertyID "orcid";
+    schema:value "http://orcid.org/0000-0002-3580-651X";
+  ];
+  schema:familyName "Lauterjung";
+  schema:givenName "JÃ¶rn";
+  schema:address [ a schema:PostalAddress;
+    schema:streetAddress "Telegrafenberg";
+    schema:addressLocality "Potsdam";
+    schema:postalCode "14473";
+    schema:addressCountry "Germany";
+  ];
+  schema:email "lau@gfz-potsdam.de";
+  schema:url "http://www.gfz-potsdam.de/en/staff/joern-lauterjung/"^^xsd:anyURI;
+  schema:qualifications "Science Management";
+  schema:affiliation <ISNI:http://isni.org/isni/0000000091952461>;
+  schema:contactPoint <http://orcid.org/0000-0002-3580-651X/scientificContact>;
+.
+
+<http://orcid.org/0000-0002-3580-651X/scientificContact> a schema:ContactPoint ;
+  schema:email "lau@gfz-potsdam.de" ;
+  schema:availableLanguage "en" ;
+  schema:contactType "scientificContact" ;
+.
+
+# Ott
+
+<mailto:stephan.ott@gfz-potsdam.de> a schema:Person;
+  schema:identifier [ a schema:PropertyValue;
+    schema:propertyID "mailto";
+    schema:value "mailto:stephan.ott@gfz-potsdam.de";
+  ];
+  schema:familyName "Ott";
+  schema:givenName "Stephan";
+  schema:address [ a schema:PostalAddress;
+    schema:streetAddress "Telegrafenberg";
+    schema:addressLocality "Potsdam";
+    schema:postalCode "14473";
+    schema:addressCountry "Germany";
+  ];
+  schema:email "stephan.ott@gfz-potsdam.de";
+  schema:telephone "+4933128827515";
+  schema:qualifications "Financial Advisor";
+  schema:affiliation <ISNI:http://isni.org/isni/0000000091952461>;
+  schema:contactPoint <mailto:stephan.ott@gfz-potsdam.de/financialContact>;
+.
+
+<mailto:stephan.ott@gfz-potsdam.de/financialContact> a schema:ContactPoint ;
+  schema:email "stephan.ott@gfz-potsdam.de" ;
+  schema:availableLanguage "en" ;
+  schema:contactType "financialContact" ;
+.
+
+# Blau
+
+<mailto:marko.blau@gfz-potsdam.de> a schema:Person;
+  schema:identifier [ a schema:PropertyValue;
+    schema:propertyID "mailto";
+    schema:value "mailto:marko.blau@gfz-potsdam.de";
+  ];
+  schema:familyName "Blau";
+  schema:givenName "Marko";
+  schema:address [ a schema:PostalAddress;
+    schema:streetAddress "Telegrafenberg";
+    schema:addressLocality "Potsdam";
+    schema:postalCode "14473";
+    schema:addressCountry "Germany";
+  ];
+  schema:email "rechtsabteilung@gfz-potsdam.de";
+  schema:telephone "+493312881052";
+  schema:url "http://www.gfz-potsdam.de/en/staff/marko-blau/"^^xsd:anyURI;
+  schema:qualifications "Lawer";
+  schema:affiliation <ISNI:http://isni.org/isni/0000000091952461>;
+  schema:contactPoint <mailto:marko.blau@gfz-potsdam.de/legalContact>;
+.
+
+<mailto:marko.blau@gfz-potsdam.de/legalContact> a schema:ContactPoint ;
+  schema:email "marko.blau@gfz-potsdam.de" ;
+  schema:availableLanguage "en" ;
+  schema:contactType "legalContact" ;
+.
+
+# Wright
+
+<http://orcid.org/0000-0001-8338-5935> a schema:Person;
+  schema:identifier [ a schema:PropertyValue;
+    schema:propertyID "orcid";
+    schema:value "http://orcid.org/0000-0001-8338-5935";
+  ];
+  schema:familyName "Wright";
+  schema:givenName "Tim";
+  schema:address [ a schema:PostalAddress;
+    schema:streetAddress "University of Leeds";
+    schema:addressLocality "School of Earth and Environment";
+    schema:postalCode "LS2 9JT";
+    schema:addressCountry "United Kingdom";
+  ];
+  schema:email "t.j.wright@leeds.ac.uk";
+  schema:telephone "+44(0)113-34-35258";
+  schema:url "http://www.see.leeds.ac.uk/people/t.wright"^^xsd:anyURI;
+  schema:qualifications "Professor";
+  schema:affiliation <ISNI:http://isni.org/isni/0000000419368403>;
+  schema:contactPoint <http://orcid.org/0000-0001-8338-5935/scientificContact>;
+  schema:contactPoint <http://orcid.org/0000-0001-8338-5935/legalContact>;
+  schema:contactPoint <http://orcid.org/0000-0001-8338-5935/financialContact>;
+.
+
+<http://orcid.org/0000-0001-8338-5935/scientificContact> a schema:ContactPoint ;
+  schema:email "t.j.wright@leeds.ac.uk" ;
+  schema:availableLanguage "en" ;
+  schema:contactType "scientificContact" ;
+.
+
+<http://orcid.org/0000-0001-8338-5935/legalContact> a schema:ContactPoint ;
+  schema:email "t.j.wright@leeds.ac.uk" ;
+  schema:availableLanguage "en" ;
+  schema:contactType "legalContact" ;
+.
+
+<http://orcid.org/0000-0001-8338-5935/financialContact> a schema:ContactPoint ;
+  schema:email "t.j.wright@leeds.ac.uk" ;
+  schema:availableLanguage "en" ;
+  schema:contactType "financialContact" ;
+.
+
+# Hooper
+
+<http://orcid.org/0000-0003-4244-6652> a schema:Person;
+  schema:identifier [ a schema:PropertyValue;
+    schema:propertyID "orcid";
+    schema:value "http://orcid.org/0000-0003-4244-6652";
+  ];
+  schema:familyName "Hooper";
+  schema:givenName "Andy";
+  schema:address [ a schema:PostalAddress;
+    schema:streetAddress "University of Leeds";
+    schema:addressLocality "School of Earth and Environment";
+    schema:postalCode "LS2 9JT";
+    schema:addressCountry "United Kingdom";
+  ];
+  schema:email "a.hooper@leeds.ac.uk";
+  schema:telephone "+44(0)113-34-37723";
+  schema:url "http://www.see.leeds.ac.uk/people/a.hooper"^^xsd:anyURI;
+  schema:qualifications "Professor";
+  schema:affiliation <ISNI:http://isni.org/isni/0000000419368403>;
+  schema:contactPoint <http://orcid.org/0000-0003-4244-6652/scientificContact>;
+.
+
+<http://orcid.org/0000-0003-4244-6652/scientificContact> a schema:ContactPoint ;
+  schema:email "a.hooper@leeds.ac.uk" ;
+  schema:availableLanguage "en" ;
+  schema:contactType "scientificContact" ;
+.
+
+# Lazecky
+
+<https://orcid.org/0000-0001-8179-5949> a schema:Person;
+  schema:identifier [ a schema:PropertyValue;
+    schema:propertyID "orcid";
+    schema:value "https://orcid.org/0000-0001-8179-5949";
+  ];
+  schema:familyName "Lazecky";
+  schema:givenName "Milan";
+  schema:address [ a schema:PostalAddress;
+    schema:streetAddress "University of Leeds";
+    schema:addressLocality "School of Earth and Environment";
+    schema:postalCode "LS2 9JT";
+    schema:addressCountry "United Kingdom";
+  ];
+  schema:email "espiritocz@gmail.com";
+
+  schema:telephone "+44(0)113-34-37723";
+  schema:url "https://www.researchgate.net/profile/Milan_Lazecky"^^xsd:anyURI;
+  schema:qualifications "PDRA";
+  schema:affiliation <ISNI:http://isni.org/isni/0000000419368403>;
+  schema:contactPoint <http://orcid.org/0000-0001-8179-5949/scientificContact>;
+.
+
+<http://orcid.org/0000-0001-8179-5949/scientificContact> a schema:ContactPoint ;
+  schema:email "espiritocz@gmail.com" ;
+  schema:availableLanguage "en" ;
+  schema:contactType "scientificContact" ;
+.
+
+#################
+# Organizations #
+#################
+
+#######################
+# Organizations - CNR #
+#######################
+
+<ISNI:http://isni.org/isni/0000000121596200> a schema:Organization;
+  schema:identifier [ a schema:PropertyValue;
+    schema:propertyID "isni";
+    schema:value "http://isni.org/isni/0000000121596200";
+  ];
+  schema:legalName "Italian National Research Council"^^xsd:string;
+  #schema:alternateName "Consiglio Nazionale Delle Ricerche"^^xsd:string;
+  #schema:alternateName "CNR"^^xsd:string;
+  schema:address [ a schema:PostalAddress;
+    schema:streetAddress "Piazzale Aldo Moro 7";
+    schema:addressLocality "Roma";
+    schema:postalCode "00185";
+    schema:addressCountry "Italy";
+  ];
+  schema:logo "https://www.cnr.it/sites/all/themes/custom/cnr03_theme/img/cnrlogo.svg"^^xsd:anyURI;
+  schema:url "https://www.cnr.it/en"^^xsd:anyURI;
+  schema:email "protocollo-ammcen@pec.cnr.it";
+  schema:contactPoint <http://orcid.org/0000-0001-8555-6494/scientificContact>;
+  schema:contactPoint <http://orcid.org/0000-0002-7245-1551/legalContact>;
+  schema:contactPoint <http://orcid.org/0000-0002-7245-1551/financialContact>;
+
+.
+
+###########################
+# Organizations - CNR     #
+#           |- IREA #
+###########################
+
+<ISNI:http://isni.org/isni/0000000085180610> a schema:Organization;
+  schema:identifier [ a schema:PropertyValue;
+    schema:propertyID "isni";
+    schema:value "http://isni.org/isni/0000000085180610";
+  ];
+  schema:legalName "Institute for Electromagnetic Sensing of the Environment";
+  #schema:alternateName "Istituto per il Rilevamento Elettromagnetico dell'Ambiente"^^xsd:string;
+  #schema:alternateName "IREA"^^xsd:string;
+  schema:address [ a schema:PostalAddress;
+    schema:streetAddress "via Diocleziano 328";
+    schema:addressLocality "Naples";
+    schema:postalCode "80124";
+    schema:addressCountry "Italy";
+  ];
+  schema:logo "http://www.irea.cnr.it/templates/rt_afterburner_j15/images/logo-ok.png"^^xsd:anyURI;
+  schema:url "http://www.irea.cnr.it/en/"^^xsd:anyURI;
+  schema:email "mbox@irea.cnr.it";
+  schema:memberOf <ISNI:http://isni.org/isni/0000000121596200>;
+  schema:contactPoint <http://orcid.org/0000-0001-8555-6494/scientificContact>;
+  schema:contactPoint <http://orcid.org/0000-0002-7245-1551/legalContact>;
+  schema:contactPoint <http://orcid.org/0000-0002-7245-1551/financialContact>;
+
+.
+
+########################
+# Organizations - CNRS #
+########################
+
+<ISNI:http://isni.org/isni/0000000121129282> a schema:Organization;
+  schema:identifier [ a schema:PropertyValue;
+    schema:propertyID "isni";
+    schema:value "http://isni.org/isni/0000000121129282";
+  ];
+  schema:legalName "French National Research Council";
+  #schema:alternateName "Centre national de la recherche scientifique"^^xsd:string;
+  #schema:alternateName "CNRS"^^xsd:string;
+  schema:address [ a schema:PostalAddress;
+    schema:streetAddress "3, rue Michel-Ange";
+    schema:addressLocality "Paris";
+    schema:postalCode "75794";
+    schema:addressCountry "France";
+  ];
+  schema:logo "http://www.cnrs.fr/fr/z-tools/newune/themes/CNRSTheme/images/logocnrsSEN.png"^^xsd:anyURI;
+  schema:url "http://www.cnrs.fr/index.php"^^xsd:anyURI;
+  schema:email "drh.webdrh@cnrs.fr";
+  schema:contactPoint <http://orcid.org/0000-0002-2099-2241/scientificContact>;
+  schema:contactPoint <http://orcid.org/0000-0002-2099-2241/legalContact>;
+  schema:contactPoint <http://orcid.org/0000-0002-2099-2241/financialContact>;
+
+.
+
+#########################
+# Organizations CNRS    #
+#         |- IPGP #
+#########################
+
+<ISNI:http://isni.org/isni/0000000106758101> a schema:Organization;
+  schema:identifier [ a schema:PropertyValue;
+    schema:propertyID "isni";
+    schema:value "http://isni.org/isni/0000000106758101";
+  ];
+  schema:legalName "Institute of Earth Physics of Paris";
+   # schema:alternateName "Institut de Physique du Globe de Paris"^^xsd:string;
+   # schema:alternateName "IPGP"^^xsd:string;
+  schema:address [ a schema:PostalAddress;
+    schema:streetAddress "1, rue Jussieu";
+    schema:addressLocality "Paris";
+    schema:postalCode "75238";
+    schema:addressCountry "France";
+  ];
+  schema:logo "https://informatix.ipgp.fr/portail/images/LogoIPGP.svg"^^xsd:anyURI;
+  schema:url "http://www.ipgp.fr/en"^^xsd:anyURI;
+  schema:email "accueil@ipgp.fr";
+  schema:memberOf <ISNI:http://isni.org/isni/0000000121129282>;
+  schema:contactPoint <http://orcid.org/0000-0002-2099-2241/scientificContact>;
+  schema:contactPoint <http://orcid.org/0000-0003-1090-900X/scientificContact>;
+  schema:contactPoint <http://orcid.org/0000-0002-2099-2241/legalContact>;
+  schema:contactPoint <http://orcid.org/0000-0002-2099-2241/financialContact>;
+
+.
+
+########################
+# Organizations - CSIC #
+########################
+
+<ISNI:http://isni.org/isni/0000000122036192> a schema:Organization;
+  schema:identifier [ a schema:PropertyValue;
+    schema:propertyID "isni";
+    schema:value "http://isni.org/isni/0000000122036192";
+  ];
+  schema:legalName "Spanish Council for Scientific Research, CSIC";
+  #schema:alternateName "Agencia Estatal Consejo Superior de Investigaciones Cientificas, CSIC"^^xsd:string;
+  #schema:alternateName "CSIC"^^xsd:string;
+  schema:address [ a schema:PostalAddress;
+    schema:streetAddress "Serrano, 117";
+    schema:addressLocality "Madrid";
+    schema:postalCode "28006";
+    schema:addressCountry "Spain";
+  ];
+  schema:logo "http://www.csic.es/imagen-corporativa"^^xsd:anyURI;
+  schema:url "http://www.csic.es/"^^xsd:anyURI;
+  schema:email "programas.europeos@csic.es";
+  schema:contactPoint <http://orcid.org/0000-0001-5745-3527/scientificContact>;
+  schema:contactPoint <http://orcid.org/0000-0002-9237-5218/scientificContact>;
+  schema:contactPoint <http://orcid.org/0000-0002-2407-0076/legalContact>;
+  schema:contactPoint <http://orcid.org/0000-0002-2407-0076/financialContact>;
+
+.
+
+#######################
+# Organizations - GFZ #
+#######################
+
+<ISNI:http://isni.org/isni/0000000091952461> a schema:Organization;
+  schema:identifier [ a schema:PropertyValue;
+    schema:propertyID "isni";
+    schema:value "http://isni.org/isni/0000000091952461";
+  ];
+  schema:legalName "GFZ German Research Centre for Geosciences";
+  #schema:alternateName "Helmholtz Zentrum Potsdam Deutsches GeoForschungsZentrum GFZ"^^xsd:string;
+  #schema:alternateName "GFZ"^^xsd:string;
+  schema:address [ a schema:PostalAddress;
+    schema:streetAddress "Telegrafenberg";
+    schema:addressLocality "Potsdam";
+    schema:postalCode "14473";
+    schema:addressCountry "Germany";
+  ];
+  #schema:logo "https://media.gfz-potsdam.de/gfz/wv/05_Medien_Kommunikation/Bildarchiv/GFZ%20Logo/temp_xs/LOGO-GFZ-en-mitFreistellungsraum_RGB_24bit_300dpi_546x390-jpg.jpg"^^xsd:anyURI;
+  schema:url "http://www.gfz-potsdam.de/"^^xsd:anyURI;
+  schema:email "info@gfz-potsdam.de";
+  schema:contactPoint <http://orcid.org/0000-0002-9925-4486/scientificContact>;
+  schema:contactPoint <http://orcid.org/0000-0002-3580-651X/scientificContact>;
+  schema:contactPoint <mailto:marko.blau@gfz-potsdam.de/legalContact>;
+  schema:contactPoint <mailto:stephan.ott@gfz-potsdam.de/financialContact>;
+
+.
+
+#######################
+# Organizations - UoL #
+#######################
+
+<ISNI:http://isni.org/isni/0000000419368403> a schema:Organization;
+  schema:identifier [ a schema:PropertyValue;
+    schema:propertyID "isni";
+    schema:value "http://isni.org/isni/0000000419368403";
+  ];
+  schema:legalName "University of Leeds";
+  #schema:alternateName "UoL"^^xsd:string;
+  schema:address [ a schema:PostalAddress;
+    schema:streetAddress "University of Leeds";
+    schema:addressLocality "Leeds";
+    schema:postalCode "LS2 9JT";
+    schema:addressCountry "United Kingdom";
+  ];
+  schema:logo "http://www.leeds.ac.uk/site/img/template-build/uol-logo.svg"^^xsd:anyURI;
+  schema:url "http://www.leeds.ac.uk/"^^xsd:anyURI;
+  schema:email "rp_applications@leeds.ac.uk";
+  schema:contactPoint <http://orcid.org/0000-0001-8338-5935/scientificContact>;
+  schema:contactPoint <http://orcid.org/0000-0001-8338-5935/legalContact>;
+  schema:contactPoint <http://orcid.org/0000-0001-8338-5935/financialContact>;
+  schema:contactPoint <http://orcid.org/0000-0001-8179-5949/scientificContact>;
+  schema:contactPoint <http://orcid.org/0000-0003-4244-6652/scientificContact>;
+
+.
+
+################
+# WEB SERVICES #
+################
+
+########################################
+# WEB SERVICES - WRAPPED_INTERFEROGRAM #
+########################################
+
+<https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/WRAPPED_INTERFEROGRAM> a epos:WebService;
+  schema:identifier "https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/WRAPPED_INTERFEROGRAM";
+  schema:description "Map of the flattened phase difference (restricted in the -pi,pi domain) computed between two SAR images acquired over the same scene with the same geometry. The Differential Interferogram is linerly related to the Line of Sight projection of the actual surface deformation.";
+  dcat:theme <epos:InSAR>;
+  schema:name "Wrapped Differential Interferogram (Phase and Amplitude)";
+  hydra:entrypoint "https://catalog.terradue.com/gep-epos/description"^^xsd:anyURI ;
+  schema:provider <ISNI:http://isni.org/isni/0000000085180610>;
+  schema:datePublished "2001-12-31"^^xsd:date;
+  schema:dateModified "2016-12-31"^^xsd:date;
+  dct:spatial [ a dct:Location;
+    locn:geometry "POLYGON((-180 -90,-180 90,180 90,180 -90,-180 -90))"^^gsp:wktLiteral;
+  ];
+  hydra:supportedOperation <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/WRAPPED_INTERFEROGRAM/Operation/Search>;
+  dct:conformsTo <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebServices/APIDocumentation>;
+  owl:versionInfo "1.1";
+  schema:keywords "Remote Sensing", "Interferometry", "DInSAR", "interferogram", "phase", "fringes", "SAR", "InSAR", "wrapped", "LOS", "deformation", "displacement", "map", "ascending", "descending", "range change";
+  dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
+  dct:temporal [ a dct:PeriodOfTime;
+    schema:startDate "1978-01-01T00:00:00Z"^^xsd:dateTime;
+    #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
+  ];
+  dcat:contactPoint <http://orcid.org/0000-0001-8555-6494/scientificContact>;
+.
+
+##########################################
+# WEB SERVICES - UNWRAPPED_INTERFEROGRAM #
+##########################################
+
+<https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/UNWRAPPED_INTERFEROGRAM> a epos:WebService;
+  schema:identifier "https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/UNWRAPPED_INTERFEROGRAM";
+  schema:description "Map of the flattened phase difference (full evolution) computed between two SAR images acquired over the same scene with the same geometry. The Differential Interferogram is linerly related to the Line of Sight projection of the actual surface deformation.";
+  dcat:theme <epos:InSAR>;
+  schema:name "Unwrapped Differential Interferogram (Phase and Amplitude)";
+  hydra:entrypoint "https://catalog.terradue.com/gep-epos/description"^^xsd:anyURI ;
+  schema:provider <ISNI:http://isni.org/isni/0000000085180610>;
+  schema:datePublished "2001-12-31"^^xsd:date;
+  schema:dateModified "2016-12-31"^^xsd:date;
+  dct:spatial [ a dct:Location;
+    locn:geometry "POLYGON((-180 -90,-180 90,180 90,180 -90,-180 -90))"^^gsp:wktLiteral;
+  ];
+  hydra:supportedOperation <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/UNWRAPPED_INTERFEROGRAM/Operation/Search>;
+  dct:conformsTo <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebServices/APIDocumentation>;
+  owl:versionInfo "1.1";
+  schema:keywords "Remote Sensing", "Interferometry", "DInSAR", "interferogram", "phase", "SAR", "InSAR", "unwrapped", "LOS", "deformation", "displacement", "map", "ascending", "descending", "range change";
+  dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
+  dct:temporal [ a dct:PeriodOfTime;
+    schema:startDate "1978-01-01T00:00:00Z"^^xsd:dateTime;
+    #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
+  ];
+  dcat:contactPoint <http://orcid.org/0000-0001-8555-6494/scientificContact>;
+.
+
+##############################################
+# WEB SERVICES - LOS_DISPLACEMENT_TIMESERIES #
+##############################################
+
+<https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/LOS_DISPLACEMENT_TIMESERIES> a epos:WebService;
+  schema:identifier "https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/LOS_DISPLACEMENT_TIMESERIES>";
+  schema:description "Temporal evoluton of the surface displacement projected along the satellite Line of Sight (LOS).";
+  dcat:theme <epos:InSAR>;
+  schema:name "LOS Displacement Time Series";
+  hydra:entrypoint "https://catalog.terradue.com/gep-epos/description"^^xsd:anyURI ;
+  schema:provider <ISNI:http://isni.org/isni/0000000085180610>;
+  schema:datePublished "2001-12-31"^^xsd:date;
+  schema:dateModified "2016-12-31"^^xsd:date;
+  dct:spatial [ a dct:Location;
+    locn:geometry "POLYGON((-180 -90,-180 90,180 90,180 -90,-180 -90))"^^gsp:wktLiteral;
+  ];
+  hydra:supportedOperation <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/LOS_DISPLACEMENT_TIMESERIES/Operation/Search>;
+  dct:conformsTo <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebServices/APIDocumentation>;
+  owl:versionInfo "1.1";
+  schema:keywords "Remote Sensing", "Interferometry", "DInSAR", "phase", "displacement", "timeseries", "multitmporal", "SAR", "InSAR", "LOS", "deformation", "ascending", "descending", "range change", "SBAS", "PS";
+  dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
+  dct:temporal [ a dct:PeriodOfTime;
+    schema:startDate "1978-01-01T00:00:00Z"^^xsd:dateTime;
+    #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
+  ];
+  dcat:contactPoint <http://orcid.org/0000-0001-8555-6494/scientificContact>;
+.
+
+####################################
+# WEB SERVICES - SPATIAL_COHERENCE #
+####################################
+
+<https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/SPATIAL_COHERENCE> a epos:WebService;
+  schema:identifier "https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/SPATIAL_COHERENCE";
+  schema:description "Map of the spatial coherence computed between two SAR images acquired over the same scene with the same geometry";
+  dcat:theme <epos:InSAR>;
+  schema:name "Spatial Coherence";
+  hydra:entrypoint "https://catalog.terradue.com/gep-epos/description"^^xsd:anyURI ;
+  schema:provider <ISNI:http://isni.org/isni/0000000085180610>;
+  schema:datePublished "2001-12-31"^^xsd:date;
+  schema:dateModified "2016-12-31"^^xsd:date;
+  dct:spatial [ a dct:Location;
+    locn:geometry "POLYGON((-180 -90,-180 90,180 90,180 -90,-180 -90))"^^gsp:wktLiteral;
+  ];
+  hydra:supportedOperation <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/SPATIAL_COHERENCE/Operation/Search>;
+  dct:conformsTo <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebServices/APIDocumentation>;
+  owl:versionInfo "1.1";
+  schema:keywords "Remote Sensing", "Interferometry", "DInSAR", "interferogram", "phase", "coherence", "multilook", "SAR", "InSAR", "wrapped", "LOS", "deformation", "displacement", "map", "ascending", "descending";
+  dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
+  dct:temporal [ a dct:PeriodOfTime;
+    schema:startDate "1978-01-01T00:00:00Z"^^xsd:dateTime;
+    #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
+  ];
+  dcat:contactPoint <http://orcid.org/0000-0001-8555-6494/scientificContact>;
+.
+
+####################################
+# WEB SERVICES - MAP_OF_LOS_VECTOR #
+####################################
+
+<https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/MAP_OF_LOS_VECTOR> a epos:WebService;
+  schema:identifier "https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/MAP_OF_LOS_VECTOR";
+  schema:description "Map of the unit vectors of the satellite Line of Sight";
+  dcat:theme <epos:InSAR>;
+  schema:name "Map of LOS vector (NEU coefficient)";
+  hydra:entrypoint "https://catalog.terradue.com/gep-epos/description"^^xsd:anyURI ;
+  schema:provider <ISNI:http://isni.org/isni/0000000085180610>;
+  schema:datePublished "2001-12-31"^^xsd:date;
+  schema:dateModified "2016-12-31"^^xsd:date;
+  dct:spatial [ a dct:Location;
+    locn:geometry "POLYGON((-180 -90,-180 90,180 90,180 -90,-180 -90))"^^gsp:wktLiteral;
+  ];
+  hydra:supportedOperation <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/MAP_OF_LOS_VECTOR/Operation/Search>;
+  dct:conformsTo <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebServices/APIDocumentation>;
+  owl:versionInfo "1.1";
+  schema:keywords "Remote Sensing", "Interferometry", "DInSAR", "interferogram", "phase", "fringes", "coherence", "multilook", "SAR", "InSAR", "wrapped", "LOS", "map", "ascending", "descending", "LOS versor";
+  dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
+  dct:temporal [ a dct:PeriodOfTime;
+    schema:startDate "1978-01-01T00:00:00Z"^^xsd:dateTime;
+    #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
+  ];
+  dcat:contactPoint <http://orcid.org/0000-0001-8555-6494/scientificContact>;
+.
+
+
+#################################################
+# WEB SERVICES - INTERFEROGRAM_APS_GLOBAL_MODEL #
+#################################################
+
+<https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/INTERFEROGRAM_APS_GLOBAL_MODEL> a epos:WebService;
+  schema:identifier "https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/INTERFEROGRAM_APS_GLOBAL_MODEL>";
+  schema:description "Atmospheric Phase Screen computed from Global Atmospheric Model for singel interferograms";
+  dcat:theme <epos:InSAR>;
+  schema:name "Interferogram Atmospheric Phase Screen from Global Atmospheric Model";
+  hydra:entrypoint "https://catalog.terradue.com/gep-epos/description"^^xsd:anyURI ;
+  schema:provider <ISNI:http://isni.org/isni/0000000106758101>;
+  schema:datePublished "2001-12-31"^^xsd:date;
+  schema:dateModified "2016-12-31"^^xsd:date;
+  dct:spatial [ a dct:Location;
+    locn:geometry "POLYGON((-180 -90,-180 90,180 90,180 -90,-180 -90))"^^gsp:wktLiteral;
+  ];
+  hydra:supportedOperation <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/INTERFEROGRAM_APS_GLOBAL_MODEL/Operation/Search>;
+  dct:conformsTo <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebServices/APIDocumentation>;
+  owl:versionInfo "1.1";
+  schema:keywords "Remote Sensing", "Interferometry", "DInSAR", "phase", "displacement", "timeseries", "multitmporal", "SAR", "InSAR", "LOS", "deformation", "ascending", "descending", "range change", "SBAS", "PS";
+  dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
+  dct:temporal [ a dct:PeriodOfTime;
+    schema:startDate "1978-01-01T00:00:00Z"^^xsd:dateTime;
+    #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
+  ];
+  dcat:contactPoint <http://orcid.org/0000-0003-1090-900X/scientificContact>;
+  dcat:contactPoint <http://orcid.org/0000-0002-2099-2241/scientificContact>;
+.
+
+#####################################
+# WEB SERVICES - DEM_RADAR_GEOMETRY #
+#####################################
+
+<https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/DEM_RADAR_GEOMETRY> a epos:WebService;
+  schema:identifier "https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/DEM_RADAR_GEOMETRY>";
+  schema:description "DEM in radar geometry";
+  dcat:theme <epos:InSAR>;
+  schema:name "DEM in radar geometry";
+  hydra:entrypoint "https://catalog.terradue.com/gep-epos/description"^^xsd:anyURI ;
+  schema:provider <ISNI:http://isni.org/isni/0000000106758101>;
+  schema:datePublished "2001-12-31"^^xsd:date;
+  schema:dateModified "2016-12-31"^^xsd:date;
+  dct:spatial [ a dct:Location;
+    locn:geometry "POLYGON((-180 -90,-180 90,180 90,180 -90,-180 -90))"^^gsp:wktLiteral;
+  ];
+  hydra:supportedOperation <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/DEM_RADAR_GEOMETRY/Operation/Search>;
+  dct:conformsTo <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebServices/APIDocumentation>;
+  schema:keywords "Remote Sensing", "Interferometry", "DInSAR", "topography", "SAR", "InSAR", "LOS", "radar geometry";
+  dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
+  dct:temporal [ a dct:PeriodOfTime;
+    schema:startDate "1978-01-01T00:00:00Z"^^xsd:dateTime;
+    #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
+  ];
+  dcat:contactPoint <http://orcid.org/0000-0003-1090-900X/scientificContact>;
+  dcat:contactPoint <http://orcid.org/0000-0002-2099-2241/scientificContact>;
+.
+
+#######################################################
+# WEB SERVICES - LOOKUP_TABLE_RADAR2GROUD_COORDINATES #
+#######################################################
+
+<https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/LOOKUP_TABLE_RADAR2GROUD_COORDINATES> a epos:WebService;
+  schema:identifier "https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/LOOKUP_TABLE_RADAR2GROUD_COORDINATES>";
+  schema:description "Lookup table to convert from radar coordinates to ground coordinates";
+  dcat:theme <epos:InSAR>;
+  schema:name "Lookup table from radar coordinates to ground  coordinates";
+  hydra:entrypoint "https://catalog.terradue.com/gep-epos/description"^^xsd:anyURI ;
+  schema:provider <ISNI:http://isni.org/isni/0000000106758101>;
+  schema:datePublished "2001-12-31"^^xsd:date;
+  schema:dateModified "2016-12-31"^^xsd:date;
+  dct:spatial [ a dct:Location;
+    locn:geometry "POLYGON((-180 -90,-180 90,180 90,180 -90,-180 -90))"^^gsp:wktLiteral;
+  ];
+  hydra:supportedOperation <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/LOOKUP_TABLE_RADAR2GROUD_COORDINATES/Operation/Search>;
+  dct:conformsTo <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebServices/APIDocumentation>;
+  schema:keywords "Remote Sensing", "Interferometry", "DInSAR", "system geometry conversion", "SAR", "InSAR", "LOS", "radar geometry", "geolocation";
+  dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
+  dct:temporal [ a dct:PeriodOfTime;
+    schema:startDate "1978-01-01T00:00:00Z"^^xsd:dateTime;
+    #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
+  ];
+  dcat:contactPoint <http://orcid.org/0000-0003-1090-900X/scientificContact>;
+  dcat:contactPoint <http://orcid.org/0000-0002-2099-2241/scientificContact>;
+.
+
+###################################################
+# API DOCUMENTATION COMMON TO ALL THE WEBSERVICES #
+###################################################
+
+<https://catalog.terradue.com/gep-epos/SatelliteObservations/WebServices/APIDocumentation> a hydra:APIDocumentation ;
+  hydra:title "Satellite Observations catalogue service API Documentation" ;
+  hydra:description "This is the technical documentation for the Satellite Observations catalogue service API" ;
+  hydra:entrypoint "https://catalog.terradue.com/gep-epos/description"^^xsd:anyURI ;
+.
+
+
+##############
+# OPERATIONS #
+##############
+
+#######################################################
+# OPERATIONS - WRAPPED_INTERFEROGRAM/Operation/Search #
+#######################################################
+
+  <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/WRAPPED_INTERFEROGRAM/Operation/Search> a hydra:Operation;
+    hydra:method "GET"^^xsd:string;
+    hydra:returns "application/json";
+    hydra:property[ a hydra:IriTemplate;
+      hydra:template "https://catalog.terradue.com/gep-epos/search{?format, pt, start, stop, geom, track}&bbox={minLongitude, minLatitude, maxLongitude, maxLatitude}"^^xsd:string;
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "format"^^xsd:string;
+          rdfs:range "xsd:string";
+          rdfs:label "Format";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "json" ;
+          http:paramValue "json" ;
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "pt"^^xsd:string;
+          rdfs:range "xsd:string";
+          rdfs:label "Product type";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "WRAPPED_INTERFEROGRAM" ;
+          http:paramValue "WRAPPED_INTERFEROGRAM" ;
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "start"^^xsd:string;
+          hydra:property "schema:startDate";
+		      schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+          rdfs:range "xsd:dateTime";
+          rdfs:label "From";
+	  schema:defaultValue "1978-01-01T00:00:00";
+          hydra:required "false"^^xsd:boolean;
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "stop"^^xsd:string;
+          hydra:property "schema:endDate";
+		      schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+          rdfs:range "xsd:dateTime";
+          rdfs:label "To";
+	  schema:defaultValue "2019-01-01T00:00:00";
+          hydra:required "false"^^xsd:boolean;
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "minLongitude"^^xsd:string;
+          hydra:property "epos:westernmostLongitude";
+          rdfs:label "Minimum Longitude";
+          schema:minValue "-180.0";
+          schema:maxValue "180.0";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "-180.0" ;
+	  rdfs:range "xsd:float";
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "minLatitude"^^xsd:string;
+          hydra:property "epos:southernmostLatitude";
+          rdfs:label "Minimum Latitude";
+          schema:minValue "-90.0";
+          schema:maxValue "90.0";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "-90.0" ;
+	  rdfs:range "xsd:float";
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "maxLongitude"^^xsd:string;
+          hydra:property "epos:easternmostLongitude";
+          rdfs:label "Maximum Longitude";
+          schema:minValue "-180.0";
+          schema:maxValue "180.0";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "180.0" ;
+	  rdfs:range "xsd:float";
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "maxLatitude"^^xsd:string;
+          hydra:property "epos:northernmostLatitude";
+          rdfs:label "Maximum Latitude";
+          schema:minValue "-90.0";
+          schema:maxValue "90.0";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "90.0" ;
+	  rdfs:range "xsd:float";
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "geom"^^xsd:string;
+          #rdfs:range "xsd:geometry";
+          rdfs:range "xsd:string";
+          rdfs:label "Geometry WKT";
+          hydra:required "false"^^xsd:boolean;
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "track"^^xsd:string;
+          rdfs:range "xsd:integer";
+          rdfs:label "Track";
+          hydra:required "false"^^xsd:boolean;
+        ];
+    ] ;
+.
+
+#########################################################
+# OPERATIONS - UNWRAPPED_INTERFEROGRAM/Operation/Search #
+#########################################################
+
+  <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/UNWRAPPED_INTERFEROGRAM/Operation/Search> a hydra:Operation;
+    hydra:method "GET"^^xsd:string;
+    hydra:returns "application/json";
+    hydra:property[ a hydra:IriTemplate;
+      hydra:template "https://catalog.terradue.com/gep-epos/search{?format, pt, start, stop, geom, track}&bbox={minLongitude, minLatitude, maxLongitude, maxLatitude}"^^xsd:string;
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "format"^^xsd:string;
+          rdfs:range "xsd:string";
+          rdfs:label "Format";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "json" ;
+          http:paramValue "json" ;
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "pt"^^xsd:string;
+          rdfs:range "xsd:string";
+          rdfs:label "Product type";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "UNWRAPPED_INTERFEROGRAM" ;
+          http:paramValue "UNWRAPPED_INTERFEROGRAM" ;
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "start"^^xsd:string;
+          hydra:property "schema:startDate";
+		      schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+	  schema:defaultValue "1978-01-01T00:00:00";
+          rdfs:range "xsd:dateTime";
+          rdfs:label "From";
+          hydra:required "false"^^xsd:boolean;
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "stop"^^xsd:string;
+          hydra:property "schema:endDate";
+		      schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+	  schema:defaultValue "2019-01-01T00:00:00";
+          rdfs:range "xsd:dateTime";
+          rdfs:label "To";
+          hydra:required "false"^^xsd:boolean;
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "minLongitude"^^xsd:string;
+          hydra:property "epos:westernmostLongitude";
+          rdfs:label "Minimum Longitude";
+          schema:minValue "-180.0";
+          schema:maxValue "180.0";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "-180.0" ;
+	  rdfs:range "xsd:float";
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "minLatitude"^^xsd:string;
+          hydra:property "epos:southernmostLatitude";
+          rdfs:label "Minimum Latitude";
+          schema:minValue "-90.0";
+          schema:maxValue "90.0";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "-90.0" ;
+	  rdfs:range "xsd:float";
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "maxLongitude"^^xsd:string;
+          hydra:property "epos:easternmostLongitude";
+          rdfs:label "Maximum Longitude";
+          schema:minValue "-180.0";
+          schema:maxValue "180.0";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "180.0" ;
+	  rdfs:range "xsd:float";
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "maxLatitude"^^xsd:string;
+          hydra:property "epos:northernmostLatitude";
+          rdfs:label "Maximum Latitude";
+          schema:minValue "-90.0";
+          schema:maxValue "90.0";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "90.0" ;
+	  rdfs:range "xsd:float";
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "geom"^^xsd:string;
+          #rdfs:range "xsd:geometry";
+          rdfs:range "xsd:string";
+          rdfs:label "Geometry WKT";
+          hydra:required "false"^^xsd:boolean;
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "track"^^xsd:string;
+          rdfs:range "xsd:integer";
+          rdfs:label "Track";
+          hydra:required "false"^^xsd:boolean;
+        ];
+    ] ;
+.
+
+#############################################################
+# OPERATIONS - LOS_DISPLACEMENT_TIMESERIES/Operation/Search #
+#############################################################
+
+  <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/LOS_DISPLACEMENT_TIMESERIES/Operation/Search> a hydra:Operation;
+    hydra:method "GET"^^xsd:string;
+    hydra:returns "application/json";
+    hydra:property[ a hydra:IriTemplate;
+      hydra:template "https://catalog.terradue.com/gep-epos/search{?format, pt, start, stop, geom, track}&bbox={minLongitude, minLatitude, maxLongitude, maxLatitude}"^^xsd:string;
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "format"^^xsd:string;
+          rdfs:range "xsd:string";
+          rdfs:label "Format";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "json" ;
+          http:paramValue "json" ;
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "pt"^^xsd:string;
+          rdfs:range "xsd:string";
+          rdfs:label "Product type";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "LOS_DISPLACEMENT_TIMESERIES" ;
+          http:paramValue "LOS_DISPLACEMENT_TIMESERIES" ;
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "start"^^xsd:string;
+          hydra:property "schema:startDate";
+		  schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+	  schema:defaultValue "1978-01-01T00:00:00";
+          rdfs:range "xsd:dateTime";
+          rdfs:label "From";
+          hydra:required "false"^^xsd:boolean;
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "stop"^^xsd:string;
+          hydra:property "schema:endDate";
+		  schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+	  schema:defaultValue "2019-01-01T00:00:00";
+          rdfs:range "xsd:dateTime";
+          rdfs:label "To";
+          hydra:required "false"^^xsd:boolean;
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "minLongitude"^^xsd:string;
+          hydra:property "epos:westernmostLongitude";
+          rdfs:label "Minimum Longitude";
+          schema:minValue "-180.0";
+          schema:maxValue "180.0";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "-180.0" ;
+	  rdfs:range "xsd:float";
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "minLatitude"^^xsd:string;
+          hydra:property "epos:southernmostLatitude";
+          rdfs:label "Minimum Latitude";
+          schema:minValue "-90.0";
+          schema:maxValue "90.0";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "-90.0" ;
+	  rdfs:range "xsd:float";
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "maxLongitude"^^xsd:string;
+          hydra:property "epos:easternmostLongitude";
+          rdfs:label "Maximum Longitude";
+          schema:minValue "-180.0";
+          schema:maxValue "180.0";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "180.0" ;
+	  rdfs:range "xsd:float";
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "maxLatitude"^^xsd:string;
+          hydra:property "epos:northernmostLatitude";
+          rdfs:label "Maximum Latitude";
+          schema:minValue "-90.0";
+          schema:maxValue "90.0";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "90.0" ;
+	  rdfs:range "xsd:float";
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "geom"^^xsd:string;
+          #rdfs:range "xsd:geometry";
+          rdfs:range "xsd:string";
+          rdfs:label "Geometry WKT";
+          hydra:required "false"^^xsd:boolean;
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "track"^^xsd:string;
+          rdfs:range "xsd:integer";
+          rdfs:label "Track";
+          hydra:required "false"^^xsd:boolean;
+        ];
+    ] ;
+.
+
+###################################################
+# OPERATIONS - SPATIAL_COHERENCE/Operation/Search #
+###################################################
+
+  <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/SPATIAL_COHERENCE/Operation/Search> a hydra:Operation;
+    hydra:method "GET"^^xsd:string;
+    hydra:returns "application/json";
+    hydra:property[ a hydra:IriTemplate;
+      hydra:template "https://catalog.terradue.com/gep-epos/search{?format, pt, start, stop, geom, track}&bbox={minLongitude, minLatitude, maxLongitude, maxLatitude}"^^xsd:string;
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "format"^^xsd:string;
+          rdfs:range "xsd:string";
+          rdfs:label "Format";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "json" ;
+          http:paramValue "json" ;
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "pt"^^xsd:string;
+          rdfs:range "xsd:string";
+          rdfs:label "Product type";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "SPATIAL_COHERENCE" ;
+          http:paramValue "SPATIAL_COHERENCE" ;
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "start"^^xsd:string;
+          hydra:property "schema:startDate";
+	  schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+	  schema:defaultValue "1978-01-01T00:00:00";
+          rdfs:range "xsd:dateTime";
+          rdfs:label "From";
+          hydra:required "false"^^xsd:boolean;
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "stop"^^xsd:string;
+          hydra:property "schema:endDate";
+		  schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+	  schema:defaultValue "2019-01-01T00:00:00";
+          rdfs:range "xsd:dateTime";
+          rdfs:label "To";
+          hydra:required "false"^^xsd:boolean;
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "minLongitude"^^xsd:string;
+          hydra:property "epos:westernmostLongitude";
+          rdfs:label "Minimum Longitude";
+          schema:minValue "-180.0";
+          schema:maxValue "180.0";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "-180.0" ;
+	  rdfs:range "xsd:float";
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "minLatitude"^^xsd:string;
+          hydra:property "epos:southernmostLatitude";
+          rdfs:label "Minimum Latitude";
+          schema:minValue "-90.0";
+          schema:maxValue "90.0";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "-90.0" ;
+	  rdfs:range "xsd:float";
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "maxLongitude"^^xsd:string;
+          hydra:property "epos:easternmostLongitude";
+          rdfs:label "Maximum Longitude";
+          schema:minValue "-180.0";
+          schema:maxValue "180.0";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "180.0" ;
+	  rdfs:range "xsd:float";
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "maxLatitude"^^xsd:string;
+          hydra:property "epos:northernmostLatitude";
+          rdfs:label "Maximum Latitude";
+          schema:minValue "-90.0";
+          schema:maxValue "90.0";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "90.0" ;
+	  rdfs:range "xsd:float";
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "geom"^^xsd:string;
+          #rdfs:range "xsd:geometry";
+          rdfs:range "xsd:string";
+          rdfs:label "Geometry WKT";
+          hydra:required "false"^^xsd:boolean;
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "track"^^xsd:string;
+          rdfs:range "xsd:integer";
+          rdfs:label "Track";
+          hydra:required "false"^^xsd:boolean;
+        ];
+    ] ;
+.
+
+###################################################
+# OPERATIONS - MAP_OF_LOS_VECTOR/Operation/Search #
+###################################################
+
+  <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/MAP_OF_LOS_VECTOR/Operation/Search> a hydra:Operation;
+    hydra:method "GET"^^xsd:string;
+    hydra:returns "application/json";
+    hydra:property[ a hydra:IriTemplate;
+      hydra:template "https://catalog.terradue.com/gep-epos/search{?format, pt, start, stop, geom, track}&bbox={minLongitude, minLatitude, maxLongitude, maxLatitude}"^^xsd:string;
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "format"^^xsd:string;
+          rdfs:range "xsd:string";
+          rdfs:label "Format";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "json" ;
+           http:paramValue "json" ;
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "pt"^^xsd:string;
+          rdfs:range "xsd:string";
+          rdfs:label "Product type";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "MAP_OF_LOS_VECTOR" ;
+          http:paramValue "MAP_OF_LOS_VECTOR" ;
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "start"^^xsd:string;
+          hydra:property "schema:startDate";
+		  schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+	  schema:defaultValue "1978-01-01T00:00:00";
+          rdfs:range "xsd:dateTime";
+          rdfs:label "From";
+          hydra:required "false"^^xsd:boolean;
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "stop"^^xsd:string;
+          hydra:property "schema:endDate";
+		  schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+	  schema:defaultValue "2019-01-01T00:00:00";
+          rdfs:range "xsd:dateTime";
+          rdfs:label "To";
+          hydra:required "false"^^xsd:boolean;
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "minLongitude"^^xsd:string;
+          hydra:property "epos:westernmostLongitude";
+          rdfs:label "Minimum Longitude";
+          schema:minValue "-180.0";
+          schema:maxValue "180.0";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "-180.0" ;
+	  rdfs:range "xsd:float";
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "minLatitude"^^xsd:string;
+          hydra:property "epos:southernmostLatitude";
+          rdfs:label "Minimum Latitude";
+          schema:minValue "-90.0";
+          schema:maxValue "90.0";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "-90.0" ;
+	  rdfs:range "xsd:float";
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "maxLongitude"^^xsd:string;
+          hydra:property "epos:easternmostLongitude";
+          rdfs:label "Maximum Longitude";
+          schema:minValue "-180.0";
+          schema:maxValue "180.0";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "180.0" ;
+	  rdfs:range "xsd:float";
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "maxLatitude"^^xsd:string;
+          hydra:property "epos:northernmostLatitude";
+          rdfs:label "Maximum Latitude";
+          schema:minValue "-90.0";
+          schema:maxValue "90.0";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "90.0" ;
+	  rdfs:range "xsd:float";
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "geom"^^xsd:string;
+          #rdfs:range "xsd:geometry";
+          rdfs:range "xsd:string";
+          rdfs:label "Geometry WKT";
+          hydra:required "false"^^xsd:boolean;
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "track"^^xsd:string;
+          rdfs:range "xsd:integer";
+          rdfs:label "Track";
+          hydra:required "false"^^xsd:boolean;
+        ];
+    ] ;
+.
+
+################################################################
+# OPERATIONS - INTERFEROGRAM_APS_GLOBAL_MODEL/Operation/Search #
+################################################################
+
+  <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/INTERFEROGRAM_APS_GLOBAL_MODEL/Operation/Search> a hydra:Operation;
+    hydra:method "GET"^^xsd:string;
+    hydra:returns "application/json";
+    hydra:property[ a hydra:IriTemplate;
+      hydra:template "https://catalog.terradue.com/gep-epos/search{?format, pt, start, stop, geom, track}&bbox={minLongitude, minLatitude, maxLongitude, maxLatitude}"^^xsd:string;
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "format"^^xsd:string;
+          rdfs:range "xsd:string";
+          rdfs:label "Format";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "json" ;
+          http:paramValue "json" ;
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "pt"^^xsd:string;
+          rdfs:range "xsd:string";
+          rdfs:label "Product type";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "INTERFEROGRAM_APS_GLOBAL_MODEL" ;
+          http:paramValue "INTERFEROGRAM_APS_GLOBAL_MODEL" ;
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "start"^^xsd:string;
+          hydra:property "schema:startDate";
+		  schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+	  schema:defaultValue "1978-01-01T00:00:00";
+          rdfs:range "xsd:dateTime";
+          rdfs:label "From";
+          hydra:required "false"^^xsd:boolean;
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "stop"^^xsd:string;
+          hydra:property "schema:endDate";
+		  schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+	  schema:defaultValue "2019-01-01T00:00:00";
+          rdfs:range "xsd:dateTime";
+          rdfs:label "To";
+          hydra:required "false"^^xsd:boolean;
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "minLongitude"^^xsd:string;
+          hydra:property "epos:westernmostLongitude";
+          rdfs:label "Minimum Longitude";
+          schema:minValue "-180.0";
+          schema:maxValue "180.0";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "-180.0" ;
+	  rdfs:range "xsd:float";
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "minLatitude"^^xsd:string;
+          hydra:property "epos:southernmostLatitude";
+          rdfs:label "Minimum Latitude";
+          schema:minValue "-90.0";
+          schema:maxValue "90.0";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "-90.0" ;
+	  rdfs:range "xsd:float";
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "maxLongitude"^^xsd:string;
+          hydra:property "epos:easternmostLongitude";
+          rdfs:label "Maximum Longitude";
+          schema:minValue "-180.0";
+          schema:maxValue "180.0";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "180.0" ;
+	  rdfs:range "xsd:float";
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "maxLatitude"^^xsd:string;
+          hydra:property "epos:northernmostLatitude";
+          rdfs:label "Maximum Latitude";
+          schema:minValue "-90.0";
+          schema:maxValue "90.0";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "90.0" ;
+	  rdfs:range "xsd:float";
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "geom"^^xsd:string;
+          #rdfs:range "xsd:geometry";
+          rdfs:range "xsd:string";
+          rdfs:label "Geometry WKT";
+          hydra:required "false"^^xsd:boolean;
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "track"^^xsd:string;
+          rdfs:range "xsd:integer";
+          rdfs:label "Track";
+          hydra:required "false"^^xsd:boolean;
+        ];
+    ] ;
+.
+
+####################################################
+# OPERATIONS - DEM_RADAR_GEOMETRY/Operation/Search #
+####################################################
+
+  <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/DEM_RADAR_GEOMETRY/Operation/Search> a hydra:Operation;
+    hydra:method "GET"^^xsd:string;
+    hydra:returns "application/json";
+    hydra:property[ a hydra:IriTemplate;
+      hydra:template "https://catalog.terradue.com/gep-epos/search{?format, pt, start, stop, geom, track}&bbox={minLongitude, minLatitude, maxLongitude, maxLatitude}"^^xsd:string;
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "format"^^xsd:string;
+          rdfs:range "xsd:string";
+          rdfs:label "Format";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "json" ;
+          http:paramValue "json" ;
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "pt"^^xsd:string;
+          rdfs:range "xsd:string";
+          rdfs:label "Product type";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "DEM_RADAR_GEOMETRY" ;
+          http:paramValue "DEM_RADAR_GEOMETRY" ;
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "start"^^xsd:string;
+          hydra:property "schema:startDate";
+	  schema:defaultValue "1978-01-01T00:00:00";
+		      schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+          rdfs:range "xsd:dateTime";
+          rdfs:label "From";
+          hydra:required "false"^^xsd:boolean;
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "stop"^^xsd:string;
+          hydra:property "schema:endDate";
+	  schema:defaultValue "2019-01-01T00:00:00";
+		      schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+          rdfs:range "xsd:dateTime";
+          rdfs:label "To";
+          hydra:required "false"^^xsd:boolean;
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "minLongitude"^^xsd:string;
+          hydra:property "epos:westernmostLongitude";
+          rdfs:label "Minimum Longitude";
+          schema:minValue "-180.0";
+          schema:maxValue "180.0";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "-180.0" ;
+	  rdfs:range "xsd:float";
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "minLatitude"^^xsd:string;
+          hydra:property "epos:southernmostLatitude";
+          rdfs:label "Minimum Latitude";
+          schema:minValue "-90.0";
+          schema:maxValue "90.0";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "-90.0" ;
+	  rdfs:range "xsd:float";
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "maxLongitude"^^xsd:string;
+          hydra:property "epos:easternmostLongitude";
+          rdfs:label "Maximum Longitude";
+          schema:minValue "-180.0";
+          schema:maxValue "180.0";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "180.0" ;
+	  rdfs:range "xsd:float";
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "maxLatitude"^^xsd:string;
+          hydra:property "epos:northernmostLatitude";
+          rdfs:label "Maximum Latitude";
+          schema:minValue "-90.0";
+          schema:maxValue "90.0";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "90.0" ;
+	  rdfs:range "xsd:float";
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "geom"^^xsd:string;
+          #rdfs:range "xsd:geometry";
+          rdfs:range "xsd:string";
+          rdfs:label "Geometry WKT";
+          hydra:required "false"^^xsd:boolean;
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "track"^^xsd:string;
+          rdfs:range "xsd:integer";
+          rdfs:label "Track";
+          hydra:required "false"^^xsd:boolean;
+        ];
+    ] ;
+.
+
+######################################################################
+# OPERATIONS - LOOKUP_TABLE_RADAR2GROUD_COORDINATES/Operation/Search #
+######################################################################
+
+  <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/LOOKUP_TABLE_RADAR2GROUD_COORDINATES/Operation/Search> a hydra:Operation;
+    hydra:method "GET"^^xsd:string;
+    hydra:returns "application/json";
+    hydra:property[ a hydra:IriTemplate;
+      hydra:template "https://catalog.terradue.com/gep-epos/search{?format, pt, start, stop, geom, track}&bbox={minLongitude, minLatitude, maxLongitude, maxLatitude}"^^xsd:string;
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "format"^^xsd:string;
+          rdfs:range "xsd:string";
+          rdfs:label "Format";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "json" ;
+          http:paramValue "json" ;
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "pt"^^xsd:string;
+          rdfs:range "xsd:string";
+          rdfs:label "Product type";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "LOOKUP_TABLE_RADAR2GROUD_COORDINATES" ;
+          http:paramValue "LOOKUP_TABLE_RADAR2GROUD_COORDINATES" ;
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "start"^^xsd:string;
+          hydra:property "schema:startDate";
+		      schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+	  schema:defaultValue "1978-01-01T00:00:00";
+          rdfs:range "xsd:dateTime";
+          rdfs:label "From";
+          hydra:required "false"^^xsd:boolean;
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "stop"^^xsd:string;
+          hydra:property "schema:endDate";
+	  schema:defaultValue "2019-01-01T00:00:00";
+		      schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+          rdfs:range "xsd:dateTime";
+          rdfs:label "To";
+          hydra:required "false"^^xsd:boolean;
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "minLongitude"^^xsd:string;
+          hydra:property "epos:westernmostLongitude";
+          rdfs:label "Minimum Longitude";
+          schema:minValue "-180.0";
+          schema:maxValue "180.0";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "-180.0" ;
+	  rdfs:range "xsd:float";
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "minLatitude"^^xsd:string;
+          hydra:property "epos:southernmostLatitude";
+          rdfs:label "Minimum Latitude";
+          schema:minValue "-90.0";
+          schema:maxValue "90.0";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "-90.0" ;
+	  rdfs:range "xsd:float";
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "maxLongitude"^^xsd:string;
+          hydra:property "epos:easternmostLongitude";
+          rdfs:label "Maximum Longitude";
+          schema:minValue "-180.0";
+          schema:maxValue "180.0";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "180.0" ;
+	  rdfs:range "xsd:float";
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "maxLatitude"^^xsd:string;
+          hydra:property "epos:northernmostLatitude";
+          rdfs:label "Maximum Latitude";
+          schema:minValue "-90.0";
+          schema:maxValue "90.0";
+          hydra:required "true"^^xsd:boolean;
+          schema:defaultValue "90.0" ;
+	  rdfs:range "xsd:float";
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "geom"^^xsd:string;
+          #rdfs:range "xsd:geometry";
+          rdfs:range "xsd:string";
+          rdfs:label "Geometry WKT";
+          hydra:required "false"^^xsd:boolean;
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+          hydra:variable "track"^^xsd:string;
+          rdfs:range "xsd:integer";
+          rdfs:label "Track";
+          hydra:required "false"^^xsd:boolean;
+        ];
+    ] ;
+.
+
+############
+# DATASETS #
+############
+
+###########################################
+# DATASETS - LOS Displacement Time Series #
+###########################################
+
+<https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/LOS_Displacement_Time_Series> a dcat:Dataset;
+  dct:title "Line of sight displacement time series";
+  dct:identifier "https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/LOS_Displacement_Time_Series";
+  dct:description "Line of sight displacement time series";
+  adms:identifier [ a adms:Identifier ;
+    adms:schemaAgency "DDSS-ID" ;
+    skos:notation "WP12-DDSS-008" ;
+  ];
+  dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
+  dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
+  dct:temporal [ a dct:PeriodOfTime ;
+    schema:startDate "1978-01-01T00:00:00Z"^^xsd:dateTime ;
+    #schema:endDate "YYYY-MM-DDThh:mm:ss"^^xsd:dateTime ;
+  ];
+  dcat:theme  <epos:InSAR> ;
+  dcat:keyword "Remote Sensing", "Interferometry", "DInSAR", "phase", "displacement", "timeseries", "multitmporal", "SAR", "InSAR", "LOS", "deformation", "ascending", "descending", "range change", "SBAS", "PS";
+  dcat:contactPoint <http://orcid.org/0000-0001-8555-6494/scientificContact>;
+  dct:publisher <ISNI:http://isni.org/isni/0000000085180610>;
+  dcat:distribution <https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/LOS_Displacement_Time_Series/Distribution/LOS_Displ_TS>;
+  dct:spatial [ a dct:Location ;
+    locn:geometry "POLYGON((-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0))"^^gsp:wktLiteral;
+  ];
+.
+
+#################################
+# DATASETS - Temporal Coherence #
+#################################
+
+<https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/Temporal_Coherence> a dcat:Dataset;
+  dct:title "Temporal Coherence";
+  dct:identifier "https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/Temporal_Coherence";
+  dct:description "Temporal Coherence";
+  adms:identifier [ a adms:Identifier ;
+  adms:schemaAgency "DDSS-ID" ;
+  skos:notation "WP12-DDSS-009" ;
+  ];
+  dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
+  dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
+  dct:temporal [ a dct:PeriodOfTime ;
+    schema:startDate "1978-01-01T00:00:00"^^xsd:dateTime ;
+    #schema:endDate "YYYY-MM-DDThh:mm:ss"^^xsd:dateTime ;
+  ];
+  dcat:theme  <epos:InSAR> ;
+  dcat:keyword "Remote Sensing", "Interferometry", "DInSAR", "displacement", "timeseries", "multitmporal", "measurement quality", "SAR", "InSAR", "LOS", "deformation", "SBAS", "PS";
+  dcat:contactPoint <http://orcid.org/0000-0001-8555-6494/scientificContact>;
+  dct:publisher <ISNI:http://isni.org/isni/0000000085180610>;
+  dcat:distribution <https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/LOS_Displacement_Time_Series/Distribution/LOS_Displ_TS>;
+  dct:spatial [ a dct:Location ;
+    locn:geometry "POLYGON((-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0))"^^gsp:wktLiteral;
+  ];
+.
+
+###########################################
+#  DATASETS - Average scatterer elevation #
+###########################################
+
+<https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/Average_Scatterer_Elevation> a dcat:Dataset;
+  dct:title "Average scatterer elevation";
+  dct:identifier "https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/Average_Scatterer_Elevation";
+  dct:description "Average scatterer elevation";
+  adms:identifier [ a adms:Identifier ;
+  adms:schemaAgency "DDSS-ID" ;
+  skos:notation "WP12-DDSS-011" ;
+  ];
+  dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
+  dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
+  dct:temporal [ a dct:PeriodOfTime ;
+    schema:startDate "1978-01-01T00:00:00"^^xsd:dateTime ;
+    #schema:endDate "YYYY-MM-DDThh:mm:ss"^^xsd:dateTime ;
+  ];
+  dcat:theme  <epos:InSAR> ;
+  dcat:keyword "Remote Sensing", "Interferometry", "DInSAR", "topography", "timeseries", "multitmporal", "SAR", "InSAR", "LOS", "deformation", "SBAS", "PS";
+  dcat:contactPoint <http://orcid.org/0000-0001-8555-6494/scientificContact>;
+  dct:publisher <ISNI:http://isni.org/isni/0000000085180610>;
+  dcat:distribution <https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/LOS_Displacement_Time_Series/Distribution/LOS_Displ_TS>;
+  dct:spatial [ a dct:Location ;
+    locn:geometry "POLYGON((-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0))"^^gsp:wktLiteral;
+  ];
+.
+
+#################################
+#  DATASETS - Mean LOS velocity #
+#################################
+
+<https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/Mean_LOS_Velocity> a dcat:Dataset;
+  dct:title "Mean LOS Velocity";
+  dct:identifier "https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/Mean_LOS_Velocity";
+  dct:description "Mean LOS Velocity";
+  adms:identifier [ a adms:Identifier ;
+  adms:schemaAgency "DDSS-ID" ;
+  skos:notation "WP12-DDSS-012" ;
+  ];
+  dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
+  dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
+  dct:temporal [ a dct:PeriodOfTime ;
+    schema:startDate "1978-01-01T00:00:00"^^xsd:dateTime ;
+    #schema:endDate "YYYY-MM-DDThh:mm:ss"^^xsd:dateTime ;
+  ];
+  dcat:theme  <epos:InSAR> ;
+  dcat:keyword "Remote Sensing", "Interferometry", "DInSAR", "velocity", "mean velocity", "displacement", "timeseries", "multitmporal", "SAR", "InSAR", "LOS", "deformation", "ascending", "descending", "range change", "SBAS", "PS";
+  dcat:contactPoint <http://orcid.org/0000-0001-8555-6494/scientificContact>;
+  dct:publisher <ISNI:http://isni.org/isni/0000000085180610>;
+  dcat:distribution <https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/LOS_Displacement_Time_Series/Distribution/LOS_Displ_TS>;
+  dct:spatial [ a dct:Location ;
+    locn:geometry "POLYGON((-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0))"^^gsp:wktLiteral;
+  ];
+.
+
+#####################################
+#  DATASETS - Wrapped Interferogram #
+#####################################
+
+<https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/Wrapped_Interferogram> a dcat:Dataset;
+  dct:title "Wrapped Differential Interferogram";
+  dct:identifier "https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/Wrapped_Interferogram";
+  dct:description "Wrapped Differential Interferogram (Phase and Amplitude)";
+  adms:identifier [ a adms:Identifier ;
+  adms:schemaAgency "DDSS-ID" ;
+  skos:notation "WP12-DDSS-001" ;
+  ];
+  dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
+  dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
+  dct:temporal [ a dct:PeriodOfTime ;
+    schema:startDate "1978-01-01T00:00:00"^^xsd:dateTime ;
+    #schema:endDate "YYYY-MM-DDThh:mm:ss"^^xsd:dateTime ;
+  ];
+  dcat:theme  <epos:InSAR> ;
+  dcat:keyword "Remote Sensing", "Interferometry", "DInSAR", "interferogram", "phase", "fringes", "SAR", "InSAR", "wrapped", "LOS", "deformation", "displacement", "map", "ascending", "descending", "range change";
+  dcat:contactPoint <http://orcid.org/0000-0001-8555-6494/scientificContact>;
+  dct:publisher <ISNI:http://isni.org/isni/0000000085180610>;
+  dcat:distribution <https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/Wrapped_Interferogram/Distribution/Wrap_Interf>;
+  dct:spatial [ a dct:Location ;
+    locn:geometry "POLYGON((-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0))"^^gsp:wktLiteral;
+  ];
+.
+
+#######################################
+#  DATASETS - Unwrapped Interferogram #
+#######################################
+
+<https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/Unwrapped_Interferogram> a dcat:Dataset;
+  dct:title "Unwrapped Differential Interferogram";
+  dct:identifier "https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/Unwrapped_Interferogram";
+  dct:description "Unwrapped Differential Interferogram (Phase and Amplitude)";
+  adms:identifier [ a adms:Identifier ;
+  adms:schemaAgency "DDSS-ID" ;
+  skos:notation "WP12-DDSS-003" ;
+  ];
+  dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
+  dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
+  dct:temporal [ a dct:PeriodOfTime ;
+    schema:startDate "1978-01-01T00:00:00"^^xsd:dateTime ;
+    #schema:endDate "YYYY-MM-DDThh:mm:ss"^^xsd:dateTime ;
+  ];
+  dcat:theme  <epos:InSAR> ;
+  dcat:keyword "Remote Sensing", "Interferometry", "DInSAR", "interferogram", "phase", "SAR", "InSAR", "unwrapped", "LOS", "deformation", "displacement", "map", "ascending", "descending", "range change";
+  dcat:contactPoint <http://orcid.org/0000-0001-8555-6494/scientificContact>;
+  dct:publisher <ISNI:http://isni.org/isni/0000000085180610>;
+  dcat:distribution <https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/Unwrapped_Interferogram/Distribution/Unwrap_Interf>;
+  dct:spatial [ a dct:Location ;
+    locn:geometry "POLYGON((-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0))"^^gsp:wktLiteral;
+  ];
+.
+
+#################################
+#  DATASETS - Spatial Coherence #
+#################################
+
+<https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/Spatial_Coherence> a dcat:Dataset;
+  dct:title "Spatial Coherence";
+  dct:identifier "https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/Spatial_Coherence";
+  dct:description "Spatial Coherence";
+  adms:identifier [ a adms:Identifier ;
+  adms:schemaAgency "DDSS-ID" ;
+  skos:notation "WP12-DDSS-002" ;
+  ];
+  dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
+  dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
+  dct:temporal [ a dct:PeriodOfTime ;
+    schema:startDate "1978-01-01T00:00:00"^^xsd:dateTime ;
+    #schema:endDate "YYYY-MM-DDThh:mm:ss"^^xsd:dateTime ;
+  ];
+  dcat:theme  <epos:InSAR> ;
+  dcat:keyword "Remote Sensing", "Interferometry", "DInSAR", "interferogram", "phase", "coherence", "multilook", "SAR", "InSAR", "wrapped", "LOS", "deformation", "displacement", "map", "ascending", "descending";
+  dcat:contactPoint <http://orcid.org/0000-0001-8555-6494/scientificContact>;
+  dct:publisher <ISNI:http://isni.org/isni/0000000085180610>;
+  dcat:distribution <https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/Spatial_Coherence/Distribution/Spac_Coh>;
+  dct:spatial [ a dct:Location ;
+    locn:geometry "POLYGON((-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0))"^^gsp:wktLiteral;
+  ];
+.
+
+#################################
+#  DATASETS - Map of LOS Vector #
+#################################
+
+<https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/Map_of_LOS_Vector> a dcat:Dataset;
+  dct:title "Map of LOS Vector";
+  dct:identifier "https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/Map_of_LOS_Vector";
+  dct:description "Map of LOS Vector (NEU coefficient)";
+  adms:identifier [ a adms:Identifier ;
+  adms:schemaAgency "DDSS-ID" ;
+  skos:notation "WP12-DDSS-004" ;
+  ];
+  dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
+  dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
+  dct:temporal [ a dct:PeriodOfTime ;
+    schema:startDate "1978-01-01T00:00:00"^^xsd:dateTime ;
+    #schema:endDate "YYYY-MM-DDThh:mm:ss"^^xsd:dateTime ;
+  ];
+  dcat:theme  <epos:InSAR> ;
+  dcat:keyword "Remote Sensing", "Interferometry", "DInSAR", "interferogram", "phase", "fringes", "coherence", "multilook", "SAR", "InSAR", "wrapped", "LOS", "map", "ascending", "descending", "LOS versor";
+  dcat:contactPoint <http://orcid.org/0000-0001-8555-6494/scientificContact>;
+  dct:publisher <ISNI:http://isni.org/isni/0000000085180610>;
+  dcat:distribution <https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/Map_of_LOS_Vector/Distribution/LOS_Vect>;
+  dct:spatial [ a dct:Location ;
+    locn:geometry "POLYGON((-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0))"^^gsp:wktLiteral;
+  ];
+.
+
+####################################################################################
+#  DATASETS - Interferogram Atmospheric Phase Screen from Global Atmospheric Model #
+####################################################################################
+
+<https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/Interferogram_APS_Global_Model> a dcat:Dataset;
+  dct:title "Interferogram Atmospheric Phase Screen from Global Atmospheric Model";
+  dct:identifier "https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/Interferogram_APS_Global_Model";
+  dct:description "Interferogram Atmospheric Phase Screen from Global Atmospheric Model";
+  adms:identifier [ a adms:Identifier ;
+  adms:schemaAgency "DDSS-ID" ;
+  skos:notation "WP12-DDSS-005" ;
+  ];
+  dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
+  dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
+  dct:temporal [ a dct:PeriodOfTime ;
+    schema:startDate "1978-01-01T00:00:00"^^xsd:dateTime ;
+    #schema:endDate "YYYY-MM-DDThh:mm:ss"^^xsd:dateTime ;
+  ];
+  dcat:theme  <epos:InSAR> ;
+  dcat:keyword "Remote Sensing", "Interferometry", "DInSAR", "phase", "displacement", "timeseries", "multitmporal", "SAR", "InSAR", "LOS", "deformation", "ascending", "descending", "range change", "SBAS", "PS";
+  dcat:contactPoint <http://orcid.org/0000-0003-1090-900X/scientificContact>;
+  dcat:contactPoint <http://orcid.org/0000-0002-2099-2241/scientificContact>;
+  dct:publisher <ISNI:http://isni.org/isni/0000000106758101>;
+  dcat:distribution <https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/Interferogram_APS_Global_Model/Distribution/APS_model>;
+  dct:spatial [ a dct:Location ;
+    locn:geometry "POLYGON((-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0))"^^gsp:wktLiteral;
+  ];
+.
+
+#####################################
+#  DATASETS - DEM in radar geometry #
+#####################################
+
+<https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/DEM_Radar_Geometry> a dcat:Dataset;
+  dct:title "DEM in radar geometry";
+  dct:identifier "https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/DEM_Radar_Geometry";
+  dct:description "DEM in radar geometry";
+  adms:identifier [ a adms:Identifier ;
+  adms:schemaAgency "DDSS-ID" ;
+  skos:notation "WP12-DDSS-006" ;
+  ];
+  dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
+  dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
+  dct:temporal [ a dct:PeriodOfTime ;
+    schema:startDate "1978-01-01T00:00:00"^^xsd:dateTime ;
+    #schema:endDate "YYYY-MM-DDThh:mm:ss"^^xsd:dateTime ;
+  ];
+  dcat:theme  <epos:InSAR> ;
+  dcat:keyword "Remote Sensing", "Interferometry", "DInSAR", "topography", "SAR", "InSAR", "LOS", "radar geometry";
+  dcat:contactPoint <http://orcid.org/0000-0003-1090-900X/scientificContact>;
+  dcat:contactPoint <http://orcid.org/0000-0002-2099-2241/scientificContact>;
+  dct:publisher <ISNI:http://isni.org/isni/0000000106758101>;
+  dcat:distribution <https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/DEM_Radar_Geometry/Distribution/DEM_radar>;
+  dct:spatial [ a dct:Location ;
+    locn:geometry "POLYGON((-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0))"^^gsp:wktLiteral;
+  ];
+.
+
+#########################################################################
+#  DATASETS - Lookup table from radar coordinates to ground coordinates #
+#########################################################################
+
+<https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/Lookup_Table_Radar2Ground_Coordinates> a dcat:Dataset;
+  dct:title "Lookup table from radar coordinates to ground coordinates";
+  dct:identifier "https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/Lookup_Table_Radar2Ground_Coordinates";
+  dct:description "Lookup table from radar coordinates to ground coordinates";
+  adms:identifier [ a adms:Identifier ;
+  adms:schemaAgency "DDSS-ID" ;
+  skos:notation "WP12-DDSS-007" ;
+  ];
+  dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
+  dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
+  dct:temporal [ a dct:PeriodOfTime ;
+    schema:startDate "1978-01-01T00:00:00"^^xsd:dateTime ;
+    #schema:endDate "YYYY-MM-DDThh:mm:ss"^^xsd:dateTime ;
+  ];
+  dcat:theme  <epos:InSAR> ;
+  dcat:keyword "Remote Sensing", "Interferometry", "DInSAR", "system geometry conversion", "SAR", "InSAR", "LOS", "radar geometry", "geolocation";
+  dcat:contactPoint <http://orcid.org/0000-0003-1090-900X/scientificContact>;
+  dcat:contactPoint <http://orcid.org/0000-0002-2099-2241/scientificContact>;
+  dct:publisher <ISNI:http://isni.org/isni/0000000106758101>;
+  dcat:distribution <https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/Lookup_Table_Radar2Ground_Coordinates/Distribution/LUT_radar2ground>;
+  dct:spatial [ a dct:Location ;
+    locn:geometry "POLYGON((-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0))"^^gsp:wktLiteral;
+  ];
+.
+
+#################
+# DISTRIBUTIONS #
+#################
+
+################################################
+# DISTRIBUTIONS - LOS Displacement Time Series #
+################################################
+
+<https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/LOS_Displacement_Time_Series/Distribution/LOS_Displ_TS> a dcat:Distribution;
+  dct:identifier "https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/LOS_Displacement_Time_Series/Distribution/LOS_Displ_TS";
+  dct:title "LOS Displacement Time Series distribution";
+  dct:description "LOS Displacement Time Series distribution";
+  dct:issued "2017-01-01"^^xsd:date ;
+  dct:modified "2017-01-01"^^xsd:date ;
+  dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+  dcat:accessURL <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/LOS_DISPLACEMENT_TIMESERIES/Operation/Search>;
+  dct:conformsTo <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/LOS_DISPLACEMENT_TIMESERIES>;
+  dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
+  dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
+.
+
+#########################################
+# DISTRIBUTIONS - Wrapped Interferogram #
+#########################################
+
+<https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/Wrapped_Interferogram/Distribution/Wrap_Interf> a dcat:Distribution;
+  dct:identifier "https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/Wrapped_Interferogram/Distribution/Wrap_Interf";
+  dct:title "Wrapped Interferograms distribution";
+  dct:description "Wrapped Interferograms istribution";
+  dct:issued "2017-01-01"^^xsd:date ;
+  dct:modified "2017-01-01"^^xsd:date ;
+  dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+  dcat:accessURL <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/WRAPPED_INTERFEROGRAM/Operation/Search>;
+  dct:conformsTo <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/WRAPPED_INTERFEROGRAM>;
+  dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
+  dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
+.
+
+###########################################
+# DISTRIBUTIONS - Unwrapped Interferogram #
+###########################################
+
+<https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/Unwrapped_Interferogram/Distribution/Unwrap_Interf> a dcat:Distribution;
+  dct:identifier "https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/Unwrapped_Interferogram/Distribution/Unwrap_Interf";
+  dct:title "Unwrapped Interferograms distribution";
+  dct:description "Unwrapped Interferograms distribution";
+  dct:issued "2017-01-01"^^xsd:date ;
+  dct:modified "2017-01-01"^^xsd:date ;
+  dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+  dcat:accessURL <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/UNWRAPPED_INTERFEROGRAM/Operation/Search>;
+  dct:conformsTo <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/UNWRAPPED_INTERFEROGRAM>;
+  dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
+  dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
+.
+
+#####################################
+# DISTRIBUTIONS - Spatial Coherence #
+#####################################
+
+<https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/Spatial_Coherence/Distribution/Spac_Coh> a dcat:Distribution;
+  dct:identifier "https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/Spatial_Coherence/Distribution/Spac_Coh";
+  dct:title "Spatial Coherence distribution";
+  dct:description "Spatial Coherence distribution";
+  dct:issued "2017-01-01"^^xsd:date ;
+  dct:modified "2017-01-01"^^xsd:date ;
+  dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+  dcat:accessURL <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/SPATIAL_COHERENCE/Operation/Search>;
+  dct:conformsTo <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/SPATIAL_COHERENCE>;
+  dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
+  dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
+.
+
+#####################################
+# DISTRIBUTIONS - Map of LOS Vector #
+#####################################
+
+<https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/Map_of_LOS_Vector/Distribution/LOS_Vect> a dcat:Distribution;
+  dct:identifier "https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/Map_of_LOS_Vector/Distribution/LOS_Vect";
+  dct:title "Map of LOS Vector distribution";
+  dct:description "Map of LOS Vector distribution";
+  dct:issued "2017-01-01"^^xsd:date ;
+  dct:modified "2017-01-01"^^xsd:date ;
+  dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+  dcat:accessURL <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/MAP_OF_LOS_VECTOR/Operation/Search>;
+  dct:conformsTo <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/MAP_OF_LOS_VECTOR>;
+  dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
+  dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
+.
+
+##################################################
+# DISTRIBUTIONS - INTERFEROGRAM_APS_GLOBAL_MODEL #
+##################################################
+
+<https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/Interferogram_APS_Global_Model/Distribution/APS_model> a dcat:Distribution;
+  dct:identifier "https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/Interferogram_APS_Global_Model/Distribution/APS_model";
+  dct:title "Interferogram Atmospheric Phase Screen from Global Atmospheric Model distribution";
+  dct:description "Interferogram Atmospheric Phase Screen from Global Atmospheric Model distribution";
+  dct:issued "2017-01-01"^^xsd:date ;
+  dct:modified "2017-01-01"^^xsd:date ;
+  dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+  dcat:accessURL <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/INTERFEROGRAM_APS_GLOBAL_MODEL/Operation/Search>;
+  dct:conformsTo <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/INTERFEROGRAM_APS_GLOBAL_MODEL>;
+  dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
+  dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
+.
+
+#########################################
+# DISTRIBUTIONS - DEM in radar geometry #
+#########################################
+
+<https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/DEM_Radar_Geometry/Distribution/DEM_radar> a dcat:Distribution;
+  dct:identifier "https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/DEM_Radar_Geometry/Distribution/DEM_radar";
+  dct:title "DEM in radar geometry distribution";
+  dct:description "DEM in radar geometry distribution";
+  dct:issued "2017-01-01"^^xsd:date ;
+  dct:modified "2017-01-01"^^xsd:date ;
+  dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+  dcat:accessURL <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/DEM_RADAR_GEOMETRY/Operation/Search>;
+  dct:conformsTo <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/DEM_RADAR_GEOMETRY>;
+  dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
+  dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
+.
+
+#############################################################################
+# DISTRIBUTIONS - Lookup table from radar coordinates to ground coordinates #
+#############################################################################
+
+<https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/Lookup_Table_Radar2Ground_Coordinates/Distribution/LUT_radar2ground> a dcat:Distribution;
+  dct:identifier "https://catalog.terradue.com/gep-epos/SatelliteObservations/Dataset/Lookup_Table_Radar2Ground_Coordinates/Distribution/LUT_radar2ground";
+  dct:title "Lookup table from radar coordinates to ground coordinates distribution";
+  dct:description "Lookup table from radar coordinates to ground coordinates distribution";
+  dct:issued "2017-01-01"^^xsd:date ;
+  dct:modified "2017-01-01"^^xsd:date ;
+  dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+  dcat:accessURL <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/LOOKUP_TABLE_RADAR2GROUD_COORDINATES/Operation/Search>;
+  dct:conformsTo <https://catalog.terradue.com/gep-epos/SatelliteObservations/WebService/LOOKUP_TABLE_RADAR2GROUD_COORDINATES>;
+  dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
+  dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
+.
+
+  <epos:Satellite-Observations> a skos:ConceptScheme;
+    dct:title "Satellite-Observations";
+    dct:description "It contains the concepts of Satellite-Observations";
+.
+  <epos:InSAR> a skos:Concept;
+    skos:definition "InSAR ";
+    skos:inScheme <epos:Satellite-Observations>;
+    skos:prefLabel "InSAR" ;
+.

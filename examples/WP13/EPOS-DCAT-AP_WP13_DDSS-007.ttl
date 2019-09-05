@@ -159,10 +159,9 @@
 
     dct:temporal [ a dct:PeriodOfTime;
         schema:startDate "1868-01-01T00:00:00Z"^^xsd:dateTime;
-        #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
     ];
     dct:spatial [ a dct:Location;
-        locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral;
+        locn:geometry "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral;
     ];
 .
 
@@ -200,11 +199,10 @@
     schema:keywords "DISTURBED DAY", "GEO-EFFECTIVITY", "GEOMAGNETIC ACTIVITY", "GEOMAGNETIC STORM", "GEOMAGNETISM", "INTERPLANETARY MAGNETIC FIELD (IMF)", "IONOSPHERE", "MAGNETIC FIELD", "MAGNETISM", "MAGNETOSPHERE", "QUIET DAY", "RAPID MAGNETIC VARIATIONS", "REMARKABLE EVENT", "SOLAR FLARE", "SOLAR FLARE EFFECT", "SOLAR QUIET", "SOLAR STORM", "SPACE-WEATHER", "SUDDEN STORM COMMENCEMENT", "SUDDEN COMMENCEMENT", "SUDDEN IMPULSE", "TIME SERIES";
     hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-007/Operation> ;
     dct:spatial [ a dct:Location;
-        locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral ;
+        locn:geometry "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral ;
     ];
     dct:temporal [ a dct:PeriodOfTime;
         schema:startDate "1868-01-01T00:00:00Z"^^xsd:dateTime;
-        #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
     ];
     dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 .
@@ -220,7 +218,7 @@
         hydra:template "http://geomag.bgs.ac.uk/EPOS/WP13/isgi/{?index, StartTime, EndTime}"^^xsd:string;
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "index"^^xsd:string;
-                rdfs:label "Geomagnetic Event";
+                rdfs:label "Type of geomagnetic event";
                 rdfs:range "xsd:string" ;
                 schema:defaultValue "SC";
                 http:paramValue "SC";
@@ -233,7 +231,7 @@
                 hydra:variable "StartTime"^^xsd:string;
                 hydra:property "schema:startDate";
                 schema:valuePattern "YYYY-MM-DD";
-                rdfs:label "StartTime";
+                rdfs:label "Start time";
                 rdfs:range "xsd:date" ;
                 schema:defaultValue "2000-01-01";
                 schema:minValue "0001-01-01";
@@ -244,7 +242,7 @@
                 hydra:variable "EndTime"^^xsd:string;
                 hydra:property "schema:endDate";
                 schema:valuePattern "YYYY-MM-DD";
-                rdfs:label "EndTime";
+                rdfs:label "End time";
                 rdfs:range "xsd:date" ;
                 schema:defaultValue "2001-01-01";
                 schema:minValue "0001-01-01";

@@ -12,10 +12,19 @@
 ##
 ## Communities can define and manage their sets of concepts in a concept scheme
 ##
-<epos:Seismology> a skos:ConceptScheme;
+<epos:SeismologyVocabulary> a skos:ConceptScheme;
 		dct:title "Seismology"@en;
 		dct:description "It contains the concepts of the Seismology domain"@en; 
+		skos:hasTopConcept <epos:Seismology> ;
 .
+
+<epos:Seismology> a skos:Concept;
+		skos:definition "The branch of science concerned with earthquakes and related phenomena"@en;
+		skos:inScheme <epos:SeismologyVocabulary>;
+		skos:topConceptOf <epos:SeismologyVocabulary>;
+		skos:prefLabel "Seismology"@en;
+.		
+	
 <epos:SeismicWaveform> a skos:Concept;
 	skos:definition "Measurement of the dynamic displacement of the Earth"@en;
 	skos:inScheme <epos:Seismology>;	

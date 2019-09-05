@@ -178,10 +178,9 @@
 
     dct:temporal [ a dct:PeriodOfTime; 
         schema:startDate "1900-01-01T00:00:00Z"^^xsd:dateTime; 
-        #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
     ]; 
     dct:spatial [ a dct:Location; 
-        locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral; 
+        locn:geometry "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral; 
     ]; 
 .
 
@@ -219,11 +218,10 @@
     schema:keywords "magnetism", "geomagnetism", "global model", "magnetic model", "magnetic survey", "main field", "model", "secular variation", "world model" ;
     hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-003/SurveyData/Operation> ;
     dct:spatial [ a dct:Location; 
-        locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral ;
+        locn:geometry "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral ;
     ]; 
     dct:temporal [ a dct:PeriodOfTime; 
         schema:startDate "1900-01-01T00:00:00Z"^^xsd:dateTime; 
-        #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
     ]; 
     dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 .
@@ -235,11 +233,13 @@
 <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-003/SurveyData/Operation> a hydra:Operation;
     hydra:method "GET"^^xsd:string;
     hydra:returns "application/json";
+    hydra:returns "application/vnd.geo+json";
+    hydra:returns "text/csv";
     hydra:property[ a hydra:IriTemplate;
         hydra:template "http://geomag.bgs.ac.uk/gifs/wdc/global-survey/data/{?start-year, end-year, north-latitude, south-latitude, west-longitude, east-longitude, add-source-information, format}"^^xsd:string;
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "start-year"^^xsd:string;
-                rdfs:label "Start year";
+                rdfs:label "Start year (decimal yyyy.yyy)";
                 hydra:property "schema:startDate";
                 schema:valuePattern "YYYY.yyy";
                 rdfs:range "xsd:decimal" ;
@@ -250,7 +250,7 @@
             ];
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "end-year"^^xsd:string;
-                rdfs:label "End year";
+                rdfs:label "End year (decimal yyyy.yyy)";
                 hydra:property "schema:endDate";
                 schema:valuePattern "YYYY.yyy";
                 rdfs:range "xsd:decimal" ;
@@ -261,8 +261,9 @@
             ];
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "north-latitude"^^xsd:string;
+                hydra:property "epos:northernmostLatitude";
                 rdfs:label "North latitude";
-                rdfs:range "xsd:decimal";
+                rdfs:range "xsd:float";
                 schema:defaultValue "90.0";
                 schema:minValue "-90.0";
                 schema:maxValue "90.0";
@@ -270,8 +271,9 @@
             ];
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "south-latitude"^^xsd:string;
+                hydra:property "epos:southernmostLatitude";
                 rdfs:label "South latitude";
-                rdfs:range "xsd:decimal";
+                rdfs:range "xsd:float";
                 schema:defaultValue "-90.0";
                 schema:minValue "-90.0";
                 schema:maxValue "90.0";
@@ -279,8 +281,9 @@
             ];
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "west-longitude"^^xsd:string;
+                hydra:property "epos:westernmostLongitude";
                 rdfs:label "West longitude";
-                rdfs:range "xsd:decimal";
+                rdfs:range "xsd:float";
                 schema:defaultValue "0.0";
                 schema:minValue "-180.0";
                 schema:maxValue "360.0";
@@ -288,8 +291,9 @@
             ];
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "east-longitude"^^xsd:string;
+                hydra:property "epos:easternmostLongitude";
                 rdfs:label "East longitude";
-                rdfs:range "xsd:decimal";
+                rdfs:range "xsd:float";
                 schema:defaultValue "360.0";
                 schema:minValue "-180.0";
                 schema:maxValue "360.0";

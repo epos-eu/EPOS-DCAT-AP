@@ -16,17 +16,11 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
-<epos:VolcanoObservations> a skos:ConceptScheme;
-		dct:title "Volcano Observations";
-		dct:description "Get information of specific GNSS station";
-.
-<epos:GeodeticData> a skos:Concept;
-		skos:definition "RINEX data (15 sec)";
-		skos:inScheme <epos:VolcanoObservations>;
-		skos:prefLabel "Geodetic Data" ;
-.
+#########
+# PERSON 
+#########
 
-<0000-0002-0069-9144> a schema:Person;
+<http://orcid.org/0000-0002-0069-9144> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "ORCID";
 		schema:value "0000-0002-0069-9144";
@@ -42,9 +36,28 @@
 	schema:telephone "+3545226000";
 	schema:url "http://en.vedur.is"^^xsd:anyURI;
 	schema:affiliation <PIC:997168343>;
-	schema:contactPoint <0000-0002-0069-9144/scientificContact>;
-	schema:contactPoint <0000-0002-0069-9144/contactPoint>;
+	schema:contactPoint <http://orcid.org/0000-0002-0069-9144/scientificContact>;
+	schema:contactPoint <http://orcid.org/0000-0002-0069-9144/contactPoint>;
 .
+
+#########
+# ContactPoint
+######### 
+
+<http://orcid.org/0000-0002-0069-9144/contactPoint> a schema:ContactPoint;
+	schema:email "bgo@vedur.is";
+	schema:availableLanguage "en" ;
+        schema:contactType "contactPoint" ;
+.
+<http://orcid.org/0000-0002-0069-9144/scientificContact> a schema:ContactPoint;
+	schema:email "bgo@vedur.is";
+	schema:availableLanguage "en" ;
+	schema:contactType "scientificContact" ;
+.
+
+#########
+# Organization
+#########
 
 <PIC:997168343> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
@@ -62,8 +75,12 @@
 	schema:url "http://en.vedur.is"^^xsd:anyURI;
 	schema:email "office@vedur.is";
 	schema:telephone "+3545226000";
-	schema:contactPoint <0000-0002-0069-9144/scientificContact>;
+	schema:contactPoint <http://orcid.org/0000-0002-0069-9144/scientificContact>;
 .
+
+#########
+# Dataset
+#########
 
 <www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/003/data> a dcat:Dataset;
 		dct:title "GNSS Raw data";
@@ -77,76 +94,23 @@
 		dct:modified "2014-10-01"^^xsd:date;
 		dct:issued "2014-10-01"^^xsd:date;
 		dct:temporal [ a dct:PeriodOfTime;
-		schema:startDate "2014-10-01T00:00:00Z"^^xsd:dateTime;
-		schema:endDate "2025-01-01T00:00:00Z"^^xsd:dateTime;
-	];
-	dct:spatial [ a dct:Location;
-		locn:geometry "POLYGON(-25.0 63.0,-25.0 68.5,-10.0 68.5,-10.0 63.0,-25.0 63.0)"^^gsp:wktLiteral;
-	];
+			schema:startDate "2014-10-01T00:00:00Z"^^xsd:dateTime;
+			schema:endDate "2025-01-01T00:00:00Z"^^xsd:dateTime;
+		];
+		dct:spatial [ a dct:Location;
+			locn:geometry "POLYGON((-25.0 63.0,-25.0 68.5,-10.0 68.5,-10.0 63.0,-25.0 63.0))"^^gsp:wktLiteral;
+		];
 		dcat:theme <epos:GeodeticData>;
-		dcat:keyword "Faults";
-		dcat:contactPoint <0000-0002-0069-9144/contactPoint>;
+		dcat:keyword "Faults","geodesy","IMO","volcanoes","gnss","deformation","timeseries";
+		dcat:contactPoint <http://orcid.org/0000-0002-0069-9144/contactPoint>;
 		dcat:distribution <www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/003/distribution>;
 		owl:versionInfo "V1.0";
 		dct:publisher <PIC:997168343>;
 .
 
-<www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/003/ws> a epos:WebService;
-	schema:identifier "www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/003/ws";
-	#schema:identifier [ a schema:PropertyValue;
-		#schema:propertyID  "DDSS-ID";
-		#schema:value  "";
-	#];
-	schema:description "List of available archive of GPS data";
-	schema:name "GNSS Raw data";
-	hydra:entrypoint "https://docs.vedur.is/api/epos/#!/GNSS/get_gps_data_rinex"^^xsd:anyURI;
-	schema:datePublished "2018-05-30"^^xsd:date;
-	schema:dateModified "2018-05-30"^^xsd:date;
-	dct:spatial [ a dct:Location;
-		locn:geometry "POLYGON(-25.0 63.0,-25.0 68.5,-10.0 68.5,-10.0 63.0,-25.0 63.0)"^^gsp:wktLiteral;
-	];
-	hydra:supportedOperation <www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/003/data/operation>;
-	schema:keywords "Faults";
-	dct:temporal [ a dct:PeriodOfTime;
-		schema:startDate "2014-10-01T00:00:00Z"^^xsd:dateTime;
-		schema:endDate "2025-01-01T00:00:00Z"^^xsd:dateTime;
-	];
-	dcat:theme <epos:GeodeticData>;
-	dcat:contactPoint <0000-0002-0069-9144/contactPoint>;
-	schema:provider <PIC:997168343>;
-.
-	<www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/003/data/operation> a hydra:Operation;
-		hydra:method "GET"^^xsd:string;
-		hydra:returns "application/json";
-		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://api.vedur.is/epos/v1/gps/data/rinex{?station_marker,date_from,date_to,status}"^^xsd:string;
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "station_marker"^^xsd:string;
-					rdfs:label "Four uppercase character designation for the station, or integer index number of station in database.";
-					hydra:required "true"^^xsd:boolean;
-          				schema:defaultValue "RHOF" ;
-					rdfs:range "xsd:string" ;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "date_from"^^xsd:string;
-					rdfs:label "Any valid time formatted as 'YYYY-MM-DDTHH:MM:SS' (UTC)";
-					hydra:required "false"^^xsd:boolean;
-					rdfs:range "xsd:dateTime" ;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "date_to"^^xsd:string;
-					rdfs:label "Any valid time formatted as 'YYYY-MM-DDTHH:MM:SS' (UTC)";
-					hydra:required "false"^^xsd:boolean;
-					rdfs:range "xsd:dateTime" ;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "status"^^xsd:string;
-					rdfs:label "RINEX file status number";
-					hydra:required "false"^^xsd:boolean;
-					rdfs:range "xsd:string" ;
-				];
-		] ;
-.
+#########
+# Distribution
+#########
 
 <www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/003/distribution> a dcat:Distribution;
 		dct:identifier "www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/003/distribution";
@@ -159,12 +123,123 @@
                 dcat:accessURL <www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/003/data/operation>;
 		dct:conformsTo <www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/003/ws>;
 .
-	<0000-0002-0069-9144/contactPoint> a schema:ContactPoint;
-		schema:email "bgo@vedur.is";
-		schema:availableLanguage "en" ;
+
+#########
+# WebService
+######### 
+
+<www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/003/ws> a epos:WebService;
+	schema:identifier "www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/003/ws";
+	schema:description "List of available archive of GPS data";
+	schema:name "GNSS Raw data";
+	hydra:entrypoint "https://docs.vedur.is/api/epos/#!/GNSS/get_gps_data_rinex"^^xsd:anyURI;
+	schema:datePublished "2018-05-30"^^xsd:date;
+	schema:dateModified "2018-05-30"^^xsd:date;
+	dct:spatial [ a dct:Location;
+		locn:geometry "POLYGON((-25.0 63.0,-25.0 68.5,-10.0 68.5,-10.0 63.0,-25.0 63.0))"^^gsp:wktLiteral;
+	];
+	hydra:supportedOperation <www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/003/data/operation>;
+	schema:keywords "Faults","geodesy","IMO","volcanoes","gnss","deformation","timeseries";
+	dct:temporal [ a dct:PeriodOfTime;
+		schema:startDate "2014-10-01T00:00:00Z"^^xsd:dateTime;
+		schema:endDate "2025-01-01T00:00:00Z"^^xsd:dateTime;
+	];
+	dcat:theme <epos:GeodeticData>;
+	dcat:contactPoint <http://orcid.org/0000-0002-0069-9144/contactPoint>;
+	schema:provider <PIC:997168343>;
 .
-	<0000-0002-0069-9144/scientificContact> a schema:ContactPoint;
-		schema:email "bgo@vedur.is";
-		schema:availableLanguage "en" ;
-		schema:contactType "scientificContact" ;
+
+#########
+# Operation
+######### 
+
+<www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/003/data/operation> a hydra:Operation;
+	hydra:method "GET"^^xsd:string;
+	hydra:returns "application/json";
+	hydra:property[ a hydra:IriTemplate;
+		hydra:template "https://api.vedur.is/epos/v1/gps/data/rinex{?station_marker,start_time,end_time,status}&bbox={minlatitude,minlongitude,maxlatitude,maxlatitude}"^^xsd:string;
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "station_marker"^^xsd:string;
+				rdfs:label "Four uppercase character designation for the station, or integer index number of station in database.";
+				hydra:required "true"^^xsd:boolean;
+				schema:defaultValue "RHOF" ;
+				rdfs:range "xsd:string" ;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "start_time"^^xsd:string;
+				rdfs:label "Any valid time formatted as 'YYYY-MM-DDThh:mm:ssZ' (UTC)";
+				hydra:property "schema:startDate";
+                                schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
+				schema:defaultValue "2014-10-01T00:00:00Z"^^xsd:dateTime;
+				hydra:required "false"^^xsd:boolean;
+				rdfs:range "xsd:dateTime" ;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "end_time"^^xsd:string;
+				rdfs:label "Any valid time formatted as 'YYYY-MM-DDThh:mm:ssZ' (UTC)";
+				hydra:property "schema:endDate";
+                                schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
+				schema:defaultValue "2014-10-01T00:00:00Z"^^xsd:dateTime;
+				hydra:required "false"^^xsd:boolean;
+				rdfs:range "xsd:dateTime" ;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+				hydra:variable "status"^^xsd:string;
+				rdfs:label "RINEX file status number";
+				hydra:required "false"^^xsd:boolean;
+				rdfs:range "xsd:string" ;
+			];
+		        hydra:mapping[ a hydra:IriTemplateMapping;
+			        hydra:variable "minlatitude"^^xsd:string; 
+		                hydra:property "epos:southernmostLatitude";
+			        rdfs:label "Minimum Latitude";
+			        schema:minValue "-90.0";
+			        schema:maxValue "90.0";
+			        hydra:required "true"^^xsd:boolean;
+			        schema:defaultValue "63.0" ;
+		                rdfs:range "xsd:float";
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+			        hydra:variable "minlongitude"^^xsd:string; 
+				hydra:property "epos:westernmostLongitude";
+			        rdfs:label "Minimum Longitude";
+			        schema:minValue "-180.0";
+			        schema:maxValue "180.0";
+			        hydra:required "true"^^xsd:boolean;
+			        schema:defaultValue "-25.0" ;
+				rdfs:range "xsd:float";
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+			        hydra:variable "maxlatitude"^^xsd:string; 
+				hydra:property "epos:northernmostLatitude";
+			        rdfs:label "Maximum Latitude";
+			        schema:minValue "-90.0";
+			        schema:maxValue "90.0";
+			        hydra:required "true"^^xsd:boolean;
+			        schema:defaultValue "68.5" ;
+				rdfs:range "xsd:float";
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+			        hydra:variable "maxlongitude"^^xsd:string; 
+				hydra:property "epos:easternmostLongitude";
+			        rdfs:label "Maximum Longitude";
+			        schema:minValue "-180.0";
+			        schema:maxValue "180.0";
+			        hydra:required "true"^^xsd:boolean;
+			        schema:defaultValue "-10.0" ;
+				rdfs:range "xsd:float";
+			];
+	] ;
+.
+
+
+
+<epos:VolcanoObservations> a skos:ConceptScheme;
+		dct:title "Volcano Observations";
+		dct:description "Get information of specific GNSS station";
+.
+<epos:GeodeticData> a skos:Concept;
+		skos:definition "RINEX data (15 sec)";
+		skos:inScheme <epos:VolcanoObservations>;
+		skos:prefLabel "Geodetic Data" ;
 .

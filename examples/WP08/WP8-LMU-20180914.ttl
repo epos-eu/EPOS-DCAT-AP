@@ -120,7 +120,7 @@
 
         # This property refers to a geographic region that is covered by the Dataset.
         dct:spatial [ a dct:Location ;
-          locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral ;
+          locn:geometry "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral ;
         ];
 
         # This property refers to a temporal period that the Dataset covers.
@@ -209,7 +209,7 @@
   # This property refers to a geographic region that is covered by the Dataset.
   # The POLYGON format is: POLYGON(lon1 lat1, lon2 lat2,...)
   dct:spatial [ a dct:Location ;
-    locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral ;
+    locn:geometry "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral ;
   ];
 
   # This property refers to a temporal period that the Dataset covers.
@@ -309,6 +309,9 @@
 				            rdfs:label "Limit results to the longest continuous segment per channel." ;
                			hydra:required "false"^^xsd:boolean ;
                     rdfs:range "xsd:boolean" ;
+				http:paramValue "true";
+			http:paramValue "false";
+				
                    
                		];
                     hydra:mapping[ a hydra:IriTemplateMapping;
@@ -378,7 +381,7 @@
 
         # This property refers to a geographic region that is covered by the Dataset.
         dct:spatial [ a dct:Location ;
-          locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral ;
+          locn:geometry "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral ;
         ];
 
         # This property refers to a temporal period that the Dataset covers.
@@ -466,7 +469,7 @@
   # This property refers to a geographic region that is covered by the Dataset.
   # The POLYGON format is: POLYGON(lon1 lat1, lon2 lat2,...)
   dct:spatial [ a dct:Location ;
-    locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral ;
+    locn:geometry "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral ;
   ];
 
   # This property refers to a temporal period that the Dataset covers.
@@ -499,6 +502,7 @@
 
                   hydra:property "schema:startDate" ;
                   schema:valuePattern "YYYY-MM-DDThh:mm:ss" ;
+		  schema:defaultValue "2010-01-01T01:00:00" ;
 
                   # This property contains the type of parameter. 
 		  # The possible values for this property are: "xsd:string" "xsd:boolean" "xsd:date" " xsd:dateTime" "xsd:decimal" "xsd:double" "xsd:float" "xsd:int" "xsd:integer" "xsd:long";
@@ -524,6 +528,7 @@
                     hydra:property "schema:endDate" ;
                     schema:valuePattern "YYYY-MM-DDThh:mm:ss" ;
                     rdfs:range "xsd:dateTime" ;
+				schema:defaultValue "2019-03-31T01:00:00" ;
                     
               		];
               		hydra:mapping[ a hydra:IriTemplateMapping ;

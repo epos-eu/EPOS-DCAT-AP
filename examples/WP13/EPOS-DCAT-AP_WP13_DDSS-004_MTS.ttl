@@ -1,0 +1,327 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http: <http://www.w3.org/2006/http#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+
+###############################################################################
+### Domain and subdomain ###
+###############################################################################
+
+<epos:Geoelectromagnetism> a skos:ConceptScheme;
+    dct:title "Geoelectromagnetism";
+    dct:description "Relating to the electric or magnetic field of the Earth";
+.
+
+<epos:Magnetotellurics> a skos:Concept;
+    skos:definition "Electromagnetic geophysical methods for inferring the earth's subsurface electrical conductivity";
+    skos:inScheme <epos:Geoelectromagnetism>;
+    skos:prefLabel "Magnetotellurics";
+.
+
+###############################################################################
+### People ###
+###############################################################################
+
+<http://orcid.org/0000-0002-5600-5375> a schema:Person;
+    schema:identifier [ a schema:PropertyValue;
+        schema:propertyID "orcid";
+        schema:value "0000-0002-5600-5375";
+    ];
+    schema:familyName "Smirnov";
+    schema:givenName "Maxim";
+    schema:address [ a schema:PostalAddress;
+        schema:streetAddress "Luleå University of Technology";
+        schema:addressLocality "Luleå";
+        schema:postalCode "97187";
+        schema:addressCountry "Sweden";
+    ];
+    schema:email "maxim.smirnov@ltu.se";
+    schema:telephone "+46 73 0834998";
+    schema:url "https://www.ltu.se/staff/s/smismi-1.151149"^^xsd:anyURI;
+    schema:affiliation  <https://www.ltu.se/org/sbn>;
+    schema:contactPoint <https://orcid.org/0000-0002-5600-5375/contactPoint>;
+    schema:contactPoint <https://orcid.org/0000-0002-5600-5375/scientificContact>;
+    schema:contactPoint <https://orcid.org/0000-0002-5600-5375/legalContact>;
+    schema:contactPoint <https://orcid.org/0000-0002-5600-5375/financialContact>;
+.
+
+
+###############################################################################
+### ContactPoint links ###
+###############################################################################
+
+<https://orcid.org/0000-0002-5600-5375/contactPoint> a schema:ContactPoint;
+    schema:email "maxim.smirnov@ltu.se";
+    schema:availableLanguage "en" ;
+    schema:contactType "contactPoint" ;
+.
+
+<https://orcid.org/0000-0002-5600-5375/scientificContact> a schema:ContactPoint;
+    schema:email "maxim.smirnov@ltu.se";
+    schema:availableLanguage "en" ;
+    schema:contactType "scientificContact" ;
+.
+
+<https://orcid.org/0000-0002-5600-5375/legalContact> a schema:ContactPoint;
+    schema:email "maxim.smirnov@ltu.se";
+    schema:availableLanguage "en" ;
+    schema:contactType "legalContact" ;
+.
+
+<https://orcid.org/0000-0002-5600-5375/financialContact> a schema:ContactPoint;
+    schema:email "maxim.smirnov@ltu.se";
+    schema:availableLanguage "en" ;
+    schema:contactType "financialContact" ;
+.
+
+
+
+
+
+###############################################################################
+### Organisations ###
+###############################################################################
+
+<https://www.ltu.se/org/sbn> a schema:Organization;
+    schema:identifier [ a schema:PropertyValue;
+        schema:propertyID "URL";
+        schema:value "https://www.ltu.se/org/sbn";
+    ];
+    schema:legalName "Luleå University of Technology";
+    schema:leiCode "Legal Entity Identifier Search: http://www.lei-lookup.com/#!search" ;
+    schema:address [ a schema:PostalAddress;
+        schema:streetAddress "Luleå University of Technology";
+        schema:addressLocality "Luleå";
+        schema:postalCode "97187";
+        schema:addressCountry "Sweden";
+    ];
+    schema:url "https://www.ltu.se/org/sbn"^^xsd:anyURI;
+    schema:email "registrator@ltu.se";
+    schema:telephone "+46 920 49 11 69";
+    schema:contactPoint <https://orcid.org/0000-0002-5600-5375/contactPoint>;
+    schema:contactPoint <https://orcid.org/0000-0002-5600-5375/scientificContact>;
+    schema:contactPoint <https://orcid.org/0000-0002-5600-5375/legalContact>;
+    schema:contactPoint <https://orcid.org/0000-0002-5600-5375/financialContact>;
+
+
+.
+
+
+###############################################################################
+### Data set ###
+###############################################################################
+
+<https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-004/MTS/Dataset> a dcat:Dataset;
+    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-004/MTS/Dataset";
+    dct:title "Magnetotelluric time series (MTS)";
+    dct:description "Magnetotellurics (MT) is an electromagnetic geophysical method for inferring the earth's subsurface electrical conductivity from measurements of natural geoelectromagnetic field variations at the Earth's surface. Magnetotelluric time series (MTS) are recordings of the components of naturally occuring electromagnetic field at the Earth's surface measured at certain location.";
+    adms:identifier [ a adms:Identifier;
+        adms:schemaAgency "DDSS-ID";
+        skos:notation "WP13-DDSS-004";
+    ];
+    dct:created "1971-01-01"^^xsd:date;
+    dct:modified "2019-01-01"^^xsd:date;
+    dct:issued "2019-01-01"^^xsd:date;
+    owl:versionInfo "1.0.0" ;
+
+    dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
+    dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI ;
+    dcat:theme  <epos:Magnetotellurics> ;
+    dcat:keyword  "Electromagnetic data",  "Geo-effectivity", "Geomagnetic activity",  "Geomagnetism",    "Magnetotellurics", "Magnetotelluric data",  "Space weather", "Magnetic survey";
+    dcat:contactPoint <https://orcid.org/0000-0002-5600-5375/contactPoint> ;
+    dct:publisher <https://www.ltu.se/org/sbn>;
+    dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-004/MTS/Distribution>;
+
+    dct:temporal [ a dct:PeriodOfTime;
+        schema:startDate "1971-01-01T00:00:00Z"^^xsd:dateTime;
+    ];
+    dct:spatial [ a dct:Location;
+        locn:geometry "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral;
+    ];
+.
+
+###############################################################################
+### Distributions ###
+###############################################################################
+
+<https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-004/MTS/Distribution> a dcat:Distribution;
+    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-004/MTS/Distribution";
+    dct:title "Magnetotelluric time series";
+    dct:description "Magnetotelluric time series are distributed via web service";
+    dct:issued "2019-01-01"^^xsd:date;
+    dct:modified "2019-01-01"^^xsd:date;
+    dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+    dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-004/MTS/Webservice>;
+    dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-004/MTS/Operation> ;
+    dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI ;
+    dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:string ;
+.
+
+###############################################################################
+### Web services ###
+###############################################################################
+
+<https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-004/MTS/Webservice> a epos:WebService;
+    schema:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-004/MTS/Webservice";
+    schema:description "Magnetotellurics (MT) is an electromagnetic geophysical method for inferring the earth's subsurface electrical conductivity from measurements of natural geoelectromagnetic field variations at the Earth's surface. Magnetotelluric time series (MTS) are recordings of the components of naturally occuring electromagnetic field at the Earth's surface measured at certain location.";
+    schema:name "Magnetotelluric web service";
+    dcat:contactPoint <https://orcid.org/0000-0002-5600-5375/contactPoint>;
+    schema:datePublished "2019-01-01Z"^^xsd:dateTime;
+    schema:dateModified "2019-01-01Z"^^xsd:dateTime;
+    schema:provider <https://www.ltu.se/org/sbn>;
+    hydra:entrypoint "http://mt.bgs.ac.uk/"^^xsd:anyURI ;
+    dcat:theme  <epos:Magnetotellurics> ;
+    schema:keywords  "Electromagnetic data",  "Geo-effectivity", "Geomagnetic activity",  "Geomagnetism",    "Magnetotellurics", "Magnetotelluric data",  "Space weather", "Magnetic survey";
+    hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-004/MTS/Operation> ;
+    dct:spatial [ a dct:Location;
+        locn:geometry "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral ;
+    ];
+    dct:temporal [ a dct:PeriodOfTime;
+        schema:startDate "1971-01-01T00:00:00Z"^^xsd:dateTime;
+    ];
+    dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+.
+
+###############################################################################
+### Web service operations ###
+###############################################################################
+
+<https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-004/MTS/Operation> a hydra:Operation;
+    hydra:method "GET"^^xsd:string;
+    hydra:returns "application/json";
+    hydra:property[ a hydra:IriTemplate;
+        hydra:template "http://mt.bgs.ac.uk/{project}/{survey}/TS/{project}{survey}_{site}.ts.json"^^xsd:string;
+            hydra:mapping[ a hydra:IriTemplateMapping;
+                hydra:variable "project"^^xsd:string;
+                rdfs:label "Project name";
+                rdfs:range "xsd:string" ;
+                schema:defaultValue "EPOS";
+                hydra:required "true"^^xsd:boolean;
+            ];
+            hydra:mapping[ a hydra:IriTemplateMapping;
+                hydra:variable "survey"^^xsd:string;
+                rdfs:label "Survey name";
+                rdfs:range "xsd:string" ;
+                schema:defaultValue "2019";
+                hydra:required "true"^^xsd:boolean;
+            ];
+            hydra:mapping[ a hydra:IriTemplateMapping;
+                hydra:variable "site"^^xsd:string;
+                rdfs:label "Site name";
+                rdfs:range "xsd:string" ;
+                schema:defaultValue "A01";
+                hydra:required "true"^^xsd:boolean;
+            ];
+    ] ;
+.
+
+
+
+
+
+<BEAR> a dcat:Project;
+	dct:identifier "BEAR";
+	dct:title "BEAR Project";
+	dct:description "Baltic Electromagnetic Array Research (BEAR) project is an international experiment for deep electromagnetic sounding using a shield-wide magnetotelluric and magnetometer array of simultaneous long period recordings. ";	
+        dcat:contactPoint <https://orcid.org/0000-0002-5600-5375/contactPoint> ;
+.
+
+
+###############################################################################
+### Dataset (Survey)###
+###############################################################################
+
+<https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-004/MTS/BEAR/1998> a dcat:Dataset;
+    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-004/MTS/BEAR/1998";
+    dct:title "BEAR magnetotelluric array time series (MTS)";
+    dct:description "Magnetotellurics (MT) is an electromagnetic geophysical method for inferring the earth's subsurface electrical conductivity from measurements of natural geoelectromagnetic field variations at the Earth's surface. Magnetotelluric Transfer Functions (MTF) describe relations between electromganetic field components in frequency domain and contain essential information about Earth's electrical conductivity. In Fennoscandia, the Baltic Electromagnetic ArrayResearch (BEAR) project, a part of EUROPROBE’sSVEKALAPKO project, realises an international experiment for deep electromagnetic sounding using a shield-wide magnetotelluric and magnetometer array of simultaneous long period recordings.";
+    adms:identifier [ a adms:Identifier;
+        adms:schemaAgency "DDSS-ID";
+        skos:notation "WP13-DDSS-010";
+    ];
+    dct:created "1998-06-01"^^xsd:date;
+    dct:modified "1998-08-31"^^xsd:date;
+    dct:issued "2019-01-01"^^xsd:date;
+    owl:versionInfo "1.0.0" ;
+
+    dct:isPartOf <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-004/MTS/Dataset> ;
+    dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
+    dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI ;
+    dcat:theme  <epos:Magnetotellurics> ;
+    dcat:keyword  "Crustal",  "Earth electrical conductivity", "Electrical conductivity", "Electromagnetic data",  "Geo-effectivity", "Geomagnetic activity",  "Geomagnetism",  "Impedance", "Impedance tensor", "Lithosphere",  "Magnetotellurics", "Magnetotelluric data",  "Space weather",  "Tipper vector", "Transfer function";
+    dcat:contactPoint <https://orcid.org/0000-0002-5600-5375/contactPoint> ;
+    dct:publisher <https://www.ltu.se/org/sbn>;
+    dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-004/MTS/Distribution>;
+
+    dct:temporal [ a dct:PeriodOfTime;
+        schema:startDate "1998-06-01T00:00:00Z"^^xsd:dateTime;
+        schema:endDate "1998-08-31T00:00:00Z"^^xsd:dateTime;
+    ];
+    dct:spatial [ a dct:Location;
+        locn:geometry "POLYGON((35.1 58.6, 13.5 58.6, 13.5 67.9, 13.5 67.9, 35.1 58.6))"^^gsp:wktLiteral;
+    ];
+.
+
+
+
+
+<SIMBA> a dcat:Project;
+	dct:identifier "SIMBA";
+	dct:title "SIMBA Project";
+	dct:description "Integrating geological and geophysical methods for characterisation of reservoirs in complex areas (SIMBA). ";	
+        dcat:contactPoint <https://orcid.org/0000-0003-0526-5609> ;
+.
+
+
+
+
+###############################################################################
+### Dataset (Survey)###
+###############################################################################
+
+<https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-004/MTS/SIMBA/SKYE> a dcat:Dataset;
+    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-004/MTS/SIMBA/SKYE";
+    dct:title "SIMBA magnetotelluric array transfer functions from the Isle of Skye, UK (MTF)";
+    dct:description "Magnetotellurics (MT) is an electromagnetic geophysical method for inferring the earth's subsurface electrical conductivity from measurements of natural geoelectromagnetic field variations at the Earth's surface. Magnetotelluric Transfer Functions (MTF) describe relations between electromganetic field components in frequency domain and contain essential information about Earth's electrical conductivity. ";
+    adms:identifier [ a adms:Identifier;
+        adms:schemaAgency "DDSS-ID";
+        skos:notation "WP13-DDSS-010";
+    ];
+    dct:created "2000-01-01"^^xsd:date;
+    dct:modified "2000-01-01"^^xsd:date;
+    dct:issued "2019-01-01"^^xsd:date;
+    owl:versionInfo "1.0.0" ;
+
+    dct:isPartOf <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-004/MTS/Dataset> ;
+    dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
+    dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI ;
+    dcat:theme  <epos:Magnetotellurics> ;
+    dcat:keyword  "Crustal",  "Earth electrical conductivity", "Electrical conductivity", "Electromagnetic data",  "Geo-effectivity", "Geomagnetic activity",  "Geomagnetism",  "Impedance", "Impedance tensor", "Lithosphere",  "Magnetotellurics", "Magnetotelluric data",  "Space weather",  "Tipper vector", "Transfer function";
+    dcat:contactPoint <https://orcid.org/0000-0002-5600-5375/contactPoint> ;
+    dct:publisher <https://www.ltu.se/org/sbn>;
+    dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-004/MTS/Distribution>;
+    dcat:Project <SIMBA>;    
+    dct:temporal [ a dct:PeriodOfTime;
+        schema:startDate "2000-01-01T00:00:00Z"^^xsd:dateTime;
+        schema:endDate "2001-01-01T00:00:00Z"^^xsd:dateTime;
+    ];
+    
+    #Polygon format is invalid
+    #dct:spatial [ a dct:Location;
+    #    locn:geometry "POLYGON(-7. 57., -5. 57., -7. 58., -5., 58.)"^^gsp:wktLiteral;
+    #];
+.
+

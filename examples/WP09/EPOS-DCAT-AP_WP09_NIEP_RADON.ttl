@@ -64,7 +64,7 @@
     schema:dateModified "2017-06-08T12:00:00Z"^^xsd:dateTime;
     schema:provider <PIC:998181508>;
     dct:spatial [ a dct:Location ;
-        locn:geometry "POLYGON(19.50 49.00,30.00 49.00,30.00 42.0,19.50 42.0,19.50 49.00 )"^^gsp:wktLiteral;
+        locn:geometry "POLYGON((19.50 49.00,30.00 49.00,30.00 42.0,19.50 42.0,19.50 49.00 ))"^^gsp:wktLiteral;
     ];
     dct:temporal [ a dct:PeriodOfTime; 
         schema:startDate "2001-01-17T00:00:00Z"^^xsd:dateTime; 
@@ -113,20 +113,24 @@
 		hydra:template "http://fridge-services.rm.ingv.it/radon/{?mintime, maxtime, minlat, maxlat, minlon, maxlon, max_radon_error}"^^xsd:string;
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "mintime"^^xsd:string;
+			rdfs:label "Minimum Time";
 			rdfs:range "xsd:dateTime";
-			rdfs:label "minimum time";
 			schema:minValue "2000-01-01T00:00:00.0000Z";
 			schema:maxValue "2018-09-20T12:00:00.0000Z";
-			schema:defaultValue "2000-03-01T00:00:00.0000Z";
+			schema:defaultValue "2015-03-01T00:00:00.0000Z";
+			hydra:property "schema:startDate";
+      schema:valuePattern "YYYY-MM-DDThh:mm:ss.SSSZ";
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "maxtime"^^xsd:string;
+			rdfs:label "Maximum Time";
 			rdfs:range "xsd:dateTime";
-			rdfs:label "maximum time";
 			schema:minValue "2000-01-01T00:00:00.0000Z";
 			schema:maxValue "2018-09-20T12:00:00.0000Z";
-			schema:defaultValue "2001-05-01T00:00:00.0000Z";
+			schema:defaultValue "2015-05-01T00:00:00.0000Z";
+			hydra:property "schema:endDate";
+      schema:valuePattern "YYYY-MM-DDThh:mm:ss.SSSZ";
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -137,7 +141,7 @@
 			schema:maxValue "90";
 			schema:defaultValue "44.5";
 			hydra:required "true"^^xsd:boolean;
-            hydra:property "epos:southernmostLatitude";
+      hydra:property "epos:southernmostLatitude";
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "maxlat"^^xsd:string;
@@ -147,8 +151,7 @@
 			schema:maxValue "90";
 			schema:defaultValue "46.5";
 			hydra:required "true"^^xsd:boolean;
-            hydra:property "epos:northernmostLatitude";;
-            hydra:property "epos:westernmostLongitude";
+      hydra:property "epos:northernmostLatitude";
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "minlon"^^xsd:string;
@@ -158,7 +161,7 @@
 			schema:maxValue "180";
 			schema:defaultValue "24";
 			hydra:required "true"^^xsd:boolean;
-            hydra:property "epos:easternmostLongitude";
+			hydra:property "epos:westernmostLongitude";
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "maxlon"^^xsd:string;
@@ -168,6 +171,7 @@
 			schema:maxValue "180";
 			schema:defaultValue "29";
 			hydra:required "true"^^xsd:boolean;
+			hydra:property "epos:easternmostLongitude";
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "max_radon_error"^^xsd:string;
@@ -195,7 +199,7 @@
 		adms:schemaAgency "DDSS-ID";
 		skos:notation "WP09-DDSS-024";
 	];
-	dct:title "NIEP - Radon Dataset";
+	dct:title "Radon Dataset";
 	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/RADON/Dataset/001";
 	dct:description "Radon counts and local temperature dataset contains Radon Gas concentration time series based on periodic counting of Rn gas at site";
 	## example of frequency using a controlled vocabulary
@@ -211,8 +215,8 @@
 .
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/RADON/Distribution/001> a dcat:Distribution;
     dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/RADON/Distribution/001";
-    dct:title "NIEP Radon counts and local temperature Distribution";
-    dct:description "NIEP Radon counts and local temperature Distribution";
+    dct:title "Radon counts and temperature Distribution";
+    dct:description "Radon counts and temperature Distribution";
     dct:created "2010-04-01"^^xsd:date;
     dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
     dcat:accessURL <https://radon.infp.ro/epos-dcat-ap/NearFaultObjservatory/NIEP/RADON/Webservice/001/Operation/001>;

@@ -1,0 +1,280 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http: <http://www.w3.org/2006/http#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+
+#########
+# PERSON 
+#########
+
+<http://orcid.org/0000-0001-8293-1340> a schema:Person;
+    schema:identifier [ a schema:PropertyValue;
+        schema:propertyID "ORCID";
+        schema:value "http://orcid.org/0000-0001-8293-1340";
+    ];
+    schema:familyName "Donnadieu";
+    schema:givenName "Franck";
+    schema:address [ a schema:PostalAddress;
+        schema:streetAddress "Laboratoire Magmas et Volcans, 6 Avenue Blaise Pascal"^^xsd:string;
+        schema:addressLocality "AUBIERE CEDEX";
+        schema:postalCode "63178";
+        schema:addressCountry "FRANCE";
+    ];
+    schema:email "f.donnadieu@opgc.fr";
+    schema:telephone "+33473346759";
+    schema:url "http://lmv.uca.fr/donnadieu-franck/"^^xsd:anyURI;
+    schema:qualifications "Lead Scientist of the VOLDORAD observation service";
+    schema:affiliation <http://isni.org/isni/0000000109416043>;
+    schema:contactPoint <http://orcid.org/0000-0001-8293-1340/contactPoint>;
+.
+
+<http://orcid.org/0000-0002-4518-3328> a schema:Person;
+    schema:identifier [ a schema:PropertyValue;
+        schema:propertyID "ORCID";
+        schema:value "http://orcid.org/0000-0002-4518-3328";
+    ];
+    schema:familyName "Labazuy";
+    schema:givenName "Philippe";
+    schema:address [ a schema:PostalAddress;
+        schema:streetAddress "Laboratoire Magmas et Volcans, 6 Avenue Blaise Pascal"^^xsd:string;
+        schema:addressLocality "AUBIERE CEDEX";
+        schema:postalCode "63178";
+        schema:addressCountry "FRANCE";
+    ];
+    schema:email "p.labazuy@opgc.fr";
+    schema:telephone "+33473346729";
+    schema:url "http://orcid.org/0000-0002-4518-3328"^^xsd:anyURI;
+    schema:qualifications "Deputy Director of OPGC";
+    schema:affiliation <http://isni.org/isni/0000000109416043>;
+    schema:contactPoint <http://orcid.org/0000-0002-4518-3328/scientificContact>; 
+.
+
+<http://orcid.org/0000-0002-0108-5486> a schema:Person;
+    schema:identifier [ a schema:PropertyValue;
+        schema:propertyID "ORCID";
+        schema:value "http://orcid.org/0000-0002-0108-5486";
+    ];
+    schema:familyName "Huret";
+    schema:givenName "Nathalie";
+    schema:address [ a schema:PostalAddress;
+        schema:streetAddress "OPGC, 4 Avenue Blaise Pascal"^^xsd:string;
+        schema:addressLocality "AUBIERE CEDEX";
+        schema:postalCode "63178";
+        schema:addressCountry "FRANCE";
+    ];
+    schema:email "n.huret@opgc.fr";
+    schema:telephone "+33473407381";
+    schema:url "http://orcid.org/0000-0002-0108-5486"^^xsd:anyURI;
+    schema:qualifications "Director of OPGC";
+    schema:affiliation <http://isni.org/isni/0000000109416043>;
+    schema:contactPoint <http://orcid.org/0000-0002-0108-5486/legalContact>;
+    schema:contactPoint <http://orcid.org/0000-0002-0108-5486/financialContact>; 
+.
+
+#########
+# ContactPoint
+######### 
+
+<http://orcid.org/0000-0002-4518-3328/scientificContact> a schema:ContactPoint;
+      schema:email "p.labazuy@opgc.fr";
+      schema:availableLanguage "en", "fr" ;
+      schema:contactType "scientificContact" ;
+. 
+<http://orcid.org/0000-0002-0108-5486/legalContact> a schema:ContactPoint;
+      schema:email "n.huret@opgc.fr";
+      schema:availableLanguage "en", "fr" ;
+      schema:contactType "legalContact" ;
+.
+<http://orcid.org/0000-0002-0108-5486/financialContact> a schema:ContactPoint;
+      schema:email "n.huret@opgc.fr";
+      schema:availableLanguage "en", "fr" ;
+      schema:contactType "financialContact" ;
+.
+
+#########
+# Organization
+######### 
+
+<http://isni.org/isni/0000000109416043> a schema:Organization;
+    schema:identifier [ a schema:PropertyValue;
+        schema:propertyID "ISNI";
+        schema:value "http://isni.org/isni/0000000109416043";
+    ];
+    schema:leiCode "Legal Entity Identifier" ;
+#    schema:legalName "Observatoire de Physique du Globe de Clermont-Ferrand"@fr;
+    schema:legalName "Earth Physics Observatory of Clermont-Ferrand"@en;
+    schema:address [ a schema:PostalAddress;
+        schema:streetAddress "OPGC, 4 Avenue Blaise Pascal";
+        schema:addressLocality "AUBIERE CEDEX";
+        schema:postalCode "63178";
+        schema:addressCountry "FRANCE";
+    ];      
+#    dct:spatial [ a dct:location ;
+#        locn:geometry "POINT(3.110 45.761)"^^gsp:wktLiteral;
+#    ];
+    schema:logo "http://wwwobs.univ-bpclermont.fr/opgc/images/LogoOPGCTransparent.png"^^xsd:anyURI;
+    schema:url "http://opgc.fr"^^xsd:anyURI;
+    schema:email "g.delcampo@opgc.fr";
+    schema:telephone "+33473407380";
+    schema:contactPoint <http://orcid.org/0000-0002-4518-3328/scientificContact>;
+    schema:contactPoint <http://orcid.org/0000-0002-0108-5486/legalContact>;
+    schema:contactPoint <http://orcid.org/0000-0002-0108-5486/financialContact>;
+    schema:memberOf <http://isni.org/isni/0000000121129282>;
+.
+
+<http://isni.org/isni/0000000121129282> a schema:Organization;
+    schema:identifier [ a schema:PropertyValue;
+        schema:propertyID "ISNI";
+        schema:value "http://isni.org/isni/0000000121129282";
+    ];
+    schema:leiCode "Legal Entity Identifier" ;
+#    schema:legalName "The National Center for Scientific Research"^^xsd:string;
+    schema:alternateName "CNRS: Le Centre National de la Recherche Scientifique"^^xsd:string;
+    schema:alternateName "CNRS"^^xsd:string;
+    schema:address [ a schema:PostalAddress;
+        schema:streetAddress "CNRS, 3 rue Michel-Ange";
+        schema:addressLocality "PARIS CEDEX 16";
+        schema:postalCode "75794";
+        schema:addressCountry "FRANCE";
+    ];   
+#    dct:spatial [ a dct:location ;
+#        locn:geometry "POINT(2.262 48.847)"^^gsp:wktLiteral;
+#    ];
+    schema:logo "http://www.cnrs.fr/fr/z-tools/newune/themes/CNRSTheme/images/logocnrs.png"^^xsd:anyURI;
+    schema:url "http://cnrs.fr"^^xsd:anyURI;
+    schema:telephone "+33144964000";
+.
+
+#########
+# Dataset
+#########
+
+<opgc.fr/vobs/voldorad/WP11/DDSS-053/dataset> a dcat:Dataset ;
+    dct:title "List of available VOLDORAD-2B Doppler Radar raw spectra"^^xsd:string;
+    dct:identifier "opgc.fr/vobs/voldorad/WP11/DDSS-053/dataset";
+    dct:description "Raw spectra acquired by the VOLODRAD-2B Doppler Radar at Montagnola shelter on Mount-Etna SICILY";
+    adms:identifier [ a adms:Identifier;
+            adms:schemaAgency "DDSS-ID";
+            skos:notation "WP11-DDSS-053";
+    ];
+    dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
+    dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI;
+    dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
+     dct:temporal [ a dct:PeriodOfTime;
+        schema:startDate "2009-08-01T00:00:00"^^xsd:dateTime;
+        schema:endDate "2018-03-31T23:59:59"^^xsd:dateTime;
+    ];
+    dct:spatial [ a dct:Location;
+        locn:geometry "POINT(15.00361 37.7189)"^^xsd:string;
+    ];
+    dcat:theme <epos:DopplerRadar>;
+    dcat:keyword "volcanology", "eruption", "ground-based", "remote-sensing", "doppler effect", "radar", "spectra", "particles", "source parameters";
+    dcat:contactPoint <http://orcid.org/0000-0001-8293-1340/contactPoint>;
+    dct:publisher <http://isni.org/isni/0000000109416043>;
+    schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+    dcat:distribution <opgc.fr/vobs/voldorad/WP11/DDSS-053/dataset/distribution>;
+.
+
+#########
+# Distribution
+######### 
+
+<opgc.fr/vobs/voldorad/WP11/DDSS-053/dataset/distribution> a dcat:Distribution;
+        dct:identifier "opgc.fr/vobs/voldorad/WP11/DDSS-053/dataset/distribution";
+        dct:title "OPGC Doppler radar raw spectra";
+        dct:description "The way to get the catalog of available doppler spectra";
+        dct:issued "2019-01-22"^^xsd:dateTime;
+        dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+        dct:conformsTo <opgc.fr/vobs/voldorad/WP11/DDSS-053>;
+        dcat:accessURL <opgc.fr/vobs/voldorad/WP11/DDSS-053/spectra>;
+        dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
+.
+
+#########
+# WebService
+######### 
+
+<opgc.fr/vobs/voldorad/WP11/DDSS-053> a epos:WebService;
+    schema:identifier "opgc.fr/vobs/voldorad/WP11/DDSS-053";
+    schema:description "This web service provides access to binary raw spectra acquired by the VOLODRAD2B Doppler radar at Montagnola shelter on the Mount-Etna";
+    schema:name "Doppler radar raw spectra";
+    schema:datePublished "2016-05-26T08:00:00Z"^^xsd:dateTime;
+    schema:dateModified "2018-02-27T16:00:00Z"^^xsd:dateTime;
+    schema:provider <http://isni.org/isni/0000000109416043>;
+    schema:keywords "volcanology", "ground-based", "remote-sensing", "doppler effect", "radar", "spectra", "particles", "source parameters";
+    hydra:supportedOperation <opgc.fr/vobs/voldorad/WP11/DDSS-053/spectra>;
+    dcat:theme <epos:DopplerRadar>;
+    schema:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+    dct:conformsTo <opgc.fr/vobs/APIDocumentation>;
+    dcat:contactPoint <http://orcid.org/0000-0001-8293-1340/contactPoint>;
+.
+    <http://orcid.org/0000-0001-8293-1340/contactPoint> a schema:ContactPoint;
+        schema:email "f.donnadieu@opgc.fr";
+        schema:availableLanguage "en", "fr";
+        schema:contactType "manager";
+.
+    <opgc.fr/vobs/APIDocumentation> a hydra:APIDocumentation;
+        hydra:title "OPGC Virtual Observatory - API Documentation";
+        hydra:description "A documentation describing how to use OPGC Virtual Observatory API to find and download data";
+        hydra:entrypoint "http://opgc.fr/vobs/api.php"^^xsd:anyURI;
+.
+    
+#########
+# Operation
+######### 
+
+<opgc.fr/vobs/voldorad/WP11/DDSS-053/spectra> a hydra:Operation;
+        hydra:method "GET"^^xsd:string;
+        hydra:returns "application/json";
+        hydra:property [ a hydra:IriTemplate;
+            hydra:template "http://opgc.fr/vobs/rest2/req.php/voldorad/spectra/{startDate}/{endDate}"^^xsd:string;
+                hydra:mapping [ a hydra:IriTemplateMapping;
+                    hydra:variable "startDate"^^xsd:string;
+                    hydra:property "schema:startDate";
+                    schema:valuePattern "YYYY-MM-DDThh:mm:ssZ"^^xsd:string;
+                    rdfs:label "Starting datetime of the time interval query (format YYYY-MM-DDThh:mm:ss:Z)";
+                    rdfs:range "xsd:dateTime";
+                    schema:minValue "0001-01-01T00:00:00Z"^^xsd:string;
+                    schema:maxValue "9999-12-31T23:59:59Z"^^xsd:string;
+                    schema:defaultValue "2010-05-08T10:00:00Z";
+                    hydra:required "true"^^xsd:boolean;
+                ];
+                hydra:mapping [ a hydra:IriTemplateMapping;
+                    hydra:variable "endDate"^^xsd:string;
+                    hydra:property "schema:endDate";
+                    schema:valuePattern "YYYY-MM-DDThh:mm:ssZ"^^xsd:string;
+                    rdfs:label "Ending datetime of the time interval query (format YYYY-MM-DDThh:mm:ssZ)";
+                    rdfs:range "xsd:dateTime";
+                    schema:minValue "0001-01-01T00:00:00Z"^^xsd:string;
+                    schema:maxValue "9999-12-31T23:59:59Z"^^xsd:string;
+                    schema:defaultValue "2010-05-12T10:00:00Z";
+                    hydra:required "true"^^xsd:boolean;
+                ];
+        ];
+.
+
+#########
+# Concept
+#########
+
+<epos:VolcanoObservations> a skos:ConceptScheme;
+        dct:title "Volcano Observations";
+        dct:description "It contains the concept of Volcanological observations";
+.
+<epos:DopplerRadar> a skos:Concept;
+            skos:inScheme <epos:VolcanoObservations>;
+            skos:prefLabel "Doppler Radar";
+.
