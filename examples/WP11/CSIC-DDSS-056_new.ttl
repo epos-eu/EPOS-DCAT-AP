@@ -87,8 +87,8 @@
 	schema:logo "http://www.csic.es/imagen-corporativa"^^xsd:anyURI;
 	schema:url "http://www.csic.es/"^^xsd:anyURI;
 	schema:contactPoint <http://orcid.org/0000-0002-8803-6504/scientificContact>;
-	schema:contactPoint <http://orcid.org/0000-0002-8651-6387/legalContact>;
-	schema:contactPoint <http://orcid.org/0000-0002-8651-6387/financialContact>;
+	schema:contactPoint <http://orcid.org/0000-0002-8803-6504/legalContact>;
+	schema:contactPoint <http://orcid.org/0000-0002-8803-6504/financialContact>;
 .
 
 #########
@@ -96,19 +96,22 @@
 ######### 
 
 <WP11/SusceptibilityMap> a dcat:Dataset;
-        dct:title "Spatial probability analysis/maps";
+        dct:title "Spatial probability analysis/maps of volcanic activity";
         dct:identifier "WP11/Susceptibility map";
         adms:identifier [ a adms:Identifier;
          	adms:schemaAgency "DDSS-ID";
         	skos:notation "WP11-DDSS-056";
         ];
-        dct:description "Spatial probability analysis/maps";
+        dct:description "Spatial probability analysis/maps of the probability of occurrence of a specific area to host a future eruptive event. These maps are static and based on the geological record including information about fractures, past eruptions, etc.";
         ## example of frequency using a controlled vocabulary
 	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
         dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
         dct:created "2018-09-01"^^xsd:date;
-        dcat:theme <epos:SusceptibilityMap>;
-        dcat:keyword "Spatial probability analysis", "Spatial probability maps", "volcanology", "hazard assessment", "volcanic hazard";
+	dct:spatial [ a dct:Location ; 
+			locn:geometry "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral ;
+        ];
+	dcat:theme <epos:SusceptibilityMap>;
+        dcat:keyword "Spatial probability analysis", "Spatial probability maps", "volcanology", "hazard assessment", "volcanic hazard", "Garrotxa Volcanic Field", "Lanzarote", "El Hierro", "geohazards", "Deception Island", "San Miguel";
         dcat:contactPoint <http://orcid.org/0000-0002-8803-6504/contactPoint>;
 	dct:publisher <http://isni.org/isni/0000000122036192>;
         dcat:distribution <WP11/SusceptibilityMap/WSDistribution>;
