@@ -244,6 +244,7 @@
 	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/WAVEFORM_CONTINUOUS/WebService/001/Operation/001>;
 	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/VEL_WAVEFORM_CONTINUOUS/WebService/001>;
 	dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI;
+	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/ACC_WAVEFORM_CONTINUOUS/Distribution/001> a dcat:Distribution;
@@ -255,6 +256,7 @@
 	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/WAVEFORM_CONTINUOUS/WebService/001/Operation/001>;
 	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/ACC_WAVEFORM_CONTINUOUS/WebService/001>;
 	dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI ;
+	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/SEISMIC_STATION/Distribution/001> a dcat:Distribution;
@@ -266,6 +268,7 @@
 	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/SEISMIC_STATION/WebService/001/Operation/001>;
 	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/SEISMIC_STATION/WebService/001>;
 	dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
+	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/VEL_WAVEFORM_CONTINUOUS/WebService/001> a epos:WebService;
@@ -288,6 +291,8 @@
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/WAVEFORM_CONTINUOUS/WebService/001/Operation/001>;
 	dcat:theme <epos:Seismicwaveforms>;
 	dcat:contactPoint <http://orcid.org/0000-0003-3489-7453/scientificContact>;
+	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/WAVEFORM_CONTINUOUS/WebService/001/APIDocumentation>;
 . 
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/ACC_WAVEFORM_CONTINUOUS/WebService/001> a epos:WebService;
@@ -310,6 +315,15 @@
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/WAVEFORM_CONTINUOUS/WebService/001/Operation/001>;
 	dcat:theme <epos:Seismicwaveforms>;
 	dcat:contactPoint <http://orcid.org/0000-0003-3489-7453/scientificContact>;
+	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/WAVEFORM_CONTINUOUS/WebService/001/APIDocumentation>;
+.
+
+# Documentation
+<https://www.epos-eu.org/epos-dcat-ap/TABOO/WAVEFORM_CONTINUOUS/WebService/001/APIDocumentation> a hydra:APIDocumentation ;
+      	hydra:title "API Documentation" ;
+      	hydra:description "Waveform data can be downloaded using GET request by contacting the webservice address with specific request options inside the URL query" ;
+      	hydra:entrypoint "https://www.orfeus-eu.org/data/eida/webservices/dataselect/" ;
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/SEISMIC_STATION/WebService/001> a epos:WebService;
@@ -331,6 +345,15 @@
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/SEISMIC_STATION/WebService/001/Operation/001>;
 	dcat:theme <epos:Seismicstations>;
 	dcat:contactPoint <http://orcid.org/0000-0003-3489-7453/scientificContact>;
+	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/SEISMIC_STATION/WebService/001/APIDocumentation>;
+.
+
+# Documentation
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/SEISMIC_STATION/WebService/001/APIDocumentation> a hydra:APIDocumentation ;
+      	hydra:title "API documentation" ;
+      	hydra:description "The FSDNWS-Station provides access to station metadata and instrument specifics in FDSN StationXML format. Metadata can be selected on SEED network, station, location or channel identifiers in addition to spatiotemporal constraints. Metadata can be extracted at multiple levels of detail. " ;
+      	hydra:entrypoint "https://www.orfeus-eu.org/data/eida/webservices/station/" ;
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/WAVEFORM_CONTINUOUS/WebService/001/Operation/001> a hydra:Operation;
@@ -456,6 +479,7 @@
 			hydra:variable "channel"^^xsd:string;
 			rdfs:label "Channel code";
 			rdfs:range "xsd:string" ;
+			# schema:defaultValue "HHZ";
 			hydra:required "false"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
