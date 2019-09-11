@@ -150,7 +150,7 @@
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
-		hydra:template "http://fridge-services.rm.ingv.it/radon/{?mintime, maxtime, minlat, maxlat, minlon, maxlon, max_radon_error}"^^xsd:string;
+		hydra:template "http://fridge-services.rm.ingv.it/radon/{?mintime, maxtime, minlat, maxlat, minlon, maxlon, max_radon_error, stacode}"^^xsd:string;
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "mintime"^^xsd:string;
 			rdfs:label "Minimum Time";
@@ -222,6 +222,15 @@
 			schema:defaultValue "100";
 			hydra:required "false"^^xsd:boolean;
 		];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+            hydra:variable "stacode"^^xsd:string;
+            rdfs:label "Station code";
+            rdfs:range "xsd:string";
+            http:paramValue "BISRd";
+            http:paramValue "PLRd";
+            http:paramValue "VRId";
+            hydra:required "true"^^xsd:boolean;
+        ];
 	] ;
 . 
 
