@@ -154,7 +154,8 @@
 		schema:propertyID "pic";
 		schema:value "999597417";
 	];
-	schema:legalName "Institute of Earth Physics of Paris";
+        schema:legalName "Institute of Earth Physics of Paris"@en; 
+	#schema:legalName "Institut de Physique du Globe de Paris"@fr;
         schema:leiCode "Legal Entity Identifier Search: http://www.lei-lookup.com/#!search" ;
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "1 rue jussieu";
@@ -205,7 +206,7 @@
 		schema:propertyID "PIC";
 		schema:value "999997930";
 	];
-	schema:legalName "RESIF Data Center";
+	schema:legalName "Réseau sismologique & géodésique français"@fr;
         schema:leiCode "Legal Entity Identifier Search: http://www.lei-lookup.com/#!search" ;
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "Université Grenoble Alpes,ISTerre,CS 40700";
@@ -244,13 +245,17 @@
 # Dataset 
 #########
 
-<WP11/seismicdata/DDSS001> a dcat:Dataset;
+<https://www.epos-eu.org/epos-dcat-ap/volcano-observations/Dataset/DDSS001-2/RESIF> a dcat:Dataset;
 		dct:title "Seismic Stations and Waveform";
-		dct:identifier "WP11/seismicdata/DDSS001";
+		dct:identifier "https://www.epos-eu.org/epos-dcat-ap/volcano-observations/Dataset/DDSS001-2/RESIF";
 		adms:identifier [ a adms:Identifier;
 			adms:schemaAgency "DDSS-ID";
 			skos:notation "WP11-DDSS-001";
 		];
+                adms:identifier [ a adms:Identifier;
+			adms:schemaAgency "DDSS-ID";
+			skos:notation "WP11-DDSS-002";
+	        ];
 		dct:description "seismic and accelerometric station metadata in FDSN StationXML format and  waveforms in miniseed format.";
 		dct:created "2011-01-01"^^xsd:date;
 		dct:temporal [ a dct:PeriodOfTime;
@@ -259,15 +264,15 @@
 		];
 		dct:spatial [ a dct:Location;
 			#locn:geometry "POLYGON(180 -90,-180 -90,-180 90,180 90,180 -90)"^^gsp:wktLiteral;
-			locn:geometry "POLYGON(-64 11,-58 11,-58 18,-64 18,-64 11)"^^gsp:wktLiteral;
-			locn:geometry "POLYGON(54.5 -21.5 , 56.5 -21.5 , 56.5 -20.5 , 54.5 -20.5 , 54.5 -21.5)"^^gsp:wktLiteral;
+			locn:geometry "POLYGON((-64 11,-58 11,-58 18,-64 18,-64 11))"^^gsp:wktLiteral;
+			locn:geometry "POLYGON((54.5 -21.5 , 56.5 -21.5 , 56.5 -20.5 , 54.5 -20.5 , 54.5 -21.5))"^^gsp:wktLiteral;
 		];
 		dcat:theme <epos:SeismicWaveform>;
 		dcat:theme <epos:SeismicStation>;
-		dcat:keyword "volcanology", "seismology","seismicity", "waveform", "macroseismic","IPGP", "RESIF", "Dataselect", "FDSN-WS", "EIDA" ,"StationXML","miniseed";
+		dcat:keyword "volcanology", "seismology","seismicity","earthquake","waveform","macroseismic","IPGP","RESIF","Dataselect","FDSN-WS","EIDA","StationXML","miniseed";
 		dct:publisher <PIC:999597417>;
-		dcat:distribution <WP11/seismicdata/DDSS001/distribution/dataselect>;
-		dcat:distribution <http://ws.resif.fr/fdsnws/station/1/query>;
+		dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/volcano-observations/Dataset/DDSS001-2/Distribution/waveform/RESIF>;
+		dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/volcano-observations/Dataset/DDSS001-2/Distribution/station/RESIF>;
 		owl:versionInfo "0";
 		dcat:contactPoint <https://orcid.org/0000-0002-9956-9971/contactPoint>;
 .
@@ -276,28 +281,28 @@
 # distribution
 #########
 
-<WP11/seismicdata/DDSS001/distribution/dataselect> a dcat:Distribution;
-		dct:identifier "WP11/seismicdata/DDSS001/distribution/dataselect";
-		dct:title "Seismic waveform :: IPGP";
-		dct:description "Seismic waveform";
+<https://www.epos-eu.org/epos-dcat-ap/volcano-observations/Dataset/DDSS001-2/Distribution/waveform/RESIF> a dcat:Distribution;
+		dct:identifier "https://www.epos-eu.org/epos-dcat-ap/volcano-observations/Dataset/DDSS001-2/Distribution/waveform/RESIF";
+		dct:title "Seismic waveform";
+		dct:description "This distribution provides access to seismic and accelerometric waveforms encoded in the miniSEED format. Its related dataset covers the time period since 2008 and is limited to French Volcanoes Observatories and the Lesser Antilles.";
 		dct:issued "2013-01-01"^^xsd:date;
 		dct:modified "2017-12-09"^^xsd:date;
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-		dct:conformsTo <ws.resif.fr/fdsnws/dataselect/ws>;
-		dcat:accessURL <ws.resif.fr/fdsnws/dataselect/operation>;
+		dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/volcano-observations/WebService/DDSS001-2/waveform/RESIF>;
+		dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/volcano-observations/WebService/DDSS001-2/Operation/waveform/RESIF>;
 		dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI;
 .
 
-<http://ws.resif.fr/fdsnws/station/1/query> a dcat:Distribution;
-		dct:identifier "http://ws.resif.fr/fdsnws/station/1/query";
-		dct:title "seismic station :: IPGP";
-		dct:description "StationXML meta-data";
+<https://www.epos-eu.org/epos-dcat-ap/volcano-observations/Dataset/DDSS001-2/Distribution/station/RESIF> a dcat:Distribution;
+		dct:identifier "https://www.epos-eu.org/epos-dcat-ap/volcano-observations/Dataset/DDSS001-2/Distribution/station/RESIF";
+		dct:title "Seismic station";
+                dct:description "This distribution provides access to meta-data of seismic and accelerometric stations encoded in the stationXML. Its related dataset covers the time period since 2008 and is limited to French Volcanoes Observatories and the Lesser Antilles.";
 		dct:issued "2013-01-01"^^xsd:date;
 		dct:modified "2017-12-09"^^xsd:date;
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-		dct:conformsTo <ws.resif.fr/fdsnws/station/ws>;
-		dcat:accessURL <ws.resif.fr/fdsnws/station>;
+		dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/volcano-observations/WebService/DDSS001-2/station/RESIF>;
+		dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/volcano-observations/WebService/DDSS001-2/Operation/station/RESIF>;
 		dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
 .
@@ -305,22 +310,22 @@
 # Webservice Dataselect
 #########
 
-<ws.resif.fr/fdsnws/dataselect/ws> a epos:WebService;
-	schema:identifier "ws.resif.fr/fdsnws/dataselect/ws";
-	schema:description "FDSN Standard webservice at RESIF to download waveform data and stationXML metadata";
+<https://www.epos-eu.org/epos-dcat-ap/volcano-observations/WebService/DDSS001-2/waveform/RESIF> a epos:WebService;
+	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/volcano-observations/WebService/DDSS001-2/waveform/RESIF";
+        schema:description "This web service provides access to seismic and accelerometric waveforms. Service implements the dataselect web service according to the standard 1.0 set by the Federation of Digital Seismograph Networks (FDSN).";
 	dcat:theme <epos:SeismicWaveform>;
-	schema:name "FDSN-WS - Resif data center (RESIF)";
-	hydra:entrypoint "http://ws.resif.fr/fdsnws/"^^xsd:anyURI;
+	schema:name "Seismic and accelerometric waveforms of the French Volcanoes Observatories";
+	hydra:entrypoint "http://seismology.resif.fr/#CMSConsultPlace:WEBSERVICES"^^xsd:anyURI;
 	schema:provider <PIC:999997930>;
 	schema:datePublished "2013-01-01"^^xsd:date;
 	schema:dateModified "2017-09-12"^^xsd:date;
 	dct:spatial [ a dct:Location;
 		#locn:geometry "POLYGON(180.0 -90.0,-180.0 -90.0,-180.0 90.0,180.0 90.0,180.0 -90.0)"^^gsp:wktLiteral;
-		locn:geometry "POLYGON(-64 11,-58 11,-58 18,-64 18,-64 11)"^^gsp:wktLiteral;
-		locn:geometry "POLYGON(54.5 -21.5 , 56.5 -21.5 , 56.5 -20.5 , 54.5 -20.5 , 54.5 -21.5)"^^gsp:wktLiteral;
+		locn:geometry "POLYGON((-64 11,-58 11,-58 18,-64 18,-64 11))"^^gsp:wktLiteral;
+		locn:geometry "POLYGON((54.5 -21.5 , 56.5 -21.5 , 56.5 -20.5 , 54.5 -20.5 , 54.5 -21.5))"^^gsp:wktLiteral;
 	];
-	hydra:supportedOperation <ws.resif.fr/fdsnws/dataselect/operation>;
-	schema:keywords "Seismology"," IPGP","RESIF-SI","dataselect","FDSN-WS","seismic waveforms";
+	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/volcano-observations/WebService/DDSS001-2/Operation/waveform/RESIF>;
+        schema:keywords "seismology"," IPGP","RESIF","dataselect","FDSN-WS","seismic waveforms","miniseed";
 	dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 	dct:temporal [ a dct:PeriodOfTime;
 		schema:startDate "1982-01-01T00:00:00Z"^^xsd:dateTime;
@@ -333,23 +338,23 @@
 # Webservice Station
 #########
 
-<ws.resif.fr/fdsnws/station/ws> a epos:WebService;
-	schema:identifier "ws.resif.fr/fdsnws/station/ws";
-	schema:description "FDSN Standard webservice at RESIF to download waveform data and stationXML metadata";
+<https://www.epos-eu.org/epos-dcat-ap/volcano-observations/WebService/DDSS001-2/station/RESIF> a epos:WebService;
+	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/volcano-observations/WebService/DDSS001-2/station/RESIF";
+        schema:description "This web service provides access to seismic and accelerometric station, instrumentation, and response data. Service implements the station web service according to the standard 1.0 set by the Federation of Digital Seismograph Networks (FDSN).";
 	dcat:theme <epos:SeismicStation>;
-	schema:name "FDSN-WS - Resif data center (RESIF)";
-	hydra:entrypoint "http://ws.resif.fr/fdsnws/"^^xsd:anyURI;
+        schema:name "Meta-data of the seismic and accelerometric stations of the French Volcanoes Observatories";
+	hydra:entrypoint "http://seismology.resif.fr/#CMSConsultPlace:WEBSERVICES"^^xsd:anyURI;
 	schema:provider <PIC:999997930>;
 	schema:datePublished "2013-01-01"^^xsd:date;
 	schema:dateModified "2017-09-12"^^xsd:date;
 	dct:spatial [ a dct:Location;
 		#locn:geometry "POLYGON(180.0 -90.0,-180.0 -90.0,-180.0 90.0,180.0 90.0,180.0 -90.0)"^^gsp:wktLiteral;
-		locn:geometry "POLYGON(-64 11,-58 11,-58 18,-64 18,-64 11)"^^gsp:wktLiteral;
-		locn:geometry "POLYGON(54.5 -21.5 , 56.5 -21.5 , 56.5 -20.5 , 54.5 -20.5 , 54.5 -21.5)"^^gsp:wktLiteral;
+		locn:geometry "POLYGON((-64 11,-58 11,-58 18,-64 18,-64 11))"^^gsp:wktLiteral;
+		locn:geometry "POLYGON((54.5 -21.5 , 56.5 -21.5 , 56.5 -20.5 , 54.5 -20.5 , 54.5 -21.5))"^^gsp:wktLiteral;
 	];
 	
-	hydra:supportedOperation <ws.resif.fr/fdsnws/station>;
-	schema:keywords "Seismology"," IPGP","RESIF-SI","dataselect","FDSN-WS","seismic waveforms";
+	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/volcano-observations/WebService/DDSS001-2/Operation/station/RESIF>;
+	schema:keywords "seismology"," IPGP","RESIF","dataselect","FDSN-WS","stationxml";
 	dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 	dct:temporal [ a dct:PeriodOfTime;
 		schema:startDate "1982-01-01T00:00:00Z"^^xsd:dateTime;
@@ -362,13 +367,13 @@
 # Operation
 #########
 
-<ws.resif.fr/fdsnws/dataselect/operation> a hydra:Operation;
+<https://www.epos-eu.org/epos-dcat-ap/volcano-observations/WebService/DDSS001-2/Operation/waveform/RESIF> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/vnd.fdsn.mseed";
 		hydra:property[ a hydra:IriTemplate;
 			hydra:template "http://ws.resif.fr/fdsnws/dataselect/1/query{?starttime,endtime,network,station,location,channel,quality,minimumlength,longestonly}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "starttime"^^xsd:dateTime;
+					hydra:variable "starttime";
 					hydra:property "schema:startDate";
 					schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 					rdfs:range "xsd:dateTime";
@@ -377,7 +382,7 @@
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "endtime"^^xsd:dateTime;
+					hydra:variable "endtime";
 					hydra:property "schema:endDate";
 					schema:valuePattern "YYYY-MM-DDThh:mm:ss";					
 					rdfs:range "xsd:dateTime";
@@ -423,14 +428,14 @@
 					http:paramValue "M";
 					http:paramValue "B";
           				#schema:defaultValue "Q";
-					hydra:required "true"^^xsd:boolean;
+					hydra:required "false"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "minimumlength"^^xsd:string;
 					rdfs:range "xsd:integer";
 					rdfs:label "minimum length of the continous record of data";
           				#schema:defaultValue "4096";
-					hydra:required "true"^^xsd:boolean;
+					hydra:required "false"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "longestonly"^^xsd:string;
@@ -439,17 +444,17 @@
 					http:paramValue "true";
 					http:paramValue "false";
          				#schema:defaultValue "false";
-					hydra:required "true"^^xsd:boolean;
+					hydra:required "false"^^xsd:boolean;
 				];
 		] ;
 .
-	<ws.resif.fr/fdsnws/station> a hydra:Operation;
+	<https://www.epos-eu.org/epos-dcat-ap/volcano-observations/WebService/DDSS001-2/Operation/station/RESIF> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/xml";
 		hydra:property[ a hydra:IriTemplate;
 			hydra:template "http://ws.resif.fr/fdsnws/station/1/query{?starttime,endtime,network,station,location,channel,minlatitude,maxlatitude,minlongitude,maxlongitude,level,nodata}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "starttime"^^xsd:dateTime;
+					hydra:variable "starttime";
 					hydra:property "schema:startDate";
 					schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 					rdfs:range "xsd:dateTime";
@@ -458,7 +463,7 @@
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "endtime"^^xsd:dateTime;
+					hydra:variable "endtime";
 					hydra:property "schema:endDate";
 					schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 					rdfs:range "xsd:dateTime";

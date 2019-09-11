@@ -83,8 +83,9 @@
 		schema:propertyID "pic";
 		schema:value "999472675";
 	]; 
-	schema:legalName "ISTITUTO NAZIONALE DI GEOFISICA E VULCANOLOGIA";
-	schema:address [ a schema:PostalAddress;
+	#schema:legalName "National Institute of Geophysics and Volcanology"@en;
+	schema:legalName "Istituto Nazionale di Geofisica e Vulcanologia"@it;	
+		schema:address [ a schema:PostalAddress;
 		schema:streetAddress "via di Vigna Murata, 605";
 		schema:addressLocality "Rome";
 		schema:postalCode "00143";
@@ -98,8 +99,8 @@
 
 <http://www.epos-eu.org/epos-dcat-ap/Seismology/SeismicHazardproducts/ShakeMapInput/Dataset/001> a dcat:Dataset ;
         dct:identifier "http://www.epos-eu.org/epos-dcat-ap/Seismology/SeismicHazardproducts/ShakeMapInput/Dataset/001" ;
-        dct:title "ESM Shakemap Web-Service" ;
-        dct:description "The ESM Shakemap Web-Service provides machine-friendly access to ShakeMap input-files derived from data and metadata included in the ESM Database (http://esm.mi.ingv.it)" ;
+        dct:title "Engineering Strong-Motion Shakemap Web-Service" ;
+        dct:description "This Web-Service provides machine-friendly access to ShakeMap input-files derived from data and metadata included in the Engineering Strong-Motion Database (http://esm.mi.ingv.it)" ;
         adms:identifier [ a adms:Identifier ;
             adms:schemaAgency "DDSS-ID" ;
             skos:notation "WP08-DDSS-048" ;
@@ -120,7 +121,7 @@
         # This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
         dcat:theme <epos:EarthquakeHazardAndRiskServices>;
 
-        dcat:keyword "ShakeMap","strong-motion parameters" ;
+        dcat:keyword "shakemap","earthquake" ;
         dcat:contactPoint <http://orcid.org/0000-0003-2480-1999/scientificContact> ;
 
         # This property refers to an Organisation responsible for making the Dataset available.
@@ -131,7 +132,7 @@
 
         # This property refers to a geographic region that is covered by the Dataset.
         dct:spatial [ a dct:Location ;
-          locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral ;
+          locn:geometry "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral ;
         ];
 
         # This property refers to a temporal period that the Dataset covers.
@@ -147,8 +148,8 @@
 
 #<http://www.epos-eu.org/epos-dcat-ap/Seismology/EngineeringStrongMotionDatabase/Dataset/001> a dcat:Dataset ;
 #        dct:identifier "http://www.epos-eu.org/epos-dcat-ap/Seismology/EngineeringStrongMotionDatabase/Dataset/001" ;
-#        dct:title "ESM - Engineering Strong-Motion portal" ;
-#        dct:description "ESM (http://esm.mi.ingv.it) allows users to query earthquake and station information and download #earthquake waveforms and response spectra for events with magnitude ≥ 4.0 mainly recorded in the European-Mediterranean nd the middle-East regions" ;
+#        dct:title "Engineering Strong-Motion portal" ;
+#        dct:description "This distribution (http://esm.mi.ingv.it) allows users to query earthquake and station information and download earthquake waveforms and response spectra for events with magnitude ≥ 4.0 mainly recorded in the European-Mediterranean and the middle-East regions" ;
 #        adms:identifier [ a adms:Identifier ;
 #            adms:schemaAgency "DDSS-ID" ;
 #            skos:notation "WP08-DDSS-010" ;
@@ -169,7 +170,7 @@
         # This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
 #        dcat:theme <epos:SeismologicalProducts> ;
 
-#        dcat:keyword "strong-motion waveforms","strong-motion parameters","event parameters","station characterization" ;
+#        dcat:keyword "earthquake","event","seismic waveform","seismicity","station","waveform","PGA","PGV","PGD","Epicentral Distance","Hypocentral distance","Joyner-Boore distance","Response spectrum","Rupture distance" ;
 #        dcat:contactPoint <http://orcid.org/0000-0003-4312-580X/scientificContact> ;
 
         # This property refers to an Organisation responsible for making the Dataset available.
@@ -177,7 +178,7 @@
 
         # This property refers to a geographic region that is covered by the Dataset.
 #        dct:spatial [ a dct:Location ;
-#          locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral ;
+#          locn:geometry "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral ;
 #        ];
 
         # This property refers to a temporal period that the Dataset covers.
@@ -190,8 +191,8 @@
 
 <http://www.epos-eu.org/epos-dcat-ap/Seismology/SeismicHazardproducts/ShakeMapInput/Dataset/001/Distribution/001> a dcat:Distribution ;
         dct:identifier "http://www.epos-eu.org/epos-dcat-ap/Seismology/SeismicHazardproducts/ShakeMapInput/Dataset/001/Distribution/001" ;
-        dct:title "ESM Shakemap Web-Service" ;
-        dct:description "The ESM Shakemap Web-Service provides machine-friendly access to ShakeMap input-files derived from data and metadata included in the ESM Database (http://esm.mi.ingv.it)" ;
+        dct:title "Engineering Strong-Motion Shakemap Web-Service" ;
+        dct:description "This Web-Service provides machine-friendly access to ShakeMap input-files derived from data and metadata included in the Engineering Strong Motion Database (http://esm.mi.ingv.it)" ;
         dct:issued "2017-01-01"^^xsd:date ;
         dct:modified "2017-01-01"^^xsd:date ;
 
@@ -228,19 +229,19 @@
 		#schema:propertyID  "DDSS-ID"; 
 		#schema:value  ""; 
 	#]; 
-	schema:description "Web-service generates input files for USGS ShakeMap software based on Engineering Strong-Motion database (http://esm.mi.ingv.it)";
+	schema:description "This Web-service generates input files for United States Geological Survey (USGS) ShakeMap software based on Engineering Strong-Motion database (http://esm.mi.ingv.it)";
 	dcat:theme <epos:EarthquakeHazardAndRiskServices>;
 	schema:name "ShakeMap Input XML - Engineering Strong-Motion database (ESM)";
 	hydra:entrypoint "http://esm.mi.ingv.it/esmws/shakemap/1/application.wadl"^^xsd:anyURI; 
 	schema:provider <PIC:999472675>;
     dcat:contactPoint <http://orcid.org/0000-0003-2480-1999/scientificContact> ;
-	schema:datePublished "2017-04-01Z"^^xsd:dateTime;
-	schema:dateModified "2017-04-01Z"^^xsd:dateTime;
+	schema:datePublished "2017-04-01"^^xsd:date;
+	schema:dateModified "2017-04-01"^^xsd:date;
 	dct:spatial [ a dct:Location; 
-		locn:geometry "POLYGON(180.0 -90.0,-180.0 -90.0,-180.0 90.0,180.0 90.0,180.0 -90.0)"^^gsp:wktLiteral; 
+		locn:geometry "POLYGON((180.0 -90.0,-180.0 -90.0,-180.0 90.0,180.0 90.0,180.0 -90.0))"^^gsp:wktLiteral; 
 	]; 
 	hydra:supportedOperation <http://esm.mi.ingv.it/esmws/shakemap/1/query/operation>;
-	schema:keywords "Seismic Hazard","INGV","ESM","Event","ShakeMap","ShakeMapXML","Strong-Motion";
+	schema:keywords "shakemap","earthquake";
 	dct:license "http://creativecommons.org/licenses/by-nd/4.0/"^^xsd:anyURI ;
 	dct:temporal [ a dct:PeriodOfTime; 
 		schema:startDate "1960-01-01T00:00:00Z"^^xsd:dateTime; 

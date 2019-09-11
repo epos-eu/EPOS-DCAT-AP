@@ -41,7 +41,7 @@
 		schema:propertyID "PIC";
 		schema:value "999993662";
 	]; 
-	schema:legalName "BRGM (French Geological Survey)";
+	schema:legalName "Bureau de Recherches Géologiques et Minières"@en;
 	schema:leiCode "Legal Entity Identifier Search: http://www.lei-lookup.com/#!search" ;
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "3, avenue Claude Guillemin";
@@ -83,7 +83,7 @@
 
 	<epos:Geology> a skos:ConceptScheme;
 		dct:title "Geology";
-		dct:description "It contains the concepts of Geology";
+		dct:description "It contains the concepts pertaining to Geological Information and Modelling";
 . 
 
 	<epos:GeologicalData> a skos:Concept;
@@ -91,9 +91,9 @@
         skos:prefLabel "Geological data"
 .
 
-<http://resource.europe-geology.eu/dataset/catalogue> a dcat:Dataset;
+<https://data.geoscience.earth/id/dataset/catalogue> a dcat:Dataset;
 		dct:title "WP15 metadata for datasets and services provided by the TCS Geological Information.";
-		dct:identifier "http://resource.europe-geology.eu/dataset/catalogue"; 
+		dct:identifier "https://data.geoscience.earth/id/dataset/catalogue"; 
 		adms:identifier [ a adms:Identifier;
 			adms:schemaAgency "DDSS-ID";
 			skos:notation "WP15-DDSS-007";
@@ -104,48 +104,48 @@
 		dct:modified "2018-09-07"^^xsd:date;
 		dct:issued "2017-10-27"^^xsd:date;
 	dct:spatial [ a dct:Location; 
-		locn:geometry "POLYGON(-180 90,180 90,180 -90,-180 90,-180 90)"^^gsp:wktLiteral; 
+		locn:geometry "POLYGON((-180 90,180 90,180 -90,-180 90,-180 90))"^^gsp:wktLiteral; 
 	]; 
 		dcat:theme <epos:GeologicalData>;
-		dcat:keyword "Geology","EPOS","WP15","BoreholeView","scientific drilling","GeologicUnitView","MappedFeature", "ModelView", "EGDI";
+		dcat:keyword "borehole", "3D / 4D Model", "geologicunit", "geology", "mappedfeature", "mine";
 		dcat:contactPoint <mailto:contact-brgm@brgm.fr/manager>;
-		dcat:distribution <http://resource.europe-geology.eu/dataset/catalogue/distributionCsw>;
+		dcat:distribution <https://data.geoscience.earth/id/dataset/catalogue/distributionCsw>;
 		dct:publisher <PIC:999993662>;
 . 
 
 
-	<http://resource.europe-geology.eu/dataset/catalogue/distributionCsw> a dcat:Distribution;
-		dct:identifier "http://resource.europe-geology.eu/dataset/catalogue/distributionCsw";
-		dct:title "Geological Map 1:1,000,000 (OneGeology-Europe layer)";
-		dct:description "The CSW provides an interface for requesting catalogue records exposed by WP15 metadata catalogue";
+	<https://data.geoscience.earth/id/dataset/catalogue/distributionCsw> a dcat:Distribution;
+		dct:identifier "https://data.geoscience.earth/id/dataset/catalogue/distributionCsw";
+		dct:title "Thematic Core Service Geological Information and Modeling catalogue";
+		dct:description "The service provides an interface for requesting Thematic Core Service Geological Information and Modeling catalogue records.";
 		dct:issued "2016-10-27"^^xsd:date;
 		dct:modified "2018-01-19"^^xsd:date;
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-		dct:conformsTo <http://resource.europe-geology.eu/service/cswEpos>;
-		dcat:accessURL <http://resource.europe-geology.eu/service/cswEpos/operation>;
-		dct:license "TBD"^^xsd:anyURI ;
+		dct:conformsTo <https://data.geoscience.earth/api/cswEpos>;
+		dcat:accessURL <https://data.geoscience.earth/api/cswEpos/operation>;
+		dct:license "royalty free licence"^^xsd:anyURI ;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
 		#dct:format "https://www.iana.org/assignments/media-types/application/xml"^^xsd:anyURI;
 . 
 
 
-<http://resource.europe-geology.eu/service/cswEpos> a epos:WebService;
-	schema:identifier "http://resource.europe-geology.eu/service/cswEpos";
+<https://data.geoscience.earth/api/cswEpos> a epos:WebService;
+	schema:identifier "https://data.geoscience.earth/api/cswEpos";
 	#schema:identifier [ a schema:PropertyValue; 
 		#schema:propertyID  "DDSS-ID"; 
 		#schema:value  "WP15-DDSS-007"; 
 	#]; 
-	schema:description "This CSW service exposes a catalogue of all datasets and services provided by the TCS Geological Information and Modelling and provides a hook to EGDI catalogue. Only new datasets and services provided by EPOS WP15 are registered in this catalogue, and a dedicated metadata record describing EGDI catalogue (its CSW) is created to enable EGDI integration within EPOS. Indeed the interaction with the ICS-C requires extra information that are not required in an INSPIRE compliant catalogue. It is thus easier protyping it on a small controlled system as the ICS-C requirement mature than revisiting the entire EGDI catalogue (2109 entries as of today)";
+	schema:description "This service exposes a catalogue of all datasets and services provided by the Thematic Core Service Geological Information and Modeling and provides a hook to EGDI catalogue. Only new datasets and services provided by EPOS Thematic Core Service Geological Information and Modeling are registered in this catalogue, and a dedicated metadata record describing EGDI catalogue (its CSW) is created to enable EGDI integration within EPOS. Indeed the interaction with the ICS-C requires extra information that are not required in an INSPIRE compliant catalogue. It is thus easier protyping it on a small controlled system as the ICS-C requirement mature than revisiting the entire EGDI catalogue (2109 entries as of today)";
 	dcat:theme <epos:GeologicalData>;
-	schema:name "WP15 Catalogue service";
-	hydra:entrypoint "http://resource.europe-geology.eu/service/cswEpos"^^xsd:anyURI; 
+	schema:name "Thematic Core Service Geological Information and Modeling catalogue";
+	hydra:entrypoint "https://data.geoscience.earth/api/cswEpos"^^xsd:anyURI; 
 	schema:provider <PIC:999993662>;
 	schema:datePublished "2016-10-27Z"^^xsd:dateTime;
 	schema:dateModified "2018-01-19Z"^^xsd:dateTime;
 	dct:spatial [ a dct:Location; 
-		locn:geometry "POLYGON(-180 90,180 90,180 -90,-180 -90,-180 90)"^^gsp:wktLiteral; 
+		locn:geometry "POLYGON((-180 90,180 90,180 -90,-180 -90,-180 90))"^^gsp:wktLiteral; 
 	]; 
-	hydra:supportedOperation <http://resource.europe-geology.eu/service/cswEpos/operation>;
+	hydra:supportedOperation <https://data.geoscience.earth/api/cswEpos/operation>;
 	schema:keywords "Geology","EPOS","WP15","BoreholeView","scientific drilling","GeologicUnitView","MappedFeature", "ModelView", "EGDI";
 	dct:license "TBD"^^xsd:anyURI;
 	dct:temporal [ a dct:PeriodOfTime; 
@@ -155,11 +155,12 @@
 	dcat:contactPoint <mailto:contact-brgm@brgm.fr/manager>;
 . 
 
-	<http://resource.europe-geology.eu/service/cswEpos/operation> a hydra:Operation;
+
+	<https://data.geoscience.earth/api/cswEpos/operation> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/xml";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "http://resource.europe-geology.eu/service/cswEpos{?service, request}"^^xsd:string;
+			hydra:template "https://data.geoscience.earth/api/cswEpos{?service, request}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "service"^^xsd:string;
 					rdfs:range "xsd:string";

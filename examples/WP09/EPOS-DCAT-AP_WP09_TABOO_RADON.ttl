@@ -130,7 +130,7 @@
 		schema:propertyID "PIC";
 		schema:value "999472675";
 	];
-	schema:legalName "INGV National Institute of Geophysics e Volcanology";
+	schema:legalName "Istituto Nazionale di Geofisica e Vulcanologia"@it;
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "Via di Vigna Murata, 605";
 		schema:addressLocality "Rome";
@@ -145,7 +145,7 @@
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/RADON/Dataset/001> a dcat:Dataset;
-	dct:title "TABOO Radon decay counts and local temperature Dataset";
+	dct:title "TABOO Radon decay counts and local temperature";
 	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/RADON/Dataset/001";
 	dct:description "Radon decay counts and local temperature dataset contains Radon Gas concentration time series based on periodic counting of Rn gas at site";
 	adms:identifier [ a adms:Identifier; 
@@ -162,7 +162,7 @@
 	# This property refers to a geographic region that is covered by the Dataset.
   	# The POLYGON format is: POLYGON(lon1 lat1, lon2 lat2,...)
 	dct:spatial [ a dct:Location ;
-		locn:geometry "POLYGON(11.78 43.95, 13.61 43.95, 13.61 42.8, 11.78 42.8, 11.78 43.95)"^^gsp:wktLiteral ;
+		locn:geometry "POLYGON((11.78 43.95, 13.61 43.95, 13.61 42.8, 11.78 42.8, 11.78 43.95))"^^gsp:wktLiteral ;
 	];
 	# This property refers to a temporal period that the Dataset covers.
     dct:temporal [ a dct:PeriodOfTime ;
@@ -170,7 +170,7 @@
         schema:endDate "2018-11-30T00:00:00Z"^^xsd:dateTime ;
     ];
 	dcat:theme  <epos:Radonconcentration> ;
-	dcat:keyword "Geochemical", "Radon concentration", "Radon decay counts", "geochemistry", "geohazards", "long term continuos timeseries", "local temperature", "NFO", "Near Fault Observatory", "TABOO", "FRIDGE";
+	dcat:keyword "Geochemistry", "Radon concentration", "Radon decay counts", "geohazard", "timeseries", "local temperature", "NFO", "TABOO", "FRIDGE";
 	dcat:contactPoint <http://orcid.org/0000-0002-6711-2264/scientificContact>;
 	dct:publisher <PIC:999472675>;
 	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/RADON/Distribution/001>;
@@ -178,8 +178,8 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/RADON/Distribution/001> a dcat:Distribution;
     dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/RADON/Distribution/001";
-	dct:title "TABOO Radon decay counts and local temperature Distribution";
-	dct:description "TABOO Radon decay counts and local temperature Distribution";
+	dct:title "TABOO Rn concentration and local temperature";
+	dct:description "This distribution provides access to radon (Rn) gas concentrations measurements and derived time series, performed at different sampling sites. Data includes temperature data measured at the sampling sites. The datasets are encoded in JSON format. Data cover the time period 2010-today and is limited to the Alta Val Tiberina (Central Italy) Near Fault Observatory.";
 	dct:created "2010-04-01"^^xsd:date;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/RADON/WebService/001/Operation/001>;
@@ -191,8 +191,8 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/RADON/WebService/001> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/RADON/WebService/001";
-	schema:description "Radon counts and local temperature Web Service allow to retrieve Radon Gas concentration time series based on periodic counting of Rn gas at site";
-	schema:name "TABOO Radon counts and local temperature Web Service";
+	schema:description "This web service provides access to radon (Rn) gas concentrations measurements and derived time series, performed at different sampling sites. Data includes temperature data measured at the sampling sites. The datasets are encoded in JSON format. Data cover the time period 2010-today and is limited to the Alta Val Tiberina (Central Italy) Near Fault Observatory.";
+	schema:name "TABOO Rn concentration and local temperature";
 	schema:datePublished "2017-06-08T12:00:00Z"^^xsd:dateTime;
 	schema:dateModified "2017-06-08T12:00:00Z"^^xsd:dateTime;
 	dct:temporal [ a dct:PeriodOfTime ;
@@ -200,10 +200,10 @@
         schema:endDate "2018-11-30T00:00:00Z"^^xsd:dateTime ;
     ];
     dct:spatial [ a dct:Location ;
-		locn:geometry "POLYGON(11.78 43.95, 13.61 43.95, 13.61 42.8, 11.78 42.8, 11.78 43.95)"^^gsp:wktLiteral ;
+		locn:geometry "POLYGON((11.78 43.95, 13.61 43.95, 13.61 42.8, 11.78 42.8, 11.78 43.95))"^^gsp:wktLiteral ;
 	];
 	schema:provider <PIC:999472675>;
-	schema:keywords "Geochemical", "Radon concentration", "Radon decay counts", "geochemistry", "geohazards", "long term continuos timeseries", "local temperature", "NFO", "Near Fault Observatory", "TABOO", "FRIDGE";
+	schema:keywords "Geochemistry", "Radon concentration", "Radon decay counts", "geohazard", "timeseries", "local temperature", "NFO", "TABOO", "FRIDGE";
 	#hydra:entrypoint "application.wadl"^^xsd:anyURI;
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/RADON/WebService/001/Operation/001>;
 	dcat:theme <epos:Radonconcentration>;
@@ -217,7 +217,7 @@
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/RADON/WebService/001/APIDocumentation> a hydra:APIDocumentation ;
     hydra:title "NFO web service Radon decay counts" ;
     hydra:description "NFO web service Radon decay counts" ;
-    hydra:entrypoint "https://docs.google.com/document/d/1bsU8ZIKsZjvKcmWi8VxET6mGZppyoikiZRP5vlVwMhs" ;
+    hydra:entrypoint "https://fridge.rm.ingv.it/docs/API_prototype_documentation_NFO_Radon.pdf" ;
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/RADON/WebService/001/Operation/001> a hydra:Operation;
