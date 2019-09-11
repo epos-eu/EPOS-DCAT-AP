@@ -170,12 +170,12 @@ schema:url "https://www.oca.eu"^^xsd:anyURI  ;
 <GlassFramework/APIDocumentationProducts> a hydra:APIDocumentation;
 hydra:title "Documentation for GlassFramework API: GNSS Products" ;
 hydra:description "Swagger Description of API Documentation for GNSS Products" ;
-hydra:entrypoint "https://glass.epos.ubi.pt:8080/GlassFramework//webjars/swagger-ui/3.2.0/?url=https://glass.epos.ubi.pt:8080/GlassFramework//swagger.json"^^xsd:anyURI ;
+hydra:entrypoint "https://https://gnss-epos.eu/ics-tcs/"^^xsd:anyURI ;
 .
 <GlassFramework/APIDocumentationData> a hydra:APIDocumentation;
 hydra:title "Documentation for GlassFramework API: GNSS Station and File MetaData" ;
 hydra:description "Swagger Description of API Documentation" ;
-hydra:entrypoint "http://gnssdata-epos.oca.eu:8080/GlassFramework//webjars/swagger-ui/3.2.0/?url=http://gnssdata-epos.oca.eu:8080/GlassFramework//swagger.json"^^xsd:anyURI ;
+hydra:entrypoint "https://gnss-epos.eu/ics-tcs/"^^xsd:anyURI ;
 .
 
 
@@ -242,7 +242,7 @@ hydra:property[ a hydra:IriTemplate;
   hydra:template "http://gnssdata-epos.oca.eu:8080/GlassFramework/webresources/files/{object_type}/{object_instance}/{output_format}"^^xsd:string;
 hydra:mapping[ a hydra:IriTemplateMapping;
 hydra:variable "object_type"^^xsd:string;
-rdfs:label "the type of the criteria";
+rdfs:label "type of the criteria";
       rdfs:range "xsd:string";
 hydra:required "true"^^xsd:boolean;
       schema:defaultValue "marker";
@@ -268,14 +268,14 @@ http:paramValue "type";
 ];
 hydra:mapping[ a hydra:IriTemplateMapping;
 hydra:variable "object_instance"^^xsd:string;
-rdfs:label " the value of the criteria";
+rdfs:label "criteria value";
       rdfs:range "xsd:string";
       schema:defaultValue "CASC";
 hydra:required "true"^^xsd:boolean;
 ];
 hydra:mapping[ a hydra:IriTemplateMapping;
 hydra:variable "output_format"^^xsd:string;
-rdfs:label " the output format";
+rdfs:label " output format";
 rdfs:range "xsd:string";
 hydra:required "true"^^xsd:boolean;
       schema:defaultValue "json";
@@ -754,7 +754,7 @@ hydra:template "http://gnssdata-epos.oca.eu:8080/GlassFramework/webresources/sta
 hydra:mapping[ a hydra:IriTemplateMapping;
 hydra:variable "data"^^xsd:string;
       rdfs:range "xsd:string";
-rdfs:label "the type of the data";
+rdfs:label "data type";
 hydra:required "true"^^xsd:boolean;
 http:paramValue "agency";
 http:paramValue "antenna";
@@ -796,13 +796,13 @@ hydra:property[ a hydra:IriTemplate;
 hydra:mapping[ a hydra:IriTemplateMapping;
 hydra:variable "name"^^xsd:string;
       rdfs:range "xsd:string";
-      rdfs:label "Name of the station(s)";
+      rdfs:label "Station(s) name(s)";
 hydra:required "false"^^xsd:boolean;
 ];
 hydra:mapping[ a hydra:IriTemplateMapping;
 hydra:variable "marker"^^xsd:string;
 rdfs:range "xsd:string";
-      rdfs:label "Marker of the station(s)";
+      rdfs:label "Station(s) marker(s)";
 hydra:required "false"^^xsd:boolean;
 ];
 ];
@@ -2204,8 +2204,8 @@ dct:title "Get stations velocities (combined)";
 dct:description "Get stations velocities via combined processing";
 dct:issued "2017-01-01"^^xsd:date ;
     dct:modified "2017-01-01"^^xsd:date ;
-
 # This property refers to the type of the Distribution. The possible types are
+
 # (http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE
 # OR
 # http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE)
@@ -2232,4 +2232,3 @@ dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 # If the type of Distribution is DOWNLOADABLE FILE, this property contains a URL that is a direct link to a downloadable file in a given format. Otherwise, this property is optional.
 #dcat:downloadURL "URL that is a direct link to a downloadable file in a given format"^^xsd:anyURI ;
 .
-
