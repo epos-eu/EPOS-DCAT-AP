@@ -1,0 +1,237 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http: <http://www.w3.org/2006/http#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+
+#########
+# PERSON 
+#########
+
+<http://orcid.org/0000-0002-0069-9144> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "ORCID";
+		schema:value "0000-0002-0069-9144";
+	];
+	schema:familyName "Benedkt G. Ófeigsson";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Bústaðavegur 7-9";
+		schema:addressLocality "Reykjavík";
+		schema:postalCode "150";
+		schema:addressCountry "Iceland";
+	];
+	schema:email "bgo@vedur.is";
+	schema:telephone "+3545226000";
+	schema:url "http://en.vedur.is"^^xsd:anyURI;
+	schema:contactPoint <http://orcid.org/0000-0002-0069-9144/scientificContact>;
+	schema:contactPoint <http://orcid.org/0000-0002-0069-9144/contactPoint>;
+.
+
+#########
+# ContactPoint
+######### 
+
+<http://orcid.org/0000-0002-0069-9144/contactPoint> a schema:ContactPoint;
+	schema:email "bgo@vedur.is";
+	schema:availableLanguage "en" ;
+        schema:contactType "contactPoint" ;
+.
+<http://orcid.org/0000-0002-0069-9144/scientificContact> a schema:ContactPoint;
+	schema:email "bgo@vedur.is";
+	schema:availableLanguage "en" ;
+	schema:contactType "scientificContact" ;
+.
+
+#########
+# Organization
+#########
+
+<PIC:997168343> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "PIC";
+		schema:value "997168343";
+	];
+	schema:legalName "Icelandic Meteorological Office";
+	schema:leiCode "630908 0350";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Bústaðavegur 7-9";
+		schema:addressLocality "Reykjavík";
+		schema:postalCode "150";
+		schema:addressCountry "Iceland";
+	];
+	schema:url "http://en.vedur.is"^^xsd:anyURI;
+	schema:email "office@vedur.is";
+	schema:telephone "+3545226200";
+	schema:contactPoint <http://orcid.org/0000-0002-0069-9144/scientificContact>;
+.
+
+#########
+# Dataset
+#########
+
+<www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/067/station> a dcat:Dataset;
+		dct:title "GNSS station metadata";
+		dct:identifier "www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/067/station";
+		adms:identifier [ a adms:Identifier;
+			adms:schemaAgency "DDSS-ID";
+			skos:notation "WP11-DDSS-067";
+		];
+		dct:description "Access to IMO's GNSS metadata";
+		dct:created "2014-10-01"^^xsd:date;
+		dct:modified "2014-10-01"^^xsd:date;
+		dct:issued "2014-10-01"^^xsd:date;
+		dct:temporal [ a dct:PeriodOfTime;
+			schema:startDate "2014-10-01T00:00:00Z"^^xsd:dateTime;
+			schema:endDate "2025-01-01T00:00:00Z"^^xsd:dateTime;
+		];
+		dct:spatial [ a dct:Location;
+			locn:geometry "POLYGON(-25.0 63.0,-25.0 68.5,-10.0 68.5,-10.0 63.0,-25.0 63.0)"^^gsp:wktLiteral;
+		];
+		dcat:theme <epos:GeodeticData>;
+		dcat:keyword "Faults";
+		dcat:contactPoint <http://orcid.org/0000-0002-0069-9144/contactPoint>;
+		dcat:distribution <www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/067/distribution>;
+		owl:versionInfo "V1.0";
+		dct:publisher <PIC:997168343>;
+.
+
+#########
+# Distribution
+#########
+
+<www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/067/distribution> a dcat:Distribution;
+	dct:identifier "www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/067/distribution";
+	dct:title "GNSS station information";
+	dct:description "GNSS station metadata";
+	dct:issued "2014-10-01"^^xsd:date;
+	dct:modified "2014-10-01"^^xsd:date;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+	dcat:accessURL <www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/067/operation>;
+	dct:conformsTo <www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/067>;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
+.
+
+#########
+# WebService
+######### 
+
+<www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/067> a epos:WebService;
+	schema:identifier "www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/067";
+	schema:description "GNSS station metadata";
+	schema:name "GNSS Station information";
+	hydra:entrypoint "https://docs.vedur.is/api/epos/#!/GNSS/get_gps_station"^^xsd:anyURI;
+	schema:datePublished "2018-05-30"^^xsd:date;
+	schema:dateModified "2018-05-30"^^xsd:date;
+	dct:spatial [ a dct:Location;
+		locn:geometry "POLYGON(-25.0 63.0,-25.0 68.5,-10.0 68.5,-10.0 63.0,-25.0 63.0)"^^gsp:wktLiteral;
+	];
+	hydra:supportedOperation <www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/067/operation>;
+	schema:keywords "Faults";
+	dct:temporal [ a dct:PeriodOfTime;
+		schema:startDate "2014-10-01T00:00:00Z"^^xsd:dateTime;
+		schema:endDate "2025-01-01T00:00:00Z"^^xsd:dateTime;
+	];
+	dcat:theme <epos:GeodeticData>;
+	dcat:contactPoint <http://orcid.org/0000-0002-0069-9144/contactPoint>;
+	schema:provider <PIC:997168343>;
+.
+
+#########
+# Operation
+######### 
+
+<www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/067/operation> a hydra:Operation;
+	hydra:method "GET"^^xsd:string;
+	hydra:returns "application/json";
+	hydra:property[ a hydra:IriTemplate;
+		hydra:template "https://api.vedur.is/epos/v1/gps/station{?start_time,end_time}&bbox={minlatitude,minlongitude,maxlatitude,maxlatitude}"^^xsd:string;
+			hydra:mapping[ a hydra:IriTemplateMapping;
+			    hydra:variable "minlatitude"^^xsd:string; 
+			    hydra:property "epos:southernmostLatitude";
+			    rdfs:label "Minimum Latitude";
+			    schema:minValue "-90.0";
+			    schema:maxValue "90.0";
+			    hydra:required "true"^^xsd:boolean;
+			    schema:defaultValue "63.0" ;
+			    rdfs:range "xsd:float";
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+			    hydra:variable "minlongitude"^^xsd:string; 
+			    hydra:property "epos:westernmostLongitude";
+			    rdfs:label "Minimum Longitude";
+			    schema:minValue "-180.0";
+			    schema:maxValue "180.0";
+			    hydra:required "true"^^xsd:boolean;
+			    schema:defaultValue "-25.0" ;
+			    rdfs:range "xsd:float";
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+			    hydra:variable "maxlatitude"^^xsd:string; 
+			    hydra:property "epos:northernmostLatitude";
+			    rdfs:label "Maximum Latitude";
+			    schema:minValue "-90.0";
+			    schema:maxValue "90.0";
+			    hydra:required "true"^^xsd:boolean;
+			    schema:defaultValue "68.5" ;
+			    rdfs:range "xsd:float";
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+			    hydra:variable "maxlongitude"^^xsd:string; 
+			    hydra:property "epos:easternmostLongitude";
+			    rdfs:label "Maximum Longitude";
+			    schema:minValue "-180.0";
+			    schema:maxValue "180.0";
+			    hydra:required "true"^^xsd:boolean;
+			    schema:defaultValue "-10.0" ;
+			    rdfs:range "xsd:float";
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+		            hydra:variable "start_time"^^xsd:string;
+			    hydra:property "schema:startDate";
+			    schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
+			    rdfs:range "xsd:dateTime";
+			    rdfs:label "Start time in format 'YYYY-MM-DDThh:mm:ssZ'";
+			    schema:minValue "1900-01-01T00:00:00Z";
+			    schema:defaultValue "1900-01-01T00:00:00Z";
+			    hydra:required "true"^^xsd:boolean;
+			];
+			hydra:mapping[ a hydra:IriTemplateMapping;
+			    hydra:variable "end_time"^^xsd:string;
+			    hydra:property "schema:endDate";
+			    schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
+			    rdfs:range "xsd:dateTime";
+			    rdfs:label "End time in format YYYY-MM-DDThh:mm:ssZ";
+			    schema:maxValue "2050-01-01T00:00:00Z";
+			    schema:defaultValue "2050-01-01T00:00:00Z";
+			    hydra:required "true"^^xsd:boolean;
+			 ];
+
+	] ;
+.
+
+
+#########
+# Concept
+######### 
+
+<epos:VolcanoObservations> a skos:ConceptScheme;
+		dct:title "Volcano Observations";
+		dct:description "GNSS station metadata";
+.
+<epos:GeodeticData> a skos:Concept;
+		skos:definition "Metadata for geodetic stations";
+		skos:inScheme <epos:VolcanoObservations>;
+      		skos:prefLabel "Geodetic Data" ;
+.
