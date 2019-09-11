@@ -160,7 +160,7 @@
 <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-010/MTF/Distribution> a dcat:Distribution;
     dct:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-010/MTF/Distribution";
     dct:title "Magnetotelluric transfer functions";
-    dct:description "Magnetotelluric transfer functions are distributed via web service";
+    dct:description "Magnetotelluric Transfer Functions (MTF) describe relations between electromganetic field components in frequency domain and contain essential information about Earth's electrical conductivity.";
     dct:issued "2019-01-01"^^xsd:date;
     dct:modified "2019-01-01"^^xsd:date;
     dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
@@ -176,7 +176,7 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-010/MTF/Webservice> a epos:WebService;
     schema:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-010/MTF/Webservice";
-    schema:description "Magnetotellurics (MT) is an electromagnetic geophysical method for inferring the earth's subsurface electrical conductivity from measurements of natural geoelectromagnetic field variations at the Earth's surface. Magnetotelluric Transfer Functions (MTF) describe relations between electromganetic field components in frequency domain and contain essential information about Earth's electrical conductivity.";
+    schema:description "Magnetotellurics (MT) is an electromagnetic geophysical method for inferring the earth's subsurface electrical conductivity from measurements of natural geoelectromagnetic field variations at the Earth's surface. Magnetotelluric Transfer Functions (MTF) describe relations between electromganetic field components in frequency domain and contain essential information about Earth's electrical conductivity. Publicly available transfer functions can be downloaded directly. For other data, enduser should contact the respective data owner.";
     schema:name "Magnetotelluric web service";
     dcat:contactPoint <https://orcid.org/0000-0002-5600-5375/contactPoint>;
     schema:datePublished "2019-01-01Z"^^xsd:dateTime;
@@ -205,32 +205,11 @@
     hydra:property[ a hydra:IriTemplate;
         hydra:template "http://mt.bgs.ac.uk/{project}/{survey}/TF/{project}{survey}_{site}.tf.json"^^xsd:string;
             hydra:mapping[ a hydra:IriTemplateMapping;
-                hydra:variable "project"^^xsd:string;
-                rdfs:label "Project name";
-                rdfs:range "xsd:string" ;
-                schema:defaultValue "EPOS";
-                http:paramValue "EPOS";
-                http:paramValue "BEAR";
-                http:paramValue "SIMBA";
-                http:paramValue "MASCA";
-                http:paramValue "TOR";
-                http:paramValue "EMMA";
-                http:paramValue "SVEKA";
-                hydra:required "true"^^xsd:boolean;
-            ];
-            hydra:mapping[ a hydra:IriTemplateMapping;
-                hydra:variable "survey"^^xsd:string;
-                rdfs:label "Survey name";
-                rdfs:range "xsd:string" ;
-                schema:defaultValue "2019";
-                hydra:required "true"^^xsd:boolean;
-            ];
-            hydra:mapping[ a hydra:IriTemplateMapping;
-                hydra:variable "site"^^xsd:string;
-                rdfs:label "Site name";
-                rdfs:range "xsd:string" ;
-                schema:defaultValue "A01";
-                hydra:required "true"^^xsd:boolean;
+                hydra:variable "StartTime"^^xsd:string;
+                rdfs:label "Start time";
+                hydra:property "schema:startDate";
+                schema:defaultValue "2000-01-01T00:00:00Z";
+                hydra:required "false"^^xsd:boolean;
             ];
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "StopTime"^^xsd:string;
@@ -279,20 +258,37 @@
                 schema:maxValue "360.0";
                 hydra:required "false"^^xsd:boolean;
             ];
+            hydra:mapping[ a hydra:IriTemplateMapping;
+                hydra:variable "project"^^xsd:string;
+                rdfs:label "Project name";
+                rdfs:range "xsd:string" ;
+                schema:defaultValue "EPOS";
+                http:paramValue "EPOS";
+                http:paramValue "BEAR";
+                http:paramValue "SIMBA";
+                http:paramValue "MASCA";
+                http:paramValue "TOR";
+                http:paramValue "EMMA";
+                http:paramValue "SVEKA";
+                hydra:required "true"^^xsd:boolean;
+            ];
+            hydra:mapping[ a hydra:IriTemplateMapping;
+                hydra:variable "survey"^^xsd:string;
+                rdfs:label "Survey name";
+                rdfs:range "xsd:string" ;
+                schema:defaultValue "2019";
+                hydra:required "true"^^xsd:boolean;
+            ];
+            hydra:mapping[ a hydra:IriTemplateMapping;
+                hydra:variable "site"^^xsd:string;
+                rdfs:label "Site name";
+                rdfs:range "xsd:string" ;
+                schema:defaultValue "A01";
+                hydra:required "true"^^xsd:boolean;
+            ];
     ] ;
 .
 
-
-
-
-
-
-<BEAR> a dcat:Project;
-	dct:identifier "BEAR";
-	dct:title "BEAR Project";
-	dct:description "Baltic Electromagnetic Array Research (BEAR) project is an international experiment for deep electromagnetic sounding using a shield-wide magnetotelluric and magnetometer array of simultaneous long period recordings. ";	
-        dcat:contactPoint <https://orcid.org/0000-0002-5600-5375/contactPoint> ;
-.
 
 
 ###############################################################################
@@ -332,18 +328,6 @@
 
 
 
-
-
-<SIMBA> a dcat:Project;
-	dct:identifier "SIMBA";
-	dct:title "SIMBA Project";
-	dct:description "Integrating geological and geophysical methods for characterisation of reservoirs in complex areas (SIMBA). ";	
-        dcat:contactPoint <https://orcid.org/0000-0003-0526-5609> ;
-.
-
-
-
-
 ###############################################################################
 ### Dataset (Survey)###
 ###############################################################################
@@ -374,9 +358,5 @@
         schema:startDate "2000-01-01T00:00:00Z"^^xsd:dateTime;
         schema:endDate "2001-01-01T00:00:00Z"^^xsd:dateTime;
     ];
-    #Polygon format is invalid
-    #dct:spatial [ a dct:Location;
-    #    locn:geometry "POLYGON(-7. 57., -5. 57., -7. 58., -5., 58.)"^^gsp:wktLiteral;
-    #];
 .
 
