@@ -148,6 +148,10 @@
 	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
         dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
         dct:created "2019-01-01"^^xsd:date;
+	dct:temporal [ a dct:PeriodOfTime; 
+			schema:startDate "2018-01-01T00:00:00Z"^^xsd:dateTime;
+			schema:endDate "2025-01-01T00:00:00Z"^^xsd:dateTime;
+		];
 	dct:spatial [ a dct:Location;
 		locn:geometry "POINT(10.399 43.721)"^^gsp:wktLiteral;
 	];
@@ -212,12 +216,13 @@
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
-				hydra:variable "project_"^^xsd:string;
+				hydra:variable "project_discipline"^^xsd:string;
 				rdfs:range "xsd:string";
 				rdfs:label "Name that Conduit, Magmatic Fluid";
-				http:paramValue "Conduit";
-				http:paramValue "Magmatic Fluid"; 
-				schema:defaultValue "Conduit";
+				http:paramValue "Fluid Dynamics";
+				http:paramValue "Continuum Mechanics";
+				http:paramValue "Thermodynamics"; 
+				schema:defaultValue "Thermodynamics";
 				hydra:required "false"^^xsd:boolean;
 			];
 	];
