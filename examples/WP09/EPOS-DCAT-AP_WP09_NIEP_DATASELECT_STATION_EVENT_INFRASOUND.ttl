@@ -61,13 +61,17 @@
     schema:contactPoint <https://orcid.org/0000-0002-6247-0687/contactPoint>;
 .
 
-<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/VEL_WAVEFORM_CONTINUOUS/Dataset/001> a dcat:Dataset;
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/SEISMIC_WAVEFORM_CONTINUOUS/Dataset/001> a dcat:Dataset;
         dct:title "Vrancea Velocity Waveform Continuous Dataset";
-        dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/VEL_WAVEFORM_CONTINUOUS/Dataset/001";
+        dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/SEISMIC_WAVEFORM_CONTINUOUS/Dataset/001";
         dct:description "This distribution provides access to Velocity Waveform Continuous data through FDSN Dataselect web service. It is encoded in mseed format.";
         adms:identifier [ a adms:Identifier ;
             adms:schemaAgency "DDSS-ID" ;
             skos:notation "WP09-DDSS-001" ;
+        ];
+        adms:identifier [ a adms:Identifier ;
+            adms:schemaAgency "DDSS-ID" ;
+            skos:notation "WP09-DDSS-002" ;
         ];
 	    dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
         dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
@@ -82,37 +86,10 @@
             schema:startDate "1999-01-01T00:00:00Z"^^xsd:dateTime ;
         ];
         dcat:theme  <epos:Seismicwaveforms> ;
-	    dcat:keyword "seismology", "seismicity", "earthquake", "Velocity", "waveform", "waveform modeling", "NFO", "Vrancea", "NIEP";
+	    dcat:keyword "seismology", "seismicity", "earthquake", "Velocity", "Acceleration", "waveform", "waveform modeling", "NFO", "Vrancea", "NIEP";
         dcat:contactPoint <https://orcid.org/0000-0002-6247-0687/contactPoint>;
         dct:publisher <PIC:998181508>;
-        dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/VEL_WAVEFORM_CONTINUOUS/Distribution/001>;
-.
-
-<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/ACC_WAVEFORM_CONTINUOUS/Dataset/001> a dcat:Dataset;
-    dct:title "Vrancea Acceleration Waveform Continuous Dataset";
-    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/ACC_WAVEFORM_CONTINUOUS/Dataset/002/NIEP";
-    dct:description "This distribution provides access to Acceleration Waveform Continuous data through FDSN Dataselect web service. It is encoded in mseed format.";
-    adms:identifier [ a adms:Identifier ;
-        adms:schemaAgency "DDSS-ID" ;
-        skos:notation "WP09-DDSS-002" ;
-    ];
-    dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
-    dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
-    dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
-    dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
-    dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
-    owl:versionInfo "1.0.0" ;
-    dct:spatial [ a dct:Location ;
-        locn:geometry "POLYGON((19.50 49.00,30.00 49.00,30.00 42.0,19.50 42.0,19.50 49.00 ))"^^gsp:wktLiteral;
-    ];
-    dct:temporal [ a dct:PeriodOfTime ;
-        schema:startDate "1999-01-01T00:00:00Z"^^xsd:dateTime ;
-    ];
-    dcat:theme  <epos:Seismicwaveforms> ;
-    dcat:keyword "seismology", "seismicity", "earthquake", "Acceleration", "waveform", "waveform modeling", "NFO", "Vrancea", "NIEP";
-    dcat:contactPoint <https://orcid.org/0000-0002-6247-0687/contactPoint>;
-    dct:publisher <PIC:998181508>;
-    dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/ACC_WAVEFORM_CONTINUOUS/Distribution/001>;
+        dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/SEISMIC_WAVEFORM_CONTINUOUS/Distribution/001>;
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/INFRASOUND_WAVEFORM_CONTINUOUS/Dataset/001> a dcat:Dataset;
@@ -136,7 +113,7 @@
             schema:startDate "2017-05-01T00:00:00Z"^^xsd:dateTime ;
     ];
     dcat:theme  <epos:Seismicwaveforms> ;
-    dcat:keyword "infrasound", "waveform", "waveform modeling", "NFO", "Vrancea", "NIEP";
+    dcat:keyword "infrasound", "waveform", "NFO", "Vrancea", "NIEP";
     dcat:contactPoint <https://orcid.org/0000-0002-6247-0687/contactPoint>;
     dct:publisher <PIC:998181508>;
     dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/INFRASOUND_WAVEFORM_CONTINUOUS/Distribution/001>;
@@ -194,26 +171,14 @@
     dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/Event/Distribution/001>;
 .
 
-<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/VEL_WAVEFORM_CONTINUOUS/Distribution/001> a dcat:Distribution;
-    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/VEL_WAVEFORM_CONTINUOUS/Distribution/001";
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/SEISMIC_WAVEFORM_CONTINUOUS/Distribution/001> a dcat:Distribution;
+    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/SEISMIC_WAVEFORM_CONTINUOUS/Distribution/001";
     dct:title  "Vrancea Velocity Waveform";
     dct:description "Velocity Waveform Continuous Dataset";
     dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
     dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-    dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/VEL_WAVEFORM_CONTINUOUS/WebService/001/Operation/001>;
-    dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/VEL_WAVEFORM_CONTINUOUS/WebService/001>;
-    dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI;
-    dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
-.
-
-<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/ACC_WAVEFORM_CONTINUOUS/Distribution/001> a dcat:Distribution;
-    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/ACC_WAVEFORM_CONTINUOUS/Distribution/001";
-    dct:title  "Vrancea Acceleration Waveform";
-    dct:description "Acceleration Waveform Continuous Dataset";
-    dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
-    dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-    dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/ACC_WAVEFORM_CONTINUOUS/WebService/001/Operation/001>;
-    dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/ACC_WAVEFORM_CONTINUOUS/WebService/001>;
+    dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/SEISMIC_WAVEFORM_CONTINUOUS/WebService/001/Operation/001>;
+    dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/SEISMIC_WAVEFORM_CONTINUOUS/WebService/001>;
     dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI;
     dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 .
@@ -253,8 +218,8 @@
     dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
 .
 
-<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/VEL_WAVEFORM_CONTINUOUS/WebService/001> a epos:WebService;
-    schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/VEL_WAVEFORM_CONTINUOUS/WebService/001";
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/SEISMIC_WAVEFORM_CONTINUOUS/WebService/001> a epos:WebService;
+    schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/SEISMIC_WAVEFORM_CONTINUOUS/WebService/001";
     schema:description "This web service provides access to seismic waveforms continuous data. It is implemented according to the standard 1.0 for seismic data web services set by the Federation of Digital Seismograph Networks (FDSN).";
     schema:name "Vrancea Velocity Seismic waveforms Continuous";
     dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
@@ -804,6 +769,7 @@
 	dct:title "Near Fault Observations";
 	dct:description "It contains the concepts of Near Fault Observations";
 . 
+
 <epos:Seismicwaveforms> a skos:Concept;
 	skos:inScheme <epos:NearFaultObservations>;
 	skos:prefLabel "Seismic waveforms";
