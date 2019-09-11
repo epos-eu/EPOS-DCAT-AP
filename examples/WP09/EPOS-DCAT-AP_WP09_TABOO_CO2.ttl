@@ -225,7 +225,7 @@
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
-		hydra:template "http://fridge-services.rm.ingv.it/co2/{?param_name, mintime, maxtime, minlat, maxlat, minlon, maxlon, minperiod, inst_type, max_int_delta}"^^xsd:string;
+		hydra:template "http://fridge-services.rm.ingv.it/co2/{?param_name, mintime, maxtime, minlat, maxlat, minlon, maxlon}"^^xsd:string;
 		# type of parameter "xsd:string" "xsd:boolean" "xsd:date" "xsd:dateTime" "xsd:decimal" "xsd:double" "xsd:float" "xsd:int" "xsd:integer" "xsd:long"
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "param_name"^^xsd:string;
@@ -297,37 +297,6 @@
 			schema:defaultValue "13.0";
 			hydra:property "epos:easternmostLongitude";
 			hydra:required "true"^^xsd:boolean;
-		];
-		hydra:mapping[ a hydra:IriTemplateMapping;
-			hydra:variable "minperiod"^^xsd:string;
-			rdfs:label "Minimum 'sampling period' allowed to extract data [minutes]";
-			rdfs:range "xsd:integer";
-			schema:minValue "1";
-			schema:defaultValue "60";
-			hydra:required "true"^^xsd:boolean;
-		];
-		hydra:mapping[ a hydra:IriTemplateMapping;
-			hydra:variable "maxperiod"^^xsd:string;
-			rdfs:label "Maximum 'sampling period' allowed to extract data [minutes]";
-			rdfs:range "xsd:integer";
-			schema:defaultValue "180";
-			hydra:required "true"^^xsd:boolean;
-		];
-		hydra:mapping[ a hydra:IriTemplateMapping;
-			hydra:variable "inst_type"^^xsd:string;
-			rdfs:label "nickname of type of installation";
-			rdfs:range "xsd:string";
-			http:paramValue "flux";
-			schema:defaultValue "flux";
-			hydra:required "true"^^xsd:boolean;
-		];
-		hydra:mapping[ a hydra:IriTemplateMapping;
-			hydra:variable "max_int_delta"^^xsd:string;
-			rdfs:label "maximum distance in time between internal temperature";
-			rdfs:range "xsd:integer";
-			schema:minValue "0";
-			schema:defaultValue "60";
-			hydra:required "false"^^xsd:boolean;
 		];
 	];
 .
