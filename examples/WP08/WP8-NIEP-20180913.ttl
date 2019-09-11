@@ -60,12 +60,12 @@
         hydra:method "GET"^^xsd:string;
         hydra:returns "application/vnd.fdsn.mseed";
         hydra:property[ a hydra:IriTemplate;
-            hydra:template "http://eida-sc3.infp.ro/fdsnws/dataselect/1/query(?starttime, endtime, network, station, location, channel, quality, minimumlength, nodata)"^^xsd:string;
+            hydra:template "http://eida-sc3.infp.ro/fdsnws/dataselect/1/query{?starttime, endtime, network, station, location, channel, quality, minimumlength, nodata}"^^xsd:string;
                 hydra:mapping[ a hydra:IriTemplateMapping;
                     hydra:variable "starttime"^^xsd:string;
                     rdfs:label "Start of the timespan";
                     rdfs:range "xsd:dateTime";
-                    schema:defaultValue "1980-01-01T00:00:00.000Z";
+                    schema:defaultValue "2019-01-01T00:00:00.000Z";
                     hydra:property "schema:startDate";
                     schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
                     hydra:required "true"^^xsd:boolean;
@@ -74,7 +74,7 @@
                     hydra:variable "endtime"^^xsd:string;
                     rdfs:label "End of the timespan";
                     rdfs:range "xsd:dateTime";
-                    schema:defaultValue "2019-01-01T00:00:00.000Z";
+                    schema:defaultValue "2019-01-01T01:00:00.000Z";
                     hydra:property "schema:endDate";
                     schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
                     hydra:required "true"^^xsd:boolean;
@@ -273,7 +273,7 @@
 	schema:datePublished "2016-01-01"^^xsd:date;
 	schema:dateModified "2016-01-01"^^xsd:date;
     dct:spatial [ a dct:Location ;
-        locn:geometry "POLYGON(19.50 49.00,30.00 49.00,30.00 42.0,19.50 42.0,19.50 49.00 )"^^gsp:wktLiteral;
+        locn:geometry "POLYGON((19.50 49.00,30.00 49.00,30.00 42.0,19.50 42.0,19.50 49.00))"^^gsp:wktLiteral;
     ];
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/Operation/002/NIEP>;
 	schema:keywords "seismology"," seismicity"," earthquakes"," waveform"," seismic hazard"," earth structure"," earthquake intensity"," macroseismic"," macroseismic information"," waveform modeling";
@@ -295,7 +295,7 @@
 	schema:datePublished "2016-01-01"^^xsd:date;
 	schema:dateModified "2016-01-01"^^xsd:date;
     dct:spatial [ a dct:Location ;
-        locn:geometry "POLYGON(19.50 49.00,30.00 49.00,30.00 42.0,19.50 42.0,19.50 49.00 )"^^gsp:wktLiteral;
+        locn:geometry "POLYGON((19.50 49.00,30.00 49.00,30.00 42.0,19.50 42.0,19.50 49.00))"^^gsp:wktLiteral;
     ];
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001/NIEP>;
 	schema:keywords "seismology"," seismicity"," earthquakes"," waveform"," seismic hazard"," earth structure"," earthquake intensity"," macroseismic"," macroseismic information"," waveform modeling"," NIEP","Dataselect","FDSN-WS","Seismic Waveform","EIDA";
@@ -328,7 +328,7 @@
     	dct:publisher <PIC:998181508>;
         dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/NIEP>;
         dct:spatial [ a dct:Location; 
-            locn:geometry "POLYGON(180.0 -90.0,-180.0 -90.0,-180.0 90.0,180.0 90.0,180.0 -90.0)"^^gsp:wktLiteral; 
+            locn:geometry "POLYGON((180.0 -90.0,-180.0 -90.0,-180.0 90.0,180.0 90.0,180.0 -90.0))"^^gsp:wktLiteral; 
         ]; 
         dct:temporal [ a dct:PeriodOfTime ;
                 schema:startDate "1980-01-01T00:00:00Z"^^xsd:dateTime ;
@@ -339,8 +339,8 @@
 # Distribution
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/NIEP> a dcat:Distribution;
     	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/NIEP";
-        dct:title "Seismic Waveform Distribution :: FDSN DATASELECT";
-        dct:description "Description of Seismic Waveform Distribution :: FDSN DATASELECT ";
+        dct:title "Seismic Waveform Distribution :: FDSN DATASELECT :: NIEP";
+        dct:description "Description of Seismic Waveform Distribution :: FDSN DATASELECT :: NIEP";
         dct:issued "2017-01-01"^^xsd:date ;
         dct:modified "2017-01-01"^^xsd:date ;
         dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
@@ -372,7 +372,7 @@
 	    dct:publisher <PIC:998181508>;
         dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/NIEP>;
         dct:spatial [ a dct:Location; 
-            locn:geometry "POLYGON(180.0 -90.0,-180.0 -90.0,-180.0 90.0,180.0 90.0,180.0 -90.0)"^^gsp:wktLiteral; 
+            locn:geometry "POLYGON((180.0 -90.0,-180.0 -90.0,-180.0 90.0,180.0 90.0,180.0 -90.0))"^^gsp:wktLiteral; 
         ]; 
         dct:temporal [ a dct:PeriodOfTime ;
                 schema:startDate "1980-01-01T00:00:00Z"^^xsd:dateTime ;
@@ -383,8 +383,8 @@
 # Distribution
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/NIEP> a dcat:Distribution;
     	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/NIEP";
-        dct:title "Seismic Stations  :: FDSN STATION ";
-        dct:description "Description of Seismic Stations  :: FDSN STATION ";
+        dct:title "Seismic Stations  :: FDSN STATION :: NIEP";
+        dct:description "Description of Seismic Stations  :: FDSN STATION :: NIEP";
         dct:issued "2017-01-01"^^xsd:date ;
         dct:modified "2017-01-01"^^xsd:date ;
         dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;

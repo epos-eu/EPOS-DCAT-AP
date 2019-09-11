@@ -171,10 +171,10 @@
 	schema:name "FDSNWS Dataselect - National Observatory of Athens (NOA)";
 	hydra:entrypoint "http://eida.gein.noa.gr/fdsnws/dataselect/1/query?"^^xsd:anyURI;
 	schema:provider <PIC:999653677>;
-	schema:datePublished "2016-01-01Z"^^xsd:dateTime;
-	schema:dateModified "2016-01-01Z"^^xsd:dateTime;
+	schema:datePublished "2016-01-01Z"^^xsd:date;
+	schema:dateModified "2016-01-01Z"^^xsd:date;
 	dct:spatial [ a dct:Location;
-		locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral;
+		locn:geometry "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral;
 	];
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001/NOA>;
 	schema:keywords "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "NOA", "Dataselect", "FDSN-WS", "Seismic Waveform", "EIDA";
@@ -195,10 +195,10 @@
 	schema:name "FDSNWS Station - National Observatory of Athens (NOA)";
 	hydra:entrypoint "http://eida.gein.noa.gr/fdsnws/station/1/query?"^^xsd:anyURI;
 	schema:provider <PIC:999653677>;
-	schema:datePublished "2016-01-01Z"^^xsd:dateTime;
-	schema:dateModified "2016-01-01Z"^^xsd:dateTime;
+	schema:datePublished "2016-01-01Z"^^xsd:date;
+	schema:dateModified "2016-01-01Z"^^xsd:date;
 	dct:spatial [ a dct:Location;
-		locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral;
+		locn:geometry "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral;
 	];
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/Operation/002/NOA>;
 	schema:keywords "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "NOA", "Station", "FDSN-WS", "Seismic Waveform", "EIDA";
@@ -219,10 +219,10 @@
 	schema:name "WFCatalog - National Observatory of Athens (NOA)";
 	hydra:entrypoint "http://eida.gein.noa.gr/eidaws/wfcatalog/1/query?"^^xsd:anyURI;
 	schema:provider <PIC:999653677>;
-	schema:datePublished "2017-09-01Z"^^xsd:dateTime;
-	schema:dateModified "2017-09-01Z"^^xsd:dateTime;
+	schema:datePublished "2017-09-01Z"^^xsd:date;
+	schema:dateModified "2017-09-01Z"^^xsd:date;
 	dct:spatial [ a dct:Location;
-		locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral;
+		locn:geometry "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral;
 	];
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/003/Operation/003/NOA>;
 	schema:keywords "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "NOA", "Station", "FDSN-WS", "Seismic Waveform", "data quality", "availability", "metadata", "EIDA";
@@ -243,10 +243,10 @@
 	schema:name "Routing - National Observatory of Athens (NOA)";
 	hydra:entrypoint "http://eida.gein.noa.gr/eidaws/routing/1/query?"^^xsd:anyURI;
 	schema:provider <PIC:999653677>;
-	schema:datePublished "2016-01-01Z"^^xsd:dateTime;
-	schema:dateModified "2016-01-01Z"^^xsd:dateTime;
+	schema:datePublished "2016-01-01Z"^^xsd:date;
+	schema:dateModified "2016-01-01Z"^^xsd:date;
 	dct:spatial [ a dct:Location;
-		locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral;
+		locn:geometry "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral;
 	];
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/004/Operation/004/NOA>;
 	schema:keywords "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "NOA", "Station", "FDSN-WS", "Seismic Waveform", "data quality", "availability", "metadata", "EIDA";
@@ -316,14 +316,14 @@
 					rdfs:range "xsd:dateTime";
 					rdfs:label "End of the timespan";
 					hydra:required "true"^^xsd:boolean;
-					schema:defaultValue "2019-01-01T01:00:00"
+					schema:defaultValue "2019-01-01T00:01:00"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "network"^^xsd:string;
 					rdfs:range "xsd:string";
 					rdfs:label "Network code";
 					hydra:required "true"^^xsd:boolean;
-					schema:defaultValue "*"
+					schema:defaultValue "CQ"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "station"^^xsd:string;
@@ -647,12 +647,16 @@
 					hydra:variable "csegments"^^xsd:string;
 					rdfs:range "xsd:boolean";
 					rdfs:label "Include continuous segments in result";
+					http:paramValue "true";
+					http:paramValue "false";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "longestonly"^^xsd:string;
 					rdfs:range "xsd:boolean";
 					rdfs:label "Include only the longest continuous segment";
+					http:paramValue "true";
+					http:paramValue "false";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
@@ -738,7 +742,7 @@
 					rdfs:label "Maximum Latitude";
 					schema:minValue "-90.0";
 					schema:maxValue "90.0";
-                    schema:defaultValue "-90";
+                    schema:defaultValue "90";
                     hydra:property "epos:northernmostLatitude" ;
 					hydra:required "true"^^xsd:boolean;
 				];
@@ -809,7 +813,7 @@
 	dct:publisher <PIC:999653677>;
         dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/NOA>;
         dct:spatial [ a dct:Location ;
-                      locn:geometry "POLYGON(-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0)"^^gsp:wktLiteral;
+                      locn:geometry "POLYGON((-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0))"^^gsp:wktLiteral;
         ];
         dct:temporal [ a dct:PeriodOfTime ;
                 schema:startDate "1997-10-14T00:00:00Z"^^xsd:dateTime ;
@@ -839,7 +843,7 @@
 	dct:publisher <PIC:999653677>;
         dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/NOA>;
         dct:spatial [ a dct:Location ;
-											locn:geometry "POLYGON(-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0)"^^gsp:wktLiteral;
+	locn:geometry "POLYGON((-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0))"^^gsp:wktLiteral;
         ];
         dct:temporal [ a dct:PeriodOfTime ;
                 schema:startDate "1997-10-14T00:00:00Z"^^xsd:dateTime ;
@@ -869,7 +873,7 @@
 	dct:publisher <PIC:999653677>;
         dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/Distribution/003/NOA>;
         dct:spatial [ a dct:Location ;
-											locn:geometry "POLYGON(-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0)"^^gsp:wktLiteral;
+	locn:geometry "POLYGON((-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0))"^^gsp:wktLiteral;
         ];
         dct:temporal [ a dct:PeriodOfTime ;
                 schema:startDate "2010-01-01T00:00:00Z"^^xsd:dateTime ;
@@ -878,41 +882,41 @@
 .
 
 # Routing
-<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/NOA> a dcat:Dataset;
-        dct:title "Primary Seismic Waveform Data";
-        dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/NOA";
-        dct:description "Seismic stations";
-        adms:identifier [ a adms:Identifier ;
-            adms:schemaAgency "DDSS-ID" ;
-            skos:notation "WP08-DDSS-004" ;
-        ];
-        dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
-        dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
-        dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
-        owl:versionInfo "1.0.0" ;
+#<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/NOA> a dcat:Dataset;
+        #dct:title "Primary Seismic Waveform Data";
+        #dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/NOA";
+        #dct:description "Seismic stations";
+        #adms:identifier [ a adms:Identifier ;
+            #adms:schemaAgency "DDSS-ID" ;
+           # skos:notation "WP08-DDSS-004" ;
+       # ];
+        #dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        #dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        #dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        #owl:versionInfo "1.0.0" ;
 
-    	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
-        dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
-        dcat:theme  <epos:SeismicStations> ;
-        dcat:keyword "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "NOA", "Station", "FDSN-WS", "Seismic Waveform", "data quality", "availability", "metadata", "EIDA";
-        dcat:contactPoint <http://orcid.org/0000-0002-4011-0971/contactPoint>;
-	dct:publisher <PIC:999653677>;                      
-        dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/Distribution/004/NOA>;
-        dct:spatial [ a dct:Location ;
-											locn:geometry "POLYGON(-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0)"^^gsp:wktLiteral;
-        ];
-        dct:temporal [ a dct:PeriodOfTime ;
-                schema:startDate "2010-01-01T00:00:00Z"^^xsd:dateTime ;
+    	#dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+        #dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+        #dcat:theme  <epos:SeismicStations> ;
+        #dcat:keyword "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "NOA", "Station", "FDSN-WS", "Seismic Waveform", "data quality", "availability", "metadata", "EIDA";
+        #dcat:contactPoint <http://orcid.org/0000-0002-4011-0971/contactPoint>;
+	#dct:publisher <PIC:999653677>;                      
+        #dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/Distribution/004/NOA>;
+        #dct:spatial [ a dct:Location ;
+		#locn:geometry "POLYGON((-180.0 -90.0,180.0 -90.0,180.0 90.0,-180.0 90.0,-180.0 -90.0))"^^gsp:wktLiteral;
+        #];
+        #dct:temporal [ a dct:PeriodOfTime ;
+                #schema:startDate "2010-01-01T00:00:00Z"^^xsd:dateTime ;
                 #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
-	];
-.
+	#];
+#.
 
 ## Distributions
 
 # FDSN dataselect
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/NOA> a dcat:Distribution;
     	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001/NOA";
-	dct:title "Seismic Waveforms  :: FDSN DATASELECT ";
+	dct:title "Seismic Waveforms  :: FDSN DATASELECT :: NOA";
 	dct:description "Description of Waveforms  :: FDSN DATASELECT ";
 	dct:issued "2016-01-01"^^xsd:date ;
 	dct:modified "2016-01-01"^^xsd:date ;
@@ -926,7 +930,7 @@
 # FDSN station
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/NOA> a dcat:Distribution;
     	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/NOA";
-	dct:title "Seismic Stations  :: FDSN STATION";
+	dct:title "Seismic Stations  :: FDSN STATION :: NOA";
 	dct:description "Description of Seismic Stations  :: FDSN STATION ";
 	dct:issued "2016-01-01"^^xsd:date ;
 	dct:modified "2016-01-01"^^xsd:date ;
@@ -940,7 +944,7 @@
 # WFCatalog
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/Distribution/003/NOA> a dcat:Distribution;
     	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/Distribution/003/NOA";
-	dct:title "Waveforms metadata  :: WFCATALOG";
+	dct:title "Waveforms metadata  :: WFCATALOG :: NOA";
 	dct:description "Description of Waveforms metadata  :: WFCATALOG ";
 	dct:issued "2017-09-01"^^xsd:date ;
 	dct:modified "2017-09-01"^^xsd:date ;
@@ -952,18 +956,18 @@
 .
 
 # Routing
-<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/Distribution/004/NOA> a dcat:Distribution;
-    	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/Distribution/004/NOA";
-	dct:title "routing of the Web Services  :: ROUTING";
-	dct:description "Description of routing of the Web Services  :: ROUTING ";
-	dct:issued "2016-01-01"^^xsd:date ;
-	dct:modified "2016-01-01"^^xsd:date ;
-	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/004/Operation/004/NOA>;
-	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/004/NOA>;
-	dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
- 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
-.
+#<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/Distribution/004/NOA> a dcat:Distribution;
+    	#dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/Distribution/004/NOA";
+	#dct:title "routing of the Web Services  :: ROUTING :: NOA";
+	#dct:description "Description of routing of the Web Services  :: ROUTING ";
+	#dct:issued "2016-01-01"^^xsd:date ;
+	#dct:modified "2016-01-01"^^xsd:date ;
+	#dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+	#dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/004/Operation/004/NOA>;
+	#dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/004/NOA>;
+	#dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
+ 	#dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+#.
 
 ## Domains
 	<epos:Seismology> a skos:ConceptScheme;

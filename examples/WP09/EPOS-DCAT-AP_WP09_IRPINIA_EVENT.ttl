@@ -72,7 +72,7 @@
 	schema:datePublished "2018-04-11"^^xsd:date;
 	schema:dateModified "2018-04-11"^^xsd:date;
 	dct:spatial [ a dct:Location;
-		locn:geometry "POLYGON(14.0 39.0,16.0 39.0,16.0 42.0,14.0 42.0,14.0 39.0)"^^gsp:wktLiteral;
+		locn:geometry "POLYGON((14.0 39.0,16.0 39.0,16.0 42.0,14.0 42.0,14.0 39.0))"^^gsp:wktLiteral;
 	];
 	dct:temporal [ a dct:PeriodOfTime;
 		schema:startDate "2007-12-07T00:00:00Z"^^xsd:dateTime;
@@ -218,6 +218,8 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "includeallorigins"^^xsd:string;
 				rdfs:range "xsd:boolean";
+				http:paramValue "true";
+				http:paramValue "false";
 				rdfs:label "Include All Origins";
 				schema:defaultValue "false";
 				hydra:required "false"^^xsd:boolean;
@@ -225,6 +227,8 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "includeallmagnitudes"^^xsd:string;
 				rdfs:range "xsd:boolean";
+				http:paramValue "true";
+				http:paramValue "false";
 				rdfs:label "Include All Magnitudes";
 				schema:defaultValue "false";
 				hydra:required "false"^^xsd:boolean;
@@ -232,6 +236,8 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "includearrivals"^^xsd:string;
 				rdfs:range "xsd:boolean";
+				http:paramValue "true";
+				http:paramValue "false";
 				rdfs:label "Include All Arrivals";
 				schema:defaultValue "false";
 				hydra:required "false"^^xsd:boolean;
@@ -387,7 +393,7 @@
 	dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
 	dct:created "2007-12-07"^^xsd:date;
 	dct:spatial [ a dct:Location;
-		locn:geometry "POLYGON(14.0 39.0,16.0 39.0,16.0 42.0,14.0 42.0,14.0 39.0)"^^gsp:wktLiteral;
+		locn:geometry "POLYGON((14.0 39.0,16.0 39.0,16.0 42.0,14.0 42.0,14.0 39.0))"^^gsp:wktLiteral;
 	];
 	dct:temporal [ a dct:PeriodOfTime;
 		schema:startDate "2007-12-07T00:00:00Z"^^xsd:dateTime;

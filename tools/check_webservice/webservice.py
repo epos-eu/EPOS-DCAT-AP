@@ -38,7 +38,7 @@ class DefaultValueException(Exception):
 
 
 # A subclass of rdflib's Graph that allows basic subgraphing.
-class Subgraphable_Graph(Graph):
+class SubgraphableGraph(Graph):
 
     # Create a subgraph from a triple by recursing
     # through the subgraph using the BNodes.
@@ -91,7 +91,7 @@ class Operation:
         # Are there any parameters embedded in the URL?
         # If so extract them and add them to the other parameters
         if '{' in self.base_url:
-            self.path_params = re.findall(r'\{.*?\}', self.base_url)
+            self.path_params = set(re.findall(r'\{.*?\}', self.base_url))
             logging.debug("Path parameters: " + str(self.path_params))
             for p in self.path_params:
                 self.parameters.add(p.lstrip('{').rstrip('}').strip())
@@ -104,8 +104,8 @@ class Operation:
         self.variables = set([])
         for var in g.triples((None, HYDRA.variable, None)):
             self.variables.add(str(var[2]))
-            required = list(g.triples((var[0], HYDRA.required, None)))[0][2]
             try:
+                required = list(g.triples((var[0], HYDRA.required, None)))[0][2]
                 default = list(g.triples((var[0], SCHEMA.defaultValue, None)))[0][2]
                 self.defaults[str(var[2])] = str(default)
             except IndexError:
@@ -166,7 +166,7 @@ class Operation:
 def test_operation(filename):
     logging.info(f"\nProcessing: {filename}")
     logging.info("-"*50)
-    graph = Subgraphable_Graph()
+    graph = SubgraphableGraph()
     graph.parse(location=filename, format='n3')
     operations =  graph.triples((None, HYDRA.property, None))
 

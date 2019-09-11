@@ -95,9 +95,9 @@
 	dct:modified "2016-01-01"^^xsd:date;
 	dct:issued "2016-01-01"^^xsd:date;
 	dct:spatial [ a dct:Location; 
-		locn:geometry "POLYGON(-25.0 63.0,-25.0 68.5,-10.0 68.5,-10.0 63.0,-25.0 63.0)"^^gsp:wktLiteral; 
+		locn:geometry "POLYGON((-25.0 63.0,-25.0 68.5,-10.0 68.5,-10.0 63.0,-25.0 63.0))"^^gsp:wktLiteral; 
 	]; 
-        dcat:keyword "eruptions; eruption source parameters; catalogue";
+        dcat:keyword "eruptions","eruption source parameters","catalogue","volcanoes","IMO";
 	dcat:theme <epos:Volcanological/petrological>;
 	dcat:contactPoint <http://orcid.org/0000-0001-5750-0872/contactPoint>;
 	dct:publisher <PIC:997168343>;
@@ -135,10 +135,10 @@
         dcat:contactPoint <http://orcid.org/0000-0001-5750-0872/contactPoint>;
         schema:provider <PIC:997168343> ;
 	dct:spatial [ a dct:Location; 
-		locn:geometry "POLYGON(-25.0 63.0,-25.0 68.5,-10.0 68.5,-10.0 63.0,-25.0 63.0)"^^gsp:wktLiteral; 
+		locn:geometry "POLYGON((-25.0 63.0,-25.0 68.5,-10.0 68.5,-10.0 63.0,-25.0 63.0))"^^gsp:wktLiteral; 
 	]; 
 	hydra:supportedOperation <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/033/Operation/033>;
-	schema:keywords "eruptions; eruption source parameters; catalogue";
+	schema:keywords "eruptions","eruption source parameters","catalogue","volcanoes","IMO";
 	dct:temporal [ a dct:PeriodOfTime; 
 		schema:startDate "2018-12-12T00:00:00Z"^^xsd:dateTime; 
 		schema:endDate "2025-01-01T00:00:00Z"^^xsd:dateTime; 
@@ -163,6 +163,7 @@
 				schema:maxValue "90.0";
 				hydra:required "true"^^xsd:boolean;
 				schema:defaultValue "63.0" ;
+				rdfs:range "xsd:float";
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "minlongitude"^^xsd:string; 
@@ -172,6 +173,7 @@
 				schema:maxValue "180.0";
 				hydra:required "true"^^xsd:boolean;
 				schema:defaultValue "-25.0" ;
+				rdfs:range "xsd:float";
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "maxlatitude"^^xsd:string; 
@@ -181,6 +183,7 @@
 				schema:maxValue "90.0";
 				hydra:required "true"^^xsd:boolean;
 				schema:defaultValue "68.5" ;
+				rdfs:range "xsd:float";
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "maxlongitude"^^xsd:string; 
@@ -190,6 +193,7 @@
 				schema:maxValue "180.0";
 				hydra:required "true"^^xsd:boolean;
 				schema:defaultValue "-10.0" ;
+				rdfs:range "xsd:float";
 			];		
 	] ;
 . 

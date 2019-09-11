@@ -207,6 +207,12 @@
 	dct:created "2018-07-06"^^xsd:date;
 	dcat:theme  <epos:EarthquakeParameters>;
 	dcat:keyword "NFO", "Earthquake", "Event", "Seismic source", "Seismic waves propagation", "Seismology";
+	dct:spatial [ a dct:Location;
+		locn:geometry "POLYGON((22.5 38.0, 21.35 38.0, 21.35 38.65, 22.5 38.65, 22.5 38.0))"^^gsp:wktLiteral;
+	];
+	dct:temporal [ a dct:PeriodOfTime;
+		schema:startDate "2000-05-20T00:00:00Z"^^xsd:dateTime;
+	];
 	dcat:contactPoint <https://orcid.org/0000-0003-1078-3419/scientificContact>;
 	dcat:contactPoint <mailto:marc.grunberg@unistra.fr/technicalContact>;
 	dct:publisher <PIC:999997930>;
@@ -224,6 +230,7 @@
 	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/event/Operation/001>;
 	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/event/WebService/001>;
 	dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
+        dct:license "https://creativecommons.org/licenses/by-sa/3.0/"^^xsd:anyURI;
 .
 
 #   Webservices 
@@ -238,10 +245,10 @@
 	schema:datePublished "2018-07-06"^^xsd:date;
 	schema:dateModified "2018-07-06"^^xsd:date;
 	dct:spatial [ a dct:Location;
-		locn:geometry "POLYGON(22.5 38.0, 21.35 38.0, 21.35 38.65, 22.5 38.65, 22.5 38.0)"^^gsp:wktLiteral;
+		locn:geometry "POLYGON((22.5 38.0, 21.35 38.0, 21.35 38.65, 22.5 38.65, 22.5 38.0))"^^gsp:wktLiteral;
 	];
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/event/Operation/001>;
-	schema:keywords "NFO","Earthquake","Event","Seismic source","Seismic waves propagation","Seismology";
+	schema:keywords "NFO","Earthquake","Event","Seismic source","Seismic waves propagation","Seismology", "CRL", "Corinth Rift Laboratory", "Near Fault Observatories";
 	dct:license "https://creativecommons.org/licenses/by-sa/3.0/"^^xsd:anyURI;
 	dct:temporal [ a dct:PeriodOfTime;
 		schema:startDate "2000-05-20T00:00:00Z"^^xsd:dateTime;
@@ -363,12 +370,16 @@
 				hydra:variable "includeallorigins"^^xsd:string;
 				rdfs:range "xsd:boolean";
 				rdfs:label "Include All Origins";
+				http:paramValue "true";
+				http:paramValue "false";
 				schema:defaultValue "false";
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "includeallmagnitudes"^^xsd:string;
 				rdfs:range "xsd:boolean";
+				http:paramValue "true";
+				http:paramValue "false";
 				rdfs:label "Include All Magnitudes";
 				schema:defaultValue "false";
 				hydra:required "false"^^xsd:boolean;
@@ -376,6 +387,8 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "includearrivals"^^xsd:string;
 				rdfs:range "xsd:boolean";
+				http:paramValue "true";
+				http:paramValue "false";
 				rdfs:label "Include All Arrivals";
 				schema:defaultValue "false";
 				hydra:required "false"^^xsd:boolean;
@@ -482,4 +495,3 @@
 			];
 	];
 .
-

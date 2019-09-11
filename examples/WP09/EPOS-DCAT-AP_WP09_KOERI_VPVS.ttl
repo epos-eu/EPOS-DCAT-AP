@@ -80,7 +80,7 @@
 	# This property refers to a geographic region that is covered by the Dataset.
   	# The POLYGON format is: POLYGON(lon1 lat1, lon2 lat2,...)
 	dct:spatial [ a dct:Location ;
-		locn:geometry "POLYGON(26.0 42.0, 31.0 42.0, 31.0 39.0, 26.0 39.0, 26.0 42.0)"^^gsp:wktLiteral ;
+		locn:geometry "POLYGON((26.0 42.0, 31.0 42.0, 31.0 39.0, 26.0 39.0, 26.0 42.0))"^^gsp:wktLiteral ;
 	];
 	# This property refers to a temporal period that the Dataset covers.
     dct:temporal [ a dct:PeriodOfTime ;
@@ -145,7 +145,7 @@
 			schema:maxValue "2017-01-01T00:00:00.000Z";
 			schema:defaultValue "2016-01-01T12:00:00.000Z";
 			hydra:property "schema:startDate";
-      		schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
+      		schema:valuePattern "YYYY-MM-DDThh:mm:ss.SSSZ";
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -156,7 +156,7 @@
 			schema:maxValue "2017-01-01T00:00:00.000Z";
 			schema:defaultValue "2016-06-01T12:00:00.000Z";
 			hydra:property "schema:endDate";
-      		schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
+      		schema:valuePattern "YYYY-MM-DDThh:mm:ss.SSSZ";
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;

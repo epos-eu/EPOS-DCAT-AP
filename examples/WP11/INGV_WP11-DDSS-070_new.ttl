@@ -137,6 +137,10 @@
 #########
 
 <WP11/Software> a dcat:Dataset;
+	adms:identifier [ a adms:Identifier ;
+            adms:schemaAgency "DDSS-ID" ;
+            skos:notation "WP11-DDSS-070" ;
+        ];
         dct:title "Software";
         dct:identifier "WP11/Software";
         dct:description "Software-catalog for Computational Volcanology";
@@ -145,9 +149,8 @@
         dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
         dct:created "2019-01-01"^^xsd:date;
 	dct:spatial [ a dct:Location;
-		locn:geometry "POLYGON(10.399 43.721)"^^gsp:wktLiteral;
-		locn:geometry "POLYGON(10.399 43.721)"^^gsp:wktLiteral;
-		];
+		locn:geometry "POINT(10.399 43.721)"^^gsp:wktLiteral;
+	];
         dcat:theme <epos:Software-catalog>;
         dcat:keyword "Software-catalog","Computational Volcanology";
         dcat:contactPoint <https://orcid.org/0000-0002-0915-3711/contactPoint>;
@@ -177,10 +180,6 @@
 
 <Software> a epos:WebService;
 	schema:identifier "Software";
-	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID  "DDSS-ID";
-		schema:value  "WP11-DDSS-070";
-	]; 
 	schema:description "Numerical Models for Computational Volcanology";
 	schema:name "Computational Infrastructure for Volcanology";
 	schema:datePublished "2018-09-01T00:00:00Z"^^xsd:dateTime;
@@ -200,11 +199,12 @@
 	
 <Software/operation> a hydra:Operation;
 	hydra:method "GET"^^xsd:string;
-	hydra:returns "json";
+	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
 		hydra:template "http://civ.pi.ingv.it/wp-json/vmsg/v1/projects/{?project_setting,project_discipline}"^^xsd:string;
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "project_setting"^^xsd:string;
+				rdfs:range "xsd:string";
 				rdfs:label "Name that Conduit, Magmatic Fluid";
 				http:paramValue "Conduit";
 				http:paramValue "Magmatic Fluid"; 
@@ -213,6 +213,7 @@
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "project_"^^xsd:string;
+				rdfs:range "xsd:string";
 				rdfs:label "Name that Conduit, Magmatic Fluid";
 				http:paramValue "Conduit";
 				http:paramValue "Magmatic Fluid"; 
@@ -231,7 +232,7 @@
 	dct:description "It contains the concepts of Volcano-Observations";
 .
 <epos:Software-catalog> a skos:Concept;
-	skos:inScheme <Volcano-Observations>;
+	skos:inScheme <epos:Volcano-Observations>;
 	skos:prefLabel "Software-catalog";
 
 .

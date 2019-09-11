@@ -57,7 +57,7 @@
 		schema:propertyID "PIC";
 		schema:value "999472675";
 	];
-	schema:legalName "Istituto Nazionale di Geofisica e Vulcanologia (INGV)";
+	schema:legalName "Istituto Nazionale di Geofisica e Vulcanologia (INGV)"@it;
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "via di Vigna Murata 605";
 		schema:addressLocality "Roma";
@@ -187,7 +187,7 @@
 #.
 
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/AHEAD/events> a dcat:Dataset;
-	dct:title "AHEAD event data 1000-1899";
+	dct:title "Historical earthquakes 1000-1899";
 	dct:description "Event data (e.g. epicentre, magnitude) for earthquakes archived in AHEAD";
 	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/AHEAD/events";
 	adms:identifier [ a adms:Identifier;
@@ -205,7 +205,7 @@
 		locn:geometry "POLYGON((-34 74,45 74,45 33,-34 33,-34 74))"^^gsp:wktLiteral;
 	];
 	dcat:theme <epos:Historicalearthquakes>;
-	dcat:keyword "events", "seismicity", "catalogue";
+	dcat:keyword "event", "earthquake", "seismicity", "catalogue", "magnitude";
 	dcat:contactPoint <https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/AHEAD/scientificContact>;
 	dcat:contactPoint <https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/AHEAD/contactPoint>;
 	dct:publisher <PIC:999472675>;
@@ -215,7 +215,7 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/AHEAD/events/SHEEC> a dcat:Dataset;
 	dct:title "SHEEC catalogue 1000-1899";
-	dct:description "The SHEEC 1000-1899 is a homogeneous, European earthquake catalogue compiled in the framework of the EC FP7 Project “Seismic Hazard Harmonisation in Europe” (SHARE). AHEAD has supplied the final earthquake list, obtained after sorting duplications out and eliminating many fake events, and the most updated historical dataset. Earthquake parameters have been obtained by: a) processing macroseismic data points (MDPs) provided by AHEAD, with updated, repeatable procedures, regionally calibrated against a set of recent, instrumental earthquakes; b) the most updated regional parametric catalogues, re-assessing Mw; 3) selecting the most reliable epicentral location between a) and b) and assessing a final Mw value as a weighted mean of a) and b).";
+	dct:description "SHEEC 1000-1899 is a homogeneous, European earthquake catalogue compiled in the framework of the EC FP7 Project “Seismic Hazard Harmonisation in Europe” (SHARE). AHEAD has supplied the final earthquake list, obtained after sorting duplications out and eliminating many fake events, and the most updated historical dataset. Earthquake parameters have been obtained by: a) processing macroseismic data points (MDPs) provided by AHEAD, with updated, repeatable procedures, regionally calibrated against a set of recent, instrumental earthquakes; b) the most updated regional parametric catalogues, re-assessing Mw; 3) selecting the most reliable epicentral location between a) and b) and assessing a final Mw value as a weighted mean of a) and b).";
 	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/AHEAD/events/SHEEC";
 	adms:identifier [ a adms:Identifier;
 		adms:schemaAgency "DOI";
@@ -236,7 +236,7 @@
 		locn:geometry "POLYGON((-32 74,45 74,45 33,-32 33,-32 74))"^^gsp:wktLiteral;
 	];
 	dcat:theme <epos:Historicalearthquakes>;
-	dcat:keyword "earthquakes", "seismicity", "catalogue";
+	dcat:keyword "event", "earthquake", "seismicity", "catalogue", "magnitude";
 	dcat:contactPoint <https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/AHEAD/scientificContact>;
 	dcat:contactPoint <https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/AHEAD/contactPoint>;
 	dct:publisher <PIC:999472675>;
@@ -249,9 +249,13 @@
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/AHEAD/macroseismic> a dcat:Dataset;
-	dct:title "AHEAD macroseismic data 1000-1899";
+	dct:title "Macroseismic intensity data 1000-1899";
 	dct:description "Macroseismic intensity data related to earthquakes archived in AHEAD";
 	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/AHEAD/macroseismic";
+	adms:identifier [ a adms:Identifier;
+		adms:schemaAgency "DOI";
+		skos:notation "10.6092/INGV.IT-AHEAD";
+	];
 	adms:identifier [ a adms:Identifier;
 		adms:schemaAgency "DDSS-ID";
 		skos:notation "WP08-DDSS-051";
@@ -267,7 +271,7 @@
 		locn:geometry "POLYGON((-34 74,45 74,45 33,-34 33,-34 74))"^^gsp:wktLiteral;
 	];
 	dcat:theme <epos:Macroseismicdata>;
-	dcat:keyword "macroseismic", "intensity";
+	dcat:keyword "macroseismology", "macroseismic intensity", "felt intensity";
 	dcat:contactPoint <https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/AHEAD/scientificContact>;
 	dcat:contactPoint <https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/AHEAD/contactPoint>;
 	dct:publisher <PIC:999472675>;
@@ -275,9 +279,13 @@
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/AHEAD/bibliography> a dcat:Dataset;
-	dct:title "AHEAD bibliographic metadata";
-	dct:description "Bibliographic metadata (e.g. author, title, publication date) of publicly available sources of data related to the earthquakes in AHEAD. Studies on historical earthquakes usually describes the historical investigation, generally providing a distribution of earthquake effects, and/or the assessed earthquakes parameters.";
+	dct:title "Bibliography metadata for historical earthquakes";
+	dct:description "Bibliography metadata (e.g. author, title, publication date) of publicly available sources of data related to the earthquakes in AHEAD. Studies on historical earthquakes usually describes the historical investigation, generally providing a distribution of earthquake effects, and/or the assessed earthquakes parameters.";
 	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/AHEAD/bibliography";
+	adms:identifier [ a adms:Identifier;
+		adms:schemaAgency "DOI";
+		skos:notation "10.6092/INGV.IT-AHEAD";
+	];
 	adms:identifier [ a adms:Identifier;
 		adms:schemaAgency "DDSS-ID";
 		skos:notation "WP08-DDSS-026";
@@ -286,8 +294,14 @@
 	dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
 	dct:created "2010-06-01"^^xsd:date;
 	dct:modified "2018-09-10"^^xsd:date;
+	dct:temporal [ a dct:PeriodOfTime;
+		schema:startDate "1970-01-01T00:00:00Z"^^xsd:dateTime;
+	];
+	dct:spatial [ a dct:Location;
+		locn:geometry "POLYGON((-34 74,45 74,45 33,-34 33,-34 74))"^^gsp:wktLiteral;
+	];
 	dcat:theme <epos:Studiesonearthquakes>;
-	dcat:keyword "bibliography", "metadata", "studies", "publications", "catalogues";
+	dcat:keyword "bibliography", "metadata", "historical earthquake studies";
 	dcat:contactPoint <https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/AHEAD/scientificContact>;
 	dcat:contactPoint <https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/AHEAD/contactPoint>;
 	dct:publisher <PIC:999472675>;
@@ -298,7 +312,7 @@
 	schema:identifier "AHEAD/services/restful/events";
 	schema:description "FDSN-event web service providing event parameters for historical earthquakes from AHEAD, the European Archive of Historical Earthquake Data";
 	dcat:theme <epos:Historicalearthquakes>;
-	schema:name "AHEAD event data 1000-1899 (FDSN-event)";
+	schema:name "Historical earthquakes 1000-1899 (FDSN-event)";
 	hydra:entrypoint "https://www.emidius.eu/fdsnws/event/1/application.wadl"^^xsd:anyURI;
 	schema:provider <PIC:999472675>;
 	schema:datePublished "2012-12-01"^^xsd:date;
@@ -308,7 +322,7 @@
 		locn:geometry "POLYGON((-33.5 73.5,34.0 73.5,34.0 33.5,-33.5 33.5,-33.5 73.5))"^^gsp:wktLiteral;
 	];
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/AHEAD/restful/fdsnws-event/Operation>;
-	schema:keywords "seismology"," seismicity"," earthquakes"," seismic hazard"," earth structure"," earthquake intensity"," macroseismic"," macroseismic information"," bibliography"," earthquakes"," parameters"," historical"," macroseismic"," intensity";
+	schema:keywords "seismology", "seismicity", "catalogue", "earthquake", "magnitude", "seismic hazard", "historical";
 	dct:license "https://www.emidius.eu/AHEAD/introduction.php#copyright"^^xsd:anyURI;
 	dct:temporal [ a dct:PeriodOfTime;
 		schema:startDate "1000-01-01T00:00:00Z"^^xsd:dateTime;
@@ -322,7 +336,7 @@
 	schema:identifier "AHEAD/services/OGC/WFS/events";
 	schema:description "The OGC WFS web service providing a point layer with event parameters for historical earthquakes from AHEAD, the European Archive of Historical Earthquake Data";
 	dcat:theme <epos:Historicalearthquakes>;
-	schema:name "AHEAD event data 1000-1899 (WFS)";
+	schema:name "Historical earthquakes 1000-1899 (OGC WFS)";
 	hydra:entrypoint "https://www.emidius.eu/services/europe/wfs?"^^xsd:anyURI;
 	schema:provider <PIC:999472675>;
 	schema:datePublished "2017-09-14"^^xsd:date;
@@ -332,7 +346,7 @@
 		locn:geometry "POLYGON((-33.5 73.5,34.0 73.5,34.0 33.5,-33.5 33.5,-33.5 73.5))"^^gsp:wktLiteral;
 	];
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/AHEAD/OGC/WFS/events/Operation>;
-	schema:keywords "seismology"," seismicity"," earthquakes"," seismic hazard"," earth structure"," earthquake intensity"," macroseismic"," macroseismic information"," bibliography"," earthquakes"," parameters"," historical"," macroseismic"," intensity";
+	schema:keywords "seismology", "seismicity", "catalogue", "earthquake", "magnitude", "seismic hazard", "historical";
 	dct:license "https://www.emidius.eu/AHEAD/introduction.php#copyright"^^xsd:anyURI;
 	dct:temporal [ a dct:PeriodOfTime;
 		schema:startDate "1000-01-01T00:00:00Z"^^xsd:dateTime;
@@ -346,7 +360,7 @@
 	schema:identifier "AHEAD/services/OGC/WMS/events";
 	schema:description "The OGC WMS web service providing a raster layer with epicentres for historical earthquakes from AHEAD, the European Archive of Historical Earthquake Data";
 	dcat:theme <epos:Historicalearthquakes>;
-	schema:name "AHEAD event data 1000-1899 (WMS)";
+	schema:name "Historical earthquakes 1000-1899 (OGC WMS)";
 	hydra:entrypoint "https://www.emidius.eu/services/europe/wms?"^^xsd:anyURI;
 	schema:provider <PIC:999472675>;
 	schema:datePublished "2018-03-09"^^xsd:date;
@@ -356,7 +370,7 @@
 		locn:geometry "POLYGON((-33.5 73.5,34.0 73.5,34.0 33.5,-33.5 33.5,-33.5 73.5))"^^gsp:wktLiteral;
 	];
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/AHEAD/OGC/WMS/events/Operation>;
-	schema:keywords "seismology"," seismicity"," earthquakes"," seismic hazard"," earth structure"," earthquake intensity"," macroseismic"," macroseismic information"," bibliography"," earthquakes"," parameters"," historical"," macroseismic"," intensity";
+	schema:keywords "seismology", "seismicity", "catalogue", "earthquake", "magnitude", "seismic hazard", "historical";
 	dct:license "https://www.emidius.eu/AHEAD/introduction.php#copyright"^^xsd:anyURI;
 	dct:temporal [ a dct:PeriodOfTime;
 		schema:startDate "1000-01-01T00:00:00Z"^^xsd:dateTime;
@@ -370,7 +384,7 @@
 	schema:identifier "AHEAD/services/restful/macroseismic";
 	schema:description "Macroseismic web service providing intensity data for historical earthquakes from AHEAD, the European Archive of Historical Earthquake Data";
 	dcat:theme <epos:Macroseismicdata>;
-	schema:name "AHEAD macroseismic data 1000-1899";
+	schema:name "Macroseismic intensity data 1000-1899";
 	hydra:entrypoint "https://www.emidius.eu/services/macroseismic/query?"^^xsd:anyURI;
 	schema:provider <PIC:999472675>;
 	schema:datePublished "2017-09-14"^^xsd:date;
@@ -380,7 +394,7 @@
 		locn:geometry "POLYGON((-33.5 73.5,34.0 73.5,34.0 33.5,-33.5 33.5,-33.5 73.5))"^^gsp:wktLiteral;
 	];
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/AHEAD/restful/macroseismic/Operation>;
-	schema:keywords "seismology"," seismicity"," earthquakes"," seismic hazard"," earth structure"," earthquake intensity"," macroseismic"," macroseismic information"," bibliography"," earthquakes"," parameters"," historical"," macroseismic"," intensity";
+	dcat:keyword "macroseismology", "macroseismic intensity", "felt intensity";
 	dct:license "https://www.emidius.eu/AHEAD/introduction.php#copyright"^^xsd:anyURI;
 	dct:temporal [ a dct:PeriodOfTime;
 		schema:startDate "1000-01-01T00:00:00Z"^^xsd:dateTime;
@@ -394,7 +408,7 @@
 	schema:identifier "AHEAD/services/restful/bibliography";
 	schema:description "Bibliography web service providing bibliographical metadata associated to data source codes in AHEAD, the European Archive of Historical Earthquake Data";
 	dcat:theme <epos:Studiesonearthquakes>;
-	schema:name "AHEAD bibliographic metadata";
+	schema:name "Bibliography metadata for historical earthquake";
 	hydra:entrypoint "https://www.emidius.eu/services/bibliography/query?"^^xsd:anyURI;
 	schema:provider <PIC:999472675>;
 	schema:datePublished "2017-07-30"^^xsd:date;
@@ -404,7 +418,7 @@
 		locn:geometry "POLYGON((-33.5 73.5,34.0 73.5,34.0 33.5,-33.5 33.5,-33.5 73.5))"^^gsp:wktLiteral;
 	];
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/AHEAD/restful/bibliography/Operation>;
-	schema:keywords "seismology"," seismicity"," earthquakes"," seismic hazard"," earth structure"," earthquake intensity"," macroseismic"," macroseismic information"," bibliography"," earthquakes"," parameters"," historical"," macroseismic"," intensity";
+	schema:keywords "bibliography", "metadata", "historical earthquake studies";
 	dct:license "https://www.emidius.eu/AHEAD/introduction.php#copyright"^^xsd:anyURI;
 	dcat:contactPoint <https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/AHEAD/contactPoint>;
 	dcat:contactPoint <https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/AHEAD/scientificContact>;
@@ -418,7 +432,7 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "starttime"^^xsd:string;
 				hydra:property "schema:startDate";
-				schema:valuePattern "YYYY-MM-DDThh:mm";
+				schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 				rdfs:range "xsd:dateTime";
 				rdfs:label "Start time"@en;
 				schema:minValue "1000-01-01T00:00:00";
@@ -429,7 +443,7 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "endtime"^^xsd:string;
 				hydra:property "schema:endDate";
-				schema:valuePattern "YYYY-MM-DDThh:mm";
+				schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 				rdfs:range "xsd:dateTime";
 				rdfs:label "End time"@en;
 				schema:minValue "1000-01-01T00:00:00";
@@ -440,14 +454,14 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "eventid"^^xsd:string;
 				rdfs:range "xsd:string";
-				rdfs:label "event ID"@en;
+				rdfs:label "Event ID"@en;
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "minlatitude"^^xsd:string;
 				hydra:property "epos:southernmostLatitude";
 				rdfs:range "xsd:float";
-				rdfs:label "minimum latitude"@en;
+				rdfs:label "Minimum latitude"@en;
 				schema:minValue "33.0000";
 				schema:maxValue "74.0000";
 				schema:defaultValue "33.0000";
@@ -457,7 +471,7 @@
 				hydra:variable "maxlatitude"^^xsd:string;
 				hydra:property "epos:northernmostLatitude";
 				rdfs:range "xsd:float";
-				rdfs:label "maximum latitude"@en;
+				rdfs:label "Maximum latitude"@en;
 				schema:minValue "33.0000";
 				schema:maxValue "74.0000";
 				schema:defaultValue "74.0000";
@@ -467,7 +481,7 @@
 				hydra:variable "minlongitude"^^xsd:string;
 				hydra:property "epos:westernmostLongitude";
 				rdfs:range "xsd:float";
-				rdfs:label "minimum longitude"@en;
+				rdfs:label "Minimum longitude"@en;
 				schema:minValue "-34.0000";
 				schema:maxValue "34.0000";
 				schema:defaultValue "-34.0000";
@@ -477,7 +491,7 @@
 				hydra:variable "maxlongitude"^^xsd:string;
 				hydra:property "epos:easternmostLongitude";
 				rdfs:range "xsd:float";
-				rdfs:label "maximum longitude"@en;
+				rdfs:label "Maximum longitude"@en;
 				schema:minValue "-34.0000";
 				schema:maxValue "34.0000";
 				schema:defaultValue "34.0000";
@@ -486,7 +500,7 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "latitude"^^xsd:string;
 				rdfs:range "xsd:float";
-				rdfs:label "center latitude"@en;
+				rdfs:label "Center latitude"@en;
 				schema:minValue "33.0000";
 				schema:maxValue "74.0000";
 				hydra:required "false"^^xsd:boolean;
@@ -494,7 +508,7 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "longitude"^^xsd:string;
 				rdfs:range "xsd:float";
-				rdfs:label "center longitude"@en;
+				rdfs:label "Center longitude"@en;
 				schema:minValue "-34.0000";
 				schema:maxValue "34.0000";
 				hydra:required "false"^^xsd:boolean;
@@ -502,7 +516,7 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "minradius"^^xsd:string;
 				rdfs:range "xsd:float";
-				rdfs:label "minimum search radius (degrees)"@en;
+				rdfs:label "Minimum search radius (degrees)"@en;
 				schema:minValue "0.00";
 				schema:maxValue "5.00";
 				hydra:required "false"^^xsd:boolean;
@@ -510,7 +524,7 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "maxradius"^^xsd:string;
 				rdfs:range "xsd:float";
-				rdfs:label "maximum search radius (degrees)"@en;
+				rdfs:label "Maximum search radius (degrees)"@en;
 				schema:minValue "0.00";
 				schema:maxValue "5.00";
 				hydra:required "false"^^xsd:boolean;
@@ -518,7 +532,7 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "minradiuskm"^^xsd:string;
 				rdfs:range "xsd:float";
-				rdfs:label "minimum search radius (in km)"@en;
+				rdfs:label "Minimum search radius (in km)"@en;
 				schema:minValue "0.00";
 				schema:maxValue "500.00";
 				hydra:required "false"^^xsd:boolean;
@@ -526,7 +540,7 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "maxradiuskm"^^xsd:string;
 				rdfs:range "xsd:float";
-				rdfs:label "maximum search radius (in km)"@en;
+				rdfs:label "Maximum search radius (in km)"@en;
 				schema:minValue "0.00";
 				schema:maxValue "500.00";
 				hydra:required "false"^^xsd:boolean;
@@ -534,7 +548,7 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "minmagnitude"^^xsd:string;
 				rdfs:range "xsd:float";
-				rdfs:label "minimum magnitude (Mw)"@en;
+				rdfs:label "Minimum magnitude (Mw)"@en;
 				schema:minValue "0.0";
 				schema:maxValue "10.0";
 				schema:defaultValue "6.5";
@@ -543,7 +557,7 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "maxmagnitude"^^xsd:string;
 				rdfs:range "xsd:float";
-				rdfs:label "maximum magnitude (Mw)"@en;
+				rdfs:label "Maximum magnitude (Mw)"@en;
 				schema:minValue "0.0";
 				schema:maxValue "10.0";
 				hydra:required "false"^^xsd:boolean;
@@ -551,19 +565,19 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "contributor"^^xsd:string;
 				rdfs:range "xsd:string";
-				rdfs:label "data contributor code"@en;
+				rdfs:label "Data contributor code"@en;
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "contributorid"^^xsd:string;
 				rdfs:range "xsd:string";
-				rdfs:label "contributor event ID"@en;
+				rdfs:label "Contributor event ID"@en;
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "format"^^xsd:string;
 				rdfs:range "xsd:string";
-				rdfs:label "output format"@en;
+				rdfs:label "Output format"@en;
 				http:paramValue "xml";
 				http:paramValue "text";
 				http:paramValue "json";
@@ -573,7 +587,7 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "orderby"^^xsd:string;
 				rdfs:range "xsd:string";
-				rdfs:label "output ordering"@en;
+				rdfs:label "Output ordering"@en;
 				http:paramValue "time";
 				http:paramValue "time-asc";
 				http:paramValue "magnitude";
@@ -584,21 +598,25 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "includeallorigins"^^xsd:string;
 				rdfs:range "xsd:boolean";
-				rdfs:label "include all origins"@en;
+				rdfs:label "Include all origins"@en;
 				schema:defaultValue "false";
+				http:paramValue "true";
+				http:paramValue "false";
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "includeallmagnitudes"^^xsd:string;
 				rdfs:range "xsd:boolean";
-				rdfs:label "include all magnitudes"@en;
+				rdfs:label "Include all magnitudes"@en;
 				schema:defaultValue "false";
+				http:paramValue "true";
+				http:paramValue "false";
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "limit"^^xsd:string;
 				rdfs:range "xsd:integer";
-				rdfs:label "limit the no. of output entries"@en;
+				rdfs:label "Limit the no. of output entries"@en;
 				schema:minValue "1";
 				schema:maxValue "5000";
 				schema:defaultValue "300";
@@ -607,14 +625,14 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "updatedafter"^^xsd:string;
 				rdfs:range "xsd:dateTime";
-				rdfs:label "update after"@en;
+				rdfs:label "Update after"@en;
 				schema:minValue "2010-01-01T00:00:00";
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "nodata"^^xsd:string;
 				rdfs:range "xsd:string";
-				rdfs:label "status code for "@en;
+				rdfs:label "Status code for "@en;
 				http:paramValue "204";
 				http:paramValue "404";
 				schema:defaultValue "204";
@@ -639,7 +657,7 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "service"^^xsd:string;
 				rdfs:range "xsd:string";
-				rdfs:label "service type"@en;
+				rdfs:label "Service type"@en;
 				http:paramValue "WFS";
 				schema:defaultValue "WFS";
 				hydra:required "true"^^xsd:boolean;
@@ -695,7 +713,7 @@
 				schema:defaultValue "GML3";
 				hydra:required "true"^^xsd:boolean;
 			];
-			hydra:mapping[ a hydra:IriTemplateMappinf;
+			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "srsName";
 				rdfs:range "xsd:string";
 				rdfs:label "SRS coordinate system";
@@ -727,7 +745,7 @@
 				hydra:variable "minlatitude"^^xsd:string;
 				hydra:property "epos:southernmostLatitude";
 				rdfs:range "xsd:float";
-				rdfs:label "minimum latitude"@en;
+				rdfs:label "Minimum latitude"@en;
 				schema:minValue "33.0000";
 				schema:maxValue "74.0000";
 				schema:defaultValue "33.0000";
@@ -737,7 +755,7 @@
 				hydra:variable "maxlatitude"^^xsd:string;
 				hydra:property "epos:northernmostLatitude";
 				rdfs:range "xsd:float";
-				rdfs:label "maximum latitude"@en;
+				rdfs:label "Maximum latitude"@en;
 				schema:minValue "33.0000";
 				schema:maxValue "74.0000";
 				schema:defaultValue "74.0000";
@@ -747,7 +765,7 @@
 				hydra:variable "minlongitude"^^xsd:string;
 				hydra:property "epos:westernmostLongitude";
 				rdfs:range "xsd:float";
-				rdfs:label "minimum longitude"@en;
+				rdfs:label "Minimum longitude"@en;
 				schema:minValue "-34.0000";
 				schema:maxValue "34.0000";
 				schema:defaultValue "-34.0000";
@@ -757,7 +775,7 @@
 				hydra:variable "maxlongitude"^^xsd:string;
 				hydra:property "epos:easternmostLongitude";
 				rdfs:range "xsd:float";
-				rdfs:label "maximum longitude"@en;
+				rdfs:label "Maximum longitude"@en;
 				schema:minValue "-34.0000";
 				schema:maxValue "34.0000";
 				schema:defaultValue "34.0000";
@@ -782,7 +800,7 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "service"^^xsd:string;
 				rdfs:range "xsd:string";
-				rdfs:label "service"@en;
+				rdfs:label "Service"@en;
 				http:paramValue "WMS";
 				schema:defaultValue "WMS";
 				hydra:required "true"^^xsd:boolean;
@@ -894,7 +912,7 @@
 				hydra:variable "minlatitude"^^xsd:string;
 				hydra:property "epos:southernmostLatitude";
 				rdfs:range "xsd:float";
-				rdfs:label "minimum latitude"@en;
+				rdfs:label "Minimum latitude"@en;
 				schema:minValue "33.0000";
 				schema:maxValue "74.0000";
 				schema:defaultValue "33.0000";
@@ -904,7 +922,7 @@
 				hydra:variable "maxlatitude"^^xsd:string;
 				hydra:property "epos:northernmostLatitude";
 				rdfs:range "xsd:float";
-				rdfs:label "maximum latitude"@en;
+				rdfs:label "Maximum latitude"@en;
 				schema:minValue "33.0000";
 				schema:maxValue "74.0000";
 				schema:defaultValue "74.0000";
@@ -914,7 +932,7 @@
 				hydra:variable "minlongitude"^^xsd:string;
 				hydra:property "epos:westernmostLongitude";
 				rdfs:range "xsd:float";
-				rdfs:label "minimum longitude"@en;
+				rdfs:label "Minimum longitude"@en;
 				schema:minValue "-34.0000";
 				schema:maxValue "34.0000";
 				schema:defaultValue "-34.0000";
@@ -924,7 +942,7 @@
 				hydra:variable "maxlongitude"^^xsd:string;
 				hydra:property "epos:easternmostLongitude";
 				rdfs:range "xsd:float";
-				rdfs:label "maximum longitude"@en;
+				rdfs:label "Maximum longitude"@en;
 				schema:minValue "-34.0000";
 				schema:maxValue "34.0000";
 				schema:defaultValue "34.0000";
@@ -941,7 +959,7 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "starttime"^^xsd:string;
 				hydra:property "schema:startDate";
-				schema:valuePattern "YYYY-MM-DDThh:mm";
+				schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 				rdfs:range "xsd:dateTime";
 				rdfs:label "Start time"@en;
 				schema:minValue "1000-01-01T00:00:00";
@@ -952,7 +970,7 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "endtime"^^xsd:string;
 				hydra:property "schema:endDate";
-				schema:valuePattern "YYYY-MM-DDThh:mm";
+				schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 				rdfs:range "xsd:dateTime";
 				rdfs:label "End time"@en;
 				schema:minValue "1000-01-01T00:00:00";
@@ -963,7 +981,7 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "eventid"^^xsd:string;
 				rdfs:range "xsd:string";
-				rdfs:label "event ID"@en;
+				rdfs:label "Event ID"@en;
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
@@ -976,7 +994,7 @@
 				hydra:variable "minlatitude"^^xsd:string;
 				hydra:property "epos:southernmostLatitude";
 				rdfs:range "xsd:float";
-				rdfs:label "minimum latitude"@en;
+				rdfs:label "Minimum latitude"@en;
 				schema:minValue "33.0000";
 				schema:maxValue "74.0000";
 				schema:defaultValue "33.0000";
@@ -986,7 +1004,7 @@
 				hydra:variable "maxlatitude"^^xsd:string;
 				hydra:property "epos:northernmostLatitude";
 				rdfs:range "xsd:float";
-				rdfs:label "maximum latitude"@en;
+				rdfs:label "Maximum latitude"@en;
 				schema:minValue "33.0000";
 				schema:maxValue "74.0000";
 				schema:defaultValue "74.0000";
@@ -996,7 +1014,7 @@
 				hydra:variable "minlongitude"^^xsd:string;
 				hydra:property "epos:westernmostLongitude";
 				rdfs:range "xsd:float";
-				rdfs:label "minimum longitude"@en;
+				rdfs:label "Minimum longitude"@en;
 				schema:minValue "-34.0000";
 				schema:maxValue "34.0000";
 				schema:defaultValue "-34.0000";
@@ -1006,7 +1024,7 @@
 				hydra:variable "maxlongitude"^^xsd:string;
 				hydra:property "epos:easternmostLongitude";
 				rdfs:range "xsd:float";
-				rdfs:label "maximum longitude"@en;
+				rdfs:label "Maximum longitude"@en;
 				schema:minValue "-34.0000";
 				schema:maxValue "34.0000";
 				schema:defaultValue "34.0000";
@@ -1015,7 +1033,7 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "latitude"^^xsd:string;
 				rdfs:range "xsd:float";
-				rdfs:label "center latitude"@en;
+				rdfs:label "Center latitude"@en;
 				schema:minValue "33.0000";
 				schema:maxValue "74.0000";
 				hydra:required "false"^^xsd:boolean;
@@ -1023,7 +1041,7 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "longitude"^^xsd:string;
 				rdfs:range "xsd:float";
-				rdfs:label "center longitude"@en;
+				rdfs:label "Center longitude"@en;
 				schema:minValue "-34.0000";
 				schema:maxValue "34.0000";
 				hydra:required "false"^^xsd:boolean;
@@ -1031,7 +1049,7 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "minradius"^^xsd:string;
 				rdfs:range "xsd:float";
-				rdfs:label "minimum search radius (degrees)"@en;
+				rdfs:label "Minimum search radius (degrees)"@en;
 				schema:minValue "0.00";
 				schema:maxValue "5.00";
 				hydra:required "false"^^xsd:boolean;
@@ -1039,7 +1057,7 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "maxradius"^^xsd:string;
 				rdfs:range "xsd:float";
-				rdfs:label "maximum search radius (degrees)"@en;
+				rdfs:label "Maximum search radius (degrees)"@en;
 				schema:minValue "0.00";
 				schema:maxValue "5.00";
 				hydra:required "false"^^xsd:boolean;
@@ -1047,7 +1065,7 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "minradiuskm"^^xsd:string;
 				rdfs:range "xsd:float";
-				rdfs:label "minimum search radius (in km)"@en;
+				rdfs:label "Minimum search radius (in km)"@en;
 				schema:minValue "0.00";
 				schema:maxValue "500.00";
 				hydra:required "false"^^xsd:boolean;
@@ -1055,7 +1073,7 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "maxradiuskm"^^xsd:string;
 				rdfs:range "xsd:float";
-				rdfs:label "maximum search radius (in km)"@en;
+				rdfs:label "Maximum search radius (in km)"@en;
 				schema:minValue "0.00";
 				schema:maxValue "500.00";
 				hydra:required "false"^^xsd:boolean;
@@ -1063,7 +1081,7 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "minmagnitude"^^xsd:string;
 				rdfs:range "xsd:float";
-				rdfs:label "minimum magnitude (Mw)"@en;
+				rdfs:label "Minimum magnitude (Mw)"@en;
 				schema:minValue "0.0";
 				schema:maxValue "10.0";
 				schema:defaultValue "6.5";
@@ -1072,7 +1090,7 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "maxmagnitude"^^xsd:string;
 				rdfs:range "xsd:float";
-				rdfs:label "maximum magnitude (Mw)"@en;
+				rdfs:label "Maximum magnitude (Mw)"@en;
 				schema:minValue "0.0";
 				schema:maxValue "10.0";
 				hydra:required "false"^^xsd:boolean;
@@ -1080,19 +1098,19 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "contributor"^^xsd:string;
 				rdfs:range "xsd:string";
-				rdfs:label "data contributor code"@en;
+				rdfs:label "Data contributor code"@en;
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "contributorid"^^xsd:string;
 				rdfs:range "xsd:string";
-				rdfs:label "contributor event ID"@en;
+				rdfs:label "Contributor event ID"@en;
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "format"^^xsd:string;
 				rdfs:range "xsd:string";
-				rdfs:label "output format"@en;
+				rdfs:label "Output format"@en;
 				http:paramValue "xml";
 				http:paramValue "json";
 				http:paramValue "jsonmacro";
@@ -1104,7 +1122,7 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "orderby"^^xsd:string;
 				rdfs:range "xsd:string";
-				rdfs:label "output ordering"@en;
+				rdfs:label "Output ordering"@en;
 				http:paramValue "time";
 				http:paramValue "time-asc";
 				http:paramValue "magnitude";
@@ -1115,42 +1133,50 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "includeallorigins"^^xsd:string;
 				rdfs:range "xsd:boolean";
-				rdfs:label "include all origins"@en;
+				rdfs:label "Include all origins"@en;
 				schema:defaultValue "false";
+				http:paramValue "true";
+				http:paramValue "false";
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "includeallmagnitudes"^^xsd:string;
 				rdfs:range "xsd:boolean";
-				rdfs:label "include all magnitudes"@en;
+				rdfs:label "Include all magnitudes"@en;
 				schema:defaultValue "false";
+				http:paramValue "true";
+				http:paramValue "false";
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "includeallmdpsets"^^xsd:string;
 				rdfs:range "xsd:boolean";
-				rdfs:label "include all MDP sets"@en;
+				rdfs:label "Include all MDP sets"@en;
 				schema:defaultValue "false";
+				http:paramValue "true";
+				http:paramValue "false";
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "includemdps"^^xsd:string;
 				rdfs:range "xsd:boolean";
-				rdfs:label "include MDPs"@en;
+				rdfs:label "Include MDPs"@en;
 				schema:defaultValue "true";
+				http:paramValue "true";
+				http:paramValue "false";
 				hydra:required "true"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "updatedafter"^^xsd:string;
 				rdfs:range "xsd:dateTime";
-				rdfs:label "update after"@en;
+				rdfs:label "Update after"@en;
 				schema:minValue "2010-01-01T00:00:00";
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "limit"^^xsd:string;
 				rdfs:range "xsd:integer";
-				rdfs:label "limit the no. of output entries"@en;
+				rdfs:label "Limit the no. of output entries"@en;
 				schema:minValue "1";
 				schema:maxValue "5000";
 				schema:defaultValue "300";
@@ -1159,7 +1185,7 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "nodata"^^xsd:string;
 				rdfs:range "xsd:string";
-				rdfs:label "status code for "@en;
+				rdfs:label "Status code for "@en;
 				http:paramValue "204";
 				http:paramValue "404";
 				schema:defaultValue "204";
@@ -1180,6 +1206,7 @@
 				rdfs:range "xsd:integer";
 				rdfs:label "Start year of the publication"@en;
 				schema:minValue "1900";
+				schema:defaultValue "1900";
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
@@ -1189,49 +1216,50 @@
 				rdfs:range "xsd:integer";
 				rdfs:label "End year of the publication"@en;
 				schema:minValue "1900";
+				schema:defaultValue "2020";
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "biblioid"^^xsd:string;
 				rdfs:range "xsd:string";
-				rdfs:label "code of the publication as used in AHEAD"@en;
+				rdfs:label "Code of the publication as used in AHEAD"@en;
 				hydra:required "true"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "author"^^xsd:string;
 				rdfs:range "xsd:string";
-				rdfs:label "surname of one of the author of the publication"@en;
+				rdfs:label "Surname of one of the author of the publication"@en;
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "title"^^xsd:string;
 				rdfs:range "xsd:string";
-				rdfs:label "title of the publication"@en;
+				rdfs:label "Title of the publication"@en;
 				schema:defaultValue "catalog";
 				hydra:required "true"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "journal"^^xsd:string;
 				rdfs:range "xsd:string";
-				rdfs:label "journal where the paper was published"@en;
+				rdfs:label "Journal where the paper was published"@en;
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "publisher"^^xsd:string;
 				rdfs:range "xsd:string";
-				rdfs:label "name of the publisher"@en;
+				rdfs:label "Name of the publisher"@en;
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "doi"^^xsd:string;
 				rdfs:range "xsd:string";
-				rdfs:label "doi of the publication"@en;
+				rdfs:label "DOI of the publication"@en;
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "year"^^xsd:string;
 				rdfs:range "xsd:integer";
-				rdfs:label "year of publication"@en;
+				rdfs:label "Year of publication"@en;
 				schema:minValue "1900";
 				hydra:required "false"^^xsd:boolean;
 			];
@@ -1239,7 +1267,7 @@
 				hydra:variable "minlatitude"^^xsd:string;
 				hydra:property "epos:southernmostLatitude";
 				rdfs:range "xsd:float";
-				rdfs:label "minimum latitude"@en;
+				rdfs:label "Minimum latitude"@en;
 				schema:minValue "33.0000";
 				schema:maxValue "74.0000";
 				hydra:required "false"^^xsd:boolean;
@@ -1248,7 +1276,7 @@
 				hydra:variable "maxlatitude"^^xsd:string;
 				hydra:property "epos:northernmostLatitude";
 				rdfs:range "xsd:float";
-				rdfs:label "maximum latitude"@en;
+				rdfs:label "Maximum latitude"@en;
 				schema:minValue "33.0000";
 				schema:maxValue "74.0000";
 				hydra:required "false"^^xsd:boolean;
@@ -1257,7 +1285,7 @@
 				hydra:variable "minlongitude"^^xsd:string;
 				hydra:property "epos:westernmostLongitude";
 				rdfs:range "xsd:float";
-				rdfs:label "minimum longitude"@en;
+				rdfs:label "Minimum longitude"@en;
 				schema:minValue "-34.0000";
 				schema:maxValue "34.0000";
 				hydra:required "false"^^xsd:boolean;
@@ -1266,7 +1294,7 @@
 				hydra:variable "maxlongitude"^^xsd:string;
 				hydra:property "epos:easternmostLongitude";
 				rdfs:range "xsd:float";
-				rdfs:label "maximum longitude"@en;
+				rdfs:label "Maximum longitude"@en;
 				schema:minValue "-34.0000";
 				schema:maxValue "34.0000";
 				hydra:required "false"^^xsd:boolean;
@@ -1274,7 +1302,7 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "latitude"^^xsd:string;
 				rdfs:range "xsd:float";
-				rdfs:label "center latitude"@en;
+				rdfs:label "Center latitude"@en;
 				schema:minValue "33.0000";
 				schema:maxValue "74.0000";
 				hydra:required "false"^^xsd:boolean;
@@ -1282,7 +1310,7 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "longitude"^^xsd:string;
 				rdfs:range "xsd:float";
-				rdfs:label "center longitude"@en;
+				rdfs:label "Center longitude"@en;
 				schema:minValue "-34.0000";
 				schema:maxValue "34.0000";
 				hydra:required "false"^^xsd:boolean;
@@ -1290,7 +1318,7 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "minradius"^^xsd:string;
 				rdfs:range "xsd:float";
-				rdfs:label "minimum search radius (degrees)"@en;
+				rdfs:label "Minimum search radius (degrees)"@en;
 				schema:minValue "0.00";
 				schema:maxValue "5.00";
 				hydra:required "false"^^xsd:boolean;
@@ -1298,7 +1326,7 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "maxradius"^^xsd:string;
 				rdfs:range "xsd:float";
-				rdfs:label "maximum search radius (degrees)"@en;
+				rdfs:label "Maximum search radius (degrees)"@en;
 				schema:minValue "0.00";
 				schema:maxValue "5.00";
 				hydra:required "false"^^xsd:boolean;
@@ -1306,7 +1334,7 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "minradiuskm"^^xsd:string;
 				rdfs:range "xsd:float";
-				rdfs:label "minimum search radius (in km)"@en;
+				rdfs:label "Minimum search radius (in km)"@en;
 				schema:minValue "0.00";
 				schema:maxValue "500.00";
 				hydra:required "false"^^xsd:boolean;
@@ -1314,7 +1342,7 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "maxradiuskm"^^xsd:string;
 				rdfs:range "xsd:float";
-				rdfs:label "maximum search radius (in km)"@en;
+				rdfs:label "Maximum search radius (in km)"@en;
 				schema:minValue "0.00";
 				schema:maxValue "500.00";
 				hydra:required "false"^^xsd:boolean;
@@ -1322,7 +1350,7 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "minmagnitude"^^xsd:string;
 				rdfs:range "xsd:float";
-				rdfs:label "minimum magnitude (Mw)"@en;
+				rdfs:label "Minimum magnitude (Mw)"@en;
 				schema:minValue "0.0";
 				schema:maxValue "10.0";
 				hydra:required "false"^^xsd:boolean;
@@ -1330,7 +1358,7 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "maxmagnitude"^^xsd:string;
 				rdfs:range "xsd:float";
-				rdfs:label "maximum magnitude (Mw)"@en;
+				rdfs:label "Maximum magnitude (Mw)"@en;
 				schema:minValue "0.0";
 				schema:maxValue "10.0";
 				hydra:required "false"^^xsd:boolean;
@@ -1338,7 +1366,7 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "format"^^xsd:string;
 				rdfs:range "xsd:string";
-				rdfs:label "output format"@en;
+				rdfs:label "Output format"@en;
 				http:paramValue "rdf";
 				http:paramValue "bib";
 				http:paramValue "xml_oai";
@@ -1349,7 +1377,7 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "orderby"^^xsd:string;
 				rdfs:range "xsd:string";
-				rdfs:label "output ordering"@en;
+				rdfs:label "Output ordering"@en;
 				http:paramValue "author";
 				http:paramValue "year";
 				http:paramValue "title";
@@ -1358,7 +1386,7 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "nodata"^^xsd:string;
 				rdfs:range "xsd:string";
-				rdfs:label "status code for "@en;
+				rdfs:label "Status code for "@en;
 				http:paramValue "204";
 				http:paramValue "404";
 				schema:defaultValue "204";
@@ -1368,7 +1396,7 @@
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/AHEAD/events/distribution/restful> a dcat:Distribution;
-	dct:title "AHEAD event data distribution (FDSN-event)";
+	dct:title "Historical earthquakes 1000-1899 distribution (FDSN-event)";
 	dct:description "The distribution of event parameters via the FDSN-event web service is the main and preferred way to access historical earthquake data archived in AHEAD.";
 	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/AHEAD/events/distribution/restful";
 	dct:issued "2017-10-25"^^xsd:date;
@@ -1381,7 +1409,7 @@
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/AHEAD/events/SHEEC/distribution/OGC/WFS> a dcat:Distribution;
-	dct:title "AHEAD event data distribution (OGC WFS)";
+	dct:title "Historical earthquakes 1000-1899 distribution (OGC WFS)";
 	dct:description "The OGC compilant WFS distribution of the historical section of the SHARE European catalogue (SHEEC 1000-1899).";
 	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/AHEAD/events/SHEEC/distribution/OGC/WFS";
 	dct:issued "2013-05-31"^^xsd:date;
@@ -1394,7 +1422,7 @@
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/AHEAD/events/SHEEC/distribution/OGC/WMS> a dcat:Distribution;
-	dct:title "AHEAD event data distribution (OGC WMS)";
+	dct:title "Historical earthquakes 1000-1899 distribution (OGC WMS)";
 	dct:description "The OGC compilant WMS distribution of the historical section of the SHARE European catalogue (SHEEC 1000-1899).";
 	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/AHEAD/events/SHEEC/distribution/OGC/WMS";
 	dct:issued "2013-05-31"^^xsd:date;
@@ -1407,7 +1435,7 @@
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/AHEAD/macroseismic/distribution/restful> a dcat:Distribution;
-	dct:title "AHEAD macroseismic data distribution";
+	dct:title "Macroseismic intensity data 1000-1899";
 	dct:description "The distribution of macroseismic intensity data via the restful web service is the main and preferred way to access historical earthquake data archived in AHEAD.";
 	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/AHEAD/macroseismic/distribution/restful";
 	dct:issued "2017-10-25"^^xsd:date;
@@ -1420,7 +1448,7 @@
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/AHEAD/bibliography/distribution/restful> a dcat:Distribution;
-	dct:title "AHEAD data sources distribution";
+	dct:title "Bibliography for historical earthquakes distribution";
 	dct:description "The distribution of bibliographical metadata via the restful web service is the main and preferred way to access the description of each data source considered by the AHEAD curators.";
 	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/AHEAD/bibliography/distribution/restful";
 	dct:issued "2017-10-25"^^xsd:date;
@@ -1433,7 +1461,7 @@
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/AHEAD/APIDocumentation> a hydra:APIDocumentation;
-      hydra:title "AHEAD web services documentation";
+      hydra:title "Web services documentation for historical earthquakes";
       hydra:description "List, descriptions and examples on how to use AHEAD web services to access data on historical earthquakes.";
 	  hydra:entrypoint "https://www.emidius.eu/AHEAD/services/"^^xsd:anyURI;
 .

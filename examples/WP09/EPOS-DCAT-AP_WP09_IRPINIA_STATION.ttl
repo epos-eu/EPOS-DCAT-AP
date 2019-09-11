@@ -70,7 +70,7 @@
 	schema:datePublished "2016-01-01"^^xsd:dateTime;
 	schema:dateModified "2016-01-01"^^xsd:dateTime;
 	dct:spatial [ a dct:Location;
-		locn:geometry "POLYGON(14.0 39.0,16.0 39.0,16.0 42.0,14.0 42.0,14.0 39.0)"^^gsp:wktLiteral;
+		locn:geometry "POLYGON((14.0 39.0,16.0 39.0,16.0 42.0,14.0 42.0,14.0 39.0))"^^gsp:wktLiteral;
 	];
 	dct:temporal [ a dct:PeriodOfTime;
 		schema:startDate "2003-01-01T00:00:00Z"^^xsd:dateTime;
@@ -112,7 +112,8 @@
 				rdfs:range "xsd:dateTime";
 				rdfs:label "Start of the timespan";
 				hydra:property "schema:startDate";
-				schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
+				schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+				schema:defaultValue "2010-01-01T00:00:00";
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
@@ -120,7 +121,8 @@
 				rdfs:range "xsd:dateTime";
 				rdfs:label "End of the timespan";
 				hydra:property "schema:endDate";
-				schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
+				schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+				schema:defaultValue "2019-03-01T00:00:00";
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
@@ -266,7 +268,7 @@
 	dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
 	dct:created "2003-01-01"^^xsd:date;
 	dct:spatial [ a dct:Location;
-		locn:geometry "POLYGON(14.0 39.0,16.0 39.0,16.0 42.0,14.0 42.0,14.0 39.0)"^^gsp:wktLiteral;
+		locn:geometry "POLYGON((14.0 39.0,16.0 39.0,16.0 42.0,14.0 42.0,14.0 39.0))"^^gsp:wktLiteral;
 	];
 	dct:temporal [ a dct:PeriodOfTime;
 		schema:startDate "2003-01-01T00:00:00Z"^^xsd:dateTime;

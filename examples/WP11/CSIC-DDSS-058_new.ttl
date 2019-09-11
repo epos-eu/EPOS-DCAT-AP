@@ -51,12 +51,12 @@
 		schema:availableLanguage "en" ;
 		schema:contactType "scientificContact" ;
 . 
-<http://orcid.org/0000-0002-8651-6387/legalContact> a schema:ContactPoint;
+<http://orcid.org/0000-0002-8803-6504/legalContact> a schema:ContactPoint;
 		schema:email "ageyertraver@gmail.com";
 		schema:availableLanguage "en" ;
 		schema:contactType "legalContact" ;
 . 
-<http://orcid.org/0000-0002-8651-6387/financialContact> a schema:ContactPoint;
+<http://orcid.org/0000-0002-8803-6504/financialContact> a schema:ContactPoint;
 		schema:email "ageyertraver@gmail.com";
 		schema:availableLanguage "en" ;
 		schema:contactType "financialContact" ;
@@ -64,7 +64,7 @@
 <http://orcid.org/0000-0002-8803-6504/contactPoint> a schema:ContactPoint;
 		schema:email "ageyertraver@gmail.com";
 		schema:availableLanguage "en" ;
-		schema:contactType "ContactPoint" ;
+		schema:contactType "contactPoint" ;
 . 
 
 #########
@@ -87,8 +87,8 @@
 	schema:logo "http://www.csic.es/imagen-corporativa"^^xsd:anyURI;
 	schema:url "http://www.csic.es/"^^xsd:anyURI;
 	schema:contactPoint <http://orcid.org/0000-0002-8803-6504/scientificContact>;
-	schema:contactPoint <http://orcid.org/0000-0002-8651-6387/legalContact>;
-	schema:contactPoint <http://orcid.org/0000-0002-8651-6387/financialContact>;
+	schema:contactPoint <http://orcid.org/0000-0002-8803-6504/legalContact>;
+	schema:contactPoint <http://orcid.org/0000-0002-8803-6504/financialContact>;
 .
 
 #########
@@ -98,13 +98,20 @@
 <WP11/HazardMap/TephraFallout> a dcat:Dataset;
         dct:title "Tephra fallout hazard maps for explosive volcanoes";
         dct:identifier "WP11/HazardMap/TephraFallout";
+        adms:identifier [ a adms:Identifier;
+         	adms:schemaAgency "DDSS-ID";
+        	skos:notation "WP11-DDSS-058";
+        ];
         dct:description "Tephra fallout hazard maps for explosive volcanoes";
         ## example of frequency using a controlled vocabulary
 	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
         dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
         dct:created "2018-09-01"^^xsd:date;
+	dct:spatial [ a dct:Location ;
+			locn:geometry "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral ;
+	];
         dcat:theme  <epos:Hazardmap> ;
-        dcat:keyword "tephra fallout", "hazard map", "explosive eruption", "hazard assessment", "volcanic hazard", "volcanology";
+        dcat:keyword "tephra fallout", "hazard map", "explosive eruption", "hazard assessment", "volcanic hazard", "volcanology","Lanzarote";
         dcat:contactPoint <http://orcid.org/0000-0002-8803-6504/contactPoint>;
 	dct:publisher <http://isni.org/isni/0000000122036192>;
         dcat:distribution <WP11/HazardMap/TephraFallout/WSDistribution>;
@@ -116,25 +123,22 @@
 #########  
 
 <WP11/HazardMap/TephraFallout/WSDistribution> a dcat:Distribution;
-        dct:identifier "WP11/HazardMaps/TephraFallout/WSDistribution";
+        dct:title "Tephra fallout hazard maps for explosive volcanoes";
+        dct:identifier "WP11/HazardMap/TephraFallout/WSDistribution";
 	dct:description "Hazard Maps WSDistribution";
 	dct:created "2018-09-01"^^xsd:date;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-	dcat:accessURL <HazardMap/operation>;
-	dct:conformsTo <HazardMap>;
-	dct:format "http://publications.europa.eu/resource/authority/file-type/TXT"^^xsd:anyURI;
+	dcat:accessURL <HazardMap/TephraFallout/operation>;
+	dct:conformsTo <HazardMap/TephraFallout>;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 .
 
 #########
 # WebService
 ######### 
 
-<HazardMap> a epos:WebService;
-	schema:identifier "HazardMap";
-	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID  "DDSS-ID";
-		schema:value  "WP11-DDSS-058";
-	]; 
+<HazardMap/TephraFallout> a epos:WebService;
+	schema:identifier "HazardMap/TephraFallout";
 	schema:description "Tephra fallout hazard maps for explosive volcanoes";
 	schema:name "Tephra fallout hazard maps for explosive volcanoes";
 	schema:datePublished "2018-09-01T00:00:00Z"^^xsd:dateTime;
@@ -142,7 +146,7 @@
 	schema:provider <http://isni.org/isni/0000000122036192>;
 	schema:keywords "tephra fallout", "hazard map", "explosive eruption", "hazard assessment", "volcanic hazard", "volcanology";
 	hydra:entrypoint "https://volcanboxws.obsea.es/"^^xsd:anyURI; 
-	hydra:supportedOperation <HazardMap/operation>;
+	hydra:supportedOperation <HazardMap/TephraFallout/operation>;
 	dcat:theme <epos:Hazardmap>;
 	dcat:contactPoint <http://orcid.org/0000-0002-8803-6504/contactPoint>;
 	
@@ -152,17 +156,26 @@
 # Operation
 ######### 
 	
-<HazardMap/operation> a hydra:Operation;
+<HazardMap/TephraFallout/operation> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
-		hydra:returns "json";
+		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://volcanboxws.obsea.es:5000/maptype?type=tephrafallout_hazard_map(&volcan=deceptionisland)"^^xsd:string;			
+			#hydra:template "https://volcanboxws.obsea.es:5000/maptype?type=tephrafallout{&volcan}"^^xsd:string;			
+			hydra:template "https://volcanboxws.obsea.es:5000/maptype{?type,volcan}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "type"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Type";
+					hydra:required "true"^^xsd:boolean;
+					http:paramValue "tephrafallout" ;
+					schema:defaultValue "tephrafallout" ;				
+        			];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "volcan"^^xsd:string;
+					rdfs:range "xsd:string";
 					rdfs:label "Volcano name that exposes hazard map";
-					http:paramValue "deceptionisland";
-					http:paramValue "site.json"; 
-					schema:defaultValue "deceptionisland";
+					http:paramValue "Lanzarote";					
+					schema:defaultValue "Lanzarote";
 					hydra:required "false"^^xsd:boolean;
 				];
 		];

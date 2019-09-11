@@ -100,10 +100,10 @@
 		schema:endDate "2015-02-28T00:00:00Z"^^xsd:dateTime; 
 	]; 
 	dct:spatial [ a dct:Location; 
-		locn:geometry "POLYGON(-25.0 63.0,-25.0 68.5,-10.0 68.5,-10.0 63.0,-25.0 63.0)"^^gsp:wktLiteral; 
+		locn:geometry "POLYGON((-25.0 63.0,-25.0 68.5,-10.0 68.5,-10.0 63.0,-25.0 63.0))"^^gsp:wktLiteral; 
 	]; 
 	dcat:theme <epos:Ground-basedremotesensingdata&products>;
-	dcat:keyword "Volcanic activity; images; web camera";
+	dcat:keyword "Volcanic activity","images","web camera","source parameters","volcanic plume","volcanic ash","volcanic gas","IMO";
 	dcat:contactPoint <http://orcid.org/0000-0001-5750-0872/contactPoint>;
 	dct:publisher <PIC:997168343>;
 	dcat:distribution <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/023/WSDistribution>;
@@ -141,10 +141,10 @@
 	schema:datePublished "2019-01-21"^^xsd:date;
 	schema:dateModified "2019-01-21"^^xsd:date;
 	dct:spatial [ a dct:Location; 
-		locn:geometry "POLYGON(-25.0 63.0,-25.0 68.5,-10.0 68.5,-10.0 63.0,-25.0 63.0)"^^gsp:wktLiteral; 
+		locn:geometry "POLYGON((-25.0 63.0,-25.0 68.5,-10.0 68.5,-10.0 63.0,-25.0 63.0))"^^gsp:wktLiteral; 
 	]; 
 	hydra:supportedOperation <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/023/Operation/023>;
-	schema:keywords "Volcanic activity; images; web cameras";
+	schema:keywords "Volcanic activity","images","web camera","source parameters","volcanic plume","volcanic ash","volcanic gas","IMO";
 	dct:temporal [ a dct:PeriodOfTime; 
 		schema:startDate "2019-01-21T00:00:00Z"^^xsd:dateTime; 
 		schema:endDate "2025-01-01T00:00:00Z"^^xsd:dateTime; 
@@ -159,7 +159,7 @@
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
-		hydra:template "https://api.vedur.is/epos/v1/volcano/meta/webcam/{?period_starts,period_ends}&bbox={minlatitude, minlongitude, maxlatitude, maxlongitude}"^^xsd:string;
+		hydra:template "https://api.vedur.is/epos/v1/volcano/meta/webcam/{?start_time,end_time}&bbox={minlatitude, minlongitude, maxlatitude, maxlongitude}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "minlatitude"^^xsd:string; 
           				hydra:property "epos:southernmostLatitude";
@@ -168,6 +168,7 @@
 					schema:maxValue "90.0";
 					hydra:required "true"^^xsd:boolean;
 					schema:defaultValue "63.0" ;
+					rdfs:range "xsd:float";
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "minlongitude"^^xsd:string; 
@@ -177,6 +178,7 @@
 					schema:maxValue "180.0";
 					hydra:required "true"^^xsd:boolean;
 					schema:defaultValue "-25.0" ;
+					rdfs:range "xsd:float";
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "maxlatitude"^^xsd:string; 
@@ -186,6 +188,7 @@
 					schema:maxValue "90.0";
 					hydra:required "true"^^xsd:boolean;
 					schema:defaultValue "68.5" ;
+					rdfs:range "xsd:float";
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "maxlongitude"^^xsd:string; 
@@ -195,9 +198,10 @@
 					schema:maxValue "180.0";
 					hydra:required "true"^^xsd:boolean;
 					schema:defaultValue "-10.0" ;
+					rdfs:range "xsd:float";
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "period_starts"^^xsd:string;
+					hydra:variable "start_time"^^xsd:string;
 					hydra:property "schema:startDate";
 					schema:valuePattern "YYYY-MM-DD";
 					rdfs:range "xsd:dateTime";
@@ -207,7 +211,7 @@
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "period_ends"^^xsd:string;
+					hydra:variable "end_time"^^xsd:string;
 					hydra:property "schema:endDate";
 					schema:valuePattern "YYYY-MM-DD";
 					rdfs:range "xsd:dateTime";

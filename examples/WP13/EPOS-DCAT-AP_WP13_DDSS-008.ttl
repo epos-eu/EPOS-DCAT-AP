@@ -165,7 +165,7 @@
         schema:startDate "1982-10-01T00:00:00Z"^^xsd:dateTime; 
     ]; 
     dct:spatial [ a dct:Location; 
-        locn:geometry "POLYGON(40.0 50.0, 0.0 50.0, 0.0 80.0, 40.0 80.0, 40.0 50.0)"^^gsp:wktLiteral; 
+        locn:geometry "POLYGON((40.0 50.0, 0.0 50.0, 0.0 80.0, 40.0 80.0, 40.0 50.0))"^^gsp:wktLiteral; 
     ]; 
 .
 
@@ -204,7 +204,7 @@
     schema:keywords "auroral electrojet", "geomagnetism", "magnetic field", "magnetism", "space weather", "substorm", "variometer" ;
     hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-008/IMAGE_EJI/Operation> ;
     dct:spatial [ a dct:Location; 
-        locn:geometry "POLYGON(40.0 50.0, 0.0 50.0, 0.0 80.0, 40.0 80.0, 40.0 50.0)"^^gsp:wktLiteral; 
+        locn:geometry "POLYGON((40.0 50.0, 0.0 50.0, 0.0 80.0, 40.0 80.0, 40.0 50.0))"^^gsp:wktLiteral; 
     ]; 
     dct:temporal [ a dct:PeriodOfTime; 
         schema:startDate "1982-10-01T00:00:00Z"^^xsd:dateTime; 
@@ -224,7 +224,7 @@
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "start"^^xsd:string;
                 hydra:property "schema:startDate";
-                schema:valuePattern "YYYYMMDD";
+                schema:valuePattern "YYYYMMdd";
                 rdfs:label "Date (yyyymmdd)";
                 rdfs:range "xsd:integer" ;
                 schema:minValue "19821001";

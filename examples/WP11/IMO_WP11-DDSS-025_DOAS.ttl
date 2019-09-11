@@ -99,10 +99,10 @@
 		schema:endDate "2015-02-27T00:00:00Z"^^xsd:dateTime; 
 	]; 
 	dct:spatial [ a dct:Location; 
-		locn:geometry "POLYGON(-25.0 63.0,-25.0 68.5,-10.0 68.5,-10.0 63.0,-25.0 63.0)"^^gsp:wktLiteral; 
+		locn:geometry "POLYGON((-25.0 63.0,-25.0 68.5,-10.0 68.5,-10.0 63.0,-25.0 63.0))"^^gsp:wktLiteral; 
 	]; 
 	dcat:theme <epos:Ground-basedremotesensingdata&products>;
-	dcat:keyword "Infrared";
+	dcat:keyword "Infrared","ground-based","volcanic activity","volcanic plume","volcanic gas","IMO","timeseries","eruption source parameters";
 	dcat:contactPoint <http://orcid.org/0000-0001-5750-0872/contactPoint>;
 	dct:publisher <PIC:997168343>;
 	dcat:distribution <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/025/WSDistribution>;
@@ -140,10 +140,10 @@
         schema:datePublished "2019-01-21"^^xsd:date;
 	schema:dateModified "2019-01-21"^^xsd:date;
 	dct:spatial [ a dct:Location; 
-		locn:geometry "POLYGON(-25.0 63.0,-25.0 68.5,-10.0 68.5,-10.0 63.0,-25.0 63.0)"^^gsp:wktLiteral; 
+		locn:geometry "POLYGON((-25.0 63.0,-25.0 68.5,-10.0 68.5,-10.0 63.0,-25.0 63.0))"^^gsp:wktLiteral; 
 	]; 
 	hydra:supportedOperation <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/025/Operation/025>;
-	schema:keywords "Infrared";
+	schema:keywords "Infrared","ground-based","volcanic activity","volcanic plume","volcanic gas","IMO","timeseries","eruption source parameters";
 	dct:temporal [ a dct:PeriodOfTime; 
 		schema:startDate "2019-01-21T00:00:00Z"^^xsd:dateTime; 
 		schema:endDate "2025-01-01T00:00:00Z"^^xsd:dateTime; 
@@ -167,6 +167,7 @@
 					schema:maxValue "90.0";
 					hydra:required "true"^^xsd:boolean;
 					schema:defaultValue "63.0" ;
+					rdfs:range "xsd:float";
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "minlongitude"^^xsd:string; 
@@ -176,6 +177,7 @@
 					schema:maxValue "180.0";
 					hydra:required "true"^^xsd:boolean;
 					schema:defaultValue "-25.0" ;
+					rdfs:range "xsd:float";
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "maxlatitude"^^xsd:string; 
@@ -185,6 +187,7 @@
 					schema:maxValue "90.0";
 					hydra:required "true"^^xsd:boolean;
 					schema:defaultValue "68.5" ;
+					rdfs:range "xsd:float";
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "maxlongitude"^^xsd:string; 
@@ -194,6 +197,7 @@
 					schema:maxValue "180.0";
 					hydra:required "true"^^xsd:boolean;
 					schema:defaultValue "-10.0" ;
+					rdfs:range "xsd:float";
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "period_starts"^^xsd:string;
@@ -201,8 +205,8 @@
 					schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
 					rdfs:range "xsd:dateTime";
 					rdfs:label "Start time in format YYYY-MM-DDThh:mm:ssZ";
-					schema:minValue "1900-01-01";
-					schema:defaultValue "1900-01-01";
+					schema:minValue "1900-01-01T00:00:00Z";
+					schema:defaultValue "1900-01-01T00:00:00Z";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
@@ -211,8 +215,8 @@
 					schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
 					rdfs:range "xsd:dateTime";
 					rdfs:label "End time in format YYYY-MM-DDThh:mm:ssZ";
-					schema:maxValue "2050-01-01";
-					schema:defaultValue "2050-01-01";
+					schema:maxValue "2050-01-01T00:00:00Z";
+					schema:defaultValue "2050-01-01T00:00:00Z";
 					hydra:required "true"^^xsd:boolean;
 				];
 				

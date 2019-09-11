@@ -96,21 +96,21 @@
 # --------------------------------------------#
 
 	<https://orcid.org/0000-0002-4460-6325/contactPoint> a schema:ContactPoint;
-		schema:email "aurelien.dupont@emsc-csem.org";
+		schema:email "contact@emsc-csem.org";
 		schema:availableLanguage "en" ;
 .
 	<https://orcid.org/0000-0002-4460-6325/scientificContact> a schema:ContactPoint;
-		schema:email "aurelien.dupont@emsc-csem.org";
+		schema:email "contact@emsc-csem.org";
 		schema:availableLanguage "en" ;
 		schema:contactType "scientificContact" ;
 .
 	<https://orcid.org/0000-0002-4460-6325/legalContact> a schema:ContactPoint;
-		schema:email "aurelien.dupont@emsc-csem.org";
+		schema:email "contact@emsc-csem.org";
 		schema:availableLanguage "en" ;
 		schema:contactType "legalContact" ;
 .
 	<https://orcid.org/0000-0002-4460-6325/financialContact> a schema:ContactPoint;
-		schema:email "aurelien.dupont@emsc-csem.org";
+		schema:email "contact@emsc-csem.org";
 		schema:availableLanguage "en" ;
 		schema:contactType "financialContact" ;
 .
@@ -123,9 +123,9 @@
 # WEBSERVICE (#1) => FDSNWS-Event
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/EMSC/WebService> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/EMSC/WebService";
-	schema:description "The fdsnws-event web service returns event (earthquake) information from EMSC catalogs. Events may be selected based on location, time and internal identifiers. The results include origin and magnitude for each event. By default results are returned as XML in QuakeML format (schema), but may also be requested in text formats. This service is an implementation of the FDSN web service specification version 1. �	Name : SeismicPortal FDSN event web service 1.0.1";
+	schema:description "This web service provides acces to seismic event parameters. It is implemented according to the fdsnws-event standart defined by the Federation of Digital Seismograph Networks (FDSN). It returns no more than 1000 measurements per requests.";
 	dcat:theme <epos:SeismicParametrics>;
-	schema:name "EMSC fdsn-event web service";
+	schema:name "Seismic events collected by the European-Mediterranean Seismological Centre";
 	hydra:entrypoint "http://www.seismicportal.eu/fdsnws/event/1/query?"^^xsd:anyURI;
 	schema:provider <PIC:998779222>;
 	schema:datePublished "2017-10-25"^^xsd:date;
@@ -134,10 +134,10 @@
 		schema:startDate "1998-01-01T00:00:00Z"^^xsd:dateTime;
 	];
 	dct:spatial [ a dct:Location;
-		locn:geometry "POLYGON(-180.0 90.0,180.0 90.0,180.0 -90.0,-180.0 -90.0,-180.0 90.0)"^^gsp:wktLiteral;
+		locn:geometry "POLYGON((-180.0 90.0,180.0 90.0,180.0 -90.0,-180.0 -90.0,-180.0 90.0))"^^gsp:wktLiteral;
 	];
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/EMSC/operation>;
-	schema:keywords "seismology","seismicity","earthquakes","Earthquake","Event";
+	schema:keywords "seismology", "earthquake", "event", "fdsnws-event";
 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 	dcat:contactPoint <https://orcid.org/0000-0002-4460-6325/contactPoint>;
 	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/EMSC/APIDocumentation>;
@@ -146,18 +146,18 @@
 # WEBSERVICE (#2) => FE-region lookup
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/EMSC/WebService> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/EMSC/WebService";
-	schema:description "The service identifies the Flinn-Engdahl region from a geolocalisation entry point";
+	schema:description "The service identifies the Flinn-Engdahl region from a geolocated point.";
 	dcat:theme <epos:SeismicParametrics>;
-	schema:name "EMSC Flinn-Engdahl Lookup web service";
+	schema:name "Flinn-Engdahl region name lookup";
 	hydra:entrypoint "http://www.seismicportal.eu/fe_regions_ws/query?"^^xsd:anyURI;
 	schema:provider <PIC:998779222>;
 	schema:datePublished "2017-10-25"^^xsd:date;
 	schema:dateModified "2017-10-25"^^xsd:date;
 	dct:spatial [ a dct:Location;
-		locn:geometry "POLYGON(-180.0 90.0,180.0 90.0,180.0 -90.0,-180.0 90.0,-180.0 90.0)"^^gsp:wktLiteral;
+		locn:geometry "POLYGON((-180.0 90.0,180.0 90.0,180.0 -90.0,-180.0 90.0,-180.0 90.0))"^^gsp:wktLiteral;
 	];
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/EMSC/operation>;
-	schema:keywords "seismology","earthquakes","Earthquake","Event";
+	schema:keywords "seismology", "earthquake", "region name";
 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 	dcat:contactPoint <https://orcid.org/0000-0002-4460-6325/contactPoint>;
 	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/EMSC/APIDocumentation>;
@@ -166,9 +166,9 @@
 # WEBSERVICE (#3) => Moment Tensors
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/EMSC/WebService> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/EMSC/WebService";
-	schema:description "Retrieves all the moment tensors collected by EMSC";
+	schema:description "This web service provides acces to moment tensor data of seismic events. It is implemented as an extention of the fdsnws-event standart defined by the Federation of Digital Seismograph Networks (FDSN).";
 	dcat:theme <epos:SeismicParametrics>;
-	schema:name "EMSC Moment Tensors web service";
+	schema:name "Moment tensor of seismic events";
 	hydra:entrypoint "http://www.seismicportal.eu/mtws/api/search?"^^xsd:anyURI;
 	schema:provider <PIC:998779222>;
 	schema:datePublished "2017-10-25"^^xsd:date;
@@ -177,10 +177,10 @@
 		schema:startDate "2010-01-01T00:00:00Z"^^xsd:dateTime;
 	];
 	dct:spatial [ a dct:Location;
-		locn:geometry "POLYGON(-180.0 90.0,180.0 90.0,180.0 -90.0,-180.0 -90.0,-180.0 90.0)"^^gsp:wktLiteral;
+		locn:geometry "POLYGON((-180.0 90.0,180.0 90.0,180.0 -90.0,-180.0 -90.0,-180.0 90.0))"^^gsp:wktLiteral;
 	];
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/EMSC/operation>;
-	schema:keywords "seismology","seismicity","earthquakes","Earthquake","Event", "moment tensor", "beachball";
+	schema:keywords "seismology", "earthquake", "focal mechanism", "moment tensor";
 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 	dcat:contactPoint <https://orcid.org/0000-0002-4460-6325/contactPoint>;
     dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/EMSC/APIDocumentation>;
@@ -189,18 +189,18 @@
 # WEBSERVICE (#4) => EventID
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/EMSC/WebService> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/EMSC/WebService";
-	schema:description "Retrieves origin parameters of the EMSC catalogue from a unified identifier and vice versa";
+	schema:description "This web service provides a dynamic mapping between seismic event identifiers of global catalogues.";
 	dcat:theme <epos:SeismicParametrics>;
-	schema:name "EMSC EventID web service";
+	schema:name "Mapping of seismic event identifiers";
 	hydra:entrypoint "http://www.seismicportal.eu/eventid/api/convert?"^^xsd:anyURI;
 	schema:provider <PIC:998779222>;
 	schema:datePublished "2017-10-25"^^xsd:date;
 	schema:dateModified "2017-10-25"^^xsd:date;
 	dct:spatial [ a dct:Location;
-		locn:geometry "POLYGON(-180.0 90.0,180.0 90.0,180.0 -90.0,-180.0 -90.0,-180.0 90.0)"^^gsp:wktLiteral;
+		locn:geometry "POLYGON((-180.0 90.0,180.0 90.0,180.0 -90.0,-180.0 -90.0,-180.0 90.0))"^^gsp:wktLiteral;
 	];
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/EMSC/operation>;
-	schema:keywords "seismology"," seismicity"," earthquakes","Earthquake","Event";
+	schema:keywords "seismology", "earthquake", "event identifier";
 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 	dcat:contactPoint <https://orcid.org/0000-0002-4460-6325/contactPoint>;
 	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/EMSC/APIDocumentation>;
@@ -209,9 +209,9 @@
 # WEBSERVICE (#5) => Rupture Models
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/005/EMSC/WebService> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/005/EMSC/WebService";
-	schema:description "Data source models from SRCMOD database of Martin Mai ";
+	schema:description "This web service provides acces to fault rupture model of seismic events.";
 	dcat:theme <epos:SeismicParametrics>;
-	schema:name "EMSC Rupture Models web service";
+	schema:name "Rupture models of seismic events";
 	hydra:entrypoint "http://www.seismicportal.eu/srcmodws/api/search?"^^xsd:anyURI;
 	schema:provider <PIC:998779222>;
 	schema:datePublished "2017-10-25"^^xsd:date;
@@ -220,10 +220,10 @@
 		schema:startDate "1900-01-01T00:00:00Z"^^xsd:dateTime;
 	];
 	dct:spatial [ a dct:Location;
-		locn:geometry "POLYGON(-180.0 90.0,180.0 90.0,180.0 -90.0,-180.0 -90.0,-180.0 90.0)"^^gsp:wktLiteral;
+		locn:geometry "POLYGON((-180.0 90.0,180.0 90.0,180.0 -90.0,-180.0 -90.0,-180.0 90.0))"^^gsp:wktLiteral;
 	];
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/005/EMSC/operation>;
-	schema:keywords "seismology","seismicity","earthquakes","Earthquake","Event", "rupture model";
+	schema:keywords "seismology", "earthquake", "fault", "fault rupture model";
 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 	dcat:contactPoint <https://orcid.org/0000-0002-4460-6325/contactPoint>;
 	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/005/EMSC/APIDocumentation>;
@@ -232,9 +232,9 @@
 # WEBSERVICE (#6) => Testimonies
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/006/EMSC/WebService> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/006/EMSC/WebService";
-	schema:description "Felt reports collected through EMSC website, mobile app, Lastquake application";
+	schema:description "This web service provides acces to felt reports of earthquakes collected by eyewitnesses. It is implemented as an extention of the fdsnws-event standart defined by the Federation of Digital Seismograph Networks (FDSN). This service allows to get event list or the individual felt reports.";
 	dcat:theme <epos:SeismicParametrics>;
-	schema:name "EMSC Testimonies web service";
+	schema:name "Seismic events felt by eyewitnesses";
 	hydra:entrypoint "http://www.seismicportal.eu/testimonies-ws/api/search?"^^xsd:anyURI;
 	schema:provider <PIC:998779222>;
 	schema:datePublished "2017-10-25"^^xsd:date;
@@ -243,10 +243,10 @@
 		schema:startDate "2010-01-01T00:00:00Z"^^xsd:dateTime;
 	];
 	dct:spatial [ a dct:Location;
-		locn:geometry "POLYGON(-180.0 90.0,180.0 90.0,180.0 -90.0,-180.0 -90.0,-180.0 90.0)"^^gsp:wktLiteral;
+		locn:geometry "POLYGON((-180.0 90.0,180.0 90.0,180.0 -90.0,-180.0 -90.0,-180.0 90.0))"^^gsp:wktLiteral;
 	];
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/006/EMSC/operation>;
-	schema:keywords "seismology"," seismicity"," earthquakes","earthquake intensity","macroseismic","Earthquake","Event", "felt intensity";
+	schema:keywords  "seismology", "earthquakes", "macroseismology" , "felt intensity";
 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 	dcat:contactPoint <https://orcid.org/0000-0002-4460-6325/contactPoint>;
 	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/006/EMSC/APIDocumentation>;
@@ -326,7 +326,7 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "starttime"^^xsd:string;
 			hydra:property "schema:startDate";
-			schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
+			schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 			rdfs:range "xsd:dateTime";
 			rdfs:label "Start Time";
 			schema:minValue "1998-01-01T00:00:00";
@@ -338,12 +338,12 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "endtime"^^xsd:string;
 		    hydra:property "schema:endDate";
-			schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
+			schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 			rdfs:range "xsd:dateTime";
 			rdfs:label "End Time";
 			schema:minValue "1998-01-01T00:00:00";
 			schema:maxValue "3000-12-31T00:00:00";
-			schema:defaultValue "2100-01-01T00:00:00";
+			schema:defaultValue "2019-03-31T00:00:00";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -351,10 +351,10 @@
 			hydra:variable "minlatitude"^^xsd:string;
 			hydra:property "epos:southernmostLatitude";
 			rdfs:range "xsd:float";
-			rdfs:label "Minimum Latitude";
+			rdfs:label "Minimum latitude (deg)";
 			schema:minValue "-90";
 			schema:maxValue "90";
-			schema:defaultValue "-90";
+			schema:defaultValue "30";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -362,7 +362,7 @@
 			hydra:variable "maxlatitude"^^xsd:string;
 			hydra:property "epos:northernmostLatitude";
 			rdfs:range "xsd:float";
-			rdfs:label "Maximum Latitude";
+			rdfs:label "Maximum latitude (deg)";
 			schema:minValue "-90";
 			schema:maxValue "90";
 			schema:defaultValue "90";
@@ -373,10 +373,10 @@
 			hydra:variable "minlongitude"^^xsd:string;
 			hydra:property "epos:westernmostLongitude";
 			rdfs:range "xsd:float";
-			rdfs:label "Minimum Longitude";
+			rdfs:label "Minimum longitude (deg)";
 			schema:minValue "-180";
 			schema:maxValue "180";
-			schema:defaultValue "-180";
+			schema:defaultValue "-40";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -384,17 +384,17 @@
 			hydra:variable "maxlongitude"^^xsd:string;
 			hydra:property "epos:easternmostLongitude";
 			rdfs:range "xsd:float";
-			rdfs:label "Maximum Longitude";
+			rdfs:label "Maximum longitude (deg)";
 			schema:minValue "-180";
 			schema:maxValue "180";
-			schema:defaultValue "180";
+			schema:defaultValue "50";
 			hydra:required "false"^^xsd:boolean;
 		];
 
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "mindepth"^^xsd:string;
 			rdfs:range "xsd:integer";
-			rdfs:label "Minimum Depth";
+			rdfs:label "Minimum depth (km)";
 			schema:minValue "0";
 			schema:maxValue "6371";
 			hydra:required "false"^^xsd:boolean;
@@ -403,7 +403,7 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "maxdepth"^^xsd:string;
 			rdfs:range "xsd:integer";
-			rdfs:label "Maximum Depth";
+			rdfs:label "Maximum depth (km)";
 			schema:minValue "0";
 			schema:maxValue "6371";
 			hydra:required "false"^^xsd:boolean;
@@ -412,19 +412,15 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "minmagnitude"^^xsd:string;
 			rdfs:range "xsd:float";
-			rdfs:label "Minimum Magnitude";
-			#schema:minValue "-10";
-			#schema:maxValue "10";
-			schema:defaultValue "6";
+			rdfs:label "Minimum magnitude";
+			schema:defaultValue "5";
 			hydra:required "false"^^xsd:boolean;
 		];
 
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "maxmagnitude"^^xsd:string;
 			rdfs:range "xsd:float";
-			rdfs:label "Maximum Magnitude";
-			#schema:minValue "-10";
-			#schema:maxValue "10";
+			rdfs:label "Maximum magnitude";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -440,6 +436,8 @@
 			rdfs:range "xsd:boolean";
 			rdfs:label "Include All Origins";
 			schema:defaultValue "false";
+			http:paramValue "true";
+			http:paramValue "false";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -458,6 +456,8 @@
 			rdfs:label "Include All Arrivals";
 			schema:defaultValue "false";
 			hydra:required "false"^^xsd:boolean;
+			http:paramValue "true";
+			http:paramValue "false";
 		];
 
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -541,7 +541,7 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "latitude"^^xsd:string;
 			rdfs:range "xsd:float";
-			rdfs:label "Latitude (Radius Search)";
+			rdfs:label "Radius search latitude (deg)";
 			schema:minValue "-90";
 			schema:maxValue "90";
 			hydra:required "false"^^xsd:boolean;
@@ -550,7 +550,7 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "longitude"^^xsd:string;
 			rdfs:range "xsd:float";
-			rdfs:label "Longitude (Radius Search)";
+			rdfs:label "Radius search longitude (deg)";
 			schema:minValue "-180";
 			schema:maxValue "180";
 			hydra:required "false"^^xsd:boolean;
@@ -559,7 +559,7 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "minradius"^^xsd:string;
 			rdfs:range "xsd:float";
-			rdfs:label "Minimum Radius for the radius Search";
+			rdfs:label "Minimum radius (deg)";
 			schema:minValue "0";
 			schema:maxValue "180";
 			hydra:required "false"^^xsd:boolean;
@@ -568,7 +568,7 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "maxradius"^^xsd:string;
 			rdfs:range "xsd:float";
-			rdfs:label "Maximum Radius for the radius Search";
+			rdfs:label "Maximum radius (deg)";
 			schema:minValue "0";
 			schema:maxValue "180";
 			hydra:required "false"^^xsd:boolean;
@@ -589,7 +589,7 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "lat"^^xsd:string;
 			rdfs:range "xsd:float";
-			rdfs:label "Latitude";
+			rdfs:label "Latitude (deg)";
 			schema:minValue "-90";
 			schema:maxValue "90";
 			schema:defaultValue "45";
@@ -599,7 +599,7 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "lon"^^xsd:string;
 			rdfs:range "xsd:float";
-			rdfs:label "Longitude";
+			rdfs:label "Longitude (deg)";
 			schema:minValue "-180";
 			schema:maxValue "180";
 			schema:defaultValue "2";
@@ -634,7 +634,7 @@
 # OPERATIONS (#3) => Moment Tensors
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/EMSC/operation> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
-		#hydra:returns "json, quakeml";
+		#hydra:returns "application/quakeml";
 		hydra:returns "application/xml";
 		hydra:property[ a hydra:IriTemplate;
 		hydra:template "http://www.seismicportal.eu/mtws/api/search{?source_catalog, eventid, startime, endtime, dayafter, mindepth, maxdepth, minmag, maxmag, lat, lon, minradius, maxradius, minlat, maxlat, minlon, maxlon, mintplung, maxtplung, minnplung, maxnplung, mindc, maxdc, preferredOnly, format, downloadAsFile, orderby, offset, limit}"^^xsd:string;
@@ -694,7 +694,7 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "dayafter"^^xsd:string;
 			rdfs:range "xsd:integer";
-			rdfs:label "Date after start time (unit is day)";
+			rdfs:label "Date after start time (in days)";
 			schema:minValue "1";
 			hydra:required "false"^^xsd:boolean;
 		];
@@ -702,7 +702,7 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "mindepth"^^xsd:string;
 			rdfs:range "xsd:integer";
-			rdfs:label "Minimum Depth";
+			rdfs:label "Minimum depth (km)";
 			schema:minValue "0";
 			schema:maxValue "6371";
 			hydra:required "false"^^xsd:boolean;
@@ -711,7 +711,7 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "maxdepth"^^xsd:string;
 			rdfs:range "xsd:integer";
-			rdfs:label "Maximum Depth";
+			rdfs:label "Maximum depth (km)";
 			schema:minValue "0";
 			schema:maxValue "6371";
 			hydra:required "false"^^xsd:boolean;
@@ -720,21 +720,21 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "minmag"^^xsd:string;
 			rdfs:range "xsd:float";
-			rdfs:label "Minimum Magnitude";
+			rdfs:label "Minimum magnitude";
 			hydra:required "false"^^xsd:boolean;
 		];
 
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "maxmag"^^xsd:string;
 			rdfs:range "xsd:float";
-			rdfs:label "Maximum Magnitude";
+			rdfs:label "Maximum magnitude";
 			hydra:required "false"^^xsd:boolean;
 		];
 
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "lat"^^xsd:string;
 			rdfs:range "xsd:float";
-			rdfs:label "Latitude (Radius Search)";
+			rdfs:label "Radius search latitude (deg)";
 			schema:minValue "-90";
 			schema:maxValue "90";
 			hydra:required "false"^^xsd:boolean;
@@ -743,7 +743,7 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "lon"^^xsd:string;
 			rdfs:range "xsd:float";
-			rdfs:label "Longitude (Radius Search)";
+			rdfs:label "Radius search longitude (deg)";
 			schema:minValue "-180";
 			schema:maxValue "180";
 			hydra:required "false"^^xsd:boolean;
@@ -752,7 +752,7 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "minradius"^^xsd:string;
 			rdfs:range "xsd:float";
-			rdfs:label "Minimum Radius for the radius Search";
+			rdfs:label "Minimum radius (deg)";
 			schema:minValue "0";
 			schema:maxValue "180";
 			hydra:required "false"^^xsd:boolean;
@@ -761,7 +761,7 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "maxradius"^^xsd:string;
 			rdfs:range "xsd:float";
-			rdfs:label "Maximum Radius for the radius Search";
+			rdfs:label "Maximum radius (deg)";
 			schema:minValue "0";
 			schema:maxValue "180";
 			hydra:required "false"^^xsd:boolean;
@@ -771,7 +771,7 @@
 			hydra:variable "minlat"^^xsd:string;
 			hydra:property "epos:southernmostLatitude";
 			rdfs:range "xsd:float";
-			rdfs:label "Minimum Latitude (Rectangle Search)";
+			rdfs:label "Minimum latitude (deg)";
 			schema:minValue "-90";
 			schema:maxValue "90";
 			schema:defaultValue "-90";
@@ -782,7 +782,7 @@
 			hydra:variable "maxlat"^^xsd:string;
 			hydra:property "epos:northernmostLatitude";
 			rdfs:range "xsd:float";
-			rdfs:label "Maximum Latitude (Rectangle Search)";
+			rdfs:label "Maximum latitude (deg)";
 			schema:minValue "-90";
 			schema:maxValue "90";
 			schema:defaultValue "90";
@@ -793,7 +793,7 @@
 			hydra:variable "minlon"^^xsd:string;
 			hydra:property "epos:westernmostLongitude";
 			rdfs:range "xsd:float";
-			rdfs:label "Minimum Longitude (Rectangle Search)";
+			rdfs:label "Minimum longitude (deg)";
 			schema:minValue "-180";
 			schema:maxValue "180";
 			schema:defaultValue "-180";
@@ -804,7 +804,7 @@
 			hydra:variable "maxlon"^^xsd:string;
 			hydra:property "epos:easternmostLongitude";
 			rdfs:range "xsd:float";
-			rdfs:label "Maximum Longitude (Rectangle Search)";
+			rdfs:label "Maximum longitude (deg)";
 			schema:minValue "-180";
 			schema:maxValue "180";
 			schema:defaultValue "180";
@@ -814,7 +814,7 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "mintplung"^^xsd:string;
 			rdfs:range "xsd:integer";
-			rdfs:label "Minimum plung of the T axis (TPLUNG)";
+			rdfs:label "Minimum plung of the T axis (deg)";
 			schema:minValue "0";
 			schema:maxValue "90";
 			hydra:required "false"^^xsd:boolean;
@@ -823,7 +823,7 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "maxtplung"^^xsd:string;
 			rdfs:range "xsd:integer";
-			rdfs:label "Maximum plung of the T axis (TPLUNG)";
+			rdfs:label "Maximum plung of the T axis (deg)";
 			schema:minValue "0";
 			schema:maxValue "90";
 			hydra:required "false"^^xsd:boolean;
@@ -832,7 +832,7 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "minnplung"^^xsd:string;
 			rdfs:range "xsd:integer";
-			rdfs:label "Minimum plung of the N axis (NPLUNG)";
+			rdfs:label "Minimum plung of the N axis (deg)";
 			schema:minValue "0";
 			schema:maxValue "90";
 			hydra:required "false"^^xsd:boolean;
@@ -841,7 +841,7 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "maxnplung"^^xsd:string;
 			rdfs:range "xsd:integer";
-			rdfs:label "Maximum plung of the N axis (NPLUNG)";
+			rdfs:label "Maximum plung of the N axis (deg)";
 			schema:minValue "0";
 			schema:maxValue "90";
 			hydra:required "false"^^xsd:boolean;
@@ -870,6 +870,8 @@
 			rdfs:range "xsd:boolean";
 			rdfs:label "Filter and show only preferred MT";
 			schema:defaultValue "true";
+			http:paramValue "true";
+			http:paramValue "false";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -889,6 +891,8 @@
 			rdfs:range "xsd:boolean";
 			rdfs:label "Download query as file?";
 			schema:defaultValue "false";
+			http:paramValue "true";
+			http:paramValue "false";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -937,7 +941,7 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "source_id"^^xsd:string;
 			rdfs:range "xsd:string";
-			rdfs:label "Event Identifier of the source catalog";
+			rdfs:label "Event identifier of the source catalog";
 			schema:defaultValue "20110311_0000010";
 			hydra:required "true"^^xsd:boolean;
 		];
@@ -945,7 +949,7 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "source_catalog"^^xsd:string;
 			rdfs:range "xsd:string";
-			rdfs:label "Name of the Source Catalog";
+			rdfs:label "Name of the source catalog";
 			http:paramValue "UNID";
             http:paramValue "EMSC";
             http:paramValue "INGV";
@@ -958,7 +962,7 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "out_catalog"^^xsd:string;
 			rdfs:range "xsd:string";
-			rdfs:label "Name of the Output Catalog";
+			rdfs:label "Name of the output catalog";
 			http:paramValue "all";
 			http:paramValue "UNID";
             http:paramValue "EMSC";
@@ -981,7 +985,7 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "collect_dloc"^^xsd:string;
 			rdfs:range "xsd:float";
-			rdfs:label "dloc is the spatial parameter for association";
+			rdfs:label "Spatial distance for association (km)";
 			schema:defaultValue "1.5";
 			hydra:required "false"^^xsd:boolean;
 		];
@@ -989,7 +993,7 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "collect_dtime"^^xsd:string;
 			rdfs:range "xsd:float";
-			rdfs:label "dtime is the temporal parameter for association";
+			rdfs:label "Temporal parameter for association (s)";
 			schema:defaultValue "60";
 			hydra:required "false"^^xsd:boolean;
 		];
@@ -997,7 +1001,7 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "misfit_dloc"^^xsd:string;
 			rdfs:range "xsd:float";
-			rdfs:label "Misfit dloc parameter";
+			rdfs:label "Misfit delta location (km)";
 			schema:defaultValue "105";
 			hydra:required "false"^^xsd:boolean;
 		];
@@ -1005,7 +1009,7 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "misfit_dtime"^^xsd:string;
 			rdfs:range "xsd:float";
-			rdfs:label "Misfit dtime parameter";
+			rdfs:label "Misfit delta time (s)";
 			schema:defaultValue "13";
 			hydra:required "false"^^xsd:boolean;
 		];
@@ -1013,7 +1017,7 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "misfit_dmag"^^xsd:string;
 			rdfs:range "xsd:float";
-			rdfs:label "Misfit dmag parameter";
+			rdfs:label "Misfit delta magnitude";
 			schema:defaultValue "0.8";
 			hydra:required "false"^^xsd:boolean;
 		];
@@ -1083,7 +1087,7 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "mindepth"^^xsd:string;
 			rdfs:range "xsd:integer";
-			rdfs:label "Minimum Depth";
+			rdfs:label "Minimum depth (km)";
 			schema:minValue "0";
 			schema:maxValue "6371";
 			hydra:required "false"^^xsd:boolean;
@@ -1092,7 +1096,7 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "maxdepth"^^xsd:string;
 			rdfs:range "xsd:integer";
-			rdfs:label "Maximum Depth";
+			rdfs:label "Maximum depth (km)";
 			schema:minValue "0";
 			schema:maxValue "6371";
 			hydra:required "false"^^xsd:boolean;
@@ -1101,14 +1105,14 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "minmag"^^xsd:string;
 			rdfs:range "xsd:float";
-			rdfs:label "Minimum Magnitude (MW)";
+			rdfs:label "Minimum magnitude";
 			hydra:required "false"^^xsd:boolean;
 		];
 
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "maxmag"^^xsd:string;
 			rdfs:range "xsd:float";
-			rdfs:label "Maximum Magnitude (MW)";
+			rdfs:label "Maximum magnitude";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -1116,7 +1120,7 @@
 			hydra:variable "minlat"^^xsd:string;
 			hydra:property "epos:southernmostLatitude";
 			rdfs:range "xsd:float";
-			rdfs:label "Minimum Latitude (Rectangle Search)";
+			rdfs:label "Minimum latitude (deg)";
 			schema:minValue "-90";
 			schema:maxValue "90";
 			hydra:required "false"^^xsd:boolean;
@@ -1126,7 +1130,7 @@
 			hydra:variable "maxlat"^^xsd:string;
 			hydra:property "epos:northernmostLatitude";
 			rdfs:range "xsd:float";
-			rdfs:label "Maximum Latitude (Rectangle Search)";
+			rdfs:label "Maximum latitude (deg)";
 			schema:minValue "-90";
 			schema:maxValue "90";
 			hydra:required "false"^^xsd:boolean;
@@ -1136,7 +1140,7 @@
 			hydra:variable "minlon"^^xsd:string;
 			hydra:property "epos:westernmostLongitude";
 			rdfs:range "xsd:float";
-			rdfs:label "Minimum Longitude (Rectangle Search)";
+			rdfs:label "Minimum longitude (deg)";
 			schema:minValue "-180";
 			schema:maxValue "180";
 			hydra:required "false"^^xsd:boolean;
@@ -1146,7 +1150,7 @@
 			hydra:variable "maxlon"^^xsd:string;
 			hydra:property "epos:easternmostLongitude";
 			rdfs:range "xsd:float";
-			rdfs:label "Maximum Longitude (Rectangle Search)";
+			rdfs:label "Maximum longitude (deg)";
 			schema:minValue "-180";
 			schema:maxValue "180";
 			hydra:required "false"^^xsd:boolean;
@@ -1155,28 +1159,28 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "avtr_min"^^xsd:string;
 			rdfs:range "xsd:float";
-			rdfs:label "Minimum Average Rupture Rise Time";
+			rdfs:label "Minimum average rupture rise time (s)";
 			hydra:required "false"^^xsd:boolean;
 		];
 
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "avtr_max"^^xsd:string;
 			rdfs:range "xsd:float";
-			rdfs:label "Maximum Minimum Average Rupture Rise Time";
+			rdfs:label "Maximum average rupture rise time (s)";
 			hydra:required "false"^^xsd:boolean;
 		];
 
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "avvr_min"^^xsd:string;
 			rdfs:range "xsd:float";
-			rdfs:label "Minimum Average Velocity Rupture Speed";
+			rdfs:label "Minimum average velocity rupture speed (km/s)";
 			hydra:required "false"^^xsd:boolean;
 		];
 
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "avvr_max"^^xsd:string;
 			rdfs:range "xsd:float";
-			rdfs:label "Maximum Average Velocity Rupture Speed";
+			rdfs:label "Maximum average velocity rupture speed (km/s)";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -1234,7 +1238,7 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "dayafter"^^xsd:string;
 			rdfs:range "xsd:integer";
-			rdfs:label "Date after start time (unit is day)";
+			rdfs:label "Date after start time (in days)";
 			schema:minValue "1";
 			hydra:required "false"^^xsd:boolean;
 		];
@@ -1242,7 +1246,7 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "mindepth"^^xsd:string;
 			rdfs:range "xsd:integer";
-			rdfs:label "Minimum Depth";
+			rdfs:label "Minimum depth (km)";
 			schema:minValue "0";
 			schema:maxValue "6371";
 			hydra:required "false"^^xsd:boolean;
@@ -1251,7 +1255,7 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "maxdepth"^^xsd:string;
 			rdfs:range "xsd:integer";
-			rdfs:label "Maximum Depth";
+			rdfs:label "Maximum depth (km)";
 			schema:minValue "0";
 			schema:maxValue "6371";
 			hydra:required "false"^^xsd:boolean;
@@ -1260,7 +1264,7 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "minmag"^^xsd:string;
 			rdfs:range "xsd:float";
-			rdfs:label "Minimum Magnitude (MW)";
+			rdfs:label "Minimum magnitude";
 			schema:defaultValue "5";
 			hydra:required "false"^^xsd:boolean;
 		];
@@ -1268,14 +1272,14 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "maxmag"^^xsd:string;
 			rdfs:range "xsd:float";
-			rdfs:label "Maximum Magnitude (MW)";
+			rdfs:label "Maximum magnitude";
 			hydra:required "false"^^xsd:boolean;
 		];
 
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "lat"^^xsd:string;
 			rdfs:range "xsd:float";
-			rdfs:label "Latitude (Radius Search)";
+			rdfs:label "Radius search latitude (deg)";
 			schema:minValue "-90";
 			schema:maxValue "90";
 			hydra:required "false"^^xsd:boolean;
@@ -1284,7 +1288,7 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "lon"^^xsd:string;
 			rdfs:range "xsd:float";
-			rdfs:label "Longitude (Radius Search)";
+			rdfs:label "Radius search longitude (deg)";
 			schema:minValue "-180";
 			schema:maxValue "180";
 			hydra:required "false"^^xsd:boolean;
@@ -1293,7 +1297,7 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "minradius"^^xsd:string;
 			rdfs:range "xsd:float";
-			rdfs:label "Minimum Radius for the radius Search";
+			rdfs:label "Minimum radius (deg)";
 			schema:minValue "0";
 			schema:maxValue "180";
 			hydra:required "false"^^xsd:boolean;
@@ -1302,7 +1306,7 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "maxradius"^^xsd:string;
 			rdfs:range "xsd:float";
-			rdfs:label "Maximum Radius for the radius Search";
+			rdfs:label "Maximum radius (deg)";
 			schema:minValue "0";
 			schema:maxValue "180";
 			hydra:required "false"^^xsd:boolean;
@@ -1312,7 +1316,7 @@
 			hydra:variable "minlat"^^xsd:string;
 			hydra:property "epos:southernmostLatitude";
 			rdfs:range "xsd:float";
-			rdfs:label "Minimum Latitude (Rectangle Search)";
+			rdfs:label "Minimum latitude (deg)";
 			schema:minValue "-90";
 			schema:maxValue "90";
 			hydra:required "false"^^xsd:boolean;
@@ -1322,7 +1326,7 @@
 			hydra:variable "maxlat"^^xsd:string;
 			hydra:property "epos:northernmostLatitude";
 			rdfs:range "xsd:float";
-			rdfs:label "Maximum Latitude (Rectangle Search)";
+			rdfs:label "Maximum latitude (deg)";
 			schema:minValue "-90";
 			schema:maxValue "90";
 			hydra:required "false"^^xsd:boolean;
@@ -1332,7 +1336,7 @@
 			hydra:variable "minlon"^^xsd:string;
 			hydra:property "epos:westernmostLongitude";
 			rdfs:range "xsd:float";
-			rdfs:label "Minimum Longitude (Rectangle Search)";
+			rdfs:label "Minimum longitude (deg)";
 			schema:minValue "-180";
 			schema:maxValue "180";
 			hydra:required "false"^^xsd:boolean;
@@ -1342,7 +1346,7 @@
 			hydra:variable "maxlon"^^xsd:string;
 			hydra:property "epos:easternmostLongitude";
 			rdfs:range "xsd:float";
-			rdfs:label "Maximum Longitude (Rectangle Search)";
+			rdfs:label "Maximum longitude (deg)";
 			schema:minValue "-180";
 			schema:maxValue "180";
 			hydra:required "false"^^xsd:boolean;
@@ -1352,7 +1356,7 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "minnbtestimonies"^^xsd:string;
 			rdfs:range "xsd:integer";
-			rdfs:label "Minimum number of Testimonies request";
+			rdfs:label "Minimum number of felt reports";
 			schema:minValue "1";
 			schema:defaultValue "100";
 			hydra:required "false"^^xsd:boolean;
@@ -1361,7 +1365,7 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "maxnbtestimonies"^^xsd:string;
 			rdfs:range "xsd:integer";
-			rdfs:label "Maximum number of Testimonies request";
+			rdfs:label "Maximum number of felt reports";
 			schema:minValue "1";
 			hydra:required "false"^^xsd:boolean;
 		];
@@ -1383,6 +1387,8 @@
 			rdfs:range "xsd:boolean";
 			rdfs:label "Download query as file?";
 			schema:defaultValue "false";
+			http:paramValue "yes";
+			http:paramValue "true";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -1435,7 +1441,7 @@
 			adms:schemaAgency "DDSS-ID";
 			skos:notation "WP08-DDSS-017";
 		];
-		dct:description "Event data collected in real-time at EMSC";
+		dct:description "Seismic event data collected in real-time at EMSC";
 		dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
 		dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
 		dct:created "2017-10-25"^^xsd:date;
@@ -1445,10 +1451,10 @@
 			schema:startDate "1998-01-01T00:00:00Z"^^xsd:dateTime;
 		];
 		dct:spatial [ a dct:Location;
-			locn:geometry "POLYGON(-180.0 90.0,180.0 90.0,180.0 -90.0,-180.0 -90.0,-180.0 90.0)"^^gsp:wktLiteral;
+			locn:geometry "POLYGON((-180.0 90.0,180.0 90.0,180.0 -90.0,-180.0 -90.0,-180.0 90.0))"^^gsp:wktLiteral;
 		];
 		dcat:theme <epos:SeismicParametrics>;
-		dcat:keyword "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "Earthquake", "Event", "rocks", "seismic waves propagation";
+		dcat:keyword "seismology", "earthquake", "event", "fdsnws-event";
 		dcat:contactPoint <https://orcid.org/0000-0002-4460-6325/contactPoint>;
 		dct:publisher <PIC:998779222>;
 		dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/EMSC/Distribution>;
@@ -1463,7 +1469,7 @@
 			adms:schemaAgency "DDSS-ID";
 			skos:notation "WP08-DDSS-018";
 		];
-		dct:description "find Flinn-Engdahl region name";
+		dct:description "Find Flinn-Engdahl region name";
 		dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
 		dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
 		dct:created "2017-10-25"^^xsd:date;
@@ -1473,10 +1479,10 @@
 			schema:startDate "2010-01-01T00:00:00Z"^^xsd:dateTime;
 		];
 		dct:spatial [ a dct:Location;
-			locn:geometry "POLYGON(-180.0 90.0,180.0 90.0,180.0 -90.0,-180.0 90.0,-180.0 90.0)"^^gsp:wktLiteral;
+			locn:geometry "POLYGON((-180.0 90.0,180.0 90.0,180.0 -90.0,-180.0 90.0,-180.0 90.0))"^^gsp:wktLiteral;
 		];
 		dcat:theme <epos:SeismicParametrics>;
-		dcat:keyword "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "Earthquake", "Event", "rocks", "seismic waves propagation";
+		dcat:keyword "seismology", "earthquake", "region name";
 		dcat:contactPoint <https://orcid.org/0000-0002-4460-6325/contactPoint>;
 		dct:publisher <PIC:998779222>;
 		dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/EMSC/Distribution>;
@@ -1501,10 +1507,10 @@
 			schema:startDate "2010-01-01T00:00:00Z"^^xsd:dateTime;
 		];
 		dct:spatial [ a dct:Location;
-			locn:geometry "POLYGON(-180.0 90.0,180.0 90.0,180.0 -90.0,-180.0 -90.0,-180.0 90.0)"^^gsp:wktLiteral;
+			locn:geometry "POLYGON((-180.0 90.0,180.0 90.0,180.0 -90.0,-180.0 -90.0,-180.0 90.0))"^^gsp:wktLiteral;
 		];
 		dcat:theme <epos:SeismicParametrics>;
-		dcat:keyword "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "Earthquake", "Event", "rocks", "seismic waves propagation";
+		dcat:keyword "seismology", "earthquake", "focal mechanism", "moment tensor";
 		dcat:contactPoint <https://orcid.org/0000-0002-4460-6325/contactPoint>;
 		dct:publisher <PIC:998779222>;
 		dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/EMSC/Distribution>;
@@ -1529,10 +1535,10 @@
 			schema:startDate "2010-01-01T00:00:00Z"^^xsd:dateTime;
 		];
 		dct:spatial [ a dct:Location;
-			locn:geometry "POLYGON(-180.0 90.0,180.0 90.0,180.0 -90.0,-180.0 -90.0,-180.0 90.0)"^^gsp:wktLiteral;
+			locn:geometry "POLYGON((-180.0 90.0,180.0 90.0,180.0 -90.0,-180.0 -90.0,-180.0 90.0))"^^gsp:wktLiteral;
 		];
 		dcat:theme <epos:SeismicParametrics>;
-		dcat:keyword "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "Earthquake", "Event", "rocks", "seismic waves propagation";
+		dcat:keyword "seismology", "earthquake", "event identifier";
 	dcat:contactPoint <https://orcid.org/0000-0002-4460-6325/contactPoint>;
 		dct:publisher <PIC:998779222>;
 		dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/EMSC/Distribution>;
@@ -1557,10 +1563,10 @@
 			schema:startDate "1900-01-01T00:00:00Z"^^xsd:dateTime;
 		];
 		dct:spatial [ a dct:Location;
-			locn:geometry "POLYGON(-180.0 90.0,180.0 90.0,180.0 -90.0,-180.0 -90.0,-180.0 90.0)"^^gsp:wktLiteral;
+			locn:geometry "POLYGON((-180.0 90.0,180.0 90.0,180.0 -90.0,-180.0 -90.0,-180.0 90.0))"^^gsp:wktLiteral;
 		];
 		dcat:theme <epos:SeismicParametrics>;
-		dcat:keyword "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "Earthquake", "Event", "rocks", "seismic waves propagation";
+		dcat:keyword "seismology", "earthquake", "fault", "fault rupture model";
 		dcat:contactPoint <https://orcid.org/0000-0002-4460-6325/contactPoint>;
 		dct:publisher <PIC:998779222>;
 		dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/005/EMSC/Distribution>;
@@ -1585,10 +1591,10 @@
 			schema:startDate "2010-01-01T00:00:00Z"^^xsd:dateTime;
 		];
 		dct:spatial [ a dct:Location;
-			locn:geometry "POLYGON(-180.0 90.0,180.0 90.0,180.0 -90.0,-180.0 -90.0,-180.0 90.0)"^^gsp:wktLiteral;
+			locn:geometry "POLYGON((-180.0 90.0,180.0 90.0,180.0 -90.0,-180.0 -90.0,-180.0 90.0))"^^gsp:wktLiteral;
 		];
 		dcat:theme <epos:SeismicParametrics>;
-		dcat:keyword "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "Earthquake", "Event", "rocks", "seismic waves propagation";
+		dcat:keyword "seismology", "earthquakes", "macroseismology" , "felt intensity";
 		dcat:contactPoint <https://orcid.org/0000-0002-4460-6325/contactPoint>;
 		dct:publisher <PIC:998779222>;
 		dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/006/EMSC/Distribution>;
@@ -1602,8 +1608,8 @@
 # DISTRIBUTION (#1) => FDSNWS-Event
  <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/EMSC/Distribution> a dcat:Distribution;
 		dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/EMSC/Distribution";
-		dct:title "EMSC Seismic Parametric Data Distribution (fdsnws-event)";
-		dct:description "Description of fdsnws-event Distribution";
+		dct:title "Seismic event data collected at the European-Mediterranean Seismological Centre";
+		dct:description "The distribution provides access to worldwide seismic event data collected in real-time. Its encoded in QuakeML format v1.2 or in a column based csv format.";
 		dct:issued "2017-10-25"^^xsd:date;
 		dct:modified "2017-10-25"^^xsd:date;
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
@@ -1616,8 +1622,8 @@
 # DISTRIBUTION (#2) => FE-region lookup
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/EMSC/Distribution> a dcat:Distribution;
 		dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/EMSC/Distribution";
-		dct:title "EMSC Seismic Parametric Data Distribution (FE-region lookup)";
-		dct:description "Description of FE-region lookup Distribution";
+		dct:title " Flinn–Engdahl region lookup";
+		dct:description "The distribution provides access to  Flinn–Engdahl region names from a geolocation.";
 		dct:issued "2017-10-25"^^xsd:date;
 		dct:modified "2017-10-25"^^xsd:date;
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
@@ -1630,8 +1636,8 @@
 # DISTRIBUTION (#3) => Moment Tensors
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/EMSC/Distribution> a dcat:Distribution;
 		dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/003/EMSC/Distribution";
-		dct:title "EMSC Seismic Parametric Data Distribution (MomentTensors)";
-		dct:description "Description of MomentTensors Distribution";
+		dct:title "Seismic moment tensor data";
+		dct:description "The distribution provides access to worldwide moment tensor of seismic events collected in real-time. Its encoded in QuakeML format v1.2 or in a column based csv format.";
 		dct:issued "2017-10-25"^^xsd:date;
 		dct:modified "2017-10-25"^^xsd:date;
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
@@ -1644,8 +1650,8 @@
 # DISTRIBUTION (#4) => EventID
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/EMSC/Distribution> a dcat:Distribution;
 		dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/004/EMSC/Distribution";
-		dct:title "EMSC Seismic Parametric Data Distribution (EventID)";
-		dct:description "Description of EventID Distribution ";
+		dct:title "Mapping of seismic event identifiers";
+		dct:description "The distribution provides access to a dynamic mapping between seismic event identifier.";
 		dct:issued "2017-10-25"^^xsd:date;
 		dct:modified "2017-10-25"^^xsd:date;
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
@@ -1658,8 +1664,8 @@
 # DISTRIBUTION (#5) => Rupture Models
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/005/EMSC/Distribution> a dcat:Distribution;
 		dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/005/EMSC/Distribution";
-		dct:title "EMSC Seismic Parametric Data Distribution (RuptureModels)";
-		dct:description "Description of RuptureModels Distribution ";
+		dct:title "Fault rupture model of seismic events";
+		dct:description "The distribution provides access to fault rupture models of the SRCMOD dataset. It's encoded in a json format.";
 		dct:issued "2017-10-25"^^xsd:date;
 		dct:modified "2017-10-25"^^xsd:date;
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
@@ -1679,8 +1685,8 @@
 # DISTRIBUTION (#6) => Testimonies
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/006/EMSC/Distribution> a dcat:Distribution;
 		dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/006/EMSC/Distribution";
-		dct:title "EMSC Seismic Parametric Data Distribution (Testimonies)";
-		dct:description "Description of Testimonies Distribution ";
+		dct:title "Felt reports of earthquake eyewitnesses collected in real-time at the European-Mediterranean Seismological Centre";
+		dct:description "The distribution provides access to seismic events felt by eyewitnesses. Event list are encoded in json and the associated felt reports in zip file containing column based ascii file.";
 		dct:issued "2017-10-25"^^xsd:date;
 		dct:modified "2017-10-25"^^xsd:date;
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
