@@ -26,10 +26,9 @@
 .
 
 <epos:Magneticactivity> a skos:Concept;
-    skos:definition "Geo-effectivity at the Earth's surface described by planetary geomagnetic indices or lists of remarkable events";
+    skos:definition "Geomagnetic indices and events" ;
     skos:inScheme <epos:Geoelectromagnetism>;
-    #skos:prefLabel "Geo-effectivity at the Earth's surface described by planetary geomagnetic indices or lists of remarkable events";
-    skos:prefLabel "Magneticactivity";
+    skos:prefLabel "Geomagnetic indices and events" ;
 .
 
 ###############################################################################
@@ -141,8 +140,8 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-008/IMAGE_EJI/Dataset> a dcat:Dataset;
     dct:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-008/IMAGE_EJI/Dataset";
-    dct:title "Electrojet indicators";
-    dct:description "IMAGE electrojet indicators are simple estimates of the total eastward and westward currents crossing the magnetometer network.";
+    dct:title "Electrojet indicators for the IMAGE network";
+    dct:description "IMAGE electrojet indicators are simple estimates of the total eastward and westward currents crossing the IMAGE magnetometer network.";
     adms:identifier [ a adms:Identifier;
         adms:schemaAgency "DDSS-ID";
         skos:notation "WP13-DDSS-008";
@@ -175,8 +174,8 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-008/IMAGE_EJI/Distribution> a dcat:Distribution;
     dct:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-008/IMAGE_EJI/Distribution";
-    dct:title "Distribution of IMAGE electroject indicator data";
-    dct:description "IMAGE electroject indicator data is distributed via web service";
+    dct:title "Electrojet indicators for the IMAGE network";
+    dct:description "IMAGE electrojet indicators are simple estimates of the total eastward and westward currents crossing the IMAGE magnetometer network.";
     dct:issued "2018-08-31"^^xsd:date;
     dct:modified "2018-08-31"^^xsd:date;
     dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
@@ -192,8 +191,8 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-008/IMAGE_EJI/Webservice> a epos:WebService;
     schema:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-008/IMAGE_EJI/Webservice";
-    schema:description "The IMAGE web service makes available data from the IMAGE electrojet indicator service.";
-    schema:name "IMAGE web service";
+    schema:description "The IMAGE web service makes available IMAGE electrojet indicators in text format.";
+    schema:name "Web service for International Monitor for Auroral Geomagnetic Effects (IMAGE) data";
     dcat:contactPoint <mailto:ari.viljanen@fmi.fi/contactPoint>;
     dcat:contactPoint <mailto:lasse.hakkinen@fmi.fi/contactPoint>;
     schema:datePublished "2018-08-31Z"^^xsd:dateTime;
@@ -220,7 +219,7 @@
     hydra:method "GET"^^xsd:string;
     hydra:returns "text/plain";
     hydra:property[ a hydra:IriTemplate;
-        hydra:template "http://space.fmi.fi/cgi-bin/imagecgi/image-epos-indicators.cgi{?start, yourname, institute, email, submit}"^^xsd:string;
+        hydra:template "http://space.fmi.fi/cgi-bin/imagecgi/image-epos-indicators.cgi?submit=ok&yourname=EPOS&institute=EPOS&email=epos@example.org{?start}"^^xsd:string;
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "start"^^xsd:string;
                 hydra:property "schema:startDate";
@@ -230,35 +229,6 @@
                 schema:minValue "19821001";
                 schema:maxValue "21000101";
                 schema:defaultValue "19821001";
-                hydra:required "true"^^xsd:boolean;
-            ];
-            hydra:mapping[ a hydra:IriTemplateMapping;
-                hydra:variable "yourname"^^xsd:string;
-                rdfs:label "Your name";
-                rdfs:range "xsd:string" ;
-                schema:defaultValue "EPOS Test User";
-                hydra:required "true"^^xsd:boolean;
-            ];
-            hydra:mapping[ a hydra:IriTemplateMapping;
-                hydra:variable "institute"^^xsd:string;
-                rdfs:label "Your institute";
-                rdfs:range "xsd:string" ;
-                schema:defaultValue "EPOS Test Institute";
-                hydra:required "true"^^xsd:boolean;
-            ];
-            hydra:mapping[ a hydra:IriTemplateMapping;
-                hydra:variable "email"^^xsd:string;
-                rdfs:label "Your email";
-                rdfs:range "xsd:string" ;
-                schema:defaultValue "EPOSTestUser@example.org";
-                hydra:required "true"^^xsd:boolean;
-            ];
-            hydra:mapping[ a hydra:IriTemplateMapping;
-                hydra:variable "submit"^^xsd:string;
-                rdfs:label "Always set to 'OK'";
-                rdfs:range "xsd:string" ;
-                http:paramValue "OK";
-                schema:defaultValue "OK";
                 hydra:required "true"^^xsd:boolean;
             ];
         ] ;

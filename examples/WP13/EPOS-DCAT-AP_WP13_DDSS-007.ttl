@@ -26,10 +26,9 @@
 .
 
 <epos:Magneticactivity> a skos:Concept;
-    skos:definition "Geo-effectivity at the Earth’s surface described by planetary geomagnetic indices or lists of remarkable events" ;
+    skos:definition "Geomagnetic indices and events" ;
     skos:inScheme <epos:Geoelectromagnetism>;
-    #skos:prefLabel "Geo-effectivity at the Earth’s surface described by planetary geomagnetic indices or lists of remarkable events" ;
-    skos:prefLabel "Magneticactivity" ;
+    skos:prefLabel "Geomagnetic indices and events" ;
 .
 
 ###############################################################################
@@ -138,7 +137,7 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-007/Dataset> a dcat:Dataset;
     dct:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-007/Dataset";
-    dct:title "ISGI Geomagnetic Events Data";
+    dct:title "Event data from the International Service for Geomagnetic Indices (ISGI)";
     dct:description "Since 2015, International Service of Geomagnetic Indices is hosted by EOST, Strasbourg, France. ISGI is a service of the International Association of Geomagnetism and Aeronomy (IAGA). ISGI is the Reference Service for validation, dissemination and stewardship of geomagnetic indices through its official Web portal.";
     adms:identifier [ a adms:Identifier;
         adms:schemaAgency "DDSS-ID";
@@ -152,7 +151,7 @@
     dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
     dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI ;
     dcat:theme  <epos:Magneticactivity> ;
-    dcat:keyword "DISTURBED DAY", "GEO-EFFECTIVITY", "GEOMAGNETIC ACTIVITY", "GEOMAGNETIC STORM", "GEOMAGNETISM", "INTERPLANETARY MAGNETIC FIELD (IMF)", "IONOSPHERE", "MAGNETIC FIELD", "MAGNETISM", "MAGNETOSPHERE", "QUIET DAY", "RAPID MAGNETIC VARIATIONS", "REMARKABLE EVENT", "SOLAR FLARE", "SOLAR FLARE EFFECT", "SOLAR QUIET", "SOLAR STORM", "SPACE-WEATHER", "SUDDEN STORM COMMENCEMENT", "SUDDEN COMMENCEMENT", "SUDDEN IMPULSE", "TIME SERIES";
+    dcat:keyword "disturbed day", "geo-effectivity", "geomagnetic activity", "geomagnetic storm", "geomagnetism", "interplanetary magnetic field", "imf", "ionosphere", "magnetic field", "magnetism", "magnetosphere", "quiet day", "rapid magnetic variations", "remarkable event", "solar flare", "solar flare effect", "solar quiet", "solar storm", "space-weather", "sudden storm commencement", "sudden commencement", "sudden impulse", "time series";
     dcat:contactPoint <http://orcid.org/0000-0001-8793-1315/contactPoint>;
     dct:publisher <PIC:999997930>;
     dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-007/Distribution>;
@@ -171,8 +170,8 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-007/Distribution> a dcat:Distribution;
     dct:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-007/Distribution";
-    dct:title "Distribution of ISGI Geomagnetic Events data";
-    dct:description "ISGI Geomagnetic Events data is distributed via a web service.";
+    dct:title "Event data from the International Service for Geomagnetic Indices (ISGI)";
+    dct:description "The International Service of Geomagnetic Indices (ISGI) is a service of the International Association of Geomagnetism and Aeronomy (IAGA). ISGI is the reference Service for validation, dissemination and stewardship of geomagnetic events.";
     dct:issued "2018-08-31"^^xsd:date;
     dct:modified "2018-08-31"^^xsd:date;
     dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
@@ -188,15 +187,15 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-007/Webservice> a epos:WebService;
     schema:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-007/Webservice";
-    schema:description "Since 2015, International Service of Geomagnetic Indices is hosted by EOST, Strasbourg, France. ISGI is a service of the International Association of Geomagnetism and Aeronomy (IAGA). ISGI is the Reference Service for validation, dissemination and stewardship of geomagnetic indices through its official Web portal.";
-    schema:name "ISGI Data Download Web Service";
+    schema:description "Geomagnetic event data ia available via the International Service of Geomagnetic Indices (ISGI) web service. It is downloaded as a gzip archive.";
+    schema:name "International Service of Geomagnetic Indices (ISGI) Data Download Web Service";
     dcat:contactPoint <http://orcid.org/0000-0001-8793-1315/contactPoint>;
     schema:datePublished "2018-08-31Z"^^xsd:dateTime;
     schema:dateModified "2018-08-31Z"^^xsd:dateTime;
     schema:provider <PIC:999997930>;
     hydra:entrypoint "http://isgi.unistra.fr/"^^xsd:anyURI ;
     dcat:theme  <epos:Magneticactivity> ;
-    schema:keywords "DISTURBED DAY", "GEO-EFFECTIVITY", "GEOMAGNETIC ACTIVITY", "GEOMAGNETIC STORM", "GEOMAGNETISM", "INTERPLANETARY MAGNETIC FIELD (IMF)", "IONOSPHERE", "MAGNETIC FIELD", "MAGNETISM", "MAGNETOSPHERE", "QUIET DAY", "RAPID MAGNETIC VARIATIONS", "REMARKABLE EVENT", "SOLAR FLARE", "SOLAR FLARE EFFECT", "SOLAR QUIET", "SOLAR STORM", "SPACE-WEATHER", "SUDDEN STORM COMMENCEMENT", "SUDDEN COMMENCEMENT", "SUDDEN IMPULSE", "TIME SERIES";
+    schema:keywords "disturbed day", "geo-effectivity", "geomagnetic activity", "geomagnetic storm", "geomagnetism", "interplanetary magnetic field", "imf", "ionosphere", "magnetic field", "magnetism", "magnetosphere", "quiet day", "rapid magnetic variations", "remarkable event", "solar flare", "solar flare effect", "solar quiet", "solar storm", "space-weather", "sudden storm commencement", "sudden commencement", "sudden impulse", "time series";
     hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-007/Operation> ;
     dct:spatial [ a dct:Location;
         locn:geometry "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral ;
