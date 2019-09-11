@@ -16,7 +16,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
-# Version 3.1 - September 2019
+# Version 3.2 - 2019 September 11
 <PIC:999472675> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "PIC";
@@ -130,7 +130,7 @@
 				locn:geometry "POLYGON((-12.39 30.3,-12.39 49.0,45.28 49,45.28 30.3,-12.39 30.3))"^^gsp:wktLiteral;
 		];
 		dcat:theme <#Activefaults>;
-		dcat:keyword "active fault", "seismogenic fault", "seismogenic source", "seismogenic zone", "earthquake", "subduction", "slab", "hazard", "earthquakes", "magnitude", "slip rate", "crustal fault sources", "subduction fault sources", "hazard model", "faults", "seismology", "geology", "geohazard", "seismic hazard", " INGV";
+		dcat:keyword "active fault","active faults", "seismogenic fault","seismogenic faults", "seismogenic source", "seismogenic sources", "seismogenic zone", "seismogenice zones", "earthquake", "earthquakes","subduction","crust", "slab", "hazard", "magnitude", "slip rate", "crustal fault","crustal faults", "subduction fault", "subduction faults", "seismic hazard", "hazard model", "seismic hazard model", "fault", "faults", "seismology", "geology", "geohazard", "INGV", "seismofaults","strike", "dip","rake", "magnitude", "SHARE";
 		dcat:contactPoint <http://orcid.org/0000-0003-1208-9412/contactPoint>;
 		dct:publisher <PIC:999472675>;
 		dcat:distribution <Seismology/EDSF/Distribution/WMS>;
@@ -193,7 +193,7 @@
 	hydra:supportedOperation <Seismology/EDSF/Operation/WMS>;
 	hydra:supportedOperation <Seismology/EDSF/WFS-CrustalFaults>;
 	hydra:supportedOperation <Seismology/EDSF/WFS-Subductions>;
-	schema:keywords "active fault"," seismogenic fault"," seismogenic source"," seismogenic zone"," earthquake"," subduction"," slab"," hazard"," earthquakes"," magnitude"," slip rate"," crustal fault sources"," subduction fault sources"," hazard model"," faults"," seismology"," geology"," geohazard"," seismic hazard"," INGV" ;
+	schema:keywords "INGV","OGC","WMS","WFS","web feature service", "web map service", "open geospatial consortium", "geoserver";
 	dct:license "https://creativecommons.org/licenses/by-sa/4.0/"^^xsd:anyURI;
 	dct:temporal [ a dct:PeriodOfTime;
 		schema:startDate "2017-01-01T00:00:00Z"^^xsd:dateTime;
@@ -230,6 +230,11 @@
 					rdfs:label "Request type";
 					schema:defaultValue "GetMap";
 					http:paramValue "GetMap";
+					http:paramValue "GetCapabilities";
+					http:paramValue "GetLegendGraphic";
+					http:paramValue "DescribeLayer";
+					http:paramValue "GetFeatureInfo";
+					http:paramValue "GetLegendGraphic"
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
@@ -339,12 +344,26 @@
 					rdfs:label "Output format";
 					schema:defaultValue "image/png";
 					http:paramValue "image/png";
+					http:paramValue "application/atom+xml";
+					http:paramValue "application/json;type=utfgrid";
+					http:paramValue "application/pdf";
+					http:paramValue "application/rss+xml";
+					http:paramValue "application/vnd.google-earth.kml+xml";
+					http:paramValue "application/vnd.google-earth.kml+xml;mode=networklink";
+					http:paramValue "application/vnd.google-earth.kmz";
+					http:paramValue "image/geotiff";
+					http:paramValue "image/geotiff8";
+					http:paramValue "image/png; mode=8bit";
 					http:paramValue "image/jpg";
 					http:paramValue "image/tiff";
 					http:paramValue "image/gif";
-					http:paramValue "application/vnd.google-earth.kmz";
-					http:paramValue "application/vnd.google-earth.kml+xml";
-					http:paramValue "application/pdf";
+					http:paramValue "image/svg+xml";
+					http:paramValue "image/tiff8";
+					http:paramValue "image/vnd.jpeg-png";
+					http:paramValue "image/vnd.jpeg-png8";
+					http:paramValue "text/html; subtype=openlayers";
+					http:paramValue "text/html; subtype=openlayers2";
+					http:paramValue "text/html; subtype=openlayers3";
 					hydra:required "true"^^xsd:boolean;
 				];
 		] ;
@@ -469,15 +488,28 @@
 				#];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "outputFormat"^^xsd:string;
+					hydra:property "schema:encodingFormat";
 					rdfs:range "xsd:string";
 					rdfs:label "Output format";
-					schema:defaultValue "text/xml; subtype=gml/2.1.2 ";
-					http:paramValue "text/xml; subtype=gml/2.1.2 ";
-					http:paramValue "gml3";
-					http:paramValue "application/json";
-					http:paramValue "application/kml";
-					http:paramValue "csv";
-					http:paramValue "SHAPE-ZIP";
+					schema:defaultValue "application/gml+xml; version=3.2";
+                                        http:paramValue "application/gml+xml; version=3.2";
+                                        http:paramValue "GML2";
+                                        http:paramValue "KML";
+                                        http:paramValue "OGR-CSV";
+                                        http:paramValue "OGR-KML";
+                                        http:paramValue "OGR-MIF";
+                                        http:paramValue "OGR-TAB";
+                                        http:paramValue "SHAPE-ZIP";
+                                        http:paramValue "application/json";
+                                        http:paramValue "application/vnd.google-earth.kml xml";
+                                        http:paramValue "application/vnd.google-earth.kml+xml";
+                                        http:paramValue "csv";
+                                        http:paramValue "gml3";
+                                        http:paramValue "gml32";
+                                        http:paramValue "json";
+                                        http:paramValue "text/xml; subtype=gml/2.1.2";
+                                        http:paramValue "text/xml; subtype=gml/3.1.1";
+                                        http:paramValue "text/xml; subtype=gml/3.2";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
@@ -646,13 +678,25 @@
 					hydra:variable "outputFormat"^^xsd:string;
 					rdfs:range "xsd:string";
 					rdfs:label "Output format";
-					schema:defaultValue "text/xml; subtype=gml/2.1.2 ";
-					http:paramValue "text/xml; subtype=gml/2.1.2 ";
-					http:paramValue "gml3";
-					http:paramValue "application/json";
-					http:paramValue "application/kml";
-					http:paramValue "csv";
+					schema:defaultValue "application/gml+xml; version=3.2";
+					http:paramValue "application/gml+xml; version=3.2";
+					http:paramValue "GML2";
+					http:paramValue "KML";
+					http:paramValue "OGR-CSV";
+					http:paramValue "OGR-KML";
+					http:paramValue "OGR-MIF";
+					http:paramValue "OGR-TAB";
 					http:paramValue "SHAPE-ZIP";
+					http:paramValue "application/json";
+					http:paramValue "application/vnd.google-earth.kml xml";
+					http:paramValue "application/vnd.google-earth.kml+xml";
+					http:paramValue "csv";
+					http:paramValue "gml3";
+					http:paramValue "gml32";
+					http:paramValue "json";
+					http:paramValue "text/xml; subtype=gml/2.1.2";
+					http:paramValue "text/xml; subtype=gml/3.1.1";
+					http:paramValue "text/xml; subtype=gml/3.2";
 					hydra:required "true"^^xsd:boolean;
 				];
 				#DB parameter for subductions are not yet implemented since attributes between subduction_countour and subduction_zones layers are different each other
@@ -687,4 +731,9 @@
 	skos:definition "Faults that are deemed to be capable to generate earthquakes of magnitude greater or equal to 5.5";
 	skos:inScheme <#Seismology>;
 	skos:prefLabel "Active faults";
+.
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/AHEAD/APIDocumentation> a hydra:APIDocumentation;
+      hydra:title "Web Services documentation and metadata for EDSF";
+      hydra:description "The Seismofaults framework includes EDSF as well as related documentation and metadata.";
+          hydra:entrypoint "http://www.seismofaults.eu"^^xsd:anyURI;
 .
