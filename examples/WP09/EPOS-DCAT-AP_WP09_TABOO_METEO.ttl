@@ -224,7 +224,7 @@
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
-		hydra:template "http://fridge-services.rm.ingv.it/meteo/{?param_name, mintime, maxtime, minlat, maxlat, minlon, maxlon}"^^xsd:string;
+		hydra:template "http://fridge-services.rm.ingv.it/meteo/{?param_name, mintime, maxtime, minlat, maxlat, minlon, maxlon, stacode}"^^xsd:string;
 		# type of parameter "xsd:string" "xsd:boolean" "xsd:date" "xsd:dateTime" "xsd:decimal" "xsd:double" "xsd:float" "xsd:int" "xsd:integer" "xsd:long"
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "param_name"^^xsd:string;
@@ -301,6 +301,17 @@
 			schema:maxValue "90";
 			schema:defaultValue "13.0";
 			hydra:property "epos:easternmostLongitude";
+			hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "stacode"^^xsd:string;
+			rdfs:label "Station code";
+			rdfs:range "xsd:string";
+			http:paramValue "nogna";
+			http:paramValue "uppiano";
+			http:paramValue "migianella";
+			http:paramValue "fungaia";
+			schema:defaultValue "uppiano";
 			hydra:required "true"^^xsd:boolean;
 		];
 	] ;

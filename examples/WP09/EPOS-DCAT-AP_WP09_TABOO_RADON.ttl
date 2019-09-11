@@ -224,7 +224,7 @@
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
-		hydra:template "http://fridge-services.rm.ingv.it/radon/{?mintime, maxtime, minlat, maxlat, minlon, maxlon, minperiod, maxperiod, type_site}"^^xsd:string;
+		hydra:template "http://fridge-services.rm.ingv.it/radon/{?mintime, maxtime, minlat, maxlat, minlon, maxlon, minperiod, maxperiod, type_site, stacode}"^^xsd:string;
 		# type of parameter "xsd:string" "xsd:boolean" "xsd:date" " xsd:dateTime" "xsd:decimal" "xsd:double" "xsd:float" "xsd:int" "xsd:integer" "xsd:long"
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "mintime"^^xsd:string;
@@ -312,6 +312,19 @@
 			http:paramValue "borehole";
 			http:paramValue "soil";
 			schema:defaultValue "indoor";
+			hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "stacode"^^xsd:string;
+			rdfs:label "Station code";
+			rdfs:range "xsd:string";
+			http:paramValue "PTRL";
+			http:paramValue "MURB";
+			http:paramValue "SSFR";
+			http:paramValue "CDCA";
+			http:paramValue "BADI";
+			http:paramValue "BADI2";
+			schema:defaultValue "PTRL";
 			hydra:required "true"^^xsd:boolean;
 		];
 	] ;
