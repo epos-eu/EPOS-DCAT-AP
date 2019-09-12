@@ -339,10 +339,10 @@
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "channel"^^xsd:string;
 					rdfs:range "xsd:string";
-          				schema:defaultValue "*T*";
+          			schema:defaultValue "?T?";
 					rdfs:label "channel code or comma seperated channels, wildcards (? or *) are authorized";
-					http:paramValue "*T*";
-					hydra:required "false"^^xsd:boolean;
+					http:paramValue "?T?";
+					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "quality"^^xsd:string;
@@ -422,8 +422,8 @@
 					hydra:variable "channel"^^xsd:string;
 					rdfs:range "xsd:string";
 					rdfs:label "channel code or comma seperated channels, wildcards (? or *) are authorized";
-					schema:defaultValue "*T*";
-					http:paramValue "*T*";
+					schema:defaultValue "?T?";
+					http:paramValue "?T?";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
