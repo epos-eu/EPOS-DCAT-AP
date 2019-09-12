@@ -99,8 +99,8 @@
 
 <http://www.epos-eu.org/epos-dcat-ap/Seismology/SeismologicalProducts/ESMFlatFile/Dataset/001> a dcat:Dataset ;
         dct:identifier "http://www.epos-eu.org/epos-dcat-ap/Seismology/SeismologicalProducts/ESMFlatFile/Dataset/001" ;
-        dct:title "Strong-motion flat-file 2018" ;
-        dct:description "This distribution (http://esm.mi.ingv.it/flatfile-2018/) is a parametric table which contains metadata and intensity measures of manually processed waveforms recorded by accelerometers for magnitude (moment Mw, local ML or surface waves Ms) higher or equal than 4.0. It is encoded in a zip file containing 3 parametric tables in csv format. It covers the time interval 1960-2016 and is limited to the Pan-European region" ;
+        dct:title "Engineering Strong-motion database - flat-file 2018" ;
+        dct:description "This distribution is a parametric table which contains metadata and intensity measures of manually processed waveforms recorded by accelerometers for magnitude (moment Mw, local ML or surface waves Ms) higher or equal than 4.0. It covers the time interval 1960-2016 and is limited to the Pan-European region" ;
         adms:identifier [ a adms:Identifier ;
             adms:schemaAgency "DDSS-ID" ;
             skos:notation "WP08-DDSS-053" ;
@@ -241,4 +241,11 @@
 <epos:SeismologicalProducts> a skos:Concept;
 		skos:inScheme <epos:Seismology>;
 		skos:prefLabel "Seismological Products";
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/ESM-flatfile-2018/APIDocumentation>
+  a hydra:APIDocumentation ;
+  hydra:title "Splash page for downloading ESM-flatfile 2018" ;
+  hydra:description "After logging in users can access the documentation and download flatfile itself." ;
+  hydra:entrypoint "https://esm.mi.ingv.it/flatfile-2018/" ;
 .
