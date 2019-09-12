@@ -168,6 +168,36 @@
     ]; 
 .
 
+<https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-009/IMAGE_Substorm/Stations/Dataset> a dcat:Dataset;
+    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-009/IMAGE_Substorm/Stations/Dataset";
+    dct:title "Station data of the event indicators for the IMAGE network";
+    dct:description "IMAGE electrojet events refer to periods when a clearly detectable eastward and/or westward current crosses the magnetometer network.";
+    adms:identifier [ a adms:Identifier;
+        adms:schemaAgency "DDSS-ID";
+        skos:notation "WP13-DDSS-009";
+    ];
+    dct:created "2018-08-31"^^xsd:date;
+    dct:modified "2018-08-31"^^xsd:date;
+    dct:issued "2018-08-31"^^xsd:date;
+    owl:versionInfo "1.0.0" ;
+
+    dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
+    dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI ;
+    dcat:theme  <epos:Magneticactivity> ;
+    dcat:keyword "auroral electrojet", "geomagnetism", "magnetic field", "magnetism", "space weather", "substorm", "variometer" ;
+    dcat:contactPoint <mailto:ari.viljanen@fmi.fi/contactPoint>;
+    dcat:contactPoint <mailto:lasse.hakkinen@fmi.fi/contactPoint>;
+    dct:publisher <PIC:999591306>;
+    dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-009/IMAGE_Substorm/Stations/Distribution>;
+
+    dct:temporal [ a dct:PeriodOfTime;
+        schema:startDate "1982-10-01T00:00:00Z"^^xsd:dateTime;
+    ];
+    dct:spatial [ a dct:Location;
+        locn:geometry "POLYGON((40.0 50.0, 0.0 50.0, 0.0 80.0, 40.0 80.0, 40.0 50.0))"^^gsp:wktLiteral;
+    ];
+.
+
 ###############################################################################
 ### Distributions ###
 ###############################################################################
@@ -184,6 +214,19 @@
     dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI ;
     dct:format "http://publications.europa.eu/resource/authority/file-type/TXT"^^xsd:string ;
 . 
+
+<https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-009/IMAGE_Substorm/Stations/Distribution> a dcat:Distribution;
+    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-009/IMAGE_Substorm/Stations/Distribution";
+    dct:title "Distribution of IMAGE station data";
+    dct:description "IMAGE station data is distributed via web service";
+    dct:issued "2018-08-31"^^xsd:date;
+    dct:modified "2018-08-31"^^xsd:date;
+    dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+    dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-009/IMAGE_Substorm/Stations/Webservice>;
+    dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-009/IMAGE_Substorm/Stations/Operation> ;
+    dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI ;
+    dct:format "http://publications.europa.eu/resource/authority/file-type/TXT"^^xsd:string ;
+.
 
 ###############################################################################
 ### Web services ###
@@ -211,6 +254,28 @@
     dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 .
 
+<https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-009/IMAGE_Substorm/Stations/Webservice> a epos:WebService;
+    schema:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-009/IMAGE_Substorm/Stations/Webservice";
+    schema:description "The IMAGE station web service makes available location data of stations";
+    schema:name "Web service for International Monitor for Auroral Geomagnetic Effects (IMAGE) data";
+    dcat:contactPoint <mailto:ari.viljanen@fmi.fi/contactPoint>;
+    dcat:contactPoint <mailto:lasse.hakkinen@fmi.fi/contactPoint>;
+    schema:datePublished "2018-08-31Z"^^xsd:dateTime;
+    schema:dateModified "2018-08-31Z"^^xsd:dateTime;
+    schema:provider <PIC:999591306>;
+    hydra:entrypoint "http://space.fmi.fi/image/www/index.php?page=request"^^xsd:anyURI ;
+    dcat:theme  <epos:Magneticactivity> ;
+    schema:keywords "auroral electrojet", "geomagnetism", "magnetic field", "magnetism", "space weather", "substorm", "variometer" ;
+    hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-009/IMAGE_Substorm/Stations/Operation> ;
+    dct:spatial [ a dct:Location;
+        locn:geometry "POLYGON((40.0 50.0, 0.0 50.0, 0.0 80.0, 40.0 80.0, 40.0 50.0))"^^gsp:wktLiteral;
+    ];
+    dct:temporal [ a dct:PeriodOfTime;
+        schema:startDate "1982-10-01T00:00:00Z"^^xsd:dateTime;
+    ];
+    dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+.
+
 ###############################################################################
 ### Web service operations ###
 ###############################################################################
@@ -232,4 +297,12 @@
                 hydra:required "true"^^xsd:boolean;
             ];
         ] ;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-009/IMAGE_Substorm/Stations/Operation> a hydra:Operation;
+    hydra:method "GET"^^xsd:string;
+    hydra:returns "application/geo+json";
+    hydra:property[ a hydra:IriTemplate;
+        hydra:template "http://geomag.bgs.ac.uk/EPOS_station_list/observatories/image"^^xsd:string;
+    ] ;
 .
