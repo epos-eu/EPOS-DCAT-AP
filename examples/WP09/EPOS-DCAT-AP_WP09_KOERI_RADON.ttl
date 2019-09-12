@@ -47,7 +47,7 @@
 		schema:propertyID "pic";
 		schema:value "999882500";
 	]; 
-	schema:legalName "KOERI Kandilli Observatory and Earthquake Research Institue";
+	schema:legalName "KOERI Kandilli Observatory and Earthquake Research Institue"@en;
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "Çengelköy";
 		schema:addressLocality "Istanbul";
@@ -61,7 +61,7 @@
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/RADON/Dataset/001> a dcat:Dataset;
-	dct:title "KOERI Radon decay counts and local temperature Dataset";
+	dct:title "Marmara Radon decay counts and local temperature";
 	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/RADON/Dataset/001";
 	dct:description "Radon decay counts and local temperature dataset contains Radon Gas concentration time series based on periodic counting of Rn gas at site";
 	adms:identifier [ a adms:Identifier; 
@@ -86,7 +86,7 @@
         schema:endDate "2017-01-01T00:00:00"^^xsd:dateTime ;
     ];
 	dcat:theme  <epos:Radonconcentration> ;
-	dcat:keyword "Geochemical", "Radon concentration", "Radon decay counts", "geochemistry", "geohazards", "long term continuos timeseries", "local temperature", "NFO", "Near Fault Observatory", "KOERI", "FRIDGE";
+	dcat:keyword "Geochemistry", "Radon concentration", "Radon decay counts", "geohazard", "timeseries", "local temperature", "NFO", "Marmara", "FRIDGE";
 	dcat:contactPoint <http://orcid.org/0000-0001-7080-183X/scientificContact>;
 	dct:publisher <PIC:999882500>;
 	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/RADON/Distribution/001>;
@@ -94,8 +94,8 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/RADON/Distribution/001> a dcat:Distribution;
     dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/RADON/Distribution/001";
-	dct:title "KOERI Radon decay counts and local temperature Distribution";
-	dct:description "KOERI Radon decay counts and local temperature Distribution";
+	dct:title "Marmara Rn concentration and local temperature";
+	dct:description "This distribution provides access to radon (Rn) gas concentrations measurements and derived time series, performed at different sampling sites. Data includes temperature data measured at the sampling sites. The datasets are encoded in JSON format. Data cover the time period 2012-2017 and is limited to the Marmara (Turkey) Near Fault Observatory.";
 	dct:created "2012-01-01"^^xsd:date;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/RADON/WebService/001/Operation/001>;
@@ -107,12 +107,12 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/RADON/WebService/001> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/RADON/WebService/001";
-	schema:description "Radon counts and local temperature Web Service allow to retrieve Radon Gas concentration time series based on periodic counting of Rn gas at site";
-	schema:name "KOERI Radon counts and local temperature Web Service";
+	schema:description "This web service provides access to radon (Rn) gas concentrations measurements and derived time series. It is implemented with Tornado (Python web framework).";
+	schema:name "Marmara Radon counts and local temperature Web Service";
 	schema:datePublished "2017-06-08T12:00:00Z"^^xsd:dateTime;
 	schema:dateModified "2017-06-08T12:00:00Z"^^xsd:dateTime;
 	schema:provider <PIC:999882500>;
-	schema:keywords "Geochemical", "Radon concentration", "Radon decay counts", "geochemistry", "geohazards", "long term continuos timeseries", "local temperature", "NFO", "Near Fault Observatory", "KOERI", "FRIDGE";
+	schema:keywords "Geochemistry", "Radon concentration", "Radon decay counts", "geohazard", "timeseries", "local temperature", "NFO", "Marmara", "FRIDGE";
 	#hydra:entrypoint "application.wadl"^^xsd:anyURI;
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/RADON/WebService/001/Operation/001>;
 	dcat:theme <epos:Radonconcentration>;
@@ -126,14 +126,14 @@
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/RADON/WebService/001/APIDocumentation> a hydra:APIDocumentation ;
     hydra:title "NFO web service Radon decay counts" ;
     hydra:description "NFO web service Radon decay counts" ;
-    hydra:entrypoint "https://docs.google.com/document/d/1bsU8ZIKsZjvKcmWi8VxET6mGZppyoikiZRP5vlVwMhs" ;
+    hydra:entrypoint "https://fridge.rm.ingv.it/docs/API_prototype_documentation_NFO_Radon.pdf" ;
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/RADON/WebService/001/Operation/001> a hydra:Operation;
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
-		hydra:template "http://fridge-services.rm.ingv.it/radon/{?mintime, maxtime, minlat, maxlat, minlon, maxlon, minperiod, maxperiod, type_site, max_radon_err, max_int_delta}"^^xsd:string;
+		hydra:template "http://fridge-services.rm.ingv.it/radon/{?mintime, maxtime, minlat, maxlat, minlon, maxlon, minperiod, maxperiod, type_site}"^^xsd:string;
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "mintime"^^xsd:string;
 			rdfs:label "Minimum Time";
@@ -221,20 +221,6 @@
 			http:paramValue "soil";
 			schema:defaultValue "indoor";
 			hydra:required "true"^^xsd:boolean;
-		];
-		hydra:mapping[ a hydra:IriTemplateMapping;
-			hydra:variable "max_radon_err"^^xsd:string;
-			rdfs:label "Maximum % uncertainty of the measure accepted for extraction";
-			rdfs:range "xsd:integer";
-			schema:maxValue "100";
-			hydra:required "false"^^xsd:boolean;
-		];
-		hydra:mapping[ a hydra:IriTemplateMapping;
-			hydra:variable "max_int_delta"^^xsd:string;
-			rdfs:label "Maximum distance in time between internal temperature";
-			rdfs:range "xsd:integer";
-			schema:minValue "0";
-			hydra:required "false"^^xsd:boolean;
 		];
 	] ;
 .
