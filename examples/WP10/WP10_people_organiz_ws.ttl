@@ -87,10 +87,10 @@ schema:url  "http://orcid.org/0000-0001-6824-6136"^^xsd:anyURI;
  schema:affiliation <PIC:996437254>;
 .
 #Person Mathilde Vergnolle
-<ResearcherID:A-5326-2010> a schema:Person;
+<https://orcid.org/0000-0002-6367-2168> a schema:Person;
  schema:identifier [ a schema:PropertyValue;
-schema:propertyID "researcherID";
-schema:value "A-5326-2010";
+ schema:propertyID "orcid";
+ schema:value "0000-0002-6367-2168";
 ];
 
  schema:familyName "Vergnolle";
@@ -105,14 +105,18 @@ schema:email "mathilde.vergnolle@geoazur.unice.fr";
 schema:telephone "+33483618627" ;
  schema:qualifications "Principal Researcher" ;
  schema:affiliation <PIC:991782030>;
- schema:contactPoint <ResearcherID:A-5326-2010/scientificContact>;
+ schema:contactPoint <https://orcid.org/0000-0002-6367-2168/scientificContact>;
+schema:email "mathilde.vergnolle@geoazur.unice.fr" ;
+ schema:availableLanguage "en" ;
+ schema:contactType "scientificContact" ;
 .
 
-<ResearcherID:A-5326-2010/scientificContact> a schema:ContactPoint;
+<http://orcid.org/0000-0002-6367-2168/scientificContact> a schema:ContactPoint;
  schema:email "mathilde.vergnolle@geoazur.unice.fr" ;
  schema:availableLanguage "en" ;
  schema:contactType "scientificContact" ;
 .
+
 #Person Ambrus Kenyeres
 <https://orcid.org/0000-0003-2714-6555> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
@@ -438,7 +442,7 @@ schema:telephone "+33483618627" ;
  	schema:contactPoint <http://orcid.org/0000-0002-9733-284X/financialContact>;
 .
 
-#UGA-CNRS
+#CNRS-UGA
 <PIC:996437258> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID  "PIC";
@@ -580,7 +584,9 @@ schema:name "GNSS product attributes that can be used in other product service r
   dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
   schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
   schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
-  schema:provider <PIC:996437254>;
+  # WP10-DDSS-006 Products.GNSS.Gateway UBI
+	# UBI
+	schema:provider <PIC:996437254>;
   dcat:theme  <epos:GNSSProductsPortal> ;
   hydra:entrypoint "https://glass.epos.ubi.pt:8080/GlassFramework/swagger.json"^^xsd:anyURI;
 schema:keywords "Geodesy", "GNSS" ;
@@ -619,7 +625,9 @@ schema:name "GNSS RINEX File Metadata";
 dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
 schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
 schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
-schema:provider <PIC:996437254>;
+  # WP10-DDSS-001 Data.GNSS.Gateway OCA
+	# OCA
+	schema:provider <PIC:991782030>;
 dcat:theme  <epos:GNSSDataGatewayPortal> ;
 hydra:entrypoint "http://gnssdata-epos.oca.eu:8080/GlassFramework/swagger.json"^^xsd:anyURI;
 schema:keywords "Geodesy", "GNSS" ;
@@ -687,7 +695,9 @@ schema:name "GNSS Stations with GNSS Products";
 dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
 schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
 schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
-schema:provider <PIC:996437254>;
+  # WP10-DDSS-006 Products.GNSS.Gateway UBI
+	# UBI
+	schema:provider <PIC:996437254>;
 dcat:theme  <epos:GNSSProductsPortal> ;
 hydra:entrypoint "https://glass.epos.ubi.pt:8080/GlassFramework/swagger.json"^^xsd:anyURI;
 schema:keywords "Geodesy", "GNSS" ;
@@ -811,7 +821,23 @@ schema:description "Returns the GNSS Time Series Product, for GNSS stations and 
   dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
   schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
   schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
-  schema:provider <PIC:996437254>;
+  # WP10-DDSS-006 Products.GNSS.Gateway UBI
+	# UBI
+	schema:provider <PIC:996437254>;
+  # WP10-DDSS-009 Products.GNSS.PPP.TimeSeries INGV
+	# INGV
+	schema:provider <PIC:996437256>;
+  # WP10-DDSS-010 Products.GNSS.DD.TimeSeries CNRS-UGA
+	# CNRS-UGA
+	schema:provider <PIC:996437258>;
+  # WP10-DDSS-011 Products.GNSS.Combined.Position BFKH, SGO
+	# BFKH
+	schema:provider <PIC:996437255>;
+	# SGO
+	schema:provider <PIC:996437261>;
+  # WP10-DDSS-016 Products.EUREF.Combined.Positions WUT-EUREF
+	# WUT-EUREF
+	schema:provider <PIC:996437259>;
   dcat:theme  <epos:GNSSProductsPortal> ;
   hydra:entrypoint "https://glass.epos.ubi.pt:8080/GlassFramework/swagger.json"^^xsd:anyURI;
 schema:keywords "Geodesy", "GNSS" ;
@@ -944,7 +970,22 @@ schema:name "GNSS Velocities";
 dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
 schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
 schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
-schema:provider <PIC:996437254>;
+  # WP10-DDSS-006 Products.GNSS.Gateway UBI
+	# UBI
+	schema:provider <PIC:996437254>;
+  # WP10-DDSS-012 Products.GNSS.DD.Velocity CNRS-UGA
+	# CNRS-UGA
+	schema:provider <PIC:996437258>;
+  # WP10-DDSS-013 Products.GNSS.PPP.Velocity INGV
+	# INGV
+	schema:provider <PIC:996437256>;
+  # WP10-DDSS-014 Products.GNSS.Combined.Velocity BFKH, SGO and INGV
+	# BFKH
+	schema:provider <PIC:996437255>;
+	# SGO
+	schema:provider <PIC:996437261>;
+	# INGV
+	#schema:provider <PIC:996437256>; it is already above providing PPP
 dcat:theme  <epos:GNSSProductsPortal> ;
 hydra:entrypoint "https://glass.epos.ubi.pt:8080/GlassFramework/swagger.json"^^xsd:anyURI;
 schema:keywords "Geodesy", "GNSS" ;
@@ -1003,7 +1044,23 @@ hydra:required "true"^^xsd:boolean;
  dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
  schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
  schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
- schema:provider <PIC:996437254>;
+  # WP10-DDSS-006 Products.GNSS.Gateway UBI
+	# UBI
+	schema:provider <PIC:996437254>;
+  # WP10-DDSS-007 Products.GNSS.PPP.Position INGV
+	# INGV
+	schema:provider <PIC:996437256>;
+  # WP10-DDSS-008 Products.GNSS.DD.Position CNRS-UGA
+	# CNRS-UGA
+	schema:provider <PIC:996437258>;
+  # WP10-DDSS-011 Products.GNSS.Combined.Position BFKH, SGO
+	# BFKH
+	schema:provider <PIC:996437255>;
+	# SGO
+	schema:provider <PIC:996437261>;
+  # WP10-DDSS-016 Products.EUREF.Combined.Positions WUT-EUREF
+	# WUT-EUREF
+	schema:provider <PIC:996437259>;
  dcat:theme  <epos:GNSSProductsPortal> ;
  hydra:entrypoint "https://glass.epos.ubi.pt:8080/GlassFramework/swagger.json"^^xsd:anyURI;
 schema:keywords "Geodesy", "GNSS" ;
@@ -1030,8 +1087,9 @@ hydra:property[ a hydra:IriTemplate;
       rdfs:range "xsd:string";
       hydra:required "true"^^xsd:boolean;
 http:paramValue "WUT-EUREF";
-http:paramValue "UGA";
+http:paramValue "CNRS-UGA";
 http:paramValue "INGV";
+http:paramValue "BFKH";
         schema:defaultValue "WUT-EUREF";
     ];
     hydra:mapping[ a hydra:IriTemplateMapping;
@@ -1122,84 +1180,6 @@ http:paramValue "INGV";
 ];
 .
 
-#WS stations/v2/list
-<GlassFramework/webresources/stations/v2/list/> a epos:WebService;
-schema:identifier "GlassFramework/webresources/stations/v2/list/";
-schema:description "Returns a list containing existing data of the chosen type such as the available cities.";
-schema:name "List GNSS stations by specific criteria";
-dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
-schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
-schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
-schema:provider <PIC:996437254>;
-dcat:theme  <epos:GNSSDataGatewayPortal> ;
-hydra:entrypoint "http://gnssdata-epos.oca.eu:8080/GlassFramework/swagger.json"^^xsd:anyURI;
-schema:keywords "Geodesy", "GNSS" ;
-dct:conformsTo <GlassFramework/APIDocumentationData> ;
-hydra:supportedOperation <GlassFramework/webresources/stations/v2/list/operation>;
-.
-
-#WS Operation stations/v2/list/
-<GlassFramework/webresources/stations/v2/list/operation> a hydra:Operation;
-hydra:method "GET"^^xsd:string;
-  hydra:returns "application/json";
-hydra:property[ a hydra:IriTemplate;
-hydra:template "http://gnssdata-epos.oca.eu:8080/GlassFramework/webresources/stations/v2/list/{data}"^^xsd:string;
-hydra:mapping[ a hydra:IriTemplateMapping;
-hydra:variable "data"^^xsd:string;
-      rdfs:range "xsd:string";
-rdfs:label "data type";
-hydra:required "true"^^xsd:boolean;
-http:paramValue "agency";
-http:paramValue "antenna";
-http:paramValue "city";
-http:paramValue "country";
-http:paramValue "files_type";
-http:paramValue "network";
-http:paramValue "radome";
-http:paramValue "receiver";
-http:paramValue "state";
-http:paramValue "station";
-      schema:defaultValue "city";
-];
-];
-.
-
-#WS stations/v2/list/station
-<GlassFramework/webresources/stations/v2/list/station> a epos:WebService;
-schema:identifier "GlassFramework/webresources/stations/v2/list/station";
-schema:description "Returns a list with the name a list with the name and marker of all the GNSS stations that disseminate GNSS data or the a list containing stations that match the given name and marker parameters.";
-  schema:name "List all GNSS station names and markers";
-  dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
-  schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
-  schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
-  schema:provider <PIC:996437254>;
-  dcat:theme  <epos:GNSSDataGatewayPortal> ;
-  hydra:entrypoint "http://gnssdata-epos.oca.eu:8080/GlassFramework/swagger.json"^^xsd:anyURI;
-schema:keywords "Geodesy", "GNSS" ;
-  dct:conformsTo <GlassFramework/APIDocumentationData> ;
-  hydra:supportedOperation <GlassFramework/webresources/stations/v2/list/station/operation>;
-.
-
-#WS Operation stations/v2/list/station
-<GlassFramework/webresources/stations/v2/list/station/operation> a hydra:Operation;
-hydra:method "GET"^^xsd:string;
-hydra:returns "application/json";
-hydra:property[ a hydra:IriTemplate;
-  hydra:template "http://gnssdata-epos.oca.eu:8080/GlassFramework/webresources/stations/v2/list/station{?name,marker}"^^xsd:string;
-hydra:mapping[ a hydra:IriTemplateMapping;
-hydra:variable "name"^^xsd:string;
-      rdfs:range "xsd:string";
-      rdfs:label "Station(s) name(s)";
-hydra:required "false"^^xsd:boolean;
-];
-hydra:mapping[ a hydra:IriTemplateMapping;
-hydra:variable "marker"^^xsd:string;
-rdfs:range "xsd:string";
-      rdfs:label "Station(s) marker(s)";
-hydra:required "false"^^xsd:boolean;
-];
-];
-.
 
 
 
@@ -1211,7 +1191,9 @@ schema:name "GNSS Stations With GNSS Products";
 dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
 schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
 schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
-schema:provider <PIC:996437254>;
+  # WP10-DDSS-006 Products.GNSS.Gateway UBI
+	# UBI
+	schema:provider <PIC:996437254>;
 dcat:theme  <epos:GNSSProductsPortal> ;
 hydra:entrypoint "https://glass.epos.ubi.pt:8080/GlassFramework/swagger.json"^^xsd:anyURI;
 schema:keywords "Geodesy", "GNSS" ;
@@ -1276,7 +1258,9 @@ schema:name "GNSS EPOS Stations With data";
 dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
 schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
 schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
-schema:provider <PIC:991782030>;
+  # WP10-DDSS-004 Data.GNSS.PanEur.Repositories OCA
+	# OCA
+	schema:provider <PIC:991782030>;
 dcat:theme  <epos:GNSSProductsPortal> ;
 hydra:entrypoint "https://glass.epos.ubi.pt:8080/GlassFramework/swagger.json"^^xsd:anyURI;
 schema:keywords "Geodesy", "GNSS" ;
@@ -2627,26 +2611,25 @@ dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 .
 
 
-#WS list/attributes
+#WS list/station/v2/attributes
 <GlassFramework/webresources/stations/v2/list> a epos:WebService;
 schema:identifier "GlassFramework/webresources/stations/v2/list";
 schema:description "Returns a list containing data of the chosen criteria type to use in other web services.";
-schema:name "GNSS product attributes that can be used in other product service requests";
+schema:name "GNSS station attributes that can be used in other product service requests";
   dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
   schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
   schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
-  schema:provider <PIC:996437254>;
+  #OCA
+  schema:provider <PIC:991782030>;
   dcat:theme <epos:GNSSDataGatewayPortal> ;
   hydra:entrypoint "http://gnssdata-epos.oca.eu:8080/GlassFramework/swagger.json"^^xsd:anyURI;
   schema:keywords "Geodesy", "GNSS" ;
   dct:conformsTo <GlassFramework/APIDocumentationData> ;
-  hydra:supportedOperation <GlassFramework/webresources/products/attributes/operation>;
+  hydra:supportedOperation <GlassFramework/webresources/stations/v2/list/operation>;
 .
 
-
-
-#WS Operation list/attributes
-<GlassFramework/webresources/stations/v2/list> a hydra:Operation;
+#WS Operation list/station/v2/attributes
+<GlassFramework/webresources/stations/v2/list/operation> a hydra:Operation;
 hydra:method "GET"^^xsd:string;
   hydra:returns "application/json";
 hydra:property[ a hydra:IriTemplate;
@@ -2667,7 +2650,7 @@ http:paramValue "state";
 http:paramValue "station";
     schema:defaultValue "agency";
 ];
-  ];
+];
 .
 
 #<------------>#
@@ -2695,8 +2678,9 @@ dct:type "http://purl.org/dc/dcmitype/Service"^^xsd:anyURI ;
         # This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
         dcat:theme  <epos:GNSSProductsPortal> ;
 
-        dcat:keyword "GNSS rinex Metadata";
+        dcat:keyword "RINEX GNSS Metadata";
 # Rui
+# Mathilde
         dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
 
         # This property refers to an Organisation responsible for making the Dataset available.
@@ -2717,26 +2701,14 @@ locn:geometry "POLYGON((40.429 81.201, -72.773 79.687, -75.234 76.100, -40.429 4
                 #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
         ] ;
 
-        # This property refers to a related Dataset of which the described Dataset is a version, edition, or adaptation.
-        # dct:hasVersion <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
-
-        # This property refers to a related Dataset of which the described Dataset is a version, edition, or adaptation.
-        # dct:isVersionOf <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
-
-        # This property refers to a related Dataset in which the described Dataset is physically or logically included.
-        # dct:isPartOf <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
-
-        # This property refers to a related Dataset that is part of the described Dataset.
-        # dct:hasPart <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
-
 .
 
 <GlassFramework/webresources/stations/v2/list/001> a dcat:Distribution ;
 dct:identifier "GlassFramework/webresources/stations/v2/list/001" ;
-dct:title "List RINEX Files search paramters" ;
-dct:description "Returns a list of values that match the search parameteres." ;
+dct:title "List RINEX Files search parameters" ;
+dct:description "Returns a list of values that match the search parameters." ;
 dct:issued "2017-01-01"^^xsd:date ;
-    dct:modified "2017-01-01"^^xsd:date ;
+dct:modified "2017-01-01"^^xsd:date ;
 
 # This property refers to the type of the Distribution. The possible types are
 # (http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE
@@ -2744,12 +2716,14 @@ dct:issued "2017-01-01"^^xsd:date ;
 # http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE)
 dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI ;
 
-# If the type of Distribution is WEB SERVICE, this property refers to the Web Service that gives access to a Distribution of the Dataset. Otherwise, this property is optional.
-dct:conformsTo <GlassFramework/webresources/files> ;
+# If the type of Distribution is WEB SERVICE, 
+# this property refers to the Web Service that gives access to a Distribution of the Dataset. Otherwise, this property is optional.
+dct:conformsTo <lassFramework/webresources/stations/v2/list> ;
 
-# This property contains a URL that gives access to a Distribution of the Dataset. The resource at the access URL may contain # information about how to get the Dataset.
+# This property contains a URL that gives access to a Distribution of the Dataset. The resource at the access URL may contain 
+# information about how to get the Dataset.
 # If the type of Distribution is WEB SERVICE, this property refers to the Operation of the Web Service to which the Distribution conforms.
-dcat:accessURL <GlassFramework/webresources/stations/v2/list> ;
+dcat:accessURL <GlassFramework/webresources/stations/v2/list/operation> ;
 
 # This property refers to the file format of the Distribution.
 # The possible types are here: http://publications.europa.eu/mdr/resource/authority/file-type/html/filetypes-eng.html
@@ -2765,4 +2739,3 @@ dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 # If the type of Distribution is DOWNLOADABLE FILE, this property contains a URL that is a direct link to a downloadable file in a given format. Otherwise, this property is optional.
 #dcat:downloadURL "URL that is a direct link to a downloadable file in a given format"^^xsd:anyURI ;
 .
-

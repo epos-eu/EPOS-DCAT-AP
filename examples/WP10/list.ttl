@@ -16,26 +16,25 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
-#WS list/attributes
+#WS list/station/v2/attributes
 <GlassFramework/webresources/stations/v2/list> a epos:WebService;
 schema:identifier "GlassFramework/webresources/stations/v2/list";
 schema:description "Returns a list containing data of the chosen criteria type to use in other web services.";
-schema:name "GNSS product attributes that can be used in other product service requests";
+schema:name "GNSS station attributes that can be used in other product service requests";
   dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
   schema:datePublished "2016-06-30T12:00:00Z"^^xsd:dateTime;
   schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
-  schema:provider <PIC:996437254>;
+  #OCA
+  schema:provider <PIC:991782030>;
   dcat:theme <epos:GNSSDataGatewayPortal> ;
   hydra:entrypoint "http://gnssdata-epos.oca.eu:8080/GlassFramework/swagger.json"^^xsd:anyURI;
   schema:keywords "Geodesy", "GNSS" ;
   dct:conformsTo <GlassFramework/APIDocumentationData> ;
-  hydra:supportedOperation <GlassFramework/webresources/products/attributes/operation>;
+  hydra:supportedOperation <GlassFramework/webresources/stations/v2/list/operation>;
 .
 
-
-
-#WS Operation list/attributes
-<GlassFramework/webresources/stations/v2/list> a hydra:Operation;
+#WS Operation list/station/v2/attributes
+<GlassFramework/webresources/stations/v2/list/operation> a hydra:Operation;
 hydra:method "GET"^^xsd:string;
   hydra:returns "application/json";
 hydra:property[ a hydra:IriTemplate;
@@ -56,7 +55,7 @@ http:paramValue "state";
 http:paramValue "station";
     schema:defaultValue "agency";
 ];
-  ];
+];
 .
 
 #<------------>#
@@ -84,8 +83,9 @@ dct:type "http://purl.org/dc/dcmitype/Service"^^xsd:anyURI ;
         # This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
         dcat:theme  <epos:GNSSProductsPortal> ;
 
-        dcat:keyword "GNSS rinex Metadata";
+        dcat:keyword "RINEX GNSS Metadata";
 # Rui
+# Mathilde
         dcat:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint> ;
 
         # This property refers to an Organisation responsible for making the Dataset available.
@@ -106,26 +106,14 @@ locn:geometry "POLYGON((40.429 81.201, -72.773 79.687, -75.234 76.100, -40.429 4
                 #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
         ] ;
 
-        # This property refers to a related Dataset of which the described Dataset is a version, edition, or adaptation.
-        # dct:hasVersion <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
-
-        # This property refers to a related Dataset of which the described Dataset is a version, edition, or adaptation.
-        # dct:isVersionOf <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
-
-        # This property refers to a related Dataset in which the described Dataset is physically or logically included.
-        # dct:isPartOf <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
-
-        # This property refers to a related Dataset that is part of the described Dataset.
-        # dct:hasPart <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
-
 .
 
 <GlassFramework/webresources/stations/v2/list/001> a dcat:Distribution ;
 dct:identifier "GlassFramework/webresources/stations/v2/list/001" ;
-dct:title "List RINEX Files search paramters" ;
-dct:description "Returns a list of values that match the search parameteres." ;
+dct:title "List RINEX Files search parameters" ;
+dct:description "Returns a list of values that match the search parameters." ;
 dct:issued "2017-01-01"^^xsd:date ;
-    dct:modified "2017-01-01"^^xsd:date ;
+dct:modified "2017-01-01"^^xsd:date ;
 
 # This property refers to the type of the Distribution. The possible types are
 # (http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE
@@ -133,12 +121,14 @@ dct:issued "2017-01-01"^^xsd:date ;
 # http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE)
 dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI ;
 
-# If the type of Distribution is WEB SERVICE, this property refers to the Web Service that gives access to a Distribution of the Dataset. Otherwise, this property is optional.
-dct:conformsTo <GlassFramework/webresources/files> ;
+# If the type of Distribution is WEB SERVICE, 
+# this property refers to the Web Service that gives access to a Distribution of the Dataset. Otherwise, this property is optional.
+dct:conformsTo <lassFramework/webresources/stations/v2/list> ;
 
-# This property contains a URL that gives access to a Distribution of the Dataset. The resource at the access URL may contain # information about how to get the Dataset.
+# This property contains a URL that gives access to a Distribution of the Dataset. The resource at the access URL may contain 
+# information about how to get the Dataset.
 # If the type of Distribution is WEB SERVICE, this property refers to the Operation of the Web Service to which the Distribution conforms.
-dcat:accessURL <GlassFramework/webresources/stations/v2/list> ;
+dcat:accessURL <GlassFramework/webresources/stations/v2/list/operation> ;
 
 # This property refers to the file format of the Distribution.
 # The possible types are here: http://publications.europa.eu/mdr/resource/authority/file-type/html/filetypes-eng.html
@@ -154,4 +144,3 @@ dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 # If the type of Distribution is DOWNLOADABLE FILE, this property contains a URL that is a direct link to a downloadable file in a given format. Otherwise, this property is optional.
 #dcat:downloadURL "URL that is a direct link to a downloadable file in a given format"^^xsd:anyURI ;
 .
-
