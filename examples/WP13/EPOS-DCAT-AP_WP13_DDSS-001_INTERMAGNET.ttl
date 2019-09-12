@@ -26,10 +26,9 @@
 .
 
 <epos:Magneticfield> a skos:Concept;
-    skos:definition "Geomagnetic data and models without restriction in scale or frequency";
+    skos:definition "Geomagnetic models and data";
     skos:inScheme <epos:Geoelectromagnetism>;
-    skos:prefLabel "Magnetic field" ;
-    #skos:prefLabel "Geomagnetic data and models without restriction in scale or frequency";
+    skos:prefLabel "Geomagnetic models and data";
 .
 
 ###############################################################################
@@ -122,7 +121,7 @@
         schema:propertyID "viaf";
         schema:value "http://viaf.org/viaf/136554353/";
     ]; 
-    schema:legalName "British Geological Survey";
+    schema:legalName "British Geological Survey, UK Research and Innovation";
     schema:leiCode "Legal Entity Identifier Search: http://www.lei-lookup.com/#!search" ;
     schema:address [ a schema:PostalAddress;
         schema:streetAddress "The Lyell Centre, Research Avenue South";
@@ -145,7 +144,7 @@
         schema:propertyID "viaf";
         schema:value "http://viaf.org/viaf/148537429/";
     ]; 
-    schema:legalName "Natural Environment Research Council";
+    schema:legalName "Natural Environment Research Council, UK Research and Innovation";
     schema:leiCode "Legal Entity Identifier Search: http://www.lei-lookup.com/#!search" ;
     schema:address [ a schema:PostalAddress;
         schema:streetAddress "Polaris House, North Star Avenue";
@@ -153,8 +152,29 @@
         schema:postalCode "SN2 1EU";
         schema:addressCountry "United Kingdom";
     ]; 
-    schema:url "www.nerc.ac.uk"^^xsd:anyURI;
-    schema:email "pressoffice@nerc.ac.uk";
+    schema:url "nerc.ukri.org"^^xsd:anyURI;
+    schema:email "communications@ukri.org";
+    schema:contactPoint <http://orcid.org/0000-0002-7677-5158/scientificContact>;
+    schema:contactPoint <http://orcid.org/0000-0002-7677-5158/legalContact>;
+    schema:contactPoint <http://orcid.org/0000-0002-7677-5158/financialContact>;
+    schema:contactPoint <mailto:smf@bgs.ac.uk/contactPoint>;
+.
+
+<PIC:999989200> a schema:Organization;
+    schema:identifier [ a schema:PropertyValue;
+        schema:propertyID "PIC";
+        schema:value "999989200";
+    ];
+    schema:legalName "UK Research and Innovation";
+    schema:leiCode "Legal Entity Identifier Search: http://www.lei-lookup.com/#!search" ;
+    schema:address [ a schema:PostalAddress;
+    schema:streetAddress "Polaris House, North Star Avenue";
+    schema:addressLocality "Swindon";
+    schema:postalCode "SN2 1FL";
+    schema:addressCountry "United Kingdom";
+    ]; 
+    schema:url "www.ukri.org"^^xsd:anyURI;
+    schema:email "communications@ukri.org";
     schema:contactPoint <http://orcid.org/0000-0002-7677-5158/scientificContact>;
     schema:contactPoint <http://orcid.org/0000-0002-7677-5158/legalContact>;
     schema:contactPoint <http://orcid.org/0000-0002-7677-5158/financialContact>;
@@ -168,7 +188,7 @@
 <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/INTERMAGNET/Dataset> a dcat:Dataset;
     dct:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/INTERMAGNET/Dataset";
     dct:title "INTERMAGNET Geomagnetic Observatory Data";
-    dct:description "The INTERMAGNET programme exists to establish a global network of cooperating digital magnetic observatories, adopting modern standard specifications for measuring and recording equipment, in order to facilitate data exchanges and the production of geomagnetic products in close to real time. To be admitted to INTERMAGNET, observatories must meet certain standards. INTERMAGNET's data sets contain continuous, provisional and definitive recordings of the Earth's magnetic field at second, minute, hour and day sample periods.";
+    dct:description "The INTERMAGNET programme exists to establish a global network of cooperating digital magnetic observatories, adopting modern standard specifications for measuring and recording equipment, in order to facilitate data exchanges and the production of geomagnetic products in close to real time. To be admitted to INTERMAGNET, observatories must meet certain standards. INTERMAGNET's data sets contain continuous, provisional and definitive recordings of the Earth's magnetic field at second and minute sample periods.";
     adms:identifier [ a adms:Identifier;
         adms:schemaAgency "DDSS-ID";
         skos:notation "WP13-DDSS-001";
@@ -181,7 +201,7 @@
     dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
     dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI ;
     dcat:theme  <epos:Magneticfield> ;
-    dcat:keyword "magnetism", "geomagnetism", "observatory", "provisional", "real time" ;
+    dcat:keyword "magnetism", "geomagnetism", "observatory", "magnetic data provisional", "real time magnetic data" ;
     dcat:contactPoint <mailto:smf@bgs.ac.uk/contactPoint> ;
     dcat:contactPoint <http://orcid.org/0000-0002-7677-5158/contactPoint>;
     dct:publisher <http://viaf.org/viaf/136554353/>;
@@ -195,14 +215,44 @@
     ]; 
 .
 
+<https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/INTERMAGNET/Stations/Dataset> a dcat:Dataset;
+    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/INTERMAGNET/Stations/Dataset";
+    dct:title "INTERMAGNET Geomagnetic Observatory Station Data";
+    dct:description "The INTERMAGNET programme exists to establish a global network of cooperating digital magnetic observatories, adopting modern standard specifications for measuring and recording equipment, in order to facilitate data exchanges and the production of geomagnetic products in close to real time. To be admitted to INTERMAGNET, observatories must meet certain standards. INTERMAGNET's data sets contain continuous, provisional and definitive recordings of the Earth's magnetic field at second and minute sample periods.";
+    adms:identifier [ a adms:Identifier;
+        adms:schemaAgency "DDSS-ID";
+        skos:notation "WP13-DDSS-001";
+    ];
+    dct:created "2018-08-31"^^xsd:date;
+    dct:modified "2018-08-31"^^xsd:date;
+    dct:issued "2018-08-31"^^xsd:date;
+    owl:versionInfo "1.0.0" ;
+
+    dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
+    dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI ;
+    dcat:theme  <epos:Magneticfield> ;
+    dcat:keyword "magnetism", "geomagnetism", "observatory", "magnetic data provisional", "real time magnetic data" ;
+    dcat:contactPoint <mailto:smf@bgs.ac.uk/contactPoint> ;
+    dcat:contactPoint <http://orcid.org/0000-0002-7677-5158/contactPoint>;
+    dct:publisher <http://viaf.org/viaf/136554353/>;
+    dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/INTERMAGNET/Stations/Distribution>;
+
+    dct:temporal [ a dct:PeriodOfTime;
+        schema:startDate "1991-01-01T00:00:00Z"^^xsd:dateTime;
+    ];
+    dct:spatial [ a dct:Location;
+        locn:geometry "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral;
+    ];
+.
+
 ###############################################################################
 ### Distributions ###
 ###############################################################################
 
 <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/INTERMAGNET/Distribution> a dcat:Distribution;
     dct:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/INTERMAGNET/Distribution";
-    dct:title "Distribution of INTERMAGNET data";
-    dct:description "INTERMAGNET data is distributed via web service, ftp and on physical media (CD/DVD/USB stick)";
+    dct:title "INTERMAGNET Geomagnetic Observatory Data";
+    dct:description "INTERMAGNET's data sets contain continuous, provisional and definitive recordings of the Earth's magnetic field at second and minute sample periods. To be admitted to INTERMAGNET, observatories must meet certain standards.";
     dct:issued "2018-08-31"^^xsd:date;
     dct:modified "2018-08-31"^^xsd:date;
     dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
@@ -213,14 +263,28 @@
     #dct:format "text/csv; text/html; text/xml; application/json; text/plain; image/png, image/jpeg, application/pdf"^^xsd:string ;
 . 
 
+<https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/INTERMAGNET/Stations/Distribution> a dcat:Distribution;
+    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/INTERMAGNET/Stations/Distribution";
+    dct:title "INTERMAGNET Geomagnetic Observatory Station Data";
+    dct:description "INTERMAGNET's data sets contain continuous, provisional and definitive recordings of the Earth's magnetic field at second and minute sample periods. To be admitted to INTERMAGNET, observatories must meet certain standards.";
+    dct:issued "2018-08-31"^^xsd:date;
+    dct:modified "2018-08-31"^^xsd:date;
+    dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+    dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/INTERMAGNET/Stations/Webservice>;
+    dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/INTERMAGNET/Stations/Operation> ;
+    dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI ;
+    dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI ;
+    #dct:format "text/csv; text/html; text/xml; application/json; text/plain; image/png, image/jpeg, application/pdf"^^xsd:string ;
+.
+
 ###############################################################################
 ### Web services ###
 ###############################################################################
 
 <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/INTERMAGNET/Webservice> a epos:WebService;
     schema:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/INTERMAGNET/Webservice";
-    schema:description "The INTERMAGNET web service makes available preliminary data from INTERMAGNET observatories. To be admitted to INTERMAGNET, observatories must meet certain standards. INTERMAGNET's data sets contain continuous, provisional and definitive recordings of the Earth's magnetic field at second, minute, hour and day sample periods.";
-    schema:name "INTERMAGNET web service";
+    schema:description "The INTERMAGNET web service makes available preliminary data from INTERMAGNET observatories. Data are available in community formats (INTERMAGNET Minute Mean Format, IAGA 2002 format, World Data Centre Format, INTERMAGNET CDF format), interoperable formats (JSON and XML) and as images.";
+    schema:name "Web service for INTERMAGNET data";
     dcat:contactPoint <mailto:smf@bgs.ac.uk/contactPoint>;
     dcat:contactPoint <http://orcid.org/0000-0002-7677-5158/contactPoint>;
     schema:datePublished "2018-08-31Z"^^xsd:dateTime;
@@ -228,14 +292,44 @@
     schema:provider <http://viaf.org/viaf/136554353/>;
     hydra:entrypoint "http://app.geomag.bgs.ac.uk/GIN/"^^xsd:anyURI ;
     dcat:theme  <epos:Magneticfield> ;
-    schema:keywords "magnetism"," geomagnetism"," observatory"," provisional"," real time";
+    schema:keywords "magnetism","geomagnetism","observatory","magnetic data provisional", "real time magnetic data";
     hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/INTERMAGNET/Operation> ;
+    dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/INTERMAGNET/APIDocumentation> ;
     dct:spatial [ a dct:Location; 
         locn:geometry "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral ;
     ]; 
     dct:temporal [ a dct:PeriodOfTime; 
         schema:startDate "1991-01-01T00:00:00Z"^^xsd:dateTime; 
     ]; 
+    dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
+.
+
+# web service documentation
+<https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/INTERMAGNET/APIDocumentation> a hydra:APIDocumentation ;
+      hydra:title "INTERMAGNET web service documentation" ;
+      hydra:description "Brief description of how to use the INTERMAGNET web service" ;
+      hydra:entrypoint "http://app.geomag.bgs.ac.uk/GIN/" ;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/INTERMAGNET/Stations/Webservice> a epos:WebService;
+    schema:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/INTERMAGNET/Stations/Webservice";
+    schema:description "The INTERMAGNET web service makes available preliminary data from INTERMAGNET observatories. Data are available in community formats (INTERMAGNET Minute Mean Format, IAGA 2002 format, World Data Centre Format, INTERMAGNET CDF format), interoperable formats (JSON and XML) and as images.";
+    schema:name "Web service for INTERMAGNET station data";
+    dcat:contactPoint <mailto:smf@bgs.ac.uk/contactPoint>;
+    dcat:contactPoint <http://orcid.org/0000-0002-7677-5158/contactPoint>;
+    schema:datePublished "2018-08-31Z"^^xsd:dateTime;
+    schema:dateModified "2018-08-31Z"^^xsd:dateTime;
+    schema:provider <http://viaf.org/viaf/136554353/>;
+    hydra:entrypoint "http://app.geomag.bgs.ac.uk/GIN/"^^xsd:anyURI ;
+    dcat:theme  <epos:Magneticfield> ;
+    schema:keywords "magnetism","geomagnetism","observatory","magnetic data provisional", "real time magnetic data";
+    hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/INTERMAGNET/Stations/Operation> ;
+    dct:spatial [ a dct:Location;
+        locn:geometry "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral ;
+    ];
+    dct:temporal [ a dct:PeriodOfTime;
+        schema:startDate "1991-01-01T00:00:00Z"^^xsd:dateTime;
+    ];
     dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 .
 
@@ -255,15 +349,7 @@
     hydra:returns "video/jpeg";
     hydra:returns "application/pdf";
     hydra:property[ a hydra:IriTemplate;
-        hydra:template "http://geomag.bgs.ac.uk/EPOS/WP13/intermagnet/{?Request, observatoryIagaCode, SamplesPerDay, dataStartDate, dataDuration, publicationState, recordTermination, traceList, colourTraces, pictureSize, pdfSize, dataScale, Format}"^^xsd:string;
-            hydra:mapping[ a hydra:IriTemplateMapping;
-                hydra:variable "Request"^^xsd:string;
-                rdfs:label "Always set to 'GetData'";
-                rdfs:range "xsd:string" ;
-                schema:defaultValue "GetData";
-                http:paramValue "GetData";
-                hydra:required "true"^^xsd:boolean;
-            ];
+        hydra:template "http://geomag.bgs.ac.uk/EPOS/WP13/intermagnet/?Request=GetData&recordTermination=native&traceList=1234&colourTraces=True{&observatoryIagaCode, SamplesPerDay, dataStartDate, dataDuration, publicationState, pictureSize, pdfSize, dataScale, Format}"^^xsd:string;
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "observatoryIagaCode"^^xsd:string;
                 rdfs:label "Observatory IAGA code";
@@ -273,12 +359,10 @@
             ];
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "SamplesPerDay"^^xsd:string;
-                rdfs:label "Data cadence or samples per day";
+                rdfs:label "Data cadence";
                 schema:defaultValue "Minute";
                 rdfs:range "xsd:string" ;
-                http:paramValue "1440";
                 http:paramValue "Minute";
-                http:paramValue "86400";
                 http:paramValue "Second";
                 hydra:required "true"^^xsd:boolean;
             ];
@@ -313,35 +397,6 @@
                 hydra:required "false"^^xsd:boolean;
             ];
             hydra:mapping[ a hydra:IriTemplateMapping;
-                hydra:variable "recordTermination"^^xsd:string;
-                rdfs:label "Text file record termination";
-                rdfs:range "xsd:string" ;
-                schema:defaultValue "Windows";
-                http:paramValue "Windows";
-                http:paramValue "UNIX";
-                hydra:required "false"^^xsd:boolean;
-            ];
-            hydra:mapping[ a hydra:IriTemplateMapping;
-                hydra:variable "traceList"^^xsd:string;
-                rdfs:label "Traces to display (plots only, not data files)";
-                rdfs:range "xsd:string" ;
-                schema:defaultValue "1234";
-                http:paramValue "1234";
-                http:paramValue "XYZS";
-                http:paramValue "HDZS";
-                http:paramValue "DIFS";
-                hydra:required "false"^^xsd:boolean;
-            ];
-            hydra:mapping[ a hydra:IriTemplateMapping;
-                hydra:variable "colourTraces"^^xsd:string;
-                rdfs:label "Colour plot  (plots only, not data files)";
-                rdfs:range "xsd:boolean" ;
-                schema:defaultValue "True";
-                http:paramValue "True";
-                http:paramValue "False";
-                hydra:required "false"^^xsd:boolean;
-            ];
-            hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "pictureSize"^^xsd:string;
                 rdfs:label "Size of jpg or png plot (pixels: 'xxx,yyy', plots only, not data files)";
                 rdfs:range "xsd:string" ;
@@ -350,9 +405,9 @@
             ];
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "pdfSize"^^xsd:string;
-                rdfs:label "Size of pdf plot (pixels: 'xxx,yyy', plots only, not data files)";
+                rdfs:label "Size of pdf plot (cm: 'xxx,yyy', plots only, not data files)";
                 rdfs:range "xsd:string" ;
-                schema:defaultValue "640,480";
+                schema:defaultValue "21.0,29.7";
                 hydra:required "false"^^xsd:boolean;
             ];
             hydra:mapping[ a hydra:IriTemplateMapping;
@@ -364,6 +419,7 @@
             ];
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "Format"^^xsd:string;
+                hydra:property "schema:encodingFormat";
                 rdfs:label "Format";
                 rdfs:range "xsd:string";
                 schema:defaultValue "xml";
@@ -383,3 +439,11 @@
             ];
     ] ;
 . 
+
+<https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/INTERMAGNET/Stations/Operation> a hydra:Operation;
+    hydra:method "GET"^^xsd:string;
+    hydra:returns "application/geo+json";
+    hydra:property[ a hydra:IriTemplate;
+        hydra:template "http://geomag.bgs.ac.uk/EPOS_station_list/observatories/intermagnet"^^xsd:string;
+    ] ;
+.
