@@ -538,7 +538,7 @@ schema:email "mathilde.vergnolle@geoazur.unice.fr" ;
 	schema:logo "https://www.oca.eu/images/Logos/logocaeu.png"^^xsd:anyURI ;
 	schema:url "https://www.oca.eu"^^xsd:anyURI  ;
  	schema:contactPoint <http://orcid.org/0000-0002-9733-284X/legalContact>;
- 	schema:contactPoint <ResearcherID:A-5326-2010/scientificContact>;
+ 	schema:contactPoint <https://orcid.org/0000-0002-6367-2168/scientificContact>;
  	schema:contactPoint <http://orcid.org/0000-0002-9733-284X/financialContact>;
 .
 
@@ -569,11 +569,11 @@ hydra:title "Products API Documentation" ;
 hydra:description "API Documentation for GNSS Products" ;
 hydra:entrypoint "https://gnss-epos.eu/ics-tcs/"^^xsd:anyURI ;
 .
-<GlassFramework/APIDocumentationData> a hydra:APIDocumentation;
-hydra:title "Data API Documentation" ;
-hydra:description "API Documentation for GNSS Station and File MetaData" ;
-hydra:entrypoint "https://gnss-epos.eu/ics-tcs/"^^xsd:anyURI ;
-.
+#<GlassFramework/APIDocumentationData> a hydra:APIDocumentation;
+#hydra:title "Data API Documentation" ;
+#hydra:description "API Documentation for GNSS Station and File MetaData" ;
+#hydra:entrypoint "https://gnss-epos.eu/ics-tcs/"^^xsd:anyURI ;
+#.
 
 
 #WS products/attributes
@@ -631,7 +631,7 @@ schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
 dcat:theme  <epos:GNSSDataGatewayPortal> ;
 hydra:entrypoint "http://gnssdata-epos.oca.eu:8080/GlassFramework/swagger.json"^^xsd:anyURI;
 schema:keywords "Geodesy", "GNSS" ;
-  dct:conformsTo <GlassFramework/APIDocumentationData> ;
+  dct:conformsTo <GlassFramework/APIDocumentationProducts> ;
   hydra:supportedOperation <GlassFramework/webresources/files/operation>;
 .
 
@@ -826,18 +826,18 @@ schema:description "Returns the GNSS Time Series Product, for GNSS stations and 
 	schema:provider <PIC:996437254>;
   # WP10-DDSS-009 Products.GNSS.PPP.TimeSeries INGV
 	# INGV
-	schema:provider <PIC:996437256>;
+	#schema:provider <PIC:996437256>;
   # WP10-DDSS-010 Products.GNSS.DD.TimeSeries CNRS-UGA
 	# CNRS-UGA
-	schema:provider <PIC:996437258>;
+	#schema:provider <PIC:996437258>;
   # WP10-DDSS-011 Products.GNSS.Combined.Position BFKH, SGO
 	# BFKH
-	schema:provider <PIC:996437255>;
+	#schema:provider <PIC:996437255>;
 	# SGO
-	schema:provider <PIC:996437261>;
+	#schema:provider <PIC:996437261>;
   # WP10-DDSS-016 Products.EUREF.Combined.Positions WUT-EUREF
 	# WUT-EUREF
-	schema:provider <PIC:996437259>;
+	#schema:provider <PIC:996437259>;
   dcat:theme  <epos:GNSSProductsPortal> ;
   hydra:entrypoint "https://glass.epos.ubi.pt:8080/GlassFramework/swagger.json"^^xsd:anyURI;
 schema:keywords "Geodesy", "GNSS" ;
@@ -975,15 +975,15 @@ schema:dateModified "2016-12-31T12:00:00Z"^^xsd:dateTime;
 	schema:provider <PIC:996437254>;
   # WP10-DDSS-012 Products.GNSS.DD.Velocity CNRS-UGA
 	# CNRS-UGA
-	schema:provider <PIC:996437258>;
+	#schema:provider <PIC:996437258>;
   # WP10-DDSS-013 Products.GNSS.PPP.Velocity INGV
 	# INGV
-	schema:provider <PIC:996437256>;
+	#schema:provider <PIC:996437256>;
   # WP10-DDSS-014 Products.GNSS.Combined.Velocity BFKH, SGO and INGV
 	# BFKH
-	schema:provider <PIC:996437255>;
+	#schema:provider <PIC:996437255>;
 	# SGO
-	schema:provider <PIC:996437261>;
+	#schema:provider <PIC:996437261>;
 	# INGV
 	#schema:provider <PIC:996437256>; it is already above providing PPP
 dcat:theme  <epos:GNSSProductsPortal> ;
@@ -1049,18 +1049,18 @@ hydra:required "true"^^xsd:boolean;
 	schema:provider <PIC:996437254>;
   # WP10-DDSS-007 Products.GNSS.PPP.Position INGV
 	# INGV
-	schema:provider <PIC:996437256>;
+	#schema:provider <PIC:996437256>;
   # WP10-DDSS-008 Products.GNSS.DD.Position CNRS-UGA
 	# CNRS-UGA
-	schema:provider <PIC:996437258>;
+	#schema:provider <PIC:996437258>;
   # WP10-DDSS-011 Products.GNSS.Combined.Position BFKH, SGO
 	# BFKH
-	schema:provider <PIC:996437255>;
+	#schema:provider <PIC:996437255>;
 	# SGO
-	schema:provider <PIC:996437261>;
+	#schema:provider <PIC:996437261>;
   # WP10-DDSS-016 Products.EUREF.Combined.Positions WUT-EUREF
 	# WUT-EUREF
-	schema:provider <PIC:996437259>;
+	#schema:provider <PIC:996437259>;
  dcat:theme  <epos:GNSSProductsPortal> ;
  hydra:entrypoint "https://glass.epos.ubi.pt:8080/GlassFramework/swagger.json"^^xsd:anyURI;
 schema:keywords "Geodesy", "GNSS" ;
@@ -1682,7 +1682,7 @@ dct:type "http://purl.org/dc/dcmitype/Service"^^xsd:anyURI ;
 
         dcat:keyword "GNSS coordinates position PPP";
 # MAthilde
-        dcat:contactPoint <ResearcherID:A-5326-2010/scientificContact> ;
+        dcat:contactPoint <https://orcid.org/0000-0002-6367-2168/scientificContact> ;
 
         # This property refers to an Organisation responsible for making the Dataset available.
 # product portal UBI
@@ -1770,7 +1770,7 @@ dct:type "http://purl.org/dc/dcmitype/Service"^^xsd:anyURI ;
 
         dcat:keyword "GNSS coordinates position";
 # Mathilde
-        dcat:contactPoint <ResearcherID:A-5326-2010/scientificContact> ;
+        dcat:contactPoint <https://orcid.org/0000-0002-6367-2168/scientificContact> ;
 
         # This property refers to an Organisation responsible for making the Dataset available.
 # product portal UBI
@@ -1858,7 +1858,7 @@ dct:type "http://purl.org/dc/dcmitype/Service"^^xsd:anyURI ;
 
         dcat:keyword "GNSS position timeseries";
 # Mathilde
-        dcat:contactPoint <ResearcherID:A-5326-2010/scientificContact> ;
+        dcat:contactPoint <https://orcid.org/0000-0002-6367-2168/scientificContact> ;
 
         # This property refers to an Organisation responsible for making the Dataset available.
 # product portal UBI
@@ -1944,7 +1944,7 @@ dct:type "http://purl.org/dc/dcmitype/Service"^^xsd:anyURI ;
 
         dcat:keyword "GNSS position timeseries";
 # Mathilde
-        dcat:contactPoint <ResearcherID:A-5326-2010/scientificContact> ;
+        dcat:contactPoint <https://orcid.org/0000-0002-6367-2168/scientificContact> ;
 
         # This property refers to an Organisation responsible for making the Dataset available.
 # product portal UBI
@@ -2043,7 +2043,7 @@ dct:type "http://purl.org/dc/dcmitype/Service"^^xsd:anyURI ;
 
         dcat:keyword "GNSS position timeseries";
 # Mathilde
-        dcat:contactPoint <ResearcherID:A-5326-2010/scientificContact> ;
+        dcat:contactPoint <https://orcid.org/0000-0002-6367-2168/scientificContact> ;
 
         # This property refers to an Organisation responsible for making the Dataset available.
 # product portal UBI
@@ -2142,7 +2142,7 @@ dct:type "http://purl.org/dc/dcmitype/Service"^^xsd:anyURI ;
 
         dcat:keyword "GNSS stations velocities PPP";
 # Mathilde
-        dcat:contactPoint <ResearcherID:A-5326-2010/scientificContact> ;
+        dcat:contactPoint <https://orcid.org/0000-0002-6367-2168/scientificContact> ;
 
         # This property refers to an Organisation responsible for making the Dataset available.
 # product portal UBI
@@ -2241,7 +2241,7 @@ dct:type "http://purl.org/dc/dcmitype/Service"^^xsd:anyURI ;
 
         dcat:keyword "GNSS stations velocities DD";
 # Mathilde
-        dcat:contactPoint <ResearcherID:A-5326-2010/scientificContact> ;
+        dcat:contactPoint <https://orcid.org/0000-0002-6367-2168/scientificContact> ;
 
         # This property refers to an Organisation responsible for making the Dataset available.
 # product portal UBI
@@ -2340,7 +2340,7 @@ dct:type "http://purl.org/dc/dcmitype/Service"^^xsd:anyURI ;
 
         dcat:keyword "GNSS stations velocities combined";
 # Mathilde
-        dcat:contactPoint <ResearcherID:A-5326-2010/scientificContact> ;
+        dcat:contactPoint <https://orcid.org/0000-0002-6367-2168/scientificContact> ;
 
         # This property refers to an Organisation responsible for making the Dataset available.
 # product portal UBI
@@ -2424,7 +2424,7 @@ schema:name "GNSS station attributes that can be used in other product service r
   dcat:theme <epos:GNSSDataGatewayPortal> ;
   hydra:entrypoint "http://gnssdata-epos.oca.eu:8080/GlassFramework/swagger.json"^^xsd:anyURI;
   schema:keywords "Geodesy", "GNSS" ;
-  dct:conformsTo <GlassFramework/APIDocumentationData> ;
+  dct:conformsTo <GlassFramework/APIDocumentationProducts> ;
   hydra:supportedOperation <GlassFramework/webresources/stations/v2/list/operation>;
 .
 
@@ -2518,7 +2518,7 @@ dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB
 
 # If the type of Distribution is WEB SERVICE, 
 # this property refers to the Web Service that gives access to a Distribution of the Dataset. Otherwise, this property is optional.
-dct:conformsTo <lassFramework/webresources/stations/v2/list> ;
+dct:conformsTo <GlassFramework/webresources/stations/v2/list> ;
 
 # This property contains a URL that gives access to a Distribution of the Dataset. The resource at the access URL may contain 
 # information about how to get the Dataset.
