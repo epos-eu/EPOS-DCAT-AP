@@ -16,7 +16,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
-# Version 3.2 - 2019 September 11
+# Version 3.3 - 2019 September 12
 <PIC:999472675> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "PIC";
@@ -230,11 +230,11 @@
 					rdfs:label "Request type";
 					schema:defaultValue "GetMap";
 					http:paramValue "GetMap";
-					http:paramValue "GetCapabilities";
-					http:paramValue "GetLegendGraphic";
-					http:paramValue "DescribeLayer";
-					http:paramValue "GetFeatureInfo";
-					http:paramValue "GetLegendGraphic"
+					#http:paramValue "GetCapabilities";
+					#http:paramValue "GetLegendGraphic";
+					#http:paramValue "DescribeLayer";
+					#http:paramValue "GetFeatureInfo";
+					#http:paramValue "GetLegendGraphic"
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
