@@ -16,143 +16,12 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
-#Person Rui Fernandes
-<http://orcid.org/0000-0002-9733-284X> a schema:Person;
- schema:identifier [ a schema:PropertyValue;
-schema:propertyID  "orcid";
-schema:value  "0000-0002-9733-284X";
-];
 
- schema:familyName "Fernandes";
- schema:givenName "Rui";
-schema:address [ a schema:PostalAddress;
-schema:streetAddress "Rua Marques D'Avila e Bolama";
-schema:addressLocality "Covilha";
-schema:postalCode "P-6100-001";
-schema:addressCountry "Portugal";
- ];
-schema:email "rui@segal.ubi.pt";
-schema:telephone "+351275319899";
-schema:url  "http://orcid.org/0000-0002-9733-284X"^^xsd:anyURI;
- schema:qualifications "Principal Researcher" ;
- schema:affiliation <PIC:996437254>;
- schema:contactPoint <http://orcid.org/0000-0002-9733-284X/legalContact>;
- schema:contactPoint <http://orcid.org/0000-0002-9733-284X/scientificContact>;
- schema:contactPoint <http://orcid.org/0000-0002-9733-284X/financialContact>;
- schema:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint>;
-.
 
-<http://orcid.org/0000-0002-9733-284X/legalContact> a schema:ContactPoint;
- schema:email "rui@segal.ubi.pt" ;
- schema:availableLanguage "en" ;
- schema:contactType "legalContact" ;
-.
-<http://orcid.org/0000-0002-9733-284X/financialContact> a schema:ContactPoint;
- schema:email "rui@segal.ubi.pt" ;
- schema:availableLanguage "en" ;
- schema:contactType "financialContact" ;
-.
 
-<http://orcid.org/0000-0002-9733-284X/scientificContact> a schema:ContactPoint;
- schema:email "rui@segal.ubi.pt" ;
- schema:availableLanguage "en" ;
- schema:contactType "scientificContact" ;
-.
-
-<http://orcid.org/0000-0002-9733-284X/contactPoint> a schema:ContactPoint;
- schema:email "rui@segal.ubi.pt";
- schema:availableLanguage "en" ;
-schema:contactType "contactPoint" ;
-.
-
-#Person Paul Crocker
-<http://orcid.org/0000-0001-6824-6136> a schema:Person;
- schema:identifier [ a schema:PropertyValue;
-schema:propertyID  "orcid";
-schema:value   "0000-0001-6824-6136";
-];
-
- schema:familyName "Crocker";
- schema:givenName "Paul";
-schema:address [ a schema:PostalAddress;
-schema:streetAddress "Rua Marques D'Avila e Bolama";
-schema:addressLocality "Covilha";
-schema:postalCode "P-6100-001";
-schema:addressCountry "Portugal";
- ];
-schema:email "crocker@segal.ubi.pt";
-schema:telephone "+351275319899";
-schema:url  "http://orcid.org/0000-0001-6824-6136"^^xsd:anyURI;
- schema:qualifications "Researcher" ;
- schema:affiliation <PIC:996437254>;
-.
-#Person Mathilde Vergnolle
-<ResearcherID:A-5326-2010> a schema:Person;
- schema:identifier [ a schema:PropertyValue;
-schema:propertyID "researcherID";
-schema:value "A-5326-2010";
-];
-
- schema:familyName "Vergnolle";
- schema:givenName "Mathilde";
-schema:address [ a schema:PostalAddress;
-schema:streetAddress "250 rue Albert Einstein";
-schema:addressLocality "Valbonne";
-schema:postalCode "06560";
-schema:addressCountry "France";
- ];
-schema:email "mathilde.vergnolle@geoazur.unice.fr";
-schema:telephone "+33483618627" ;
- schema:qualifications "Principal Researcher" ;
- schema:affiliation <PIC:991782030>;
- schema:contactPoint <ResearcherID:A-5326-2010/scientificContact>;
-.
-
-<ResearcherID:A-5326-2010/scientificContact> a schema:ContactPoint;
- schema:email "mathilde.vergnolle@geoazur.unice.fr" ;
- schema:availableLanguage "en" ;
- schema:contactType "scientificContact" ;
-.
-
-<PIC:996437254> a schema:Organization;
- schema:identifier [ a schema:PropertyValue;
-schema:propertyID  "PIC";
-schema:value   "996437254";
-];
- schema:legalName "University of Beira Interior";
- schema:address [ a schema:PostalAddress;
-schema:streetAddress "Rua Marques D'Avila e Bolama";
-schema:addressLocality "Covilha";
-schema:postalCode "P-6200-001";
-schema:addressCountry "Portugal";
- ];
-schema:logo "http://www.ubi.pt/Ficheiros/Menus/1/logo_ubi_vhorizontalB.jpg"^^xsd:anyURI ;
-schema:url "http://www.ubi.pt"^^xsd:anyURI  ;
- schema:contactPoint <http://orcid.org/0000-0002-9733-284X/legalContact>;
- schema:contactPoint <http://orcid.org/0000-0002-9733-284X/scientificContact>;
- schema:contactPoint <http://orcid.org/0000-0002-9733-284X/financialContact>;
-.
-<PIC:991782030> a schema:Organization;
- schema:identifier [ a schema:PropertyValue;
-schema:propertyID  "PIC";
-schema:value   "991782030";
-];
- schema:legalName "Côte d’Azur Observatory";
- schema:address [ a schema:PostalAddress;
-schema:streetAddress "Boulevard de l’Observatoire CS 34229";
-schema:addressLocality "Nice";
-schema:postalCode "F-06304";
-schema:addressCountry "France";
- ];
-schema:logo "https://www.oca.eu/images/Logos/logocaeu.png"^^xsd:anyURI ;
-schema:url "https://www.oca.eu"^^xsd:anyURI  ;
- schema:contactPoint <http://orcid.org/0000-0002-9733-284X/legalContact>;
- schema:contactPoint <ResearcherID:A-5326-2010/scientificContact>;
- schema:contactPoint <http://orcid.org/0000-0002-9733-284X/financialContact>;
-.
 <epos:Geodesy> a skos:ConceptScheme;
  dct:title "Geodesy";
- dct:description "It contains the concepts of the Geodesy domain";
+ dct:description "Geodesy Domain Concepts";
 .
 
 <epos:GNSSProductsPortal> a skos:Concept;
@@ -168,13 +37,13 @@ schema:url "https://www.oca.eu"^^xsd:anyURI  ;
 .
 
 <GlassFramework/APIDocumentationProducts> a hydra:APIDocumentation;
-hydra:title "Documentation for GlassFramework API: GNSS Products" ;
-hydra:description "Swagger Description of API Documentation for GNSS Products" ;
+hydra:title "Products API Documentation" ;
+hydra:description "API Documentation for GNSS Products" ;
 hydra:entrypoint "https://gnss-epos.eu/ics-tcs/"^^xsd:anyURI ;
 .
 <GlassFramework/APIDocumentationData> a hydra:APIDocumentation;
-hydra:title "Documentation for GlassFramework API: GNSS Station and File MetaData" ;
-hydra:description "Swagger Description of API Documentation" ;
+hydra:title "Data API Documentation" ;
+hydra:description "API Documentation for GNSS Station and File MetaData" ;
 hydra:entrypoint "https://gnss-epos.eu/ics-tcs/"^^xsd:anyURI ;
 .
 

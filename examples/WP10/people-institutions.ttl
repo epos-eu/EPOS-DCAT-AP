@@ -1,0 +1,539 @@
+@prefix adms:   <http://www.w3.org/ns/adms#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix epos:   <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix dc:     <http://purl.org/dc/elements/1.1/> .
+@prefix dct:    <http://purl.org/dc/terms/> .
+@prefix vcard:  <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra:  <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat:   <http://www.w3.org/ns/dcat#> .
+@prefix cnt:    <http://www.w3.org/2011/content#> .
+@prefix locn:   <http://www.w3.org/ns/locn#> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http:   <http://www.w3.org/2006/http#> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix gsp:    <http://www.opengis.net/ont/geosparql#> .
+
+#Person Rui Fernandes
+<http://orcid.org/0000-0002-9733-284X> a schema:Person;
+ schema:identifier [ a schema:PropertyValue;
+schema:propertyID  "orcid";
+schema:value  "0000-0002-9733-284X";
+];
+
+ schema:familyName "Fernandes";
+ schema:givenName "Rui";
+schema:address [ a schema:PostalAddress;
+schema:streetAddress "Rua Marques D'Avila e Bolama";
+schema:addressLocality "Covilha";
+schema:postalCode "P-6100-001";
+schema:addressCountry "Portugal";
+ ];
+schema:email "rui@segal.ubi.pt";
+schema:telephone "+351275319899";
+schema:url  "http://orcid.org/0000-0002-9733-284X"^^xsd:anyURI;
+ schema:qualifications "Principal Researcher" ;
+ schema:affiliation <PIC:996437254>;
+ schema:contactPoint <http://orcid.org/0000-0002-9733-284X/legalContact>;
+ schema:contactPoint <http://orcid.org/0000-0002-9733-284X/scientificContact>;
+ schema:contactPoint <http://orcid.org/0000-0002-9733-284X/financialContact>;
+ schema:contactPoint <http://orcid.org/0000-0002-9733-284X/contactPoint>;
+.
+
+<http://orcid.org/0000-0002-9733-284X/legalContact> a schema:ContactPoint;
+ schema:email "rui@segal.ubi.pt" ;
+ schema:availableLanguage "en" ;
+ schema:contactType "legalContact" ;
+.
+<http://orcid.org/0000-0002-9733-284X/financialContact> a schema:ContactPoint;
+ schema:email "rui@segal.ubi.pt" ;
+ schema:availableLanguage "en" ;
+ schema:contactType "financialContact" ;
+.
+
+<http://orcid.org/0000-0002-9733-284X/scientificContact> a schema:ContactPoint;
+ schema:email "rui@segal.ubi.pt" ;
+ schema:availableLanguage "en" ;
+ schema:contactType "scientificContact" ;
+.
+
+<http://orcid.org/0000-0002-9733-284X/contactPoint> a schema:ContactPoint;
+ schema:email "rui@segal.ubi.pt";
+ schema:availableLanguage "en" ;
+schema:contactType "contactPoint" ;
+.
+
+#Person Paul Crocker
+<http://orcid.org/0000-0001-6824-6136> a schema:Person;
+ schema:identifier [ a schema:PropertyValue;
+schema:propertyID  "orcid";
+schema:value   "0000-0001-6824-6136";
+];
+
+ schema:familyName "Crocker";
+ schema:givenName "Paul";
+schema:address [ a schema:PostalAddress;
+schema:streetAddress "Rua Marques D'Avila e Bolama";
+schema:addressLocality "Covilha";
+schema:postalCode "P-6100-001";
+schema:addressCountry "Portugal";
+ ];
+schema:email "crocker@segal.ubi.pt";
+schema:telephone "+351275319899";
+schema:url  "http://orcid.org/0000-0001-6824-6136"^^xsd:anyURI;
+ schema:qualifications "Researcher" ;
+ schema:affiliation <PIC:996437254>;
+.
+#Person Mathilde Vergnolle
+<ResearcherID:A-5326-2010> a schema:Person;
+ schema:identifier [ a schema:PropertyValue;
+schema:propertyID "researcherID";
+schema:value "A-5326-2010";
+];
+
+ schema:familyName "Vergnolle";
+ schema:givenName "Mathilde";
+schema:address [ a schema:PostalAddress;
+schema:streetAddress "250 rue Albert Einstein";
+schema:addressLocality "Valbonne";
+schema:postalCode "06560";
+schema:addressCountry "France";
+ ];
+schema:email "mathilde.vergnolle@geoazur.unice.fr";
+schema:telephone "+33483618627" ;
+ schema:qualifications "Principal Researcher" ;
+ schema:affiliation <PIC:991782030>;
+ schema:contactPoint <ResearcherID:A-5326-2010/scientificContact>;
+.
+
+<ResearcherID:A-5326-2010/scientificContact> a schema:ContactPoint;
+ schema:email "mathilde.vergnolle@geoazur.unice.fr" ;
+ schema:availableLanguage "en" ;
+ schema:contactType "scientificContact" ;
+.
+#Person Ambrus Kenyeres
+<https://orcid.org/0000-0003-2714-6555> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "orcid";
+		schema:value  "https://orcid.org/0000-0003-2714-6555";
+	];
+
+	schema:familyName "Kenyeres";
+	schema:givenName "Ambrus";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Bosnyák tér 5";
+		schema:addressLocality "Budapest";
+		schema:postalCode "H-1149";
+		schema:addressCountry "Hungary";
+ 	];
+	schema:email "ambrus.kenyeres@sgo-penc.hu";
+	schema:telephone "+3606-1-222-5101";
+	schema:url  "https://orcid.org/0000-0003-2714-6555"^^xsd:anyURI;
+	schema:qualifications "Principal Researcher" ;
+	schema:affiliation <PIC:996437255>;
+	schema:contactPoint <https://orcid.org/0000-0003-2714-6555/legalContact>;
+	schema:contactPoint <https://orcid.org/0000-0003-2714-6555/scientificContact>;
+	schema:contactPoint <https://orcid.org/0000-0003-2714-6555/financialContact>;
+	schema:contactPoint <https://orcid.org/0000-0003-2714-6555/contactPoint>;
+.
+
+<https://orcid.org/0000-0003-2714-6555/legalContact> a schema:ContactPoint;
+	schema:email "ambrus.kenyeres@sgo-penc.hu" ;
+	schema:availableLanguage "en" ;
+	schema:contactType "legalContact" ;
+.
+
+<https://orcid.org/0000-0003-2714-6555/financialContact> a schema:ContactPoint;
+	schema:email "ambrus.kenyeres@sgo-penc.hu" ;
+	schema:availableLanguage "en" ;
+	schema:contactType "financialContact" ;
+.
+
+<https://orcid.org/0000-0003-2714-6555/scientificContact> a schema:ContactPoint;
+	schema:email "ambrus.kenyeres@sgo-penc.hu" ;
+	schema:availableLanguage "en" ;
+	schema:contactType "scientificContact" ;
+.
+
+<https://orcid.org/0000-0003-2714-6555/contactPoint> a schema:ContactPoint;
+	schema:email "ambrus.kenyeres@sgo-penc.hu";
+	schema:availableLanguage "en" ;
+.
+
+#Person Nicola d'Agostino
+<https://orcid.org/0000-0002-0444-6240> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "orcid";
+		schema:value  "https://orcid.org/0000-0002-0444-6240";
+	];
+
+	schema:familyName "d'Agostino";
+	schema:givenName "Nicola ";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Via di Vigna Murata 605";
+		schema:addressLocality "Roma";
+		schema:postalCode "I-00143";
+		schema:addressCountry "Italy";
+ 	];
+	schema:email "nicola.dagostino@ingv.it";
+	schema:telephone "+39 06518601";
+	schema:url  "https://orcid.org/0000-0002-0444-6240"^^xsd:anyURI;
+	schema:qualifications "Principal Researcher" ;
+	schema:affiliation <PIC:996437256>;
+	schema:contactPoint <https://orcid.org/0000-0002-0444-6240/legalContact>;
+	schema:contactPoint <https://orcid.org/0000-0002-0444-6240/scientificContact>;
+	schema:contactPoint <https://orcid.org/0000-0002-0444-6240/financialContact>;
+	schema:contactPoint <https://orcid.org/0000-0002-0444-6240/contactPoint>;
+.
+
+<https://orcid.org/0000-0002-0444-6240/legalContact> a schema:ContactPoint;
+	schema:email "nicola.dagostino@ingv.it" ;
+	schema:availableLanguage "en" ;
+	schema:contactType "legalContact" ;
+.
+
+<https://orcid.org/0000-0002-0444-6240/financialContact> a schema:ContactPoint;
+	schema:email "nicola.dagostino@ingv.it" ;
+	schema:availableLanguage "en" ;
+	schema:contactType "financialContact" ;
+.
+
+<https://orcid.org/0000-0002-0444-6240/scientificContact> a schema:ContactPoint;
+	schema:email "nicola.dagostino@ingv.it" ;
+	schema:availableLanguage "en" ;
+	schema:contactType "scientificContact" ;
+.
+
+<https://orcid.org/0000-0002-0444-6240/contactPoint> a schema:ContactPoint;
+	schema:email "nicola.dagostino@ingv.it";
+	schema:availableLanguage "en" ;
+.
+
+#Person Carine Bruyninx
+<https://orcid.org/0000-0001-6492-3945> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "orcid";
+		schema:value  "https://orcid.org/0000-0001-6492-3945";
+	];
+
+	schema:familyName "Bruyninx";
+	schema:givenName "Carine";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Ringlaan 3";
+		schema:addressLocality "Brussels";
+		schema:postalCode "BE-1180";
+		schema:addressCountry "Belgium";
+ 	];
+	schema:email "c.bruyninx@oma.be";
+	schema:telephone "+32 23730211";
+	schema:url  "https://orcid.org/0000-0001-6492-3945"^^xsd:anyURI;
+	schema:qualifications "Principal Researcher" ;
+	schema:affiliation <PIC:996437257>;
+	schema:contactPoint <https://orcid.org/0000-0001-6492-3945/legalContact>;
+	schema:contactPoint <https://orcid.org/0000-0001-6492-3945/scientificContact>;
+	schema:contactPoint <https://orcid.org/0000-0001-6492-3945/financialContact>;
+	schema:contactPoint <https://orcid.org/0000-0001-6492-3945/contactPoint>;
+.
+
+<https://orcid.org/0000-0001-6492-3945/legalContact> a schema:ContactPoint;
+	schema:email "c.bruyninx@oma.be" ;
+	schema:availableLanguage "en" ;
+	schema:contactType "legalContact" ;
+.
+
+<https://orcid.org/0000-0001-6492-3945/financialContact> a schema:ContactPoint;
+	schema:email "c.bruyninx@oma.be" ;
+	schema:availableLanguage "en" ;
+	schema:contactType "financialContact" ;
+.
+
+<https://orcid.org/0000-0001-6492-3945/scientificContact> a schema:ContactPoint;
+	schema:email "c.bruyninx@oma.be" ;
+	schema:availableLanguage "en" ;
+	schema:contactType "scientificContact" ;
+.
+
+<https://orcid.org/0000-0001-6492-3945/contactPoint> a schema:ContactPoint;
+	schema:email "c.bruyninx@oma.be";
+	schema:availableLanguage "en" ;
+.
+
+#Person Anne Socquet
+<https://orcid.org/0000-0002-9208-7136> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "orcid";
+		schema:value  "https://orcid.org/0000-0002-9208-7136";
+	];
+
+	schema:familyName "Socquet";
+	schema:givenName "Anne";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "ISTerre, CS 40700, GRENOBLE Cedex 9";
+		schema:addressLocality "Grenoble";
+		schema:postalCode "FR-38058 ";
+		schema:addressCountry "France";
+ 	];
+	schema:email "anne.socquet@univ-grenoble-alpes.fr";
+	schema:telephone "+33 0613479222";
+	schema:url  "https://orcid.org/0000-0002-9208-7136"^^xsd:anyURI;
+	schema:qualifications "Principal Researcher" ;
+	schema:affiliation <PIC:996437258>;
+	schema:contactPoint <https://orcid.org/0000-0002-9208-7136/legalContact>;
+	schema:contactPoint <https://orcid.org/0000-0002-9208-7136/scientificContact>;
+	schema:contactPoint <https://orcid.org/0000-0002-9208-7136/financialContact>;
+	schema:contactPoint <https://orcid.org/0000-0002-9208-7136/contactPoint>;
+.
+
+<https://orcid.org/0000-0002-9208-7136/legalContact> a schema:ContactPoint;
+	schema:email "anne.socquet@univ-grenoble-alpes.fr" ;
+	schema:availableLanguage "en" ;
+	schema:contactType "legalContact" ;
+.
+
+<https://orcid.org/0000-0002-9208-7136/financialContact> a schema:ContactPoint;
+	schema:email "anne.socquet@univ-grenoble-alpes.fr" ;
+	schema:availableLanguage "en" ;
+	schema:contactType "financialContact" ;
+.
+
+<https://orcid.org/0000-0002-9208-7136/scientificContact> a schema:ContactPoint;
+	schema:email "anne.socquet@univ-grenoble-alpes.fr" ;
+	schema:availableLanguage "en" ;
+	schema:contactType "scientificContact" ;
+.
+
+<https://orcid.org/0000-0002-9208-7136/contactPoint> a schema:ContactPoint;
+	schema:email "anne.socquet@univ-grenoble-alpes.fr";
+	schema:availableLanguage "en" ;
+.
+
+#Person Tomasz Liwosz
+<https://orcid.org/0000-0002-3989-4625> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "orcid";
+		schema:value  "https://orcid.org/0000-0002-3989-4625";
+	];
+
+	schema:familyName "Liwosz";
+	schema:givenName "Tomasz";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Pl. Politechniki 1";
+		schema:addressLocality "Warsaw";
+		schema:postalCode "PL-00-661";
+		schema:addressCountry "Poland";
+ 	];
+	schema:email "tomasz.liwosz@pw.edu.pl";
+	schema:telephone "+48 222347185";
+	schema:url  "https://orcid.org/0000-0002-3989-4625"^^xsd:anyURI;
+	schema:qualifications "Principal Researcher" ;
+	schema:affiliation <PIC:996437259>;
+	schema:contactPoint <https://orcid.org/0000-0002-3989-4625/legalContact>;
+	schema:contactPoint <https://orcid.org/0000-0002-3989-4625/scientificContact>;
+	schema:contactPoint <https://orcid.org/0000-0002-3989-4625/financialContact>;
+	schema:contactPoint <https://orcid.org/0000-0002-3989-4625/contactPoint>;
+.
+
+<https://orcid.org/0000-0002-3989-4625/legalContact> a schema:ContactPoint;
+	schema:email "tomasz.liwosz@pw.edu.pl" ;
+	schema:availableLanguage "en" ;
+	schema:contactType "legalContact" ;
+.
+
+<https://orcid.org/0000-0002-3989-4625/financialContact> a schema:ContactPoint;
+	schema:email "tomasz.liwosz@pw.edu.pl" ;
+	schema:availableLanguage "en" ;
+	schema:contactType "financialContact" ;
+.
+
+<https://orcid.org/0000-0002-3989-4625/scientificContact> a schema:ContactPoint;
+	schema:email "tomasz.liwosz@pw.edu.pl" ;
+	schema:availableLanguage "en" ;
+	schema:contactType "scientificContact" ;
+.
+
+<https://orcid.org/0000-0002-3989-4625/contactPoint> a schema:ContactPoint;
+	schema:email "tomasz.liwosz@pw.edu.pl";
+	schema:availableLanguage "en" ;
+.
+
+#UBI
+<PIC:996437254> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "PIC";
+		schema:value   "996437254";
+	];
+	schema:legalName "University of Beira Interior";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Rua Marques D'Avila e Bolama";
+		schema:addressLocality "Covilha";
+		schema:postalCode "P-6200-001";
+		schema:addressCountry "Portugal";
+ 	];
+	schema:logo "http://www.ubi.pt/Ficheiros/Menus/1/logo_ubi_vhorizontalB.jpg"^^xsd:anyURI ;
+	schema:url "http://www.ubi.pt"^^xsd:anyURI  ;
+ 	schema:contactPoint <http://orcid.org/0000-0002-9733-284X/legalContact>;
+ 	schema:contactPoint <http://orcid.org/0000-0002-9733-284X/scientificContact>;
+ 	schema:contactPoint <http://orcid.org/0000-0002-9733-284X/financialContact>;
+.
+
+#BFKH
+<PIC:996437255> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "PIC";
+		schema:value   "996437255";
+	];
+	schema:legalName "Department of Geodesy, Remote Sensing and Land Offices - Government Office of the Capital City Budapest";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Bosnyák tér 5";
+		schema:addressLocality "Budapest";
+		schema:postalCode "H-1149";
+		schema:addressCountry "Hungary";
+ 	];
+	schema:logo "http://www.ftf.bfkh.gov.hu/portal/images/kepek/logo/fm_logo_en.png"^^xsd:anyURI ;
+	schema:url "http://www.ftf.bfkh.gov.hu/portal_en/"^^xsd:anyURI  ;
+ 	schema:contactPoint <http://orcid.org/0000-0002-9733-284X/legalContact>;
+ 	schema:contactPoint <http://orcid.org/0000-0002-9733-284X/scientificContact>;
+ 	schema:contactPoint <http://orcid.org/0000-0002-9733-284X/financialContact>;
+.
+
+#INGV
+<PIC:996437256> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "PIC";
+		schema:value   "996437256";
+	];
+	schema:legalName "Istituto Nazionale di Geofisica e Vulcanologia - Centro Nazionale di Terremoti, Rome, Italy";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Via di Vigna Murata 605";
+		schema:addressLocality "Roma";
+		schema:postalCode "I-00143";
+		schema:addressCountry "Italy";
+ 	];
+	schema:logo "http://www.ingv.it/templates/g5_helium/custom/images/INGV_logo_colore_bianca.png"^^xsd:anyURI ;
+	schema:url "http://www.ingv.it/en"^^xsd:anyURI  ;
+ 	schema:contactPoint <http://orcid.org/0000-0002-9733-284X/legalContact>;
+ 	schema:contactPoint <http://orcid.org/0000-0002-9733-284X/scientificContact>;
+ 	schema:contactPoint <http://orcid.org/0000-0002-9733-284X/financialContact>;
+.
+
+#ROB-EUREF
+<PIC:996437257> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "PIC";
+		schema:value   "996437257";
+	];
+	schema:legalName "Royal Observatory of Belgium";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Ringlaan 3";
+		schema:addressLocality "Brussels";
+		schema:postalCode "BE-1180";
+		schema:addressCountry "Belgium";
+ 	];
+	schema:logo "https://www.astro.oma.be/wp-content/themes/porto-child/assets/img/logoEN.png"^^xsd:anyURI ;
+	schema:url "https://www.astro.oma.be/en/"^^xsd:anyURI  ;
+ 	schema:contactPoint <http://orcid.org/0000-0002-9733-284X/legalContact>;
+ 	schema:contactPoint <http://orcid.org/0000-0002-9733-284X/scientificContact>;
+ 	schema:contactPoint <http://orcid.org/0000-0002-9733-284X/financialContact>;
+.
+
+#UGA-CNRS
+<PIC:996437258> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "PIC";
+		schema:value   "996437258";
+	];
+	schema:legalName "Université Grenoble Alpes";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "ISTerre, CS 40700, GRENOBLE Cedex 9";
+		schema:addressLocality "Grenoble";
+		schema:postalCode "FR-38058 ";
+		schema:addressCountry "France";
+ 	];
+	schema:logo "https://www.isterre.fr/squelettes/images/logo-bandeau-isterre-ks.png"^^xsd:anyURI ;
+	schema:url "https://www.isterre.fr/?lang=en"^^xsd:anyURI  ;
+ 	schema:contactPoint <http://orcid.org/0000-0002-9733-284X/legalContact>;
+ 	schema:contactPoint <http://orcid.org/0000-0002-9733-284X/scientificContact>;
+ 	schema:contactPoint <http://orcid.org/0000-0002-9733-284X/financialContact>;
+.
+
+#WUT-EUREF
+<PIC:996437259> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "PIC";
+		schema:value   "996437259";
+	];
+	schema:legalName "Department of Geodesy and Geodetic Astronomy, Warsaw University of Technology, Poland";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Pl. Politechniki 1";
+		schema:addressLocality "Warsaw";
+		schema:postalCode "PL-00-661";
+		schema:addressCountry "Poland";
+ 	];
+	schema:logo "https://www.pw.edu.pl/design/pw/images/GodloPolski_34.png"^^xsd:anyURI ;
+	schema:url "https://www.pw.edu.pl/engpw"^^xsd:anyURI  ;
+ 	schema:contactPoint <http://orcid.org/0000-0002-9733-284X/legalContact>;
+ 	schema:contactPoint <http://orcid.org/0000-0002-9733-284X/scientificContact>;
+ 	schema:contactPoint <http://orcid.org/0000-0002-9733-284X/financialContact>;
+.
+
+#LM
+<PIC:996437260> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "PIC";
+		schema:value   "996437260";
+	];
+	schema:legalName "Lantmäteriet, Sweden";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Lantmäteriet Fastighetsbildning";
+		schema:addressLocality "Gävle";
+		schema:postalCode "SE-801 82";
+		schema:addressCountry " Sweden";
+ 	];
+	schema:logo "https://www.lantmateriet.se/wwwroot/lmse/images/LM-logotyp.svg"^^xsd:anyURI ;
+	schema:url "https://www.lantmateriet.se/"^^xsd:anyURI  ;
+ 	schema:contactPoint <http://orcid.org/0000-0002-9733-284X/legalContact>;
+ 	schema:contactPoint <http://orcid.org/0000-0002-9733-284X/scientificContact>;
+ 	schema:contactPoint <http://orcid.org/0000-0002-9733-284X/financialContact>;
+.
+
+#SGO
+<PIC:996437261> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "PIC";
+		schema:value   "996437261";
+	];
+	schema:legalName "Satellite Geodetic Observatory";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "2614 Penc, Sügipuszta 1592 Budapest, Pf. 585";
+		schema:addressLocality "PENC";
+		schema:postalCode "HU - 2614 ";
+		schema:addressCountry "Hungary";
+ 	];
+	schema:logo "https://www.lantmateriet.se/wwwroot/lmse/images/LM-logotyp.svg"^^xsd:anyURI ;
+	schema:url "http://www.sgo-penc.hu/index_eng.php"^^xsd:anyURI  ;
+ 	schema:contactPoint <http://orcid.org/0000-0002-9733-284X/legalContact>;
+ 	schema:contactPoint <http://orcid.org/0000-0002-9733-284X/scientificContact>;
+ 	schema:contactPoint <http://orcid.org/0000-0002-9733-284X/financialContact>;
+.
+
+#OCA
+<PIC:991782030> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID  "PIC";
+		schema:value   "991782030";
+	];
+	schema:legalName "Côte d’Azur Observatory";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Boulevard de l’Observatoire CS 34229";
+		schema:addressLocality "Nice";
+		schema:postalCode "F-06304";
+		schema:addressCountry "France";
+ 	];
+	schema:logo "https://www.oca.eu/images/Logos/logocaeu.png"^^xsd:anyURI ;
+	schema:url "https://www.oca.eu"^^xsd:anyURI  ;
+ 	schema:contactPoint <http://orcid.org/0000-0002-9733-284X/legalContact>;
+ 	schema:contactPoint <ResearcherID:A-5326-2010/scientificContact>;
+ 	schema:contactPoint <http://orcid.org/0000-0002-9733-284X/financialContact>;
+.
