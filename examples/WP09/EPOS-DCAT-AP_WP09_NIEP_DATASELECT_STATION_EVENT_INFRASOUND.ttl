@@ -166,8 +166,9 @@
     ];
     dcat:theme  <epos:EarthquakeParameters>;
     dcat:keyword "earthquake", "event", "rock", "seismic source", "seismic waves propagation", "seismology", "NFO", "TABOO", "FRIDGE";
-    dcat:contactPoint <http://orcid.org/0000-0003-3489-7453/scientificContact>;
-    dct:publisher <PIC:999472675>;
+    dcat:contactPoint <https://orcid.org/0000-0002-6247-0687/contactPoint>;
+
+    dct:publisher <PIC:998181508>;
     dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/Event/Distribution/001>;
 .
 
@@ -177,7 +178,7 @@
     dct:description "This distribution provides access to Velocity and Acceleration Waveform Continuous data through FDSN Dataselect web service. It is encoded in mseed format. Its related dataset is limited to the Vrancea Near Fault Observatory Area.";
     dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
     dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-    dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/SEISMIC_WAVEFORM_CONTINUOUS/WebService/001/Operation/001>;
+    dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/WAVEFORM_CONTINUOUS/WebService/001/Operation/001>;
     dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/SEISMIC_WAVEFORM_CONTINUOUS/WebService/001>;
     dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI;
     dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
@@ -190,7 +191,7 @@
     dct:description "This distribution provides access to Velocity and Acceleration Waveform Continuous data through FDSN Dataselect web service. It is encoded in mseed format. Its related dataset is limited to the Vrancea Near Fault Observatory Area.";
     dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
     dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-    dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/INFRASOUND_WAVEFORM_CONTINUOUS/WebService/001/Operation/001>;
+    dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/WAVEFORM_CONTINUOUS/WebService/001/Operation/001>;
     dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/INFRASOUND_WAVEFORM_CONTINUOUS/WebService/001>;
     dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI;
     dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
@@ -350,6 +351,7 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "network"^^xsd:string;
 			rdfs:label "Network code";
+            http:paramValue "RO";
 			rdfs:range "xsd:string";
 			hydra:required "true"^^xsd:boolean;
 		];
@@ -418,22 +420,22 @@
 			hydra:variable "endtime"^^xsd:string;
 			rdfs:label "End of the timespan";
 			rdfs:range "xsd:dateTime";
-			schema:defaultValue "2014-05-10T12:00:02";
 			hydra:property "schema:endDate";
       		schema:valuePattern "YYYY-MM-DDThh:mm:ss";
-			hydra:required "true"^^xsd:boolean;
+			hydra:required "false"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "network"^^xsd:string;
 			rdfs:label "Network code";
 			rdfs:range "xsd:string";
+            http:paramValue "RO";
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "station"^^xsd:string;
 			rdfs:label "Station code";
 			rdfs:range "xsd:string";
-			schema:defaultValue "VRI";
+            schema:defaultValue "VRI";
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
