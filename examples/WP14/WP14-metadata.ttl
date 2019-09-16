@@ -672,22 +672,59 @@
 		skos:inScheme <epos:Anthropogenichazards>;
 		skos:prefLabel "conventional hydrocarbon extraction";
 . 
-	<epos:Datahandlingapplications> a skos:Concept;
+
+	<epos:CollectivePropertiesOfSeismicityAnalysis> a skos:Concept;
 		skos:inScheme <epos:Anthropogenichazards>;
-		skos:prefLabel "data handling applications";
+		skos:prefLabel "collective properties of seismicity analysis";
+. 
+	<epos:Converters> a skos:Concept;
+		skos:inScheme <epos:Anthropogenichazards>;
+		skos:prefLabel "converters";
+. 
+	<epos:CorrelationAnalysis> a skos:Concept;
+		skos:inScheme <epos:Anthropogenichazards>;
+		skos:prefLabel "correlation analysis";
 . 
 	<epos:Dataprocessingapplications> a skos:Concept;
 		skos:inScheme <epos:Anthropogenichazards>;
 		skos:prefLabel "data processing applications";
 . 
-	<epos:Resourcemanagementapplications> a skos:Concept;
+	<epos:DownloadTools> a skos:Concept;
 		skos:inScheme <epos:Anthropogenichazards>;
-		skos:prefLabel "resource management applications";
+		skos:prefLabel "download tools";
 . 
-	<epos:Visualizationapplications> a skos:Concept;
+	<epos:EarthquakeInteractionsAnalysis> a skos:Concept;
 		skos:inScheme <epos:Anthropogenichazards>;
-		skos:prefLabel "visualization applications";
+		skos:prefLabel "earthquake interactions analysis";
 . 
+	<epos:EventDetectionAlgorithms> a skos:Concept;
+		skos:inScheme <epos:Anthropogenichazards>;
+		skos:prefLabel "event detection algorithms";
+. 
+	<epos:FilteringTools> a skos:Concept;
+		skos:inScheme <epos:Anthropogenichazards>;
+		skos:prefLabel "filtering tools";
+. 
+	<epos:ProbabilisticSeismicHazardAnalysis> a skos:Concept;
+		skos:inScheme <epos:Anthropogenichazards>;
+		skos:prefLabel "probabilistic seismic hazard analysis";
+. 
+	<epos:SeismogramAnalysisTools> a skos:Concept;
+		skos:inScheme <epos:Anthropogenichazards>;
+		skos:prefLabel "seismogram analysis tools";
+. 
+	<epos:SourceParameterEstimation> a skos:Concept;
+		skos:inScheme <epos:Anthropogenichazards>;
+		skos:prefLabel "source parameter estimation";
+.
+	<epos:StressFieldModeling> a skos:Concept;
+		skos:inScheme <epos:Anthropogenichazards>;
+		skos:prefLabel "stress field modeling";
+.
+	<epos:Visualizations> a skos:Concept;
+		skos:inScheme <epos:Anthropogenichazards>;
+		skos:prefLabel "visualizations";
+.
 
 
 	<anthropogenic_hazards/dataset/virtual_access> a dcat:Dataset;
@@ -2849,14 +2886,14 @@
 			schema:propertyID  "DDSS-ID" ;
 		  	schema:value "WP14-DDSS-A01" ;
 		];
-		schema:name "Catalog Export" ;
+		schema:name "Catalog to XLS converter" ;
 		schema:description "Exports a Catalog MATLAB file as a spreadsheet file (in XLSX format)" ;
   		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
   		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:CatalogToXls"^^xsd:anyURI ;
 		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 		schema:softwareVersion "1.0";
 		schema:keywords "format conversion", "data download", "data export" ;
-  		dcat:theme <epos:Resourcemanagementapplications>;
+  		dcat:theme <epos:Converters>;
 .
 
 	<anthropogenic_hazards/software/GDFToXls> a schema:SoftwareApplication;
@@ -2865,14 +2902,14 @@
 			schema:propertyID  "DDSS-ID" ;
 		  	schema:value "WP14-DDSS-A02" ;
 		];
-		schema:name "GDF Export" ;
+		schema:name "GDF to XLS converter" ;
 		schema:description "Exports a GDF MATLAB file as a spreadsheet file (in XLSX format)" ;
   		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
 		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:GDFToXls"^^xsd:anyURI ;
 		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 		schema:softwareVersion "1.0";
 		schema:keywords "format conversion", "data download", "data export" ;
-		dcat:theme <epos:Resourcemanagementapplications>;
+		dcat:theme <epos:Converters>;
 .
 
 	<anthropogenic_hazards/software/FrontHistogramsVis> a schema:SoftwareApplication;
@@ -2888,7 +2925,7 @@
 		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 		schema:softwareVersion "1.0";
 		schema:keywords "episode-oriented graphics", "production data visualization";
-		dcat:theme <epos:Visualizationapplications>;
+		dcat:theme <epos:Visualizations>;
 .
 
 	<anthropogenic_hazards/software/FrontAdvanceVis> a schema:SoftwareApplication;
@@ -2897,14 +2934,14 @@
 			schema:propertyID  "DDSS-ID" ;
 		  	schema:value "WP14-DDSS-A04" ;
 		];
-		schema:name "Seismicity with Front Advance" ;
+		schema:name "Seismic Activity with Front Advance" ;
 		schema:description "Application allowing for visualization of the activity changes in time relatively to the front location" ;
   		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
 		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:FrontAdvanceVis"^^xsd:anyURI ;
 		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 		schema:softwareVersion "1.0";
 		schema:keywords "episode-oriented graphics", "production data visualization", "production - seismicity interaction";
-		dcat:theme <epos:Visualizationapplications>;
+		dcat:theme <epos:Visualizations>;
 .
 
 	<anthropogenic_hazards/software/EPISODE_BASIC_GMAPS_Visualization> a schema:SoftwareApplication;
@@ -2913,14 +2950,14 @@
 			schema:propertyID  "DDSS-ID" ;
 		  	schema:value "WP14-DDSS-A05" ;
 		];
-		schema:name "Integrated data visualization" ;
+		schema:name "Integrated Google Maps data visualization" ;
 		schema:description "Application allowing visualization of miscellaneous data related to episode" ;
   		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
 		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:EPISODE_BASIC_GMAPS_Visualization"^^xsd:anyURI ;
 		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 		schema:softwareVersion "1.0";
 		schema:keywords "episode-oriented graphics", "episode visualization", "GIS data visualization", "production - seismicity interaction";
-		dcat:theme <epos:Visualizationapplications>;
+		dcat:theme <epos:Visualizations>;
 .
 
 	<anthropogenic_hazards/software/CatalogFilter> a schema:SoftwareApplication;
@@ -2936,39 +2973,39 @@
 		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 		schema:softwareVersion "1.0";
 		schema:keywords "data selection", "data filtering";
-		dcat:theme <epos:Datahandlingapplications>;
+		dcat:theme <epos:FilteringTools>;
 .
 
-	<anthropogenic_hazards/software/CatalogTimeWithParamExtractor> a schema:SoftwareApplication;
-		schema:identifier "anthropogenic_hazards/software/CatalogTimeWithParamExtractor" ;
+	<anthropogenic_hazards/software/CatalogToVector> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/CatalogToVector" ;
 		schema:identifier [ a schema:PropertyValue ;
 			schema:propertyID  "DDSS-ID" ;
 		  	schema:value "WP14-DDSS-A07" ;
 		];
-		schema:name "Catalog Time and Correlated parameter extractor" ;
-		schema:description "Extracts time column and a chosen parameter from a catalog and returns them as vectors" ;
+		schema:name "Catalog to Vectors converter" ;
+		schema:description "Tool for converting a Catalog into a series of vectors that can be further used in other applications (e.g. Time Series Builder)." ;
   		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
-		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:CatalogTimeWithParamExtractor"^^xsd:anyURI ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:CatalogToVector"^^xsd:anyURI ;
 		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 		schema:softwareVersion "1.0";
 		schema:keywords "data selection", "data extraction";
-		dcat:theme <epos:Datahandlingapplications>;
+		dcat:theme <epos:Converters>;
 .
 
-	<anthropogenic_hazards/software/GDFTimeWithParamExtractor> a schema:SoftwareApplication;
-		schema:identifier "anthropogenic_hazards/software/GDFTimeWithParamExtractor" ;
+	<anthropogenic_hazards/software/GDFToVector> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/GDFToVector" ;
 		schema:identifier [ a schema:PropertyValue ;
 			schema:propertyID  "DDSS-ID" ;
 		  	schema:value "WP14-DDSS-A08" ;
 		];
-		schema:name "GDF Time and Correlated parameter extractor" ;
-		schema:description "Extracts time column and a chosen parameter from a GDF file and returns them as vectors" ;
+		schema:name "GDF to Vectors converter" ;
+		schema:description "Tool for converting a GDF file into a series of vectors that can be further used in other applications (e.g. Time Series Builder)." ;
   		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
-		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:GDFTimeWithParamExtractor"^^xsd:anyURI ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:GDFToVector"^^xsd:anyURI ;
 		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 		schema:softwareVersion "1.0";
 		schema:keywords "data selection", "data extraction";
-		dcat:theme <epos:Datahandlingapplications>;
+		dcat:theme <epos:Converters>;
 .
 
 	<anthropogenic_hazards/software/CatalogMergeTool> a schema:SoftwareApplication;
@@ -2977,14 +3014,14 @@
 			schema:propertyID  "DDSS-ID" ;
 		  	schema:value "WP14-DDSS-A09" ;
 		];
-		schema:name "Ground Motion Parameters Tool" ;
+		schema:name "Ground Motion Parameters Catalog builder" ;
 		schema:description "Joins a Seismic Catalog and a GM Catalog into a joined catalog" ;
   		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
 		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:CatalogMergeTool"^^xsd:anyURI ;
 		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 		schema:softwareVersion "1.0";
 		schema:keywords "data selection", "data merging";
-		dcat:theme <epos:Datahandlingapplications>;
+		dcat:theme <epos:Converters>;
 .
 
 	<anthropogenic_hazards/software/SeedConverter> a schema:SoftwareApplication;
@@ -2993,14 +3030,14 @@
 			schema:propertyID  "DDSS-ID" ;
 		  	schema:value "WP14-DDSS-A10" ;
 		];
-		schema:name "Seed Converter" ;
+		schema:name "Seed converter" ;
 		schema:description "Converts SEED volume (either fullSEED or miniSEED) to either SAC or ASCII" ;
   		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
 		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:SeedConverter"^^xsd:anyURI ;
 		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 		schema:softwareVersion "1.0";
 		schema:keywords "format conversion", "data merging", "data filtering", "data export";
-		dcat:theme <epos:Datahandlingapplications>;
+		dcat:theme <epos:Converters>;
 .
 
 	<anthropogenic_hazards/software/SeismogramPicks> a schema:SoftwareApplication;
@@ -3016,7 +3053,7 @@
 		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 		schema:softwareVersion "1.0";
 		schema:keywords "waveform viewing", "picking on waveform", "format conversion";
-		dcat:theme <epos:Datahandlingapplications>;
+		dcat:theme <epos:SeismogramAnalysisTools>;
 .
 
 	<anthropogenic_hazards/software/SignalDownload> a schema:SoftwareApplication;
@@ -3032,7 +3069,7 @@
 		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 		schema:softwareVersion "1.0";
 		schema:keywords "data selection", "data export", "waveform viewing";
-		dcat:theme <epos:Datahandlingapplications>;
+		dcat:theme <epos:SeismogramAnalysisTools>;
 .
 
 	<anthropogenic_hazards/software/TimeSeriesBuilder> a schema:SoftwareApplication;
@@ -3048,7 +3085,7 @@
 		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 		schema:softwareVersion "1.0";
 		schema:keywords "data selection", "data filtering", "data reshaping", "data conversion";
-		dcat:theme <epos:Datahandlingapplications>;
+		dcat:theme <epos:Converters>;
 .
 
 	<anthropogenic_hazards/software/SeiscompOrder> a schema:SoftwareApplication;
@@ -3064,7 +3101,7 @@
 		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 		schema:softwareVersion "1.0";
 		schema:keywords "data selection", "data filtering", "data export", "waveform viewing";
-		dcat:theme <epos:Datahandlingapplications>;
+		dcat:theme <epos:SeismogramAnalysisTools>;
 .
 
 	<anthropogenic_hazards/software/MagnitudeConversionApp> a schema:SoftwareApplication;
@@ -3073,14 +3110,14 @@
 			schema:propertyID  "DDSS-ID" ;
 		  	schema:value "WP14-DDSS-A16" ;
 		];
-		schema:name "Magnitude Conversion" ;
+		schema:name "Magnitude conversion" ;
 		schema:description "Establishes empirical scaling relationships between different magnitude scales" ;
   		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
 		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:MagnitudeConversionApp"^^xsd:anyURI ;
 		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 		schema:softwareVersion "1.0";
 		schema:keywords "data conversion";
-		dcat:theme <epos:Datahandlingapplications>;
+		dcat:theme <epos:CollectivePropertiesOfSeismicityAnalysis>;
 .
 
 	<anthropogenic_hazards/software/StationarityTestingApp> a schema:SoftwareApplication;
@@ -3096,7 +3133,7 @@
 		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 		schema:softwareVersion "1.0";
 		schema:keywords "statistical analysis", "statistical properties of seismicity", "parameter probabilistic distribution";
-		dcat:theme <epos:Dataprocessingapplications>;
+		dcat:theme <epos:CollectivePropertiesOfSeismicityAnalysis>;
 .
 
 	<anthropogenic_hazards/software/CompletenessLevelApp> a schema:SoftwareApplication;
@@ -3112,7 +3149,7 @@
 		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 		schema:softwareVersion "1.0";
 		schema:keywords "statistical analysis", "statistical properties of seismicity", "parameter probabilistic distribution";
-		dcat:theme <epos:Dataprocessingapplications>;
+		dcat:theme <epos:CollectivePropertiesOfSeismicityAnalysis>;
 .
 
 	<anthropogenic_hazards/software/GDFTDSH> a schema:SoftwareApplication;
@@ -3128,7 +3165,7 @@
 		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 		schema:softwareVersion "1.0";
 		schema:keywords "statistical analysis", "probabilistic seismic hazard analysis", "time-dependent hazard", "production-dependent hazard", "production - seismicity interaction";
-		dcat:theme <epos:Dataprocessingapplications>;
+		dcat:theme <epos:ProbabilisticSeismicHazardAnalysis>;
 .
 
 	<anthropogenic_hazards/software/TimeVaryingFullTDSH> a schema:SoftwareApplication;
@@ -3144,7 +3181,7 @@
 		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 		schema:softwareVersion "1.0";
 		schema:keywords "statistical analysis", "probabilistic seismic hazard analysis", "time-dependent hazard", "production-dependent hazard", "production - seismicity interaction";
-		dcat:theme <epos:Dataprocessingapplications>;
+		dcat:theme <epos:ProbabilisticSeismicHazardAnalysis>;
 .
 
 	<anthropogenic_hazards/software/StationaryTDSHFull> a schema:SoftwareApplication;
@@ -3160,7 +3197,7 @@
 		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 		schema:softwareVersion "1.0";
 		schema:keywords "statistical analysis", "probabilistic seismic hazard analysis", "time-dependent hazard", "production-dependent hazard", "production - seismicity interaction";
-		dcat:theme <epos:Dataprocessingapplications>;
+		dcat:theme <epos:ProbabilisticSeismicHazardAnalysis>;
 .
 
 	<anthropogenic_hazards/software/ExcProbMag> a schema:SoftwareApplication;
@@ -3176,7 +3213,7 @@
 		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 		schema:softwareVersion "1.0";
 		schema:keywords "statistical analysis", "probabilistic seismic hazard analysis", "stationary hazard";
-		dcat:theme <epos:Dataprocessingapplications>;
+		dcat:theme <epos:ProbabilisticSeismicHazardAnalysis>;
 .
 
 	<anthropogenic_hazards/software/MaxCredMag> a schema:SoftwareApplication;
@@ -3192,7 +3229,7 @@
 		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 		schema:softwareVersion "1.0";
 		schema:keywords "statistical analysis", "probabilistic seismic hazard analysis", "stationary hazard";
-		dcat:theme <epos:Dataprocessingapplications>;
+		dcat:theme <epos:ProbabilisticSeismicHazardAnalysis>;
 .
 
 	<anthropogenic_hazards/software/MeanRetPeriod> a schema:SoftwareApplication;
@@ -3208,7 +3245,7 @@
 		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 		schema:softwareVersion "1.0";
 		schema:keywords "statistical analysis", "probabilistic seismic hazard analysis", "stationary hazard";
-		dcat:theme <epos:Dataprocessingapplications>;
+		dcat:theme <epos:ProbabilisticSeismicHazardAnalysis>;
 .
 
 	<anthropogenic_hazards/software/BasicSSHApplication> a schema:SoftwareApplication;
@@ -3224,7 +3261,7 @@
 		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 		schema:softwareVersion "1.0";
 		schema:keywords "statistical analysis", "statistical properties of seismicity", "parameter probabilistic distribution", "stationary hazard";
-		dcat:theme <epos:Dataprocessingapplications>;
+		dcat:theme <epos:ProbabilisticSeismicHazardAnalysis>;
 .
 
 	<anthropogenic_hazards/software/SpectralAnalysis> a schema:SoftwareApplication;
@@ -3240,7 +3277,7 @@
 		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 		schema:softwareVersion "1.0";
 		schema:keywords "source parameters", "earthquake spectra";
-		dcat:theme <epos:Dataprocessingapplications>;
+		dcat:theme <epos:SourceParameterEstimation>;
 .
 
 	<anthropogenic_hazards/software/FOCI_APP> a schema:SoftwareApplication;
@@ -3256,7 +3293,7 @@
 		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 		schema:softwareVersion "1.0";
 		schema:keywords "source parameters", "source mechanism", "moment tensor";
-		dcat:theme <epos:Dataprocessingapplications>;
+		dcat:theme <epos:SourceParameterEstimation>;
 .
 
 	<anthropogenic_hazards/software/Trmloc> a schema:SoftwareApplication;
@@ -3272,7 +3309,7 @@
 		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 		schema:softwareVersion "1.0";
 		schema:keywords "source parameters", "source location";
-		dcat:theme <epos:Dataprocessingapplications>;
+		dcat:theme <epos:SourceParameterEstimation>;
 .
 
 	<anthropogenic_hazards/software/StressMaps> a schema:SoftwareApplication;
@@ -3288,7 +3325,7 @@
 		schema:license "https://creativecommons.org/licenses/by-sa/4.0/"^^xsd:anyURI ;
 		schema:softwareVersion "1.0";
 		schema:keywords "stress modelling", "geo-resource production impact", "production - seismicity interaction";
-		dcat:theme <epos:Dataprocessingapplications>;
+		dcat:theme <epos:Visualizations>;
 .
 
 	<anthropogenic_hazards/software/MsatsiPlot> a schema:SoftwareApplication;
@@ -3304,7 +3341,7 @@
 		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 		schema:softwareVersion "1.0";
 		schema:keywords "source mechanism", "moment tensor", "stress inversion";
-		dcat:theme <epos:Dataprocessingapplications>;
+		dcat:theme <epos:StressFieldModeling>;
 .
 
 	<anthropogenic_hazards/software/Autocorrelation> a schema:SoftwareApplication;
@@ -3320,7 +3357,7 @@
 		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 		schema:softwareVersion "1.0";
 		schema:keywords "statistical analysis", "statistical properties of seismicity";
-		dcat:theme <epos:Dataprocessingapplications>;
+		dcat:theme <epos:CorrelationAnalysis>;
 .
 
 	<anthropogenic_hazards/software/MatsumuraTest> a schema:SoftwareApplication;
@@ -3336,7 +3373,7 @@
 		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 		schema:softwareVersion "1.0";
 		schema:keywords "statistical analysis", "statistical properties of seismicity";
-		dcat:theme <epos:Dataprocessingapplications>;
+		dcat:theme <epos:CollectivePropertiesOfSeismicityAnalysis>;
 .
 
 	<anthropogenic_hazards/software/Crosscorrelation> a schema:SoftwareApplication;
@@ -3352,7 +3389,7 @@
 		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 		schema:softwareVersion "1.0";
 		schema:keywords "statistical analysis", "statistical properties of seismicity", "geo-resource production impact", "production – seismicity interaction";
-		dcat:theme <epos:Dataprocessingapplications>;
+		dcat:theme <epos:CorrelationAnalysis>;
 .
 
 	<anthropogenic_hazards/software/PSRTest> a schema:SoftwareApplication;
@@ -3368,7 +3405,23 @@
 		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 		schema:softwareVersion "1.0";
 		schema:keywords "statistical analysis", "statistical properties of seismicity";
-		dcat:theme <epos:Dataprocessingapplications>;
+		dcat:theme <epos:CollectivePropertiesOfSeismicityAnalysis>;
+.
+
+	<anthropogenic_hazards/software/CsvToCatalog> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/CsvToCatalog" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A35" ;
+		];
+		schema:name "CSV to Catalog converter" ;
+		schema:description "Tool for conversion of a CSV file into a Catalog in IS-EPOS Platform format. The csv file should use ';' as delimiter, and should include header line with names of the columns." ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:CsvToCatalog"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "converter";
+		dcat:theme <epos:Converters>;
 .
 
 	<anthropogenic_hazards/software/EffDropApp> a schema:SoftwareApplication;
@@ -3384,7 +3437,279 @@
 		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 		schema:softwareVersion "1.0";
 		schema:keywords "source parameters", "statistical properties of seismicity";
+		dcat:theme <epos:SourceParameterEstimation>;
+.
+
+	<anthropogenic_hazards/software/BasicVectorOperations> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/BasicVectorOperations" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A37" ;
+		];
+		schema:name "Basic Vector Operations" ;
+		schema:description "Tool for performing simple predefined operations on a given double vector" ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:BasicVectorOperations"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "vector operations";
 		dcat:theme <epos:Dataprocessingapplications>;
+.
+
+	<anthropogenic_hazards/software/MmaxEstimate> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/MmaxEstimate" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A38" ;
+		];
+		schema:name "Estimate of Maximum Possible Magnitude from Induced Deformation" ;
+		schema:description "This application estimates an occurrence probability for an event of a given maximum magnitude over a period of time. It also estimates maximum possible magnitude from the size of the geo-resource reservoir, represented by the reservoir length (Grasso et al.2018), using M(Lr) relationship for earthquake (e.g. Wells Coppersmith 1994)." ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:MmaxEstimate"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "probabilistic seismic hazard analysis", "stationary hazard", "time-dependent hazard", "production-dependent hazard", "hazard analysis";
+		dcat:theme <epos:Visualizations>;
+.
+
+	<anthropogenic_hazards/software/GMPEEqsCalc> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/GMPEEqsCalc" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A39" ;
+		];
+		schema:name "Ground Motion Prediction Equations: GMPE calculation" ;
+		schema:description "To estimate ground motion prediction equation (GMPE). The GMPE relates ground motion parameters, usually amplitude parameters, to sets of independent variables representing the cause of the motion. The following independent variables could be taken into account: characteristic of the path, source and site. Moreover, the non-linearity of ground vibration propagation on short distances from the epicenter is supported by using 'h' as the common/fix depth so that the standard error of estimation is minimised. The final model is estimated using ordinary one-stage regression method in three steps, including the statistical and physical consistency of the model, estimation of the fixed depth (if it's chosen as a parameter) and residuals analysis." ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:GMPEEqsCalc"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "ground motion prediction equations";
+		dcat:theme <epos:ProbabilisticSeismicHazardAnalysis>;
+.
+
+	<anthropogenic_hazards/software/GMPEResidualsAnalysis> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/GMPEResidualsAnalysis" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A49" ;
+		];
+		schema:name "Ground Motion Prediction Equations: Residuals analysis" ;
+		schema:description "This step analyzes the residuals of the model (observed minus estimated values). Normality of residuals are investigated and suitable plots are shown. The outliers were shown and chosen one can be removed." ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:GMPEResidualsAnalysis"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "ground motion prediction equations";
+		dcat:theme <epos:ProbabilisticSeismicHazardAnalysis>;
+.
+
+	<anthropogenic_hazards/software/GMPEFinalModel> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/GMPEFinalModel" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A13" ;
+		];
+		schema:name "Ground Motion Prediction Equations: Final model analysis" ;
+		schema:description "The final Model of the Ground Motion Prediction Equation is summarized with additional plots." ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:GMPEFinalModel"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "ground motion prediction equations";
+		dcat:theme <epos:ProbabilisticSeismicHazardAnalysis>;
+.
+
+	<anthropogenic_hazards/software/BackProjection> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/BackProjection" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A40" ;
+		];
+		schema:name "Waveform-based seismic event location" ;
+		schema:description "This application implements a location procedure which allows imaging the distribution of seismic sources in both time and space. First, a characteristic function (CF; in this case, the STA/LTA ratio) is calculated at all the vertical-component seismograms from the selected stations. The user then define a volume likely containing the source(s), and a number of grid nodes along the two horizontal (NS-EW) and vertical coordinates for discretising this volume. For each grid node located at the arbitrary location (x,y,z), the predicted arrival times are calculated at all the stations, and the different CFs are time-shifted consequently. By stacking these time-shifted CFs one obtains a time-dependent Brightness function associated with that particular grid node. The procedure is iterated over all the grid nodes of the source volume; at the end of the process, the maximum (maxima) of the Brightness function will provide an estimate of the source location and origin time. The main advantage of this procedure is that it exploits waveform information (both arrival times and relative amplitudes) without the need of pre-assembled phase-picking data. The method, therefore, is particularly well-suited for emergent signals and/or for real-time applications. The technique has been largely inspired by the previous works from Kao and Shan (2004), Grigoli et al. (2013, 2014), Langet et al., (2014), to which the reader is referred for a more comprehensive description of the methodology." ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:BackProjection"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "source location", "hypocenter location";
+		dcat:theme <epos:SourceParameterEstimation>;
+.
+
+	<anthropogenic_hazards/software/Merger> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/Merger" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A41" ;
+		];
+		schema:name "MERGER: Dynamic risk analysis using a bow-tie approach" ;
+		schema:description "MERGER, a simulator for multi-hazard risk assessment in ExploRation/exploitation of GeoResources, is a tool for performing dynamic risk analyses using a bow-tie approach. The tool has been designed for solving fault trees (FT) and event trees (ET) linked in a bow-tie structure and using a Monte Carlo approach." ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:Merger"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "dynamic bow-tie analysis", "fault-tree", "event-tree", "statistical analysis", "multi-hazard risk assessment", "Monte Carlo simulations", "Geo-resource production impact";
+		dcat:theme <epos:ProbabilisticSeismicHazardAnalysis>;
+.
+
+	<anthropogenic_hazards/software/GeoresourceLengthAnalysisApp> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/GeoresourceLengthAnalysisApp" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A42" ;
+		];
+		schema:name "Earthquake interactions: Georesource scale" ;
+		schema:description "Anthropogenic seismicity rate and magnitude are analyzed using superposed epoch to extract mean field patterns that are more robust than a single serie. This application analyse aftershocks sequence in the 1-3L near field distances from the “reservoir”. L is a proxy for georesource dimension, being mine gallery width, reservoir length , etc... Input data are time series from seismicity catalogue. This application is important to quantify the mean field pattern of several aftershocks to be compared with regional tectonic patterns" ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:GeoresourceLengthAnalysisApp"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "geo-resource production impact", "statistical properties of seismicity", "mainshock", "aftershock";
+		dcat:theme <epos:EarthquakeInteractionsAnalysis>;
+.
+
+	<anthropogenic_hazards/software/MagnitudinalLengthAnalysisApp> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/MagnitudinalLengthAnalysisApp" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A43" ;
+		];
+		schema:name "Earthquake interactions: Mainshock scale" ;
+		schema:description "Anthropogenic seismicity rate and magnitude are analyzed using superposed epochs to extract mean field patterns that are more robust than a single serie. This application analyse aftershocks sequence in the 1-3L near field distances, L being the Fault length for the earthquake mainshocks. Input data are time series from seismicity catalogue. This application is important to quantify the mean field pattern of aftershock production to be compared with regional tectonic patterns" ;
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:MagnitudinalLengthAnalysisApp"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "geo-resource production impact", "statistical properties of seismicity", "mainshock", "aftershock";
+		dcat:theme <epos:EarthquakeInteractionsAnalysis>;
+.
+
+	<anthropogenic_hazards/software/EarthquakeReshufflingAnalysisApp> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/EarthquakeReshufflingAnalysisApp" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A44" ;
+		];
+		schema:name "Earthquake interactions: Earthquake swarm / reshuffling analysis" ;
+		schema:description "Anthropogenic seismicity rate and magnitude are tested against non correlated series with the same number of data. It is achieved by 'reshuffling' the data. It is a robust way to check how significant is the variability over time of anthropogenic seismicity. Input data are time series from seismicity catalogue. This application is important to quantify the robustness of observed seismicity pattern against random fluctuations of the same size system Outputs are observed and reshuffled time series.";
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:EarthquakeReshufflingAnalysisApp"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "geo-resource production impact", "statistical properties of seismicity", "earthquake swarm";
+		dcat:theme <epos:EarthquakeInteractionsAnalysis>;
+.
+
+	<anthropogenic_hazards/software/SeasonalTrendApp> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/SeasonalTrendApp" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A46" ;
+		];
+		schema:name "Earthquake interactions: Time correlated earthquakes (Seasonal trends)" ;
+		schema:description "Test of of Number, space, and Magnitude pattern against reshuffled distribution in time e.g daily patterns for mine induced seismicity or monthly pattern for reservoir induced seismicity. The test aims to quantify how “seasonal” patterns remain uniform over time and to accept or to reject the uniform pattern under a given confidence level. Allows to capture anthropogenic trends in time pattern that correspond to geo-resource production type. It allows to extract time relationship to production patterns and departure from uniform tectonic seismicity background. Input data are time series from seismicity catalogue. Outputs are time series tested against reshuffled series .";
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:SeasonalTrendApp"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "geo-resource production impact", "statistical properties of seismicity", "seasonal trend";
+		dcat:theme <epos:EarthquakeInteractionsAnalysis>;
+.
+
+	<anthropogenic_hazards/software/DoubleCoupleMomentTensorInversion> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/DoubleCoupleMomentTensorInversion" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A45" ;
+		];
+		schema:name "Mechanism: Shear slip" ;
+		schema:description "The program performs inversion of amplitudes of longitudinal (P) and transversal (S) seismic waves as 3-component vectors into the mechanism of the seismic source in the description of a double couple using a grid search across the full or a priori specified range of the fault-plane solution angles.";
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:DoubleCoupleMomentTensorInversion"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "seismic event mechanism", "shear slip along a fault", "inversion of P an/or S amplitudes", "grid search";
+		dcat:theme <epos:SourceParameterEstimation>;
+.
+
+	<anthropogenic_hazards/software/MomentTensorInversion> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/MomentTensorInversion" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A51" ;
+		];
+		schema:name "Mechanism: Full Moment Tensor" ;
+		schema:description "The program performs inversion of amplitudes of longitudinal (P) and transversal (S) seismic waves as 3-component vectors into the mechanism of the seismic source in the description of unconstrained moment tensor (MT). As such, it allows describe general dipole sources including isotropic components: e.g., it is suitable to retrieve the parameters of both a shear dislocation common at foci of tectonic earthquakes (described as a double-couple, DC) and volumetric sources as tensile cracks or cavity implosions. It provides the MT error estimate: evaluates the data covariance matrix based on standard deviations of individual components of P and S motion. The application is designed preferentially for processing of seismic events induced by industrial activity (mining, hydro-fracture test in geothermal and oil wells etc.).";
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:MomentTensorInversion"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "seismic event mechanism", "linear inversion of P an/or S amplitudes", "full moment tensor", "decomposition into elementary components";
+		dcat:theme <epos:SourceParameterEstimation>;
+.
+
+	<anthropogenic_hazards/software/ShearTensileCrackInversion> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/ShearTensileCrackInversion" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A52" ;
+		];
+		schema:name "Mechanism: Shear-Tensile crack" ;
+		schema:description "The program performs inversion of amplitudes of longitudinal (P) and transversal (S) seismic waves as 3-component vectors into the mechanism of the seismic source in the description of shear-tensile crack (STC).";
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:ShearTensileCrackInversion"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "seismic event mechanism", "crack source model", "shear-slip and crack opening/closing", "inversion of P an/or S amplitudes", "grid search";
+		dcat:theme <epos:SourceParameterEstimation>;
+.
+
+	<anthropogenic_hazards/software/StressChanges> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/StressChanges" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A47" ;
+		];
+		schema:name "Stress and strain changes induced by fluid injection and temperature change driven by geothermal injection" ;
+		schema:description "Prediction of the temperature and Coulomb stress changes in a deep reservoir with hydro-thermal circulation and thermo-poro-elastic effects. Methodology: 2D THM model (code_Aster, open source), gmsh, gnuplot, python.";
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:StressChanges"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "Coulomb stress changes";
+		dcat:theme <epos:CollectivePropertiesOfSeismicityAnalysis>;
+.
+
+	<anthropogenic_hazards/software/MultipletIdentification> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/MultipletIdentification" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A48" ;
+		];
+		schema:name "Template-matching based detection algorithm" ;
+		schema:description "Detection of events by template matching. Template datasets (picked events) are correlated with the continuous seismic records to identify new events.";
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:MultipletIdentification"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "aftershocks", "earthquake swarm", "data selection";
+		dcat:theme <epos:EventDetectionAlgorithms>;
+.
+
+	<anthropogenic_hazards/software/CatalogToAscii> a schema:SoftwareApplication;
+		schema:identifier "anthropogenic_hazards/software/CatalogToAscii" ;
+		schema:identifier [ a schema:PropertyValue ;
+			schema:propertyID  "DDSS-ID" ;
+		  	schema:value "WP14-DDSS-A50" ;
+		];
+		schema:name "Catalog to ASCII converter" ;
+		schema:description "Application that transforms a seismic or ground motion catalog to ASCII format";
+  		schema:contactPoint  <https://orcid.org/0000-0002-9824-7962/contactPoint> ;
+		schema:mainEntityOfPage "https://tcs.ah-epos.eu/#apps:CatalogToAscii"^^xsd:anyURI ;
+		schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+		schema:softwareVersion "1.0";
+		schema:keywords "format conversion, data download, data export";
+		dcat:theme <epos:Converters>;
 .
 
 	<http://orcid.org/0000-0002-4801-4888/contactPoint> a schema:ContactPoint;

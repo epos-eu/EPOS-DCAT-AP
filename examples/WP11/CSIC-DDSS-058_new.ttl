@@ -107,9 +107,14 @@
 	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
         dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
         dct:created "2018-09-01"^^xsd:date;
-	dct:spatial [ a dct:Location ;
-			locn:geometry "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral ;
-	];
+	dct:spatial [ a dct:Location;
+        # geometry of zone: Canary Islands
+        locn:geometry "POLYGON((-18.4 27.4, -18.4 29.6, -13 29.6, -13 27.4, -18.4 27.4))"^^gsp:wktLiteral;
+        # geometry of zone: Lanzarote
+        #locn:geometry "POLYGON((-14 29.4, -13 29.4, -13 28.75, -14 28.75, -14 29.4))"^^gsp:wktLiteral;
+	locn:geometry "POLYGON((-14 29.4, -14 28.75, -13 28.75, -13 29.4, -14 29.4))"^^gsp:wktLiteral;
+  	 ];      
+
         dcat:theme  <epos:Hazardmap> ;
         dcat:keyword "tephra fallout", "hazard map", "explosive eruption", "hazard assessment", "volcanic hazard", "volcanology","Lanzarote";
         dcat:contactPoint <http://orcid.org/0000-0002-8803-6504/contactPoint>;
@@ -146,6 +151,14 @@
 	schema:provider <http://isni.org/isni/0000000122036192>;
 	schema:keywords "tephra fallout", "hazard map", "explosive eruption", "hazard assessment", "volcanic hazard", "volcanology";
 	hydra:entrypoint "https://volcanboxws.obsea.es/"^^xsd:anyURI; 
+        dct:created "2018-09-01"^^xsd:date;
+	dct:spatial [ a dct:Location;
+        # geometry of zone: Canary Islands
+        locn:geometry "POLYGON((-18.4 27.4, -18.4 29.6, -13 29.6, -13 27.4, -18.4 27.4))"^^gsp:wktLiteral;
+        # geometry of zone: Lanzarote
+        #locn:geometry "POLYGON((-14 29.4, -13 29.4, -13 28.75, -14 28.75, -14 29.4))"^^gsp:wktLiteral;
+	locn:geometry "POLYGON((-14 29.4, -14 28.75, -13 28.75, -13 29.4, -14 29.4))"^^gsp:wktLiteral;
+  	 ];   
 	hydra:supportedOperation <HazardMap/TephraFallout/operation>;
 	dcat:theme <epos:Hazardmap>;
 	dcat:contactPoint <http://orcid.org/0000-0002-8803-6504/contactPoint>;
