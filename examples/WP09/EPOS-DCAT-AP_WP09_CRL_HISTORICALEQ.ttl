@@ -16,66 +16,64 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
-<http://orcid.org/0000-0003-2431-1383> a schema:Person;
+#   Persons    
+#---------------------------------------------------------------------------------------------------------
+<https://orcid.org/0000-0003-1078-3419> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "orcid";
-		schema:value "http://orcid.org/0000-0003-2431-1383";
+		schema:value "https://orcid.org/0000-0003-1078-3419";
 	];
-	schema:familyName "Manea";
-	schema:givenName "Liviu Marius";
+	schema:familyName "Lambotte";
+	schema:givenName "Sophie";
 	schema:address [ a schema:PostalAddress;
-		schema:streetAddress "Calugareni st., 12";
-		schema:addressLocality "Magurele, Ilfov";
-		schema:postalCode "077125";
-		schema:addressCountry "Romania";
+		schema:streetAddress "EOST, 5 rue Rene Descartes";
+		schema:addressLocality "Strasbourg cedex";
+		schema:postalCode "67084";
+		schema:addressCountry "France";
 	];
-	schema:email "mlmarius@yahoo.com";
-	schema:telephone "+40722******";
-	schema:url "http://orcid.org/0000-0003-2431-1383"^^xsd:anyURI;
-	schema:qualifications "IT";
-	schema:affiliation <PIC:998181508>;
-.
-<http://orcid.org/0000-0003-2431-1383/scientificContact> a schema:ContactPoint;
-	schema:email "mlmarius@yahoo.com";
-	schema:availableLanguage "en" ;
-	schema:contactType "scientificContact" ;
-.
-<http://orcid.org/0000-0003-2431-1383/legalContact> a schema:ContactPoint;
-	schema:email "mlmarius@yahoo.com";
-	schema:availableLanguage "en" ;
-	schema:contactType "legalContact" ;
-.
-<http://orcid.org/0000-0003-2431-1383/financialContact> a schema:ContactPoint;
-	schema:email "mlmarius@yahoo.com";
-	schema:availableLanguage "en" ;
-	schema:contactType "financialContact" ;
-.
-	<http://orcid.org/0000-0003-2431-1383/contactPoint> a schema:ContactPoint;
-		schema:email "mlmarius@yahoo.com";
-		schema:availableLanguage "en" ;
+	schema:email "sophie.lambotte@unistra.fr";
+	schema:telephone "+33368850086";
+	schema:qualifications "Researcher, Seismologist";
+	schema:affiliation <PIC:999997930>;
+	schema:contactPoint <https://orcid.org/0000-0003-1078-3419/scientificContact>;
 .
 
-<PIC:998181508> a schema:Organization;
+#   ContactPoints 
+#---------------------------------------------------------------------------------------------------------
+
+<https://orcid.org/0000-0003-1078-3419/scientificContact> a schema:ContactPoint;
+	schema:email "sophie.lambotte@unistra.fr";
+	schema:availableLanguage "en" ;
+	schema:contactType "scientificContact";
+.
+
+#   Organisations 
+#---------------------------------------------------------------------------------------------------------
+<PIC:999997930> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "PIC";
-		schema:value "998181508";
+		schema:value "PIC:999997930";
 	];
-	schema:legalName "National Institute for Earth Physics";
+	schema:legalName "Ecole et Observatoire des Sciences de la Terre";
 	schema:address [ a schema:PostalAddress;
-		schema:streetAddress "Calugareni st., 12";
-		schema:addressLocality "Magurele, Ilfov";
-		schema:postalCode "077125";
-		schema:addressCountry "Romania";
+		schema:streetAddress "EOST, 5 rue Rene Descartes";
+		schema:addressLocality "Strasbourg cedex";
+		schema:postalCode "67084";
+		schema:addressCountry "France";
 	];
-	schema:logo "http://intranet.infp.ro/wp-content/uploads/public_dirs/Materiale_vizibilitate_INFP/LOGO MAIN INFP_resize.gif"^^xsd:anyURI;
-	schema:url "http://www.infp.ro"^^xsd:anyURI;
-	schema:contactPoint <http://orcid.org/0000-0003-2431-1383/scientificContact>;
+	schema:logo "http://eost.unistra.fr/fileadmin/templates/DUN/eost-v2/images/logo.png"^^xsd:anyURI;
+	schema:url "http://eost.unistra.fr/en/"^^xsd:anyURI;
+	schema:contactPoint <https://orcid.org/0000-0003-1078-3419/scientificContact>;
+	schema:contactPoint <https://orcid.org/0000-0003-1078-3419/legalContact>;
+	schema:contactPoint <mailto:binta.mesmacque@unistra.fr/financialContact>;
 .
 
-<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/HistEQ/Dataset/001> a dcat:Dataset;
-	dct:title "Historical earthquakes of interest for the Vrancea NFO";
-	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/HistEQ/Dataset/001";
-	dct:description "FDSN-event web service providing event parameters for historical earthquakes from the European Archive of Historical Earthquake Data (AHEAD) in the area surrounding the Vrancea NFO.";
+
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/HistEQ/Dataset/001> a dcat:Dataset;
+	dct:title "Historical earthquakes of interest for the CRL NFO";
+	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/HistEQ/Dataset/001";
+	dct:description "FDSN-event web service providing event parameters for historical earthquakes from the European Archive of Historical Earthquake Data (AHEAD) in the area surrounding the Corinth NFO";
 	adms:identifier [ a adms:Identifier;
 		adms:schemaAgency "DOI";
 		skos:notation "10.6092/INGV.IT-AHEAD";
@@ -95,35 +93,35 @@
         schema:endDate "1899-12-31T23:59:59Z"^^xsd:dateTime ;
     ];
     dct:spatial [ a dct:Location ;
-		locn:geometry "POLYGON((19.50 49.00, 30.00 49.00, 30.00 42.0, 19.50 42.0, 19.50 49.00))"^^gsp:wktLiteral ;
+		locn:geometry "POLYGON((22.5 38.0, 21.35 38.0, 21.35 38.65, 22.5 38.65, 22.5 38.0))"^^gsp:wktLiteral ;
 	];
 	dcat:theme  <epos:Historicalearthquakes> ;
     dcat:keyword "seismology", "seismicity", "earthquake", "seismic hazard", "earth structure", "epicentral intensity", "macroseismic";
 	dcat:contactPoint <http://orcid.org/0000-0002-9697-6504/scientificContact>;
-	dct:publisher <PIC:998181508>;
-	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/HistEQ/Distribution/001>;
+	dct:publisher <PIC:999997930>;
+	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/HistEQ/Distribution/001>;
 .
 
-<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/HistEQ/Distribution/001> a dcat:Distribution;
-    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/HistEQ/Distribution/001";
-    dct:title "Historical earthquakes of interest for the Vrancea NFO (FDSN-event)";
-    dct:description "The distribution of event parameters via the FDSN-event web service is the main and preferred way to access historical earthquake data archived in the European Archive of Historical Earthquake Data (AHEAD) in the area surrounding the Vrancea NFO.";
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/HistEQ/Distribution/001> a dcat:Distribution;
+    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/HistEQ/Distribution/001";
+    dct:title "Historical earthquakes of interest for the CRL NFO (FDSN-event)";
+    dct:description "The distribution of event parameters via the FDSN-event web service is the main and preferred way to access historical earthquake data archived in the European Archive of Historical Earthquake Data (AHEAD) in the area surrounding the Corinth NFO.";
     dct:created "2017-03-01"^^xsd:date;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/HistEQ/WebService/001/Operation/001>;
-	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/HistEQ/WebService/001>;
+	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/HistEQ/WebService/001/Operation/001>;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/HistEQ/WebService/001>;
 	dct:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI ;
 	dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
 .
 
-<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/HistEQ/WebService/001> a epos:WebService;
-	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/HistEQ/WebService/001";
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/HistEQ/WebService/001> a epos:WebService;
+	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/HistEQ/WebService/001";
 	adms:identifier [ a adms:Identifier;
 		adms:schemaAgency "DDSS-ID";
 		skos:notation "WP09-DDSS-029";
 	];
-	schema:description "FDSN-event web service providing event parameters for historical earthquakes from the European Archive of Historical Earthquake Data (AHEAD) in the area surrounding the NFO NIEP";
-	schema:name "Historical Earthquake Catalog for the Vrancea NFO (FDSN event web service)";
+	schema:description "FDSN-event web service providing event parameters for historical earthquakes from the European Archive of Historical Earthquake Data (AHEAD) in the area surrounding the Corinth NFO";
+	schema:name "Historical Earthquake Catalog for the Corinth NFO (FDSN event web service)";
 	schema:datePublished "2017-06-17T12:00:00Z"^^xsd:dateTime;
 	schema:dateModified "2017-08-31T12:00:00Z"^^xsd:dateTime;
 	dct:temporal [ a dct:PeriodOfTime ;
@@ -131,25 +129,25 @@
         schema:endDate "1899-12-31T23:59:59Z"^^xsd:dateTime ;
     ];
     dct:spatial [ a dct:Location ;
-		locn:geometry "POLYGON((19.50 49.00, 30.00 49.00, 30.00 42.0, 19.50 42.0, 19.50 49.00))"^^gsp:wktLiteral ;
+		locn:geometry "POLYGON((22.5 38.0, 21.35 38.0, 21.35 38.65, 22.5 38.65, 22.5 38.0))"^^gsp:wktLiteral ;
 	];
-	schema:provider <PIC:998181508>;
+	schema:provider <PIC:999997930>;
 	schema:keywords "seismology", "seismicity", "earthquake", "seismic hazard", "earth structure", "epicentral intensity", "macroseismic";
 	#hydra:entrypoint "application.wadl"^^xsd:anyURI; 
-	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/HistEQ/WebService/001/Operation/001>;
+	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/HistEQ/WebService/001/Operation/001>;
 	dcat:theme <epos:Historicalearthquakes>;
-	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/HistEQ/WebService/001/APIDocumentation>;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/HistEQ/WebService/001/APIDocumentation>;
 	dcat:contactPoint <http://orcid.org/0000-0003-2185-3267/contactPoint>;
 .
 
-<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/HistEQ/WebService/001/APIDocumentation> a hydra:APIDocumentation ;
-    hydra:title "API Documentation for historical earthquakes for Vrancea NFO" ;
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/HistEQ/WebService/001/APIDocumentation> a hydra:APIDocumentation ;
+    hydra:title "API Documentation for historical earthquakes for Corinth NFO" ;
     hydra:description "List, descriptions and examples on how to use AHEAD web services to access data on historical earthquakes." ;
     hydra:entrypoint "https://emidius.eu/AHEAD/services/" ;
 .
 
 
-<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/HistEQ/WebService/001/Operation/001> a hydra:Operation;
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/HistEQ/WebService/001/Operation/001> a hydra:Operation;
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/xml";
 	hydra:property [ a hydra:IriTemplate;
@@ -195,7 +193,7 @@
 				rdfs:range "xsd:float";
 				schema:minValue "-90.0";
 				schema:maxValue "90.0";
-				schema:defaultValue "44.5";
+				schema:defaultValue "38.0";
 				hydra:property "epos:southernmostLatitude";
 				hydra:required "true"^^xsd:boolean;
 			];
@@ -205,7 +203,7 @@
 				rdfs:range "xsd:float";
 				schema:minValue "-90.0";
 				schema:maxValue "90.0";
-				schema:defaultValue "46.5";
+				schema:defaultValue "38.65";
 				hydra:property "epos:northernmostLatitude";
 				hydra:required "true"^^xsd:boolean;
 			];
@@ -215,7 +213,7 @@
 				rdfs:range "xsd:float";
 				schema:minValue "-180.0";
 				schema:maxValue "180.0";
-				schema:defaultValue "24.0";
+				schema:defaultValue "21.35";
 				hydra:property "epos:westernmostLongitude";
 				hydra:required "true"^^xsd:boolean;
 			];
@@ -225,7 +223,7 @@
 				rdfs:range "xsd:float";
 				schema:minValue "-180.0";
 				schema:maxValue "180.0";
-				schema:defaultValue "29.0";
+				schema:defaultValue "22.5";
 				hydra:property "epos:easternmostLongitude";
 				hydra:required "true"^^xsd:boolean;
 			];

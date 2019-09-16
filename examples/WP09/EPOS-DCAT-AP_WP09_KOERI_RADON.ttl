@@ -92,6 +92,38 @@
 	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/RADON/Distribution/001>;
 .
 
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/RADON_STATIONS/Dataset/001> a dcat:Dataset;
+	dct:title "Marmara Radon decay counts and local temperature";
+	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/RADON_STATIONS/Dataset/001";
+	dct:description "Radon decay counts and local temperature dataset contains Radon Gas concentration time series based on periodic counting of Rn gas at site";
+	adms:identifier [ a adms:Identifier; 
+		adms:schemaAgency "DDSS-ID";
+		skos:notation "WP09-DDSS-024b"; 
+	];
+	## example of frequency using a controlled vocabulary
+	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+	dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
+	dct:created "2012-01-01T00:00:00Z"^^xsd:dateTime;
+	dct:issued "2012-01-01T00:00:00Z"^^xsd:dateTime;
+	dct:modified "2012-01-01T00:00:00Z"^^xsd:dateTime;
+	owl:versionInfo "1.0.0";
+	# This property refers to a geographic region that is covered by the Dataset.
+  	# The POLYGON format is: POLYGON(lon1 lat1, lon2 lat2,...)
+	dct:spatial [ a dct:Location ;
+		locn:geometry "POLYGON((26.0 42.0, 31.0 42.0, 31.0 39.0, 26.0 39.0, 26.0 42.0))"^^gsp:wktLiteral ;
+	];
+	# This property refers to a temporal period that the Dataset covers.
+    dct:temporal [ a dct:PeriodOfTime ;
+        schema:startDate "2012-01-01T00:00:00"^^xsd:dateTime ;
+        schema:endDate "2017-01-01T00:00:00"^^xsd:dateTime ;
+    ];
+	dcat:theme  <epos:Radonconcentration> ;
+	dcat:keyword "Geochemistry", "Radon concentration", "Radon decay counts", "geohazard", "timeseries", "local temperature", "NFO", "Marmara", "FRIDGE";
+	dcat:contactPoint <http://orcid.org/0000-0001-7080-183X/scientificContact>;
+	dct:publisher <PIC:999882500>;
+	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/RADON_STATIONS/Distribution/001>;
+.
+
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/RADON/Distribution/001> a dcat:Distribution;
     dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/RADON/Distribution/001";
 	dct:title "Marmara Rn concentration and local temperature";
@@ -105,6 +137,19 @@
 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 .
 
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/RADON_STATIONS/Distribution/001> a dcat:Distribution;
+    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/RADON_STATIONS/Distribution/001";
+	dct:title "Marmara Radon stations";
+	dct:description "This distribution provides access to radon (Rn) stations information. The datasets are encoded in JSON format. Data cover the time period 2012-2017 and is limited to the Marmara (Turkey) Near Fault Observatory.";
+	dct:created "2012-01-01"^^xsd:date;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/RADON_STATIONS/WebService/001/Operation/001>;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/RADON_STATIONS/WebService/001>;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
+	# This property refers to the licence under which the Distribution is made available.
+	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+.
+
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/RADON/WebService/001> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/RADON/WebService/001";
 	schema:description "This web service provides access to radon (Rn) gas concentrations measurements and derived time series. It is implemented with Tornado (Python web framework).";
@@ -113,6 +158,24 @@
 	schema:dateModified "2017-06-08T12:00:00Z"^^xsd:dateTime;
 	schema:provider <PIC:999882500>;
 	schema:keywords "Geochemistry", "Radon concentration", "Radon decay counts", "geohazard", "timeseries", "local temperature", "NFO", "Marmara", "FRIDGE";
+	#hydra:entrypoint "application.wadl"^^xsd:anyURI;
+	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/RADON/WebService/001/Operation/001>;
+	dcat:theme <epos:Radonconcentration>;
+	dcat:contactPoint <http://orcid.org/0000-0001-7080-183X/scientificContact>;
+	# This property refers to the API documentation. (Optional)
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/RADON/WebService/001/APIDocumentation> ;
+	# This property refers to the licence under which the Distribution is made available.
+	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/RADON_STATIONS/WebService/001> a epos:WebService;
+	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/RADON_STATIONS/WebService/001";
+	schema:description "This web service provides access to radon (Rn) stations information. It is implemented with Tornado (Python web framework).";
+	schema:name "Marmara Radon stations Web Service";
+	schema:datePublished "2017-06-08T12:00:00Z"^^xsd:dateTime;
+	schema:dateModified "2017-06-08T12:00:00Z"^^xsd:dateTime;
+	schema:provider <PIC:999882500>;
+	schema:keywords "Geochemistry", "Radon stations", "NFO", "Marmara", "FRIDGE";
 	#hydra:entrypoint "application.wadl"^^xsd:anyURI;
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/RADON/WebService/001/Operation/001>;
 	dcat:theme <epos:Radonconcentration>;
@@ -219,11 +282,81 @@
 			http:paramValue "shelter";
 			http:paramValue "borehole";
 			http:paramValue "soil";
-			schema:defaultValue "indoor";
-			hydra:required "true"^^xsd:boolean;
+			hydra:required "false"^^xsd:boolean;
 		];
 	] ;
 .
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/RADON_STATIONS/WebService/001/Operation/001> a hydra:Operation;
+	hydra:method "GET"^^xsd:string;
+	hydra:returns "application/json";
+	hydra:property[ a hydra:IriTemplate;
+		hydra:template "http://fridge-services.rm.ingv.it/radon/stations{?mintime, maxtime, minlat, maxlat, minlon, maxlon, stacode}"^^xsd:string;
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "mintime"^^xsd:string;
+			rdfs:label "Minimum Time";
+			rdfs:range "xsd:dateTime";
+			schema:minValue "2012-01-01T00:00:00.000Z";
+			schema:maxValue "2017-01-01T00:00:00.000Z";
+			schema:defaultValue "2012-11-01T12:00:00.000Z";
+			hydra:property "schema:startDate";
+      		schema:valuePattern "YYYY-MM-DDThh:mm:ss.SSSZ";
+			hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "maxtime"^^xsd:string;
+			rdfs:label "Maximum Time";
+			rdfs:range "xsd:dateTime";
+			schema:minValue "2012-01-01T00:00:00.000Z";
+			schema:maxValue "2017-01-01T00:00:00.000Z";
+			schema:defaultValue "2012-11-02T12:00:00.000Z";
+			hydra:property "schema:endDate";
+      		schema:valuePattern "YYYY-MM-DDThh:mm:ss.SSSZ";
+			hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "minlat"^^xsd:string;
+			rdfs:label "Minimum Latitude";
+			rdfs:range "xsd:float";
+			schema:minValue "-90";
+			schema:maxValue "90";
+			schema:defaultValue "39.0";
+			hydra:required "true"^^xsd:boolean;
+			hydra:property "epos:southernmostLatitude";
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "maxlat"^^xsd:string;
+			rdfs:label "Maximum Latitude";
+			rdfs:range "xsd:float";
+			schema:minValue "-90";
+			schema:maxValue "90";
+			schema:defaultValue "42.0";
+			hydra:required "true"^^xsd:boolean;
+			hydra:property "epos:northernmostLatitude";
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "minlon"^^xsd:string;
+			rdfs:label "Minimum Longitude";
+			rdfs:range "xsd:float";
+			schema:minValue "-90";
+			schema:maxValue "90";
+			schema:defaultValue "26.0";
+			hydra:required "true"^^xsd:boolean;
+			hydra:property "epos:westernmostLongitude";
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "maxlon"^^xsd:string;
+			rdfs:label "Maximum Longitude";
+			rdfs:range "xsd:float";
+			schema:minValue "-90";
+			schema:maxValue "90";
+			schema:defaultValue "31.0";
+			hydra:required "true"^^xsd:boolean;
+			hydra:property "epos:easternmostLongitude";
+		];
+	] ;
+.
+
 <epos:NearFaultObservations> a skos:ConceptScheme;
 	dct:title "Near Fault Observations";
 	dct:description "It contains the concepts of Near Fault Observations";
