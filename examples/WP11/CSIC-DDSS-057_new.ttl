@@ -106,9 +106,18 @@
 	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
         dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
         dct:created "2018-09-01"^^xsd:date;
-	dct:spatial [ a dct:Location ;
-			locn:geometry "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral ;
-        ];
+	dct:spatial [ a dct:Location;
+        # geometry of zone: Canary Islands
+        locn:geometry "POLYGON((-18.4 27.4, -18.4 29.6, -13 29.6, -13 27.4))"^^gsp:wktLiteral;
+        # geometry of zone: Lanzarote
+        locn:geometry "POLYGON((-14 29.4, -13 29.4, -13 28.75, -14 28.75))"^^gsp:wktLiteral;
+       # geometry of zone: El Hierro
+        locn:geometry "POLYGON((-18.24 27.88, -17.78 27.88, -17.78 27.6, -18.24 27.6))"^^gsp:wktLiteral;
+             # geometry of zone: La Garrotxa
+        locn:geometry "POLYGON((2.4 42.27, 2.8 42.27, 2.8 42, 2.4 42))"^^gsp:wktLiteral;
+             # geometry of zone: Deception Island
+        locn:geometry "POLYGON((-60.8 -62.8, -60.48 -62.8, -60.48 -63.03, -60.8 -63.03))"^^gsp:wktLiteral;
+   	 ];      
 	dcat:theme  <epos:Hazardmap> ;
 	dcat:keyword "Volcanoes", "lava flow", "hazard map", "volcanic hazard", "volcanology", "hazard assessment", "Garrotxa Volcanic Field", "Lanzarote", "El Hierro", "geohazards", "Deception Island";
         dcat:contactPoint <http://orcid.org/0000-0002-8803-6504/contactPoint>;
@@ -144,6 +153,18 @@
 	schema:dateModified "2018-09-01T12:00:00Z"^^xsd:dateTime;
 	schema:provider <http://isni.org/isni/0000000122036192>;
 	schema:keywords "Volcanoes", "lava flow", "hazard map", "volcanic hazard", "volcanology", "hazard assessment";
+	dct:spatial [ a dct:Location;
+        # geometry of zone: Canary Islands
+        locn:geometry "POLYGON((-18.4 27.4, -18.4 29.6, -13 29.6, -13 27.4))"^^gsp:wktLiteral;
+        # geometry of zone: Lanzarote
+        locn:geometry "POLYGON((-14 29.4, -13 29.4, -13 28.75, -14 28.75))"^^gsp:wktLiteral;
+       # geometry of zone: El Hierro
+        locn:geometry "POLYGON((-18.24 27.88, -17.78 27.88, -17.78 27.6, -18.24 27.6))"^^gsp:wktLiteral;
+             # geometry of zone: La Garrotxa
+        locn:geometry "POLYGON((2.4 42.27, 2.8 42.27, 2.8 42, 2.4 42))"^^gsp:wktLiteral;
+             # geometry of zone: Deception Island
+        locn:geometry "POLYGON((-60.8 -62.8, -60.48 -62.8, -60.48 -63.03, -60.8 -63.03))"^^gsp:wktLiteral;
+   	 ];  
 	hydra:entrypoint "https://volcanboxws.obsea.es/"^^xsd:anyURI; 
 	hydra:supportedOperation <HazardMap/Lavaflow/operation>;
 	dcat:theme <epos:Hazardmap>;
