@@ -306,7 +306,7 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/vnd.fdsn.mseed";
 		hydra:property[ a hydra:IriTemplate;
-	                hydra:template "http://ws.ipgp.fr/fdsnws/dataselect/1/query{?starttime, endtime, network, station, location, quality, minimumlength, longestonly}&channel=?{channel}"^^xsd:string;
+	                hydra:template "http://ws.ipgp.fr/fdsnws/dataselect/1/query{?starttime, endtime, network, station, location, quality, minimumlength, longestonly}&channel={channel}"^^xsd:string;
 			#hydra:template "http://ws.ipgp.fr/fdsnws/dataselect/1/query{?starttime, endtime, network, station, location, channel, quality, minimumlength, longestonly}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "starttime";
@@ -389,7 +389,7 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/xml";
 		hydra:property[ a hydra:IriTemplate;
-		        hydra:template "http://ws.ipgp.fr/fdsnws/station/1/query{?starttime, endtime, network, station, location, minlatitude, maxlatitude, minlongitude, maxlongitude, level, nodata}&channel=?{channel}"^^xsd:string;
+		        hydra:template "http://ws.ipgp.fr/fdsnws/station/1/query{?starttime, endtime, network, station, location, minlatitude, maxlatitude, minlongitude, maxlongitude, level, nodata}&channel={channel}"^^xsd:string;
 			#hydra:template "http://ws.ipgp.fr/fdsnws/station/1/query{?starttime, endtime, network, station, location, channel, minlatitude, maxlatitude, minlongitude, maxlongitude, level, nodata}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "starttime";
