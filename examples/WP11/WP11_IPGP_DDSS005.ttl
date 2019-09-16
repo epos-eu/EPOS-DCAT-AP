@@ -306,7 +306,8 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/vnd.fdsn.mseed";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "http://ws.ipgp.fr/fdsnws/dataselect/1/query{?starttime, endtime, network, station, location, channel, quality, minimumlength, longestonly}"^^xsd:string;
+	                hydra:template "http://ws.ipgp.fr/fdsnws/dataselect/1/query{?starttime, endtime, network, station, location, quality, minimumlength, longestonly}&channel=?{channel}"^^xsd:string;
+			#hydra:template "http://ws.ipgp.fr/fdsnws/dataselect/1/query{?starttime, endtime, network, station, location, channel, quality, minimumlength, longestonly}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "starttime";
 					hydra:property "schema:startDate";
@@ -349,7 +350,7 @@
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "channel"^^xsd:string;
 					rdfs:range "xsd:string";
-          			schema:defaultValue "?A?";
+          			        schema:defaultValue "?A?";
 					rdfs:label "channel code or comma seperated channels, wildcards (? or *) are authorized";
 					http:paramValue "?A?";
 					hydra:required "true"^^xsd:boolean;
@@ -388,7 +389,8 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/xml";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "http://ws.ipgp.fr/fdsnws/station/1/query{?starttime, endtime, network, station, location, channel, minlatitude, maxlatitude, minlongitude, maxlongitude, level, nodata}"^^xsd:string;
+		        hydra:template "http://ws.ipgp.fr/fdsnws/station/1/query{?starttime, endtime, network, station, location, minlatitude, maxlatitude, minlongitude, maxlongitude, level, nodata}&channel=?{channel}"^^xsd:string;
+			#hydra:template "http://ws.ipgp.fr/fdsnws/station/1/query{?starttime, endtime, network, station, location, channel, minlatitude, maxlatitude, minlongitude, maxlongitude, level, nodata}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "starttime";
 					hydra:property "schema:startDate";
