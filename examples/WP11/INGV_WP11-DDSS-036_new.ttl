@@ -168,8 +168,16 @@
 	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
         dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
         dct:created "2005-01-01"^^xsd:date;
+		dct:temporal [ a dct:PeriodOfTime; 
+			schema:startDate "1995-01-01T00:00:00Z"^^xsd:dateTime;
+			schema:endDate "2015-12-31T00:00:00Z"^^xsd:dateTime;
+		];
+	dct:spatial [ a dct:Location;
+		locn:geometry "POLYGON((14.7 37.6 , 14.7 38.1 , 15.7 38.1 , 15.7 37.6 , 14.7 37.6))"^^gsp:wktLiteral;
+		
+		];
         dcat:theme  <epos:GeochemicalData> ;
-        dcat:keyword "Geochemical-Data","Bulk Rock Analysis";
+        dcat:keyword "GeochemicalData","Bulk Rock Analysis";
         dcat:contactPoint <http://orcid.org/0000-0002-0915-3711/contactPoint>;
 	dct:publisher <PIC:999472675>;
         dcat:distribution <WP11/Bulksample/WSDistribution>;
@@ -212,12 +220,23 @@
 	schema:name "Bulk Rock Analysis";
 	schema:datePublished "2017-08-20T12:00:00Z"^^xsd:dateTime;
 	schema:dateModified "2017-09-15T12:00:00Z"^^xsd:dateTime;
+	dct:spatial [ a dct:Location;
+		locn:geometry "POLYGON((14.7 37.6 , 14.7 38.1 , 15.7 38.1 , 15.7 37.6 , 14.7 37.6))"^^gsp:wktLiteral;
+		
+		];
 	schema:provider <PIC:999472675>;
 	schema:keywords "Petrology", "Volcanology", "Etna", "Magma composition", "Bulk Rock Analysis";
 	#hydra:entrypoint "application.wadl"^^xsd:anyURI;
 	hydra:supportedOperation <rest/bulk-rock/operation>;
 	dcat:theme <epos:GeochemicalData>;
+	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 	dcat:contactPoint <http://orcid.org/0000-0002-0915-3711/contactPoint>;
+.
+
+<rest/documentation> a hydra:APIDocumentation ;
+      hydra:title "Metadata Description" ;
+      hydra:description "Documentation for metadata parameters" ;
+      hydra:entrypoint "http://tsd.ct.ingv.it/tsdws/catalogs/1/metadata" ;
 .
 
 #########
@@ -285,9 +304,4 @@
 	skos:prefLabel "Geochemical Data";
 	skos:definition "Geochemical Data";
 
-
 .
-
-
-
-

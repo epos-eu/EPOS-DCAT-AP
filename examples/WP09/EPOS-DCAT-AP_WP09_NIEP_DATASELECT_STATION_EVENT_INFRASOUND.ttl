@@ -140,7 +140,7 @@
         schema:startDate "1999-01-01T00:00:00Z"^^xsd:dateTime ;
     ];
     dcat:theme  <epos:Seismicstations> ;
-    dcat:keyword "seismology", "seismicity", "earthquakes", "seismic station", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "station information", "waveform modeling", "NIEP" , "Station", "FDSN-WS", "Seismic Station", "EIDA" ;
+    dcat:keyword "seismology", "seismicity", "earthquake", "NIEP" , "Station", "EIDA" ;
     dcat:contactPoint <https://orcid.org/0000-0002-6247-0687/contactPoint>;
     dct:publisher <PIC:998181508>;
     dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/SEISMIC_STATION/Distribution/001>;
@@ -192,7 +192,7 @@
         schema:startDate "1999-01-01T00:00:00Z"^^xsd:dateTime ;
     ];
     dcat:theme  <epos:EarthquakeParameters>;
-    dcat:keyword "earthquake", "event", "rock", "seismic source", "seismic waves propagation", "seismology", "NFO", "TABOO", "FRIDGE";
+    dcat:keyword "earthquake", "event", "rock", "seismic source", "seismic waves propagation", "seismology", "NFO", "VRANCEA", "FRIDGE";
     dcat:contactPoint <https://orcid.org/0000-0002-6247-0687/contactPoint>;
 
     dct:publisher <PIC:998181508>;
@@ -201,7 +201,7 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/SEISMIC_WAVEFORM_CONTINUOUS/Distribution/001> a dcat:Distribution;
     dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/SEISMIC_WAVEFORM_CONTINUOUS/Distribution/001";
-    dct:title  "Vrancea Velocity Waveform";
+    dct:title  "Vrancea Velocity and Acceleration Waveform";
     dct:description "This distribution provides access to Velocity and Acceleration Waveform Continuous data through FDSN Dataselect web service. It is encoded in mseed format. Its related dataset is limited to the Vrancea Near Fault Observatory Area.";
     dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
     dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
@@ -226,7 +226,7 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/SEISMIC_STATION/Distribution/001> a dcat:Distribution;
     dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/SEISMIC_STATION/Distribution/001";
-    dct:title "Vrancea Seismic Station Information";
+    dct:title "Vrancea Stations";
 	dct:description "This distribution provides access to Seismic Station Information through FDSN Station web service. It is encoded in xml or text format. Its related dataset is limited to the Vrancea Near Fault Observatory Area.";
     dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
@@ -272,33 +272,12 @@
         schema:startDate "1999-01-01T00:00:00Z"^^xsd:dateTime; 
     ]; 
     schema:provider <PIC:998181508>;
-    schema:keywords "seismology", "seismicity", "earthquake", "waveform", "velocity", "waveform modeling", "NIEP", "Vrancea";
+    schema:keywords "seismology", "seismicity", "earthquake", "waveform", "velocity", "acceleration", "waveform modeling", "NIEP", "Vrancea";
     hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/WAVEFORM_CONTINUOUS/WebService/001/Operation/001>;
     dcat:theme <epos:Seismicwaveforms>;
     dcat:contactPoint <https://orcid.org/0000-0002-6247-0687/contactPoint>;
     dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 . 
-
-<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/ACC_WAVEFORM_CONTINUOUS/WebService/001> a epos:WebService;
-    schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/ACC_WAVEFORM_CONTINUOUS/WebService/001";
-	schema:description "This web service provides access to seismic waveforms continuous data. It is implemented according to the standard 1.0 for seismic data web services set by the Federation of Digital Seismograph Networks (FDSN).";
-	schema:name "Vrancea Acceleration Seismic waveforms Continuous";
-    schema:datePublished "2016-01-01"^^xsd:date;
-    schema:dateModified "2016-01-01"^^xsd:date;
-    dct:spatial [ a dct:Location ;
-        locn:geometry "POLYGON((19.50 49.00,30.00 49.00,30.00 42.0,19.50 42.0,19.50 49.00 ))"^^gsp:wktLiteral;
-    ];
-    dct:temporal [ a dct:PeriodOfTime; 
-        schema:startDate "1999-01-01T00:00:00Z"^^xsd:dateTime; 
-        #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
-    ]; 
-    schema:provider <PIC:998181508>;
-	schema:keywords "seismology", "seismicity", "earthquake", "waveform", "acceleration", "waveform modeling", "NIEP", "Vrancea";
-	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/WAVEFORM_CONTINUOUS/WebService/001/Operation/001>;
-	dcat:theme <epos:Seismicwaveforms>;
-    dcat:contactPoint <https://orcid.org/0000-0002-6247-0687/contactPoint>;
-    dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
-.
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/INFRASOUND_WAVEFORM_CONTINUOUS/WebService/001> a epos:WebService;
     schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/INFRASOUND_WAVEFORM_CONTINUOUS/WebService/001";
@@ -379,7 +358,7 @@
         #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
     ]; 
     schema:provider <PIC:998181508>;
-    schema:keywords "earthquake", "event", "rock", "seismic source", "seismic waves propagation", "seismology", "NFO", "NIEP", "FRIDGE";
+    schema:keywords "earthquake", "event", "rock", "seismic source", "seismic waves propagation", "seismology", "NFO", "VRANCEA", "FRIDGE";
     hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/Event/WebService/001/Operation/001>;
     dcat:theme <epos:Crustalvelocityparameters>;
     dcat:contactPoint <https://orcid.org/0000-0002-6247-0687/contactPoint>;
@@ -489,7 +468,7 @@
 			hydra:variable "network"^^xsd:string;
 			rdfs:label "Network code";
 			rdfs:range "xsd:string";
-            http:paramValue "RO";
+            http:defaultValue "RO";
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -517,7 +496,7 @@
 			rdfs:range "xsd:float";
 			schema:minValue "-90.0";
 			schema:maxValue "90.0";
-			schema:defaultValue "43.0";
+			schema:defaultValue "44.5";
 			hydra:property "epos:southernmostLatitude";
 			hydra:required "true"^^xsd:boolean;
 		];
@@ -527,7 +506,7 @@
 			rdfs:range "xsd:float";
 			schema:minValue "-90.0";
 			schema:maxValue "90.0";
-			schema:defaultValue "44.0";
+			schema:defaultValue "46.5";
 			hydra:property "epos:northernmostLatitude";
 			hydra:required "true"^^xsd:boolean;
 		];
@@ -537,7 +516,7 @@
 			rdfs:range "xsd:float";
 			schema:minValue "-180.0";
 			schema:maxValue "180.0";
-			schema:defaultValue "12.0";
+			schema:defaultValue "24.0";
 			hydra:property "epos:westernmostLongitude";
 			hydra:required "true"^^xsd:boolean;
 		];
@@ -547,7 +526,7 @@
 			rdfs:range "xsd:float";
 			schema:minValue "-180.0";
 			schema:maxValue "180.0";
-			schema:defaultValue "13.0";
+			schema:defaultValue "29.0";
 			hydra:property "epos:easternmostLongitude";
 			hydra:required "true"^^xsd:boolean;
 		];
@@ -593,7 +572,7 @@
             rdfs:label "Start Time";
             schema:minValue "2010-04-01T00:00:00Z";
             schema:maxValue "2018-12-31T00:00:00Z";
-            schema:defaultValue "2015-03-01T00:00:00Z";
+            schema:defaultValue "2016-03-01T00:00:00Z";
             hydra:property "schema:startDate";
             schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
             hydra:required "false"^^xsd:boolean;
@@ -604,7 +583,7 @@
             rdfs:label "End Time";
             schema:minValue "2010-04-01T00:00:00Z";
             schema:maxValue "2018-12-31T00:00:00Z";
-            schema:defaultValue "2015-03-03T00:00:00Z";
+            schema:defaultValue "2016-03-31T00:00:00Z";
             hydra:property "schema:endDate";
             schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
             hydra:required "false"^^xsd:boolean;
@@ -615,7 +594,7 @@
             rdfs:label "Minimum Latitude";
             schema:minValue "-90";
             schema:maxValue "90";
-            schema:defaultValue "43";
+            schema:defaultValue "44.5";
             hydra:property "epos:southernmostLatitude";
             hydra:required "false"^^xsd:boolean;
         ];
@@ -625,7 +604,7 @@
             rdfs:label "Maximum Latitude";
             schema:minValue "-90";
             schema:maxValue "90";
-            schema:defaultValue "44";
+            schema:defaultValue "46.5";
             hydra:property "epos:northernmostLatitude";
             hydra:required "false"^^xsd:boolean;
         ];
@@ -635,7 +614,7 @@
             rdfs:label "Minimum Longitude";
             schema:minValue "-180";
             schema:maxValue "180";
-            schema:defaultValue "12";
+            schema:defaultValue "24";
             hydra:property "epos:westernmostLongitude";
             hydra:required "false"^^xsd:boolean;
         ];
@@ -645,7 +624,7 @@
             rdfs:label "Maximum Longitude";
             schema:minValue "-180";
             schema:maxValue "180";
-            schema:defaultValue "13";
+            schema:defaultValue "29";
             hydra:property "epos:easternmostLongitude";
             hydra:required "false"^^xsd:boolean;
         ];
