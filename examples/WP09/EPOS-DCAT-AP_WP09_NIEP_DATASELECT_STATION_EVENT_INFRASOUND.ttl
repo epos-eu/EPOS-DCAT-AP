@@ -146,10 +146,37 @@
     dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/SEISMIC_STATION/Distribution/001>;
 .
 
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/INFRASOUND_STATION/Dataset/001> a dcat:Dataset;
+    dct:title "Vrancea Infrasound Station Information Dataset";
+    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/SEISMIC_STATION/Dataset/001";
+    dct:description "Vrancea Seismic Station Information Dataset through FDSN Dataselect web service. It is encoded in mseed format.";
+    adms:identifier [ a adms:Identifier ;
+        adms:schemaAgency "DDSS-ID" ;
+        skos:notation "WP09-DDSS-004b" ;
+    ];
+    dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+    dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+    dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+    dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+    dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+    owl:versionInfo "1.0.0" ;
+    dct:spatial [ a dct:Location ;
+        locn:geometry "POLYGON((19.50 49.00,30.00 49.00,30.00 42.0,19.50 42.0,19.50 49.00 ))"^^gsp:wktLiteral;
+    ];
+    dct:temporal [ a dct:PeriodOfTime ;
+        schema:startDate "1999-01-01T00:00:00Z"^^xsd:dateTime ;
+    ];
+    dcat:theme  <epos:Seismicstations> ;
+    dcat:keyword "seismology", "seismicity", "earthquakes", "seismic station", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "station information", "waveform modeling", "NIEP" , "Station", "FDSN-WS", "Seismic Station", "EIDA" ;
+    dcat:contactPoint <https://orcid.org/0000-0002-6247-0687/contactPoint>;
+    dct:publisher <PIC:998181508>;
+    dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/INFRASOUND_STATION/Distribution/001>;
+.
+
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/Event/Dataset/001> a dcat:Dataset;
     dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/Event/Dataset/001";
     dct:description "Information about the earthquakes (events) occurred in the Vrancea Near Fault Observatory Area.";
-    dct:title "TABOO Instrumental Earthquakes (FDSN-Event)";
+    dct:title "VRANCEA Instrumental Earthquakes (FDSN-Event)";
         adms:identifier [ a adms:Identifier;
         adms:schemaAgency "DDSS-ID";
         skos:notation "WP09-DDSS-006";
@@ -186,7 +213,8 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/INFRASOUND_WAVEFORM_CONTINUOUS/Distribution/001> a dcat:Distribution;
     dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/INFRASOUND_WAVEFORM_CONTINUOUS/Distribution/001";
-    dct:title  "Vrancea Infrasound Waveform";
+    dct:title  "Vrancea Infrasound Waveform Data";
+    #dct:description "Infrasound Waveform Continuous Dataset";
     dct:description "This distribution provides access to Velocity and Acceleration Waveform Continuous data through FDSN Dataselect web service. It is encoded in mseed format. Its related dataset is limited to the Vrancea Near Fault Observatory Area.";
     dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
     dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
@@ -205,6 +233,18 @@
 	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/SEISMIC_STATION/WebService/001/Operation/001>;
 	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/SEISMIC_STATION/WebService/001>;
 	dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
+    dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/INFRASOUND_STATION/Distribution/001> a dcat:Distribution;
+    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/INFRASOUND_STATION/Distribution/001";
+    dct:title "Vrancea Infrasound Station Information";
+    dct:description "This distribution provides access to Infrasound Station Information through FDSN Station web service. It is encoded in xml or text format. Its related dataset is limited to the Vrancea Near Fault Observatory Area.";
+    dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+    dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+    dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/SEISMIC_STATION/WebService/001/Operation/001>;
+    dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/INFRASOUND_STATION/WebService/001>;
+    dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
     dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 .
 
@@ -263,7 +303,7 @@
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/SEISMIC_STATION/WebService/001> a epos:WebService;
     schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/SEISMIC_STATION/WebService/001";
 	schema:description "This web service provides access to seismic station metadata, including locations, operation periods, instrumentation, and response data. It is implemented according to the standard 1.0 for seismic station web services set by the Federation of Digital Seismograph Networks (FDSN).";
-	schema:name "NIEP Seismic Station Information";
+	schema:name "Vrancea Seismic Station Information";
     schema:datePublished "2016-01-01"^^xsd:date;
     schema:dateModified "2016-01-01"^^xsd:date;
     dct:spatial [ a dct:Location ;
@@ -277,6 +317,28 @@
 	schema:keywords "seismology", "seismicity", "earthquake", "station", "NIEP", "Vrancea";
     dcat:theme <epos:Seismicstations>;
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/SEISMIC_STATION/WebService/001/Operation/001>;
+    schema:keywords "seismology"," seismicity"," earthquakes"," waveform"," seismic hazard"," earth structure"," earthquake intensity"," macroseismic"," macroseismic information"," waveform modeling";
+    dcat:contactPoint <https://orcid.org/0000-0002-6247-0687/contactPoint>;
+    dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+. 
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/INFRASOUND_STATION/WebService/001> a epos:WebService;
+    schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/INFRASOUND_STATION/WebService/001";
+    schema:description "This web service provides access to infrasound station metadata, including locations, operation periods, instrumentation, and response data. It is implemented according to the standard 1.0 for seismic station web services set by the Federation of Digital Seismograph Networks (FDSN).";
+    schema:name "Vrancea Infrasound Station Information";
+    schema:datePublished "2016-01-01"^^xsd:date;
+    schema:dateModified "2016-01-01"^^xsd:date;
+    dct:spatial [ a dct:Location ;
+        locn:geometry "POLYGON((19.50 49.00,30.00 49.00,30.00 42.0,19.50 42.0,19.50 49.00 ))"^^gsp:wktLiteral;
+    ];
+    dct:temporal [ a dct:PeriodOfTime; 
+        schema:startDate "1999-01-01T00:00:00Z"^^xsd:dateTime; 
+        #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
+    ]; 
+    schema:provider <PIC:998181508>;
+    schema:keywords "seismology", "seismicity", "earthquake", "station", "NIEP", "Vrancea";
+    dcat:theme <epos:Seismicstations>;
+    hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/SEISMIC_STATION/WebService/001/Operation/001>;
     schema:keywords "seismology"," seismicity"," earthquakes"," waveform"," seismic hazard"," earth structure"," earthquake intensity"," macroseismic"," macroseismic information"," waveform modeling";
     dcat:contactPoint <https://orcid.org/0000-0002-6247-0687/contactPoint>;
     dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
@@ -314,7 +376,7 @@
 			rdfs:range "xsd:dateTime";
 			schema:defaultValue "2014-05-10T12:00:00";
 			hydra:property "schema:startDate";
-      		schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+      		        schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -323,7 +385,7 @@
 			rdfs:range "xsd:dateTime";
 			schema:defaultValue "2014-05-10T12:00:02";
 			hydra:property "schema:endDate";
-      		schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+      		        schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -391,7 +453,7 @@
 			rdfs:range "xsd:dateTime";
 			schema:defaultValue "2014-05-10T12:00:00";
 			hydra:property "schema:startDate";
-      		schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+      		        schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -399,7 +461,7 @@
 			rdfs:label "End of the timespan";
 			rdfs:range "xsd:dateTime";
 			hydra:property "schema:endDate";
-      		schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+      		        schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 			hydra:required "false"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -413,7 +475,7 @@
 			hydra:variable "station"^^xsd:string;
 			rdfs:label "Station code";
 			rdfs:range "xsd:string";
-            schema:defaultValue "VRI";
+                        schema:defaultValue "VRI";
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -481,6 +543,7 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "format"^^xsd:string;
 			rdfs:label "Output Format";
+			hydra:property "schema:encodingFormat";
 			rdfs:range "xsd:string";
 			http:paramValue "xml";
 			http:paramValue "text";
