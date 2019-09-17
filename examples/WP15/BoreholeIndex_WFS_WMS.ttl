@@ -83,13 +83,17 @@
 
 
 	<epos:Geology> a skos:ConceptScheme;
-		dct:title "Geology";
-		dct:description "It contains the concepts of Geology";
+		dct:title "geology";
+		dct:description "It contains the concepts pertaining to Geological Information and Modelling";
 . 
 
-	<epos:Boreholedata> a skos:Concept;
+	<epos:Borehole> a skos:Concept;
 		skos:inScheme <epos:Geology>;
-		skos:prefLabel "Borehole data";
+		skos:prefLabel "borehole";
+		skos:definition "A borehole is the generalized term for any narrow shaft drilled in the ground (INSPIRE).";
+		rdfs:seeAlso <https://data.geoscience.earth/def/eposb#Borehole>;
+		skos:exactMatch <https://www.opengis.net/def/appschema/gsmlbh/Borehole>;
+		skos:exactMatch <http://inspire.ec.europa.eu/featureconcept/Borehole>;
 . 
 
 	<https://data.geoscience.earth/id/dataset/borehole> a dcat:Dataset;
@@ -108,9 +112,9 @@
 				#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
 			]; 
 	dct:spatial [ a dct:Location; 
-		locn:geometry "POLYGON((-180 90,180 90,180 -90,-180 90,-180 90))"^^gsp:wktLiteral; 
+		locn:geometry "POLYGON((-180 -90,-180 90,180 90,180 -90,-180 -90))"^^gsp:wktLiteral;
 	]; 
-		dcat:theme <epos:Boreholedata>;
+		dcat:theme <epos:Borehole>;
 		dcat:keyword "borehole","geology";
 		dcat:contactPoint <mailto:contact-brgm@brgm.fr/manager>;
 		dcat:distribution <https://data.geoscience.earth/id/dataset/borehole/distributionWfs>; 
@@ -154,14 +158,14 @@
 		#schema:value  "WP15-DDSS-001i"; 
 	#]; 
 	schema:description "This service enables to discover existing Boreholes through spatial and attribute based queries (names, drilling method, ...).";
-	dcat:theme <epos:Boreholedata>;
+	dcat:theme <epos:Borehole>;
 	schema:name "Borehole Discovery Service";
 	hydra:entrypoint "https://data.geoscience.earth/api/wfsBorehole"^^xsd:anyURI; 
 	schema:provider <PIC:999993662>;
 	schema:datePublished "2016-10-27Z"^^xsd:date;
 	schema:dateModified "2018-01-19Z"^^xsd:date;
 	dct:spatial [ a dct:Location; 
-		locn:geometry "POLYGON((-180 90,180 90,180 -90,-180 -90,-180 90))"^^gsp:wktLiteral; 
+		locn:geometry "POLYGON((-180 -90,-180 90,180 90,180 -90,-180 -90))"^^gsp:wktLiteral; 
 	]; 
 	hydra:supportedOperation <https://data.geoscience.earth/api/wfsBorehole/operation>;
 	schema:keywords "borehole","geology";
@@ -376,14 +380,14 @@
 		#schema:value  "WP15-DDSS-001j"; 
 	#]; 
 	schema:description "This service allows visualization of available Boreholes in a given area of Europe.";
-	dcat:theme <epos:Boreholedata>;
+	dcat:theme <epos:Borehole>;
 	schema:name "Borehole View Service";
 	hydra:entrypoint "https://data.geoscience.earth/api/wmsBorehole?"^^xsd:anyURI; 
 	schema:provider <PIC:999993662>;
 	schema:datePublished "2016-10-27Z"^^xsd:date;
 	schema:dateModified "2018-01-19Z"^^xsd:date;
 	dct:spatial [ a dct:Location; 
-		locn:geometry "POLYGON((-180 90,180 90,180 -90,-180 -90,-180 90))"^^gsp:wktLiteral; 
+		locn:geometry "POLYGON((-180 -90,-180 90,180 90,180 -90,-180 -90))"^^gsp:wktLiteral; 
 	]; 
 	hydra:supportedOperation <https://data.geoscience.earth/api/wmsBorehole/operation>;
 	schema:keywords "borehole","geology";

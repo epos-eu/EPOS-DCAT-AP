@@ -26,10 +26,9 @@
 .
 
 <epos:Magneticfield> a skos:Concept;
-    skos:definition "Geomagnetic data and models without restriction in scale or frequency";
+    skos:definition "Geomagnetic models and data";
     skos:inScheme <epos:Geoelectromagnetism>;
-    #skos:prefLabel "Geomagnetic data and models without restriction in scale or frequency";
-    skos:prefLabel "Magneticfield data";
+    skos:prefLabel "Geomagnetic models and data";
 .
 
 ###############################################################################
@@ -165,8 +164,38 @@
         schema:startDate "1982-10-01T00:00:00Z"^^xsd:dateTime; 
     ]; 
     dct:spatial [ a dct:Location; 
-        locn:geometry "POLYGON(40.0 50.0, 0.0 50.0, 0.0 80.0, 40.0 80.0, 40.0 50.0)"^^gsp:wktLiteral; 
+        locn:geometry "POLYGON((40.0 50.0, 0.0 50.0, 0.0 80.0, 40.0 80.0, 40.0 50.0))"^^gsp:wktLiteral; 
     ]; 
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-002/IMAGE/Stations/Dataset> a dcat:Dataset;
+    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-002/IMAGE/Stations/Dataset";
+    dct:title "Station data of the International Monitor for Auroral Geomagnetic Effects (IMAGE)";
+    dct:description "IMAGE consists of 41 magnetometer stations maintained by 8 institutes from Finland, Germany, Norway, Poland, Russia and Sweden. The prime objectives of IMAGE are to study auroral electrojets and moving two-dimensional current systems. The long profile covering geographic latitudes from 51 to 79 degrees is especially favourable for electrojet studies. Together with other ground-based recordings (by radars, riometers, all-sky cameras) and satellite observations, IMAGE is an essential part in the investigations of high-latitude magnetospheric-ionospheric physics. Together with its predecessor, the EISCAT magnetometer cross started in 1982, IMAGE also provides high-quality data useful for studies of geomagnetic induction and long-term geomagnetic activity in the auroral region.";
+    adms:identifier [ a adms:Identifier;
+        adms:schemaAgency "DDSS-ID";
+        skos:notation "WP13-DDSS-002";
+    ];
+    dct:created "2018-08-31"^^xsd:date;
+    dct:modified "2018-08-31"^^xsd:date;
+    dct:issued "2018-08-31"^^xsd:date;
+    owl:versionInfo "1.0.0" ;
+
+    dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
+    dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI ;
+    dcat:theme  <epos:Magneticfield> ;
+    dcat:keyword "auroral electrojet", "geomagnetism", "magnetic field", "magnetism", "space weather", "substorm", "variometer" ;
+    dcat:contactPoint <mailto:ari.viljanen@fmi.fi/contactPoint>;
+    dcat:contactPoint <mailto:lasse.hakkinen@fmi.fi/contactPoint>;
+    dct:publisher <PIC:999591306>;
+    dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-002/IMAGE/Stations/Distribution>;
+
+    dct:temporal [ a dct:PeriodOfTime;
+        schema:startDate "1982-10-01T00:00:00Z"^^xsd:dateTime;
+    ];
+    dct:spatial [ a dct:Location;
+        locn:geometry "POLYGON((40.0 50.0, 0.0 50.0, 0.0 80.0, 40.0 80.0, 40.0 50.0))"^^gsp:wktLiteral;
+    ];
 .
 
 ###############################################################################
@@ -175,8 +204,8 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-002/IMAGE/Distribution> a dcat:Distribution;
     dct:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-002/IMAGE/Distribution";
-    dct:title "Distribution of IMAGE magnetometer data";
-    dct:description "IMAGE data is distributed via web service";
+    dct:title "Magnetometer data of the International Monitor for Auroral Geomagnetic Effects (IMAGE)";
+    dct:description "IMAGE consists of 41 magnetometer stations maintained by 8 institutes from Finland, Germany, Norway, Poland, Russia and Sweden. The prime objectives of IMAGE are to study auroral electrojets and moving two-dimensional current systems.";
     dct:issued "2018-08-31"^^xsd:date;
     dct:modified "2018-08-31"^^xsd:date;
     dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
@@ -184,6 +213,19 @@
     dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-002/IMAGE/Operation> ;
     dct:license "http://space.fmi.fi/image/www/index.php?page=rules_of_road"^^xsd:anyURI ;
     dct:format "http://publications.europa.eu/resource/authority/file-type/TXT"^^xsd:anyURI ;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-002/IMAGE/Stations/Distribution> a dcat:Distribution;
+    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-002/IMAGE/Stations/Distribution";
+    dct:title "IMAGE station list";
+    dct:description "IMAGE consists of 41 magnetometer stations maintained by 8 institutes from Finland, Germany, Norway, Poland, Russia and Sweden. The prime objectives of IMAGE are to study auroral electrojets and moving two-dimensional current systems.";
+    dct:issued "2018-08-31"^^xsd:date;
+    dct:modified "2018-08-31"^^xsd:date;
+    dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+    dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-002/IMAGE/Stations/Webservice>;
+    dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-002/IMAGE/Stations/Operation> ;
+    dct:license "http://space.fmi.fi/image/www/index.php?page=rules_of_road"^^xsd:anyURI ;
+    dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI ;
 . 
 
 ###############################################################################
@@ -192,8 +234,8 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-002/IMAGE/Webservice> a epos:WebService;
     schema:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-002/IMAGE/Webservice";
-    schema:description "The IMAGE web service makes available data from the IMAGE magnetometer network.";
-    schema:name "IMAGE web service";
+    schema:description "The IMAGE web service makes available data from the IMAGE magnetometer network in text format.";
+    schema:name "Web service for International Monitor for Auroral Geomagnetic Effects (IMAGE) data";
     dcat:contactPoint <mailto:ari.viljanen@fmi.fi/contactPoint>;
     dcat:contactPoint <mailto:lasse.hakkinen@fmi.fi/contactPoint>;
     schema:datePublished "2018-08-31Z"^^xsd:dateTime;
@@ -204,11 +246,33 @@
     schema:keywords "auroral electrojet", "geomagnetism", "magnetic field", "magnetism", "space weather", "substorm", "variometer" ;
     hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-002/IMAGE/Operation> ;
     dct:spatial [ a dct:Location; 
-        locn:geometry "POLYGON(40.0 50.0, 0.0 50.0, 0.0 80.0, 40.0 80.0, 40.0 50.0)"^^gsp:wktLiteral; 
+        locn:geometry "POLYGON((40.0 50.0, 0.0 50.0, 0.0 80.0, 40.0 80.0, 40.0 50.0))"^^gsp:wktLiteral; 
     ]; 
     dct:temporal [ a dct:PeriodOfTime; 
         schema:startDate "1982-10-01T00:00:00Z"^^xsd:dateTime; 
     ]; 
+    dct:license "http://space.fmi.fi/image/www/index.php?page=rules_of_road"^^xsd:anyURI;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-002/IMAGE/Stations/Webservice> a epos:WebService;
+    schema:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-002/IMAGE/Stations/Webservice";
+    schema:description "The IMAGE station web service makes available location data of stations";
+    schema:name "IMAGE station web service";
+    dcat:contactPoint <mailto:ari.viljanen@fmi.fi/contactPoint>;
+    dcat:contactPoint <mailto:lasse.hakkinen@fmi.fi/contactPoint>;
+    schema:datePublished "2018-08-31Z"^^xsd:dateTime;
+    schema:dateModified "2018-08-31Z"^^xsd:dateTime;
+    schema:provider <PIC:999591306>;
+    hydra:entrypoint "http://geomag.bgs.ac.uk/EPOS_station_list/observatories/image"^^xsd:anyURI ;
+    dcat:theme  <epos:Magneticfield> ;
+    schema:keywords "auroral electrojet", "geomagnetism", "magnetic field", "magnetism", "space weather", "substorm", "variometer" ;
+    hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-002/IMAGE/Stations/Operation> ;
+    dct:spatial [ a dct:Location;
+        locn:geometry "POLYGON((40.0 50.0, 0.0 50.0, 0.0 80.0, 40.0 80.0, 40.0 50.0))"^^gsp:wktLiteral;
+    ];
+    dct:temporal [ a dct:PeriodOfTime;
+        schema:startDate "1982-10-01T00:00:00Z"^^xsd:dateTime;
+    ];
     dct:license "http://space.fmi.fi/image/www/index.php?page=rules_of_road"^^xsd:anyURI;
 .
 
@@ -220,7 +284,7 @@
     hydra:method "GET"^^xsd:string;
     hydra:returns "text/plain";
     hydra:property[ a hydra:IriTemplate;
-        hydra:template "http://space.fmi.fi/cgi-bin/imagecgi/image-epos.cgi{?start, yourname, institute, email, submit}"^^xsd:string;
+        hydra:template "http://space.fmi.fi/cgi-bin/imagecgi/image-epos.cgi?submit=ok&yourname=EPOS&institute=EPOS&email=epos@example.org{&start}"^^xsd:string;
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "start"^^xsd:string;
                 rdfs:label "Date (yyyymmdd)";
@@ -232,34 +296,13 @@
                 schema:defaultValue "19821001";
                 hydra:required "true"^^xsd:boolean;
             ];
-            hydra:mapping[ a hydra:IriTemplateMapping;
-                hydra:variable "yourname"^^xsd:string;
-                rdfs:label "Your name";
-                rdfs:range "xsd:string" ;
-                schema:defaultValue "EPOS Test User";
-                hydra:required "true"^^xsd:boolean;
-            ];
-            hydra:mapping[ a hydra:IriTemplateMapping;
-                hydra:variable "institute"^^xsd:string;
-                rdfs:label "Your institute";
-                rdfs:range "xsd:string" ;
-                schema:defaultValue "EPOS Test Institute";
-                hydra:required "true"^^xsd:boolean;
-            ];
-            hydra:mapping[ a hydra:IriTemplateMapping;
-                hydra:variable "email"^^xsd:string;
-                rdfs:label "Your email";
-                rdfs:range "xsd:string" ;
-                schema:defaultValue "EPOSTestUser@example.org";
-                hydra:required "true"^^xsd:boolean;
-            ];
-            hydra:mapping[ a hydra:IriTemplateMapping;
-                hydra:variable "submit"^^xsd:string;
-                rdfs:label "Always set to 'OK'";
-                rdfs:range "xsd:string" ;
-                http:paramValue "OK";
-                schema:defaultValue "OK";
-                hydra:required "true"^^xsd:boolean;
-            ];
         ] ;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-002/IMAGE/Stations/Operation> a hydra:Operation;
+    hydra:method "GET"^^xsd:string;
+    hydra:returns "application/geo+json";
+    hydra:property[ a hydra:IriTemplate;
+        hydra:template "http://geomag.bgs.ac.uk/EPOS_station_list/observatories/image"^^xsd:string;
+    ] ;
 .

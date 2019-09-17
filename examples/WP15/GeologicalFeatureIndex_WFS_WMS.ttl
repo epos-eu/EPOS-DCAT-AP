@@ -84,12 +84,24 @@
 
 	<epos:Geology> a skos:ConceptScheme;
 		dct:title "Geology";
-		dct:description "It contains the concepts of Geology";
+		dct:description "It contains the concepts pertaining to Geological Information and Modelling";
 . 
 
-	<epos:GeologicalData> a skos:Concept;
+	<epos:GeologicUnit> a skos:Concept;
 		skos:inScheme <epos:Geology>;
-		skos:prefLabel "Geological Data";
+		skos:prefLabel "geologicunit";
+		skos:definition "-- Definition -- A volume of rock with distinct characteristics.-- Description -- Includes both formal units (i.e. formally adopted and named in an official lexicon) and informal units (i.e. named but not promoted to the lexicon) and unnamed units (i.e. recognisable and described and delineable in the field but not otherwise formalised).Spatial properties are only available through association with a MappedFeature. (INSPIRE).";
+		skos:exactMatch <https://www.opengis.net/def/appschema/gsmlb/GeologicUnit>;
+		skos:exactMatch <http://inspire.ec.europa.eu/featureconcept/GeologicUnit>;
+. 
+
+
+	<epos:Mappedfeature> a skos:Concept;
+		skos:inScheme <epos:Geology>;
+		skos:prefLabel "mappedfeature";
+		skos:definition "-- Definition -- A spatial representation of a GeologicFeature.  -- Description -- A MappedFeature is part of a geological interpretation.  It provides a link between a notional feature (description package) and one spatial representation of it, or part of it (exposures, surface traces and intercepts, etc) which forms the specific bounded occurrence, such as an outcrop or map polygon. (INSPIRE)";
+		skos:exactMatch <https://www.opengis.net/def/appschema/gsmlb/MappedFeature>;
+		skos:exactMatch <http://inspire.ec.europa.eu/featureconcept/MappedFeature>;
 . 
 
 	
@@ -117,9 +129,9 @@
 		# using http://vocabs.ands.org.au/repository/api/lda/csiro/international-chronostratigraphic-chart/2017/resource.html?uri=http://resource.geosciml.org/classifier/ics/ischart/BaseArchean its ok
 		
 	dct:spatial [ a dct:Location; 
-		locn:geometry "POLYGON((-180 90,180 90,180 -90,-180 90,-180 90))"^^gsp:wktLiteral; 
+		locn:geometry "POLYGON((-180 -90,-180 90,180 90,180 -90,-180 -90))"^^gsp:wktLiteral;
 	]; 
-		dcat:theme <epos:GeologicalData>;
+		dcat:theme <epos:GeologicUnit>;
 		dcat:keyword "geologicunit", "mappedfeature", "geology";
 		dcat:contactPoint <mailto:contact-brgm@brgm.fr/manager>;
 		dcat:distribution <https://data.geoscience.earth/id/dataset/geologicunit/distributionWfs>;
@@ -162,14 +174,14 @@
 <https://data.geoscience.earth/api/wfsGeologicUnit> a epos:WebService;
 	schema:identifier "https://data.geoscience.earth/api/wfsGeologicUnit";
 	schema:description "This service allows to find geological features appearing on the EGDI 1:1,000,000 geological map.";
-	dcat:theme <epos:GeologicalData>;
+	dcat:theme <epos:GeologicUnit>;
 	schema:name "Geological Feature Discovery Service";
 	hydra:entrypoint "https://data.geoscience.earth/api/wfsGeologicUnit"^^xsd:anyURI; 
 	schema:provider <PIC:999993662>;
 	schema:datePublished "2016-10-27Z"^^xsd:date;
 	schema:dateModified "2018-01-19Z"^^xsd:date;
 	dct:spatial [ a dct:Location; 
-		locn:geometry "POLYGON((-180 90,180 90,180 -90,-180 -90,-180 90))"^^gsp:wktLiteral; 
+		locn:geometry "POLYGON((-180 -90,-180 90,180 90,180 -90,-180 -90))"^^gsp:wktLiteral;
 	]; 
 	hydra:supportedOperation <https://data.geoscience.earth/api/wfsGeologicUnit/operation>;
 	schema:keyword "geologicunit", "mappedfeature", "geology";
@@ -316,14 +328,14 @@
 <https://data.geoscience.earth/api/wmsGeologicUnit> a epos:WebService;
 	schema:identifier "https://data.geoscience.earth/api/wmsGeologicUnit";
 	schema:description "This services provides an interface for map visualization of geological map of Europe.";
-	dcat:theme <epos:GeologicalData>;
+	dcat:theme <epos:GeologicUnit>;
 	schema:name "Geological Map 1:1,000,000 (OneGeology-Europe layer)";
 	hydra:entrypoint "https://data.geoscience.earth/api/wmsGeologicUnit?"^^xsd:anyURI; 
 	schema:provider <PIC:999993662>;
 	schema:datePublished "2016-10-27Z"^^xsd:date;
 	schema:dateModified "2018-01-19Z"^^xsd:date;
 	dct:spatial [ a dct:Location; 
-		locn:geometry "POLYGON((-180 90,180 90,180 -90,-180 -90,-180 90))"^^gsp:wktLiteral; 
+		locn:geometry "POLYGON((-180 -90,-180 90,180 90,180 -90,-180 -90))"^^gsp:wktLiteral;
 	]; 
 	hydra:supportedOperation <https://data.geoscience.earth/api/wmsGeologicUnit/operation>;
 	schema:keyword "geologicunit", "mappedfeature", "geology";

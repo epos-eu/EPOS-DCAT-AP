@@ -1,20 +1,21 @@
-@prefix adms: <http://www.w3.org/ns/adms#> .  
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .  
-@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .  
-@prefix dc: <http://purl.org/dc/elements/1.1/> .  
-@prefix dct: <http://purl.org/dc/terms/> .  
-@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .  
-@prefix hydra: <http://www.w3.org/ns/hydra/core#> .  
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .  
-@prefix schema: <http://schema.org/> .  
-@prefix dcat: <http://www.w3.org/ns/dcat#> .  
-@prefix cnt: <http://www.w3.org/2011/content#> .  
-@prefix locn: <http://www.w3.org/ns/locn#> .  
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .  
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .  
-@prefix http: <http://www.w3.org/2006/http#> .  
-@prefix owl: <http://www.w3.org/2002/07/owl#> .  
-@prefix gsp: <http://www.opengis.net/ont/geosparql#> .  
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http: <http://www.w3.org/2006/http#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+
 
 <http://orcid.org/0000-0003-2431-1383> a schema:Person;
     schema:identifier [ a schema:PropertyValue;
@@ -34,8 +35,9 @@
     schema:url "http://orcid.org/0000-0003-2431-1383"^^xsd:anyURI;
     schema:qualifications "IT";
     schema:affiliation <PIC:998181508>;
-    schema:contactPoint <http://orcid.org/0000-0003-2431-1383/scientificContact>;
+    schema:contactPoint <http://orcid.org/0000-0003-2431-1383/contactPoint>;
 . 
+
 <https://orcid.org/0000-0002-2181-4471> a schema:Person;
     schema:identifier [ a schema:PropertyValue;
         schema:propertyID "orcid";
@@ -54,31 +56,21 @@
     schema:url "https://orcid.org/0000-0002-2181-4471"^^xsd:anyURI;
     schema:qualifications "IT";
     schema:affiliation <PIC:998181508>;
-    schema:contactPoint <https://orcid.org/0000-0002-2181-4471/scientificContact>;
+    schema:contactPoint <https://orcid.org/0000-0002-2181-4471/contactPoint>;
 . 
-<https://radon.infp.ro/epos-dcat-ap/NearFaultObjservatory/NIEP/RADON/Webservice/001> a epos:WebService;
-    schema:identifier "https://radon.infp.ro/epos-dcat-ap/NearFaultObjservatory/NIEP/RADON/Webservice/001";
-    schema:description "Radon counts and local temperature Web Service allow to retrieve Radon Gas concentration time series based on periodic counting of Rn gas at site";
-    schema:name "NIEP Radon counts and local temperature Web Service";
-    schema:datePublished "2017-06-08T12:00:00Z"^^xsd:dateTime;
-    schema:dateModified "2017-06-08T12:00:00Z"^^xsd:dateTime;
-    schema:provider <PIC:998181508>;
-    dct:spatial [ a dct:Location ;
-        locn:geometry "POLYGON((19.50 49.00,30.00 49.00,30.00 42.0,19.50 42.0,19.50 49.00 ))"^^gsp:wktLiteral;
-    ];
-    dct:temporal [ a dct:PeriodOfTime; 
-        schema:startDate "2001-01-17T00:00:00Z"^^xsd:dateTime; 
-        #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
-    ]; 
-    schema:keywords "Geochemical", "Radon concentration", "Radon decay counts", "geochemistry", "geohazards", "long term continuos timeseries", "local temperature";
-    hydra:operation <https://radon.infp.ro/epos-dcat-ap/NearFaultObjservatory/NIEP/RADON/Webservice/001/Operation/001>;
-    dcat:theme <epos:Radonconcentration>;
-    dcat:contactPoint <http://orcid.org/0000-0003-2431-1383/contactPoint>;
-.
+
 <http://orcid.org/0000-0003-2431-1383/contactPoint> a schema:ContactPoint;
     schema:email "mlmarius@yahoo.com";
     schema:availableLanguage "en";
+    schema:contactType "scientificContact" ;
 .
+
+<https://orcid.org/0000-0002-2181-4471/contactPoint> a schema:ContactPoint;
+    schema:email "marmura@infp.ro" ;
+    schema:availableLanguage "en" ;
+    schema:contactType "scientificContact" ;
+.
+
 <PIC:998181508> a schema:Organization;
     schema:identifier [ a schema:PropertyValue;
         schema:propertyID "pic";
@@ -95,22 +87,128 @@
     schema:url "http://www.infp.ro"^^xsd:anyURI;
     schema:email "contact@infp.ro";
 .
-<https://orcid.org/0000-0002-2181-4471/scientificContact> a schema:ContactPoint;
-    schema:email "marmura@infp.ro";
-    schema:availableLanguage "en" ;
-    schema:contactType "scientificContact" ;
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/RADON/Dataset/001> a dcat:Dataset;
+    adms:identifier [ a adms:Identifier ;
+        adms:schemaAgency "DDSS-ID";
+        skos:notation "WP09-DDSS-024";
+    ];
+    dct:title "Vrancea Radon Dataset";
+    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/RADON/Dataset/001";
+    dct:description "Vrancea Radon counts and local temperature dataset contains Radon Gas concentration time series based on periodic counting of Rn gas at site";
+    dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+    dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
+
+    dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+    dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+    dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+    owl:versionInfo "1.0.0" ;
+    dct:spatial [ a dct:Location ;
+        locn:geometry "POLYGON((19.50 49.00,30.00 49.00,30.00 42.0,19.50 42.0,19.50 49.00 ))"^^gsp:wktLiteral;
+    ];
+    dct:temporal [ a dct:PeriodOfTime ;
+        schema:startDate "1999-01-01T00:00:00Z"^^xsd:dateTime ;
+    ];
+    dcat:theme  <epos:Radonconcentration> ;
+    dcat:keyword "Geochemistry", "Radon concentration", "Radon decay counts", "geohazard", "timeseries", "local temperature", "NFO", "Vrancea", "FRIDGE";
+    dcat:contactPoint <http://orcid.org/0000-0003-2431-1383/contactPoint>;
+    dct:publisher <PIC:998181508>;
+    dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/RADON/Distribution/001>;
 .
-<http://orcid.org/0000-0003-2431-1383/scientificContact> a schema:ContactPoint;
-    schema:email "mlmarius@yahoo.com";
-    schema:availableLanguage "en" ;
-    schema:contactType "scientificContact" ;
-. 
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/RADON_STATIONS/Dataset/001> a dcat:Dataset;
+    adms:identifier [ a adms:Identifier ;
+        adms:schemaAgency "DDSS-ID";
+        skos:notation "WP09-DDSS-024b";
+    ];
+    dct:title "Vrancea Radon Stations Dataset";
+    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/RADON_STATIONS/Dataset/001";
+    dct:description "Vrancea Radon counts and local temperature dataset contains Radon Gas concentration time series based on periodic counting of Rn gas at site";
+    dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+    dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
+
+    dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+    dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+    dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+    owl:versionInfo "1.0.0" ;
+    dct:spatial [ a dct:Location ;
+        locn:geometry "POLYGON((19.50 49.00,30.00 49.00,30.00 42.0,19.50 42.0,19.50 49.00 ))"^^gsp:wktLiteral;
+    ];
+    dct:temporal [ a dct:PeriodOfTime ;
+        schema:startDate "1999-01-01T00:00:00Z"^^xsd:dateTime ;
+    ];
+    dcat:theme  <epos:Radonconcentration> ;
+    dcat:keyword "Geochemistry", "Radon stations", "NFO", "Vrancea", "FRIDGE";
+    dcat:contactPoint <http://orcid.org/0000-0003-2431-1383/contactPoint>;
+    dct:publisher <PIC:998181508>;
+    dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/RADON_STATIONS/Distribution/001>;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/RADON/Distribution/001> a dcat:Distribution;
+    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/RADON/Distribution/001";
+    dct:title "Vrancea Rn concentration and local temperature";
+    dct:description "Vrancea Radon counts and temperature Distribution in JSON format";
+    dct:created "2010-04-01"^^xsd:date;
+    dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+    dcat:accessURL <https://radon.infp.ro/epos-dcat-ap/NearFaultObjservatory/NIEP/RADON/Webservice/001/Operation/001>;
+    dct:conformsTo <https://radon.infp.ro/epos-dcat-ap/NearFaultObjservatory/NIEP/RADON/Webservice/001>;
+    dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/RADON_STATIONS/Distribution/001> a dcat:Distribution;
+    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/RADON_STATIONS/Distribution/001";
+    dct:title "Vrancea Radon Stations";
+    dct:description "Vrancea Radon stations information";
+    dct:created "2010-04-01"^^xsd:date;
+    dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+    dcat:accessURL <https://radon.infp.ro/epos-dcat-ap/NearFaultObjservatory/NIEP/RADON_STATIONS/Webservice/001/Operation/001>;
+    dct:conformsTo <https://radon.infp.ro/epos-dcat-ap/NearFaultObjservatory/NIEP/RADON_STATIONS/Webservice/001>;
+    dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
+.
+
+<https://radon.infp.ro/epos-dcat-ap/NearFaultObjservatory/NIEP/RADON/Webservice/001> a epos:WebService;
+    schema:identifier "https://radon.infp.ro/epos-dcat-ap/NearFaultObjservatory/NIEP/RADON/Webservice/001";
+    schema:description "Vrancea Radon counts and local temperature Web Service allow to retrieve Radon Gas concentration time series based on periodic counting of Rn gas at site";
+    schema:name "Vrancea Radon counts and local temperature Web Service";
+    schema:datePublished "2017-06-08T12:00:00Z"^^xsd:dateTime;
+    schema:dateModified "2017-06-08T12:00:00Z"^^xsd:dateTime;
+    schema:provider <PIC:998181508>;
+    dct:spatial [ a dct:Location ;
+        locn:geometry "POLYGON((19.50 49.00,30.00 49.00,30.00 42.0,19.50 42.0,19.50 49.00 ))"^^gsp:wktLiteral;
+    ];
+    dct:temporal [ a dct:PeriodOfTime ;
+        schema:startDate "1999-01-01T00:00:00Z"^^xsd:dateTime ;
+    ];
+    schema:keywords "Geochemical", "Radon concentration", "Radon decay counts", "geochemistry", "geohazards", "long term continuos timeseries", "local temperature";
+    hydra:operation <https://radon.infp.ro/epos-dcat-ap/NearFaultObjservatory/NIEP/RADON/Webservice/001/Operation/001>;
+    dcat:theme <epos:Radonconcentration>;
+    dcat:contactPoint <http://orcid.org/0000-0003-2431-1383/contactPoint>;
+.
+
+<https://radon.infp.ro/epos-dcat-ap/NearFaultObjservatory/NIEP/RADON_STATIONS/Webservice/001> a epos:WebService;
+    schema:identifier "https://radon.infp.ro/epos-dcat-ap/NearFaultObjservatory/NIEP/RADON_STATIONS/Webservice/001";
+    schema:description "Vrancea Radon stations Web Service allow to retrieve Radon stations information.";
+    schema:name "Vrancea Radon stations Web Service";
+    schema:datePublished "2017-06-08T12:00:00Z"^^xsd:dateTime;
+    schema:dateModified "2017-06-08T12:00:00Z"^^xsd:dateTime;
+    schema:provider <PIC:998181508>;
+    dct:spatial [ a dct:Location ;
+        locn:geometry "POLYGON((19.50 49.00,30.00 49.00,30.00 42.0,19.50 42.0,19.50 49.00 ))"^^gsp:wktLiteral;
+    ];
+    dct:temporal [ a dct:PeriodOfTime ;
+        schema:startDate "1999-01-01T00:00:00Z"^^xsd:dateTime ;
+    ];
+    schema:keywords "Geochemical", "Radon stations", "Vrancea", "NFO", "FRIDGE";
+    hydra:operation <https://radon.infp.ro/epos-dcat-ap/NearFaultObjservatory/NIEP/RADON_STATIONS/Webservice/001/Operation/001>;
+    dcat:theme <epos:Radonconcentration>;
+    dcat:contactPoint <http://orcid.org/0000-0003-2431-1383/contactPoint>;
+.
 
 <https://radon.infp.ro/epos-dcat-ap/NearFaultObjservatory/NIEP/RADON/Webservice/001/Operation/001> a hydra:Operation;
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
-		hydra:template "http://fridge-services.rm.ingv.it/radon/{?mintime, maxtime, minlat, maxlat, minlon, maxlon, max_radon_error}"^^xsd:string;
+		hydra:template "http://fridge-services.rm.ingv.it/radon/{?mintime, maxtime, minlat, maxlat, minlon, maxlon, stacode}"^^xsd:string;
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "mintime"^^xsd:string;
 			rdfs:label "Minimum Time";
@@ -173,17 +271,77 @@
 			hydra:required "true"^^xsd:boolean;
 			hydra:property "epos:easternmostLongitude";
 		];
-		hydra:mapping[ a hydra:IriTemplateMapping;
-			hydra:variable "max_radon_error"^^xsd:string;
-			rdfs:range "xsd:integer";
-			rdfs:label "maximum error";
-			schema:minValue "0";
-			schema:maxValue "100";
-			schema:defaultValue "100";
-			hydra:required "false"^^xsd:boolean;
-		];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+            hydra:variable "stacode"^^xsd:string;
+            rdfs:label "Station code";
+            rdfs:range "xsd:string";
+            http:paramValue "BISR";
+            http:paramValue "PLR";
+            http:paramValue "VRI";
+            schema:defaultValue "BISR";
+            hydra:required "true"^^xsd:boolean;
+        ];
 	] ;
-. 
+.
+
+<https://radon.infp.ro/epos-dcat-ap/NearFaultObjservatory/NIEP/RADON_STATIONS/Webservice/001/Operation/001> a hydra:Operation;
+	hydra:method "GET"^^xsd:string;
+	hydra:returns "application/json";
+	hydra:property[ a hydra:IriTemplate;
+		hydra:template "http://fridge-services.rm.ingv.it/radon/stations{?mintime, maxtime, minlat, maxlat, minlon, maxlon, stacode}"^^xsd:string;
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "mintime"^^xsd:string;
+			rdfs:label "Minimum Time";
+			rdfs:range "xsd:dateTime";
+			schema:minValue "2000-01-01T00:00:00.0000Z";
+			schema:maxValue "2018-09-20T12:00:00.0000Z";
+			schema:defaultValue "2015-03-01T00:00:00.0000Z";
+			hydra:property "schema:startDate";
+      		schema:valuePattern "YYYY-MM-DDThh:mm:ss.SSSZ";
+			hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "maxtime"^^xsd:string;
+			rdfs:label "Maximum Time";
+			rdfs:range "xsd:dateTime";
+			schema:minValue "2000-01-01T00:00:00.0000Z";
+			schema:maxValue "2018-09-20T12:00:00.0000Z";
+			schema:defaultValue "2015-05-01T00:00:00.0000Z";
+			hydra:property "schema:endDate";
+      		schema:valuePattern "YYYY-MM-DDThh:mm:ss.SSSZ";
+			hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "minlat"^^xsd:string;
+			rdfs:range "xsd:float";
+			rdfs:label "minimum Latitude";
+			schema:minValue "-90";
+			schema:maxValue "90";
+			schema:defaultValue "44.5";
+			hydra:required "true"^^xsd:boolean;
+      		hydra:property "epos:southernmostLatitude";
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "maxlat"^^xsd:string;
+			rdfs:range "xsd:float";
+			rdfs:label "maximum Latitude";
+			schema:minValue "-90";
+			schema:maxValue "90";
+			schema:defaultValue "46.5";
+			hydra:required "true"^^xsd:boolean;
+      		hydra:property "epos:northernmostLatitude";
+		];
+        hydra:mapping[ a hydra:IriTemplateMapping;
+            hydra:variable "stacode"^^xsd:string;
+            rdfs:label "Station code";
+            rdfs:range "xsd:string";
+            http:paramValue "BISR";
+            http:paramValue "PLR";
+            http:paramValue "VRI";
+            hydra:required "false"^^xsd:boolean;
+        ];
+	] ;
+.
 
 <epos:NearFaultObservations> a skos:ConceptScheme;
 	dct:title "Near Fault Observations";
@@ -192,34 +350,4 @@
 <epos:Radonconcentration> a skos:Concept;
 	skos:inScheme <epos:NearFaultObservations>;
 	skos:prefLabel "Radon concentration";
-.
-
-<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/RADON/Dataset/001> a dcat:Dataset;
-	adms:identifier [ a adms:Identifier ;
-		adms:schemaAgency "DDSS-ID";
-		skos:notation "WP09-DDSS-024";
-	];
-	dct:title "Radon Dataset";
-	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/RADON/Dataset/001";
-	dct:description "Radon counts and local temperature dataset contains Radon Gas concentration time series based on periodic counting of Rn gas at site";
-	## example of frequency using a controlled vocabulary
-	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
-	dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
-	dct:created "2010-04-01"^^xsd:date;
-	dcat:theme  <epos:Radonconcentration> ;
-	dcat:keyword "Geochemical", "Radon concentration", "Radon counts", "geochemistry", "geohazards", "long term continuos timeseries", "local temperature" ;
-	dcat:contactPoint <http://orcid.org/0000-0003-2431-1383/contactPoint>;
-	dct:publisher <PIC:998181508>;
-	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/RADON/Distribution/001>;
-
-.
-<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/RADON/Distribution/001> a dcat:Distribution;
-    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/NIEP/RADON/Distribution/001";
-    dct:title "Radon counts and temperature Distribution";
-    dct:description "Radon counts and temperature Distribution";
-    dct:created "2010-04-01"^^xsd:date;
-    dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-    dcat:accessURL <https://radon.infp.ro/epos-dcat-ap/NearFaultObjservatory/NIEP/RADON/Webservice/001/Operation/001>;
-    dct:conformsTo <https://radon.infp.ro/epos-dcat-ap/NearFaultObjservatory/NIEP/RADON/Webservice/001>;
-    dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 .

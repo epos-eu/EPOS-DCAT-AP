@@ -47,7 +47,7 @@
 		schema:propertyID "pic";
 		schema:value "999882500";
 	]; 
-	schema:legalName "KOERI Kandilli Observatory and Earthquake Research Institue";
+	schema:legalName "KOERI Kandilli Observatory and Earthquake Research Institue"@en;
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "Çengelköy";
 		schema:addressLocality "Istanbul";
@@ -60,13 +60,17 @@
 	schema:contactPoint <http://orcid.org/0000-0001-7080-183X/scientificContact>;
 .
 
-<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/VEL_WAVEFORM_CONTINUOUS/Dataset/001> a dcat:Dataset;
-	dct:title "KOERI Velocity Waveform Continuous Dataset";
-	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/VEL_WAVEFORM_CONTINUOUS/Dataset/001";
-	dct:description "Velocity Waveform Continuous Dataset.";
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/WAVEFORM_CONTINUOUS/Dataset/001> a dcat:Dataset;
+	dct:title "Marmara Velocity and Acceleration Waveform Dataset";
+	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/WAVEFORM_CONTINUOUS/Dataset/001";
+	dct:description "Seismic Waveform Continuous Dataset.";
 	adms:identifier [ a adms:Identifier; 
 		adms:schemaAgency "DDSS-ID";
 		skos:notation "WP09-DDSS-001"; 
+	];
+	adms:identifier [ a adms:Identifier; 
+		adms:schemaAgency "DDSS-ID";
+		skos:notation "WP09-DDSS-002"; 
 	];
 	## example of frequency using a controlled vocabulary
 	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
@@ -84,44 +88,14 @@
         schema:endDate "2017-01-01T00:00:00"^^xsd:dateTime ;
     ];
 	dcat:theme  <epos:Seismicwaveforms> ;
-	dcat:keyword "seismology", "seismicity", "earthquakes", "Velocity", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "NFO", "Near Fault Observatory", "KOERI";
+	dcat:keyword "seismology", "seismicity", "earthquake", "Velocity", "Acceleration", "waveform", "waveform modeling", "NFO", "MARMARA";
 	dcat:contactPoint <http://orcid.org/0000-0001-7080-183X/scientificContact>;
 	dct:publisher <PIC:999882500>;
 	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/VEL_WAVEFORM_CONTINUOUS/Distribution/001>;
 .
 
-<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/ACC_WAVEFORM_CONTINUOUS/Dataset/001> a dcat:Dataset;
-	dct:title "KOERI Acceleration Waveform Continuous Dataset";
-	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/ACC_WAVEFORM_CONTINUOUS/Dataset/001";
-	dct:description "Acceleration Waveform Continuous Dataset.";
-	adms:identifier [ a adms:Identifier; 
-		adms:schemaAgency "DDSS-ID";
-		skos:notation "WP09-DDSS-002"; 
-	];
-	## example of frequency using a controlled vocabulary
-	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
-	dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
-	dct:created "2012-01-01T00:00:00Z"^^xsd:dateTime;
-	dct:issued "2012-01-01T00:00:00Z"^^xsd:dateTime;
-	dct:modified "2012-01-01T00:00:00Z"^^xsd:dateTime;
-	owl:versionInfo "1.0.0";
-	dct:spatial [ a dct:Location ;
-		locn:geometry "POLYGON(26.0 42.0, 31.0 42.0, 31.0 39.0, 26.0 39.0, 26.0 42.0)"^^gsp:wktLiteral ;
-	];
-	# This property refers to a temporal period that the Dataset covers.
-    dct:temporal [ a dct:PeriodOfTime ;
-        schema:startDate "2012-01-01T00:00:00"^^xsd:dateTime ;
-        schema:endDate "2017-01-01T00:00:00"^^xsd:dateTime ;
-    ];
-	dcat:theme  <epos:Seismicwaveforms> ;
-	dcat:keyword "seismology", "seismicity", "earthquakes", "Acceleration", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "NFO", "Near Fault Observatory", "KOERI";
-	dcat:contactPoint <http://orcid.org/0000-0001-7080-183X/scientificContact>;
-	dct:publisher <PIC:999882500>;
-	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/ACC_WAVEFORM_CONTINUOUS/Distribution/001>;
-.
-
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/SEISMIC_STATION/Dataset/001> a dcat:Dataset;
-	dct:title "KOERI Seismic Station Information Dataset";
+	dct:title "Marmara Seismic Station Information Dataset";
 	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/SEISMIC_STATION/Dataset/001";
 	dct:description "Seismic Station Information Dataset.";
 	adms:identifier [ a adms:Identifier; 
@@ -144,38 +118,27 @@
         schema:endDate "2017-01-01T00:00:00"^^xsd:dateTime ;
     ];
 	dcat:theme  <epos:Seismicstations> ;
-	dcat:keyword "seismology", "seismicity", "earthquakes", "station", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "KOERI" ;
+	dcat:keyword "seismology", "seismicity", "earthquake", "station", "MARMARA";
 	dcat:contactPoint <http://orcid.org/0000-0001-7080-183X/scientificContact>;
 	dct:publisher <PIC:999882500>;
 	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/SEISMIC_STATION/Distribution/001>;
 .
 
-<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/VEL_WAVEFORM_CONTINUOUS/Distribution/001> a dcat:Distribution;
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/WAVEFORM_CONTINUOUS/Distribution/001> a dcat:Distribution;
     dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/VEL_WAVEFORM_CONTINUOUS/Distribution/001";
-    dct:title "KOERI Velocity Waveform Continuous Distribution";
-	dct:description "KOERI Velocity Waveform Continuous Distribution";
+    dct:title "Marmara Velocity and Acceleration Waveform";
+	dct:description "This distribution provides access to Velocity and Acceleration Waveform Continuous data through FDSN Dataselect web service. It is encoded in mseed format. Its related dataset covers the time period since 2012 and is limited to the Marmara (Turkey) Near Fault Observatory Area.";
 	dct:created "2012-01-01"^^xsd:date;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/WAVEFORM_CONTINUOUS/WebService/001/Operation/001>;
-	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/VEL_WAVEFORM_CONTINUOUS/WebService/001>;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/WAVEFORM_CONTINUOUS/WebService/001>;
 	dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI;
-.
-
-<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/ACC_WAVEFORM_CONTINUOUS/Distribution/001> a dcat:Distribution;
-    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/ACC_WAVEFORM_CONTINUOUS/Distribution/001";
-	dct:title "KOERI Acceleration Waveform Continuous Distribution";
-	dct:description "KOERI Acceleration Waveform Continuous Distribution";
-	dct:created "2012-01-01"^^xsd:date;
-	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/WAVEFORM_CONTINUOUS/WebService/001/Operation/001>;
-	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/ACC_WAVEFORM_CONTINUOUS/WebService/001>;
-	dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI ;
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/SEISMIC_STATION/Distribution/001> a dcat:Distribution;
     dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/SEISMIC_STATION/Distribution/001";
-    dct:title "KOERI Seismic Station Information Distribution";
-	dct:description "KOERI Seismic Station Information Distribution";
+    dct:title "Marmara Stations";
+	dct:description "Marmara Seismic Station Information";
 	dct:created "2012-01-01"^^xsd:date;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/SEISMIC_STATION/WebService/001/Operation/001>;
@@ -183,28 +146,14 @@
 	dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
 .
 
-<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/VEL_WAVEFORM_CONTINUOUS/WebService/001> a epos:WebService;
-	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/VEL_WAVEFORM_CONTINUOUS/WebService/001";
-	schema:description "KOERI - The dataselect Web service provides access to time series data in miniSEED format. The data may be filtered e.g. by time, station and network parameters. The request type is HTTP-GET and HTTP-POST. Please refer to http://www.fdsn.org/webservice for a complete service description.";
-	schema:name "KOERI - Velocity and Acceleration Seismic waveforms Continuous";
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/WAVEFORM_CONTINUOUS/WebService/001> a epos:WebService;
+	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/WAVEFORM_CONTINUOUS/WebService/001";
+	schema:description "The dataselect Web service provides access to time series data in miniSEED format. The data may be filtered e.g. by time, station and network parameters. The request type is HTTP-GET and HTTP-POST. Please refer to http://www.fdsn.org/webservice for a complete service description.";
+	schema:name "Marmara Velocity and Acceleration Seismic waveforms Web Service";
 	schema:datePublished "2016-01-01T00:00:00.000Z"^^xsd:dateTime;
 	schema:dateModified "2016-01-01T00:00:00.000Z"^^xsd:dateTime;
 	schema:provider <PIC:999882500>;
-	schema:keywords "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "KOERI", "Dataselect", "FDSN-WS", "Seismic Waveform", "EIDA";
-	#hydra:entrypoint "application.wadl"^^xsd:anyURI; 
-	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/WAVEFORM_CONTINUOUS/WebService/001/Operation/001>;
-	dcat:theme <epos:Seismicwaveforms>;
-	dcat:contactPoint <http://orcid.org/0000-0001-7080-183X/scientificContact>;
-. 
-
-<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/ACC_WAVEFORM_CONTINUOUS/WebService/001> a epos:WebService;
-	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/ACC_WAVEFORM_CONTINUOUS/WebService/001";
-	schema:description "KOERI - The dataselect Web service provides access to time series data in miniSEED format. The data may be filtered e.g. by time, station and network parameters. The request type is HTTP-GET and HTTP-POST. Please refer to http://www.fdsn.org/webservice for a complete service description.";
-	schema:name "KOERI - Velocity and Acceleration Seismic waveforms Continuous";
-	schema:datePublished "2016-01-01T00:00:00.000Z"^^xsd:dateTime;
-	schema:dateModified "2016-01-01T00:00:00.000Z"^^xsd:dateTime;
-	schema:provider <PIC:999882500>;
-	schema:keywords "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "KOERI", "Dataselect", "FDSN-WS", "Seismic Waveform", "EIDA";
+	schema:keywords "seismology", "seismicity", "earthquake", "Velocity", "Acceleration", "waveform", "waveform modeling", "NFO", "MARMARA";
 	#hydra:entrypoint "application.wadl"^^xsd:anyURI; 
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/WAVEFORM_CONTINUOUS/WebService/001/Operation/001>;
 	dcat:theme <epos:Seismicwaveforms>;
@@ -213,12 +162,12 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/SEISMIC_STATION/WebService/001> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/SEISMIC_STATION/WebService/001";
-	schema:description "KOERI - The fdsnws-station web service returns station metadata in FDSN StationXML format (schema here) or as delimited text. The purpose of the FDSN StationXML schema is to define an XML representation of the most important and commonly used structures of SEED 2.4 metadata. Results are available at multiple levels of granularity: network, station, channel and response.";
-	schema:name "KOERI - Seismic Station Information";
+	schema:description "The fdsnws-station web service returns station metadata in FDSN StationXML format (schema here) or as delimited text. The purpose of the FDSN StationXML schema is to define an XML representation of the most important and commonly used structures of SEED 2.4 metadata. Results are available at multiple levels of granularity: network, station, channel and response.";
+	schema:name "Marmara Seismic Station Information";
 	schema:datePublished "2016-01-01T00:00:00.000Z"^^xsd:dateTime;
 	schema:dateModified "2016-01-01T00:00:00.000Z"^^xsd:dateTime;
 	schema:provider <PIC:999882500>;
-	schema:keywords "seismology", "seismicity", "earthquakes", "stations", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "KOERI";
+	schema:keywords "seismology", "seismicity", "earthquake", "station", "MARMARA";
 	#hydra:entrypoint "application.wadl"^^xsd:anyURI; 
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/SEISMIC_STATION/WebService/001/Operation/001>;
 	dcat:theme <epos:Seismicstations>;
@@ -234,18 +183,18 @@
 			hydra:variable "starttime"^^xsd:string;
 			rdfs:label "Start of the timespan";
 			rdfs:range "xsd:dateTime";
-			schema:defaultValue "2014-05-10T12:00:00";
+			schema:defaultValue "2012-01-01T00:00:00";
 			hydra:property "schema:startDate";
-      		        schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+      		schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "endtime"^^xsd:string;
 			rdfs:label "End of the timespan";
 			rdfs:range "xsd:dateTime";
-			schema:defaultValue "2014-05-10T12:00:02";
+			schema:defaultValue "2012-01-01T00:00:05";
 			hydra:property "schema:endDate";
-      		        schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+      		schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;

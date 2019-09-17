@@ -26,10 +26,9 @@
 .
 
 <epos:Magneticfield> a skos:Concept;
-    skos:definition "Geomagnetic data and models without restriction in scale or frequency";
+    skos:definition "Geomagnetic models and data";
     skos:inScheme <epos:Geoelectromagnetism>;
-    #skos:prefLabel "Geomagnetic data and models without restriction in scale or frequency";
-    skos:prefLabel "Magneticfield";
+    skos:prefLabel "Geomagnetic models and data";
 .
 
 ###############################################################################
@@ -122,7 +121,7 @@
         schema:propertyID "viaf";
         schema:value "http://viaf.org/viaf/136554353/";
     ];
-    schema:legalName "British Geological Survey";
+    schema:legalName "British Geological Survey, UK Research and Innovation";
     schema:leiCode "Legal Entity Identifier Search: http://www.lei-lookup.com/#!search" ;
     schema:address [ a schema:PostalAddress;
         schema:streetAddress "The Lyell Centre, Research Avenue South";
@@ -145,7 +144,7 @@
         schema:propertyID "viaf";
         schema:value "http://viaf.org/viaf/148537429/";
     ];
-    schema:legalName "Natural Environment Research Council";
+    schema:legalName "Natural Environment Research Council, UK Research and Innovation";
     schema:leiCode "Legal Entity Identifier Search: http://www.lei-lookup.com/#!search" ;
     schema:address [ a schema:PostalAddress;
         schema:streetAddress "Polaris House, North Star Avenue";
@@ -153,13 +152,34 @@
         schema:postalCode "SN2 1EU";
         schema:addressCountry "United Kingdom";
     ];
-    schema:url "www.nerc.ac.uk"^^xsd:anyURI;
-    schema:email "pressoffice@nerc.ac.uk";
+    schema:url "nerc.ukri.org"^^xsd:anyURI;
+    schema:email "communications@ukri.org";
     schema:contactPoint <http://orcid.org/0000-0002-7677-5158/scientificContact>;
     schema:contactPoint <http://orcid.org/0000-0002-7677-5158/legalContact>;
     schema:contactPoint <http://orcid.org/0000-0002-7677-5158/financialContact>;
     schema:contactPoint <mailto:smf@bgs.ac.uk/contactPoint>;
 .
+
+<PIC:999989200> a schema:Organization;
+    schema:identifier [ a schema:PropertyValue;
+        schema:propertyID "PIC";
+        schema:value "999989200";
+    ];
+    schema:legalName "UK Research and Innovation";
+    schema:leiCode "Legal Entity Identifier Search: http://www.lei-lookup.com/#!search" ;
+    schema:address [ a schema:PostalAddress;
+    schema:streetAddress "Polaris House, North Star Avenue";
+    schema:addressLocality "Swindon";
+    schema:postalCode "SN2 1FL";
+    schema:addressCountry "United Kingdom";
+    ]; 
+    schema:url "www.ukri.org"^^xsd:anyURI;
+    schema:email "communications@ukri.org";
+    schema:contactPoint <http://orcid.org/0000-0002-7677-5158/scientificContact>;
+    schema:contactPoint <http://orcid.org/0000-0002-7677-5158/legalContact>;
+    schema:contactPoint <http://orcid.org/0000-0002-7677-5158/financialContact>;
+    schema:contactPoint <mailto:smf@bgs.ac.uk/contactPoint>;
+. 
 
 ###############################################################################
 ### Data set ###
@@ -167,7 +187,7 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-012/IGRF/Dataset> a dcat:Dataset;
     dct:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-012/IGRF/Dataset";
-    dct:title "International Geomagnetic Reference Field (IGRF)";
+    dct:title "International Geomagnetic Reference Field (IGRF), global model";
     dct:description "The International Geomagnetic Reference Field (IGRF) is released by the International Association of Geomagnetism and Aeronomy (IAGA). It consists of a standard mathematical description of the Earth's main magnetic field that is used widely in studies of the Earth's deep interior, its crust and its ionosphere and magnetosphere. The current revision of the model is number 12, revisions are made approximately every 12 years. The coefficients for this degree and order 13 main field model were finalized by a task force of IAGA in December 2014. The IGRF is the product of a collaborative effort between magnetic field modellers and the institutes involved in collecting and disseminating magnetic field data from satellites and from observatories and surveys around the world.";
     adms:identifier [ a adms:Identifier;
         adms:schemaAgency "DDSS-ID";
@@ -181,7 +201,7 @@
     dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
     dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI ;
     dcat:theme  <epos:Magneticfield> ;
-    dcat:keyword "magnetism", "core", "world model" ;
+    dcat:keyword "compass", "compass direction", "declination", "core", "geomagnetism", "global model", "inclination", "magnetic field", "magnetic model", "magnetism", "main field", "model", "secular variation", "spherical harmonics", "sferic", "world model";
     dcat:contactPoint <mailto:smf@bgs.ac.uk/contactPoint> ;
     dcat:contactPoint <http://orcid.org/0000-0002-7677-5158/contactPoint> ;
     dct:publisher <http://viaf.org/viaf/136554353/>;
@@ -192,7 +212,7 @@
         schema:endDate "2024-12-31T00:00:00Z"^^xsd:dateTime;
     ];
     dct:spatial [ a dct:Location;
-        locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral;
+        locn:geometry "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral;
     ];
 .
 
@@ -202,8 +222,8 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-012/IGRF/Distribution> a dcat:Distribution;
     dct:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-012/IGRF/Distribution";
-    dct:title "Distribution of IGRF model";
-    dct:description "The IGRF model is distributed via web service and as software";
+    dct:title "International Geomagnetic Reference Field (IGRF), global model";
+    dct:description "The International Geomagnetic Reference Field (IGRF) is released by the International Association of Geomagnetism and Aeronomy (IAGA). It consists of a standard mathematical description of the Earth's main magnetic field that is used widely in studies of the Earth's deep interior, its crust and its ionosphere and magnetosphere. The current revision of the model is number 12, revisions are made approximately every 12 years. The coefficients for this degree and order 13 main field model were finalized by a task force of IAGA in December 2014. The IGRF is the product of a collaborative effort between magnetic field modellers and the institutes involved in collecting and disseminating magnetic field data from satellites and from observatories and surveys around the world.";
     dct:issued "2018-08-31"^^xsd:date;
     dct:modified "2018-08-31"^^xsd:date;
     dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
@@ -219,8 +239,8 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-012/IGRF/Webservice> a epos:WebService;
     schema:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-012/IGRF/Webservice";
-    schema:description "The International Geomagnetic Reference Field (IGRF) is released by the International Association of Geomagnetism and Aeronomy (IAGA). It consists of a standard mathematical description of the Earth's main magnetic field that is used widely in studies of the Earth's deep interior, its crust and its ionosphere and magnetosphere. The current revision of the model is number 12, revisions are made approximately every 12 years. The coefficients for this degree and order 13 main field model were finalized by a task force of IAGA in December 2014. The IGRF is the product of a collaborative effort between magnetic field modellers and the institutes involved in collecting and disseminating magnetic field data from satellites and from observatories and surveys around the world.";
-    schema:name "IGRF web service";
+    schema:description "Single point estimates of the geomagnetic fiels at any point on the earth's surface and at altitudes up to 10,000km and depths down to 2,900km are available from the IGRF web service. Estimates can be requested for years from 1900 to 2025. Data can be returned in XML, JSON, CSV, text and HTML formats.";
+    schema:name "Web service for the International Geomagnetic Reference Field (IGRF) global model";
     dcat:contactPoint <mailto:smf@bgs.ac.uk/contactPoint>;
     dcat:contactPoint <http://orcid.org/0000-0002-7677-5158/contactPoint>;
     schema:datePublished "2018-08-31Z"^^xsd:dateTime;
@@ -228,16 +248,24 @@
     schema:provider <http://viaf.org/viaf/136554353/>;
     hydra:entrypoint "http://www.geomag.bgs.ac.uk/web_service/GMModels/"^^xsd:anyURI ;
     dcat:theme  <epos:Magneticfield> ;
-    schema:keywords "Compass", "Compass direction", "Declination", "Earth core", "core", "Geomagnetism", "Global model", "Inclination", "Magnetic field", "Magnetic model", "Magnetism", "Main field", "Model", "Navigation", "Secular variation", "Spherical harmonic", "Sferic", "World model";
+    schema:keywords "compass", "compass direction", "declination", "core", "geomagnetism", "global model", "inclination", "magnetic field", "magnetic model", "magnetism", "main field", "model", "secular variation", "spherical harmonics", "sferic", "world model";
     hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-012/IGRF/Operation> ;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-012/IGRF/APIDocumentation> ;
     dct:spatial [ a dct:Location;
-        locn:geometry "POLYGON(180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0)"^^gsp:wktLiteral ;
+        locn:geometry "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral ;
     ];
     dct:temporal [ a dct:PeriodOfTime;
         schema:startDate "2015-01-01T00:00:00Z"^^xsd:dateTime;
         schema:endDate "2024-12-31T00:00:00Z"^^xsd:dateTime;
     ];
     dct:license "http://creativecommons.org/publicdomain/zero/1.0/"^^xsd:anyURI;
+.
+
+# web service documentation
+<https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-012/IGRF/APIDocumentation> a hydra:APIDocumentation ;
+      hydra:title "IGRF web service documentation" ;
+      hydra:description "Brief description of how to use the IGRF web service" ;
+      hydra:entrypoint "http://www.geomag.bgs.ac.uk/web_service/GMModels/help/general" ;
 .
 
 ###############################################################################
@@ -254,7 +282,7 @@
     hydra:property[ a hydra:IriTemplate;
         hydra:template "http://www.geomag.bgs.ac.uk/web_service/GMModels/igrf/12{?latitude, longitude, altitude, date, format}"^^xsd:string;
             hydra:mapping[ a hydra:IriTemplateMapping;
-                hydra:variable "latitude"^^xsd:float;
+                hydra:variable "latitude"^^xsd:string;
                 #hydra:property "epos:southernmostLatitude";
                 hydra:property "epos:northernmostLatitude";
                 rdfs:label "Latitude";
@@ -265,7 +293,7 @@
                 hydra:required "false"^^xsd:boolean;
             ];
             hydra:mapping[ a hydra:IriTemplateMapping;
-                hydra:variable "longitude"^^xsd:float;
+                hydra:variable "longitude"^^xsd:string;
                 #hydra:property "epos:westernmostLongitude";
                 hydra:property "epos:easternmostLongitude";
                 rdfs:label "Longitude";
@@ -276,7 +304,7 @@
                 hydra:required "false"^^xsd:boolean;
             ];
             hydra:mapping[ a hydra:IriTemplateMapping;
-                hydra:variable "altitude"^^xsd:float;
+                hydra:variable "altitude"^^xsd:string;
                 rdfs:label "Altitude (km)";
                 rdfs:range "xsd:string" ;
                 schema:defaultValue "0";
@@ -297,6 +325,7 @@
             ];
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "format"^^xsd:string;
+				hydra:property "schema:encodingFormat";
                 rdfs:label "Type of output (XML, JSON, CSV, TXT or HTML)";
                 rdfs:range "xsd:string" ;
                 schema:defaultValue "xml";

@@ -83,12 +83,14 @@
 
 	<epos:Geology> a skos:ConceptScheme;
 		dct:title "Geology";
-		dct:description "It contains the concepts of Geology";
+		dct:description "It contains the concepts pertaining to Geological Information and Modelling";
 . 
 
-	<epos:GeologicalData> a skos:Concept;
+	<epos:Mine> a skos:Concept;
 		skos:inScheme <epos:Geology>;
-		skos:prefLabel "Geological Data";
+		skos:prefLabel "mine";
+		skos:definition "-- Definition -- An excavation carried out for the extraction of mineral deposits.  -- Description -- ‘True’ mines are underground workings and open-pit workings (also called open-sky mines) generally for the extraction of metallic commodities. The Mine feature also includes open workings generally for the extraction of industrial minerals, commonly referred to as quarries. (INSPIRE)";
+		skos:exactMatch <http://inspire.ec.europa.eu/featureconcept/Mine>;
 . 
 
 
@@ -105,9 +107,9 @@
 		dct:modified "2018-09-07"^^xsd:date;
 		dct:issued "2017-10-27"^^xsd:date;
 	dct:spatial [ a dct:Location; 
-		locn:geometry "POLYGON((-180 90,180 90,180 -90,-180 90,-180 90))"^^gsp:wktLiteral; 
+		locn:geometry "POLYGON((-180 -90,-180 90,180 90,180 -90,-180 -90))"^^gsp:wktLiteral;
 	]; 
-		dcat:theme <epos:GeologicalData>;
+		dcat:theme <epos:Mine>;
 		dcat:keyword "mine","geology";
 		dcat:contactPoint <mailto:contact-brgm@brgm.fr/manager>;
 		dcat:distribution <https://data.geoscience.earth/id/dataset/mine/distributionWfs>;
@@ -136,14 +138,14 @@
 		#schema:value  "WP15-DDSS-010a";
 	#]; 
 	schema:description "Based on Minerals4EU dataset, this service allows to explore and discover available mine in a given area.";
-	dcat:theme <epos:GeologicalData>;
+	dcat:theme <epos:Mine>;
 	schema:name "Mine discovery service";
 	hydra:entrypoint "https://data.geoscience.earth/api/wfsMine"^^xsd:anyURI;
 	schema:provider <PIC:999993662>;
 	schema:datePublished "2016-10-27Z"^^xsd:date;
 	schema:dateModified "2018-01-19Z"^^xsd:date;
 	dct:spatial [ a dct:Location; 
-		locn:geometry "POLYGON((-180 90,180 90,180 -90,-180 -90,-180 90))"^^gsp:wktLiteral; 
+		locn:geometry "POLYGON((-180 -90,-180 90,180 90,180 -90,-180 -90))"^^gsp:wktLiteral;
 	]; 
 	hydra:supportedOperation <https://data.geoscience.earth/api/wfsMine/operation>;
 	schema:keywords "mine", "geology";

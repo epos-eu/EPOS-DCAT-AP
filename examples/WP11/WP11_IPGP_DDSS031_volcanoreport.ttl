@@ -166,9 +166,9 @@
 # Dataset 
 #######
 
-<WP11/volcanic-activity/DDSS031> a dcat:Dataset;
+<https://www.epos-eu.org/epos-dcat-ap/volcano-observations/Dataset/DDSS0031/Dataset/report/IPGP> a dcat:Dataset;
 	dct:title "Reports on volcanic activity";
-	dct:identifier "WP11/volcanic-activity/DDSS031";
+	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/volcano-observations/Dataset/DDSS0031/Dataset/report/IPGP";
 	adms:identifier [ a adms:Identifier;
 		adms:schemaAgency "DDSS-ID";
 		skos:notation "WP11-DDSS-031";
@@ -185,9 +185,9 @@
 		locn:geometry "POLYGON((54.5 -21.5 , 56.5 -21.5 , 56.5 -20.5 , 54.5 -20.5 , 54.5 -21.5))"^^gsp:wktLiteral;
 	];
 	dcat:theme <epos:volcanic-activity>;
-	dcat:keyword "volcanology", "geohazards","periodic reports", "exceptional reports", "volcanic eruptions", "VONA", "civil aviation", "VAAC - Volcanic Ash Advisories Centers", "WMO - World Meteorolgical Organization";
+	dcat:keyword "volcanology", "geohazards","report", "volcanic activity", "eruption", "VONA", "civil aviation", "aviation color code" , "VAAC - Volcanic Ash Advisories Centers", "WMO - World Meteorolgical Organization";
 	dct:publisher <PIC:999597417>;
-	dcat:distribution <WP11/volcanic-activity/DDSS031/distribution/report>;
+	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/volcano-observations/Dataset/DDSS0031/Distribution/report/IPGP>;
 	#dcat:distribution <http://ws.ipgp.fr/volcano-reports/>;
 	owl:versionInfo "0";
 	dcat:contactPoint <https://orcid.org/0000-0002-4234-3787/contactPoint>;
@@ -197,15 +197,15 @@
 # distribution
 #######
 
-<WP11/volcanic-activity/DDSS031/distribution/report> a dcat:Distribution;
-	dct:identifier "WP11/volcanic-activity/DDSS031/distribution/report";
+<https://www.epos-eu.org/epos-dcat-ap/volcano-observations/Dataset/DDSS0031/Distribution/report/IPGP> a dcat:Distribution;
+	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/volcano-observations/Dataset/DDSS0031/Distribution/report/IPGP";
 	dct:title "Reports on volcanic activity";
         dct:description "The service provides access to periodic and exceptional reports produced by the French volcano Observatories.  It also give access to the Volcano Observatory Notice for Aviation";
 	dct:issued "2019-01-01"^^xsd:date;
 	dct:modified "2019-01-01"^^xsd:date;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-	dct:conformsTo <http://ws.ipgp.fr/volcano-reports/report/ws>;
-	dcat:accessURL <http://ws.ipgp.fr/volcano-reports/report/operation>;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/volcano-observations/WebService/DDSS0031/report/IPGP>;
+	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/volcano-observations/WebService/DDSS0031/Operation/report/IPGP>;
 	dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 	dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI;
 .
@@ -214,8 +214,8 @@
 # Webservice volcano reports
 #######
 
-<http://ws.ipgp.fr/volcano-reports/report/ws> a epos:WebService;
-	schema:identifier "http://ws.ipgp.fr/volcano-reports/report/ws";
+<https://www.epos-eu.org/epos-dcat-ap/volcano-observations/WebService/DDSS0031/report/IPGP> a epos:WebService;
+	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/volcano-observations/WebService/DDSS0031/report/IPGP";
         schema:description "This web service provides access to reports dessiminated by the French volcanoes Observatories. It also provides the activity and the aviation color code according to standards of the Volcanic Ash Advisory Centers of the World Meteorological Organisation and to emergency plans (plan ORSEC) of authorities";
 	dcat:theme <epos:volcanic-activity>;
         schema:name "Volcano reports and activity color code of the French volcanoes";
@@ -228,8 +228,8 @@
 		locn:geometry "POLYGON((-64 11,-58 11,-58 18,-64 18,-64 11))"^^gsp:wktLiteral;
 		locn:geometry "POLYGON((54.5 -21.5 , 56.5 -21.5 , 56.5 -20.5 , 54.5 -20.5 , 54.5 -21.5))"^^gsp:wktLiteral;
 	];
-	hydra:supportedOperation <http://ws.ipgp.fr/volcano-reports/report/operation>;
-	schema:keywords "Volcanic activity"," IPGP","periodic reports","exceptional reports","eruption" , "VONA" , "VAAC";
+	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/volcano-observations/WebService/DDSS0031/Operation/report/IPGP>;
+	schema:keywords "volcanic activity"," IPGP","report","eruption" , "VONA" , "VAAC";
 	dct:license "http://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI;
 	dct:temporal [ a dct:PeriodOfTime;
 		schema:startDate "1999-01-01T00:00:00Z"^^xsd:dateTime;
@@ -241,7 +241,7 @@
 # Operation
 ######### 
 
-<http://ws.ipgp.fr/volcano-reports/report/operation> a hydra:Operation;
+<https://www.epos-eu.org/epos-dcat-ap/volcano-observations/WebService/DDSS0031/Operation/report/IPGP> a hydra:Operation;
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;

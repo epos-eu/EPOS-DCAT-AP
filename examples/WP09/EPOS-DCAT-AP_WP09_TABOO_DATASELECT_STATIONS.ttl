@@ -145,13 +145,17 @@
 	schema:contactPoint <http://orcid.org/0000-0002-8651-6387/financialContact>;
 .
 
-<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/VEL_WAVEFORM_CONTINUOUS/Dataset/001> a dcat:Dataset;
-	dct:title "TABOO Velocity Waveform Continuous Dataset";
-	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/VEL_WAVEFORM_CONTINUOUS/Dataset/001";
-	dct:description "Velocity Waveform Continuous Dataset.";
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/WAVEFORM_CONTINUOUS/Dataset/001> a dcat:Dataset;
+	dct:title "TABOO Velocity and Acceleration Waveform Continuous Dataset";
+	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/WAVEFORM_CONTINUOUS/Dataset/001";
+	dct:description "Velocity and Acceleration Waveform Continuous Dataset.";
 	adms:identifier [ a adms:Identifier; 
 		adms:schemaAgency "DDSS-ID";
 		skos:notation "WP09-DDSS-001"; 
+	];
+	adms:identifier [ a adms:Identifier; 
+		adms:schemaAgency "DDSS-ID";
+		skos:notation "WP09-DDSS-002"; 
 	];
 	## example of frequency using a controlled vocabulary
 	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
@@ -169,40 +173,10 @@
                 #schema:endDate "YYYY-MM-DDThh:mm:ss"^^xsd:dateTime ;
         ];
 	dcat:theme  <epos:Seismicwaveforms> ;
-	dcat:keyword "seismology", "seismicity", "earthquake", "Velocity", "waveform", "waveform modeling", "NFO", "TABOO";
+	dcat:keyword "seismology", "seismicity", "earthquake", "Velocity", "Acceleration", "waveform", "waveform modeling", "NFO", "TABOO";
 	dcat:contactPoint <http://orcid.org/0000-0003-3489-7453/scientificContact>;
 	dct:publisher <PIC:999472675>;
-	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/VEL_WAVEFORM_CONTINUOUS/Distribution/001>;
-.
-
-<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/ACC_WAVEFORM_CONTINUOUS/Dataset/001> a dcat:Dataset;
-	dct:title "TABOO Acceleration Waveform Continuous Dataset";
-	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/ACC_WAVEFORM_CONTINUOUS/Dataset/001";
-	dct:description "Acceleration Waveform Continuous Dataset.";
-	adms:identifier [ a adms:Identifier; 
-		adms:schemaAgency "DDSS-ID";
-		skos:notation "WP09-DDSS-002"; 
-	];
-	## example of frequency using a controlled vocabulary
-	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
-	dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
-	dct:created "2010-04-01T00:00:00Z"^^xsd:dateTime;
-	dct:issued "2010-04-01T00:00:00Z"^^xsd:dateTime;
-	dct:modified "2010-04-01T00:00:00Z"^^xsd:dateTime;
-	owl:versionInfo "1.0.0";
-	dct:spatial [ a dct:Location ;
-		locn:geometry "POLYGON((11.78 43.95, 13.61 43.95, 13.61 42.8, 11.78 42.8, 11.78 43.95))"^^gsp:wktLiteral ;
-	];
-	# This property refers to a temporal period that the Dataset covers.
-	dct:temporal [ a dct:PeriodOfTime ;
-		schema:startDate "2010-04-01T00:00:00"^^xsd:dateTime ;
-		#schema:endDate "YYYY-MM-DDThh:mm:ss"^^xsd:dateTime ;
-	];
-	dcat:theme  <epos:Seismicwaveforms> ;
-	dcat:keyword "seismology", "seismicity", "earthquake", "Acceleration", "waveform", "waveform modeling", "NFO", "TABOO";
-	dcat:contactPoint <http://orcid.org/0000-0003-3489-7453/scientificContact>;
-	dct:publisher <PIC:999472675>;
-	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/ACC_WAVEFORM_CONTINUOUS/Distribution/001>;
+	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/WAVEFORM_CONTINUOUS/Distribution/001>;
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/SEISMIC_STATION/Dataset/001> a dcat:Dataset;
@@ -235,41 +209,32 @@
 	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/SEISMIC_STATION/Distribution/001>;
 .
 
-<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/VEL_WAVEFORM_CONTINUOUS/Distribution/001> a dcat:Distribution;
-    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/VEL_WAVEFORM_CONTINUOUS/Distribution/001";
-    dct:title "TABOO Velocity Waveform";
-	dct:description "This distribution provides access to Velocity Waveform Continuous data through FDSN Dataselect web service. It is encoded in mseed format. Its related dataset covers the time period since 2010 and is limited to the Alta Val Tiberina (Central Italy) Near Fault Observatory Area.";
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/WAVEFORM_CONTINUOUS/Distribution/001> a dcat:Distribution;
+    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/WAVEFORM_CONTINUOUS/Distribution/001";
+    dct:title "TABOO Velocity and Acceleration Waveform";
+	dct:description "This distribution provides access to Velocity and Acceleration Waveform Continuous data through FDSN Dataselect web service. It is encoded in mseed format. Its related dataset covers the time period since 2010 and is limited to the Alta Val Tiberina (Central Italy) Near Fault Observatory Area.";
 	dct:created "2010-04-01"^^xsd:date;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/WAVEFORM_CONTINUOUS/WebService/001/Operation/001>;
-	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/VEL_WAVEFORM_CONTINUOUS/WebService/001>;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/WAVEFORM_CONTINUOUS/WebService/001>;
 	dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI;
-.
-
-<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/ACC_WAVEFORM_CONTINUOUS/Distribution/001> a dcat:Distribution;
-    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/ACC_WAVEFORM_CONTINUOUS/Distribution/001";
-	dct:title "TABOO Acceleration Waveform";
-	dct:description "This distribution provides access to Acceleration Waveform Continuous data through FDSN Dataselect web service. It is encoded in mseed format. Its related dataset covers the time period since 2010 and is limited to the Alta Val Tiberina (Central Italy) Near Fault Observatory Area.";
-	dct:created "2010-04-01"^^xsd:date;
-	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/WAVEFORM_CONTINUOUS/WebService/001/Operation/001>;
-	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/ACC_WAVEFORM_CONTINUOUS/WebService/001>;
-	dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI ;
+	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/SEISMIC_STATION/Distribution/001> a dcat:Distribution;
     dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/SEISMIC_STATION/Distribution/001";
-    dct:title "TABOO Seismic Station Information";
+    dct:title "TABOO Stations";
 	dct:description "This distribution provides access to Seismic Station Information through FDSN Station web service. It is encoded in xml or text format. Its related dataset covers the time period since 2010 and is limited to the Alta Val Tiberina (Central Italy) Near Fault Observatory Area.";
 	dct:created "2010-04-01"^^xsd:date;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/SEISMIC_STATION/WebService/001/Operation/001>;
 	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/SEISMIC_STATION/WebService/001>;
 	dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
+	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 .
 
-<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/VEL_WAVEFORM_CONTINUOUS/WebService/001> a epos:WebService;
-	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/VEL_WAVEFORM_CONTINUOUS/WebService/001";
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/WAVEFORM_CONTINUOUS/WebService/001> a epos:WebService;
+	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/WAVEFORM_CONTINUOUS/WebService/001";
 	schema:description "This web service provides access to seismic waveforms continuous data. It is implemented according to the standard 1.0 for seismic data web services set by the Federation of Digital Seismograph Networks (FDSN).";
 	schema:name "TABOO velocity and acceleration seismic waveforms catalog";
 	schema:datePublished "2016-01-01T00:00:00.000Z"^^xsd:dateTime;
@@ -288,28 +253,15 @@
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/WAVEFORM_CONTINUOUS/WebService/001/Operation/001>;
 	dcat:theme <epos:Seismicwaveforms>;
 	dcat:contactPoint <http://orcid.org/0000-0003-3489-7453/scientificContact>;
-. 
+	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/WAVEFORM_CONTINUOUS/WebService/001/APIDocumentation>;
+.
 
-<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/ACC_WAVEFORM_CONTINUOUS/WebService/001> a epos:WebService;
-	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/ACC_WAVEFORM_CONTINUOUS/WebService/001";
-	schema:description "This web service provides access to seismic waveforms continuous data. It is implemented according to the standard 1.0 for seismic data web services set by the Federation of Digital Seismograph Networks (FDSN).";
-	schema:name "TABOO Velocity and Acceleration Seismic waveforms Continuous";
-	schema:datePublished "2016-01-01T00:00:00.000Z"^^xsd:dateTime;
-	schema:dateModified "2016-01-01T00:00:00.000Z"^^xsd:dateTime;
-	dct:spatial [ a dct:Location ;
-		locn:geometry "POLYGON((11.78 43.95, 13.61 43.95, 13.61 42.8, 11.78 42.8, 11.78 43.95))"^^gsp:wktLiteral ;
-	];
-	# This property refers to a temporal period that the Dataset covers.
-    dct:temporal [ a dct:PeriodOfTime ;
-        schema:startDate "2010-04-01T00:00:00"^^xsd:dateTime ;
-        #schema:endDate "YYYY-MM-DDThh:mm:ss"^^xsd:dateTime ;
-    ];
-	schema:provider <PIC:999472675>;
-	schema:keywords "seismology", "seismicity", "earthquake", "waveform", "waveform modeling", "TABOO";
-	#hydra:entrypoint "application.wadl"^^xsd:anyURI; 
-	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/WAVEFORM_CONTINUOUS/WebService/001/Operation/001>;
-	dcat:theme <epos:Seismicwaveforms>;
-	dcat:contactPoint <http://orcid.org/0000-0003-3489-7453/scientificContact>;
+# Documentation
+<https://www.epos-eu.org/epos-dcat-ap/TABOO/WAVEFORM_CONTINUOUS/WebService/001/APIDocumentation> a hydra:APIDocumentation ;
+      	hydra:title "API Documentation" ;
+      	hydra:description "Waveform data can be downloaded using GET request by contacting the webservice address with specific request options inside the URL query" ;
+      	hydra:entrypoint "https://www.orfeus-eu.org/data/eida/webservices/dataselect/" ;
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/SEISMIC_STATION/WebService/001> a epos:WebService;
@@ -331,6 +283,15 @@
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/SEISMIC_STATION/WebService/001/Operation/001>;
 	dcat:theme <epos:Seismicstations>;
 	dcat:contactPoint <http://orcid.org/0000-0003-3489-7453/scientificContact>;
+	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/SEISMIC_STATION/WebService/001/APIDocumentation>;
+.
+
+# Documentation
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/SEISMIC_STATION/WebService/001/APIDocumentation> a hydra:APIDocumentation ;
+      	hydra:title "API documentation" ;
+      	hydra:description "The FSDNWS-Station provides access to station metadata and instrument specifics in FDSN StationXML format. Metadata can be selected on SEED network, station, location or channel identifiers in addition to spatiotemporal constraints. Metadata can be extracted at multiple levels of detail. " ;
+      	hydra:entrypoint "https://www.orfeus-eu.org/data/eida/webservices/station/" ;
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/WAVEFORM_CONTINUOUS/WebService/001/Operation/001> a hydra:Operation;
@@ -456,6 +417,7 @@
 			hydra:variable "channel"^^xsd:string;
 			rdfs:label "Channel code";
 			rdfs:range "xsd:string" ;
+			# schema:defaultValue "HHZ";
 			hydra:required "false"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
