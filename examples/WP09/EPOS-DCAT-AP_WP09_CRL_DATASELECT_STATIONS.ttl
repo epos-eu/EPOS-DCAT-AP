@@ -379,11 +379,11 @@
 # FDSN - Dataselect - RESIF
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/WebService/001/RESIF> a epos:WebService ;
-	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/dataselect/WebService/001/RESIF";
-	schema:description "FDSN Standard webservice at RESIF to download waveform data";
+	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/WebService/001/RESIF";
+	schema:description "Corinth Rift Laboratory (Greece) - This FDSN webservice at RESIF provides access to seismic waveforms continuous data";
 	dcat:theme <epos:SeismicWaveforms>;
 	dcat:contactPoint <https://orcid.org/0000-0002-9956-9971/contactPoint>;
-	schema:name "FDSN Dataselect-WS - Resif data center (RESIF)";
+	schema:name "Corinth Rift Laboratory - FDSN Dataselect Web Service (RESIF)";
 	hydra:entrypoint "http://ws.resif.fr/fdsnws/dataselect/1/query?"^^xsd:anyURI; 
 	schema:provider <PIC:999997930>;
 	schema:datePublished "2013-01-01Z"^^xsd:dateTime;
@@ -392,22 +392,23 @@
 		locn:geometry "POLYGON((22.5 38.0, 21.35 38.0, 21.35 38.65, 22.5 38.65, 22.5 38.0))"^^gsp:wktLiteral; 
 	]; 
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/WebService/001/Operation/001/RESIF>;
-	schema:keywords "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "waveform modeling", "RESIF", "Dataselect", "FDSN-WS", "seismic waveform", "EIDA", "CRL", "Corinth Rift Laboratory", "Near Fault Observatories", "Strainmeter", "tide gauge", "water level", "Atmospheric pressure";
+	schema:keywords "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "waveform modeling", "RESIF", "seismic waveform", "CRL", "Corinth Rift Laboratory", "Near Fault Observatories";
 	dct:license "To be defined!"^^xsd:anyURI;
 	dct:temporal [ a dct:PeriodOfTime; 
 		schema:startDate "2000-01-01T00:00:00Z"^^xsd:dateTime; 
 		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
 	]; 
+        dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/WebService/001/APIDocumentation>;
 . 
 
 # FDSN - Dataselect - NOA
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/WebService/001/NOA> a epos:WebService;
         schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/WebService/001/NOA";
-        schema:description "FDSN Standard Webservice at NOA to download waveform data";
+        schema:description "Corinth Rift Laboratory (Greece) - This FDSN webservice at RESIF provides access to seismic waveforms continuous data.";
         dcat:theme <epos:SeismicWaveforms>;
         dcat:contactPoint <http://orcid.org/0000-0002-4011-0971/contactPoint>;
-        schema:name "FDSNWS Dataselect - National Observatory of Athens (NOA)";
+        schema:name "Corinth Rift Laboratory - FDSN Dataselect Web Service (National Observatory of Athens (NOA))";
         hydra:entrypoint "http://eida.gein.noa.gr/fdsnws/dataselect/1/query?"^^xsd:anyURI;
         schema:provider <PIC:999653677>;
         schema:datePublished "2016-01-01Z"^^xsd:dateTime;
@@ -416,12 +417,26 @@
                 locn:geometry "POLYGON((22.5 38.0, 21.35 38.0, 21.35 38.65, 22.5 38.65, 22.5 38.0))"^^gsp:wktLiteral;      
         ];
         hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/WebService/001/Operation/001/NOA>;
-        schema:keywords "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "waveform modeling", "NOA", "Dataselect", "FDSN-WS", "Seismic Waveform", "EIDA", "CRL", "Corinth Rift Laboratory", "Near Fault Observatories";
+        schema:keywords "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "waveform modeling", "NOA", "Seismic Waveform", "EIDA", "CRL", "Corinth Rift Laboratory", "Near Fault Observatories";
         dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
         dct:temporal [ a dct:PeriodOfTime;
                 schema:startDate "1997-10-14T00:00:00Z"^^xsd:dateTime;
                 #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
         ];
+        dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/WebService/001/APIDocumentation>;
+.
+
+# Documentation
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/WebService/001/APIDocumentation> a hydra:APIDocumentation ;
+      	hydra:title "API Documentation" ;
+      	hydra:description "Waveform data can be downloaded using GET request by contacting the webservice address with specific request options inside the URL query" ;
+      	hydra:entrypoint "https://www.orfeus-eu.org/data/eida/webservices/dataselect/" ;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/WebService/002/APIDocumentation> a hydra:APIDocumentation ;
+      	hydra:title "API documentation" ;
+      	hydra:description "The FSDNWS-Station provides access to station metadata and instrument specifics in FDSN StationXML format. Metadata can be selected on SEED network, station, location or channel identifiers in addition to spatiotemporal constraints. Metadata can be extracted at multiple levels of detail. " ;
+      	hydra:entrypoint "https://www.orfeus-eu.org/data/eida/webservices/station/" ;
 .
 
 
@@ -429,10 +444,10 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/WebService/002/RESIF> a epos:WebService ;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/WebService/002/RESIF";
-	schema:description "FDSN Standard webservice at RESIF to download seismic metadata";
+	schema:description "Corinth Rift Laboratory (Greece) - This FDSN webservice at RESIF provides access to seismic station metadata.";
 	dcat:theme <epos:SeismicStations>;
 	dcat:contactPoint <https://orcid.org/0000-0002-9956-9971/contactPoint>;
-	schema:name "FDSN Station-WS - Resif data center (RESIF)";
+	schema:name "Corinth Rift Laboratory - FDSN Station Web Service (RESIF)";
 	hydra:entrypoint "http://ws.resif.fr/fdsnws/station/1/query?"^^xsd:anyURI; 
 	schema:provider <PIC:999997930>;
 	schema:datePublished "2013-01-01Z"^^xsd:dateTime;
@@ -441,22 +456,23 @@
                 locn:geometry "POLYGON((22.5 38.0, 21.35 38.0, 21.35 38.65, 22.5 38.65, 22.5 38.0))"^^gsp:wktLiteral;      
 	]; 
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/WebService/002/Operation/002/RESIF>;
-	schema:keywords "seismology", "seismicity", "earthquakes", "metadata","seismic hazard", "earth structure", "RESIF", "stationXML modeling", "CRL", "Corinth Rift Laboratory", "Near Fault Observatories", "Strainmeter", "tide gauge", "water level", "Atmospheric pressure";
+	schema:keywords "seismology", "seismicity", "earthquakes", "metadata", "seismic station", "RESIF", "stationXML modeling", "CRL", "Corinth Rift Laboratory", "EIDA", "Near Fault Observatories";
 	dct:license "To be defined!"^^xsd:anyURI;
 	dct:temporal [ a dct:PeriodOfTime; 
 		schema:startDate "2000-01-01T00:00:00Z"^^xsd:dateTime; 
 		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
 	]; 
+        dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/WebService/002/APIDocumentation>;
 . 
 
 # FDSN - Station - NOA
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/WebService/002/NOA> a epos:WebService;
         schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/WebService/002/NOA";
-        schema:description "FDSN Standard Webservice at NOA to download seismic metadata";
+        schema:description "Corinth Rift Laboratory (Greece) - This FDSN webservice at NOA provides access to seismic station metadata.";
         dcat:theme <epos:SeismicStations>;
         dcat:contactPoint <http://orcid.org/0000-0002-4011-0971/contactPoint>;
-        schema:name "FDSNWS Station - National Observatory of Athens (NOA)";
+        schema:name "Corinth Rift Laboratory - FDSN Station Web Service (National Observatory of Athens (NOA))";
         hydra:entrypoint "http://eida.gein.noa.gr/fdsnws/station/1/query?"^^xsd:anyURI;
         schema:provider <PIC:999653677>;
         schema:datePublished "2016-01-01Z"^^xsd:dateTime;
@@ -465,7 +481,7 @@
                 locn:geometry "POLYGON((22.5 38.0, 21.35 38.0, 21.35 38.65, 22.5 38.65, 22.5 38.0))"^^gsp:wktLiteral;      
         ];
         hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/WebService/002/Operation/002/NOA>;
-        schema:keywords "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "waveform modeling", "NOA", "Station", "FDSN-WS", "Seismic Waveform", "EIDA", "CRL", "Corinth Rift Laboratory", "Near Fault Observatories";
+	schema:keywords "seismology", "seismicity", "earthquakes", "metadata", "seismic station", "NOA", "EIDA", "stationXML modeling", "CRL", "Corinth Rift Laboratory", "Near Fault Observatories";
         dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
         dct:temporal [ a dct:PeriodOfTime;
                 schema:startDate "1997-10-14T00:00:00Z"^^xsd:dateTime;
@@ -491,7 +507,7 @@
 				        rdfs:range "xsd:dateTime";
 				        rdfs:label "Start of the timespan";
 				        hydra:required "true"^^xsd:boolean;
-				        schema:defaultValue "2018-01-01T00:00:00"
+				        schema:defaultValue "2016-01-01T00:00:00"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "endtime"^^xsd:string;
@@ -500,7 +516,7 @@
 					rdfs:range "xsd:dateTime";
 					rdfs:label "End of the timespan";
 					hydra:required "true"^^xsd:boolean;
-					schema:defaultValue "2018-01-01T00:01:00"
+					schema:defaultValue "2016-01-01T00:01:00"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "network"^^xsd:string;
@@ -513,19 +529,20 @@
 					hydra:variable "station"^^xsd:string;
 					rdfs:range "xsd:string";
 					rdfs:label "Station code";
+					schema:defaultValue "AIOA";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "location"^^xsd:string;
-					rdfs:range "xsd:string";
+					rdfs:range "xsd:integer";
 					rdfs:label "Location code";
-					hydra:required "true"^^xsd:boolean;
+					hydra:required "false"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "channel"^^xsd:string;
 					rdfs:range "xsd:string";
 					rdfs:label "Channel code";
-					hydra:required "true"^^xsd:boolean;
+					hydra:required "false"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "quality"^^xsd:string;
@@ -536,13 +553,13 @@
 					http:paramValue "Q";
 					http:paramValue "R";
 					http:paramValue "D";
-					hydra:required "true"^^xsd:boolean;
+					hydra:required "false"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "minimumlength"^^xsd:string;
 					rdfs:range "xsd:integer";
 					rdfs:label "Minimum Length";
-					hydra:required "true"^^xsd:boolean;
+					hydra:required "false"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "nodata"^^xsd:string;
@@ -550,7 +567,7 @@
 					rdfs:label "HTTP error code if no data is found";
 					http:paramValue "204";
 					http:paramValue "404";
-					hydra:required "true"^^xsd:boolean;
+					hydra:required "false"^^xsd:boolean;
 				];
 		];
 .
@@ -595,16 +612,16 @@
                                 ];
                                 hydra:mapping[ a hydra:IriTemplateMapping;
                                         hydra:variable "location"^^xsd:string;
-                                        rdfs:range "xsd:string";
+                                        rdfs:range "xsd:integer";
                                         rdfs:label "Location code";
-                                        hydra:required "true"^^xsd:boolean;
+                                        hydra:required "false"^^xsd:boolean;
                                         
                                 ];
                                 hydra:mapping[ a hydra:IriTemplateMapping;
                                         hydra:variable "channel"^^xsd:string;
                                         rdfs:range "xsd:string";
                                         rdfs:label "Channel code";
-                                        hydra:required "true"^^xsd:boolean;
+                                        hydra:required "false"^^xsd:boolean;
                                        
                                 ];
                                 hydra:mapping[ a hydra:IriTemplateMapping;
@@ -613,13 +630,13 @@
                                         rdfs:label "Quality";
                                         http:paramValue "B";
                                         http:paramValue "M";
-                                        hydra:required "true"^^xsd:boolean;
+                                        hydra:required "false"^^xsd:boolean;
                                 ];
                                 hydra:mapping[ a hydra:IriTemplateMapping;
                                         hydra:variable "minimumlength"^^xsd:string;
                                         rdfs:range "xsd:integer";
                                         rdfs:label "Minimum Length";
-                                        hydra:required "true"^^xsd:boolean;
+                                        hydra:required "false"^^xsd:boolean;
                                 ];
                                 hydra:mapping[ a hydra:IriTemplateMapping;
                                         hydra:variable "nodata"^^xsd:string;
@@ -627,7 +644,7 @@
                                         rdfs:label "HTTP error code if no data is found";
                                         http:paramValue "204";
                                         http:paramValue "404";
-                                        hydra:required "true"^^xsd:boolean;
+                                        hydra:required "false"^^xsd:boolean;
                                 ];
                 ];
 .
@@ -645,7 +662,7 @@
                                         schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 					rdfs:range "xsd:dateTime";
 					rdfs:label "Start of the timespan";
-					hydra:required "true"^^xsd:boolean;
+					hydra:required "false"^^xsd:boolean;
 					schema:defaultValue "2010-01-01T00:00:00"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
@@ -654,32 +671,33 @@
                                         schema:valuePattern "YYYY-MM-DDThh:mm:ss";
 					rdfs:range "xsd:dateTime";
 					rdfs:label "End of the timespan";
-					hydra:required "true"^^xsd:boolean;
+					hydra:required "false"^^xsd:boolean;
 					schema:defaultValue "2019-03-31T01:00:00"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "network"^^xsd:string;
 					rdfs:range "xsd:string";
 					rdfs:label "Network code";
+					schema:defaultValue "CL";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "station"^^xsd:string;
 					rdfs:range "xsd:string";
 					rdfs:label "Station code";
-					hydra:required "true"^^xsd:boolean;
+					hydra:required "false"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "location"^^xsd:string;
 					rdfs:range "xsd:string";
 					rdfs:label "Location code";
-					hydra:required "true"^^xsd:boolean;
+					hydra:required "false"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "channel"^^xsd:string;
 					rdfs:range "xsd:string";
 					rdfs:label "Channel code";
-					hydra:required "true"^^xsd:boolean;
+					hydra:required "false"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "minlatitude"^^xsd:string;
@@ -730,6 +748,7 @@
 					http:paramValue "channel";
 					http:paramValue "response";
 					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "station"
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "nodata"^^xsd:string;
@@ -737,7 +756,7 @@
 					rdfs:label "HTTP error code if no data is found";
 					http:paramValue "204";
 					http:paramValue "404";
-					hydra:required "true"^^xsd:boolean;
+					hydra:required "false"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "matchtimeseries"^^xsd:string;
@@ -745,7 +764,7 @@
 					rdfs:label "Matchtimeseries";
 					http:paramValue "true";
 					http:paramValue "false";
-					hydra:required "true"^^xsd:boolean;
+					hydra:required "false"^^xsd:boolean;
 				];
 		];
 . 
@@ -870,9 +889,9 @@
 # Dataset - dataselect - RESIF
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/Dataset/001/RESIF> a dcat:Dataset;
-        dct:title "Primary Seismic Waveform Data";
+        dct:title "CRL Velocity and Acceleration Waveform Continuous Dataset - RESIF";
         dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/Dataset/001/RESIF";
-        dct:description "Continuous seismic and non-seismic waveforms";
+        dct:description "Velocity and Acceleration Waveform Continuous Dataset";
         adms:identifier [ a adms:Identifier ;
         	adms:schemaAgency "DDSS-ID" ;
         	skos:notation "WP09-DDSS-001" ;
@@ -881,20 +900,16 @@
         	adms:schemaAgency "DDSS-ID" ;
         	skos:notation "WP09-DDSS-002" ;
         ];
-	adms:identifier [ a adms:Identifier ;
-        	adms:schemaAgency "DDSS-ID" ;
-        	skos:notation "WP09-DDSS-035" ;
-        ];
         dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         owl:versionInfo "1.0.0" ;
-    	  dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+    	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
         dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
         dcat:theme  <epos:SeismicWaveforms> ;
-        dcat:keyword "seismology", "seismicity", "earthquakes", "seismic waveform", "seismic hazard", "acceleration", "earth structure", "waveform modeling", "RESIF" , "Dataselect", "FDSN-WS", "Seismic Waveform", "EIDA", "CRL", "Corinth Rift Laboratory", "Near Fault Observatories", "Strainmeter", "tide gauge", "water level", "Atmospheric pressure" ;
+        dcat:keyword "seismology", "seismicity", "earthquakes", "Seismic Waveform", "seismic hazard", "velocity", "acceleration", "earth structure", "waveform modeling", "RESIF" , "CRL", "Corinth Rift Laboratory", "Near Fault Observatories" ;
         dcat:contactPoint <ResearcherID:B-4828-2015/scientificContact>;
-	     dct:publisher <PIC:999997930>;
+	dct:publisher <PIC:999997930>;
         dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/Dataset/001/Distribution/001/RESIF>;
         dct:spatial [ a dct:Location ;
 		locn:geometry "POLYGON((22.5 38.0, 21.35 38.0, 21.35 38.65, 22.5 38.65, 22.5 38.0))"^^gsp:wktLiteral; 
@@ -908,9 +923,9 @@
 # Dataset - dataselect - NOA
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/Dataset/001/NOA> a dcat:Dataset;
-        dct:title "Primary Seismic Waveform Data";
+        dct:title "CRL - Velocity and Acceleration Waveform Continuous Dataset - NOA";
         dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/Dataset/001/NOA";
-        dct:description "Continuous seismic waveforms";
+        dct:description "Velocity and Acceleration Waveform Continuous Dataset";
         adms:identifier [ a adms:Identifier ;
         	adms:schemaAgency "DDSS-ID" ;
         	skos:notation "WP09-DDSS-001" ;
@@ -923,11 +938,10 @@
         dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
         owl:versionInfo "1.0.0" ;
-
         dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
         dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
         dcat:theme  <epos:SeismicWaveforms> ;
-        dcat:keyword "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "waveform modeling", "NOA", "Dataselect", "FDSN-WS", "seismic waveform", "EIDA", "CRL", "Corinth Rift Laboratory", "Near Fault Observatories";
+        dcat:keyword "seismology", "seismicity", "earthquakes", "Seismic waveform", "seismic hazard", "velocity", "acceleration", "earth structure", "waveform modeling", "NOA", "CRL", "Corinth Rift Laboratory", "Near Fault Observatories";
         dcat:contactPoint <http://orcid.org/0000-0002-4011-0971/contactPoint>;
         dct:publisher <PIC:999653677>;
         dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/Dataset/001/Distribution/001/NOA>;
@@ -942,9 +956,9 @@
 
 # Dataset - station - RESIF
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/Dataset/002/RESIF> a dcat:Dataset;
-        dct:title "Primary Seismic Metadata for stations ";
+        dct:title "CRL Seismic Station Information Dataset - RESIF";
         dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/Dataset/002/RESIF";
-        dct:description "Seismic Stations ";
+        dct:description "Seismic Station Information Dataset";
         adms:identifier [ a adms:Identifier ;
             adms:schemaAgency "DDSS-ID" ;
             skos:notation "WP09-DDSS-001b" ;
@@ -957,7 +971,7 @@
     	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
         dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
         dcat:theme  <epos:SeismicStations> ;
-        dcat:keyword "seismology", "seismicity", "earthquakes", "seismic station", "seismic hazard", "station information", "waveform modeling", "RESIF" , "Station", "FDSN-WS", "EIDA", "CRL", "Corinth Rift Laboratory", "Near Fault Observatories", "Strainmeter", "tide gauge", "water level", "Atmospheric pressure" ;
+        dcat:keyword "seismology", "seismicity", "earthquakes", "seismic station", "seismic hazard", "station information", "waveform modeling", "RESIF" , "Station", "CRL", "Corinth Rift Laboratory", "Near Fault Observatories";
         dcat:contactPoint <ResearcherID:B-4828-2015/scientificContact>;
 	dct:publisher <PIC:999997930>;
         dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/Dataset/002/Distribution/002/RESIF>;
@@ -972,9 +986,9 @@
 
 # Dataset - station - NOA
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/Dataset/002/NOA> a dcat:Dataset;
-        dct:title "Primary Seismic Waveform Data";
+        dct:title "CRL Seismic Station Information Dataset - NOA";
         dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/Dataset/002/NOA";
-        dct:description "Seismic stations";
+        dct:description "Seismic Station Information Dataset";
         adms:identifier [ a adms:Identifier ;
             adms:schemaAgency "DDSS-ID" ;
             skos:notation "WP09-DDSS-001b" ;
@@ -987,7 +1001,7 @@
         dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
         dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
         dcat:theme  <epos:SeismicStations> ;
-        dcat:keyword "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "waveform modeling", "NOA", "Station", "FDSN-WS", "seismic Waveform", "EIDA", "CRL", "Corinth Rift Laboratory", "Near Fault Observatories";
+        dcat:keyword "seismology", "seismicity", "earthquakes", "seismic station", "seismic hazard", "station information", "waveform modeling", "NOA" , "Station", "CRL", "Corinth Rift Laboratory", "Near Fault Observatories";
         dcat:contactPoint <http://orcid.org/0000-0002-4011-0971/contactPoint>;
         dct:publisher <PIC:999653677>;
         dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/Dataset/002/Distribution/002/NOA>;
@@ -1006,23 +1020,10 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/Dataset/001/Distribution/001/RESIF> a dcat:Distribution;
    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/Dataset/001/Distribution/001/RESIF";
-    dct:title  "CRL Velocity and Acceleration Waveform (RESIF)";
-	dct:description "Description of Seismic Waveform Distribution :: FDSN DATASELECT :: RESIF :: CRL";
-    dct:issued "2017-01-01"^^xsd:date ;
-	dct:modified "2017-01-01"^^xsd:date ;
-	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/WebService/001/Operation/001/RESIF>;
-	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/WebService/001/RESIF>;
-	dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI;
- 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
- 	# RESIF : normally we should refer to dct:license "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Open_Licence.pdf" ;
-.
 
-<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/Dataset/003/Distribution/003/RESIF> a dcat:Distribution;
-   dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/Dataset/003/Distribution/003/RESIF";
-    dct:title "CRL Strainmeter Waveforms and Water level-pressure Data (RESIF)";
-	dct:description "Description of Seismic Waveform Distribution :: FDSN DATASELECT :: RESIF :: CRL";
-    dct:issued "2017-01-01"^^xsd:date ;
+  dct:title  "CRL Velocity and Acceleration Waveform - RESIF";
+	dct:description "Access to Velocity and Acceleration Waveform Continuous data through FDSN Dataselect web service. It is encoded in mseed format. Its related dataset covers the time period since 2000 and is limited to the Corinth Rift Laboratory (Greece) Near Fault Observatory Area.";
+  dct:issued "2017-01-01"^^xsd:date ;
 	dct:modified "2017-01-01"^^xsd:date ;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/WebService/001/Operation/001/RESIF>;
@@ -1035,10 +1036,10 @@
 # Distribution - station RESIF
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/Dataset/002/Distribution/002/RESIF> a dcat:Distribution;
-    	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/Dataset/002/Distribution/002/RESIF";
-        dct:title  "CRL Stations (RESIF)";
-	dct:description "Description of Seismic Stations  :: FDSN STATION :: RESIF :: CRL";
-        dct:issued "2016-01-01"^^xsd:date ;
+  dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/Dataset/002/Distribution/002/RESIF";
+  dct:title  "CRL Stations - RESIF";
+	dct:description "Access to Seismic Station Information through FDSN Station web service. It is encoded in xml or text format. Its related dataset covers the time period since 2000 and is limited to the Corinth Rift Laboratory (Greece) Near Fault Observatory Area.";
+  dct:issued "2016-01-01"^^xsd:date ;
 	dct:modified "2016-01-01"^^xsd:date ;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/WebService/002/Operation/002/RESIF>;
@@ -1052,9 +1053,8 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/Dataset/001/Distribution/001/NOA> a dcat:Distribution;
         dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/Dataset/001/Distribution/001/NOA";
-        dct:title  "CRL Velocity and Acceleration Waveform (NOA)";
-        dct:description "Description of Waveforms  :: FDSN DATASELECT :: NOA :: CRL";
-        dct:issued "2016-01-01"^^xsd:date ;
+        dct:title  "CRL Velocity and Acceleration Waveform - NOA";
+	      dct:description "Access to Velocity and Acceleration Waveform Continuous data through FDSN Dataselect web service. It is encoded in mseed format. Its related dataset covers the time period since 1997 and is limited to the Corinth Rift Laboratory (Greece) Near Fault Observatory Area.";        dct:issued "2016-01-01"^^xsd:date ;
         dct:modified "2016-01-01"^^xsd:date ;
         dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
         dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/WebService/001/Operation/001/NOA>;
@@ -1063,25 +1063,13 @@
         dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 .
 
-<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/Dataset/003/Distribution/003/NOA> a dcat:Distribution;
-        dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/Dataset/003/Distribution/003/NOA";
-        dct:title  "CRL Strainmeter Waveforms and Water level-pressure Data (NOA)";
-        dct:description "Description of Waveforms  :: FDSN DATASELECT :: NOA :: CRL";
-        dct:issued "2016-01-01"^^xsd:date ;
-        dct:modified "2016-01-01"^^xsd:date ;
-        dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-        dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/WebService/001/Operation/001/NOA>;
-        dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/WebService/001/NOA>;
-        dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
-        dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
-.
 
 # Distribution - station - NOA
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/Dataset/002/Distribution/002/NOA> a dcat:Distribution;
         dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/Dataset/002/Distribution/002/NOA";
-        dct:title  "CRL Stations (NOA)";
-        dct:description "Description of Seismic Stations  :: FDSN STATION :: NOA :: CRL";
+        dct:title  "CRL Stations - NOA";
+	      dct:description "Access to Seismic Station Information through FDSN Station web service. It is encoded in xml or text format. Its related dataset covers the time period since 1997 and is limited to the Corinth Rift Laboratory (Greece) Near Fault Observatory Area.";     
         dct:issued "2016-01-01"^^xsd:date ;
         dct:modified "2016-01-01"^^xsd:date ;
         dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
