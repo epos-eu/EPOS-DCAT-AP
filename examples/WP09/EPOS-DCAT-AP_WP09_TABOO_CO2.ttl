@@ -295,7 +295,7 @@
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
-		hydra:template "http://fridge-services.rm.ingv.it/co2/{?stacode, mintime, maxtime, minlat, maxlat, minlon, maxlon}"^^xsd:string;
+		hydra:template "http://fridge-services.rm.ingv.it/co2/{?stacode, mintime, maxtime, minlat, maxlat, minlon, maxlon, param_type}"^^xsd:string;
 		# type of parameter "xsd:string" "xsd:boolean" "xsd:date" "xsd:dateTime" "xsd:decimal" "xsd:double" "xsd:float" "xsd:int" "xsd:integer" "xsd:long"
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "stacode"^^xsd:string;
@@ -368,6 +368,15 @@
 			schema:maxValue "90";
 			schema:defaultValue "13.0";
 			hydra:property "epos:easternmostLongitude";
+			hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "param_type"^^xsd:string;
+			rdfs:label "Type the physical parameter (concentration, flux)";
+			rdfs:range "xsd:string";
+			http:paramValue "concentration";
+			http:paramValue "flux";
+			schema:defaultValue "concentration";
 			hydra:required "true"^^xsd:boolean;
 		];
 	];
