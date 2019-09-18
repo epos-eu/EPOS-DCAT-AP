@@ -637,7 +637,7 @@
 		#hydra:returns "application/quakeml";
 		hydra:returns "application/xml";
 		hydra:property[ a hydra:IriTemplate;
-		hydra:template "http://www.seismicportal.eu/mtws/api/search{?source_catalog, eventid, startime, endtime, dayafter, mindepth, maxdepth, minmag, maxmag, lat, lon, minradius, maxradius, minlat, maxlat, minlon, maxlon, mintplung, maxtplung, minnplung, maxnplung, mindc, maxdc, preferredOnly, format, downloadAsFile, orderby, offset, limit}"^^xsd:string;
+		hydra:template "http://www.seismicportal.eu/mtws/api/search{?source_catalog, eventid, starttime, endtime, dayafter, mindepth, maxdepth, minmag, maxmag, lat, lon, minradius, maxradius, minlat, maxlat, minlon, maxlon, mintplung, maxtplung, minnplung, maxnplung, mindc, maxdc, preferredOnly, format, downloadAsFile, orderby, offset, limit}"^^xsd:string;
 
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "source_catalog"^^xsd:string;
@@ -965,11 +965,11 @@
 			rdfs:label "Name of the output catalog";
 			http:paramValue "all";
 			http:paramValue "UNID";
-            http:paramValue "EMSC";
-            http:paramValue "INGV";
-            http:paramValue "USGS";
-            http:paramValue "ISC";
-            schema:defaultValue "all";
+            		http:paramValue "EMSC";
+            		http:paramValue "INGV";
+            		http:paramValue "USGS";
+            		http:paramValue "ISC";
+            		schema:defaultValue "all";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -1027,6 +1027,8 @@
 			rdfs:range "xsd:boolean";
 			rdfs:label "Select only the first elected event by catalog";
 			schema:defaultValue "false";
+			http:paramValue "true";
+			http:paramValue "false";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -1035,6 +1037,8 @@
 			rdfs:range "xsd:boolean";
 			rdfs:label "If TRUE return info about the event";
 			schema:defaultValue "false";
+			http:paramValue "true";
+			http:paramValue "false";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -1055,7 +1059,7 @@
 			rdfs:label "Spatial selection type";
 			http:paramValue "rectangle";
 			http:paramValue "none";
-            schema:defaultValue "rectangle";
+            		schema:defaultValue "rectangle";
 			hydra:required "false"^^xsd:boolean;
 		];	
 
@@ -1073,7 +1077,7 @@
 
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "maxdate"^^xsd:string;
-		    hydra:property "schema:endDate";
+		    	hydra:property "schema:endDate";
 			schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
 			rdfs:range "xsd:dateTime";
 			rdfs:label "End Time";
