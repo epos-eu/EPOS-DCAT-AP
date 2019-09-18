@@ -91,8 +91,8 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/Event/Distribution/001> a dcat:Distribution;
     dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/Event/Distribution/001";
-	dct:title "KOERI FDSN Event Distribution";
-	dct:description "KOERI FDSN Event Distribution";
+	dct:title "Marmara Events";
+	dct:description "This distribution provides access to Instrumental Earthquakes data (in terms of location and magnitude) through FDSN Event web service. Datasets are encoded in QuakeML and text format. Its related dataset covers the time period since 2012 and is limited to the Marmara (Turkey) Near Fault Observatory.";
 	dct:created "2012-01-01"^^xsd:date;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/Event/WebService/001/Operation/001>;
@@ -102,17 +102,24 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/Event/WebService/001> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/Event/WebService/001";
-	schema:description "KOERI - The fdsnws-event web service returns event (earthquake) information from the catalogs submitted to the IRIS DMC. Events may be selected based on location, time, catalog, contributor and internal identifiers. By default, events are retrieved from the NEIC PDE catalog for recent events and then the ISC catalog when it becomes available. These default results include only that catalog’s “primary origin” and “primary magnitude” for each event, they may optionally include all available magnitude estimates. By default results are returned as XML in QuakeML format (schema), but may also be requested in text formats. This service is an implementation of the FDSN web service specification version 1.";
-	schema:name "KOERI FDSN Event Web Service";
+	schema:description "The fdsnws-event web service returns event (earthquake) information from the catalogs submitted to the IRIS DMC. Events may be selected based on location, time, catalog, contributor and internal identifiers. By default, events are retrieved from the NEIC PDE catalog for recent events and then the ISC catalog when it becomes available. These default results include only that catalog’s “primary origin” and “primary magnitude” for each event, they may optionally include all available magnitude estimates. By default results are returned as XML in QuakeML format (schema), but may also be requested in text formats. This service is an implementation of the FDSN web service specification version 1.";
+	schema:name "Marmara Event Web Service";
 	schema:datePublished "2017-06-08T12:00:00Z"^^xsd:dateTime;
 	schema:dateModified "2017-06-08T12:00:00Z"^^xsd:dateTime;
 	schema:provider <PIC:999882500>;
 	schema:keywords "earthquake", "event", "rocks", "seismic source", "seismic waves propagation", "seismology", "NFO", "Near Fault Observatory", "KOERI", "FRIDGE";
 	# hydra:entrypoint "application.wadl"^^xsd:anyURI; 
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/Event/WebService/001/Operation/001>;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/Event/WebService/001/APIDocumentation> ;
 	dcat:theme <epos:Crustalvelocityparameters>;
 	dcat:contactPoint <http://orcid.org/0000-0001-7080-183X/scientificContact>;
 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/Event/WebService/001/APIDocumentation> a hydra:APIDocumentation ;
+    hydra:title "API Documentation" ;
+    hydra:description "Event data can be downloaded using GET request by contacting the webservice address with specific request options inside the URL query" ;
+    hydra:entrypoint "https://www.fdsn.org/webservices/fdsnws-event-1.2.pdf";
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/KOERI/Event/WebService/001/Operation/001> a hydra:Operation;
@@ -299,6 +306,7 @@
 			hydra:variable "format"^^xsd:string;
 			rdfs:range "xsd:string";
 			rdfs:label "Output Format";
+			hydra:property "schema:encodingFormat";
 			http:paramValue "xml";
 			http:paramValue "text";
 			schema:defaultValue "xml";

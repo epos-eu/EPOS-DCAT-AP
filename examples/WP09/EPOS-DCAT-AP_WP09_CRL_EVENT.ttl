@@ -195,18 +195,19 @@
 #  Dataset
 #---------------------------------------------------------------------------------------------------------
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/event/Dataset/001> a dcat:Dataset;
-	dct:title "CORINTH RIFT LABORATORY Event Dataset";
+	dct:title "CRL Event Dataset";
 		adms:identifier [ a adms:Identifier;
 		adms:schemaAgency "DDSS-ID";
 		skos:notation "WP09-DDSS-006";
 	];
 	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/event/Dataset/001";
-	dct:description "Corinth Rift Laboratory (Greece) - The fdsnws-event web service returns event (earthquake) information";
+	dct:description "Information about the instrumental earthquakes (events) in the Corinth Rift Laboratory (Greece) Near Fault Observatory area.";
 	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
 	dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
 	dct:created "2018-07-06"^^xsd:date;
 	dcat:theme  <epos:EarthquakeParameters>;
-	dcat:keyword "NFO", "Earthquake", "Event", "Seismic source", "Seismic waves propagation", "Seismology";
+	dcat:keyword "NFO", "CRL", "Earthquake", "Event", "Seismic source", "Seismic waves propagation", "Seismology", "Corinth Rift Laboratory", "Near Fault Observatories";
+
 	dct:spatial [ a dct:Location;
 		locn:geometry "POLYGON((22.5 38.0, 21.35 38.0, 21.35 38.65, 22.5 38.65, 22.5 38.0))"^^gsp:wktLiteral;
 	];
@@ -222,15 +223,15 @@
 #  Distribution
 #--------------------------------------------------------------------------------------------------------
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/event/Distribution/001> a dcat:Distribution;
-	dct:title "CRLNET Event Distribution";
+	dct:title "CRL Events";
 	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/event/Distribution/001";
-	dct:description "CRLNET Event Distribution";
+	dct:description "Access to instrumental earthquakes data (location and magnitude) through FDSN Event web service. Dataset covers the time period since 2000 and is limited to the Corinth Rift Laboratory (Greece) Near Fault Observatory.  Dataset is encoded in QuakeML and text format.";
 	dct:created "2018-07-06"^^xsd:date;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/event/Operation/001>;
+	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/event/Webservice/001/Operation/001>;
 	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/event/WebService/001>;
 	dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
-        dct:license "https://creativecommons.org/licenses/by-sa/3.0/"^^xsd:anyURI;
+  dct:license "https://creativecommons.org/licenses/by-sa/4.0/"^^xsd:anyURI;
 .
 
 #   Webservices 
@@ -239,7 +240,7 @@
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/event/WebService/001";
 	schema:description "Corinth Rift Laboratory (Greece) - The fdsnws-event web service returns event (earthquake) information";
 	dcat:theme <epos:EarthquakeParameters>;
-	schema:name "Corinth Rift Laboratory - FDSN Event Web Service";
+	schema:name "Corinth Rift Laboratory (CRL) - FDSN Event Web Service";
 	hydra:entrypoint "http://nfocrl.u-strasbg.fr/fdsnws/event/1/query?"^^xsd:anyURI;
 	schema:provider <PIC:999997930>;
 	schema:datePublished "2018-07-06"^^xsd:date;
@@ -247,17 +248,24 @@
 	dct:spatial [ a dct:Location;
 		locn:geometry "POLYGON((22.5 38.0, 21.35 38.0, 21.35 38.65, 22.5 38.65, 22.5 38.0))"^^gsp:wktLiteral;
 	];
-	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/event/Operation/001>;
-	schema:keywords "NFO","Earthquake","Event","Seismic source","Seismic waves propagation","Seismology", "CRL", "Corinth Rift Laboratory", "Near Fault Observatories";
-	dct:license "https://creativecommons.org/licenses/by-sa/3.0/"^^xsd:anyURI;
 	dct:temporal [ a dct:PeriodOfTime;
 		schema:startDate "2000-05-20T00:00:00Z"^^xsd:dateTime;
 	];
+	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/event/Webservice/001/Operation/001>;
+        dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/event/WebService/001/APIDocumentation> ;
+	schema:keywords "NFO", "CRL", "Earthquake", "Event", "Seismic source", "Seismic waves propagation", "Seismology", "Corinth Rift Laboratory", "Near Fault Observatories";
 	schema:contactPoint <mailto:marc.grunberg@unistra.fr/technicalContact>;
 	schema:contactPoint <mailto:fabien.engels@unistra.fr/technicalContact>;
+	dct:license "https://creativecommons.org/licenses/by-sa/4.0/"^^xsd:anyURI;
 .
 
-<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/event/Operation/001> a hydra:Operation;
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/event/WebService/001/APIDocumentation> a hydra:APIDocumentation ;
+    hydra:title "API Documentation" ;
+    hydra:description "Event data can be downloaded using GET request by contacting the webservice address with specific request options inside the URL query" ;
+    hydra:entrypoint "https://www.fdsn.org/webservices/fdsnws-event-1.2.pdf";
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/event/Webservice/001/Operation/001> a hydra:Operation;
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/xml";
 	hydra:property[ a hydra:IriTemplate;
@@ -265,23 +273,23 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "starttime"^^xsd:string;
                                 hydra:property "schema:startDate";
-                                schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+                                schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
 				rdfs:range "xsd:dateTime";
 				rdfs:label "Start Time";
-				schema:minValue "2000-05-20T00:00:00";
-				schema:maxValue "2999-01-01T00:00:00";
-				schema:defaultValue "2016-01-01T00:00:00";
+				schema:minValue "2000-05-20T00:00:00Z";
+				schema:maxValue "2999-01-01T00:00:00Z";
+				schema:defaultValue "2016-01-01T00:00:00Z";
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "endtime"^^xsd:string;
                                 hydra:property "schema:endDate";
-                                schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+                                schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
 				rdfs:range "xsd:dateTime";
 				rdfs:label "End Time";
-				schema:minValue "2000-05-20T00:00:00";
-				schema:maxValue "2999-01-01T00:00:00";
-				schema:defaultValue "2016-01-01T05:00:00";
+				schema:minValue "2000-05-20T00:00:00Z";
+				schema:maxValue "2999-01-01T00:00:00Z";
+				schema:defaultValue "2016-01-01T05:00:00Z";
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
@@ -339,7 +347,7 @@
 				rdfs:label "Maximum Depth";
 				schema:minValue "-10";
 				schema:maxValue "6378";
-				schema:defaultValue "15";
+				schema:defaultValue "20";
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
@@ -348,7 +356,7 @@
 				rdfs:label "Minimum Magnitude";
 				#schema:minValue "-10";
 				#schema:maxValue "10";
-				schema:defaultValue "1.5";
+				schema:defaultValue "1";
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
@@ -357,7 +365,7 @@
 				rdfs:label "Maximum Magnitude";
 				#schema:minValue "-10";
 				#schema:maxValue "10";
-				schema:defaultValue "5";
+				schema:defaultValue "7";
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
@@ -447,6 +455,7 @@
 				hydra:variable "format"^^xsd:string;
 				rdfs:range "xsd:string";
 				rdfs:label "Output Format";
+				hydra:property "schema:encodingFormat";
 				http:paramValue "xml";
 				http:paramValue "text";
 				schema:defaultValue "xml";

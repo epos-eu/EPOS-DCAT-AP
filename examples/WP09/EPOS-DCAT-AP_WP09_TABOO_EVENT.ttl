@@ -183,12 +183,13 @@
 	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/Event/WebService/001/Operation/001>;
 	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/Event/WebService/001>;
 	dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
+	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/Event/WebService/001> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/Event/WebService/001";
 	schema:description "This web service provides access to Instrumental Earthquakes data (in terms of location and magnitude) through FDSN Event web service. Datasets are encoded in QuakeML and text format. Its related dataset covers the time period since 2010 and is limited to the Alta Val Tiberina (Central Italy) Near Fault Observatory.";
-	schema:name "TABOO Events";
+	schema:name "TABOO Event Web Service";
 	schema:datePublished "2017-06-08T12:00:00Z"^^xsd:dateTime;
 	schema:dateModified "2017-06-08T12:00:00Z"^^xsd:dateTime;
 	dct:temporal [ a dct:PeriodOfTime ;
@@ -202,15 +203,16 @@
 	schema:keywords "earthquake", "event", "rock", "seismic source", "seismic waves propagation", "seismology", "NFO", "TABOO", "FRIDGE";
 	# hydra:entrypoint "application.wadl"^^xsd:anyURI; 
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/Event/WebService/001/Operation/001>;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/Event/WebService/001/APIDocumentation> ;
 	dcat:theme <epos:Crustalvelocityparameters>;
 	dcat:contactPoint <http://orcid.org/0000-0002-8608-4289/contactPoint>;
 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/Event/WebService/001/APIDocumentation> a hydra:APIDocumentation ;
-    hydra:title "TABOO Instrumental Earthquakes (FDSN-Event)" ;
-    hydra:description "TABOO Instrumental Earthquakes (FDSN-Event)" ;
-    hydra:entrypoint "https://fridge.rm.ingv.it/docs/API_prototype_documentation_NFO_InstrumentalEQ.pdf";
+    hydra:title "API Documentation" ;
+    hydra:description "Event data can be downloaded using GET request by contacting the webservice address with specific request options inside the URL query" ;
+    hydra:entrypoint "https://www.fdsn.org/webservices/fdsnws-event-1.2.pdf";
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/Event/WebService/001/Operation/001> a hydra:Operation;
