@@ -1,5 +1,4 @@
 @prefix adms: <http://www.w3.org/ns/adms#> .  
-@prefix adms: <http://www.w3.org/ns/adms#> .  
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .  
 @prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .  
 @prefix dc: <http://purl.org/dc/elements/1.1/> .  
@@ -16,7 +15,6 @@
 @prefix http: <http://www.w3.org/2006/http#> .  
 @prefix owl: <http://www.w3.org/2002/07/owl#> .  
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .  
-@prefix time:  <http://www.w3.org/2006/time#> .
 
 <mailto:contact-brgm@brgm.fr> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
@@ -44,7 +42,6 @@
 		schema:value "999993662";
 	]; 
 	schema:legalName "Bureau de Recherches Géologiques et Minières"@en;
-	#schema:legalName "BRGM (French Geological Survey)"@en;
 	schema:leiCode "Legal Entity Identifier Search: http://www.lei-lookup.com/#!search" ;
 	schema:address [ a schema:PostalAddress;
 		schema:streetAddress "3, avenue Claude Guillemin";
@@ -58,6 +55,7 @@
 	schema:contactPoint <mailto:contact-brgm@brgm.fr/legalContact>;
 	schema:contactPoint <mailto:contact-brgm@brgm.fr/financialContact>;
 . 
+
 
 
 	<mailto:contact-brgm@brgm.fr/manager> a schema:ContactPoint;
@@ -82,124 +80,105 @@
 		schema:contactType "financialContact" ;
 .
 
+
 	<epos:Geology> a skos:ConceptScheme;
 		dct:title "Geology";
 		dct:description "It contains the concepts pertaining to Geological Information and Modelling";
 . 
 
-	<epos:GeologicUnit> a skos:Concept;
+	<epos:Mine> a skos:Concept;
 		skos:inScheme <epos:Geology>;
-		skos:prefLabel "geologicunit";
-		skos:definition "-- Definition -- A volume of rock with distinct characteristics.-- Description -- Includes both formal units (i.e. formally adopted and named in an official lexicon) and informal units (i.e. named but not promoted to the lexicon) and unnamed units (i.e. recognisable and described and delineable in the field but not otherwise formalised).Spatial properties are only available through association with a MappedFeature. (INSPIRE).";
-		skos:exactMatch <https://www.opengis.net/def/appschema/gsmlb/GeologicUnit>;
-		skos:exactMatch <http://inspire.ec.europa.eu/featureconcept/GeologicUnit>;
+		skos:prefLabel "mine";
+		skos:definition "-- Definition -- An excavation carried out for the extraction of mineral deposits.  -- Description -- ‘True’ mines are underground workings and open-pit workings (also called open-sky mines) generally for the extraction of metallic commodities. The Mine feature also includes open workings generally for the extraction of industrial minerals, commonly referred to as quarries. (INSPIRE)";
+		skos:exactMatch <http://inspire.ec.europa.eu/featureconcept/Mine>;
 . 
 
 
-	<epos:Mappedfeature> a skos:Concept;
-		skos:inScheme <epos:Geology>;
-		skos:prefLabel "mappedfeature";
-		skos:definition "-- Definition -- A spatial representation of a GeologicFeature.  -- Description -- A MappedFeature is part of a geological interpretation.  It provides a link between a notional feature (description package) and one spatial representation of it, or part of it (exposures, surface traces and intercepts, etc) which forms the specific bounded occurrence, such as an outcrop or map polygon. (INSPIRE)";
-		skos:exactMatch <https://www.opengis.net/def/appschema/gsmlb/MappedFeature>;
-		skos:exactMatch <http://inspire.ec.europa.eu/featureconcept/MappedFeature>;
-. 
-
-	
-	<https://data.geoscience.earth/id/dataset/geologicunit> a dcat:Dataset;
-		dct:title "Geological Feature index";
-		dct:identifier "https://data.geoscience.earth/id/dataset/geologicunit";
+	<https://data.geoscience.earth/id/dataset/mine> a dcat:Dataset;
+		dct:title "Georesource occurence data";
+		dct:identifier "https://data.geoscience.earth/id/dataset/mine"; 
 		adms:identifier [ a adms:Identifier;
 			adms:schemaAgency "DDSS-ID";
-			skos:notation "WP15-DDSS-002a";
+			skos:notation "WP15-DDSS-010a";
 		]; 
-		adms:identifier [ a adms:Identifier;
-			adms:schemaAgency "DDSS-ID";
-			skos:notation "WP15-DDSS-002b";
-		]; 
-		dct:description "This dataset is created from the harvesting of map geological features initially collected for EGDI (original national datasets from OneGeology-Europe). It aims at supporting search and discovery of geological features (bedrock or surface information).";
+		dct:description "Based on Minerals4EU dataset, this dataset allows to explore and discover available mineral resources datasets in a given area.";
 		dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
 		dct:created "2017-10-27"^^xsd:date;
-		#dct:temporal
-		#[ a dct:PeriodOfTime;
-				#time:hasBeginning  <http://resource.geosciml.org/classifier/ics/ischart/BaseArchean> ;
-				#time:hasEnd        <http://resource.geosciml.org/classifier/ics/ischart/Present> ;
-		#];
-	
-		#20190822 SG note : at CSIRO resolver <http://resource.geosciml.org/classifier/ics/ischart/BaseArchean> do not resolve because the redirects points to http://vocabs.ands.org.au/repository/api/lda/csiro/international-chronostratigraphic-chart/2018-revised/
-		# using http://vocabs.ands.org.au/repository/api/lda/csiro/international-chronostratigraphic-chart/2017/resource.html?uri=http://resource.geosciml.org/classifier/ics/ischart/BaseArchean its ok
-		
+		dct:modified "2018-09-07"^^xsd:date;
+		dct:issued "2017-10-27"^^xsd:date;
 	dct:spatial [ a dct:Location; 
 		locn:geometry "POLYGON((-180 -90,-180 90,180 90,180 -90,-180 -90))"^^gsp:wktLiteral;
 	]; 
-		dcat:theme <epos:GeologicUnit>;
-		dcat:keyword "geologicunit", "mappedfeature", "geology";
+		dcat:theme <epos:Mine>;
+		dcat:keyword "mine","geology";
 		dcat:contactPoint <mailto:contact-brgm@brgm.fr/manager>;
-		dcat:distribution <https://data.geoscience.earth/id/dataset/geologicunit/distributionWfs>;
-		dcat:distribution <https://data.geoscience.earth/id/dataset/geologicunit/distributionWms>;
+		dcat:distribution <https://data.geoscience.earth/id/dataset/mine/distributionWfs>;
+		dcat:distribution <https://data.geoscience.earth/id/dataset/mine/distributionWms>;
 		dct:publisher <PIC:999993662>;
 . 
 
-		<http://resource.geosciml.org/classifier/ics/ischart/BaseArchean> a <http://resource.geosciml.org/ontology/timescale/thors#EraBoundary>.
-		<http://resource.geosciml.org/classifier/ics/ischart/Present> a <http://resource.geosciml.org/ontology/timescale/thors#EraBoundary>.
-
-	<https://data.geoscience.earth/id/dataset/geologicunit/distributionWfs> a dcat:Distribution;
-		dct:identifier "https://data.geoscience.earth/id/dataset/geologicunit/distributionWfs";
-		dct:title "Geological Feature Discovery Service";
-		dct:description "This service allows to find geological features appearing on the EGDI 1:1,000,000 geological map.";
+	<https://data.geoscience.earth/id/dataset/mine/distributionWfs> a dcat:Distribution;
+		dct:identifier "https://data.geoscience.earth/id/dataset/mine/distributionWfs";
+		dct:title "Mine Discovery Service based on Minerals4EU dataset";
+		dct:description "Based on Minerals4EU dataset, this service allows to explore and discover available mine in a given area.";
 		dct:issued "2016-10-27"^^xsd:date;
 		dct:modified "2018-01-19"^^xsd:date;
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-		dct:conformsTo <https://data.geoscience.earth/api/wfsGeologicUnit>;
-		dcat:accessURL <https://data.geoscience.earth/api/wfsGeologicUnit/operation>;
+		dct:conformsTo <https://data.geoscience.earth/api/wfsMine>;
+		dcat:accessURL <https://data.geoscience.earth/api/wfsMine/operation>;
 		dct:license "royalty free licence"^^xsd:anyURI ;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/GML"^^xsd:anyURI;
 		#dct:format "https://www.iana.org/assignments/media-types/application/gml+xml"^^xsd:anyURI;
 . 
 
-	<https://data.geoscience.earth/id/dataset/geologicunit/distributionWms> a dcat:Distribution;
-		dct:identifier "https://data.geoscience.earth/id/dataset/geologicunit/distributionWms";
-		dct:title "Geological Map 1:1,000,000 (OneGeology-Europe layer)";
-		dct:description "This services provides an interface for map visualization of geological map of Europe.";
+
+	<https://data.geoscience.earth/id/dataset/mine/distributionWms> a dcat:Distribution;
+		dct:identifier "https://data.geoscience.earth/id/dataset/mine/distributionWms";
+		dct:title "Mine View Service based on Minerals4EU dataset";
+		dct:description "Based on Minerals4EU dataset, this serviceallows visualization of available Mines in a given area of Europe.";
 		dct:issued "2016-10-27"^^xsd:date;
 		dct:modified "2018-01-19"^^xsd:date;
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-		dct:conformsTo <https://data.geoscience.earth/api/wmsGeologicUnit>;
-		dcat:accessURL <https://data.geoscience.earth/api/wmsGeologicUnit/operation>;
+		dct:conformsTo <https://data.geoscience.earth/api/wmsMine>;
+		dcat:accessURL <https://data.geoscience.earth/api/wmsMine/operation>;
 		dct:license "royalty free licence"^^xsd:anyURI ;
-		dct:format "http://publications.europa.eu/resource/authority/file-type/PNG"^^xsd:anyURI;
+		dct:format "http://publications.europa.eu/resource/authority/file-type/GML"^^xsd:anyURI;
 		#dct:format "https://www.iana.org/assignments/media-types/application/gml+xml"^^xsd:anyURI;
 . 
 
-
-<https://data.geoscience.earth/api/wfsGeologicUnit> a epos:WebService;
-	schema:identifier "https://data.geoscience.earth/api/wfsGeologicUnit";
-	schema:description "This service allows to find geological features appearing on the EGDI 1:1,000,000 geological map.";
-	dcat:theme <epos:GeologicUnit>;
-	schema:name "Geological Feature Discovery Service";
-	hydra:entrypoint "https://data.geoscience.earth/api/wfsGeologicUnit"^^xsd:anyURI; 
+	
+<https://data.geoscience.earth/api/wfsMine> a epos:WebService;
+	schema:identifier "https://data.geoscience.earth/api/wfsMine";
+	#schema:identifier [ a schema:PropertyValue; 
+		#schema:propertyID  "DDSS-ID"; 
+		#schema:value  "WP15-DDSS-010a";
+	#]; 
+	schema:description "Based on Minerals4EU dataset, this service allows to explore and discover available mine in a given area.";
+	dcat:theme <epos:Mine>;
+	schema:name "Mine discovery service";
+	hydra:entrypoint "https://data.geoscience.earth/api/wfsMine"^^xsd:anyURI;
 	schema:provider <PIC:999993662>;
 	schema:datePublished "2016-10-27Z"^^xsd:date;
 	schema:dateModified "2018-01-19Z"^^xsd:date;
 	dct:spatial [ a dct:Location; 
 		locn:geometry "POLYGON((-180 -90,-180 90,180 90,180 -90,-180 -90))"^^gsp:wktLiteral;
 	]; 
-	hydra:supportedOperation <https://data.geoscience.earth/api/wfsGeologicUnit/operation>;
-	schema:keyword "geologicunit", "mappedfeature", "geology";
+	hydra:supportedOperation <https://data.geoscience.earth/api/wfsMine/operation>;
+	schema:keywords "mine", "geology";
 	dct:license "TBD"^^xsd:anyURI;
-	#dct:temporal
-	#[ a dct:PeriodOfTime;
-	#		time:hasBeginning  <http://resource.geosciml.org/classifier/ics/ischart/BaseArchean> ;
-	#		time:hasEnd        <http://resource.geosciml.org/classifier/ics/ischart/Present> ;
-	#];
+	dct:temporal [ a dct:PeriodOfTime; 
+		schema:startDate "2016-10-27T00:00:00Z"^^xsd:dateTime; 
+		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
+	]; 
 	dcat:contactPoint <mailto:contact-brgm@brgm.fr/manager>;
 . 
 
 
-	<https://data.geoscience.earth/api/wfsGeologicUnit/operation> a hydra:Operation;
+	<https://data.geoscience.earth/api/wfsMine/operation> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/gml+xml";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://data.geoscience.earth/api/wfsGeologicUnit{?service, request, typenames, version, count, gml:identifier, gml:name, geologicUnitType, rank, lithology, geologicHistory, observationMethod, positionalAccuracy, geologicUnitType_uri, representativeLithology_uri, representativeOlderAge_uri, representativeYoungerAge_uri, specification_uri, BBOX}"^^xsd:string;
+			hydra:template "https://data.geoscience.earth/api/wfsMine{?service, request, typenames, version, count, gml:identifier, gml:name, BBOX}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "service"^^xsd:string;
 					rdfs:range "xsd:string";
@@ -218,7 +197,9 @@
 					hydra:variable "typenames"^^xsd:string;
 					rdfs:range "xsd:string";
 					rdfs:label "FeatureType";
-					schema:defaultValue "gsmlp:GeologicUnitView";
+					schema:defaultValue "erl:MineView";
+					http:paramValue "erl:MineView";
+					http:paramValue "erl:MineralOccurrenceView";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
@@ -240,6 +221,7 @@
 					rdfs:label "WFS BBOX filter parameter";
 					hydra:required "false"^^xsd:boolean;
 				];
+				
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "outputFormat"^^xsd:string;
 					rdfs:range "xsd:string";
@@ -250,6 +232,7 @@
 					schema:defaultValue "application/geo%2Bjson";
 					hydra:required "true"^^xsd:boolean;
 				];
+
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "gml:identifier"^^xsd:string;
 					rdfs:range "xsd:string";
@@ -262,106 +245,38 @@
 					rdfs:label "name";
 					hydra:required "false"^^xsd:boolean;
 				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "geologicUnitType"^^xsd:string;
-					rdfs:range "xsd:string";
-					rdfs:label "geologic unit type";
-					hydra:required "false"^^xsd:boolean;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "rank"^^xsd:string;
-					rdfs:range "xsd:string";
-					rdfs:label "rank";
-					hydra:required "false"^^xsd:boolean;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "lithology"^^xsd:string;
-					rdfs:range "xsd:string";
-					rdfs:label "lithology";
-					hydra:required "false"^^xsd:boolean;
-				];	
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "geologicHistory"^^xsd:string;
-					rdfs:range "xsd:string";
-					rdfs:label "geologicHistory";
-					hydra:required "false"^^xsd:boolean;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "observationMethod"^^xsd:string;
-					rdfs:range "xsd:string";
-					rdfs:label "observationMethod";
-					hydra:required "false"^^xsd:boolean;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "positionalAccuracy"^^xsd:string;
-					rdfs:range "xsd:string";
-					rdfs:label "positionalAccuracy";
-					hydra:required "false"^^xsd:boolean;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "geologicUnitType_uri"^^xsd:string;
-					rdfs:range "xsd:string";
-					rdfs:label "geologicUnitType_uri";
-					hydra:required "false"^^xsd:boolean;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "representativeLithology_uri"^^xsd:string;
-					rdfs:range "xsd:string";
-					rdfs:label "representativeLithology_uri";
-					hydra:required "false"^^xsd:boolean;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "representativeOlderAge_uri"^^xsd:string;
-					rdfs:range "xsd:string";
-					rdfs:label "representativeOlderAge_uri";
-					hydra:required "false"^^xsd:boolean;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "representativeYoungerAge_uri"^^xsd:string;
-					rdfs:range "xsd:string";
-					rdfs:label "representativeYoungerAge_uri";
-					hydra:required "false"^^xsd:boolean;
-				];
-				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "specification_uri"^^xsd:string;
-					rdfs:range "xsd:string";
-					rdfs:label "specification_uri";
-					hydra:required "false"^^xsd:boolean;
-				];				
 		] ;
 . 
 
 
-
-
-<https://data.geoscience.earth/api/wmsGeologicUnit> a epos:WebService;
-	schema:identifier "https://data.geoscience.earth/api/wmsGeologicUnit";
-	schema:description "This services provides an interface for map visualization of geological map of Europe.";
-	dcat:theme <epos:GeologicUnit>;
-	schema:name "Geological Map 1:1,000,000 (OneGeology-Europe layer)";
-	hydra:entrypoint "https://data.geoscience.earth/api/wmsGeologicUnit?"^^xsd:anyURI; 
+<https://data.geoscience.earth/api/wmsMine> a epos:WebService;
+	schema:identifier "https://data.geoscience.earth/api/wmsMine";
+	schema:description "Based on Minerals4EU dataset, this serviceallows visualization of available Mines in a given area of Europe.";
+	dcat:theme <epos:Mine>;
+	schema:name "Mine View Service";
+	hydra:entrypoint "https://data.geoscience.earth/api/wmsMine?"^^xsd:anyURI; 
 	schema:provider <PIC:999993662>;
 	schema:datePublished "2016-10-27Z"^^xsd:date;
 	schema:dateModified "2018-01-19Z"^^xsd:date;
 	dct:spatial [ a dct:Location; 
-		locn:geometry "POLYGON((-180 -90,-180 90,180 90,180 -90,-180 -90))"^^gsp:wktLiteral;
+		locn:geometry "POLYGON((-180 -90,-180 90,180 90,180 -90,-180 -90))"^^gsp:wktLiteral; 
 	]; 
-	hydra:supportedOperation <https://data.geoscience.earth/api/wmsGeologicUnit/operation>;
-	schema:keyword "geologicunit", "mappedfeature", "geology";
+	hydra:supportedOperation <https://data.geoscience.earth/api/wmsMine/operation>;
+	schema:keywords "mine", "geology";
 	dct:license "TBD"^^xsd:anyURI;
-	#dct:temporal
-	#[ a dct:PeriodOfTime;
-	#	time:hasBeginning  <http://resource.geosciml.org/classifier/ics/ischart/BaseArchean> ;
-	#	time:hasEnd        <http://resource.geosciml.org/classifier/ics/ischart/Present> ;
-	#];
+	dct:temporal [ a dct:PeriodOfTime; 
+		schema:startDate "1886-05-16T00:00:00Z"^^xsd:dateTime; 
+		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
+	]; 
 	dcat:contactPoint <mailto:contact-brgm@brgm.fr/manager>;
 . 
 
-<https://data.geoscience.earth/api/wmsGeologicUnit/operation> a hydra:Operation;
+<https://data.geoscience.earth/api/wmsMine/operation> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "image/png";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://data.geoscience.earth/api/wmsGeologicUnit{?service, version, request, layers, crs, format, width, height}&bbox={minlatitude, minlongitude, maxlatitude, maxlongitude}"^^xsd:string;
+			hydra:template "https://data.geoscience.earth/api/wmsMine{?service, version, request, layers, crs, format, width, height}&bbox={minlatitude, minlongitude, maxlatitude, maxlongitude}"^^xsd:string;
+				
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "service"^^xsd:string;
 					rdfs:range "xsd:string";
@@ -387,24 +302,16 @@
 					hydra:variable "layers"^^xsd:string;
 					rdfs:range "xsd:string";
 					rdfs:label "Layers";
-					schema:defaultValue  "EGDI_GE_GeologicUnit_EN_1M_Surface_Lithology";
-					http:paramValue "EGDI.GE.GeologicUnit";
-					http:paramValue "EGDI_Surface_Geology";
-					http:paramValue "EGDI_GE_GeologicUnit_EN_1M_Surface_Lithology";
-					http:paramValue "EGDI_GE_GeologicUnit_EN_1M_Surface_Lithology_0";
-					http:paramValue "EGDI_GE_GeologicUnit_EN_1M_Surface_Lithology_opti_10";
-					http:paramValue "EGDI_GE_GeologicUnit_EN_1M_Surface_Lithology_opti_100";
-					http:paramValue "EGDI_GE_GeologicUnit_EN_1M_Surface_Lithology_opti_1000";
-					http:paramValue "EGDI_GE_GeologicUnit_EN_1M_Surface_Age";
+					schema:defaultValue "Mine";
 					hydra:required "true"^^xsd:boolean;
 				];
 				#hydra:mapping[ a hydra:IriTemplateMapping;
 					#hydra:variable "BBOX"^^xsd:string;
 					#rdfs:range "xsd:string";
 					#rdfs:label "WMS BBOX filter parameter";
-					#schema:defaultValue "-180,-90,180,90";
 					#hydra:required "true"^^xsd:boolean;
-				#];	
+					#schema:defaultValue "-180,-90,180,90";
+				#];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "minlatitude"^^xsd:string;
 					hydra:property "epos:southernmostLatitude";
@@ -444,6 +351,7 @@
 					schema:maxValue "180.0";
 					hydra:required "true"^^xsd:boolean;
 					schema:defaultValue "180";
+					
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "crs"^^xsd:string;
@@ -456,7 +364,7 @@
 					hydra:variable "format"^^xsd:string;
 					rdfs:range "xsd:string";
 					rdfs:label "Output format";
-					hydra:property "schema:encodingFormat";		
+					hydra:property "schema:encodingFormat";			
 					http:paramValue "image/png";
 					http:paramValue "image/jpeg";
 					http:paramValue "image/geotiff";
