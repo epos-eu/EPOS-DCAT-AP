@@ -230,15 +230,10 @@
 			hydra:variable "param_name"^^xsd:string;
 			rdfs:label "Meteorological parameter at CO2 site";
 			rdfs:range "xsd:string";
-			http:paramValue "water_level";
-			http:paramValue "air_temperature_ext";
-			http:paramValue "air_temperature_int";
-			http:paramValue "water_temperature";
-			http:paramValue "water_conductivity";
+			http:paramValue "air_temperature";
 			http:paramValue "rain";
-			http:paramValue "humidity";
 			http:paramValue "atmospheric_pressure";
-			schema:defaultValue "humidity";
+			schema:defaultValue "air_temperature";
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -289,7 +284,7 @@
 			rdfs:range "xsd:float";
 			schema:minValue "-90";
 			schema:maxValue "90";
-			schema:defaultValue "12.0";
+			schema:defaultValue "11.9662";
 			hydra:property "epos:westernmostLongitude";
 			hydra:required "true"^^xsd:boolean;
 		];
