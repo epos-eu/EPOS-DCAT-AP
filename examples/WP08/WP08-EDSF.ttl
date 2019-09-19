@@ -164,7 +164,8 @@
 	dct:conformsTo <Seismology/EDSF>;
 	dcat:accessURL <Seismology/EDSF/WFS-CrustalFaults>;
 	dct:license "https://creativecommons.org/licenses/by-sa/4.0/"^^xsd:anyURI ;
-	dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
+	#dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 .
 <Seismology/EDSF/Distribution/WFS_Subductions> a dcat:Distribution;
 	dct:identifier "Seismology/EDSF/Distribution/WFS_Subductions";
@@ -176,7 +177,8 @@
 	dct:conformsTo <Seismology/EDSF>;
 	dcat:accessURL <Seismology/EDSF/WFS-Subductions>;
 	dct:license "https://creativecommons.org/licenses/by-sa/4.0/"^^xsd:anyURI ;
-	dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
+	#dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 .
 
 <Seismology/EDSF> a epos:WebService;
@@ -494,7 +496,7 @@
 					hydra:property "schema:encodingFormat";
 					rdfs:range "xsd:string";
 					rdfs:label "Output format";
-					schema:defaultValue "gml3";
+					schema:defaultValue "application/json";
                                         #http:paramValue "application/gml+xml; version=3.2";
                                         http:paramValue "GML2";
                                         http:paramValue "KML";
@@ -682,7 +684,7 @@
 					rdfs:range "xsd:string";
 					rdfs:label "Output format";
 					hydra:property "schema:encodingFormat";
-					schema:defaultValue "gml3";
+					schema:defaultValue "application/json";
 					#http:paramValue "application/gml+xml; version=3.2";
 					http:paramValue "GML2";
 					http:paramValue "KML";
