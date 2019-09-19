@@ -131,7 +131,7 @@
 		dct:conformsTo <https://data.geoscience.earth/api/wfsBorehole>;
 		dcat:accessURL <https://data.geoscience.earth/api/wfsBorehole/operation>;
 		dct:license "royalty free licence"^^xsd:anyURI ;
-		dct:format "http://publications.europa.eu/resource/authority/file-type/GML"^^xsd:anyURI;
+		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		#dct:format "https://www.iana.org/assignments/media-types/application/gml+xml"^^xsd:anyURI;
 . 
 
@@ -183,7 +183,7 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/gml+xml";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://data.geoscience.earth/api/wfsBorehole{?service, request, typenames, version, count, gml:identifier, gml:name, purpose, status, drillingMethod, operator, driller, drillStartDate, drillEndDate, startPoint, inclinationType, boreholeMaterialCustodian, boreholeLength_m, elevation_m, elevation_srs, positionalAccuracy, source, parentBorehole_uri, metadata_uri, cored, accessToPhysicalDrillCore, boreholeUse, BBOX}"^^xsd:string;
+			hydra:template "https://data.geoscience.earth/api/wfsBorehole{?service, request, typenames, version, outputFormat, count, gml:identifier, gml:name, purpose, status, drillingMethod, operator, driller, drillStartDate, drillEndDate, startPoint, inclinationType, boreholeMaterialCustodian, boreholeLength_m, elevation_m, elevation_srs, positionalAccuracy, source, parentBorehole_uri, metadata_uri, cored, accessToPhysicalDrillCore, boreholeUse, BBOX}"^^xsd:string;
 # HIDE FROM USER IN CONFIGURATION TAB!
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "service"^^xsd:string;

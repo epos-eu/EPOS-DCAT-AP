@@ -267,6 +267,7 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "format"^^xsd:string;
 				rdfs:label "output format";
+				hydra:property "schema:encodingFormat";
 				rdfs:range "xsd:string";
 				http:paramValue "xml";
 				http:paramValue "text";
@@ -288,12 +289,16 @@
 				hydra:variable "includeallorigins"^^xsd:string;
 				rdfs:label "include all origins";
 				rdfs:range "xsd:boolean";
+				http:paramValue "true";
+				http:paramValue "false";
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "includeallmagnitudes"^^xsd:string;
 				rdfs:label "include all magnitudes";
 				rdfs:range "xsd:boolean";
+				http:paramValue "true";
+				http:paramValue "false";
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
