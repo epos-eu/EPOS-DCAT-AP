@@ -113,14 +113,15 @@
 
 <Aviation-color-codes> a dcat:Distribution;
 		dct:identifier "Aviation-color-codes";
-		dct:title "Aviation color codes for volcanoes";
-		dct:description "It reports the aviation color codes for each volcano in Iceland";
+		dct:title "Aviation color codes for Icelandic volcanoess";
+		dct:description "The service allows to access the current status of icelandic volcanoes as coded through the Aviation Color codes. It also allows to investgate this parameter as function of time and see how the Aviation Color code has been changing through time. It allows to investigate the aviation color code for volcanoes such as Katla, Oraefajokull and Hekla";
 		dct:issued "2014-10-01"^^xsd:date;
 		dct:modified "2014-10-01"^^xsd:date;
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/032>;
                 dcat:accessURL <www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/032/Operation/032>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
+		dct:license "https://creativecommons.org/licenses/by-sa/4.0/"^^xsd:anyURI;
 .
 
 #########
@@ -146,8 +147,13 @@
 	dcat:theme <epos:VolcanologicalData>;
 	dcat:contactPoint <http://orcid.org/0000-0001-5750-0872/contactPoint>;
 	schema:provider <PIC:997168343>;
+        dct:conformsTo <www.epos-eu.org/epos-dcat-ap/Volcano_observations/APIDocumentation>;
 .
-
+<www.epos-eu.org/epos-dcat-ap/Volcano_observations/APIDocumentation> a hydra:APIDocumentation;
+      hydra:title "Web services documentation for Volcano_observations";
+      hydra:description "List, descriptions and examples on how to use web services to access data.";
+      hydra:entrypoint "https://docs.vedur.is/api/epos/#!/Volcanoes/get_volcanoes_products_aviation_color_codes"^^xsd:anyURI;
+.
 #########
 # Operation
 ######### 
