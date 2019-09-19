@@ -112,14 +112,15 @@
 #########  
 <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/058/WSDistribution> a dcat:Distribution;
 		dct:identifier "www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/058/WSDistribution";
-		dct:title "Tephra fallout hazard maps for explosive volcanoes";
-		dct:description "Static map";
+		dct:title "Tephra fallout hazard maps Iceland";
+		dct:description "The service allows to open static maps showing the probabilistic hazard due to tephra fallout at selected Icelandic volcanoes; e.g. Hekla, Katla and Oraefajokull. The maps are provided for selected tephra ground loading thresholds and have been produced for eruptive scenarios of reference.";
 		dct:issued "2018-11-30"^^xsd:date;
 		dct:modified "2018-11-30"^^xsd:date;
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
                 dcat:accessURL <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/058/Operation/058>;
 		dct:conformsTo <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/058>;
+		dct:license "https://creativecommons.org/licenses/by-sa/4.0/"^^xsd:anyURI;
 . 
 
 #########
@@ -136,6 +137,7 @@
         dcat:theme <epos:Geohazards>;
 	schema:datePublished "2018-11-30"^^xsd:date;
 	schema:dateModified "2018-11-30"^^xsd:date;
+	dct:conformsTo <www.epos-eu.org/epos-dcat-ap/Volcano_observations/APIDocumentation>;
 	dct:spatial [ a dct:Location; 
 		locn:geometry "POLYGON((-25.0 63.0,-25.0 68.5,-10.0 68.5,-10.0 63.0,-25.0 63.0))"^^gsp:wktLiteral; 
 	]; 
@@ -146,6 +148,12 @@
 		schema:endDate "2025-01-01T00:00:00Z"^^xsd:dateTime; 
 	]; 
 . 
+
+<www.epos-eu.org/epos-dcat-ap/Volcano_observations/APIDocumentation> a hydra:APIDocumentation;
+      hydra:title "Web services documentation for Volcano_observations";
+      hydra:description "List, descriptions and examples on how to use web services to access data.";
+      hydra:entrypoint "https://docs.vedur.is/api/epos/#!/Volcanoes/get_hazard_maps_meta"^^xsd:anyURI;
+.
 
 #########
 # Operation
