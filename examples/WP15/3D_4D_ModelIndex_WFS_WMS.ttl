@@ -227,9 +227,11 @@
 					hydra:variable "outputFormat"^^xsd:string;
 					rdfs:range "xsd:string";
 					rdfs:label "Output format";
-					hydra:property "schema:encodingFormat";			
-					http:paramValue "application/geo+json"; # do we need to urlEncode this ?
-					http:paramValue "application/gml+xml;version=3.2"; # do we need to urlEncode this ?
+					hydra:property "schema:encodingFormat";	
+					http:paramValue "application/geo%2Bjson"; # do we need to urlEncode this ?
+					http:paramValue "application/gml%2Bxml%3B%20version%3D3.2"; # do we need to urlEncode this ?
+					#http:paramValue "application/geo+json"; # do we need to urlEncode this ?
+					#http:paramValue "application/gml+xml;version=3.2"; # do we need to urlEncode this ?
 					schema:defaultValue "application/geo+json";
 					hydra:required "true"^^xsd:boolean;
 				];
