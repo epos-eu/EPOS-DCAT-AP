@@ -113,6 +113,7 @@
 		dcat:keyword "mine","geology";
 		dcat:contactPoint <mailto:contact-brgm@brgm.fr/manager>;
 		dcat:distribution <https://data.geoscience.earth/id/dataset/mine/distributionWfs>;
+		dcat:distribution <https://data.geoscience.earth/id/dataset/mine/distributionWms>;
 		dct:publisher <PIC:999993662>;
 . 
 
@@ -125,6 +126,21 @@
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:conformsTo <https://data.geoscience.earth/api/wfsMine>;
 		dcat:accessURL <https://data.geoscience.earth/api/wfsMine/operation>;
+		dct:license "royalty free licence"^^xsd:anyURI ;
+		dct:format "http://publications.europa.eu/resource/authority/file-type/GML"^^xsd:anyURI;
+		#dct:format "https://www.iana.org/assignments/media-types/application/gml+xml"^^xsd:anyURI;
+. 
+
+
+	<https://data.geoscience.earth/id/dataset/mine/distributionWms> a dcat:Distribution;
+		dct:identifier "https://data.geoscience.earth/id/dataset/mine/distributionWms";
+		dct:title "Mine View Service based on Minerals4EU dataset";
+		dct:description "Based on Minerals4EU dataset, this serviceallows visualization of available Mines in a given area of Europe.";
+		dct:issued "2016-10-27"^^xsd:date;
+		dct:modified "2018-01-19"^^xsd:date;
+		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+		dct:conformsTo <https://data.geoscience.earth/api/wmsMine>;
+		dcat:accessURL <https://data.geoscience.earth/api/wmsMine/operation>;
 		dct:license "royalty free licence"^^xsd:anyURI ;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/GML"^^xsd:anyURI;
 		#dct:format "https://www.iana.org/assignments/media-types/application/gml+xml"^^xsd:anyURI;
@@ -207,6 +223,17 @@
 				];
 				
 				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "outputFormat"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Output format";
+					hydra:property "schema:encodingFormat";			
+					http:paramValue "application/geo%2Bjson"; # do we need to urlEncode this ?
+					http:paramValue "application/gml%2Bxml%3B%20version%3D3.2"; # do we need to urlEncode this ?
+					schema:defaultValue "application/geo%2Bjson";
+					hydra:required "true"^^xsd:boolean;
+				];
+
+				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "gml:identifier"^^xsd:string;
 					rdfs:range "xsd:string";
 					rdfs:label "index identifier";
@@ -220,3 +247,143 @@
 				];
 		] ;
 . 
+
+
+<https://data.geoscience.earth/api/wmsMine> a epos:WebService;
+	schema:identifier "https://data.geoscience.earth/api/wmsMine";
+	schema:description "Based on Minerals4EU dataset, this serviceallows visualization of available Mines in a given area of Europe.";
+	dcat:theme <epos:Mine>;
+	schema:name "Mine View Service";
+	hydra:entrypoint "https://data.geoscience.earth/api/wmsMine?"^^xsd:anyURI; 
+	schema:provider <PIC:999993662>;
+	schema:datePublished "2016-10-27Z"^^xsd:date;
+	schema:dateModified "2018-01-19Z"^^xsd:date;
+	dct:spatial [ a dct:Location; 
+		locn:geometry "POLYGON((-180 -90,-180 90,180 90,180 -90,-180 -90))"^^gsp:wktLiteral; 
+	]; 
+	hydra:supportedOperation <https://data.geoscience.earth/api/wmsMine/operation>;
+	schema:keywords "mine", "geology";
+	dct:license "TBD"^^xsd:anyURI;
+	dct:temporal [ a dct:PeriodOfTime; 
+		schema:startDate "1886-05-16T00:00:00Z"^^xsd:dateTime; 
+		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
+	]; 
+	dcat:contactPoint <mailto:contact-brgm@brgm.fr/manager>;
+. 
+
+<https://data.geoscience.earth/api/wmsMine/operation> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "image/png";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://data.geoscience.earth/api/wmsMine{?service, version, request, layers, crs, format, width, height}&bbox={minlatitude, minlongitude, maxlatitude, maxlongitude}"^^xsd:string;
+				
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "service"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "service";
+					schema:defaultValue "WMS";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "version"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "WMS version";
+					schema:defaultValue "1.3.0";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "request"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Request type";
+					schema:defaultValue "GetMap";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "layers"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Layers";
+					schema:defaultValue "Mine";
+					hydra:required "true"^^xsd:boolean;
+				];
+				#hydra:mapping[ a hydra:IriTemplateMapping;
+					#hydra:variable "BBOX"^^xsd:string;
+					#rdfs:range "xsd:string";
+					#rdfs:label "WMS BBOX filter parameter";
+					#hydra:required "true"^^xsd:boolean;
+					#schema:defaultValue "-180,-90,180,90";
+				#];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "minlatitude"^^xsd:string;
+					hydra:property "epos:southernmostLatitude";
+					rdfs:range "xsd:float";
+					rdfs:label "Minimum Latitude";
+					schema:minValue "-90.0";
+					schema:maxValue "90.0";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "-90";
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "maxlatitude"^^xsd:string;
+					hydra:property "epos:northernmostLatitude";
+					rdfs:range "xsd:float";
+					rdfs:label "Maximum Latitude";
+					schema:minValue "-90.0";
+					schema:maxValue "90.0";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "90";
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "minlongitude"^^xsd:string;
+					hydra:property "epos:westernmostLongitude";
+					rdfs:range "xsd:float";
+					rdfs:label "Minimum Longitude";
+					schema:minValue "-180.0";
+					schema:maxValue "180.0";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "-180";
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "maxlongitude"^^xsd:string;
+					hydra:property "epos:easternmostLongitude";
+					rdfs:range "xsd:float";
+					rdfs:label "Maximum Longitude";
+					schema:minValue "-180.0";
+					schema:maxValue "180.0";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "180";
+					
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "crs"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Spatial Reference System";
+					schema:defaultValue "EPSG:4326";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "format"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Output format";
+					hydra:property "schema:encodingFormat";			
+					http:paramValue "image/png";
+					http:paramValue "image/jpeg";
+					http:paramValue "image/geotiff";
+					schema:defaultValue "image/png";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "width"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Width of the output map";
+					schema:defaultValue "1536";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "height"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Height of the output map";
+					schema:defaultValue "660";
+					hydra:required "true"^^xsd:boolean;
+				];
+		] ;
+.
