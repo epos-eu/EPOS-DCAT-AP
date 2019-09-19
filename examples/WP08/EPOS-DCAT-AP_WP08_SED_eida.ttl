@@ -26,7 +26,7 @@
 		schema:streetAddress "Sonneggstr. 5, NO FO 69.2";
 		schema:addressLocality "Zürich";
 		schema:postalCode "8092";
-		schema:addressCountry "Switzerland";
+		schema:addressCountry "Zürich";
 	]; 
 	schema:email "kaestli@sed.ethz.ch";
 	schema:telephone "+41446333422";
@@ -47,7 +47,7 @@
 		schema:streetAddress "Sonneggstr. 5, NO FO 69.3";
 		schema:addressLocality "Zürich";
 		schema:postalCode "8092";
-		schema:addressCountry "Switzerland";
+		schema:addressCountry "Zürich";
 	]; 
 	schema:email "john.clinton@sed.ethz.ch";
 	schema:telephone "+41446334436";
@@ -64,7 +64,7 @@
 		#schema:value  ""; 
 	#]; 
 	schema:description "access to Seismic Waveform data maintained by SED. Service implements FDSN dataselect web service 1.0 standard";
-	dcat:theme <epos:Seismicwaveforms>;
+	dcat:theme <#Seismicwaveforms>;
 	schema:name "FDSN Dataselect - Swiss Seismological Service at ETH Zurich";
 	hydra:entrypoint "http://eida.ethz.ch/fdsnws/dataselect/1/query?"^^xsd:anyURI; 
 	schema:provider <PIC:999979015>;
@@ -80,6 +80,10 @@
 		schema:startDate "1980-01-01T00:00:00Z"^^xsd:dateTime; 
 		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
 	]; 
+	schema:contactPoint <orcid.org/0000-0001-8626-2703/scientificContact>;
+	schema:contactPoint <orcid.org/0000-0001-8667-8549/legalContact>;
+	schema:contactPoint <orcid.org/0000-0001-8667-8549/financialContact>;
+
 . 
 
 <http://eida.ethz.ch/fdsnws/station/1/query?> a epos:WebService;
@@ -89,7 +93,7 @@
 		#schema:value  ""; 
 	#]; 
 	schema:description "access to Seismic station, instrumentation, and response  data maintained by SED. Service implements FDSN station web service 1.0 standard";
-	dcat:theme <epos:Seismicstations>;
+	dcat:theme <#Seismicstations>;
 	schema:name "FDSN Station - Swiss Seismological Service at ETH Zurich";
 	hydra:entrypoint "http://eida.ethz.ch/fdsnws/station/1/query?"^^xsd:anyURI; 
 	schema:provider <PIC:999979015>;
@@ -106,16 +110,20 @@
 		schema:startDate "1980-01-01T00:00:00Z"^^xsd:dateTime; 
 		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
 	]; 
+	schema:contactPoint <orcid.org/0000-0001-8626-2703/scientificContact>;
+	schema:contactPoint <orcid.org/0000-0001-8667-8549/legalContact>;
+	schema:contactPoint <orcid.org/0000-0001-8667-8549/financialContact>;
+
 . 
 
-<http://eida.ethz.ch/fdsnws/station/1/query?> a epos:WebService;
-	schema:identifier "http://eida.ethz.ch/fdsnws/station/1/query?";
+<http://eida.ethz.ch/eidaws/routing/1/query?> a epos:WebService;
+	schema:identifier "http://eida.ethz.ch/eidaws/routing/1/query?";
 	#schema:identifier [ a schema:PropertyValue; 
 		#schema:propertyID  "DDSS-ID"; 
 		#schema:value  ""; 
 	#]; 
 	schema:description "access to Routing information for FDSN station, FDSN dataselect and EIDA WFcatalog web services. Service endpoint clone maintained by SED. Service implements EIDA routing web service 1.0.3 standard";
-	dcat:theme <epos:Seismicdataservices>;
+	dcat:theme <#Seismicdataservices>;
 	schema:name "EIDA routing - Swiss Seismological Service at ETH Zurich";
 	hydra:entrypoint "http://eida.ethz.ch/eidaws/routing/1/query?"^^xsd:anyURI; 
 	schema:provider <PIC:999979015>;
@@ -124,14 +132,17 @@
 	dct:spatial [ a dct:Location; 
 		locn:geometry "POLYGON(-180 -90,-180 90,180 90,180 -90,-180 -90)"^^gsp:wktLiteral; 
 	]; 
-	hydra:supportedOperation <http://eida.ethz.ch/fdsnws/station/1/query?/operation>;
-	hydra:supportedOperation <http://eida.ethz.ch/fdsnws/station/1/query?/operation>;
+	hydra:supportedOperation <http://eida.ethz.ch/fdsnws/routing/1/query?/operation>;
 	schema:keywords "seismology"," seismicity"," earthquakes"," waveform"," instrumentation","SED","ETHZ","metadata";
 	dct:license "to be defined by EIDA"^^xsd:anyURI;
 	dct:temporal [ a dct:PeriodOfTime; 
-		schema:startDate "2017-01-01T00:00:00Z"^^xsd:dateTime; 
+		schema:startDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
 		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
 	]; 
+	schema:contactPoint <orcid.org/0000-0001-8626-2703/scientificContact>;
+	schema:contactPoint <orcid.org/0000-0001-8667-8549/legalContact>;
+	schema:contactPoint <orcid.org/0000-0001-8667-8549/financialContact>;
+
 . 
 
 <http://eida.ethz.ch/eidaws/wfcatalog/1/query?> a epos:WebService;
@@ -141,7 +152,7 @@
 		#schema:value  ""; 
 	#]; 
 	schema:description "access to Seismic to availability and quality metadata for seismic waveforms archived at SED. Service implements FDSN station web service 1.0 standard";
-	dcat:theme <epos:waveformquality>;
+	dcat:theme <#waveformquality>;
 	schema:name "EIDA WFcatalog - Swiss Seismological Service at ETH Zurich";
 	hydra:entrypoint "http://eida.ethz.ch/eidaws/wfcatalog/1/query?"^^xsd:anyURI; 
 	schema:provider <PIC:999979015>;
@@ -157,6 +168,10 @@
 		schema:startDate "2011-01-01T00:00:00Z"^^xsd:dateTime; 
 		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
 	]; 
+	schema:contactPoint <orcid.org/0000-0001-8626-2703/scientificContact>;
+	schema:contactPoint <orcid.org/0000-0001-8667-8549/legalContact>;
+	schema:contactPoint <orcid.org/0000-0001-8667-8549/financialContact>;
+
 . 
 
 <PIC:999979015> a schema:Organization;
@@ -177,9 +192,11 @@
 	schema:contactPoint <orcid.org/0000-0001-8667-8549/legalContact>;
 	schema:contactPoint <orcid.org/0000-0001-8667-8549/financialContact>;
 . 
+
+
 	<http://eida.ethz.ch/fdsnws/dataselect/1/query?/operation> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
-		hydra:returns "application/vnd.fdsn.mseed";
+		hydra:returns "binary";
 		hydra:property[ a hydra:IriTemplate;
 			hydra:template "http://eida.ethz.ch/fdsnws/dataselect/1/query{?starttime, endtime, network, station, location, channel, quality, minimumlength, nodata}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
@@ -251,7 +268,7 @@
 . 
 	<http://eida.ethz.ch/fdsnws/station/1/query?/operation> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
-		hydra:returns "application/xml";
+		hydra:returns "XML";
 		hydra:property[ a hydra:IriTemplate;
 			hydra:template "http://eida.ethz.ch/fdsnws/station/1/query{?starttime, endtime, network, station, location, channel, minlatitude, maxlatitude, minlongitude, maxlongitude, level, nodata}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
@@ -352,9 +369,10 @@
 				];
 		] ;
 . 
-	<http://eida.ethz.ch/fdsnws/station/1/query?/operation> a hydra:Operation;
+
+	<http://eida.ethz.ch/fdsnws/routing/1/query?/operation> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
-		hydra:returns "application/xml";
+		hydra:returns "XML";
 		hydra:property[ a hydra:IriTemplate;
 			hydra:template "http://eida.ethz.ch/eidaws/routing/1/query{?starttime, endtime, network, station, location, channel, minlatitude, maxlatitude, minlongitude, maxlongitude, service, format, alternative}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
@@ -444,14 +462,18 @@
 					rdfs:range "xsd:string";
 					rdfs:label "Response Format";
 					http:paramValue "xml";
+					http:paramValue "get";
+					http:paramValue "post";
 					http:paramValue "json";
 					schema:defaultValue "xml";
 					hydra:required "false"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "alternative"^^xsd:string;
-					rdfs:range "xsd:boolean";
-					schema:defaultValue "false"^^xsd:boolean;
+					rdfs:range "xsd:string";
+					http:paramValue "true";
+					http:paramValue "false";
+					schema:defaultValue "false"^^xsd:string;
 					rdfs:label "include alternative routesor not?";
 					hydra:required "false"^^xsd:boolean;
 				];
@@ -459,7 +481,7 @@
 . 
 	<http://eida.ethz.ch/eidaws/wfcatalog/1/query?/operation> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
-		hydra:returns "application/xml";
+		hydra:returns "XML";
 		hydra:property[ a hydra:IriTemplate;
 			hydra:template "http://eida.ethz.ch/eidaws/wfcatalog/1/query{?starttime, endtime, percent_availability_gt, percent_availability_lt, num_gaps_gt, num_gaps_lt, num_overlaps_gt, num_overlaps_lt, sample_stdev_gt, sample_stdev_lt, sample_rms_gt, sample_rms_lt, max_gap_gt, max_gap_lt, sample_min_gt, sample_min_lt, sample_max_gt, sample_max_lt, sample_mean_gt, sample_mean_lt, network, station, location, channel, csegments, longestonly, minlen, include}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
