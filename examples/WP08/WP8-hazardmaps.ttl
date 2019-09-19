@@ -26,7 +26,7 @@
 		schema:streetAddress "Sonneggstr. 5, NO FO 69.2";
 		schema:addressLocality "Zürich";
 		schema:postalCode "8092";
-		schema:addressCountry "Zürich";
+		schema:addressCountry "Switzerland";
 	]; 
 	schema:email "kaestli@sed.ethz.ch";
 	schema:telephone "+41446333422";
@@ -47,7 +47,7 @@
 		schema:streetAddress "Sonneggstr. 5, NO FO 61.2";
 		schema:addressLocality "Zürich";
 		schema:postalCode "8092";
-		schema:addressCountry "Zürich";
+		schema:addressCountry "Switzerland";
 	]; 
 	schema:email "laurentiu.danciu@sed.ethz.ch";
 	schema:telephone "+41446327439";
@@ -324,6 +324,7 @@
 		hydra:variable "format"^^xsd:string;
 		rdfs:range "xsd:string";
 		rdfs:label "Output format";
+		hydra:property "schema:encodingFormat";
 		schema:defaultValue "image/png";
 		http:paramValue "image/png";
 		hydra:required "true"^^xsd:boolean;
@@ -341,12 +342,12 @@
 	hydra:property[ a hydra:IriTemplate;
 	hydra:template "http://efehrmaps.ethz.ch/cgi-bin/mapserv{?lon1, lat1, lon2, lat2, id, imt, hmapexceedprob, hmapexceedyears, soilType, aggregationtype, aggregationlevel}"^^xsd:string;
 	hydra:mapping[ a hydra:IriTemplateMapping;
-			hydra:variable "id"^^xsd:string;
-			rdfs:range "xsd:integer";
-			rdfs:label "Hazard model id";
-			schema:defaultValue "68";
-			http:paramValue "68";
-			hydra:required "true"^^xsd:boolean;
+		hydra:variable "id"^^xsd:string;
+		rdfs:range "xsd:integer";
+		rdfs:label "Hazard model id";
+		schema:defaultValue "68";
+		http:paramValue "68";
+		hydra:required "true"^^xsd:boolean;
 	];
 	hydra:mapping[ a hydra:IriTemplateMapping;
 		hydra:variable "lat1"^^xsd:string;
