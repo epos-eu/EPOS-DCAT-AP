@@ -637,7 +637,7 @@
 		#hydra:returns "application/quakeml";
 		hydra:returns "application/xml";
 		hydra:property[ a hydra:IriTemplate;
-		hydra:template "http://www.seismicportal.eu/mtws/api/search{?source_catalog, eventid, startime, endtime, dayafter, mindepth, maxdepth, minmag, maxmag, lat, lon, minradius, maxradius, minlat, maxlat, minlon, maxlon, mintplung, maxtplung, minnplung, maxnplung, mindc, maxdc, preferredOnly, format, downloadAsFile, orderby, offset, limit}"^^xsd:string;
+		hydra:template "http://www.seismicportal.eu/mtws/api/search{?source_catalog, eventid, starttime, endtime, dayafter, mindepth, maxdepth, minmag, maxmag, lat, lon, minradius, maxradius, minlat, maxlat, minlon, maxlon, mintplung, maxtplung, minnplung, maxnplung, mindc, maxdc, preferredOnly, format, downloadAsFile, orderby, offset, limit}"^^xsd:string;
 
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "source_catalog"^^xsd:string;
@@ -965,11 +965,11 @@
 			rdfs:label "Name of the output catalog";
 			http:paramValue "all";
 			http:paramValue "UNID";
-            http:paramValue "EMSC";
-            http:paramValue "INGV";
-            http:paramValue "USGS";
-            http:paramValue "ISC";
-            schema:defaultValue "all";
+            		http:paramValue "EMSC";
+            		http:paramValue "INGV";
+            		http:paramValue "USGS";
+            		http:paramValue "ISC";
+            		schema:defaultValue "all";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -1025,8 +1025,10 @@
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "prefered_only"^^xsd:string;
 			rdfs:range "xsd:boolean";
-			rdfs:label "Select only the first elected event by catalog";
+			rdfs:label "Select only the first selected event by catalog";
 			schema:defaultValue "false";
+			http:paramValue "true";
+			http:paramValue "false";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -1035,6 +1037,8 @@
 			rdfs:range "xsd:boolean";
 			rdfs:label "If TRUE return info about the event";
 			schema:defaultValue "false";
+			http:paramValue "true";
+			http:paramValue "false";
 			hydra:required "false"^^xsd:boolean;
 		];
 
@@ -1055,7 +1059,7 @@
 			rdfs:label "Spatial selection type";
 			http:paramValue "rectangle";
 			http:paramValue "none";
-            schema:defaultValue "rectangle";
+            		schema:defaultValue "rectangle";
 			hydra:required "false"^^xsd:boolean;
 		];	
 
@@ -1073,7 +1077,7 @@
 
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "maxdate"^^xsd:string;
-		    hydra:property "schema:endDate";
+		    	hydra:property "schema:endDate";
 			schema:valuePattern "YYYY-MM-DDThh:mm:ssZ";
 			rdfs:range "xsd:dateTime";
 			rdfs:label "End Time";
@@ -1387,7 +1391,7 @@
 			rdfs:range "xsd:boolean";
 			rdfs:label "Download query as file?";
 			schema:defaultValue "false";
-			http:paramValue "yes";
+			http:paramValue "false";
 			http:paramValue "true";
 			hydra:required "false"^^xsd:boolean;
 		];
@@ -1622,7 +1626,7 @@
 # DISTRIBUTION (#2) => FE-region lookup
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/EMSC/Distribution> a dcat:Distribution;
 		dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/EMSC/Distribution";
-		dct:title " Flinn–Engdahl region lookup";
+		dct:title "Flinn–Engdahl region lookup";
 		dct:description "The distribution provides access to  Flinn–Engdahl region names from a geolocation.";
 		dct:issued "2017-10-25"^^xsd:date;
 		dct:modified "2017-10-25"^^xsd:date;

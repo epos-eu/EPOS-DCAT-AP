@@ -1,0 +1,618 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http: <http://www.w3.org/2006/http#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+
+#   Domain    
+#---------------------------------------------------------------------------------------------------------
+<epos:NearFaultObservations> a skos:ConceptScheme;
+	dct:title "Near Fault Observations";
+	dct:description "It contains the concepts of Near Fault Observations";
+.
+
+<epos:GeophysicalData> a skos:Concept;
+	skos:inScheme <epos:NearFaultObservations>;
+	skos:prefLabel "Geophysical Data";
+.
+
+<epos:StrainmeterStations> a skos:Concept;
+	skos:inScheme <epos:NearFaultObservations>;
+	skos:prefLabel "Strainmeter Stations";
+.
+
+<epos:StrainmeterWaveforms> a skos:Concept;
+	skos:inScheme <epos:NearFaultObservations>;
+	skos:prefLabel "Strainmeter Waveforms";
+.
+
+#   Persons    
+#---------------------------------------------------------------------------------------------------------
+<ResearcherID:B-4828-2015> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "researcherID";
+		schema:value "ResearcherID:B-4828-2015";
+	];
+	schema:familyName "Bernard";
+	schema:givenName "Pascal";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Institut de Physique du Globe de Paris, 1 Rue Jussieu";
+		schema:addressLocality "Paris";
+		schema:postalCode "75238";
+		schema:addressCountry "France";
+	];
+	schema:email "bernard@ipgp.fr";
+	schema:telephone "+33183957529";
+	schema:qualifications "Researcher, Science Management";
+	schema:url "http://www.ipgp.fr/fr/bernard-pascal/"^^xsd:anyURI;
+	schema:affiliation <PIC:999597417>;
+	schema:contactPoint <ResearcherID:B-4828-2015/scientificContact>;
+.
+
+<ResearcherID:E-7067-2017> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "researcherID";
+		schema:value "ResearcherID:E-7067-2017";
+	];
+	schema:familyName "Chaussidon";
+	schema:givenName "Marc";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Institut de Physique du Globe de Paris, 1 Rue Jussieu";
+		schema:addressLocality "Paris";
+		schema:postalCode "75238";
+		schema:addressCountry "France";
+	];
+	schema:email "chaussidon@ipgp.fr";
+	schema:qualifications "Director of institut de Physique du Globe de Paris - IPGP";
+	schema:affiliation <PIC:999597417>;
+	schema:contactPoint <ResearcherID:E-7067-2017/legalContact>;
+	schema:contactPoint <ResearcherID:E-7067-2017/scientificContact>;
+.
+
+<mailto:courgey@ipgp.fr> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "mailto";
+		schema:value "mailto:courgey@ipgp.fr";
+	];
+	schema:familyName "Courgey";
+	schema:givenName "Bernadette";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Institut de Physique du Globe de Paris, 1 Rue Jussieu";
+		schema:addressLocality "Paris";
+		schema:postalCode "75238";
+		schema:addressCountry "France";
+	];
+	schema:email "courgey@ipgp.fr";
+	schema:qualifications "Financial Office";
+	schema:affiliation <PIC:999597417>;
+	schema:contactPoint <mailto:courgey@ipgp.fr/financialContact>;
+.
+
+<https://orcid.org/0000-0003-2936-8047> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "orcid";
+		schema:value "https://orcid.org/0000-0003-2936-8047";
+	]; 
+	schema:familyName "Pedersen";
+	schema:givenName "Helle";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Université Grenoble Alpes,ISTerre,CS 40700";
+		schema:addressLocality "Grenoble Cedex 9";
+		schema:postalCode "38058";
+		schema:addressCountry "France";
+	]; 
+	schema:email "mailto:Helle.Pedersen@univ-grenoble-alpes.fr";
+	schema:telephone "+33476635200";
+	schema:url "https://isterre.fr/annuaire/pages-web-du-personnel/helle-pedersen/?id_auteur=58"^^xsd:anyURI;
+	schema:qualifications "Researcher, Science Management, Scientific leader of the RESIF Data Center";
+	schema:affiliation <PIC:999997930>;
+	schema:contactPoint <https://orcid.org/0000-0003-2936-8047/scientificContact>;
+. 
+<https://orcid.org/0000-0003-1777-9172> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "orcid";
+		schema:value "https://orcid.org/0000-0003-1777-9172";
+	]; 
+	schema:familyName "Walpersdorf";
+	schema:givenName "Andrea";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Université Grenoble Alpes,ISTerre,CS 40700";
+		schema:addressLocality "Grenoble Cedex 9";
+		schema:postalCode "38058";
+		schema:addressCountry "France";
+	]; 
+	schema:email "mailto:Andrea.Walsperdorf@univ-grenoble-alpes.fr";
+	schema:telephone "+33476635200";
+	schema:url "https://isterre.fr/annuaire/pages-web-du-personnel/andrea-walpersdorf/?id_auteur=76/"^^xsd:anyURI;
+	schema:qualifications "Researcher , Science Management, Director of RESIF (Réseau Sismologique et géodésique Français)";
+	schema:affiliation <PIC:999997930>;
+	schema:contactPoint <https://orcid.org/0000-0003-1777-9172/legalContact>;
+.
+
+<https://orcid.org/0000-0002-9956-9971> a schema:Person;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "orcid";
+		schema:value "https://orcid.org/0000-0002-9956-9971";
+	]; 
+	schema:familyName "Péquegnat";
+	schema:givenName "Catherine";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Université Grenoble Alpes,ISTerre,CS 40700";
+		schema:addressLocality "Grenoble Cedex 9";
+		schema:postalCode "38058";
+		schema:addressCountry "France";
+	]; 
+	schema:email "mailto:Catherine.Pequegnat@univ-grenoble-alpes.fr";
+	schema:telephone "+33476635200";
+	schema:url "https://www.isterre.fr/spip.php?page=auteur&id_auteur=59&lang=fr/"^^xsd:anyURI;
+	schema:qualifications "Engineer, technical leader of the RESIF Data Center, Data and services technicalContact, Seismological services" ;
+	schema:affiliation <PIC:999997930>;
+	schema:contactPoint <https://orcid.org/0000-0002-9956-9971/contactPoint> ;
+. 
+
+# Organization
+#---------------------------------------------------------------------------------------------------------
+
+<PIC:999997930> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "pic";
+		schema:value "999997930";
+	]; 
+	schema:legalName "RESIF Data Center";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "Université Grenoble Alpes,ISTerre,CS 40700";
+		schema:addressLocality "Grenoble Cedex 9";
+		schema:postalCode "38058";
+		schema:addressCountry "France";
+	]; 
+	schema:url "http://seismology.resif.fr/"^^xsd:anyURI;
+	schema:email "datacenter@resif.fr";
+   schema:contactPoint <https://orcid.org/0000-0003-2936-8047/scientificContact>;
+   schema:contactPoint <https://orcid.org/0000-0003-1777-9172/legalContact>;
+   schema:contactPoint <https://orcid.org/0000-0002-9956-9971/contactPoint>;
+.
+
+<PIC:999597417> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+		schema:propertyID "pic";
+		schema:value "999597417";
+	]; 
+	schema:legalName "Institute of Earth Physics of Paris";
+	schema:address [ a schema:PostalAddress;
+		schema:streetAddress "1 rue jussieu";
+		schema:addressLocality "Paris";
+		schema:postalCode "75238";
+		schema:addressCountry "France";
+	]; 
+	schema:url "http://www.ipgp.fr/"^^xsd:anyURI;
+	schema:email "accueil@ipgp.fr";
+   schema:contactPoint <ResearcherID:E-7067-2017/scientificContact>;
+   schema:contactPoint <ResearcherID:E-7067-2017/legalContact>;
+   schema:contactPoint <mailto:courgey@ipgp.fr/financialContact>;
+.
+
+
+# Contacts
+#---------------------------------------------------------------------------------------------------------
+
+<ResearcherID:B-4828-2015/scientificContact> a schema:ContactPoint;
+		schema:email "bernard@ipgp.fr";
+		schema:availableLanguage "en" ;
+		schema:contactType "scientificContact" ;
+.
+<ResearcherID:E-7067-2017/legalContact> a schema:ContactPoint;
+		schema:email "chaussidon@ipgp.fr";
+		schema:availableLanguage "en" ;
+		schema:contactType "legalContact" ;	
+.
+<ResearcherID:E-7067-2017/scientificContact> a schema:ContactPoint;
+		schema:email "chaussidon@ipgp.fr";
+		schema:availableLanguage "en" ;
+		schema:contactType "scientificContact" ;	
+.
+<mailto:courgey@ipgp.fr/financialContact> a schema:ContactPoint;
+		schema:email "courgey@ipgp.fr";
+		schema:availableLanguage "en" ;
+		schema:contactType "financialContact" ;
+.
+
+<https://orcid.org/0000-0002-9956-9971/contactPoint> a schema:ContactPoint;
+	schema:email "Catherine.Pequegnat@@univ-grenoble-alpes.fr";
+	schema:availableLanguage "en" ;
+	schema:contactType "manager" ;	
+.
+
+<https://orcid.org/0000-0003-2936-8047/scientificContact> a schema:ContactPoint;
+		schema:email "Helle.Pedersen@univ-grenoble-alpes.fr";
+		schema:availableLanguage "en" ;
+		schema:contactType "scientificContact" ;
+.
+
+<https://orcid.org/0000-0003-1777-9172/legalContact> a schema:ContactPoint;
+		schema:email "Andrea.Walpersdorf@univ-grenoble-alpes.fr";
+		schema:availableLanguage "en" ;
+		schema:contactType "legalContact" ;	
+.
+
+# Webservices 
+#---------------------------------------------------------------------------------------------------------
+
+# FDSN - Dataselect - RESIF
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/geophysics/WebService/001/RESIF> a epos:WebService ;
+	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/geophysics/WebService/001/RESIF";
+	schema:description "Corinth Rift Laboratory (Greece) - This FDSN webservice at RESIF provides access to geophysical waveforms continuous data (strainmeter, tiltmeter, tide gauge, atmospheric pressure)";
+	dcat:theme <epos:GeophysicalData>;
+	dcat:theme <epos:StrainmeterWaveforms>;
+	dcat:contactPoint <https://orcid.org/0000-0002-9956-9971/contactPoint>;
+	schema:name "Corinth Rift Laboratory - FDSN Dataselect Web Service (RESIF)";
+	hydra:entrypoint "http://ws.resif.fr/fdsnws/dataselect/1/query?"^^xsd:anyURI; 
+	schema:provider <PIC:999997930>;
+	schema:datePublished "2013-01-01Z"^^xsd:dateTime;
+	schema:dateModified "2017-09-12Z"^^xsd:dateTime;
+	dct:spatial [ a dct:Location; 
+		locn:geometry "POLYGON((22.5 38.0, 21.35 38.0, 21.35 38.65, 22.5 38.65, 22.5 38.0))"^^gsp:wktLiteral; 
+	]; 
+	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/geophysics/WebService/001/Operation/001/RESIF>;
+	schema:keywords "geophysical data", "seismicity", "earthquakes", "waveform", "waveform modeling", "RESIF", "CRL", "Corinth Rift Laboratory", "Near Fault Observatories", "Strainmeter", "tide gauge", "water level", "Atmospheric pressure", "tiltmeter";
+	dct:license "To be defined!"^^xsd:anyURI;
+	dct:temporal [ a dct:PeriodOfTime; 
+		schema:startDate "2000-01-01T00:00:00Z"^^xsd:dateTime; 
+		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
+	]; 
+. 
+
+
+# FDSN - Station - RESIF
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/geophysics/WebService/002/RESIF> a epos:WebService ;
+schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/geophysics/WebService/002/RESIF";
+	schema:description "Corinth Rift Laboratory (Greece) - This FDSN webservice at RESIF provides access to geophysical station metadata (strainmeter, tiltmeter, tide gauge, atmospheric pressure).";
+	dcat:theme <epos:StrainmeterStations>;
+	dcat:contactPoint <https://orcid.org/0000-0002-9956-9971/contactPoint>;
+	schema:name "Corinth Rift Laboratory - FDSN Station Web Service (RESIF)";
+	hydra:entrypoint "http://ws.resif.fr/fdsnws/station/1/query?"^^xsd:anyURI; 
+	schema:provider <PIC:999997930>;
+	schema:datePublished "2013-01-01Z"^^xsd:dateTime;
+	schema:dateModified "2017-09-12Z"^^xsd:dateTime;
+	dct:spatial [ a dct:Location; 
+                locn:geometry "POLYGON((22.5 38.0, 21.35 38.0, 21.35 38.65, 22.5 38.65, 22.5 38.0))"^^gsp:wktLiteral;      
+	]; 
+	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/geophysics/WebService/002/Operation/002/RESIF>;
+	schema:keywords "seismology", "seismicity", "earthquakes", "metadata", "RESIF", "stationXML modeling", "CRL", "Corinth Rift Laboratory", "Near Fault Observatories", "Strainmeter", "tide gauge", "water level", "Atmospheric pressure", "tiltmeter";
+	dct:license "To be defined!"^^xsd:anyURI;
+	dct:temporal [ a dct:PeriodOfTime; 
+		schema:startDate "2000-01-01T00:00:00Z"^^xsd:dateTime; 
+		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime; 
+	]; 
+. 
+
+# Operation
+#---------------------------------------------------------------------------------------------------------
+
+# FDSN - dataselect - RESIF
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/geophysics/WebService/001/Operation/001/RESIF> a hydra:Operation;
+	hydra:method "GET"^^xsd:string;
+	hydra:returns "application/vnd.fdsn.mseed";	
+	hydra:property[ a hydra:IriTemplate;
+	hydra:template "http://ws.resif.fr/fdsnws/dataselect/1/query{?starttime, endtime, network, station, location, channel, quality, minimumlength, nodata}"^^xsd:string;
+	
+				hydra:mapping[ a hydra:IriTemplateMapping;
+				        hydra:variable "starttime"^^xsd:string;
+                                        hydra:property "schema:startDate";
+                                        schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+				        rdfs:range "xsd:dateTime";
+				        rdfs:label "Start of the timespan";
+				        hydra:required "true"^^xsd:boolean;
+				        schema:defaultValue "2016-01-01T00:00:00"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "endtime"^^xsd:string;
+                                        hydra:property "schema:endDate";
+                                        schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+					rdfs:range "xsd:dateTime";
+					rdfs:label "End of the timespan";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "2016-01-01T00:01:00"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "network"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Network code";
+					schema:defaultValue "CL";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "station"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Station code";
+					schema:defaultValue "MOKI";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "location"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Location code";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "channel"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Channel code";
+					http:paramValue "?V?";
+					http:paramValue "?A?";
+					http:paramValue "?D?";
+					http:paramValue "?T?";
+					http:paramValue "?K?";
+					schema:defaultValue "?V?";
+					hydra:required "True"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "quality"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Quality";
+					http:paramValue "B";
+					http:paramValue "M";
+					http:paramValue "Q";
+					http:paramValue "R";
+					http:paramValue "D";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "minimumlength"^^xsd:string;
+					rdfs:range "xsd:integer";
+					rdfs:label "Minimum Length";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "nodata"^^xsd:string;
+					rdfs:range "xsd:integer";
+					rdfs:label "HTTP error code if no data is found";
+					http:paramValue "204";
+					http:paramValue "404";
+					hydra:required "false"^^xsd:boolean;
+				];
+		];
+.
+
+
+# FDSN - station - RESIF
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/geophysics/WebService/002/Operation/002/RESIF> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/xml";
+		hydra:property[ a hydra:IriTemplate;
+		hydra:template "http://ws.resif.fr/fdsnws/station/1/query{?starttime, endtime, network, station, location, minlatitude, maxlatitude, minlongitude, maxlongitude, level, nodata, matchtimeseries}&channel={channel}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "starttime"^^xsd:string;
+                                        hydra:property "schema:startDate";
+                                        schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+					rdfs:range "xsd:dateTime";
+					rdfs:label "Start of the timespan";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "2010-01-01T00:00:00"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "endtime"^^xsd:string;
+                                        hydra:property "schema:endDate";
+                                        schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+					rdfs:range "xsd:dateTime";
+					rdfs:label "End of the timespan";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "2019-03-31T01:00:00"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "network"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Network code";
+                                        schema:defaultValue "CL";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "station"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Station code";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "location"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Location code";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "channel"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Channel code";	
+					http:paramValue "?V?";
+					http:paramValue "?A?";
+					http:paramValue "?D?";
+					http:paramValue "?T?";
+					http:paramValue "?K?";
+                                        schema:defaultValue "?V?";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "minlatitude"^^xsd:string;
+					rdfs:range "xsd:float";
+					rdfs:label "Minimum Latitude";
+					schema:minValue "-90.0";
+					schema:maxValue "90.0";
+                                        schema:defaultValue "38.0";
+                                        hydra:property "epos:southernmostLatitude";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "maxlatitude"^^xsd:string;
+					rdfs:range "xsd:float";
+					rdfs:label "Maximum Latitude";
+					schema:minValue "-90.0";
+					schema:maxValue "90.0";
+                                        schema:defaultValue "38.65";
+                                        hydra:property "epos:northernmostLatitude";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "minlongitude"^^xsd:string;
+					rdfs:range "xsd:float";
+					rdfs:label "Minimum Longitude";
+					schema:minValue "-180.0";
+					schema:maxValue "180.0";
+                                        schema:defaultValue "21.35";
+                                        hydra:property "epos:westernmostLongitude";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "maxlongitude"^^xsd:string;
+					rdfs:range "xsd:float";
+					rdfs:label "Maximum Longitude";
+					schema:minValue "-180.0";
+					schema:maxValue "180.0";
+                                        schema:defaultValue "22.5";
+                                        hydra:property "epos:easternmostLongitude";
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "level"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Level";
+					http:paramValue "network";
+					http:paramValue "station";
+					http:paramValue "channel";
+					http:paramValue "response";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "station"
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "nodata"^^xsd:string;
+					rdfs:range "xsd:integer";
+					rdfs:label "HTTP error code if no data is found";
+					http:paramValue "204";
+					http:paramValue "404";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "matchtimeseries"^^xsd:string;
+					rdfs:range "xsd:boolean";
+					rdfs:label "Matchtimeseries";
+					http:paramValue "true";
+					http:paramValue "false";
+					hydra:required "false"^^xsd:boolean;
+				];
+		];
+. 
+
+#  Datasets
+#---------------------------------------------------------------------------------------------------------
+
+# Dataset - dataselect - RESIF
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/geophysics/Dataset/001/RESIF> a dcat:Dataset;
+        dct:title "CRL Geophysical Waveform Continuous Dataset - RESIF"; 
+        dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/geophysics/Dataset/001/RESIF";
+        dct:description "Continuous Geophysical waveform Continuous Dataset (Strainmeter, Tiltmeter, Tide Gauge, Atmospheric pressure)";
+	adms:identifier [ a adms:Identifier ;
+        	adms:schemaAgency "DDSS-ID" ;
+        	skos:notation "WP09-DDSS-035" ;
+        ];
+        dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        owl:versionInfo "1.0.0" ;
+    	  dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+        dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
+        dcat:theme  <epos:StrainmeterWaveforms> ;
+        dcat:theme  <epos:GeophysicalData> ;
+	schema:keywords "geophysical data", "seismicity", "earthquakes", "waveform", "waveform modeling", "RESIF", "CRL", "Corinth Rift Laboratory", "Near Fault Observatories", "Strainmeter", "tide gauge", "water level", "Atmospheric pressure", "Tiltmeter";
+        dcat:contactPoint <ResearcherID:B-4828-2015/scientificContact>;
+	     dct:publisher <PIC:999997930>;
+        dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/geophysics/Dataset/001/Distribution/001/RESIF>;
+        dct:spatial [ a dct:Location ;
+		locn:geometry "POLYGON((22.5 38.0, 21.35 38.0, 21.35 38.65, 22.5 38.65, 22.5 38.0))"^^gsp:wktLiteral; 
+        ];
+        dct:temporal [ a dct:PeriodOfTime ;
+                schema:startDate "2000-01-01T00:00:00Z"^^xsd:dateTime ;
+                #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
+	];
+.
+
+
+# Dataset - station - RESIF
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/geophysics/Dataset/002/RESIF> a dcat:Dataset;
+        dct:title "CRL Geophysical Station Information Dataset - RESIF";
+        dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/geophysics/Dataset/002/RESIF";
+        dct:description "Geophysical Station Information Dataset (Strainmeter, Tiltmeter, Tide Gauge, Atmospheric Pressure)";
+        adms:identifier [ a adms:Identifier ;
+            adms:schemaAgency "DDSS-ID" ;
+            skos:notation "WP09-DDSS-035b" ;
+        ];
+        dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+        owl:versionInfo "1.0.0" ;
+
+    	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+        dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+        dcat:theme  <epos:StrainmeterStations> ;
+        dcat:keyword "seismology", "seismicity", "earthquakes", "geophysical station", "station information", "RESIF" , "Station", "CRL", "Corinth Rift Laboratory", "Near Fault Observatories", "Strainmeter", "tide gauge", "water level", "Atmospheric pressure", "Tiltmeter";
+        dcat:contactPoint <ResearcherID:B-4828-2015/scientificContact>;
+	dct:publisher <PIC:999997930>;
+        dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/geophysics/Dataset/002/Distribution/002/RESIF>;
+        dct:spatial [ a dct:Location ;
+		locn:geometry "POLYGON((22.5 38.0, 21.35 38.0, 21.35 38.65, 22.5 38.65, 22.5 38.0))"^^gsp:wktLiteral; 
+        ];
+        dct:temporal [ a dct:PeriodOfTime ;
+                schema:startDate "2000-01-01T00:00:00Z"^^xsd:dateTime ;
+                #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
+	];
+.
+
+
+# Distribution
+#---------------------------------------------------------------------------------------------------------
+# Distribution - dataselect - RESIF
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/geophysics/Dataset/001/Distribution/001/RESIF> a dcat:Distribution;
+   dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/geophysics/Dataset/001/Distribution/001/RESIF";
+   #dct:title  "CRL Geophysical Waveforms Distribution (strainmeter, tiltmeter, tide gauge, atmospheric pressure)";
+   dct:title "CRL Strainmeter Waveforms and Water level-pressure Data";
+   dct:description "Access to Geophysical Waveform Continuous data (strainmeter, tiltmeter, tide gauge, atmospheric pressure) through FDSN Dataselect web service. It is encoded in mseed format. Its related dataset covers the time period since 2000 and is limited to the Corinth Rift Laboratory (Greece) Near Fault Observatory Area.";
+        dct:issued "2017-01-01"^^xsd:date ;
+	dct:modified "2017-01-01"^^xsd:date ;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/geophysics/WebService/001/Operation/001/RESIF>;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/geophysics/WebService/001/RESIF>;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI;
+ 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+ 	#RESIF : normally we should refer to dct:license "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Open_Licence.pdf" ;
+.
+
+# Distribution - station RESIF
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/geophysics/Dataset/002/Distribution/002/RESIF> a dcat:Distribution;
+    	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/geophysics/Dataset/002/Distribution/002/RESIF";
+        #dct:title  "CRL Geophysical Station Information (strainmeter, tiltmeter, tide gauge, atmospheric pressure)";
+        dct:title "CRL Strainmeter Station Information";
+	dct:description "Access to Geophysical Station Information (strainmeter, tiltmeter, tide gauge, atmospheric pressure) through FDSN Station web service. It is encoded in xml or text format. Its related dataset covers the time period since 2000 and is limited to the Corinth Rift Laboratory (Greece) Near Fault Observatory Area.";
+        dct:issued "2016-01-01"^^xsd:date ;
+	dct:modified "2016-01-01"^^xsd:date ;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/geophysics/WebService/002/Operation/002/RESIF>;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/geophysics/WebService/002/RESIF>;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
+ 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+ 	# RESIF : normally we should refer to dct:license "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Open_Licence.pdf" ;
+.

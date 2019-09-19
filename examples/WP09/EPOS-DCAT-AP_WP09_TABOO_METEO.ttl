@@ -145,7 +145,7 @@
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/METEO/Dataset/001> a dcat:Dataset;
-	dct:title "TABOO Meteorological Parameters at CO2 site Dataset";
+	dct:title "TABOO Meteo Parameters at CO2 site Dataset";
 	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/METEO/Dataset/001";
 	dct:description "Meteorological parameters at CO2 site Web Service retrieve meteorological parameters time series based on periodic counting of water level, water conductivity, air temperature, water temperature, rain, humidity, atmospheric pressure at CO2 site";
 	adms:identifier [ a adms:Identifier; 
@@ -170,7 +170,7 @@
         # schema:endDate "2019-01-01T00:00:00Z"^^xsd:dateTime ;
     ];
 	dcat:theme  <epos:Meteorologicaldata>;
-	dcat:keyword "geochemistry", "meteo parameter", "meteo parameters at CO2 site", "water level", "air temperature", "water temperature", "water conductivity", "rain", "humidity", "atmospheric pressure", "NFO", "TABOO", "FRIDGE";
+	dcat:keyword "geochemistry", "meteo parameter", "meteo parameters at CO2 site", "air temperature", "rain", "humidity", "atmospheric pressure", "NFO", "TABOO", "FRIDGE";
 	dcat:contactPoint <http://orcid.org/0000-0002-8608-4289/contactPoint>;
 	dct:publisher <PIC:999472675>;
     dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/METEO/Distribution/001>;
@@ -178,8 +178,8 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/METEO/Distribution/001> a dcat:Distribution;
     dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/METEO/Distribution/001";
-	dct:title "TABOO Meteo Parameters at CO2 site";
-	dct:description "This distribution provides access to time series of meteo parameters like water level, air temperature, water temperature, water conductivity, rain, humidity and atmospheric pressure measured at CO2 sites. The datasets are encoded in JSON format. Data cover the time period 2010-today and they are limited to the Alta Val Tiberina (Central Italy) Near Fault Observatory.";
+	dct:title "TABOO Meteo at CO2 site";
+	dct:description "This distribution provides access to time series of meteo parameters like air temperature, rain, humidity and atmospheric pressure measured at CO2 sites. The datasets are encoded in JSON format. Data cover the time period 2010-today and they are limited to the Alta Val Tiberina (Central Italy) Near Fault Observatory.";
 	dct:created "2017-03-01"^^xsd:date;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/METEO/WebService/001/Operation/001>;
@@ -191,7 +191,7 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/METEO/WebService/001> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/METEO/WebService/001";
-	schema:description "This web service provides access to time series of meteo parameters like water level, air temperature, water temperature, water conductivity, rain, humidity and atmospheric pressure measured at CO2 sites. The datasets are encoded in JSON format. Data cover the time period 2010-today and they are limited to the Alta Val Tiberina (Central Italy) Near Fault Observatory.";
+	schema:description "This web service provides access to time series of meteo parameters like air temperature, rain, humidity and atmospheric pressure measured at CO2 sites. It is implemented with Tornado (Python web framework).";
 	schema:name "TABOO Meteo parameters at CO2 site";
 	schema:datePublished "2017-06-08T12:00:00Z"^^xsd:dateTime;
 	schema:dateModified "2017-06-08T12:00:00Z"^^xsd:dateTime;
@@ -203,7 +203,7 @@
 		locn:geometry "POLYGON((11.78 43.95, 13.61 43.95, 13.61 42.8, 11.78 42.8, 11.78 43.95))"^^gsp:wktLiteral ;
 	];
 	schema:provider <PIC:999472675>;
-	schema:keywords "geochemistry", "meteo parameter", "meteo parameters at CO2 site", "water level", "air temperature", "water temperature", "water conductivity", "rain", "humidity", "atmospheric pressure", "NFO", "TABOO", "FRIDGE";
+	schema:keywords "geochemistry", "meteo parameter", "meteo parameters at CO2 site", "air temperature", "rain", "humidity", "atmospheric pressure", "NFO", "TABOO", "FRIDGE";
 	#hydra:entrypoint "application.wadl"^^xsd:anyURI;
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/METEO/WebService/001/Operation/001>;
 	dcat:theme <epos:Meteorologicaldata>;
@@ -217,28 +217,24 @@
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/METEO/WebService/001/APIDocumentation> a hydra:APIDocumentation ;
     hydra:title "NFO web service Meteo Parameters at CO2 site" ;
     hydra:description "NFO web service Meteo Parameters at CO2 site";
-    hydra:entrypoint "https://fridge.rm.ingv.it/docs/API_prototype_documentation_NFO_Meteo.pdf" ;
+    hydra:entrypoint "http://fridge.rm.ingv.it/docs/API_prototype_documentation_NFO_Meteo.pdf" ;
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/METEO/WebService/001/Operation/001> a hydra:Operation;
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
-		hydra:template "http://fridge-services.rm.ingv.it/meteo/{?param_name, mintime, maxtime, minlat, maxlat, minlon, maxlon}"^^xsd:string;
+		hydra:template "http://fridge-services.rm.ingv.it/meteo/{?param_name, mintime, maxtime, minlat, maxlat, minlon, maxlon, stacode}"^^xsd:string;
 		# type of parameter "xsd:string" "xsd:boolean" "xsd:date" "xsd:dateTime" "xsd:decimal" "xsd:double" "xsd:float" "xsd:int" "xsd:integer" "xsd:long"
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "param_name"^^xsd:string;
 			rdfs:label "Meteorological parameter at CO2 site";
 			rdfs:range "xsd:string";
-			http:paramValue "water_level";
-			http:paramValue "air_temperature_ext";
-			http:paramValue "air_temperature_int";
-			http:paramValue "water_temperature";
-			http:paramValue "water_conductivity";
+			http:paramValue "air_temperature";
+			http:paramValue "atmospheric_pressure";
 			http:paramValue "rain";
 			http:paramValue "humidity";
-			http:paramValue "atmospheric_pressure";
-			schema:defaultValue "humidity";
+			schema:defaultValue "air_temperature";
 			hydra:required "true"^^xsd:boolean;
 		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
@@ -289,7 +285,7 @@
 			rdfs:range "xsd:float";
 			schema:minValue "-90";
 			schema:maxValue "90";
-			schema:defaultValue "12.0";
+			schema:defaultValue "11.9662";
 			hydra:property "epos:westernmostLongitude";
 			hydra:required "true"^^xsd:boolean;
 		];
@@ -301,6 +297,17 @@
 			schema:maxValue "90";
 			schema:defaultValue "13.0";
 			hydra:property "epos:easternmostLongitude";
+			hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "stacode"^^xsd:string;
+			rdfs:label "Station code";
+			rdfs:range "xsd:string";
+			http:paramValue "nogna";
+			http:paramValue "uppiano";
+			http:paramValue "migianella";
+			http:paramValue "fungaia";
+			schema:defaultValue "uppiano";
 			hydra:required "true"^^xsd:boolean;
 		];
 	] ;

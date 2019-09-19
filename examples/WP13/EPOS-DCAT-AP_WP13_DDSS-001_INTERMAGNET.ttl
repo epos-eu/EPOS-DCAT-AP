@@ -207,6 +207,11 @@
     dct:publisher <http://viaf.org/viaf/136554353/>;
     dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-001/INTERMAGNET/Distribution>;
 
+	adms:identifier [ a adms:Identifier;
+      adms:schemaAgency "DOI";
+      skos:notation "10.5880/INTERMAGNET.2013";
+    ];
+	
     dct:temporal [ a dct:PeriodOfTime; 
         schema:startDate "1991-01-01T00:00:00Z"^^xsd:dateTime; 
     ]; 
@@ -349,7 +354,7 @@
     hydra:returns "video/jpeg";
     hydra:returns "application/pdf";
     hydra:property[ a hydra:IriTemplate;
-        hydra:template "http://geomag.bgs.ac.uk/EPOS/WP13/intermagnet/?Request=GetData&recordTermination=native&traceList=1234&colourTraces=True{&observatoryIagaCode, SamplesPerDay, dataStartDate, dataDuration, publicationState, pictureSize, pdfSize, dataScale, Format}"^^xsd:string;
+        hydra:template "http://geomag.bgs.ac.uk/EPOS/WP13/intermagnet/?Request=GetData&recordTermination=native&traceList=1234&colourTraces=True{&observatoryIagaCode, SamplesPerDay, dataStartDate, dataEndDate, publicationState, pictureSize, pdfSize, dataScale, Format}"^^xsd:string;
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "observatoryIagaCode"^^xsd:string;
                 rdfs:label "Observatory IAGA code";
@@ -370,18 +375,18 @@
                 hydra:variable "dataStartDate"^^xsd:string;
                 hydra:property "schema:startDate";
                 schema:valuePattern "YYYY-MM-DD";
-                rdfs:label "Date (yyyy-mm-dd)";
+                rdfs:label "Start date (yyyy-mm-dd)";
                 rdfs:range "xsd:date" ;
                 schema:defaultValue "2018-01-01";
                 hydra:required "false"^^xsd:boolean;
             ];
             hydra:mapping[ a hydra:IriTemplateMapping;
-                hydra:variable "dataDuration"^^xsd:string;
-                rdfs:label "Duration (days)";
-                rdfs:range "xsd:integer";
-                schema:minValue "1";
-                schema:maxValue "28";
-                schema:defaultValue "1";
+                hydra:variable "dataEndDate"^^xsd:string;
+                hydra:property "schema:endDate";
+                schema:valuePattern "YYYY-MM-DD";
+                rdfs:label "End date (yyyy-mm-dd)";
+                rdfs:range "xsd:date";
+                schema:defaultValue "2018-01-02";
                 hydra:required "false"^^xsd:boolean;
             ];
             hydra:mapping[ a hydra:IriTemplateMapping;

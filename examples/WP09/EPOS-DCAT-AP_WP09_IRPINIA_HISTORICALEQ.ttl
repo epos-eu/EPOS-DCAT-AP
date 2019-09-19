@@ -137,8 +137,8 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/HistEQ/Distribution/001> a dcat:Distribution;
     dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/HistEQ/Distribution/001";
-    dct:title "Distribution of historical earthquakes 1000-2014 of interest for the NFO Irpinia";
-    dct:description "The distribution of event parameters via the FDSN-event web service is the main and preferred way to access historical earthquake data archived in the Italian Archive of Historical Earthquake Data (ASMI) in the area surrounding the NFO Irpinia.";
+    dct:title "Historical earthquakes of interest for the IRPINIA NFO (FDSN-event)";
+    dct:description "The distribution of event parameters via the FDSN-event web service is the main and preferred way to access historical earthquake data archived in the Italian Archive of Historical Earthquake Data (ASMI) in the area surrounding the IRPINIA NFO.";
     dct:created "2017-03-01"^^xsd:date;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/irpinia/HistEQ/WebService/001/Operation/001>;
@@ -153,7 +153,7 @@
 		adms:schemaAgency "DDSS-ID";
 		skos:notation "WP09-DDSS-029";
 	];
-	schema:description "FDSN-event web service providing event parameters for historical earthquakes from the Italian Archive of Historical Earthquake Data (ASMI) in the area surrounding the NFO Irpinia";
+	schema:description "FDSN-event web service providing event parameters for historical earthquakes from the Italian Archive of Historical Earthquake Data (ASMI) in the area surrounding the IRPINIA NFO";
 	schema:name "Historical Earthquake Catalog for the NFO Irpinia (FDSN event web service)";
 	schema:datePublished "2017-06-17T12:00:00Z"^^xsd:dateTime;
 	schema:dateModified "2017-08-31T12:00:00Z"^^xsd:dateTime;
@@ -283,6 +283,7 @@
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "format"^^xsd:string;
 				rdfs:label "output format";
+				hydra:property "schema:encodingFormat";
 				rdfs:range "xsd:string";
 				http:paramValue "xml";
 				http:paramValue "text";
@@ -304,12 +305,16 @@
 				hydra:variable "includeallorigins"^^xsd:string;
 				rdfs:label "include all origins";
 				rdfs:range "xsd:boolean";
+				http:paramValue "true"; 
+				http:paramValue "false";
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;
 				hydra:variable "includeallmagnitudes"^^xsd:string;
 				rdfs:label "include all magnitudes";
 				rdfs:range "xsd:boolean";
+				http:paramValue "true"; 
+				http:paramValue "false";
 				hydra:required "false"^^xsd:boolean;
 			];
 			hydra:mapping[ a hydra:IriTemplateMapping;

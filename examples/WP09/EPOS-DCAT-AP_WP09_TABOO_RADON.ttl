@@ -176,6 +176,38 @@
 	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/RADON/Distribution/001>;
 .
 
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/RADON_STATIONS/Dataset/001> a dcat:Dataset;
+	dct:title "TABOO Radon station information";
+	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/RADON_STATIONS/Dataset/001";
+	dct:description "Radon station information dataset contains geographical information about radon stations.";
+	adms:identifier [ a adms:Identifier; 
+		adms:schemaAgency "DDSS-ID";
+		skos:notation "WP09-DDSS-024b"; 
+	];
+	## example of frequency using a controlled vocabulary
+	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
+	dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
+	dct:created "2010-04-01T00:00:00Z"^^xsd:dateTime;
+	dct:issued "2010-04-01T00:00:00Z"^^xsd:dateTime;
+	dct:modified "2010-04-01T00:00:00Z"^^xsd:dateTime;
+	owl:versionInfo "1.0.0";
+	# This property refers to a geographic region that is covered by the Dataset.
+  	# The POLYGON format is: POLYGON(lon1 lat1, lon2 lat2,...)
+	dct:spatial [ a dct:Location ;
+		locn:geometry "POLYGON((11.78 43.95, 13.61 43.95, 13.61 42.8, 11.78 42.8, 11.78 43.95))"^^gsp:wktLiteral ;
+	];
+	# This property refers to a temporal period that the Dataset covers.
+    dct:temporal [ a dct:PeriodOfTime ;
+        schema:startDate "2010-04-01T00:00:00Z"^^xsd:dateTime ;
+        schema:endDate "2018-11-30T00:00:00Z"^^xsd:dateTime ;
+    ];
+	dcat:theme  <epos:Radonconcentration> ;
+	dcat:keyword "Geochemistry", "Radon station", "geohazard", "NFO", "TABOO", "FRIDGE";
+	dcat:contactPoint <http://orcid.org/0000-0002-6711-2264/scientificContact>;
+	dct:publisher <PIC:999472675>;
+	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/RADON_STATIONS/Distribution/001>;
+.
+
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/RADON/Distribution/001> a dcat:Distribution;
     dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/RADON/Distribution/001";
 	dct:title "TABOO Rn concentration and local temperature";
@@ -189,9 +221,22 @@
 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 .
 
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/RADON_STATIONS/Distribution/001> a dcat:Distribution;
+    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/RADON_STATIONS/Distribution/001";
+	dct:title "TABOO Radon Stations";
+	dct:description "This distribution provides access to radon (Rn) stations information. Data includes stations coordinates, region name, network code. The datasets are encoded in JSON format. Data cover the time period 2010-today and is limited to the Alta Val Tiberina (Central Italy) Near Fault Observatory.";
+	dct:created "2010-04-01"^^xsd:date;
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+	dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/RADON_STATIONS/WebService/001/Operation/001>;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/RADON_STATIONS/WebService/001>;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
+	# This property refers to the licence under which the Distribution is made available.
+	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+.
+
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/RADON/WebService/001> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/RADON/WebService/001";
-	schema:description "This web service provides access to radon (Rn) gas concentrations measurements and derived time series, performed at different sampling sites. Data includes temperature data measured at the sampling sites. The datasets are encoded in JSON format. Data cover the time period 2010-today and is limited to the Alta Val Tiberina (Central Italy) Near Fault Observatory.";
+	schema:description "This web service provides access to radon (Rn) gas concentrations measurements and derived time series. It is implemented with Tornado (Python web framework).";
 	schema:name "TABOO Rn concentration and local temperature";
 	schema:datePublished "2017-06-08T12:00:00Z"^^xsd:dateTime;
 	schema:dateModified "2017-06-08T12:00:00Z"^^xsd:dateTime;
@@ -214,18 +259,164 @@
 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 .
 
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/RADON_STATIONS/WebService/001> a epos:WebService;
+	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/RADON_STATIONS/WebService/001";
+	schema:description "This web service provides access to radon stations information. It is implemented with Tornado (Python web framework).";
+	schema:name "TABOO Radon Station Information";
+	schema:datePublished "2017-06-08T12:00:00Z"^^xsd:dateTime;
+	schema:dateModified "2017-06-08T12:00:00Z"^^xsd:dateTime;
+	dct:temporal [ a dct:PeriodOfTime ;
+        schema:startDate "2010-04-01T00:00:00Z"^^xsd:dateTime ;
+        schema:endDate "2018-11-30T00:00:00Z"^^xsd:dateTime ;
+    ];
+    dct:spatial [ a dct:Location ;
+		locn:geometry "POLYGON((11.78 43.95, 13.61 43.95, 13.61 42.8, 11.78 42.8, 11.78 43.95))"^^gsp:wktLiteral ;
+	];
+	schema:provider <PIC:999472675>;
+	schema:keywords "Geochemistry", "Radon stations", "geohazard", "NFO", "TABOO", "FRIDGE";
+	#hydra:entrypoint "application.wadl"^^xsd:anyURI;
+	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/RADON_STATIONS/WebService/001/Operation/001>;
+	dcat:theme <epos:Radonconcentration>;
+	dcat:contactPoint <http://orcid.org/0000-0002-8608-4289/contactPoint>;
+	# This property refers to the API documentation. (Optional)
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/RADON/WebService/001/APIDocumentation> ;
+	# This property refers to the licence under which the Distribution is made available.
+	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+.
+
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/RADON/WebService/001/APIDocumentation> a hydra:APIDocumentation ;
     hydra:title "NFO web service Radon decay counts" ;
     hydra:description "NFO web service Radon decay counts" ;
-    hydra:entrypoint "https://fridge.rm.ingv.it/docs/API_prototype_documentation_NFO_Radon.pdf" ;
+    hydra:entrypoint "http://fridge.rm.ingv.it/docs/API_prototype_documentation_NFO_Radon.pdf" ;
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/RADON/WebService/001/Operation/001> a hydra:Operation;
 	hydra:method "GET"^^xsd:string;
 	hydra:returns "application/json";
 	hydra:property[ a hydra:IriTemplate;
-		hydra:template "http://fridge-services.rm.ingv.it/radon/{?mintime, maxtime, minlat, maxlat, minlon, maxlon, minperiod, maxperiod, type_site, max_radon_err, max_int_delta}"^^xsd:string;
+		hydra:template "http://fridge-services.rm.ingv.it/radon/{?stacode, mintime, maxtime, minlat, maxlat, minlon, maxlon, minperiod, maxperiod, type_site}"^^xsd:string;
 		# type of parameter "xsd:string" "xsd:boolean" "xsd:date" " xsd:dateTime" "xsd:decimal" "xsd:double" "xsd:float" "xsd:int" "xsd:integer" "xsd:long"
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "stacode"^^xsd:string;
+			rdfs:label "Station code";
+			rdfs:range "xsd:string";
+			http:paramValue "PTRL";
+			http:paramValue "MURB";
+			http:paramValue "SSFR";
+			http:paramValue "CDCA";
+			http:paramValue "BADI";
+			http:paramValue "BADI2";
+			schema:defaultValue "PTRL";
+			hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "mintime"^^xsd:string;
+			rdfs:label "Minimum Time";
+			rdfs:range "xsd:dateTime";
+			schema:minValue "2010-04-01T00:00:00.000Z";
+			schema:maxValue "2017-12-31T00:00:00.000Z";
+			schema:defaultValue "2010-05-01T12:00:00.000Z";
+			hydra:property "schema:startDate";
+      		schema:valuePattern "YYYY-MM-DDThh:mm:ss.SSSZ";
+			hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "maxtime"^^xsd:string;
+			rdfs:label "Maximum Time";
+			rdfs:range "xsd:dateTime";
+			schema:minValue "2010-04-01T00:00:00.000Z";
+			schema:maxValue "2017-12-31T00:00:00.000Z";
+			schema:defaultValue "2010-06-01T12:00:00.000Z";
+			hydra:property "schema:endDate";
+      		schema:valuePattern "YYYY-MM-DDThh:mm:ss.SSSZ";
+			hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "minlat"^^xsd:string;
+			rdfs:label "Minimum Latitude [deg]";
+			rdfs:range "xsd:float";
+			schema:minValue "-90";
+			schema:maxValue "90";
+			schema:defaultValue "43.0";
+			hydra:property "epos:southernmostLatitude";
+			hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "maxlat"^^xsd:string;
+			rdfs:label "Maximum Latitude [deg]";
+			rdfs:range "xsd:float";
+			schema:minValue "-90";
+			schema:maxValue "90";
+			schema:defaultValue "44.0";
+			hydra:property "epos:northernmostLatitude";
+			hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "minlon"^^xsd:string;
+			rdfs:label "Minimum Longitude [deg]";
+			rdfs:range "xsd:float";
+			schema:minValue "-90";
+			schema:maxValue "90";
+			schema:defaultValue "11.9662";
+			hydra:property "epos:westernmostLongitude";
+			hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "maxlon"^^xsd:string;
+			rdfs:label "Maximum Longitude [deg]";
+			rdfs:range "xsd:float";
+			schema:minValue "-90";
+			schema:maxValue "90";
+			schema:defaultValue "13.0";
+			hydra:property "epos:easternmostLongitude";
+			hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "minperiod"^^xsd:string;
+			rdfs:label "Minimum 'sampling period' allowed to extract data [minutes]";
+			rdfs:range "xsd:integer";
+			schema:minValue "1";
+			schema:defaultValue "60";
+			hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "maxperiod"^^xsd:string;
+			rdfs:label "Maximum 'sampling period' allowed to extract data [minutes]";
+			rdfs:range "xsd:integer";
+			schema:defaultValue "180";
+			hydra:required "true"^^xsd:boolean;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "type_site"^^xsd:string;
+			rdfs:label "Nickname of type of installation";
+			rdfs:range "xsd:string";
+			http:paramValue "indoor";
+			http:paramValue "shelter";
+			http:paramValue "borehole";
+			http:paramValue "soil";
+			hydra:required "false"^^xsd:boolean;
+		];
+	] ;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/TABOO/RADON_STATIONS/WebService/001/Operation/001> a hydra:Operation;
+	hydra:method "GET"^^xsd:string;
+	hydra:returns "application/json";
+	hydra:property[ a hydra:IriTemplate;
+		hydra:template "http://fridge-services.rm.ingv.it/radon/stations{?stacode, mintime, maxtime, minlat, maxlat, minlon, maxlon}"^^xsd:string;
+		# type of parameter "xsd:string" "xsd:boolean" "xsd:date" " xsd:dateTime" "xsd:decimal" "xsd:double" "xsd:float" "xsd:int" "xsd:integer" "xsd:long"
+		hydra:mapping[ a hydra:IriTemplateMapping;
+			hydra:variable "stacode"^^xsd:string;
+			rdfs:label "Station code";
+			rdfs:range "xsd:string";
+			http:paramValue "PTRL";
+			http:paramValue "MURB";
+			http:paramValue "SSFR";
+			http:paramValue "CDCA";
+			http:paramValue "BADI";
+			http:paramValue "BADI2";
+			hydra:required "false"^^xsd:boolean;
+		];
 		hydra:mapping[ a hydra:IriTemplateMapping;
 			hydra:variable "mintime"^^xsd:string;
 			rdfs:label "Minimum Time";
@@ -288,48 +479,9 @@
 			hydra:property "epos:easternmostLongitude";
 			hydra:required "true"^^xsd:boolean;
 		];
-		hydra:mapping[ a hydra:IriTemplateMapping;
-			hydra:variable "minperiod"^^xsd:string;
-			rdfs:label "Minimum 'sampling period' allowed to extract data [minutes]";
-			rdfs:range "xsd:integer";
-			schema:minValue "1";
-			schema:defaultValue "60";
-			hydra:required "true"^^xsd:boolean;
-		];
-		hydra:mapping[ a hydra:IriTemplateMapping;
-			hydra:variable "maxperiod"^^xsd:string;
-			rdfs:label "Maximum 'sampling period' allowed to extract data [minutes]";
-			rdfs:range "xsd:integer";
-			schema:defaultValue "180";
-			hydra:required "true"^^xsd:boolean;
-		];
-		hydra:mapping[ a hydra:IriTemplateMapping;
-			hydra:variable "type_site"^^xsd:string;
-			rdfs:label "Nickname of type of installation";
-			rdfs:range "xsd:string";
-			http:paramValue "indoor";
-			http:paramValue "shelter";
-			http:paramValue "borehole";
-			http:paramValue "soil";
-			schema:defaultValue "indoor";
-			hydra:required "true"^^xsd:boolean;
-		];
-		hydra:mapping[ a hydra:IriTemplateMapping;
-			hydra:variable "max_radon_err"^^xsd:string;
-			rdfs:label "Maximum % uncertainty of the measure accepted for extraction";
-			rdfs:range "xsd:integer";
-			schema:maxValue "100";
-			hydra:required "false"^^xsd:boolean;
-		];
-		hydra:mapping[ a hydra:IriTemplateMapping;
-			hydra:variable "max_int_delta"^^xsd:string;
-			rdfs:label "Maximum distance in time between internal temperature";
-			rdfs:range "xsd:integer";
-			schema:minValue "0";
-			hydra:required "false"^^xsd:boolean;
-		];
 	] ;
 .
+
 <epos:NearFaultObservations> a skos:ConceptScheme;
 	dct:title "Near Fault Observations";
 	dct:description "It contains the concepts of Near Fault Observations";
