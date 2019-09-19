@@ -28,12 +28,12 @@
 	skos:prefLabel "Geophysical Data";
 .
 
-<epos:StraimeterStations> a skos:Concept;
+<epos:StrainmeterStations> a skos:Concept;
 	skos:inScheme <epos:NearFaultObservations>;
 	skos:prefLabel "Strainmeter Stations";
 .
 
-<epos:StraimeterWaveforms> a skos:Concept;
+<epos:StrainmeterWaveforms> a skos:Concept;
 	skos:inScheme <epos:NearFaultObservations>;
 	skos:prefLabel "Strainmeter Waveforms";
 .
@@ -395,7 +395,7 @@ schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/xml";
 		hydra:property[ a hydra:IriTemplate;
-		hydra:template "http://ws.resif.fr/fdsnws/station/1/query{?starttime, endtime, network, station, location, channel, minlatitude, maxlatitude, minlongitude, maxlongitude, level, nodata, matchtimeseries}"^^xsd:string;
+		hydra:template "http://ws.resif.fr/fdsnws/station/1/query{?starttime, endtime, network, station, location, minlatitude, maxlatitude, minlongitude, maxlongitude, level, nodata, matchtimeseries}&channel={channel}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "starttime"^^xsd:string;
                                         hydra:property "schema:startDate";
@@ -425,7 +425,6 @@ schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL
 					hydra:variable "station"^^xsd:string;
 					rdfs:range "xsd:string";
 					rdfs:label "Station code";
-                                        schema:defaultValue "MOKI";
 					hydra:required "false"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
@@ -535,7 +534,7 @@ schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL
         owl:versionInfo "1.0.0" ;
     	  dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
         dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI;
-        dcat:theme  <epos:StraimeterWaveforms> ;
+        dcat:theme  <epos:StrainmeterWaveforms> ;
         dcat:theme  <epos:GeophysicalData> ;
 	schema:keywords "geophysical data", "seismicity", "earthquakes", "waveform", "waveform modeling", "RESIF", "CRL", "Corinth Rift Laboratory", "Near Fault Observatories", "Strainmeter", "tide gauge", "water level", "Atmospheric pressure", "Tiltmeter";
         dcat:contactPoint <ResearcherID:B-4828-2015/scientificContact>;
@@ -567,7 +566,7 @@ schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL
 
     	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI;
         dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
-        dcat:theme  <epos:SeismicStations> ;
+        dcat:theme  <epos:StrainmeterStations> ;
         dcat:keyword "seismology", "seismicity", "earthquakes", "geophysical station", "station information", "RESIF" , "Station", "CRL", "Corinth Rift Laboratory", "Near Fault Observatories", "Strainmeter", "tide gauge", "water level", "Atmospheric pressure", "Tiltmeter";
         dcat:contactPoint <ResearcherID:B-4828-2015/scientificContact>;
 	dct:publisher <PIC:999997930>;
@@ -588,8 +587,9 @@ schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/geophysics/Dataset/001/Distribution/001/RESIF> a dcat:Distribution;
    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/geophysics/Dataset/001/Distribution/001/RESIF";
-        dct:title  "CRL Geophysical Waveforms Distribution (strainmeter, tiltmeter, tide gauge, atmospheric pressure)";
-	dct:description "Access to Geophysical Waveform Continuous data (strainmeter, tiltmeter, tide gauge, atmospheric pressure) through FDSN Dataselect web service. It is encoded in mseed format. Its related dataset covers the time period since 2000 and is limited to the Corinth Rift Laboratory (Greece) Near Fault Observatory Area.
+   #dct:title  "CRL Geophysical Waveforms Distribution (strainmeter, tiltmeter, tide gauge, atmospheric pressure)";
+   dct:title "CRL Strainmeter Waveforms and Water level-pressure Data";
+   dct:description "Access to Geophysical Waveform Continuous data (strainmeter, tiltmeter, tide gauge, atmospheric pressure) through FDSN Dataselect web service. It is encoded in mseed format. Its related dataset covers the time period since 2000 and is limited to the Corinth Rift Laboratory (Greece) Near Fault Observatory Area.";
         dct:issued "2017-01-01"^^xsd:date ;
 	dct:modified "2017-01-01"^^xsd:date ;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
@@ -597,14 +597,15 @@ schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL
 	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/geophysics/WebService/001/RESIF>;
 	dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI;
  	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
- 	# RESIF : normally we should refer to dct:license "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Open_Licence.pdf" ;
+ 	#RESIF : normally we should refer to dct:license "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Open_Licence.pdf" ;
 .
 
 # Distribution - station RESIF
 
 <https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/geophysics/Dataset/002/Distribution/002/RESIF> a dcat:Distribution;
     	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL/geophysics/Dataset/002/Distribution/002/RESIF";
-        dct:title  "CRL Geophysical Station Information (strainmeter, tiltmeter, tide gauge, atmospheric pressure)";
+        #dct:title  "CRL Geophysical Station Information (strainmeter, tiltmeter, tide gauge, atmospheric pressure)";
+        dct:title "CRL Strainmeter Station Information";
 	dct:description "Access to Geophysical Station Information (strainmeter, tiltmeter, tide gauge, atmospheric pressure) through FDSN Station web service. It is encoded in xml or text format. Its related dataset covers the time period since 2000 and is limited to the Corinth Rift Laboratory (Greece) Near Fault Observatory Area.";
         dct:issued "2016-01-01"^^xsd:date ;
 	dct:modified "2016-01-01"^^xsd:date ;
@@ -615,4 +616,3 @@ schema:identifier "https://www.epos-eu.org/epos-dcat-ap/NearFaultObservatory/CRL
  	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
  	# RESIF : normally we should refer to dct:license "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Open_Licence.pdf" ;
 .
-
