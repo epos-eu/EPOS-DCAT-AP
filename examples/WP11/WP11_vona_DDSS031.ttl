@@ -116,13 +116,14 @@
 <https://www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/031/Vona> a dcat:Distribution;
 		dct:identifier "https://www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/031/Vona";
 		dct:title "VONA reports for the Icelandic volcanoes";
-		dct:description "VONA reports for the Icelandic volcanoes";
+		dct:description "The service allows to look for VONA (Volcano Observatory Notification for the Aviation) that has been issued by the Icelandic Meteorological Office since 2014. Examples are for volcanoes like Katla and Oraefajokull.";
 		dct:issued "2014-10-01"^^xsd:date;
 		dct:modified "2014-10-01"^^xsd:date;
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/031/Vona/operation>;
 		dct:conformsTo <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/031/Vona>;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
+		dct:license "https://creativecommons.org/licenses/by-sa/4.0/"^^xsd:anyURI;               
 .
 
 #########
@@ -148,6 +149,13 @@
 	schema:provider <PIC:997168343>;
 	dcat:contactPoint <http://orcid.org/0000-0001-5750-0872/contactPoint>;
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/031/Vona/operation>;
+	dct:conformsTo <www.epos-eu.org/epos-dcat-ap/Volcano_observations/APIDocumentation>;
+.
+
+<www.epos-eu.org/epos-dcat-ap/Volcano_observations/APIDocumentation> a hydra:APIDocumentation;
+      hydra:title "Web services documentation for Volcano_observations";
+      hydra:description "List, descriptions and examples on how to use web services to access data.";
+      hydra:entrypoint "https://docs.vedur.is/api/epos/#!/Volcanoes/get_hazard_maps_meta"^^xsd:anyURI;
 .
 
 #########
