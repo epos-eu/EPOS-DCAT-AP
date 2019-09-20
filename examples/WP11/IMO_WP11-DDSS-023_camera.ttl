@@ -84,7 +84,7 @@
 ######### 
 
 <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/023/data> a dcat:Dataset;
-	dct:title "Ground-based visible and thermal / IR camera";
+	dct:title "Ground based visible and thermal/IR camera Iceland";
 	dct:identifier "www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/023/data";
 	adms:identifier [ a adms:Identifier;
 		adms:schemaAgency "DDSS-ID";
@@ -116,14 +116,15 @@
 
 <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/023/WSDistribution> a dcat:Distribution;
 	dct:identifier "www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/023/WSDistribution";
-	dct:title "Ground-based visible and thermal / IR camera";
-	dct:description "Access the images from web cameras for selected eruptions";
+	dct:title "Ground based visible and thermal/IR camera Iceland";
+	dct:description "The service allows to access data from the ground based visible and thermal/IR camera in Iceland. It is possible to access data collected during past eruptions, e.g. Bardabunga/Holuhraun in 2014-2015.";
 	dct:issued "2019-01-21"^^xsd:date;
 	dct:modified "2019-01-21"^^xsd:date;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 	dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 	dcat:accessURL <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/023/Operation/023>;
 	dct:conformsTo<www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/023>
+	dct:license "https://creativecommons.org/licenses/by-sa/4.0/"^^xsd:anyURI;
 . 
 
 #########
@@ -149,7 +150,15 @@
 		schema:startDate "2019-01-21T00:00:00Z"^^xsd:dateTime; 
 		schema:endDate "2025-01-01T00:00:00Z"^^xsd:dateTime; 
 	]; 
+        dct:conformsTo <www.epos-eu.org/epos-dcat-ap/Volcano_observations/APIDocumentation>;
 .
+
+<www.epos-eu.org/epos-dcat-ap/Volcano_observations/APIDocumentation> a hydra:APIDocumentation;
+      hydra:title "Web services documentation for Volcano_observations";
+      hydra:description "List, descriptions and examples on how to use web services to access data.";
+      hydra:entrypoint "https://docs.vedur.is/api/epos/#!/Volcanoes/get_volcano_meta_webcam"^^xsd:anyURI;
+.
+
 
 #########
 # Operation
