@@ -115,14 +115,15 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/Volcano-Observations/Dataset/031/Volcanic-activity/distribution> a dcat:Distribution;
 		dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Volcano-Observations/Dataset/031/Volcanic-activity/distribution";
-		dct:title "Volcanic activity";
-		dct:description "Reports containing the description of the status of the volcanoes on a weekly basis";
+		dct:title "Volcanic activity reports Iceland";
+		dct:description "The service allows to look for reports issued by the Icelandic Meteorological Office about activity at volcanoes in Iceland. Each report includes a description based on monitoring data of different types (seismic, deformation, geochemical), if applicable, to all Icelandic volcanoes, including for example Katla, Hekla, Oraefajokull, etc.";
 		dct:issued "2014-10-01"^^xsd:date;
 		dct:modified "2014-10-01"^^xsd:date;
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
                 dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Volcano-Observations/Dataset/031/Volcanic-activity/operation>;
 		dct:conformsTo <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/031/Volcanic-activity>;
+		dct:license "https://creativecommons.org/licenses/by-sa/4.0/"^^xsd:anyURI;
 .
 
 #########
@@ -140,6 +141,7 @@
 		locn:geometry "POLYGON((-25.0 63.0,-25.0 68.5,-10.0 68.5,-10.0 63.0,-25.0 63.0))"^^gsp:wktLiteral;
 	];
 	schema:keywords "Volcanic activity","report","volcanoes","IMO";
+	dct:conformsTo <www.epos-eu.org/epos-dcat-ap/Volcano_observations/APIDocumentation>;
 	dct:temporal [ a dct:PeriodOfTime;
 		schema:startDate "2014-10-01T00:00:00Z"^^xsd:dateTime;
 		schema:endDate "2025-01-01T00:00:00Z"^^xsd:dateTime;
@@ -148,6 +150,12 @@
 	schema:provider <PIC:997168343>;
 	dcat:contactPoint <http://orcid.org/0000-0001-5750-0872/contactPoint>;
 	hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Volcano-Observations/Dataset/031/Volcanic-activity/operation>;
+.
+
+<www.epos-eu.org/epos-dcat-ap/Volcano_observations/APIDocumentation> a hydra:APIDocumentation;
+      hydra:title "Web services documentation for Volcano_observations";
+      hydra:description "List, descriptions and examples on how to use web services to access data.";
+      hydra:entrypoint "https://docs.vedur.is/api/epos/#!/Volcanoes/get_volcanoes_products_reports"^^xsd:anyURI;
 .
 
 #########
