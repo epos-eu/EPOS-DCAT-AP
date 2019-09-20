@@ -114,14 +114,15 @@
 
 <www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/003/distribution> a dcat:Distribution;
 		dct:identifier "www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/003/distribution";
-		dct:title "GNSS Raw data";
-		dct:description "List of available archive of GPS data";
+		dct:title "GNSS raw data Iceland";
+		dct:description "The services provides the raw data from a selected GNSS station, once the name of the station is provided by the user.";
 		dct:issued "2014-10-01"^^xsd:date;
 		dct:modified "2014-10-01"^^xsd:date;
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI ;
                 dcat:accessURL <www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/003/data/operation>;
 		dct:conformsTo <www.epos-eu.org/epos-dcat-ap/VolcanoObservations/Dataset/003/ws>;
+                dct:license "https://creativecommons.org/licenses/by-sa/4.0/"^^xsd:anyURI;
 .
 
 #########
@@ -147,6 +148,14 @@
 	dcat:theme <epos:GeodeticData>;
 	dcat:contactPoint <http://orcid.org/0000-0002-0069-9144/contactPoint>;
 	schema:provider <PIC:997168343>;
+        dct:conformsTo <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/003/ws/APIDocumentation>;
+.
+
+
+<www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/003/ws/APIDocumentation> a hydra:APIDocumentation;
+      hydra:title "Web services documentation for Volcano_observations";
+      hydra:description "List, descriptions and examples on how to use web services to access data.";
+      hydra:entrypoint "https://docs.vedur.is/api/epos/#!/GNSS/get_gps_data_rinex"^^xsd:anyURI;
 .
 
 #########
