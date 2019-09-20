@@ -120,12 +120,13 @@
 	dcat:contactPoint <orcid.org/0000-0003-4086-8755/financialContact>;
 	dct:publisher <PIC:999979015>;
 	dcat:distribution <Seismology/EFEHR/HazardMap/Distribution/WMS/hmap457>;
-	#dcat:distribution <Seismology/EFEHR/HazardMap/Distribution/SHP/hmap457>;
+	dcat:distribution <Seismology/EFEHR/HazardMap/Distribution/SHP/hmap457>;
+        dcat:distribution <Seismology/EFEHR/HazardMap/Distribution/txt/hmap457>;
 .
 
 <Seismology/EFEHR/HazardMap/Distribution/SHP/hmap457> a dcat:Distribution ;
 	dct:identifier "eismology/EFEHR/HazardMap/Distribution/SHP/hmap457" ;
-	dct:title "zipped shape file distribution for SHARE 475y mean PGA hazard map" ;
+	dct:title "SHARE 475y mean PGA hazard map - shape file" ;
 	dct:description "zipped shape file distribution for SHARE 475y mean PGA hazard map" ;
 	dct:issued "2010-01-01"^^xsd:date ;
 	dct:modified "2010-01-01"^^xsd:date ;
@@ -138,7 +139,7 @@
 .
 <Seismology/EFEHR/HazardMap/Distribution/WMS/hmap457> a dcat:Distribution;
 	dct:identifier "Seismology/EFEHR/HazardMap/Distribution/WMS/hmap457";
-	dct:title "SHARE 475y mean PGA hazard map";
+	dct:title "SHARE 475y mean PGA hazard map WMS";
         #dct:title "wms distribution for SHARE 475y mean PGA hazard map";
 	dct:description "WMS distribution for SHARE 475y mean PGA hazard map";
 	dct:issued "2010-01-01"^^xsd:date;
@@ -207,7 +208,7 @@
 	hydra:mapping[ a hydra:IriTemplateMapping;
 		hydra:variable "MAP"^^xsd:string;
 		rdfs:range "xsd:string";
-		rdfs:label "map file (data source";
+		rdfs:label "map file (data source)";
 		schema:defaultValue "/var/www/mapfile/sharehazard.01.map";
 		http:paramValue "/var/www/mapfile/sharehazard.01.map";
 		hydra:required "true"^^xsd:boolean;
@@ -339,7 +340,7 @@
 # this is the only valid representation in the EPOS dcat framework.
 <Seismology/HazardMaps/hmap457/Operation/txt> a hydra:Operation;
 	hydra:method "GET"^^xsd:string;
-	hydra:returns "image/png";
+	hydra:returns "application/txt";
 	hydra:property[ a hydra:IriTemplate;
 	hydra:template "http://efehrmaps.ethz.ch/cgi-bin/mapserv{?lon1, lat1, lon2, lat2, id, imt, hmapexceedprob, hmapexceedyears, soilType, aggregationtype, aggregationlevel}"^^xsd:string;
 	hydra:mapping[ a hydra:IriTemplateMapping;
