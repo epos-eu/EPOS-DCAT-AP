@@ -28,10 +28,6 @@ class TemplateException(Exception):
     def __init__(self):
         self.message = "There must be just one template"
 
-class ParameterException(Exception):
-    def __init__(self, variables, parameters):
-        self.message = "Variable and parameter lists differ"
-
 class DefaultValueException(Exception):
     def __init__(self, parameter):
         self.message = f"Required parameter {parameter} must have a default value"
@@ -121,7 +117,7 @@ class Operation:
 
         # These two sets should be identical
         if self.variables != self.parameters:
-            raise ParameterException(self.variables, self.parameters)
+            logging.warn("Variable and parameter lists differ")
 
     def _create_base_url(self):
         url = self.base_url
@@ -193,7 +189,7 @@ def test_operation(filename):
     for o in ographs:
         try:
             op = Operation(o)
-        except (TemplateException, DefaultValueException, ParameterException) as e:
+        except (TemplateException, DefaultValueException) as e:
             logging.error(e.message)
             logging.error("Unable to proceed with this file")
             return
