@@ -176,7 +176,7 @@ class Operation:
 
 
 def test_operation(filename):
-    logging.info(f"\nProcessing: {filename}")
+    logging.info(f"Processing: {filename}")
     logging.info("-"*50)
     graph = SubgraphableGraph()
     graph.parse(location=filename, format='n3')
@@ -220,4 +220,4 @@ if __name__ == "__main__":
     elif p.is_dir():
         for f in p.glob('*.ttl'):
             test_operation(str(f))
-            logging.info("="*50)
+            logging.info("="*50 + "\n\n")
