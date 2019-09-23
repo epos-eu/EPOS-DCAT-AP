@@ -109,8 +109,11 @@
 	dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
 	dct:created "2010-06-01"^^xsd:date;
 	dct:modified "2018-09-10"^^xsd:date;
-	dct:spatial [ a dct:Location;
-		locn:geometry "POLYGON((-180 -90,180 -90,180 90,180 -90,-180 -90))"^^gsp:wktLiteral;
+	#dct:spatial [ a dct:Location;
+		#locn:geometry "POLYGON((-180 -90,180 -90,180 90,180 -90,-180 -90))"^^gsp:wktLiteral;
+	#];
+        dct:spatial [ a dct:Location;
+		locn:geometry "POLYGON((-25.2679 34.45,44.8321 34.45,44.8321 71.55,-25.2679 71.55,-25.2679 34.45))"^^gsp:wktLiteral;
 	];
 	dcat:theme <epos:Hazard>;
 	dcat:keyword "seismic hazard", "map", "seismology", "ground motion", "probability";
