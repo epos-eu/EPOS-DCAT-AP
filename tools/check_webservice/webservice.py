@@ -138,7 +138,7 @@ class Operation:
         logging.debug("Base URL: " + url)
         logging.debug("parameters: " + str(self.defaults))
 
-        rsp = requests.get(url, params=self.defaults)
+        rsp = requests.get(url, params=self.defaults, stream=True)
 
         logging.info("URL: " + rsp.url)
         logging.info("Status: " + str(rsp.status_code))
@@ -146,20 +146,33 @@ class Operation:
         rsp.raise_for_status()
 
         logging.info("Content type: " + rsp.headers['Content-Type'])
+        try:
+            logging.info("Content length: " + rsp.headers['Content-Length'])
+        except KeyError as ke:
+            logging.info("Content length not provided")
 
         if rsp.headers['Content-Type'] == "application/octet-stream":
             # For WP13 this is a zip file so log contained files
             logging.info("Binary data")
             with tempfile.TemporaryFile() as f:
-                f.write(rsp.content)
-                z = zipfile.ZipFile(f)
-                logging.info("Zipped files: " + str(z.namelist()))
+                for chunk in rsp.iter_content(chunk_size=8192):
+                    f.write(chunk)
+                f.flush()
+                try:
+                    z = zipfile.ZipFile(f)
+                    logging.info("Zipped files: " + str(z.namelist()))
+                except zipfile.BadZipFile as bzf:
+                    logging.error(bzf)
+
         # Text file of some sort, log a summary
         else:
-            if len(rsp.text) <= 1200:
-                logging.info("Text:\n" + rsp.text)
-            else:
-                logging.info("Text:\n" + rsp.text[:500] + "...\n...\n..." + rsp.text[-500:])
+            first = True
+            for chunk in rsp.iter_content(chunk_size=1024):
+                if first:
+                    logging.info("Head:\n" + chunk.decode("utf-8")[:500])
+                    first = False
+            if chunk:
+                logging.info("Tail:\n" + chunk.decode("utf-8")[-500:])
 
 
 def test_operation(filename):
