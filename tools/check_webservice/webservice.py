@@ -82,6 +82,9 @@ class Operation:
         # Split into URL and query parameters and then tidy up the parameters 
         # This doesn't deal with '} ?' which might be possible?
         url_parts = template[0][2].split('{?')
+        # It's possible the optional parameters are introduced by & not ?
+        if len(url_parts) == 1:
+            url_parts = template[0][2].split('{&')
         self.base_url = url_parts[0]
         self.parameters = set([])
         if len(url_parts) > 1:
