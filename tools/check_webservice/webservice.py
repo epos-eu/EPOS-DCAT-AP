@@ -217,8 +217,8 @@ def test_operation(filename, level):
             logging.warn(pe.message)
         except (TemplateException, DefaultValueException) as e:
             logging.error(e.message)
-            logging.error("Unable to proceed with this file")
-            return
+            logging.error("Unable to proceed with this operation")
+            continue
 
         try:
             op.get()
@@ -238,7 +238,7 @@ if __name__=='__main__':
 if __name__ == "__main__":
     p = Path(args.target)
     if p.is_file():
-        test_operation(str(p))
+        test_operation(str(p), args.level)
     elif p.is_dir():
         for f in p.glob('*.ttl'):
             test_operation(str(f), args.level)
