@@ -57,7 +57,7 @@ class SubgraphableGraph(Graph):
 
 
 class Operation:
-    def __init__(self, g, level):
+    def __init__(self, graph, level):
         """
         Attributes intialised in __init__()
             base_url    a string extracted from hydra.template
@@ -67,12 +67,11 @@ class Operation:
         """
         self.path_params = None
         self.level = level
-        self._parse_template(g)
-        self._parse_parameters(g)
+        self.graph = graph
 
-    def _parse_template(self, g):
+    def parse_template(self):
         # Extract url and parameters from template string 
-        template = list(g.triples((None, HYDRA.template, None)))
+        template = list(self.graph.triples((None, HYDRA.template, None)))
         if len(template) != 1:
             raise TemplateException(template)
         logging.debug(template[0][2])
@@ -99,15 +98,15 @@ class Operation:
 
         logging.debug("Template parameters: " + str(self.parameters))
 
-    def _parse_parameters(self, g):
+    def parse_parameters(self):
         # Extract parameters from RDF, then required parameters and defaults values
         self.defaults = {}
         self.variables = set([])
-        for var in g.triples((None, HYDRA.variable, None)):
+        for var in self.graph.triples((None, HYDRA.variable, None)):
             self.variables.add(str(var[2]))
             try:
-                required = list(g.triples((var[0], HYDRA.required, None)))[0][2]
-                default = list(g.triples((var[0], SCHEMA.defaultValue, None)))[0][2]
+                required = list(self.graph.triples((var[0], HYDRA.required, None)))[0][2]
+                default = list(self.graph.triples((var[0], SCHEMA.defaultValue, None)))[0][2]
                 self.defaults[str(var[2])] = str(default)
             except IndexError:
                 if required:
@@ -206,6 +205,8 @@ def test_operation(filename, level):
     for o in ographs:
         try:
             op = Operation(o, level)
+            op.parse_template()
+            op.parse_parameters()
         except (TemplateException, DefaultValueException) as e:
             logging.error(e.message)
             logging.error("Unable to proceed with this file")
