@@ -4,6 +4,7 @@ from rdflib.namespace import RDFS
 from rdflib.term import BNode, URIRef
 from requests.exceptions import RequestException
 
+import argparse
 import logging
 import re
 import requests
@@ -56,7 +57,7 @@ class SubgraphableGraph(Graph):
 
 
 class Operation:
-    def __init__(self, g):
+    def __init__(self, g, level):
         """
         Attributes intialised in __init__()
             base_url    a string extracted from hydra.template
@@ -65,6 +66,7 @@ class Operation:
             defaults    dictionary of required parameters and default values
         """
         self.path_params = None
+        self.level = level
         self._parse_template(g)
         self._parse_parameters(g)
 
@@ -145,37 +147,39 @@ class Operation:
 
         rsp.raise_for_status()
 
-        logging.info("Content type: " + rsp.headers['Content-Type'])
-        try:
-            logging.info("Content length: " + rsp.headers['Content-Length'])
-        except KeyError as ke:
-            logging.info("Content length not provided")
+        if self.level > 1:
+            logging.info("Content type: " + rsp.headers['Content-Type'])
+            try:
+                logging.info("Content length: " + rsp.headers['Content-Length'])
+            except KeyError as ke:
+                logging.info("Content length not provided")
 
-        if rsp.headers['Content-Type'] == "application/octet-stream":
-            # For WP13 this is a zip file so log contained files
-            logging.info("Binary data")
-            with tempfile.TemporaryFile() as f:
-                for chunk in rsp.iter_content(chunk_size=8192):
-                    f.write(chunk)
-                f.flush()
-                try:
-                    z = zipfile.ZipFile(f)
-                    logging.info("Zipped files: " + str(z.namelist()))
-                except zipfile.BadZipFile as bzf:
-                    logging.error(bzf)
+        if self.level > 2:
+            if rsp.headers['Content-Type'] == "application/octet-stream":
+                # For WP13 this is a zip file so log contained files
+                logging.info("Binary data")
+                with tempfile.TemporaryFile() as f:
+                    for chunk in rsp.iter_content(chunk_size=8192):
+                        f.write(chunk)
+                    f.flush()
+                    try:
+                        z = zipfile.ZipFile(f)
+                        logging.info("Zipped files: " + str(z.namelist()))
+                    except zipfile.BadZipFile as bzf:
+                        logging.error(bzf)
 
-        # Text file of some sort, log a summary
-        else:
-            first = True
-            for chunk in rsp.iter_content(chunk_size=1024):
-                if first:
-                    logging.info("Head:\n" + chunk.decode("utf-8")[:500])
-                    first = False
-            if chunk:
-                logging.info("Tail:\n" + chunk.decode("utf-8")[-500:])
+            # Text file of some sort, log a summary
+            else:
+                first = True
+                for chunk in rsp.iter_content(chunk_size=1024):
+                    if first:
+                        logging.info("Head:\n" + chunk.decode("utf-8")[:500])
+                        first = False
+                if chunk:
+                    logging.info("Tail:\n" + chunk.decode("utf-8")[-500:])
 
 
-def test_operation(filename):
+def test_operation(filename, level):
     logging.info(f"Processing: {filename}")
     logging.info("-"*50)
     graph = SubgraphableGraph()
@@ -201,7 +205,7 @@ def test_operation(filename):
 
     for o in ographs:
         try:
-            op = Operation(o)
+            op = Operation(o, level)
         except (TemplateException, DefaultValueException) as e:
             logging.error(e.message)
             logging.error("Unable to proceed with this file")
@@ -213,11 +217,19 @@ def test_operation(filename):
             logging.error(e)
 
 
+parser = argparse.ArgumentParser()
+parser.add_argument("target", help="File or folder to be processed")
+parser.add_argument("--level", type=int, choices=[1, 2, 3], default=2)
+
+if __name__=='__main__':
+
+    args = parser.parse_args()
+    logging.basicConfig(level=logging.INFO)
 if __name__ == "__main__":
-    p = Path(sys.argv[1])
+    p = Path(args.target)
     if p.is_file():
         test_operation(str(p))
     elif p.is_dir():
         for f in p.glob('*.ttl'):
-            test_operation(str(f))
+            test_operation(str(f), args.level)
             logging.info("="*50 + "\n\n")
