@@ -144,11 +144,11 @@ class Operation:
         logging.debug("parameters: " + str(self.defaults))
 
         rsp = requests.get(url, params=self.defaults, stream=True)
-
-        logging.info("URL: " + rsp.url)
-        logging.info("Status: " + str(rsp.status_code))
-
         rsp.raise_for_status()
+
+        if self.level > 0:
+            logging.info("URL: " + rsp.url)
+            logging.info("Status: " + str(rsp.status_code))
 
         if self.level > 1:
             logging.info("Content type: " + rsp.headers['Content-Type'])
@@ -183,8 +183,10 @@ class Operation:
 
 
 def test_operation(filename, level):
-    logging.info(f"Processing: {filename}")
-    logging.info("-"*50)
+    if level > 0:
+        logging.info(f"Processing: {filename}")
+        logging.info("-"*50)
+
     graph = SubgraphableGraph()
     graph.parse(location=filename, format='n3')
     operations =  graph.triples((None, HYDRA.property, None))
@@ -225,8 +227,9 @@ def test_operation(filename, level):
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument("target", help="File or folder to be processed")
-parser.add_argument("--level", type=int, choices=[1, 2, 3], default=2)
+parser.add_argument("target", help="file or folder to be processed")
+parser.add_argument("--level", type=int, choices=[0, 1, 2, 3], default=1,
+                    help="output level, (default: %(default)s)")
 
 if __name__=='__main__':
 
@@ -239,4 +242,5 @@ if __name__ == "__main__":
     elif p.is_dir():
         for f in p.glob('*.ttl'):
             test_operation(str(f), args.level)
-            logging.info("="*50 + "\n\n")
+            if args.level > 0:
+                logging.info("="*50 + "\n\n")
