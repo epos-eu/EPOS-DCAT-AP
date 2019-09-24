@@ -225,11 +225,15 @@ def test_operation(filename, level):
         except RequestException as e:
             logging.error(e)
 
-
-parser = argparse.ArgumentParser()
+parser = argparse.ArgumentParser(formatter_class=argparse.RawTextHelpFormatter)
 parser.add_argument("target", help="file or folder to be processed")
 parser.add_argument("--level", type=int, choices=[0, 1, 2, 3], default=1,
-                    help="output level, (default: %(default)s)")
+                    help=("output level (default: %(default)s)\n"
+                          "  0 - suppress output, report errors and warnings\n"
+                          "  1 - echo urls and response status\n"
+                          "  2 - plus other response headers\n"
+                          "  3 - plus attempt to show head and tail of content\n"
+                          "      or list files in compressed content."))
 
 if __name__=='__main__':
 
