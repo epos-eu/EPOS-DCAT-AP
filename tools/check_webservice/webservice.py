@@ -33,6 +33,10 @@ class DefaultValueException(Exception):
     def __init__(self, parameter):
         self.message = f"Required parameter {parameter} must have a default value"
 
+class ParameterException(Exception):
+    def __init__(self, url):
+        self.message = f"For {url} variable and parameter lists differ"
+
 
 # A subclass of rdflib's Graph that allows basic subgraphing.
 class SubgraphableGraph(Graph):
@@ -118,7 +122,7 @@ class Operation:
 
         # These two sets should be identical
         if self.variables != self.parameters:
-            logging.warn("Variable and parameter lists differ")
+            raise ParameterException(self.base_url)
 
     def _create_base_url(self):
         url = self.base_url
@@ -207,6 +211,8 @@ def test_operation(filename, level):
             op = Operation(o, level)
             op.parse_template()
             op.parse_parameters()
+        except ParameterException as pe:
+            logging.warn(pe.message)
         except (TemplateException, DefaultValueException) as e:
             logging.error(e.message)
             logging.error("Unable to proceed with this file")
