@@ -13,7 +13,7 @@ import tempfile
 import zipfile
 
 # Set up basic logging to stdout
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 
 # Namespaces that are not currently defined in rdflib
 HYDRA = Namespace('http://www.w3.org/ns/hydra/core#')
@@ -147,27 +147,27 @@ class Operation:
         rsp.raise_for_status()
 
         if self.level > 0:
-            logging.info("URL: " + rsp.url)
-            logging.info("Status: " + str(rsp.status_code))
+            print("URL: " + rsp.url)
+            print("Status: " + str(rsp.status_code))
 
         if self.level > 1:
-            logging.info("Content type: " + rsp.headers['Content-Type'])
+            print("Content type: " + rsp.headers['Content-Type'])
             try:
-                logging.info("Content length: " + rsp.headers['Content-Length'])
+                print("Content length: " + rsp.headers['Content-Length'])
             except KeyError as ke:
-                logging.info("Content length not provided")
+                print("Content length: not provided")
 
         if self.level > 2:
             if rsp.headers['Content-Type'] == "application/octet-stream":
                 # For WP13 this is a zip file so log contained files
-                logging.info("Binary data")
+                print("Binary data")
                 with tempfile.TemporaryFile() as f:
                     for chunk in rsp.iter_content(chunk_size=8192):
                         f.write(chunk)
                     f.flush()
                     try:
                         z = zipfile.ZipFile(f)
-                        logging.info("Zipped files: " + str(z.namelist()))
+                        print("Zipped files: " + str(z.namelist()))
                     except zipfile.BadZipFile as bzf:
                         logging.error(bzf)
 
@@ -176,54 +176,55 @@ class Operation:
                 first = True
                 for chunk in rsp.iter_content(chunk_size=1024):
                     if first:
-                        logging.info("Head:\n" + chunk.decode("utf-8")[:500])
+                        print("Head:\n" + chunk.decode("utf-8")[:500])
                         first = False
                 if chunk:
-                    logging.info("Tail:\n" + chunk.decode("utf-8")[-500:])
+                    print("Tail:\n" + chunk.decode("utf-8")[-500:])
 
 
 def test_operation(filename, level):
     if level > 0:
-        logging.info(f"Processing: {filename}")
-        logging.info("-"*50)
+        print("="*80)
+        print(f"Processing: {filename}")
 
     graph = SubgraphableGraph()
     graph.parse(location=filename, format='n3')
-    operations =  graph.triples((None, HYDRA.property, None))
+    operations =  list(graph.triples((None, HYDRA.property, None)))
 
-    ographs = []
+    found = False
     for o in operations:
         # The root of an operation must be:
         #     (URIRef, HYDRA.property, BNode)
         if type(o[0]) != URIRef or type(o[2]) != BNode:
             continue
+
+        if level > 0:
+            print("-"*80)
+
         # Generate a subgraph (tree) for each operation
         g = Graph()
         g.add(o)
         try:
             g = g + graph.sub_graph(o)
-        except BNodeException as bne:
-            logging.error(bne.message)
-            logging.error("Unable to proceed with this file")
-            return
-        ographs.append(g)
-
-    for o in ographs:
-        try:
-            op = Operation(o, level)
+            op = Operation(g, level)
+            found = True
             op.parse_template()
             op.parse_parameters()
+            op.get()
+        except BNodeException as bne:
+            logging.error(bne.message)
         except ParameterException as pe:
             logging.warn(pe.message)
         except (TemplateException, DefaultValueException) as e:
             logging.error(e.message)
-            logging.error("Unable to proceed with this operation")
-            continue
-
-        try:
-            op.get()
         except RequestException as e:
             logging.error(e)
+
+    if not found:
+        logging.warn("No operations found in this file")
+
+    if level > 0:
+        print("="*80 + "\n")
 
 parser = argparse.ArgumentParser(formatter_class=argparse.RawTextHelpFormatter)
 parser.add_argument("target", help="file or folder to be processed")
@@ -246,5 +247,3 @@ if __name__ == "__main__":
     elif p.is_dir():
         for f in p.glob('*.ttl'):
             test_operation(str(f), args.level)
-            if args.level > 0:
-                logging.info("="*50 + "\n\n")
