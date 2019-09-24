@@ -285,9 +285,10 @@
 					rdfs:range "xsd:string";
 					rdfs:label "Output format";
 					hydra:property "schema:encodingFormat";			
-					http:paramValue "application/geo%2Bjson"; # do we need to urlEncode this ?
-					http:paramValue "application/gml%2Bxml%3B%20version%3D3.2"; # do we need to urlEncode this ?
-					schema:defaultValue "application/geo%2Bjson";
+					#http:paramValue "application/geo%2Bjson"; # do we need to urlEncode this ?
+					#http:paramValue "application/gml%2Bxml%3B%20version%3D3.2"; # do we need to urlEncode this ?
+					http:paramValue "json";
+					schema:defaultValue "json";
 					hydra:required "true"^^xsd:boolean;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
