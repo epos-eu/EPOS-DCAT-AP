@@ -215,12 +215,13 @@ def test_operation(filename, level):
             op = Operation(g, level)
             found = True
             op.parse_template()
-            op.parse_parameters()
+            try:
+                op.parse_parameters()
+            except ParameterException as pe:
+                logging.warn(pe.message)
             op.get()
         except BNodeException as bne:
             logging.error(bne.message)
-        except ParameterException as pe:
-            logging.warn(pe.message)
         except (TemplateException, DefaultValueException) as e:
             logging.error(e.message)
         except RequestException as e:
