@@ -1,9 +1,3 @@
-from pathlib import Path
-from rdflib import Namespace, Graph
-from rdflib.namespace import RDFS
-from rdflib.term import BNode, URIRef
-from requests.exceptions import RequestException
-
 import argparse
 import logging
 import re
@@ -11,6 +5,13 @@ import requests
 import sys
 import tempfile
 import zipfile
+
+from pathlib import Path
+from rdflib import Namespace, Graph
+from rdflib.namespace import RDFS
+from rdflib.term import BNode, URIRef
+from requests.exceptions import RequestException
+
 
 # Set up basic logging to stdout
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
@@ -25,13 +26,16 @@ class BNodeException(Exception):
     def __init__(self, bnode):
         self.message = f"Final element of triple must be a BNode, it's {type(bnode)}"
 
+
 class TemplateException(Exception):
     def __init__(self):
         self.message = "There must be just one template"
 
+
 class DefaultValueException(Exception):
     def __init__(self, parameter):
         self.message = f"Required parameter {parameter} must have a default value"
+
 
 class ParameterException(Exception):
     def __init__(self, url):
@@ -51,7 +55,7 @@ class SubgraphableGraph(Graph):
 
         children = self.triples((bnode, None, None))
         g = Graph()
-     
+
         for child in children:
             g.add(child)
             if type(child[2]) == BNode:
@@ -74,16 +78,16 @@ class Operation:
         self.graph = graph
 
     def parse_template(self):
-        # Extract url and parameters from template string 
+        # Extract url and parameters from template string
         template = list(self.graph.triples((None, HYDRA.template, None)))
         if len(template) != 1:
             raise TemplateException(template)
         logging.debug(template[0][2])
 
-        # Split into URL and query parameters and then tidy up the parameters 
+        # Split into URL and query parameters and then tidy up the parameters
         # This doesn't deal with '} ?' which might be possible?
         url_parts = template[0][2].split('{?')
-        # It's possible the optional parameters are introduced by & not ?
+        # It's possible the optional parameters are introduced by & not?
         if len(url_parts) == 1:
             url_parts = template[0][2].split('{&')
         self.base_url = url_parts[0]
@@ -109,8 +113,10 @@ class Operation:
         for var in self.graph.triples((None, HYDRA.variable, None)):
             self.variables.add(str(var[2]))
             try:
-                required = list(self.graph.triples((var[0], HYDRA.required, None)))[0][2]
-                default = list(self.graph.triples((var[0], SCHEMA.defaultValue, None)))[0][2]
+                required = list(
+                    self.graph.triples((var[0], HYDRA.required, None)))[0][2]
+                default = list(
+                    self.graph.triples((var[0], SCHEMA.defaultValue, None)))[0][2]
                 self.defaults[str(var[2])] = str(default)
             except IndexError:
                 if required:
@@ -189,7 +195,7 @@ def test_operation(filename, level):
 
     graph = SubgraphableGraph()
     graph.parse(location=filename, format='n3')
-    operations =  list(graph.triples((None, HYDRA.property, None)))
+    operations = list(graph.triples((None, HYDRA.property, None)))
 
     found = False
     for o in operations:
@@ -226,6 +232,7 @@ def test_operation(filename, level):
     if level > 0:
         print("="*80 + "\n")
 
+
 parser = argparse.ArgumentParser(formatter_class=argparse.RawTextHelpFormatter)
 parser.add_argument("target", help="file or folder to be processed")
 parser.add_argument("--level", type=int, choices=[0, 1, 2, 3], default=1,
@@ -236,10 +243,9 @@ parser.add_argument("--level", type=int, choices=[0, 1, 2, 3], default=1,
                           "  3 - plus attempt to show head and tail of content\n"
                           "      or list files in compressed content."))
 
-if __name__=='__main__':
+args = parser.parse_args()
+logging.basicConfig(level=logging.INFO)
 
-    args = parser.parse_args()
-    logging.basicConfig(level=logging.INFO)
 if __name__ == "__main__":
     p = Path(args.target)
     if p.is_file():
