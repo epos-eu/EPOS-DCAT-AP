@@ -1,9 +1,4 @@
-from pathlib import Path
-from rdflib import Namespace, Graph
-from rdflib.namespace import RDFS
-from rdflib.term import BNode, URIRef
-from requests.exceptions import RequestException
-
+import argparse
 import logging
 import re
 import requests
@@ -11,8 +6,15 @@ import sys
 import tempfile
 import zipfile
 
+from pathlib import Path
+from rdflib import Namespace, Graph
+from rdflib.namespace import RDFS
+from rdflib.term import BNode, URIRef
+from requests.exceptions import RequestException
+
+
 # Set up basic logging to stdout
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 
 # Namespaces that are not currently defined in rdflib
 HYDRA = Namespace('http://www.w3.org/ns/hydra/core#')
@@ -24,17 +26,20 @@ class BNodeException(Exception):
     def __init__(self, bnode):
         self.message = f"Final element of triple must be a BNode, it's {type(bnode)}"
 
+
 class TemplateException(Exception):
     def __init__(self):
         self.message = "There must be just one template"
 
-class ParameterException(Exception):
-    def __init__(self, variables, parameters):
-        self.message = "Variable and parameter lists differ"
 
 class DefaultValueException(Exception):
     def __init__(self, parameter):
         self.message = f"Required parameter {parameter} must have a default value"
+
+
+class ParameterException(Exception):
+    def __init__(self, url):
+        self.message = f"For {url} variable and parameter lists differ"
 
 
 # A subclass of rdflib's Graph that allows basic subgraphing.
@@ -50,7 +55,7 @@ class SubgraphableGraph(Graph):
 
         children = self.triples((bnode, None, None))
         g = Graph()
-     
+
         for child in children:
             g.add(child)
             if type(child[2]) == BNode:
@@ -60,7 +65,7 @@ class SubgraphableGraph(Graph):
 
 
 class Operation:
-    def __init__(self, g):
+    def __init__(self, graph, level):
         """
         Attributes intialised in __init__()
             base_url    a string extracted from hydra.template
@@ -69,19 +74,22 @@ class Operation:
             defaults    dictionary of required parameters and default values
         """
         self.path_params = None
-        self._parse_template(g)
-        self._parse_parameters(g)
+        self.level = level
+        self.graph = graph
 
-    def _parse_template(self, g):
-        # Extract url and parameters from template string 
-        template = list(g.triples((None, HYDRA.template, None)))
+    def parse_template(self):
+        # Extract url and parameters from template string
+        template = list(self.graph.triples((None, HYDRA.template, None)))
         if len(template) != 1:
             raise TemplateException(template)
         logging.debug(template[0][2])
 
-        # Split into URL and query parameters and then tidy up the parameters 
+        # Split into URL and query parameters and then tidy up the parameters
         # This doesn't deal with '} ?' which might be possible?
         url_parts = template[0][2].split('{?')
+        # It's possible the optional parameters are introduced by & not?
+        if len(url_parts) == 1:
+            url_parts = template[0][2].split('{&')
         self.base_url = url_parts[0]
         self.parameters = set([])
         if len(url_parts) > 1:
@@ -98,15 +106,17 @@ class Operation:
 
         logging.debug("Template parameters: " + str(self.parameters))
 
-    def _parse_parameters(self, g):
+    def parse_parameters(self):
         # Extract parameters from RDF, then required parameters and defaults values
         self.defaults = {}
         self.variables = set([])
-        for var in g.triples((None, HYDRA.variable, None)):
+        for var in self.graph.triples((None, HYDRA.variable, None)):
             self.variables.add(str(var[2]))
             try:
-                required = list(g.triples((var[0], HYDRA.required, None)))[0][2]
-                default = list(g.triples((var[0], SCHEMA.defaultValue, None)))[0][2]
+                required = list(
+                    self.graph.triples((var[0], HYDRA.required, None)))[0][2]
+                default = list(
+                    self.graph.triples((var[0], SCHEMA.defaultValue, None)))[0][2]
                 self.defaults[str(var[2])] = str(default)
             except IndexError:
                 if required:
@@ -118,7 +128,7 @@ class Operation:
 
         # These two sets should be identical
         if self.variables != self.parameters:
-            raise ParameterException(self.variables, self.parameters)
+            raise ParameterException(self.base_url)
 
     def _create_base_url(self):
         url = self.base_url
@@ -139,73 +149,108 @@ class Operation:
         logging.debug("Base URL: " + url)
         logging.debug("parameters: " + str(self.defaults))
 
-        rsp = requests.get(url, params=self.defaults)
-
-        logging.info("URL: " + rsp.url)
-        logging.info("Status: " + str(rsp.status_code))
-
+        rsp = requests.get(url, params=self.defaults, stream=True)
         rsp.raise_for_status()
 
-        logging.info("Content type: " + rsp.headers['Content-Type'])
+        if self.level > 0:
+            print("URL: " + rsp.url)
+            print("Status: " + str(rsp.status_code))
 
-        if rsp.headers['Content-Type'] == "application/octet-stream":
-            # For WP13 this is a zip file so log contained files
-            logging.info("Binary data")
-            with tempfile.TemporaryFile() as f:
-                f.write(rsp.content)
-                z = zipfile.ZipFile(f)
-                logging.info("Zipped files: " + str(z.namelist()))
-        # Text file of some sort, log a summary
-        else:
-            if len(rsp.text) <= 1200:
-                logging.info("Text:\n" + rsp.text)
+        if self.level > 1:
+            print("Content type: " + rsp.headers['Content-Type'])
+            try:
+                print("Content length: " + rsp.headers['Content-Length'])
+            except KeyError as ke:
+                print("Content length: not provided")
+
+        if self.level > 2:
+            if rsp.headers['Content-Type'] == "application/octet-stream":
+                # For WP13 this is a zip file so log contained files
+                print("Binary data")
+                with tempfile.TemporaryFile() as f:
+                    for chunk in rsp.iter_content(chunk_size=8192):
+                        f.write(chunk)
+                    f.flush()
+                    try:
+                        z = zipfile.ZipFile(f)
+                        print("Zipped files: " + str(z.namelist()))
+                    except zipfile.BadZipFile as bzf:
+                        logging.error(bzf)
+
+            # Text file of some sort, log a summary
             else:
-                logging.info("Text:\n" + rsp.text[:500] + "...\n...\n..." + rsp.text[-500:])
+                first = True
+                for chunk in rsp.iter_content(chunk_size=1024):
+                    if first:
+                        print("Head:\n" + chunk.decode("utf-8")[:500])
+                        first = False
+                if chunk:
+                    print("Tail:\n" + chunk.decode("utf-8")[-500:])
 
 
-def test_operation(filename):
-    logging.info(f"\nProcessing: {filename}")
-    logging.info("-"*50)
+def test_operation(filename, level):
+    if level > 0:
+        print("="*80)
+        print(f"Processing: {filename}")
+
     graph = SubgraphableGraph()
     graph.parse(location=filename, format='n3')
-    operations =  graph.triples((None, HYDRA.property, None))
+    operations = list(graph.triples((None, HYDRA.property, None)))
 
-    ographs = []
+    found = False
     for o in operations:
         # The root of an operation must be:
         #     (URIRef, HYDRA.property, BNode)
         if type(o[0]) != URIRef or type(o[2]) != BNode:
             continue
+
+        if level > 0:
+            print("-"*80)
+
         # Generate a subgraph (tree) for each operation
         g = Graph()
         g.add(o)
         try:
             g = g + graph.sub_graph(o)
+            op = Operation(g, level)
+            found = True
+            op.parse_template()
+            try:
+                op.parse_parameters()
+            except ParameterException as pe:
+                logging.warn(pe.message)
+            op.get()
         except BNodeException as bne:
             logging.error(bne.message)
-            logging.error("Unable to proceed with this file")
-            return
-        ographs.append(g)
-
-    for o in ographs:
-        try:
-            op = Operation(o)
-        except (TemplateException, DefaultValueException, ParameterException) as e:
+        except (TemplateException, DefaultValueException) as e:
             logging.error(e.message)
-            logging.error("Unable to proceed with this file")
-            return
-
-        try:
-            op.get()
         except RequestException as e:
             logging.error(e)
 
+    if not found:
+        logging.warn("No operations found in this file")
+
+    if level > 0:
+        print("="*80 + "\n")
+
+
+parser = argparse.ArgumentParser(formatter_class=argparse.RawTextHelpFormatter)
+parser.add_argument("target", help="file or folder to be processed")
+parser.add_argument("--level", type=int, choices=[0, 1, 2, 3], default=1,
+                    help=("output level (default: %(default)s)\n"
+                          "  0 - suppress output, report errors and warnings\n"
+                          "  1 - echo urls and response status\n"
+                          "  2 - plus other response headers\n"
+                          "  3 - plus attempt to show head and tail of content\n"
+                          "      or list files in compressed content."))
+
+args = parser.parse_args()
+logging.basicConfig(level=logging.INFO)
 
 if __name__ == "__main__":
-    p = Path(sys.argv[1])
+    p = Path(args.target)
     if p.is_file():
-        test_operation(str(p))
+        test_operation(str(p), args.level)
     elif p.is_dir():
         for f in p.glob('*.ttl'):
-            test_operation(str(f))
-            logging.info("="*50)
+            test_operation(str(f), args.level)
