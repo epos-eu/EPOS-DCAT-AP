@@ -115,14 +115,15 @@
 
 <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/025/WSDistribution> a dcat:Distribution;
 		dct:identifier "www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/025/WSDistribution";
-		dct:title "Ground-based UV scanner spectra";
-		dct:description "Access the raw data from the DOAS instrument for selected eruptions";
+		dct:title "Ground based UV spectra (DOAS) Iceland";
+		dct:description "The service allows to access raw data from the ground based UV spectra (DOAS) stations in Iceland. It is possible to access data collected during past eruptions, e.g.Bardabunga/Holuhraun in 2014-2015.";
 		dct:issued "2019-01-21"^^xsd:date;
 		dct:modified "2019-01-21"^^xsd:date;
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
                 dcat:accessURL <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/025/Operation/025>;
-		dct:conformsTo<www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/025>
+		dct:conformsTo<www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/025>;
+		dct:license "https://creativecommons.org/licenses/by-sa/4.0/"^^xsd:anyURI;
 .
 
 #########
@@ -143,12 +144,20 @@
 		locn:geometry "POLYGON((-25.0 63.0,-25.0 68.5,-10.0 68.5,-10.0 63.0,-25.0 63.0))"^^gsp:wktLiteral; 
 	]; 
 	hydra:supportedOperation <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/025/Operation/025>;
+	dct:conformsTo <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/025/APIDocumentation>;
 	schema:keywords "Infrared","ground-based","volcanic activity","volcanic plume","volcanic gas","IMO","timeseries","eruption source parameters";
 	dct:temporal [ a dct:PeriodOfTime; 
 		schema:startDate "2019-01-21T00:00:00Z"^^xsd:dateTime; 
 		schema:endDate "2025-01-01T00:00:00Z"^^xsd:dateTime; 
 	]; 
 . 
+
+<www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/025/APIDocumentation> a hydra:APIDocumentation;
+      hydra:title "Web services documentation for Volcano_observations";
+      hydra:description "List, descriptions and examples on how to use web services to access data.";
+      hydra:entrypoint "https://docs.vedur.is/api/epos/#!/Volcanoes/get_volcano_meta_doas"^^xsd:anyURI;
+.
+ 
 #########
 # Operation
 ######### 

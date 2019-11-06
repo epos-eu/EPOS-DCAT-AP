@@ -183,7 +183,7 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/gml+xml";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://data.geoscience.earth/api/wfsBorehole{?service, request, typenames, version, outputFormat, count, gml:identifier, gml:name, purpose, status, drillingMethod, operator, driller, drillStartDate, drillEndDate, startPoint, inclinationType, boreholeMaterialCustodian, boreholeLength_m, elevation_m, elevation_srs, positionalAccuracy, source, parentBorehole_uri, metadata_uri, cored, accessToPhysicalDrillCore, boreholeUse, BBOX}"^^xsd:string;
+			hydra:template "https://data.geoscience.earth/api/wfsBorehole{?service, request, typenames, version, outputFormat, count, gml:identifier, gml:name, purpose, status, drillingMethod, operator, driller, drillStartDate, drillEndDate, startPoint, inclinationType, boreholeMaterialCustodian, boreholeLength_m, elevation_m, elevation_srs, positionalAccuracy, source, parentBorehole_uri, metadata_uri, cored, accessToPhysicalDrillCore, boreholeUse}&bbox={minlatitude,minlongitude,maxlatitude,maxlongitude}"^^xsd:string;
 # HIDE FROM USER IN CONFIGURATION TAB!
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "service"^^xsd:string;
@@ -222,12 +222,54 @@
 					rdfs:label "WFS count parameter";
 					hydra:required "false"^^xsd:boolean;
 				];
+			        
 # Allow User to draw a bbox in the map that will feed that BBOX element IN CONFIGURATION TAB! Conflicts with BBOX and BBOX override elements in the generic user interface. 
+				#hydra:mapping[ a hydra:IriTemplateMapping;
+					#hydra:variable "BBOX"^^xsd:string;
+					#rdfs:range "xsd:string";
+					#rdfs:label "WFS BBOX filter parameter";
+					#hydra:required "false"^^xsd:boolean;
+				#];
+			        hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "minlatitude"^^xsd:string;
+					hydra:property "epos:southernmostLatitude";
+					rdfs:range "xsd:float";
+					rdfs:label "Minimum Latitude";
+					schema:minValue "-90.0";
+					schema:maxValue "90.0";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "-90";
+				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
-					hydra:variable "BBOX"^^xsd:string;
-					rdfs:range "xsd:string";
-					rdfs:label "WFS BBOX filter parameter";
-					hydra:required "false"^^xsd:boolean;
+					hydra:variable "maxlatitude"^^xsd:string;
+					hydra:property "epos:northernmostLatitude";
+					rdfs:range "xsd:float";
+					rdfs:label "Maximum Latitude";
+					schema:minValue "-90.0";
+					schema:maxValue "90.0";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "90";
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "minlongitude"^^xsd:string;
+					hydra:property "epos:westernmostLongitude";
+					rdfs:range "xsd:float";
+					rdfs:label "Minimum Longitude";
+					schema:minValue "-180.0";
+					schema:maxValue "180.0";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "-180";
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "maxlongitude"^^xsd:string;
+					hydra:property "epos:easternmostLongitude";
+					rdfs:range "xsd:float";
+					rdfs:label "Maximum Longitude";
+					schema:minValue "-180.0";
+					schema:maxValue "180.0";
+					hydra:required "true"^^xsd:boolean;
+					schema:defaultValue "180";
+					
 				];
 
 				hydra:mapping[ a hydra:IriTemplateMapping;
@@ -235,9 +277,10 @@
 					rdfs:range "xsd:string";
 					rdfs:label "Output format";
 					hydra:property "schema:encodingFormat";			
-					http:paramValue "application/geo%2Bjson"; # do we need to urlEncode this ?
-					http:paramValue "application/gml%2Bxml%3B%20version%3D3.2"; # do we need to urlEncode this ?
-					schema:defaultValue "application/geo%2Bjson";
+					#http:paramValue "application/geo%2Bjson"; # do we need to urlEncode this ?
+					#http:paramValue "application/gml%2Bxml%3B%20version%3D3.2"; # do we need to urlEncode this ?
+					http:paramValue "json";
+					schema:defaultValue "json";
 					hydra:required "true"^^xsd:boolean;
 				];
 

@@ -110,14 +110,15 @@
 #########  
 <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/033/WSDistribution> a dcat:Distribution;
 	dct:identifier "www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/033/WSDistribution";
-	dct:title "Catalogue of eruptions";
-	dct:description "Access the list of past eruptions in Iceland and parameters";
+	dct:title "Catalogue of Icelandic volcanic eruptions";
+	dct:description "The service allows to access the catalogue of eruptions occurred at Icelandic volcanoes since the Holocene. Key volcanoes and volcanic eruptions are included, e.g. Hekla, Katla, Eyjafjallajokull, Grimsvotn";
 	dct:issued "2018-12-12"^^xsd:date;
 	dct:modified "2018-12-12"^^xsd:date;
 	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 	dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
         dcat:accessURL <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/033/Operation/033> ;
-        dct:conformsTo<www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/033> 
+        dct:conformsTo <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/033> ;
+	dct:license "https://creativecommons.org/licenses/by-sa/4.0/"^^xsd:anyURI;
 .
 
 #########
@@ -143,8 +144,15 @@
 		schema:startDate "2018-12-12T00:00:00Z"^^xsd:dateTime; 
 		schema:endDate "2025-01-01T00:00:00Z"^^xsd:dateTime; 
 	]; 
+        dct:conformsTo <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/033/APIDocumentation>;
 . 
- 
+
+<www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/033/APIDocumentation> a hydra:APIDocumentation;
+      hydra:title "Web services documentation for Volcano_observations";
+      hydra:description "List, descriptions and examples on how to use web services to access data.";
+      hydra:entrypoint "https://docs.vedur.is/api/epos/#!/Volcanoes/get_volcano_eruption"^^xsd:anyURI;
+.
+
 #########
 # Operation
 ######### 

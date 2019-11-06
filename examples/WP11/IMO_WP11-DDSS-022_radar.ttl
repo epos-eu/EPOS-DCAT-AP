@@ -80,7 +80,7 @@
 ######### 
 	
 <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/022/data> a dcat:Dataset;
-		dct:title "Ground-based radar data";
+		dct:title "Ground based radar data Iceland";
 		dct:identifier "www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/022/data";	
 	    	adms:identifier [ a adms:Identifier;
 			adms:schemaAgency "DDSS-ID";
@@ -112,14 +112,15 @@
 
 <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/022/WSDistribution> a dcat:Distribution;
 		dct:identifier "www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/022/WSDistribution";
-		dct:title "Ground-based radar data";
-		dct:description "Access the raw data from radar for selected eruptions";
+		dct:title "Ground based radar data Iceland";
+		dct:description "The service allows to access processed data from the ground based C-band radar data located in Keflavík. It is possible to access data collected during past eruptions, e.g.  Eyjafjallajokull in 2010 and Grimsvotn in 2011.";
 		dct:issued "2019-01-21"^^xsd:date;
 		dct:modified "2019-01-21"^^xsd:date;
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dcat:accessURL <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/022/Operation/022>;
 		dct:conformsTo <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/022>;
+                dct:license "https://creativecommons.org/licenses/by-sa/4.0/"^^xsd:anyURI;
 .  
 
 #########
@@ -129,7 +130,7 @@
 <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/022> a epos:WebService;
 	schema:identifier "www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/022";
 	schema:description "Access raw data from radar for selected eruptions";
-	schema:name "Ground-based radar data";
+	schema:name "Ground based radar data Iceland";
 	hydra:entrypoint "https://docs.vedur.is/api/epos/#!/Volcanoes/get_volcano_meta_radar_volcano_station"^^xsd:anyURI; 
 	schema:datePublished "2019-01-21"^^xsd:date;
 	schema:dateModified "2019-01-21"^^xsd:date;
@@ -145,8 +146,15 @@
 		schema:startDate "2019-01-21T00:00:00Z"^^xsd:dateTime; 
 		schema:endDate "2025-01-01T00:00:00Z"^^xsd:dateTime; 
 	]; 
+        dct:conformsTo <www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/022/APIDocumentation>;
 . 
-	
+
+<www.epos-eu.org/epos-dcat-ap/Volcano_observations/Dataset/022/APIDocumentation> a hydra:APIDocumentation;
+      hydra:title "Web services documentation for Volcano_observations";
+      hydra:description "List, descriptions and examples on how to use web services to access data.";
+      hydra:entrypoint "https://docs.vedur.is/api/epos/#!/Volcanoes/get_volcano_meta_radar_station"^^xsd:anyURI;
+.
+
 #########
 # Operation
 ######### 

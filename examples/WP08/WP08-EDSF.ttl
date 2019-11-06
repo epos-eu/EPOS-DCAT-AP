@@ -16,7 +16,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
-# Version 3.4 - 2019 September 12
+# Version 3.6 - 2019 October 19
 <PIC:999472675> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "PIC";
@@ -128,7 +128,7 @@
 			#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
 	  	];
 		dct:spatial [ a dct:Location;
-			locn:geometry "POLYGON((-12.39 30.3,-12.39 49.0,45.28 49,45.28 30.3,-12.39 30.3))"^^gsp:wktLiteral;
+			locn:geometry "POLYGON((-12.39 30.3,-12.39 52.0,45.28 52,45.28 30.3,-12.39 30.3))"^^gsp:wktLiteral;
 		];
 		dcat:theme <#Activefaults>;
 		dcat:keyword "active fault","active faults", "seismogenic fault","seismogenic faults", "seismogenic source", "seismogenic sources", "seismogenic zone", "seismogenice zones", "earthquake", "earthquakes","subduction","crust", "slab", "hazard", "magnitude", "slip rate", "crustal fault","crustal faults", "subduction fault", "subduction faults", "seismic hazard", "hazard model", "seismic hazard model", "fault", "faults", "seismology", "geology", "geohazard", "INGV", "seismofaults","strike", "dip","rake", "magnitude", "SHARE";
@@ -164,7 +164,8 @@
 	dct:conformsTo <Seismology/EDSF>;
 	dcat:accessURL <Seismology/EDSF/WFS-CrustalFaults>;
 	dct:license "https://creativecommons.org/licenses/by-sa/4.0/"^^xsd:anyURI ;
-	dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
+	#dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 .
 <Seismology/EDSF/Distribution/WFS_Subductions> a dcat:Distribution;
 	dct:identifier "Seismology/EDSF/Distribution/WFS_Subductions";
@@ -176,7 +177,8 @@
 	dct:conformsTo <Seismology/EDSF>;
 	dcat:accessURL <Seismology/EDSF/WFS-Subductions>;
 	dct:license "https://creativecommons.org/licenses/by-sa/4.0/"^^xsd:anyURI ;
-	dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
+	#dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI;
+	dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 .
 
 <Seismology/EDSF> a epos:WebService;
@@ -189,7 +191,7 @@
 	schema:datePublished "2017-01-01"^^xsd:date;
 	schema:dateModified "2017-01-01"^^xsd:date;
 	dct:spatial [ a dct:Location;
-		locn:geometry "POLYGON((-12.39 30.3,-12.39 49.0,45.28 49,45.28 30.3,-12.39 30.3))"^^gsp:wktLiteral;
+		locn:geometry "POLYGON((-12.39 30.3,-12.39 52.0,45.28 52,45.28 30.3,-12.39 30.3))"^^gsp:wktLiteral;
 	];
 	hydra:supportedOperation <Seismology/EDSF/Operation/WMS>;
 	hydra:supportedOperation <Seismology/EDSF/WFS-CrustalFaults>;
@@ -197,7 +199,7 @@
 	schema:keywords "INGV","OGC","WMS","WFS","web feature service", "web map service", "open geospatial consortium", "geoserver";
 	dct:license "https://creativecommons.org/licenses/by-sa/4.0/"^^xsd:anyURI;
 	dct:temporal [ a dct:PeriodOfTime;
-		schema:startDate "2017-01-01T00:00:00Z"^^xsd:dateTime;
+		schema:startDate "2013-05-31T00:00:00Z"^^xsd:dateTime;
 		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime;
 	];
 	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/EDSF/APIDocumentation>;
@@ -280,7 +282,7 @@
 					schema:maxValue "90.0";
 					rdfs:range "xsd:float";
 					hydra:required "true"^^xsd:boolean;
-					schema:defaultValue "49.0013656616211" ;
+					schema:defaultValue "52.0" ;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "minlongitude"^^xsd:string;
@@ -439,7 +441,7 @@
 					schema:maxValue "90.0";
 					rdfs:range "xsd:float";
 					hydra:required "false"^^xsd:boolean;
-					schema:defaultValue "49.0013656616211" ;
+					schema:defaultValue "52.0" ;
 				];
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "minlongitude"^^xsd:string;
@@ -494,7 +496,7 @@
 					hydra:property "schema:encodingFormat";
 					rdfs:range "xsd:string";
 					rdfs:label "Output format";
-					schema:defaultValue "gml3";
+					schema:defaultValue "json";
                                         #http:paramValue "application/gml+xml; version=3.2";
                                         http:paramValue "GML2";
                                         http:paramValue "KML";
@@ -503,13 +505,12 @@
                                         http:paramValue "OGR-MIF";
                                         http:paramValue "OGR-TAB";
                                         http:paramValue "SHAPE-ZIP";
-                                        http:paramValue "application/json";
+                                        http:paramValue "json";
                                         #http:paramValue "application/vnd.google-earth.kml xml";
                                         #http:paramValue "application/vnd.google-earth.kml+xml";
                                         http:paramValue "csv";
                                         http:paramValue "gml3";
-                                        http:paramValue "gml32";
-                                        http:paramValue "json";
+                                        http:paramValue "gml32";                                    
                                         #http:paramValue "text/xml; subtype=gml/2.1.2";
                                         #http:paramValue "text/xml; subtype=gml/3.1.1";
                                         #http:paramValue "text/xml; subtype=gml/3.2";
@@ -682,7 +683,7 @@
 					rdfs:range "xsd:string";
 					rdfs:label "Output format";
 					hydra:property "schema:encodingFormat";
-					schema:defaultValue "gml3";
+					schema:defaultValue "json";
 					#http:paramValue "application/gml+xml; version=3.2";
 					http:paramValue "GML2";
 					http:paramValue "KML";
@@ -691,13 +692,12 @@
 					http:paramValue "OGR-MIF";
 					http:paramValue "OGR-TAB";
 					http:paramValue "SHAPE-ZIP";
-					http:paramValue "application/json";
+					http:paramValue "json";
 					#http:paramValue "application/vnd.google-earth.kml xml";
 					#http:paramValue "application/vnd.google-earth.kml+xml";
 					http:paramValue "csv";
 					http:paramValue "gml3";
-					http:paramValue "gml32";
-					http:paramValue "json";
+					http:paramValue "gml32";					
 					#http:paramValue "text/xml; subtype=gml/2.1.2";
 					#http:paramValue "text/xml; subtype=gml/3.1.1";
 					#http:paramValue "text/xml; subtype=gml/3.2";
