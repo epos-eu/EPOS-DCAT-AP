@@ -123,10 +123,14 @@
 	schema:contactType "manager";
 .
 
-<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/EFEHR/EU_Exposure> a dcat:Dataset;
-	dct:title "European Exposure Model";
-	dct:description "The geographical distribution of population, replacement cost of buildings, and total number of buildings (residential, commercial, industrial), and their distribution between lateral load resisting system construction material, within the European Exposure Model (v0.1).";
-	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/EFEHR/EU_Exposure";
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/EFEHR/EU_Exposure_L0> a dcat:Dataset;
+	dct:title "European Exposure Model (Admin Level 0)";
+	dct:description "The geographical distribution of population, replacement cost of buildings, and total number of buildings (residential, commercial, industrial), and their distribution between lateral load resisting system construction material, within the European Exposure Model (v0.1). The data is presented within administrative level 0 (country) boundaries.";
+	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/EFEHR/EU_Exposure_L0";
+	adms:identifier [ a adms:Identifier;
+		adms:schemaAgency "DOI";
+		skos:notation "10.7414/EUC-EUROPEAN-EXPOSURE-MODEL-LEVEL0-v0.1";
+	];
 	adms:identifier [ a adms:Identifier;
 		adms:schemaAgency "DDSS-ID";
 		skos:notation "WP08-DDSS-042";
@@ -144,6 +148,34 @@
 	dcat:contactPoint <https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/EFEHR/contactPoint>;
 	dct:publisher <PIC:999844476>;
 	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Distribution/EFEHR/OGC/WMS/EU_Exposure_L0>;
+	#dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Distribution/EFEHR/OGC/WMS/EU_Exposure_L1>;
+.
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/EFEHR/EU_Exposure_L1> a dcat:Dataset;
+	dct:title "European Exposure Model (Admin Level 1)";
+	dct:description "The geographical distribution of population, replacement cost of buildings, and total number of buildings (residential, commercial, industrial), and their distribution between lateral load resisting system construction material, within the European Exposure Model (v0.1). The data is presented within administrative level 1 boundaries for each country.";
+	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/EFEHR/EU_Exposure_L1";
+	adms:identifier [ a adms:Identifier;
+		adms:schemaAgency "DOI";
+		skos:notation "10.7414/EUC-EUROPEAN-EXPOSURE-MODEL-LEVEL1-v0.1";
+	];
+	adms:identifier [ a adms:Identifier;
+		adms:schemaAgency "DDSS-ID";
+		skos:notation "WP08-DDSS-042";
+	];
+	dct:type "http://purl.org/dc/dcmitype/Dataset"^^xsd:anyURI;
+	dct:created "2018-12-05"^^xsd:date;
+	dct:modified "2018-12-05"^^xsd:date;
+        dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI ;
+	dct:spatial [ a dct:Location;
+		locn:geometry "POLYGON((-32.5 73.5,45.0 73.5,45.0 32.5,-32.5 32.5,-32.5 73.5))"^^gsp:wktLiteral;
+	];
+	dcat:theme <epos:ExposureModel>;
+	dcat:keyword "exposure", "seismic risk", "buildings", "population", "map", "earthquake";
+	dcat:contactPoint <https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/EFEHR/scientificContact>;
+	dcat:contactPoint <https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/EFEHR/contactPoint>;
+	dct:publisher <PIC:999844476>;
+	#dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Distribution/EFEHR/OGC/WMS/EU_Exposure_L0>;
 	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Distribution/EFEHR/OGC/WMS/EU_Exposure_L1>;
 .
 
