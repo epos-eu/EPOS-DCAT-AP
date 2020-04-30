@@ -234,7 +234,7 @@
 
 <https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-002/IMAGE/Webservice> a epos:WebService;
     schema:identifier "https://www.epos-eu.org/epos-dcat-ap/GeoElectroMagnetism/WP13-DDSS-002/IMAGE/Webservice";
-    schema:description "The IMAGE web service makes available data from the IMAGE magnetometer network in text format.";
+    schema:description "The IMAGE web service makes available data from the IMAGE magnetometer network in text format. The output data files contain a full day (24 hours) of data with the original sampling rate (10 s or 20s).";
     schema:name "Web service for International Monitor for Auroral Geomagnetic Effects (IMAGE) data";
     dcat:contactPoint <mailto:ari.viljanen@fmi.fi/contactPoint>;
     dcat:contactPoint <mailto:lasse.hakkinen@fmi.fi/contactPoint>;
@@ -284,7 +284,7 @@
     hydra:method "GET"^^xsd:string;
     hydra:returns "text/plain";
     hydra:property[ a hydra:IriTemplate;
-        hydra:template "http://space.fmi.fi/cgi-bin/imagecgi/image-epos.cgi?submit=ok&yourname=EPOS&institute=EPOS&email=epos@example.org{&start}"^^xsd:string;
+        hydra:template "https://space.fmi.fi/image/epos/data_download_epos.php?starttime={&start}"^^xsd:string;
             hydra:mapping[ a hydra:IriTemplateMapping;
                 hydra:variable "start"^^xsd:string;
                 rdfs:label "Date (yyyymmdd)";
