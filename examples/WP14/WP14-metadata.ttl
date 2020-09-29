@@ -217,21 +217,21 @@
 	schema:url "http://www.knmi.nl"^^xsd:anyURI;
 	schema:contactPoint <http://orcid.org/0000-0001-7153-5115/contactPoint>;
 .
-<PIC:974007459> a schema:Organization;
-	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "pic";
-		schema:value "974007459";
-	]; 
-	schema:legalName "Reykjavik Energy";
-	schema:address [ a schema:PostalAddress;
-		schema:streetAddress "Bæjarháls 1";
-		schema:addressLocality "Reykjavík";
-		schema:addressCountry "Iceland";
-	]; 
-	schema:logo "https://www.or.is/english/about-or/logo"^^xsd:anyURI;
-	schema:url "https://www.or.is"^^xsd:anyURI;
-	schema:contactPoint <https://orcid.org/0000-0003-2989-1663/contactPoint>;
-.
+#<PIC:974007459> a schema:Organization;
+#	schema:identifier [ a schema:PropertyValue;
+#		schema:propertyID "pic";
+#		schema:value "974007459";
+#	];
+#	schema:legalName "Reykjavik Energy";
+#	schema:address [ a schema:PostalAddress;
+#		schema:streetAddress "Bæjarháls 1";
+#		schema:addressLocality "Reykjavík";
+#		schema:addressCountry "Iceland";
+#	];
+#	schema:logo "https://www.or.is/english/about-or/logo"^^xsd:anyURI;
+#	schema:url "https://www.or.is"^^xsd:anyURI;
+#	schema:contactPoint <https://orcid.org/0000-0003-2989-1663/contactPoint>;
+#.
 <https://www.sgsw.ch> a schema:Organization;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "URL";
@@ -279,7 +279,21 @@
     schema:url "http://en.isor.is/"^^xsd:anyURI;
     schema:contactPoint <mailto:Egill.Arni.Gudnason@isor.is/contactPoint>;
 .
-
+<PIC:999740201> a schema:Organization;
+	schema:identifier [ a schema:PropertyValue;
+						schema:propertyID "pic";
+						schema:value "999740201";
+					  ];
+	schema:legalName "NORSAR";
+	schema:address [ a schema:PostalAddress;
+					 schema:streetAddress "Gunnar Randers vei 15";
+					 schema:addressLocality "Kjeller";
+					 schema:postalCode "N-2007";
+					 schema:addressCountry "Norway";
+				   ];
+	schema:url "https://www.norsar.no/"^^xsd:anyURI;
+	schema:contactPoint <http://orcid.org/0000-0002-5036-0958/contactPoint>;
+.
 
 <http://orcid.org/0000-0002-4801-4888> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
@@ -571,22 +585,22 @@
 	schema:affiliation <PIC:999518944>;
 	schema:contactPoint <http://orcid.org/0000-0001-7153-5115/contactPoint>;
 . 
-<https://orcid.org/0000-0003-2989-1663> a schema:Person;
-	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "orcid";
-		schema:value "0000-0003-2989-1663";
-	]; 
-	schema:familyName "Snæbjörnsdóttir";
-	schema:givenName "Sandra Ósk";
-	schema:address [ a schema:PostalAddress;
-		schema:streetAddress "Bæjarháls 1";
-		schema:addressLocality "Reykjavík";
-		schema:addressCountry "Iceland";
-	];
-	schema:email "sandra.osk.snaebjornsdottir@or.is";
-	schema:affiliation <PIC:974007459>;
-	schema:contactPoint <https://orcid.org/0000-0003-2989-1663/contactPoint>;
-. 
+#<https://orcid.org/0000-0003-2989-1663> a schema:Person;
+#	schema:identifier [ a schema:PropertyValue;
+#		schema:propertyID "orcid";
+#		schema:value "0000-0003-2989-1663";
+#	];
+#	schema:familyName "Snæbjörnsdóttir";
+#	schema:givenName "Sandra Ósk";
+#	schema:address [ a schema:PostalAddress;
+#		schema:streetAddress "Bæjarháls 1";
+#		schema:addressLocality "Reykjavík";
+#		schema:addressCountry "Iceland";
+#	];
+#	schema:email "sandra.osk.snaebjornsdottir@or.is";
+#	schema:affiliation <PIC:974007459>;
+#	schema:contactPoint <https://orcid.org/0000-0003-2989-1663/contactPoint>;
+#.
 <mailto:thomas.bloch@sgsw.ch> a schema:Person;
 	schema:identifier [ a schema:PropertyValue;
 		schema:propertyID "mailto";
@@ -638,6 +652,23 @@
     schema:email "Egill.Arni.Gudnason@isor.is";
     schema:affiliation <http://en.isor.is/>;
     schema:contactPoint <mailto:Egill.Arni.Gudnason@isor.is/contactPoint>;
+.
+<http://orcid.org/0000-0002-5036-0958> a schema:Person;
+   schema:identifier [ a schema:PropertyValue;
+					   schema:propertyID "orcid";
+					   schema:value "0000-0002-5036-0958";
+					 ];
+   schema:familyName "Wuestefeld";
+   schema:givenName "Andreas";
+   schema:address [ a schema:PostalAddress;
+					schema:streetAddress "Gunnar Randers vei 15";
+					schema:addressLocality "Kjeller";
+					schema:postalCode "N-2007";
+					schema:addressCountry "Norway";
+				  ];
+   schema:email "Andreas.Wuestefeld@norsar.no";
+   schema:affiliation <PIC:999740201>;
+   schema:contactPoint <http://orcid.org/0000-0002-5036-0958/contactPoint>;
 .
 
 	<epos:Anthropogenichazards> a skos:ConceptScheme;
@@ -1701,34 +1732,34 @@
 		dcat:contactPoint <mailto:Egill.Arni.Gudnason@isor.is/contactPoint>;
 		dcat:distribution <anthropogenic_hazards/distribution/episode-elements/SG>;
 .
-#	<anthropogenic_hazards/dataset/episode/COTTON_VALLEY> a dcat:Dataset;
-#		dct:title "COTTON VALLEY: hydraulic fracturing";
-#		dct:identifier "anthropogenic_hazards/dataset/episode/COTTON_VALLEY";
-#		adms:identifier [ a adms:Identifier;
-#			adms:schemaAgency "DDSS-ID";
-#			skos:notation "WP14-DDSS-042";
-#		]; 
-#		adms:identifier [ a adms:Identifier;
-#     adms:schemaAgency "DOI";
-#     skos:notation "10.25171/InstGeoph_PAS_ISEPOS-2019-003";
-#   ];
-#   dct:description "Fracture imaging study in the Carthage Gas Unit, Panola County, Texas, USA is shown that microseismic events induced by hydraulic fracturing at a depth of 9,500 ft were detected at distances exceeding 1,300 ft from the origin. An industry consortium of major operators, service companies, government agencies and national laboratories was formed to perform a more detailed study using 96, 3-component geophone sondes distributed among two monitor wells. A unique microseismic recording system specifically designed and manufactured for these operating depths is presented. Applications of the technology include optimization of hydraulic fracture designs and accurate mapping of fracture geometry. How to cite: IS EPOS (2019), Episode: COTTON VALLEY, https://tcs.ah-epos.eu/#episode:COTTON_VALLEY";
-#		dct:created "2019-04-30"^^xsd:date;
-#		dct:modified "2019-04-30"^^xsd:date;
-#		dct:issued "2019-04-30"^^xsd:date;
-#		dct:temporal [ a dct:PeriodOfTime; 
-#			schema:startDate "1997-05-12T08:30:36Z"^^xsd:dateTime;
-#			schema:endDate "1997-05-16T12:36:00Z"^^xsd:dateTime;
-#		];
-#		dct:spatial [ a dct:Location;
-#	        locn:geometry "POINT(-94.42 32.17)"^^gsp:wktLiteral;
-#	    ];
-#		dcat:theme <epos:Unconventionalhydrocarbonextraction>;
-#		dcat:keyword "anthropogenic hazards","TCS AH","IS-EPOS platform", "episode", "unconventional hydrocarbon extraction", "anthropogenic seismicity", "catalogue", "seismic waveform", "station information", "injection industrial data", "velocity model", "hydrocarbon production data";
-#		dct:publisher <TODO>;
-#		dcat:contactPoint <TODO>;
-#		dcat:distribution <anthropogenic_hazards/distribution/episode-elements/COTTON_VALLEY>;
-#. 
+	<anthropogenic_hazards/dataset/episode/COTTON_VALLEY> a dcat:Dataset;
+		dct:title "COTTON VALLEY: hydraulic fracturing";
+		dct:identifier "anthropogenic_hazards/dataset/episode/COTTON_VALLEY";
+		adms:identifier [ a adms:Identifier;
+			adms:schemaAgency "DDSS-ID";
+			skos:notation "WP14-DDSS-042";
+		];
+		adms:identifier [ a adms:Identifier;
+     adms:schemaAgency "DOI";
+     skos:notation "10.25171/InstGeoph_PAS_ISEPOS-2019-003";
+   ];
+   dct:description "Fracture imaging study in the Carthage Gas Unit, Panola County, Texas, USA is shown that microseismic events induced by hydraulic fracturing at a depth of 9,500 ft were detected at distances exceeding 1,300 ft from the origin. An industry consortium of major operators, service companies, government agencies and national laboratories was formed to perform a more detailed study using 96, 3-component geophone sondes distributed among two monitor wells. A unique microseismic recording system specifically designed and manufactured for these operating depths is presented. Applications of the technology include optimization of hydraulic fracture designs and accurate mapping of fracture geometry. How to cite: IS EPOS (2019), Episode: COTTON VALLEY, https://tcs.ah-epos.eu/#episode:COTTON_VALLEY";
+		dct:created "2019-04-30"^^xsd:date;
+		dct:modified "2019-04-30"^^xsd:date;
+		dct:issued "2019-04-30"^^xsd:date;
+		dct:temporal [ a dct:PeriodOfTime;
+			schema:startDate "1997-05-12T08:30:36Z"^^xsd:dateTime;
+			schema:endDate "1997-05-16T12:36:00Z"^^xsd:dateTime;
+		];
+		dct:spatial [ a dct:Location;
+	        locn:geometry "POINT(-94.42 32.17)"^^gsp:wktLiteral;
+	    ];
+		dcat:theme <epos:Unconventionalhydrocarbonextraction>;
+		dcat:keyword "anthropogenic hazards","TCS AH","IS-EPOS platform", "episode", "unconventional hydrocarbon extraction", "anthropogenic seismicity", "catalogue", "seismic waveform", "station information", "injection industrial data", "velocity model", "hydrocarbon production data";
+		dct:publisher <PIC:999740201>;
+		dcat:contactPoint <http://orcid.org/0000-0002-5036-0958/contactPoint>;
+		dcat:distribution <anthropogenic_hazards/distribution/episode-elements/COTTON_VALLEY>;
+.
 	<anthropogenic_hazards/dataset/episode/VOUGLANS> a dcat:Dataset;
 		dct:title "VOUGLANS: water reservoir";
 		dct:identifier "anthropogenic_hazards/dataset/episode/VOUGLANS";
@@ -1858,7 +1889,7 @@
 	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/WYSIN>;
 #	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/CARBFIX>;
 	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/SG>;
-#	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/COTTON_VALLEY>;
+	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/COTTON_VALLEY>;
 	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/VOUGLANS>;
 	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/GAZLI>;
 #	hydra:supportedOperation <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/BOGDANKA>;
@@ -3212,28 +3243,46 @@
 				];
 		] ;
 . 
-#	<anthropogenic_hazards/webservice/is-epos_platform/episode-elements/COTTON_VALLEY> a hydra:Operation;
-#		hydra:method "GET"^^xsd:string;
-#		hydra:returns "application/json";
-#		hydra:property[ a hydra:IriTemplate;
-#			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType}"^^xsd:string;
-#				hydra:mapping[ a hydra:IriTemplateMapping;
-#					hydra:variable "episode"^^xsd:string;
-#					rdfs:range "xsd:string";
-#					rdfs:label "Episode dataset contains: seismic data: Catalog, Event related waveforms, Seismic Network; industrial data: Fracking Process Parameters, Well Path, Well Position; geodata: Velocity Model. From 1997-05-12 till 1997-05-16. Additional configuration and filtration possible on the IS-EPOS Platform - please select the 'Download' button.";
-#					schema:defaultValue "COTTON_VALLEY";
-#					http:paramValue "COTTON_VALLEY" ;
-#					hydra:required "true"^^xsd:boolean;
-#				];
-#				hydra:mapping[ a hydra:IriTemplateMapping;
-#					hydra:variable "dataType"^^xsd:string;
-#					rdfs:range "xsd:string";
-#					rdfs:label "Type of the data item. Sample values: 'Episode XML'";
-#					schema:defaultValue "Episode XML";
-#					hydra:required "false"^^xsd:boolean;
-#				];
-#		] ;
-#. 
+	<anthropogenic_hazards/webservice/is-epos_platform/episode-elements/COTTON_VALLEY> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://tcs.ah-epos.eu/api/epos/episode-elements{?episode,dataType}"^^xsd:string;
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "episode"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Episode dataset contains: seismic data: Catalog, Event related waveforms, Seismic Network; industrial data: Fracking Process Parameters, Well Path, Well Position; geodata: Velocity Model. From 1997-05-12 till 1997-05-16. Additional configuration and filtration possible on the IS-EPOS Platform - please select the 'Download' button.";
+					schema:defaultValue "COTTON_VALLEY";
+					http:paramValue "COTTON_VALLEY" ;
+					hydra:required "true"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "dataType"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Type of the data item. Sample values: 'Catalog', 'Miniseed Signal', 'Seismic Network', 'Velocity model', 'Well Path'";
+					schema:defaultValue "Catalog";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+							   hydra:variable "before"^^xsd:string;
+							   hydra:property "schema:endDate";
+							   schema:valuePattern "YYYY-MM-DD";
+							   rdfs:range "xsd:dateTime";
+							   rdfs:label "Items before this date";
+							   schema:defaultValue "2020-09-28";
+							   hydra:required "false"^^xsd:boolean;
+							 ];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+							   hydra:variable "after"^^xsd:string;
+							   hydra:property "schema:startDate";
+							   schema:valuePattern "YYYY-MM-DD";
+							   rdfs:range "xsd:dateTime";
+							   rdfs:label "Items after this date";
+							   schema:defaultValue "1970-01-01";
+							   hydra:required "false"^^xsd:boolean;
+							 ];
+		] ;
+.
 	<anthropogenic_hazards/webservice/is-epos_platform/episode-elements/VOUGLANS> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/json";
@@ -3689,17 +3738,16 @@
 		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
 		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
 .
-# will be available July/August 2019
-#	<anthropogenic_hazards/distribution/episode-elements/COTTON_VALLEY> a dcat:Distribution;
-#		dct:identifier "anthropogenic_hazards/distribution/episode-elements/COTTON_VALLEY";
-#		dct:title "Episode COTTON VALLEY: hydraulic fracturing - dataset";
-#		dct:description "Enables to list data items contained in the episode (dataset) as 'Catalog, 'Seismic Network', 'Event Related Waveforms', 'Velocity model' and some 'Industrial data', features filtering. Episode comprehensively describes a geophysical process induced or triggered by human technological activity, which could pose a hazard for populations, infrastructure and environment. Fracture imaging study in the Carthage Gas Unit, Panola County, Texas, USA is shown where microseismic events induced by hydraulic fracturing at a depth of 9,500 ft were detected at distances exceeding 1,300 ft from the origin. An industry consortium of major operators, service companies, government agencies and national laboratories was formed to perform a more detailed study using 96, 3-component geophone sondes distributed among two monitor wells. A unique microseismic recording system specifically designed and manufactured for these operating depths is presented. Applications of the technology include optimization of hydraulic fracture designs and accurate mapping of fracture geometry. The data recorded at the Cotton Valley hydrofracture were of high quality and provided definitive results in gaining an understanding of the fracture generations at this site. The instrumentation worked admirably with only minor problems resulting from loss of some of the downhole sensors damaged during installation. Additionally, several channels have been contaminated by electrical noise and in many instances, the P-wave amplitudes were often lost within the background noise. Data integrated as Cotton Valley episode have been converted from the original CDs. Some data were corrupted on those CDs as well as the original full filenames were lost during the transfer to PC format from Unix operating system."; 
-#		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
-#		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
-#		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/COTTON_VALLEY>;
-#		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
-#		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
-#. 
+	<anthropogenic_hazards/distribution/episode-elements/COTTON_VALLEY> a dcat:Distribution;
+		dct:identifier "anthropogenic_hazards/distribution/episode-elements/COTTON_VALLEY";
+		dct:title "Episode COTTON VALLEY: hydraulic fracturing - dataset";
+		dct:description "Enables to list data items contained in the episode (dataset) as 'Catalog, 'Seismic Network', 'Event Related Waveforms', 'Velocity model' and some 'Industrial data', features filtering. Episode comprehensively describes a geophysical process induced or triggered by human technological activity, which could pose a hazard for populations, infrastructure and environment. Fracture imaging study in the Carthage Gas Unit, Panola County, Texas, USA is shown where microseismic events induced by hydraulic fracturing at a depth of 9,500 ft were detected at distances exceeding 1,300 ft from the origin. An industry consortium of major operators, service companies, government agencies and national laboratories was formed to perform a more detailed study using 96, 3-component geophone sondes distributed among two monitor wells. A unique microseismic recording system specifically designed and manufactured for these operating depths is presented. Applications of the technology include optimization of hydraulic fracture designs and accurate mapping of fracture geometry. The data recorded at the Cotton Valley hydrofracture were of high quality and provided definitive results in gaining an understanding of the fracture generations at this site. The instrumentation worked admirably with only minor problems resulting from loss of some of the downhole sensors damaged during installation. Additionally, several channels have been contaminated by electrical noise and in many instances, the P-wave amplitudes were often lost within the background noise. Data integrated as Cotton Valley episode have been converted from the original CDs. Some data were corrupted on those CDs as well as the original full filenames were lost during the transfer to PC format from Unix operating system.";
+		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI;
+		dct:conformsTo <anthropogenic_hazards/webservice/is-epos_platform> ;
+		dcat:accessURL <anthropogenic_hazards/webservice/is-epos_platform/episode-elements/COTTON_VALLEY>;
+		dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI;
+		dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
+.
 	<anthropogenic_hazards/distribution/episode-elements/VOUGLANS> a dcat:Distribution;
 		dct:identifier "anthropogenic_hazards/distribution/episode-elements/VOUGLANS";
 		dct:title "Episode VOUGLANS: water reservoir - dataset";
@@ -4649,11 +4697,11 @@
 		schema:availableLanguage "en" ;
 		schema:contactType "contactPoint" ;
 .
-	<https://orcid.org/0000-0003-2989-1663/contactPoint> a schema:ContactPoint;
-		schema:email "sandra.osk.snaebjornsdottir@or.is";
-		schema:availableLanguage "en" ;
-		schema:contactType "contactPoint" ;
-.
+#	<https://orcid.org/0000-0003-2989-1663/contactPoint> a schema:ContactPoint;
+#		schema:email "sandra.osk.snaebjornsdottir@or.is";
+#		schema:availableLanguage "en" ;
+#		schema:contactType "contactPoint" ;
+#.
 	<mailto:thomas.bloch@sgsw.ch/contactPoint> a schema:ContactPoint;
 		schema:email "thomas.bloch@sgsw.ch";
 		schema:availableLanguage "en" ;
@@ -4669,3 +4717,9 @@
         schema:availableLanguage "en" ;
         schema:contactType "contactPoint" ;
 .
+<http://orcid.org/0000-0002-5036-0958/contactPoint> a schema:ContactPoint;
+		schema:email "Andreas.Wuestefeld@norsar.no";
+		schema:availableLanguage "en" ;
+		schema:contactType "contactPoint" ;
+.
+
