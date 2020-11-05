@@ -1196,7 +1196,8 @@ epos:EquipmentShape
       sh:path dct:relation ;
       sh:or ( [ sh:class rdfs:Resource ; ]
         [ sh:class dcat:Dataset ; ]
-       [ sh:class epos:WebService ; ] );
+        [ sh:class schema:Service ; ]
+        [ sh:class epos:WebService ; ] );
        sh:description "This property refers to a related resource (e.g., Dataset, WebService, etc.).";
   ];
   sh:property [
@@ -1502,6 +1503,7 @@ epos:FacilityShape
        sh:description "This property refers to a related resource (e.g., Dataset, WebService, etc).";
        sh:or ( [ sh:class rdfs:Resource ; ]
         [ sh:class dcat:Dataset ; ]
+        [ sh:class schema:Service ; ]
         [ sh:class epos:WebService ; ] );
    ] ;
    sh:property [
