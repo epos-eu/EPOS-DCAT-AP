@@ -33,7 +33,7 @@
   dct:contributor [foaf:name "Andy Riddick" ;  ] ;
   dct:contributor [foaf:name "Xiaoliang Wang" ; ] ;
   dct:created "2018-02-09"^^xsd:date ;
-  dct:modified "2019-05-21"^^xsd:date ;
+  dct:modified "2020-11-13"^^xsd:date ;
   dct:relation <https://joinup.ec.europa.eu/node/69559> ;
   dct:title "EPOS DCAT Application Profile"@en  ;
   rdfs:comment "This document specifies the set of classes, properties and shapes graphs used in the EPOS DCAT Application Profile."@en  ;
@@ -47,7 +47,7 @@
  # owl:imports <http://www.w3.org/ns/oa#> ;
   #owl:imports <http://www.w3.org/ns/org#> ;
   #owl:imports <http://xmlns.com/foaf/0.1/> ;
-  owl:versionInfo "0.15" ;
+  owl:versionInfo "1.0" ;
   foaf:homepage <http://www.epos-eu.org/epos-dcat-ap> ; .
 ####
 # Classes
@@ -929,7 +929,31 @@ sh:property [
       sh:path schema:serviceType ;
       sh:datatype xsd:string;
     ] ;
+sh:property [
+      sh:path schema:keywords ;
+      sh:datatype xsd:string;
+      sh:maxCount 1;
+  ];
+  sh:property [
+      sh:path dcat:theme;
+      sh:class skos:Concept ;
+  ] ;
+sh:property [
+        sh:path dct:temporal ;
+        sh:class dct:PeriodOfTime ;
+        sh:maxCount 1;
+    ] ;
+  sh:property [
+      sh:path dct:spatial ;
+      sh:class dct:Location ;
+  ] ;
+  sh:property [
+      sh:path schema:url ;
+      sh:datatype xsd:anyURI;
+      sh:maxCount 1 ;
+  ] ;
 .
+
 epos:EquipmentShape
   a sh:NodeShape ;
   sh:targetClass epos:Equipment;
@@ -1043,12 +1067,17 @@ sh:property [
       sh:path dct:relation ;
       sh:or ( [ sh:class rdfs:Resource ; ]
         [ sh:class dcat:Dataset ; ]
+	[ sh:class schema:Service ; ]
 	[ sh:class epos:WebService ; ] );
 ] ;
 sh:property [
      sh:path dcat:theme ;
      sh:class skos:Concept ;
 ] ;
+sh:property [
+      sh:path foaf:page ;
+      sh:datatype xsd:anyURI ;
+  ];
 .
 epos:DatasetShape
   a sh:NodeShape ;
@@ -1312,12 +1341,17 @@ epos:FacilityShape
        sh:path dct:relation ;
        sh:or ( [ sh:class rdfs:Resource ; ]
         [ sh:class dcat:Dataset ; ]
+	[ sh:class schema:Service ; ]
 	[ sh:class epos:WebService ; ] );
   ] ;
   sh:property [
       sh:path epos:annotation ;
       sh:class oa:Annotation;
     ] ;
+  sh:property [
+      sh:path dct:spatial ;
+      sh:class dct:Location ;
+  ] ;
 .
 epos:DistributionShape
   a sh:NodeShape ;
