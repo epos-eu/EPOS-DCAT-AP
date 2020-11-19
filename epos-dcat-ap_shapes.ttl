@@ -1146,10 +1146,7 @@ epos:DatasetShape
       sh:message "Distribution is recommended. Please fill in a value"@en  ;
       sh:severity sh:Warning ;
     ] ;
-  sh:property [
-      sh:path dcat:distribution ;
-      sh:class dcat:Distribution;
-    ] ;
+  
   sh:property [
       sh:path dcat:contactPoint ;
       sh:minCount 1 ;
@@ -1157,10 +1154,7 @@ epos:DatasetShape
       sh:message "Contact point is recommended. Please fill in a value"@en  ;
       sh:severity sh:Warning ;
   ] ;
-  sh:property [
-      sh:path dcat:contactPoint ;
-      sh:node epos:ContactPointType ;
-    ] ;
+  
   sh:property [
       sh:path dct:publisher ;
       sh:minCount 1 ;
@@ -1182,10 +1176,7 @@ epos:DatasetShape
       sh:message "Keyword is recommended. Please fill in a value"@en  ;
       sh:severity sh:Warning ;
     ] ;
- sh:property [
-      sh:path dcat:keyword ;
-      sh:datatype xsd:string ;
-    ] ;
+
 sh:property [
       sh:path dcat:theme ;
       sh:class skos:Concept ;
