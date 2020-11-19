@@ -1025,6 +1025,7 @@ epos:EquipmentShape
  sh:property [
       sh:path schema:manufacturer ;
       sh:class schema:Organization ;
+      sh:maxCount 1 ;
  ] ;
  sh:property [
       sh:path schema:manufacturer ;
@@ -1056,30 +1057,36 @@ epos:EquipmentShape
  sh:property [
       sh:path epos:filter ;
       sh:datatype xsd:string ;
+      sh:maxCount 1 ;
  ] ;
  sh:property [
       sh:path epos:dynamicRange ;
       sh:class schema:QuantitativeValue ;
+      sh:maxCount 1 ;
  ] ;
  sh:property [
       sh:path epos:orientation ;
       sh:datatype xsd:string ;
+      sh:maxCount 1 ;
  ] ;
  sh:property [
       sh:path epos:resolution ;
       sh:datatype xsd:string ;
+      sh:maxCount 1 ;
  ] ;
  sh:property [
       sh:path epos:samplePeriod ;
       sh:class schema:QuantitativeValue ;
+      sh:maxCount 1 ;
  ] ;
  sh:property [
-      sh:path [sh:alternativePath (schema:contactPoint dcat:contactPoint)] ;
+      sh:path dcat:contactPoint ;
       sh:node epos:ContactPointType ;
  ];
  sh:property [
       sh:path dct:spatial ;
       sh:class dct:Location ;
+      sh:maxCount 1 ;
     ] ;
  sh:property [
       sh:path epos:annotation ;
@@ -1088,6 +1095,7 @@ epos:EquipmentShape
  sh:property [
        sh:path dct:temporal ;
        sh:class dct:PeriodOfTime ;
+       sh:maxCount 1 ;
  ] ;
 sh:property [
       sh:path dct:relation ;
