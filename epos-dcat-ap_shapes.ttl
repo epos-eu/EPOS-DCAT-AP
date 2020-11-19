@@ -767,15 +767,7 @@ epos:WebServiceShape
 epos:OperationShape
 a sh:NodeShape ;
 sh:targetClass hydra:Operation;
-####
-# Operation mandatory properties
-####
-  sh:property [
-    sh:path hydra:method ;
-    sh:minCount 1 ;
-    sh:maxCount 1 ;
-    sh:datatype xsd:string ;
- ] ;
+
 ####
 # Operation  recommended properties
 ####
@@ -792,12 +784,12 @@ sh:targetClass hydra:Operation;
     sh:maxCount 1 ;
   ] ;
  sh:property [
-    sh:path hydra:returns ;
-    sh:datatype xsd:string;
-    sh:minCount 1 ;
-    sh:message "returns is recommended. Please fill in a value"@en ;
-    sh:severity sh:Warning ;
- ] ;
+      sh:path hydra:returns ;
+      sh:datatype xsd:string;
+      sh:minCount 1 ;
+      sh:message "returns is recommended. Please fill in a value"@en ;
+      sh:severity sh:Warning ;
+ ];
  sh:property [
     sh:path hydra:returns ;
     sh:datatype xsd:string;
@@ -806,9 +798,12 @@ sh:targetClass hydra:Operation;
 # Operation optional properties
 ####
   sh:property [
-    sh:path hydra:expects ;
-    sh:class hydra:Class ;
- ] ;
+      sh:path hydra:method ;
+      sh:description "The HTTP method";
+      sh:maxCount 1 ;
+      sh:datatype xsd:string ;
+  ];
+
 .
 
 
@@ -834,7 +829,7 @@ epos:IriTemplateMappingShape
   a sh:NodeShape ;
   sh:targetClass hydra:IriTemplateMapping ;
 ####
-# IriTemplateMapping properties
+# IriTemplateMapping mandatory properties
 ####
   sh:property [
       sh:path hydra:variable ;
@@ -878,6 +873,16 @@ epos:IriTemplateMappingShape
   sh:property [
       sh:path http:paramValue ;
       sh:datatype xsd:string ;  
+  ] ;
+  sh:property [
+      sh:path schema:valuePattern ;
+      sh:datatype xsd:string ;
+      sh:maxCount 1 ;
+  ] ;
+  sh:property [
+      sh:path hydra:property ;
+      sh:datatype xsd:string ;
+      sh:maxCount 1 ;
   ] ;
 .
 
