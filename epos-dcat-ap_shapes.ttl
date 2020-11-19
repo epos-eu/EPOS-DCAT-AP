@@ -1705,7 +1705,12 @@ epos:SoftwareApplicationShape
       sh:severity sh:Warning ;
     ] ;
     sh:property [
-      sh:path [sh:alternativePath (schema:contactPoint dcat:contactPoint)] ;
+      sh:path schema:name ;
+      sh:datatype xsd:string;
+      sh:maxCount 1 ;
+    ] ;
+    sh:property [
+      sh:path schema:contactPoint ;
       sh:node epos:ContactPointType ;
     ] ;
     sh:property [
@@ -1721,27 +1726,33 @@ epos:SoftwareApplicationShape
     sh:property [
       sh:path schema:description ;
       sh:datatype xsd:string ;
+      sh:maxCount 1 ;
     ] ;
     sh:property [
       sh:path schema:downloadUrl ;
       sh:datatype xsd:anyURI;
+      sh:maxCount 1 ;
     ] ;
     sh:property [
       sh:path schema:license ;
       sh:datatype xsd:anyURI;
+      sh:maxCount 1 ;
     ] ;
     sh:property [
       sh:path schema:softwareVersion;
       sh:datatype xsd:string ;
+      sh:maxCount 1 ;
     ] ;
     sh:property [
       sh:path schema:softwareRequirements ;
       sh:or ( [ sh:datatype xsd:string ; ]
         [ sh:datatype xsd:anyURI ; ] );
+      sh:maxCount 1 ;
     ] ;
     sh:property [
       sh:path schema:potentialAction ;
       sh:class schema:ControlAction ;
+      sh:maxCount 1 ;
     ] ;
     sh:property [
       sh:path dct:relation ;
@@ -1750,7 +1761,22 @@ epos:SoftwareApplicationShape
    sh:property [
       sh:path schema:installUrl ;
       sh:datatype xsd:anyURI;
+      sh:maxCount 1 ;
     ] ;
+    sh:property [
+       sh:path schema:mainEntityOfPage ;
+       sh:datatype xsd:anyURI ;
+       sh:maxCount 1 ;
+  ] ;
+  sh:property [
+        sh:path schema:keywords ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+  ] ;
+  sh:property [
+        sh:path dcat:theme;
+        sh:class skos:Concept ;
+  ] ;
 .
 
 epos:ControlActionShape
