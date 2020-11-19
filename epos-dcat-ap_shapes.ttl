@@ -1521,6 +1521,7 @@ epos:ProjectShape
       sh:or ( [ sh:datatype xsd:string ; ]
         [ sh:datatype xsd:anyURI ; ] );
       sh:minCount 1 ;
+      sh:maxCount 1 ;
     ] ;
     sh:property [
       sh:path dct:title ;
@@ -1532,7 +1533,7 @@ epos:ProjectShape
   # Project recommended properties
   ####
   sh:property [
-      sh:path [sh:alternativePath (schema:contactPoint dcat:contactPoint)] ;
+      sh:path dcat:contactPoint ;
       sh:node epos:ContactPointType ;
     ] ;
    sh:property [
@@ -1560,6 +1561,7 @@ epos:ProjectShape
   sh:property [
       sh:path foaf:homepage ;
       sh:class foaf:Document ;
+      sh:maxCount 1 ;
   ] ;
 .
 epos:PublicationShape
@@ -1578,6 +1580,7 @@ epos:PublicationShape
     sh:property [
       sh:path schema:name ;
       sh:minCount 1 ;
+      sh:maxCount 1 ;
       sh:datatype xsd:string ;
     ] ;
   ####
@@ -1626,6 +1629,8 @@ epos:PublicationShape
    sh:property [
       sh:path schema:author ;
       sh:class schema:Person;
+      sh:maxCount 1 ;
+      
     ] ;
    sh:property [
       sh:path schema:author ;
