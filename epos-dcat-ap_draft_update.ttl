@@ -1013,14 +1013,19 @@ epos:ServiceShape
       sh:datatype xsd:string;
       sh:maxCount 1 ;
   ] ;
-  sh:property [
-      sh:path schema:provider;
-      sh:description "This property refers to an Organisation or Person responsible for making the Service available. ";
-      sh:or ( [ sh:class schema:Organization ; ]
-        [ sh:class schema:Person ; ] );
-      sh:minCount 1;
-      sh:message "Provider is recommended. Please fill in a value"@en  ;
-      sh:severity sh:Warning ;
+  sh:property [	
+    sh:path schema:provider;	
+    sh:or ( [ sh:class schema:Organization ; ]	
+      [ sh:class schema:Person ; ] );	
+    sh:maxCount 1;	
+  ] ;	
+sh:property [	
+    sh:path schema:provider;	
+    sh:or ( [ sh:class schema:Organization ; ]	
+      [ sh:class schema:Person ; ] );	
+    sh:minCount 1;	
+    sh:message "Provider is recommended. Please fill in a value"@en  ;	
+    sh:severity sh:Warning ;	
   ] ;
 ####
 # Service optional properties
