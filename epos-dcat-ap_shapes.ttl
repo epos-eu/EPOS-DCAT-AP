@@ -1709,12 +1709,9 @@ epos:SoftwareApplicationShape
       sh:datatype xsd:string;
       sh:maxCount 1 ;
     ] ;
+    
     sh:property [
       sh:path schema:contactPoint ;
-      sh:node epos:ContactPointType ;
-    ] ;
-    sh:property [
-      sh:path [sh:alternativePath (schema:contactPoint dcat:contactPoint)] ;
       sh:node epos:ContactPointType ;
       sh:minCount 1 ;
       sh:message "Contact point is recommended. Please fill in a value"@en  ;
@@ -1838,11 +1835,13 @@ epos:SoftwareSourceCodeShape
       sh:severity sh:Warning ;
     ] ;
     sh:property [
-      sh:path [sh:alternativePath (schema:contactPoint dcat:contactPoint)] ;
-      sh:node epos:ContactPointType ;
-    ] ;
+      sh:path schema:name ;
+      sh:datatype xsd:string;
+      sh:maxCount 1 ;
+  ] ;
+    
     sh:property [
-      sh:path [sh:alternativePath (schema:contactPoint dcat:contactPoint)] ;
+      sh:path schema:contactPoint ;
       sh:node epos:ContactPointType ;
       sh:minCount 1 ;
       sh:message "Contact point is recommended. Please fill in a value"@en  ;
@@ -1854,18 +1853,22 @@ epos:SoftwareSourceCodeShape
     sh:property [
       sh:path schema:description ;
       sh:datatype xsd:string ;
+      sh:maxCount 1 ;
     ] ;
     sh:property [
       sh:path schema:codeRepository ;
       sh:datatype xsd:anyURI ;
+      sh:maxCount 1 ;
     ] ;
     sh:property [
       sh:path schema:license ;
       sh:datatype xsd:anyURI ;
+      sh:maxCount 1 ;
     ] ;
     sh:property [
       sh:path schema:softwareVersion;
       sh:datatype xsd:string ;
+      sh:maxCount 1 ;
     ] ;
     sh:property [
       sh:path schema:programmingLanguage;
@@ -1874,9 +1877,24 @@ epos:SoftwareSourceCodeShape
     sh:property [
       sh:path schema:runtimePlatform ;
       sh:datatype xsd:string ;
+      sh:maxCount 1 ;
     ] ;
     sh:property [
       sh:path schema:targetProduct ;
       sh:class schema:SoftwareApplication ;
     ] ;
+    sh:property [
+      sh:path schema:mainEntityOfPage ;
+      sh:datatype xsd:anyURI ;
+      sh:maxCount 1 ;
+  ] ;
+  sh:property [
+      sh:path schema:keywords ;
+      sh:datatype xsd:string ;
+      sh:maxCount 1 ;
+  ] ;
+  sh:property [
+     sh:path dcat:theme;
+     sh:class skos:Concept ;
+  ] ;
 .
