@@ -1315,6 +1315,7 @@ epos:FacilityShape
    sh:property [
       sh:path dct:title ;
       sh:minCount 1 ;
+      sh:maxCount 1 ;
       sh:datatype xsd:string ;
     ] ;
 ####
@@ -1356,10 +1357,9 @@ epos:FacilityShape
    sh:property [
       sh:path foaf:page ;
       sh:datatype xsd:anyURI ;
-      sh:maxCount 1 ;
     ] ;
    sh:property [
-      sh:path [sh:alternativePath (schema:contactPoint dcat:contactPoint)] ;
+      sh:path dcat:contactPoint)] ;
       sh:node epos:ContactPointType ;
   ] ;
   sh:property [
