@@ -21,6 +21,8 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix http: <http://www.w3.org/2006/http#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
 <http://www.epos-eu.org/epos-dcat-ap>
   rdf:type owl:Ontology ;
@@ -32,8 +34,9 @@
   dct:contributor [foaf:name "Sylvain Grellet" ;  ] ;
   dct:contributor [foaf:name "Andy Riddick" ;  ] ;
   dct:contributor [foaf:name "Xiaoliang Wang" ; ] ;
+  dct:contributor [foaf:name "Valerio Vinciarelli" ; ] ;
   dct:created "2018-02-09"^^xsd:date ;
-  dct:modified "2020-11-13"^^xsd:date ;
+  dct:modified "2020-11-19"^^xsd:date ;
   dct:relation <https://joinup.ec.europa.eu/node/69559> ;
   dct:title "EPOS DCAT Application Profile"@en  ;
   rdfs:comment "This document specifies the set of classes, properties and shapes graphs used in the EPOS DCAT Application Profile."@en  ;
@@ -112,13 +115,10 @@ dcat:keyword owl:equivalentProperty schema:keywords .
 ##Extending range and domain of dcat:contactPoint##
 dcat:contactPoint
   rdf:type owl:ObjectProperty ;
-  rdfs:domain [rdf:type owl:Class ;
-  owl:unionOf(dcat:Dataset schema:Organization 
-  schema:Person epos:Equipment
-  schema:SoftwareApplication schema:SoftwareSourceCode
-  epos:WebService foaf:Project epos:Facility)];
-  rdfs:range [rdf:type owl:Class ;
-  owl:unionOf(vcard:Kind schema:ContactPoint)];
+  rdfs:domain [ rdf:type owl:Class ;
+  owl:unionOf (dcat:Dataset schema:Organization schema:Person epos:Equipment schema:SoftwareApplication schema:SoftwareSourceCode epos:WebService foaf:Project epos:Facility)];
+  rdfs:range [ rdf:type owl:Class ;
+  owl:unionOf (vcard:Kind schema:ContactPoint)];
 .
 epos:associatedProject
   rdf:type owl:ObjectProperty;
@@ -128,7 +128,7 @@ epos:associatedProject
 epos:annotation
   rdf:type owl:ObjectProperty ;
   rdfs:domain [rdf:type owl:Class ;
-  owl:unionOf(rdfs:Resource foaf:Agent dcat:Distribution)] ;
+  owl:unionOf (rdfs:Resource foaf:Agent dcat:Distribution)] ;
   rdfs:range oa:Annotation ;
 .
 ##Extending the domain of dcat:theme##
@@ -136,7 +136,7 @@ dcat:theme
   rdf:type owl:ObjectProperty ;
   rdfs:comment "The main category/domain of the referred resource."@en  ;
   rdfs:domain [rdf:type owl:Class ;
-  owl:unionOf(rdfs:Resource dcat:Dataset)] ;
+  owl:unionOf (rdfs:Resource dcat:Dataset)] ;
   rdfs:range skos:Concept ;
 .
 epos:dynamicRange
@@ -165,32 +165,32 @@ epos:orientation
 .
 ##Spatial properties##
 epos:northernmostLatitude 
-  rdf:type owl:DataTypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:subPropertyOf geo:lat;
   rdfs:comment "The WGS84 upper bound (max) latitude of a SpatialThing (decimal degrees)"
 .
 epos:southernmostLatitude
-  rdf:type owl:DataTypeProperty ;
+  rdf:type owl:DatatypeProperty ;
   rdfs:subPropertyOf geo:lat;
   rdfs:comment "The WGS84 lower bound (min) latitude of a SpatialThing (decimal degrees)"
 .
 epos:westernmostLongitude
-  rdf:type owl:DataTypeProperty ;
-  rdfs:subPropertyOf geo:lon;
+  rdf:type owl:DatatypeProperty ;
+  rdfs:subPropertyOf geo:long;
   rdfs:comment "The WGS84 lower bound (min) longitude of a SpatialThing (decimal degrees)"
 .
 epos:easternmostLongitude
-  rdf:type owl:DataTypeProperty ;
-  rdfs:subPropertyOf geo:lon;
+  rdf:type owl:DatatypeProperty ;
+  rdfs:subPropertyOf geo:long;
   rdfs:comment "The WGS84 upper bound (max) longitude of a SpatialThing (decimal degrees)"
 .
 ##Extending the range of schema:owns##
 schema:owns
  rdf:type owl:ObjectProperty ;
   rdfs:domain [rdf:type owl:Class ;
-  owl:unionOf(schema:Person schema:Organization)];
+  owl:unionOf (schema:Person schema:Organization)];
   rdfs:range [rdf:type owl:Class ;
-  owl:unionOf(schema:OwnershipInfo schema:Product epos:Facility)];
+  owl:unionOf (schema:OwnershipInfo schema:Product epos:Facility)];
 .
 epos:resolution
   rdf:type owl:ObjectProperty ;
@@ -448,11 +448,17 @@ epos:PersonShape
 # Person optional properties
 ####
   sh:property [
+      sh:path schema:givenName ;
+      sh:datatype xsd:string;
+      sh:maxCount 1 ;
+  ] ;
+  sh:property [
       sh:path schema:familyName ;
       sh:datatype xsd:string;
+      sh:maxCount 1 ;
     ] ;
   sh:property [
-      sh:path [sh:alternativePath (schema:contactPoint dcat:contactPoint)] ;
+      sh:path schema:contactPoint ;
       sh:node epos:ContactPointType ;
   ] ;
   sh:property [
@@ -468,6 +474,7 @@ epos:PersonShape
    sh:property [
       sh:path schema:qualifications ;
       sh:datatype xsd:string;
+      sh:maxCount 1 ;
     ] ;
   sh:property [
       sh:path schema:telephone ;
@@ -477,6 +484,7 @@ epos:PersonShape
   sh:property [
       sh:path schema:url ;
       sh:datatype xsd:anyURI;
+      sh:maxCount 1 ;
     ] ;
   sh:property [
       sh:path schema:affiliation ;
