@@ -556,6 +556,7 @@ epos:OrganizationShape
   sh:property [
       sh:path schema:url ;
       sh:datatype xsd:anyURI;
+      sh:maxCount 1 ;
     ] ;
   sh:property [
       sh:path schema:email ;
@@ -566,7 +567,7 @@ epos:OrganizationShape
       sh:datatype xsd:string;
     ] ;
   sh:property [
-      sh:path [sh:alternativePath (schema:contactPoint dcat:contactPoint)] ;
+      sh:path schema:contactPoint ;
       sh:node epos:ContactPointType ;
   ] ;
   sh:property [
@@ -578,7 +579,12 @@ epos:OrganizationShape
       sh:or ( [sh:class epos:Facility; ]
         [sh:class epos:Equipment; ]);
     ] ;
+  sh:property [
+      sh:path epos:associatedProject;
+      sh:class foaf:Project;
+  ];
 .
+
 epos:ContactPointShape
   a sh:NodeShape ;
   sh:targetClass schema:ContactPoint;
@@ -593,12 +599,18 @@ epos:ContactPointShape
       sh:severity sh:Warning ;
       #sh:in ( "legalContact" "financialContact" "scientificContact" "manager" );
     ] ;
+    sh:property [
+      sh:path schema:contactType ;
+      sh:datatype xsd:string;
+      sh:maxCount 1 ;
+  ] ;
 ####
 # ContactPoint optional properties
 ####
   sh:property [
       sh:path schema:name ;
       sh:datatype xsd:string;
+      sh:maxCount 1 ;
     ] ;
   sh:property [
       sh:path schema:email ;
