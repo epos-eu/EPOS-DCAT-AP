@@ -17,7 +17,6 @@
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
 
-
 <http://orcid.org/0000-0001-7750-7254> a schema:Person ;
 	schema:identifier [ a schema:PropertyValue ;
 		schema:propertyID  "orcid" ;
@@ -137,8 +136,8 @@
 	dct:title "Primary Seismic Waveform Data" ;
 	dct:description "Continuous seismic waveforms" ;
 	adms:identifier [ a adms:Identifier ;
-	    adms:schemaAgency "DDSS-ID" ;
-	    skos:notation "WP8-DDSS-001" ;
+		adms:schemaAgency "DDSS-ID" ;
+	    	skos:notation "WP8-DDSS-001" ;
 	];
 	dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
 	dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
@@ -167,7 +166,7 @@
 
 	# This property refers to a geographic region that is covered by the Dataset.
 	dct:spatial [ a dct:Location ;
-	  locn:geometry "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral ;
+		locn:geometry "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral ;
 	];
 
 	# This property refers to a temporal period that the Dataset covers.
@@ -396,8 +395,8 @@
 	schema:identifier "softwareID" ;
 
 	schema:identifier [ a schema:PropertyValue ;
-	schema:propertyID  "DDSS-ID" ;
-	schema:value "WP8-DDSS-XXX" ;
+		schema:propertyID  "DDSS-ID" ;
+		schema:value "WP8-DDSS-XXX" ;
 	];
 	schema:name "name of the software" ;
 	schema:description "description of the software" ;
@@ -587,6 +586,7 @@
 	hydra:method "GET" ;
 	hydra:returns "application/xml" ;
 	hydra:property [ a hydra:IriTemplate ;
+			   
 		hydra:template "https://www.orfeus-eu.org/fdsnws/station/1/query{?starttime, endtime, network, station, location, channel,  minlatitude, maxlatitude, minlongitude, maxlongitude, level}"^^xsd:string ;
 
 		hydra:mapping[ a hydra:IriTemplateMapping ;
@@ -677,7 +677,7 @@
 			http:paramValue "response" ;
 			hydra:required "false"^^xsd:boolean ;
 		];
-  ];
+	];
 .
 
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/APIDocumentation> a hydra:APIDocumentation ;
