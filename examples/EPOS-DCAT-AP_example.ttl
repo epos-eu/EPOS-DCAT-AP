@@ -15,6 +15,7 @@
 @prefix http: <http://www.w3.org/2006/http#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 
 
 <http://orcid.org/0000-0001-7750-7254> a schema:Person ;
@@ -363,6 +364,7 @@
 	skos:prefLabel "Seismic Station" ;
 .
 
+
 <https://github.com/Jollyfant/EPOS-TURTLE> a schema:SoftwareSourceCode;
 	schema:identifier "https://github.com/Jollyfant/EPOS-TURTLE" ;
 	schema:name "Python library for EPOS-RDF conversion" ;
@@ -557,7 +559,7 @@
 	schema:keywords "keywords1, keywords2, keywords3" ;
 
 	# This property refers to a category (skos:Concept) of the Service. A Service may be associated with multiple themes.
-	dcat:theme <epos:Access_to_Mobile_Instruments> ;
+	dcat:theme <epos:SeismicStation> ;
 
 	# This property refers to a temporal period that the Service covers.
         dct:temporal [ a dct:PeriodOfTime ;
