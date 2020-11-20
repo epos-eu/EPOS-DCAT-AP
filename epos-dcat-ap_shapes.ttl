@@ -234,6 +234,7 @@ epos:CatalogShape
   sh:property [
       sh:path dct:publisher ;
       sh:minCount 1 ;
+      sh:maxCount 1 ;
       sh:or (
         [sh:class foaf:Agent ; ]
         [sh:class schema:Organization ; ]) ;
@@ -1156,12 +1157,7 @@ epos:DatasetShape
       sh:message "Publisher is recommended. Please fill in a value"@en  ;
       sh:severity sh:Warning ;
     ] ;
- sh:property [
-      sh:path dct:publisher ;
-      sh:maxCount 1 ;
-      sh:or ( [ sh:class foaf:Agent ; ]
-      [ sh:class schema:Organization ; ] ) ;
-    ] ;
+ 
  sh:property [
       sh:path dcat:keyword ;
       sh:minCount 1 ;
@@ -1891,3 +1887,193 @@ epos:SoftwareSourceCodeShape
      sh:class skos:Concept ;
   ] ;
 .
+
+epos:PeriodOfTimeShape
+  a sh:NodeShape ;
+  sh:targetClass dct:PeriodOfTime ;
+
+sh:property [
+      sh:path schema:startDate ;
+      sh:maxCount 1 ;
+      sh:description "This property contains the start of the period."  ;
+      sh:node epos:DateOrDateTimeDataType ;
+  ] ;
+
+  sh:property [
+        sh:path schema:endDate ;
+        sh:maxCount 1 ;
+        sh:description "This property contains the end of the period."  ;
+        sh:node epos:DateOrDateTimeDataType ;
+    ] ;
+.
+
+epos:PostalAddressShape
+ a sh:NodeShape ;
+ sh:targetClass schema:PostalAddress;
+ ####
+ # properties
+ ####
+
+ sh:property [
+    sh:path schema:streetAddress ;
+    sh:datatype xsd:string;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+ sh:property [
+     sh:path schema:addressLocality ;
+     sh:datatype xsd:string;
+     sh:minCount 1 ;
+     sh:maxCount 1 ;
+ ] ;
+ sh:property [
+      sh:path schema:postalCode ;
+      sh:datatype xsd:string;
+      sh:minCount 1 ;
+      sh:maxCount 1 ;
+ ] ;
+ sh:property [
+       sh:path schema:addressCountry ;
+       sh:datatype xsd:string;
+       sh:minCount 1 ;
+      sh:maxCount 1 ;
+ ];
+.
+
+epos:QuantitativeValueShape
+  a sh:NodeShape ;
+  sh:targetClass schema:QuantitativeValue ;
+  ####
+  # properties
+  ####
+  sh:property [
+      sh:path schema:unitCode ;
+      sh:datatype xsd:string;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+  ] ;
+  sh:property [
+      sh:path schema:value ;
+      sh:datatype xsd:double;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+  ] ;
+.
+epos:LocationShape
+a sh:NodeShape ;
+sh:targetClass dct:Location ;
+####
+# properties
+####
+  sh:property [
+     sh:path locn:geometry ;
+     sh:datatype gsp:wktLiteral;
+     sh:minCount 1 ;
+  ] ;
+.
+
+epos:IdentifierShape
+  a sh:NodeShape ;
+  sh:targetClass adms:Identifier;
+    sh:property [
+      sh:path adms:schemeAgency ;
+      sh:datatype xsd:string ;
+      sh:maxCount 1 ;
+  ] ;
+  sh:property [
+      sh:path skos:notation ;
+      sh:description "This property contains a string that is an identifier in the context of the identifier scheme referenced by its datatype.";
+      sh:datatype xsd:string ;
+      sh:maxCount 1 ;
+    ] ;
+.
+
+epos:PropertyValueShape
+  a sh:NodeShape ;
+  sh:targetClass schema:PropertyValue ;
+  ####
+  # properties
+  ####
+  sh:property [
+      sh:path schema:propertyID ;
+      sh:datatype xsd:string;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+  ] ;
+  sh:property [
+      sh:path schema:value ;
+      sh:datatype xsd:string;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+  ] ;
+.
+
+epos:ConceptSchemeShape
+  a sh:NodeShape ;
+  sh:targetClass skos:ConceptScheme ;
+
+  sh:property [
+      sh:path dct:title ;
+      sh:datatype xsd:string;
+      sh:minCount 1 ;
+      sh:message "Title is recommended. Please fill in a value"@en  ;
+      sh:severity sh:Warning ;
+  ] ;
+  sh:property [
+      sh:path dct:title ;
+      sh:description "This property contains a name of the category scheme. May be repeated for different versions of the name";
+      sh:datatype xsd:string;
+      sh:maxCount 1 ;
+  ] ;
+  sh:property [
+      sh:path dct:description ;
+      sh:datatype xsd:string;
+      sh:minCount 1 ;
+      sh:message "Description is recommended. Please fill in a value"@en  ;
+      sh:severity sh:Warning ;
+  ] ;
+  sh:property [
+      sh:path dct:description ;
+      sh:datatype xsd:string;
+      sh:maxCount 1 ;
+  ] ;
+ .
+epos:ConceptShape
+  a sh:NodeShape ;
+  sh:targetClass skos:Concept ;
+  sh:property [
+      sh:path skos:definition ;
+      sh:datatype xsd:string ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+  ] ;
+  sh:property [
+      sh:path skos:prefLabel ;
+      sh:description "This property contains a preferred label of the category. This property can be repeated for parallel language versions of the label.";
+      sh:datatype xsd:string ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+    ] ;
+  sh:property [
+      sh:path skos:inScheme;
+      sh:class skos:ConceptScheme;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+  ] ;
+.
+epos:IdentifierShape
+  a sh:NodeShape ;
+  sh:targetClass adms:Identifier;
+    sh:property [
+      sh:path adms:schemeAgency ;
+      sh:datatype xsd:string ;
+      sh:maxCount 1 ;
+  ] ;
+  sh:property [
+      sh:path skos:notation ;
+      sh:description "This property contains a string that is an identifier in the context of the identifier scheme referenced by its datatype.";
+      sh:datatype xsd:string ;
+      sh:maxCount 1 ;
+    ] ;
+.
+
