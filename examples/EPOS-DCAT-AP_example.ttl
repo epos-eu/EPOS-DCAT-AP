@@ -442,17 +442,26 @@
 
 	# This property contains the physical address of the Facility.
 	vcard:hasAddress [ a vcard:Address ;
-		vcard:country-name "The Netherlands" ;
-		#vcard:locality "locality" ;
-		#vcard:postal-code "postal-code" ;
-		#vcard:street-address "Street Address" ;
+		vcard:country-name "Country" ;
+		vcard:locality "locality" ;
+		vcard:postal-code "00000" ;
+		vcard:street-address "Street Address" ;
 	];
+
+	# This property refers to a page or document about this Facility.
+	foaf:page "http://facilityURL.org"^^xsd:anyURI ;
 
 	# This property contains contact information that can be used for sending comments about the Facility.
 	dcat:contactPoint <http://orcid.org/0000-0002-6250-2474/contactPoint> ;
 
-	# This property refers to a related resource (e.g., Dataset, WebService).
+	# This property refers to a related resource (e.g., Dataset, WebService, Service).
 	dct:relation <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001> ;
+
+	# This property refers to a geographical location of the Facility
+	dct:spatial [ a dct:Location ;
+		locn:geometry  "POLYGON((14.7 37.6 , 14.7 38.1 , 15.7 38.1 , 15.7 37.6 , 14.7 37.6))"^^gsp:wktLiteral;
+        ];
+
 .
 
 <https://www.fdsn.org/networks/NL/station/DBN> a epos:Equipment;
