@@ -533,6 +533,48 @@
 
 .
 
+# Service
+<https://www.epos-eu.org/epos-dcat-ap/Service/001> a schema:Service ;
+	# This property contains the main identifier for the Service.
+        schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Service/001";
+ 
+	# This property contains the name of the Service.
+	schema:name "Service name" ;
+
+	# This property refers to the Contact Point defined for the Service.
+	schema:contactPoint <http://orcid.org/0000-0002-6250-2474/contactPoint> ;
+	
+	# This property contains the description of the Service.
+	schema:description "description service" ;
+
+	# This property refers to an Organisation or Person responsible for making the Service available.
+	schema:provider <PIC:999518944> ;
+
+	#  This property contains the type of service being offered.
+	schema:serviceType "TNA service" ;
+
+	# This property contains the keywords used to describe the Service. Multiple entries in a keywords list are typically delimited by commas.
+	schema:keywords "keywords1, keywords2, keywords3" ;
+
+	# This property refers to a category (skos:Concept) of the Service. A Service may be associated with multiple themes.
+	dcat:theme <epos:Access_to_Mobile_Instruments> ;
+
+	# This property refers to a temporal period that the Service covers.
+        dct:temporal [ a dct:PeriodOfTime ;
+                schema:startDate "2020-01-01T00:00:00Z"^^xsd:dateTime ;
+                schema:endDate "2020-10-31T00:00:00Z"^^xsd:dateTime ;
+        ] ;
+
+	# This property refers to a geographical area (Point or Polygon) covered by the Service.
+	dct:spatial [ a dct:Location ;
+		locn:geometry  "POLYGON((14.7 37.6 , 14.7 38.1 , 15.7 38.1 , 15.7 37.6 , 14.7 37.6))"^^gsp:wktLiteral; 
+	];
+        
+	# This property refers to a page about the Service.
+        schema:url "http://serviceTest.org"^^xsd:anyURI ;
+ .
+
+
 # Dataset
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/ODC> a dcat:Dataset ;
 	dct:title "Primary Seismic Waveform Data" ;
