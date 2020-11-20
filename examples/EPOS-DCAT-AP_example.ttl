@@ -448,7 +448,7 @@
 		vcard:street-address "Street Address" ;
 	];
 
-	# This property refers to a page or document about this Facility.
+	# This property refers to a page or document about the Facility.
 	foaf:page "http://facilityURL.org"^^xsd:anyURI ;
 
 	# This property contains contact information that can be used for sending comments about the Facility.
@@ -466,16 +466,22 @@
 
 <https://www.fdsn.org/networks/NL/station/DBN> a epos:Equipment;
 
+	# This property contains the main identifier for the Equipment.
 	schema:identifier "https://www.fdsn.org/networks/NL/station/DBN" ;
+
+	# This property contains a name given to the Equipment.
 	schema:name "Netherlands Seismic and Acoustic Network - Station DBN" ;
+
+	# This property contains a free-text description of the Equipment.
 	schema:description "Netherlands Seismic and Acoustic Network - Station DBN" ;
 
-	# This property refers to the URI or category which describe the type of the Equipment.
+	# This property refers to the URI or category (skos:Concept) which describe the type of the Equipment.
 	dct:type "https://orfeus-eu.org/ns/station"^^xsd:anyURI ;
 
 	# This property refers to an Organisation responsible for manufacturing the Equipment.
 	schema:manufacturer <PIC:999518944> ;
-
+	
+	# This property contains the serial number for the Equipment.
 	schema:serialNumber "serialNumber" ;
 
 	# This property refers to an Equipment or a Facility in which the described Equipment is included.
@@ -516,11 +522,15 @@
 		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
 	] ;
 
-	# This property refers to a related resource (e.g., Dataset, WebService).
+	# This property refers to a related resource (e.g., Dataset, WebService, Service).
 	dct:relation <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001> ;
 
-	# This property refers to a category of the Equipment. A Equipment may be associated with multiple themes.
+	# This property refers to a category (skos:Concept) of the Equipment. A Equipment may be associated with multiple themes.
 	dcat:theme <epos:SeismicStation> ;
+
+	# This property refers to a page or document about the Equipment.
+	foaf:page "http://equipmentURL.org"^^xsd:anyURI ;
+
 .
 
 # Dataset
