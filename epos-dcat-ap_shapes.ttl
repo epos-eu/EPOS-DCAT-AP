@@ -479,7 +479,7 @@ epos:PersonShape
   sh:property [
       sh:path schema:telephone ;
       sh:datatype xsd:string;
-      sh:maxCount 1 ;
+      
     ] ;
   sh:property [
       sh:path schema:url ;
@@ -691,10 +691,7 @@ epos:WebServiceShape
       sh:message "Contact Point is recommended. Please fill in a value"@en  ;
       sh:severity sh:Warning ;
     ] ;
-  sh:property [
-      sh:path [sh:alternativePath (schema:contactPoint dcat:contactPoint)] ;
-      sh:node epos:ContactPointType ;
-  ] ;
+  
   sh:property [
       sh:path schema:provider;
       sh:or ( [sh:class schema:Organization ; ]
@@ -1093,7 +1090,6 @@ epos:EquipmentShape
  sh:property [
        sh:path dct:temporal ;
        sh:class dct:PeriodOfTime ;
-       sh:maxCount 1 ;
  ] ;
 sh:property [
       sh:path dct:relation ;
