@@ -36,7 +36,7 @@
   dct:contributor [foaf:name "Xiaoliang Wang" ; ] ;
   dct:contributor [foaf:name "Valerio Vinciarelli" ; ] ;
   dct:created "2018-02-09"^^xsd:date ;
-  dct:modified "2020-11-20"^^xsd:date ;
+  dct:modified "2021-02-03"^^xsd:date ;
   dct:relation <https://joinup.ec.europa.eu/node/69559> ;
   dct:title "EPOS DCAT Application Profile"@en  ;
   rdfs:comment "This document specifies the set of classes, properties and shapes graphs used in the EPOS DCAT Application Profile."@en  ;
@@ -2059,6 +2059,34 @@ epos:ConceptShape
       sh:class skos:ConceptScheme;
       sh:maxCount 1 ;
       sh:minCount 1 ;
+  ] ;
+.
+epos:AddressShape
+  a sh:NodeShape ;
+  sh:targetClass vcard:Address;
+  sh:property [
+     sh:path vcard:country-name ;
+     sh:datatype xsd:string;
+     sh:minCount 1 ;
+     sh:maxCount 1 ;
+  ] ;
+  sh:property [
+      sh:path vcard:locality ;
+      sh:datatype xsd:string;
+      sh:minCount 1 ;
+      sh:maxCount 1 ;
+  ] ;
+  sh:property [
+       sh:path vcard:postal-code ;
+       sh:datatype xsd:string;
+       sh:minCount 1 ;
+       sh:maxCount 1 ;
+  ] ;
+  sh:property [
+        sh:path vcard:street-address ;
+        sh:datatype xsd:string;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
   ] ;
 .
 
