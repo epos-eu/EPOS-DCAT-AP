@@ -2090,5 +2090,29 @@ epos:AddressShape
   ] ;
 .
 
+epos:ApiDocumentationShape
+  a sh:NodeShape ;
+  sh:targetClass hydra:ApiDocumentation;
+  sh:property [
+     sh:path hydra:title ;
+     sh:datatype xsd:string;
+     sh:minCount 1 ;
+     sh:maxCount 1 ;
+   ] ;
+   sh:property [
+      sh:path hydra:description ;
+      sh:datatype xsd:string;
+      sh:minCount 1 ;
+      sh:maxCount 1 ;
+  ] ;
+  sh:property [
+       sh:path hydra:entrypoint ;
+       sh:datatype xsd:anyURI ;
+       sh:minCount 1 ;
+      sh:maxCount 1 ;
+  ] ;
+ .
+
+
 
 
