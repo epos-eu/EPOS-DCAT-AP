@@ -1018,6 +1018,7 @@ epos:ServiceShape
     ] ;
   sh:property [
       sh:path schema:provider;
+      sh:description "This property refers to an Organisation or Person responsible for making the Service available.";
       sh:or ( [ sh:class schema:Organization ; ]
         [ sh:class schema:Person ; ] );
       sh:maxCount 1;
@@ -1441,7 +1442,7 @@ epos:FacilityShape
         [ sh:datatype xsd:anyURI ; ] );
       sh:minCount 1 ;
       sh:maxCount 1 ;
-     ] ;
+    ] ;
   sh:property [
       sh:path dct:title ;
       sh:description "This property contains a name given to the Facility.";
@@ -2095,17 +2096,19 @@ epos:SoftwareSourceCodeShape
 epos:PeriodOfTimeShape
   a sh:NodeShape ;
   sh:targetClass dct:PeriodOfTime ;
-
+ ####
+ # PeriodOfTime properties
+ ####
   sh:property [
       sh:path schema:startDate ;
-      sh:maxCount 1 ;
       sh:description "This property contains the start of the period."  ;
+      sh:maxCount 1 ;
       sh:node epos:DateOrDateTimeDataType ;
     ] ;
   sh:property [
       sh:path schema:endDate ;
-      sh:maxCount 1 ;
       sh:description "This property contains the end of the period."  ;
+      sh:maxCount 1 ;
       sh:node epos:DateOrDateTimeDataType ;
     ] ;
 .
@@ -2114,28 +2117,32 @@ epos:PostalAddressShape
   a sh:NodeShape ;
   sh:targetClass schema:PostalAddress;
  ####
- # properties
+ # PostalAddress properties
  ####
   sh:property [
       sh:path schema:streetAddress ;
+      sh:description "The street address. For example, 1600 Amphitheatre Pkwy.";
       sh:datatype xsd:string;
       sh:minCount 1 ;
       sh:maxCount 1 ;
     ] ;
   sh:property [
       sh:path schema:addressLocality ;
+      sh:description "The locality in which the street address is, and which is in the region. For example, Mountain View.";
       sh:datatype xsd:string;
       sh:minCount 1 ;
       sh:maxCount 1 ;
     ] ;
   sh:property [
       sh:path schema:postalCode ;
+      sh:description "The postal code. For example, 94043.";
       sh:datatype xsd:string;
       sh:minCount 1 ;
       sh:maxCount 1 ;
     ] ;
   sh:property [
       sh:path schema:addressCountry ;
+      sh:description "The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code.";
       sh:datatype xsd:string;
       sh:minCount 1 ;
       sh:maxCount 1 ;
@@ -2146,29 +2153,33 @@ epos:QuantitativeValueShape
   a sh:NodeShape ;
   sh:targetClass schema:QuantitativeValue ;
   ####
-  # properties
+  # QuantitativeValue properties
   ####
   sh:property [
       sh:path schema:unitCode ;
+      sh:description "The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.";
       sh:datatype xsd:string;
       sh:maxCount 1 ;
       sh:minCount 1 ;
     ] ;
   sh:property [
       sh:path schema:value ;
+      sh:description "The value of the quantitative value or property value node.The recommended type for values is 'Number'.";
       sh:datatype xsd:double;
       sh:maxCount 1 ;
       sh:minCount 1 ;
     ] ;
 .
+
 epos:LocationShape
   a sh:NodeShape ;
   sh:targetClass dct:Location ;
 ####
-# properties
+# Location properties
 ####
   sh:property [
      sh:path locn:geometry ;
+     sh:description "This property associates any resource with the corresponding geometry.";
      sh:datatype gsp:wktLiteral;
      sh:minCount 1 ;
     ] ;
@@ -2176,9 +2187,13 @@ epos:LocationShape
 
 epos:IdentifierShape
   a sh:NodeShape ;
-  sh:targetClass adms:Identifier;   
+  sh:targetClass adms:Identifier;
+####
+# Identifier properties
+####
   sh:property [
       sh:path adms:schemeAgency ;
+      sh:description "This property provides the name of the agency that created the identifier."; 	      
       sh:datatype xsd:string ;
       sh:maxCount 1 ;
     ] ;
@@ -2193,17 +2208,19 @@ epos:IdentifierShape
 epos:PropertyValueShape
   a sh:NodeShape ;
   sh:targetClass schema:PropertyValue ;
-  ####
-  # properties
-  ####
+####
+# PropertyValue properties
+####
   sh:property [
       sh:path schema:propertyID ;
+      sh:description "A commonly used identifier for the characteristic represented by the property, e.g. a manufacturer or a standard code for a property. propertyID can be (1) a prefixed string, mainly meant to be used with standards for product properties; (2) a site-specific, non-prefixed string (e.g. the primary key of the property or the vendor-specific id of the property), or (3) a URL indicating the type of the property, either pointing to an external vocabulary, or a Web resource that describes the property (e.g. a glossary entry). Standards bodies should promote a standard prefix for the identifiers of properties from their standards.";
       sh:datatype xsd:string;
       sh:maxCount 1 ;
       sh:minCount 1 ;
   ] ;
   sh:property [
       sh:path schema:value ;
+      sh:description "The value of the quantitative value or property value node. The recommended type for values is 'Number'.";
       sh:datatype xsd:string;
       sh:maxCount 1 ;
       sh:minCount 1 ;
@@ -2213,9 +2230,9 @@ epos:PropertyValueShape
 epos:ConceptSchemeShape
   a sh:NodeShape ;
   sh:targetClass skos:ConceptScheme ;
-  ####
-  # properties
-  ####
+####
+# ConceptScheme properties
+####
   sh:property [
       sh:path dct:title ;
       sh:datatype xsd:string;
@@ -2245,9 +2262,9 @@ epos:ConceptSchemeShape
 epos:ConceptShape
   a sh:NodeShape ;
   sh:targetClass skos:Concept ;
-  ####
-  # properties
-  ####
+####
+# Concept properties
+####
   sh:property [
       sh:path skos:definition ;
       sh:datatype xsd:string ;
@@ -2272,29 +2289,33 @@ epos:AddressShape
   a sh:NodeShape ;
   sh:targetClass vcard:Address;
 ####
-# properties
+# Address properties
 ####
   sh:property [
      sh:path vcard:country-name ;
+     sh:description "The country name associated with the address of the object";
      sh:datatype xsd:string;
      sh:minCount 1 ;
      sh:maxCount 1 ;
     ] ;
   sh:property [
       sh:path vcard:locality ;
+      sh:description "The locality (e.g. city or town) associated with the address of the object";
       sh:datatype xsd:string;
       sh:minCount 1 ;
       sh:maxCount 1 ;
     ] ;
   sh:property [
        sh:path vcard:postal-code ;
+       sh:description "The postal code associated with the address of the object";
        sh:datatype xsd:string;
        sh:minCount 1 ;
        sh:maxCount 1 ;
     ] ;
   sh:property [
         sh:path vcard:street-address ;
-        sh:datatype xsd:string;
+        sh:description "The street address associated with the address of the object";
+	sh:datatype xsd:string;
         sh:minCount 1 ;
         sh:maxCount 1 ;
     ] ;
@@ -2303,20 +2324,26 @@ epos:AddressShape
 epos:ApiDocumentationShape
   a sh:NodeShape ;
   sh:targetClass hydra:ApiDocumentation;
+####
+#ApiDocumentation properties
+####
   sh:property [
      sh:path hydra:title ;
+     sh:description "This property contains the title of the Api documentation.";
      sh:datatype xsd:string;
      sh:minCount 1 ;
      sh:maxCount 1 ;
     ] ;
   sh:property [
       sh:path hydra:description ;
+      sh:description "This property contains a description of the Api documentation.";
       sh:datatype xsd:string;
       sh:minCount 1 ;
       sh:maxCount 1 ;
     ] ;
   sh:property [
        sh:path hydra:entrypoint ;
+       sh:description "This property refers to the API entry point.";
        sh:datatype xsd:anyURI ;
        sh:minCount 1 ;
       sh:maxCount 1 ;
