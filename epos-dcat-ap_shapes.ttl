@@ -1968,10 +1968,12 @@ epos:ControlActionShape
   ####
   sh:property [
       sh:path schema:object ;
+      sh:description "The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read a book.";
       sh:class schema:CreativeWork ;
     ] ;
   sh:property [
       sh:path schema:result ;
+      sh:description "The result produced in the action. e.g. John wrote a book."; 	      
       sh:class schema:CreativeWork ;
     ] ; 
 .
@@ -1984,11 +1986,13 @@ epos:CreativeWorkShape
   ####
   sh:property [
       sh:path schema:encodingFormat ;
+      sh:description "Media type typically expressed using a MIME format (see IANA site and MDN reference) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.).";
       sh:or ( [ sh:datatype xsd:string ; ]
         [ sh:datatype xsd:anyURI ; ] );
     ] ;
   sh:property [
       sh:path dct:conformsTo ;
+      #sh:description "";	      
       sh:or ( [ sh:datatype xsd:string ; ]
         [ sh:datatype xsd:anyURI ; ] );
     ] ; 
