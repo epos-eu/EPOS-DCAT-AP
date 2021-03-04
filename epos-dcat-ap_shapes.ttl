@@ -2243,7 +2243,7 @@ epos:ConceptSchemeShape
     ] ;
   sh:property [
       sh:path dct:title ;
-      sh:description "This property contains a name of the category scheme. May be repeated for different versions of the name";
+      sh:description "This property contains a name of the category scheme.";
       sh:datatype xsd:string;
       sh:maxCount 1 ;
     ] ;
@@ -2256,6 +2256,7 @@ epos:ConceptSchemeShape
     ] ;
   sh:property [
       sh:path dct:description ;
+      sh:description "This property contains a description of the category scheme.";
       sh:datatype xsd:string;
       sh:maxCount 1 ;
     ] ;
@@ -2268,6 +2269,7 @@ epos:ConceptShape
 ####
   sh:property [
       sh:path skos:definition ;
+      sh:description "This property contains a statement or formal explanation of the meaning of a concept." ;
       sh:datatype xsd:string ;
       sh:maxCount 1 ;
       sh:minCount 1 ;
@@ -2281,7 +2283,8 @@ epos:ConceptShape
     ] ;
   sh:property [
       sh:path skos:inScheme;
-      sh:class skos:ConceptScheme;
+      sh:description "Relates a resource (for example a concept) to a concept scheme in which it is included." ;
+      sh:class skos:ConceptScheme ;
       sh:maxCount 1 ;
       sh:minCount 1 ;
     ] ;
