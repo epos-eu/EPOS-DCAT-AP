@@ -19,11 +19,11 @@
     Author: Rossana Paciello <rossana.paciello@ingv.it>
  -->
  <!--
-	PURPOSE AND USAGE
-	
-	This XSLT is a proof of concept for the mapping from WMS GetCapabilities request content to EPOS-DCAT-AP,
-	as such, it must be considered as unstable, and can be updated any time based
-	on the revisions to the EPOS-DCAT-AP specifications.  
+    PURPOSE AND USAGE
+
+    This XSLT is a proof of concept for the mapping WMS GetCapabilities response to EPOS-DCAT-AP,
+    as such, it must be considered as unstable, and can be updated any time based
+    on the revisions to the EPOS-DCAT-AP specifications.  
 -->
 
 <xsl:transform
