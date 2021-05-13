@@ -2,7 +2,7 @@
 
 <!--  
 
-  Copyright EPOS ERIC 2021
+  Copyright 2021 EPOS ERIC
 
   Licensed under the EUPL, Version 1.1 or - as soon they will be approved by
   the European Commission - subsequent versions of the EUPL (the "Licence");
