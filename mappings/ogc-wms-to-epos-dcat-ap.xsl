@@ -389,9 +389,6 @@
      <schema:givenName><xsl:value-of select="substring-before($ContactPerson, ' ')"/></schema:givenName>
 
 
-     <!-- Organisation Name - REQUIRED by deegree and INSPIRE -->
-
-
 
            <xsl:choose>
              <xsl:when test="string((string-length(string(./wms:Service/wms:ContactInformation/wms:ContactPersonPrimary/wms:ContactOrganization)) &gt; '0')) != 'false'">
