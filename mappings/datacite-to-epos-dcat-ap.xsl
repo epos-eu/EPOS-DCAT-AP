@@ -17,9 +17,9 @@
   See the Licence for the specific language governing permissions and
   limitations under the Licence.
   
-  Author: Rossana Paciello, <rossana.paciello@ingv.it>
+  Author: Rossana Paciello <rossana.paciello@ingv.it>
   
-  This work is based on an existing mapping from DataCite to DCAT-AP created by the following authors:
+  This work is based on an existing mapping from DataCite to DCAT-AP (https://ec-jrc.github.io/datacite-to-dcat-ap/)created by the following authors:
   European Commission, Joint Research Centre (JRC)
   Andrea Perego <andrea.perego@ec.europa.eu>
  
