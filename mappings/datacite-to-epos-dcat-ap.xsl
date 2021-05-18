@@ -1,8 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!--  
+<!-- 
+    Copyright 2021 EPOS ERIC
 
-  Copyright 2021 EPOS ERIC
+    This work is free: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This work is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+    
+    Author: Rossana Paciello <rossana.paciello@ingv.it>
+ 
+  Note:
+	
+  This work is based on an existing mapping from DataCite to DCAT-AP (https://ec-jrc.github.io/datacite-to-dcat-ap/)created by the following authors:
+  European Commission, Joint Research Centre (JRC)
+  Andrea Perego <andrea.perego@ec.europa.eu>
+  It is covered by the following license:
+  
+  Copyright 2016-2021 EUROPEAN UNION
 
   Licensed under the EUPL, Version 1.1 or - as soon they will be approved by
   the European Commission - subsequent versions of the EUPL (the "Licence");
@@ -16,12 +38,6 @@
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the Licence for the specific language governing permissions and
   limitations under the Licence.
-  
-  Author: Rossana Paciello <rossana.paciello@ingv.it>
-  
-  This work is based on an existing mapping from DataCite to DCAT-AP (https://ec-jrc.github.io/datacite-to-dcat-ap/)created by the following authors:
-  European Commission, Joint Research Centre (JRC)
-  Andrea Perego <andrea.perego@ec.europa.eu>
  
 -->
 
