@@ -81,11 +81,17 @@
     <xsl:variable name="eastBoundLongitude" select="normalize-space(/wms:WMS_Capabilities/wms:Capability/wms:Layer/wms:EX_GeographicBoundingBox/wms:eastBoundLongitude)"/>
     <xsl:variable name="westBoundLongitude" select="normalize-space(/wms:WMS_Capabilities/wms:Capability/wms:Layer/wms:EX_GeographicBoundingBox/wms:westBoundLongitude)"/>
 
+<xsl:choose>
+    <xsl:when test="string((string-length(normalize-space(/wms:WMS_Capabilities/wms:Capability/wms:Layer/wms:EX_GeographicBoundingBox/wms:southBoundLatitude)) &gt; '0')) != 'false'">
+             
     <dct:spatial>
           <dct:Location>
             <locn:geometry rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POLYGON((<xsl:value-of select="$westBoundLongitude"/><xsl:text> </xsl:text><xsl:value-of select="$southBoundLatitude"/>,<xsl:value-of select="$westBoundLongitude"/><xsl:text> </xsl:text><xsl:value-of select="$northBoundLatitude"/>,<xsl:value-of select="$eastBoundLongitude"/><xsl:text> </xsl:text><xsl:value-of select="$northBoundLatitude"/>,<xsl:value-of select="$eastBoundLongitude"/><xsl:text> </xsl:text><xsl:value-of select="$southBoundLatitude"/>,<xsl:value-of select="$westBoundLongitude"/><xsl:text> </xsl:text><xsl:value-of select="$southBoundLatitude"/>))</locn:geometry>
           </dct:Location>
     </dct:spatial>
+</xsl:when>
+</xsl:choose>
+    
 
 
 </xsl:template>
