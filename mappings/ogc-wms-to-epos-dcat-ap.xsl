@@ -57,7 +57,7 @@
     xmlns:hydra="http://www.w3.org/ns/hydra/core#"
     xmlns:http="http://www.w3.org/2006/http#"
 
-    exclude-result-prefixes = "dtct2.2 dtct3 dtct4 earl oa xlink xsi xsl"
+    exclude-result-prefixes = "dtct2.2 dtct3 dtct4 oa xlink xsi xsl"
     version="1.0">
 
   <xsl:output method="xml"
