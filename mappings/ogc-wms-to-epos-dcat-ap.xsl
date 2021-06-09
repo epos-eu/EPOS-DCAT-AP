@@ -394,6 +394,9 @@
              <xsl:when test="string((string-length(string(./wms:Service/wms:ContactInformation/wms:ContactPersonPrimary/wms:ContactOrganization)) &gt; '0')) != 'false'">
                <schema:affiliation>
                  <schema:Organization>
+	           <schema:identifier>
+                     <xsl:value-of select="translate(./wms:Service/wms:ContactInformation/wms:ContactPersonPrimary/wms:ContactOrganization, ' ', '')"/>
+                   </schema:identifier>
                    <schema:legalName>
                      <xsl:value-of select="string(./wms:Service/wms:ContactInformation/wms:ContactPersonPrimary/wms:ContactOrganization)"/>
                    </schema:legalName>
