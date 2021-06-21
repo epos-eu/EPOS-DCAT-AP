@@ -21,7 +21,7 @@
  <!--
     PURPOSE AND USAGE
 
-    This XSLT is a proof of concept for the mapping WMS GetCapabilities response to EPOS-DCAT-AP,
+    This XSLT is a proof of concept for the mapping WMS 1.3.0 GetCapabilities response to EPOS-DCAT-AP,
     as such, it must be considered as unstable, and can be updated any time based
     on the revisions to the EPOS-DCAT-AP specifications.  
 -->
