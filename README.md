@@ -13,7 +13,9 @@ Main features of this profile are:
 *A Simplified UML Class Diagram of the EPOS-DCAT-AP model. It extends DCAT-AP 1.1 introducing additional classes (in yellow) and relationships*
 
 # Contacts
+
 Rossana Paciello rossana.paciello@ingv.it
+
 Luca Trani Luca.Trani@knmi.nl
 
  
