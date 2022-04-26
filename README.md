@@ -1,1 +1,1 @@
-# epos-dcat-ap2
+# EPOS-DCAT-AP v2.0
