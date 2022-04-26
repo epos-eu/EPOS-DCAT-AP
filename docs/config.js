@@ -100,6 +100,15 @@ var respecConfig = {
         value: "2.0"
       }
       ]
+    },
+    {
+      key: "Feedback:",
+      data: [
+      {
+       value: "GitHub issues",
+       href: "https://github.com/epos-eu/EPOS-DCAT-AP/issues"
+      }
+      ]
     }
   ],
     wg: "EPOS-DCAT-AP Working Group",
