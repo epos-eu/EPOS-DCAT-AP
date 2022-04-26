@@ -1,0 +1,42 @@
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[]
+
+<SoftwareSourceCodeId> a schema:SoftwareSourceCode;
+
+  # Mandatory
+    # This property contains one or more identifier for the software
+    schema:identifier "SoftwareSourceCodeId" ;
+
+  # Recommended
+    # This property contains contact information that can be used for sending comments about the software.
+    schema:contactPoint  <http://orcid.org/0000-0002-6250-0000/contactPoint> ;
+    schema:name "Python library for EPOS-RDF conversion" ;
+
+  # Optional
+    # Link to the repository where the un-compiled, human readable code and related code is located (SVN, github, CodePlex).
+    schema:codeRepository "https://github.com/softwaresourcecode"^^xsd:anyURI ;
+
+    schema:description "Python library for EPOS-RDF conversion" ;
+    schema:keywords "keyword1", "keyword2", "keyword3" ;
+
+    # This property refers to the web page URL which describes the software.
+    schema:mainEntityOfPage "web_page_URL"^^xsd:anyURI ;
+
+    # This property refers to the licence under which the software is made available.
+    schema:license "https://github.com/softwaresourcecode/blob/master/LICENSE"^^xsd:anyURI ;
+
+    # The computer programming language.
+    schema:programmingLanguage "Python";
+
+    schema:runtimePlatform "Python2.3";
+
+    # This property refers to the version of the software.
+    schema:softwareVersion "1.0";
+
+    dcat:theme <epos:SeismicWaveform> ;
+.

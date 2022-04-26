@@ -1,0 +1,531 @@
+  <!--
+<aside class="ednote">
+<p>The usage note for <code>dct:accessRights</code> says:</p>
+<blockquote>
+<p>This property refers to information that indicates whether the Dataset is open data, has access restrictions or is not public. A controlled vocabulary with three members (<code>:public</code>, <code>:restricted</code>, <code>:non-public</code>) will be created and maintained by the Publications Office of the EU.</p>
+</blockquote>
+<p>A code list with those values have been actually published by the OP [[?EUV-AR]], so the usage note should be updated accordingly.</p>
+<p>An issue has been raised in DCAT-AP: <a href="https://github.com/SEMICeu/DCAT-AP/issues/159">issue 159</a>.</p>
+</aside>
+-->
+<table class="simple" id="table-optional-properties-for-dataset">
+  <thead>
+    <tr>
+      <th class="small">
+          <p>Property</p>
+      </th>
+      <th class="small">
+          <p>URI</p>
+      </th>
+      <th class="small">
+          <p>Range</p>
+      </th>
+      <th class="large">
+          <p>Usage note</p>
+      </th>
+      <th class="xsmall">
+          <p>Card.</p>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="property optional" id="dataset-access-rights">
+      <td>
+          <p>accessRights</p>
+      </td>
+      <td>
+          <p><code>dct:accessRights</code></p>
+      </td>
+      <td>
+          <p><code>dct:RightsStatement</code></p>
+      </td>
+      <td class="justify">
+          <p>This property refers to information that indicates whether the Dataset is open data, has access restrictions or is not public. A controlled vocabulary with three members (:public, :restricted, :non-public) will be created and maintained by the Publications Office of the EU. </p>
+      </td>
+      <td class="center">
+          <p>0..1</p>
+      </td>
+    </tr>
+    <tr class="property optional" id="dataset-frequency">
+      <td>
+          <p>accrualPeriodicity</p>
+      </td>
+      <td>
+          <p><code>dct:accrualPeriodicity</code></p>
+      </td>
+      <td>
+          <p><code>dct:Frequency</code></p>
+      </td>
+      <td class="justify">
+          <p>This property refers to the frequency at which the Dataset is updated.</p>
+      </td>
+      <td class="center">
+          <p>0..1</p>
+      </td>
+    </tr>
+    <tr class="property optional" id="dataset-conforms-to">
+      <td>
+          <p>conformsTo</p>
+      </td>
+      <td>
+          <p><code>dct:conformsTo</code></p>
+      </td>
+      <td>
+          <p><code>dct:Standard</code></p>
+      </td>
+      <td class="justify">
+          <p>This property refers to an implementing rule or other specification.</p>
+      </td>
+      <td class="center">
+          <p>0..n</p>
+      </td>
+    </tr>
+
+    <tr class="property optional ap-ext" id="dataset-created">
+      <td>
+          <p>created</p>
+      </td>
+      <td>
+          <p><code>dct:created</code></p>
+      </td>
+      <td>
+          <p><code>rdfs:Literal</code><br/>typed as <code>xsd:date</code> or <code>xsd:dateTime</code></p>
+      </td>
+      <td class="justify">
+          <p>This property contains the date on which the Dataset has been first created.</p>
+      </td>
+      <td class="center">
+          <p>0..1</p>
+      </td>
+    </tr>
+
+    <tr class="property optional" id="dataset-creator">
+      <td>
+          <p>creator</p>
+      </td>
+      <td>
+          <p><code>dct:creator</code></p>
+      </td>
+      <td>
+          <p><code>schema:Organization</code></p>
+      </td>
+      <td class="justify">
+          <p>This property refers to the primarily responsible for producing the Dataset.</p>
+      </td>
+      <td class="center">
+          <p>0..n</p>
+      </td>
+    </tr>
+    <tr class="property optional" id="dataset-has-part">
+      <td>
+          <p>hasPart</p>
+      </td>
+      <td>
+          <p><code>dct:hasPart</code></p>
+      </td>
+      <td>
+          <p><code>dcat:Dataset</code></p>
+      </td>
+      <td class="justify">
+          <p>This property refers to a related Dataset that is part of the described Dataset.</p>
+      </td>
+      <td class="center">
+          <p>0..n</p>
+      </td>
+    </tr>
+    <tr class="property optional" id="dataset-has-qualityannotation">
+      <td>
+          <p>hasQualityAnnotation</p>
+      </td>
+      <td>
+          <p><code>dqv:hasQualityAnnotation</code></p>
+      </td>
+      <td>
+          <p><code>oa:Annotation</code></p>
+      </td>
+      <td class="justify">
+          <p>This property refers to a statement related to quality of the Dataset, including rating, quality certificate that can be associated to the Dataset.</p>
+      </td>
+      <td class="center">
+          <p>0..n</p>
+      </td>
+    </tr>
+
+    <tr class="property optional" id="dataset-has-version">
+      <td>
+          <p>hasVersion</p>
+      </td>
+      <td>
+          <p><code>dct:hasVersion</code></p>
+      </td>
+      <td>
+          <p><code>dcat:Dataset</code></p>
+      </td>
+      <td class="justify">
+          <p>This property refers to a related Dataset that is a version, edition, or adaptation of the described Dataset.</p>
+      </td>
+      <td class="center">
+          <p>0..n</p>
+      </td>
+    </tr>
+    <tr class="property optional" id="dataset-other-identifier">
+      <td>
+          <p>identifier</p>
+      </td>
+      <td>
+          <p><code>adms:identifier</code></p>
+      </td>
+      <td>
+          <p><code>adms:Identifier</code></p>
+      </td>
+      <td class="justify">
+          <p>This property refers to a secondary identifier of the Dataset, such as MAST/ADS [[?MAST-ADS]], [[?DataCite]], [[?DOI]], [[?EZID]] or [[?W3ID]].</p>
+      </td>
+      <td class="center">
+          <p>0..n</p>
+      </td>
+    </tr>
+    <tr class="property optional" id="dataset-is-part-of">
+      <td>
+          <p>isPartOf</p>
+      </td>
+      <td>
+          <p><code>dct:isPartOf</code></p>
+      </td>
+      <td>
+          <p><code>dcat:Dataset</code></p>
+      </td>
+      <td class="justify">
+          <p>This property refers to a related Dataset in which the described Dataset is physically or logically included.</p>
+      </td>
+      <td class="center">
+          <p>0..n</p>
+      </td>
+    </tr>
+    <tr class="property optional" id="dataset-is-referenced-by">
+      <td>
+          <p>isReferencedBy</p>
+      </td>
+      <td>
+          <p><code>dct:isReferencedBy</code></p>
+      </td>
+      <td>
+          <p><code>rdfs:Resource</code></p>
+      </td>
+      <td class="justify">
+          <p>This property is about a related resource, such as a publication, that references, cites, or otherwise points to the Dataset.</p>
+      </td>
+      <td class="center">
+          <p>0..n</p>
+      </td>
+    </tr>
+    <tr class="property optional" id="dataset-issued">
+      <td>
+          <p>issued</p>
+      </td>
+      <td>
+          <p><code>dct:issued</code></p>
+      </td>
+      <td>
+          <p><code>rdfs:Literal</code><br/>typed as <code>xsd:date</code> or <code>xsd:dateTime</code></p>
+      </td>
+      <td class="justify">
+          <p>This property contains the date of formal issuance (e.g., publication) of the Dataset.</p>
+      </td>
+      <td class="center">
+          <p>0..1</p>
+      </td>
+    </tr>
+    <tr class="property optional" id="dataset-is-version-of">
+      <td>
+          <p>isVersionOf</p>
+      </td>
+      <td>
+          <p><code>dct:isVersionOf</code></p>
+      </td>
+      <td>
+          <p><code>dcat:Dataset</code></p>
+      </td>
+      <td class="justify">
+          <p>This property refers to a related Dataset of which the described Dataset is a version, edition, or adaptation.</p>
+      </td>
+      <td class="center">
+          <p>0..n</p>
+      </td>
+    </tr>
+    <tr class="property optional" id="dataset-landing-page">
+      <td>
+          <p>landingPage</p>
+      </td>
+      <td>
+          <p><code>dcat:landingPage</code></p>
+      </td>
+      <td>
+          <p><code>foaf:Document</code></p>
+      </td>
+      <td class="justify">
+          <p>This property refers to a Web page that provides access to the Dataset, its Distributions and/or additional information. It is intended to point to a landing page at the original data provider, not to a page on a site of a third party, such as an aggregator.</p>
+      </td>
+      <td class="center">
+          <p>0..n</p>
+      </td>
+    </tr>
+    <tr class="property optional" id="dataset-language">
+      <td>
+          <p>language</p>
+      </td>
+      <td>
+          <p><code>dct:language</code></p>
+      </td>
+      <td>
+          <p><code>dct:LinguisticSystem</code></p>
+      </td>
+      <td class="justify">
+          <p>This property refers to a language of the Dataset. This property can be repeated if there are multiple languages in the Dataset <!-- - see <a class="no-secRef" href="#accessibility-and-multilingual-aspects"></a>-->.</p>
+      </td>
+      <td class="center">
+          <p>0..n</p>
+      </td>
+    </tr>
+    <tr class="property optional" id="dataset-modified">
+      <td>
+          <p>modified</p>
+      </td>
+      <td>
+          <p><code>dct:modified</code></p>
+      </td>
+      <td>
+          <p><code>rdfs:Literal</code><br/>typed as <code>xsd:date</code> or <code>xsd:dateTime</code></p>
+      </td>
+      <td class="justify">
+          <p>This property contains the most recent date on which the Dataset was changed or modified.</p>
+      </td>
+      <td class="center">
+          <p>0..1</p>
+        </td>
+    </tr>
+    <tr class="property optional" id="dataset-page">
+      <td>
+          <p>page</p>
+      </td>
+      <td>
+          <p><code>foaf:page</code></p>
+      </td>
+      <td>
+          <p><code>foaf:Document</code></p>
+      </td>
+      <td class="justify">
+          <p>This property refers to a page or document about this Dataset.</p>
+      </td>
+      <td class="center">
+          <p>0..n</p>
+      </td>
+    </tr>
+
+    <tr class="property optional" id="dataset-provenance">
+      <td>
+          <p>provenance</p>
+      </td>
+      <td>
+          <p><code>dct:provenance</code></p>
+      </td>
+      <td>
+          <p><code>dct:ProvenanceStatement</code></p>
+      </td>
+      <td class="justify">
+          <p>This property contains a statement about the lineage of a Dataset.</p>
+      </td>
+      <td class="center">
+          <p>0..n</p>
+      </td>
+    </tr>
+
+    <tr class="property optional" id="dataset-qualified-attribution">
+      <td>
+          <p>qualifiedAttribution</p>
+      </td>
+      <td>
+          <p><code>prov:qualifiedAttribution</code></p>
+      </td>
+      <td>
+          <p><code>prov:Attribution</code></p>
+      </td>
+      <td class="justify">
+          <p>This property refers to a link to an Agent having some form of responsibility for the Dataset.</p>
+      </td>
+      <td class="center">
+          <p>0..n</p>
+      </td>
+    </tr>
+    <tr class="property optional" id="dataset-qualified-relation">
+      <td>
+          <p>qualifiedRelation</p>
+      </td>
+      <td>
+          <p><code>dcat:qualifiedRelation</code></p>
+      </td>
+      <td>
+          <p><code>dcat:Relationship</code></p>
+      </td>
+      <td class="justify">
+          <p>This property provides a link to a description of a relationship with another resource.</p>
+      </td>
+      <td class="center">
+          <p>0..n</p>
+      </td>
+    </tr>
+    <tr class="property optional" id="dataset-relation">
+      <td>
+          <p>relation</p>
+      </td>
+      <td>
+          <p><code>dct:relation</code></p>
+      </td>
+      <td>
+          <p><code>rdfs:Resource</code></p>
+      </td>
+      <td class="justify">
+          <p>This property refers to a related resource.</p>
+      </td>
+      <td class="center">
+          <p>0..n</p>
+      </td>
+    </tr>
+    <tr class="property optional" id="dataset-sample">
+      <td>
+          <p>sample</p>
+      </td>
+      <td>
+          <p><code>adms:sample</code></p>
+      </td>
+      <td>
+          <p><code>dcat:Distribution</code></p>
+      </td>
+      <td class="justify">
+          <p>This property refers to a sample Distribution of the Dataset.</p>
+      </td>
+      <td class="center">
+          <p>0..n</p>
+      </td>
+    </tr>
+    <tr class="property optional" id="dataset-source">
+      <td>
+          <p>source</p>
+      </td>
+      <td>
+          <p><code>dct:source</code></p>
+      </td>
+      <td>
+          <p><code>dcat:Dataset</code></p>
+      </td>
+      <td class="justify">
+          <p>This property refers to a related Dataset from which the described Dataset is derived.</p>
+      </td>
+      <td class="center">
+          <p>0..n</p>
+      </td>
+    </tr>
+    <tr class="property optional" id="dataset-spatial-resolution-in-metres">
+      <td>
+          <p>spatialResolutionInMeters</p>
+      </td>
+      <td>
+          <p><code>dcat:spatialResolutionInMeters</code></p>
+      </td>
+      <td>
+          <p><code>xsd:decimal</code></p>
+      </td>
+      <td class="justify">
+          <p>This property refers to the minimum spatial separation resolvable in a Dataset, measured in metres.</p>
+      </td>
+      <td class="center">
+          <p>0..1</p>
+      </td>
+    </tr>
+    <tr class="property optional" id="dataset-temporal-resolution">
+      <td>
+          <p>temporalResolution</p>
+      </td>
+      <td>
+          <p><code>dcat:temporalResolution</code></p>
+      </td>
+      <td>
+          <p><code>rdfs:Literal</code><br/>typed as <code>xsd:duration</code></p>
+      </td>
+      <td class="justify">
+          <p>This property refers to the minimum time period resolvable in the Dataset.</p>
+      </td>
+      <td class="center">
+          <p>0..1</p>
+      </td>
+    </tr>
+    <tr class="property optional" id="dataset-type">
+      <td>
+          <p>type</p>
+      </td>
+      <td>
+          <p><code>dct:type</code></p>
+      </td>
+      <td>
+          <p><code>skos:Concept</code></p>
+      </td>
+      <td class="justify">
+          <p>This property refers to the type of the Dataset. A controlled vocabulary for the values has not been established in [[DCAT-AP]].</p>
+      </td>
+      <td class="center">
+          <p>0..n</p>
+      </td>
+    </tr>
+    <tr class="property optional" id="dataset-version">
+      <td>
+          <p>versionInfo</p>
+      </td>
+      <td>
+          <p><code>owl:versionInfo</code></p>
+      </td>
+      <td>
+          <p><code>rdfs:Literal</code></p>
+      </td>
+      <td class="justify">
+          <p>This property contains a version number or other version designation of the Dataset.</p>
+      </td>
+      <td class="center">
+          <p>0..1</p>
+      </td>
+    </tr>
+    <tr class="property optional" id="dataset-version-notes">
+      <td>
+          <p>versionNotes</p>
+      </td>
+      <td>
+          <p><code>adms:versionNotes</code></p>
+      </td>
+      <td>
+          <p><code>rdfs:Literal</code></p>
+      </td>
+      <td class="justify">
+          <p>This property contains a description of the differences between this version and a previous version of the Dataset. This property can be repeated for parallel language versions of the version notes <!-- - see <a class="no-secRef" href="#accessibility-and-multilingual-aspects"></a>-->.</p>
+      </td>
+      <td class="center">
+          <p>0..n</p>
+      </td>
+    </tr>
+    <tr class="property optional" id="dataset-was-generated-by">
+      <td>
+          <p>wasGeneratedBy</p>
+      </td>
+      <td>
+          <p><code>prov:wasGeneratedBy</code></p>
+      </td>
+      <td>
+          <p><code>prov:Activity</code></p>
+      </td>
+      <td class="justify">
+          <p>This property refers to an Activity that generated, or provides the business context for, the creation of the Dataset.</p>
+      </td>
+      <td class="center">
+          <p>0..n</p>
+      </td>
+    </tr>
+</tbody>
+</table>

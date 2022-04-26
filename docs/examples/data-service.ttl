@@ -1,0 +1,41 @@
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#>.
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[]
+
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/DataService/001> a dcat:DataService ;
+
+# Mandatory properties
+  dcat:endpointURL "http://www.orfeus-eu.org/fdsnws/dataselect/1/query"^^xsd:anyURI ;
+  dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/DataService/001" ;
+  dct:title "Title of Seismic Waveform Data Service" ;
+
+ # Recommended properties
+  dcat:contactPoint <http://orcid.org/0000-0002-6250-0000/contactPoint> ;
+  dcat:endpointDescription <https://www.epos-eu.org/epos-dcat-ap/Seismology/DataService/001/Operation/001> ;
+  dcat:servesDataset <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001> ;
+  dcat:theme  <epos:SeismicWaveform> ;
+  dct:description "FDSN Standard webservice to download waveform data" ;
+  dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+  dct:publisher <PIC:000518944> ;
+
+# Optional properties
+  dcat:keyword "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity";
+  dct:accessRight "";
+  dct:conformsTo "https://www.orfeus-eu.org/data/eida/webservices/dataselect/"^^xsd:anyURI ;
+  dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+  dct:spatial [ a dct:Location ;
+  		dcat:bbox "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral ;
+  	];
+  dct:temporal [ a dct:PeriodOfTime ;
+  		dcat:startDate "1988-01-01T00:00:00Z"^^xsd:dateTime ;
+  		dcat:endDate "2022-01-01T00:00:00Z"^^xsd:dateTime ;
+  	] ;
+.

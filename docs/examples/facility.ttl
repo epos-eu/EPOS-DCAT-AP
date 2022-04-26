@@ -1,0 +1,56 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[]
+
+<https://doi.org/10.21944/e970fd34-23b9-3411-b366-e4f72877d2c5> a epos:Facility ;
+
+  # Mandatory
+    # This property contains a free-text description of the Facility.
+    dct:description "Description of Facility" ;
+
+    # This property contains the main identifier for the Facility.
+    dct:identifier "https://doi.org/10.21944/e970fd34-23b9-3411-b366-e4f72877d2c5" ;
+
+    # This property contains a name given to the Facility.
+    dct:title "Title of Facility" ;
+
+  # Recommended
+    # This property refers to a category (skos:Concept) of the Facility.
+    dcat:theme <epos:SeismicNetwork> ;
+
+    # This property refers to the URI or category (skos:Concept) which describe the type of the Facility.
+    dct:type "https://orfeus-eu.org/ns/network"^^xsd:anyURI ;
+
+  # Optional
+    # This property contains contact information that can be used for sending comments about the Facility.
+    dcat:contactPoint <http://orcid.org/0000-0002-6250-0000/contactPoint> ;
+
+    # This property refers to a Facility in which the described Facility is included.
+    # dct:isPartOf </https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/other> ;
+
+    # This property contains the physical address of the Facility.
+    vcard:hasAddress [ a vcard:Address ;
+        vcard:country-name "Country" ;
+        vcard:locality "locality" ;
+        vcard:postal-code "00000" ;
+        vcard:street-address "Street Address" ;
+    ];
+
+    # This property refers to a page or document about the Facility.
+    dcat:landingPage "http://facilityURL.org"^^xsd:anyURI ;
+
+    # This property refers to a related resource (e.g., Dataset, DataService, Service).
+    dct:relation <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001> ;
+
+    # This property refers to a geographical location of the Facility
+    dct:spatial [ a dct:Location ;
+        dcat:bbox  "POLYGON((14.7 37.6 , 14.7 38.1 , 15.7 38.1 , 15.7 37.6 , 14.7 37.6))"^^gsp:wktLiteral;
+    ];
+.

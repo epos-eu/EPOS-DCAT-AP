@@ -1,0 +1,40 @@
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[]
+
+<softwareID> a schema:SoftwareApplication;
+
+  # Mandatory
+    # This property contains one or more identifier for the software
+    schema:identifier "softwareID" ;
+    schema:identifier [ a schema:PropertyValue ;
+  		schema:propertyID  "DDSS-ID" ;
+  		schema:value "WP8-DDSS-XXX" ;
+  	];
+
+  # Recommended
+    # This property contains contact information that can be used for sending comments about the software.
+    schema:contactPoint  <http://orcid.org/0000-0002-6250-0000/contactPoint> ;
+    schema:name "name of the software" ;
+
+  # Optional
+    schema:description "description of the software" ;
+
+    # This property refers to the URL to download the software.
+    schema:downloadUrl "URL"^^xsd:anyURI ;
+    schema:keywords "keyword1", "keyword2", "keyword3" ;
+
+    # This property refers to the licence under which the software is made available.
+    schema:license "https://www.gnu.org/licenses/gpl.html"^^xsd:anyURI ;
+
+    # This property refers to the web page URL which describes the software.
+    schema:mainEntityOfPage "web_page_URL"^^xsd:anyURI ;
+    
+    # This property refers to the version of the software.
+    schema:softwareVersion "1.1";
+    dcat:theme <epos:SeismicWaveform> ;
+.

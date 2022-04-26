@@ -1,0 +1,38 @@
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[]
+
+<http://orcid.org/0000-0001-7750-0000> a schema:Person ;
+
+  # Mandatory properties
+    schema:identifier [ a schema:PropertyValue ;
+          schema:propertyID  "orcid" ;
+          schema:value   "0000-0001-7750-0000" ;
+    ];
+    schema:identifier [ a schema:PropertyValue ;
+          schema:propertyID  "ScopusAuthorID" ;
+          schema:value   "5500056000" ;
+    ];
+
+  # Optional properties
+    schema:address [ a schema:PostalAddress ;
+          schema:streetAddress "address, 1" ;
+          schema:addressLocality "Rome" ;
+          schema:postalCode "00143" ;
+          schema:addressCountry "Italy" ;
+    ];
+    schema:affiliation <PIC:000518944> ;
+    schema:contactPoint <http://orcid.org/0000-0001-7750-0000/legalContact> ;
+    schema:contactPoint <http://orcid.org/0000-0001-7750-0000/scientificContact> ;
+    schema:contactPoint <http://orcid.org/0000-0001-7750-0000/financialContact> ;
+    schema:email "test1@private.com" ;
+    schema:familyName "Surname1" ;
+    schema:givenName "Name1" ;
+    schema:qualifications "Researcher" ;
+    schema:telephone "+001002003004" ;
+    schema:url  "http://orcid.org/0000-0001-7750-0000"^^xsd:anyURI ;
+.

@@ -1,0 +1,195 @@
+<table class="simple" id="table-optional-properties-for-softwaresourcecode">
+<thead>
+    <tr>
+      <th class="small">
+          <p>Property</p>
+      </th>
+      <th class="small">
+          <p>URI</p>
+      </th>
+      <th class="small">
+          <p>Range</p>
+      </th>
+      <th class="large">
+          <p>Usage note</p>
+      </th>
+      <th class="xsmall">
+          <p>Card.</p>
+      </th>
+    </tr>
+</thead>
+<tbody>
+  <tr class="property optional ap-ext" id="softwaresourcecode-code-repository">
+    <td>
+        <p>codeRepository</p>
+    </td>
+    <td>
+        <p><code>schema:codeRepository</code></p>
+    </td>
+    <td>
+        <p><code>rdfs:Literal</code><br>typed with URI</p>
+    </td>
+    <td class="justify">
+        <p>This property contains the link to the repository where the un-compiled, human readable code and related code is located (SVN, GitHub, CodePlex).</p>
+    </td>
+    <td class="center">
+        <p>0..1</p>
+    </td>
+  </tr>
+  <tr class="property optional ap-ext" id="softwaresourcecode-description">
+    <td>
+        <p>description</p>
+    </td>
+    <td>
+        <p><code>schema:description</code></p>
+    </td>
+    <td>
+        <p><code>rdfs:Literal</code></p>
+    </td>
+    <td class="justify">
+        <p>This property contains the description of the Software Source Code</p>
+    </td>
+    <td class="center">
+        <p>0..1</p>
+    </td>
+  </tr>
+  <tr class="property optional ap-ext" id="softwaresourcecode-keywords">
+    <td>
+        <p>keywords</p>
+    </td>
+    <td>
+        <p><code>schema:keywords</code></p>
+    </td>
+    <td>
+        <p><code>rdfs:Literal</code></p>
+    </td>
+    <td class="justify">
+        <p>This property contains the keywords used to describe the Software Source Code. Multiple entries in a keywords list are typically delimited by commas.</p>
+    </td>
+    <td class="center">
+        <p>0..n</p>
+    </td>
+  </tr>
+  <tr class="property optional ap-ext" id="softwaresourcecode-license">
+    <td>
+        <p>license</p>
+    </td>
+    <td>
+        <p><code>schema:license</code></p>
+    </td>
+    <td>
+        <p><code>rdfs:Literal typed with URI</code></p>
+    </td>
+    <td class="justify">
+        <p>This property contains the URL of the license document that applies to the Software Source Code.</p>
+    </td>
+    <td class="center">
+        <p>0..1</p>
+    </td>
+  </tr>
+  <tr class="property optional ap-ext" id="softwaresourcecode-main-entity-of-page">
+    <td>
+        <p>mainEntityOfPage</p>
+    </td>
+    <td>
+        <p><code>schema:mainEntityOfPage</code></p>
+    </td>
+    <td>
+        <p><code>rdfs:Literal</code><br>typed with URI</p>
+    </td>
+    <td class="justify">
+        <p>This property refers to the web page URL which describes the Software Source Code.</p>
+    </td>
+    <td class="center">
+        <p>0..1</p>
+    </td>
+  </tr>
+  <tr class="property optional ap-ext" id="softwaresourcecode-programmingLanguage">
+    <td>
+        <p>programmingLanguage</p>
+    </td>
+    <td>
+        <p><code>schema:programmingLanguage</code></p>
+    </td>
+    <td>
+        <p><code>rdfs:Literal</code></p>
+    </td>
+    <td class="justify">
+        <p>This property contains the computer programming language used to develop the Software Source Code.</p>
+    </td>
+    <td class="center">
+        <p>0..n</p>
+    </td>
+  </tr>
+  <tr class="property optional ap-ext" id="softwaresourcecode-runtime-platform">
+    <td>
+        <p>runtimePlatform</p>
+    </td>
+    <td>
+        <p><code>schema:runtimePlatform</code></p>
+    </td>
+    <td>
+        <p><code>rdfs:Literal</code></p>
+    </td>
+    <td class="justify">
+        <p>This property refers to the runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).</p>
+    </td>
+    <td class="center">
+        <p>0..1</p>
+    </td>
+  </tr>
+
+  <tr class="property optional ap-ext" id="softwaresourcecode-software-version">
+    <td>
+        <p>softwareVersion</p>
+    </td>
+    <td>
+        <p><code>schema:softwareVersion</code></p>
+    </td>
+    <td>
+        <p><code>rdfs:Literal</code></p>
+    </td>
+    <td class="justify">
+        <p>This property contains the version of the Software Source Code instance.</p>
+    </td>
+    <td class="center">
+        <p>0..1</p>
+    </td>
+  </tr>
+  <tr class="property optional ap-ext" id="softwaresourcecode-target-product">
+    <td>
+        <p>targetProduct</p>
+    </td>
+    <td>
+        <p><code>schema:targetProduct</code></p>
+    </td>
+    <td>
+        <p><code>schema:SoftwareApplication</code></p>
+    </td>
+    <td class="justify">
+        <p>This property refers the target Operating System / Product to which the code applies. If applies to several versions, just the product name can be used.</p>
+    </td>
+    <td class="center">
+        <p>0..n</p>
+    </td>
+  </tr>
+  <tr class="property optional ap-ext" id="softwaresourcecode-theme">
+    <td>
+        <p>theme</p>
+    </td>
+    <td>
+        <p><code>dcat:theme</code></p>
+    </td>
+    <td>
+        <p><code>skos:Concept</code></p>
+    </td>
+    <td class="justify">
+        <p>This property refers to a category of the Software Application. A Software may be associated with multiple themes.</p>
+    </td>
+    <td class="center">
+        <p>0..n</p>
+    </td>
+  </tr>
+
+</tbody>
+</table>
