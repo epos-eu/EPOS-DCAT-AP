@@ -3,13 +3,9 @@ var respecConfig = {
     logos: [
    {    //src: 'https://www.epos-eu.org/themes/epos/logo.svg',
          src: './logo.svg',
-//      src: "./images/eu-isa2-programme.jpg",
-////      url: 'https://ec.europa.eu/isa',
-//      url: "https://ec.europa.eu/isa2",
+
        alt: "EPOS",
-////      title: "EU ISA Programme",
-//      alt: "EU ISA² Programme",
-//      title: "EU ISA² Programme",
+
       width: 150,
       height: 42,
       id: 'logo-epos'
@@ -40,38 +36,20 @@ var respecConfig = {
 //    prEnd:"2020-12-23",
     shortName: "epos-dcat-ap2",
     canonicalURI: "TBD",
-//    canonicalURI: "https://semiceu.github.io/GeoDCAT-AP/drafts/2.0.0-draft-0.1/",
-//    canonicalURI: "https://semiceu.github.io/GeoDCAT-AP/releases/2.0.0/",
-//    canonicalURI: "https://semiceu.github.io/GeoDCAT-AP/releases/",
-//    prevRecURI: "https://joinup.ec.europa.eu/release/geodcat-ap/101",
-//    prevRecURI: "https://semiceu.github.io/GeoDCAT-AP/releases/1.0.1/",
-    //prevRecURI: "TBD",
-//    previousPublishDate:  "2016-08-02",
-//    previousMaturity:     "final",
-//    previousURI:          "https://joinup.ec.europa.eu/release/geodcat-ap/101",
-/* SEMICEU specific - start */
-//    thisVersionURI:       "https://semiceu.github.io/GeoDCAT-AP/drafts/latest/",
-//    thisVersionURI:       "https://semiceu.github.io/GeoDCAT-AP/drafts/2.0.0-draft-0.1/",
+
     thisVersionURI:       "TBD",
-//    prevVersionURI:       "https://semiceu.github.io/GeoDCAT-AP/drafts/latest/",
-  //  prevVersionURI:       "TBD",
-//    latestVersionURI:     "https://semiceu.github.io/GeoDCAT-AP/releases/2.0.0/",
-  //  latestVersionURI:     "TBD",
-/* SEMICEU specific - end   */
-  //  edDraftURI:           "ED",
-  //  issueBase:            "https://github.com/",
-  //  github:               "https://github.com/",
+
     editors: [
         {
           name:   "Rossana Paciello",
           orcid:  "0000-0002-6975-1991",
-          company: "Istituto Nazionale Geofisisca e Vulcanologia - INGV",
+          company: "Istituto Nazionale Geofisica e Vulcanologia - INGV",
           companyURL: "www.ingv.it"
         },
         {
           name: 	"Manuela Sbarra",
           orcid:  "0000-0001-7746-6309",
-          company:    "Istituto Nazionale Geofisisca e Vulcanologia - INGV",
+          company:    "Istituto Nazionale Geofisica e Vulcanologia - INGV",
           companyURL: "www.ingv.it"
         }],
 
@@ -79,7 +57,7 @@ var respecConfig = {
       {
         name:   "Rossana Paciello",
         orcid:  "0000-0002-6975-1991",
-        company: "INGV - Istituto Nazionale Geofisisca e Vulcanologia, Italy"
+        company: "INGV - Istituto Nazionale Geofisica e Vulcanologia, Italy"
 
 //        companyURL: "https://ec.europa.eu/jrc/"
       },
@@ -126,9 +104,7 @@ var respecConfig = {
   ],
     wg: "EPOS-DCAT-AP Working Group",
     wgURI: "https://github.com/",
-//    wgURI: "https://joinup.ec.europa.eu/solution/geodcat-ap",
-//    wgPublicList: "",
-//    wgPatentURI: "",
+
     inlineCSS: "true",
     lint: "false",
     localBiblio: {
