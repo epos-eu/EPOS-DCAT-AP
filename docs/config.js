@@ -20,7 +20,7 @@ var respecConfig = {
     copyrightHolder: "dd",
     copyrightURL: "dddd",
     copyrightStart: "ddd",
-    publishDate: "2022-04-26",
+    publishDate: "2022-05-12",
 
     //specStatus: "ED",
 
