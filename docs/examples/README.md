@@ -3,8 +3,6 @@
 <thead>
 <tr>
 <th>Turtle</th>
-<th>RDF/XML</th>
-<th>JSON-LD</th>
 </tr>
 </thead>
 <tbody>
