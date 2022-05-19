@@ -12,18 +12,22 @@
     <td><a href="./address.ttl"><code>address.ttl</code></a></td>
 </tr>
 <tr>
-    <td><a href="./category-scheme.ttl"><code>category-scheme.ttl</code></a></td>
+        <td>Category</td>
+        <td><a href="./category.ttl"><code>category.ttl</code></a></td>
+</tr>
+<tr> 
+        <td>Category Scheme</td>
+        <td><a href="./category-scheme.ttl"><code>category-scheme.ttl</code></a></td>
 </tr>
 <tr>
-    <td><a href="./category.ttl"><code>category.ttl</code></a></td>
-</tr>
-<tr>
-    <td><a href="./contact-point.ttl"><code>contact-point.ttl</code></a></td>
+        <td>Contact Point</td>
+        <td><a href="./contact-point.ttl"><code>contact-point.ttl</code></a></td>
 </tr>
 <tr>
     <td><a href="./data-service.ttl"><code>data-service.ttl</code></a></td>
 </tr>
 <tr>
+    <td>Dataset</td>
     <td><a href="./dataset.ttl"><code>dataset.ttl</code></a></td>
 </tr>
 <tr>
