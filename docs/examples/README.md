@@ -56,7 +56,6 @@
     <td><a href="./organization.ttl"><code>organization.ttl</code></a></td>
 </tr>
 <tr>
-
     <td><a href="./period-of-time.ttl"><code>period-of-time.ttl</code></a></td>
 </tr>
 <tr>
