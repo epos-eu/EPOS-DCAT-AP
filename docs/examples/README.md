@@ -95,7 +95,7 @@ Full example: <a href="./full_example.ttl"><code>full_example.ttl</code></a>
         <td><a href="./service.ttl"><code>service.ttl</code></a></td>
 </tr>
 <tr>
-        <td>SoftwareAapplication</td>
+        <td>SoftwareApplication</td>
         <td><a href="./softwareapplication.ttl"><code>softwareapplication.ttl</code></a></td>
 </tr>
 <tr>
