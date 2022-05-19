@@ -57,7 +57,7 @@
         <td><a href="./iritemplatemapping.ttl"><code>iritemplatemapping.ttl</code></a></td>
 </tr>
 <tr>
-        <td>Location></td>
+        <td>Location</td>
         <td><a href="./location-geometry.ttl"><code>location-geometry.ttl</code></a></td>
 </tr>
 <tr>    <td/>
