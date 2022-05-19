@@ -23,18 +23,21 @@
         <td>Contact Point</td>
         <td><a href="./contact-point.ttl"><code>contact-point.ttl</code></a></td>
 </tr>
-<tr>
-    <td><a href="./data-service.ttl"><code>data-service.ttl</code></a></td>
+<tr> 
+        <td>Data Service</td>
+        <td><a href="./data-service.ttl"><code>data-service.ttl</code></a></td>
 </tr>
 <tr>
-    <td>Dataset</td>
-    <td><a href="./dataset.ttl"><code>dataset.ttl</code></a></td>
+        <td>Dataset</td>
+        <td><a href="./dataset.ttl"><code>dataset.ttl</code></a></td>
 </tr>
 <tr>
-    <td><a href="./distribution.ttl"><code>distribution.ttl</code></a></td>
+        <td>Distribution</td>
+        <td><a href="./distribution.ttl"><code>distribution.ttl</code></a></td>
 </tr>
 <tr>
-    <td><a href="./equipment.ttl"><code>equipment.ttl</code></a></td>
+        <td>Equipment</td>
+        <td><a href="./equipment.ttl"><code>equipment.ttl</code></a></td>
 </tr>
 <tr>
     <td><a href="./facility.ttl"><code>facility.ttl</code></a></td>
