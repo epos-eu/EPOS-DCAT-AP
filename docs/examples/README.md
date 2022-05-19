@@ -2,11 +2,13 @@
 <table>
 <thead>
 <tr>
-<th>Turtle</th>
+    <th>Class</td>
+    <th>Turtle</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+    <td>Address</td>
     <td><a href="./address.ttl"><code>address.ttl</code></a></td>
 </tr>
 <tr>
