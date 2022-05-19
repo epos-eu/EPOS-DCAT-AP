@@ -1,4 +1,7 @@
 <h1>Examples</h1>
+
+Full example: <a href="./full_example.ttl"><code>full_example.ttl</code></a>
+<br>
 <table>
 <thead>
 <tr>
