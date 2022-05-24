@@ -124,7 +124,7 @@
     rdfs:range skos:Concept ;
   .
 # Extending the range of schema:owns##
- schema:owns
+  schema:owns
     rdf:type owl:ObjectProperty ;
     rdfs:domain [rdf:type owl:Class ;
     	owl:unionOf (schema:Person schema:Organization)];
@@ -1080,7 +1080,7 @@ epos:AgentShape
    ] ;
   sh:property [
       sh:path dct:type ;
-      sh:description "This property refers to a type of the agent that makes the Catalog or Dataset available";
+      sh:description "This property refers to a type of the Agent that makes the Catalog, Catalog Record, Data Service, or Dataset available. ";
       sh:class skos:Concept ;
       sh:maxCount 1 ;
     ] ;
@@ -1240,7 +1240,7 @@ epos:PeriodOfTimeShape
     ] ;
   sh:property [
       sh:path dcat:startDate;
-      sh:description "This property contains the start of the period."  ;
+      sh:description "This property contains the start of the Period of Time."  ;
       sh:node epos:DateOrDateTimeDataType ;
       sh:maxCount 1 ;
     ] ;
@@ -1253,7 +1253,7 @@ epos:PeriodOfTimeShape
     ] ;
   sh:property [
       sh:path dcat:endDate ;
-      sh:description "This property contains the end of the period."  ;
+      sh:description "This property contains the end of the Period of Time."  ;
       sh:node epos:DateOrDateTimeDataType ;
       sh:maxCount 1 ;
     ] ;
@@ -1301,29 +1301,29 @@ epos:AddressShape
   ####
   sh:property [
       sh:path vcard:country-name ;
-      sh:description "The country name associated with the address of the object";
+      sh:description "The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code.";
       sh:datatype xsd:string;
       sh:minCount 1 ;
       sh:maxCount 1 ;
     ] ;
   sh:property [
       sh:path vcard:locality ;
-      sh:description "The locality (e.g. city or town) associated with the address of the object";
+      sh:description "The locality in which the street address is, and which is in the region. For example, Mountain View.";
       sh:datatype xsd:string;
       sh:minCount 1 ;
       sh:maxCount 1 ;
     ] ;
   sh:property [
       sh:path vcard:postal-code ;
-      sh:description "The postal code associated with the address of the object";
+      sh:description "The postal code. For example, 94043. ";
       sh:datatype xsd:string;
       sh:minCount 1 ;
       sh:maxCount 1 ;
     ] ;
   sh:property [
       sh:path vcard:street-address ;
-      sh:description "The street address associated with the address of the object";
-	    sh:datatype xsd:string;
+      sh:description "The street name and civic number of an Address.";
+      sh:datatype xsd:string;
       sh:minCount 1 ;
       sh:maxCount 1 ;
     ] ;
@@ -1399,6 +1399,19 @@ epos:EquipmentShape
   # Equipment recommended properties
   ####
   sh:property [
+      sh:path dct:creator ;
+      sh:class schema:Organization ;
+      sh:minCount 1;
+      sh:message "Creator is recommended. Please fill in a value"@en ;
+      sh:severity sh:Warning ;
+    ] ;
+  sh:property [
+      sh:path schema:manufacturer ;
+      sh:description "This property refers to an Organisation responsible for producing the Equipment";
+      sh:class schema:Organization ;
+      sh:maxCount 1 ;
+    ] ;
+  sh:property [
       sh:path dct:type ;
       sh:or ( [ sh:datatype xsd:anyURI ; ]
               [ sh:class skos:Concept ; ] ) ;
@@ -1413,19 +1426,6 @@ epos:EquipmentShape
               [ sh:class skos:Concept ; ] ) ;
       sh:maxCount 1 ;
     ] ;
-  sh:property [
-      sh:path dct:creator ;
-      sh:class schema:Organization ;
-      sh:minCount 1;
-      sh:message "Creator is recommended. Please fill in a value"@en ;
-      sh:severity sh:Warning ;
-    ] ;
-  sh:property [
-      sh:path schema:manufacturer ;
-      sh:description "This property refers to an Organisation responsible for producing the Equipment";
-      sh:class schema:Organization ;
-      sh:maxCount 1 ;
-    ] ;
   ####
   # Equipment optional properties
   ####
@@ -1435,38 +1435,8 @@ epos:EquipmentShape
       sh:node epos:ContactPointType ;
     ];
   sh:property [
-     sh:path dcat:theme ;
-     sh:description "This property refers to a category of the Equipment. An Equipment may be associated with multiple themes.";
-     sh:class skos:Concept ;
-    ] ;
-  sh:property [
-      sh:path dct:isPartOf ;
-      sh:description "This property refers to an Equipment or a Facility in which the described Equipment is included.";
-      sh:or ( [ sh:class epos:Equipment; ]
-              [ sh:class epos:Facility; ] );
-    ] ;
-  sh:property [
-      sh:path dct:relation ;
-      sh:description "This property refers to a related resource (e.g., Dataset, DataService, etc.).";
-      sh:or ( [ sh:class rdfs:Resource ; ]
-              [ sh:class dcat:Dataset ; ]
-	            [ sh:class schema:Service ; ]
-	            [ sh:class epos:DataService ; ] );
-    ] ;
-  sh:property [
-      sh:path dct:spatial ;
-      sh:description "This property refers to a geographical location of the Equipment.";
-      sh:class dct:Location ;
-      #sh:maxCount 1 ;
-    ] ;
-  sh:property [
-      sh:path dct:temporal ;
-      sh:description "This property contains the start and the end of the period. ";
-      sh:class dct:PeriodOfTime ;
-    ] ;
-  sh:property [
       sh:path epos:dynamicRange ;
-      sh:description "This property contains the full-scale measuring ability (unit and value).";
+      sh:description "This property contains the full-scale measuring ability.";
       sh:datatype xsd:string ;
       sh:maxCount 1 ;
     ] ;
@@ -1477,10 +1447,34 @@ epos:EquipmentShape
       sh:maxCount 1 ;
     ] ;
   sh:property [
+      sh:path dct:isPartOf ;
+      sh:description "This property refers to an Equipment or a Facility in which the described Equipment is included.";
+      sh:or ( [ sh:class epos:Equipment; ]
+              [ sh:class epos:Facility; ] );
+    ] ;
+  sh:property [
+      sh:path dcat:keyword;
+      sh:description " This property contains a keyword or tag describing the Data Service. ";
+      sh:datatype xsd:string ;
+    ] ;
+  sh:property [
+      sh:path dcat:landingPage ;
+      sh:description "This property refers to a web page about this Equipment.";
+      sh:datatype xsd:anyURI ;
+    ] ;
+  sh:property [
       sh:path epos:orientation ;
       sh:description "This property describes how the instrument is oriented.";
       sh:datatype xsd:string ;
       sh:maxCount 1 ;
+    ] ;
+  sh:property [
+      sh:path dct:relation ;
+      sh:description "This property refers to a related resource (e.g., Dataset, DataService, etc.).";
+      sh:or ( [ sh:class rdfs:Resource ; ]
+              [ sh:class dcat:Dataset ; ]
+	      [ sh:class schema:Service ; ]
+	      [ sh:class epos:DataService ; ] );
     ] ;
   sh:property [
       sh:path epos:resolution ;
@@ -1494,15 +1488,21 @@ epos:EquipmentShape
       sh:datatype xsd:string ;
       sh:maxCount 1 ;
     ] ;
-  sh:property [
-      sh:path dcat:landingPage ;
-      sh:description "This property refers to a web page about this Equipment.";
-      sh:datatype xsd:anyURI ;
+ sh:property [
+      sh:path dct:spatial ;
+      sh:description "This property refers to a geographical location of the Equipment.";
+      sh:class dct:Location ;
+      #sh:maxCount 1 ;
     ] ;
   sh:property [
-      sh:path dcat:keyword;
-      sh:description " This property contains a keyword or tag describing the Data Service. ";
-      sh:datatype xsd:string ;
+      sh:path dct:temporal ;
+      sh:description "This property contains the start and the end of the period. ";
+      sh:class dct:PeriodOfTime ;
+    ] ;
+  sh:property [
+     sh:path dcat:theme ;
+     sh:description "This property refers to a category of the Equipment. An Equipment may be associated with multiple themes.";
+     sh:class skos:Concept ;
     ] ;
 .
 epos:FacilityShape
@@ -1573,18 +1573,15 @@ epos:FacilityShape
       sh:class epos:Facility ;
     ] ;
   sh:property [
-      sh:path dct:relation ;
-      sh:description "This property refers to a related resource (e.g., Dataset, DataService, etc).";
-      sh:or ( [ sh:class rdfs:Resource ; ]
-              [ sh:class dcat:Dataset ; ]
-            	[ sh:class schema:Service ; ]
-	            [ sh:class dcat:DataService ; ] );
+      sh:path vcard:hasAddress ;
+      sh:description "This property contains the physical address of the Facility.";
+      sh:class vcard:Address ;
+      sh:maxCount 1 ;
     ] ;
   sh:property [
-      sh:path dct:spatial ;
-      sh:description "This property refers to the geographical coordinates of the facility.";
-      sh:class dct:Location ;
-      sh:maxCount 1 ;
+      sh:path dcat:keyword;
+      sh:description " This property contains a keyword or tag describing the Facility. ";
+      sh:datatype xsd:string ;
     ] ;
   sh:property [
       sh:path dcat:landingPage ;
@@ -1592,16 +1589,19 @@ epos:FacilityShape
       sh:datatype xsd:anyURI ;
     ] ;
   sh:property [
-      sh:path dcat:keyword;
-      sh:description " This property contains a keyword or tag describing the Data Service. ";
-      sh:datatype xsd:string ;
+      sh:path dct:relation ;
+      sh:description "This property refers to a related resource (e.g., Dataset, DataService, etc).";
+      sh:or ( [ sh:class rdfs:Resource ; ]
+              [ sh:class dcat:Dataset ; ]
+              [ sh:class schema:Service ; ]
+	      [ sh:class dcat:DataService ; ] );
     ] ;
   sh:property [
-      sh:path vcard:hasAddress ;
-      sh:description "This property contains the physical address of the Facility.";
-      sh:class vcard:Address ;
+      sh:path dct:spatial ;
+      sh:description "This property refers to the geographical coordinates of the Facility.";
+      sh:class dct:Location ;
       sh:maxCount 1 ;
-    ] ;
+    ] ;  
 .
 epos:IriTemplateShape
   a sh:NodeShape ;
@@ -1630,17 +1630,17 @@ epos:IriTemplateMappingShape
   sh:targetClass hydra:IriTemplateMapping ;
   ####
   # IriTemplateMapping mandatory properties
-  ####
+  #### 
   sh:property [
-      sh:path hydra:variable ;
-      sh:description "This property contains the name of the parameter as required by data service specifications.";
+      sh:path rdfs:label ;
+      sh:description "This property contains a short string used to describe the meaning of the parameter.";
       sh:datatype xsd:string ;
       sh:minCount 1 ;
       sh:maxCount 1 ;
     ] ;
   sh:property [
-      sh:path rdfs:label ;
-      sh:description "This property contains a short string used to describe the meaning of the parameter.";
+      sh:path rdfs:range ;
+      sh:description "This property contains the type of parameter (e.g., xsd:string, xsd:Boolean, xsd:date, xsd:dateTime).";
       sh:datatype xsd:string ;
       sh:minCount 1 ;
       sh:maxCount 1 ;
@@ -1653,26 +1653,15 @@ epos:IriTemplateMappingShape
       sh:maxCount 1 ;
     ] ;
   sh:property [
-      sh:path rdfs:range ;
-      sh:description "This property contains the type of parameter (e.g., xsd:string, xsd:Boolean, xsd:date, xsd:dateTime).";
+      sh:path hydra:variable ;
+      sh:description "This property contains the name of the parameter as required by data service specifications.";
       sh:datatype xsd:string ;
       sh:minCount 1 ;
       sh:maxCount 1 ;
     ] ;
   ####
-  # IriTemplateMapping optional properties
+  # IriTemplateMapping recommended properties
   ####
-  sh:property [
-      sh:path http:paramValue ;
-      sh:description "This property contains one of the possible values which should be used in the data service query. It could be repeated as many times as needed.";
-      sh:datatype xsd:string ;
-    ] ;
-  sh:property [
-      sh:path hydra:property ;
-      sh:description "This property contains the vocabulary term which indicates the semantic description of parameter.";
-      sh:datatype xsd:string ;
-      sh:maxCount 1 ;
-    ] ;
   sh:property [
       sh:path schema:defaultValue ;
       sh:description "This property contains the default value of the parameter.";
@@ -1688,6 +1677,17 @@ epos:IriTemplateMappingShape
   sh:property [
       sh:path schema:minValue ;
       sh:description "This property contains the minimum value of the parameter.";
+      sh:datatype xsd:string ;
+      sh:maxCount 1 ;
+    ] ;
+  sh:property [
+      sh:path http:paramValue ;
+      sh:description "This property contains one of the possible values which should be used in the data service query. It could be repeated as many times as needed.";
+      sh:datatype xsd:string ;
+    ] ;
+  sh:property [
+      sh:path hydra:property ;
+      sh:description "This property contains the vocabulary term which indicates the semantic description of parameter.";
       sh:datatype xsd:string ;
       sh:maxCount 1 ;
     ] ;
@@ -1783,17 +1783,17 @@ epos:OrganizationShape
   # Organization optional properties
   ####
   sh:property [
-      sh:path epos:associatedProject;
-      sh:description "This property refers to a Project in which the Organization is involved.";
-      sh:class foaf:Project;
-    ];
-  sh:property [
       sh:path schema:address;
       sh:description "This property contains the physical address of the Organization.";
       sh:or ( [sh:datatype xsd:string ; ]
               [ sh:class schema:PostalAddress; ] ) ;
       sh:maxCount 1 ;
     ] ;
+  sh:property [
+      sh:path epos:associatedProject;
+      sh:description "This property refers to a Project in which the Organization is involved.";
+      sh:class foaf:Project;
+    ];
   sh:property [
       sh:path schema:contactPoint ;
       sh:description "This property refers to the Contact Point defined for the Organization.";
@@ -1840,11 +1840,6 @@ epos:PersonShape
   # Person mandatory properties
   ####
   sh:property [
-      sh:path schema:affiliation ;
-      sh:description "This property refers to the organization to which the person is affiliated.";
-      sh:class schema:Organization;
-    ] ;
-  sh:property [
       sh:path schema:identifier ;
       sh:description "This property contains the main identifier for the Person (e.g.,ORCID, ScopusID, etc.).";
       sh:or ([sh:datatype xsd:string;]
@@ -1861,6 +1856,11 @@ epos:PersonShape
       sh:or ([sh:datatype xsd:string ;]
              [sh:class schema:PostalAddress; ] ) ;
       sh:maxCount 1 ;
+    ] ;
+  sh:property [
+      sh:path schema:affiliation ;
+      sh:description "This property refers to the organization to which the person is affiliated.";
+      sh:class schema:Organization;
     ] ;
   sh:property [
       sh:path schema:contactPoint ;
@@ -2104,11 +2104,7 @@ epos:PublicationShape
   ####
   # Publication optional properties
   ####
-  sh:property [
-     sh:path dcat:theme;
-     sh:description "This property refers to a category of the Publication. A Publication may be associated with multiple themes.";
-     sh:class skos:Concept ;
-  ] ;
+  
   sh:property [
       sh:path schema:issn ;
       sh:description "This property contains the International Standard Serial Number (ISSN) that identifies the Publication.";
@@ -2134,31 +2130,15 @@ epos:PublicationShape
       sh:maxCount 1 ;
     ] ;
   sh:property [
+     sh:path dcat:theme;
+     sh:description "This property refers to a category of the Publication. A Publication may be associated with multiple themes.";
+     sh:class skos:Concept ;
+    ] ;
+  sh:property [
       sh:path schema:volumeNumber ;
       sh:description "This property contains the volume identifier of the Publication.";
       sh:datatype xsd:string;
       sh:maxCount 1 ;
-    ] ;
-.
-epos:QuantitativeValueShape
-  a sh:NodeShape ;
-  sh:targetClass schema:QuantitativeValue ;
-  ####
-  # QuantitativeValue properties
-  ####
-  sh:property [
-      sh:path schema:unitCode ;
-      sh:description "The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.";
-      sh:datatype xsd:string;
-      sh:maxCount 1 ;
-      sh:minCount 1 ;
-    ] ;
-  sh:property [
-      sh:path schema:value ;
-      sh:description "The value of the quantitative value or property value node.The recommended type for values is 'Number'.";
-      sh:datatype xsd:double;
-      sh:maxCount 1 ;
-      sh:minCount 1 ;
     ] ;
 .
 epos:ServiceShape
@@ -2171,8 +2151,8 @@ epos:ServiceShape
       sh:path schema:identifier ;
       sh:description "This property contains the main identifier for the Service.";
       sh:or ( [ sh:datatype xsd:string; ]
-      [ sh:datatype xsd:anyURI; ]
-      [ sh:class schema:PropertyValue; ] ) ;
+      	    [ sh:datatype xsd:anyURI; ]
+     	    [ sh:class schema:PropertyValue; ] ) ;
       sh:minCount 1 ;
     ] ;
   ####
@@ -2231,9 +2211,16 @@ epos:ServiceShape
   # Service optional properties
   ###
   sh:property [
-      sh:path dcat:theme;
-      sh:description "This property refers to a category of the Service. A Service may be associated with multiple themes.";
-      sh:class skos:Concept ;
+      sh:path schema:keywords ;
+      sh:description "This property contains the keywords used to describe the Service. Multiple entries in a keywords list are typically delimited by commas.";
+      sh:datatype xsd:string;
+      sh:maxCount 1;
+    ];
+  sh:property [
+      sh:path schema:serviceType ;
+      sh:description "This property contains the type of service being offered.";
+      sh:datatype xsd:string;
+      sh:maxCount 1;
     ] ;
   sh:property [
       sh:path dct:spatial ;
@@ -2246,16 +2233,9 @@ epos:ServiceShape
       sh:class dct:PeriodOfTime ;
     ] ;
   sh:property [
-      sh:path schema:keywords ;
-      sh:description "This property contains the keywords used to describe the Service. Multiple entries in a keywords list are typically delimited by commas.";
-      sh:datatype xsd:string;
-      sh:maxCount 1;
-    ];
-  sh:property [
-      sh:path schema:serviceType ;
-      sh:description "This property contains the type of service being offered.";
-      sh:datatype xsd:string;
-      sh:maxCount 1;
+      sh:path dcat:theme;
+      sh:description "This property refers to a category of the Service. A Service may be associated with multiple themes.";
+      sh:class skos:Concept ;
     ] ;
   sh:property [
       sh:path schema:url ;
@@ -2306,16 +2286,6 @@ epos:SoftwareApplicationShape
   # SoftwareApplication optional properties
   ####
   sh:property [
-      sh:path dcat:theme;
-      sh:description "This property refers to a category of the Software Application. A Software may be associated with multiple themes.";
-      sh:class skos:Concept ;
-    ] ;
-  sh:property [
-      sh:path dct:relation ;
-      sh:description "This property refers to the DataService Operation linked to the application.";
-      sh:class hydra:Operation ;
-    ] ;
-  sh:property [
       sh:path schema:description ;
       sh:description "This property contains the description of the Software Application.";
       sh:datatype xsd:string ;
@@ -2357,6 +2327,12 @@ epos:SoftwareApplicationShape
       sh:maxCount 1 ;
     ] ;
   sh:property [
+      sh:path dct:relation ;
+      sh:description "This property refers to the DataService Operation linked to the application.";
+      sh:class hydra:Operation ;
+    ] ;
+
+  sh:property [
       sh:path schema:softwareRequirements ;
       sh:description "Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application.";
       sh:or ( [ sh:datatype xsd:string ; ]
@@ -2368,6 +2344,11 @@ epos:SoftwareApplicationShape
       sh:description "This property contains the version of the Software Application instance.";
       sh:datatype xsd:string ;
       sh:maxCount 1 ;
+    ] ;
+  sh:property [
+      sh:path dcat:theme;
+      sh:description "This property refers to a category of the Software Application. A Software may be associated with multiple themes.";
+      sh:class skos:Concept ;
     ] ;
 .
 epos:ControlActionShape
@@ -2417,7 +2398,7 @@ epos:SoftwareSourceCodeShape
       sh:description "This property contains the main identifier for the Software Source Code.";
       sh:or ( [ sh:datatype xsd:string; ]
               [ sh:datatype xsd:anyURI; ]
-              [sh:class schema:PropertyValue; ] ) ;
+              [ sh:class schema:PropertyValue; ] ) ;
       sh:minCount 1 ;
     ] ;
   ####
@@ -2447,11 +2428,6 @@ epos:SoftwareSourceCodeShape
   ####
   # SoftwareSourceCode optional properties
   ####
-  sh:property [
-     sh:path dcat:theme;
-     sh:description "This property refers to a category of the Software Source Code. A Software may be associated with multiple themes.";
-     sh:class skos:Concept ;
-    ] ;
   sh:property [
       sh:path schema:codeRepository ;
       sh:description "This property contains the link to the repository where the uncompiled, human readable code and related code is located (SVN, GitHub, CodePlex).";
@@ -2502,5 +2478,10 @@ epos:SoftwareSourceCodeShape
       sh:path schema:targetProduct ;
       sh:description "This property refers the target Operating System / Product to which the code applies. If applies to several versions, just the product name can be used.";
       sh:class schema:SoftwareApplication ;
+    ] ;
+  sh:property [
+     sh:path dcat:theme;
+     sh:description "This property refers to a category of the Software Source Code. A Software may be associated with multiple themes.";
+     sh:class skos:Concept ;
     ] ;
 .
