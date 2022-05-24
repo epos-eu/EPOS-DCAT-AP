@@ -231,13 +231,13 @@ epos:CatalogShape
   ####
   sh:property [
       sh:path dct:description ;
-      sh:description "This property contains a free-text account of the Catalogue. This property can be repeated for parallel language versions of the description.";
+      sh:description "This property contains a free-text account of the Catalog. This property can be repeated for parallel language versions of the description.";
       sh:datatype xsd:string;
       sh:minCount 1 ;
     ] ;
   sh:property [
       sh:path dct:publisher ;
-      sh:description "This property refers to an entity (organisation) responsible for making the Catalogue available.";
+      sh:description "This property refers to an entity (organisation) responsible for making the Catalog available.";
       sh:minCount 1 ;
       sh:maxCount 1 ;
       sh:or (
@@ -254,26 +254,10 @@ epos:CatalogShape
   # Catalog recommended properties
   sh:property [
       sh:path dcat:dataset ;
-      sh:description "This property links the Catalogue with a Dataset that is part of the Catalog.";
+      sh:description "This property links the Catalog with a Dataset that is part of the Catalog.";
       sh:class dcat:Dataset ;
       sh:minCount 1 ;
       sh:message "Dataset is recommended. Please fill in a value"@en  ;
-      sh:severity sh:Warning ;
-    ] ;
-  sh:property [
-    sh:path dcat:service ;
-    sh:description "This property refers to a site or end-point (Data Service) that is listed in the Catalog. As empty Catalog are usually indications of problems, this property should be combined with the previous property dataset to implement an empty Catalogue check.";
-    sh:class dcat:DataService ;
-    sh:minCount 1 ;
-    sh:message "Service is recommended. Please fill in a value"@en  ;
-    sh:severity sh:Warning ;
-  ] ;
-  sh:property [
-      sh:path dcat:themeTaxonomy ;
-      sh:description "This property refers to a knowledge organization system used to classify the resources documented in the Catalog (Data Services, Datasets, and other Catalogs).";
-      sh:datatype xsd:anyURI;
-      sh:minCount 1 ;
-      sh:message "themeTaxonomy is recommended. Please fill in a value"@en  ;
       sh:severity sh:Warning ;
     ] ;
   sh:property [
@@ -287,6 +271,19 @@ epos:CatalogShape
       sh:path dct:issued ;
       sh:description "This property contains the date of formal issuance (e.g., publication) of the Catalog.";
       sh:node epos:DateOrDateTimeDataType ;
+      sh:maxCount 1 ;
+    ] ;
+  sh:property [
+      sh:path foaf:homepage ;
+      sh:class foaf:Document ;
+      sh:minCount 1 ;
+      sh:message "Homepage is recommended. Please fill in a value"@en  ;
+      sh:severity sh:Warning ;
+    ] ;
+  sh:property [
+      sh:path foaf:homepage ;
+      sh:description "This property refers to a web page that acts as the main page for the Catalog.";
+      sh:class foaf:Document ;
       sh:maxCount 1 ;
     ] ;
   sh:property [
@@ -331,18 +328,22 @@ epos:CatalogShape
       sh:severity sh:Warning ;
     ] ;
   sh:property [
-      sh:path foaf:homepage ;
-      sh:class foaf:Document ;
+    sh:path dcat:service ;
+    sh:description "This property refers to a site or end-point (Data Service) that is listed in the Catalog. As empty Catalog are usually indications of problems, this property should be combined with the previous property dataset to implement an empty Catalogue check.";
+    sh:class dcat:DataService ;
+    sh:minCount 1 ;
+    sh:message "Service is recommended. Please fill in a value"@en  ;
+    sh:severity sh:Warning ;
+  ] ;
+  sh:property [
+      sh:path dcat:themeTaxonomy ;
+      sh:description "This property refers to a knowledge organization system used to classify the resources documented in the Catalog (Data Services, Datasets, and other Catalogs).";
+      sh:datatype xsd:anyURI;
       sh:minCount 1 ;
-      sh:message "Homepage is recommended. Please fill in a value"@en  ;
+      sh:message "themeTaxonomy is recommended. Please fill in a value"@en  ;
       sh:severity sh:Warning ;
     ] ;
-  sh:property [
-      sh:path foaf:homepage ;
-      sh:description "This property refers to a web page that acts as the main page for the Catalog.";
-      sh:class foaf:Document ;
-      sh:maxCount 1 ;
-    ] ;
+  
   ####
   # Catalog optional properties
   ####
@@ -369,7 +370,7 @@ epos:CatalogShape
     ] ;
   sh:property [
       sh:path dcat:record ;
-      sh:description "This property refers to a Catalogue Record that is part of the Catalog";
+      sh:description "This property refers to a Catalog Record that is part of the Catalog";
       sh:class dcat:CatalogRecord ;
     ] ;
   sh:property [
@@ -394,7 +395,7 @@ epos:CatalogRecordShape
     ] ;
   sh:property [
       sh:path foaf:primaryTopic ;
-      sh:description "This property links the Catalogue Record to the Dataset described in the record.";
+      sh:description "This property links the Catalog Record to the Dataset described in the record.";
       sh:node epos:DcatResourceShape ;
       sh:maxCount 1 ;
       sh:minCount 1 ;
@@ -452,7 +453,7 @@ epos:CatalogRecordShape
     ] ;
   sh:property [
       sh:path dct:issued ;
-      sh:description "This property contains the date on which the description of the Dataset was included in the Catalogue.";
+      sh:description "This property contains the date on which the description of the Dataset was included in the Catalog.";
       sh:node epos:DateOrDateTimeDataType ;
       sh:maxCount 1 ;
     ] ;
@@ -477,7 +478,7 @@ epos:CatalogRecordShape
     ] ;
   sh:property [
       sh:path dct:title ;
-      sh:description "This property contains a name given to the Catalogue Record. This property can be repeated for parallel language versions of the name.";
+      sh:description "This property contains a name given to the Catalog Record. This property can be repeated for parallel language versions of the name.";
       sh:datatype xsd:string;
     ] ;
 .
