@@ -60,18 +60,18 @@
     rdfs:comment "A generic equipment. E.g. a GPS sensor, a seismic station's channel"@en  ;
     rdfs:isDefinedBy <http://www.epos-eu.org/epos-dcat-ap> ;
     rdfs:label "Equipment"@en  ;
-    rdfs:subClassOf dcat:Resource ;
+    rdfs:subClassOf rdfs:Resource ;
   .
   epos:Facility
     a owl:Class ;
     rdfs:comment "A resource representing a Facility. E.g. a laboratory, a seismic station"@en  ;
     rdfs:isDefinedBy <http://www.epos-eu.org/epos-dcat-ap> ;
     rdfs:label "Facility"@en  ;
-    rdfs:subClassOf dcat:Resource ;
+    rdfs:subClassOf rdfs:Resource ;
   .
   epos:Publication
     a owl:Class ;
-    rdfs:comment "EPOS specialisation of schema:CreativeWork"@en  ;
+    rdfs:comment "A text publication is a resource relating to a dataset, data product or other. It is a subclass of schema:CreativeWork"@en  ;
     rdfs:isDefinedBy <http://www.epos-eu.org/epos-dcat-ap> ;
     rdfs:label "Publication"@en  ;
     rdfs:subClassOf schema:CreativeWork ;
@@ -83,8 +83,8 @@
 # Classes ####
   ##Alignment schema:ContactPoint and vcard:Kind##
   schema:ContactPoint a owl:Class;
-      owl:equivalentClass vcard:Kind;
-      rdfs:label "ContactPoint"@en;
+    owl:equivalentClass vcard:Kind;
+    rdfs:label "ContactPoint"@en;
   .
   ##Alignment schema:Organization and foaf:Organization##
   schema:Organization a owl:Class;
@@ -110,25 +110,25 @@
   dcat:contactPoint
     rdf:type owl:ObjectProperty ;
     rdfs:domain [ rdf:type owl:Class ;
-    owl:unionOf (dcat:Dataset schema:Organization schema:Person epos:Equipment schema:SoftwareApplication schema:SoftwareSourceCode dcat:DataService foaf:Project epos:Facility)];
+    	owl:unionOf (dcat:Dataset schema:Organization schema:Person epos:Equipment schema:SoftwareApplication schema:SoftwareSourceCode dcat:DataService foaf:Project epos:Facility)];
     rdfs:range [ rdf:type owl:Class ;
-    owl:unionOf (vcard:Kind schema:ContactPoint)];
+    	owl:unionOf (vcard:Kind schema:ContactPoint)];
   .
 # Extending the domain of dcat:theme##
   dcat:theme
     rdf:type owl:ObjectProperty ;
     rdfs:comment "The main category/domain of the referred resource."@en  ;
     rdfs:domain [rdf:type owl:Class ;
-    owl:unionOf (rdfs:Resource dcat:Dataset)] ;
+    	owl:unionOf (rdfs:Resource dcat:Dataset)] ;
     rdfs:range skos:Concept ;
   .
 # Extending the range of schema:owns##
  schema:owns
     rdf:type owl:ObjectProperty ;
     rdfs:domain [rdf:type owl:Class ;
-    owl:unionOf (schema:Person schema:Organization)];
+    	owl:unionOf (schema:Person schema:Organization)];
     rdfs:range [rdf:type owl:Class ;
-    owl:unionOf (schema:OwnershipInfo schema:Product epos:Facility)];
+    	owl:unionOf (schema:OwnershipInfo schema:Product epos:Facility)];
   .
 
 ####
@@ -137,6 +137,7 @@
 # Organization properties
   epos:associatedProject
     rdf:type owl:ObjectProperty;
+    rdfs:comment "This property refers to a Project in which the Organization is involved."@en  ;
     rdfs:domain schema:Organization ;
     rdfs:range foaf:Project ;
   .
@@ -145,7 +146,7 @@
     rdf:type owl:ObjectProperty ;
     rdfs:comment "This property contains the full scale measuring ability, in nT (unit and value)"@en  ;
     rdfs:domain epos:Equipment ;
-    rdfs:range schema:QuantitativeValue ;
+    rdfs:range rdfs:Literal ;
   .
   epos:filter
     rdf:type owl:ObjectProperty ;
@@ -161,15 +162,15 @@
   .
   epos:resolution
     rdf:type owl:ObjectProperty ;
-    rdfs:comment "This property contains the resolution in nT"@en  ;
+    rdfs:comment "This property contains the resolution"@en  ;
     rdfs:domain epos:Equipment ;
     rdfs:range rdfs:Literal ;
   .
   epos:samplePeriod
     rdf:type owl:ObjectProperty ;
-    rdfs:comment "This property contains the sample period in ms"@en  ;
+    rdfs:comment "This property contains the sample period"@en  ;
     rdfs:domain epos:Equipment ;
-    rdfs:range schema:QuantitativeValue ;
+    rdfs:range rdfs:Literal ;
   .
 # Spatial properties##
   epos:northernmostLatitude
@@ -198,7 +199,7 @@
 ####
 epos:DcatResourceShape
   a sh:NodeShape ;
-  sh:description "the union of Catalog, Dataset and DataService" ;
+  sh:description "The union of Catalog, Dataset and DataService" ;
   sh:message "The node is either a Catalog, Dataset or a DataService" ;
   sh:or ([ sh:class dcat:Catalog ]
          [ sh:class dcat:Dataset ]
@@ -211,7 +212,7 @@ epos:DateOrDateTimeDataType
   sh:message "The values must be data typed as either xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth"@en  ;
   sh:or ( [ sh:datatype xsd:date ; ]
           [ sh:datatype xsd:dateTime ; ]
-	        [ sh:datatype xsd:gYear ; ]
+	  [ sh:datatype xsd:gYear ; ]
           [ sh:datatype xsd:gYearMonth ; ]
  ) ;
 .
@@ -245,7 +246,7 @@ epos:CatalogShape
     ] ;
   sh:property [
       sh:path dct:title ;
-      sh:description "This property contains a name given to the Catalogue. This property can be repeated for parallel language versions of the name." ;
+      sh:description "This property contains a name given to the Catalog. This property can be repeated for parallel language versions of the name." ;
       sh:datatype xsd:string;
       sh:minCount 1 ;
     ] ;
@@ -253,7 +254,7 @@ epos:CatalogShape
   # Catalog recommended properties
   sh:property [
       sh:path dcat:dataset ;
-      sh:description "This property links the Catalogue with a Dataset that is part of the Catalogue.";
+      sh:description "This property links the Catalogue with a Dataset that is part of the Catalog.";
       sh:class dcat:Dataset ;
       sh:minCount 1 ;
       sh:message "Dataset is recommended. Please fill in a value"@en  ;
@@ -261,7 +262,7 @@ epos:CatalogShape
     ] ;
   sh:property [
     sh:path dcat:service ;
-    sh:description "This property refers to a site or end-point (Data Service) that is listed in the Catalogue. As empty Catalogues are usually indications of problems, this property should be combined with the previous property dataset to implement an empty Catalogue check.";
+    sh:description "This property refers to a site or end-point (Data Service) that is listed in the Catalog. As empty Catalog are usually indications of problems, this property should be combined with the previous property dataset to implement an empty Catalogue check.";
     sh:class dcat:DataService ;
     sh:minCount 1 ;
     sh:message "Service is recommended. Please fill in a value"@en  ;
@@ -269,7 +270,7 @@ epos:CatalogShape
   ] ;
   sh:property [
       sh:path dcat:themeTaxonomy ;
-      sh:description "This property refers to a knowledge organization system used to classify the Catalogue's Datasets.";
+      sh:description "This property refers to a knowledge organization system used to classify the resources documented in the Catalog (Data Services, Datasets, and other Catalogs).";
       sh:datatype xsd:anyURI;
       sh:minCount 1 ;
       sh:message "themeTaxonomy is recommended. Please fill in a value"@en  ;
@@ -279,18 +280,18 @@ epos:CatalogShape
       sh:path dct:issued ;
       sh:node epos:DateOrDateTimeDataType ;
       sh:minCount 1 ;
-      sh:message "Release date is recommended. Please fill in a value"@en  ;
+      sh:message "Issued date is recommended. Please fill in a value"@en  ;
       sh:severity sh:Warning ;
     ] ;
   sh:property [
       sh:path dct:issued ;
-      sh:description "This property contains the date of formal issuance (e.g., publication) of the Catalogue.";
+      sh:description "This property contains the date of formal issuance (e.g., publication) of the Catalog.";
       sh:node epos:DateOrDateTimeDataType ;
       sh:maxCount 1 ;
     ] ;
   sh:property [
       sh:path dct:language ;
-      sh:description "This property refers to a language used in the textual metadata describing titles, descriptions, etc. of the Datasets in the Catalogue. This property can be repeated if the metadata is provided in multiple languages.";
+      sh:description "This property refers to a language used in the textual metadata describing titles, descriptions, etc. of the Datasets in the Catalog. This property can be repeated if the metadata is provided in multiple languages.";
       sh:minCount 1 ;
       sh:class dct:LinguisticSystem ;
       sh:message "Language is recommended. Please fill in a value"@en  ;
@@ -305,7 +306,7 @@ epos:CatalogShape
     ] ;
   sh:property [
       sh:path dct:license ;
-      sh:description "This property refers to the licence under which the Catalogue can be used or reused.";
+      sh:description "This property refers to the licence under which the Catalog can be used or reused.";
       sh:class dct:LicenseDocument ;
       sh:maxCount 1 ;
     ] ;
@@ -318,14 +319,14 @@ epos:CatalogShape
     ] ;
   sh:property [
       sh:path dct:modified ;
-      sh:description "This property contains the most recent date on which the Catalogue was modified.";
+      sh:description "This property contains the most recent date on which the Catalog was modified.";
       sh:node epos:DateOrDateTimeDataType ;
       sh:maxCount 1 ;
     ] ;
   sh:property [
       sh:path dct:spatial ;
       sh:class dct:Location ;
-      sh:description "This property refers to a geographical area covered by the Catalogue.";
+      sh:description "This property refers to a geographical area covered by the Catalog.";
       sh:minCount 1 ;
       sh:severity sh:Warning ;
     ] ;
@@ -338,7 +339,7 @@ epos:CatalogShape
     ] ;
   sh:property [
       sh:path foaf:homepage ;
-      sh:description "This property refers to a web page that acts as the main page for the Catalogue.";
+      sh:description "This property refers to a web page that acts as the main page for the Catalog.";
       sh:class foaf:Document ;
       sh:maxCount 1 ;
     ] ;
@@ -351,29 +352,29 @@ epos:CatalogShape
       sh:class dcat:Catalog ;
     ] ;
   sh:property [
-      sh:path dcat:record ;
-      sh:description "This property refers to a Catalogue Record that is part of the Catalogue";
-      sh:class dcat:CatalogRecord ;
-    ] ;
-  sh:property [
       sh:path dct:creator;
       sh:description "This property refers to a catalog whose contents are of interest in the context of this catalog ";
       sh:class foaf:Agent;
     ] ;
   sh:property [
       sh:path dct:hasPart ;
-      sh:description "This property refers to a related Catalogue that is part of the described Catalogue";
+      sh:description "This property refers to a related Catalog that is part of the described Catalog";
       sh:class dcat:Catalog ;
     ] ;
   sh:property [
       sh:path dct:isPartOf ;
-      sh:description "This property refers to a related Catalogue in which the described Catalogue is physically or logically included.";
+      sh:description "This property refers to a related Catalog in which the described Catalog is physically or logically included.";
       sh:class dcat:Catalog ;
       sh:maxCount 1 ;
     ] ;
   sh:property [
+      sh:path dcat:record ;
+      sh:description "This property refers to a Catalogue Record that is part of the Catalog";
+      sh:class dcat:CatalogRecord ;
+    ] ;
+  sh:property [
       sh:path dct:rights ;
-      sh:description "This property refers to a statement that specifies rights associated with the Catalogue.";
+      sh:description "This property refers to a statement that specifies rights associated with the Catalog.";
       sh:class dct:RightsStatement ;
       sh:maxCount 1 ;
     ] ;
