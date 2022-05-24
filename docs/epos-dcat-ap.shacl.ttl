@@ -252,6 +252,7 @@ epos:CatalogShape
     ] ;
   ####
   # Catalog recommended properties
+  ####
   sh:property [
       sh:path dcat:dataset ;
       sh:description "This property links the Catalog with a Dataset that is part of the Catalog.";
@@ -343,7 +344,6 @@ epos:CatalogShape
       sh:message "themeTaxonomy is recommended. Please fill in a value"@en  ;
       sh:severity sh:Warning ;
     ] ;
-  
   ####
   # Catalog optional properties
   ####
@@ -594,8 +594,7 @@ epos:DataServiceShape
     ] ;
   ####
   # DataService optional properties
-  ####
-  
+  #### 
   sh:property [
       sh:path dct:accessRight ;
       sh:description " This property MAY include information regarding access or restrictions based on privacy, security, or other policies.";
@@ -685,14 +684,6 @@ epos:DatasetShape
       sh:severity sh:Warning ;
     ] ;
   sh:property [
-      sh:path dcat:theme ;
-      sh:description "This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.";
-      sh:class skos:Concept ;
-      sh:minCount 1 ;
-      sh:message "Theme is recommended. Please fill in a value"@en  ;
-      sh:severity sh:Warning ;
-    ] ;
-  sh:property [
       sh:path dct:publisher ;
       sh:description "This property refers to an entity (organisation) responsible for making the Dataset available.";
       sh:or ( [ sh:class foaf:Agent ; ]
@@ -715,46 +706,17 @@ epos:DatasetShape
       sh:minCount 1 ;
       sh:severity sh:Warning ;
     ] ;
+  sh:property [
+      sh:path dcat:theme ;
+      sh:description "This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.";
+      sh:class skos:Concept ;
+      sh:minCount 1 ;
+      sh:message "Theme is recommended. Please fill in a value"@en  ;
+      sh:severity sh:Warning ;
+    ] ;
   ####
   # Dataset optional properties
   ####
-  sh:property [
-      sh:path adms:identifier ;
-      sh:description "This property refers to a secondary identifier of the Dataset, such as MAST/ADS, DataCite, DOI, EZID or W3ID.";
-      sh:class adms:Identifier ;
-    ] ;
-  sh:property [
-      sh:path adms:sample ;
-      sh:description "This property refers to a sample distribution of the dataset";
-      sh:class dcat:Distribution ;
-    ] ;
-  sh:property [
-      sh:path adms:versionNotes ;
-      sh:description "This property contains a description of the differences between this version and a previous version of the Dataset. This property can be repeated for parallel language versions of the version notes.";
-      sh:datatype xsd:string ;
-    ] ;
-  sh:property [
-      sh:path dcat:landingPage ;
-      sh:description "This property refers to a web page that provides access to the Dataset, its Distributions and/or additional information. It is intended to point to a landing page at the original data provider, not to a page on a site of a third party, such as an aggregator.";
-      sh:class foaf:Document ;
-    ] ;
-  sh:property [
-      sh:path dcat:qualifiedRelation ;
-      sh:description " This property provides a link to a description of a relationship with another resource";
-      sh:class dcat:Relationship
-    ];
-  sh:property [
-      sh:path dcat:spatialResolutionInMeters ;
-      sh:description "This property refers to the minimum spatial separation resolvable in a dataset, measured in meters.";
-      sh:datatype xsd:decimal ;
-      sh:maxCount 1 ;
-    ];
-  sh:property [
-      sh:path dcat:temporalResolution ;
-      sh:description " This property refers to the minimum time period resolvable in the dataset.";
-      sh:datatype xsd:duration ;
-      sh:maxCount 1 ;
-    ];
   sh:property [
       sh:path dct:accessRights ;
       sh:description "This property refers to information that indicates whether the Dataset is open data, has access restrictions or is not public. A controlled vocabulary with three members (:public, :restricted, :non-public) will be created and maintained by the Publications Office of the EU.";
@@ -792,9 +754,19 @@ epos:DatasetShape
       sh:class dcat:Dataset ;
     ] ;
   sh:property [
+      sh:path dqv:hasQualityAnnotation ;
+      sh:description "This property refers to a statement related to quality of the Dataset, including rating, quality certificate that can be associated to the Dataset. ";
+      sh:class oa:Annotation ;
+    ] ;
+  sh:property [
       sh:path dct:hasVersion ;
       sh:description "This property refers to a related Dataset that is a version, edition, or adaptation of the described Dataset.";
       sh:class dcat:Dataset ;
+    ] ;
+  sh:property [
+      sh:path adms:identifier ;
+      sh:description "This property refers to a secondary identifier of the Dataset, such as MAST/ADS, DataCite, DOI, EZID or W3ID.";
+      sh:class adms:Identifier ;
     ] ;
   sh:property [
       sh:path dct:isPartOf ;
@@ -819,6 +791,11 @@ epos:DatasetShape
       sh:maxCount 1 ;
     ] ;
   sh:property [
+      sh:path dcat:landingPage ;
+      sh:description "This property refers to a web page that provides access to the Dataset, its Distributions and/or additional information. It is intended to point to a landing page at the original data provider, not to a page on a site of a third party, such as an aggregator.";
+      sh:class foaf:Document ;
+    ] ;
+  sh:property [
       sh:path dct:language ;
       sh:description "This property refers to a language of the Dataset. This property can be repeated if there are multiple languages in the Dataset.";
       sh:class dct:LinguisticSystem ;
@@ -830,14 +807,34 @@ epos:DatasetShape
       sh:node epos:DateOrDateTimeDataType ;
     ] ;
   sh:property [
+      sh:path foaf:page ;
+      sh:description "This property refers to a page or document about this Dataset.";
+      sh:class foaf:Document ;
+    ] ;
+  sh:property [
       sh:path dct:provenance ;
       sh:description "This property contains a statement about the lineage of a Dataset.";
       sh:class dct:ProvenanceStatement ;
     ] ;
   sh:property [
+      sh:path prov:qualifiedAttribution ;
+      sh:description " This property refers to a liink to an Agent having some form of responsibility for the resource ";
+      sh:class prov:Attribution  ;
+    ];
+  sh:property [
+      sh:path dcat:qualifiedRelation ;
+      sh:description " This property provides a link to a description of a relationship with another resource";
+      sh:class dcat:Relationship
+    ];
+  sh:property [
       sh:path dct:relation ;
       sh:description "This property refers to a related resource.";
       sh:class rdfs:Resource ;
+    ] ;
+  sh:property [
+      sh:path adms:sample ;
+      sh:description "This property refers to a sample distribution of the dataset";
+      sh:class dcat:Distribution ;
     ] ;
   sh:property [
       sh:path dct:source ;
@@ -845,15 +842,22 @@ epos:DatasetShape
       sh:class dcat:Dataset ;
     ] ;
   sh:property [
+      sh:path dcat:spatialResolutionInMeters ;
+      sh:description "This property refers to the minimum spatial separation resolvable in a dataset, measured in meters.";
+      sh:datatype xsd:decimal ;
+      sh:maxCount 1 ;
+    ];
+  sh:property [
+      sh:path dcat:temporalResolution ;
+      sh:description " This property refers to the minimum time period resolvable in the dataset.";
+      sh:datatype xsd:duration ;
+      sh:maxCount 1 ;
+    ];
+  sh:property [
       sh:path dct:type ;
       sh:description "This property refers to the type of the Dataset. A controlled vocabulary for the values has not been established.";
       sh:datatype xsd:anyURI ;
-    ] ;
-  sh:property [
-      sh:path foaf:page ;
-      sh:description "This property refers to a page or document about this Dataset.";
-      sh:class foaf:Document ;
-    ] ;
+    ] ; 
   sh:property [
       sh:path owl:versionInfo ;
       sh:description "This property contains a version number or other version designation of the Dataset.";
@@ -861,10 +865,10 @@ epos:DatasetShape
       sh:datatype xsd:string;
     ] ;
   sh:property [
-      sh:path prov:qualifiedAttribution ;
-      sh:description " This property refers to a liink to an Agent having some form of responsibility for the resource ";
-      sh:class prov:Attribution  ;
-  ];
+      sh:path adms:versionNotes ;
+      sh:description "This property contains a description of the differences between this version and a previous version of the Dataset. This property can be repeated for parallel language versions of the version notes.";
+      sh:datatype xsd:string ;
+    ] ;
   sh:property [
       sh:path prov:wasGeneratedBy ;
       sh:description " This property refers to an activity that generated, or provides the business context for, the creation of the dataset.";
