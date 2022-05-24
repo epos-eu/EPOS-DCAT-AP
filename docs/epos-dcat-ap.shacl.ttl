@@ -329,7 +329,7 @@ epos:CatalogShape
     ] ;
   sh:property [
     sh:path dcat:service ;
-    sh:description "This property refers to a site or end-point (Data Service) that is listed in the Catalog. As empty Catalog are usually indications of problems, this property should be combined with the previous property dataset to implement an empty Catalogue check.";
+    sh:description "This property refers to a site or end-point (Data Service) that is listed in the Catalog. As empty Catalog are usually indications of problems, this property should be combined with the previous property dataset to implement an empty Catalog check.";
     sh:class dcat:DataService ;
     sh:minCount 1 ;
     sh:message "Service is recommended. Please fill in a value"@en  ;
@@ -413,7 +413,7 @@ epos:CatalogRecordShape
   sh:property [
       sh:path adms:status ;
       sh:datatype xsd:anyURI;
-      sh:description "This property refers to the type of the latest revision of a Dataset's entry in the Catalogue. It MUST take one of the values :created, :updated or :deleted depending on whether this latest revision is a result of a creation, update or deletion.";
+      sh:description "This property refers to the type of the latest revision of a Dataset's entry in the Catalog. It MUST take one of the values :created, :updated or :deleted depending on whether this latest revision is a result of a creation, update or deletion.";
       sh:maxCount 1 ;
     ] ;
   sh:property [
@@ -644,7 +644,7 @@ epos:DatasetShape
     ] ;
   sh:property [
       sh:path dct:identifier ;
-      sh:description "This property contains the main identifier for the Dataset, e.g. the URI or other unique identifier in the context of the Catalogue.";
+      sh:description "This property contains the main identifier for the Dataset, e.g. the URI or other unique identifier in the context of the Catalog.";
       sh:or ( [ sh:datatype xsd:string ; ]
         [ sh:datatype xsd:anyURI ; ] );
       sh:minCount 1 ;
@@ -1074,7 +1074,7 @@ epos:AgentShape
    ] ;
   sh:property [
       sh:path dct:type ;
-      sh:description "This property refers to a type of the agent that makes the Catalogue or Dataset available";
+      sh:description "This property refers to a type of the agent that makes the Catalog or Dataset available";
       sh:class skos:Concept ;
       sh:maxCount 1 ;
     ] ;
