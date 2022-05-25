@@ -5,7 +5,7 @@ Full example: <a href="./full_example.ttl"><code>full_example.ttl</code></a>
 <table>
 <thead>
 <tr>
-    <th>Class</td>
+    <th>Class</th>
     <th>Turtle</th>
 </tr>
 </thead>
