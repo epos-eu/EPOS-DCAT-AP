@@ -73,12 +73,12 @@ var respecConfig = {
        data: [{
           value: "Luca Trani",
           orcid:  "0000-0001-7750-7254"
-          //href: "https://orcid.org/0000-0001-7750-7254"
+          href: "https://orcid.org/0000-0001-7750-7254"
        },
        {
            value: "Daniele Bailo",
            orcid:  "0000-0003-0695-4406"
-           //href: "https://orcid.org/0000-0003-0695-4406"
+           href: "https://orcid.org/0000-0003-0695-4406"
        },
        {
            value: "Epos Community",
