@@ -81,7 +81,7 @@ var respecConfig = {
            href: "https://orcid.org/0000-0003-0695-4406"
        },
        {
-           value: "Epos Community",
+           value: "Epos Community"
            //href: "https://orcid.org/0000-0001-5805-9337"
        }
     ]
