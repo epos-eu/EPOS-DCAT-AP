@@ -19,7 +19,7 @@ var respecConfig = {
     copyrightHolder: "dd",
     copyrightURL: "dddd",
     copyrightStart: "ddd",
-    publishDate: "2022-05-12",
+    #publishDate: "2022-05-12",
 
     //specStatus: "ED",
 
@@ -84,7 +84,7 @@ var respecConfig = {
        }*/
     ]
     },
-    {
+    /*{
       key: "Document status:",
       data: [
       {
@@ -99,7 +99,7 @@ var respecConfig = {
         value: "2.0"
       }
       ]
-    },
+    },*/
     {
       key: "Feedback:",
       data: [
