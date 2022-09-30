@@ -62,6 +62,12 @@
                 #schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
         ] ;
 
+        # This property refers to the quality assurance document URL
+        dqv:hasQualityAnnotation [ a oa:Annotation ;
+       		oa:hasBody "URL_of_QualityAssuranceDocument"^^xsd:anyURI  ;
+       		oa:hasTarget <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001> ;
+        ];
+
         # This property refers to a related Dataset of which the described Dataset is a version, edition, or adaptation.
         # dct:hasVersion <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
 
@@ -163,8 +169,8 @@
   hydra:returns "application/vnd.fdsn.mseed" ;
 
   hydra:property[ a hydra:IriTemplate ;
-        	hydra:template "http://www.orfeus-eu.org/fdsnws/dataselect/1/query/{?starttime,endtime}"^^xsd:string ;
-        		hydra:mapping[ a hydra:IriTemplateMapping ;
+        hydra:template "http://www.orfeus-eu.org/fdsnws/dataselect/1/query/{?starttime,endtime}"^^xsd:string ;
+             hydra:mapping[ a hydra:IriTemplateMapping ;
                   # This property contains the name of the parameter as required by web service specifications
                   hydra:variable "starttime"^^xsd:string ;
 		  hydra:property "schema:startDate";
@@ -179,6 +185,8 @@
 
                   # This property contains the default value of the parameter
                   schema:defaultValue "2012-01-01T00:00:00" ;
+		  
+		  
 
                   # The minimum value of the parameter
                   # schema:minValue "2012-01-01T00:00:00" ;
@@ -189,19 +197,22 @@
                   # This property contains one of the possible value which should be used in the web service query
                   # It could be repeated as many times as needed.
                   # http:paramValue "possible value" ;
+		  
+		  # Specify whether multiple values are allowed for a parameter. Default is false. 
+		  schema:multipleValues "true"^^xsd:boolean ;
            	];
-              		hydra:mapping[ a hydra:IriTemplateMapping ;
-               			hydra:variable "endtime"^^xsd:string ;
-
-				            hydra:property "schema:endDate";
-                    schema:valuePattern "YYYY-MM-DDThh:mm:ss";
-
-				            rdfs:label "End of the timespan" ;
-               			hydra:required "true"^^xsd:boolean ;
-                    rdfs:range "xsd:dateTime" ;
-                    schema:defaultValue "2012-02-01T00:00:00" ;
-
-              		];
+              	hydra:mapping[ a hydra:IriTemplateMapping ;
+               		hydra:variable "endtime"^^xsd:string ;
+			hydra:property "schema:endDate";
+                    	schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+			rdfs:label "End of the timespan" ;
+               		hydra:required "true"^^xsd:boolean ;
+                    	rdfs:range "xsd:dateTime" ;
+                    	schema:defaultValue "2012-02-01T00:00:00" ;
+			
+			# Specify whether or not a service parameter is hidden from the GUI configuration panel. Default is false.
+			schema:readonlyValue "true"^^xsd:boolean ;
+              	];
 
        	];
 .
