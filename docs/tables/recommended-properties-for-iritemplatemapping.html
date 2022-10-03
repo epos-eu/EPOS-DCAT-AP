@@ -70,6 +70,23 @@
         <p>0..1</p>
     </td>
   </tr>
+  <tr class="property recommended ap-ext" id="iritemplatemapping-multiValues">
+    <td>
+        <p>multiValues</p>
+    </td>
+    <td>
+        <p><code>schema:multiValues</code></p>
+    </td>
+    <td>
+        <p><code>rdfs:Literal</code> typed as <code>xsd:boolean</code></p>
+    </td>
+    <td class="justify">
+        <p>Whether multiple values are allowed for the property. Default is false.</p>
+    </td>
+    <td class="center">
+        <p>1..1</p>
+    </td>
+  </tr>
   <tr class="property recommended ap-ext" id="iritemplatemapping-paramValue">
     <td>
         <p>paramValue</p>
@@ -85,23 +102,6 @@
     </td>
     <td class="center">
         <p>0..n</p>
-    </td>
-  </tr>
-  <tr class="property recommended ap-ext" id="iritemplatemapping-multiValue">
-    <td>
-        <p>multiValue</p>
-    </td>
-    <td>
-        <p><code>schema:multiValue</code></p>
-    </td>
-    <td>
-        <p><code>rdfs:Literal</code> typed as <code>xsd:boolean</code></p>
-    </td>
-    <td class="justify">
-        <p>Whether multiple values are allowed for the property. Default is false.</p>
-    </td>
-    <td class="center">
-        <p>1..1</p>
     </td>
   </tr>
   <tr class="property recommended ap-ext" id="iritemplatemapping-property">
@@ -121,6 +121,25 @@
         <p>0..1</p>
     </td>
   </tr>
+    
+ <tr class="property recommended ap-ext" id="iritemplatemapping-readonlyValue">
+    <td>
+        <p>readonlyValue</p>
+    </td>
+    <td>
+        <p><code>schema:readonlyValue</code></p>
+    </td>
+    <td>
+        <p><code>rdfs:Literal</code> typed as <code>xsd:boolean</code></p>
+    </td>
+    <td class="justify">
+        <p>Whether or not a property is mutable. Default is false. Specifying this for a property that also has a value makes it act similar to a "hidden" input in an HTML form.</p>
+    </td>
+    <td class="center">
+        <p>1..1</p>
+    </td>
+  </tr>
+    
   <tr class="property recommended ap-ext" id="iritemplatemapping-valuePattern">
     <td>
         <p>valuePattern</p>
