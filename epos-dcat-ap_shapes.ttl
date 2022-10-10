@@ -947,6 +947,16 @@ epos:IriTemplateMappingShape
       sh:datatype xsd:string ;
     ] ;
   sh:property [
+      sh:path schema:multipleValues ;
+      sh:description "Whether multiple values are allowed for the property. Default is false.";
+      sh:datatype xsd:boolean ;
+    ] ;
+  sh:property [
+      sh:path schema:readonlyValue ;
+      sh:description "Whether or not a property is mutable. Default is false. Specifying this for a property that also has a value makes it act similar to a hidden input in an HTML form.";
+      sh:datatype xsd:boolean ;
+    ] ;
+  sh:property [
       sh:path schema:valuePattern ;
       sh:description "This property contains the regular expression for testing values according to the parameter's specification.";
       sh:datatype xsd:string ;
@@ -1411,6 +1421,11 @@ epos:DatasetShape
       sh:path dct:hasPart ;
       sh:description "This property refers to a related Dataset that is part of the described Dataset.";
       sh:class dcat:Dataset ;
+    ] ;
+  sh:property [
+      sh:path dqv:hasQualityAnnotation ;
+      sh:description "This property refers to a statement related to quality of the Dataset, including rating, quality certificate that can be associated to the Dataset. ";
+      sh:class oa:Annotation ;
     ] ;
   sh:property [
       sh:path epos:annotation ;
