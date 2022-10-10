@@ -2392,3 +2392,24 @@ epos:AgentShape
       sh:maxCount 1 ;
    ] ;
  .
+
+epos:AnnotationShape
+  a sh:NodeShape ;
+  sh:targetClass oa:Annotation;
+
+# ## Mandatory properties
+
+  sh:property [
+     sh:path oa:hasBody ;
+     sh:description "The object of the relationship is a resource that is a body of the Annotation.";
+     sh:datatype xsd:anyURI;
+     sh:minCount 1 ;
+   ] ;
+# ## Optional properties
+   sh:property [
+      sh:path oa:hasTarget ;
+      sh:description "The relationship between an Annotation and its Target.";
+      sh:class dcat:Dataset ;
+   ] ;
+   
+ .
