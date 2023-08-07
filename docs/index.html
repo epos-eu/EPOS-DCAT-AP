@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en-GB">
+
 <head>
-<title>EPOS-DCAT-AP - Version 2.0</title>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<script class="remove" src="./js/respect.js"></script>
-<script class="remove" src="./js/config.js"></script>
-<link rel="stylesheet" href="./styles.css">
+  <title>EPOS-DCAT-AP - Version 3.0 - Draft</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <script class="remove" src="./js/respect.js"></script>
+  <script class="remove" src="./js/config.js"></script>
+  <link rel="stylesheet" href="./styles.css">
 </head>
+
 <body>
   <section id="abstract" class="introductory">
     <h2>Abstract</h2>
     <p>EPOS-DCAT-AP is an extension of the DCAT Application Profile for Research Infrastructures in Environmental and the solid-Earth domains.<br>
       The extension is developed and adopted in the framework of the European Plate Observing System (<a href="https://www.epos-eu.org">EPOS</a>) in order to capture the diversity and heterogeneity of the assets provided by the EPOS community. <br>
       EPOS-DCAT-AP is based on DCAT-AP and uses or extends additional vocabularies (e.g., Schema.org, Hydra).
-      <br>This document is the result of a collaborative work involving diverse expertise (scientific, technical, semantic) with the purpose of aligning EPOS-DCAT-AP version 1.0 with DCAT-AP version 2.1.0.
+      <br>This document is the result of a collaborative work involving diverse expertise (scientific, technical, semantic) with the purpose of aligning EPOS-DCAT-AP version 2.0 with DCAT-AP version 3.0.
     </p>
   </section>
 
@@ -27,15 +29,19 @@
   <section id="introduction">
 
     <h2>Introduction</h2>
-    <p>This document contains version 2.0 of the specification for EPOS-DCAT-AP, an extension of the DCAT application profile for Research Infrastructures which allows to increase findability, accessibility, and usability of multidisciplinary resources to researchers and other stakeholders.</p>
+    <p>This document contains version 3.0 of the specification for EPOS-DCAT-AP, an extension of the DCAT application profile for Research Infrastructures which allows to increase findability, accessibility, and usability of multidisciplinary
+      resources to researchers and other stakeholders.</p>
 
     <section id="context">
       <h3>Context</h3>
       <p>The European Plate Observing System [[EPOS]] is a pan-European Research Infrastructure (RI) for solidEarth sciences included in the Environmental Research Infrastructure Cluster (ENVRI).<br>
-      A major challenge in EPOS is the integration of multi-disciplinary, multi-organisational, distributed resources and community resources into a single overarching Research Infrastructure - the EPOS Integrated Core Services (ICS). ICS aggregate and harmonise descriptions of datasets, data products, software and services provided by different Thematic Core Services (TCS). TCS adopt heterogeneous formats, vocabularies, protocols, and standards to represent and make their assets available. 
-        In order to capture, organise and harmonise information from different sources and to enable semantic interoperability through exchanges of metadata between ICS and TCS, an application profile based on DCAT-AP has been developed, namely EPOS-DCAT-AP [[EPOS-DCAT-AP]].
-      <br>
-      EPOS-DCAT-AP is the result of a collaborative work that brought together diverse expertise which aims at increasing accessibility and usability of multidisciplinary data to researchers and other stakeholders.
+        A major challenge in EPOS is the integration of multi-disciplinary, multi-organisational, distributed resources and community resources into a single overarching Research Infrastructure - the EPOS Integrated Core Services (ICS). ICS aggregate
+        and harmonise descriptions of datasets, data products, software and services provided by different Thematic Core Services (TCS). TCS adopt heterogeneous formats, vocabularies, protocols, and standards to represent and make their assets
+        available.
+        In order to capture, organise and harmonise information from different sources and to enable semantic interoperability through exchanges of metadata between ICS and TCS, an application profile based on DCAT-AP has been developed, namely
+        EPOS-DCAT-AP [[EPOS-DCAT-AP]].
+        <br>
+        EPOS-DCAT-AP is the result of a collaborative work that brought together diverse expertise which aims at increasing accessibility and usability of multidisciplinary data to researchers and other stakeholders.
       </p>
       <strong>EPOS-DCAT-AP is adopted successfully in EPOS, however, the set of requirements addressed make this model suitable to be adopted by other Research Infrastructures and to be applied in different contexts.
       </strong>
@@ -43,13 +49,28 @@
 
     <section id="scope-of-the-revision">
       <h3>Scope of this document</h3>
-      <p>The purpose of this document is to align EPOS-DCAT-AP version 1.0 with DCAT-AP version 2.1.0 [[DCAT-AP]].</p>
+      <p>The purpose of this document is to align EPOS-DCAT-AP version 2.0 with DCAT-AP version 3 [[DCAT-AP-3]].</p>
     </section>
 
     <section id="specification">
       <h3>A DCAT-AP extension</h3>
       <p>The EPOS-DCAT-AP specification is designed as an extension of DCAT-AP in conformance with the guidelines for the creation of DCAT-AP extensions [[DCAT-AP-EG]].</p>
-      <p>The DCAT-AP Application Profile on which this document is based is the DCAT-AP specification v 2.1.0 [[DCAT-AP]]. </p>
+      <p>The DCAT-AP Application Profile on which this document is based is the DCAT-AP specification v3 [[DCAT-AP-3]].  </p>
+    </section>
+
+    <section id="history">
+      <h3>Revision history</h3>
+      <p>In 2023, the adoption of W3C DCAT 3  triggered a new alignment for DCAT-AP. W3C DCAT 3 extends the profile with the Dataset Series notion, deprecates the use of some URIs and introducing new URIs in the DCAT namespace for the use case of Dataset versioning. </p>
+
+    <section id="history_alignment"><h4>Alignment EPOS-DCAT-AP v2 with DCAT-AP 3</h4>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/revision_history.html"></div>
+
+    </section>
+      <section id="history_alignment2"><h4>Properties characterizing EPOS-DCAT-AP 3.0 with respect to DCAT-AP
+3.0</h4>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/revision_history_2.html"></div>
+
+      </section>
     </section>
 
   </section>
@@ -59,16 +80,19 @@
     <h2>Terminology used in the Application Profile</h2>
 
     <p>A <strong>Vocabulary</strong> s a specification that determines the semantics of terms (classes and properties) in a broad context of information exchange. The defined terms are highlyhigly reusable.</p>
-    <p>An <strong>Application Profile</strong> is a specification that re-uses terms from one or more base standards (vocabularies), adding more specificity by identifying mandatory, recommended and optional elements to be used for a particular application, as well as recommendations for controlled vocabularies to be used.</p>
+    <p>An <strong>Application Profile</strong> is a specification that re-uses terms from one or more base standards (vocabularies), adding more specificity by identifying mandatory, recommended and optional elements to be used for a particular
+      application, as well as recommendations for controlled vocabularies to be used.</p>
 
     <p>In the following sections, classes and properties are grouped under headings ‘mandatory’, ‘recommended’ and ‘optional’. These terms have the following meaning:</p>
 
     <ul>
       <li><strong>Mandatory class</strong>: a receiver MUST be able to process information about instances of the class; a sender MUST provide information about instances of the class.</li>
-      <li><strong>Recommended class</strong>: a receiver MUST be able to process information about instances of the class; a sender SHOULD provide information about instances of the class; a sender of data MUST provide information about instances of the class, if such information is available.</li>
+      <li><strong>Recommended class</strong>: a receiver MUST be able to process information about instances of the class; a sender SHOULD provide information about instances of the class; a sender of data MUST provide information about instances of
+        the class, if such information is available.</li>
       <li><strong>Optional class</strong>: a receiver MUST be able to process information about instances of the class; a sender MAY provide the information but is not obliged to do so.</li>
       <li><strong>Mandatory property</strong>: a receiver MUST be able to process the information for that property; a sender MUST provide the information for that property.</li>
-      <li><strong>Recommended property</strong>: a receiver MUST be able to process the information for that property; a sender SHOULD provide information for that property; a sender MUST provide information for that property, if such information is available.</li>
+      <li><strong>Recommended property</strong>: a receiver MUST be able to process the information for that property; a sender SHOULD provide information for that property; a sender MUST provide information for that property, if such information is
+        available.</li>
       <li><strong>Optional property</strong>: a receiver MUST be able to process the information for that property; a sender MAY provide the information for that property but is not obliged to do so.</li>
     </ul>
 
@@ -77,11 +101,12 @@
       <h3>Namespaces</h3>
       <p>The namespace for EPOS-DCAT-AP is: <code>https://www.epos-eu.org/epos-dcat-ap</code></p>
       <p>The namespace prefix is: <code>epos</code></p>
-      <p>The Application Profile reuses terms from various existing specifications, following <a data-cite="?DWBP#dataVocabularies">established best practices</a> [[?DWBP]]. The following table indicates the full list of corresponding namespaces used in this document.</p>
+      <p>The Application Profile reuses terms from various existing specifications, following <a data-cite="?DWBP#dataVocabularies">established best practices</a> [[?DWBP]]. The following table indicates the full list of corresponding namespaces used
+        in this document.</p>
       <div data-include-format="html" data-include-replace="true" data-include="./tables/namespaces.html"></div>
     </section>
 
-    <section id="overview" >
+    <section id="overview">
 
       <h3>Application Profile Overview</h3>
 
@@ -95,8 +120,8 @@
       </aside>
 
       <figure id="fig-epos-dcat-ap-uml-class-diagram">
-        <a href="./images/epos-dcat-ap_v2.0.0.svg" title="view full-size image"><img src="./images/epos-dcat-ap_v2.0.0.svg" alt="EPOS-DCAT-AP UML Class Diagram"/></a>
-       
+        <a href="./images/epos-dcat-ap_v2.0.0.svg" title="view full-size image"><img src="./images/epos-dcat-ap_v2.0.0.svg" alt="EPOS-DCAT-AP UML Class Diagram" /></a>
+
         <figcaption>EPOS-DCAT-AP UML Class Diagram</figcaption>
       </figure>
 
@@ -107,953 +132,1021 @@
   <!-- Classes -->
   <section id="classes">
 
-  <h2>Application Profile Classes</h2>
-  <section id="mandatory-classes">
-    <h3>Mandatory Classes</h3>
-    <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-classes.html"></div>
-  </section>
+    <h2>Application Profile Classes</h2>
+    <section id="mandatory-classes">
+      <h3>Mandatory Classes</h3>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-classes.html"></div>
+    </section>
 
-  <section id="recommended-classes">
-    <h3>Recommended Classes</h3>
-    <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-classes.html"></div>
-  </section>
+    <section id="recommended-classes">
+      <h3>Recommended Classes</h3>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-classes.html"></div>
+    </section>
 
-  <section id="optional-classes">
-    <h3>Optional Classes</h3>
-    <div data-include-format="html" data-include-replace="true" data-include="./tables/optional-classes.html"></div>
-  </section>
+    <section id="optional-classes">
+      <h3>Optional Classes</h3>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/optional-classes.html"></div>
+    </section>
 
-  <section id="epos-dcat-ap-classes">
-    <h3>Additional classes for EPOS-DCAT-AP</h3>
-    <p>The following classes are included in [[EPOS-DCAT-AP]]:</p>
-    <div data-include-format="html" data-include-replace="true" data-include="./tables/epos-dcat-ap-classes.html"></div>
-  </section>
+    <section id="epos-dcat-ap-classes">
+      <h3>Additional classes for EPOS-DCAT-AP</h3>
+      <p>The following classes are included in [[EPOS-DCAT-AP]]:</p>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/epos-dcat-ap-classes.html"></div>
+    </section>
 
-  <section id="equivalent-epos-dcat-ap-classes">
-    <h3>Equivalent classes for EPOS-DCAT-AP</h3>
-    <p>The following classes are defined as equivalent classes for [[EPOS-DCAT-AP]]:</p>
-    <div data-include-format="html" data-include-replace="true" data-include="./tables/equivalent-epos-dcat-ap-classes.html"></div>
-    <aside class="note">
-      <p>Class equality means that the classes have the same intensional meaning, i.e., denote the same concept.<p>
-    </aside>
-  </section>
+    <section id="equivalent-epos-dcat-ap-classes">
+      <h3>Equivalent classes for EPOS-DCAT-AP</h3>
+      <p>The following classes are defined as equivalent classes for [[EPOS-DCAT-AP]]:</p>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/equivalent-epos-dcat-ap-classes.html"></div>
+      <aside class="note">
+        <p>Class equality means that the classes have the same intensional meaning, i.e., denote the same concept.<p>
+      </aside>
+    </section>
 
-</section>
+  </section>
 
   <!-- Properties -->
   <section id="properties">
 
-  <h2>Application Profile Properties per Class</h2>
-  <p>A quick reference table of properties per class is included in  <a href="#quick-reference-of-classes-and-properties">4.37 Quick Reference of Classes and Properties</a>. The list of included properties contains all the properties in [[DCAT-AP]], plus a selection of properties from other vocabularies on which EPOS-DCAT-AP expresses additional constraints or on which EPOS-DCAT-AP wants to emphasise their usage.
-  </p>
-  <p>Examples on the use of these properties, encoded in [[Turtle]], are included in the relevant sections and available from a <a href="./examples/">separate folder</a>.</p>
+    <h2>Application Profile Properties per Class</h2>
+    <p>A quick reference table of properties per class is included in <a href="#quick-reference-of-classes-and-properties">4.37 Quick Reference of Classes and Properties</a>. The list of included properties contains all the properties in [[DCAT-AP]],
+      plus a selection of properties from other vocabularies on which EPOS-DCAT-AP expresses additional constraints or on which EPOS-DCAT-AP wants to emphasise their usage.
+    </p>
+    <p>Examples on the use of these properties, encoded in [[Turtle]], are included in the relevant sections and available from a <a href="./examples/">separate folder</a>.</p>
 
-  <!-- Address -->
-  <section id="properties-for-address">
-    <h3>Class: Address</h3>
-    <aside class="note">
-    <p>This class is included in [[EPOS-DCAT-AP]].</p>
-    </aside>
-    <div data-include-format="html" data-include-replace="true" data-include="./tables/class-address.html"></div>
-
-    <section id="mandatory-properties-for-address">
-      <h4>Mandatory properties</h4>
+    <!-- Address -->
+    <section id="properties-for-address">
+      <h3>Class: Address</h3>
       <aside class="note">
-        <p>The following properties are included in [[EPOS-DCAT-AP]]:</p>
-        <ul>
-          <li><a href="#address-country-name">country-name</a></li>
-          <li><a href="#address-locality">locality</a></li>
-          <li><a href="#address-postal-code">postal-code</a></li>
-          <li><a href="#address-street-address">street-address </a></li>
-        </ul>
+        <p>This class is included in [[EPOS-DCAT-AP]].</p>
       </aside>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-address.html"></div>
-    </section>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/class-address.html"></div>
 
-    <section id="examples-for-address">
-      <h4>Example</h4>
-      <aside class="example" id="ex-address" title="Address">
-      <p>The address in this example is the same of <a href="#ex-postal-address"></a>, but represented by using [[VCARD-RDF]].</p>
-      <pre data-include-format="text" data-include="./examples/address.ttl"></pre>
-      </aside>
-    </section>
-
-  </section>
-
-  <!-- Agent -->
-  <section id="properties-for-agent">
-    <h3>Class: Agent</h3>
-    <div data-include-format="html" data-include-replace="true" data-include="./tables/class-agent.html"></div>
-
-    <section id="mandatory-properties-for-agent">
-       <h4>Mandatory property</h4>
-       <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-agent.html"></div>
-    </section>
-
-    <section id="recommended-properties-for-agent">
-      <h4>Recommended property</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-properties-for-agent.html"></div>
-    </section>
-
-  </section>
-
-  <!-- Catalog -->
-  <section id="properties-for-catalog">
-    <h3>Class: Catalog</h3>
-    <div data-include-format="html" data-include-replace="true" data-include="./tables/class-catalog.html"></div>
-
-    <section id="mandatory-properties-for-catalog">
-      <h4>Mandatory properties</h4>
-      <aside class="note">
-        <p>[[EPOS-DCAT-AP]] extends the range of the following property:<br>
-          <ul class='one'>
-          <li >
-            <a href="#catalog-publisher">publisher</a>: range extended to <code>schema:Organization</code>
-          </li>
-        <ul>
-      </aside>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-catalog.html"></div>
-    </section>
-
-    <section id="recommended-properties-for-catalog">
-      <h4>Recommended properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-properties-for-catalog.html"></div>
-    </section>
-
-    <section id="optional-properties-for-catalog">
-      <h4>Optional properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/optional-properties-for-catalog.html"></div>
-    </section>
-
-  </section>
-
-  <!-- Catalog Record -->
-  <section id="properties-for-catalog-record">
-    <h3>Class: CatalogRecord</h3>
-    <div data-include-format="html" data-include-replace="true" data-include="./tables/class-catalog-record.html"></div>
-    <section id="mandatory-properties-for-catalog-record">
-      <h4>Mandatory properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-catalog-record.html"></div>
-    </section>
-
-    <section id="recommended-properties-for-catalog-record">
-      <h4>Recommended properties</h4>
-      <aside class="note">
-        <p>The following property is included in [[EPOS-DCAT-AP]]:</p>
-        <ul>
-          <li><a href="#catalog-record-identifier">identifier</a></li>
-        </ul>
-      </aside>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-properties-for-catalog-record.html"></div>
-    </section>
-
-    <section id="optional-properties-for-catalog-record">
-      <h4>Optional properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/optional-properties-for-catalog-record.html"></div>
-    </section>
-  </section>
-
-  <!-- Category -->
-  <section id="properties-for-category">
-
-    <h3>Class: Category</h3>
-    <div data-include-format="html" data-include-replace="true" data-include="./tables/class-category.html"></div>
-    <section id="mandatory-properties-for-category">
-      <h4>Mandatory properties</h4>
-      <aside class="note">
-        The following properties are included in [[EPOS-DCAT-AP]]:
-        <ul>
-          <li><a href="#category-definition">definition</a></li>
-          <li><a href="#category-inscheme">inScheme</a></li>
-        </ul>
-        The following property is mandatory in [[EPOS-DCAT-AP]]:
-        <ul>
-          <li><a href="#category-preflabel">prefLabel</a></li>
-        </ul>
-      </aside>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-category.html"></div>
-    </section>
-
-    <section id="examples-for-category">
-      <h4>Example</h4>
-      <aside class="example" id="ex-category" title="Category">
-      <pre data-include-format="text" data-include="./examples/category.ttl"></pre>
-      </aside>
-    </section>
-
-  </section>
-
-  <!-- Category Scheme -->
-  <section id="properties-for-category-scheme">
-    <h3>Class: CategoryScheme</h3>
-    <div data-include-format="html" data-include-replace="true" data-include="./tables/class-category-scheme.html"></div>
-    <section id="recommended-properties-for-category-scheme">
-      <h4>Recommended properties</h4>
-      <aside class="note">
-        <p>The following property is included in [[EPOS-DCAT-AP]]:</p>
-        <ul>
-          <li><a href="#category-scheme-description">description</a></li>
-        </ul>
-      </aside>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-properties-for-category-scheme.html"></div>
-    </section>
-
-    <section id="examples-for-category-scheme">
-      <h4>Example</h4>
-      <aside class="example" id="ex-category-scheme" title="Category Scheme">
-      <pre data-include-format="text" data-include="./examples/category-scheme.ttl"></pre>
-      </aside>
-    </section>
-  </section>
-
-  <!-- Checksum -->
-  <section id="properties-for-checksum">
-    <h3>Class: Checksum</h3>
-    <div data-include-format="html" data-include-replace="true" data-include="./tables/class-checksum.html"></div>
-    <section id="mandatory-properties-for-checksum">
-      <h4>Mandatory properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-checksum.html"></div>
-    </section>
-  </section>
-
-  <!-- ContactPoint -->
-  <section id="properties-for-contact-point">
-
-    <h3>Class: ContactPoint</h3>
-    <aside class="note">
-      <p>This class is included in [[EPOS-DCAT-AP]].</p>
-    </aside>
-    <div data-include-format="html" data-include-replace="true" data-include="./tables/class-contact-point.html"></div>
-    <section id="recommended-properties-for-contact-point">
-      <h4>Recommended properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-properties-for-contact-point.html"></div>
-    </section>
-    <section id="optional-properties-for-contact-point">
-      <h4>Optional properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/optional-properties-for-contact-point.html"></div>
-    </section>
-
-    <section id="examples-for-contact-point">
-      <h4>Example</h4>
-      <aside class="example" id="ex-contact-point" title="contactPoint">
-        <pre data-include-format="text" data-include="./examples/contact-point.ttl"></pre>
-      </aside>
-    </section>
-
-  </section>
-
-  <!-- Data Service -->
-  <section id="properties-for-data-service">
-    <h3>Class: DataService</h3>
-    <div data-include-format="html" data-include-replace="true" data-include="./tables/class-data-service.html"></div>
-    <section id="mandatory-properties-for-data-service">
-      <h4>Mandatory properties</h4>
-      <aside class="note">
-        <p>The following property is inherited from superclass <a data-cite="VOCAB-DCAT-2#Class:Resource">dcat:Resource</a> [[VOCAB-DCAT-2]]</p>
-        <ul>
-            <li><a href="#data-service-identifier">identifier</a></li>
-        </ul>
-        </p>
-      </aside>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-data-service.html"></div>
-    </section>
-    <section id="recommended-properties-for-data-service">
-      <h4>Recommended properties</h4>
-      <aside class="note">
-        <p>The following properties are inherited from superclass <a data-cite="VOCAB-DCAT-2#Class:Resource">dcat:Resource </a> [[VOCAB-DCAT-2]]</p>
-        <ul>
-            <li><a href="#data-service-contact-point">contactPoint </a></li>
-            <li><a href="#data-service-issued">issued</a></li>
-            <li><a href="#data-service-modified">modified</a></li>
-            <li><a href="#data-service-publisher">publisher</a></li>
-            <li><a href="#data-service-theme">theme</a></li>
-        </ul>
-        <p>[[EPOS-DCAT-AP]] extends the range of the following properties:<br>
-          <ul class='one'><li >
-            <a href="#data-service-publisher">publisher</a> range extended to <code>schema:Organization</code>
-          </li>
-          <li><a href="#data-service-endpoint-description">endpointDescription</a> range extended to  <code>hydra:Operation;</code>
-          </li>
-          </ul>
-        </p>
-      </aside>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-properties-for-data-service.html"></div>
-    </section>
-    <section id="optional-properties-for-data-service">
-      <h4>Optional properties</h4>
-      <aside class="note">
-        <p>The following properties are included in [[EPOS-DCAT-AP]]:</p>
-        <ul>
-          <li><a href="#data-service-spatial">spatial</a></li>
-          <li><a href="#data-service-temporal">temporal</a></li>
-        </ul>
-        <p>The following properties are inherited from superclass <a data-cite="VOCAB-DCAT-2#Class:Resource">dcat:Resource </a>[[VOCAB-DCAT-2]]</p>
-        <ul>
-            <li><a href="#data-service-conforms-to">conformsTo</a></li>
-            <li><a href="#data-service-keyword">keyword</a></li>
-        </ul>
-      </aside>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/optional-properties-for-data-service.html"></div>
-    </section>
-    <section id="examples-for-data-service">
-      <h4>Example</h4>
-      <aside class="example" id="ex-data-service" title="Data Service">
-      <pre data-include-format="text" data-include="./examples/data-service.ttl"></pre>
-      </aside>
-    </section>
-  </section>
-
-  <!-- Dataset -->
-  <section id="properties-for-dataset">
-
-    <h3>Class: Dataset</h3>
-    <div data-include-format="html" data-include-replace="true" data-include="./tables/class-dataset.html"></div>
-    <section id="mandatory-properties-for-dataset">
-      <h4>Mandatory properties</h4>
-      <aside class="note">
-        The following property is mandatory in [[EPOS-DCAT-AP]]:
-        <ul>
-          <li><a href="#dataset-identifier">identifier</a></li>
-        </ul>
-      </aside>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-dataset.html"></div>
-    </section>
-    <section id="recommended-properties-for-dataset">
-      <h4>Recommended properties</h4>
-      <aside class="note">
-      <p>[[EPOS-DCAT-AP]] extends the range of the following properties:<br>
-        <ul class='one'><li >
-          <a href="#dataset-contact-point">contactPoint</a> range extended to <code>schema:ContactPoint</code>
-        </li>
-        <li><a href="#dataset-publisher">publisher</a> range extended to  <code>schema:Organization</code>
-        </li>
-        </ul>
-      </p>
-      </aside>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-properties-for-dataset.html"></div>
-    </section>
-    <section id="optional-properties-for-dataset">
-      <h4>Optional properties</h4>
-      <aside class="note">
-        <p>The following properties are included in [[EPOS-DCAT-AP]]:</p>
-        <ul>
-          <li><a href="#dataset-created">created</a></li>
-          <li><a href="#dataset-has-part">hasPart</a></li>
-          <li><a href="#dataset-has-qualityannotation">hasQualityAnnotation</a></li>
-          <li><a href="#dataset-is-part-of">isPartOf</a></li>
-        </ul>
-        <p>[[EPOS-DCAT-AP]] extends the range of the following property:<br>
-          <ul class='one'>
-          <li><a href="#dataset-creator">creator</a> range extended to  <code>schema:Organization</code>
-          </li>
-          </ul>
-        </p>
-      </aside>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/optional-properties-for-dataset.html"></div>
-    </section>
-    <section id="examples-for-dataset">
-      <h4>Example</h4>
-      <aside class="example" id="ex-dataset" title="Dataset">
-      <pre data-include-format="text" data-include="./examples/dataset.ttl"></pre>
-      </aside>
-
-    </section>
-
-  </section>
-
-  <!-- Distribution -->
-  <section id="properties-for-distribution">
-
-    <h3>Class: Distribution</h3>
-    <div data-include-format="html" data-include-replace="true" data-include="./tables/class-distribution.html"></div>
-    <section id="mandatory-properties-for-distribution">
-
-      <h4>Mandatory properties</h4>
-      <aside class="note">
-        <p>The following property is included in  [[EPOS-DCAT-AP]]:</p>
-        <ul>
-          <li><a href="#distribution-identifier">identifier</a></li>
-        </ul>
-      </aside>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-distribution.html"></div>
-
-    </section>
-
-    <section id="recommended-properties-for-distribution">
-      <h4>Recommended properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-properties-for-distribution.html"></div>
-    </section>
-
-    <section id="optional-properties-for-distribution">
-      <h4>Optional properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/optional-properties-for-distribution.html"></div>
-    </section>
-
-    <section id="examples-for-distribution">
-      <h4>Example</h4>
-      <aside class="example" id="ex-distribution" title="Distribution">
-        <pre data-include-format="text" data-include="./examples/distribution.ttl"></pre>
-      </aside>
-    </section>
-
-  </section>
-
-  <!-- Document -->
-  <section id="properties-for-document">
-    <h3>Class: Document</h3>
-    <aside class="note">
-      <p>This class is not explicitly associated with any property in [[DCAT-AP]].</p>
-    </aside>
-    <div data-include-format="html" data-include-replace="true" data-include="./tables/class-document.html"></div>
-  </section>
-
-  <!-- Equipment -->
-  <section id="properties-for-equipment">
-    <h3>Class: Equipment</h3>
-    <aside class="note">
-    <p>New class added in [[EPOS-DCAT-AP]].</p>
-    </aside>
-    <div data-include-format="html" data-include-replace="true" data-include="./tables/class-equipment.html"></div>
-    <section id="mandatory-properties-for-equipment">
-      <h4>Mandatory properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-equipment.html"></div>
-    </section>
-    <section id="recommended-properties-for-equipment">
-      <h4>Recommended properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-properties-for-equipment.html"></div>
-    </section>
-    <section id="optional-properties-for-equipment">
-      <h4>Optional properties</h4>
-      <aside class="note">
-        <p>New properties added in [[EPOS-DCAT-AP]]:</p>
-        <ul>
-          <li><a href="#equipment-dynamic-range">dynamicRange</a></li>
-          <li><a href="#equipment-filter">filter</a></li>
-          <li><a href="#equipment-resolution">resolution</a></li>
-          <li><a href="#equipment-orientation">orientation</a></li>
-          <li><a href="#equipment-sample-period">samplePeriod</a></li>
-        </ul>
-      </aside>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/optional-properties-for-equipment.html"></div>
-    </section>
-    <section id="examples-for-equipment">
-      <h4>Example</h4>
-      <aside class="example" id="ex-equipment" title="Equipment">
-      <pre data-include-format="text" data-include="./examples/equipment.ttl"></pre>
-      </aside>
-    </section>
-  </section>
-
-  <!-- Facility -->
-  <section id="properties-for-facility">
-
-    <h3>Class: Facility</h3>
-    <aside class="note">
-      <p>New class added in [[EPOS-DCAT-AP]].</p>
-    </aside>
-    <div data-include-format="html" data-include-replace="true" data-include="./tables/class-facility.html"></div>
-    <section id="mandatory-properties-for-facility">
-      <h4>Mandatory properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-facility.html"></div>
-    </section>
-    <section id="recommended-properties-for-facility">
-      <h4>Recommended properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-properties-for-facility.html"></div>
-    </section>
-    <section id="optional-properties-for-facility">
-      <h4>Optional properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/optional-properties-for-facility.html"></div>
-    </section>
-    <section id="examples-for-facility">
-      <h4>Example</h4>
-      <aside class="example" id="ex-facility" title="Facility">
-      <pre data-include-format="text" data-include="./examples/facility.ttl"></pre>
-      </aside>
-    </section>
-  </section>
-
-  <!-- Identifier -->
-  <section id="properties-for-identifier">
-    <h3>Class: Identifier</h3>
-
-    <div data-include-format="html" data-include-replace="true" data-include="./tables/class-identifier.html"></div>
-    <section id="mandatory-properties-for-identifier">
-      <h4>Mandatory properties</h4>
-      <aside class="note">
-        <p>The following property is included in [[EPOS-DCAT-AP]]:</p>
-        <ul>
-          <li><a href="#identifier-schemeagency">schemeAgency</a></li>
-        </ul>
-      </aside>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-identifier.html"></div>
-    </section>
-    <section id="examples-for-identifier">
-      <h4>Example</h4>
-      <aside class="example" id="ex-identifier" title="Identifier">
-      <pre data-include-format="text" data-include="./examples/identifier.ttl"></pre>
-      </aside>
-    </section>
-  </section>
-
-  <!-- IriTemplate -->
-  <section id="properties-for-iritemplate">
-    <h3>Class: IriTemplate</h3>
-    <aside class="note">
-    <p>This class is included in [[EPOS-DCAT-AP]].</p>
-    </aside>
-    <div data-include-format="html" data-include-replace="true" data-include="./tables/class-iritemplate.html"></div>
-    <section id="mandatory-properties-for-iritemplate">
-      <h4>Mandatory properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-iritemplate.html"></div>
-    </section>
-    <section id="optional-properties-for-iritemplate">
-      <h4>Optional properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/optional-properties-for-iritemplate.html"></div>
-    </section>
-    <section id="examples-for-iritemplate">
-      <h4>Example</h4>
-      <aside class="example" id="ex-iritemplate" title="IriTemplate">
-      <pre data-include-format="text" data-include="./examples/iritemplate.ttl"></pre>
-      </aside>
-    </section>
-  </section>
-
-  <!-- IriTemplate Mapping -->
-  <section id="properties-for-iritemplatemapping">
-    <h3>Class: IriTemplateMapping</h3>
-    <aside class="note">
-    <p>This class is included in [[EPOS-DCAT-AP]].</p>
-    </aside>
-    <div data-include-format="html" data-include-replace="true" data-include="./tables/class-iritemplatemapping.html"></div>
-    <section id="mandatory-properties-for-iritemplatemapping">
-      <h4>Mandatory properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-iritemplatemapping.html"></div>
-    </section>
-    <section id="recommended-properties-for-iritemplatemapping">
-      <h4>Recommended properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-properties-for-iritemplatemapping.html"></div>
-    </section>
-    <section id="examples-for-iritemplatemapping">
-      <h4>Example</h4>
-      <aside class="example" id="ex-iritemplatemapping" title="IriTemplateMapping">
-      <pre data-include-format="text" data-include="./examples/iritemplatemapping.ttl"></pre>
-      </aside>
-    </section>
-  </section>
-
-  <!-- Kind -->
-  <section id="properties-for-kind">
-    <h3>Class: Kind</h3>
-    <aside class="note">
-    <p>This class is not explicitly associated with any property in [[DCAT-AP]].</p>
-    </aside>
-    <div data-include-format="html" data-include-replace="true" data-include="./tables/class-kind.html"></div>
-  </section>
-
-  <!-- License Document -->
-  <section id="properties-for-license-document">
-    <h3>Class: LicenseDocument</h3>
-    <div data-include-format="html" data-include-replace="true" data-include="./tables/class-license-document.html"></div>
-    <section id="recommended-properties-for-license-document">
-      <h4>Recommended property</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-properties-for-license-document.html"></div>
-    </section>
-  </section>
-
-  <!-- Location -->
-  <section id="properties-for-location">
-
-    <h3>Class: Location</h3>
-    <div data-include-format="html" data-include-replace="true" data-include="./tables/class-location.html"></div>
-    <aside class="note">
-           <p>
-             The WKT encoding supports geospatial positions expressed in coordinate reference systems other than <a href="https://en.wikipedia.org/wiki/World_Geodetic_System#WGS84">WGS84</a>.
-           </p>
-    </aside>
-    <section id="recommended-properties-for-location">
-      <h4>Recommended properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-properties-for-location.html"></div>
-    </section>
-    <section id="optional-properties-for-location">
-      <h4>Optional properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/optional-properties-for-location.html"></div>
-    </section>
-    <section id="examples-for-location">
-      <h4>Examples</h4>
-      <aside class="example" id="ex-location-gn" title="Location as centroid">
-        <pre data-include-format="text" data-include="./examples/location-centroid.ttl"></pre>
-        <figure id="fig-spatial-coverage-centroid">
-          <img src="./images/ex-spatial-coverage-centroid.png"/>
-          <figcaption>Map preview of a spatial coverage specified with a centroid (source: <a href="https://w3c.github.io/dxwg/dcat/#ex-spatial-coverage-centroid">https://w3c.github.io/dxwg/dcat/#ex-spatial-coverage-centroid</a>)</figcaption>
-        </figure>
-      </aside>
-      <aside class="example" id="ex-location-geom" title="Location as geometry">
-        <pre data-include-format="text" data-include="./examples/location-geometry.ttl"></pre>
-        <figure id="fig-spatial-coverage-geometry">
-          <img src="./images/ex-spatial-coverage-bbox.png"/>
-          <figcaption>Map preview of a spatial coverage specified with a geometry (source: <a href="https://w3c.github.io/dxwg/dcat/#ex-spatial-coverage-bbox">https://w3c.github.io/dxwg/dcat/#ex-spatial-coverage-bbox</a>)</figcaption>
-        </figure>
-      </aside>
-    </section>
-
-  </section>
-
-  <!-- Media Type -->
-  <section id="properties-for-media-type">
-    <h3>Class: MediaType</h3>
-    <aside class="note">
-      <p>This class is not explicitly associated with any property in [[DCAT-AP]].</p>
-    </aside>
-    <div data-include-format="html" data-include-replace="true" data-include="./tables/class-media-type.html"></div>
-  </section>
-
-  <!-- Operation -->
-  <section id="properties-for-operation">
-    <h3>Class: Operation</h3>
-    <aside class="note">
-    <p>This class is included in [[EPOS-DCAT-AP]].</p>
-    </aside>
-    <div data-include-format="html" data-include-replace="true" data-include="./tables/class-operation.html"></div>
-    <section id="recommended-properties-for-operation">
-      <h4>Recommended properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-properties-for-operation.html"></div>
-    </section>
-    <section id="optional-properties-for-operation">
-      <h4>Optional properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/optional-properties-for-operation.html"></div>
-    </section>
-    <section id="examples-for-operation">
-      <h4>Example</h4>
-      <aside class="example" id="ex-operation" title="Operation">
-      <pre data-include-format="text" data-include="./examples/operation.ttl"></pre>
-    </aside>
-    </section>
-  </section>
-
-  <!-- Organization -->
-  <section id="properties-for-organization">
-    <h3>Class: Organization</h3>
-    <aside class="note">
-    <p>This class is included in [[EPOS-DCAT-AP]].</p>
-    </aside>
-    <div data-include-format="html" data-include-replace="true" data-include="./tables/class-organization.html"></div>
-    <section id="mandatory-properties-for-organization">
-      <h4>Mandatory properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-organization.html"></div>
-    </section>
-
-    <section id="recommended-properties-for-organization">
-      <h4>Recommended properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-properties-for-organization.html"></div>
-    </section>
-
-    <section id="optional-properties-for-organization">
-      <h4>Optional properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/optional-properties-for-organization.html"></div>
-    </section>
-
-    <section id="examples-for-organization">
-      <h4>Example</h4>
-      <aside class="example" id="ex-organization" title="Organization">
-      <pre data-include-format="text" data-include="./examples/organization.ttl"></pre>
-      </aside>
-    </section>
-
-  </section>
-
-  <!-- Period of Time -->
-  <section id="properties-for-period-of-time">
-    <h3>Class: PeriodOfTime</h3>
-    <div data-include-format="html" data-include-replace="true" data-include="./tables/class-period-of-time.html"></div>
-    <section id="recommended-properties-for-period-of-time">
-      <h4>Recommended properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-properties-for-period-of-time.html"></div>
-    </section>
-    <section id="optional-properties-for-period-of-time">
-      <h4>Optional properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/optional-properties-for-period-of-time.html"></div>
-    </section>
-    <section id="examples-for-period-of-time">
-      <h4>Example</h4>
-      <aside class="example" id="ex-period-of-time" title="Period of Time">
-      <pre data-include-format="text" data-include="./examples/period-of-time.ttl"></pre>
-      </aside>
-
-    </section>
-
-  </section>
-
-  <!-- Person -->
-  <section id="properties-for-person">
-    <h3>Class: Person</h3>
-    <aside class="note">
-    <p>This class is included in [[EPOS-DCAT-AP]].</p>
-    </aside>
-    <div data-include-format="html" data-include-replace="true" data-include="./tables/class-person.html"></div>
-    <section id="mandatory-properties-for-person">
-      <h4>Mandatory properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-person.html"></div>
-    </section>
-
-    <section id="optional-properties-for-person">
-      <h4>Optional properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/optional-properties-for-person.html"></div>
-    </section>
-
-    <section id="examples-for-person">
-      <h4>Example</h4>
-      <aside class="example" id="ex-person" title="Person">
-      <pre data-include-format="text" data-include="./examples/person.ttl"></pre>
-      </aside>
-    </section>
-  </section>
-
-  <!-- Postal address-->
-  <section id="properties-for-postaladdress">
-    <h3>Class: PostalAddress</h3>
-    <aside class="note">
-    <p>This class is included in [[EPOS-DCAT-AP]].</p>
-    </aside>
-    <div data-include-format="html" data-include-replace="true" data-include="./tables/class-postaladdress.html"></div>
-    <section id="mandatory-properties-for-postaladdress">
+      <section id="mandatory-properties-for-address">
         <h4>Mandatory properties</h4>
         <aside class="note">
-        <p>The following properties are not included in [[DCAT-AP]]:</p>
-        <ul>
-          <li><a href="#postaladdress-addresscountry">addressCountry</a></li>
-          <li><a href="#postaladdress-addresslocality">addressLocality</a></li>
-          <li><a href="#postaladdress-postalcode">postalCode</a></li>
-          <li><a href="#postaladdress-streetaddress">streetAddress</a></li>
-        </ul>
+          <p>The following properties are included in [[EPOS-DCAT-AP]]:</p>
+          <ul>
+            <li><a href="#address-country-name">country-name</a></li>
+            <li><a href="#address-locality">locality</a></li>
+            <li><a href="#address-postal-code">postal-code</a></li>
+            <li><a href="#address-street-address">street-address </a></li>
+          </ul>
+        </aside>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-address.html"></div>
+      </section>
+
+      <section id="examples-for-address">
+        <h4>Example</h4>
+        <aside class="example" id="ex-address" title="Address">
+          <p>The address in this example is the same of <a href="#ex-postal-address"></a>, but represented by using [[VCARD-RDF]].</p>
+          <pre data-include-format="text" data-include="./examples/address.ttl"></pre>
+        </aside>
+      </section>
+
+    </section>
+
+    <!-- Agent -->
+    <section id="properties-for-agent">
+      <h3>Class: Agent</h3>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/class-agent.html"></div>
+
+      <section id="mandatory-properties-for-agent">
+        <h4>Mandatory property</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-agent.html"></div>
+      </section>
+
+      <section id="recommended-properties-for-agent">
+        <h4>Recommended property</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-properties-for-agent.html"></div>
+      </section>
+    </section>
+
+    <!-- Catalog -->
+    <section id="properties-for-catalog">
+      <h3>Class: Catalog</h3>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/class-catalog.html"></div>
+
+      <section id="mandatory-properties-for-catalog">
+        <h4>Mandatory properties</h4>
+        <aside class="note">
+          <p>[[EPOS-DCAT-AP]] extends the range of the following property:<br>
+          <ul class='one'>
+            <li >
+              <a href="#catalog-publisher">publisher</a>: range extended to <code>schema:Organization</code>
+            </li>
+          <ul>
+        </aside>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-catalog.html"></div>
+      </section>
+
+      <section id="recommended-properties-for-catalog">
+        <h4>Recommended properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-properties-for-catalog.html"></div>
+      </section>
+
+      <section id="optional-properties-for-catalog">
+        <h4>Optional properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/optional-properties-for-catalog.html"></div>
+      </section>
+
+    </section>
+
+    <!-- Catalog Record -->
+    <section id="properties-for-catalog-record">
+      <h3>Class: CatalogRecord</h3>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/class-catalog-record.html"></div>
+      <section id="mandatory-properties-for-catalog-record">
+        <h4>Mandatory properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-catalog-record.html"></div>
+      </section>
+
+      <section id="recommended-properties-for-catalog-record">
+        <h4>Recommended properties</h4>
+        <aside class="note">
+          <p>The following property is included in EPOS-DCAT-AP 2 [[EPOS-DCAT-AP]]:</p>
+          <ul>
+            <li><a href="#catalog-record-identifier">identifier</a></li>
+          </ul>
+        </aside>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-properties-for-catalog-record.html"></div>
+      </section>
+
+      <section id="optional-properties-for-catalog-record">
+        <h4>Optional properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/optional-properties-for-catalog-record.html"></div>
+      </section>
+    </section>
+
+    <!-- Category -->
+    <section id="properties-for-category">
+      <h3>Class: Category</h3>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/class-category.html"></div>
+      <section id="mandatory-properties-for-category">
+        <h4>Mandatory properties</h4>
+        <aside class="note">
+          The following properties are included in [[EPOS-DCAT-AP]]:
+          <ul>
+            <li><a href="#category-definition">definition</a></li>
+            <li><a href="#category-inscheme">inScheme</a></li>
+          </ul>
+          The following property is mandatory in [[EPOS-DCAT-AP]]:
+          <ul>
+            <li><a href="#category-preflabel">prefLabel</a></li>
+          </ul>
+        </aside>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-category.html"></div>
+      </section>
+
+      <section id="examples-for-category">
+        <h4>Example</h4>
+        <aside class="example" id="ex-category" title="Category">
+          <pre data-include-format="text" data-include="./examples/category.ttl"></pre>
+        </aside>
+      </section>
+    </section>
+
+    <!-- Category Scheme -->
+    <section id="properties-for-category-scheme">
+      <h3>Class: CategoryScheme</h3>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/class-category-scheme.html"></div>
+      <section id="recommended-properties-for-category-scheme">
+        <h4>Recommended properties</h4>
+        <aside class="note">
+          <p>The following property is included in [[EPOS-DCAT-AP]]:</p>
+          <ul>
+            <li><a href="#category-scheme-description">description</a></li>
+          </ul>
+        </aside>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-properties-for-category-scheme.html"></div>
+      </section>
+
+      <section id="examples-for-category-scheme">
+        <h4>Example</h4>
+        <aside class="example" id="ex-category-scheme" title="Category Scheme">
+          <pre data-include-format="text" data-include="./examples/category-scheme.ttl"></pre>
+        </aside>
+      </section>
+    </section>
+
+    <!-- Checksum -->
+    <section id="properties-for-checksum">
+      <h3>Class: Checksum</h3>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/class-checksum.html"></div>
+      <section id="mandatory-properties-for-checksum">
+        <h4>Mandatory properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-checksum.html"></div>
+      </section>
+    </section>
+
+    <!-- ContactPoint -->
+    <section id="properties-for-contact-point">
+
+      <h3>Class: ContactPoint</h3>
+      <aside class="note">
+        <p>This class is included in [[EPOS-DCAT-AP]].</p>
+      </aside>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/class-contact-point.html"></div>
+      <section id="recommended-properties-for-contact-point">
+        <h4>Recommended properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-properties-for-contact-point.html"></div>
+      </section>
+      <section id="optional-properties-for-contact-point">
+        <h4>Optional properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/optional-properties-for-contact-point.html"></div>
+      </section>
+
+      <section id="examples-for-contact-point">
+        <h4>Example</h4>
+        <aside class="example" id="ex-contact-point" title="contactPoint">
+          <pre data-include-format="text" data-include="./examples/contact-point.ttl"></pre>
+        </aside>
+      </section>
+
+    </section>
+
+    <!-- Data Service -->
+    <section id="properties-for-data-service">
+      <h3>Class: DataService</h3>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/class-data-service.html"></div>
+      <section id="mandatory-properties-for-data-service">
+        <h4>Mandatory properties</h4>
+        <aside class="note">
+          <p>The following property is inherited from superclass <a data-cite="VOCAB-DCAT-3#Class:Resource">dcat:Resource</a> [[VOCAB-DCAT-3]]</p>
+          <ul>
+              <li><a href="#data-service-identifier">identifier</a></li>
+          </ul>
+          </p>
+        </aside>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-data-service.html"></div>
+      </section>
+      <section id="recommended-properties-for-data-service">
+        <h4>Recommended properties</h4>
+        <aside class="note">
+          <p>The following properties are inherited from superclass <a data-cite="VOCAB-DCAT-3#Class:Resource">dcat:Resource </a> [[VOCAB-DCAT-3]]</p>
+          <ul>
+              <li><a href="#data-service-contact-point">contactPoint </a></li>
+              <li><a href="#data-service-issued">issued</a></li>
+              <li><a href="#data-service-modified">modified</a></li>
+              <li><a href="#data-service-provider">provider</a></li>
+              <li><a href="#data-service-theme">theme</a></li>
+          </ul>
+          <p>[[EPOS-DCAT-AP]] extends the range of the following properties:<br>
+            <ul class='one'><li >
+              <a href="#data-service-provider">provider</a> range extended to <code>schema:Organization</code>
+            </li>
+            <li><a href="#data-service-endpoint-description">endpointDescription</a> range extended to  <code>hydra:Operation;</code>
+            </li>
+            </ul>
+          </p>
+        </aside>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-properties-for-data-service.html"></div>
+      </section>
+      <section id="optional-properties-for-data-service">
+        <h4>Optional properties</h4>
+        <aside class="note">
+          <p>The following properties are included in [[EPOS-DCAT-AP]]:</p>
+          <ul>
+            <li><a href="#data-service-spatial">spatial</a></li>
+            <li><a href="#data-service-temporal">temporal</a></li>
+          </ul>
+          <p>The following properties are inherited from superclass <a data-cite="VOCAB-DCAT-3#Class:Resource">dcat:Resource </a>[[VOCAB-DCAT-3]]</p>
+          <ul>
+              <li><a href="#data-service-conforms-to">conformsTo</a></li>
+              <li><a href="#data-service-keyword">keyword</a></li>
+          </ul>
+        </aside>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/optional-properties-for-data-service.html"></div>
+      </section>
+      <section id="examples-for-data-service">
+        <h4>Example</h4>
+        <aside class="example" id="ex-data-service" title="Data Service">
+        <pre data-include-format="text" data-include="./examples/data-service.ttl"></pre>
+        </aside>
+      </section>
+    </section>
+
+    <!-- Dataset   -->
+    <section id="properties-for-dataset">
+
+      <h3>Class: Dataset</h3>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/class-dataset.html"></div>
+      <section id="mandatory-properties-for-dataset">
+        <h4>Mandatory properties</h4>
+        <aside class="note">
+          The following property is mandatory in [[EPOS-DCAT-AP]]:
+          <ul>
+            <li><a href="#dataset-identifier">identifier</a></li>
+          </ul>
+        </aside>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-dataset.html"></div>
+      </section>
+      <section id="recommended-properties-for-dataset">
+        <h4>Recommended properties</h4>
+        <aside class="note">
+        <p>[[EPOS-DCAT-AP]] extends the range of the following properties:<br>
+          <ul class='one'><li >
+            <a href="#dataset-contact-point">contactPoint</a> range extended to <code>schema:ContactPoint</code>
+          </li>
+          <li><a href="#dataset-publisher">publisher</a> range extended to  <code>schema:Organization</code>
+          </li>
+          </ul>
+        </p>
+        </aside>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-properties-for-dataset.html"></div>
+      </section>
+      <section id="optional-properties-for-dataset">
+        <h4>Optional properties</h4>
+        <aside class="note">
+          <p>The following properties are included in [[EPOS-DCAT-AP]]:</p>
+          <ul>
+            <li><a href="#dataset-created">created</a></li>
+            <li><a href="#dataset-has-part">hasPart</a></li>
+            <li><a href="#dataset-has-qualityannotation">hasQualityAnnotation</a></li>
+            <li><a href="#dataset-is-part-of">isPartOf</a></li>
+          </ul>
+          <p>[[EPOS-DCAT-AP]] extends the range of the following property:<br>
+            <ul class='one'>
+            <li><a href="#dataset-creator">creator</a> range extended to  <code>schema:Organization</code>
+            </li>
+            </ul>
+          </p>
+        </aside>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/optional-properties-for-dataset.html"></div>
+      </section>
+      <section id="examples-for-dataset">
+        <h4>Example</h4>
+        <aside class="example" id="ex-dataset" title="Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset.ttl"></pre>
+        </aside>
+
+      </section>
+
+    </section>
+
+    <!-- DatasetInSeries -->
+    <section id="properties-for-dataset-in-series">
+      <h3>Class: Dataset member of a Dataset Series</h3>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/class-dataset-in-series.html"></div>
+      <section id="mandatory-properties-for-dataset-in-series">
+        <h4>Mandatory properties</h4>
+        <!--<aside class="note">
+          <p>The following property is inherited from superclass <a data-cite="VOCAB-DCAT-2#Class:Resource">dcat:Resource</a> [[VOCAB-DCAT-2]]</p>
+          <ul>
+              <li><a href="#datasetservice-identifier">identifier</a></li>
+          </ul>
+          </p>
+        </aside>-->
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-dataset-in-series.html"></div>
+      </section>
+
+      <section id="recommended-properties-for-dataset-in-series">
+        <h4>Recommended properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-properties-for-dataset-in-series.html"></div>
+      </section>
+
+      <section id="optional-properties-for-dataset-in-series">
+        <h4>Optional properties</h4>
+    <div data-include-format="html" data-include-replace="true" data-include="./tables/optional-properties-for-dataset-in-series.html"></div>
+
+      </section>
+      <section id="examples-for-dataset-in-series">
+        <h4>Example</h4>
+        <aside class="example" id="ex-dataset-in-series" title="DatasetInSeries">
+        <!--  <pre data-include-format="text" data-include="./examples/dataset-series.ttl"></pre>
+      </aside>-->
+      </section>
+
+    </section>
+
+    <!-- DatasetSeries -->
+    <section id="properties-for-dataset-series">
+      <h3>Class: Dataset Series</h3>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/class-dataset-series.html"></div>
+      <section id="mandatory-properties-for-dataset-series">
+        <h4>Mandatory properties</h4>
+        <!--<aside class="note">
+          <p>The following property is inherited from superclass <a data-cite="VOCAB-DCAT-2#Class:Resource">dcat:Resource</a> [[VOCAB-DCAT-2]]</p>
+          <ul>
+              <li><a href="#datasetservice-identifier">identifier</a></li>
+          </ul>
+          </p>
+        </aside>-->
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-dataset-series.html"></div>
+      </section>
+
+      <section id="recommended-properties-for-dataset-series">
+        <h4>Recommended properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-properties-for-dataset-series.html"></div>
+      </section>
+
+      <section id="optional-properties-for-dataset-series">
+        <h4>Optional properties</h4>
+       <div data-include-format="html" data-include-replace="true" data-include="./tables/optional-properties-for-dataset-series.html"></div>
+
+      </section>
+      <section id="examples-for-dataset-series">
+        <h4>Example</h4>
+        <aside class="example" id="ex-dataset-series" title="DatasetSeries">
+
+      </section>
+
+    </section>
+    <!-- Distribution -->
+    <section id="properties-for-distribution">
+
+      <h3>Class: Distribution</h3>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/class-distribution.html"></div>
+      <section id="mandatory-properties-for-distribution">
+
+        <h4>Mandatory properties</h4>
+        <aside class="note">
+          <p>The following property is included in  [[EPOS-DCAT-AP]]:</p>
+          <ul>
+            <li><a href="#distribution-identifier">identifier</a></li>
+          </ul>
+        </aside>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-distribution.html"></div>
+
+      </section>
+
+      <section id="recommended-properties-for-distribution">
+        <h4>Recommended properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-properties-for-distribution.html"></div>
+      </section>
+
+      <section id="optional-properties-for-distribution">
+        <h4>Optional properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/optional-properties-for-distribution.html"></div>
+      </section>
+
+      <section id="examples-for-distribution">
+        <h4>Example</h4>
+        <aside class="example" id="ex-distribution" title="Distribution">
+          <pre data-include-format="text" data-include="./examples/distribution.ttl"></pre>
+        </aside>
+      </section>
+
+    </section>
+
+    <!-- Document -->
+    <section id="properties-for-document">
+      <h3>Class: Document</h3>
+      <aside class="note">
+        <p>This class is not explicitly associated with any property in [[DCAT-AP]].</p>
+      </aside>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/class-document.html"></div>
+    </section>
+
+    <!-- Equipment -->
+    <section id="properties-for-equipment">
+      <h3>Class: Equipment</h3>
+      <aside class="note">
+        <p>New class added in [[EPOS-DCAT-AP]].</p>
+      </aside>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/class-equipment.html"></div>
+      <section id="mandatory-properties-for-equipment">
+        <h4>Mandatory properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-equipment.html"></div>
+      </section>
+      <section id="recommended-properties-for-equipment">
+        <h4>Recommended properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-properties-for-equipment.html"></div>
+      </section>
+      <section id="optional-properties-for-equipment">
+        <h4>Optional properties</h4>
+        <aside class="note">
+          <p>New properties added in [[EPOS-DCAT-AP]]:</p>
+          <ul>
+            <li><a href="#equipment-dynamic-range">dynamicRange</a></li>
+            <li><a href="#equipment-filter">filter</a></li>
+            <li><a href="#equipment-resolution">resolution</a></li>
+            <li><a href="#equipment-orientation">orientation</a></li>
+            <li><a href="#equipment-sample-period">samplePeriod</a></li>
+          </ul>
+        </aside>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/optional-properties-for-equipment.html"></div>
+      </section>
+      <section id="examples-for-equipment">
+        <h4>Example</h4>
+        <aside class="example" id="ex-equipment" title="Equipment">
+          <pre data-include-format="text" data-include="./examples/equipment.ttl"></pre>
+        </aside>
+      </section>
+    </section>
+
+    <!-- Facility -->
+    <section id="properties-for-facility">
+
+      <h3>Class: Facility</h3>
+      <aside class="note">
+        <p>New class added in [[EPOS-DCAT-AP]].</p>
+      </aside>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/class-facility.html"></div>
+      <section id="mandatory-properties-for-facility">
+        <h4>Mandatory properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-facility.html"></div>
+      </section>
+      <section id="recommended-properties-for-facility">
+        <h4>Recommended properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-properties-for-facility.html"></div>
+      </section>
+      <section id="optional-properties-for-facility">
+        <h4>Optional properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/optional-properties-for-facility.html"></div>
+      </section>
+      <section id="examples-for-facility">
+        <h4>Example</h4>
+        <aside class="example" id="ex-facility" title="Facility">
+          <pre data-include-format="text" data-include="./examples/facility.ttl"></pre>
+        </aside>
+      </section>
+    </section>
+
+    <!-- Identifier -->
+    <section id="properties-for-identifier">
+      <h3>Class: Identifier</h3>
+
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/class-identifier.html"></div>
+      <section id="mandatory-properties-for-identifier">
+        <h4>Mandatory properties</h4>
+        <aside class="note">
+          <p>The following property is included in [[EPOS-DCAT-AP]]:</p>
+          <ul>
+            <li><a href="#identifier-schemeagency">schemeAgency</a></li>
+          </ul>
+        </aside>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-identifier.html"></div>
+      </section>
+      <section id="examples-for-identifier">
+        <h4>Example</h4>
+        <aside class="example" id="ex-identifier" title="Identifier">
+          <pre data-include-format="text" data-include="./examples/identifier.ttl"></pre>
+        </aside>
+      </section>
+    </section>
+
+    <!-- IriTemplate -->
+    <section id="properties-for-iritemplate">
+      <h3>Class: IriTemplate</h3>
+      <aside class="note">
+        <p>This class is included in [[EPOS-DCAT-AP]].</p>
+      </aside>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/class-iritemplate.html"></div>
+      <section id="mandatory-properties-for-iritemplate">
+        <h4>Mandatory properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-iritemplate.html"></div>
+      </section>
+      <section id="optional-properties-for-iritemplate">
+        <h4>Optional properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/optional-properties-for-iritemplate.html"></div>
+      </section>
+      <section id="examples-for-iritemplate">
+        <h4>Example</h4>
+        <aside class="example" id="ex-iritemplate" title="IriTemplate">
+          <pre data-include-format="text" data-include="./examples/iritemplate.ttl"></pre>
+        </aside>
+      </section>
+    </section>
+
+    <!-- IriTemplate Mapping -->
+    <section id="properties-for-iritemplatemapping">
+      <h3>Class: IriTemplateMapping</h3>
+      <aside class="note">
+        <p>This class is included in [[EPOS-DCAT-AP]].</p>
+      </aside>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/class-iritemplatemapping.html"></div>
+      <section id="mandatory-properties-for-iritemplatemapping">
+        <h4>Mandatory properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-iritemplatemapping.html"></div>
+      </section>
+      <section id="recommended-properties-for-iritemplatemapping">
+        <h4>Recommended properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-properties-for-iritemplatemapping.html"></div>
+      </section>
+      <section id="examples-for-iritemplatemapping">
+        <h4>Example</h4>
+        <aside class="example" id="ex-iritemplatemapping" title="IriTemplateMapping">
+          <pre data-include-format="text" data-include="./examples/iritemplatemapping.ttl"></pre>
+        </aside>
+      </section>
+    </section>
+
+    <!-- Kind -->
+    <section id="properties-for-kind">
+      <h3>Class: Kind</h3>
+      <aside class="note">
+        <p>This class is not explicitly associated with any property in [[DCAT-AP]].</p>
+      </aside>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/class-kind.html"></div>
+    </section>
+
+    <!-- License Document -->
+    <section id="properties-for-license-document">
+      <h3>Class: LicenseDocument</h3>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/class-license-document.html"></div>
+      <section id="recommended-properties-for-license-document">
+        <h4>Recommended property</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-properties-for-license-document.html"></div>
+      </section>
+    </section>
+
+    <!-- Location -->
+    <section id="properties-for-location">
+
+      <h3>Class: Location</h3>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/class-location.html"></div>
+      <aside class="note">
+        <p>
+          The WKT encoding supports geospatial positions expressed in coordinate reference systems other than <a href="https://en.wikipedia.org/wiki/World_Geodetic_System#WGS84">WGS84</a>.
+        </p>
+      </aside>
+      <section id="recommended-properties-for-location">
+        <h4>Recommended properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-properties-for-location.html"></div>
+      </section>
+      <section id="optional-properties-for-location">
+        <h4>Optional properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/optional-properties-for-location.html"></div>
+      </section>
+      <section id="examples-for-location">
+        <h4>Examples</h4>
+        <aside class="example" id="ex-location-gn" title="Location as centroid">
+          <pre data-include-format="text" data-include="./examples/location-centroid.ttl"></pre>
+          <figure id="fig-spatial-coverage-centroid">
+            <img src="./images/ex-spatial-coverage-centroid.png" />
+            <figcaption>Map preview of a spatial coverage specified with a centroid (source: <a href="https://w3c.github.io/dxwg/dcat/#ex-spatial-coverage-centroid">https://w3c.github.io/dxwg/dcat/#ex-spatial-coverage-centroid</a>)</figcaption>
+          </figure>
+        </aside>
+        <aside class="example" id="ex-location-geom" title="Location as geometry">
+          <pre data-include-format="text" data-include="./examples/location-geometry.ttl"></pre>
+          <figure id="fig-spatial-coverage-geometry">
+            <img src="./images/ex-spatial-coverage-bbox.png" />
+            <figcaption>Map preview of a spatial coverage specified with a geometry (source: <a href="https://w3c.github.io/dxwg/dcat/#ex-spatial-coverage-bbox">https://w3c.github.io/dxwg/dcat/#ex-spatial-coverage-bbox</a>)</figcaption>
+          </figure>
+        </aside>
+      </section>
+
+    </section>
+
+    <!-- Media Type -->
+    <section id="properties-for-media-type">
+      <h3>Class: MediaType</h3>
+      <aside class="note">
+        <p>This class is not explicitly associated with any property in [[DCAT-AP]].</p>
+      </aside>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/class-media-type.html"></div>
+    </section>
+
+    <!-- Operation -->
+    <section id="properties-for-operation">
+      <h3>Class: Operation</h3>
+      <aside class="note">
+        <p>This class is included in [[EPOS-DCAT-AP]].</p>
+      </aside>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/class-operation.html"></div>
+      <section id="recommended-properties-for-operation">
+        <h4>Recommended properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-properties-for-operation.html"></div>
+      </section>
+      <section id="optional-properties-for-operation">
+        <h4>Optional properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/optional-properties-for-operation.html"></div>
+      </section>
+      <section id="examples-for-operation">
+        <h4>Example</h4>
+        <aside class="example" id="ex-operation" title="Operation">
+          <pre data-include-format="text" data-include="./examples/operation.ttl"></pre>
+        </aside>
+      </section>
+    </section>
+
+    <!-- Organization -->
+    <section id="properties-for-organization">
+      <h3>Class: Organization</h3>
+      <aside class="note">
+        <p>This class is included in [[EPOS-DCAT-AP]].</p>
+      </aside>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/class-organization.html"></div>
+      <section id="mandatory-properties-for-organization">
+        <h4>Mandatory properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-organization.html"></div>
+      </section>
+
+      <section id="recommended-properties-for-organization">
+        <h4>Recommended properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-properties-for-organization.html"></div>
+      </section>
+
+      <section id="optional-properties-for-organization">
+        <h4>Optional properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/optional-properties-for-organization.html"></div>
+      </section>
+
+      <section id="examples-for-organization">
+        <h4>Example</h4>
+        <aside class="example" id="ex-organization" title="Organization">
+          <pre data-include-format="text" data-include="./examples/organization.ttl"></pre>
+        </aside>
+      </section>
+
+    </section>
+
+    <!-- Period of Time -->
+    <section id="properties-for-period-of-time">
+      <h3>Class: PeriodOfTime</h3>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/class-period-of-time.html"></div>
+      <section id="recommended-properties-for-period-of-time">
+        <h4>Recommended properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-properties-for-period-of-time.html"></div>
+      </section>
+      <section id="optional-properties-for-period-of-time">
+        <h4>Optional properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/optional-properties-for-period-of-time.html"></div>
+      </section>
+      <section id="examples-for-period-of-time">
+        <h4>Example</h4>
+        <aside class="example" id="ex-period-of-time" title="Period of Time">
+          <pre data-include-format="text" data-include="./examples/period-of-time.ttl"></pre>
+        </aside>
+
+      </section>
+
+    </section>
+
+    <!-- Person -->
+    <section id="properties-for-person">
+      <h3>Class: Person</h3>
+      <aside class="note">
+        <p>This class is included in [[EPOS-DCAT-AP]].</p>
+      </aside>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/class-person.html"></div>
+      <section id="mandatory-properties-for-person">
+        <h4>Mandatory properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-person.html"></div>
+      </section>
+
+      <section id="optional-properties-for-person">
+        <h4>Optional properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/optional-properties-for-person.html"></div>
+      </section>
+
+      <section id="examples-for-person">
+        <h4>Example</h4>
+        <aside class="example" id="ex-person" title="Person">
+          <pre data-include-format="text" data-include="./examples/person.ttl"></pre>
+        </aside>
+      </section>
+    </section>
+
+    <!-- Postal address-->
+    <section id="properties-for-postaladdress">
+      <h3>Class: PostalAddress</h3>
+      <aside class="note">
+        <p>This class is included in [[EPOS-DCAT-AP]].</p>
+      </aside>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/class-postaladdress.html"></div>
+      <section id="mandatory-properties-for-postaladdress">
+        <h4>Mandatory properties</h4>
+        <aside class="note">
+          <p>The following properties are not included in [[DCAT-AP]]:</p>
+          <ul>
+            <li><a href="#postaladdress-addresscountry">addressCountry</a></li>
+            <li><a href="#postaladdress-addresslocality">addressLocality</a></li>
+            <li><a href="#postaladdress-postalcode">postalCode</a></li>
+            <li><a href="#postaladdress-streetaddress">streetAddress</a></li>
+          </ul>
         </aside>
         <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-postaladdress.html"></div>
+      </section>
+      <section id="examples-for-postal-address">
+        <h4>Example</h4>
+        <aside class="example" id="ex-postal-address" title="PostalAddress">
+          <p>The address in this example is the same of <a href="#ex-address"></a>, but represented by using [[LOCN]].</p>
+          <pre data-include-format="text" data-include="./examples/postal-address.ttl"></pre>
+        </aside>
+      </section>
     </section>
-    <section id="examples-for-postal-address">
-      <h4>Example</h4>
-      <aside class="example" id="ex-postal-address" title="PostalAddress">
-      <p>The address in this example is the same of <a href="#ex-address"></a>, but represented by using [[LOCN]].</p>
-      <pre data-include-format="text" data-include="./examples/postal-address.ttl"></pre>
-      </aside>
-    </section>
-  </section>
 
-  <!-- Project -->
-  <section id="properties-for-project">
-    <h3>Class: Project</h3>
-    <aside class="note">
-    <p>This class is included in [[EPOS-DCAT-AP]].</p>
-    </aside>
-    <div data-include-format="html" data-include-replace="true" data-include="./tables/class-project.html"></div>
-    <section id="mandatory-properties-for-project">
-      <h4>Mandatory properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-project.html"></div>
-    </section>
-    <section id="recommended-properties-for-project">
+    <!-- Project -->
+    <section id="properties-for-project">
+      <h3>Class: Project</h3>
+      <aside class="note">
+        <p>This class is included in [[EPOS-DCAT-AP]].</p>
+      </aside>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/class-project.html"></div>
+      <section id="mandatory-properties-for-project">
+        <h4>Mandatory properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-project.html"></div>
+      </section>
+      <section id="recommended-properties-for-project">
         <h4>Recommended properties</h4>
         <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-properties-for-project.html"></div>
-    </section>
-    <section id="optional-properties-for-project">
+      </section>
+      <section id="optional-properties-for-project">
         <h4>Optional properties</h4>
         <div data-include-format="html" data-include-replace="true" data-include="./tables/optional-properties-for-project.html"></div>
-    </section>
-  </section>
-
-  <!-- PropertyValue -->
-  <section id="properties-for-propertyvalue">
-    <h3>Class: PropertyValue</h3>
-    <aside class="note">
-    <p>This class is included in [[EPOS-DCAT-AP]].</p>
-    </aside>
-    <div data-include-format="html" data-include-replace="true" data-include="./tables/class-propertyvalue.html"></div>
-    <section id="mandatory-properties-for-propertyvalue">
-      <h4>Mandatory properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-propertyvalue.html"></div>
+      </section>
     </section>
 
-    <section id="examples-for-property-value.html">
-      <h4>Example</h4>
-      <aside class="example" id="ex-property-value" title="Property Value">
-      <pre data-include-format="text" data-include="./examples/property-value.ttl"></pre>
+    <!-- PropertyValue -->
+    <section id="properties-for-propertyvalue">
+      <h3>Class: PropertyValue</h3>
+      <aside class="note">
+        <p>This class is included in [[EPOS-DCAT-AP]].</p>
       </aside>
-    </section>
-  </section>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/class-propertyvalue.html"></div>
+      <section id="mandatory-properties-for-propertyvalue">
+        <h4>Mandatory properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-propertyvalue.html"></div>
+      </section>
 
-  <!-- Provenance Statement -->
-  <section id="properties-for-provenance-statement">
-    <h3>Class: ProvenanceStatement</h3>
-    <aside class="note">
-    <p>This class is not explicitly associated with any property in [[DCAT-AP]].</p>
-    </aside>
-    <div data-include-format="html" data-include-replace="true" data-include="./tables/class-provenance-statement.html"></div>
-
-  </section>
-
-  <!-- Publication -->
-  <section id="properties-for-publication">
-    <h3>Class: Publication</h3>
-    <aside class="note">
-      <p>New class added in [[EPOS-DCAT-AP]].</p>
-    </aside>
-    <div data-include-format="html" data-include-replace="true" data-include="./tables/class-publication.html"></div>
-
-    <section id="mandatory-properties-for-publication">
-      <h4>Mandatory properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-publication.html"></div>
+      <section id="examples-for-property-value.html">
+        <h4>Example</h4>
+        <aside class="example" id="ex-property-value" title="Property Value">
+          <pre data-include-format="text" data-include="./examples/property-value.ttl"></pre>
+        </aside>
+      </section>
     </section>
 
-    <section id="recommended-properties-for-publication">
-      <h4>Recommended properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-properties-for-publication.html"></div>
-    </section>
-    <section id="optional-properties-for-publication">
-      <h4>Optional properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/optional-properties-for-publication.html"></div>
-    </section>
-  </section>
-
-  <!-- Relationship -->
-  <section id="properties-for-relationship">
-    <h3>Class: Relationship</h3>
-    <div data-include-format="html" data-include-replace="true" data-include="./tables/class-relationship.html"></div>
-    <section id="mandatory-properties-for-relationship">
-      <h4>Mandatory properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-relationship.html"></div>
-    </section>
-  </section>
-
-  <!-- Rights Statement -->
-  <section id="properties-for-rights-statement">
-    <h3>Class: RightsStatement</h3>
-    <aside class="note">
-    <p>This class is not explicitly associated with any property in [[DCAT-AP]].</p>
-    </aside>
-    <div data-include-format="html" data-include-replace="true" data-include="./tables/class-rights-statement.html"></div>
-
-  </section>
-
-  <!-- Standard -->
-  <section id="properties-for-standard">
-    <h3>Class: Standard</h3>
-    <aside class="note">
-      <p>This class is not explicitly associated with any property in [[DCAT-AP]].</p>
-    </aside>
-    <div data-include-format="html" data-include-replace="true" data-include="./tables/class-standard.html"></div>
-  </section>
-
-  <!-- Service -->
-  <section id="properties-for-service">
-    <h3>Class: Service</h3>
-    <aside class="note">
-    <p>This class is included in [[EPOS-DCAT-AP]].</p>
-    </aside>
-    <div data-include-format="html" data-include-replace="true" data-include="./tables/class-service.html"></div>
-
-    <section id="mandatory-properties-for-service">
-      <h4>Mandatory properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-service.html"></div>
-    </section>
-
-    <section id="recommended-properties-for-service">
-      <h4>Recommended properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-properties-for-service.html"></div>
-    </section>
-
-    <section id="optional-properties-for-service">
-      <h4>Optional properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/optional-properties-for-service.html"></div>
-    </section>
-
-    <section id="examples-for-service">
-      <h4>Example</h4>
-      <aside class="example" id="ex-service" title="Service">
-      <pre data-include-format="text" data-include="./examples/service.ttl"></pre>
+    <!-- Provenance Statement -->
+    <section id="properties-for-provenance-statement">
+      <h3>Class: ProvenanceStatement</h3>
+      <aside class="note">
+        <p>This class is not explicitly associated with any property in [[DCAT-AP]].</p>
       </aside>
-    </section>
-  </section>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/class-provenance-statement.html"></div>
 
-  <!-- SoftwareApplication-->
-  <section id="properties-for-softwareapplication">
-    <h3>Class: SoftwareApplication</h3>
-    <aside class="note">
-    <p>This class is included in [[EPOS-DCAT-AP]].</p>
-    </aside>
-    <div data-include-format="html" data-include-replace="true" data-include="./tables/class-softwareapplication.html"></div>
-    <section id="mandatory-properties-for-softwareapplication">
-      <h4>Mandatory properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-softwareapplication.html"></div>
     </section>
 
-    <section id="recommended-properties-for-softwareapplication">
-      <h4>Recommended properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-properties-for-softwareapplication.html"></div>
-    </section>
-
-    <section id="optional-properties-for-softwareapplication">
-      <h4>Optional properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/optional-properties-for-softwareapplication.html"></div>
-    </section>
-
-    <section id="examples-for-softwareapplication">
-      <h4>Example</h4>
-      <aside class="example" id="ex-softwareapplication" title="SoftwareApplication">
-      <pre data-include-format="text" data-include="./examples/softwareapplication.ttl"></pre>
+    <!-- Publication -->
+    <section id="properties-for-publication">
+      <h3>Class: Publication</h3>
+      <aside class="note">
+        <p>New class added in [[EPOS-DCAT-AP]].</p>
       </aside>
-    </section>
-  </section>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/class-publication.html"></div>
 
-  <!-- SoftwareSourceCode-->
-  <section id="properties-for-softwaresourcecode">
-    <h3>Class: SoftwareSourceCode</h3>
-    <aside class="note">
-    <p>This class is included in [[EPOS-DCAT-AP]].</p>
-    </aside>
-    <div data-include-format="html" data-include-replace="true" data-include="./tables/class-softwaresourcecode.html"></div>
+      <section id="mandatory-properties-for-publication">
+        <h4>Mandatory properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-publication.html"></div>
+      </section>
 
-    <section id="mandatory-properties-for-softwaresourcecode">
-      <h4>Mandatory properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-softwaresourcecode.html"></div>
-    </section>
-
-    <section id="recommended-properties-for-softwaresourcecode">
-      <h4>Recommended properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-properties-for-softwaresourcecode.html"></div>
+      <section id="recommended-properties-for-publication">
+        <h4>Recommended properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-properties-for-publication.html"></div>
+      </section>
+      <section id="optional-properties-for-publication">
+        <h4>Optional properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/optional-properties-for-publication.html"></div>
+      </section>
     </section>
 
-    <section id="optional-properties-for-softwaresourcecode">
-      <h4>Optional properties</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/optional-properties-for-softwaresourcecode.html"></div>
+    <!-- Relationship -->
+    <section id="properties-for-relationship">
+      <h3>Class: Relationship</h3>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/class-relationship.html"></div>
+      <section id="mandatory-properties-for-relationship">
+        <h4>Mandatory properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-relationship.html"></div>
+      </section>
     </section>
 
-    <section id="examples-for-softwaresourcecode">
-      <h4>Example</h4>
-      <aside class="example" id="ex-softwaresourcecode" title="SoftwareSourceCode">
-      <pre data-include-format="text" data-include="./examples/softwaresourcecode.ttl"></pre>
+    <!-- Rights Statement -->
+    <section id="properties-for-rights-statement">
+      <h3>Class: RightsStatement</h3>
+      <aside class="note">
+        <p>This class is not explicitly associated with any property in [[DCAT-AP]].</p>
       </aside>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/class-rights-statement.html"></div>
+
+    </section>
+
+    <!-- Standard -->
+    <section id="properties-for-standard">
+      <h3>Class: Standard</h3>
+      <aside class="note">
+        <p>This class is not explicitly associated with any property in [[DCAT-AP]].</p>
+      </aside>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/class-standard.html"></div>
+    </section>
+
+    <!-- Service -->
+    <section id="properties-for-service">
+      <h3>Class: Service</h3>
+      <aside class="note">
+        <p>This class is included in [[EPOS-DCAT-AP]].</p>
+      </aside>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/class-service.html"></div>
+
+      <section id="mandatory-properties-for-service">
+        <h4>Mandatory properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-service.html"></div>
+      </section>
+
+      <section id="recommended-properties-for-service">
+        <h4>Recommended properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-properties-for-service.html"></div>
+      </section>
+
+      <section id="optional-properties-for-service">
+        <h4>Optional properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/optional-properties-for-service.html"></div>
+      </section>
+
+      <section id="examples-for-service">
+        <h4>Example</h4>
+        <aside class="example" id="ex-service" title="Service">
+          <pre data-include-format="text" data-include="./examples/service.ttl"></pre>
+        </aside>
+      </section>
+    </section>
+
+    <!-- SoftwareApplication-->
+    <section id="properties-for-softwareapplication">
+      <h3>Class: SoftwareApplication</h3>
+      <aside class="note">
+        <p>This class is included in [[EPOS-DCAT-AP]].</p>
+      </aside>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/class-softwareapplication.html"></div>
+      <section id="mandatory-properties-for-softwareapplication">
+        <h4>Mandatory properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-softwareapplication.html"></div>
+      </section>
+
+      <section id="recommended-properties-for-softwareapplication">
+        <h4>Recommended properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-properties-for-softwareapplication.html"></div>
+      </section>
+
+      <section id="optional-properties-for-softwareapplication">
+        <h4>Optional properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/optional-properties-for-softwareapplication.html"></div>
+      </section>
+
+      <section id="examples-for-softwareapplication">
+        <h4>Example</h4>
+        <aside class="example" id="ex-softwareapplication" title="SoftwareApplication">
+          <pre data-include-format="text" data-include="./examples/softwareapplication.ttl"></pre>
+        </aside>
+      </section>
+    </section>
+
+    <!-- SoftwareSourceCode-->
+    <section id="properties-for-softwaresourcecode">
+      <h3>Class: SoftwareSourceCode</h3>
+      <aside class="note">
+        <p>This class is included in [[EPOS-DCAT-AP]].</p>
+      </aside>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/class-softwaresourcecode.html"></div>
+
+      <section id="mandatory-properties-for-softwaresourcecode">
+        <h4>Mandatory properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/mandatory-properties-for-softwaresourcecode.html"></div>
+      </section>
+
+      <section id="recommended-properties-for-softwaresourcecode">
+        <h4>Recommended properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/recommended-properties-for-softwaresourcecode.html"></div>
+      </section>
+
+      <section id="optional-properties-for-softwaresourcecode">
+        <h4>Optional properties</h4>
+        <div data-include-format="html" data-include-replace="true" data-include="./tables/optional-properties-for-softwaresourcecode.html"></div>
+      </section>
+
+      <section id="examples-for-softwaresourcecode">
+        <h4>Example</h4>
+        <aside class="example" id="ex-softwaresourcecode" title="SoftwareSourceCode">
+          <pre data-include-format="text" data-include="./examples/softwaresourcecode.ttl"></pre>
+        </aside>
+      </section>
+    </section>
+
+    <!-- Annexes-->
+    <section id="quick-reference-of-classes-and-properties" class="appendix">
+      <!-- Quick Reference of Classes and Properties  -->
+      <h2>Quick Reference of Classes and Properties</h2>
+      <p>This version of EPOS-DCAT-AP extends [[DCAT-AP]] with additional classes and properties (some of which re-used across classes). They are listed in the following table marked with a prepended “plus” sign (+).</p>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/epos-dcat-ap-classes-and-properties.html"></div>
     </section>
   </section>
-
-  <!-- Annexes -->
-  <section id="quick-reference-of-classes-and-properties" class="appendix">
-    <!-- Quick Reference of Classes and Properties -->
-    <h2>Quick Reference of Classes and Properties</h2>
-    <p>This version of EPOS-DCAT-AP extends [[DCAT-AP]] with additional classes and properties (some of which re-used across classes). They are listed in the following table marked with a prepended “plus” sign (+).</p>
-    <div data-include-format="html" data-include-replace="true" data-include="./tables/epos-dcat-ap-classes-and-properties.html"></div>
-   </section>
-  </section>
-  <!-- SHACL -->
+  <!--SHACL-->
   <section id="shacl">
-   <h2>SHACL Contraints</h2>
-    <p>The SHACL constraints for EPOS-DCAT-AP are available at:  </p>
-    <p><a href="https://github.com/epos-eu/EPOS-DCAT-AP/blob/EPOS-DCAT-AP-v2.0/docs/epos-dcat-ap_v2.0.0_shacl.ttl">
-       https://github.com/epos-eu/EPOS-DCAT-AP/blob/EPOS-DCAT-AP-v2.0/docs/epos-dcat-ap_v2.0.0_shacl.ttl</a>
+    <h2>SHACL Contraints</h2>
+    <p>The SHACL constraints for EPOS-DCAT-AP are available at: </p>
+    <p><a href="https://github.com/epos-eu/EPOS-DCAT-AP/blob/EPOS-DCAT-AP-v2.0/docs/epos-dcat-ap_v3.0.0_shacl.ttl">
+        https://github.com/epos-eu/EPOS-DCAT-AP/blob/EPOS-DCAT-AP-v2.0/docs/epos-dcat-ap_v3.0.0_shacl.ttl</a>
     </p>
-  <p> They represent a set of integrity constraints used to validate instance shapes with respect to:
-    <ul><li>cardinality constraints, both for properties that have a minimum occurrence greater or equal to than 1 (for example, there needs to be at least one occurrence of the mandatory property title of a Dataset) and properties that have an explicit maximum occurrence (for example, there can be a maximum of one licence for a Distribution)
-      </li>
-      <li> restrictions concerning ranges (expressed as sh:nodeKind) of properties to avoid that properties, irrespective of whether they are mandatory, recommended or optional, are provided that violate range declarations.
-      </li>
-    </ul>    
-   </section> 
+    <p> They represent a set of integrity constraints used to validate instance shapes with respect to:
+      <ul>
+        <li>cardinality constraints, both for properties that have a minimum occurrence greater or equal to than 1 (for example, there needs to be at least one occurrence of the mandatory property title of a Dataset) and properties that have an
+          explicit maximum occurrence (for example, there can be a maximum of one licence for a Distribution)
+        </li>
+        <li> restrictions concerning ranges (expressed as sh:nodeKind) of properties to avoid that properties, irrespective of whether they are mandatory, recommended or optional, are provided that violate range declarations.
+        </li>
+      </ul>
+  </section>
 
 
 </body>
