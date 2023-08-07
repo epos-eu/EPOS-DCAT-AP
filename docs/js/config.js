@@ -71,14 +71,9 @@ var respecConfig = {
       {
        key: "Contributors:",
        data: [{
-          value: "Luca Trani",
-          orcid:  "0000-0001-7750-7254",
-          href: "https://orcid.org/0000-0001-7750-7254"
-       },
-       {
-           value: "Daniele Bailo",
-           orcid:  "0000-0003-0695-4406",
-           href: "https://orcid.org/0000-0003-0695-4406"
+          value: "Kety Giuliacci",
+          orcid:  "0000-0002-7916-6884",
+          href: "https://orcid.org/0000-0002-7916-6884"
        },
        {
            value: "Epos Community"
