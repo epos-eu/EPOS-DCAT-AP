@@ -1,0 +1,144 @@
+<table class="simple" id="table-optional-properties-for-dataset-series">
+  <thead>
+      <tr>
+        <th class="small">
+            <p>Property</p>
+        </th>
+        <th class="small">
+            <p>URI</p>
+        </th>
+        <th class="small">
+            <p>Range</p>
+        </th>
+        <th class="large">
+            <p>Usage note</p>
+        </th>
+        <th class="xsmall">
+            <p>Card.</p>
+        </th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr class="property optional" id="dataset-series-description">
+          <td>
+              <p>description</p>
+          </td>
+          <td>
+              <p><code>dct:description</code></p>
+          </td>
+          <td>
+          <p><code>rdfs:Literal</code></p>
+          </td>
+          <td class="justify">
+              <p>This property contains a free-text account of the Dataset Series. This property can be repeated for parallel language versions of the description.</p>
+          </td>
+          <td class="center">
+              <p>1..n</p>
+          </td>
+      </tr>
+      <tr class="property optional" id="dataset-series-first">
+        <td>
+            <p>first</p>
+        </td>
+        <td>
+            <p><code>dct:first</code></p>
+        </td>
+        <td>
+        <p><code>----</code></p>
+        </td>
+        <td class="justify">
+            <p>This property contains the first resource in an ordered collection or series of resources, to which the current resource belongs.</p>
+        </td>
+        <td class="center">
+            <p>0..1</p>
+        </td>
+      </tr>
+      <tr class="property optional" id="dataset-series-frequency">
+        <td>
+            <p>accrualPeriodicity</p>
+        </td>
+        <td>
+            <p><code>dct:accrualPeriodicity</code></p>
+        </td>
+        <td>
+          <p><code>dct:Frequency</code></p>
+        </td>
+        <td class="justify">
+            <p>This property contains the frequency at which the Dataset Series is updated. The frequency of a dataset series is not equal to the frequency of the dataset in the collection.
+            </p>
+        </td>
+        <td class="center">
+            <p>0..1</p>
+        </td>
+      </tr>
+      <tr class="property optional" id="dataset-series-issued">
+        <td>
+            <p>issued</p>
+        </td>
+        <td>
+            <p><code>dct:issued</code></p>
+        </td>
+        <td>
+        <p><code>rdfs:Literal</code> typed as <code>xsd:date</code> or <code>xsd:dateTime</code></p>
+        </td>
+        <td class="justify">
+            <p>This property contains the date of formal issuance (e.g., publication) of the Dataset Series. The moment when the dataset series was established as a managed resource. This is not equal to the release date of the oldest dataset in the collection of the dataset series. </p>
+        </td>
+        <td class="center">
+            <p>0..1</p>
+        </td>
+      </tr>
+      <tr class="property optional" id="dataset-series-last">
+        <td>
+            <p>last</p>
+        </td>
+        <td>
+            <p><code>dct:last</code></p>
+        </td>
+        <td>
+        <p><code></code></p>
+        </td>
+        <td class="justify">
+            <p>This property contains the last resource in an ordered collection or series.</p>
+        </td>
+        <td class="center">
+            <p>0..1</p>
+        </td>
+      </tr>
+      <tr class="property optional" id="dataset-series-modified">
+        <td>
+            <p>modified</p>
+        </td>
+        <td>
+            <p><code>dct:modified</code></p>
+        </td>
+        <td>
+        <p><code>rdfs:Literal</code> typed as <code>xsd:date</code> or <code>xsd:dateTime</code></p>
+        </td>
+        <td class="justify">
+            <p>This property contains the most recent date on which the Dataset Series was changed or modified. This is not equal to the most recent modified dataset in the collection of the dataset series.</p>
+        </td>
+        <td class="center">
+            <p>0..1</p>
+        </td>
+      </tr>
+
+      <tr class="property optional" id="dataset-series-seriesmember">
+        <td>
+            <p>series member</p>
+        </td>
+        <td>
+            <p><code>dcat:seriesMember</code></p>
+        </td>
+        <td>
+            <p><code>---</code></p>
+        </td>
+        <td class="justify">
+            <p>This property refers to a member of the Dataset Series.</p>
+        </td>
+        <td class="center">
+            <p>0..n</p>
+        </td>
+      </tr>
+  </tbody>
+</table>

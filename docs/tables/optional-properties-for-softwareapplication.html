@@ -1,0 +1,211 @@
+<table class="simple" id="table-optional-properties-for-softwareapplication">
+<thead>
+    <tr>
+      <th class="small">
+          <p>Property</p>
+      </th>
+      <th class="small">
+          <p>URI</p>
+      </th>
+      <th class="small">
+          <p>Range</p>
+      </th>
+      <th class="large">
+          <p>Usage note</p>
+      </th>
+      <th class="xsmall">
+          <p>Card.</p>
+      </th>
+    </tr>
+</thead>
+<tbody>
+  <tr class="property optional ap-ext" id="softwareapplication-description">
+    <td>
+        <p>description</p>
+    </td>
+    <td>
+        <p><code>schema:description</code></p>
+    </td>
+    <td>
+        <p><code>rdfs:Literal</code></p>
+    </td>
+    <td class="justify">
+        <p>This property contains the description of the Software Application.</p>
+    </td>
+    <td class="center">
+        <p>0..1</p>
+    </td>
+  </tr>
+  <tr class="property optional ap-ext" id="softwareapplication-downloadurl">
+    <td>
+        <p>downloadUrl</p>
+    </td>
+    <td>
+        <p><code>schema:downloadUrl</code></p>
+    </td>
+    <td>
+        <p><code>rdfs:Literal</code><br>typed with URI</p>
+    </td>
+    <td class="justify">
+        <p>If the Software Application can be downloaded this property contains the URL to download it.</p>
+    </td>
+    <td class="center">
+        <p>0..1</p>
+    </td>
+  </tr>
+  <tr class="property optional ap-ext" id="softwareapplication-installurl">
+    <td>
+        <p>installUrl</p>
+    </td>
+    <td>
+        <p><code>schema:installUrl</code></p>
+    </td>
+    <td>
+        <p><code>rdfs:Literal</code><br>typed with URI</p>
+    </td>
+    <td class="justify">
+        <p>This property contains the URL at which the application may be installed.</p>
+    </td>
+    <td class="center">
+        <p>0..1</p>
+    </td>
+  </tr>
+  <tr class="property optional ap-ext" id="softwareapplication-keywords">
+    <td>
+        <p>keywords</p>
+    </td>
+    <td>
+        <p><code>schema:keywords</code></p>
+    </td>
+    <td>
+        <p><code>rdfs:Literal</code></p>
+    </td>
+    <td class="justify">
+        <p>This property contains the keywords used to describe the Software Application. Multiple entries in a keywords list are typically delimited by commas.</p>
+    </td>
+    <td class="center">
+        <p>0..n</p>
+    </td>
+  </tr>
+  <tr class="property optional ap-ext" id="softwareapplication-license">
+    <td>
+        <p>license</p>
+    </td>
+    <td>
+        <p><code>schema:license</code></p>
+    </td>
+    <td>
+        <p><code>rdfs:Literal typed with URI</code></p>
+    </td>
+    <td class="justify">
+        <p>This property contains the URL of the license document that applies to the Software Application.</p>
+    </td>
+    <td class="center">
+        <p>0..1</p>
+    </td>
+  </tr>
+  <tr class="property optional ap-ext" id="softwareapplication-main-entity-of-page">
+    <td>
+        <p>mainEntityOfPage</p>
+    </td>
+    <td>
+        <p><code>schema:mainEntityOfPage</code></p>
+    </td>
+    <td>
+        <p><code>rdfs:Literal</code><br>typed with URI</p>
+    </td>
+    <td class="justify">
+        <p>This property refers to the web page URL which describes the Software Application.</p>
+    </td>
+    <td class="center">
+        <p>0..1</p>
+    </td>
+  </tr>
+  <tr class="property optional ap-ext" id="softwareapplication-potentialaction">
+    <td>
+        <p>potentialAction</p>
+    </td>
+    <td>
+        <p><code>schema:potentialAction</code></p>
+    </td>
+    <td>
+        <p><code>schema:ControlAction</code></p>
+    </td>
+    <td class="justify">
+        <p>This property describes the object upon which the action is carried out and the result produced in the action.</p>
+    </td>
+    <td class="center">
+        <p>0..1</p>
+    </td>
+  </tr>
+  <tr class="property optional ap-ext" id="softwareapplication-relation">
+    <td>
+        <p>relation</p>
+    </td>
+    <td>
+        <p><code>dct:relation</code></p>
+    </td>
+    <td>
+        <p><code>hydra:Operation</code></p>
+    </td>
+    <td class="justify">
+        <p>This property refers to the WebService Operation linked to the application.</p>
+    </td>
+    <td class="center">
+        <p>0..n</p>
+    </td>
+  </tr>
+  <tr class="property optional ap-ext" id="softwareapplication-software-requirements">
+    <td>
+        <p>softwareRequirements</p>
+    </td>
+    <td>
+        <p><code>schema:softwareRequirements</code></p>
+    </td>
+    <td>
+        <p><code>rdfs:Literal</code><br>typed with URI</p>
+    </td>
+    <td class="justify">
+        <p>Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application.</p>
+    </td>
+    <td class="center">
+        <p>0..1</p>
+    </td>
+  </tr>
+  <tr class="property optional ap-ext" id="softwareapplication-software-version">
+    <td>
+        <p>softwareVersion</p>
+    </td>
+    <td>
+        <p><code>schema:softwareVersion</code></p>
+    </td>
+    <td>
+        <p><code>rdfs:Literal</code></p>
+    </td>
+    <td class="justify">
+        <p>This property contains the version of the Software Application instance.</p>
+    </td>
+    <td class="center">
+        <p>0..1</p>
+    </td>
+  </tr>
+  <tr class="property optional ap-ext" id="softwareapplication-theme">
+    <td>
+        <p>theme</p>
+    </td>
+    <td>
+        <p><code>dcat:theme</code></p>
+    </td>
+    <td>
+        <p><code>skos:Concept</code></p>
+    </td>
+    <td class="justify">
+        <p>This property refers to a category of the Software Application. A Software may be associated with multiple themes.</p>
+    </td>
+    <td class="center">
+        <p>0..n</p>
+    </td>
+  </tr>
+
+</tbody>
+</table>

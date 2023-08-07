@@ -1,0 +1,220 @@
+<table class="simple" id="table-epos-dcat-ap-classes">
+<thead>
+  <tr>
+    <th class="small">
+        <p>Class name</p>
+    </th>
+    <th class="large">
+        <p>Usage note</p>
+    </th>
+    <th class="medium">
+        <p>URI</p>
+    </th>
+    <th class="small">
+        <p>Reference</p>
+    </th>
+  </tr>
+</thead>
+<tbody>
+  <tr class="class optional ap-ext" id="address">
+    <td>
+        <p><a href="#properties-for-address">Address</a></p>
+    </td>
+    <td>
+        <p>A postal address of the Kind.</p>
+    </td>
+    <td>
+        <p><code>vcard:Address</code></p>
+    </td>
+    <td>
+        <p><a data-cite="VCARD-RDF#d4e1292">§&nbsp;Address</a><br>[[VCARD-RDF]]</p>
+    </td>
+  </tr>
+
+  <tr class="class optional ap-ext" id="equipment">
+    <td>
+        <p><a href="#properties-for-equipment">Equipment</a></p>
+    </td>
+    <td>
+        <p>A Device.</p>
+        <p>Note: it is a subclass of <code>rdfs:Resource</code></p>
+    </td>
+    <td>
+        <p><code>epos:Equipment</code>
+    </td>
+
+    <td>
+      <p><a class="sec-ref" data-cite="RDF-SCHEMA#ch_resource">§&nbsp;<bdi class="secno">2.1 </bdi>rdfs:Resource</a><br>[[RDF-SCHEMA]]</p>
+      <p>  <a href="https://schema.org/Product">§&nbsp;Product</a><br>[[SCHEMA-ORG]]</p>
+    </td>
+  </tr>
+
+  <tr class="class optional ap-ext" id="facility">
+    <td>
+        <p><a href="#properties-for-facility">Facility</a></p>
+    </td>
+    <td>
+        <p>A facility with resources and related services used by the scientific community to conduct top-level research in their respective fields, ranging from social sciences to astronomy, genomics to nanotechnologies. </p>
+        <p>Examples include laboratories, special habitats, libraries, databases, biological archives, etc. A type of facility could be a research infrastructure a higher aggregated entity.</p>
+
+        <p>Note: it is a subclass of <code>rdfs:Resource</code><p>
+    </td>
+    <td>
+        <p><code>epos:Facility</code></p>
+    </td>
+    <td>
+      <p><a class="sec-ref" data-cite="RDF-SCHEMA#ch_resource">§&nbsp;<bdi class="secno">2.1 </bdi>rdfs:Resource</a><br>[[RDF-SCHEMA]]</p>
+    </td>
+  </tr>
+
+  <tr class="class optional ap-ext" id="iritemplate">
+    <td>
+      <p><a href="#properties-for-iritemplate">IriTemplate</a></p>
+    </td>
+    <td>
+      <p>An IRI template with a set of IriTemplateMapping.</p>
+      <p>Note: it is a subclass of <code>rdfs:Resource</code></p>
+    </td>
+    <td>
+        <p><code>hydra:IriTemplate</code></p>
+    </td>
+    <td>
+        <p><a data-cite="HYDRA1#IriTemplate">§&nbsp;hydra:IriTemplate</a><br>[[HYDRA]]</p>
+    </td>
+  </tr>
+
+  <tr class="class optional ap-ext" id="iritemplatemapping">
+    <td>
+        <p><a href="#properties-for-iritemplatemapping">IriTemplateMapping</a></p>
+    </td>
+    <td>
+        <p>A mapping from an IRI template variable to a property. The syntax of the template literal is specified by its datatype and defaults to the [[RFC6570]] URI Template syntax, which can be explicitly indicated by hydra:Rfc6570Template.</p>
+        <p>Note: it is a subclass of <code>rdfs:Resource</code></p>
+    </td>
+    <td>
+        <p><code>hydra:IriTemplateMapping</code></p>
+    </td>
+    <td>
+        <p><a class="src-ref" data-cite="HYDRA1#IriTemplateMapping">§&nbsp;hydra:IriTemplateMapping</a><br>[[HYDRA]]</p>
+    </td>
+  </tr>
+  <tr class="class optional ap-ext" id="operation">
+    <td>
+        <p><a href="#properties-for-operation">Operation</a></p>
+    </td>
+    <td>
+        <p>A description of a Data Service operation which includes an IriTemplate.</p>
+        <p>Note: it is a subclass of <code>rdfs:Resource</code></p>
+    </td>
+    <td>
+        <p><code>hydra:Operation</code></p>
+    </td>
+    <td>
+        <p><a data-cite="HYDRA1#Operation">§&nbsp;hydra:Operation</a><br>[[HYDRA]]</p>
+    </td>
+  </tr>
+  <tr class="class optional ap-ext" id="postaladdress">
+    <td>
+        <p><a href="#properties-for-postaladdress">PostalAddress</a></p>
+    </td>
+    <td>
+        <p>A postal address of a Person or Organization.</p>
+    </td>
+    <td>
+        <p><code>schema:PostalAddress</code></p>
+    </td>
+    <td>
+        <a href="https://schema.org/PostalAddress">§&nbsp;PostalAddress</a><br>[[SCHEMA-ORG]]
+    </td>
+  </tr>
+  <tr class="class optional ap-ext" id="project">
+    <td>
+        <p><a href="#properties-for-project">Project</a></p>
+    </td>
+    <td>
+        <p>An associated project for an Organization.</p>
+    </td>
+    <td>
+        <p><code>foaf:Project</code></p>
+    </td>
+    <td>
+       <p><a data-cite="FOAF#term_Project">§&nbsp;Class: foaf:Project</a><br>[[FOAF]]</p>
+    </td>
+  </tr>
+  <tr class="class optional ap-ext" id="propertyvalue">
+    <td>
+        <p><a href="#properties-for-propertyvalue">PropertyValue</a></p>
+    </td>
+    <td>
+        <p>A property-value pair, e.g. representing a feature of a product or place. </p>
+    </td>
+    <td>
+        <p><code>schema:PropertyValue</code></p>
+    </td>
+    <td>
+      <p><a href="https://schema.org/PropertyValue">§&nbsp;PropertyValue</a><br>[[SCHEMA-ORG]]</p>
+    </td>
+  </tr>
+  <tr class="class optional ap-ext" id="publication">
+    <td>
+        <p><a href="#properties-for-publication">Publication</a></p>
+    </td>
+    <td>
+        <p>A text publication is a resource relating to a dataset, data product or other.</p>
+        <p>Note: it is a subclass of <code>schema:CreativeWork</code></p>
+    </td>
+    <td>
+        <p><code>epos:Publication</code></p>
+    </td>
+    <td>
+      <p><a href="https://schema.org/#CreativeWork">§&nbsp;CreativeWork</a><br>[[SCHEMA-ORG]]</p>
+    </td>
+  </tr>
+  <tr class="class optional ap-ext" id="service">
+    <td>
+        <p><a href="#properties-for-service">Service</a></p>
+    </td>
+    <td>
+        <p>A service provided by an Organization.</p>
+        <p>Note: it is a subclass of <code>schema:Intangible</code></p>
+    </td>
+    <td>
+        <p><code>schema:Service</code></p>
+    </td>
+    <td>
+      <a href="https://schema.org/Service">§&nbsp;Service</a><br>[[SCHEMA-ORG]]
+    </td>
+
+  </tr>
+  <tr class="class optional ap-ext" id="softwareapplication">
+    <td>
+        <a href="#properties-for-softwareapplication">SoftwareApplication</a>
+    </td>
+    <td>
+        <p>A software package, application and program.</p>
+        <p>Note: it is a subclass of <code>schema:CreativeWork</code></p>
+    </td>
+    <td>
+        <p><code>schema:SoftwareApplication </code></p>
+    </td>
+    <td>
+        <a href="https://schema.org/SoftwareApplication">§&nbsp;SoftwareApplication</a><br>[[SCHEMA-ORG]]
+    </td>
+  </tr>
+  <tr class="class optional ap-ext" id="softwaresourcecode">
+    <td>
+        <a href="#properties-for-softwaresourcecode">SoftwareSourceCode</a>
+    </td>
+    <td>
+        <p>A computer programming source code. Example: Full (compile ready) solutions, code snippet samples, scripts, templates.</p>
+        <p>Note: it is a subclass of <code>schema:CreativeWork</code></p>
+    </td>
+    <td>
+        <p><code>schema:SoftwareSourceCode</code></p>
+    </td>
+    <td>
+        <p><a href="https://schema.org/SoftwareSourceCode">§&nbsp;SoftwareSourceCode</a><br>[[SCHEMA-ORG]]</p>
+    </td>
+  </tr>
+</tbody>
+</table>

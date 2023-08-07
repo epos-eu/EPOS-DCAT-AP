@@ -1,0 +1,91 @@
+<table class="simple" id="table-optional-properties-for-catalog-record">
+  <thead>
+    <tr>
+      <th class="small">
+          <p>Property</p>
+      </th>
+      <th class="small">
+          <p>URI</p>
+      </th>
+      <th class="small">
+          <p>Range</p>
+      </th>
+      <th class="large">
+          <p>Usage note</p>
+      </th>
+      <th class="xsmall">
+          <p>Card.</p>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr class="property optional" id="catalog-record-description">
+        <td>
+            <p>description</p>
+        </td>
+        <td>
+            <p><code>dct:description</code></p>
+        </td>
+        <td>
+            <p><code>rdfs:Literal</code></p>
+        </td>
+        <td>
+            <p>This property contains a free-text account of the Catalog Record. This property can be repeated for parallel language versions of the description <!-- - see <a class="no-secRef" href="#accessibility-and-multilingual-aspects"></a>-->.</p>
+        </td>
+        <td class="center">
+            <p>0..n</p>
+        </td>
+      </tr>
+      <tr class="property optional" id="catalog-record-language">
+        <td>
+            <p>language</p>
+        </td>
+        <td>
+            <p><code>dct:language</code></p>
+        </td>
+        <td>
+            <p><code>dct:LinguisticSystem</code></p>
+        </td>
+        <td class="justify">
+            <p>This property refers to a language used in the textual metadata describing titles, descriptions, etc. of the Catalog Record. This property can be repeated if the metadata is provided in multiple languages <!-- - see <a class="no-secRef" href="#accessibility-and-multilingual-aspects"></a>-->.</p>
+        </td>
+        <td class="center">
+            <p>0..n</p>
+        </td>
+      </tr>
+      <tr class="property optional" id="catalog-record-source">
+        <td>
+            <p>source</p>
+        </td>
+        <td>
+            <p><code>dct:source</code></p>
+        </td>
+        <td>
+            <p><code>dcat:CatalogRecord</code></p>
+        </td>
+        <td class="justify">
+            <p>This property refers to the original metadata record that was used in creating the Catalog Record.</p>
+        </td>
+        <td class="center">
+            <p>0..1</p>
+        </td>
+      </tr>
+      <tr class="property optional" id="catalog-record-title">
+        <td>
+            <p>title</p>
+        </td>
+        <td>
+            <p><code>dct:title</code></p>
+        </td>
+        <td>
+            <p><code>rdfs:Literal</code></p>
+        </td>
+        <td class="justify">
+            <p>This property contains a name given to the Catalog Record. This property can be repeated for parallel language versions of the name <!-- - see <a class="no-secRef" href="#accessibility-and-multilingual-aspects"></a>-->.</p>
+        </td>
+        <td class="center">
+            <p>0..n</p>
+        </td>
+      </tr>
+  </tbody>
+</table>
