@@ -1,0 +1,33 @@
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#>.
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[]
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001> a dcat:Distribution ;
+
+  # Mandatory properties
+    # This property dcat:accessURL contains url of DataService
+    dcat:accessURL "http://www.orfeus-eu.org/fdsnws/dataselect/1/query"^^xsd:anyURI ;
+    dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001" ;
+
+  # Recommended properties
+    # - dcatap:availability
+    dct:description "Description of Seismic Waveform Distribution" ;
+
+    # The possible types of the file format are here: http://publications.europa.eu/mdr/resource/authority/file-type/html/filetypes-eng.html
+    dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI ;
+
+    dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+
+  # Optional properties
+    dcat:accessService <https://www.epos-eu.org/epos-dcat-ap/Seismology/DataService/001> ;
+    # This property SHOULD be used to indicate the model, schema, ontology, view or profile that this representation of a dataset conforms to. This is (generally) a complementary concern to the media-type or format.
+    dct:conformsTo "http://www.fdsn.org/pdf/SEEDManual_V2.4.pdf"^^xsd:anyURI ;
+    dct:issued "2017-01-01"^^xsd:date ;
+    dct:modified "2017-01-01"^^xsd:date ;
+    dct:title "Title of Seismic Waveform Distribution" ;
+  .

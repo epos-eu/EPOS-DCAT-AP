@@ -1,0 +1,55 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[]
+
+<https://www.epos-eu.org/epos-dcat-ap/Service/001> a schema:Service ;
+
+  # Mandatory
+    # This property contains the main identifier for the Service.
+    schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Service/001";
+
+  # Recommended
+    # This property refers to the Contact Point defined for the Service.
+    schema:contactPoint <http://orcid.org/0000-0002-6250-0000/contactPoint> ;
+
+    # This property contains the description of the Service.
+    schema:description "description service" ;
+
+    # This property contains the name of the Service.
+    schema:name "Service name" ;
+
+    # This property refers to an Organization or Person responsible for making the Service available.
+    schema:provider <PIC:000518944> ;
+
+  # Optional
+    # This property contains the keywords used to describe the Service. Multiple entries in a keywords list are typically delimited by commas.
+    schema:keywords "keywords1, keywords2, keywords3" ;
+
+    #  This property contains the type of service being offered.
+    schema:serviceType "TNA service" ;
+
+    # This property refers to a geographical area (Point or Polygon) covered by the Service.
+    dct:spatial [ a dct:Location ;
+    	dcat:bbox  "POLYGON((14.7 37.6 , 14.7 38.1 , 15.7 38.1 , 15.7 37.6 , 14.7 37.6))"^^gsp:wktLiteral;
+    ];
+
+    # This property refers to a temporal period that the Service covers.
+    dct:temporal [ a dct:PeriodOfTime ;
+            dcat:startDate "2020-01-01T00:00:00Z"^^xsd:dateTime ;
+            dcat:endDate "2020-10-31T00:00:00Z"^^xsd:dateTime ;
+    ] ;
+
+    # This property refers to a category (skos:Concept) of the Service. A Service may be associated with multiple themes.
+    dcat:theme <epos:SeismicStation> ;
+
+    # This property refers to a page about the Service.
+    schema:url "http://serviceTest.org"^^xsd:anyURI ;
+.

@@ -1,0 +1,999 @@
+@prefix : <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcatap: <http://data.europa.eu/r5r> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+@prefix http: <http://www.w3.org/2006/http#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix spdx: <http://spdx.org/rdf/terms#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Person
+<http://orcid.org/0000-0001-7750-0000> a schema:Person ;
+	schema:identifier [ a schema:PropertyValue ;
+	schema:propertyID  "orcid" ;
+	schema:value   "0000-0001-7750-0000" ;
+	];
+	schema:identifier [ a schema:PropertyValue ;
+	schema:propertyID  "ScopusAuthorID" ;
+	schema:value   "5500056000" ;
+	];
+	schema:familyName "Surname1" ;
+	schema:givenName "Name1" ;
+	schema:address [ a schema:PostalAddress ;
+		schema:streetAddress "address, 1" ;
+		schema:addressLocality "Rome" ;
+		schema:postalCode "00143" ;
+		schema:addressCountry "Italy" ;
+	];
+	schema:email "test1@private.com" ;
+	schema:telephone "+001002003004" ;
+	schema:url  "http://orcid.org/0000-0001-7750-0000"^^xsd:anyURI ;
+	schema:qualifications "Researcher" ;
+	schema:affiliation <PIC:000518944> ;
+	schema:contactPoint <http://orcid.org/0000-0001-7750-0000/legalContact> ;
+	schema:contactPoint <http://orcid.org/0000-0001-7750-0000/scientificContact> ;
+	schema:contactPoint <http://orcid.org/0000-0001-7750-0000/financialContact> ;
+.
+
+# ContactPoint
+<http://orcid.org/0000-0001-7750-0000/legalContact> a schema:ContactPoint ;
+	schema:email "test1@email.it ";
+	schema:availableLanguage "en" ;
+	schema:contactType "legalContact";
+.
+
+<http://orcid.org/0000-0001-7750-0000/financialContact> a schema:ContactPoint ;
+	schema:email "test1@email.it ";
+	schema:availableLanguage "en" ;
+	schema:contactType "financialContact" ;
+.
+
+<http://orcid.org/0000-0001-7750-0000/scientificContact> a schema:ContactPoint ;
+	schema:email "test1@email.it ";
+	schema:availableLanguage "en" ;
+	schema:contactType "scientificContact" ;
+.
+
+<http://orcid.org/0000-0002-6250-0000> a schema:Person ;
+	schema:identifier "http://orcid.org/0000-0002-6250-0000" ;
+	schema:familyName "Surname2" ;
+	schema:givenName "Name2" ;
+	schema:address [ a schema:PostalAddress ;
+		schema:streetAddress "address2, 2" ;
+		schema:addressLocality "Rome" ;
+		schema:postalCode "00143" ;
+		schema:addressCountry "Italy" ;
+	];
+	schema:email "test2@email.it" ;
+	schema:telephone "+39001584663" ;
+	schema:url  "http://orcid.org/0000-0002-6250-0000"^^xsd:anyURI ;
+	schema:qualifications "IT" ;
+	schema:affiliation <PIC:000518944> ;
+	schema:contactPoint <http://orcid.org/0000-0002-6250-0000/contactPoint> ;
+.
+
+<http://orcid.org/0000-0002-6250-0000/contactPoint> a schema:ContactPoint ;
+	schema:email "test2@knmi@nl" ;
+	schema:availableLanguage "en" ;
+	schema:contactType "manager";
+.
+
+<PIC:000518944> a schema:Organization ;
+	schema:identifier [ a schema:PropertyValue ;
+		schema:propertyID "PIC" ;
+		schema:value "000518944" ;
+	];
+	schema:legalName "Institute test1" ;
+	schema:leiCode "Legal Entity Identifier Search" ;
+	schema:address [ a schema:PostalAddress ;
+		schema:streetAddress "address, 002" ;
+		schema:addressLocality "Rome" ;
+		schema:postalCode "00143" ;
+		schema:addressCountry "Italy" ;
+	];
+	schema:logo "http://www.test.it/logo.png"^^xsd:anyURI ;
+	schema:url "http://www.test.it"^^xsd:anyURI  ;
+	schema:email "test1_institute@email.it" ;
+	schema:telephone "+0302206911" ;
+	schema:contactPoint <http://orcid.org/0000-0001-7750-0000/legalContact> ;
+	schema:contactPoint <http://orcid.org/0000-0001-7750-0000/scientificContact> ;
+	schema:contactPoint <http://orcid.org/0000-0001-7750-0000/financialContact> ;
+	schema:memberOf <PIC:007012076> ;
+.
+
+<PIC:007012076> a schema:Organization ;
+	schema:identifier [ a schema:PropertyValue ;
+		schema:propertyID  "PIC" ;
+		schema:value   "007012076" ;
+	];
+	schema:legalName "Institute test1" ;
+	schema:leiCode "Legal Entity Identifier Search" ;
+	schema:address [ a schema:PostalAddress ;
+		schema:streetAddress "address, 002" ;
+		schema:addressLocality "Rome" ;
+		schema:postalCode "00143" ;
+		schema:addressCountry "Italy" ;
+	];
+	schema:url "http://www.test2.it/"^^xsd:anyURI ;
+	schema:email "test2_example@email.it" ;
+	schema:telephone "+0302206922" ;
+	schema:contactPoint <http://orcid.org/0000-0001-7750-0000/legalContact> ;
+	schema:contactPoint <http://orcid.org/0000-0001-7750-0000/scientificContact> ;
+	schema:contactPoint <http://orcid.org/0000-0001-7750-0000/financialContact> ;
+.
+
+# Dataset
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001> a dcat:Dataset ;
+####
+# Mandatory properties
+####
+	dct:description "Primary Seismic Waveform Data" ;
+	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001" ;
+	dct:title "Primary Seismic Waveform Data" ;
+
+####
+# Recommended properties
+####
+	dcat:contactPoint <http://orcid.org/0000-0002-6250-0000/contactPoint> ;
+	# This property links the Dataset to an available Distribution.
+	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001> ;
+
+	dcat:keyword "seismic waveform","continuous waveform" ,"mseed" ;
+
+	# This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
+	dcat:theme  <epos:SeismicWaveform> ;
+
+	# This property refers to an Organisation responsible for making the Dataset available.
+	dct:publisher <PIC:000518944> ;
+
+	# This property refers to a geographic region that is covered by the Dataset.
+	dct:spatial [ a dct:Location ;
+			dcat:bbox "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral ;
+	];
+
+	# This property refers to a temporal period that the Dataset covers.
+	dct:temporal [ a dct:PeriodOfTime ;
+		dcat:startDate "1988-01-01T00:00:00Z"^^xsd:dateTime ;
+		dcat:endDate "2022-01-01T00:00:00Z"^^xsd:dateTime ;
+	] ;
+
+####
+# Optional properties
+####
+	adms:identifier [ a adms:Identifier ;
+			adms:schemeAgency "DDSS-ID" ;
+			skos:notation "WP08-DDSS-001" ;
+	];
+
+	# - adms:sample
+	# - adms:versionNotes
+	# - dcat:landingPage
+	# - dcat:qualifiedRelation
+	# - dcat:spatialResolutionInMeters
+	# - dcat:temporalResolution
+	# - dct:accessRights
+
+	# This property refers to the frequency at which the Dataset is updated.
+	# The possible types are here: http://purl.org/cld/freq/
+	dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI ;
+
+	# - dct:conformsTo
+
+	dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+
+	# - dct:creator
+
+	# This property refers to a related Dataset that is part of the described Dataset.
+	# dct:hasPart <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
+
+	dqv:hasQualityAnnotation [ a oa:Annotation ;
+		oa:hasBody "URL_of_QualityAssurance"^^xsd:anyURI  ;
+		oa:hasTarget <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001> ;
+	];
+	# This property refers to a related Dataset of which the described Dataset is a version, edition, or adaptation.
+	# dct:hasVersion <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
+
+	# This property refers to a related Dataset in which the described Dataset is physically or logically included.
+	# dct:isPartOf <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
+
+	# This property refers to a related Dataset of which the described Dataset is a version, edition, or adaptation.
+	# dct:isVersionOf <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
+
+	# - dct:isReferencedBy
+
+	dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+
+	# - dct:language
+
+	dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+
+	# - dct:provenance
+	# - dct:relation
+	# - dct:source
+
+
+	# This property refers to the type of the Dataset.
+	# Example of frequency using a controlled vocabulary http://dublincore.org/2012/06/14/dctype
+	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
+
+	# - foaf:page
+
+	owl:versionInfo "1.0.0" ;
+
+	# - prov:qualifiedAttribution
+	# - prov:wasGeneratedBy
+.
+
+# Distribution
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001> a dcat:Distribution ;
+####
+# Mandatory properties
+####
+	# This property dcat:accessURL contains url of  DataService ->endpoinURL
+	dcat:accessURL "http://www.orfeus-eu.org/fdsnws/dataselect/1/query"^^xsd:anyURI ;
+
+	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001" ;
+####
+# Recommended properties
+####
+	# - dcatap:availability
+	dct:description "Description of Seismic Waveform Distribution" ;
+
+
+	# This property refers to the file format of the Distribution.
+	# The possible types are here: http://publications.europa.eu/mdr/resource/authority/file-type/html/filetypes-eng.html
+	dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI ;
+
+	# This property refers to the licence under which the Distribution is made available.
+	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+####
+# Optional properties
+####
+	# - adms:status
+
+	# conformsTo --> accessService
+	dcat:accessService <https://www.epos-eu.org/epos-dcat-ap/Seismology/DataService/001> ;
+
+	# This property contains the size of a Distribution in bytes.
+	# dcat:byteSize "1024"^^xsd:decimal ;
+
+	# - dcat:compressFormat
+
+	# If the type of Distribution is DOWNLOADABLE FILE, this property contains a URL that is a direct link to a downloadable file in a given format. Otherwise, this property is optional.
+	# dcat:downloadURL "Direct_link_to_downloadable_file"^^xsd:anyURI ;
+
+	# - dcat:mediaType
+	# - dcat:packageFormat
+	# - dcat:spatialResolutionInMeters
+	# - dcat:temporalResolution
+
+	# This property SHOULD be used to indicate the model, schema, ontology, view or profile that this representation of a dataset conforms to. This is (generally) a complementary concern to the media-type or format.
+	dct:conformsTo "http://www.fdsn.org/pdf/SEEDManual_V2.4.pdf"^^xsd:anyURI ;
+
+	dct:issued "2017-01-01"^^xsd:date ;
+
+	# - dct:language
+
+	dct:modified "2017-01-01"^^xsd:date ;
+
+	# - dct:rights
+
+	dct:title "Title of Seismic Waveform Distribution" ;
+
+	# - foaf:page
+	# - odrl:hasPolicy
+	# - spdx:checksum
+.
+
+# DataService
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/DataService/001> a dcat:DataService ;
+####
+# Mandatory properties
+####
+
+	#hydra:entrypoint -->dcat:endpointURL
+	dcat:endpointURL "http://www.orfeus-eu.org/fdsnws/dataselect/1/query"^^xsd:anyURI ;
+
+	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/DataService/001" ;
+	#name -->title
+	dct:title "Title of Seismic Waveform Data Selvice" ;
+
+####
+# Recommended properties
+####
+	# This property contains contact information that can be used for sending comments about the Web Service.
+	dcat:contactPoint <http://orcid.org/0000-0002-6250-0000/contactPoint> ;
+
+	# This property refers to a web service operation supported by the Web Service.
+	#hydra:supportedOperation -->  dcat:endpointDescription
+	dcat:endpointDescription <https://www.epos-eu.org/epos-dcat-ap/Seismology/DataService/001/Operation/001> ;
+
+	dcat:servesDataset <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001> ;
+
+	#This property refers to a category of the Web Service. A Web Service may be associated with multiple themes.
+	dcat:theme  <epos:SeismicWaveform> ;
+
+	dct:description "FDSN Standard webservice to download waveform data" ;
+
+	#schema:datePublished -->dct:issued
+	dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+
+	#schema:dateModified -->dct:modified
+	dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+
+	# This property refers to an Organisation responsible for making the Web Service available.
+	#dct:publisher-->schema:provider
+	dct:publisher <PIC:000518944> ;
+
+####
+# Optional properties
+####
+	dcat:keyword "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "Dataselect", "FDSN-WS", "Seismic Waveform", "EIDA" ;
+
+	# - dct:accessRight
+
+	# This property refers to the Service API definition. (Optional)
+	dct:conformsTo "https://www.orfeus-eu.org/data/eida/webservices/dataselect/"^^xsd:anyURI ;
+
+	# This property refers to the licence under which the Distribution is made available.
+	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+
+	# This property refers to a geographic region that is covered by the Dataset.
+	# The POLYGON format is: POLYGON((lon1 lat1, lon2 lat2,...))
+		dct:spatial [ a dct:Location ;
+		dcat:bbox "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral ;
+	];
+
+	# This property refers to a temporal period that the Dataset covers.
+	dct:temporal [ a dct:PeriodOfTime ;
+		dcat:startDate "1988-01-01T00:00:00Z"^^xsd:dateTime ;
+		dcat:endDate "2022-01-01T00:00:00Z"^^xsd:dateTime ;
+	] ;
+.
+
+# Operation
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/DataService/001/Operation/001> a hydra:Operation;
+
+# Optional properties
+	hydra:method "GET";
+
+# Recommended properties
+	# This property is used to specify the output format of the Operation.
+	# The possible values are listed here:  https://www.iana.org/assignments/media-types/media-types.xhtml
+	hydra:returns "application/vnd.fdsn.mseed" ;
+
+	hydra:property[ a hydra:IriTemplate ;
+		# Mandatory properties
+		hydra:template "http://www.orfeus-eu.org/fdsnws/dataselect/1/query/{?starttime,endtime,network,quality}"^^xsd:string ;
+		# Optional properties
+		hydra:mapping[ a hydra:IriTemplateMapping ;
+			# Mandatory properties #
+			# This property contains the name of the parameter as required by web service specifications
+			hydra:variable "starttime"^^xsd:string ;
+
+			# This property contains a short string used to describe the meaning of the parameter to the GUI user.
+			rdfs:label "Start of the timespan" ;
+
+			# This property contains true if the property is required, false otherwise.
+			hydra:required "true"^^xsd:boolean ;
+
+			# This property contains the type of parameter.
+			# The possible values for this property are: "xsd:string" "xsd:boolean" "xsd:date" " xsd:dateTime" "xsd:decimal" "xsd:double" "xsd:float" "xsd:int" "xsd:integer" "xsd:long";
+			rdfs:range "xsd:dateTime" ;
+
+			# Optional properties #
+			# This property contains one of the possible value which should be used in the web service query
+			# It could be repeated as many times as needed.
+			# http:paramValue "possible value" ;
+
+			hydra:property "schema:startDate";
+
+			# This property contains the default value of the parameter
+			schema:defaultValue "2012-01-01T00:00:00" ;
+
+			# The maximum value of the parameter
+			# schema:maxValue "2017-12-01T00:00:00" ;
+
+			# The minimum value of the parameter
+			# schema:minValue "2012-01-01T00:00:00" ;
+
+			schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping ;
+			# Mandatory properties #
+			hydra:variable "endtime"^^xsd:string ;
+			rdfs:label "End of the timespan" ;
+			hydra:required "true"^^xsd:boolean ;
+			rdfs:range "xsd:dateTime" ;
+			# Optional properties #
+			hydra:property "schema:endDate";
+			schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+			schema:defaultValue "2012-02-01T00:00:00" ;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping ;
+			hydra:variable "network"^^xsd:string ;
+			rdfs:label "Network code" ;
+			hydra:required "false"^^xsd:boolean ;
+			rdfs:range "xsd:string" ;
+			schema:defaultValue "BE" ;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping ;
+			hydra:variable "quality"^^xsd:string ;
+			rdfs:label "Quality" ;
+			hydra:required "false"^^xsd:boolean ;
+			http:paramValue "B" ;
+			http:paramValue "M" ;
+			rdfs:range "xsd:string" ;
+			schema:defaultValue "B" ;
+			schema:multiValue "false"^^xsd:boolean ;
+		];
+	];
+.
+
+# ConceptScheme
+<epos:Seismology> a skos:ConceptScheme ;
+	dct:title "Seismology" ;
+	dct:description "It contains the concepts of the Seismology domain" ;
+.
+# Concept
+<epos:SeismicWaveform> a skos:Concept ;
+	skos:definition "Measurement of the dynamic displacement of the Earth" ;
+	skos:inScheme <epos:Seismology> ;
+	skos:prefLabel "Seismic waveform" ;
+.
+# ConceptScheme
+<epos:SeismicNetwork> a skos:Concept ;
+	skos:definition "Collection of seismic stations in a seismic network" ;
+	skos:inScheme <epos:Seismology> ;
+	skos:prefLabel "Seismic Network" ;
+.
+# Concept
+<epos:SeismicStation> a skos:Concept ;
+	skos:definition "Station of a seismic network" ;
+	skos:inScheme <epos:Seismology> ;
+	skos:prefLabel "Seismic Station" ;
+.
+
+# SoftwareSourceCode
+<SoftwareSourceCodeId> a schema:SoftwareSourceCode;
+	schema:identifier "SoftwareSourceCodeId" ;
+	schema:name "Python library for EPOS-RDF conversion" ;
+	schema:description "Python library for EPOS-RDF conversion" ;
+
+	# This property contains contact information that can be used for sending comments about the software.
+	schema:contactPoint <http://orcid.org/0000-0002-6250-0000/contactPoint> ;
+
+	# Link to the repository where the un-compiled, human readable code and related code is located (SVN, github, CodePlex).
+	schema:codeRepository "https://github.com/softwaresourcecode"^^xsd:anyURI ;
+
+	# This property refers to the licence under which the software is made available.
+	schema:license "https://github.com/softwaresourcecode/blob/master/LICENSE"^^xsd:anyURI ;
+
+	# This property refers to the version of the software.
+	schema:softwareVersion "1.0";
+
+	# The computer programming language.
+	schema:programmingLanguage "Python";
+
+	# This property refers to the web page URL which describes the software.
+	schema:mainEntityOfPage "web_page_URL"^^xsd:anyURI ;
+
+	schema:keywords "keyword1", "keyword2", "keyword3" ;
+	dcat:theme <epos:SeismicWaveform> ;
+.
+# SoftwareApplication
+<softwareID> a schema:SoftwareApplication;
+	# This property contains one or more identifier for the software
+	schema:identifier "softwareID" ;
+
+	schema:identifier [ a schema:PropertyValue ;
+		schema:propertyID  "DDSS-ID" ;
+		schema:value "WP8-DDSS-XXX" ;
+	];
+	schema:name "name of the software" ;
+	schema:description "description of the software" ;
+
+	# This property contains contact information that can be used for sending comments about the software.
+	schema:contactPoint  <http://orcid.org/0000-0002-6250-0000/contactPoint> ;
+
+	# This property refers to the URL to download the software.
+	schema:downloadUrl "URL"^^xsd:anyURI ;
+
+	# This property refers to the licence under which the software is made available.
+	schema:license "https://www.gnu.org/licenses/gpl.html"^^xsd:anyURI ;
+
+	# This property refers to the version of the software.
+	schema:softwareVersion "1.1";
+
+	# This property refers to the web page URL which describes the software.
+	schema:mainEntityOfPage "web_page_URL"^^xsd:anyURI ;
+
+	schema:keywords "keyword1", "keyword2", "keyword3" ;
+	dcat:theme <epos:SeismicWaveform> ;
+.
+# Facility
+<https://doi.org/10.21944/e970fd34-23b9-3411-b366-e4f72877d2c5> a epos:Facility ;
+
+	# This property contains the main identifier for the Facility.
+	dct:identifier "https://doi.org/10.21944/e970fd34-23b9-3411-b366-e4f72877d2c5" ;
+
+	# This property contains a name given to the Facility.
+	dct:title "Title of Facility" ;
+
+	# This property contains a free-text description of the Facility.
+	dct:description "Description of Facility" ;
+
+	# This property refers to the URI or category (skos:Concept) which describe the type of the Facility.
+	dct:type "https://orfeus-eu.org/ns/network"^^xsd:anyURI ;
+
+	# This property refers to a category (skos:Concept) of the Facility.
+	dcat:theme <epos:SeismicNetwork> ;
+
+	# This property refers to a Facility in which the described Facility is included.
+	# dct:isPartOf </https://www.epos-eu.org/epos-dcat-ap/Seismology/Facility/other> ;
+
+	# This property contains the physical address of the Facility.
+	vcard:hasAddress [ a vcard:Address ;
+		vcard:country-name "Country" ;
+		vcard:locality "locality" ;
+		vcard:postal-code "00000" ;
+		vcard:street-address "Street Address" ;
+	];
+
+	# This property refers to a page or document about the Facility.
+	dcat:landingPage "http://facilityURL.org"^^xsd:anyURI ;
+	dcat:keyword "seismology", "seismicity", "earthquakes", "seismic station", "seismic hazard", "earth structure";
+
+	# This property contains contact information that can be used for sending comments about the Facility.
+	dcat:contactPoint <http://orcid.org/0000-0002-6250-0000/contactPoint> ;
+
+	# This property refers to a related resource (e.g., Dataset, DataService, Service).
+	dct:relation <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001> ;
+
+	# This property refers to a geographical location of the Facility
+	dct:spatial [ a dct:Location ;
+		dcat:bbox  "POLYGON((14.7 37.6 , 14.7 38.1 , 15.7 38.1 , 15.7 37.6 , 14.7 37.6))"^^gsp:wktLiteral;
+	];
+.
+# Equipment
+<https://www.fdsn.org/networks/NL/station/DBN> a epos:Equipment;
+
+	# This property contains the main identifier for the Equipment.
+	dct:identifier "https://www.fdsn.org/networks/NL/station/DBN" ;
+
+	# This property contains a name given to the Equipment.
+	dct:title "Title of Equipment" ;
+
+	# This property contains a free-text description of the Equipment.
+	dct:description "Description of Equipment" ;
+
+	# This property refers to the URI or category (skos:Concept) which describe the type of the Equipment.
+	dct:type "https://orfeus-eu.org/ns/station"^^xsd:anyURI ;
+
+	# This property refers to an Organisation responsible for manufacturing the Equipment.
+	dct:creator <PIC:000518944> ;
+
+	# This property refers to an Equipment or a Facility in which the described Equipment is included.
+	dct:isPartOf <https://doi.org/10.21944/e970fd34-23b9-3411-b366-e4f72877d2c5> ;
+
+	dcat:contactPoint <http://orcid.org/0000-0002-6250-0000/contactPoint> ;
+
+	# This property refers to a geographical location of the Equipment.
+	# The format is: POINT(lon lat elevation). Skip elevation when the value is 0.
+	dct:spatial [ a dct:Location ;
+		dcat:centroid "POINT(5.1767 52.1017 3)"^^gsp:wktLiteral ;
+	] ;
+
+	# This property describes the filter that the instrument uses to produce data.
+	epos:filter "filter";
+
+	# This property contains the full-scale measuring ability (unit and value).
+	epos:dynamicRange "range";
+
+	# This property contains the sample period (unit and value).
+	epos:samplePeriod "unit and value";
+
+	# This property contains the resolution in nT.
+	epos:resolution "resolution" ;
+
+	# This property describes how the instrument is oriented.
+	epos:orientation "90.0/0.0"^^xsd:string ;
+
+	# This property refers to the temporal period of operation of the Equipment.
+	dct:temporal [ a dct:PeriodOfTime ;
+		dcat:startDate "1997-11-25T00:00:00Z"^^xsd:dateTime ;
+		dcat:endDate "2022-11-25T00:00:00Z"^^xsd:dateTime ;
+	] ;
+
+	# This property refers to a related resource (e.g., Dataset, DataService, Service).
+	dct:relation <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001> ;
+
+	# This property refers to a category (skos:Concept) of the Equipment. A Equipment may be associated with multiple themes.
+	dcat:theme <epos:SeismicStation> ;
+
+	# This property refers to a page or document about the Equipment.
+	dcat:landingPage "http://equipmentURL.org"^^xsd:anyURI ;
+
+	dcat:keyword "seismology", "seismicity", "earthquakes", "seismic station", "seismic hazard", "earth structure";
+.
+
+# Service
+<https://www.epos-eu.org/epos-dcat-ap/Service/001> a schema:Service ;
+	# This property contains the main identifier for the Service.
+	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Service/001";
+
+	# This property contains the name of the Service.
+	schema:name "Service name" ;
+
+	# This property refers to the Contact Point defined for the Service.
+	schema:contactPoint <http://orcid.org/0000-0002-6250-0000/contactPoint> ;
+
+	# This property contains the description of the Service.
+	schema:description "description service" ;
+
+	# This property refers to an Organisation or Person responsible for making the Service available.
+	schema:provider <PIC:000518944> ;
+
+	#  This property contains the type of service being offered.
+	schema:serviceType "TNA service" ;
+
+	# This property contains the keywords used to describe the Service. Multiple entries in a keywords list are typically delimited by commas.
+	schema:keywords "keywords1, keywords2, keywords3" ;
+
+	# This property refers to a category (skos:Concept) of the Service. A Service may be associated with multiple themes.
+	dcat:theme <epos:SeismicStation> ;
+
+	# This property refers to a temporal period that the Service covers.
+	dct:temporal [ a dct:PeriodOfTime ;
+		dcat:startDate "2020-01-01T00:00:00Z"^^xsd:dateTime ;
+		dcat:endDate "2020-10-31T00:00:00Z"^^xsd:dateTime ;
+	] ;
+
+	# This property refers to a geographical area (Point or Polygon) covered by the Service.
+	dct:spatial [ a dct:Location ;
+		dcat:bbox  "POLYGON((14.7 37.6 , 14.7 38.1 , 15.7 38.1 , 15.7 37.6 , 14.7 37.6))"^^gsp:wktLiteral;
+	];
+
+	# This property refers to a page about the Service.
+	schema:url "http://serviceTest.org"^^xsd:anyURI ;
+ .
+
+# Dataset
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/ODC> a dcat:Dataset ;
+####
+# Mandatory properties
+####
+	dct:description "Seismic Stations " ;
+	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/002/ODC" ;
+	dct:title "Seismic Stations" ;
+
+####
+# Recommended properties
+####
+	dcat:contactPoint <http://orcid.org/0000-0002-6250-0000/contactPoint> ; 
+	# This property links the Dataset to an available Distribution.
+	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/ODC> ;
+
+	dcat:keyword "seismology", "seismicity", "earthquakes", "seismic station", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "station information", "waveform modeling", "INGV", "Station", "FDSN-WS", "Seismic Station", "EIDA" ;
+
+	# This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
+	dcat:theme <epos:SeismicNetwork> ;
+
+	# This property refers to an Organisation responsible for making the Dataset available.
+	dct:publisher <PIC:000518944> ;
+
+	# This property refers to a geographic region that is covered by the Dataset.
+	dct:spatial [ a dct:Location ;
+	dcat:bbox "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral ;
+	];
+
+	# This property refers to a temporal period that the Dataset covers.
+	dct:temporal [ a dct:PeriodOfTime ;
+		dcat:startDate "1988-01-01T00:00:00Z"^^xsd:dateTime ;
+		dcat:endDate "2022-01-01T00:00:00Z"^^xsd:dateTime ;
+	] ;
+
+####
+# Optional properties
+####
+	adms:identifier [ a adms:Identifier ;
+		adms:schemeAgency "DDSS-ID" ;
+		skos:notation "WP08-DDSS-002" ;
+	] ;
+
+	# This property refers to the frequency at which the Dataset is updated.
+	# The possible types are here: http://purl.org/cld/freq/
+	dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI ;
+
+	# - dct:conformsTo
+
+	dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+
+	# - dct:creator
+
+	# This property refers to a related Dataset that is part of the described Dataset.
+	# dct:hasPart <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
+
+    dqv:hasQualityAnnotation [ a oa:Annotation ;
+		oa:hasBody "URL_of_QualityAssurance"^^xsd:anyURI  ;
+		oa:hasTarget <https://www.epos-eu.org/epos-dcat-ap/Seismology/002/ODC> ;
+	];
+
+	# This property refers to a related Dataset of which the described Dataset is a version, edition, or adaptation.
+	# dct:hasVersion <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
+
+	# This property refers to a related Dataset in which the described Dataset is physically or logically included.
+	# dct:isPartOf <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
+
+	# This property refers to a related Dataset of which the described Dataset is a version, edition, or adaptation.
+	# dct:isVersionOf <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
+
+	# - dct:isReferencedBy
+
+	dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+
+	# - dct:language
+
+	dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+
+	# - dct:provenance
+	# - dct:relation
+	# - dct:source
+
+
+	# This property refers to the type of the Dataset.
+	# Example of frequency using a controlled vocabulary http://dublincore.org/2012/06/14/dctype
+	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
+
+	# - foaf:page
+
+	owl:versionInfo "1.0.0" ;
+
+	# - prov:qualifiedAttribution
+	# - prov:wasGeneratedBy
+.
+# Distribution
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/ODC> a dcat:Distribution ;
+####
+# Mandatory properties
+####
+
+	# This property dcat:accessURL contains url of  DataService ->endpoinURL
+	dcat:accessURL "https://www.orfeus-eu.org/fdsnws/station/1/query"^^xsd:anyURI ;
+
+	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/Distribution/002/ODC" ;
+
+####
+# Recommended properties
+####
+	# - dcatap:availability
+	dct:description "Seismic Stations  :: FDSN STATION" ;
+
+
+	# This property refers to the file format of the Distribution.
+	# The possible types are here: http://publications.europa.eu/mdr/resource/authority/file-type/html/filetypes-eng.html
+	dct:format "http://publications.europa.eu/resource/authority/file-type/XML"^^xsd:anyURI ;
+
+	# This property refers to the licence under which the Distribution is made available.
+	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+
+####
+# Optional properties
+####
+	# - adms:status
+
+	# conformsTo --> accessService
+	dcat:accessService <https://www.epos-eu.org/epos-dcat-ap/Seismology/DataService/002/ODC> ;
+
+	# This property contains the size of a Distribution in bytes.
+	# dcat:byteSize "1024"^^xsd:decimal ;
+
+	# - dcat:compressFormat
+
+	# If the type of Distribution is DOWNLOADABLE FILE, this property contains a URL that is a direct link to a downloadable file in a given format. Otherwise, this property is optional.
+	# dcat:downloadURL "Direct_link_to_downloadable_file"^^xsd:anyURI ;
+
+	# - dcat:mediaType
+	# - dcat:packageFormat
+	# - dcat:spatialResolutionInMeters
+	# - dcat:temporalResolution
+
+	# This property SHOULD be used to indicate the model, schema, ontology, view or profile that this representation of a dataset conforms to. This is (generally) a complementary concern to the media-type or format.
+	dct:conformsTo "https://www.fdsn.org/xml/station/fdsn-station-1.1.xsd"^^xsd:anyURI ;
+
+	dct:issued "2017-01-01"^^xsd:date ;
+
+	# - dct:language
+
+	dct:modified "2017-01-01"^^xsd:date ;
+
+	# - dct:rights
+
+	dct:title "Title of Seismic Waveform Distribution" ;
+
+	# - foaf:page
+	# - odrl:hasPolicy
+	# - spdx:checksum
+.
+# DataService
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/DataService/002/ODC> a dcat:DataService ;
+####
+# Mandatory properties
+####
+	#hydra:entrypoint -->dcat:endpointURL
+	dcat:endpointURL "https://www.orfeus-eu.org/fdsnws/station/1/query"^^xsd:anyURI ;
+
+	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/DataService/002/ODC" ;
+	#name -->title
+	dct:title "FDSN Station Web Service" ;
+####
+# Recommended properties
+####
+	# This property contains contact information that can be used for sending comments about the Web Service.
+	dcat:contactPoint <http://orcid.org/0000-0002-6250-0000/contactPoint> ;
+
+	# This property refers to a web service operation supported by the Web Service.
+	#hydra:supportedOperation -->  dcat:endpointDescription
+	dcat:endpointDescription <https://www.epos-eu.org/epos-dcat-ap/Seismology/DataService/002/Operation/002/ODC> ;
+
+	dcat:servesDataset <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/002/ODC> ;
+
+	#This property refers to a category of the Web Service. A Web Service may be associated with multiple themes.
+	dcat:theme <epos:SeismicNetwork> ;
+
+	dct:description "The fdsnws-station web service returns station metadata in FDSN StationXML format (schema here) or as delimited text. The purpose of the FDSN StationXML schema is to define an XML representation of the most important and commonly used structures of SEED 2.4 metadata. Results are available at multiple levels of granularity: network, station, channel and response." ;
+
+	#schema:datePublished -->dct:issued
+	dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+
+	#schema:dateModified -->dct:modified
+	dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+
+	# This property refers to an Organisation responsible for making the Web Service available.
+	#dct:publisher-->schema:provider
+	dct:publisher <PIC:000518944> ;
+
+####
+# Optional properties
+####
+	dcat:keyword  "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling" ;
+
+	# - dct:accessRight
+
+	# This property refers to the Service API definition. (Optional)
+	dct:conformsTo "https://www.orfeus-eu.org/data/eida/webservices/station/"^^xsd:anyURI ;
+
+	# This property refers to the licence under which the Distribution is made available.
+	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+
+	# This property refers to a geographic region that is covered by the Dataset.
+	# The POLYGON format is: POLYGON((lon1 lat1, lon2 lat2,...))
+	dct:spatial [ a dct:Location ;
+		dcat:bbox "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral ;
+	];
+
+	# This property refers to a temporal period that the Dataset covers.
+	dct:temporal [ a dct:PeriodOfTime ;
+		dcat:startDate "1988-01-01T00:00:00Z"^^xsd:dateTime ;
+		dcat:endDate "2022-01-01T00:00:00Z"^^xsd:dateTime ;
+	] ;
+.
+# Operation
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/DataService/002/Operation/002/ODC> a hydra:Operation ;
+	hydra:method "GET" ;
+	hydra:returns "application/xml" ;
+	hydra:property [ a hydra:IriTemplate ;
+
+		hydra:template "https://www.orfeus-eu.org/fdsnws/station/1/query{?starttime, endtime, network, station, location, channel,  minlatitude, maxlatitude, minlongitude, maxlongitude, level}"^^xsd:string ;
+
+		hydra:mapping[ a hydra:IriTemplateMapping ;
+			hydra:variable "starttime"^^xsd:string ;
+			hydra:property "schema:startDate";
+			schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+			rdfs:label "Start of the timespan" ;
+			hydra:required "true"^^xsd:boolean ;
+			rdfs:range "xsd:dateTime" ;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping ;
+			hydra:variable "endtime"^^xsd:string ;
+			hydra:property "schema:endDate";
+			schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+			rdfs:label "End of the timespan" ;
+			hydra:required "true"^^xsd:boolean ;
+			rdfs:range "xsd:dateTime" ;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping ;
+			hydra:variable "network"^^xsd:string ;
+			rdfs:label "Network code" ;
+			hydra:required "true"^^xsd:boolean ;
+			schema:defaultValue "NL" ;
+			rdfs:range "xsd:string" ;
+		];
+		hydra:mapping[ a hydra:IriTemplateMapping ;
+			hydra:variable "station"^^xsd:string ;
+			rdfs:label "Station code" ;
+			hydra:required "true"^^xsd:boolean ;
+			schema:defaultValue "HGN" ;
+			rdfs:range "xsd:string" ;
+		];
+		hydra:mapping [ a hydra:IriTemplateMapping ;
+			hydra:variable "location"^^xsd:string ;
+			rdfs:label "Location code" ;
+			hydra:required "false"^^xsd:boolean ;
+			rdfs:range "xsd:string" ;
+		];
+		hydra:mapping [ a hydra:IriTemplateMapping ;
+			hydra:variable "channel"^^xsd:string ;
+			rdfs:label "Channel code" ;
+			hydra:required "false"^^xsd:boolean ;
+			rdfs:range "xsd:string" ;
+		];
+		hydra:mapping [ a hydra:IriTemplateMapping ;
+			hydra:variable "minlatitude"^^xsd:string ;
+			hydra:property "epos:southernmostLatitude" ;
+			rdfs:range "xsd:float";
+			rdfs:label "Minimum Latitude" ;
+			schema:minValue "-90.0" ;
+			schema:maxValue "90.0" ;
+			hydra:required "false"^^xsd:boolean ;
+		];
+		hydra:mapping [ a hydra:IriTemplateMapping ;
+			hydra:variable "maxlatitude"^^xsd:string ;
+			hydra:property "epos:northernmostLatitude" ;
+			rdfs:range "xsd:float";
+			rdfs:label "Maximum Latitude" ;
+			schema:minValue "-90.0" ;
+			schema:maxValue "90.0" ;
+			hydra:required "false"^^xsd:boolean ;
+		];
+		hydra:mapping [ a hydra:IriTemplateMapping ;
+			hydra:variable "minlongitude"^^xsd:string ;
+			hydra:property "epos:westernmostLongitude" ;
+			rdfs:range "xsd:float";
+			rdfs:label "Minimum Longitude" ;
+			schema:minValue "-180.0" ;
+			schema:maxValue "180.0" ;
+			hydra:required "false"^^xsd:boolean ;
+		];
+		hydra:mapping [ a hydra:IriTemplateMapping ;
+			hydra:variable "maxlongitude"^^xsd:string ;
+			hydra:property "epos:easternmostLongitude" ;
+			rdfs:range "xsd:float";
+			rdfs:label "Maximum Longitude" ;
+			schema:minValue "-180.0" ;
+			schema:maxValue "180.0" ;
+			hydra:required "false"^^xsd:boolean ;
+		];
+		hydra:mapping [ a hydra:IriTemplateMapping ;
+			hydra:variable "level"^^xsd:string ;
+			rdfs:label "Level of instrument detail" ;
+			rdfs:range "xsd:string";
+			http:paramValue "network" ;
+			http:paramValue "station" ;
+			http:paramValue "channel" ;
+			http:paramValue "response" ;
+			hydra:required "false"^^xsd:boolean ;
+		];
+];
+.

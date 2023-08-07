@@ -1,0 +1,58 @@
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[]
+
+<PIC:000518944> a schema:Organization ;
+
+  # Mandatory properties
+    schema:identifier [ a schema:PropertyValue ;
+        schema:propertyID "PIC" ;
+        schema:value "000518944" ;
+    ];
+
+  # Recommended properties
+    schema:leiCode "Legal Entity Identifier Search" ;
+    schema:legalName "Institute test1" ;
+
+  # Optional properties
+    schema:address [ a schema:PostalAddress ;
+                schema:streetAddress "address, 002" ;
+                schema:addressLocality "Rome" ;
+                schema:postalCode "00143" ;
+                schema:addressCountry "Italy" ;
+    ];
+    schema:contactPoint <http://orcid.org/0000-0001-7750-0000/legalContact> ;
+    schema:contactPoint <http://orcid.org/0000-0001-7750-0000/scientificContact> ;
+    schema:contactPoint <http://orcid.org/0000-0001-7750-0000/financialContact> ;
+    schema:email "test1_institute@email.it" ;
+    schema:logo "http://www.test.it/logo.png"^^xsd:anyURI ;
+    schema:memberOf <PIC:007012076> ;
+    schema:telephone "+0302206911" ;
+    schema:url "http://www.test.it"^^xsd:anyURI  ;
+.
+
+<PIC:007012076> a schema:Organization ;
+  	schema:identifier [ a schema:PropertyValue ;
+          	schema:propertyID  "PIC" ;
+           	schema:value   "007012076" ;
+    ];
+
+    schema:leiCode "Legal Entity Identifier Search" ;
+    schema:legalName "Institute 2" ;
+    schema:address [ a schema:PostalAddress ;
+                schema:streetAddress "address, 002" ;
+                schema:addressLocality "Rome" ;
+                schema:postalCode "00143" ;
+                schema:addressCountry "Italy" ;
+    ];
+    schema:contactPoint <http://orcid.org/0000-0001-7750-0000/legalContact> ;
+    schema:contactPoint <http://orcid.org/0000-0001-7750-0000/scientificContact> ;
+    schema:contactPoint <http://orcid.org/0000-0001-7750-0000/financialContact> ;
+    schema:email "test2_example@email.it" ;
+    schema:telephone "+0302206922" ;
+    schema:url "http://www.test2.it/"^^xsd:anyURI ;
+.

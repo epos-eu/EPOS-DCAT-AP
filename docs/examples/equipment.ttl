@@ -1,0 +1,72 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[]
+
+<https://www.fdsn.org/networks/NL/station/DBN> a epos:Equipment;
+  # Mandatory
+    # This property contains a free-text description of the Equipment.
+    dct:description "Description of Equipment" ;
+
+    # This property contains the main identifier for the Equipment.
+    dct:identifier "https://www.fdsn.org/networks/NL/station/DBN" ;
+
+    # This property contains a name given to the Equipment.
+    dct:title "Title of Equipment" ;
+
+  # Recommended
+    # This property refers to an Organization responsible for manufacturing the Equipment.
+    dct:creator <PIC:000518944> ;
+
+    # This property refers to the URI or category (skos:Concept) which describe the type of the Equipment.
+    dct:type "https://orfeus-eu.org/ns/station"^^xsd:anyURI ;
+
+  # Optional
+    dcat:contactPoint <http://orcid.org/0000-0002-6250-0000/contactPoint> ;
+
+    # This property contains the full-scale measuring ability (unit and value).
+    epos:dynamicRange "range";
+
+    # This property describes the filter that the instrument uses to produce data.
+    epos:filter "filter";
+
+    # This property refers to an Equipment or a Facility in which the described Equipment is included.
+    dct:isPartOf <https://doi.org/10.21944/e970fd34-23b9-3411-b366-e4f72877d2c5> ;
+    dcat:keyword "seismology", "seismicity", "earthquakes", "seismic station", "seismic hazard", "earth structure";
+
+    # This property refers to a page or document about the Equipment.
+    dcat:landingPage "http://equipmentURL.org"^^xsd:anyURI ;
+
+    # This property describes how the instrument is oriented.
+    epos:orientation "90.0/0.0"^^xsd:string ;
+
+    # This property refers to a related resource (e.g., Dataset, DataService, Service).
+    dct:relation <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001> ;
+
+    # This property contains the resolution in nT.
+    epos:resolution "resolution" ;
+
+    # This property contains the sample period (unit and value).
+    epos:samplePeriod "unit and value";
+
+    # This property refers to a geographical location of the Equipment.
+    # The format is: POINT(lon lat elevation). Skip elevation when the value is 0.
+    dct:spatial [ a dct:Location ;
+        dcat:centroid "POINT(5.1767 52.1017 3)"^^gsp:wktLiteral ;
+    ] ;
+
+    # This property refers to the temporal period of operation of the Equipment.
+    dct:temporal [ a dct:PeriodOfTime ;
+        dcat:startDate "1997-11-25T00:00:00Z"^^xsd:dateTime ;
+        dcat:endDate "2022-11-25T00:00:00Z"^^xsd:dateTime ;
+    ] ;
+
+    # This property refers to a category (skos:Concept) of the Equipment. A Equipment may be associated with multiple themes.
+    dcat:theme <epos:SeismicStation> ;
+.

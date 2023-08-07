@@ -1,0 +1,56 @@
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[]
+
+  hydra:mapping[ a hydra:IriTemplateMapping ;
+
+		# This property contains the name of the parameter as required by web service specifications
+		hydra:variable "starttime"^^xsd:string ;
+
+		# This property contains a short string used to describe the meaning of the parameter to the GUI user.
+		rdfs:label "Start of the timespan" ;
+
+		# This property contains true if the property is required, false otherwise.
+		hydra:required "true"^^xsd:boolean ;
+
+		# This property contains the type of parameter.
+		# The possible values for this property are: "xsd:string" "xsd:boolean" "xsd:date" " xsd:dateTime" "xsd:decimal" "xsd:double" "xsd:float" "xsd:int" "xsd:integer" "xsd:long";
+		rdfs:range "xsd:dateTime" ;
+
+
+		# This property contains one of the possible value which should be used in the web service query
+		# It could be repeated as many times as needed.
+		# http:paramValue "possible value" ;
+
+		hydra:property "schema:startDate";
+
+		# This property contains the default value of the parameter
+		schema:defaultValue "2012-01-01T00:00:00" ;
+
+		# The maximum value of the parameter
+		# schema:maxValue "2017-12-01T00:00:00" ;
+
+		# The minimum value of the parameter
+		# schema:minValue "2012-01-01T00:00:00" ;
+
+		schema:valuePattern "YYYY-MM-DDThh:mm:ss";
+		schema:readonlyValue "true"^^xsd:boolean ;
+	];
+
+	hydra:mapping[ a hydra:IriTemplateMapping ;
+		hydra:variable "quality"^^xsd:string ;
+		rdfs:label "Quality" ;
+		hydra:required "false"^^xsd:boolean ;
+		http:paramValue "B" ;
+		http:paramValue "M" ;
+		rdfs:range "xsd:string" ;
+		schema:defaultValue "B" ;
+		schema:multiValues "false"^^xsd:boolean ;
+		
+	];
+.
