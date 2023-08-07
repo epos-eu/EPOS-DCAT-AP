@@ -1,0 +1,92 @@
+<table class="simple" id="table-recommended-properties-for-dataset-series">
+  <thead>
+      <tr>
+        <th class="small">
+            <p>Property</p>
+        </th>
+        <th class="small">
+            <p>URI</p>
+        </th>
+        <th class="small">
+            <p>Range</p>
+        </th>
+        <th class="large">
+            <p>Usage note</p>
+        </th>
+        <th class="xsmall">
+            <p>Card.</p>
+        </th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr class="property recommended" id="dataset-series-contact-point">
+        <td>
+            <p>contactPoint </p>
+        </td>
+        <td>
+            <p><code>dcat:contactPoint </code></p>
+        </td>
+        <td>
+          <p><code>vcard:Kind</code> or <code>schema:ContactPoint</code></p>
+        </td>
+        <td class="justify">
+            <p>This property contains a contact information that can be used for sending comments about the Dataset Series.</p>
+        </td>
+        <td class="center">
+            <p>0..n</p>
+        </td>
+      </tr>
+
+      <tr class="property recommended" id="dataset-series-publisher">
+        <td>
+            <p>publisher</p>
+        </td>
+        <td>
+            <p><code>dct:publisher</code></p>
+        </td>
+        <td>
+              <p><code>foaf:Agent</code> or <code>schema:Organization</code></p>
+        </td>
+        <td class="justify">
+            <p>This property refers to a responsible for ensuring the coherency of the Dataset Series. The publisher of the dataset series may not be the publisher of all datasets.  E.g. a digital archive could take over the publishing of older datasets in the series. </p>
+        </td>
+        <td class="center">
+            <p>0..1</p>
+        </td>
+      </tr>
+      <tr class="property recommended" id="dataset-series-spatial">
+        <td>
+            <p>spatial</p>
+        </td>
+        <td>
+            <p><code>dct:spatial</code></p>
+        </td>
+        <td>
+        <p><code>dct:Location</code></p>
+        </td>
+        <td class="justify">
+            <p>This property contains the geographic region that is covered by the Dataset Series. When spatial coverage is a dimension in the dataset series then the spatial coverage of each dataset in the collection should be part of the spatial coverage. In that case, an open ended value is recommended, e.g. EU or a broad bounding box covering the expected values.</p>
+        </td>
+        <td class="center">
+            <p>0..n</p>
+        </td>
+      </tr>
+      <tr class="property recommended" id="dataset-series-temporal">
+        <td>
+            <p>temporal</p>
+        </td>
+        <td>
+            <p><code>dct:temporal</code></p>
+        </td>
+        <td>
+              <p><code>dct:PeriodOfTime</code></p>
+        </td>
+        <td class="justify">
+            <p>This property refers to a temporal period that the Dataset Series covers. When temporal coverage is a dimension in the dataset series then the temporal coverage of each dataset in the collection should be part of the temporal coverage. In that case, an open ended value is recommended, e.g. after 2012</p>
+        </td>
+        <td class="center">
+            <p>0..n</p>
+        </td>
+      </tr>
+  </tbody>
+</table>
