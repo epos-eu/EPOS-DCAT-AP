@@ -10,16 +10,15 @@ jobs:
 
     steps:
       # Checkout the `main` branch
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
       # Install Node.js
-      - uses: actions/setup-node@v2-beta
+      - uses: actions/setup-node@v1
         with:
           node-version: '14'
-      # Install npm dependencies
-      # (similar to npm install)
-      - run: npm ci
-      # Run code to build the site files inside the `big-island-buses` folder
+      - run: npm install
       - run: npm run build
+      - run: npm test
 
       # Checkout the `app-challenge` branch
       - uses: actions/checkout@v2
