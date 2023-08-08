@@ -20,6 +20,6 @@ An extension of the DCAT Application Profile for Research Infrastructures in the
   </summary>
   <p>
     <br>
-    <i><zero-md src="LICENSE"></zero-md></i>
+    <i><zero-md src="https://epos-eu.github.io/EPOS-DCAT-AP/LICENSE"></zero-md></i>
   </p>
 </details>
