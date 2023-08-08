@@ -37,6 +37,8 @@ jobs:
           path: temp/v3
           clean: false
       - run: mkdir ./v3
+      - run: ls
+      - run: pwd
       - run: mv temp/v3/ ./v3
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
