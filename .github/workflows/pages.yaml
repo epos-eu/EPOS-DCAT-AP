@@ -34,12 +34,10 @@ jobs:
         with:
           ref: EPOS-DCAT-AP-v3.0
           # Put the checked out files inside the `big-island-buses/heleon` folder
-          path: temp/v3
+          path: pages/v3
           clean: false
-      - run: mkdir ./v3
+      - run: cd pages/v3
       - run: ls
-      - run: pwd
-      - run: mv ./EPOS-DCAT-AP/temp/v3/ ./v3
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
