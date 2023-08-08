@@ -5,58 +5,29 @@ on:
     branches: [main]
 
 jobs:
+  # Build job
   build:
+# <Not provided for brevity>
+# At a minimum this job should upload artifacts using actions/upload-pages-artifact
+
+  # Deploy job
+  deploy:
+# Add a dependency to the build job
+    needs: build
+
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write  # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+
+# Deploy to the github-pages environment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+# Specify runner + deployment step
     runs-on: ubuntu-latest
-
     steps:
-      # Checkout the `main` branch
-      - name: Checkout
-        uses: actions/checkout@v2
-      # Install Node.js
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '14'
-      - run: npm install
-      - run: npm run build
-      - run: npm test
-
-      # Checkout the `app-challenge` branch
-      - uses: actions/checkout@v2
-        with:
-          ref: EPOS-DCAT-AP-shapes
-          # Put the checked out files inside the `big-island-buses/heleon` folder
-          path: epos-dcat-ap/v1
-          clean: false
-      # Delete the .git folder from `big-island-buses/heleon`
-      # This turns the files into a plain folder instead of a git repository
-      - run: rm -rf epos-dcat-ap/v1/.git
-
-      # Checkout the `app-challenge` branch
-      - uses: actions/checkout@v2
-        with:
-          ref: EPOS-DCAT-AP-v2.0
-          # Put the checked out files inside the `big-island-buses/heleon` folder
-          path: epos-dcat-ap/v2
-          clean: false
-      # Delete the .git folder from `big-island-buses/heleon`
-      # This turns the files into a plain folder instead of a git repository
-      - run: rm -rf epos-dcat-ap/v2/.git
-
-      # Checkout the `app-challenge` branch
-      - uses: actions/checkout@v2
-        with:
-          ref: EPOS-DCAT-AP-v3.0
-          # Put the checked out files inside the `big-island-buses/heleon` folder
-          path: epos-dcat-ap/v3
-          clean: false
-      # Delete the .git folder from `big-island-buses/heleon`
-      # This turns the files into a plain folder instead of a git repository
-      - run: rm -rf epos-dcat-ap/v3/.git
-
-      # Deploy the `big-island-buses` folder to GitHub Pages
-      - uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: './epos-dcat-ap'
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2 # or the latest "vX.X.X" version tag for this action
