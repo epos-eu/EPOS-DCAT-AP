@@ -21,6 +21,7 @@ This project implements an extension of the DCAT-AP for the EPOS Research Infras
     Published under MIT License
   </summary>
   <p>
-    <zero-md src="LICENSE"></zero-md>
+    <br>
+    <i><zero-md src="LICENSE"></zero-md></i>
   </p>
 </details>
