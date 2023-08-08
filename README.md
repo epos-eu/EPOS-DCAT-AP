@@ -4,9 +4,7 @@
 <!-- Load the element definition -->
 <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@1/src/zero-md.min.js"></script>
 
-
-
-This project implements an extension of the DCAT-AP for the EPOS Research Infrastructure.
+An extension of the DCAT Application Profile for Research Infrastructures in the solid-Earth domain
 
 <a href="https://github.com/epos-eu/EPOS-DCAT-AP/tree/EPOS-DCAT-AP-shapes">Version 1.0</a>
 
