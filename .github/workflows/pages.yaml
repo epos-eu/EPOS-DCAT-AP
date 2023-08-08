@@ -36,12 +36,13 @@ jobs:
           # Put the checked out files inside the `big-island-buses/heleon` folder
           path: pages/v3
           clean: false
+      - run: cd pages/v3 && rm README.md LICENSE && mv docs/* . && rm -R docs
       - run: cd pages/v3 && ls
       - run: ls
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
-          source: ./
+          source: ./pages
           destination: ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
