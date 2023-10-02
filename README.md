@@ -23,3 +23,6 @@ An extension of the DCAT Application Profile for Research Infrastructures in the
     <i><zero-md src="https://epos-eu.github.io/EPOS-DCAT-AP/LICENSE"></zero-md></i>
   </p>
 </details>
+
+
+Last update: October, 2nd, 2023
