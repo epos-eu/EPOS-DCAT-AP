@@ -330,17 +330,17 @@ epos:CatalogShape
       sh:severity sh:Warning ;
     ] ;
   sh:property [
-    sh:path dcat:service ;
-    sh:description "This property refers to a site or end-point (Data Service) that is listed in the Catalog. As empty Catalog are usually indications of problems, this property should be combined with the previous property dataset to implement an empty Catalog check.";
-    sh:class dcat:DataService ;
-    sh:minCount 1 ;
-    sh:message "Service is recommended. Please fill in a value"@en  ;
-    sh:severity sh:Warning ;
+      sh:path dcat:service ;
+      sh:description "This property refers to a site or end-point (Data Service) that is listed in the Catalog. As empty Catalog are usually indications of problems, this property should be combined with the previous property dataset to implement an empty Catalog check.";
+      sh:class dcat:DataService ;
+      sh:minCount 1 ;
+      sh:message "Service is recommended. Please fill in a value"@en  ;
+      sh:severity sh:Warning ;
   ] ;
   sh:property [
       sh:path dcat:themeTaxonomy ;
       sh:description "This property refers to a knowledge organization system used to classify the resources documented in the Catalog (Data Services, Datasets, and other Catalogs).";
-      sh:datatype xsd:anyURI;
+      sh:class skos:ConceptScheme ;
       sh:minCount 1 ;
       sh:message "themeTaxonomy is recommended. Please fill in a value"@en  ;
       sh:severity sh:Warning ;
@@ -571,14 +571,14 @@ epos:DataServiceShape
       sh:maxCount 1;
     ] ;
   sh:property [
-      sh:path dct:publisher;
+      sh:path schema:provider ;
       sh:class schema:Organization ;
       sh:minCount 1 ;
-      sh:message "Publisher is recommended. Please fill in a value"@en  ;
+      sh:message "Provider is recommended. Please fill in a value"@en  ;
       sh:severity sh:Warning ;
     ] ;
   sh:property [
-      sh:path dct:publisher;
+      sh:path schema:provider ;
       sh:description " This property refers to an Organisation responsible for making the Data Service available.";
       sh:class schema:Organization ;
       sh:maxCount 1;
@@ -611,9 +611,15 @@ epos:DataServiceShape
   sh:property [
       sh:path dct:conformsTo ;
       sh:description " This property indicates the general standard or specification that the endpoints implement. E.g. http://www.opengis.net/def/serviceType/ogc/wfs/1.0.0.";
-       sh:or ( [sh:class dct:Standard ; ]
-               [ sh:datatype xsd:anyURI ; ] );
+      sh:or ( [ sh:class dct:Standard ; ]
+              [ sh:datatype xsd:anyURI ; ] );
     ] ;
+  sh:property [
+      sh:path dct:format;
+      sh:description " This property refers to the structure that can be returned by querying the endpointURL. ";
+      sh:or ( [ sh:datatype xsd:string ; ]
+              [ sh:datatype xsd:anyURI ; ] );
+   ] ;
   sh:property [
       sh:path dcat:keyword;
       sh:description " This property contains a keyword or tag describing the Data Service. ";
@@ -621,7 +627,7 @@ epos:DataServiceShape
     ] ;
   sh:property [
       sh:path dct:license ;
-      sh:description "This property refers to the licence under which the Data Service can be used or reused.";
+      sh:description "This property refers to the license under which the Data Service can be used or reused.";
       sh:or ( [sh:class dct:LicenseDocument ; ]
               [ sh:datatype xsd:anyURI ; ] );
       sh:maxCount 1 ;
@@ -653,7 +659,7 @@ epos:DatasetShape
       sh:path dct:identifier ;
       sh:description "This property contains the main identifier for the Dataset, e.g. the URI or other unique identifier in the context of the Catalog.";
       sh:or ( [ sh:datatype xsd:string ; ]
-        [ sh:datatype xsd:anyURI ; ] );
+              [ sh:datatype xsd:anyURI ; ] );
       sh:minCount 1 ;
       sh:maxCount 1 ;
     ] ;
@@ -692,7 +698,7 @@ epos:DatasetShape
     ] ;
   sh:property [
       sh:path dct:publisher ;
-      sh:description "This property refers to an entity (organisation) responsible for making the Dataset available.";
+      sh:description "This property refers to an entity (Organisation) responsible for making the Dataset available.";
       sh:or ( [ sh:class foaf:Agent ; ]
               [ sh:class schema:Organization ; ] ) ;
       sh:minCount 1 ;
@@ -782,15 +788,15 @@ epos:DatasetShape
       sh:class dcat:Dataset ;
     ] ;
   sh:property [
-      sh:path dcat:isVersionOf ; # ->modified
-      sh:description "This property refers to a related Dataset of which the described Dataset is a version, edition, or adaptation.";
-      sh:class dcat:Dataset ;
-    ] ;
-  sh:property [
       sh:path dct:isReferencedBy ;
       sh:nodeKind sh:BlankNodeOrIRI ;
       sh:description "This property is about a related resource, such as a publication, that references, cites, or otherwise points to the dataset.";
       sh:class rdfs:Resource  ;
+    ] ;
+  sh:property [
+      sh:path dcat:isVersionOf ; # ->modified
+      sh:description "This property refers to a related Dataset of which the described Dataset is a version, edition, or adaptation.";
+      sh:class dcat:Dataset ;
     ] ;
   sh:property [
       sh:path dct:issued ;
@@ -936,6 +942,58 @@ epos:DatasetInSeriesShape
 	    sh:description "This property refers to the frequency at which the Dataset is updated. ";
     ];
 .
+epos:DatasetInSeriesShape
+  a sh:NodeShape ;
+  #sh:targetClass dcat:Dataset ;
+  ####
+  # DatasetInSeries mandatory properties
+  ####
+  sh:property [
+      sh:path dct:description;
+      sh:description "This property contains a free-text account of the Dataset. This property can be repeated for parallel language versions of the description .";
+      sh:datatype xsd:string ;
+      sh:minCount 1 ;
+  ] ;
+  sh:property [
+      sh:path dct:title;
+      sh:description "This property contains a name given to the Dataset. This property can be repeated for parallel language versions of the name .";"
+      sh:datatype xsd:string ;
+      sh:minCount 1 ;
+  ] ;
+  ####
+  # DatasetInSeries recommended properties
+  ####
+  sh:property [
+      sh:path dcat:inSeries;
+      sh:class dcat:DatasetSeries;
+      sh:description "This property contains dataset series of which the dataset is part.";
+      sh:minCount 1 ;
+      sh:message "inSeries is recommended. Please fill in a value"@en  ;
+      sh:severity sh:Warning ;
+  ];
+  sh:property [
+      sh:path dcat:previous;
+      sh:class dcat:DatasetInSeries;
+      sh:description "This property links the previous resource (before the current one) in an ordered collection or series of resources. Unless the dataset is the last in the chain a dataset in a collection must have a previous one.";
+      sh:minCount 1 ;
+      sh:message "previous is recommended. Please fill in a value"@en  ;
+      sh:severity sh:Warning ;
+  ];
+  ####
+  # DatasetInSeries optional properties
+  ####
+  sh:property [
+      sh:path dct:accrualPeriodicity;
+      sh:description "This property refers to the frequency at which the Dataset is updated. ";
+      #sh:class dct:Frequency ;
+      sh:datatype xsd:anyURI ;
+  ];
+  sh:property [
+      sh:path dct:next;
+      sh:class dcat:DatasetInSeries ;
+      sh:description "This property refers to the frequency at which the Dataset is updated. ";
+  ];
+.
 epos:DatasetSeriesShape
   a sh:NodeShape ;
   sh:targetClass dcat:DatasetSeries ;
@@ -943,13 +1001,90 @@ epos:DatasetSeriesShape
   # DatasetSeries mandatory properties
   ####
   sh:property [
-      sh:path dcat:accessURL ;
-      sh:description "This property contains a URL that gives access to a Distribution of the Dataset. The resource at the access URL may contain information about how to get the Dataset.";
-      sh:or ( [ sh:class rdfs:Resource ; ]
-              [ sh:datatype xsd:anyURI ; ] ) ;
+      sh:path dct:title ;
+      sh:description "This property contains a name given to the Dataset Series. This property can be repeated for parallel language versions of the name." ;
+      sh:datatype xsd:string;
       sh:minCount 1 ;
-    ] ;
-
+  ] ;
+  ####
+  # DatasetSeries recommended properties
+  ####
+  sh:property [
+      sh:path dcat:contactPoint ;
+      sh:description "This property contains contact information that can be used for sending comments about the about the Dataset Series.";
+      sh:node epos:ContactPointType ;
+      sh:minCount 1;
+      sh:message "Contact Point is recommended. Please fill in a value"@en  ;
+      sh:severity sh:Warning ;
+  ] ;
+  sh:property [
+      sh:path dct:publisher ;
+      sh:description "This property refers to a responsible for ensuring the coherency of the Dataset Series. The publisher of the dataset series may not be the publisher of all datasets.";
+      sh:maxCount 1 ;
+      sh:or (
+          [sh:class foaf:Agent ; ]
+          [sh:class schema:Organization ; ]) ;
+  ] ;
+  sh:property [
+      sh:path dct:spatial ;
+      sh:class dct:Location ;
+      sh:description "This property contains the geographic region that is covered by the Dataset Series. ";
+      sh:minCount 1 ;
+      sh:severity sh:Warning ;
+  ] ;
+  sh:property [
+      sh:path dct:temporal ;
+      sh:description "This property refers to a temporal period that the Dataset Series covers.";
+      sh:class dct:PeriodOfTime ;
+      sh:minCount 1 ;
+      sh:severity sh:Warning ;
+  ] ;
+  ####
+  # DatasetSeries optional properties
+  ####
+  sh:property [
+      sh:path dct:accrualPeriodicity ;
+      sh:description "This property refers to the frequency at which the Dataset Series is updated.";
+      #sh:class dct:Frequency ;
+      sh:datatype xsd:anyURI ;
+      sh:maxCount 1 ;
+  ] ;
+  sh:property [
+      sh:path dct:description ;
+      sh:description "This property contains a free-text account of the Dataset Series. This property can be repeated for parallel language versions of the description.";
+      sh:datatype xsd:string;
+      sh:minCount 1 ;
+  ] ;
+  sh:property [
+      sh:path dcat:first ;
+      sh:description "This property contains the first resource in an ordered collection or series of resources, to which the current resource belongs.";
+      #sh:datatype xsd:string;
+      sh:maxCount 1 ;
+  ] ;
+  sh:property [
+      sh:path dct:issued ;
+      sh:description "This property contains the date of formal issuance (e.g., publication) of the Dataset Series. ";
+      sh:node epos:DateOrDateTimeDataType ;
+      sh:maxCount 1 ;
+  ] ;
+  sh:property [
+      sh:path dcat:last ;
+      sh:description "This property contains the last resource in an ordered collection or series..";
+      #sh:datatype xsd:string;
+      sh:maxCount 1 ;
+  ] ;
+  sh:property [
+      sh:path dct:modified ;
+      sh:description "This property contains the most recent date on which the Dataset Series was changed or modified.";
+      sh:node epos:DateOrDateTimeDataType ;
+      sh:maxCount 1 ;
+  ] ;
+  sh:property [
+      sh:path dcat:seriesMember ;
+      sh:description "TThis property refers to a member of the Dataset Series.";
+      #sh:datatype xsd:string;
+  ] ;
+.
 epos:DistributionShape
   a sh:NodeShape ;
   sh:targetClass dcat:Distribution;
@@ -1125,7 +1260,6 @@ epos:DistributionShape
       sh:path dcat:temporalResolution ;
       sh:description " This property refers to the minimum time period resolvable in the dataset distribution.";
       sh:datatype xsd:duration ;
-      sh:maxCount 1 ;
     ];
   sh:property [
       sh:path dct:title ;
@@ -1499,7 +1633,7 @@ epos:EquipmentShape
       sh:severity sh:Warning ;
     ] ;
   sh:property [
-      sh:path schema:manufacturer ;
+      sh:path dct:creator ;
       sh:description "This property refers to an Organisation responsible for producing the Equipment";
       sh:class schema:Organization ;
       sh:maxCount 1 ;
