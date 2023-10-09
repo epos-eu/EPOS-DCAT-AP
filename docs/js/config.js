@@ -141,7 +141,7 @@
       },
       "FOAF":{
         "href":"http://xmlns.com/foaf/0.1/",
-        "title":"FOAF Vocabulary Specification 0.99 (Paddington Edition). ",
+        "title":"FOAF Vocabulary Specification 0.1 (Paddington Edition). ",
         "publisher":"Dan Brickley; Libby Miller. FOAF project.",
         "date":"14 January 2014"
       },
@@ -152,7 +152,7 @@
       "HYDRA":{
         "href":"http://www.w3.org/ns/hydra/core#",
         "title":"HYDRA"
-      },
+      }, 
       "HYDRA1":{
         "href":"http://api.verint.com/w3c/hydra#",
         "title":"HYDRA"
