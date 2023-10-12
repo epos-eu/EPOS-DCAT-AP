@@ -62,19 +62,64 @@
       <p>The DCAT-AP Application Profile on which this document is based is the DCAT-AP specification v3 [[DCAT-AP-3]].  </p>
     </section>
 
+    <section id="profile-encoding">
+      <h3>Profile Encoding</h3>
+      <p>The encoding of the EPOS-DCAT-AP provides the technical aspects
+        used for data representation and exchange, ensuring interoperability.  An influential choice for achieving interoperability across diverse systems is the adoption of RDF (Resource Description Framework) and the Turtle format.
+        RDF's structure allows for a flexible and standardized representation of data, promoting a harmonized approach to information exchange.
+        </p>
+      <p>The preference for Turtle as a data exchange format  is based on its simplicity and human-readable nature. This choice  is crucial for promoting a consistent and clear representation of data, fitting well with the RDF model.
+      </p>
+      <p>Finally, a Turtle document serves as a textual representation of an RDF graph, offering a compact yet expressive format for articulating the complexities of the graph. An RDF graph, built on triples consisting of a subject, predicate, and object, forms the backbone of this interoperable and standardized representation.
+      </p>
+    </section>
+
+    <section id="profile-validation">
+      <h3>Profile Validation</h3>
+      <p>To verify if the data exchange is (technically) conformant to DCAT-AP, the Shapes Constraint Language (SHACL) is defined. 
+      </p>
+      <p> SHACL is designed to provide constraints and validation for RDF graphs and offering several advantages:
+        <ul>
+         <li>
+          <b>Extensibility:</b> SHACL allows for the precise definition of constraints on RDF data. It is designed to be extensible, enabling users to define custom constraint components, which can be reused across multiple shapes and datasets. 
+         </li>
+         <li>
+          <b>Scalable and efficient:</b> SHACL is structured for efficient validation, making it suitable for use with large datasets and complex data models.
+         </li>
+         <li>
+          <b>Widely adopted:</b> SHACL is a W3C Recommendation for expressing constraints on a RDF knowledge graph, it enjoys broad support among data management tools and libraries, promoting interoperability and reusability. This makes it a more natural fit for data models that need to interoperate with other semantic web resources and standards.
+         </li>
+        </ul>
+      </p>
+      <p>The SHACL constraints for EPOS-DCAT-AP are available at: </p>
+      <p><a href="https://github.com/epos-eu/EPOS-DCAT-AP/blob/EPOS-DCAT-AP-v3.0/docs/epos-dcat-ap_v3.0.0_shacl.ttl">
+        https://github.com/epos-eu/EPOS-DCAT-AP/blob/EPOS-DCAT-AP-v3.0/docs/epos-dcat-ap_v3.0.0_shacl.ttl</a>
+      </p>
+      <p> They represent a set of integrity constraints used to validate instance shapes with respect to:
+        <ul>
+         <li>cardinality constraints, both for properties that have a minimum occurrence greater or equal to than 1 (for example, there needs to be at least one occurrence of the mandatory property title of a Dataset) and properties that have an
+          explicit maximum occurrence (for example, there can be a maximum of one licence for a Distribution)
+         </li>
+         <li> restrictions concerning ranges (expressed as sh:nodeKind) of properties to avoid that properties, irrespective of whether they are mandatory, recommended or optional, are provided that violate range declarations.
+         </li>
+        </ul>
+      </p>
+    </section>
+
     <section id="history">
       <h3>Revision history</h3>
       <p>In 2023, the adoption of W3C DCAT 3  triggered a new alignment for DCAT-AP. W3C DCAT 3 extends the profile with the Dataset Series notion, deprecates the use of some URIs and introducing new URIs in the DCAT namespace for the use case of Dataset versioning. </p>
-
-    <section id="history_alignment"><h4>Alignment EPOS-DCAT-AP v2 with DCAT-AP 3</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/revision_history.html"></div>
-
+    
+    <section id="history_alignment"><h4>Classes Alignment EPOS-DCAT-AP v3.0 with DCAT-AP v3.0</h4>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/revision_history_copy.html"></div>
+      <!--<section id="history_alignment"><h4>Alignment EPOS-DCAT-AP v2 with DCAT-AP 3</h4> !-->
+      <!--<div data-include-format="html" data-include-replace="true" data-include="./tables/revision_history.html"></div>!-->
     </section>
-      <section id="history_alignment2"><h4>Properties characterizing EPOS-DCAT-AP 3.0 with respect to DCAT-AP
-3.0</h4>
-      <div data-include-format="html" data-include-replace="true" data-include="./tables/revision_history_2.html"></div>
+    <section id="history_alignment2"><h4>Properties characterizing EPOS-DCAT-AP v3.0 with respect to DCAT-AP v3.0</h4>
+      <div data-include-format="html" data-include-replace="true" data-include="./tables/revision_history_2_copy.html"></div>
+      <!--<div data-include-format="html" data-include-replace="true" data-include="./tables/revision_history_2.html"></div>!-->
+    </section>
 
-      </section>
     </section>
 
   </section>
@@ -1135,7 +1180,7 @@
       <div data-include-format="html" data-include-replace="true" data-include="./tables/epos-dcat-ap-classes-and-properties.html"></div>
     </section>
   </section>
-  <!--SHACL-->
+  <!--SHACL
   <section id="shacl">
     <h2>SHACL Contraints</h2>
     <p>The SHACL constraints for EPOS-DCAT-AP are available at: </p>
@@ -1150,7 +1195,7 @@
         <li> restrictions concerning ranges (expressed as sh:nodeKind) of properties to avoid that properties, irrespective of whether they are mandatory, recommended or optional, are provided that violate range declarations.
         </li>
       </ul>
-  </section>
+  </section>-->
 
 
 </body>
