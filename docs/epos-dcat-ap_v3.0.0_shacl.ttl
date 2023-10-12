@@ -921,7 +921,7 @@ epos:DatasetInSeriesShape
     ];
   sh:property [
    	  sh:path dcat:previous;
-  	  sh:class dcat:DatasetInSeries;
+  	  sh:class dcat:Dataset;
       sh:description "This property links the previous resource (before the current one) in an ordered collection or series of resources. Unless the dataset is the last in the chain a dataset in a collection must have a previous one.";
       sh:minCount 1 ;
       sh:message "previous is recommended. Please fill in a value"@en  ;
@@ -939,7 +939,7 @@ epos:DatasetInSeriesShape
     ];
   sh:property [
       sh:path dct:next;
-      sh:class dcat:DatasetInSeries ;
+      sh:class dcat:Dataset ;
 	    sh:description "This property refers to the frequency at which the Dataset is updated. ";
     ];
 .
@@ -1245,7 +1245,17 @@ epos:ConceptSchemeShape
   a sh:NodeShape ;
   sh:targetClass skos:ConceptScheme ;
   ####
-  # ConceptScheme properties
+  # ConceptScheme mandatory properties
+  ####
+  sh:property [
+      sh:path dct:title ;
+      sh:datatype xsd:string;
+      sh:minCount 1 ;
+      sh:maxCount 1 ;
+      sh:description "This property contains a name of the category scheme.";
+    ] ;
+  ####
+  # ConceptScheme recommended properties
   ####
   sh:property [
       sh:path dct:description ;
@@ -1256,21 +1266,8 @@ epos:ConceptSchemeShape
     ] ;
   sh:property [
       sh:path dct:description ;
+      sh:datatype xsd:string;
       sh:description "This property contains a description of the category scheme.";
-      sh:datatype xsd:string;
-      sh:maxCount 1 ;
-    ] ;
-  sh:property [
-      sh:path dct:title ;
-      sh:datatype xsd:string;
-      sh:minCount 1 ;
-      sh:message "Title is recommended. Please fill in a value"@en  ;
-      sh:severity sh:Warning ;
-    ] ;
-  sh:property [
-      sh:path dct:title ;
-      sh:description "This property contains a name of the category scheme.";
-      sh:datatype xsd:string;
       sh:maxCount 1 ;
     ] ;
 .
@@ -1861,16 +1858,6 @@ epos:IriTemplateMappingShape
       sh:datatype xsd:string ;
     ] ;
   sh:property [
-      sh:path schema:multipleValues ;
-      sh:description "Whether multiple values are allowed for the property. Default is false.";
-      sh:datatype xsd:boolean ;
-    ] ;
-  sh:property [
-      sh:path schema:readonlyValue ;
-      sh:description "Whether or not a property is mutable. Default is false. Specifying this for a property that also has a value makes it act similar to a hidden input in an HTML form.";
-      sh:datatype xsd:boolean ;
-    ] ;
-  sh:property [
       sh:path hydra:property ;
       sh:description "This property contains the vocabulary term which indicates the semantic description of parameter.";
       sh:datatype xsd:string ;
@@ -1880,6 +1867,21 @@ epos:IriTemplateMappingShape
       sh:path schema:valuePattern ;
       sh:description "This property contains the regular expression for testing values according to the parameter's specification.";
       sh:datatype xsd:string ;
+      sh:maxCount 1 ;
+    ] ;
+  ####
+  # IriTemplateMapping optional properties
+  ####
+  sh:property [
+      sh:path schema:multipleValues ;
+      sh:description "Whether multiple values are allowed for the property. Default is false.";
+      sh:datatype xsd:boolean ;
+      sh:maxCount 1 ;
+    ] ;
+  sh:property [
+      sh:path schema:readonlyValue ;
+      sh:description "Whether or not a property is mutable. Default is false. Specifying this for a property that also has a value makes it act similar to a hidden input in an HTML form.";
+      sh:datatype xsd:boolean ;
       sh:maxCount 1 ;
     ] ;
 .
