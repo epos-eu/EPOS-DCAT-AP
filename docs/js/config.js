@@ -734,7 +734,7 @@ function quickreference() {
       "title":"Joinup. Asset Description Metadata Schema (ADMS)",
       "publisher":"European Commission"
     },
-    "CERIF-VOCS": {
+    /*"CERIF-VOCS": {
       "href":"http://www.eurocris.org/Uploads/Web%20pages/CERIF-1.5/CERIF1.5_Semantics.xhtml",
       "title":"CERIF standard vocabularies"
     },
@@ -842,9 +842,9 @@ function quickreference() {
       "publisher":"Wageningen UR",
       "date":"4 June 2018",
       "authors":["Hajo Rijgersberg", "Mark van Assem", "Don Willems", "Xin-Ying Ren", "Mari Wigham", "Jeen Broekstra", "Jan Top"]
-    },
+    },*/
     "GeoSPARQL11": {
-      //        "href": "https://github.com/opengeospatial/ogc-geosparql/1.1",
+      //"href": "https://github.com/opengeospatial/ogc-geosparql/1.1",
       "href": "https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html",
       "title": "OGC GeoSPARQL 1.1",
       //        "authors": [],
