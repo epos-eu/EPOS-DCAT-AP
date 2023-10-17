@@ -1,0 +1,598 @@
+<table class="simple" id="table-epos-dcat-ap-classes-and-properties">
+  <thead>
+  <tr>
+    <th>Class</th>
+    <th>Class URI</th>
+    <th>Mandatory prop.</th>
+    <th>Recommended prop.</th>
+    <th>Optional prop.</th>
+  </tr>
+  </thead>
+<tbody>
+  <tr>
+    <td>+ <a href="#address">Address</a></td>
+    <td><code>vcard:Address</code></td>
+    <td class="property mandatory">
+        <p>+ <a title="country-name" href="#address-country-name"><code>vcard:country-name</code></a></p>
+        <p>+ <a title="locality" href="#address-locality"><code>vcard:locality</code></a></p>
+        <p>+ <a title="postal-code" href="#address-postal-code"><code>vcard:postal-code</code></a></p>
+        <p>+ <a title="street-address" href="#address-street-address"><code>vcard:street-address</code></a></p>
+    </td>
+    <td class="property recommended">
+    </td>
+    <td class="property optional">
+    </td>
+  </tr>
+  <tr>
+    <td><a href="#agent">Agent</a></td>
+    <td><code>foaf:Agent</code></td>
+    <td class="property mandatory">
+        <p><a title="name" href="#agent-name"><code>foaf:name</code></a></p>
+    </td>
+    <td class="property recommended">
+      <p><a title="type" href="#agent-type"><code>dct:type</code></a></p>
+    </td>
+    <td class="property optional"></td>
+  </tr>
+  <tr>
+    <td><a href="#catalog">Catalog</a></td>
+    <td><code>dcat:Catalog</code></td>
+    <td class="property mandatory">
+      <p><a title="description" href="#catalog-description"><code>dct:description</code></a></p>
+      <p><a title="publisher" href="#catalog-publisher"><code>dct:publisher</code></a></p>
+      <p><a title="title" href="#catalog-title"><code>dct:title</code></a></p>
+    </td>
+    <td class="property recommended">
+      <p><a title="dataset" href="#catalog-dataset"><code>dcat:dataset</code></a></p>
+      <p><a title="issued" href="#catalog-issued"><code>dct:issued</code></a></p>
+      <p><a title="homepage" href="#catalog-homepage"><code>foaf:homepage</code></a></p>
+      <p><a title="language" href="#catalog-language"><code>dct:language</code></a></p>
+      <p><a title="license" href="#catalog-license"><code>dct:license</code></a></p>
+      <p><a title="modified" href="#catalog-modified"><code>dct:modified</code></a></p>
+      <p><a title="service" href="#catalog-service"><code>dcat:service</code></a></p>
+      <p><a title="spatial" href="#catalog-spatial"><code>dct:spatial</code></a></p>
+      <p><a title="themeTaxonomy" href="#catalog-theme-taxonomy"><code>dcat:themeTaxonomy</code></a></p>
+    </td>
+    <td class="property optional">
+      <p><a title="catalog" href="#catalog-catalog"><code>dcat:catalog</code></a></p>
+      <p><a title="creator" href="#catalog-creator"><code>dct:creator</code></a></p>
+      <p><a title="has-part" href="#catalog-has-part"><code>dct:hasPart</code></a></p>
+      <p><a title="is-part-of" href="#catalog-is-part-of"><code>dct:isPartOf</code></a></p>
+      <p><a title="record" href="#catalog-record"><code>dcat:record</code></a></p>
+      <p><a title="rights" href="#catalog-rights"><code>dct:rights</code></a></p>
+      <p><a title="temporal" href="#catalog-temporal"><code>dct:temporal</code></a></p>
+    </td>
+  </tr>
+  <tr>
+    <td><a href="#catalog-record">CatalogRecord</a></td>
+    <td><code>dcat:CatalogRecord</code></td>
+    <td class="property mandatory">
+      <p><a title="modified" href="#catalog-record-modified"><code>dct:modified</code></a></p>
+      <p><a title="primary-topic" href="#catalog-record-primary-topic"><code>foaf:primaryTopic</code></a></p>
+    </td>
+    <td class="property recommended">
+      <p><a title="conforms-to" href="#catalog-record-conforms-to"><code>dct:conformsTo</code></a></p>
+      <p>+ <a title="identifier" href="#catalog-record-identifier"><code>dct:identifier</code></a></p>
+      <p><a title="issued" href="#catalog-record-issued"><code>dct:issued</code></a></p>
+      <p><a title="status" href="#catalog-record-status"><code>adms:status</code></a></p>
+    </td>
+    <td class="property optional">
+      <p><a title="description" href="#catalog-record-description"><code>dct:description</code></a></p>
+      <p><a title="language" href="#catalog-record-language"><code>dct:language</code></a></p>
+      <p><a title="source" href="#catalog-record-source"><code>dct:source</code></a></p>
+      <p><a title="title" href="#catalog-record-title"><code>dct:title</code></a></p>
+    </td>
+  </tr>
+  <tr>
+    <td><a href="#category">Category</a></td>
+    <td><code>skos:Concept</code></td>
+    <td class="property mandatory" >
+      <p>+ <a title="definition" href="#category-definition"><code>skos:definition</code></a></p>
+      <p>+ <a title="inscheme" href="#category-inscheme"><code>skos:inScheme</code></a></p>
+      <p><a title="preflabel" href="#category-preflabel"><code>skos:prefLabel</code></a></p>
+    </td>
+    <td class="property recommended"></td>
+    <td class="property optional"></td>
+  </tr>
+  <tr>
+    <td><a href="#category-scheme">CategoryScheme</a></td>
+    <td><code>skos:ConceptScheme</code></td>
+    <td class="property mandatory">
+    </td>
+    <td class="property recommended">
+        <p>+ <a title="description" href="#category-scheme-description"><code>dct:description</code></a></p>
+        <p><a title="title" href="#category-scheme-title"><code>dct:title</code></a></p>
+    </td>
+    <td class="property optional">
+    </td>
+  </tr>
+  <tr>
+    <td><a href="#checksum">Checksum</a></td>
+    <td><code>spdx:Checksum</code></td>
+    <td class="property mandatory">
+        <p><a title="algorithm" href="#checksum-algorithm"><code>spdx:algorithm</code></a></p>
+        <p><a title="checksum-value" href="#checksum-checksum-value"><code>spdx:checksumValue</code></a></p>
+    </td>
+    <td class="property recommended"></td>
+    <td class="property optional"></td>
+  </tr>
+  <tr>
+    <td>+ <a href="#contactpoint">ContactPoint</a></td>
+    <td><code>schema:contactPoint</code></td>
+    <td class="property mandatory">
+    </td>
+    <td class="property recommended">
+      <p>+ <a title="contacttype" href="#contact-point-contacttype"><code>schema:contactType</code></a></p>
+    </td>
+    <td class="property optional">
+      <p>+ <a title="availablelanguage" href="#contact-point-availablelanguage"><code>schema:availableLanguage</code></a></p>
+      <p>+ <a title="email" href="#contact-point-email"><code>schema:email</code></a></p>
+      <p>+ <a title="telephone" href="#contact-point-telephone"><code>schema:telephone</code></a></p>
+    </td>
+  </tr>
+  <tr>
+     <td><a href="#data-service">DataService</a></td>
+     <td><code>dcat:DataService</code></td>
+     <td class="property mandatory">
+           <p><a title="endpoint-url" href="#data-service-endpoint-url"><code>dcat:endpointURL</code></a></p>
+           <p>+ <a title="identifier" href="#data-service-identifier"><code>dct:identifier</code></a></p>
+           <p><a title="title" href="#data-service-title"><code>dct:title</code></a></p>
+     </td>
+     <td class="property recommended">
+          <p>+ <a title="contact-point" href="#data-service-contact-point"><code>dcat:contactPoint</code></a></p>
+          <p><a title="description" href="#data-service-description"><code>dct:description</code></a></p>
+          <p><a title="endpoint-description" href="#data-service-endpoint-description"><code>dcat:endpointDescription</code></a></p>
+          <p>+ <a title="issued" href="#data-service-issued"><code>dct:issued</code></a></p>
+          <p>+ <a title="modified" href="#data-service-modified"><code>dct:modified</code></a></p>
+          <p>+ <a title="publisher" href="#data-service-publisher"><code>dct:publisher</code></a></p>
+          <p><a title="serves-dataset" href="#data-service-serves-dataset"><code>dcat:servesDataset</code></a></p>
+          <p>+ <a title="theme" href="#data-service-theme"><code>dcat:theme</code></a></p>
+     </td>
+     <td class="property optional">
+        <p> <a title="access-rights" href="#data-service-access-rights"><code>dct:accessRights</code></a></p>
+        <p>+ <a title="conforms-to" href="#data-service-conforms-to"><code>dct:conformsTo</code></a></p>
+        <p>+ <a title="keyword" href="#data-service-keyword"><code>dcat:keyword</code></a></p>
+        <p><a title="license" href="#data-service-license"><code>dct:license</code></a></p>
+        <p>+ <a title="spatial" href="#data-service-spatial"><code>dct:spatial</code></a></p>
+        <p>+ <a title="temporal" href="#data-service-temporal"><code>dct:temporal</code></a></p>
+    </td>
+  </tr>
+  <tr>
+    <td><a href="#dataset">Dataset</a></td>
+    <td><code>dcat:Dataset</code></td>
+    <td class="property mandatory">
+      <p><a title="description" href="#dataset-description"><code>dct:description</code></a></p>
+      <p><a title="identifier" href="#dataset-identifier"><code>dct:identifier</code></a></p>
+      <p><a title="title" href="#dataset-title"><code>dct:title</code></a></p>
+    </td>
+    <td class="property recommended">
+      <p><a title="contact-point" href="#dataset-contact-point"><code>dcat:contactPoint</code></a></p>
+      <p><a title="distribution" href="#dataset-distribution"><code>dcat:distribution</code></a></p>
+      <p><a title="keyword" href="#dataset-keyword"><code>dcat:keyword</code></a></p>
+      <p><a title="publisher" href="#dataset-publisher"><code>dct:publisher</code></a></p>
+      <p><a title="spatial" href="#dataset-spatial"><code>dct:spatial</code></a></p>
+      <p><a title="temporal" href="#dataset-temporal"><code>dct:temporal</code></a></p>
+      <p><a title="theme" href="#dataset-category"><code>dcat:theme</code></a></p>
+    </td>
+    <td class="property optional">
+      <p><a title="access-rights" href="#dataset-access-rights"><code>dct:accessRights</code></a></p>
+      <p><a title="frequency" href="#dataset-frequency"><code>dct:accrualPeriodicity</code></a></p>
+      <p><a title="conforms-to" href="#dataset-conforms-to"><code>dct:conformsTo</code></a></p>
+      <p>+ <a title="created" href="#dataset-created"><code>dct:created</code></a></p>
+      <p><a title="creator" href="#dataset-creator"><code>dct:creator</code></a></p>
+      <p>+ <a title="has-part" href="#dataset-has-part"><code>dct:hasPart</code></a></p>
+      <p>+ <a title="has-qualityannotation" href="#dataset-has-qualityannotation"><code>dqv:hasQualityAnnotation</code></a></p>
+      <p><a title="has-version" href="#dataset-has-version"><code>dcat:hasVersion</code></a></p>
+      <p><a title="identifier" href="#dataset-other-identifier"><code> adms:identifier</code></a></p>
+      <p>+ <a title="is-part-of" href="#dataset-is-part-of"><code>dct:isPartOf</code></a></p>
+      <p><a title="is-referenced-by" href="#dataset-is-referenced-by"><code>dct:isReferencedBy</code></a></p>
+      <p><a title="issued" href="#dataset-issued"><code>dct:issued</code></a></p>
+      <p><a title="is-version-of" href="#dataset-is-version-of"><code>dcat:isVersionOf</code></a></p>
+      <p><a title="landing-page" href="#dataset-landing-page"><code>dcat:landingPage</code></a></p>
+      <p><a title="language" href="#dataset-language"><code>dct:language</code></a></p>
+      <p><a title="modified" href="#dataset-modified"><code>dct:modified</code></a></p>
+      <p><a title="page" href="#dataset-page"><code>foaf:page</code></a></p>
+      <p><a title="provenance" href="#dataset-provenance"><code>dct:provenance</code></a></p>
+      <p><a title="qualified-attribution" href="#dataset-qualified-attribution"><code>prov:qualifiedAttribution</code></a></p>
+      <p><a title="qualified-relation" href="#dataset-qualified-relation"><code>dcat:qualifiedRelation</code></a></p>
+      <p><a title="relation" href="#dataset-relation"><code>dct:relation</code></a></p>
+      <p><a title="sample" href="#dataset-sample"><code>adms:sample</code></a></p>
+      <p><a title="source" href="#dataset-source"><code>dct:source</code></a></p>
+      <p><a title="spatial-resolution-in-meters" href="#dataset-spatial-resolution-in-meters"><code>dcat:spatialResolutionInMeters</code></a></p>
+      <p><a title="temporal-resolution" href="#dataset-temporal-resolution"><code>dcat:temporalResolution</code></a></p>
+      <p><a title="type" href="#dataset-type"><code>dct:type</code></a></p>
+      <p><a title="version" href="#dataset-version"><code>dcat:version</code></a></p>
+      <p><a title="version-notes" href="#dataset-version-notes"><code>adms:versionNotes</code></a></p>
+      <p><a title="was-generated-by" href="#dataset-was-generated-by"><code>prov:wasGeneratedBy</code></a></p>
+    </td>
+  </tr>
+  <tr>
+    <td><a href="#dataset-in-series">Dataset Int Series</a></td>
+    <td><code>dcat:Dataset</code></td>
+    <td class="property mandatory">
+      <p><a title="title" href="#dataset-in-series-title"><code>dct:title</code></a></p>
+      <p><a title="description" href="#dataset-in-series-description"><code>dct:description</code></a></p>
+    </td>
+    <td class="property recommended">
+      <p><a title="inseries" href="#dataset-in-series-inseries"><code>dcat:inSeries</code></a></p>
+      <p><a title="previous" href="#dataset-in-series-previous"><code>dcat:previous</code></a></p>
+    </td>
+    <td class="property optional">
+      <p><a title="accrualPeriodicity" href="#dataset-in-series-frequency"><code>dct:accrualPeriodicity</code></a></p>
+      <p><a title="next" href="#dataset-in-series-next"><code>dct:next</code></a></p>
+    </td>
+  </tr>
+  <tr>
+    <td><a href="#dataset-series">Dataset Series</a></td>
+    <td><code>dcat:DatasetSeries</code></td>
+    <td class="property mandatory">
+      <p><a title="title" href="#dataset-series-title"><code>dct:title</code></a></p>
+    </td>
+    <td class="property recommended">
+      <p><a title="contactPoint" href="#dataset-series-contact-point"><code>dcat:contactPoint</code></a></p>
+      <p><a title="publisher" href="#dataset-series-publisher"><code>dct:publisher</code></a></p>
+      <p><a title="spatial" href="#dataset-series-spatial"><code>dct:spatial</code></a></p>
+      <p><a title="temporal" href="#dataset-series-temporal"><code>dct:temporal</code></a></p>
+    </td>
+    <td class="property optional">
+      <p><a title="description" href="#dataset-series-description"><code>dct:description</code></a></p>
+      <p><a title="first" href="#dataset-series-first"><code>dct:first</code></a></p>
+      <p><a title="frequency" href="#dataset-series-frequency"><code>dct:accrualPeriodicity</code></a></p>
+      <p><a title="issued" href="#dataset-series-issued"><code>dct:issued</code></a></p>
+      <p><a title="last" href="#dataset-series-last"><code>dct:last</code></a></p>
+      <p><a title="modified" href="#dataset-series-modified"><code>dct:modified</code></a></p>
+      <p><a title="seriesmember" href="#dataset-series-seriesmember"><code>dct:seriesMember</code></a></p>
+    </td>
+  </tr>
+  <tr>
+    <td><a href="#distribution">Distribution</a></td>
+    <td><code>dcat:Distribution</code></td>
+    <td class="property mandatory">
+      <p><a title="access-url" href="#distribution-access-url"><code>dcat:accessURL</code></a></p>
+      <p>+ <a title="identifier" href="#distribution-identifier"><code>dct:identifier</code></a></p>
+    </td>
+    <td class="property recommended">
+      <p><a title="availability" href="#distribution-availability"><code>dcatap:availability</code></a></p>
+      <p><a title="description" href="#distribution-description"><code>dct:description</code></a></p>
+      <p><a title="format" href="#distribution-format"><code>dct:format</code></a></p>
+      <p><a title="license" href="#distribution-license"><code>dct:license</code></a></p>
+    </td>
+    <td class="property optional">
+      <p><a title="access-service" href="#distribution-access-service"><code>dcat:accessService</code></a></p>
+      <p><a title="byte-size" href="#distribution-bytesize"><code>dcat:byteSize</code></a></p>
+      <p><a title="checksum" href="#distribution-checksum"><code>spdx:checksum</code></a></p>
+      <p><a title="compression-format" href="#distribution-compression-format"><code>dcat:compressFormat</code></a></p>
+      <p><a title="conforms-to" href="#distribution-conforms-to"><code>dct:conformsTo</code></a></p>
+      <p><a title="download-url" href="#distribution-download-url"><code>dcat:downloadURL</code></a></p>
+      <p><a title="has-policy" href="#distribution-has-policy"><code>odrl:hasPolicy</code></a></p>
+      <p><a title="issued" href="#distribution-issued"><code>dct:issued</code></a></p>
+      <p><a title="language" href="#distribution-language"><code>dct:language</code></a></p>
+      <p><a title="media-type" href="#distribution-media-type"><code>dcat:mediaType</code></a></p>
+      <p><a title="modified" href="#distribution-modified"><code>dct:modified</code></a></p>
+      <p><a title="package-format" href="#distribution-package-format"><code>dcat:packageFormat</code></a></p>
+      <p><a title="page" href="#distribution-page"><code>foaf:page</code></a></p>
+      <p><a title="rights" href="#distribution-rights"><code>dct:rights</code></a></p>
+      <p><a title="spatial-resolution-in-meters" href="#distribution-spatial-resolution-in-meters"><code>dcat:spatialResolutionInMeters</code></a></p>
+      <p><a title="status" href="#distribution-status"><code>adms:status</code></a></p>
+      <p><a title="temporal-resolution" href="#distribution-temporal-resolution"><code>dcat:temporalResolution</code></a></p>
+      <p><a title="title" href="#distribution-title"><code>dct:title</code></a></p>
+    </td>
+  </tr>
+  <tr>
+    <td>+ <a href="#equipment">Equipment</a></td>
+    <td><code>epos:Equipment</code></td>
+    <td class="property mandatory">
+      <p>+ <a title="description" href="#equipment-description"><code>dct:description</code></a></p>
+      <p>+ <a title="identifier" href="#equipment-identifier"><code>dct:identifier</code></a></p>
+      <p>+ <a title="title" href="#equipment-title"><code>dct:title</code></a></p>
+    </td>
+    <td class="property recommended">
+      <p>+ <a title="creator" href="#equipment-creator"><code>dct:creator</code></a></p>
+      <p>+ <a title="type" href="#equipment-type"><code>dct:type</code></a></p>
+    </td>
+    <td class="property optional">
+      <p>+ <a title="contact-point" href="#equipment-contact-point"><code>dcat:contactPoint</code> or <code>schema:contactPoint</code></a></p>
+      <p>+ <a title="dynamic-range" href="#equipment-dynamic-range"><code>epos:dynamicRange</code></a></p>
+      <p>+ <a title="filter" href="#equipment-filter"><code>epos:filter</code></a></p>
+      <p>+ <a title="is-part-of" href="#equipment-is-part-of"><code>dct:isPartOf</code></a></p>
+      <p>+ <a title="keyword" href="#equipment-keyword"><code>dcat:keyword</code></a></p>
+      <p>+ <a title="landingpage" href="#equipment-landingpage"><code>dcat:landingPage</code></a></p>
+      <p>+ <a title="orientation" href="#equipment-orientation"><code>epos:orientation</code></a></p>
+      <p>+ <a title="relation" href="#equipment-relation"><code>dct:relation</code></a></p>
+      <p>+ <a title="resolution" href="#equipment-resolution"><code>epos:resolution</code></a></p>
+      <p>+ <a title="sample-period" href="#equipment-sample-period"><code>epos:samplePeriod</code></a></p>
+      <p>+ <a title="spatial" href="#equipment-spatial"><code>dct:spatial</code></a></p>
+      <p>+ <a title="temporal" href="#equipment-temporal"><code>dct:temporal</code></a></p>
+      <p>+ <a title="theme" href="#equipment-theme"><code>dcat:theme</code></a></p>
+    </td>
+  </tr>
+  <tr>
+    <td>+ <a href="#facility">Facility</a></td>
+    <td><code>epos:Facility</code></td>
+    <td class="property mandatory">
+      <p>+ <a title="description" href="#facility-description"><code>dct:description</code></a></p>
+      <p>+ <a title="identifier" href="#facility-identifier"><code>dct:identifier</code></a></p>
+      <p>+ <a title="title" href="#facility-title"><code>dct:title</code></a></p>
+    </td>
+    <td class="property recommended">
+      <p>+ <a title="theme" href="#facility-theme"><code>dcat:theme</code></a></p>
+      <p>+ <a title="type" href="#facility-type"><code>dct:type</code></a></p>
+    </td>
+    <td class="property optional">
+      <p>+ <a title="contact-point" href="#facility-contact-point"><code>dcat:contactPoint</code> or <code>schema:contactPoint</code></a></p>
+      <p>+ <a title="is-part-of" href="#facility-is-part-of"><code>dct:isPartOf</code></a></p>
+      <p>+ <a title="keyword" href="#facility-keyword"><code>vcard:hasAddress</code></a></p>
+      <p>+ <a title="has-address" href="#facility-keyword"><code>dcat:keyword</code></a></p>
+      <p>+ <a title="landingpage" href="#facility-landingpage"><code>dcat:landingPage</code></a></p>
+      <p>+ <a title="relation" href="#facility-relation"><code>dct:relation</code></a></p>
+      <p>+ <a title="spatial" href="#facility-spatial"><code>dct:spatial</code></a></p>
+    </td>
+  </tr>
+  <tr>
+    <td><a href="#identifier">Identifier</a></td>
+    <td><code>adms:Identifier</code></td>
+    <td class="property mandatory">
+        <p><a title="notation" href="#identifier-notation"><code>skos:notation</code></a></p>
+        <p>+ <a title="schemeagency" href="#identifier-schemeagency"><code>adms:schemeAgency</code></a></p>
+    </td>
+    <td class="property recommended"></td>
+    <td class="property optional"></td>
+  </tr>
+  <tr>
+    <td>+ <a href="#iritemplate">IriTemplate</a></td>
+    <td><code>hydra:IriTemplate</code></td>
+    <td class="property mandatory">
+        <p>+ <a title="template" href="#iritemplate-template"><code>hydra:template</code></a></p>
+    </td>
+    <td class="property recommended"></td>
+    <td class="property optional">
+      <p>+ <a title="mapping" href="#iritemplate-mapping"><code>hydra:mapping</code></a></p>
+    </td>
+  </tr>
+  <tr>
+    <td>+ <a href="#iritemplatemapping">IriTemplateMapping</a></td>
+    <td><code>hydra:IriTemplateMapping</code></td>
+    <td class="property mandatory">
+        <p>+ <a title="label" href="#iritemplatemapping-label"><code>rdf:label</code></a></p>
+        <p>+ <a title="range" href="#iritemplatemapping-range"><code>rdfs:range</code></a></p>
+        <p>+ <a title="required" href="#iritemplatemapping-required"><code>hydra:required</code></a></p>
+        <p>+ <a title="variable" href="#iritemplatemapping-variable"><code>hydra:variable</code></a></p>
+    </td>
+    <td class="property recommended">
+       <p>+ <a title="defaultvalue" href="#iritemplatemapping-defaultValue"><code>schema:defaultValue</code></a></p>
+       <p>+ <a title="maxvalue" href="#iritemplatemapping-maxvalue"><code>schema:maxValue</code></a></p>
+       <p>+ <a title="minvalue" href="#iritemplatemapping-minvalue"><code>schema:minValue</code></a></p>
+       <p>+ <a title="multivalues" href="#iritemplatemapping-multiValues"><code>schema:multiValues</code></a></p>
+       <p>+ <a title="readonlyvalue" href="#iritemplatemapping-readonlyValue"><code>schema:readonlyValue</code></a></p>
+       <p>+ <a title="paramValue" href="#iritemplatemapping-paramValue"><code>http:paramValue</code></a></p>
+       <p>+ <a title="property" href="#iritemplatemapping-property"><code>hydra:property</code></a></p>
+       <p>+ <a title="valuepattern" href="#iritemplatemapping-valuePattern"><code>schema:valuePattern</code></a></p>
+    </td>
+    <td class="property optional"></td>
+  </tr>
+  <tr>
+    <td><a href="#license-document">LicenseDocument</a></td>
+    <td><code>dct:LicenseDocument</code></td>
+    <td class="property mandatory"></td>
+    <td class="property recommended">
+       <p><a title="type" href="#license-document-type"><code>dct:type</code></a></p>
+    </td>
+    <td class="property optional"></td>
+  </tr>
+  <tr>
+    <td><a href="#location">Location</a></td>
+    <td><code>dct:Location</code></td>
+    <td class="property mandatory"></td>
+    <td class="property recommended">
+      <p><a title="bbox" href="#location-bbox"><code>dcat:bbox</code></a></p>
+      <p><a title="centroid" href="#location-centroid"><code>dcat:centroid</code></a></p>
+    </td>
+    <td class="property optional">
+      <p><a title="geometry" href="#location-geometry"><code>locn:geometry</code></a></p>
+    </td>
+  </tr>
+  <tr>
+    <td>+ <a href="#operation">Operation</a></td>
+    <td><code>hydra:Operation</code></td>
+    <td class="property mandatory"></td>
+    <td class="property recommended">
+      <p>+ <a title="property" href="#operation-property"><code>hydra:property</code></a></p>
+      <p>+ <a title="returns" href="#operation-returns"><code>hydra:returns</code></a></p>
+    </td>
+    <td class="property optional">
+      <p>+ <a title="method" href="#operation-method"><code>hydra:method</code></a></p>
+    </td>
+  </tr>
+  <tr>
+    <td>+ <a href="#organization">Organization</a></td>
+    <td><code>schema:Organization</code></td>
+    <td class="property mandatory">
+      <p>+ <a title="identifier" href="#organization-identifier"><code>schema:identifier</code></a></p>
+    </td>
+    <td class="property recommended">
+      <p>+ <a title="leicode" href="#organization-leicode"><code>schema:leiCode</code></a></p>
+      <p>+ <a title="legalname" href="#organization-legalname"><code>schema:legalname</code></a></p>
+    </td>
+    <td class="property optional">
+      <p>+ <a title="address" href="#organization-address"><code>schema:address</code></a></p>
+      <p>+ <a title="associatedproject" href="#organization-associatedproject"><code>epos:associatedProject</code></a></p>
+      <p>+ <a title="contact-point" href="#organization-contact-point"><code>dcat:contactPoint</code> or <code>schema:contactPoint</code></a></p>
+      <p>+ <a title="email" href="#organization-email"><code>schema:email</code></a></p>
+      <p>+ <a title="logo" href="#organization-logo"><code>schema:logo</code></a></p>
+      <p>+ <a title="memberof" href="#organization-memberof"><code>schema:memberOf</code></a></p>
+      <p>+ <a title="owns" href="#organization-owns"><code>schema:owns</code></a></p>
+      <p>+ <a title="telephone" href="#organization-telephone"><code>schema:telephone</code></a></p>
+      <p>+ <a title="url" href="#organization-url"><code>schema:url</code></a></p>
+    </td>
+  </tr>
+  <tr>
+    <td><a href="#period-of-time">PeriodOfTime</a></td>
+    <td><code>dct:PeriodOfTime</code></td>
+    <td class="property mandatory"></td>
+    <td class="property recommended">
+      <p><a title="end-date" href="#period-of-time-end-date"><code>dcat:endDate</code></a></p>
+      <p><a title="start-date" href="#period-of-time-start-date"><code>dcat:startDate</code></a></p>
+    </td>
+    <td class="property optional">
+      <p><a title="beginning" href="#period-of-time-beginning"><code>time:hasBeginning</code></a></p>
+      <p><a title="end" href="#period-of-time-end"><code>time:hasEnd</code></a></p>
+    </td>
+  </tr>
+  <tr>
+    <td>+ <a href="#person">Person</a></td>
+    <td><code>schema:Person</code></td>
+    <td class="property mandatory">
+      <p>+ <a title="identifier" href="#person-identifier"><code>schema:identifier</code></a></p>
+    </td>
+    <td class="property recommended"></td>
+    <td class="property optional">
+      <p>+ <a title="address" href="#person-address"><code>schema:address</code></a></p>
+      <p>+ <a title="affiliation" href="#person-affiliation"><code>schema:affiliation</code></a></p>
+      <p>+ <a title="contact-point" href="#person-contact-point"><code>dcat:contactPoint</code> or <code>schema:contactPoint</code></a></p>
+      <p>+ <a title="email" href="#person-email"><code>schema:email</code></a></p>
+      <p>+ <a title="logo" href="#person-familyname"><code>schema:familyName</code></a></p>
+      <p>+ <a title="memberof" href="#person-givenname"><code>schema:givenName</code></a></p>
+      <p>+ <a title="owns" href="#person-qualifications"><code>schema:qualifications</code></a></p>
+      <p>+ <a title="telephone" href="#person-telephone"><code>schema:telephone</code></a></p>
+      <p>+ <a title="url" href="#person-url"><code>schema:url</code></a></p>
+    </td>
+  </tr>
+  <tr>
+    <td>+ <a href="#postaladdress">PostalAddress</a></td>
+    <td><code>schema:PostalAddress</code></td>
+    <td class="property mandatory">
+        <p>+ <a title="addresscountry" href="#postaladdress-addresscountry"><code>schema:addressCountry</code></a></p>
+        <p>+ <a title="addresslocality" href="#postaladdress-addresslocality"><code>schema:addressLocality</code></a></p>
+        <p>+ <a title="postalcode" href="#postaladdress-postalcode"><code>schema:postalCode</code></a></p>
+        <p>+ <a title="streetaddress" href="#postaladdress-streetaddress"><code>schema:streetAddress</code></a></p>
+    </td>
+    <td class="property recommended"></td>
+    <td class="property optional"></td>
+  </tr>
+  <tr>
+    <td>+ <a href="#project">Project</a></td>
+    <td><code>schema:Project</code></td>
+    <td class="property mandatory">
+        <p>+ <a title="identifier" href="#project-identifier"><code>dct:identifier</code></a></p>
+        <p>+ <a title="title" href="#project-title"><code>dct:title</code></a></p>
+    </td>
+    <td class="property recommended">
+      <p>+ <a title="contact-point" href="#project-contact-point"><code>dcat:contactPoint</code> or <code>schema:contactPoint</code></a></p>
+      <p>+ <a title="description" href="#project-description"><code>dct:description</code></a></p>
+    </td>
+    <td class="property optional">
+      <p>+ <a title="homepage" href="#project-homepage"><code>foaf:homepage</code></a></p>
+    </td>
+  </tr>
+  <tr>
+    <td>+ <a href="#propertyvalue">PropertyValue</a></td>
+    <td><code>schema:PropertyValue</code></td>
+    <td class="property mandatory">
+        <p>+ <a title="identifier" href="#propertyvalue-propertyID"><code>schema:propertyID</code></a></p>
+        <p>+ <a title="title" href="#propertyvalue-value"><code>schema:value</code></a></p>
+    </td>
+    <td class="property recommended"></td>
+    <td class="property optional"></td>
+  </tr>
+  <tr>
+    <td>+ <a href="#publication">Publication</a></td>
+    <td><code>epos:Publication</code></td>
+    <td class="property mandatory">
+        <p>+ <a title="identifier" href="#publication-identifier"><code>schema:identifier</code></a></p>
+        <p>+ <a title="name" href="#publication-name"><code>schema:name</code></a></p>
+    </td>
+    <td class="property recommended">
+      <p>+ <a title="abstract" href="#publication-abstract"><code>dct:abstract</code></a></p>
+      <p>+ <a title="author" href="#publication-author"><code>schema:author</code></a></p>
+      <p>+ <a title="contributor" href="#publication-contributor"><code>schema:contributor</code></a></p>
+      <p>+ <a title="datepublished" href="#publication-datepublished"><code>schema:datePublished</code></a></p>
+      <p>+ <a title="publisher" href="#publication-publisher"><code>schema:publisher</code></a></p>
+    </td>
+    <td class="property optional">
+      <p>+ <a title="issn" href="#publication-issn"><code>schema:issn</code></a></p>
+      <p>+ <a title="keywords" href="#publication-keywords"><code>schema:keywords</code></a></p>
+      <p>+ <a title="license" href="#publication-license"><code>schema:license</code></a></p>
+      <p>+ <a title="number-of-pages" href="#publication-number-of-pages"><code>schema:numberOfPages</code></a></p>
+      <p>+ <a title="theme" href="#publication-theme"><code>dcat:theme</code></a></p>
+      <p>+ <a title="volumeNumber" href="#publication-volumeNumber"><code>schema:volumeNumber</code></a></p>
+    </td>
+  </tr>
+  <tr>
+    <td><a href="#relationship">Relationship</a></td>
+    <td><code>dcat:Relationship</code></td>
+    <td class="property mandatory">
+        <p><a title="had-role" href="#relationship-had-role"><code>dcat:hadRole</code></a></p>
+        <p><a title="relation" href="#relationship-relation"><code>dct:relation</code></a></p>
+    </td>
+    <td class="property recommended"></td>
+    <td class="property optional"></td>
+  </tr>
+  <tr>
+    <td>+ <a href="#service">Service</a></td>
+    <td><code>schema:Service</code></td>
+    <td class="property mandatory">
+        <p>+ <a title="identifier" href="#service-identifier"><code>schema:identifier</code></a></p>
+    </td>
+    <td class="property recommended">
+        <p>+ <a title="contact-point" href="#service-contact-point"><code>dcat:contactPoint</code> or <code>schema:contactPoint</code></a></p>
+        <p>+ <a title="description" href="#service-description"><code>schema:description</code></a></p>
+        <p>+ <a title="name" href="#service-name"><code>schema:name</code></a></p>
+        <p>+ <a title="provider" href="#service-provider"><code>schema:provider</code></a></p>
+    </td>
+    <td class="property optional">
+      <p>+ <a title="keywords" href="#service-keywords"><code>schema:keywords</code></a></p>
+      <p>+ <a title="servicetype" href="#service-servicetype"><code>schema:serviceType</code></a></p>
+      <p>+ <a title="spatial" href="#service-spatial"><code>dct:spatial</code></a></p>
+      <p>+ <a title="temporal" href="#service-temporal"><code>dct:temporal</code></a></p>
+      <p>+ <a title="theme" href="#service-theme"><code>dcat:theme</code></a></p>
+      <p>+ <a title="url" href="#service-url"><code>schema:url</code></a></p>
+    </td>
+  </tr>
+  <tr>
+    <td>+ <a href="#softwareapplication">SoftwareApplication</a></td>
+    <td><code>schema:SoftwareApplication</code></td>
+    <td class="property mandatory">
+        <p>+ <a title="identifier" href="#softwareapplication-identifier"><code>schema:identifier</code></a></p>
+    </td>
+    <td class="property recommended">
+        <p>+ <a title="contact-point" href="#softwareapplication-contact-point"><code>dcat:contactPoint</code> or <code>schema:contactPoint</code></a></p>
+        <p>+ <a title="name" href="#softwareapplication-name"><code>schema:name</code></a></p>
+    </td>
+    <td class="property optional">
+      <p>+ <a title="description" href="#softwareapplication-description"><code>schema:description</code></a></p>
+      <p>+ <a title="downloadurl" href="#softwareapplication-downloadurl"><code>schema:downloadUrl</code></a></p>
+      <p>+ <a title="installurl" href="#softwareapplication-installurl"><code>schema:installurl</code></a></p>
+      <p>+ <a title="keywords" href="#softwareapplication-keywords"><code>schema:keywords</code></a></p>
+      <p>+ <a title="main-entity-of-page" href="#softwareapplication-main-entity-of-page"><code>schema:mainEntityOfPage</code></a></p>
+      <p>+ <a title="potentialaction" href="#softwareapplication-potentialaction"><code>schema:potentialAction</code></a></p>
+      <p>+ <a title="relation" href="#softwareapplication-relation"><code>dct:relation</code></a></p>
+      <p>+ <a title="software-requirements" href="#softwareapplication-software-requirements"><code>schema:softwareRequirements</code></a></p>
+      <p>+ <a title="software-version" href="#softwareapplication-software-version"><code>schema:softwareVersion</code></a></p>
+      <p>+ <a title="theme" href="#softwareapplication-theme"><code>dcat:theme</code></a></p>
+    </td>
+  </tr>
+  <tr>
+    <td>+ <a href="#softwaresourcecode">SoftwareSourceCode</a></td>
+    <td><code>schema:SoftwareSourceCode</code></td>
+    <td class="property mandatory">
+        <p>+ <a title="identifier" href="#softwaresourcecode-identifier"><code>schema:identifier</code></a></p>
+    </td>
+    <td class="property recommended">
+        <p>+ <a title="contact-point" href="#softwaresourcecode-contact-point"><code>dcat:contactPoint</code> or <code>schema:contactPoint</code></a></p>
+        <p>+ <a title="name" href="#softwaresourcecode-name"><code>schema:name</code></a></p>
+    </td>
+    <td class="property optional">
+      <p>+ <a title="code-repository" href="#softwaresourcecode-code-repository"><code>schema:codeRepository</code></a></p>
+      <p>+ <a title="description" href="#softwaresourcecode-description"><code>schema:description</code></a></p>
+      <p>+ <a title="keywords" href="#softwaresourcecode-keywords"><code>schema:keywords</code></a></p>
+      <p>+ <a title="main-entity-of-page" href="#softwaresourcecode-main-entity-of-page"><code>schema:mainEntityOfPage</code></a></p>
+      <p>+ <a title="programmingLanguage" href="#softwaresourcecode-programmingLanguage"><code>schema:programmingLanguage</code></a></p>
+      <p>+ <a title="runtime-platform" href="#softwaresourcecode-runtime-platform"><code>schema:runtimePlatform</code></a></p>
+      <p>+ <a title="software-version" href="#softwaresourcecode-software-version"><code>schema:softwareVersion</code></a></p>
+      <p>+ <a title="target-product" href="#softwaresourcecode-target-product"><code>schema:targetProduct</code></a></p>
+      <p>+ <a title="software-requirements" href="#softwareapplication-software-requirements"><code>schema:softwareRequirements</code></a></p>
+      <p>+ <a title="theme" href="#softwaresourcecode-theme"><code>dcat:theme</code></a></p>
+    </td>
+  </tr>
+</tbody>
+</table>

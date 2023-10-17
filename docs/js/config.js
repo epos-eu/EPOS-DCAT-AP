@@ -1,3 +1,6 @@
+function quickreference() {
+  $('#table-epos-dcat-ap-classes-and-properties').DataTable();
+};
     var respecConfig = {
     //	preProcess: [dfn_index],
     logos: [
@@ -152,7 +155,7 @@
       "HYDRA":{
         "href":"http://www.w3.org/ns/hydra/core#",
         "title":"HYDRA"
-      }, 
+      },
       "HYDRA1":{
         "href":"http://api.verint.com/w3c/hydra#",
         "title":"HYDRA"
