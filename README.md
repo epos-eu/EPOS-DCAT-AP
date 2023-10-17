@@ -1,14 +1,7 @@
-# EPOS DCAT-AP
+# EPOS DCAT-AP: An extension of the DCAT Application Profile for Research Infrastructures in the solid-Earth domain
 
-This project implements an extension of the DCAT-AP for the EPOS Research Infrastructure.
+The extension is developed and adopted in the framework of the European Plate Observing System (EPOS, https://www.epos-eu.org) in order to capture the diversity and heterogeneity of the assets provided by the EPOS community.
+
+EPOS-DCAT-AP is based on DCAT-AP and uses or extends additional vocabularies (e.g., Schema.org, Hydra).
 
 GitHub pages available here: https://epos-eu.github.io/EPOS-DCAT-AP/
-
-Main features of this profile are:
-* Support for additional entities and resources such as: Organisation, Person, Facility, Publication, Software, Service, Project, Equipment, WebService
-* Characterisation of APIs and Webservice for data access (using the hydra vocabulary www.hydra-cg.com/spec/latest/core/) 
-* Additional roles 
-* Support for annotations
-* Support for validation and consistency check – via Shapes Constraint Language (SHACL, www.w3.org/TR/shacl)
-* Support for data collections (i.e. Dataset dct:isPartOf, dct:hasPart)
-
