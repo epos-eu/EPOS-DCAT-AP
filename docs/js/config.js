@@ -160,7 +160,13 @@ function quickreference() {
         "href":"http://api.verint.com/w3c/hydra#",
         "title":"HYDRA"
       },
-
+      "SHACL":{
+        "title": "Shapes Constraint Language (SHACL).",
+        "authors": ["Holger Knublauch", "Dimitris Kontokostas","W3C"],
+        "date": "20 July 2017",
+        "publisher":"W3C Recommendation.",
+        "href": "https://www.w3.org/TR/shacl/"
+      },
       "CiteDCAT-AP": {
         "href": "https://ec-jrc.github.io/datacite-to-dcat-ap/",
         "title": "DataCite to DCAT-AP Mapping",

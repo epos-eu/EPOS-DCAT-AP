@@ -75,7 +75,7 @@ function createJSONLDEditorFrom(selector) {
 $(document).ready(function () {
   var examples = [];
   var editors = [];
-  var examples_id = ".esempio";
+  var examples_id = ".ex_turtle";
   var examples_class = ".h3";
   var folder = "./examples/";
   var $examples = $(examples_id);
