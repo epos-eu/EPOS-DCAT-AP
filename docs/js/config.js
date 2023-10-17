@@ -2,7 +2,7 @@ function quickreference() {
   $('#table-epos-dcat-ap-classes-and-properties').DataTable();
 };
     var respecConfig = {
-    //	preProcess: [dfn_index],
+    postProcess: [quickreference],
     logos: [
       {    //src: 'https://www.epos-eu.org/themes/epos/logo.svg',
         src: './images/logo.svg',
