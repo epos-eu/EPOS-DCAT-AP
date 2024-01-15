@@ -7,8 +7,8 @@ EPOS-DCAT-AP is based on DCAT-AP and uses or extends additional vocabularies (e.
 GitHub pages available here: https://epos-eu.github.io/EPOS-DCAT-AP/
 <br>
 <br>
-<br>
-### References:
+
+#### References:
 
 - L. Trani, R. Paciello, M. Sbarra, D. Ulbricht and the EPOS IT Team, *<b>“Representing Core Concepts for solid-Earth sciences with DCAT – the EPOS-DCAT Application Profile”</b>*, in European Geosciences Union (EGU), 8 - 13 April 2018, Vienna, Austria. <a href="https://www.researchgate.net/publication/326782859_Representing_Core_Concepts_for_solid-Earth_sciences_with_DCAT_-_the_EPOS-DCAT_Application_Profile" target="_blank">Link</a>
 
