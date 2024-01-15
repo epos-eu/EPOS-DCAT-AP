@@ -36,7 +36,7 @@ Last update: December, 20th, 2023
 
 - L. Trani, R. Paciello, D. Bailo, V. Vinciarelli, *<b>“EPOS-DCAT-AP: a DCAT Application Profile for solid-Earth sciences”</b>*, in American Geophysical Union (AGU), 10 - 14 December 2018, Washington, D.C.
 
-- L. Trani, R. Paciello, *<b>“Representing cross-disciplinary knowledge in solid-Earth sciences with EPOS-DCAT-AP”</b>*, in The EPOS Newsletter issue 03 July 2019 | TopTip 01.
+- L. Trani, R. Paciello, *<b>“Representing cross-disciplinary knowledge in solid-Earth sciences with EPOS-DCAT-AP”</b>*, in The EPOS Newsletter issue 03 July 2019, TopTip 01.
 
 - R. Paciello, L. Trani, D. Bailo, and K. G Jeffery, *<b>“EPOS-DCAT-AP a representation for enabling cross-disciplinary collaboration in solid Earth sciences”</b>*, in European Geosciences Union (EGU), 7 - 12 April 2019, Vienna, Austria.
 
