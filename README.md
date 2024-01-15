@@ -8,6 +8,7 @@ GitHub pages available here: https://epos-eu.github.io/EPOS-DCAT-AP/
 
 
 References:
+
 · L. Trani, R. Paciello, M. Sbarra, D. Ulbricht and the EPOS IT Team, “Representing Core Concepts for solid-Earth sciences with DCAT – the EPOS-DCAT Application Profile”, in European Geosciences Union (EGU), 8 - 13 April 2018, Vienna, Austria.
 
 · L. Trani, R. Paciello, D. Bailo, V. Vinciarelli, “EPOS-DCAT-AP: a DCAT Application Profile for solid-Earth sciences”, in American Geophysical Union (AGU), 10 - 14 December 2018, Washington, D.C.
