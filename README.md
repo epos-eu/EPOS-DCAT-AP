@@ -42,4 +42,4 @@ Last update: December, 20th, 2023
 
 - R. Paciello, L. Trani, D. Bailo and M. Sbarra, *<b>“EPOS-DCAT-AP 2.0 – State of play on the Application Profile for metadata exchange in the EPOS RI”</b>*, in Garoufallou, E., Vlachidis, A. (eds) Metadata and Semantic Research. MTSR 2022. Communications in Computer and Information Science, vol 1789. Springer, Cham. EPOS-DCAT-AP 2.0 – State of Play on the Application Profile for .
 
-- R. Paciello, L. Trani, D. Bailo, V. Vinciarelli and M. Sbarra, *<b>“SHAPEness: a SHACL-driven Metadata Editor”</b>*, in Garoufallou, E., Vlachidis, A. (eds) Metadata and Semantic Research. MTSR 2022. Communications in Computer and Information Science, vol 1789. Springer, Cham. 
+- R. Paciello, L. Trani, D. Bailo, V. Vinciarelli and M. Sbarra, *<b>“SHAPEness: a SHACL-driven Metadata Editor”</b>*, in Garoufallou, E., Vlachidis, A. (eds) Metadata and Semantic Research. MTSR 2022. Communications in Computer and Information Science, vol 1789. Springer, Cham. DOI: <a href="http://dx.doi.org/10.1007/978-3-031-39141-5_23">10.1007/978-3-031-39141-5_23</a>
