@@ -2538,7 +2538,134 @@ epos:SoftwareApplicationShape
       sh:description "This property refers to a category of the Software Application. A Software may be associated with multiple themes.";
       sh:class skos:Concept ;
     ] ;
+ sh:property [
+      sh:path schema:author ;
+      sh:description "This property refers to a Person or an Organization that is author of this content or rating.";
+      sh:or (
+        [sh:class foaf:Agent ; ]
+	[sh:class schema:Person ; ]
+        [sh:class schema:Organization ; ]) ;
+      sh:maxCount 1 ;    
+    ] ;
+  sh:property [
+      sh:path schema:contributor ;
+      sh:description "This property refers to a Person or an Organization that is contributor of this content or rating.";
+      sh:or (
+        [sh:class foaf:Agent ; ]
+	[sh:class schema:Person ; ]
+        [sh:class schema:Organization ; ]) ;   
+    ] ;
+  sh:property [
+      sh:path schema:creator ;
+      sh:description "This property refers to a Person or an Organization that is creator of this content or rating.";
+      sh:or (
+        [sh:class foaf:Agent ; ]
+	[sh:class schema:Person ; ]
+        [sh:class schema:Organization ; ]) ;   
+    ] ;
+  sh:property [
+      sh:path schema:founder ;
+      sh:description "This property refers to a Person or an Organization that supports (sponsors) something through some kind of financial contribution.";
+      sh:or (
+        [sh:class foaf:Agent ; ]
+	[sh:class schema:Person ; ]
+        [sh:class schema:Organization ; ]) ;   
+    ] ;
+  sh:property [
+      sh:path schema:maintainer ;
+      sh:description "This property refers to a Person or an Organization that is maintainer of the Software application.";
+      sh:or (
+        [sh:class foaf:Agent ; ]
+	[sh:class schema:Person ; ]
+        [sh:class schema:Organization ; ]) ;   
+    ] ;
+  sh:property [
+       sh:path schema:memoryRequirements ;
+       sh:description "This property refers to a minimum memory requirements.";
+       sh:datatype xsd:string;
+       sh:maxCount 1 ;    
+    ] ;
+  sh:property [
+       sh:path schema:operatingSystem ;
+       sh:description "This property refers to the operating systems supported.";
+       sh:datatype xsd:string;
+       sh:maxCount 1 ;    
+    ] ;
+   sh:property [
+       sh:path schema:processorRequirements ;
+       sh:description "This property refers to a processor architecture required to run the application.";
+       sh:datatype xsd:string;
+       sh:maxCount 1 ;    
+    ] ;
+   sh:property [
+      sh:path schema:producer ;
+      sh:description "This property refers to a Person or an Organization that who produced the Software application..";
+      sh:or (
+        [sh:class foaf:Agent ; ]
+	[sh:class schema:Person ; ]
+        [sh:class schema:Organization ; ]) ;   
+    ] ;
+   sh:property [
+      sh:path schema:provider ;
+      sh:description "This property refers to a Person or an Organization that is the service provider of the Software application.";
+      sh:or (
+        [sh:class foaf:Agent ; ]
+	[sh:class schema:Person ; ]
+        [sh:class schema:Organization ; ]) ;   
+    ] ;
+  sh:property [
+      sh:path schema:publisher ;
+      sh:description "This property refers to a citation or reference to another creative work, such as another publication, web page, scholarly article, etc.";
+      sh:or (
+        [sh:class foaf:Agent ; ]
+	[sh:class foaf:Person ; ]
+        [sh:class schema:Organization ; ]) ;
+      sh:maxCount 1 ;    
+    ] ;
+  sh:property [
+      sh:path schema:citation ;
+      sh:description "This property refers to a citation or reference to another creative work, such as another publication, web page, scholarly article, etc.";
+      sh:datatype xsd:string;
+      sh:maxCount 1 ;    
+    ] ;
+  sh:property [
+      sh:path schema:size ;
+      sh:description "This property refers to a standardized size of a product or creative work, specified either through a simple textual string.";
+      sh:datatype xsd:string;
+      sh:maxCount 1 ;    
+    ] ;
+  sh:property [
+      sh:path schema:spatialCoverage ;
+      sh:description "This property indicates the place(s) which are the focus of the content.";
+      sh:datatype xsd:string;
+      sh:maxCount 1 ;    
+    ] ;
+  sh:property [
+      sh:path schema:creativeWorkStatus ;
+      sh:description "This property refers to the status of a creative work in terms of its stage in a lifecycle.";
+      sh:datatype xsd:string;
+      sh:maxCount 1 ;    
+    ] ;
+  sh:property [
+      sh:path schema:storageRequirements ;
+      sh:description "This property refers to the storage requirements.";
+      sh:datatype xsd:string;
+      sh:maxCount 1 ;    
+    ] ;
+  sh:property [
+      sh:path schema:temporalCoverage ;
+      sh:description "This property indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period.";
+      sh:datatype xsd:string;
+      sh:maxCount 1 ;    
+    ] ;
+  sh:property [
+      sh:path schema:timeRequired ;
+      sh:description "This property refers to an approximate or typical time it usually takes to work with or through the content of this work.";
+      sh:datatype xsd:string;
+      sh:maxCount 1 ;    
+    ] ;
 .
+
 epos:ControlActionShape
   a sh:NodeShape ;
   sh:targetClass schema:ControlAction ;
@@ -2672,5 +2799,107 @@ epos:SoftwareSourceCodeShape
      sh:path dcat:theme;
      sh:description "This property refers to a category of the Software Source Code. A Software may be associated with multiple themes.";
      sh:class skos:Concept ;
+    ] ;
+  sh:property [
+      sh:path schema:author ;
+      sh:description "This property refers to a Person or an Organization that is author of this content or rating.";
+      sh:or (
+        [sh:class foaf:Agent ; ]
+	[sh:class schema:Person ; ]
+        [sh:class schema:Organization ; ]) ;
+      sh:maxCount 1 ;    
+    ] ;
+  sh:property [
+      sh:path schema:contributor ;
+      sh:description "This property refers to a Person or an Organization that is contributor of this content or rating.";
+      sh:or (
+        [sh:class foaf:Agent ; ]
+	[sh:class schema:Person ; ]
+        [sh:class schema:Organization ; ]) ;   
+    ] ;
+  sh:property [
+      sh:path schema:creator ;
+      sh:description "This property refers to a Person or an Organization that is creator of this content or rating.";
+      sh:or (
+        [sh:class foaf:Agent ; ]
+	[sh:class schema:Person ; ]
+        [sh:class schema:Organization ; ]) ;   
+    ] ;
+  sh:property [
+      sh:path schema:founder ;
+      sh:description "This property refers to a Person or an Organization that supports (sponsors) something through some kind of financial contribution.";
+      sh:or (
+        [sh:class foaf:Agent ; ]
+	[sh:class schema:Person ; ]
+        [sh:class schema:Organization ; ]) ;   
+    ] ;
+  sh:property [
+      sh:path schema:maintainer ;
+      sh:description "This property refers to a Person or an Organization that is maintainer of a SoftwareeSouceCode.";
+      sh:or (
+        [sh:class foaf:Agent ; ]
+	[sh:class schema:Person ; ]
+        [sh:class schema:Organization ; ]) ;   
+    ] ;
+   sh:property [
+      sh:path schema:producer ;
+      sh:description "This property refers to a Person or an Organization that who produced the SoftwareeSouceCode.";
+      sh:or (
+        [sh:class foaf:Agent ; ]
+	[sh:class schema:Person ; ]
+        [sh:class schema:Organization ; ]) ;   
+    ] ;
+  sh:property [
+      sh:path schema:publisher ;
+      sh:description "This property refers to a citation or reference to another creative work, such as another publication, web page, scholarly article, etc.";
+      sh:or (
+        [sh:class foaf:Agent ; ]
+	[sh:class foaf:Person ; ]
+        [sh:class schema:Organization ; ]) ;
+      sh:maxCount 1 ;    
+    ] ;
+  sh:property [
+      sh:path schema:provider ;
+      sh:description "This property refers to a Person or an Organization that is the service provider of the SoftwareeSouceCode.";
+      sh:or (
+        [sh:class foaf:Agent ; ]
+	[sh:class schema:Person ; ]
+        [sh:class schema:Organization ; ]) ;   
+    ] ;
+  sh:property [
+      sh:path schema:citation ;
+      sh:description "This property refers to a citation or reference to another creative work, such as another publication, web page, scholarly article, etc.";
+      sh:datatype xsd:string;
+      sh:maxCount 1 ;    
+    ] ;
+  sh:property [
+      sh:path schema:spatialCoverage ;
+      sh:description "This property indicates the place(s) which are the focus of the content.";
+      sh:datatype xsd:string;
+      sh:maxCount 1 ;    
+    ] ;
+  sh:property [
+      sh:path schema:size ;
+      sh:description "This property refers to a standardized size of a product or creative work, specified either through a simple textual string.";
+      sh:datatype xsd:string;
+      sh:maxCount 1 ;    
+    ] ;
+  sh:property [
+      sh:path schema:creativeWorkStatus ;
+      sh:description "This property refers to the status of a creative work in terms of its stage in a lifecycle.";
+      sh:datatype xsd:string;
+      sh:maxCount 1 ;    
+    ] ;
+  sh:property [
+      sh:path schema:temporalCoverage ;
+      sh:description "This property indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period.";
+      sh:datatype xsd:string;
+      sh:maxCount 1 ;    
+    ] ;
+  sh:property [
+      sh:path schema:timeRequired ;
+      sh:description "This property refers to an approximate or typical time it usually takes to work with or through the content of this work.";
+      sh:datatype xsd:string;
+      sh:maxCount 1 ;    
     ] ;
 .
