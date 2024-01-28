@@ -206,7 +206,7 @@
         <p>0..n</p>
     </td>
   </tr>
-<tr class="property optional ap-ext" id="softwareapplication-author">
+  <tr class="property optional ap-ext" id="softwareapplication-author">
     <td>
         <p>author</p>
     </td>
@@ -223,23 +223,7 @@
         <p>0..1</p>
     </td>
   </tr> 
-  <tr class="property optional ap-ext" id="softwareapplication-citation">
-    <td>
-        <p>related publications</p>
-    </td>
-    <td>
-        <p><code>schema:citation</code></p>
-    </td>
-    <td>
-         <p><code>rdfs:Literal</code> or <code>schema:PropertyValue</code></p>
-    </td>
-    <td class="justify">
-        <p>This property refers to a citation or reference to another creative work, such as another publication, web page, scholarly article, etc.</p>
-    </td>
-    <td class="center">
-        <p>0..n</p>
-    </td>
-  </tr>    
+   
   <tr class="property optional ap-ext" id="softwareapplication-contributor">
     <td>
         <p>contributor</p>
@@ -401,38 +385,39 @@
         <p><code>schema:publisher</code></p>
     </td>
     <td>
-         <p><code>rdfs:Literal</code> or <code>schema:PropertyValue</code></p>
+        <p><code>schema:Organization</code> or <code>schema:Person</code> or <code>foaf:Agent</code></p>
     </td>
     <td class="justify">
         <p>This property refers to a citation or reference to another creative work, such as another publication, web page, scholarly article, etc.</p>
     </td>
     <td class="center">
-        <p>0..n</p>
+        <p>0..1</p>
     </td>
   </tr>   
-  <tr class="property optional ap-ext" id="softwareapplication-timeRequired">
+  <tr class="property optional ap-ext" id="softwareapplication-citation">
     <td>
-        <p>timeRequired</p>
+        <p>related publications</p>
     </td>
     <td>
-        <p><code>schema:timeRequired</code></p>
+        <p><code>schema:citation</code></p>
     </td>
     <td>
          <p><code>rdfs:Literal</code></p>
     </td>
     <td class="justify">
-        <p>This property refers to an approximate or typical time it usually takes to work with or through the content of this work.</p>
+        <p>This property refers to a citation or reference to another creative work, such as another publication, web page, scholarly article, etc.</p>
     </td>
     <td class="center">
         <p>0..1</p>
     </td>
-  </tr>  
+  </tr>    
+  
   <tr class="property optional ap-ext" id="softwareapplication-size">
     <td>
         <p>size</p>
     </td>
     <td>
-        <p><code>schema:size</code></p>
+        <p><code>schema:fileSize</code></p>
     </td>
     <td>
          <p><code>rdfs:Literal</code></p>
@@ -494,10 +479,10 @@
     <td class="center">
         <p>0..1</p>
     </td> 
-  </tr> 
-  <tr class="property optional ap-ext" id="softwareapplication-temporal-relevance">
+  </tr>  
+  <tr class="property optional ap-ext" id="softwareapplication-temporalCoverage">
     <td>
-        <p>temporal relevance</p>
+        <p>temporalCoverage</p>
     </td>
     <td>
         <p><code>schema:temporalCoverage</code></p>
@@ -512,5 +497,22 @@
         <p>0..n</p>
     </td>
   </tr>
+  <tr class="property optional ap-ext" id="softwareapplication-timeRequired">
+    <td>
+        <p>timeRequired</p>
+    </td>
+    <td>
+        <p><code>schema:timeRequired</code></p>
+    </td>
+    <td>
+         <p><code>rdfs:Literal</code></p>
+    </td>
+    <td class="justify">
+        <p>This property refers to an approximate or typical time it usually takes to work with or through the content of this work.</p>
+    </td>
+    <td class="center">
+        <p>0..1</p>
+    </td>
+  </tr>   
 </tbody>
 </table>
