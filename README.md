@@ -6,7 +6,7 @@ EPOS-DCAT-AP is based on DCAT-AP and uses or extends additional vocabularies (e.
 
 GitHub pages available here: https://epos-eu.github.io/EPOS-DCAT-AP/
 <br>
-<br>
+
 
 #### References:
 
