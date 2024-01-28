@@ -26,7 +26,7 @@ An extension of the DCAT Application Profile for Research Infrastructures in the
 <br>
 
  
-Last update: December, 20th, 2023
+Last update: January, 28th, 2024
 <br>
 
 <hr>
