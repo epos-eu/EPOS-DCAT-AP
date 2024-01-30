@@ -57,6 +57,13 @@ jobs:
         with:
           source: ./pages
           destination: ./_site
+          clean: false
+      - run: cd pages/facets/facility_theme && rm README.md LICENSE && mv docs/* . && rm -R docs
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./pages
+          destination: ./_site    
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
 
