@@ -13,7 +13,7 @@ An extension of the DCAT Application Profile for Research Infrastructures in the
 <a href="https://epos-eu.github.io/EPOS-DCAT-AP/v3/">Version 3.0</a>
 <br>
 <br>
-<a href="https://epos-eu.github.io/EPOS-DCAT-AP/facets/">Facets</a>
+<a href="https://epos-eu.github.io/EPOS-DCAT-AP/facets/">facets</a>
 <br>
 <br>
 <details>
