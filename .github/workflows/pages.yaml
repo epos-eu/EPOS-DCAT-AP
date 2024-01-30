@@ -45,6 +45,13 @@ jobs:
           path: pages/v2
           clean: false
       - run: cd pages/v2 && rm README.md LICENSE && mv docs/* . && rm -R docs
+      - uses: actions/checkout@v2
+        with:
+          ref: facets
+          # Put the checked out files inside the `big-island-buses/heleon` folder
+          path: pages/facets
+          clean: false
+      - run: cd pages/facets && rm README.md LICENSE && mv docs/* . && rm -R docs
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
