@@ -20,7 +20,6 @@ An extension of the DCAT Application Profile for Research Infrastructures in the
   <summary>
     Published under MIT License
   </summary>
-  
   <p>
     <br>
     <i><zero-md src="https://epos-eu.github.io/EPOS-DCAT-AP/LICENSE"></zero-md></i>
