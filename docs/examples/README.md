@@ -20,11 +20,11 @@ Full example: <a href="./full_example.ttl"><code>full_example.ttl</code></a>
 </tr>
 <tr>
         <td>Category Scheme</td>
-        <td><a href="./category-scheme.ttl"><code>category-scheme.ttl</code></a></td>
+        <td><a href="./categoryscheme.ttl"><code>categoryscheme.ttl</code></a></td>
 </tr>
 <tr>
         <td>Contact Point</td>
-        <td><a href="./contact-point.ttl"><code>contact-point.ttl</code></a></td>
+        <td><a href="./contactpoint.ttl"><code>contactpoint.ttl</code></a></td>
 </tr>
 <tr>
         <td>Data Service</td>
@@ -76,7 +76,7 @@ Full example: <a href="./full_example.ttl"><code>full_example.ttl</code></a>
 </tr>
 <tr>
         <td>PeriodOfTime</td>
-        <td><a href="./period-of-time.ttl"><code>period-of-time.ttl</code></a></td>
+        <td><a href="./periodoftime.ttl"><code>periodoftime.ttl</code></a></td>
 </tr>
 <tr>
         <td>Person</td>
@@ -84,11 +84,11 @@ Full example: <a href="./full_example.ttl"><code>full_example.ttl</code></a>
 </tr>
 <tr>
         <td>PostalAddress</td>
-        <td><a href="./postal-address.ttl"><code>postal-address.ttl</code></a></td>
+        <td><a href="./postaladdress.ttl"><code>postaladdress.ttl</code></a></td>
 </tr>
 <tr>
         <td>PropertyValue</td>
-        <td><a href="./property-value.ttl"><code>property-value.ttl</code></a></td>
+        <td><a href="./propertyvalue.ttl"><code>propertyvalue.ttl</code></a></td>
 </tr>
 <tr>
         <td>Service</td>
