@@ -19,7 +19,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr class="property optional" id="data-service-access-rights">
+    <tr class="property optional" id="dataservice.accessrights">
       <td>
           <p>accessRights</p>
       </td>
@@ -36,24 +36,7 @@
           <p>0..1</p>
       </td>
     </tr>
-    <tr class="property optional ap-ext" id="data-service-conforms-to">
-      <td>
-          <p>conformsTo</p>
-      </td>
-      <td>
-          <p><code>dct:conformsTo</code></p>
-      </td>
-      <td>
-          <p><code>dct:Standard</code></p>
-      </td>
-      <td class="justify">
-          <p>This property refers to the Data Service API Definition URL.  E.g., https://www.orfeus-eu.org/data/eida/webservices/station/</p>
-      </td>
-      <td class="center">
-          <p>0..n</p>
-      </td>
-    </tr>
-    <tr class="property recommended" id="data-service-format">
+    <tr class="property optional" id="dataservice.format">
       <td>
           <p>format</p>
       </td>
@@ -70,24 +53,24 @@
           <p>0..n</p>
       </td>
     </tr>
-    <tr class="property recommended ap-ext" id="data-service-keyword">
+    <tr class="property optional" id="dataservice.landingpage">
       <td>
-          <p>keyword</p>
+          <p>landingPage</p>
       </td>
       <td>
-          <p><code>dcat:keyword</code></p>
+          <p><code>dcat:landingPage</code></p>
       </td>
       <td>
-          <p><code>rdfs:Literal</code></p>
+          <p><code>foaf:Document</code></p>
       </td>
       <td class="justify">
-          <p>This property contains a keyword or tag describing the Data Service.</p>
+          <p>This property contains It is intended to point to a landing page at the original data service provider, not to a page on a site of a third party, such as an aggregator..</p>
       </td>
       <td class="center">
-          <p>0..n</p>
+          <p>0..1</p>
       </td>
     </tr>
-    <tr class="property optional" id="data-service-license">
+    <tr class="property optional" id="dataservice.license">
       <td>
           <p>license</p>
       </td>
@@ -104,7 +87,7 @@
           <p>0..1</p>
       </td>
     </tr>
-    <tr class="property optional ap-ext" id="data-service-spatial">
+    <tr class="property optional" id="dataservice.spatial">
       <td>
           <p>spatial</p>
       </td>
@@ -121,7 +104,7 @@
           <p>0..n</p>
       </td>
     </tr>
-    <tr class="property optional ap-ext" id="data-service-temporal">
+    <tr class="property optional" id="dataservice.temporal">
       <td>
           <p>temporal</p>
       </td>
