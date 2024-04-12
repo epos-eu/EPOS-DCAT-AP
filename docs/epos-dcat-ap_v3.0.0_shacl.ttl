@@ -339,7 +339,7 @@ epos:CatalogShape
   ] ;
   sh:property [
       sh:path dcat:themeTaxonomy ;
-      sh:description "This property refers to a knowledge organization system used to classify the resources documented in the Catalog (Data Services, Datasets, and other Catalogs).";
+      sh:description "This property refers to a geographic area covered by the Catalog's Datasets.";
       sh:class skos:ConceptScheme ;
       sh:minCount 1 ;
       sh:message "themeTaxonomy is recommended. Please fill in a value"@en  ;
@@ -414,14 +414,9 @@ epos:CatalogRecordShape
       sh:path dct:conformsTo ;
       sh:datatype xsd:anyURI;
       sh:minCount 1 ;
+      sh:description "This property refers to an Application Profile that the Dataset’s metadata conforms to";
       sh:message "ConformsTo is recommended. Please fill in a value"@en  ;
       sh:severity sh:Warning ;
-    ] ;
-  sh:property [
-      sh:path dct:conformsTo ;
-      sh:description "This property refers to an Application Profile that the Dataset’s metadata conforms to";
-      sh:datatype xsd:anyURI;
-      sh:maxCount 1 ;
     ] ;
   sh:property [
       sh:path dct:identifier ;
@@ -520,6 +515,12 @@ epos:DataServiceShape
   # DataService recommended properties
   ####
   sh:property [
+      sh:path dct:conformsTo ;
+      sh:description "This property refers to the Data Service API Definition URL. E.g. http://www.opengis.net/def/serviceType/ogc/wfs/1.0.0.";
+      sh:or ( [ sh:class dct:Standard ; ]
+              [ sh:datatype xsd:anyURI ; ] );
+    ] ;
+  sh:property [
       sh:path dcat:contactPoint ;
       sh:description "This property contains contact information that can be used for sending comments about the Data Service.";
       sh:node epos:ContactPointType ;
@@ -558,6 +559,11 @@ epos:DataServiceShape
       sh:maxCount 1;
     ] ;
   sh:property [
+      sh:path dcat:keyword;
+      sh:description " This property contains a keyword or tag describing the Data Service. ";
+      sh:datatype xsd:string ;
+    ] ;
+  sh:property [
       sh:path dct:modified ;
       sh:node epos:DateOrDateTimeDataType ;
       sh:minCount 1 ;
@@ -571,21 +577,21 @@ epos:DataServiceShape
       sh:maxCount 1;
     ] ;
   sh:property [
-      sh:path schema:provider ;
+      sh:path dct:publisher ;
       sh:class schema:Organization ;
       sh:minCount 1 ;
-      sh:message "Provider is recommended. Please fill in a value"@en  ;
+      sh:message "Publisher is recommended. Please fill in a value"@en  ;
       sh:severity sh:Warning ;
     ] ;
   sh:property [
-      sh:path schema:provider ;
-      sh:description " This property refers to an Organisation responsible for making the Data Service available.";
+      sh:path dct:publisher ;
+      sh:description "This property refers to an Organisation responsible for making the Data Service available.";
       sh:class schema:Organization ;
       sh:maxCount 1;
     ] ;
   sh:property [
       sh:path dcat:servesDataset ;
-      sh:description " This property refers to a collection of data that this data service can distribute.";
+      sh:description "This property refers to a collection of data that this data service can distribute.";
       sh:class dcat:Dataset;
       sh:minCount 1 ;
       sh:message " servesDataset is recommended. Please fill in a value"@en  ;
@@ -604,26 +610,20 @@ epos:DataServiceShape
   ####
   sh:property [
       sh:path dct:accessRight ;
-      sh:description " This property MAY include information regarding access or restrictions based on privacy, security, or other policies.";
+      sh:description "This property MAY include information regarding access or restrictions based on privacy, security, or other policies.";
       sh:class dct:RightsStatement;
       sh:maxCount 1;
     ] ;
   sh:property [
-      sh:path dct:conformsTo ;
-      sh:description " This property indicates the general standard or specification that the endpoints implement. E.g. http://www.opengis.net/def/serviceType/ogc/wfs/1.0.0.";
-      sh:or ( [ sh:class dct:Standard ; ]
+      sh:path dct:format;
+      sh:description "This property refers to the structure that can be returned by querying the endpointURL. ";
+      sh:or ( [ sh:datatype xsd:string ; ]
               [ sh:datatype xsd:anyURI ; ] );
     ] ;
   sh:property [
-      sh:path dct:format;
-      sh:description " This property refers to the structure that can be returned by querying the endpointURL. ";
-      sh:or ( [ sh:datatype xsd:string ; ]
-              [ sh:datatype xsd:anyURI ; ] );
-   ] ;
-  sh:property [
-      sh:path dcat:keyword;
-      sh:description " This property contains a keyword or tag describing the Data Service. ";
-      sh:datatype xsd:string ;
+     sh:path dcat:landingPage ;
+     sh:description "This property contains web page that provides access to the Data Service and/or additional information. It is intended to point to a landing page at the original data service provider, not to a page on a site of a third party, such as an aggregator.";
+     sh:class foaf:Document ;
     ] ;
   sh:property [
       sh:path dct:license ;
@@ -889,59 +889,6 @@ epos:DatasetShape
       sh:class prov:Activity ;
     ];
 .
-epos:DatasetInSeriesShape
-  a sh:NodeShape ;
-  sh:targetClass dcat:Dataset ;
-  ####
-  # DatasetInSeries mandatory properties
-  ####
-  sh:property [
-      sh:path dct:description;
-      sh:description "This property contains a free-text account of the Dataset. This property can be repeated for parallel language versions of the description .";
-      sh:datatype xsd:string ;
-      sh:minCount 1 ;
-    ] ;
-  sh:property [
-      sh:path dct:title;
-      sh:description "This property contains a name given to the Dataset. This property can be repeated for parallel language versions of the name .";
-      sh:datatype xsd:string ;
-      sh:minCount 1 ;
-    ] ;
-  ####
-  # DatasetInSeries recommended properties
-  ####
-  sh:property [
-   	  sh:path dcat:inSeries;
-  	  sh:class dcat:DatasetSeries;
-      sh:description "This property contains dataset series of which the dataset is part.";
-      sh:minCount 1 ;
-      sh:message "inSeries is recommended. Please fill in a value"@en  ;
-      sh:severity sh:Warning ;
-    ];
-  sh:property [
-   	  sh:path dcat:previous;
-  	  sh:class dcat:Dataset;
-      sh:description "This property links the previous resource (before the current one) in an ordered collection or series of resources. Unless the dataset is the last in the chain a dataset in a collection must have a previous one.";
-      sh:minCount 1 ;
-      sh:message "previous is recommended. Please fill in a value"@en  ;
-      sh:severity sh:Warning ;
-    ];
-  ####
-  # DatasetInSeries optional properties
-  ####
-  sh:property [
-      sh:path dct:accrualPeriodicity;
-	    sh:description "This property refers to the frequency at which the Dataset is updated. ";
-      #sh:class dct:Frequency ;
-      sh:datatype xsd:anyURI ;
-      sh:maxCount 1 ;
-    ];
-  sh:property [
-      sh:path dct:next;
-      sh:class dcat:Dataset ;
-	    sh:description "This property refers to the frequency at which the Dataset is updated. ";
-    ];
-.
 epos:DatasetSeriesShape
   a sh:NodeShape ;
   sh:targetClass dcat:DatasetSeries ;
@@ -1199,7 +1146,7 @@ epos:DistributionShape
     ];
   sh:property [
       sh:path adms:status ;
-      sh:description "This property refers to the maturity of the Distribution";
+      sh:description "This property refers to the status of the distribution in the context of maturity lifecycle. It MUST take one of the values Completed, Deprecated, Under Development, Withdrawn.";
       sh:class skos:Concept ;
       sh:maxCount 1 ;
     ] ;
@@ -2544,7 +2491,7 @@ epos:SoftwareApplicationShape
         [sh:class foaf:Agent ; ]
 	[sh:class schema:Person ; ]
         [sh:class schema:Organization ; ]) ;
-      sh:maxCount 1 ;    
+      sh:maxCount 1 ;
     ] ;
   sh:property [
       sh:path schema:contributor ;
@@ -2552,7 +2499,7 @@ epos:SoftwareApplicationShape
       sh:or (
         [sh:class foaf:Agent ; ]
 	[sh:class schema:Person ; ]
-        [sh:class schema:Organization ; ]) ;   
+        [sh:class schema:Organization ; ]) ;
     ] ;
   sh:property [
       sh:path schema:creator ;
@@ -2560,7 +2507,7 @@ epos:SoftwareApplicationShape
       sh:or (
         [sh:class foaf:Agent ; ]
 	[sh:class schema:Person ; ]
-        [sh:class schema:Organization ; ]) ;   
+        [sh:class schema:Organization ; ]) ;
     ] ;
   sh:property [
       sh:path schema:founder ;
@@ -2568,7 +2515,7 @@ epos:SoftwareApplicationShape
       sh:or (
         [sh:class foaf:Agent ; ]
 	[sh:class schema:Person ; ]
-        [sh:class schema:Organization ; ]) ;   
+        [sh:class schema:Organization ; ]) ;
     ] ;
   sh:property [
       sh:path schema:maintainer ;
@@ -2576,25 +2523,25 @@ epos:SoftwareApplicationShape
       sh:or (
         [sh:class foaf:Agent ; ]
 	[sh:class schema:Person ; ]
-        [sh:class schema:Organization ; ]) ;   
+        [sh:class schema:Organization ; ]) ;
     ] ;
   sh:property [
        sh:path schema:memoryRequirements ;
        sh:description "This property refers to a minimum memory requirements.";
        sh:datatype xsd:string;
-       sh:maxCount 1 ;    
+       sh:maxCount 1 ;
     ] ;
   sh:property [
        sh:path schema:operatingSystem ;
        sh:description "This property refers to the operating systems supported.";
        sh:datatype xsd:string;
-       sh:maxCount 1 ;    
+       sh:maxCount 1 ;
     ] ;
    sh:property [
        sh:path schema:processorRequirements ;
        sh:description "This property refers to a processor architecture required to run the application.";
        sh:datatype xsd:string;
-       sh:maxCount 1 ;    
+       sh:maxCount 1 ;
     ] ;
    sh:property [
       sh:path schema:producer ;
@@ -2602,7 +2549,7 @@ epos:SoftwareApplicationShape
       sh:or (
         [sh:class foaf:Agent ; ]
 	[sh:class schema:Person ; ]
-        [sh:class schema:Organization ; ]) ;   
+        [sh:class schema:Organization ; ]) ;
     ] ;
    sh:property [
       sh:path schema:provider ;
@@ -2610,7 +2557,7 @@ epos:SoftwareApplicationShape
       sh:or (
         [sh:class foaf:Agent ; ]
 	[sh:class schema:Person ; ]
-        [sh:class schema:Organization ; ]) ;   
+        [sh:class schema:Organization ; ]) ;
     ] ;
   sh:property [
       sh:path schema:publisher ;
@@ -2619,49 +2566,49 @@ epos:SoftwareApplicationShape
         [sh:class foaf:Agent ; ]
 	[sh:class foaf:Person ; ]
         [sh:class schema:Organization ; ]) ;
-      sh:maxCount 1 ;    
+      sh:maxCount 1 ;
     ] ;
   sh:property [
       sh:path schema:citation ;
       sh:description "This property refers to a citation or reference to another creative work, such as another publication, web page, scholarly article, etc.";
       sh:datatype xsd:string;
-      sh:maxCount 1 ;    
+      sh:maxCount 1 ;
     ] ;
   sh:property [
       sh:path schema:size ;
       sh:description "This property refers to a standardized size of a product or creative work, specified either through a simple textual string.";
       sh:datatype xsd:string;
-      sh:maxCount 1 ;    
+      sh:maxCount 1 ;
     ] ;
   sh:property [
       sh:path schema:spatialCoverage ;
       sh:description "This property indicates the place(s) which are the focus of the content.";
       sh:datatype xsd:string;
-      sh:maxCount 1 ;    
+      sh:maxCount 1 ;
     ] ;
   sh:property [
       sh:path schema:creativeWorkStatus ;
       sh:description "This property refers to the status of a creative work in terms of its stage in a lifecycle.";
       sh:datatype xsd:string;
-      sh:maxCount 1 ;    
+      sh:maxCount 1 ;
     ] ;
   sh:property [
       sh:path schema:storageRequirements ;
       sh:description "This property refers to the storage requirements.";
       sh:datatype xsd:string;
-      sh:maxCount 1 ;    
+      sh:maxCount 1 ;
     ] ;
   sh:property [
       sh:path schema:temporalCoverage ;
       sh:description "This property indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period.";
       sh:datatype xsd:string;
-      sh:maxCount 1 ;    
+      sh:maxCount 1 ;
     ] ;
   sh:property [
       sh:path schema:timeRequired ;
       sh:description "This property refers to an approximate or typical time it usually takes to work with or through the content of this work.";
       sh:datatype xsd:string;
-      sh:maxCount 1 ;    
+      sh:maxCount 1 ;
     ] ;
 .
 
@@ -2806,7 +2753,7 @@ epos:SoftwareSourceCodeShape
         [sh:class foaf:Agent ; ]
 	[sh:class schema:Person ; ]
         [sh:class schema:Organization ; ]) ;
-      sh:maxCount 1 ;    
+      sh:maxCount 1 ;
     ] ;
   sh:property [
       sh:path schema:contributor ;
@@ -2814,7 +2761,7 @@ epos:SoftwareSourceCodeShape
       sh:or (
         [sh:class foaf:Agent ; ]
 	[sh:class schema:Person ; ]
-        [sh:class schema:Organization ; ]) ;   
+        [sh:class schema:Organization ; ]) ;
     ] ;
   sh:property [
       sh:path schema:creator ;
@@ -2822,7 +2769,7 @@ epos:SoftwareSourceCodeShape
       sh:or (
         [sh:class foaf:Agent ; ]
 	[sh:class schema:Person ; ]
-        [sh:class schema:Organization ; ]) ;   
+        [sh:class schema:Organization ; ]) ;
     ] ;
   sh:property [
       sh:path schema:founder ;
@@ -2830,7 +2777,7 @@ epos:SoftwareSourceCodeShape
       sh:or (
         [sh:class foaf:Agent ; ]
 	[sh:class schema:Person ; ]
-        [sh:class schema:Organization ; ]) ;   
+        [sh:class schema:Organization ; ]) ;
     ] ;
   sh:property [
       sh:path schema:maintainer ;
@@ -2838,7 +2785,7 @@ epos:SoftwareSourceCodeShape
       sh:or (
         [sh:class foaf:Agent ; ]
 	[sh:class schema:Person ; ]
-        [sh:class schema:Organization ; ]) ;   
+        [sh:class schema:Organization ; ]) ;
     ] ;
    sh:property [
       sh:path schema:producer ;
@@ -2846,7 +2793,7 @@ epos:SoftwareSourceCodeShape
       sh:or (
         [sh:class foaf:Agent ; ]
 	[sh:class schema:Person ; ]
-        [sh:class schema:Organization ; ]) ;   
+        [sh:class schema:Organization ; ]) ;
     ] ;
   sh:property [
       sh:path schema:publisher ;
@@ -2855,7 +2802,7 @@ epos:SoftwareSourceCodeShape
         [sh:class foaf:Agent ; ]
 	[sh:class foaf:Person ; ]
         [sh:class schema:Organization ; ]) ;
-      sh:maxCount 1 ;    
+      sh:maxCount 1 ;
     ] ;
   sh:property [
       sh:path schema:provider ;
@@ -2863,42 +2810,42 @@ epos:SoftwareSourceCodeShape
       sh:or (
         [sh:class foaf:Agent ; ]
 	[sh:class schema:Person ; ]
-        [sh:class schema:Organization ; ]) ;   
+        [sh:class schema:Organization ; ]) ;
     ] ;
   sh:property [
       sh:path schema:citation ;
       sh:description "This property refers to a citation or reference to another creative work, such as another publication, web page, scholarly article, etc.";
       sh:datatype xsd:string;
-      sh:maxCount 1 ;    
+      sh:maxCount 1 ;
     ] ;
   sh:property [
       sh:path schema:spatialCoverage ;
       sh:description "This property indicates the place(s) which are the focus of the content.";
       sh:datatype xsd:string;
-      sh:maxCount 1 ;    
+      sh:maxCount 1 ;
     ] ;
   sh:property [
       sh:path schema:size ;
       sh:description "This property refers to a standardized size of a product or creative work, specified either through a simple textual string.";
       sh:datatype xsd:string;
-      sh:maxCount 1 ;    
+      sh:maxCount 1 ;
     ] ;
   sh:property [
       sh:path schema:creativeWorkStatus ;
       sh:description "This property refers to the status of a creative work in terms of its stage in a lifecycle.";
       sh:datatype xsd:string;
-      sh:maxCount 1 ;    
+      sh:maxCount 1 ;
     ] ;
   sh:property [
       sh:path schema:temporalCoverage ;
       sh:description "This property indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period.";
       sh:datatype xsd:string;
-      sh:maxCount 1 ;    
+      sh:maxCount 1 ;
     ] ;
   sh:property [
       sh:path schema:timeRequired ;
       sh:description "This property refers to an approximate or typical time it usually takes to work with or through the content of this work.";
       sh:datatype xsd:string;
-      sh:maxCount 1 ;    
+      sh:maxCount 1 ;
     ] ;
 .

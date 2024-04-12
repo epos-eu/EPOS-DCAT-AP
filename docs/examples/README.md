@@ -18,7 +18,7 @@ Full example: <a href="./full_example.ttl"><code>full_example.ttl</code></a>
         <td>Category</td>
         <td><a href="./category.ttl"><code>category.ttl</code></a></td>
 </tr>
-<tr> 
+<tr>
         <td>Category Scheme</td>
         <td><a href="./category-scheme.ttl"><code>category-scheme.ttl</code></a></td>
 </tr>
@@ -26,9 +26,9 @@ Full example: <a href="./full_example.ttl"><code>full_example.ttl</code></a>
         <td>Contact Point</td>
         <td><a href="./contact-point.ttl"><code>contact-point.ttl</code></a></td>
 </tr>
-<tr> 
+<tr>
         <td>Data Service</td>
-        <td><a href="./data-service.ttl"><code>data-service.ttl</code></a></td>
+        <td><a href="./dataservice.ttl"><code>dataservice.ttl</code></a></td>
 </tr>
 <tr>
         <td>Dataset</td>
@@ -83,7 +83,7 @@ Full example: <a href="./full_example.ttl"><code>full_example.ttl</code></a>
         <td><a href="./person.ttl"><code>person.ttl</code></a></td>
 </tr>
 <tr>
-        <td>PostalAddress</td> 
+        <td>PostalAddress</td>
         <td><a href="./postal-address.ttl"><code>postal-address.ttl</code></a></td>
 </tr>
 <tr>
