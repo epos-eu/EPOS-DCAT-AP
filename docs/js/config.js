@@ -81,7 +81,7 @@ function quickreference() {
         }
       ]
       },
-      /*{
+      {
       key: "Document status:",
       data: [
       {
@@ -89,7 +89,7 @@ function quickreference() {
       }
       ]
       },
-      {
+      /*{
       key: "Document version:",
       data: [
       {
