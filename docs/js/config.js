@@ -22,7 +22,7 @@ function quickreference() {
     copyrightHolder: "dd",
     copyrightURL: "dddd",
     copyrightStart: "ddd",
-    specStatus: "CR",
+    specStatus: "WD",
     //publishDate: "2022-05-12",
     //specStatus: "ED",
     //specStatus: "unofficial",
