@@ -2501,14 +2501,14 @@ epos:SoftwareApplicationShape
 	[sh:class schema:Person ; ]
         [sh:class schema:Organization ; ]) ;
     ] ;
-  sh:property [
-      sh:path schema:creator ;
-      sh:description "This property refers to a Person or an Organization that is creator of this content or rating.";
-      sh:or (
-        [sh:class foaf:Agent ; ]
-	[sh:class schema:Person ; ]
-        [sh:class schema:Organization ; ]) ;
-    ] ;
+  #sh:property [
+   #   sh:path schema:creator ;
+  #    sh:description "This property refers to a Person or an Organization that is creator of this content or rating.";
+   #   sh:or (
+    #    [sh:class foaf:Agent ; ]
+#	[sh:class schema:Person ; ]
+ #       [sh:class schema:Organization ; ]) ;
+  #  ] ;
   sh:property [
       sh:path schema:funder ;
       sh:description "This property refers to a Person or an Organization that supports (sponsors) something through some kind of financial contribution.";
@@ -2543,14 +2543,14 @@ epos:SoftwareApplicationShape
        sh:datatype xsd:string;
        sh:maxCount 1 ;
     ] ;
-   sh:property [
-      sh:path schema:producer ;
-      sh:description "This property refers to a Person or an Organization that who produced the Software application..";
-      sh:or (
-        [sh:class foaf:Agent ; ]
-	[sh:class schema:Person ; ]
-        [sh:class schema:Organization ; ]) ;
-    ] ;
+   #sh:property [
+    #  sh:path schema:producer ;
+    #  sh:description "This property refers to a Person or an Organization that who produced the Software application..";
+    #  sh:or (
+    #    [sh:class foaf:Agent ; ]
+#	[sh:class schema:Person ; ]
+ #       [sh:class schema:Organization ; ]) ;
+  #  ] ;
    sh:property [
       sh:path schema:provider ;
       sh:description "This property refers to a Person or an Organization that is the service provider of the Software application.";
