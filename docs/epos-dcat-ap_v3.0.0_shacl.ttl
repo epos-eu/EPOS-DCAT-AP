@@ -2510,7 +2510,7 @@ epos:SoftwareApplicationShape
         [sh:class schema:Organization ; ]) ;
     ] ;
   sh:property [
-      sh:path schema:founder ;
+      sh:path schema:funder ;
       sh:description "This property refers to a Person or an Organization that supports (sponsors) something through some kind of financial contribution.";
       sh:or (
         [sh:class foaf:Agent ; ]
@@ -2763,16 +2763,16 @@ epos:SoftwareSourceCodeShape
 	[sh:class schema:Person ; ]
         [sh:class schema:Organization ; ]) ;
     ] ;
+  # sh:property [
+  #    sh:path schema:creator ;
+  #    sh:description "This property refers to a Person or an Organization that is creator of this content or rating.";
+  #    sh:or (
+  #      [sh:class foaf:Agent ; ]
+ #	[sh:class schema:Person ; ]
+ #       [sh:class schema:Organization ; ]) ;
+  #  ] ;
   sh:property [
-      sh:path schema:creator ;
-      sh:description "This property refers to a Person or an Organization that is creator of this content or rating.";
-      sh:or (
-        [sh:class foaf:Agent ; ]
-	[sh:class schema:Person ; ]
-        [sh:class schema:Organization ; ]) ;
-    ] ;
-  sh:property [
-      sh:path schema:founder ;
+      sh:path schema:funder ;
       sh:description "This property refers to a Person or an Organization that supports (sponsors) something through some kind of financial contribution.";
       sh:or (
         [sh:class foaf:Agent ; ]
@@ -2787,14 +2787,14 @@ epos:SoftwareSourceCodeShape
 	[sh:class schema:Person ; ]
         [sh:class schema:Organization ; ]) ;
     ] ;
-   sh:property [
-      sh:path schema:producer ;
-      sh:description "This property refers to a Person or an Organization that who produced the SoftwareeSouceCode.";
-      sh:or (
-        [sh:class foaf:Agent ; ]
-	[sh:class schema:Person ; ]
-        [sh:class schema:Organization ; ]) ;
-    ] ;
+   #sh:property [
+    #  sh:path schema:producer ;
+    #  sh:description "This property refers to a Person or an Organization that who produced the SoftwareeSouceCode.";
+    #  sh:or (
+    #    [sh:class foaf:Agent ; ]
+#	[sh:class schema:Person ; ]
+    #    [sh:class schema:Organization ; ]) ;
+   # ] ;
   sh:property [
       sh:path schema:publisher ;
       sh:description "This property refers to a citation or reference to another creative work, such as another publication, web page, scholarly article, etc.";
