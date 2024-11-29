@@ -7,8 +7,24 @@
 
 []
 
-<epos:SeismicWaveform> a skos:Concept ;
-	skos:definition "Measurement of the dynamic displacement of the Earth" ;
-	skos:inScheme <epos:Seismology> ;
-	skos:prefLabel "Seismic waveform" ;
+<category:wavefmpeakmotiservices> a skos:Concept;
+ skos:prefLabel "Waveform and peak-motion services";
+ skos:definition "TCS Subdomain";
+ skos:inScheme <category:seismology>;
+ skos:narrower <category:wavefmpeakmotidata>,<category:wavefmmetrics>,<category:wavefmmetadata>,<category:strgmotiparameters>,<category:wavefmparameters>;
+.
+<category:wavefmpeakmotidata> a skos:Concept;
+ skos:prefLabel "Waveform and peak-motion data";
+ skos:definition "TCS Subdomain";
+ skos:inScheme <category:seismology>;
+ skos:broader <category:wavefmpeakmotiservices>;
+ skos:narrower <category:seismicwavefmsdistributedeidadividualendpots>;
+ skos:notation "WP08-DDSS-005";
+.
+<category:seismicwavefmsdistributedeidadividualendpots> a skos:Concept;
+ skos:prefLabel "Seismic waveforms distributed by EIDA (individual endpoints)";
+ skos:definition "TCS Subdomain";
+ skos:inScheme <category:seismology>;
+ skos:broader <category:wavefmpeakmotidata>;
+ skos:notation "WP08-DDSS-001";
 .
