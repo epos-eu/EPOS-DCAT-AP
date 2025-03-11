@@ -81,7 +81,7 @@ function quickreference() {
            //href: "https://orcid.org/0000-0001-5805-9337"
         }
       ]
-      },
+      } ,/*
       {
       key: "Document status:",
       data: [
@@ -90,7 +90,7 @@ function quickreference() {
       }
       ]
       },
-      /*{
+     {
       key: "Document version:",
       data: [
       {
