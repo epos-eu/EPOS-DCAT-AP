@@ -42,13 +42,19 @@ function quickreference() {
         name:   "Rossana Paciello",
         orcid:  "0000-0002-6975-1991",
         company: "Istituto Nazionale Geofisica e Vulcanologia - INGV",
-        companyURL: "www.ingv.it"
+        companyURL: "https://www.ingv.it"
       },
       {
         name: 	"Manuela Sbarra",
         orcid:  "0000-0001-7746-6309",
         company:    "Istituto Nazionale Geofisica e Vulcanologia - INGV",
-        companyURL: "www.ingv.it"
+        companyURL: "https://www.ingv.it"
+      },
+      {
+        name: "Kety Giuliacci",
+        orcid:  "0000-0002-7916-6884",
+        company:    "Istituto Nazionale Geofisica e Vulcanologia - INGV",
+        companyURL: "https://www.ingv.it"
       }
     ],
 
@@ -65,17 +71,18 @@ function quickreference() {
     orcid:  "0000-0001-7746-6309",
     company:    "INGV - Istituto Nazionale Geofisisca e Vulcanologia, Italy"
 
-    }
+    },
+   
     ],*/
     otherLinks: [
       {
       key: "Contributors:",
       data: [
-        {
+        /*{
         value: "Kety Giuliacci",
         orcid:  "0000-0002-7916-6884",
         href: "https://orcid.org/0000-0002-7916-6884"
-        },
+        },*/
         {
            value: "Epos Community"
            //href: "https://orcid.org/0000-0001-5805-9337"
