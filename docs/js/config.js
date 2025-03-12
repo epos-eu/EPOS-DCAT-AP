@@ -42,18 +42,21 @@ function quickreference() {
         name:   "Rossana Paciello",
         orcid:  "0000-0002-6975-1991",
         company: "Istituto Nazionale Geofisica e Vulcanologia - INGV",
+        mailto: "rossana.paciello@ingv.it",
         companyURL: "https://www.ingv.it"
       },
       {
         name: 	"Manuela Sbarra",
         orcid:  "0000-0001-7746-6309",
         company:    "Istituto Nazionale Geofisica e Vulcanologia - INGV",
+        mailto: "manuela.sbarra@ingv.it",
         companyURL: "https://www.ingv.it"
       },
       {
         name: "Kety Giuliacci",
         orcid:  "0000-0002-7916-6884",
         company:    "Istituto Nazionale Geofisica e Vulcanologia - INGV",
+        mailto: "kety.giuliacci@ingv.it",
         companyURL: "https://www.ingv.it"
       }
     ],
