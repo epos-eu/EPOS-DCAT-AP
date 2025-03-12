@@ -29,7 +29,7 @@ An extension of the DCAT Application Profile for Research Infrastructures in the
 <br>
 
 
-Last update: April, 10th, 2024
+Last update: March, 12nd, 2025
 <br>
 <hr>
 <b>References:</b>
