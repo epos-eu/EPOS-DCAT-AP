@@ -15,8 +15,6 @@ An extension of the DCAT Application Profile for Research Infrastructures in the
 <!--<a href="https://epos-eu.github.io/EPOS-DCAT-AP/facets/">Facets</a>-->
 <br>
 
-
-
 <details>
   <summary>
     Published under MIT License
