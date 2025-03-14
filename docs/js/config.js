@@ -45,13 +45,7 @@ function quickreference() {
         mailto: "rossana.paciello@ingv.it",
         companyURL: "https://www.ingv.it"
       },
-       {
-        name: "Daniele Bailo",
-        orcid:  "0000-0003-0695-4406",
-        company:    "Istituto Nazionale Geofisica e Vulcanologia - INGV",
-        mailto: "daniele.bailo@ingv.it",
-        companyURL: "https://www.ingv.it"
-      },
+      
       {
         name: 	"Manuela Sbarra",
         orcid:  "0000-0001-7746-6309",
@@ -64,6 +58,12 @@ function quickreference() {
         orcid:  "0000-0002-7916-6884",
         company:    "Istituto Nazionale Geofisica e Vulcanologia - INGV",
         mailto: "kety.giuliacci@ingv.it",
+        companyURL: "https://www.ingv.it"
+      }, {
+        name: "Daniele Bailo",
+        orcid:  "0000-0003-0695-4406",
+        company:    "Istituto Nazionale Geofisica e Vulcanologia - INGV",
+        mailto: "daniele.bailo@ingv.it",
         companyURL: "https://www.ingv.it"
       }
     ],
