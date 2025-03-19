@@ -60,6 +60,12 @@ function quickreference() {
         mailto: "kety.giuliacci@ingv.it",
         companyURL: "https://www.ingv.it"
       }, {
+        name: "Luca Trani",
+        orcid:  "0000-0001-7750-7254",
+        company:    "Koninklijk Nederlands Meteorologisch Instituut - KNMI",
+        mailto: "luca.trani@knmi.nl",
+        companyURL: "https://www.knmi.nl"
+      },{
         name: "Daniele Bailo",
         orcid:  "0000-0003-0695-4406",
         company:    "Istituto Nazionale Geofisica e Vulcanologia - INGV",
