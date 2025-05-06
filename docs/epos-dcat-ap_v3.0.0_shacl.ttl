@@ -2500,14 +2500,14 @@ epos:SoftwareApplicationShape
 	[sh:class schema:Person ; ]
         [sh:class schema:Organization ; ]) ;
     ] ;
-  #sh:property [
-   #   sh:path schema:creator ;
-  #    sh:description "This property refers to a Person or an Organization that is creator of this content or rating.";
-   #   sh:or (
-    #    [sh:class foaf:Agent ; ]
-#	[sh:class schema:Person ; ]
- #       [sh:class schema:Organization ; ]) ;
-  #  ] ;
+  sh:property [
+      sh:path schema:creator ;
+      sh:description "This property refers to a Person or an Organization that is creator of this content or rating.";
+      sh:or (
+        [sh:class foaf:Agent ; ]
+	[sh:class schema:Person ; ]
+        [sh:class schema:Organization ; ]) ;
+    ] ;
   sh:property [
       sh:path schema:funder ;
       sh:description "This property refers to a Person or an Organization that supports (sponsors) something through some kind of financial contribution.";
@@ -2759,14 +2759,14 @@ epos:SoftwareSourceCodeShape
 	[sh:class schema:Person ; ]
         [sh:class schema:Organization ; ]) ;
     ] ;
-  # sh:property [
-  #    sh:path schema:creator ;
-  #    sh:description "This property refers to a Person or an Organization that is creator of this content or rating.";
-  #    sh:or (
-  #      [sh:class foaf:Agent ; ]
- #	[sh:class schema:Person ; ]
- #       [sh:class schema:Organization ; ]) ;
-  #  ] ;
+   sh:property [
+      sh:path schema:creator ;
+      sh:description "This property refers to a Person or an Organization that is creator of this content or rating.";
+      sh:or (
+       [sh:class foaf:Agent ; ]
+ 	[sh:class schema:Person ; ]
+        [sh:class schema:Organization ; ]) ;
+    ] ;
   sh:property [
       sh:path schema:funder ;
       sh:description "This property refers to a Person or an Organization that supports (sponsors) something through some kind of financial contribution.";
