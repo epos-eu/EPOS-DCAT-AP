@@ -2814,6 +2814,13 @@ epos:SoftwareSourceCodeShape
       sh:datatype xsd:string;
     ] ;
   sh:property [
+      sh:path schema:softwareRequirements ;
+      sh:description "Component dependency requirements for software source code. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the software source code.";
+      sh:or ( [ sh:datatype xsd:string ; ]
+        [ sh:datatype xsd:anyURI ; ] );
+      sh:maxCount 1 ;
+    ] ;
+  sh:property [
       sh:path schema:spatialCoverage ;
       sh:description "This property indicates the place(s) which are the focus of the content.";
       sh:datatype xsd:string;
