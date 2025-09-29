@@ -23,3 +23,6 @@ GitHub pages available here: https://epos-eu.github.io/EPOS-DCAT-AP/
 
 - R. Paciello, L. Trani, D. Bailo, V. Vinciarelli and M. Sbarra, *<b>“SHAPEness: a SHACL-driven Metadata Editor”</b>*, in Garoufallou, E., Vlachidis, A. (eds) Metadata and Semantic Research. MTSR 2022. Communications in Computer and Information Science, vol 1789. Springer, Cham. 
 <br>DOI: <a href="http://dx.doi.org/10.1007/978-3-031-39141-5_23" target="_blank">10.1007/978-3-031-39141-5_23</a>
+
+- L. Trani, M. Atkinson, D. Bailo, R. Paciello, R. Filgueira,<b>“Establishing Core Concepts for Information-Powered Collaborations”, in Future Generation Computer Systems, vol. 89 (2018), pp. 421-437.
+  <br>DOI: <a href="https://doi.org/10.1016/j.future.2018.07.005" target="_blank">10.1016/j.future.2018.07.005</a>
